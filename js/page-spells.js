@@ -36,6 +36,7 @@ function parsesource (source) {
 	if (source === "EEPC") source = "Elemental Evil Player's Companion";
 	if (source === "SCAG") source = "Sword Coast Adventurer's Guide";
 	if (source === "UAMystic") source = "Unearthed Arcana: The Mystic Class";
+	if (source === "BoLS 3pp") source = "Book of Lost Spells (3pp)";
 	return source;
 }
 
@@ -82,8 +83,28 @@ function loadspells() {
 				curspell.source = "PHB";
 			}
 
+            var toadd = "<li class='row' id='"+i+"' data-link='"+encodeURIComponent(name).toLowerCase().replace("'","%27")+"' data-name='"+encodeURIComponent(name).replace("'","%27")+"'><span class='name col-xs-3'>"+name+"</span> <span class='source col-xs-2' title=\""+parsesource(source)+"\">"+source+"</span> <span class='level col-xs-2'>"+leveltext+"</span> <span class='school col-xs-2'>"+schooltext+"</span> <span class='classes col-xs-3'>"+curspell.classes+"</span> ";
+             if (curspell.level[0] === "P" && curspell.level[1] === "D") { // if it's a psionic discipline, make an invisible search field with all the modes associated
+                var textlist = curspell.text;
 
-			$("ul.spells").append("<li class='row' id='"+i+"' data-link='"+encodeURIComponent(name).toLowerCase().replace("'","%27")+"' data-name='"+encodeURIComponent(name).replace("'","%27")+"'><span class='name col-xs-3'>"+name+"</span> <span class='source col-xs-2' title=\""+parsesource(source)+"\">"+source+"</span> <span class='level col-xs-2'>"+leveltext+"</span> <span class='school col-xs-2'>"+schooltext+"</span> <span class='classes col-xs-3'>"+curspell.classes+"</span> </li>");
+                var psisearch = "";
+                for (var j = 0; j < textlist.length; ++j) {
+                    var regex = /^((.* )\(.*psi.*?\)|Bestial Transformation)\./g;
+                    var matches = regex.exec(textlist[j]);
+
+                    if (matches) {
+                        var cleanedpsi = matches[1].trim();
+                        if (cleanedpsi.indexOf("(") != -1) {
+                            cleanedpsi = cleanedpsi.substring(0, cleanedpsi.indexOf("("));
+                        }
+                        psisearch += '"' + cleanedpsi.trim() + '" '
+                    }
+                }
+
+                toadd = toadd + "<span class='disciplinesearch' style='display: none'>"+psisearch+"</span>";
+             }
+             toadd = toadd + "</li>";
+			$("ul.spells").append(toadd);
 
 			if (!$("select.levelfilter:contains('"+parsespelllevel(curspell.level)+"')").length) {
 				$("select.levelfilter").append("<option value='"+curspell.level+"'>"+parsespelllevel(curspell.level)+"</option>");
@@ -122,7 +143,7 @@ function loadspells() {
 		$("select.sourcefilter").val("All");
 
 		var options = {
-			valueNames: ['name', 'source', 'level', 'school', 'classes'],
+			valueNames: ['name', 'source', 'level', 'school', 'classes', 'disciplinesearch'],
 			listClass: "spells"
 		}
 
@@ -165,12 +186,14 @@ function loadspells() {
 			var schoolfilter = $("select.schoolfilter").val();
 			var classfilter = $("select.classfilter").val();
 			var sourcefilter = $("select.sourcefilter").val();
+			var thirdpartyfilter = $("select.3ppfilter").val();
 
 			spellslist.filter(function(item) {
 				var rightlevel = false;
 				var rightschool = false;
 				var rightclass = false;
 				var rightsource = false;
+				var rightparty = false;
 
 				if (levelfilter === "All" || item.values().level.indexOf(levelfilter) !== -1) rightlevel = true;
 				if (schoolfilter === "All" || item.values().school === schoolfilter) rightschool = true;
@@ -180,7 +203,10 @@ function loadspells() {
 				}
 				if (classfilter === "All") rightclass = true;
 				if (sourcefilter === "All" || item.values().source === sourcefilter) rightsource = true;
-				if (rightlevel && rightschool && rightclass && rightsource) return true;
+				if (thirdpartyfilter === "All") rightparty = true;
+				if (thirdpartyfilter === "None" && item.values().source.indexOf("3pp") === -1) rightparty = true;
+				if (thirdpartyfilter === "Only" && item.values().source.indexOf("3pp") !== -1) rightparty = true;
+				if (rightlevel && rightschool && rightclass && rightsource && rightparty) return true;
 				return false;
 			});
 		});
