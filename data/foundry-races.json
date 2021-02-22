@@ -1,0 +1,14 @@
+{
+	"raceFeature": [
+		{
+			"name": "Radiant Soul",
+			"source": "VGM",
+			"raceName": "Aasimar (Protector)",
+			"raceSource": "VGM",
+			"data": {
+				"activation.type": "action",
+				"activation.cost": 1
+			}
+		}
+	]
+}

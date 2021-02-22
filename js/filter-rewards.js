@@ -15,7 +15,7 @@ class PageFilterRewards extends PageFilter {
 		});
 	}
 
-	mutateForFilters (it) {
+	static mutateForFilters (it) {
 		// No-op
 	}
 

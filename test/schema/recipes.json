@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "0.1.0",
+	"$id": "recipes.json",
+	"version": "1.2.1",
 	"type": "object",
 
 	"definitions": {
@@ -26,7 +27,8 @@
 							"type": "object",
 							"properties": {
 								"min": {"type": "integer"},
-								"max": {"type": "integer"}
+								"max": {"type": "integer"},
+								"note": {"$ref": "entry.json"}
 							},
 							"required": ["min", "max"],
 							"additionalProperties": false
@@ -34,7 +36,8 @@
 						{
 							"type": "object",
 							"properties": {
-								"exact": {"type": "integer"}
+								"exact": {"type": "integer"},
+								"note": {"$ref": "entry.json"}
 							},
 							"required": ["exact"],
 							"additionalProperties": false
@@ -61,7 +64,65 @@
 					"items": {
 						"$ref": "entry.json"
 					}
-				}
+				},
+				"type": {
+					"type": "string",
+					"enum": ["Human", "Elven", "Dwarven", "Halfling", "Uncommon Cuisine", "Elixir/Ale"]
+				},
+				"diet": {
+					"type": "string",
+					"enum": ["V", "C", "X"]
+				},
+				"miscTags": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": ["alcohol"]
+					}
+				},
+				"allergenGroups": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"celery",
+							"gluten",
+							"crustaceans",
+							"eggs",
+							"fish",
+							"lupin",
+							"milk",
+							"molluscs",
+							"mustard",
+							"nuts",
+							"peanuts",
+							"sesame",
+							"soya",
+							"sulphites"
+						]
+					}
+				},
+				"dishTypes": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"appetizer",
+							"bread",
+							"cocktail",
+							"dessert",
+							"drink",
+							"entree",
+							"pastry",
+							"salad",
+							"side",
+							"snack",
+							"soup"
+						]
+					}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
 			},
 			"required": ["name", "source", "instructions", "ingredients"],
 			"additionalProperties": false

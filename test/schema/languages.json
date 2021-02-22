@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.0.1",
+	"$id": "languages.json",
+	"version": "1.1.1",
 	"type": "object",
 
 	"properties": {
@@ -54,13 +55,31 @@
 						"items": {
 							"type": "string"
 						}
-					}
+					},
+					"hasFluff": {"type": "boolean"},
+					"hasFluffImages": {"type": "boolean"}
 				},
 				"required": [
 					"name",
 					"source",
 					"page"
 				],
+				"additionalProperties": false
+			}
+		},
+
+		"languageScript": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {"type": "string"},
+					"fonts": {
+						"type": "array",
+						"items": {"type": "string"}
+					}
+				},
+				"required": ["name", "fonts"],
 				"additionalProperties": false
 			}
 		}

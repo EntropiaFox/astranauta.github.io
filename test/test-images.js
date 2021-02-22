@@ -69,6 +69,8 @@ if (fs.existsSync("./img")) {
 		"plutonium",
 		"covers",
 		"spells",
+		"charcreationoptions",
+		"recipes",
 	]);
 
 	fs.readdirSync("./img")

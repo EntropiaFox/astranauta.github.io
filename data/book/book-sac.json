@@ -380,7 +380,7 @@
 											"name": "Does the druid's Elemental Wild Shape limit you to the four creatures listed, or can you turn into any creature with the elemental type?",
 											"id": "028",
 											"entries": [
-												"The creatures listed in Elemental Wild Shape\u2014{@creature Air Elemental||air}, {@creature Earth Elemental||earth}, {@creature Fire Elemental||fire}, and {@creature Water Elemental||water} elementals\u2014are specific creatures in the {@book Monster Manual|MM} , not creature types or subtypes. Elemental Wild Shape allows you to transform into one of those creatures."
+												"The creatures listed in Elemental Wild Shape\u2014{@creature Air Elemental||air}, {@creature Earth Elemental||earth}, {@creature Fire Elemental||fire}, and {@creature Water Elemental||water} elementals\u2014are specific creatures in the {@book Monster Manual|MM}, not creature types or subtypes. Elemental Wild Shape allows you to transform into one of those creatures."
 											]
 										},
 										{
@@ -634,7 +634,7 @@
 											"name": "Can a ranger move between the attack rolls of the Whirlwind Attack feature?",
 											"id": "046",
 											"entries": [
-												"No. Whirlwind Attack is unusual, in that it's a single attack with multiple attack rolls. In most other instances, an attack has one attack roll. The rule on moving between attacks ({@i PHB} , \"{@book Moving Between Attacks|PHB|9|Moving between Attacks}\") lets you move between weapon attacks, not between the attack rolls of an exceptional feature like Whirlwind Attack."
+												"No. Whirlwind Attack is unusual, in that it's a single attack with multiple attack rolls. In most other instances, an attack has one attack roll. The rule on moving between attacks ({@i PHB}, \"{@book Moving Between Attacks|PHB|9|Moving between Attacks}\") lets you move between weapon attacks, not between the attack rolls of an exceptional feature like Whirlwind Attack."
 											]
 										},
 										{
@@ -832,7 +832,7 @@
 											"name": "Does the warlock's Awakened Mind feature allow two-way telepathic communication?",
 											"id": "05c",
 											"entries": [
-												"The feature is intended to provide one-way communication. The warlock can use the feature to speak telepathically to a creature, but the feature doesn't give that creature the ability to telepathically reply. In contrast, the telepathy ability that some monsters have ({@i MM} , \"{@book Telepathy|MM|0|Telepathy}\") does make two-way communication possible."
+												"The feature is intended to provide one-way communication. The warlock can use the feature to speak telepathically to a creature, but the feature doesn't give that creature the ability to telepathically reply. In contrast, the telepathy ability that some monsters have ({@i MM}, \"{@book Telepathy|MM|0|Telepathy}\") does make two-way communication possible."
 											]
 										},
 										{
@@ -1782,7 +1782,7 @@
 											"name": "Can a non-Battle Master attempt to disarm someone?",
 											"id": "0ca",
 											"entries": [
-												"The Disarming Attack maneuver is designed for the Battle Master archetype, but anyone can try to disarm a foe. The Disarm action option ({@i DMG} , \"{@book Disarm|DMG|9|Disarm}\") provides one way a DM might adjudicate the activity."
+												"The Disarming Attack maneuver is designed for the Battle Master archetype, but anyone can try to disarm a foe. The Disarm action option ({@i DMG}, \"{@book Disarm|DMG|9|Disarm}\") provides one way a DM might adjudicate the activity."
 											]
 										},
 										{
@@ -1849,7 +1849,7 @@
 											"name": "Do you always know when you're under the effect of a spell?",
 											"id": "0d1",
 											"entries": [
-												"You're aware that a spell is affecting you if it has a perceptible effect or if its text says you're aware of it (see {@i PHB} , under \"{@book Targets|PHB|10|Targets}\"). Most spells are obvious. For example, {@spell fireball} burns you, {@spell cure wounds} heals you, and {@spell command} forces you to suddenly do something you didn't intend. Certain spells are more subtle, yet you become aware of the spell at a time specified in the spell's description. {@spell Charm person} and {@spell detect thoughts} are examples of such spells.",
+												"You're aware that a spell is affecting you if it has a perceptible effect or if its text says you're aware of it (see {@i PHB}, under \"{@book Targets|PHB|10|Targets}\"). Most spells are obvious. For example, {@spell fireball} burns you, {@spell cure wounds} heals you, and {@spell command} forces you to suddenly do something you didn't intend. Certain spells are more subtle, yet you become aware of the spell at a time specified in the spell's description. {@spell Charm person} and {@spell detect thoughts} are examples of such spells.",
 												"Some spells are so subtle that you might not know you were ever under their effects. A prime example of that sort of spell is {@spell suggestion}. Assuming you failed to notice the spellcaster casting the spell, you might simply remember the caster saying, \"The treasure you're looking for isn't here. Go look for it in the room at the top of the next tower.\" You failed your saving throw, and off you went to the other tower, thinking it was your idea to go there. You and your companions might deduce that you were beguiled if evidence of the spell is found. It's ultimately up to the DM whether you discover the presence of inconspicuous spells. Discovery usually comes through the use of skills like {@skill Arcana}, {@skill Investigation}, {@skill Insight}, and {@skill Perception} or through spells like {@spell detect magic}."
 											]
 										},
@@ -2290,7 +2290,7 @@
 											"name": "Can you use green-flame blade and booming blade with Extra Attack, opportunity attacks, Sneak Attack, and other weapon attack options?",
 											"id": "0fd",
 											"entries": [
-												"Introduced in the {@book Sword Coast Adventurer's Guide|SCAG} , the {@spell green-flame blade|TCE} and {@spell booming blade|TCE} spells pose a number of questions, because they each do something unusual: require you to make a melee attack with a weapon as part of the spell's casting.",
+												"Introduced in the {@book Sword Coast Adventurer's Guide|SCAG}, the {@spell green-flame blade|TCE} and {@spell booming blade|TCE} spells pose a number of questions, because they each do something unusual: require you to make a melee attack with a weapon as part of the spell's casting.",
 												"First, each of these spells involves a normal melee weapon attack, not a spell attack, so you use whatever ability modifier you normally use with the weapon. (A spell tells you if it includes a spell attack, and neither of these spells do.) For example, if you use a {@item longsword|PHB} with {@spell green-flame blade|TCE}, you use your Strength modifier for the weapon's attack and damage rolls.",
 												"Second, neither {@spell green-flame blade|TCE} nor {@spell booming blade|TCE} works with Extra Attack or any other feature that requires the {@action Attack} action. Like other spells, these cantrips require the {@action Cast a Spell} action, not the Attack action, and they can't be used to make an opportunity attack, unless a special feature allows you to do so.",
 												"Third, these weapon attacks work with Sneak Attack if they fulfill the normal requirements for that feature. For example, if you have the Sneak Attack feature and cast {@spell green-flame blade|TCE} with a finesse weapon, you can deal Sneak Attack damage to the target of the weapon attack if you have advantage on the attack roll and hit."
@@ -2316,7 +2316,7 @@
 											"name": "Can the extra action granted by haste be used to activate a magic item?",
 											"id": "0ff",
 											"entries": [
-												"No. Activating a magic item isn't a function of the {@action Use an Object} action ({@i DMG} , \"{@book Activating an Item|DMG|7|Activating an Item}\")."
+												"No. Activating a magic item isn't a function of the {@action Use an Object} action ({@i DMG}, \"{@book Activating an Item|DMG|7|Activating an Item}\")."
 											]
 										},
 										{
@@ -2637,7 +2637,7 @@
 											"name": "What actions can monsters use to make opportunity attacks? Are Multiattack and breath weapon actions allowed?",
 											"id": "11d",
 											"entries": [
-												"A monster follows the normal {@book opportunity attack rules|PHB|9|Opportunity Attacks}, which specify that an attack of opportunity is one melee attack. That means a monster must choose a single melee attack to make, either an attack in its stat block or a generic attack, like an unarmed strike. Multiattack doesn't qualify, not only because it's more than one attack, but also because the rule on Multiattack ({@i MM} , \"{@book Multiattack|MM|0|Multiattack}\") states that this action can't be used for opportunity attacks. An action, such as a breath weapon, that doesn't include an attack roll is also not eligible."
+												"A monster follows the normal {@book opportunity attack rules|PHB|9|Opportunity Attacks}, which specify that an attack of opportunity is one melee attack. That means a monster must choose a single melee attack to make, either an attack in its stat block or a generic attack, like an unarmed strike. Multiattack doesn't qualify, not only because it's more than one attack, but also because the rule on Multiattack ({@i MM}, \"{@book Multiattack|MM|0|Multiattack}\") states that this action can't be used for opportunity attacks. An action, such as a breath weapon, that doesn't include an attack roll is also not eligible."
 											]
 										},
 										{
@@ -2827,7 +2827,7 @@
 											"name": "Can potions be administered to unconscious characters as an action?",
 											"id": "12f",
 											"entries": [
-												"Yes, you can administer a potion to someone else as an action ({@i DMG} , \"{@book Potions|DMG|7|Potions}\")."
+												"Yes, you can administer a potion to someone else as an action ({@i DMG}, \"{@book Potions|DMG|7|Potions}\")."
 											]
 										},
 										{
@@ -2843,7 +2843,7 @@
 											"name": "For the hat of disguise, how do I set the spell save DC for disguise self ? Does the wearer have to be a caster?",
 											"id": "131",
 											"entries": [
-												"Use your spellcasting ability modifier to set the DC. If you don't have a spellcasting ability, use your proficiency bonus to set it (see the rule in the {@i DMG} , under \"{@book Spells|DMG|7|Spells}\")."
+												"Use your spellcasting ability modifier to set the DC. If you don't have a spellcasting ability, use your proficiency bonus to set it (see the rule in the {@i DMG}, under \"{@book Spells|DMG|7|Spells}\")."
 											]
 										},
 										{

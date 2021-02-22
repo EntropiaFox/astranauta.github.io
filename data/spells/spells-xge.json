@@ -1398,7 +1398,8 @@
 						"source": "PHB"
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dawn",
@@ -2274,7 +2275,6 @@
 				"Whenever the mount disappears, it leaves behind any objects it was wearing or carrying."
 			],
 			"miscTags": [
-				"HL",
 				"PRM",
 				"SMN"
 			],
@@ -2285,7 +2285,8 @@
 						"source": "PHB"
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flame Arrows",
@@ -2558,6 +2559,10 @@
 				{
 					"source": "UAWGE",
 					"page": 107
+				},
+				{
+					"source": "ERLW",
+					"page": 50
 				},
 				{
 					"source": "TCE",
@@ -3050,7 +3055,8 @@
 						"source": "PHB"
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Infestation",
@@ -4138,7 +4144,8 @@
 						"source": "PHB"
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mind Spike",
@@ -4835,7 +4842,8 @@
 						"source": "PHB"
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadow of Moil",
@@ -5559,7 +5567,8 @@
 						"source": "PHB"
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Summon Greater Demon",
@@ -5583,7 +5592,10 @@
 			"components": {
 				"v": true,
 				"s": true,
-				"m": "a vial of blood from a humanoid killed within the past 24 hours"
+				"m": {
+					"text": "a vial of blood from a humanoid killed within the past 24 hours",
+					"consume": "optional"
+				}
 			},
 			"duration": [
 				{
@@ -5652,7 +5664,10 @@
 			"components": {
 				"v": true,
 				"s": true,
-				"m": "a vial of blood from a humanoid killed within the past 24 hours"
+				"m": {
+					"text": "a vial of blood from a humanoid killed within the past 24 hours",
+					"consume": "optional"
+				}
 			},
 			"duration": [
 				{
@@ -6246,7 +6261,8 @@
 						"definedInSource": "UAClassFeatureVariants"
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Toll the Dead",
@@ -6795,6 +6811,9 @@
 						"The attack rolls of ranged weapon attacks have disadvantage if the attacks pass in or out of the wind."
 					]
 				}
+			],
+			"conditionInflict": [
+				"deafened"
 			],
 			"classes": {
 				"fromClassList": [

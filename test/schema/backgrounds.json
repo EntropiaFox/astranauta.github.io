@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.1.4",
+	"$id": "backgrounds.json",
+	"version": "1.2.1",
 	"type": "object",
 
 	"definitions": {
@@ -17,7 +18,10 @@
 					"type": "integer"
 				},
 				"skillProficiencies": {
-					"$ref": "util.json#/definitions/skillProficiencies"
+					"type": "array",
+					"items": {
+						"$ref": "util.json#/definitions/skillProficiencies"
+					}
 				},
 				"toolProficiencies": {
 					"$ref": "util.json#/definitions/toolProficiencies"
@@ -42,7 +46,9 @@
 				},
 				"startingEquipment": {
 					"$ref": "util.json#/definitions/startingEquipment"
-				}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
 			},
 			"additionalProperties": false
 		},

@@ -23,12 +23,12 @@ class SpellsPage {
 		const hash = UrlUtil.autoEncodeHash(spell);
 		if (!spell.uniqueId && _addedHashes.has(hash)) return null;
 		_addedHashes.add(hash);
-		const isExcluded = ExcludeUtil.isExcluded(spell.name, "spell", spell.source);
+		const isExcluded = ExcludeUtil.isExcluded(hash, "spell", spell.source);
 
 		this._pageFilter.mutateAndAddToFilters(spell, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(spell.source);
 		const time = PageFilterSpells.getTblTimeStr(spell.time[0]);
@@ -36,9 +36,9 @@ class SpellsPage {
 		const concentration = spell._isConc ? "×" : "";
 		const range = Parser.spRangeToFull(spell.range);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-2-9 pl-0">${spell.name}</span>
-			<span class="col-1-5 text-center">${Parser.spLevelToFull(spell.level)}${this._getListItem_getLevelMetaPart(spell)}</span>
+			<span class="col-1-5 text-center">${PageFilterSpells.getTblLevelStr(spell)}</span>
 			<span class="col-1-7 text-center">${time}</span>
 			<span class="col-1-2 sp__school-${spell.school} text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</span>
 			<span class="col-0-6 text-center" title="Concentration">${concentration}</span>
@@ -73,8 +73,6 @@ class SpellsPage {
 		return listItem;
 	}
 
-	_getListItem_getLevelMetaPart (spell) { return `${spell.meta && spell.meta.ritual ? " (rit.)" : ""}${spell.meta && spell.meta.technomagic ? " (tec.)" : ""}`; }
-
 	handleFilterChange () {
 		const f = this._pageFilter.filterBox.getValues();
 		list.filter(li => {
@@ -91,16 +89,18 @@ class SpellsPage {
 		const concentration = spell._isConc ? "×" : "";
 		const range = Parser.spRangeToFull(spell.range);
 
-		const $ele = $(`<li class="row">
-			<a href="#${UrlUtil.autoEncodeHash(spell)}" title="${spell.name}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${UrlUtil.autoEncodeHash(spell)}" title="${spell.name}" class="lst--border lst__row-inner">
 				<span class="bold col-3-2 pl-0">${spell.name}</span>
-				<span class="capitalise col-1-5 text-center">${Parser.spLevelToFull(spell.level)}${this._getListItem_getLevelMetaPart(spell)}</span>
+				<span class="capitalise col-1-5 text-center">${PageFilterSpells.getTblLevelStr(spell)}</span>
 				<span class="col-1-8 text-center">${time}</span>
 				<span class="capitalise col-1-6 sp__school-${spell.school} text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</span>
 				<span class="concentration--sublist col-0-7 text-center" title="Concentration">${concentration}</span>
 				<span class="range col-3-2 pr-0 text-right">${range}</span>
 			</a>
-		</li>`).contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,
@@ -138,23 +138,28 @@ class SpellsPage {
 			});
 		}
 
-		const statTab = Renderer.utils.tabButton(
-			"Spell",
-			() => {},
-			buildStatsTab,
-		);
-		const infoTab = Renderer.utils.tabButton(
-			"Info",
-			() => {},
-			buildFluffTab,
-		);
-		const picTab = Renderer.utils.tabButton(
-			"Images",
-			() => {},
-			buildFluffTab.bind(null, true),
-		);
+		const tabMetas = [
+			new Renderer.utils.TabButton({
+				label: "Spell",
+				fnPopulate: buildStatsTab,
+				isVisible: true,
+			}),
+			new Renderer.utils.TabButton({
+				label: "Info",
+				fnPopulate: buildFluffTab,
+				isVisible: Renderer.utils.hasFluffText(spell),
+			}),
+			new Renderer.utils.TabButton({
+				label: "Images",
+				fnPopulate: buildFluffTab.bind(null, true),
+				isVisible: Renderer.utils.hasFluffImages(spell),
+			}),
+		];
 
-		Renderer.utils.bindTabButtons(statTab, infoTab, picTab);
+		Renderer.utils.bindTabButtons({
+			tabButtons: tabMetas.filter(it => it.isVisible),
+			tabLabelReference: tabMetas.map(it => it.label),
+		});
 
 		ListUtil.updateSelected();
 	}
@@ -220,7 +225,7 @@ class SpellsPage {
 						},
 					);
 				} else {
-					Renderer.hover.doPopoutCurPage(evt, toList, Hist.lastLoadedId);
+					Renderer.hover.doPopoutCurPage(evt, toList[Hist.lastLoadedId]);
 				}
 			}
 		}
@@ -301,7 +306,7 @@ async function pPageInit (loadedSources) {
 	spellBookView = new BookModeView({
 		hashKey: "bookview",
 		$openBtn: $(`#btn-spellbook`),
-		noneVisibleMsg: "If you wish to view multiple spells, please first make a list",
+		$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple spells, please first make a list</span>`),
 		pageTitle: "Spells Book View",
 		popTblGetNumShown: ($wrpContent, $dispName, $wrpControls) => {
 			const toShow = ListUtil.getSublistedIds().map(id => spellList[id])
@@ -452,7 +457,14 @@ function addSpells (data) {
 	});
 	ListUtil.bindPinButton();
 	const $btnPop = ListUtil.getOrTabRightButton(`btn-popout`, `new-window`);
-	Renderer.hover.bindPopoutButton($btnPop, spellList, SpellsPage.popoutHandlerGenerator.bind(SpellsPage), "Popout Window (SHIFT for Source Data; CTRL for Markdown Render)");
+	Renderer.hover.bindPopoutButton(
+		$btnPop,
+		spellList,
+		{
+			handlerGenerator: SpellsPage.popoutHandlerGenerator.bind(SpellsPage),
+			title: "Popout Window (SHIFT for Source Data; CTRL for Markdown Render)",
+		},
+	);
 	UrlUtil.bindLinkExportButton(spellsPage._pageFilter.filterBox);
 	ListUtil.bindOtherButtons({
 		download: true,

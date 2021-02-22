@@ -7,6 +7,7 @@ class LegendaryGroupBuilder extends Builder {
 			titleSidebarDownloadJson: "Download Legendary Groups as JSON",
 			prop: "legendaryGroup",
 			titleSelectDefaultSource: "(Same as Legendary Group)",
+			typeRenderData: "dataLegendaryGroup",
 		});
 
 		this._renderOutputDebounced = MiscUtil.debounce(() => this._renderOutput(), 50);
@@ -20,12 +21,21 @@ class LegendaryGroupBuilder extends Builder {
 		}
 	}
 
-	async pHandleSidebarLoadExistingData (legGroup) {
+	/**
+	 * @param legGroup
+	 * @param [opts]
+	 * @param [opts.meta]
+	 */
+	async pHandleSidebarLoadExistingData (legGroup, opts) {
+		opts = opts || {};
+
 		legGroup.source = this._ui.source;
 
 		delete legGroup.uniqueId;
 
-		this.setStateFromLoaded({s: legGroup, m: this.getInitialMetaState()});
+		const meta = {...(opts.meta || {}), ...this.getInitialMetaState()};
+
+		this.setStateFromLoaded({s: legGroup, m: meta});
 
 		this.renderInput();
 		this.renderOutput();
@@ -77,7 +87,7 @@ class LegendaryGroupBuilder extends Builder {
 
 		// initialise tabs
 		this._resetTabs("input");
-		const tabs = ["Info", "Lair Actions", "Regional Effects", "Mythic Encounter"].map((it, ix) => this._getTab(ix, it, {hasBorder: true, tabGroup: "input", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		const tabs = ["Info", "Lair Actions", "Regional Effects", "Mythic Encounter"].map((it, ix) => this._getTab(ix, it, "meta", {hasBorder: true, tabGroup: "input", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
 		const [infoTab, lairActionsTab, regionalEffectsTab, mythicEncounterTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink ui-tab__wrp-tab-heads--border">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
@@ -118,7 +128,7 @@ class LegendaryGroupBuilder extends Builder {
 
 		// initialise tabs
 		this._resetTabs("output");
-		const tabs = ["Legendary Group", "Data"].map((it, ix) => this._getTab(ix, it, {tabGroup: "output", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		const tabs = ["Legendary Group", "Data"].map((it, ix) => this._getTab(ix, it, "meta", {tabGroup: "output", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
 		const [legGroupTab, dataTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));

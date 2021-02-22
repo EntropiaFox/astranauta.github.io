@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.1.2",
+	"$id": "deities.json",
+	"version": "1.1.4",
 	"type": "object",
 
 	"definitions": {
@@ -57,7 +58,7 @@
 					"items": {
 						"type": "string",
 						"enum": [
-							"Arcana", "Death", "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War", "Forge", "Grave", "Order"
+							"Arcana", "Death", "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War", "Forge", "Grave", "Order", "Peace", "Twilight"
 						]
 					}
 				},
@@ -101,7 +102,8 @@
 				},
 				"customExtensionOf": {
 					"type": "string"
-				}
+				},
+				"piety": {"type": "boolean"}
 			},
 			"additionalProperties": false
 		},

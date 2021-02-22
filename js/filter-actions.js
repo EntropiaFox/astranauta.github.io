@@ -13,7 +13,7 @@ class PageFilterActions extends PageFilter {
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Optional/Variant Action", "SRD"], isSrdFilter: true});
 	}
 
-	mutateForFilters (it) {
+	static mutateForFilters (it) {
 		it._fTime = it.time ? it.time.map(it => it.unit || it) : null;
 		it._fMisc = it.srd ? ["SRD"] : [];
 		if (it.fromVariant) it._fMisc.push("Optional/Variant Action");

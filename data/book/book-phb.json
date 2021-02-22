@@ -5699,7 +5699,7 @@
 											"page": 164,
 											"entries": [
 												"You determine what spells you know and can prepare for each class individually, as if you were a single-classed member of that class. If you are a ranger 4/wizard 3, for example, you know three 1st-level ranger spells based on your levels in the ranger class. As 3rd-level wizard, you know three wizard cantrips, and your spellbook contains ten wizard spells, two of which (the two you gained when you reached 3rd level as a wizard) can be 2nd-level spells. If your intelligence is 16, you can prepare six wizard spells from your spellbook.",
-												"Each spell you know and prepare is associated with one of your classes, and you use the spellcasting ability of that class when you cast the spell. Similarly, a spellcasting focus, such as a holy symbol, can he used only for the spells from the class associated with that focus.",
+												"Each spell you know and prepare is associated with one of your classes, and you use the spellcasting ability of that class when you cast the spell. Similarly, a spellcasting focus, such as a holy symbol, can be used only for the spells from the class associated with that focus.",
 												"If a cantrip of yours increases in power at higher levels, the increase is based on your character level, not your level in a particular class."
 											],
 											"id": "0fe"
@@ -10960,223 +10960,223 @@
 									],
 									"rows": [
 										[
-											"Auril, goddess of winter",
+											"{@deity Auril}, goddess of winter",
 											"NE",
 											"Nature, Tempest",
 											"Six-pointed snowflake"
 										],
 										[
-											"Azuth, god of wizards",
+											"{@deity Azuth}, god of wizards",
 											"LN",
 											"Knowledge",
 											"Left hand pointing upward, outlined in fire"
 										],
 										[
-											"Bane, god of tyranny",
+											"{@deity Bane}, god of tyranny",
 											"LE",
 											"War",
 											"Upright black right hand, thumb and fingers together"
 										],
 										[
-											"Beshaba, goddess of misfortune",
+											"{@deity Beshaba}, goddess of misfortune",
 											"CE",
 											"Trickery",
 											"Black antlers"
 										],
 										[
-											"Bhaal, god of murder",
+											"{@deity Bhaal}, god of murder",
 											"NE",
 											"Death",
 											"Skull surrounded by a ring of blood droplets"
 										],
 										[
-											"Chauntea, goddess of agriculture",
+											"{@deity Chauntea}, goddess of agriculture",
 											"NG",
 											"Life",
 											"Sheaf of grain or a blooming rose over grain"
 										],
 										[
-											"Cyric, god of lies",
+											"{@deity Cyric}, god of lies",
 											"CE",
 											"Trickery",
 											"White jawless skull on black or purple sunburst"
 										],
 										[
-											"Deneir, god of writing",
+											"{@deity Deneir}, god of writing",
 											"NG",
 											"Knowledge",
 											"Lit candle above an open eye"
 										],
 										[
-											"Eldath, goddess of peace",
+											"{@deity Eldath}, goddess of peace",
 											"NG",
 											"Life, Nature",
 											"Waterfall plunging into still pool"
 										],
 										[
-											"Gond, god of craft",
+											"{@deity Gond}, god of craft",
 											"N",
 											"Knowledge",
 											"Toothed cog with four spokes"
 										],
 										[
-											"Helm, god of protection",
+											"{@deity Helm}, god of protection",
 											"LN",
 											"Life, Light",
 											"Staring eye on upright left gauntlet"
 										],
 										[
-											"Ilmater, god of endurance",
+											"{@deity Ilmater}, god of endurance",
 											"LG",
 											"Life",
 											"Hands bound at the wrist with red cord"
 										],
 										[
-											"Kelemvor, god of the dead",
+											"{@deity Kelemvor}, god of the dead",
 											"LN",
 											"Death",
 											"Upright skeletal arm holding balanced scales"
 										],
 										[
-											"Lathander, god of birth and renewal",
+											"{@deity Lathander}, god of birth and renewal",
 											"NG",
 											"Life, Light",
 											"Road traveling into a sunrise"
 										],
 										[
-											"Leira, goddess of illusion",
+											"{@deity Leira}, goddess of illusion",
 											"CN",
 											"Trickery",
 											"Point-down triangle containing a swirl of mist"
 										],
 										[
-											"Lliira, goddess of joy",
+											"{@deity Lliira}, goddess of joy",
 											"CG",
 											"Life",
 											"Triangle of three six-pointed stars"
 										],
 										[
-											"Loviatar, goddess of pain",
+											"{@deity Loviatar}, goddess of pain",
 											"LE",
 											"Death",
 											"Nine-tailed barbed scourge"
 										],
 										[
-											"Malar, god of the hunt",
+											"{@deity Malar}, god of the hunt",
 											"CE",
 											"Nature",
 											"Clawed paw"
 										],
 										[
-											"Mask, god of thieves",
+											"{@deity Mask}, god of thieves",
 											"CN",
 											"Trickery",
 											"Black mask"
 										],
 										[
-											"Mielikki, goddess of forests",
+											"{@deity Mielikki}, goddess of forests",
 											"NG",
 											"Nature",
 											"Unicorn's head"
 										],
 										[
-											"Milil, god of poetry and song",
+											"{@deity Milil}, god of poetry and song",
 											"NG",
 											"Light",
 											"Five-stringed harp made of leaves"
 										],
 										[
-											"Myrkul, god of death",
+											"{@deity Myrkul}, god of death",
 											"NE",
 											"Death",
 											"White human skull"
 										],
 										[
-											"Mystra, goddess of magic",
+											"{@deity Mystra}, goddess of magic",
 											"NG",
 											"Knowledge",
 											"Circle of seven stars, or nine stars encircling a flowing red mist, or a single star"
 										],
 										[
-											"Oghma, god of knowledge",
+											"{@deity Oghma}, god of knowledge",
 											"N",
 											"Knowledge",
 											"Blank scroll"
 										],
 										[
-											"Savras, god of divination and fate",
+											"{@deity Savras}, god of divination and fate",
 											"LN",
 											"Knowledge",
 											"Crystal ball containing many kinds of eyes"
 										],
 										[
-											"Selune, goddess of the moon",
+											"{@deity Selûne}, goddess of the moon",
 											"CG",
 											"Knowledge, Life",
 											"Pair of eyes surrounded by seven stars"
 										],
 										[
-											"Shar, goddess of darkness and loss",
+											"{@deity Shar}, goddess of darkness and loss",
 											"NE",
 											"Death, Trickery",
 											"Black disk encircled with a border"
 										],
 										[
-											"Silvanus, god of wild nature",
+											"{@deity Silvanus}, god of wild nature",
 											"N",
 											"Nature",
 											"Oak leaf"
 										],
 										[
-											"Sune, goddess of love and beauty",
+											"{@deity Sune}, goddess of love and beauty",
 											"CG",
 											"Life, Light",
 											"Face of a beautiful red-haired woman"
 										],
 										[
-											"Talona, goddess of disease and poison",
+											"{@deity Talona}, goddess of disease and poison",
 											"CE",
 											"Death",
 											"Three teardrops on a triangle"
 										],
 										[
-											"Talos, god of storms",
+											"{@deity Talos}, god of storms",
 											"CE",
 											"Tempest",
 											"Three lightning bolts radiating from a central point"
 										],
 										[
-											"Tempus, god of war",
+											"{@deity Tempus}, god of war",
 											"N",
 											"War",
 											"Upright flaming sword"
 										],
 										[
-											"Torm, god of courage and self-sacrifice",
+											"{@deity Torm}, god of courage and self-sacrifice",
 											"LG",
 											"War",
 											"White right gauntlet"
 										],
 										[
-											"Tymora, goddess of good fortune",
+											"{@deity Tymora}, goddess of good fortune",
 											"CG",
 											"Trickery",
 											"Face-up coin"
 										],
 										[
-											"Tyr, god of justice",
+											"{@deity Tyr}, god of justice",
 											"LG",
 											"War",
 											"Balanced scales resting on a warhammer"
 										],
 										[
-											"Umberlee, goddess of the sea",
+											"{@deity Umberlee}, goddess of the sea",
 											"CE",
 											"Tempest",
 											"Wave curling left and right"
 										],
 										[
-											"Waukeen, goddess of trade",
+											"{@deity Waukeen}, goddess of trade",
 											"N",
 											"Knowledge, Trickery",
 											"Upright coin with Waukeen's profile facing left"
@@ -11209,151 +11209,151 @@
 									],
 									"rows": [
 										[
-											"Beory, goddess of nature",
+											"{@deity Beory|Greyhawk}, goddess of nature",
 											"N",
 											"Nature",
 											"Green disk"
 										],
 										[
-											"Boccob, god of magic",
+											"{@deity Boccob|Greyhawk}, god of magic",
 											"N",
 											"Knowledge",
 											"Eye within a pentagram"
 										],
 										[
-											"Celestian, god of stars and wanderers",
+											"{@deity Celestian|Greyhawk}, god of stars and wanderers",
 											"N",
 											"Knowledge",
 											"Arc of seven stars inside a circle"
 										],
 										[
-											"Ehlonna, goddess of woodlands",
+											"{@deity Ehlonna|Greyhawk}, goddess of woodlands",
 											"NG",
 											"Life, Nature",
 											"Unicorn horn"
 										],
 										[
-											"Erythnul, god of envy and slaughter",
+											"{@deity Erythnul|Greyhawk}, god of envy and slaughter",
 											"CE",
 											"War",
 											"Blood drop"
 										],
 										[
-											"Fharlanghn, god of horizons and travel",
+											"{@deity Fharlanghn|Greyhawk}, god of horizons and travel",
 											"NG",
 											"Knowledge, Trickery",
 											"Circle crossed by a curved horizon line"
 										],
 										[
-											"Heironeous, god of chivalry and valor",
+											"{@deity Heironeous|Greyhawk}, god of chivalry and valor",
 											"LG",
 											"War",
 											"Lightning bolt"
 										],
 										[
-											"Hextor, god of war and discord",
+											"{@deity Hextor|Greyhawk}, god of war and discord",
 											"LE",
 											"War",
 											"Six arrows facing downward in a fan"
 										],
 										[
-											"Kord, god of athletics and sport",
+											"{@deity Kord|Greyhawk}, god of athletics and sport",
 											"CG",
 											"Tempest, War",
 											"Four spears and four maces radiating out from a central point"
 										],
 										[
-											"Incabulos, god of plague and famine",
+											"{@deity Incabulos|Greyhawk}, god of plague and famine",
 											"NE",
 											"Death",
 											"Reptilian eye with a horizontal diamond"
 										],
 										[
-											"Istus, goddess of fate and destiny",
+											"{@deity Istus|Greyhawk}, goddess of fate and destiny",
 											"N",
 											"Knowledge",
 											"Weaver's spindle with three strands"
 										],
 										[
-											"luz, god of pain and oppression",
+											"{@deity Iuz|Greyhawk}, god of pain and oppression",
 											"CE",
 											"Death",
 											"Grinning human skull"
 										],
 										[
-											"Nerull, god of death",
+											"{@deity Nerull|Greyhawk}, god of death",
 											"NE",
 											"Death",
 											"Skull with either a sickle or a scythe"
 										],
 										[
-											"Obad-Hai, god of nature",
+											"{@deity Obad-Hai|Greyhawk}, god of nature",
 											"N",
 											"Nature",
 											"Oak leaf and acorn"
 										],
 										[
-											"Olidammara, god of revelry",
+											"{@deity Olidammara|Greyhawk}, god of revelry",
 											"CN",
 											"Trickery",
 											"Laughing mask"
 										],
 										[
-											"Pelor, god of the sun and healing",
+											"{@deity Pelor|Greyhawk}, god of the sun and healing",
 											"NG",
 											"Life, Light",
 											"Sun"
 										],
 										[
-											"Pholtus, god of light and law",
+											"{@deity Pholtus|Greyhawk}, god of light and law",
 											"LG",
 											"Light",
 											"Silver sun or full moon partially eclipsed by a smaller crescent moon"
 										],
 										[
-											"Ralishaz, god of ill luck and insanity",
+											"{@deity Ralishaz|Greyhawk}, god of ill luck and insanity",
 											"CN",
 											"Trickery",
 											"Three bone fate-casting sticks"
 										],
 										[
-											"Rao, god of peace and reason",
+											"{@deity Rao|Greyhawk}, god of peace and reason",
 											"LG",
 											"Knowledge",
 											"White heart"
 										],
 										[
-											"St. Cuthbert, god of common sense and zeal",
+											"{@deity St. Cuthbert|Greyhawk}, god of common sense and zeal",
 											"LN",
 											"Knowledge",
 											"Circle at the center of a starburst of lines"
 										],
 										[
-											"Tharizdun, god of eternal darkness",
+											"{@deity Tharizdun|Greyhawk}, god of eternal darkness",
 											"CE",
 											"Trickery",
 											"Dark spiral or inverted ziggurat"
 										],
 										[
-											"Trithereon, god of liberty and retribution",
+											"{@deity Trithereon|Greyhawk}, god of liberty and retribution",
 											"CG",
 											"War",
 											"Triskelion"
 										],
 										[
-											"Ulaa, goddess of hills and mountains",
+											"{@deity Ulaa|Greyhawk}, goddess of hills and mountains",
 											"LG",
 											"Life, War",
 											"Mountain with a circle at its heart"
 										],
 										[
-											"Vecna, god of evil secrets",
+											"{@deity Vecna|Greyhawk}, god of evil secrets",
 											"NE",
 											"Knowledge",
 											"Hand with eye in the palm"
 										],
 										[
-											"Wee Jas, goddess of magic and death",
+											"{@deity Wee Jas|Greyhawk}, goddess of magic and death",
 											"LN",
 											"Death, Knowledge",
 											"Red skull in front of fireball"
@@ -11386,43 +11386,43 @@
 									],
 									"rows": [
 										[
-											"Paladine, god of rulers and guardians",
+											"{@deity Paladine|dragonlance}, god of rulers and guardians",
 											"LG",
 											"War",
 											"Silver triangle"
 										],
 										[
-											"Branchala, god of music",
+											"{@deity Branchala|dragonlance}, god of music",
 											"NG",
 											"Light",
 											"Bard's harp"
 										],
 										[
-											"Habbakuk, god of animal life and the sea",
+											"{@deity Habbakuk|dragonlance}, god of animal life and the sea",
 											"NG",
 											"Nature, Tempest",
 											"Blue bird"
 										],
 										[
-											"Kiri-Jolith, god of honor and war",
+											"{@deity Kiri-Jolith|dragonlance}, god of honor and war",
 											"LG",
 											"War",
 											"Bison's horns"
 										],
 										[
-											"Majere, god of meditation and order",
+											"{@deity Majere|dragonlance}, god of meditation and order",
 											"LG",
 											"Knowledge",
 											"Copper spider"
 										],
 										[
-											"Mishakal, goddess of healing",
+											"{@deity Mishakal|dragonlance}, goddess of healing",
 											"LG",
 											"Knowledge, Life",
 											"Blue infinity sign"
 										],
 										[
-											"Solinari, god of good magic",
+											"{@deity Solinari|dragonlance}, god of good magic",
 											"LG",
 											"no clerics",
 											"White circle or sphere"
@@ -11446,43 +11446,43 @@
 									],
 									"rows": [
 										[
-											"Gilean, god of knowledge",
+											"{@deity Gilean|dragonlance}, god of knowledge",
 											"N",
 											"Knowledge",
 											"Open book"
 										],
 										[
-											"Chislev, goddess of nature",
+											"{@deity Chislev|dragonlance}, goddess of nature",
 											"N",
 											"Nature",
 											"Feather"
 										],
 										[
-											"Reorx, god of craft",
+											"{@deity Reorx|dragonlance}, god of craft",
 											"N",
 											"Knowledge",
 											"Forging hammer"
 										],
 										[
-											"Shinare, goddess of wealth and trade",
+											"{@deity Shinare|dragonlance}, goddess of wealth and trade",
 											"N",
 											"Knowledge, Trickery",
 											"Griffon's wing"
 										],
 										[
-											"Sirrion, god of fire and change",
+											"{@deity Sirrion|dragonlance}, god of fire and change",
 											"N",
 											"Nature",
 											"Multi-colored fire"
 										],
 										[
-											"Zivilyn, god of wisdom",
+											"{@deity Zivilyn|dragonlance}, god of wisdom",
 											"N",
 											"Knowledge",
 											"Great green or gold tree"
 										],
 										[
-											"Lunitari, goddess of neutral magic",
+											"{@deity Lunitari|dragonlance}, goddess of neutral magic",
 											"N",
 											"no clerics",
 											"Red circle or sphere"
@@ -11506,43 +11506,43 @@
 									],
 									"rows": [
 										[
-											"Takhisis, goddess of night and hatred",
+											"{@deity Takhisis|Dragonlance}, goddess of night and hatred",
 											"LE",
 											"Death",
 											"Black crescent"
 										],
 										[
-											"Chemosh, god of the undead",
+											"{@deity Chemosh|Dragonlance}, god of the undead",
 											"LE",
 											"Death",
 											"Yellow skull"
 										],
 										[
-											"Hiddukel, god of lies and greed",
+											"{@deity Hiddukel|Dragonlance}, god of lies and greed",
 											"CE",
 											"Trickery",
 											"Broken merchant's scales"
 										],
 										[
-											"Morgion, god of disease and secrecy",
+											"{@deity Morgion|Dragonlance}, god of disease and secrecy",
 											"NE",
 											"Death",
 											"Hood with two red eyes"
 										],
 										[
-											"Sargonnas, god of vengeance and fire",
+											"{@deity Sargonnas|Dragonlance}, god of vengeance and fire",
 											"LE",
 											"War",
 											"Stylized red condor"
 										],
 										[
-											"Zeboim, goddess of the sea and storms",
+											"{@deity Zeboim|Dragonlance}, goddess of the sea and storms",
 											"CE",
 											"Tempest",
 											"Turtle shell"
 										],
 										[
-											"Nuitari, god of evil magic",
+											"{@deity Nuitari|Dragonlance}, god of evil magic",
 											"LE",
 											"no clerics",
 											"Black circle or sphere"
@@ -11582,55 +11582,55 @@
 													],
 													"rows": [
 														[
-															"Arawai, goddess of fertility",
+															"{@deity Arawai|eberron}, goddess of fertility",
 															"NG",
 															"Life, Nature",
 															"Sheaf of wheat tied with green ribbon"
 														],
 														[
-															"Aureon, god of law and knowledge",
+															"{@deity Aureon|eberron}, god of law and knowledge",
 															"LN",
 															"Knowledge",
 															"Open tome"
 														],
 														[
-															"Balinor, god of beasts and the hunt",
+															"{@deity Balinor|eberron}, god of beasts and the hunt",
 															"N",
 															"Life, Nature",
 															"Pair of antlers"
 														],
 														[
-															"Boldrei, goddess of community and home",
+															"{@deity Boldrei|eberron}, goddess of community and home",
 															"LG",
 															"Life",
 															"Fire in a stone hearth"
 														],
 														[
-															"Dol Arrah, goddess of sunlight and honor",
+															"{@deity Dol Arrah|eberron}, goddess of sunlight and honor",
 															"LG",
 															"Light, War",
 															"Rising sun"
 														],
 														[
-															"Dol Dorn, god of strength at arms",
+															"{@deity Dol Dorn|eberron}, god of strength at arms",
 															"CG",
 															"War",
 															"Longsword crossed over a shield"
 														],
 														[
-															"Kol Korran, god of trade and wealth",
+															"{@deity Kol Korran|eberron}, god of trade and wealth",
 															"N",
 															"Trickery",
 															"Nine-sided gold coin"
 														],
 														[
-															"Olladra, goddess of good fortune",
+															"{@deity Olladra|eberron}, goddess of good fortune",
 															"NG",
 															"Life, Trickery",
 															"Domino"
 														],
 														[
-															"Onatar, god of craft",
+															"{@deity Onatar|eberron}, god of craft",
 															"NG",
 															"Knowledge",
 															"Crossed hammer and tongs"
@@ -11653,37 +11653,37 @@
 													],
 													"rows": [
 														[
-															"The Devourer, god of nature's wrath",
+															"{@deity The Devourer|eberron}, god of nature's wrath",
 															"NE",
 															"Tempest",
 															"Bundle of five sharpened bones"
 														],
 														[
-															"The Fury, goddess of wrath and madness",
+															"{@deity The Fury|eberron}, goddess of wrath and madness",
 															"NE",
 															"War",
 															"Winged wyrm with woman's head and upper body"
 														],
 														[
-															"The Keeper, god of greed and death",
+															"{@deity The Keeper|eberron}, god of greed and death",
 															"NE",
 															"Death",
 															"Dragonshard stone in the shape of a fang"
 														],
 														[
-															"The Mockery, god of violence and treachery",
+															"{@deity The Mockery|eberron}, god of violence and treachery",
 															"NE",
 															"War",
 															"Five blood-spattered tools"
 														],
 														[
-															"The Shadow, god of dark magic",
+															"{@deity The Shadow|eberron}, god of dark magic",
 															"CE",
 															"Knowledge",
 															"Obsidian tower"
 														],
 														[
-															"The Traveler, deity of chaos and change",
+															"{@deity The Traveler|eberron}, deity of chaos and change",
 															"CN",
 															"Knowledge, Trickery",
 															"Four crossed, rune-inscribed bones"
@@ -11706,37 +11706,37 @@
 													],
 													"rows": [
 														[
-															"The Silver Flame, deity of protection and good",
+															"{@deity The Silver Flame|eberron}, deity of protection and good",
 															"LG",
 															"Life, Light, War",
 															"Flame drawn on silver or molded from silver"
 														],
 														[
-															"The Blood of Vol, philosophy of immortality and undeath",
+															"{@deity The Blood of Vol|eberron}, philosophy of immortality and undeath",
 															"LN",
 															"Death, Life",
 															"Stylized dragon skull on red teardrop gem"
 														],
 														[
-															"Cults of the Dragon Below, deities of madness",
+															"{@deity Cults of the Dragon Below|eberron}, deities of madness",
 															"NE",
 															"Trickery",
 															"Varies"
 														],
 														[
-															"The Path of Light, philosophy of light and self-improvement",
+															"{@deity The Path of Light|eberron}, philosophy of light and self-improvement",
 															"LN",
 															"Life, Light",
 															"Brilliant crystal"
 														],
 														[
-															"The Undying Court, elven ancestors",
+															"{@deity The Undying Court|eberron}, elven ancestors",
 															"NG",
 															"Knowledge, Life",
 															"Varies"
 														],
 														[
-															"The Spirits of the Past, elven ancestors",
+															"{@deity The Spirits of the Past|eberron}, elven ancestors",
 															"CG",
 															"War",
 															"Varies"
@@ -11775,145 +11775,145 @@
 									],
 									"rows": [
 										[
-											"Bahamut, dragon god of good",
+											"{@deity Bahamut|nonhuman}, dragon god of good",
 											"LG",
 											"Life, War",
 											"Dragon's head in profile"
 										],
 										[
-											"Blibdoolpoolp, kuo-toa goddess",
+											"{@deity Blibdoolpoolp|nonhuman}, kuo-toa goddess",
 											"NE",
 											"Death",
 											"Lobster head or black pearl"
 										],
 										[
-											"Corellon Larethian, elf deity of art and magic",
+											"{@deity Corellon Larethian|nonhuman}, elf deity of art and magic",
 											"CG",
 											"Light",
 											"Quarter moon or starburst"
 										],
 										[
-											"Deep Sashelas, elf god of the sea",
+											"{@deity Deep Sashelas|nonhuman}, elf god of the sea",
 											"CG",
 											"Nature, Tempest",
 											"Dolphin"
 										],
 										[
-											"Eadro, merfolk deity of the sea",
+											"{@deity Eadro|nonhuman}, merfolk deity of the sea",
 											"N",
 											"Nature, Tempest",
 											"Spiral design"
 										],
 										[
-											"Garl Glittergold, gnome god of trickery and wiles",
+											"{@deity Garl Glittergold|nonhuman}, gnome god of trickery and wiles",
 											"LG",
 											"Trickery",
 											"Gold nugget"
 										],
 										[
-											"Grolantor, hill giant god of war",
+											"{@deity Grolantor|nonhuman}, hill giant god of war",
 											"CE",
 											"War",
 											"Wooden club"
 										],
 										[
-											"Gruumsh, orc god of storms and war",
+											"{@deity Gruumsh|nonhuman}, orc god of storms and war",
 											"CE",
 											"Tempest, War",
 											"Unblinking eye"
 										],
 										[
-											"Hruggek, bugbear god of violence",
+											"{@deity Hruggek|nonhuman}, bugbear god of violence",
 											"CE",
 											"War",
 											"Morningstar"
 										],
 										[
-											"Kurtulmak, kobold god of war and mining",
+											"{@deity Kurtulmak|nonhuman}, kobold god of war and mining",
 											"LE",
 											"War",
 											"Gnome skull"
 										],
 										[
-											"Laogzed, troglodyte god of hunger",
+											"{@deity Laogzed|nonhuman}, troglodyte god of hunger",
 											"CE",
 											"Death",
 											"Image of the lizard/toad god"
 										],
 										[
-											"Lolth, drow goddess of spiders",
+											"{@deity Lolth|nonhuman}, drow goddess of spiders",
 											"CE",
 											"Trickery",
 											"Spider"
 										],
 										[
-											"Maglubiyet, goblinoid god of war",
+											"{@deity Maglubiyet|nonhuman}, goblinoid god of war",
 											"LE",
 											"War",
 											"Bloody axe"
 										],
 										[
-											"Moradin, dwarf god of creation",
+											"{@deity Moradin|nonhuman}, dwarf god of creation",
 											"LG",
 											"Knowledge",
 											"Hammer and anvil"
 										],
 										[
-											"Rillifane Rallathil, wood elf god of nature",
+											"{@deity Rillifane Rallathil|nonhuman}, wood elf god of nature",
 											"CG",
 											"Nature",
 											"Oak"
 										],
 										[
-											"Sehanine Moonbow, elf goddess of the moon",
+											"{@deity Sehanine Moonbow|nonhuman}, elf goddess of the moon",
 											"CG",
 											"Knowledge",
 											"Crescent moon"
 										],
 										[
-											"Sekolah, sahuagin god of the hunt",
+											"{@deity Sekolah|nonhuman}, sahuagin god of the hunt",
 											"LE",
 											"Nature, Tempest",
 											"Shark"
 										],
 										[
-											"Semuanya, lizardfolk deity of survival",
+											"{@deity Semuanya|nonhuman}, lizardfolk deity of survival",
 											"N",
 											"Life",
 											"Egg"
 										],
 										[
-											"Skerrit, centaur and satyr god of nature",
+											"{@deity Skerrit|nonhuman}, centaur and satyr god of nature",
 											"N",
 											"Nature",
 											"Oak growing from acorn"
 										],
 										[
-											"Skoraeus Stonebones, god of stone giants and art",
+											"{@deity Skoraeus Stonebones|nonhuman}, god of stone giants and art",
 											"N",
 											"Knowledge",
 											"Stalactite"
 										],
 										[
-											"Surtur, god of fire giants and craft",
+											"{@deity Surtur|nonhuman}, god of fire giants and craft",
 											"LE",
 											"Knowledge, War",
 											"Flaming sword"
 										],
 										[
-											"Thrym, god of frost giants and strength",
+											"{@deity Thrym|nonhuman}, god of frost giants and strength",
 											"CE",
 											"War",
 											"White double-bladed axe"
 										],
 										[
-											"Tiamat, dragon goddess of evil",
+											"{@deity Tiamat|nonhuman}, dragon goddess of evil",
 											"LE",
 											"Trickery",
 											"Dragon head with five claw marks"
 										],
 										[
-											"Yondalla, halfling goddess of fertility and protection",
+											"{@deity Yondalla|nonhuman}, halfling goddess of fertility and protection",
 											"LG",
 											"Life",
 											"Shield"
@@ -11955,85 +11955,85 @@
 									],
 									"rows": [
 										[
-											"The Daghdha, god of weather and crops",
+											"{@deity The Daghdha|celtic}, god of weather and crops",
 											"CG",
 											"Nature, Trickery",
 											"Bubbling cauldron or shield"
 										],
 										[
-											"Arawn, god of life and death",
+											"{@deity Arawn|celtic}, god of life and death",
 											"NE",
 											"Life, Death",
 											"Black star on gray background"
 										],
 										[
-											"Belenus, god of sun, light, and warmth",
+											"{@deity Belenus|celtic}, god of sun, light, and warmth",
 											"NG",
 											"Light",
 											"Solar disk and standing stones"
 										],
 										[
-											"Brigantia, goddess of rivers and livestock",
+											"{@deity Brigantia|celtic}, goddess of rivers and livestock",
 											"NG",
 											"Life",
 											"Footbridge"
 										],
 										[
-											"Diancecht, god of medicine and healing",
+											"{@deity Diancecht|celtic}, god of medicine and healing",
 											"LG",
 											"Life",
 											"Crossed oak and mistletoe branches"
 										],
 										[
-											"Dunatis, god of mountains and peaks",
+											"{@deity Dunatis|celtic}, god of mountains and peaks",
 											"N",
 											"Nature",
 											"Red sun-capped mountain peak"
 										],
 										[
-											"Goibhniu, god of smiths and healing",
+											"{@deity Goibhniu|celtic}, god of smiths and healing",
 											"NG",
 											"Knowledge, Life",
 											"Giant mallet over sword"
 										],
 										[
-											"Lugh, god of arts, travel, and commerce",
+											"{@deity Lugh|celtic}, god of arts, travel, and commerce",
 											"CN",
 											"Knowledge, Life",
 											"Pair of long hands"
 										],
 										[
-											"Manannan mac Lir, god of oceans and sea creatures",
+											"{@deity Manannan mac Lir|celtic}, god of oceans and sea creatures",
 											"LN",
 											"Nature, Tempest",
 											"Wave of white water on green"
 										],
 										[
-											"Math Mathonwy, god of magic",
+											"{@deity Math Mathonwy|celtic}, god of magic",
 											"NE",
 											"Knowledge",
 											"Staff"
 										],
 										[
-											"Morrigan, goddess of battle",
+											"{@deity Morrigan|celtic}, goddess of battle",
 											"CE",
 											"War",
 											"Two crossed spears"
 										],
 										[
-											"Nuada, god of war and warriors",
+											"{@deity Nuada|celtic}, god of war and warriors",
 											"N",
 											"War",
 											"Silver hand on black background"
 										],
 										[
-											"Oghma, god of speech and writing",
+											"{@deity Oghma|celtic}, god of speech and writing",
 											"NG",
 											"Knowledge",
 											"Unfurled scroll"
 										],
 										[
-											"Silvanus, god of nature and forests",
+											"{@deity Silvanus|celtic}, god of nature and forests",
 											"N",
 											"Nature",
 											"Summer oak tree"
@@ -12066,115 +12066,115 @@
 									],
 									"rows": [
 										[
-											"Zeus, god of the sky, ruler of the gods",
+											"{@deity Zeus|greek}, god of the sky, ruler of the gods",
 											"N",
 											"Tempest",
 											"Fist full of lightning bolts"
 										],
 										[
-											"Aphrodite, goddess of love and beauty",
+											"{@deity Aphrodite|greek}, goddess of love and beauty",
 											"CG",
 											"Light",
 											"Sea shell"
 										],
 										[
-											"Apollo, god of light, music, and healing",
+											"{@deity Apollo|greek}, god of light, music, and healing",
 											"CG",
 											"Knowledge, Life, Light",
 											"Lyre"
 										],
 										[
-											"Ares, god of war and strife",
+											"{@deity Ares|greek}, god of war and strife",
 											"CE",
 											"War",
 											"Spear"
 										],
 										[
-											"Artemis, goddess of hunting and childbirth",
+											"{@deity Artemis|greek}, goddess of hunting and childbirth",
 											"NG",
 											"Life, Nature",
 											"Bow and arrow on lunar disk"
 										],
 										[
-											"Athena, goddess of wisdom and civilization",
+											"{@deity Athena|greek}, goddess of wisdom and civilization",
 											"LG",
 											"Knowledge, War",
 											"Owl"
 										],
 										[
-											"Demeter, goddess of agriculture",
+											"{@deity Demeter|greek}, goddess of agriculture",
 											"NG",
 											"Life",
 											"Mare's head"
 										],
 										[
-											"Dionysus, god of mirth and wine",
+											"{@deity Dionysus|greek}, god of mirth and wine",
 											"CN",
 											"Life",
 											"Thyrsus (staff tipped with pine cone)"
 										],
 										[
-											"Hades, god of the underworld",
+											"{@deity Hades|greek}, god of the underworld",
 											"LE",
 											"Death",
 											"Black ram"
 										],
 										[
-											"Hecate, goddess of magic and the moon",
+											"{@deity Hecate|greek}, goddess of magic and the moon",
 											"CE",
 											"Knowledge, Trickery",
 											"Setting moon"
 										],
 										[
-											"Hephaestus, god of smithing and craft",
+											"{@deity Hephaestus|greek}, god of smithing and craft",
 											"NG",
 											"Knowledge",
 											"Hammer and anvil"
 										],
 										[
-											"Hera, goddess of marriage and intrigue",
+											"{@deity Hera|greek}, goddess of marriage and intrigue",
 											"CN",
 											"Trickery",
 											"Fan of peacock feathers"
 										],
 										[
-											"Hercules, god of strength and adventure",
+											"{@deity Hercules|greek}, god of strength and adventure",
 											"CG",
 											"Tempest, War",
 											"Lion's head"
 										],
 										[
-											"Hermes, god of travel and commerce",
+											"{@deity Hermes|greek}, god of travel and commerce",
 											"CG",
 											"Trickery",
 											"Caduceus (winged staff and serpents)"
 										],
 										[
-											"Hestia, goddess of home and family",
+											"{@deity Hestia|greek}, goddess of home and family",
 											"NG",
 											"Life",
 											"Hearth"
 										],
 										[
-											"Nike, goddess of victory",
+											"{@deity Nike|greek}, goddess of victory",
 											"LN",
 											"War",
 											"Winged woman"
 										],
 										[
-											"Pan, god of nature",
+											"{@deity Pan|greek}, god of nature",
 											"CN",
 											"Nature",
 											"Syrinx (pan pipes)"
 										],
 										[
-											"Poseidon, god of the sea and earthquakes",
+											"{@deity Poseidon|greek}, god of the sea and earthquakes",
 											"CN",
 											"Tempest",
 											"Trident"
 										],
 										[
-											"Tyche, goddess of good fortune",
+											"{@deity Tyche|greek}, goddess of good fortune",
 											"N",
 											"Trickery",
 											"Red pentagram"
@@ -12209,85 +12209,85 @@
 									],
 									"rows": [
 										[
-											"Re-Horakhty, god of the sun, ruler of the gods",
+											"{@deity Re-Horakhty|egyptian}, god of the sun, ruler of the gods",
 											"LG",
 											"Life, Light",
 											"Solar disk encircled by serpent"
 										],
 										[
-											"Anubis, god of judgment and death",
+											"{@deity Anubis|egyptian}, god of judgment and death",
 											"LN",
 											"Death",
 											"Black jackal"
 										],
 										[
-											"Apep, god of evil, fire, and serpents",
+											"{@deity Apep|egyptian}, god of evil, fire, and serpents",
 											"NE",
 											"Trickery",
 											"Flaming snake"
 										],
 										[
-											"Bast, goddess of cats and vengeance",
+											"{@deity Bast|egyptian}, goddess of cats and vengeance",
 											"CG",
 											"War",
 											"Cat"
 										],
 										[
-											"Bes, god of luck and music",
+											"{@deity Bes|egyptian}, god of luck and music",
 											"CN",
 											"Trickery",
 											"Image of the misshapen deity"
 										],
 										[
-											"Hathor, goddess of love, music, and motherhood",
+											"{@deity Hathor|egyptian}, goddess of love, music, and motherhood",
 											"NG",
 											"Life, Light",
 											"Horned cow's head with lunar disk"
 										],
 										[
-											"Imhotep, god of crafts and medicine",
+											"{@deity Imhotep|egyptian}, god of crafts and medicine",
 											"NG",
 											"Knowledge",
 											"Step pyramid"
 										],
 										[
-											"Isis, goddess of fertility and magic",
+											"{@deity Isis|egyptian}, goddess of fertility and magic",
 											"NG",
 											"Knowledge, Life",
 											"Ankh and star"
 										],
 										[
-											"Nephthys, goddess of death and grief",
+											"{@deity Nephthys|egyptian}, goddess of death and grief",
 											"CG",
 											"Death",
 											"Horns around a lunar disk"
 										],
 										[
-											"Osiris, god of nature and the underworld",
+											"{@deity Osiris|egyptian}, god of nature and the underworld",
 											"LG",
 											"Life, Nature",
 											"Crook and flail"
 										],
 										[
-											"Ptah, god of crafts, knowledge, and secrets",
+											"{@deity Ptah|egyptian}, god of crafts, knowledge, and secrets",
 											"LN",
 											"Knowledge",
 											"Bull"
 										],
 										[
-											"Set, god of darkness and desert storms",
+											"{@deity Set|egyptian}, god of darkness and desert storms",
 											"CE",
 											"Death, Tempest, Trickery",
 											"Coiled cobra"
 										],
 										[
-											"Sobek, god of water and crocodiles",
+											"{@deity Sobek|egyptian}, god of water and crocodiles",
 											"LE",
 											"Nature, Tempest",
 											"Crocodile head with horns and plumes"
 										],
 										[
-											"Thoth, god of knowledge and wisdom",
+											"{@deity Thoth|egyptian}, god of knowledge and wisdom",
 											"N",
 											"Knowledge",
 											"Ibis"
@@ -12321,121 +12321,121 @@
 									],
 									"rows": [
 										[
-											"Odin, god of knowledge and war",
+											"{@deity Odin|norse}, god of knowledge and war",
 											"NG",
 											"Knowledge, War",
 											"Watching blue eye"
 										],
 										[
-											"Aegir, god of the sea and storms",
+											"{@deity Aegir|norse}, god of the sea and storms",
 											"NE",
 											"Tempest",
 											"Rough ocean waves"
 										],
 										[
-											"Balder, god of beauty and poetry",
+											"{@deity Balder|norse}, god of beauty and poetry",
 											"NG",
 											"Life, Light",
 											"Gem-encrusted silver chalice"
 										],
 										[
-											"Forseti, god of justice and law",
+											"{@deity Forseti|norse}, god of justice and law",
 											"N",
 											"Light",
 											"Head of a bearded man"
 										],
 										[
-											"Frey, god of fertility and the sun",
+											"{@deity Frey|norse}, god of fertility and the sun",
 											"NG",
 											"Life, Light",
 											"Ice-blue greatsword"
 										],
 										[
-											"Freya, goddess of fertility and love",
+											"{@deity Freya|norse}, goddess of fertility and love",
 											"NG",
 											"Life",
 											"Falcon"
 										],
 										[
-											"Frigga, goddess of birth and fertility",
+											"{@deity Frigga|norse}, goddess of birth and fertility",
 											"N",
 											"Life, Light",
 											"Cat"
 										],
 										[
-											"Heimdall, god of watchfulness and loyalty",
+											"{@deity Heimdall|norse}, god of watchfulness and loyalty",
 											"LG",
 											"Light, War",
 											"Curling musical horn"
 										],
 										[
-											"Hel, goddess of the underworld",
+											"{@deity Hel|norse}, goddess of the underworld",
 											"NE",
 											"Death",
 											"Woman's face, rotting on one side"
 										],
 										[
-											"Hermod, god of luck",
+											"{@deity Hermod|norse}, god of luck",
 											"CN",
 											"Trickery",
 											"Winged scroll"
 										],
 										[
-											"Loki, god of thieves and trickery",
+											"{@deity Loki|norse}, god of thieves and trickery",
 											"CE",
 											"Trickery",
 											"Flame"
 										],
 										[
-											"Njord, god of sea and wind",
+											"{@deity Njord|norse}, god of sea and wind",
 											"NG",
 											"Nature, Tempest",
 											"Gold coin"
 										],
 										[
-											"Odur, god of light and the sun",
+											"{@deity Odur|norse}, god of light and the sun",
 											"CG",
 											"Light",
 											"Solar disk"
 										],
 										[
-											"Sif, goddess of war",
+											"{@deity Sif|norse}, goddess of war",
 											"CG",
 											"War",
 											"Upraised sword"
 										],
 										[
-											"Skadi, god of earth and mountains",
+											"{@deity Skadi|norse}, god of earth and mountains",
 											"N",
 											"Nature",
 											"Mountain peak"
 										],
 										[
-											"Surtur, god of fire giants and war",
+											"{@deity Surtur|norse}, god of fire giants and war",
 											"LE",
 											"War",
 											"Flaming sword"
 										],
 										[
-											"Thor, god of storms and thunder",
+											"{@deity Thor|norse}, god of storms and thunder",
 											"CG",
 											"Tempest, War",
 											"Hammer"
 										],
 										[
-											"Thrym, god of fire giants and cold",
+											"{@deity Thrym|norse}, god of fire giants and cold",
 											"CE",
 											"War",
 											"White double-bladed axe"
 										],
 										[
-											"Tyr, god of courage and strategy",
+											"{@deity Tyr|norse}, god of courage and strategy",
 											"LN",
 											"Knowledge, War",
 											"Sword"
 										],
 										[
-											"Uller, god of hunting and winter",
+											"{@deity Uller|norse}, god of hunting and winter",
 											"CN",
 											"Nature",
 											"Longbow"

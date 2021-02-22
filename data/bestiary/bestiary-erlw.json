@@ -3,7 +3,8 @@
 		"otherSources": {
 			"monster": {
 				"MM": "ERLW",
-				"VGM": "ERLW"
+				"VGM": "ERLW",
+				"TCE": "ERLW"
 			}
 		},
 		"dependencies": {
@@ -137,31 +138,37 @@
 				{
 					"name": "Eye Ray",
 					"entries": [
-						"Belashyrra shoots one of the following magical eye rays of its choice, targeting one creature it can see within 120 feet of it:"
-					]
-				},
-				{
-					"name": "1",
-					"entries": [
-						"Psyche-Reconstruction Ray. The target must make a {@dc 22} Wisdom saving throw, taking 49 ({@damage 9d10}) psychic damage on a failed save, or half as much damage on a successful one. If this damage reduces a creature to 0 hit points, it dies and transforms into a spectator under Belashyrra's control and acts immediately after Belashyrra in the initiative order. The target can't be returned to its original form by any means short of a wish spell."
-					]
-				},
-				{
-					"name": "2",
-					"entries": [
-						"Domination Ray. The target must succeed on a {@dc 22} Wisdom saving throw or be {@condition charmed} by Belashyrra for 1 minute or until the target takes damage. Belashyrra can issue telepathic commands to the {@condition charmed} creature (no action required), which it does its best to obey."
-					]
-				},
-				{
-					"name": "3",
-					"entries": [
-						"Mind-Weakening Ray. The target must succeed on a {@dc 22} Intelligence saving throw or take 36 ({@damage 8d8}) psychic damage and be unable to cast spells or activate magic items for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
-					]
-				},
-				{
-					"name": "4",
-					"entries": [
-						"Blinding Ray. The target and each creature within 10 feet of it must succeed on a {@dc 22} Constitution saving throw or take 19 ({@damage 3d12}) radiant damage and be {@condition blinded} for 1 minute. Until this blindness ends, Belyshyrra can see through the {@condition blinded} creature's eyes. The {@condition blinded} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"Belashyrra shoots one of the following magical eye rays of its choice, targeting one creature it can see within 120 feet of it:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1. Psyche-Reconstruction Ray.",
+									"style": "italic",
+									"entry": "The target must make a {@dc 22} Wisdom saving throw, taking 49 ({@damage 9d10}) psychic damage on a failed save, or half as much damage on a successful one. If this damage reduces a creature to 0 hit points, it dies and transforms into a spectator under Belashyrra's control and acts immediately after Belashyrra in the initiative order. The target can't be returned to its original form by any means short of a wish spell."
+								},
+								{
+									"type": "item",
+									"name": "2. Domination Ray.",
+									"style": "italic",
+									"entry": "The target must succeed on a {@dc 22} Wisdom saving throw or be {@condition charmed} by Belashyrra for 1 minute or until the target takes damage. Belashyrra can issue telepathic commands to the {@condition charmed} creature (no action required), which it does its best to obey."
+								},
+								{
+									"type": "item",
+									"name": "3. Mind-Weakening Ray.",
+									"style": "italic",
+									"entry": "The target must succeed on a {@dc 22} Intelligence saving throw or take 36 ({@damage 8d8}) psychic damage and be unable to cast spells or activate magic items for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "4. Blinding Ray.",
+									"style": "italic",
+									"entry": "The target and each creature within 10 feet of it must succeed on a {@dc 22} Constitution saving throw or take 19 ({@damage 3d12}) radiant damage and be {@condition blinded} for 1 minute. Until this blindness ends, Belyshyrra can see through the {@condition blinded} creature's eyes. The {@condition blinded} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								}
+							]
+						}
 					]
 				}
 			],
@@ -222,7 +229,9 @@
 			],
 			"conditionInflictLegendary": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bone Knight",
@@ -364,7 +373,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Changeling",
@@ -467,7 +478,8 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Clawfoot",
@@ -564,7 +576,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Corrin Delmaco",
@@ -711,7 +724,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dolgrim",
@@ -807,7 +822,9 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dusk Hag",
@@ -953,7 +970,9 @@
 				"charmed",
 				"incapacitated",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dyrrn",
@@ -1140,7 +1159,9 @@
 			],
 			"conditionInflictLegendary": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Expeditious Messenger",
@@ -1222,7 +1243,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Fastieth",
@@ -1274,7 +1296,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Garra",
@@ -1432,95 +1456,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
-		},
-		{
-			"name": "Homunculus Servant",
-			"source": "ERLW",
-			"page": 62,
-			"size": "T",
-			"type": "construct",
-			"ac": [
-				{
-					"ac": 13,
-					"from": [
-						"natural armor"
-					]
-				}
 			],
-			"hp": {
-				"special": "1 + your Intelligence modifier + your artificer level (the homunculus has a number of Hit Dice [d4s] equal to your artificer level)"
-			},
-			"speed": {
-				"walk": 20,
-				"fly": 30
-			},
-			"str": 4,
-			"dex": 15,
-			"con": 12,
-			"int": 10,
-			"wis": 10,
-			"cha": 7,
-			"save": {
-				"dex": "+2 plus PB"
-			},
-			"skill": {
-				"perception": "+0 plus PB × 2",
-				"stealth": "+2 plus PB"
-			},
-			"senses": [
-				"darkvision 60 ft."
-			],
-			"passive": "10 + (PB × 2)",
-			"immune": [
-				"poison"
-			],
-			"conditionImmune": [
-				"exhaustion",
-				"poisoned"
-			],
-			"languages": [
-				"understands the languages you speak"
-			],
-			"pbNote": "equals your bonus",
-			"trait": [
-				{
-					"name": "Evasion",
-					"entries": [
-						"If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's {@condition incapacitated}."
-					]
-				},
-				{
-					"name": "Might of the Master",
-					"entries": [
-						"The following numbers increase by 1 when your proficiency bonus increases by 1: the homunculus's skill and saving throw bonuses (above) and the bonuses to hit and damage of its attack (below)."
-					]
-				}
-			],
-			"actionNote": "Requires Your Bonus Action",
-			"action": [
-				{
-					"name": "Force Strike",
-					"entries": [
-						"{@atk rw} {@hitYourSpellAttack} to hit, range 30 ft., one target you can see. {@h}{@damage 1d4 + PB} force damage."
-					]
-				}
-			],
-			"reaction": [
-				{
-					"name": "Channel Magic",
-					"entries": [
-						"The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you."
-					]
-				}
-			],
-			"hasToken": true,
-			"senseTags": [
-				"D"
-			],
-			"miscTags": [
-				"RW"
-			]
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Inspired",
@@ -1703,7 +1641,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Iron Defender",
@@ -1795,7 +1735,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kalaraq Quori",
@@ -1993,7 +1935,9 @@
 			"conditionInflictSpell": [
 				"frightened",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kalashtar",
@@ -2074,7 +2018,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Karrnathi Undead Soldier",
@@ -2193,7 +2139,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lady Illmarrow",
@@ -2476,7 +2424,9 @@
 				"petrified",
 				"restrained",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Living Burning Hands",
@@ -2579,7 +2529,9 @@
 			],
 			"miscTags": [
 				"AOE"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Living Cloudkill",
@@ -2692,7 +2644,9 @@
 			],
 			"miscTags": [
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Living Lightning Bolt",
@@ -2804,7 +2758,9 @@
 			],
 			"miscTags": [
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Magewright",
@@ -2880,7 +2836,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mordakhesh",
@@ -3048,7 +3006,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Radiant Idol",
@@ -3205,7 +3165,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rak Tulkhesh",
@@ -3411,7 +3373,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sergeant",
@@ -3506,96 +3470,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
-		},
-		{
-			"name": "Steel Defender",
-			"source": "ERLW",
-			"page": 61,
-			"size": "M",
-			"type": "construct",
-			"ac": [
-				{
-					"ac": 15,
-					"from": [
-						"natural armor"
-					]
-				}
 			],
-			"hp": {
-				"special": "2 + your Intelligence modifier + five times your artificer level (the defender has a number of Hit Dice [ d8s] equal to your artificer level)"
-			},
-			"speed": {
-				"walk": 40
-			},
-			"str": 14,
-			"dex": 12,
-			"con": 14,
-			"int": 4,
-			"wis": 10,
-			"cha": 6,
-			"save": {
-				"dex": "+1 plus PB",
-				"con": "+2 plus PB"
-			},
-			"skill": {
-				"athletics": "+2 plus PB",
-				"perception": "+0 plus PB × 2"
-			},
-			"senses": [
-				"darkvision 60 ft."
-			],
-			"passive": "10 + (PB × 2)",
-			"immune": [
-				"poison"
-			],
-			"conditionImmune": [
-				"charmed",
-				"exhaustion",
-				"poisoned"
-			],
-			"languages": [
-				"understands the languages you speak"
-			],
-			"pbNote": "equals your bonus",
-			"trait": [
-				{
-					"name": "Vigilant",
-					"entries": [
-						"The defender can't be surprised."
-					]
-				}
-			],
-			"actionNote": "Requires Your Bonus Action",
-			"action": [
-				{
-					"name": "Force-Empowered Rend",
-					"entries": [
-						"{@atk mw} {@hitYourSpellAttack} to hit, reach 5 ft., one target you can see. {@h}{@damage 1d8 + PB} force damage."
-					]
-				},
-				{
-					"name": "Repair (3/Day)",
-					"entries": [
-						"The magical mechanisms inside the defender restore {@dice 2d8 + PB} hit points to itself or to one construct or object within 5 feet of it."
-					]
-				}
-			],
-			"reaction": [
-				{
-					"name": "Deflect Attack",
-					"entries": [
-						"The defender imposes disadvantage on the attack roll of one creature it can see that is within 5 feet of it, provided the attack roll is against a creature other than the defender."
-					]
-				}
-			],
-			"hasToken": true,
-			"senseTags": [
-				"D"
-			],
-			"miscTags": [
-				"MW"
-			]
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sul Khatesh",
@@ -3819,7 +3696,9 @@
 				"frightened",
 				"paralyzed",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tarkanan Assassin",
@@ -3949,7 +3828,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "The Lord of Blades",
@@ -4179,7 +4060,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tsucora Quori",
@@ -4319,7 +4202,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Undying Councilor",
@@ -4546,7 +4431,8 @@
 				"incapacitated",
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Undying Soldier",
@@ -4669,7 +4555,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Valenar Hawk",
@@ -4744,7 +4632,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Valenar Hound",
@@ -4826,7 +4715,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Valenar Steed",
@@ -4891,7 +4782,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Warforged Colossus",
@@ -5055,7 +4948,8 @@
 				"frightened",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Warforged Soldier",
@@ -5157,7 +5051,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Warforged Titan",
@@ -5273,7 +5169,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zakya Rakshasa",
@@ -5423,7 +5321,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

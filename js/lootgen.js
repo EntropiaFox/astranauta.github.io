@@ -199,7 +199,10 @@ class LootGen {
 
 		if (hoard) {
 			const treasure = [];
-			treasure.push(lootGen.getFormattedCoinsForDisplay(curTable.coins));
+			const formattedCoinMeta = lootGen.getFormattedCoinsMeta(curTable.coins);
+			treasure.push(formattedCoinMeta.html);
+
+			let worthOfArtAndGems = 0;
 			const artAndGems = loot.gems ? loot.gems : (loot.artobjects ? loot.artobjects : null);
 			if (artAndGems) {
 				let artAndGemsTable = loot.artobjects ? lootList.artobjects : lootList.gemstones;
@@ -212,7 +215,16 @@ class LootGen {
 					${lootGen.$getSortedDeduplicatedList(gems)}
 					</li>
 				`.appendTo($el);
+
+				worthOfArtAndGems = (artAndGems.type * roll);
 			}
+
+			// region Add a display for coinage + art/gem objects, combined
+			const totalCoinValue = formattedCoinMeta.gpTotal + worthOfArtAndGems;
+			if (totalCoinValue) {
+				treasure.push(`<i class="ve-muted">${totalCoinValue} gp of coins, art objects, and/or gems, divided as follows:</i>`)
+			}
+			// endregion
 
 			if (loot.magicitems) {
 				const magicItemTableType = [];
@@ -260,7 +272,8 @@ class LootGen {
 			}
 			for (let i = 0; i < treasure.length; i++) $el.prepend(`<li>${treasure[i]}</li>`);
 		} else {
-			$el.prepend(`<li>${lootGen.getFormattedCoinsForDisplay(loot.coins)}</li>`);
+			const formattedCoinMeta = lootGen.getFormattedCoinsMeta(loot.coins)
+			$el.prepend(`<li>${formattedCoinMeta.html}</li>`);
 		}
 		let title = hoard
 			? `<strong>Hoard</strong> for challenge rating: <strong>${CHALLENGE_RATING_RANGE[cr]}</strong>`
@@ -336,15 +349,18 @@ class LootGen {
 		return {itemRoll, rolled};
 	}
 
-	getFormattedCoinsForDisplay (loot) {
+	getFormattedCoinsMeta (loot) {
 		const generatedCoins = LootGen.generateCoinsFromLoot(loot);
 		const individuallyFormattedCoins = [];
 		generatedCoins.forEach((coin) => {
 			individuallyFormattedCoins.unshift(`<li>${Parser._addCommas(coin.value)} ${coin.denomination}</li>`);
 		});
-		const totalValueGP = Parser._addCommas(LootGen.getGPValueFromCoins(generatedCoins));
+		const totalValueGp = LootGen.getGPValueFromCoins(generatedCoins);
 		const combinedFormattedCoins = individuallyFormattedCoins.reduce((total, formattedCoin) => total + formattedCoin, "");
-		return `${totalValueGP} gp total:<ul> ${combinedFormattedCoins}</ul>`;
+		return {
+			html: `${Parser._addCommas(totalValueGp)} gp in coinage:<ul> ${combinedFormattedCoins}</ul>`,
+			gpTotal: totalValueGp,
+		};
 	}
 
 	static generateCoinsFromLoot (loot) {

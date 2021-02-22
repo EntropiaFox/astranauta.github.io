@@ -37,6 +37,7 @@ function getFnListSort (prop) {
 		case "trait":
 		case "legendaryGroup":
 		case "language":
+		case "languageScript":
 		case "condition":
 		case "disease":
 		case "status":
@@ -68,6 +69,7 @@ function getFnListSort (prop) {
 		case "charoption":
 		case "charoptionFluff":
 		case "recipe":
+		case "recipeFluff":
 			return (a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source);
 		case "deity":
 			return (a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source) || SortUtil.ascSortLower(a.pantheon, b.pantheon);

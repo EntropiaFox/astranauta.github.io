@@ -17,11 +17,13 @@ class PageFilterConditionsDiseases extends PageFilter {
 			displayFn: PageFilterConditionsDiseases.getDisplayProp,
 			deselFn: (it) => it === "disease" || it === "status",
 		});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Has Images", "Has Info"], isSrdFilter: true});
 	}
 
-	mutateForFilters (it) {
+	static mutateForFilters (it) {
 		it._fMisc = it.srd ? ["SRD"] : [];
+		if (it.hasFluff) it._fMisc.push("Has Info");
+		if (it.hasFluffImages) it._fMisc.push("Has Images");
 	}
 
 	addToFilters (it, isExcluded) {

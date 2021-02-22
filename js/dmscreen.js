@@ -167,7 +167,7 @@ class Board {
 	}
 
 	doShowLoading () {
-		$(`<div class="dm-screen-loading"><span class="initial-message">Loading...</span></div>`).css({
+		$(`<div class="dm-screen-loading"><span class="initial-message initial-message--large">Loading...</span></div>`).css({
 			gridColumnStart: "1",
 			gridColumnEnd: String(this.width + 1),
 			gridRowStart: "1",
@@ -973,7 +973,7 @@ class Panel {
 			source,
 			hash,
 		).then(it => {
-			const fn = Renderer.hover._pageToRenderFn(page);
+			const fn = Renderer.hover.getFnRenderCompact(page);
 
 			const $contentInner = $(`<div class="panel-content-wrapper-inner"/>`);
 			const $contentStats = $(`<table class="stats"/>`).appendTo($contentInner);
@@ -3137,12 +3137,10 @@ class NoteBox {
 
 						if (beltsAtPos === 2 && belts === 0) {
 							const str = beltStack.join("");
-							if (/^([1-9]\d*)?d([1-9]\d*)(\s?[+-]\s?\d+)?$/i.exec(str)) {
-								await Renderer.dice.pRoll2(str.replace(`[[`, "").replace(`]]`, ""), {
-									isUser: false,
-									name: "DM Screen",
-								});
-							}
+							await Renderer.dice.pRoll2(str.replace(`[[`, "").replace(`]]`, ""), {
+								isUser: false,
+								name: "DM Screen",
+							});
 						} else if (bracesAtPos === 1 && braces === 0) {
 							const str = braceStack.join("");
 							const tag = str.split(" ")[0].replace(/^@/, "");

@@ -6,14 +6,14 @@
 			"id": "854",
 			"entries": [
 				"Something is killing people in Palebank Village, and if the characters don't stop it, they might be next. \"Frozen Sick\" is an adventure that takes characters from 1st to 3rd level and introduces them to the continent's Biting North region\u2014the bleak arctic realms of the Greying Wildlands and Eiselcross.",
-				"If your players are using the heroic chronicle to create their characters (see {@book chapter 4|EGW|14|Heroic Chronicle}), work with them to decide how they made their way to Palebank Village. Are they citizens of Uthodurn now aiding in the surface expansion of their civilization? Have they come north to seek freedom from the wars of other lands? Any number of options can help tie characters to this frigid region and the mysteries it holds.",
+				"If your players are using the heroic chronicle to create their characters (see {@book chapter 4|EGW|5|Heroic Chronicle}), work with them to decide how they made their way to Palebank Village. Are they citizens of Uthodurn now aiding in the surface expansion of their civilization? Have they come north to seek freedom from the wars of other lands? Any number of options can help tie characters to this frigid region and the mysteries it holds.",
 				{
 					"type": "section",
 					"name": "Story Overview",
 					"id": "855",
 					"entries": [
 						"Urgon Wenth, a dwarf explorer, recently returned home to Palebank Village after exploring the icy wastes of Eiselcross for a year. The dwarf brought home several items plundered from ruins on Foren, the largest of Eiselcross's islands. Among these treasures were two beautiful blue glass vials, which Urgon sold to an elf collector named Verla Pelc. The vials were then stolen, given to a fence out of Shadycreek Run, and sold again to an unsuspecting merchant.",
-						"In truth, the vials' beautiful blue color is the result of deadly blue spores that cling to the interior of the glass. Faint cracks in both the vials have exposed each person who handled them to frigid woe, a deadly disease that can't be cured by conventional means. The disease has already killed Urgon and Verla, turning them into ice statues. Details on frigid woe are found in the \"{@book Eiselcross|EGW|9}\" section of chapter 3.",
+						"In truth, the vials' beautiful blue color is the result of deadly blue spores that cling to the interior of the glass. Faint cracks in both the vials have exposed each person who handled them to frigid woe, a deadly disease that can't be cured by conventional means. The disease has already killed Urgon and Verla, turning them into ice statues. Details on frigid woe are found in the \"{@book Eiselcross|EGW|4}\" section of chapter 3.",
 						{
 							"type": "entries",
 							"name": "Adventure Summary",
@@ -28,7 +28,7 @@
 							"name": "Setup and Starting Points",
 							"id": "857",
 							"entries": [
-								"Work with the players to establish why their characters are in Palebank Village. You can provide information regarding the village and its surrounding lands, all of which are described in {@book chapter 3|EGW|8|Palebank Village}.",
+								"Work with the players to establish why their characters are in Palebank Village. You can provide information regarding the village and its surrounding lands, all of which are described in {@book chapter 3|EGW|4|Palebank Village}.",
 								"Before the adventure begins is also the time to figure out if the characters already know each other or if this adventure is the first time they've met."
 							]
 						}
@@ -525,7 +525,7 @@
 									"name": "Stone Chest",
 									"id": "88a",
 									"entries": [
-										"The stone chest's outer lid is carved with the face of a dragon. A character who examines the chest and succeeds on a DC 12 Wisdom ({@skill Perception}) check finds pin-sized openings in the dragon's mouth that contain a blue powder. The powder can be removed with a successful DC 15 Dexterity check using thieves' tools. A character who fails this check must succeed on a DC 11 Constitution saving throw or contract frigid woe (see the \"{@book Eiselcross|EGW|9}\" section of chapter 3).",
+										"The stone chest's outer lid is carved with the face of a dragon. A character who examines the chest and succeeds on a DC 12 Wisdom ({@skill Perception}) check finds pin-sized openings in the dragon's mouth that contain a blue powder. The powder can be removed with a successful DC 15 Dexterity check using thieves' tools. A character who fails this check must succeed on a DC 11 Constitution saving throw or contract frigid woe (see the \"{@book Eiselcross|EGW|4}\" section of chapter 3).",
 										"A {@spell detect magic} spell reveals that the chest radiates an aura of evocation magic. When a creature touches the chest without speaking a prayer to Tiamat, a gust of wind escapes the dragon's mouth. If the blue powder is still in the dragon's mouth, it forms a cloud that fills a 15-foot cube in front of the chest. Each creature within the area must succeed on a DC 11 Constitution saving throw or contract frigid woe."
 									]
 								},
@@ -578,7 +578,7 @@
 									"name": "Vials of Frigid Woe",
 									"id": "890",
 									"entries": [
-										"As an action, a creature can throw a vial of frigid woe up to 20 feet, shattering it on impact and releasing its contents as a cloud of spores. Each creature within 5 feet of the vial when it shatters must succeed on a DC 11 Constitution saving throw or contract frigid woe (see the \"{@book Eiselcross|EGW|9}\" section of chapter 3).",
+										"As an action, a creature can throw a vial of frigid woe up to 20 feet, shattering it on impact and releasing its contents as a cloud of spores. Each creature within 5 feet of the vial when it shatters must succeed on a DC 11 Constitution saving throw or contract frigid woe (see the \"{@book Eiselcross|EGW|4}\" section of chapter 3).",
 										"If a character has contracted frigid woe, track the number of days that have passed so you can inform the player when their character's symptoms appear and when they need to make Constitution saving throws."
 									]
 								}
@@ -642,7 +642,7 @@
 										"\"Don't worry! It'll cool down here eventually!\" a joking voice bellows over the snow. A female dwarf with a shaggy mane of unkempt hair bows to you. \"Morgo Delwur at your service. Welcome to Eiselcross!\""
 									]
 								},
-								"Morgo Delwur (a neutral good, female mountain dwarf {@creature werebear}) has lived in Syrinlya for years. She can show the characters around and answer any questions they have about the settlement, providing any of the details found in {@book chapter 3|EGW|9|Syrinlya}. If the characters ask about Orvo Mustave or the Buyer, Morgo points out where both live. Though Morgo never adventured with Urgon Wenth and wasn't a close friend, she is sad to hear of the dwarf's passing.",
+								"Morgo Delwur (a neutral good, female mountain dwarf {@creature werebear}) has lived in Syrinlya for years. She can show the characters around and answer any questions they have about the settlement, providing any of the details found in {@book chapter 3|EGW|4|Syrinlya}. If the characters ask about Orvo Mustave or the Buyer, Morgo points out where both live. Though Morgo never adventured with Urgon Wenth and wasn't a close friend, she is sad to hear of the dwarf's passing.",
 								"Morgo and the other explorers in Syrinlya know about frigid woe and the disease's terrible effects. If the characters have any unanswered questions about the disease, the explorers share what they know."
 							]
 						}
@@ -699,7 +699,7 @@
 										"The pungent scent of incense fills this yurt, whose walls are painted with glowing arcane runes. A brass brazier burns brightly at the center of the floor, around which are set a few plush chairs, a bed, and a large stone chest. On one of those chairs sits an elf reading a book. A small dragon with green butterfly wings is curled in the elf's lap."
 									]
 								},
-								"The Buyer (lawful neutral, nonbinary, high elf {@creature mage}) is a mysterious elf who purchases Aeorian relics in Syrinlya for the Uthodurnian government. See the \"{@book Syrinlya|EGW|9|Syrinlya}\" section of chapter 3 for more information about the Buyer and their business. The green {@creature Faerie Dragon (Violet)||faerie dragon} is Dew, the elf's familiar.",
+								"The Buyer (lawful neutral, nonbinary, high elf {@creature mage}) is a mysterious elf who purchases Aeorian relics in Syrinlya for the Uthodurnian government. See the \"{@book Syrinlya|EGW|4|Syrinlya}\" section of chapter 3 for more information about the Buyer and their business. The green {@creature Faerie Dragon (Violet)||faerie dragon} is Dew, the elf's familiar.",
 								"The Buyer has been in Syrinlya since the day the outpost was founded. They can answer any questions the characters might have about the outpost's history, the island of Foren, or frigid woe. If the characters want to confirm that the Buyer is able to quickly send the cure for frigid woe to Palebank Village, the elf tells them that the stone chest in the yurt has the magical capability to teleport objects on command.",
 								"In addition to the aid they provide in getting the cure back to Palebank Village, the Buyer offers to purchase any Aeorian relics the characters want to sell.",
 								{
@@ -794,7 +794,7 @@
 												]
 											]
 										},
-										"As the characters travel, use the \"{@book Encounters in Eiselcross|EGW|9|Encounters in Eiselcross}\" section in chapter 3 to generate random encounters. After traveling forty miles, the characters enter Thin Sheets. This region is known for its large patches of thin ice over deep, frigid water (see the rules for frigid water and thin ice in {@book chapter 5|DMG|5|Wilderness Hazards} of the {@book Dungeon Master's Guide|DMG})."
+										"As the characters travel, use the \"{@book Encounters in Eiselcross|EGW|4|Encounters in Eiselcross}\" section in chapter 3 to generate random encounters. After traveling forty miles, the characters enter Thin Sheets. This region is known for its large patches of thin ice over deep, frigid water (see the rules for frigid water and thin ice in {@book chapter 5|DMG|5|Wilderness Hazards} of the {@book Dungeon Master's Guide|DMG})."
 									]
 								}
 							]
@@ -1476,7 +1476,7 @@
 									"name": "Treasure",
 									"id": "8f2",
 									"entries": [
-										"The chest is packed with fine sand and contains twenty doses of frigid woe antidote (see \"{@book Eiselcross|EGW|9|Eiselcross}\" in chapter 3) and an {@item ersatz eye|XGE} (see {@book chapter 6|EGW|16|Ersatz Eye})."
+										"The chest is packed with fine sand and contains twenty doses of frigid woe antidote (see \"{@book Eiselcross|EGW|4|Eiselcross}\" in chapter 3) and an {@item ersatz eye|XGE} (see {@book chapter 6|EGW|7|Ersatz Eye})."
 									]
 								}
 							]
@@ -1488,7 +1488,7 @@
 					"name": "Concluding the Adventure",
 					"id": "8f3",
 					"entries": [
-						"You can roll for random encounters on the way back to Syrinlya (see \"{@book Encounters in Eiselcross|EGW|9|Encounters in Eiselcross}\" in chapter 3), or you can allow the characters an uneventful trip as reward for a job well done. When the characters arrive in Syrinlya, they can arrange for the Buyer to teleport the antidote for frigid woe to Palebank Village. After doing so, the elf pays out the 200 gp reward on behalf of Elro Aldataur.",
+						"You can roll for random encounters on the way back to Syrinlya (see \"{@book Encounters in Eiselcross|EGW|4|Encounters in Eiselcross}\" in chapter 3), or you can allow the characters an uneventful trip as reward for a job well done. When the characters arrive in Syrinlya, they can arrange for the Buyer to teleport the antidote for frigid woe to Palebank Village. After doing so, the elf pays out the 200 gp reward on behalf of Elro Aldataur.",
 						"If the characters don't successfully recover the frigid woe antidote in time to save Irven and his family, all four family members succumb to the disease. If the characters are successful, they have the thanks of Elro Aldataur, Irven and his family, the people of Palebank Village, and the explorers of Syrinlya.",
 						{
 							"type": "entries",

@@ -42,6 +42,7 @@ class CreatureParser extends BaseParser {
 				"SENSES",
 				"LANGUAGES",
 				"CHALLENGE",
+				"PROFICIENCY BONUS",
 			];
 			const NO_ABSORB_TITLES = [
 				"ACTION",
@@ -217,12 +218,19 @@ class CreatureParser extends BaseParser {
 				continue;
 			}
 
-			// challenges and traits
-			// goes into actions
+			// challenge rating
 			if (!curLine.indexOf_handleColon("Challenge ")) {
 				// noinspection StatementWithEmptyBodyJS
 				while (absorbBrokenLine(true));
 				this._setCleanCr(stats, curLine);
+				continue;
+			}
+
+			// proficiency bonus
+			if (!curLine.indexOf_handleColon("Proficiency Bonus ")) {
+				// noinspection StatementWithEmptyBodyJS
+				while (absorbBrokenLine());
+				// (Ignored)
 				continue;
 			}
 
@@ -852,6 +860,7 @@ class CreatureParser extends BaseParser {
 		DamageTypeTag.tryRun(stats);
 		MiscTag.tryRun(stats);
 		DetectNamedCreature.tryRun(stats);
+		TagImmResVulnConditional.tryRun(stats);
 		doCleanup();
 	}
 

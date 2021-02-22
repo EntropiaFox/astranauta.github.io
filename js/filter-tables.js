@@ -15,7 +15,7 @@ class PageFilterTables extends PageFilter {
 		});
 	}
 
-	mutateForFilters (it) { /* no-op */ }
+	static mutateForFilters (it) { /* no-op */ }
 
 	addToFilters (it, isExcluded) {
 		if (isExcluded) return;

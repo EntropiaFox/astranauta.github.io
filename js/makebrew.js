@@ -1,5 +1,22 @@
 "use strict";
 
+class SidemenuRenderCache {
+	constructor ({$lastStageSaved, $lastWrpBtnLoadExisting}) {
+		this.$lastStageSaved = $lastStageSaved;
+		this.$lastWrpBtnLoadExisting = $lastWrpBtnLoadExisting;
+	}
+}
+
+class SideMenuListRenderCache {
+	constructor () {
+		this._metas = [];
+	}
+
+	getIxMaxRendered () { return this._metas.length; }
+	getMeta (ix) { return this._metas[ix]; }
+	setMeta (ix, meta) { this._metas[ix] = meta; }
+}
+
 class PageUi {
 	constructor () {
 		this._builders = {};
@@ -22,6 +39,9 @@ class PageUi {
 		this._saveSettingsDebounced = MiscUtil.debounce(() => this._doSaveSettings(), 50);
 
 		this._isLastRenderInputFail = false;
+
+		this._sidemenuRenderCache = null;
+		this._sidemenuListRenderCache = null;
 	}
 
 	set creatureBuilder (creatureBuilder) { this._builders.creatureBuilder = creatureBuilder; }
@@ -45,10 +65,17 @@ class PageUi {
 	get allSources () { return this._allSources; }
 
 	set source (json) {
+		const prevSource = this._settings.activeSource;
+
 		this._$selSource.val(json);
 		this._settings.activeSource = json;
 		this._doHandleUpdateSource();
+
+		if (!prevSource && json) this.__setStageMain();
 	}
+
+	get sidemenuRenderCache () { return this._sidemenuRenderCache; }
+	set sidemenuRenderCache (val) { this._sidemenuRenderCache = val; }
 
 	_doSave () {
 		this.__saveableStates = this.__saveableStates || {builders: {}};
@@ -296,8 +323,8 @@ class Builder extends ProxyBase {
 	 * @param opts.titleSidebarLoadExisting Text for "Load Existing" sidebar button.
 	 * @param opts.titleSidebarDownloadJson Text for "Download JSON" sidebar button.
 	 * @param opts.metaSidebarDownloadMarkdown Meta for a "Download Markdown" sidebar button.
-	 * @param opts.sidebarItemOptionsMetas Additional sidebar item options, displayed in each burger context menu.
 	 * @param opts.prop Homebrew prop.
+	 * @param opts.typeRenderData Renderer "dataX" entry type.
 	 */
 	constructor (opts) {
 		super();
@@ -305,8 +332,8 @@ class Builder extends ProxyBase {
 		this._titleSidebarLoadExisting = opts.titleSidebarLoadExisting;
 		this._titleSidebarDownloadJson = opts.titleSidebarDownloadJson;
 		this._metaSidebarDownloadMarkdown = opts.metaSidebarDownloadMarkdown;
-		this._sidebarItemOptionsMetas = opts.sidebarItemOptionsMetas;
 		this._prop = opts.prop;
+		this._typeRenderData = opts.typeRenderData;
 
 		Builder._BUILDERS.push(this);
 		TabUiUtil.decorate(this);
@@ -326,6 +353,7 @@ class Builder extends ProxyBase {
 		this.doCreateProxies(); // init proxies
 
 		this._$btnSave = null;
+		this._$wrpBtnLoadExisting = null;
 		this._$sideMenuStageSaved = null;
 		this._$sideMenuWrpList = null;
 		this._$eles = {}; // Generic internal element storage
@@ -358,6 +386,10 @@ class Builder extends ProxyBase {
 	}
 
 	setStateFromLoaded () { throw new TypeError(`Unimplemented method!`); }
+
+	getIxBrew (entity) {
+		return (BrewUtil.homebrew[this._prop] || []).findIndex(it => it.source === entity.source && it.name === entity.name);
+	}
 
 	doHandleSourceUpdate () {
 		const nuSource = this._ui.source;
@@ -397,38 +429,57 @@ class Builder extends ProxyBase {
 	}
 
 	renderSideMenu () {
-		this._ui.$wrpSideMenu.empty();
+		// region Detach any sidemenu renders from other builders
+		if (this._ui.sidemenuRenderCache) {
+			if (this._ui.sidemenuRenderCache.$lastStageSaved !== this._$sideMenuStageSaved) this._ui.sidemenuRenderCache.$lastStageSaved.detach();
 
-		const $btnLoadExisting = $(`<button class="btn btn-xs btn-default">${this._titleSidebarLoadExisting}</button>`)
-			.click(() => this.pHandleSidebarLoadExistingClick());
-		$$`<div class="sidemenu__row">${$btnLoadExisting}</div>`.appendTo(this._ui.$wrpSideMenu);
+			if (this._ui.sidemenuRenderCache.$lastWrpBtnLoadExisting !== this._$wrpBtnLoadExisting) this._ui.sidemenuRenderCache.$lastWrpBtnLoadExisting.detach();
+		}
+		// endregion
 
-		const $btnDownloadJson = $(`<button class="btn btn-default btn-xs mb-2">${this._titleSidebarDownloadJson}</button>`)
-			.click(() => this.handleSidebarDownloadJsonClick());
+		// region If this is our first sidemenu render, create elements
+		if (!this._$sideMenuStageSaved) {
+			const $btnLoadExisting = $(`<button class="btn btn-xs btn-default">${this._titleSidebarLoadExisting}</button>`)
+				.click(() => this.pHandleSidebarLoadExistingClick());
+			this._$wrpBtnLoadExisting = $$`<div class="sidemenu__row">${$btnLoadExisting}</div>`;
 
-		const $wrpDownloadMarkdown = (() => {
-			if (!this._metaSidebarDownloadMarkdown) return null;
+			const $btnDownloadJson = $(`<button class="btn btn-default btn-xs mb-2">${this._titleSidebarDownloadJson}</button>`)
+				.click(() => this.handleSidebarDownloadJsonClick());
 
-			const $btnDownload = $(`<button class="btn btn-default btn-xs mb-2">${this._metaSidebarDownloadMarkdown.title}</button>`)
-				.click(async () => {
-					const entities = this._getSidebarVisibleEntities();
-					const mdOut = await this._metaSidebarDownloadMarkdown.pFnGetText(entities);
-					DataUtil.userDownloadText(`${DataUtil.getCleanFilename(BrewUtil.sourceJsonToFull(this._ui.source))}.md`, mdOut);
-				});
+			const $wrpDownloadMarkdown = (() => {
+				if (!this._metaSidebarDownloadMarkdown) return null;
 
-			const $btnSettings = $(`<button class="btn btn-default btn-xs mb-2"><span class="glyphicon glyphicon-cog"/></button>`)
-				.click(() => RendererMarkdown.pShowSettingsModal());
+				const $btnDownload = $(`<button class="btn btn-default btn-xs mb-2">${this._metaSidebarDownloadMarkdown.title}</button>`)
+					.click(async () => {
+						const entities = this._getSidebarVisibleEntities();
+						const mdOut = await this._metaSidebarDownloadMarkdown.pFnGetText(entities);
+						DataUtil.userDownloadText(`${DataUtil.getCleanFilename(BrewUtil.sourceJsonToFull(this._ui.source))}.md`, mdOut);
+					});
 
-			return $$`<div class="flex-v-center btn-group">${$btnDownload}${$btnSettings}</div>`
-		})();
+				const $btnSettings = $(`<button class="btn btn-default btn-xs mb-2"><span class="glyphicon glyphicon-cog"/></button>`)
+					.click(() => RendererMarkdown.pShowSettingsModal());
 
-		this._$sideMenuWrpList = $(`<div class="sidemenu__row flex-col">`);
-		this._$sideMenuStageSaved = $$`<div>
-		${PageUi.__$getSideMenuDivider().hide()}
-		<div class="flex-v-center">${$btnDownloadJson}</div>
-		${$wrpDownloadMarkdown}
-		${this._$sideMenuWrpList}
-		</div>`.appendTo(this._ui.$wrpSideMenu);
+				return $$`<div class="flex-v-center btn-group">${$btnDownload}${$btnSettings}</div>`
+			})();
+
+			this._$sideMenuWrpList = this._$sideMenuWrpList || $(`<div class="sidemenu__row flex-col">`);
+			this._$sideMenuStageSaved = $$`<div>
+			${PageUi.__$getSideMenuDivider().hide()}
+			<div class="flex-v-center">${$btnDownloadJson}</div>
+			${$wrpDownloadMarkdown}
+			${this._$sideMenuWrpList}
+			</div>`;
+		}
+		// endregion
+
+		// Make our sidemenu internal wrapper visible
+		this._$wrpBtnLoadExisting.appendTo(this._ui.$wrpSideMenu)
+		this._$sideMenuStageSaved.appendTo(this._ui.$wrpSideMenu);
+
+		this._ui.sidemenuRenderCache = new SidemenuRenderCache({
+			$lastWrpBtnLoadExisting: this._$wrpBtnLoadExisting,
+			$lastStageSaved: this._$sideMenuStageSaved,
+		});
 
 		this.doUpdateSidemenu();
 	}
@@ -447,18 +498,54 @@ class Builder extends ProxyBase {
 	}
 
 	doUpdateSidemenu () {
-		this._$sideMenuWrpList.empty();
+		this._sidemenuListRenderCache = this._sidemenuListRenderCache || new SideMenuListRenderCache();
 
 		const toList = this.getSideMenuItems();
-		this._$sideMenuStageSaved.toggle(!!toList.length);
+		this._$sideMenuStageSaved.toggleVe(!!toList.length);
 
-		toList.forEach(entry => {
-			const ixBrew = BrewUtil.getEntryIxByEntry(this._prop, entry);
+		// region Create a sparse array, of brew index -> entry
+		const toListSparse = [];
+		toList.forEach((entry, i) => {
+			const ix = BrewUtil.getEntryIxByEntry(this._prop, entry);
+			toListSparse[ix] = {
+				entry,
+				position: i,
+			};
+		});
+		// endregion
+
+		const ixs = toList.map(entry => BrewUtil.getEntryIxByEntry(this._prop, entry));
+		const ixCap = Math.max(...ixs) + 1; // +1 so our "<" loop functions
+
+		for (let ix = 0, len = Math.max(ixCap, this._sidemenuListRenderCache.getIxMaxRendered()); ix < len; ++ix) {
+			const {entry, position} = toListSparse[ix] ?? {};
+			const meta = this._sidemenuListRenderCache.getMeta(ix);
+
+			if (meta) {
+				if (entry) {
+					meta.$row.showVe();
+
+					if (meta.name !== entry.name) {
+						meta.$dispName.text(entry.name);
+						meta.name = entry.name;
+					}
+
+					if (meta.position !== position) {
+						meta.$row.css("order", position);
+						meta.position = position;
+					}
+				} else {
+					meta.$row.hideVe();
+				}
+				continue;
+			}
+
+			if (!entry) continue;
 
 			const $btnEdit = $(`<button class="btn btn-xs btn-default mr-2" title="Edit"><span class="glyphicon glyphicon-pencil"/></button>`)
 				.click(() => {
 					if (this.getOnNavMessage() && !confirm("You have unsaved changes. Are you sure?")) return;
-					this.setStateFromLoaded({s: MiscUtil.copy(entry), m: {...this.getInitialMetaState(), ixBrew}});
+					this.setStateFromLoaded({s: MiscUtil.copy(BrewUtil.getEntryByEntryIx(this._prop, ix)), m: {...this.getInitialMetaState(), ixBrew: ix}});
 					this.renderInput();
 					this.renderOutput();
 					this.doUiSave();
@@ -468,10 +555,10 @@ class Builder extends ProxyBase {
 				new ContextUtil.Action(
 					"Duplicate",
 					async () => {
-						const copy = MiscUtil.copy(entry);
+						const copy = MiscUtil.copy(BrewUtil.getEntryByEntryIx(this._prop, ix));
 
 						// Get the root name without trailing numbers, e.g. "Goblin (2)" -> "Goblin"
-						const m = /^(.*?) \((\d+)\)$/.exec(entry.name.trim());
+						const m = /^(.*?) \((\d+)\)$/.exec(copy.name.trim());
 						if (m) copy.name = `${m[1]} (${Number(m[2]) + 1})`;
 						else copy.name = `${copy.name} (1)`;
 						await BrewUtil.pAddEntry(this._prop, copy);
@@ -482,7 +569,7 @@ class Builder extends ProxyBase {
 					"View JSON",
 					(evt) => {
 						const out = this._ui._getJsonOutputTemplate();
-						out[this._prop] = [PropOrder.getOrdered(DataUtil.cleanJson(MiscUtil.copy(entry)), this._prop)];
+						out[this._prop] = [PropOrder.getOrdered(DataUtil.cleanJson(MiscUtil.copy(BrewUtil.getEntryByEntryIx(this._prop, ix))), this._prop)];
 
 						const $content = Renderer.hover.$getHoverContent_statsCode(this._state);
 
@@ -501,14 +588,38 @@ class Builder extends ProxyBase {
 					"Download JSON",
 					() => {
 						const out = this._ui._getJsonOutputTemplate();
-						out[this._prop] = [DataUtil.cleanJson(MiscUtil.copy(entry))];
-						DataUtil.userDownload(DataUtil.getCleanFilename(entry.name), out);
+						const cpy = MiscUtil.copy(BrewUtil.getEntryByEntryIx(this._prop, ix));
+						out[this._prop] = [DataUtil.cleanJson(cpy)];
+						DataUtil.userDownload(DataUtil.getCleanFilename(cpy.name), out);
 					},
 				),
-				...(this._sidebarItemOptionsMetas || []).map(it => new ContextUtil.Action(
-					it.name,
-					(evt) => it.pAction(evt, entry),
-				)),
+				new ContextUtil.Action(
+					"View Markdown",
+					(evt) => {
+						const entry = MiscUtil.copy(BrewUtil.getEntryByEntryIx(this._prop, ix));
+						const name = `${entry._displayName || entry.name} \u2014 Markdown`;
+						const mdText = RendererMarkdown.get().render({entries: [{type: this._typeRenderData, [this._typeRenderData]: entry}]});
+						const $content = Renderer.hover.$getHoverContent_miscCode(name, mdText);
+
+						Renderer.hover.getShowWindow(
+							$content,
+							Renderer.hover.getWindowPositionFromEvent(evt),
+							{
+								title: name,
+								isPermanent: true,
+								isBookContent: true,
+							},
+						);
+					},
+				),
+				new ContextUtil.Action(
+					"Download Markdown",
+					() => {
+						const entry = MiscUtil.copy(BrewUtil.getEntryByEntryIx(this._prop, ix));
+						const mdText = CreatureBuilder._getAsMarkdown(entry).trim();
+						DataUtil.userDownloadText(`${DataUtil.getCleanFilename(entry.name)}.md`, mdText);
+					},
+				),
 			]);
 
 			const $btnBurger = $(`<button class="btn btn-xs btn-default mr-2" title="More Options"><span class="glyphicon glyphicon-option-vertical"/></button>`)
@@ -517,11 +628,11 @@ class Builder extends ProxyBase {
 			const $btnDelete = $(`<button class="btn btn-xs btn-danger" title="Delete"><span class="glyphicon glyphicon-trash"/></button>`)
 				.click(async () => {
 					if (confirm("Are you sure?")) {
-						if (this.ixBrew === ixBrew) {
+						if (this.ixBrew === ix) {
 							this.isEntrySaved = false;
 							this.ixBrew = null;
 							this.mutSavedButtonText();
-						} else if (this.ixBrew > ixBrew) {
+						} else if (this.ixBrew > ix) {
 							this.ixBrew--; // handle the splice -- our index is now one lower
 						}
 						await BrewUtil.pRemoveEntry(this._prop, entry);
@@ -530,11 +641,21 @@ class Builder extends ProxyBase {
 					}
 				});
 
-			$$`<div class="mkbru__sidebar-entry flex-v-center split px-2">
-			<span class="py-1">${entry.name}</span>
+			const $dispName = $$`<span class="py-1">${entry.name}</span>`;
+
+			const $row = $$`<div class="mkbru__sidebar-entry flex-v-center split px-2" style="order: ${position}">
+			${$dispName}
 			<div class="py-1 no-shrink">${$btnEdit}${$btnBurger}${$btnDelete}</div>
 			</div>`.appendTo(this._$sideMenuWrpList);
-		});
+
+			const nuMeta = {
+				$dispName,
+				$row,
+				name: entry.name,
+				position,
+			};
+			this._sidemenuListRenderCache.setMeta(ix, nuMeta);
+		}
 	}
 
 	_getSidebarVisibleEntities () {
@@ -614,6 +735,76 @@ class Builder extends ProxyBase {
 			});
 	}
 
+	$getFluffInput (cb) {
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Flavor Info");
+
+		const imageRows = [];
+
+		const doUpdateState = () => {
+			const out = {};
+
+			const entries = UiUtil.getTextAsEntries($iptEntries.val());
+			if (entries && entries.length) out.entries = entries;
+
+			const images = imageRows.map(it => it.getState()).filter(Boolean);
+
+			if (images.length) out.images = images;
+
+			if (out.entries || out.images) this._state.fluff = out;
+			else delete this._state.fluff;
+
+			cb();
+		};
+
+		const doUpdateOrder = () => {
+			imageRows.forEach(it => it.$ele.detach().appendTo($wrpRows));
+			doUpdateState();
+		};
+
+		const $wrpRowsOuter = $(`<div class="relative"/>`);
+		const $wrpRows = $(`<div class="flex-col"/>`).appendTo($wrpRowsOuter);
+
+		const rowOptions = {$wrpRowsOuter};
+
+		const $iptEntries = $(`<textarea class="form-control form-control--minimal resize-vertical mb-2"/>`)
+			.change(() => doUpdateState());
+
+		const $btnAddImage = $(`<button class="btn btn-xs btn-default">Add Image</button>`)
+			.click(async () => {
+				const url = await InputUiUtil.pGetUserString({title: "Enter a URL"});
+				if (!url) return;
+				CreatureBuilder.__$getFluffInput__getImageRow(doUpdateState, doUpdateOrder, rowOptions, imageRows, {href: {url: url}}).$ele.appendTo($wrpRows);
+				doUpdateState();
+			});
+
+		$$`<div class="flex-col">
+		${$iptEntries}
+		${$wrpRowsOuter}
+		<div>${$btnAddImage}</div>
+		</div>`.appendTo($rowInner);
+
+		if (this._state.fluff) {
+			if (this._state.fluff.entries) $iptEntries.val(UiUtil.getEntriesAsText(this._state.fluff.entries));
+			if (this._state.fluff.images) this._state.fluff.images.forEach(img => CreatureBuilder.__$getFluffInput__getImageRow(doUpdateState, doUpdateOrder, rowOptions, imageRows, img).$ele.appendTo($wrpRows));
+		}
+
+		return $row;
+	}
+
+	_getRenderedMarkdownCode () {
+		const mdText = this.constructor._getAsMarkdown(this._state);
+		return Renderer.get().render({
+			type: "entries",
+			entries: [
+				{
+					type: "code",
+					name: `Markdown`,
+					preformatted: mdText,
+				},
+			],
+		});
+	}
+
 	doHandleSourcesAdd () { throw new TypeError(`Unimplemented method!`); }
 	renderInput () {
 		try {
@@ -632,7 +823,7 @@ class Builder extends ProxyBase {
 	_renderInputImpl () { throw new TypeError(`Unimplemented method!`); }
 	renderOutput () { throw new TypeError(`Unimplemented method!`); }
 	async pHandleSidebarLoadExistingClick () { throw new TypeError(`Unimplemented method!`); }
-	async pHandleSidebarLoadExistingData () { throw new TypeError(`Unimplemented method!`); }
+	async pHandleSidebarLoadExistingData (entity, opts) { throw new TypeError(`Unimplemented method!`); }
 	getInitialMetaState () { return {}; }
 	async pInit () {}
 	async pDoPostSave () {}
@@ -1056,7 +1247,21 @@ class Makebrew {
 
 				const [page, source, hash] = initialLoadMeta.statemeta;
 				const toLoad = await Renderer.hover.pCacheAndGet(page, source, hash, {isCopy: true});
-				return builder.pHandleSidebarLoadExistingData(toLoad, {isForce: true});
+
+				// Try to link up the ixBrew for homebrew entities, so that we can cleanly edit and save them without
+				//   creating duplicates.
+				const meta = {};
+				if (toLoad.uniqueId !== null) {
+					const ixBrew = builder.getIxBrew(toLoad);
+					if (~ixBrew) {
+						meta.ixBrew = ixBrew;
+
+						// If we're using an existing ixBrew, use its source, too
+						if (toLoad.source) ui.source = toLoad.source;
+					}
+				}
+
+				return builder.pHandleSidebarLoadExistingData(toLoad, {isForce: true, meta});
 			}
 		} finally { Makebrew._LOCK.unlock(); }
 	}

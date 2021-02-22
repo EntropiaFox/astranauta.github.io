@@ -14,35 +14,8 @@ class CreatureBuilder extends Builder {
 					return RendererMarkdown.monster.pGetMarkdownDoc(mons);
 				},
 			},
-			// TODO refactor this if/when more Markdown rendering is supported (e.g. spells)
-			sidebarItemOptionsMetas: [
-				{
-					name: "View Markdown",
-					pAction: (evt, entry) => {
-						const name = `${entry._displayName || entry.name} \u2014 Markdown`;
-						const mdText = RendererMarkdown.get().render({entries: [{type: "dataCreature", dataCreature: entry}]});
-						const $content = Renderer.hover.$getHoverContent_miscCode(name, mdText);
-
-						Renderer.hover.getShowWindow(
-							$content,
-							Renderer.hover.getWindowPositionFromEvent(evt),
-							{
-								title: name,
-								isPermanent: true,
-								isBookContent: true,
-							},
-						);
-					},
-				},
-				{
-					name: "Download Markdown",
-					pAction: (evt, entry) => {
-						const mdText = CreatureBuilder._getAsMarkdown(entry).trim();
-						DataUtil.userDownloadText(`${DataUtil.getCleanFilename(entry.name)}.md`, mdText);
-					},
-				},
-			],
 			prop: "monster",
+			typeRenderData: "dataCreature",
 		});
 
 		this._bestiaryFluffIndex = null;
@@ -66,20 +39,6 @@ class CreatureBuilder extends Builder {
 		return RendererMarkdown.get().render({entries: [{type: "dataCreature", dataCreature: mon}]});
 	}
 
-	_getRenderedMarkdownCode () {
-		const mdText = CreatureBuilder._getAsMarkdown(this._state);
-		return Renderer.get().render({
-			type: "entries",
-			entries: [
-				{
-					type: "code",
-					name: `Markdown`,
-					preformatted: mdText,
-				},
-			],
-		});
-	}
-
 	async pHandleSidebarLoadExistingClick () {
 		const result = await SearchWidget.pGetUserCreatureSearch();
 		if (result) {
@@ -92,6 +51,7 @@ class CreatureBuilder extends Builder {
 	 * @param creature
 	 * @param [opts]
 	 * @param [opts.isForce]
+	 * @param [opts.meta]
 	 */
 	async pHandleSidebarLoadExistingData (creature, opts) {
 		opts = opts || [];
@@ -140,16 +100,18 @@ class CreatureBuilder extends Builder {
 		// Semi-gracefully handle e.g. ERLW's Steel Defender
 		if (creature.passive != null && typeof creature.passive === "string") delete creature.passive;
 
-		if (Parser.crToNumber(creature.cr) !== 100 && !opts.isForce) {
+		const meta = {...(opts.meta || {}), ...this.getInitialMetaState()};
+
+		if (Parser.crToNumber(creature.cr) < VeCt.CR_CUSTOM && !opts.isForce) {
 			const ixDefault = Parser.CRS.indexOf(creature.cr.cr || creature.cr);
 			const scaleTo = await InputUiUtil.pGetUserEnum({values: Parser.CRS, title: "At Challenge Rating...", default: ixDefault});
 
 			if (scaleTo != null && scaleTo !== ixDefault) {
 				const scaled = await ScaleCreature.scale(creature, Parser.crToNumber(Parser.CRS[scaleTo]));
 				delete scaled._displayName;
-				this.setStateFromLoaded({s: scaled, m: this.getInitialMetaState()});
-			} else this.setStateFromLoaded({s: creature, m: this.getInitialMetaState()});
-		} else this.setStateFromLoaded({s: creature, m: this.getInitialMetaState()});
+				this.setStateFromLoaded({s: scaled, m: meta});
+			} else this.setStateFromLoaded({s: creature, m: meta});
+		} else this.setStateFromLoaded({s: creature, m: meta});
 
 		this.renderInput();
 		this.renderOutput();
@@ -254,7 +216,7 @@ class CreatureBuilder extends Builder {
 
 			// validate ixBrew
 			if (state.m.ixBrew != null) {
-				const expectedIx = (BrewUtil.homebrew.monster || []).findIndex(it => it.source === state.s.source && it.name === state.s.name);
+				const expectedIx = this.getIxBrew(state.s);
 				if (!~expectedIx) state.m.ixBrew = null;
 				else if (expectedIx !== state.m.ixBrew) state.m.ixBrew = expectedIx;
 			}
@@ -385,7 +347,7 @@ class CreatureBuilder extends Builder {
 
 		// initialise tabs
 		this._resetTabs("input");
-		const tabs = ["Info", "Species", "Core", "Defence", "Abilities", "Flavor/Misc"].map((it, ix) => this._getTab(ix, it, {hasBorder: true, tabGroup: "input", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		const tabs = ["Info", "Species", "Core", "Defence", "Abilities", "Flavor/Misc"].map((it, ix) => this._getTab(ix, it, "meta", {hasBorder: true, tabGroup: "input", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
 		const [infoTab, speciesTab, coreTab, defenseTab, abilTab, miscTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink ui-tab__wrp-tab-heads--border">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
@@ -464,7 +426,7 @@ class CreatureBuilder extends Builder {
 
 		// FLAVOR/MISC
 		this.__$getTokenInput(cb).appendTo(miscTab.$wrpTab);
-		this.__$getFluffInput(cb).appendTo(miscTab.$wrpTab);
+		this.$getFluffInput(cb).appendTo(miscTab.$wrpTab);
 		this.__$getEnvironmentInput(cb).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptString("Group", cb, this._state, {title: "The family this creature belongs to, e.g. 'Modrons' in the case of a Duodrone."}, "group").appendTo(miscTab.$wrpTab);
 		this.__$getSoundClipInput(cb).appendTo(miscTab.$wrpTab);
@@ -2528,11 +2490,11 @@ class CreatureBuilder extends Builder {
 										})() : null,
 									].filter(Boolean).join(" or ");
 
-									const getDamageDicePt = ($iptNum, $iptFaces, $iptBonus) => {
+									const getDamageDicePt = ($iptNum, $iptFaces, $iptBonus, isSkipAbilMod) => {
 										const num = UiUtil.strToInt($iptNum.val(), 1, {fallbackOnNaN: 1});
 										const faces = UiUtil.strToInt($iptFaces.val(), 6, {fallbackOnNaN: 6});
 										const bonusVal = UiUtil.strToInt($iptBonus.val());
-										const totalBonus = abilMod + bonusVal;
+										const totalBonus = (isSkipAbilMod ? 0 : abilMod) + bonusVal;
 										return `${Math.floor(num * ((faces + 1) / 2)) + (totalBonus || 0)} ({@damage ${num}d${faces}${totalBonus ? ` ${UiUtil.intToBonus(totalBonus).replace(/([-+])/g, "$1 ")}` : ``}})`;
 									};
 									const getDamageTypePt = ($ipDamType) => $ipDamType.val().trim() ? ` ${$ipDamType.val().trim()}` : "";
@@ -2541,7 +2503,7 @@ class CreatureBuilder extends Builder {
 										$cbRanged.prop("checked") ? `${getDamageDicePt($iptRangedDamDiceCount, $iptRangedDamDiceNum, $iptRangedDamBonus)}${getDamageTypePt($iptRangedDamType)} damage${$cbMelee.prop("checked") ? ` at range` : ""}` : null,
 										$cbVersatile.prop("checked") ? `${getDamageDicePt($iptVersatileDamDiceCount, $iptVersatileDamDiceNum, $iptVersatileDamBonus)}${getDamageTypePt($iptVersatileDamType)} damage if used with both hands` : null,
 									].filter(Boolean).join(", or ");
-									const ptDamageFull = $cbBonusDamage.prop("checked") ? `${ptDamage}, plus ${getDamageDicePt($iptBonusDamDiceCount, $iptBonusDamDiceNum, $iptBonusDamBonus)}${getDamageTypePt($iptBonusDamType)} damage` : ptDamage;
+									const ptDamageFull = $cbBonusDamage.prop("checked") ? `${ptDamage}, plus ${getDamageDicePt($iptBonusDamDiceCount, $iptBonusDamDiceNum, $iptBonusDamBonus, true)}${getDamageTypePt($iptBonusDamType)} damage` : ptDamage;
 
 									return {
 										name: $iptName.val().trim() || "Unarmed Strike",
@@ -2904,62 +2866,6 @@ class CreatureBuilder extends Builder {
 		return $row;
 	}
 
-	__$getFluffInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Flavour Info");
-
-		const imageRows = [];
-
-		const doUpdateState = () => {
-			const out = {};
-
-			const entries = UiUtil.getTextAsEntries($iptEntries.val());
-			if (entries && entries.length) out.entries = entries;
-
-			const images = imageRows.map(it => it.getState()).filter(Boolean);
-
-			if (images.length) out.images = images;
-
-			if (out.entries || out.images) this._state.fluff = out;
-			else delete this._state.fluff;
-
-			cb();
-		};
-
-		const doUpdateOrder = () => {
-			imageRows.forEach(it => it.$ele.detach().appendTo($wrpRows));
-			doUpdateState();
-		};
-
-		const $wrpRowsOuter = $(`<div class="relative"/>`);
-		const $wrpRows = $(`<div class="flex-col"/>`).appendTo($wrpRowsOuter);
-
-		const rowOptions = {$wrpRowsOuter};
-
-		const $iptEntries = $(`<textarea class="form-control form-control--minimal resize-vertical mb-2"/>`)
-			.change(() => doUpdateState());
-
-		const $btnAddImage = $(`<button class="btn btn-xs btn-default">Add Image</button>`)
-			.click(async () => {
-				const url = await InputUiUtil.pGetUserString({title: "Enter a URL"});
-				if (!url) return;
-				CreatureBuilder.__$getFluffInput__getImageRow(doUpdateState, doUpdateOrder, rowOptions, imageRows, {href: {url: url}}).$ele.appendTo($wrpRows);
-				doUpdateState();
-			});
-
-		$$`<div class="flex-col">
-		${$iptEntries}
-		${$wrpRowsOuter}
-		<div>${$btnAddImage}</div>
-		</div>`.appendTo($rowInner);
-
-		if (this._state.fluff) {
-			if (this._state.fluff.entries) $iptEntries.val(UiUtil.getEntriesAsText(this._state.fluff.entries));
-			if (this._state.fluff.images) this._state.fluff.images.forEach(img => CreatureBuilder.__$getFluffInput__getImageRow(doUpdateState, doUpdateOrder, rowOptions, imageRows, img).$ele.appendTo($wrpRows));
-		}
-
-		return $row;
-	}
-
 	static __$getFluffInput__getImageRow (doUpdateState, doUpdateOrder, options, imageRows, image) {
 		const out = {};
 
@@ -3123,7 +3029,7 @@ class CreatureBuilder extends Builder {
 
 		// initialise tabs
 		this._resetTabs("output");
-		const tabs = ["Statblock", "Info", "Images", "Data", "Markdown"].map((it, ix) => this._getTab(ix, it, {tabGroup: "output", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		const tabs = ["Statblock", "Info", "Images", "Data", "Markdown"].map((it, ix) => this._getTab(ix, it, "meta", {tabGroup: "output", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
 		const [statTab, infoTab, imageTab, dataTab, markdownTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));

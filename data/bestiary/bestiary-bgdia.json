@@ -128,7 +128,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Amrik Vanthampur",
@@ -224,7 +226,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Archduke Zariel of Avernus",
@@ -298,7 +302,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Arkhan the Cruel",
@@ -459,7 +465,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bel",
@@ -671,7 +679,9 @@
 				"invisible",
 				"paralyzed",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bitter Breath",
@@ -841,7 +851,8 @@
 				"blinded",
 				"deafened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Bone Whelk",
@@ -920,7 +931,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Burney the Barber",
@@ -1168,7 +1181,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Death's Head of Bhaal",
@@ -1280,7 +1295,8 @@
 			],
 			"conditionInflict": [
 				"stunned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Dryad Spirit",
@@ -1403,12 +1419,15 @@
 				"I"
 			],
 			"damageTags": [
+				"B",
 				"F",
 				"O"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elliach",
@@ -1617,7 +1636,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Fist of Bane",
@@ -1698,7 +1718,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Flying Dagger",
@@ -1849,7 +1870,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Harkina Hunt",
@@ -1994,7 +2017,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hellwasp Grub",
@@ -2157,7 +2182,9 @@
 			],
 			"conditionInflictSpell": [
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Iron Consul",
@@ -2252,7 +2279,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Kostchtchie",
@@ -2438,7 +2466,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Krull",
@@ -2639,7 +2669,8 @@
 				"paralyzed",
 				"poisoned",
 				"stunned"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lulu",
@@ -2845,7 +2876,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Master of Souls",
@@ -3001,7 +3034,8 @@
 			],
 			"conditionInflictSpell": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Mortlock Vanthampur",
@@ -3087,7 +3121,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Necromite of Myrkul",
@@ -3157,7 +3193,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Necrotic Centipede",
@@ -3276,7 +3314,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Nine-Fingers Keene",
@@ -3384,7 +3423,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Peacock",
@@ -3557,7 +3598,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rilsa Rael",
@@ -3668,7 +3711,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Skeletal Rats",
@@ -3808,7 +3853,8 @@
 			],
 			"conditionInflictSpell": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Smiler the Defiler",
@@ -3953,7 +3999,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sylvira Savikas",
@@ -4181,7 +4229,9 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Torogar Steelfist",
@@ -4298,7 +4348,8 @@
 			],
 			"conditionInflict": [
 				"unconscious"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Traxigor",
@@ -4367,7 +4418,8 @@
 				"source": "SKT"
 			},
 			"type": "monstrosity",
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ulder Ravengard",
@@ -4461,7 +4513,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Undead Tree",

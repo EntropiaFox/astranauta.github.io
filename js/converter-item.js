@@ -116,6 +116,10 @@ class ItemParser extends BaseParser {
 		BonusTag.tryRun(stats);
 		ItemMiscTag.tryRun(stats);
 		ItemSpellcastingFocusTag.tryRun(stats);
+		DamageResistanceTag.tryRun(stats);
+		DamageImmunityTag.tryRun(stats);
+		DamageVulnerabilityTag.tryRun(stats);
+		ConditionImmunityTag.tryRun(stats);
 
 		// TODO
 		//  - tag damage type?

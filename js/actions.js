@@ -17,24 +17,31 @@ class ActionsPage extends ListPage {
 			sublistClass: "subactions",
 
 			dataProps: ["action"],
+
+			isPreviewable: true,
 		});
 	}
 
 	getListItem (it, anI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
 		const time = it.time ? it.time.map(tm => ActionsPage._getTimeText(tm)).join("/") : "\u2014";
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
-			<span class="col-6 bold pl-0">${it.name}</span>
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
+			<span class="col-0-3 px-0 flex-vh-center lst__btn-toggle-expand self-flex-stretch">[+]</span>
+			<span class="col-5-7 bold">${it.name}</span>
 			<span class="col-4 bold">${time}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
-		</a>`;
+		</a>
+		<div class="flex ve-hidden relative lst__wrp-preview">
+			<div class="vr-0 absolute lst__vr-preview"></div>
+			<div class="flex-col py-3 ml-4 lst__wrp-preview-inner"></div>
+		</div>`;
 
 		const listItem = new ListItem(
 			anI,
@@ -68,13 +75,14 @@ class ActionsPage extends ListPage {
 
 		const time = it.time ? it.time.map(tm => ActionsPage._getTimeText(tm)).join("/") : "\u2014";
 
-		const $ele = $(`<li class="row">
-			<a href="#${hash}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-8 pl-0">${it.name}</span>
 				<span class="bold col-4 pr-0">${time}</span>
 			</a>
-		</li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,

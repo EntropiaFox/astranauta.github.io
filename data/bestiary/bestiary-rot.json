@@ -690,7 +690,8 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Ice Troll",
@@ -928,7 +929,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Neronvain",
@@ -1056,7 +1058,8 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Paper Whirlwind",
@@ -1262,7 +1265,8 @@
 			],
 			"conditionInflict": [
 				"restrained"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sled Dog",
@@ -1474,13 +1478,12 @@
 					]
 				}
 			],
+			"legendaryHeader": [
+				"Tiamat can take 5 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. Tiamat regains spent legendary actions at the start of its turn.",
+				"Tiamat's legendary action options are associated with her five dragon heads (a bite and a breath weapon for each). Once Tiamat chooses a legendary action option for one of her heads, she can't choose another one associated with that head until the start of her next turn."
+			],
 			"legendaryActions": 5,
 			"legendary": [
-				{
-					"entries": [
-						"Tiamat's legendary action options are associated with her five dragon heads (a bite and a breath weapon for each). Once Tiamat chooses a legendary action option for one of her heads, she can't choose another one associated with that head until the start of her next turn."
-					]
-				},
 				{
 					"name": "Bite",
 					"entries": [
@@ -1561,7 +1564,8 @@
 				"blinded",
 				"deafened",
 				"stunned"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Varram",

@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.8.2",
+	"$id": "items.json",
+	"version": "1.10.0",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -117,10 +118,19 @@
 				"curse": {
 					"type": "boolean"
 				},
-				"resist": {
-					"type": "string"
+				"vulnerable": {
+					"$ref": "util.json#/definitions/damageVulnerabilityArray"
 				},
-				"color": {
+				"resist": {
+					"$ref": "util.json#/definitions/damageResistArray"
+				},
+				"immune": {
+					"$ref": "util.json#/definitions/damageImmunityArray"
+				},
+				"conditionImmune": {
+					"$ref": "util.json#/definitions/conditionImmunityArray"
+				},
+				"detail1": {
 					"type": "string"
 				},
 				"scfType": {
@@ -319,7 +329,13 @@
 				"bonusSpellAttack": {
 					"type": "string"
 				},
+				"bonusSpellSaveDc": {
+					"type": "string"
+				},
 				"bonusSavingThrow": {
+					"type": "string"
+				},
+				"bonusProficiencyBonus": {
 					"type": "string"
 				},
 				"otherSources": {
@@ -364,6 +380,10 @@
 						]
 					}
 				},
+				"atomicPackContents": {
+					"description": "If the item's pack contents should be treated as one atomic unit, rather than handled as individual sub-items.",
+					"type": "boolean"
+				},
 				"containerCapacity": {
 					"type": "object",
 					"properties": {
@@ -397,7 +417,10 @@
 				},
 				"grantsProficiency": {
 					"type": "boolean"
-				}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"},
+				"hasRefs": {"type": "boolean"}
 			},
 			"additionalProperties": false
 		},

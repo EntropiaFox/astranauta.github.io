@@ -118,6 +118,19 @@
 			]
 		},
 		{
+			"name": "Rath Modar",
+			"source": "HotDQ",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/HotDQ/Rath Modar.jpg"
+					}
+				}
+			]
+		},
+		{
 			"name": "Rezmir",
 			"source": "HotDQ",
 			"images": [

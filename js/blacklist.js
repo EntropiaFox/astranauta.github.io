@@ -211,12 +211,12 @@ class Blacklist {
 				Blacklist.remove(id, hash, category, source);
 			});
 
-		const $ele = $$`<li class="row no-click flex-v-center lst--border">
+		const $ele = $$`<div class="no-click flex-v-center lst__row lst--border lst__row-inner no-shrink">
 			<span class="col-5">${Parser.sourceJsonToFull(source)}</span>
 			<span class="col-3">${display.displayCategory}</span>
 			<span class="bold col-3">${displayName}</span>
 			<span class="col-1 text-center">${$btnRemove}</span>
-		</li>`;
+		</div>`;
 
 		const listItem = new ListItem(
 			id,

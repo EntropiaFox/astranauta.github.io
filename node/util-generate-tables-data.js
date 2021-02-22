@@ -107,6 +107,9 @@ class UtilGenTables {
 				classSource: table._tmpMeta.classSource,
 			};
 			delete table._tmpMeta;
+		} else if (table._tmpMeta.metaType === "variantrule") {
+			table.variantrule = {name: table._tmpMeta.name, source: table._tmpMeta.source};
+			delete table._tmpMeta;
 		}
 
 		if (table.type === "table") delete table.type;
@@ -251,6 +254,46 @@ class UtilGenTables {
 		stacks.table.forEach(it => {
 			it.name = it.caption;
 			it.source = it._tmpMeta.subclassSource || it._tmpMeta.classSource;
+
+			this._mutDataAddPage(it);
+			this._mutCleanData(it);
+		});
+
+		return stacks;
+	}
+
+	static getGenericTables (entity, metaType, ...props) {
+		const sectionOrders = {};
+		const stacks = {table: [], tableGroup: []};
+		const path = [];
+
+		props.forEach(prop => {
+			if (!entity[prop]) return;
+			const tmpMeta = {
+				metaType: metaType,
+				name: entity.name,
+				source: entity.source,
+			};
+
+			entity[prop].forEach(ent => {
+				this._doSearch({
+					sectionOrders,
+					path,
+					tmpMeta,
+					section: entity.name,
+					data: ent,
+					stacks: stacks,
+					isRequireIncludes: true,
+
+					// Used to deduplicate headers
+					name: entity.name,
+				})
+			})
+		});
+
+		stacks.table.forEach(it => {
+			it.name = it.caption;
+			it.source = it._tmpMeta.source;
 
 			this._mutDataAddPage(it);
 			this._mutCleanData(it);

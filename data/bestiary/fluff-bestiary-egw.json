@@ -810,32 +810,6 @@
 					}
 				}
 			]
-		},
-		{
-			"name": "Yeti (Allowak variant)",
-			"source": "EGW",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						"A yeti's windborne howl sounds out across remote mountains, striking fear into the hearts of the scattered miners and herders that dwell there. These hulking creatures stalk alpine peaks in a ceaseless hunt for food. Their snow-white fur lets them move like ghosts against the frozen landscape. A yeti's icy simian eyes can freeze its prey in place."
-					]
-				},
-				{
-					"type": "section",
-					"entries": [
-						"When Aeor fell into Foren, the impact threw a monolithic, purple crystal miles away from the crash site. The stone pierced the body of an abominable yeti named Allowak, but the crystal's magic preserved the yeti's corpse and absorbed Allowak's soul. When other yetis touched the crystal, their intellect increased and their innate desire to slaughter faded away. A society of the monstrosities living in huts and keeping mammoths for food sprung up around the crystal. These peaceful yetis abhor their more savage kin.",
-						{
-							"type": "entries",
-							"name": "A Secret Place",
-							"entries": [
-								"The yetis of Allowak's Sanctuary keep their home a secret, for they worry that outsiders might try to steal the crystal. Although the crystal's effects seem permanent, the yetis fear that if it were removed from Allowak's remains, they would lose their newfound intelligence. If outsiders get close to the village, the yetis patrolling the village's borders approach and act like the more common and savage members of their species. The yetis of Allowak's Sanctuary do not kill unless forced to, but they will cause injury to guard their secret.",
-								"In recent years, the yetis have acquired books and journals from explorers who died close to their camp. The tomes gave the yetis an understanding of the world beyond Eiselcross."
-							]
-						}
-					]
-				}
-			]
 		}
 	]
 }

@@ -109,13 +109,61 @@ Parser.textToNumber = function (str) {
 };
 
 Parser.numberToVulgar = function (number) {
-	const spl = `${number}`.split(".");
+	const isNeg = number < 0;
+	const spl = `${number}`.replace(/^-/, "").split(".");
 	if (spl.length === 1) return number;
-	if (spl[1] === "5") return `${spl[0]}½`;
-	if (spl[1] === "25") return `${spl[0]}¼`;
-	if (spl[1] === "75") return `${spl[0]}¾`;
+
+	let preDot = spl[0] === "0" ? "" : spl[0];
+	if (isNeg) preDot = `-${preDot}`;
+
+	switch (spl[1]) {
+		case "125": return `${preDot}⅛`;
+		case "25": return `${preDot}¼`;
+		case "375": return `${preDot}⅜`;
+		case "5": return `${preDot}½`;
+		case "625": return `${preDot}⅝`;
+		case "75": return `${preDot}¾`;
+		case "875": return `${preDot}⅞`;
+
+		default: {
+			// Handle recursive
+			const asNum = Number(`0.${spl[1]}`);
+			if (asNum.toFixed(2) === (1 / 3).toFixed(2)) return `${preDot}⅓`;
+			if (asNum.toFixed(2) === (2 / 3).toFixed(2)) return `${preDot}⅔`;
+		}
+	}
+
 	return Parser.numberToFractional(number);
 };
+
+Parser.vulgarToNumber = function (str) {
+	const [, leading = "0", vulgar = ""] = /^(\d+)?([⅛¼⅜½⅝¾⅞⅓⅔])?$/.exec(str) || [];
+	let out = Number(leading);
+	switch (vulgar) {
+		case "⅛": out += 0.125; break;
+		case "¼": out += 0.25; break;
+		case "⅜": out += 0.375; break;
+		case "½": out += 0.5; break;
+		case "⅝": out += 0.625; break;
+		case "¾": out += 0.75; break;
+		case "⅞": out += 0.875; break;
+		case "⅓": out += 1 / 3; break;
+		case "⅔": out += 2 / 3; break;
+		case "": break;
+		default: throw new Error(`Unhandled vulgar part "${vulgar}"`);
+	}
+	return out;
+};
+
+Parser.numberToSuperscript = function (number) {
+	return `${number}`.split("").map(c => isNaN(c) ? c : Parser._NUMBERS_SUPERSCRIPT[Number(c)]).join("");
+};
+Parser._NUMBERS_SUPERSCRIPT = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+
+Parser.numberToSubscript = function (number) {
+	return `${number}`.split("").map(c => isNaN(c) ? c : Parser._NUMBERS_SUBSCRIPT[Number(c)]).join("");
+};
+Parser._NUMBERS_SUBSCRIPT = "₀₁₂₃₄₅₆₇₈₉";
 
 Parser._greatestCommonDivisor = function (a, b) {
 	if (b < Number.EPSILON) return a;
@@ -246,12 +294,18 @@ Parser.isValidCr = function (cr) {
 };
 
 Parser.crToNumber = function (cr) {
-	if (cr === "Unknown" || cr === "\u2014" || cr == null) return 100;
+	if (cr === "Unknown" || cr === "\u2014" || cr == null) return VeCt.CR_UNKNOWN;
 	if (cr.cr) return Parser.crToNumber(cr.cr);
+
 	const parts = cr.trim().split("/");
-	if (parts.length === 1) return Number(parts[0]);
-	else if (parts.length === 2) return Number(parts[0]) / Number(parts[1]);
-	else return 0;
+
+	if (parts.length === 1) {
+		if (isNaN(parts[0])) return VeCt.CR_CUSTOM;
+		return Number(parts[0]);
+	} else if (parts.length === 2) {
+		if (isNaN(parts[0]) || isNaN(Number(parts[1]))) return VeCt.CR_CUSTOM;
+		return Number(parts[0]) / Number(parts[1]);
+	} else return 0;
 };
 
 Parser.numberToCr = function (number, safe) {
@@ -534,7 +588,7 @@ Parser.itemValueToFull = function (item, opts = {isShortForm: false, isSmallUnit
 	return Parser._moneyToFull(item, "value", "valueMult", opts);
 };
 
-Parser.itemValueToFullMultiCurrency = function (item, opts = {isShortForm: false, isSmallUnits: false}) {
+Parser.itemValueToFullMultiCurrency = function (item, opts = {isShortForm: false, isSmallUnits: false, multiplier: 1}) {
 	return Parser._moneyToFullMultiCurrency(item, "value", "valueMult", opts);
 };
 
@@ -558,11 +612,11 @@ Parser._moneyToFull = function (it, prop, propMult, opts = {isShortForm: false, 
 	return "";
 };
 
-Parser._moneyToFullMultiCurrency = function (it, prop, propMult, isShortForm) {
+Parser._moneyToFullMultiCurrency = function (it, prop, propMult, {isShortForm, multiplier} = {}) {
 	if (it[prop]) {
 		const simplified = CurrencyUtil.doSimplifyCoins(
 			{
-				cp: it[prop],
+				cp: it[prop] * (multiplier ?? 1),
 			},
 			{
 				currencyConversionId: it.currencyConversion,
@@ -850,7 +904,7 @@ Parser.spTimeListToFull = function (times, isStripTags) {
 };
 
 Parser.getTimeToFull = function (time) {
-	return `${time.number} ${time.unit === "bonus" ? "bonus action" : time.unit}${time.number > 1 ? "s" : ""}`;
+	return `${time.number ? `${time.number} ` : ""}${time.unit === "bonus" ? "bonus action" : time.unit}${time.number > 1 ? "s" : ""}`;
 };
 
 RNG_SPECIAL = "special";
@@ -1253,6 +1307,8 @@ Parser.monCrToFull = function (cr, {xp = null, isMythic = false} = {}) {
 	if (cr == null) return "";
 
 	if (typeof cr === "string") {
+		if (Parser.crToNumber(cr) >= VeCt.CR_CUSTOM) return cr;
+
 		xp = xp != null ? Parser._addCommas(xp) : Parser.crToXp(cr);
 		return `${cr} (${xp} XP${isMythic ? `, or ${Parser.crToXp(cr, {isDouble: true})} XP as a mythic encounter` : ""})`;
 	} else {
@@ -1263,8 +1319,9 @@ Parser.monCrToFull = function (cr, {xp = null, isMythic = false} = {}) {
 	}
 };
 
-Parser.monImmResToFull = function (toParse) {
-	const outerLen = toParse.length;
+Parser.getFullImmRes = function (toParse) {
+	if (!toParse.length) return "";
+
 	let maxDepth = 0;
 
 	function toString (it, depth = 0) {
@@ -1274,35 +1331,42 @@ Parser.monImmResToFull = function (toParse) {
 		} else if (it.special) {
 			return it.special;
 		} else {
-			let stack = it.preNote ? `${it.preNote} ` : "";
+			const stack = [];
+
+			if (it.preNote) stack.push(it.preNote);
+
 			const prop = it.immune ? "immune" : it.resist ? "resist" : it.vulnerable ? "vulnerable" : null;
 			if (prop) {
 				const toJoin = it[prop].map(nxt => toString(nxt, depth + 1));
-				stack += depth ? toJoin.join(maxDepth ? "; " : ", ") : toJoin.joinConjunct(", ", " and ");
+				stack.push(depth ? toJoin.join(maxDepth ? "; " : ", ") : toJoin.joinConjunct(", ", " and "));
 			}
-			if (it.note) stack += ` ${it.note}`;
-			return stack;
+
+			if (it.note) stack.push(it.note);
+
+			return stack.join(" ");
 		}
 	}
 
-	function serialJoin (arr) {
-		if (arr.length <= 1) return arr.join("");
+	const arr = toParse.map(it => toString(it));
 
-		let out = "";
-		for (let i = 0; i < arr.length - 1; ++i) {
-			const it = arr[i];
-			const nxt = arr[i + 1];
-			out += it;
-			out += (it.includes(",") || nxt.includes(",")) ? "; " : ", ";
-		}
-		out += arr.last();
-		return out;
+	if (arr.length <= 1) return arr.join("");
+
+	let out = "";
+	for (let i = 0; i < arr.length - 1; ++i) {
+		const it = arr[i];
+		const nxt = arr[i + 1];
+
+		const orig = toParse[i];
+		const origNxt = toParse[i + 1];
+
+		out += it;
+		out += (it.includes(",") || nxt.includes(",") || (orig && orig.cond) || (origNxt && origNxt.cond)) ? "; " : ", ";
 	}
-
-	return serialJoin(toParse.map(it => toString(it)));
+	out += arr.last();
+	return out;
 };
 
-Parser.monCondImmToFull = function (condImm, isPlainText) {
+Parser.getFullCondImm = function (condImm, isPlainText) {
 	function render (condition) {
 		return isPlainText ? condition : Renderer.get().render(`{@condition ${condition}}`);
 	}
@@ -1605,6 +1669,7 @@ Parser.CAT_ID_BOOK = 44;
 Parser.CAT_ID_PAGE = 45;
 Parser.CAT_ID_LEGENDARY_GROUP = 46;
 Parser.CAT_ID_CHAR_CREATION_OPTIONS = 47;
+Parser.CAT_ID_RECIPES = 48;
 
 Parser.CAT_ID_TO_FULL = {};
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CREATURE] = "Bestiary";
@@ -1655,6 +1720,7 @@ Parser.CAT_ID_TO_FULL[Parser.CAT_ID_BOOK] = "Book";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_PAGE] = "Page";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_LEGENDARY_GROUP] = "Legendary Group";
 Parser.CAT_ID_TO_FULL[Parser.CAT_ID_CHAR_CREATION_OPTIONS] = "Character Creation Option";
+Parser.CAT_ID_TO_FULL[Parser.CAT_ID_RECIPES] = "Recipe";
 
 Parser.pageCategoryToFull = function (catId) {
 	return Parser._parse_aToB(Parser.CAT_ID_TO_FULL, catId);
@@ -1709,6 +1775,7 @@ Parser.CAT_ID_TO_PROP[Parser.CAT_ID_BOOK] = "book";
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_PAGE] = null;
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_LEGENDARY_GROUP] = null;
 Parser.CAT_ID_TO_PROP[Parser.CAT_ID_CHAR_CREATION_OPTIONS] = "charoption";
+Parser.CAT_ID_TO_PROP[Parser.CAT_ID_RECIPES] = "recipe";
 
 Parser.pageCategoryToProp = function (catId) {
 	return Parser._parse_aToB(Parser.CAT_ID_TO_PROP, catId);
@@ -1743,11 +1810,19 @@ Parser.spSubclassesToCurrentAndLegacyFull = function (sp, subclassLookup) {
 	const toCheck = [];
 	fromSubclass
 		.filter(c => {
-			const excludeClass = ExcludeUtil.isExcluded(c.class.name, "class", c.class.source);
+			const excludeClass = ExcludeUtil.isExcluded(
+				UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: c.class.name, source: c.class.source}),
+				"class",
+				c.class.source,
+			);
 			if (excludeClass) return false;
 
 			const fromLookup = MiscUtil.get(subclassLookup, c.class.source, c.class.name, c.subclass.source, c.subclass.name);
-			const excludeSubclass = ExcludeUtil.isExcluded((fromLookup || {}).name || c.subclass.name, "subclass", c.subclass.source);
+			const excludeSubclass = ExcludeUtil.isExcluded(
+				UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: (fromLookup || {}).name || c.subclass.name, source: c.subclass.source}),
+				"subclass",
+				c.subclass.source,
+			);
 			return !excludeSubclass;
 		})
 		.sort((a, b) => {
@@ -1830,6 +1905,7 @@ Parser.TRAP_HAZARD_TYPE_TO_FULL = {
 	ENV: "Environmental Hazard",
 	WLD: "Wilderness Hazard",
 	GEN: "Generic",
+	EST: "Eldritch Storm",
 };
 
 Parser.tierToFullLevel = function (tier) {
@@ -2136,6 +2212,8 @@ Parser.vehicleTypeToFull = function (vehicleType) {
 	return Parser._parse_aToB(Parser.VEHICLE_TYPE_TO_FULL, vehicleType);
 };
 
+SRC_5ETOOLS_TMP = "SRC_5ETOOLS_TMP"; // Temp source, used as a placeholder value
+
 SRC_CoS = "CoS";
 SRC_DMG = "DMG";
 SRC_EEPC = "EEPC";
@@ -2201,6 +2279,8 @@ SRC_MOT = "MOT";
 SRC_IDRotF = "IDRotF";
 SRC_TCE = "TCE";
 SRC_SCREEN = "Screen";
+SRC_SCREEN_WILDERNESS_KIT = "ScreenWildernessKit";
+SRC_HEROES_FEAST = "HF";
 
 SRC_AL_PREFIX = "AL";
 
@@ -2284,6 +2364,7 @@ SRC_UA2020SMT = `${SRC_UA_PREFIX}2020SpellsAndMagicTattoos`;
 SRC_UA2020POR = `${SRC_UA_PREFIX}2020PsionicOptionsRevisited`;
 SRC_UA2020SCR = `${SRC_UA_PREFIX}2020SubclassesRevisited`;
 SRC_UA2020F = `${SRC_UA_PREFIX}2020Feats`;
+SRC_UA2021GL = `${SRC_UA_PREFIX}2021GothicLineages`;
 
 SRC_3PP_SUFFIX = " 3pp";
 
@@ -2361,6 +2442,8 @@ Parser.SOURCE_JSON_TO_FULL[SRC_MOT] = "Mythic Odysseys of Theros";
 Parser.SOURCE_JSON_TO_FULL[SRC_IDRotF] = "Icewind Dale: Rime of the Frostmaiden";
 Parser.SOURCE_JSON_TO_FULL[SRC_TCE] = "Tasha's Cauldron of Everything";
 Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN] = "Dungeon Master's Screen";
+Parser.SOURCE_JSON_TO_FULL[SRC_SCREEN_WILDERNESS_KIT] = "Dungeon Master's Screen: Wilderness Kit";
+Parser.SOURCE_JSON_TO_FULL[SRC_HEROES_FEAST] = "Heroes' Feast";
 Parser.SOURCE_JSON_TO_FULL[SRC_ALCoS] = `${AL_PREFIX}Curse of Strahd`;
 Parser.SOURCE_JSON_TO_FULL[SRC_ALEE] = `${AL_PREFIX}Elemental Evil`;
 Parser.SOURCE_JSON_TO_FULL[SRC_ALRoD] = `${AL_PREFIX}Rage of Demons`;
@@ -2435,6 +2518,7 @@ Parser.SOURCE_JSON_TO_FULL[SRC_UA2020SMT] = `${UA_PREFIX}2020 Spells and Magic T
 Parser.SOURCE_JSON_TO_FULL[SRC_UA2020POR] = `${UA_PREFIX}2020 Psionic Options Revisited`;
 Parser.SOURCE_JSON_TO_FULL[SRC_UA2020SCR] = `${UA_PREFIX}2020 Subclasses Revisited`;
 Parser.SOURCE_JSON_TO_FULL[SRC_UA2020F] = `${UA_PREFIX}2020 Feats`;
+Parser.SOURCE_JSON_TO_FULL[SRC_UA2021GL] = `${UA_PREFIX}2021 Gothic Lineages`;
 
 Parser.SOURCE_JSON_TO_ABV = {};
 Parser.SOURCE_JSON_TO_ABV[SRC_CoS] = "CoS";
@@ -2502,6 +2586,8 @@ Parser.SOURCE_JSON_TO_ABV[SRC_MOT] = "MOT";
 Parser.SOURCE_JSON_TO_ABV[SRC_IDRotF] = "IDRotF";
 Parser.SOURCE_JSON_TO_ABV[SRC_TCE] = "TCE";
 Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN] = "Screen";
+Parser.SOURCE_JSON_TO_ABV[SRC_SCREEN_WILDERNESS_KIT] = "Wild";
+Parser.SOURCE_JSON_TO_ABV[SRC_HEROES_FEAST] = "HF";
 Parser.SOURCE_JSON_TO_ABV[SRC_ALCoS] = "ALCoS";
 Parser.SOURCE_JSON_TO_ABV[SRC_ALEE] = "ALEE";
 Parser.SOURCE_JSON_TO_ABV[SRC_ALRoD] = "ALRoD";
@@ -2567,15 +2653,16 @@ Parser.SOURCE_JSON_TO_ABV[SRC_UACFV] = "UACFV";
 Parser.SOURCE_JSON_TO_ABV[SRC_UAFRW] = "UAFRW";
 Parser.SOURCE_JSON_TO_ABV[SRC_UAPCRM] = "UAPCRM";
 Parser.SOURCE_JSON_TO_ABV[SRC_UAR] = "UAR";
-Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC1] = "UA2S1";
-Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC2] = "UA2S2";
-Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC3] = "UA2S3";
-Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC4] = "UA2S4";
-Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC5] = "UA2S5";
-Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SMT] = "UA2SMT";
-Parser.SOURCE_JSON_TO_ABV[SRC_UA2020POR] = "UA2POR";
-Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SCR] = "UA2SCR";
-Parser.SOURCE_JSON_TO_ABV[SRC_UA2020F] = "UA2F";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC1] = "UA20S1";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC2] = "UA20S2";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC3] = "UA20S3";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC4] = "UA20S4";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SC5] = "UA20S5";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SMT] = "UA20SMT";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2020POR] = "UA20POR";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2020SCR] = "UA20SCR";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2020F] = "UA20F";
+Parser.SOURCE_JSON_TO_ABV[SRC_UA2021GL] = "UA21GL";
 
 Parser.SOURCE_JSON_TO_DATE = {};
 Parser.SOURCE_JSON_TO_DATE[SRC_CoS] = "2016-03-15";
@@ -2641,6 +2728,8 @@ Parser.SOURCE_JSON_TO_DATE[SRC_MOT] = "2020-06-02";
 Parser.SOURCE_JSON_TO_DATE[SRC_IDRotF] = "2020-09-15";
 Parser.SOURCE_JSON_TO_DATE[SRC_TCE] = "2020-11-17";
 Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN] = "2015-01-20";
+Parser.SOURCE_JSON_TO_DATE[SRC_SCREEN_WILDERNESS_KIT] = "2020-11-17";
+Parser.SOURCE_JSON_TO_DATE[SRC_HEROES_FEAST] = "2020-10-27";
 Parser.SOURCE_JSON_TO_DATE[SRC_ALCoS] = "2016-03-15";
 Parser.SOURCE_JSON_TO_DATE[SRC_ALEE] = "2015-04-07";
 Parser.SOURCE_JSON_TO_DATE[SRC_ALRoD] = "2015-09-15";
@@ -2715,6 +2804,7 @@ Parser.SOURCE_JSON_TO_DATE[SRC_UA2020SMT] = "2020-03-26";
 Parser.SOURCE_JSON_TO_DATE[SRC_UA2020POR] = "2020-04-14";
 Parser.SOURCE_JSON_TO_DATE[SRC_UA2020SCR] = "2020-05-12";
 Parser.SOURCE_JSON_TO_DATE[SRC_UA2020F] = "2020-07-13";
+Parser.SOURCE_JSON_TO_DATE[SRC_UA2021GL] = "2020-01-26";
 
 Parser.SOURCES_ADVENTURES = new Set([
 	SRC_LMoP,
@@ -2785,6 +2875,7 @@ Parser.SOURCES_VANILLA = new Set([ // An opinionated set of source that could be
 	SRC_SADS,
 	SRC_TCE,
 	SRC_SCREEN,
+	SRC_SCREEN_WILDERNESS_KIT,
 ]);
 Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 [
@@ -2878,6 +2969,8 @@ Parser.TAG_TO_DEFAULT_SOURCE = {
 	"table": SRC_DMG,
 	"language": SRC_PHB,
 	"charoption": SRC_MOT,
+	"recipe": SRC_HEROES_FEAST,
+	"itemEntry": SRC_DMG,
 };
 Parser.getTagSource = function (tag, source) {
 	if (source && source.trim()) return source;

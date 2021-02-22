@@ -1,4 +1,69 @@
 {
+	"languageScript": [
+		{
+			"name": "Draconic",
+			"fonts": [
+				"fonts/languages/PHB/Draconic/Iokharic.otf",
+				"fonts/languages/PHB/Draconic/Iokharic Bold.otf",
+				"fonts/languages/PHB/Draconic/Iokharic Italic.otf",
+				"fonts/languages/PHB/Draconic/Iokharic Bold Italic.otf"
+			]
+		},
+		{
+			"name": "Dwarvish",
+			"fonts": [
+				"fonts/languages/PHB/Dwarvish/Dethek.otf",
+				"fonts/languages/PHB/Dwarvish/Dethek Bold.otf",
+				"fonts/languages/PHB/Dwarvish/Dethek Italic.otf",
+				"fonts/languages/PHB/Dwarvish/Dethek Bold Italic.otf",
+				"fonts/languages/PHB/Dwarvish/Dethek Stone.ttf",
+				"fonts/languages/PHB/Dwarvish/Dethek Alt.ttf",
+				"fonts/languages/PHB/Dwarvish/Olde Dethek.otf",
+				"fonts/languages/PHB/Dwarvish/Olde Dethek Italic.otf",
+				"fonts/languages/PHB/Dwarvish/Davek 4e.otf",
+				"fonts/languages/PHB/Dwarvish/Davek 4e Bold.otf",
+				"fonts/languages/PHB/Dwarvish/Davek 4e Italic.otf",
+				"fonts/languages/PHB/Dwarvish/Davek 4e Bold Italic.otf"
+			]
+		},
+		{
+			"name": "Elvish",
+			"fonts": [
+				"fonts/languages/PHB/Elvish/Espruar 5e.ttf",
+				"fonts/languages/PHB/Elvish/Espruar 3e.otf",
+				"fonts/languages/PHB/Elvish/Espruar 3e Bold.otf",
+				"fonts/languages/PHB/Elvish/Espruar 3e Italic.otf",
+				"fonts/languages/PHB/Elvish/Espruar 3e Bold Italic.otf",
+				"fonts/languages/PHB/Elvish/Espruar 3e Alt.ttf",
+				"fonts/languages/PHB/Elvish/Espruar 2e.ttf",
+				"fonts/languages/PHB/Elvish/Olde Espruar.otf",
+				"fonts/languages/PHB/Elvish/Rellanic 4e.otf",
+				"fonts/languages/PHB/Elvish/Rellanic 4e Bold.otf",
+				"fonts/languages/PHB/Elvish/Rellanic 4e Italic.otf",
+				"fonts/languages/PHB/Elvish/Rellanic 4e Bold Italic.otf"
+			]
+		},
+		{
+			"name": "Infernal",
+			"fonts": [
+				"fonts/languages/PHB/Infernal/Infernal.ttf",
+				"fonts/languages/PHB/Infernal/Barazhad.otf",
+				"fonts/languages/PHB/Infernal/Barazhad Bold.otf",
+				"fonts/languages/PHB/Infernal/Barazhad Italic.otf",
+				"fonts/languages/PHB/Infernal/Barazhad Bold Italic.otf"
+			]
+		},
+		{
+			"name": "Thorass",
+			"fonts": [
+				"fonts/languages/PHB/Human/Thorass.otf",
+				"fonts/languages/PHB/Human/Thorass Bold.otf",
+				"fonts/languages/PHB/Human/Thorass Italic.otf",
+				"fonts/languages/PHB/Human/Thorass Bold Italic.otf",
+				"fonts/languages/PHB/Human/Olde Thorass.otf"
+			]
+		}
+	],
 	"language": [
 		{
 			"name": "Aarakocra",
@@ -28,10 +93,7 @@
 			"typicalSpeakers": [
 				"{@filter demons|bestiary|tag=demon}"
 			],
-			"script": "Infernal",
-			"fonts": [
-				"fonts/languages/PHB/Infernal/Infernal.ttf"
-			]
+			"script": "Infernal"
 		},
 		{
 			"name": "Alzhedo",
@@ -50,7 +112,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blink Dog",
@@ -134,7 +197,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chondathan",
@@ -154,7 +218,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Common",
@@ -195,7 +260,10 @@
 			"typicalSpeakers": [
 				"{@filter humans|bestiary|type=humanoid|tag=any race;human}"
 			],
-			"script": "Common"
+			"script": "Common",
+			"fonts": [
+				"fonts/languages/PHB/Human/Harpers.ttf"
+			]
 		},
 		{
 			"name": "Daelkyr",
@@ -226,7 +294,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dambrathan",
@@ -314,15 +383,10 @@
 				"{@race dragonborn}"
 			],
 			"script": "Draconic",
-			"fonts": [
-				"fonts/languages/PHB/Draconic/Iokharic.otf",
-				"fonts/languages/PHB/Draconic/Iokharic Bold.otf",
-				"fonts/languages/PHB/Draconic/Iokharic Italic.otf",
-				"fonts/languages/PHB/Draconic/Iokharic Bold Italic.otf"
-			],
 			"entries": [
 				"Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants."
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Druidic",
@@ -374,15 +438,10 @@
 				"{@filter dwarves|bestiary|type=humanoid|tag=any race;dwarf}"
 			],
 			"script": "Dwarvish",
-			"fonts": [
-				"fonts/languages/PHB/Dwarvish/Davek.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Italic.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold Italic.otf"
-			],
 			"entries": [
 				"Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak."
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elvish",
@@ -421,15 +480,10 @@
 				"{@filter elves|bestiary|type=humanoid|tag=any race;elf}"
 			],
 			"script": "Elvish",
-			"fonts": [
-				"fonts/languages/PHB/Elvish/Rellanic Bold Italic.otf",
-				"fonts/languages/PHB/Elvish/Rellanic Bold.otf",
-				"fonts/languages/PHB/Elvish/Rellanic Italic.otf",
-				"fonts/languages/PHB/Elvish/Rellanic.otf"
-			],
 			"entries": [
 				"Elvish is fluid, with subtle intonations and intricate grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn their language so they can add Elvish ballads to their repertoires."
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant",
@@ -472,12 +526,7 @@
 				"{@filter giants|bestiary|type=giant}"
 			],
 			"script": "Dwarvish",
-			"fonts": [
-				"fonts/languages/PHB/Dwarvish/Davek.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Italic.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold Italic.otf"
-			]
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Eagle",
@@ -571,15 +620,10 @@
 				"{@filter gnomes|bestiary|type=humanoid|tag=any race;gnome}"
 			],
 			"script": "Dwarvish",
-			"fonts": [
-				"fonts/languages/PHB/Dwarvish/Davek.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Italic.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold Italic.otf"
-			],
 			"entries": [
 				"The Gnomish language, which uses the Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about the natural world."
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Goblin",
@@ -623,12 +667,7 @@
 				"{@filter goblinoids|bestiary|tag=goblinoid}"
 			],
 			"script": "Dwarvish",
-			"fonts": [
-				"fonts/languages/PHB/Dwarvish/Davek.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Italic.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold Italic.otf"
-			]
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grell",
@@ -706,12 +745,6 @@
 				"Halruaan ethnic group"
 			],
 			"script": "Draconic",
-			"fonts": [
-				"fonts/languages/PHB/Draconic/Iokharic.otf",
-				"fonts/languages/PHB/Draconic/Iokharic Bold.otf",
-				"fonts/languages/PHB/Draconic/Iokharic Italic.otf",
-				"fonts/languages/PHB/Draconic/Iokharic Bold Italic.otf"
-			],
 			"entries": [
 				{
 					"type": "inset",
@@ -764,7 +797,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Infernal",
@@ -785,10 +819,7 @@
 			"typicalSpeakers": [
 				"{@filter devils|bestiary|tag=devil}"
 			],
-			"script": "Infernal",
-			"fonts": [
-				"fonts/languages/PHB/Infernal/Infernal.ttf"
-			]
+			"script": "Infernal"
 		},
 		{
 			"name": "Ixitxachitl",
@@ -887,7 +918,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Minotaur",
@@ -937,7 +969,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Naush",
@@ -950,7 +983,8 @@
 		{
 			"name": "Netherese",
 			"source": "HotDQ",
-			"page": 93
+			"page": 93,
+			"script": "Draconic"
 		},
 		{
 			"name": "Olman",
@@ -977,15 +1011,10 @@
 				"{@filter orcs|bestiary|tag=orc}"
 			],
 			"script": "Dwarvish",
-			"fonts": [
-				"fonts/languages/PHB/Dwarvish/Davek.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Italic.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold Italic.otf"
-			],
 			"entries": [
 				" Orc is a harsh, grating language with hard consonants. It has no script of its own but is written in the Dwarvish script."
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Otyugh",
@@ -1036,15 +1065,10 @@
 				"{@filter elementals|bestiary|type=elemental}"
 			],
 			"script": "Dwarvish",
-			"fonts": [
-				"fonts/languages/PHB/Dwarvish/Davek.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Italic.otf",
-				"fonts/languages/PHB/Dwarvish/Davek Bold Italic.otf"
-			],
 			"entries": [
 				"Primordial is a guttural language, filled with harsh syllables and hard consonants."
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Qualith",
@@ -1088,7 +1112,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Riedran",
@@ -1117,7 +1142,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sahuagin",
@@ -1165,7 +1191,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Slaad",
@@ -1256,12 +1283,7 @@
 				"{@filter fey creatures|bestiary|type=fey}"
 			],
 			"script": "Elvish",
-			"fonts": [
-				"fonts/languages/PHB/Elvish/Rellanic Bold Italic.otf",
-				"fonts/languages/PHB/Elvish/Rellanic Bold.otf",
-				"fonts/languages/PHB/Elvish/Rellanic Italic.otf",
-				"fonts/languages/PHB/Elvish/Rellanic.otf"
-			]
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thayan",
@@ -1280,7 +1302,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thieves' Cant",
@@ -1348,7 +1371,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Turmic",
@@ -1367,7 +1391,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Uluik",
@@ -1386,7 +1411,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Umber Hulk",
@@ -1406,12 +1432,7 @@
 				"underdark traders"
 			],
 			"script": "Elvish",
-			"fonts": [
-				"fonts/languages/PHB/Elvish/Rellanic Bold Italic.otf",
-				"fonts/languages/PHB/Elvish/Rellanic Bold.otf",
-				"fonts/languages/PHB/Elvish/Rellanic Italic.otf",
-				"fonts/languages/PHB/Elvish/Rellanic.otf"
-			]
+			"hasFluffImages": true
 		},
 		{
 			"name": "Untheric",
@@ -1430,7 +1451,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vedalken",
@@ -1477,7 +1499,8 @@
 						"If your Dungeon Master allows this option, then any human from an ethnic group that has its own language is assumed to know that language as well as Common. This ethnic language is treated as a free additional language for such individuals."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Winter Wolf",

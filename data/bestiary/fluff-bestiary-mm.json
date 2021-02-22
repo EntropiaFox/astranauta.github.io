@@ -6185,23 +6185,6 @@
 			]
 		},
 		{
-			"name": "Giant Rat (Diseased)",
-			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Some giant rats carry vile diseases that they spread with their bites."
-							]
-						}
-					]
-				}
-			]
-		},
-		{
 			"name": "Giant Sea Horse",
 			"source": "MM",
 			"entries": [
@@ -7479,8 +7462,15 @@
 						{
 							"type": "entries",
 							"entries": [
-								"The degenerate subterranean grimlocks were once human, but their worship of the mind flayers over generations of prowling the Underdark transformed them into blind, monstrous cannibals long ago. Debased Cultists. The empire of the mind flayers once spread across many worlds, enslaving countless races. Among those were human cultures whose high priests the mind flayers subverted using their insidious powers of thought control. Those leaders gradually turned the faiths of their followers toward the illithids, which they worshiped as blasphemous deities.",
-								"Over time, the rituals of these enslaved humans created fervent cannibal cults that regarded the brain eating of the mind flayers as a holy sacrament. The illithids commanded their worshipers to abduct other sentient creatures to be sacrificed. After the victims' brains had been consumed, the mind flayers gave the lifeless bodies to the cultists.",
+								"The degenerate subterranean grimlocks were once human, but their worship of the mind flayers over generations of prowling the Underdark transformed them into blind, monstrous cannibals long ago.",
+								{
+									"type": "entries",
+									"name": "Debased Cultists",
+									"entries": [
+										"The empire of the mind flayers once spread across many worlds, enslaving countless races. Among those were human cultures whose high priests the mind flayers subverted using their insidious powers of thought control. Those leaders gradually turned the faiths of their followers toward the illithids, which they worshiped as blasphemous deities.",
+										"Over time, the rituals of these enslaved humans created fervent cannibal cults that regarded the brain eating of the mind flayers as a holy sacrament. The illithids commanded their worshipers to abduct other sentient creatures to be sacrificed. After the victims' brains had been consumed, the mind flayers gave the lifeless bodies to the cultists."
+									]
+								},
 								{
 									"name": "Blind Hunters",
 									"type": "entries",
@@ -14542,14 +14532,6 @@
 					}
 				}
 			]
-		},
-		{
-			"name": "Thri-kreen (Psionic)",
-			"source": "MM",
-			"_copy": {
-				"name": "Thri-kreen",
-				"source": "MM"
-			}
 		},
 		{
 			"name": "Thug",

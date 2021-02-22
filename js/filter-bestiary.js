@@ -176,7 +176,7 @@ class PageFilterBestiary extends PageFilter {
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			items: ["Familiar", ...Object.keys(Parser.MON_MISC_TAG_TO_FULL), "Bonus Actions", "Lair Actions", "Legendary", "Mythic", "Adventure NPC", "Spellcaster", ...Object.values(Parser.ATB_ABV_TO_FULL).map(it => `${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${it}`), "Regional Effects", "Reactions", "Swarm", "Has Variants", "Modified Copy", "Has Alternate Token", "Has Token", "SRD", "AC from Item(s)", "AC from Natural Armor", "AC from Unarmored Defense"],
+			items: ["Familiar", ...Object.keys(Parser.MON_MISC_TAG_TO_FULL), "Bonus Actions", "Lair Actions", "Legendary", "Mythic", "Adventure NPC", "Spellcaster", ...Object.values(Parser.ATB_ABV_TO_FULL).map(it => `${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${it}`), "Regional Effects", "Reactions", "Swarm", "Has Variants", "Modified Copy", "Has Alternate Token", "Has Info", "Has Images", "Has Token", "SRD", "AC from Item(s)", "AC from Natural Armor", "AC from Unarmored Defense"],
 			displayFn: (it) => Parser.monMiscTagToFull(it).uppercaseFirst(),
 			deselFn: (it) => it === "Adventure NPC",
 			itemSortFn: PageFilterBestiary.ascSortMiscFilter,
@@ -189,7 +189,7 @@ class PageFilterBestiary extends PageFilter {
 		});
 	}
 
-	mutateForFilters (mon) {
+	static mutateForFilters (mon) {
 		Renderer.monster.initParsed(mon);
 
 		if (typeof mon.speed === "number" && mon.speed > 0) {
@@ -248,6 +248,8 @@ class PageFilterBestiary extends PageFilter {
 		if (mon.srd) mon._fMisc.push("SRD");
 		if (mon.tokenUrl || mon.hasToken) mon._fMisc.push("Has Token");
 		if (mon.mythic) mon._fMisc.push("Mythic");
+		if (mon.hasFluff) mon._fMisc.push("Has Info");
+		if (mon.hasFluffImages) mon._fMisc.push("Has Images");
 		(mon.ac || []).forEach(it => {
 			if (!it.from) return;
 			if (it.from.includes("natural armor")) mon._fMisc.push("AC from Natural Armor");
@@ -419,7 +421,7 @@ class ModalFilterBestiary extends ModalFilter {
 		pageFilter.mutateAndAddToFilters(mon);
 
 		const eleLabel = document.createElement("label");
-		eleLabel.className = "row lst--border no-select lst__wrp-cells";
+		eleLabel.className = "w-100 flex-vh-center lst--border no-select lst__wrp-cells";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY](mon);
 		const source = Parser.sourceJsonToAbv(mon.source);

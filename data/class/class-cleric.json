@@ -15,6 +15,29 @@
 			],
 			"spellcastingAbility": "wis",
 			"casterProgression": "full",
+			"preparedSpells": "<$level$> + <$wis_mod$>",
+			"cantripProgression": [
+				3,
+				3,
+				3,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light",
@@ -2186,7 +2209,7 @@
 			"classSource": "PHB",
 			"level": 11,
 			"entries": [
-				"Starting at 11th level, when an {@filter undead of CR 2 or lower|bestiary|challenge rating=[&0;&2]|type=undead|miscellaneous=!swarm} or lower fails its saving throw against your Turn Undead feature, the creature is instantly destroyed."
+				"Starting at 11th level, when an {@filter undead of CR 2 or lower|bestiary|challenge rating=[&0;&2]|type=undead|miscellaneous=!swarm} fails its saving throw against your Turn Undead feature, the creature is instantly destroyed."
 			]
 		},
 		{
@@ -2413,7 +2436,7 @@
 			"level": 1,
 			"header": 1,
 			"entries": [
-				"At 1st level, the cleric learns one necromancy cantrip of his or her choice from any spell list. When the cleric casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other."
+				"At 1st level, the cleric learns one {@filter necromancy cantrip|spells|level=0|school=N} of his or her choice from any spell list. When the cleric casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other."
 			]
 		},
 		{

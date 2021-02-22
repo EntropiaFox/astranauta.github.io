@@ -11,7 +11,7 @@ class PageFilterCultsBoons extends PageFilter {
 		});
 	}
 
-	mutateForFilters (it) {
+	static mutateForFilters (it) {
 		it._fType = it.__prop === "cult" ? "Cult" : it.type ? `Boon, ${it.type}` : "Boon";
 	}
 

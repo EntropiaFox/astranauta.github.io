@@ -57,16 +57,18 @@ class ProxyBase {
 		return new Proxy(toProxy, {
 			set: (object, prop, value) => {
 				if (object[prop] === value) return true;
+				const prevValue = object[prop];
 				object[prop] = value;
-				if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hook => hook(prop, value));
-				if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, value));
+				if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hook => hook(prop, value, prevValue));
+				if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, value, prevValue));
 				return true;
 			},
 			deleteProperty: (object, prop) => {
 				if (!(prop in object)) return true;
+				const prevValue = object[prop];
 				delete object[prop];
-				if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hook => hook(prop, null));
-				if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, null));
+				if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hook => hook(prop, undefined, prevValue));
+				if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, undefined, prevValue));
 				return true;
 			},
 		});
@@ -108,6 +110,11 @@ class ProxyBase {
 			const ix = obj[hookProp][prop].findIndex(hk => hk === hook);
 			if (~ix) obj[hookProp][prop].splice(ix, 1);
 		}
+	}
+
+	_removeHooks (hookProp, prop) {
+		if (this.__hooks[hookProp]) delete this.__hooks[hookProp][prop];
+		if (this.__hooksTmp && this.__hooksTmp[hookProp]) delete this.__hooksTmp[hookProp][prop];
 	}
 
 	_removeHookAll (hookProp, hook) {
@@ -306,14 +313,14 @@ class UiUtil {
 
 		UiUtil._initModalEscapeHandler();
 		UiUtil._initModalMouseupHandlers();
-		$(document.activeElement).blur(); // blur any active element as it will be behind the modal
+		if (document.activeElement) document.activeElement.blur(); // blur any active element as it will be behind the modal
 
 		// if the user closed the modal by clicking the "cancel" background, isDataEntered is false
 		const pHandleCloseClick = async (isDataEntered, ...args) => {
 			if (opts.cbClose) await opts.cbClose(isDataEntered, ...args);
 
-			if (opts.isIndestructible) $overlay.detach();
-			else $overlay.remove();
+			if (opts.isIndestructible) wrpOverlay.detach();
+			else wrpOverlay.remove();
 
 			doTeardown();
 		};
@@ -324,20 +331,26 @@ class UiUtil {
 		};
 
 		const doOpen = () => {
-			$overlay.appendTo(document.body);
+			wrpOverlay.appendTo(document.body);
 			document.body.classList.add(`ui-modal__body-active`);
 		};
 
-		const $overlay = $(`<div class="ui-modal__overlay">`);
-		if (opts.zIndex != null) $overlay.css({zIndex: opts.zIndex});
-		if (opts.overlayColor != null) $overlay.css({backgroundColor: opts.overlayColor});
+		const wrpOverlay = e_({tag: "div", clazz: "ui-modal__overlay"});
+		if (opts.zIndex != null) wrpOverlay.style.zIndex = `${opts.zIndex}`;
+		if (opts.overlayColor != null) wrpOverlay.style.backgroundColor = `${opts.overlayColor}`;
 
 		// In "fullscreen" mode, blank out the modal background
-		const $overlayBlind = opts.isFullscreenModal
-			? $(`<div class="ui-modal__overlay-blind w-100 h-100 flex-col"></div>`).appendTo($overlay)
+		const overlayBlind = opts.isFullscreenModal
+			? e_({
+				tag: "div",
+				clazz: `ui-modal__overlay-blind w-100 h-100 flex-col`,
+			}).appendTo(wrpOverlay)
 			: null;
 
-		const $scroller = $(`<div class="ui-modal__scroller flex-col"></div>`);
+		const wrpScroller = e_({
+			tag: "div",
+			clazz: `ui-modal__scroller flex-col`,
+		});
 
 		const modalWindowClasses = [
 			opts.isWidth100 ? `w-100` : "",
@@ -350,27 +363,53 @@ class UiUtil {
 			opts.hasFooter ? `pb-0` : "",
 		].filter(Boolean);
 
-		const $btnCloseModal = opts.isFullscreenModal
-			? $(`<button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>`)
-				.click(() => pHandleCloseClick(false))
+		const btnCloseModal = opts.isFullscreenModal ? e_({
+			tag: "button",
+			clazz: `btn btn-danger btn-xs`,
+			html: `<span class="glyphicon glyphicon-remove></span>`,
+			click: pHandleCloseClick(false),
+		}) : null;
+
+		const modalFooter = opts.hasFooter
+			? e_({
+				tag: "div",
+				clazz: `"no-shrink w-100 flex-col ui-modal__footer ${opts.isFullscreenModal ? `ui-modal__footer--fullscreen mt-1` : ""}`,
+			})
 			: null;
 
-		const $modalFooter = opts.hasFooter ? $(`<div class="no-shrink w-100 flex-col ui-modal__footer ${opts.isFullscreenModal ? `ui-modal__footer--fullscreen mt-1` : ""}"></div>`) : null;
+		const modal = e_({
+			tag: "div",
+			clazz: `ui-modal__inner flex-col dropdown-menu ${modalWindowClasses.join(" ")}`,
+			children: [
+				!opts.isEmpty && opts.title
+					? e_({
+						tag: "div",
+						clazz: `split-v-center no-shrink ${opts.isHeaderBorder ? `ui-modal__header--border` : ""} ${opts.isFullscreenModal ? `ui-modal__header--fullscreen mb-1` : ""}`,
+						children: [
+							opts.title
+								? e_({
+									tag: "h4",
+									clazz: `my-2`,
+									html: opts.title.qq(),
+								})
+								: null,
 
-		const $modal = $$`<div class="ui-modal__inner flex-col dropdown-menu ${modalWindowClasses.join(" ")}">
-			${!opts.isEmpty && opts.title ? $$`<div class="split-v-center no-shrink ${opts.isHeaderBorder ? `ui-modal__header--border` : ""} ${opts.isFullscreenModal ? `ui-modal__header--fullscreen mb-1` : ""}">
-				${opts.title ? `<h4 class="my-2">${opts.title.escapeQuotes()}</h4>` : ""}${opts.$titleSplit || ""}${$btnCloseModal}
-			</div>` : null}
+							opts.$titleSplit ? opts.$titleSplit[0] : null,
 
-			${!opts.isEmpty ? $scroller : null}
+							btnCloseModal,
+						].filter(Boolean),
+					})
+					: null,
 
-			${$modalFooter}
-		</div>`
-			.appendTo(opts.isFullscreenModal ? $overlayBlind : $overlay);
+				!opts.isEmpty ? wrpScroller : null,
 
-		$overlay
-			.mouseup(evt => {
-				if (evt.target !== $overlay[0]) return;
+				modalFooter,
+			].filter(Boolean),
+		}).appendTo(opts.isFullscreenModal ? overlayBlind : wrpOverlay)
+
+		wrpOverlay
+			.addEventListener("mouseup", evt => {
+				if (evt.target !== wrpOverlay) return;
 				if (evt.target !== UiUtil._MODAL_LAST_MOUSEDOWN) return;
 				if (opts.isPermanent) return;
 				evt.stopPropagation();
@@ -388,9 +427,9 @@ class UiUtil {
 		if (!opts.isClosed) UiUtil._pushToModalStack(modalStackMeta);
 
 		const out = {
-			$modal,
-			$modalInner: $scroller,
-			$modalFooter,
+			$modal: $(modal),
+			$modalInner: $(wrpScroller),
+			$modalFooter: $(modalFooter),
 			doClose: pHandleCloseClick,
 			doTeardown,
 		};
@@ -741,9 +780,204 @@ ProfUiUtil.PROF_TO_FULL = {
 	},
 };
 
-class TabUiUtil {
+class TabUiUtilBase {
 	static decorate (obj) {
+		/* No-op */
+	}
+}
+
+class TabUiUtil extends TabUiUtilBase {
+	static decorate (obj) {
+		super.decorate(obj);
+
 		obj.__tabMetas = {};
+
+		obj._resetTabs = function (tabGroup) {
+			tabGroup = tabGroup || "_default";
+			(obj.__tabMetas[tabGroup] || [])
+				.filter(Boolean)
+				.forEach(tab => tab.fnCleanup());
+			obj.__tabMetas[tabGroup] = [];
+		};
+
+		obj._setActiveTab = function (tab, tabGroup) {
+			tabGroup = tabGroup || "_default";
+			const activeProp = `activeTab__${tabGroup}`;
+
+			const tabMeta = obj.__tabMetas[tabGroup];
+
+			const ix = tabMeta.indexOf(tab);
+			if (~ix) {
+				const _proxyProp = `_${tab.proxyProp}`;
+				obj[_proxyProp][activeProp] = ix;
+			}
+		};
+
+		obj._hasPrevTab = function (proxyProp, tabGroup) { return obj.__hasTab(proxyProp, tabGroup, -1); };
+		obj._hasNextTab = function (proxyProp, tabGroup) { return obj.__hasTab(proxyProp, tabGroup, 1); };
+
+		obj.__hasTab = function (proxyProp, tabGroup, offset) {
+			tabGroup = tabGroup || "_default";
+			const activeProp = `activeTab__${tabGroup}`;
+			const _proxyProp = `_${proxyProp}`;
+			const ixActive = obj[_proxyProp][activeProp];
+			return !!(obj.__tabMetas[tabGroup] && obj.__tabMetas[tabGroup][ixActive + offset]);
+		};
+
+		obj._doSwitchToPrevTab = function (proxyProp, tabGroup) { return obj.__doSwitchToTab(proxyProp, tabGroup, -1); };
+		obj._doSwitchToNextTab = function (proxyProp, tabGroup) { return obj.__doSwitchToTab(proxyProp, tabGroup, 1); };
+
+		obj.__doSwitchToTab = function (proxyProp, tabGroup, offset) {
+			if (!obj.__hasTab(proxyProp, tabGroup, offset)) return;
+			tabGroup = tabGroup || "_default";
+			const activeProp = `activeTab__${tabGroup}`;
+			const _proxyProp = `_${proxyProp}`;
+			obj[_proxyProp][activeProp] = obj[_proxyProp][activeProp] + offset;
+		};
+
+		/**
+		 * @param proxyProp
+		 * @param hk
+		 * @param [opts]
+		 * @param [opts.tabGroup]
+		 */
+		obj._addHookActiveTab = function (proxyProp, hk, opts) {
+			opts = opts || {};
+
+			const tabGroup = opts.tabGroup || "_default";
+			const activeProp = `activeTab__${tabGroup}`;
+
+			this._addHook(proxyProp, activeProp, hk);
+		};
+
+		/**
+		 * @param ix The tabs ordinal index.
+		 * @param name The name to display on the tab.
+		 * @param proxyProp E.g. "state", "meta", ...
+		 * @param [opts] Options object.
+		 * @param [opts.tabGroup] User-defined string identifying which group of tabs this belongs to.
+		 * @param [opts.hasBorder] True if the tab should compensate for having a top border; i.e. pad itself.
+		 * @param [opts.hasBackground] True if the tab should have a flat-color background.
+		 * @param [opts.cbTabChange] Callback function to call on tab change.
+		 */
+		obj._getTab = function (ix, name, proxyProp, opts) {
+			const tabGroup = opts.tabGroup || "_default";
+
+			const activeProp = `activeTab__${tabGroup}`;
+
+			const _proxyProp = `_${proxyProp}`;
+			const __proxyProp = `__${proxyProp}`;
+			obj[__proxyProp][activeProp] = obj[__proxyProp][activeProp] || 0;
+
+			const $btnTab = $(`<button class="btn btn-default ui-tab__btn-tab-head">${name}</button>`)
+				.click(() => obj[_proxyProp][activeProp] = ix);
+
+			const $wrpTab = $(`<div class="ui-tab__wrp-tab-body ve-hidden ${opts.hasBorder ? "ui-tab__wrp-tab-body--border" : ""} ${opts.hasBackground ? "ui-tab__wrp-tab-body--background" : ""}"></div>`);
+
+			const hkActiveTab = (prop, ixActive, prevIxActive) => {
+				$btnTab.toggleClass("ui-tab__btn-tab-head--active", ixActive === ix);
+				$wrpTab.toggleVe(ixActive === ix);
+
+				if (opts.cbTabChange) {
+					// If we were the tab switched away from, run the on-change callback (ensuring it only gets called once)
+					if (prevIxActive === ix && ixActive !== ix) opts.cbTabChange();
+				}
+			};
+			obj._addHook(proxyProp, activeProp, hkActiveTab);
+			hkActiveTab(activeProp, obj[_proxyProp][activeProp]);
+
+			const tab = {
+				ix,
+				$btnTab,
+				$wrpTab,
+				proxyProp,
+				fnCleanup: () => {
+					obj._removeHook(proxyProp, activeProp, hkActiveTab);
+				},
+			};
+
+			(obj.__tabMetas[tabGroup] = obj.__tabMetas[tabGroup] || [])[ix] = tab;
+
+			return tab;
+		};
+	}
+}
+
+class TabUiUtilSide extends TabUiUtilBase {
+	static decorate (obj) {
+		super.decorate();
+
+		obj._renderTabs = function ($parent, proxyProp, tabMetas) {
+			if (!tabMetas.length) throw new Error(`One or more tab meta must be specified!`);
+
+			const _proxyProp = `_${proxyProp}`;
+			const __proxyProp = `__${proxyProp}`;
+			this[__proxyProp].ixActiveTab = this[__proxyProp].ixActiveTab || 0;
+
+			const $dispTabTitle = $(`<div class="ui-tab-side__disp-active-tab-name bold"></div>`);
+
+			const renderTabMeta_buttons = (it) => {
+				const $btns = it.buttons.map((meta, j) => {
+					const $btn = $(`<button class="btn btn-primary btn-sm" ${meta.title ? `title="${meta.title.qq()}"` : ""}>${meta.html}</button>`)
+						.click(evt => meta.pFnClick(evt, $btn));
+
+					if (j === it.buttons.length - 1) $btn.addClass(`br-0 btr-0 bbr-0`);
+
+					return $btn;
+				});
+
+				const $btnTab = $$`<div class="btn-group flex-v-center flex-h-right mb-2">${$btns}</div>`;
+
+				return {
+					...it,
+					$btnTab,
+				};
+			};
+
+			const renderTabMetas_standard = (it, i) => {
+				const $btnTab = $(`<button class="btn btn-default btn-sm ui-tab-side__btn-tab mb-2 br-0 btr-0 bbr-0 text-left flex-v-center" title="${it.name.qq()}"><div class="${it.icon} ui-tab-side__icon-tab mr-2 mobile-ish__mr-0 text-center"></div><div class="mobile-ish__hidden">${it.name.qq()}</div></button>`)
+					.click(() => this[_proxyProp].ixActiveTab = i);
+
+				const $wrpTab = $(`<div class="flex-col w-100 min-h-100 h-100 ui-tab-side__wrp-tab px-3 py-2 overflow-y-auto"></div>`);
+
+				return {
+					...it,
+					ix: i,
+					$btnTab,
+					$wrpTab,
+				};
+			};
+
+			const tabMetasOut = tabMetas.map((it, i) => {
+				switch (it.type) {
+					case "buttons": return renderTabMeta_buttons(it, i);
+					default: return renderTabMetas_standard(it, i);
+				}
+			});
+
+			$$`<div class="flex-col w-100 h-100">
+				${$dispTabTitle}
+				<div class="flex w-100 h-100 min-h-0">
+					<div class="flex-col h-100 pt-2">${tabMetasOut.map(it => it.$btnTab)}</div>
+					<div class="flex-col w-100 h-100 min-w-0">${tabMetasOut.map(it => it.$wrpTab).filter(Boolean)}</div>
+				</div>
+			</div>`.appendTo($parent);
+
+			const hkActiveTab = () => {
+				tabMetasOut.forEach(it => {
+					if (it.type) return; // For specially typed tabs (e.g. buttons), do nothing
+
+					const isActive = it.ix === this[_proxyProp].ixActiveTab;
+					if (isActive) $dispTabTitle.text(it.name);
+					it.$btnTab.toggleClass("active", isActive);
+					it.$wrpTab.toggleVe(isActive);
+				});
+			};
+			this._addHook(proxyProp, "ixActiveTab", hkActiveTab);
+			hkActiveTab();
+
+			return tabMetasOut;
+		};
 
 		/**
 		 * @param ix The tabs ordinal index.
@@ -783,11 +1017,6 @@ class TabUiUtil {
 			const out = {ix, $btnTab, $wrpTab};
 			tabMeta[ix] = out;
 			return out;
-		};
-
-		obj._resetTabs = function (tabGroup) {
-			tabGroup = tabGroup || "_default";
-			obj.__tabMetas[tabGroup] = [];
 		};
 	}
 }
@@ -1186,6 +1415,7 @@ class SearchWidget {
 			// On the first keypress, switch to loading dots
 			this._$iptSearch.keydown(evt => {
 				if (evt.key === "Escape") this._$iptSearch.blur();
+				if (!this._$iptSearch.val().trim().length) return;
 				if (evt.which !== 13) {
 					if (lastSearchTerm === "") this.__showMsgWait();
 					lastSearchTerm = this._$iptSearch.val();
@@ -1299,10 +1529,8 @@ class SearchWidget {
 
 	static async pGetUserRaceSearch () {
 		// FIXME convert to be more like spell/creature search instead of running custom indexes
-		const dataSource = async () => {
-			const raceJson = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/races.json`);
-			const raceData = Renderer.race.mergeSubraces(raceJson.race);
-			return {race: raceData};
+		const dataSource = () => {
+			return DataUtil.race.loadJSON();
 		};
 		await SearchWidget.pLoadCustomIndex("entity_Races", dataSource, "race", Parser.CAT_ID_RACE, UrlUtil.PG_RACES, "races");
 
@@ -1598,7 +1826,7 @@ class InputUiUtil {
 		}
 
 		return new Promise(resolve => {
-			const $btnTrueRemember = opts.textYesRemember ? $(`<button class="btn btn-primary flex-v-center"><span class="glyphicon glyphicon-ok mr-2"></span><span>${opts.textYesRemember}</span></button>`)
+			const $btnTrueRemember = opts.textYesRemember ? $(`<button class="btn btn-primary flex-v-center mr-2"><span class="glyphicon glyphicon-ok mr-2"></span><span>${opts.textYesRemember}</span></button>`)
 				.click(() => {
 					doClose(true, true);
 					if (opts.fnRemember) {
@@ -2392,29 +2620,29 @@ class SourceUiUtil {
 				[$iptName, $iptAbv, $iptJson].forEach($ipt => $ipt.removeClass("form-control--error"));
 			});
 
-		const $stageInitial = $$`<div class="h-100 w-100 flex-vh-center"><div>
+		const $stageInitial = $$`<div class="h-100 w-100 flex-vh-center"><div class="flex-col">
 			<h3 class="text-center">${isEditMode ? "Edit Homebrew Source" : "Add a Homebrew Source"}</h3>
-			<div class="row ui-source__row mb-2"><div class="col-12 flex-v-center">
+			<div class="ui-source__row mb-2"><div class="col-12 flex-v-center">
 				<span class="mr-2 ui-source__name help" title="The name or title for the homebrew you wish to create. This could be the name of a book or PDF; for example, 'Monster Manual'">Title</span>
 				${$iptName}
 			</div></div>
-			<div class="row ui-source__row mb-2"><div class="col-12 flex-v-center">
+			<div class="ui-source__row mb-2"><div class="col-12 flex-v-center">
 				<span class="mr-2 ui-source__name help" title="An abbreviated form of the title. This will be shown in lists on the site, and in the top-right corner of statblocks or data entries; for example, 'MM'">Abbreviation</span>
 				${$iptAbv}
 			</div></div>
-			<div class="row ui-source__row mb-2"><div class="col-12 flex-v-center">
+			<div class="ui-source__row mb-2"><div class="col-12 flex-v-center">
 				<span class="mr-2 ui-source__name help" title="This will be used to identify your homebrew universally, so should be unique to you and you alone">JSON Identifier</span>
 				${$iptJson}
 			</div></div>
-			<div class="row ui-source__row mb-2"><div class="col-12 flex-v-center">
+			<div class="ui-source__row mb-2"><div class="col-12 flex-v-center">
 				<span class="mr-2 ui-source__name help" title="A link to the original homebrew, e.g. a GM Binder page">Source URL</span>
 				${$iptUrl}
 			</div></div>
-			<div class="row ui-source__row mb-2"><div class="col-12 flex-v-center">
+			<div class="ui-source__row mb-2"><div class="col-12 flex-v-center">
 				<span class="mr-2 ui-source__name help" title="A comma-separated list of authors, e.g. 'John Doe, Joe Bloggs'">Author(s)</span>
 				${$iptAuthors}
 			</div></div>
-			<div class="row ui-source__row mb-2"><div class="col-12 flex-v-center">
+			<div class="ui-source__row mb-2"><div class="col-12 flex-v-center">
 				<span class="mr-2 ui-source__name help" title="A comma-separated list of people who converted the homebrew to 5etools' format, e.g. 'John Doe, Joe Bloggs'">Converted By</span>
 				${$iptConverters}
 			</div></div>
@@ -2453,8 +2681,8 @@ class SourceUiUtil {
 
 		const $stageExisting = $$`<div class="h-100 w-100 flex-vh-center" style="display: none;"><div>
 			<h3 class="text-center">Select a Homebrew Source</h3>
-			<div class="row mb-2"><div class="col-12 flex-vh-center">${$selExisting}</div></div>
-			<div class="row"><div class="col-12 flex-vh-center">${$btnBackExisting}${$btnConfirmExisting}</div></div>
+			<div class="mb-2"><div class="col-12 flex-vh-center">${$selExisting}</div></div>
+			<div class="col-12 flex-vh-center">${$btnBackExisting}${$btnConfirmExisting}</div>
 		</div></div>`.appendTo(options.$parent);
 	}
 }
@@ -2472,11 +2700,15 @@ class BaseComponent extends ProxyBase {
 	}
 
 	_addHookBase (prop, hook) {
-		this._addHook("state", prop, hook);
+		return this._addHook("state", prop, hook);
 	}
 
 	_removeHookBase (prop, hook) {
-		this._removeHook("state", prop, hook);
+		return this._removeHook("state", prop, hook);
+	}
+
+	_removeHooksBase (prop) {
+		return this._removeHooks("state", prop);
 	}
 
 	_setState (toState) {
@@ -2513,8 +2745,8 @@ class BaseComponent extends ProxyBase {
 		};
 	}
 
-	setBaseSaveableStateFrom (toLoad) {
-		toLoad.state && Object.assign(this._state, toLoad.state);
+	setBaseSaveableStateFrom (toLoad, isOverwrite = false) {
+		toLoad.state && this._proxyAssignSimple("state", toLoad.state, isOverwrite);
 	}
 
 	/**
@@ -2533,6 +2765,7 @@ class BaseComponent extends ProxyBase {
 	 * @param opts Options object.
 	 * @param opts.prop The state property.
 	 * @param [opts.fnDeleteExisting] Function to run on deleted render meta. Arguments are `rendered, item`.
+	 * @param [opts.fnReorderExisting] Function to run on all meta, as a final step. Useful for re-ordering elements.
 	 * @param opts.fnUpdateExisting Function to run on existing render meta. Arguments are `rendered, item`.
 	 * @param opts.fnGetNew Function to run which generates existing render meta. Arguments are `item`.
 	 * @param [opts.isDiffMode] If a diff of the state should be taken/checked before updating renders.
@@ -2582,6 +2815,13 @@ class BaseComponent extends ProxyBase {
 			delete rendered[id];
 			if (opts.fnDeleteExisting) opts.fnDeleteExisting(meta);
 		});
+
+		if (opts.fnReorderExisting) {
+			(this._state[opts.prop] || []).forEach((it, i) => {
+				const meta = rendered[it.id];
+				opts.fnReorderExisting(meta, it, i);
+			});
+		}
 	}
 
 	/**
@@ -2685,7 +2925,7 @@ class BaseComponent extends ProxyBase {
 
 	// to be overridden as required
 	getSaveableState () { return {...this.getBaseSaveableState()}; }
-	setStateFrom (toLoad) { this.setBaseSaveableStateFrom(toLoad); }
+	setStateFrom (toLoad, isOverwrite = false) { this.setBaseSaveableStateFrom(toLoad, isOverwrite); }
 
 	async _pLock (lockName) {
 		while (this.__locks[lockName]) await this.__locks[lockName].lock;
@@ -2695,6 +2935,10 @@ class BaseComponent extends ProxyBase {
 			lock,
 			unlock,
 		}
+	}
+
+	async _pGate (lockName) {
+		while (this.__locks[lockName]) await this.__locks[lockName].lock;
 	}
 
 	_unlock (lockName) {
@@ -2768,6 +3012,10 @@ class RenderableCollectionBase {
 		// No-op
 	}
 
+	doReorderExistingComponent (renderedMeta, entity, i) {
+		// No-op
+	}
+
 	/**
 	 * @param [opts] Temporary override options.
 	 * @param [opts.isDiffMode]
@@ -2776,9 +3024,10 @@ class RenderableCollectionBase {
 		opts = opts || {};
 		this._comp._renderCollection({
 			prop: this._prop,
-			fnUpdateExisting: (rendered, source, i) => this.doUpdateExistingRender(rendered, source, i),
+			fnUpdateExisting: (rendered, ent, i) => this.doUpdateExistingRender(rendered, ent, i),
 			fnGetNew: (entity, i) => this.getNewRender(entity, i),
 			fnDeleteExisting: (rendered) => this.doDeleteExistingRender(rendered),
+			fnReorderExisting: (rendered, ent, i) => this.doReorderExistingComponent(rendered, ent, i),
 			namespace: this._namespace,
 			isDiffMode: opts.isDiffMode != null ? opts.isDiffMode : this._isDiffMode,
 		});
@@ -3114,7 +3363,9 @@ class ComponentUiUtil {
 					component._state[prop] = fnConvert(raw.slice(1), fallbackEmpty, opts) - opts.offset;
 				} else {
 					// otherwise, try to modify the previous value
-					const mUnary = /^[-+/*^]/.exec(raw);
+					const mUnary = prevValue != null && prevValue < 0
+						? /^[+/*^]/.exec(raw) // If the previous value was `-X`, then treat minuses as normal values
+						: /^[-+/*^]/.exec(raw);
 					if (mUnary) {
 						const cur = component._state[prop];
 						let proc = raw;
@@ -3127,12 +3378,17 @@ class ComponentUiUtil {
 					}
 				}
 			});
+		let prevValue;
 		const hook = () => {
 			if (opts.isAllowNull && component._state[prop] == null) {
+				prevValue = null;
 				return $ipt.val(null);
 			}
+
 			const num = (component._state[prop] || 0) + opts.offset;
-			$ipt.val(opts.padLength ? `${num}`.padStart(opts.padLength, "0") : num)
+			const val = opts.padLength ? `${num}`.padStart(opts.padLength, "0") : num;
+			prevValue = val;
+			$ipt.val(val);
 		};
 		if (opts.hookTracker) ComponentUiUtil.trackHook(opts.hookTracker, prop, hook);
 		component._addHookBase(prop, hook);
@@ -3260,7 +3516,7 @@ class ComponentUiUtil {
 	 * @param prop Component to hook on.
 	 * @param [opts] Options Object.
 	 * @param [opts.$ele] Element to use.
-	 * @return {JQuery}
+	 * @return {$}
 	 */
 	static $getIptEntries (component, prop, opts) {
 		opts = opts || {};
@@ -3269,6 +3525,7 @@ class ComponentUiUtil {
 			.keydown(evt => { if (evt.key === "Escape") $ipt.blur(); })
 			.change(() => component._state[prop] = UiUtil.getTextAsEntries($ipt.val().trim()));
 		const hook = () => $ipt.val(UiUtil.getEntriesAsText(component._state[prop]));
+		component._addHookBase(prop, hook);
 		hook();
 		return $ipt;
 	}
@@ -3361,6 +3618,7 @@ class ComponentUiUtil {
 	 * @param prop Component to hook on.
 	 * @param opts Options Object.
 	 * @param opts.values Values to display.
+	 * @param [opts.isHiddenPerValue]
 	 * @param [opts.$ele] Element to use.
 	 * @param [opts.html] HTML to convert to element to use.
 	 * @param [opts.isAllowNull] If null is allowed.
@@ -3382,7 +3640,7 @@ class ComponentUiUtil {
 			const cleanTerm = this._$getSelSearchable_getSearchString($iptSearch.val());
 			metaOptions.forEach(it => {
 				it.isVisible = it.searchTerm.includes(cleanTerm);
-				it.$ele.toggleVe(it.isVisible);
+				it.$ele.toggleVe(it.isVisible && !it.isForceHidden);
 			});
 		};
 		const handleSearchChangeDebounced = MiscUtil.debounce(handleSearchChange, 30);
@@ -3395,14 +3653,14 @@ class ComponentUiUtil {
 
 					case "ArrowDown": {
 						evt.preventDefault();
-						const visibleMetaOptions = metaOptions.filter(it => it.isVisible);
+						const visibleMetaOptions = metaOptions.filter(it => it.isVisible && !it.isForceHidden);
 						if (!visibleMetaOptions.length) return;
 						visibleMetaOptions[0].$ele.focus();
 						break;
 					}
 
 					case "Enter": {
-						const visibleMetaOptions = metaOptions.filter(it => it.isVisible);
+						const visibleMetaOptions = metaOptions.filter(it => it.isVisible && !it.isForceHidden);
 						if (!visibleMetaOptions.length) return;
 						comp._state[prop] = visibleMetaOptions[0].value;
 						break;
@@ -3431,6 +3689,9 @@ class ComponentUiUtil {
 				.click(() => {
 					comp._state[prop] = v;
 					$(document.activeElement).blur();
+					// Temporarily remove pointer events from the dropdown, so it collapses thanks to its :hover CSS
+					$wrp.addClass("no-events");
+					setTimeout(() => $wrp.removeClass("no-events"), 50);
 				})
 				.keydown(evt => {
 					switch (evt.key) {
@@ -3438,7 +3699,7 @@ class ComponentUiUtil {
 
 						case "ArrowDown": {
 							evt.preventDefault();
-							const visibleMetaOptions = metaOptions.filter(it => it.isVisible);
+							const visibleMetaOptions = metaOptions.filter(it => it.isVisible && !it.isForceHidden);
 							if (!visibleMetaOptions.length) return;
 							const ixCur = visibleMetaOptions.indexOf(out);
 							const nxt = visibleMetaOptions[ixCur + 1];
@@ -3448,7 +3709,7 @@ class ComponentUiUtil {
 
 						case "ArrowUp": {
 							evt.preventDefault();
-							const visibleMetaOptions = metaOptions.filter(it => it.isVisible);
+							const visibleMetaOptions = metaOptions.filter(it => it.isVisible && !it.isForceHidden);
 							if (!visibleMetaOptions.length) return;
 							const ixCur = visibleMetaOptions.indexOf(out);
 							const prev = visibleMetaOptions[ixCur - 1];
@@ -3466,14 +3727,30 @@ class ComponentUiUtil {
 				})
 				.appendTo($wrpChoices);
 
+			const isForceHidden = opts.isHiddenPerValue && !!(opts.isAllowNull ? opts.isHiddenPerValue[i - 1] : opts.isHiddenPerValue[i]);
+			if (isForceHidden) $ele.hideVe();
+
 			const out = {
 				value: v,
 				isVisible: true,
+				isForceHidden,
 				searchTerm: this._$getSelSearchable_getSearchString(display),
 				$ele,
 			};
 			return out;
 		});
+
+		const fnUpdateHidden = (isHiddenPerValue, isHideNull = false) => {
+			let metaOptions_ = metaOptions;
+
+			if (opts.isAllowNull) {
+				metaOptions_[0].isForceHidden = isHideNull;
+				metaOptions_ = metaOptions_.slice(1);
+			}
+
+			metaOptions_.forEach((it, i) => it.isForceHidden = !!isHiddenPerValue[i]);
+			handleSearchChange();
+		};
 
 		const hk = () => {
 			if (comp._state[prop] == null) $iptDisplay.addClass("italic").val(opts.displayNullAs || "\u2014");
@@ -3486,7 +3763,15 @@ class ComponentUiUtil {
 		comp._addHookBase(prop, hk);
 		hk();
 
-		return opts.asMeta ? ({$wrp, unhook: () => comp._removeHookBase(prop, hk)}) : $wrp;
+		return opts.asMeta
+			? ({
+				$wrp,
+				unhook: () => comp._removeHookBase(prop, hk),
+				$iptDisplay,
+				$iptSearch,
+				fnUpdateHidden,
+			})
+			: $wrp;
 	}
 
 	static _$getSelSearchable_getSearchString (str) {
@@ -3505,31 +3790,52 @@ class ComponentUiUtil {
 	 * @param [opts.fnDisplay] Value display function.
 	 * @param [opts.displayNullAs] If null values are allowed, display them as this string.
 	 * @param [opts.asMeta] If a meta-object should be returned containing the hook and the select.
-	 * @return {JQuery}
 	 */
 	static $getSelEnum (component, prop, opts) {
 		opts = opts || {};
 
-		const $sel = (opts.$ele || $(opts.html || `<select class="form-control input-xs"></select>`))
-			.change(() => {
-				const ix = Number($sel.val());
-				if (~ix) component._state[prop] = opts.values[ix];
-				else {
-					if (opts.isAllowNull) component._state[prop] = null;
-					else component._state[prop] = opts.values[0];
-				}
-			});
-		if (opts.isAllowNull) $(`<option/>`, {value: -1, text: opts.displayNullAs || "\u2014"}).appendTo($sel);
-		opts.values.forEach((it, i) => $(`<option/>`, {value: i, text: opts.fnDisplay ? opts.fnDisplay(it) : it}).appendTo($sel));
+		let values;
+
+		let $sel = opts.$ele ? opts.$ele : opts.html ? $(opts.html) : null;
+		// Use native API, if we can, for performance
+		if (!$sel) { const sel = document.createElement("select"); sel.className = "form-control input-xs"; $sel = $(sel); }
+
+		$sel.change(() => {
+			const ix = Number($sel.val());
+			if (~ix) component._state[prop] = values[ix];
+			else {
+				if (opts.isAllowNull) component._state[prop] = null;
+				else component._state[prop] = values[0];
+			}
+		});
+
+		const setValues = (nxtValues) => {
+			if (CollectionUtil.deepEquals(values, nxtValues)) return;
+			values = nxtValues;
+			$sel.empty();
+			// Use native API for performance
+			if (opts.isAllowNull) { const opt = document.createElement("option"); opt.value = "-1"; opt.text = opts.displayNullAs || "\u2014"; $sel.append(opt); }
+			values.forEach((it, i) => { const opt = document.createElement("option"); opt.value = `${i}`; opt.text = opts.fnDisplay ? opts.fnDisplay(it) : it; $sel.append(opt); });
+			hook();
+		};
+
 		const hook = () => {
 			const searchFor = component._state[prop] === undefined ? null : component._state[prop];
 			// Null handling is done in change handler
-			const ix = opts.values.indexOf(searchFor);
+			const ix = values.indexOf(searchFor);
 			$sel.val(`${ix}`);
 		};
 		component._addHookBase(prop, hook);
-		hook();
-		return opts.asMeta ? ({$sel, unhook: () => component._removeHookBase(prop, hook)}) : $sel;
+
+		setValues(opts.values);
+
+		if (!opts.asMeta) return $sel;
+
+		return {
+			$sel,
+			hook: () => component._removeHookBase(prop, hook),
+			setValues,
+		};
 	}
 
 	/**
@@ -3538,18 +3844,57 @@ class ComponentUiUtil {
 	 * @param opts Options Object.
 	 * @param opts.values Values to display.
 	 * @param [opts.fnDisplay] Value display function.
-	 * @return {JQuery}
 	 */
 	static $getPickEnum (component, prop, opts) {
+		return this._$getPickEnumOrString(component, prop, opts);
+	}
+
+	/**
+	 * @param component An instance of a class which extends BaseComponent.
+	 * @param prop Component to hook on.
+	 * @param [opts] Options Object.
+	 * @param [opts.values] Values to display.
+	 * @param [opts.isCaseInsensitive] If the values should be case insensitive.
+	 */
+	static $getPickString (component, prop, opts) {
+		return this._$getPickEnumOrString(component, prop, {...opts, isFreeText: true});
+	}
+
+	/**
+	 * @param component An instance of a class which extends BaseComponent.
+	 * @param prop Component to hook on.
+	 * @param opts Options Object.
+	 * @param [opts.values] Values to display.
+	 * @param [opts.fnDisplay] Value display function.
+	 * @param [opts.isFreeText] If the picker should accept free text.
+	 * @param [opts.isCaseInsensitive] If the picker should accept free text.
+	 */
+	static _$getPickEnumOrString (component, prop, opts) {
 		opts = opts || {};
 
-		const initialVals = opts.values
+		const initialValuesArray = (opts.values || []).concat(opts.isFreeText ? MiscUtil.copy((component._state[prop] || [])) : []);
+		const initialVals = initialValuesArray
+			.map(v => opts.isCaseInsensitive ? v.toLowerCase() : v)
 			.mergeMap(v => ({[v]: component._state[prop] && component._state[prop].includes(v)}));
 
-		const menu = ContextUtil.getMenu(opts.values.map(it => new ContextUtil.Action(
-			opts.fnDisplay ? opts.fnDisplay(it) : it,
-			() => pickComp.getPod().set(it, true),
-		)));
+		let $btnAdd;
+		if (opts.isFreeText) {
+			$btnAdd = $(`<button class="btn btn-xxs btn-default ui-pick__btn-add">+</button>`)
+				.click(async () => {
+					const input = await InputUiUtil.pGetUserString();
+					if (input == null || input === VeCt.SYM_UI_SKIP) return;
+					const inputClean = opts.isCaseInsensitive ? input.trim().toLowerCase() : input.trim();
+					pickComp.getPod().set(inputClean, true);
+				});
+		} else {
+			const menu = ContextUtil.getMenu(opts.values.map(it => new ContextUtil.Action(
+				opts.fnDisplay ? opts.fnDisplay(it) : it,
+				() => pickComp.getPod().set(it, true),
+			)));
+
+			$btnAdd = $(`<button class="btn btn-xxs btn-default ui-pick__btn-add">+</button>`)
+				.click(evt => ContextUtil.pOpenMenu(evt, menu));
+		}
 
 		const pickComp = BaseComponent.fromObject(initialVals);
 		pickComp.render = function ($parent) {
@@ -3558,14 +3903,11 @@ class ComponentUiUtil {
 			Object.entries(this._state).forEach(([k, v]) => {
 				if (v === false) return;
 
-				const $btnRemove = $(`<button class="btn btn-danger ui-pick__btn-remove">×</button>`)
+				const $btnRemove = $(`<button class="btn btn-danger ui-pick__btn-remove text-center">×</button>`)
 					.click(() => this._state[k] = false);
 				$$`<div class="flex mx-1 mb-1 ui-pick__disp-pill"><div class="px-1 ui-pick__disp-text flex-v-center">${opts.fnDisplay ? opts.fnDisplay(k) : k}</div>${$btnRemove}</div>`.appendTo($parent);
 			});
 		};
-
-		const $btnAdd = $(`<button class="btn btn-xxs btn-default ui-pick__btn-add mb-1">+</button>`)
-			.click(evt => ContextUtil.pOpenMenu(evt, menu));
 
 		const $wrpPills = $(`<div class="flex flex-wrap w-100"></div>`);
 		const $wrp = $$`<div class="flex-v-center">${$btnAdd}${$wrpPills}</div>`;
@@ -3623,6 +3965,7 @@ class ComponentUiUtil {
 		return opts.asMeta ? {$wrp, unhook: () => component._removeHookBase(prop, hook)} : $wrp;
 	}
 
+	// region Multi Choice
 	/**
 	 * @param comp
 	 * @param prop Base prop. This will be expanded with `__...`-suffixed sub-props as required.
@@ -3653,9 +3996,9 @@ class ComponentUiUtil {
 		valueGroups.forEach((group, i) => {
 			if (i !== 0) $eles.push($(`<hr class="w-100 hr-1 hr--dotted">`));
 
-			if (group.name) $eles.push($(`<div class="flex-v-center row py-1"><span class="mr-2">‒</span><span>${group.name}</span></div>`));
+			if (group.name) $eles.push($(`<div class="flex-v-center py-1"><span class="mr-2">‒</span><span>${group.name}</span></div>`));
 
-			if (group.text) $eles.push($(`<div class="flex-v-center row py-1"><div class="ml-1 mr-3"></div><i>${group.text}</i></div>`));
+			if (group.text) $eles.push($(`<div class="flex-v-center py-1"><div class="ml-1 mr-3"></div><i>${group.text}</i></div>`));
 
 			group.values.forEach(v => {
 				const ixValueFrozen = ixValue;
@@ -3710,15 +4053,19 @@ class ComponentUiUtil {
 				comp._addHookBase(propIsActive, hk);
 				hk();
 
+				const displayValue = opts.fnDisplay ? opts.fnDisplay(v, ixValueFrozen) : v;
+
 				rowMetas.push({
 					$cb,
+					displayValue,
+					value: v,
 					propIsActive,
 					unhook: () => comp._removeHookBase(propIsActive, hk),
 				});
 
-				$eles.push($$`<label class="flex-v-center row py-1 stripe-even">
+				$eles.push($$`<label class="flex-v-center py-1 stripe-even">
 					<div class="col-1 flex-vh-center">${$cb}</div>
-					<div class="col-11 flex-v-center">${opts.fnDisplay ? opts.fnDisplay(v, ixValueFrozen) : v}</div>
+					<div class="col-11 flex-v-center">${displayValue}</div>
 				</label>`);
 
 				ixValue++;
@@ -3735,6 +4082,7 @@ class ComponentUiUtil {
 		const unhook = () => rowMetas.forEach(it => it.unhook());
 		return {
 			$ele: $$`<div class="flex-col w-100 overflow-y-auto">${$eles}</div>`,
+			rowMetas, // Return this to allow for creating custom UI
 			propIsAcceptable,
 			propPulse,
 			unhook,
@@ -3786,22 +4134,414 @@ class ComponentUiUtil {
 		// If no mode is specified, default to a "count 1" chooser
 		if (opts.count == null && opts.min == null && opts.max == null) opts.count = 1;
 	}
-}
+	// endregion
 
-if (typeof module !== "undefined") {
-	module.exports = {
-		ProxyBase,
-		UiUtil,
-		ListUiUtil,
-		ProfUiUtil,
-		TabUiUtil,
-		SearchUiUtil,
-		SearchWidget,
-		InputUiUtil,
-		DragReorderUiUtil,
-		SourceUiUtil,
-		BaseComponent,
-		ComponentUiUtil,
-		RenderableCollectionBase,
+	/**
+	 * @param comp An instance of a class which extends BaseComponent.
+	 * @param opts Options Object.
+	 * @param opts.propMin
+	 * @param opts.propMax
+	 * @param opts.propCurMin
+	 * @param opts.propCurMax
+	 * @param [opts.fnDisplay] Value display function.
+	 */
+	static $getSliderRange (comp, opts) {
+		opts = opts || {};
+		const slider = new ComponentUiUtil.RangeSlider({comp, ...opts});
+		return slider.$get();
 	}
 }
+ComponentUiUtil.RangeSlider = class {
+	constructor (
+		{
+			comp,
+			propMin,
+			propMax,
+			propCurMin,
+			propCurMax,
+			fnDisplay,
+		},
+	) {
+		this._comp = comp;
+		this._propMin = propMin;
+		this._propMax = propMax;
+		this._propCurMin = propCurMin;
+		this._propCurMax = propCurMax;
+		this._fnDisplay = fnDisplay;
+
+		// region Make a copy of the interesting bits of the parent component, so we can freely change them without
+		//   outside performance implications
+		this._compCpy = BaseComponent.fromObject({
+			[this._propMin]: this._comp._state[this._propMin],
+			[this._propMax]: this._comp._state[this._propMax],
+			[this._propCurMin]: this._comp._state[this._propCurMin],
+			[this._propCurMax]: this._comp._state[this._propCurMax],
+		});
+
+		// Sync parent changes to our state
+		this._comp._addHook("state", this._propMin, () => this._compCpy._state[this._propMin] = this._comp._state[this._propMin]);
+		this._comp._addHook("state", this._propMax, () => this._compCpy._state[this._propMax] = this._comp._state[this._propMax]);
+		this._comp._addHook("state", this._propCurMin, () => this._compCpy._state[this._propCurMin] = this._comp._state[this._propCurMin]);
+		this._comp._addHook("state", this._propCurMax, () => this._compCpy._state[this._propCurMax] = this._comp._state[this._propCurMax]);
+		// endregion
+
+		this._cacheRendered = null;
+		this._dispTrackOuter = null;
+		this._dispTrackInner = null;
+		this._thumbLow = null;
+		this._thumbHigh = null;
+		this._dragMeta = null;
+	}
+
+	$get () {
+		const out = this.get();
+		return $(out);
+	}
+
+	get () {
+		this.constructor._init();
+		this.constructor._ALL_SLIDERS.add(this);
+
+		if (this._cacheRendered) return this._cacheRendered;
+
+		// region Top part
+		const dispValueLeft = this._getDispValue({isBorder: true, side: "left"});
+		const dispValueRight = this._getDispValue({isBorder: true, side: "right"});
+
+		this._dispTrackInner = e_({
+			tag: "div",
+			clazz: "ui-slidr__track-inner h-100 absolute",
+		});
+
+		this._thumbLow = this._getThumb();
+		this._thumbHigh = this._getThumb();
+
+		this._dispTrackOuter = e_({
+			tag: "div",
+			clazz: `relative w-100 ui-slidr__track-outer`,
+			children: [
+				this._dispTrackInner,
+				this._thumbLow,
+				this._thumbHigh,
+			],
+		});
+
+		const wrpTrack = e_({
+			tag: "div",
+			clazz: `flex-v-center w-100 h-100 ui-slidr__wrp-track`,
+			mousedown: evt => {
+				const thumb = this._getClosestThumb(evt);
+				this._handleMouseDown(evt, thumb);
+			},
+			children: [
+				this._dispTrackOuter,
+			],
+		});
+
+		const wrpTop = e_({
+			tag: "div",
+			clazz: "flex-v-center w-100 ui-slidr__wrp-top",
+			children: [
+				dispValueLeft,
+				wrpTrack,
+				dispValueRight,
+			],
+		});
+		// endregion
+
+		// region Bottom part
+		const wrpPips = e_({
+			tag: "div",
+			clazz: `w-100 flex relative clickable h-100 ui-slidr__wrp-pips`,
+			mousedown: evt => {
+				const thumb = this._getClosestThumb(evt);
+				this._handleMouseDown(evt, thumb);
+			},
+		});
+
+		const wrpBottom = e_({
+			tag: "div",
+			clazz: "w-100 flex-vh-center ui-slidr__wrp-bottom",
+			children: [
+				this._getDispValue({side: "left"}), // Pad the start
+				wrpPips,
+				this._getDispValue({side: "right"}), // and the end
+			],
+		});
+		// endregion
+
+		// region Hooks
+		const hkChangeValue = () => {
+			const min = this._compCpy._state[this._propMin]; const max = this._compCpy._state[this._propMax];
+			const curMin = this._compCpy._state[this._propCurMin]; const curMax = this._compCpy._state[this._propCurMax];
+
+			const pctMin = ((curMin - min) / (max - min)) * 100; const pctMax = ((curMax - min) / (max - min)) * 100;
+
+			this._dispTrackInner.style.left = `${pctMin}%`;
+			this._dispTrackInner.style.right = `${100 - pctMax}%`;
+
+			this._thumbLow.style.left = `calc(${pctMin}% - ${this.constructor._W_THUMB_PX / 2}px)`;
+			this._thumbHigh.style.left = `calc(${pctMax}% - ${this.constructor._W_THUMB_PX / 2}px)`;
+
+			dispValueLeft.html(this._fnDisplay ? `${this._fnDisplay(curMin)}`.qq() : curMin);
+			dispValueRight.html(this._fnDisplay ? `${this._fnDisplay(curMax)}`.qq() : curMax);
+		};
+
+		const hkChangeLimit = () => {
+			const pips = [];
+
+			const numPips = this._compCpy._state[this._propMax] - this._compCpy._state[this._propMin];
+			let pipIncrement = 1;
+			// Cap the number of pips
+			if (numPips > ComponentUiUtil.RangeSlider._MAX_PIPS) pipIncrement = Math.ceil(numPips / ComponentUiUtil.RangeSlider._MAX_PIPS);
+
+			let i, len;
+			for (
+				i = this._compCpy._state[this._propMin], len = this._compCpy._state[this._propMax] + 1;
+				i < len;
+				i += pipIncrement
+			) {
+				pips.push(this._getWrpPip({
+					isMajor: i === this._compCpy._state[this._propMin] || i === (len - 1),
+					value: i,
+				}));
+			}
+
+			// Ensure the last pip is always rendered, even if we're reducing pips
+			if (i !== this._compCpy._state[this._propMax]) pips.push(this._getWrpPip({isMajor: true, value: this._compCpy._state[this._propMax]}));
+
+			wrpPips.empty();
+			e_({
+				ele: wrpPips,
+				children: pips,
+			});
+
+			hkChangeValue();
+		};
+
+		this._compCpy._addHook("state", this._propMin, hkChangeLimit);
+		this._compCpy._addHook("state", this._propMax, hkChangeLimit);
+		this._compCpy._addHook("state", this._propCurMin, hkChangeValue);
+		this._compCpy._addHook("state", this._propCurMax, hkChangeValue);
+
+		hkChangeLimit();
+		// endregion
+
+		const wrp = e_({
+			tag: "div",
+			clazz: "flex-col w-100 ui-slidr__wrp",
+			children: [
+				wrpTop,
+				wrpBottom,
+			],
+		});
+
+		return this._cacheRendered = wrp;
+	}
+
+	destroy () {
+		this.constructor._ALL_SLIDERS.remove(this);
+		if (this._cacheRendered) this._cacheRendered.remove();
+	}
+
+	_getDispValue ({isBorder, side}) {
+		return e_({
+			tag: "div",
+			clazz: `overflow-hidden ui-slidr__disp-value no-shrink no-grow flex-vh-center bold no-select ${isBorder ? `ui-slidr__disp-value--border` : ""} ui-slidr__disp-value--${side}`,
+		});
+	}
+
+	_getThumb () {
+		const thumb = e_({
+			tag: "div",
+			clazz: "ui-slidr__thumb absolute not-clickable",
+			mousedown: evt => this._handleMouseDown(evt, thumb),
+		}).attr("draggable", true);
+
+		return thumb;
+	}
+
+	_getWrpPip ({isMajor, value} = {}) {
+		const min = this._compCpy._state[this._propMin]; const max = this._compCpy._state[this._propMax];
+		const pctValue = ((value - min) / (max - min)) * 100;
+		const posLeft = `${pctValue}%`;
+		const styleLeft = `left: ${posLeft};`;
+
+		const pip = e_({
+			tag: "div",
+			clazz: `ui-slidr__pip ${isMajor ? `ui-slidr__pip--major` : `absolute`}`,
+		});
+
+		const dispLabel = e_({
+			tag: "div",
+			clazz: "absolute ui-slidr__pip-label flex-vh-center ve-small no-wrap",
+			html: isMajor ? this._fnDisplay ? `${this._fnDisplay(value)}`.qq() : value : "",
+		});
+
+		return e_({
+			tag: "div",
+			clazz: "flex-col flex-vh-center absolute no-select",
+			children: [
+				pip,
+				dispLabel,
+			],
+			style: styleLeft,
+		});
+	}
+
+	/**
+	 * Convert pixel-space to track-space.
+	 * Example usage:
+	 * ```
+	 * click: evt => {
+	 *   const {x: trackOriginX, width: trackWidth} = this._dispTrackOuter.getBoundingClientRect();
+	 *   const value = this._getRelativeValue(evt, {trackOriginX, trackWidth});
+	 *   this._handleClick(evt, value);
+	 * }
+	 * ```
+	 */
+	_getRelativeValue (evt, {trackOriginX, trackWidth}) {
+		const min = this._compCpy._state[this._propMin]; const max = this._compCpy._state[this._propMax];
+
+		const xEvt = EventUtil.getClientX(evt) - trackOriginX;
+		const rawVal = min
+			+ Math.round(
+				(xEvt / trackWidth) * (max - min),
+			);
+
+		return Math.min(max, Math.max(min, rawVal)); // Clamp eet
+	}
+
+	_getClosestThumb (evt) {
+		const {x: trackOriginX, width: trackWidth} = this._dispTrackOuter.getBoundingClientRect();
+		const value = this._getRelativeValue(evt, {trackOriginX, trackWidth});
+
+		if (value < this._compCpy._state[this._propCurMin]) return this._thumbLow;
+		if (value > this._compCpy._state[this._propCurMax]) return this._thumbHigh;
+
+		const {distToMin, distToMax} = this._getDistsToCurrentMinAndMax(value);
+		if (distToMax < distToMin) return this._thumbHigh;
+		return this._thumbLow;
+	}
+
+	_getDistsToCurrentMinAndMax (value) {
+		// Move the closest slider to this pip's location
+		const distToMin = Math.abs(this._compCpy._state[this._propCurMin] - value);
+		const distToMax = Math.abs(this._compCpy._state[this._propCurMax] - value);
+		return {distToMin, distToMax}
+	}
+
+	_handleClick (evt, value) {
+		evt.stopPropagation();
+		evt.preventDefault();
+
+		// If lower than the lowest value, set the low value
+		if (value < this._compCpy._state[this._propCurMin]) this._compCpy._state[this._propCurMin] = value;
+
+		// If higher than the highest value, set the high value
+		if (value > this._compCpy._state[this._propCurMax]) this._compCpy._state[this._propCurMax] = value;
+
+		// Move the closest slider to this pip's location
+		const {distToMin, distToMax} = this._getDistsToCurrentMinAndMax(value);
+
+		if (distToMax < distToMin) this._compCpy._state[this._propCurMax] = value;
+		else this._compCpy._state[this._propCurMin] = value;
+	}
+
+	_handleMouseDown (evt, thumb) {
+		evt.preventDefault();
+		evt.stopPropagation();
+
+		// region Set drag metadata
+		const {x: trackOriginX, width: trackWidth} = this._dispTrackOuter.getBoundingClientRect();
+
+		thumb.addClass(`ui-slidr__thumb--hover`);
+
+		this._dragMeta = {
+			trackOriginX,
+			trackWidth,
+			thumb,
+		};
+		// endregion
+	}
+
+	_handleMouseUp () {
+		const wasActive = this._doDragCleanup();
+
+		// On finishing a slide, push our state to the parent comp
+		if (wasActive) {
+			this._comp._proxyAssignSimple(
+				"state",
+				{
+					[this._propMin]: this._compCpy._state[this._propMin],
+					[this._propMax]: this._compCpy._state[this._propMax],
+					[this._propCurMin]: this._compCpy._state[this._propCurMin],
+					[this._propCurMax]: this._compCpy._state[this._propCurMax],
+				},
+			);
+		}
+	}
+
+	_handleMouseMove (evt) {
+		if (!this._dragMeta) return;
+
+		const val = this._getRelativeValue(evt, this._dragMeta);
+
+		if (this._dragMeta.thumb === this._thumbLow) {
+			if (val > this._compCpy._state[this._propCurMax]) return;
+			this._compCpy._state[this._propCurMin] = val;
+		} else if (this._dragMeta.thumb === this._thumbHigh) {
+			if (val < this._compCpy._state[this._propCurMin]) return;
+			this._compCpy._state[this._propCurMax] = val;
+		}
+	}
+
+	_doDragCleanup () {
+		const isActive = this._dragMeta != null;
+
+		if (this._dragMeta?.thumb) this._dragMeta.thumb.removeClass(`ui-slidr__thumb--hover`);
+
+		this._dragMeta = null;
+
+		return isActive;
+	}
+
+	static _init () {
+		if (this._isInit) return;
+		document.addEventListener("mousemove", evt => {
+			for (const slider of this._ALL_SLIDERS) {
+				slider._handleMouseMove(evt);
+			}
+		});
+
+		document.addEventListener("mouseup", evt => {
+			for (const slider of this._ALL_SLIDERS) {
+				slider._handleMouseUp(evt);
+			}
+		});
+	}
+}
+ComponentUiUtil.RangeSlider._isInit = false;
+ComponentUiUtil.RangeSlider._ALL_SLIDERS = new Set();
+ComponentUiUtil.RangeSlider._W_THUMB_PX = 16;
+ComponentUiUtil.RangeSlider._W_LABEL_PX = 24;
+ComponentUiUtil.RangeSlider._MAX_PIPS = 40;
+
+// Expose classes for Node/VTTs as appropriate
+const utilsUiExports = {
+	ProxyBase,
+	UiUtil,
+	ListUiUtil,
+	ProfUiUtil,
+	TabUiUtil,
+	SearchUiUtil,
+	SearchWidget,
+	InputUiUtil,
+	DragReorderUiUtil,
+	SourceUiUtil,
+	BaseComponent,
+	ComponentUiUtil,
+	RenderableCollectionBase,
+};
+if (typeof module !== "undefined") module.exports = utilsUiExports;
+else Object.assign(window, utilsUiExports);

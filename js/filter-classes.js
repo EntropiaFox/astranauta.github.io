@@ -54,11 +54,11 @@ class PageFilterClasses extends PageFilter {
 
 	get optionsFilter () { return this._optionsFilter; }
 
-	mutateForFilters (cls) {
+	static mutateForFilters (cls) {
 		cls.source = cls.source || SRC_PHB;
 		cls.subclasses = cls.subclasses || [];
 
-		cls._fSourceSubclass = [cls.source, ...cls.subclasses.map(it => it.source)];
+		cls._fSourceSubclass = [...new Set([cls.source, ...cls.subclasses.map(it => it.source)])];
 
 		cls._fMisc = [];
 		if (cls.isReprinted) cls._fMisc.push("Reprinted");
@@ -111,18 +111,35 @@ class PageFilterClasses extends PageFilter {
 		opts.isCompact = true;
 	}
 
-	toDisplay (values, it) {
-		const isAnySubclassDisplayed = values[this._optionsFilter.header].isDisplayClassIfSubclassActive && (it.subclasses || []).some(sc => {
+	isClassNaturallyDisplayed (values, cls) {
+		return this._filterBox.toDisplay(
+			values,
+			cls.source,
+			cls._fMisc,
+		);
+	}
+
+	isAnySubclassDisplayed (values, cls) {
+		return values[this._optionsFilter.header].isDisplayClassIfSubclassActive && (cls.subclasses || []).some(sc => {
 			return this._filterBox.toDisplay(
 				values,
 				sc.source,
 				sc._fMisc,
 			);
 		});
+	}
 
+	/** Return the first active source we find; use this as a fake source for things we want to force-display. */
+	getActiveSource (values) {
+		const sourceFilterValues = values[this._sourceFilter.header];
+		if (!sourceFilterValues) return null;
+		return Object.keys(sourceFilterValues).find(it => this._sourceFilter.toDisplay(values, it));
+	}
+
+	toDisplay (values, it) {
 		return this._filterBox.toDisplay(
 			values,
-			isAnySubclassDisplayed ? it._fSourceSubclass : it.source,
+			this.isAnySubclassDisplayed(values, it) ? it._fSourceSubclass : it.source,
 			it._fMisc,
 		)
 	}

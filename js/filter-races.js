@@ -92,8 +92,8 @@ class PageFilterRaces extends PageFilter {
 	constructor () {
 		super();
 
-		const sizeFilter = new Filter({header: "Size", displayFn: Parser.sizeAbvToFull, itemSortFn: PageFilterRaces.filterAscSortSize});
-		const asiFilter = new Filter({
+		this._sizeFilter = new Filter({header: "Size", displayFn: Parser.sizeAbvToFull, itemSortFn: PageFilterRaces.filterAscSortSize});
+		this._asiFilter = new Filter({
 			header: "Ability Bonus (Including Subrace)",
 			items: [
 				"Player Choice",
@@ -118,9 +118,9 @@ class PageFilterRaces extends PageFilter {
 			],
 			itemSortFn: PageFilterRaces.filterAscSortAsi,
 		});
-		const baseRaceFilter = new Filter({header: "Base Race"});
-		const speedFilter = new Filter({header: "Speed", items: ["Climb", "Fly", "Swim", "Walk (Fast)", "Walk", "Walk (Slow)"]});
-		const traitFilter = new Filter({
+		this._baseRaceFilter = new Filter({header: "Base Race"});
+		this._speedFilter = new Filter({header: "Speed", items: ["Climb", "Fly", "Swim", "Walk (Fast)", "Walk", "Walk (Slow)"]});
+		this._traitFilter = new Filter({
 			header: "Traits",
 			items: [
 				"Amphibious",
@@ -148,7 +148,7 @@ class PageFilterRaces extends PageFilter {
 				return it === "NPC Race";
 			},
 		});
-		const languageFilter = new Filter({
+		this._languageFilter = new Filter({
 			header: "Languages",
 			items: [
 				"Abyssal",
@@ -171,18 +171,16 @@ class PageFilterRaces extends PageFilter {
 			],
 			umbrellaItems: ["Choose"],
 		});
-		const miscFilter = new Filter({header: "Miscellaneous", items: ["Base Race", "Key Race", "Modified Copy", "SRD"], isSrdFilter: true});
-
-		this._sizeFilter = sizeFilter;
-		this._asiFilter = asiFilter;
-		this._baseRaceFilter = baseRaceFilter;
-		this._speedFilter = speedFilter;
-		this._traitFilter = traitFilter;
-		this._languageFilter = languageFilter;
-		this._miscFilter = miscFilter;
+		this._creatureTypeFilter = new Filter({
+			header: "Creature Type",
+			items: Parser.MON_TYPES,
+			displayFn: StrUtil.toTitleCase,
+			itemSortFn: SortUtil.ascSortLower,
+		});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Base Race", "Key Race", "Modified Copy", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
 	}
 
-	mutateForFilters (race) {
+	static mutateForFilters (race) {
 		if (race.ability) {
 			const abils = PageFilterRaces.getAbilityObjs(race.ability);
 			race._fAbility = abils.map(a => PageFilterRaces.mapAbilityObjToFull(a));
@@ -202,10 +200,13 @@ class PageFilterRaces extends PageFilter {
 		race._fTraits.push(...(race.traitTags || []));
 		race._fSources = SourceFilter.getCompleteFilterSources(race);
 		race._fLangs = PageFilterRaces.getLanguageProficiencyTags(race.languageProficiencies);
+		race._fCreatureTypes = race.creatureTypes ? race.creatureTypes.map(it => it.choose || it).flat() : ["humanoid"];
 		race._fMisc = race.srd ? ["SRD"] : [];
 		if (race._isBaseRace) race._fMisc.push("Base Race");
 		if (race._isBaseRace || !race._isSubRace) race._fMisc.push("Key Race");
 		if (race._isCopy) race._fMisc.push("Modified Copy");
+		if (race.hasFluff) race._fMisc.push("Has Info");
+		if (race.hasFluffImages) race._fMisc.push("Has Images");
 
 		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "None"};
 		race._slAbility = ability.asTextShort;
@@ -218,6 +219,7 @@ class PageFilterRaces extends PageFilter {
 		this._sizeFilter.addItem(race.size);
 		this._asiFilter.addItem(race._fAbility);
 		this._baseRaceFilter.addItem(race._baseName);
+		this._creatureTypeFilter.addItem(race._fCreatureTypes);
 		this._traitFilter.addItem(race._fTraits);
 	}
 
@@ -230,6 +232,7 @@ class PageFilterRaces extends PageFilter {
 			this._traitFilter,
 			this._languageFilter,
 			this._baseRaceFilter,
+			this._creatureTypeFilter,
 			this._miscFilter,
 		];
 	}
@@ -244,6 +247,7 @@ class PageFilterRaces extends PageFilter {
 			r._fTraits,
 			r._fLangs,
 			r._baseName,
+			r._fCreatureTypes,
 			r._fMisc,
 		)
 	}
@@ -300,13 +304,14 @@ class ModalFilterRaces extends ModalFilter {
 	}
 
 	async _pLoadAllData () {
-		const rawRaceData = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/races.json`);
-		return Renderer.race.mergeSubraces(rawRaceData.race);
+		const fromData = await DataUtil.race.loadJSON();
+		const fromBrew = await DataUtil.race.loadBrew();
+		return [...fromData.race, ...fromBrew.race];
 	}
 
 	_getListItem (pageFilter, race, rI) {
 		const eleLabel = document.createElement("label");
-		eleLabel.className = "row lst--border no-select lst__wrp-cells";
+		eleLabel.className = "w-100 flex-vh-center lst--border no-select lst__wrp-cells";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](race);
 		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "None"};

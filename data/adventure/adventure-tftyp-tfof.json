@@ -3309,7 +3309,7 @@
 										"Do the duergar have some of Durgeddin's items? If so, are they guarding them or using them?"
 									]
 								},
-								"You can also use this adventure to sow the seeds of the characters' next activity. Perhaps the party encounters a legend of a magical treasure from Khundrukar's fall, buried in the tomb of an evil knight. Maybe Great Ulfe's ogre clan is terrorizing a nearby area, or an ore war chief wields a legendary weapon that was crafted by Durgeddin."
+								"You can also use this adventure to sow the seeds of the characters' next activity. Perhaps the party encounters a legend of a magical treasure from Khundrukar's fall, buried in the tomb of an evil knight. Maybe Great Ulfe's ogre clan is terrorizing a nearby area, or an {@creature orc war chief} wields a legendary weapon that was crafted by Durgeddin."
 							]
 						}
 					]

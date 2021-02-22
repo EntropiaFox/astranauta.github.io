@@ -674,7 +674,7 @@
 		{
 			"name": "Keen Sight",
 			"entries": [
-				"The <$name$> has advantage on Wisdom (perception) checks that rely on sight."
+				"The <$name$> has advantage on Wisdom ({@skill Perception}) checks that rely on sight."
 			]
 		},
 		{
@@ -686,7 +686,7 @@
 		{
 			"name": "Keen Smell",
 			"entries": [
-				"The <$name$> has advantage on Wisdom (perception) checks that rely on smell."
+				"The <$name$> has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
 			]
 		},
 		{

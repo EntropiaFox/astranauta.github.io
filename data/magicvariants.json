@@ -507,7 +507,8 @@
 					"An armblade is a magic weapon that attaches to your arm, becoming inseparable from you as long as you're attuned to it. To attune to this item, you must hold it against your forearm for the entire attunement period.",
 					"As a bonus action, you can retract the armblade into your forearm or extend it from there. While it is extended, you can use the weapon as if you were holding it, and you can't use that hand for other purposes."
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Armor of Acid Resistance",
@@ -522,10 +523,16 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "acid",
+				"resist": [
+					"acid"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
@@ -541,10 +548,16 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "cold",
+				"resist": [
+					"cold"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
@@ -560,10 +573,16 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "fire",
+				"resist": [
+					"fire"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
@@ -579,10 +598,16 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "force",
+				"resist": [
+					"force"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
@@ -617,10 +642,16 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "lightning",
+				"resist": [
+					"lightning"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
@@ -636,10 +667,16 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "necrotic",
+				"resist": [
+					"necrotic"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
@@ -655,10 +692,16 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "poison",
+				"resist": [
+					"poison"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
@@ -674,10 +717,16 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "psychic",
+				"resist": [
+					"psychic"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
@@ -693,10 +742,16 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "radiant",
+				"resist": [
+					"radiant"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
@@ -712,14 +767,20 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
-				"resist": "thunder",
+				"resist": [
+					"thunder"
+				],
 				"tier": "major",
 				"rarity": "rare",
-				"reqAttune": true
+				"reqAttune": true,
+				"hasRefs": true,
+				"entries": [
+					"{#itemEntry Armor of Resistance}"
+				]
 			}
 		},
 		{
-			"name": "Arrow of Slaying (Generic)",
+			"name": "Arrow of Slaying (*)",
 			"type": "GV",
 			"requires": [
 				{
@@ -734,6 +795,7 @@
 			},
 			"ammo": true,
 			"entries": [
+				"{@note * This generic variant has the same name and source as the item {@item arrow of slaying}}.",
 				"An {@italic arrow of slaying} is a magic weapon meant to slay a particular kind of creature. Some are more focused than others; for example, there are both {@italic arrows of dragon slaying} and {@italic arrows of blue dragon slaying}. If a creature belonging to the type, race, or group associated with an {@italic arrow of slaying} takes damage from the arrow, the creature must make a DC 17 Constitution saving throw, taking an extra {@dice 6d10} piercing damage on a failed save, or half as much extra damage on a successful one.",
 				"Once an {@italic arrow of slaying} deals its extra damage to a creature, it becomes a nonmagical arrow.",
 				"Other types of magic ammunition of this kind exist, such as bolts of slaying meant for a crossbow, though arrows are most common."
@@ -749,7 +811,8 @@
 					"{=baseName/at} {=baseName/l} of slaying is a magic weapon meant to slay a particular kind of creature. Some are more focused than others; for example, there are both {@i {=baseName/l}s of dragon slaying} and {@i {=baseName/l}s of blue dragon slaying}. If a creature belonging to the type, race, or group associated with {=baseName/a} {=baseName/l} of slaying takes damage from the {=baseName/l}, the creature must make a DC 17 Constitution saving throw, taking an extra {@dice 6d10} piercing damage on a failed save, or half as much extra damage on a successful one.",
 					"Once {=baseName/a} {=baseName/l} of slaying deals its extra damage to a creature, it becomes a nonmagical {=baseName/l}."
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Barding",
@@ -810,7 +873,8 @@
 				"lootTables": [
 					"Magic Item Table G"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blade of the Medusa",
@@ -904,7 +968,8 @@
 				"lootTables": [
 					"Magic Item Table H"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Defender",
@@ -931,7 +996,8 @@
 				"lootTables": [
 					"Magic Item Table I"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dragon Slayer",
@@ -957,7 +1023,8 @@
 				"lootTables": [
 					"Magic Item Table G"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow +1 Armor",
@@ -1022,7 +1089,8 @@
 				"lootTables": [
 					"Magic Item Table G"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frost Brand",
@@ -1037,6 +1105,9 @@
 				"source": "DMG",
 				"page": 171,
 				"srd": true,
+				"resist": [
+					"fire"
+				],
 				"tier": "major",
 				"rarity": "very rare",
 				"reqAttune": true,
@@ -1048,7 +1119,8 @@
 				"lootTables": [
 					"Magic Item Table H"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gambler's Blade",
@@ -1104,7 +1176,8 @@
 				"lootTables": [
 					"Magic Item Table G"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hellfire Weapon",
@@ -1123,7 +1196,8 @@
 					"This weapon is fashioned from infernal iron and traced with veins of hellfire that shed dim light in a 5-foot-radius.",
 					"Any humanoid killed by an attack made with this weapon has its soul funneled into the River Styx, where it's reborn instantly as a {@creature lemure} devil."
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Holy Avenger",
@@ -1150,7 +1224,8 @@
 				"lootTables": [
 					"Magic Item Table I"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Imbued Wood (Fernian Ash)",
@@ -1441,7 +1516,7 @@
 				}
 			],
 			"inherits": {
-				"namePrefix": "Last Stand Armor ",
+				"namePrefix": "Last Stand ",
 				"source": "EGW",
 				"page": 267,
 				"rarity": "very rare",
@@ -1464,6 +1539,11 @@
 				"namePrefix": "Living ",
 				"source": "ERLW",
 				"page": 278,
+				"resist": [
+					"necrotic",
+					"poison",
+					"psychic"
+				],
 				"rarity": "very rare",
 				"reqAttune": true,
 				"bonusAc": "+1",
@@ -1541,7 +1621,8 @@
 				"lootTables": [
 					"Magic Item Table I"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mariner's Armor",
@@ -1730,7 +1811,8 @@
 				"lootTables": [
 					"Magic Item Table H"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orb of Shielding (Fernian Basalt)",
@@ -2220,12 +2302,13 @@
 				"reqAttune": true,
 				"entries": [
 					"When you attack a creature with this magic weapon and roll a 20 on the attack roll, that target takes an extra 10 necrotic damage if it isn't a construct or an undead. You also gain 10 temporary hit points.",
-					"{@i Note: According to the SRD, it is an extra {@dice 3d6} necrotic damage.}"
+					"{@i Note: According to the SRD, it is an extra {@dice 3d6} necrotic damage, although {@link this is incorrect|https://rpg.stackexchange.com/a/174522/53884}.}"
 				],
 				"lootTables": [
 					"Magic Item Table G"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sword of Sharpness",
@@ -2247,13 +2330,14 @@
 				"entries": [
 					"When you attack an object with this magic sword and hit, maximize your weapon damage dice against the target.",
 					"When you attack a creature with this weapon and roll a 20 on the attack roll, that target takes an extra 14 slashing damage. Then roll another {@dice d20}. If you roll a 20, you lop off one of the target's limbs, with the effect of such loss determined by the DM. If the creature has no limb to sever, you lop off a portion of its body instead.",
-					"{@i Note: According to the SRD, it is an extra {@dice 4d6} slashing damage, although {@link this is incorrect|https://twitter.com/JeremyECrawford/status/949111823990534144}}.",
+					"{@i Note: According to the SRD, it is an extra {@dice 4d6} slashing damage, although {@link this is incorrect|https://rpg.stackexchange.com/a/174522/53884}}.",
 					"In addition, you can speak the sword's command to cause the blade to shed bright light in a 10-foot radius and dim light for an additional 10 feet. Speaking the command word again or sheathing the sword puts out the light."
 				],
 				"lootTables": [
 					"Magic Item Table H"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sword of Vengeance",
@@ -2327,7 +2411,7 @@
 			},
 			"entries": [
 				"When you roll a 20 with this magic weapon, the target takes an extra 7 damage of the weapon's type.",
-				"{@i Note: According to the SRD, it is an extra {@dice 2d6} damage.}"
+				"{@i Note: According to the SRD, it is an extra {@dice 2d6} damage, although {@link this is incorrect|https://rpg.stackexchange.com/a/174522/53884}.}"
 			],
 			"inherits": {
 				"namePrefix": "Vicious +1 ",
@@ -2338,7 +2422,7 @@
 				"entries": [
 					"You have a {=bonusWeapon} bonus to attack and damage rolls made with this weapon.",
 					"When you roll a 20 with this magic weapon, the target takes an extra 7 {=dmgType} damage.",
-					"{@i Note: According to the SRD, it is an extra {@dice 2d6} {=dmgType} damage.}"
+					"{@i Note: According to the SRD, it is an extra {@dice 2d6} {=dmgType} damage, although {@link this is incorrect|https://rpg.stackexchange.com/a/174522/53884}.}"
 				]
 			}
 		},
@@ -2355,7 +2439,7 @@
 			},
 			"entries": [
 				"When you roll a 20 with this magic weapon, the target takes an extra 7 damage of the weapon's type.",
-				"{@i Note: According to the SRD, it is an extra {@dice 2d6} damage.}"
+				"{@i Note: According to the SRD, it is an extra {@dice 2d6} damage, although {@link this is incorrect|https://rpg.stackexchange.com/a/174522/53884}.}"
 			],
 			"inherits": {
 				"namePrefix": "Vicious ",
@@ -2366,12 +2450,13 @@
 				"rarity": "rare",
 				"entries": [
 					"When you roll a 20 with this magic weapon, the target takes an extra 7 {=dmgType} damage.",
-					"{@i Note: According to the SRD, it is an extra {@dice 2d6} {=dmgType} damage.}"
+					"{@i Note: According to the SRD, it is an extra {@dice 2d6} {=dmgType} damage, although {@link this is incorrect|https://rpg.stackexchange.com/a/174522/53884}.}"
 				],
 				"lootTables": [
 					"Magic Item Table G"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vorpal Sword",
@@ -2398,7 +2483,8 @@
 				"lootTables": [
 					"Magic Item Table I"
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Walloping Ammunition",
@@ -2465,7 +2551,8 @@
 				"lootTables": [
 					"Magic Item Table F"
 				]
-			}
+			},
+			"hasFluffImages": true
 		}
 	],
 	"linkedLootTables": {

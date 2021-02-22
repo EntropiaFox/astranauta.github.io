@@ -163,6 +163,18 @@
 			]
 		},
 		{
+			"name": "Automatic Success",
+			"source": "DMG",
+			"page": 239,
+			"ruleType": "VO",
+			"entries": [
+				"Sometimes the randomness of a {@dice d20} roll leads to ludicrous results. Let's say a door requires a DC 15 Strength check to batter down. A fighter with Strength 20 might helplessly flail against the door due to bad die rolls. Meanwhile, the rogue with a 10 Strength rolls a natural 20 on her first check and knocks the door from its hinges.",
+				"If such results bother you, allow automatic success on checks for characters with high ability scores. Under this optional rule, a character automatically succeeds on any ability check with a DC less than or equal to the relevant ability score minus 5. So in the above example, the fighter would automatically kick in the door. This rule doesn't apply to contests, saving throws, or attack rolls.",
+				"The downside of this approach is its predictability. Once a character's ability score reaches 20, checks of DC 15 and lower using that ability become automatic successes. Smart players will then always try to match the character with the highest ability score against any given check. If you want some risk of failure, you need to set higher DCs. Doing this, though, can merely aggravate the problem you're trying to solve: higher DCs require higher die rolls, and thus rely even more on luck.",
+				"You can modify this rule to account for proficiencies using an additional option. If a character can apply a proficiency bonus to the check, he or she automatically succeeds if its DC is less than or equal to the relevant ability score. If you don't mind predictability, and you can resist the temptation to increase DCs, you might find that this variant speeds up play and focuses attention on truly difficult, tense situations."
+			]
+		},
+		{
 			"name": "Cleaving Through Creatures",
 			"source": "DMG",
 			"page": 272,
@@ -4300,7 +4312,7 @@
 						"As a DM, you have a lot to track during the game. Sometimes you can lose track of inspiration and forget to award it. As a variant rule, you can allow the players to handle awarding inspiration entirely. During every session, each player can award inspiration to another player. A player follows whatever guidelines the group has agreed on for awarding inspiration.",
 						"This approach makes your life easier and also gives players the chance to recognize each other for good play. You still need to make sure that inspiration is being awarded fairly.",
 						"This approach works best with groups that are focused on the story. It falls flat if the players merely manipulate it to gain advantage in key situations, without earning inspiration by way of good roleplaying or whatever other criteria the group has established.",
-						"In this variant, you can allow each player to award inspiration more than once per session. If you do so, the first time that a player awards inspiration in a session is free. Whenever that player awards it later in the same session. you gain inspiration that you can spend to give advantage to any foe of the player characters. There's no limit to the number of inspirations you can gain in this way, and unspent inspiration carries over from one session to the next."
+						"In this variant, you can allow each player to award inspiration more than once per session. If you do so, the first time that a player awards inspiration in a session is free. Whenever that player awards it later in the same session, you gain inspiration that you can spend to give advantage to any foe of the player characters. There's no limit to the number of inspirations you can gain in this way, and unspent inspiration carries over from one session to the next."
 					]
 				}
 			]
@@ -5574,7 +5586,7 @@
 									"name": "Spells Known and Prepared",
 									"entries": [
 										"You determine what spells you know and can prepare for each class individually, as if you were a single-classed member of that class. If you are a ranger 4/wizard 3, for example, you know three 1st-level ranger spells based on your levels in the ranger class. As 3rd-level wizard, you know three wizard cantrips, and your spellbook contains ten wizard spells, two of which (the two you gained when you reached 3rd level as a wizard) can be 2nd-level spells. If your intelligence is 16, you can prepare six wizard spells from your spellbook.",
-										"Each spell you know and prepare is associated with one of your classes, and you use the spellcasting ability of that class when you cast the spell. Similarly, a spellcasting focus, such as a holy symbol, can he used only for the spells from the class associated with that focus."
+										"Each spell you know and prepare is associated with one of your classes, and you use the spellcasting ability of that class when you cast the spell. Similarly, a spellcasting focus, such as a holy symbol, can be used only for the spells from the class associated with that focus."
 									]
 								},
 								{
@@ -9558,7 +9570,10 @@
 									"Invisibility",
 									"5,000 gp"
 								]
-							]
+							],
+							"data": {
+								"tableInclude": true
+							}
 						},
 						{
 							"type": "table",
@@ -9597,7 +9612,10 @@
 									"5th",
 									"1,000 gp"
 								]
-							]
+							],
+							"data": {
+								"tableInclude": true
+							}
 						},
 						{
 							"type": "entries",
@@ -14179,7 +14197,7 @@
 									"type": "entries",
 									"name": "Saltmarsh Story Hook",
 									"entries": [
-										"The presence of the hags pollutes the water in the cove, killing the fish, which then wash up on shore. Ferrin Kastilar (see {@adventure location 29|GoS|0|29. Sea Grove of Obad-Hai} in {@adventure Saltmarsh|GoS|0}) offers the characters four [magicitem]potion of water breathing; to find and end the source of this problem.",
+										"The presence of the hags pollutes the water in the cove, killing the fish, which then wash up on shore. Ferrin Kastilar (see {@adventure location 29|GoS|0|29. Sea Grove of Obad-Hai} in {@adventure Saltmarsh|GoS|0}) offers the characters four {@item potion of water breathing||potions of water breathing} to find and end the source of this problem.",
 										{
 											"type": "image",
 											"href": {
@@ -14341,7 +14359,7 @@
 									"name": "Statue of St. Cuthbert",
 									"entries": [
 										"The missionaries of St. Cuthbert planned to stay for months or years in most ports, so they brought along a statue of their sacred deity to display at each stop. The statue weighs 1,500 pounds.",
-										"A {@spell detect magic} spell or similar effect reveals auras of enchantment and necromancy magic radiating from the statue. A creature of any nonchaotic alignment that prays to St. Cuthbert for 1 minute while within 10 feet of the statue is affected as if it just drank a [magicitem]. The statue grants this benefit to no more than one creature every 24 hours.",
+										"A {@spell detect magic} spell or similar effect reveals auras of enchantment and necromancy magic radiating from the statue. A creature of any nonchaotic alignment that prays to St. Cuthbert for 1 minute while within 10 feet of the statue is affected as if it just drank a {@item potion of heroism}. The statue grants this benefit to no more than one creature every 24 hours.",
 										"A creature of any chaotic alignment that prays to St. Cuthbert for 1 minute while within 10 feet of the statue must succeed on a DC 15 Constitution saving throw or become {@condition blinded} for 1 hour."
 									]
 								}
@@ -14564,7 +14582,7 @@
 									"type": "entries",
 									"name": "Saltmarsh Story Hook",
 									"entries": [
-										"Captain Xendros asks the characters to recover the statue from the wreck, offering a box of [magicitem] in exchange for the likeness of St. Cuthbert. Xendros warns the characters that bandits might try to recover treasure from the wreck and to be on the lookout.",
+										"Captain Xendros asks the characters to recover the statue from the wreck, offering a box of {@item Nolzur's marvelous pigments} in exchange for the likeness of St. Cuthbert. Xendros warns the characters that bandits might try to recover treasure from the wreck and to be on the lookout.",
 										"If the characters recover the statue but don't give it to Xendros, he sends two {@creature Glabrezu||glabrezus} to attack the characters while they rest."
 									]
 								},
@@ -14986,7 +15004,7 @@
 									"type": "entries",
 									"name": "Saltmarsh Story Hook",
 									"entries": [
-										"Over several days recently, {@creature Mud Mephit||mud mephits} have appeared in Saltmarsh to steal food, pull pranks, and annoy people. Wellgar Brinehanded (see {@adventure location 26|GoS|0|26. Temple of Procan} in {@adventure Saltmarsh|GoS|0}) tracked the mephits back to Warthalkeel's ruins. He offers the characters 100 gp to find and close the portal that the mephits are coming through. If the characters take the job, Wellgar gives each a [magicitem] before they go to the ruins."
+										"Over several days recently, {@creature Mud Mephit||mud mephits} have appeared in Saltmarsh to steal food, pull pranks, and annoy people. Wellgar Brinehanded (see {@adventure location 26|GoS|0|26. Temple of Procan} in {@adventure Saltmarsh|GoS|0}) tracked the mephits back to Warthalkeel's ruins. He offers the characters 100 gp to find and close the portal that the mephits are coming through. If the characters take the job, Wellgar gives each a {@item potion of water breathing} before they go to the ruins."
 									]
 								},
 								{
@@ -15037,7 +15055,7 @@
 									"type": "entries",
 									"name": "Saltmarsh Story Hook",
 									"entries": [
-										"Eliander Fireborn tells the characters that a group of lizardfolk has gathered in the water above the ruins of Warthalkeel. He asks the characters to greet the lizardfolk on behalf of the town and find out why they're close to the town. Eliander offers the characters 250 gp to talk to the lizardfolk and gives each character a [magicitem] before they set out. He expects the potions back if the characters don't use them."
+										"Eliander Fireborn tells the characters that a group of lizardfolk has gathered in the water above the ruins of Warthalkeel. He asks the characters to greet the lizardfolk on behalf of the town and find out why they're close to the town. Eliander offers the characters 250 gp to talk to the lizardfolk and gives each character a {@item potion of water breathing} before they set out. He expects the potions back if the characters don't use them."
 									]
 								},
 								{

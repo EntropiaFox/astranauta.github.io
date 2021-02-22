@@ -45,6 +45,7 @@ class List {
 	 * @param [opts] Options object.
 	 * @param [opts.fnSort] Sort function. Should accept `(a, b, o)` where `o` is an options object. Pass `null` to
 	 * disable sorting.
+	 * @param [opts.fnSearch] Search function. Should accept `(li, searchTerm)` where `li` is a list item.
 	 * @param [opts.$iptSearch] Search input.
 	 * @param opts.$wrpList List wrapper.
 	 * @param [opts.isUseJquery] If the list items are using jQuery elements. Significantly slower for large lists.
@@ -55,6 +56,7 @@ class List {
 		this._$iptSearch = opts.$iptSearch;
 		this._$wrpList = opts.$wrpList;
 		this._fnSort = opts.fnSort === undefined ? SortUtil.listSort : opts.fnSort;
+		this._fnSearch = opts.fnSearch;
 
 		this._items = [];
 		this._eventHandlers = {};
@@ -92,19 +94,46 @@ class List {
 		// This should only be run after all the elements are ready from page load
 		if (this._$iptSearch) {
 			UiUtil.bindTypingEnd({$ipt: this._$iptSearch, fnKeyup: () => this.search(this._$iptSearch.val())});
-			this._searchTerm = List._getCleanSearchTerm(this._$iptSearch.val());
-			this._init_bindEscapeKey();
+			this._searchTerm = List.getCleanSearchTerm(this._$iptSearch.val());
+			this._init_bindKeydowns();
 		}
 		this._doSearch();
 		this._isInit = true;
 	}
 
-	_init_bindEscapeKey () {
-		this._$iptSearch.on("keydown", evt => {
-			if (evt.which !== 27) return; // escape
-			this._$iptSearch.val("");
-			this.search("");
-		});
+	_init_bindKeydowns () {
+		this._$iptSearch
+			.on("keydown", evt => {
+				// Avoid handling the same event multiple times, if there are multiple lists bound to one input
+				if (evt._List__isHandled) return;
+
+				switch (evt.key) {
+					case "Escape": return this._handleKeydown_escape(evt);
+					case "Enter": return this._handleKeydown_enter(evt);
+				}
+			});
+	}
+
+	_handleKeydown_escape (evt) {
+		evt._List__isHandled = true;
+
+		if (!this._$iptSearch.val()) {
+			$(document.activeElement).blur();
+			return;
+		}
+
+		this._$iptSearch.val("");
+		this.search("");
+	}
+
+	_handleKeydown_enter (evt) {
+		const firstVisibleItem = this.visibleItems[0];
+		if (!firstVisibleItem) return;
+
+		evt._List__isHandled = true;
+
+		$(firstVisibleItem.ele).click();
+		if (firstVisibleItem.values.hash && !IS_VTT) window.location.hash = firstVisibleItem.values.hash;
 	}
 
 	update () {
@@ -114,8 +143,10 @@ class List {
 	}
 
 	_doSearch () {
-		if (this._searchTerm) this._searchedItems = this._items.filter(it => it.searchText.includes(this._searchTerm));
-		else this._searchedItems = [...this._items];
+		if (this._searchTerm) {
+			if (this._fnSearch) this._searchedItems = this._items.filter(it => this._fnSearch(it, this._searchTerm));
+			else this._searchedItems = this._items.filter(it => it.searchText.includes(this._searchTerm));
+		} else this._searchedItems = [...this._items];
 
 		// Never show excluded items
 		this._searchedItems = this._searchedItems.filter(it => !it.data.isExcluded);
@@ -149,7 +180,7 @@ class List {
 			this._$wrpList.children().detach();
 			for (let i = 0; i < len; ++i) this._$wrpList.append(this._filteredSortedItems[i].ele);
 		} else {
-			this._$wrpList.empty();
+			this._$wrpList[0].innerHTML = "";
 			const frag = document.createDocumentFragment();
 			for (let i = 0; i < len; ++i) frag.appendChild(this._filteredSortedItems[i].ele);
 			this._$wrpList[0].appendChild(frag);
@@ -160,7 +191,7 @@ class List {
 	}
 
 	search (searchTerm) {
-		const nextTerm = List._getCleanSearchTerm(searchTerm);
+		const nextTerm = List.getCleanSearchTerm(searchTerm);
 		if (nextTerm !== this._searchTerm) {
 			this._searchTerm = nextTerm;
 			this._doSearch();
@@ -360,18 +391,12 @@ class List {
 
 	updateSelected (item) {
 		if (this.visibleItems.includes(item)) {
-			if (this._isMultiSelection) {
-				this.deselectAll(true);
-			} else if (this._lastSelection) {
-				if (this._lastSelection !== item) {
-					this._lastSelection.isSelected = false;
-					item.isSelected = true;
-					this._lastSelection = item;
-				}
-			} else {
-				item.isSelected = true;
-				this._lastSelection = item;
-			}
+			if (this._isMultiSelection) this.deselectAll(true);
+
+			if (this._lastSelection && this._lastSelection !== item) this._lastSelection.isSelected = false;
+
+			item.isSelected = true;
+			this._lastSelection = item;
 		} else this.deselectAll();
 	}
 
@@ -380,7 +405,7 @@ class List {
 	}
 	// endregion
 
-	static _getCleanSearchTerm (str) {
+	static getCleanSearchTerm (str) {
 		return (str || "").trim().toLowerCase().split(/\s+/g).join(" ");
 	}
 }

@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.2.0",
+	"$id": "fluff-vehicles.json",
+	"version": "1.3.0",
 	"type": "object",
 	"properties": {
 		"vehicleFluff": {
@@ -27,19 +28,25 @@
 						}
 					},
 					"_copy": {
-						"name": {
-							"type": "string"
-						},
-						"source": {
-							"type": "string"
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"source": {
+								"type": "string"
+							}
 						}
 					},
 					"_appendCopy": {
-						"name": {
-							"type": "string"
-						},
-						"source": {
-							"type": "string"
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"source": {
+								"type": "string"
+							}
 						}
 					}
 				},

@@ -1,4 +1,4 @@
-@import 'vars';
+@import 'includes/vars';
 
 // region class
 .cls__ {
@@ -10,6 +10,7 @@
 		overflow: hidden;
 		max-height: 32px;
 		display: block;
+		word-spacing: 100vw;
 	}
 
 	&btn-toggle-sidebar {
@@ -259,7 +260,7 @@
 
 	> tbody > tr > th {
 		color: black;
-		padding: 1px 0.2em;
+		padding: 1px 0.3em;
 	}
 
 	&__ {
@@ -303,7 +304,7 @@
 		&col-generic-center {
 			text-align: center;
 			min-width: 1em;
-			max-width: 3.2em;
+			max-width: 5em;
 		}
 
 		&stripe-odd:nth-child(odd) {

@@ -240,7 +240,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -370,7 +370,7 @@
 			"races": [
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -618,7 +618,7 @@
 				},
 				{
 					"name": "Human (Mark of Handling)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -705,7 +705,7 @@
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -752,7 +752,7 @@
 				}
 			],
 			"entries": [
-				"Your magic turns others into beasts. Choose any number of willing creatures that you can see within range. You transform each target into the form of a Large or smaller beast with a challenge rating of 4 or lower. On subsequent turns, you can use your action to transform affected creatures into new forms.",
+				"Your magic turns others into beasts. Choose any number of willing creatures that you can see within range. You transform each target into the form of a {@filter Large or smaller beast with a challenge rating of 4 or lower|bestiary|challenge rating=[&0;&4]|type=beast|size=f;d;t;s;m;l|miscellaneous=!swarm}. On subsequent turns, you can use your action to transform affected creatures into new forms.",
 				"The transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies. You can choose a different form for each target. A target's game statistics are replaced by the statistics of the chosen beast, though the target retains its alignment and Intelligence, Wisdom, and Charisma scores. The target assumes the hit points of its new form, and when it reverts to its normal form, it returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn't reduce the creature's normal form to 0 hit points, it isn't knocked {@condition unconscious}. The creature is limited in the actions it can perform by the nature of its new form, and it can't speak or cast spells.",
 				"The target's gear melds into the new form. The target can't activate, wield, or otherwise benefit from any of its equipment."
 			],
@@ -1177,7 +1177,7 @@
 			"races": [
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -1527,13 +1527,13 @@
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -1685,7 +1685,7 @@
 				},
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -1813,7 +1813,7 @@
 				},
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -1959,6 +1959,10 @@
 					},
 					{
 						"name": "Wizard",
+						"source": "PHB"
+					},
+					{
+						"name": "Monk",
 						"source": "PHB"
 					}
 				]
@@ -2225,13 +2229,13 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Healing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Handling)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -2379,13 +2383,13 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Healing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -2517,7 +2521,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Healing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -2591,7 +2595,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Handling)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -3146,7 +3150,8 @@
 						}
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Beacon of Hope",
@@ -3184,9 +3189,6 @@
 			],
 			"entries": [
 				"This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing."
-			],
-			"miscTags": [
-				"HL"
 			],
 			"areaTags": [
 				"MT"
@@ -3264,7 +3266,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Handling)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -3343,7 +3345,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Handling)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -3638,7 +3640,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -4396,7 +4398,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Passage)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -4809,6 +4811,26 @@
 							"name": "Wildfire",
 							"source": "TCE"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Sun Soul",
+							"source": "XGE"
+						}
 					}
 				]
 			},
@@ -4843,7 +4865,8 @@
 					"name": "Rakdos Cultist",
 					"source": "GGR"
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Call Lightning",
@@ -5065,13 +5088,13 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Handling)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -5406,7 +5429,6 @@
 				"R"
 			],
 			"miscTags": [
-				"HL",
 				"SCL"
 			],
 			"areaTags": [
@@ -5793,25 +5815,25 @@
 			"races": [
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -6122,7 +6144,8 @@
 					"name": "Golgari Agent",
 					"source": "GGR"
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Color Spray",
@@ -6668,13 +6691,13 @@
 			"races": [
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -6774,7 +6797,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -6871,7 +6894,7 @@
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -7182,6 +7205,16 @@
 							"name": "Genie (UA)",
 							"source": "UA2020SubclassesRevisited"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
 					}
 				],
 				"fromClassListVariant": [
@@ -7401,7 +7434,7 @@
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -7518,7 +7551,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Handling)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -7591,7 +7624,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -7765,7 +7798,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Storm)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -7938,7 +7971,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Storm)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -8348,7 +8381,7 @@
 				}
 			],
 			"entries": [
-				"Choose a spell of 5th level or lower that you can cast, that has a casting time of 1 action, and that can target you. You cast that spell\u2014called the contingent spell\u2014as part of casting contingency, expending spell slots for both, but the contingent spell doesn't come into effect. Instead, it takes effect when a certain circumstance occurs. You describe that circumstance when you cast the two spells. For example, a contingency cast with water breathing might stipulate that water breathing comes into effect when you are engulfed in water or a similar liquid.",
+				"Choose a spell of 5th level or lower that you can cast, that has a casting time of 1 action, and that can target you. You cast that spell\u2014called the contingent spell\u2014as part of casting contingency, expending spell slots for both, but the contingent spell doesn't come into effect. Instead, it takes effect when a certain circumstance occurs. You describe that circumstance when you cast the two spells. For example, a contingency cast with {@spell water breathing} might stipulate that {@spell water breathing} comes into effect when you are engulfed in water or a similar liquid.",
 				"The contingent spell takes effect immediately after the circumstance is met for the first time, whether or not you want it to, and then contingency ends.",
 				"The contingent spell takes effect only on you, even if it can normally target others. You can use only one contingency spell at a time. If you cast this spell again, the effect of another contingency spell on you ends. Also, contingency ends on you if its material component is ever not on your person."
 			],
@@ -8439,7 +8472,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -8630,7 +8663,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Storm)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -8975,7 +9008,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -9101,7 +9134,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -9439,7 +9472,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -9769,7 +9802,7 @@
 				},
 				{
 					"name": "Halfling (Mark of Healing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -9973,6 +10006,16 @@
 							"name": "Shadow",
 							"source": "XGE"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Shadow",
+							"source": "PHB"
+						}
 					}
 				]
 			},
@@ -10045,7 +10088,7 @@
 				},
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				}
@@ -10119,6 +10162,18 @@
 					{
 						"name": "Artificer",
 						"source": "TCE"
+					}
+				],
+				"fromSubclass": [
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Shadow",
+							"source": "PHB"
+						}
 					}
 				]
 			}
@@ -10416,7 +10471,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -10745,7 +10800,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -10860,7 +10915,7 @@
 				},
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -10936,7 +10991,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -11077,7 +11132,7 @@
 				},
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -11214,11 +11269,12 @@
 			"races": [
 				{
 					"name": "Human (Mark of Passage)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Disguise Self",
@@ -11384,7 +11440,7 @@
 				},
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				}
@@ -11454,7 +11510,6 @@
 				"dexterity"
 			],
 			"miscTags": [
-				"HL",
 				"SGT"
 			],
 			"areaTags": [
@@ -11937,19 +11992,19 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -12259,7 +12314,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Handling)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -12685,7 +12740,7 @@
 						"subclass": {
 							"name": "Land",
 							"source": "PHB",
-							"subSubclass": "Forest"
+							"subSubclass": "Grassland"
 						}
 					},
 					{
@@ -12713,7 +12768,7 @@
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -13077,7 +13132,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -13831,6 +13886,18 @@
 						"name": "Wizard",
 						"source": "PHB"
 					}
+				],
+				"fromSubclass": [
+					{
+						"class": {
+							"name": "Druid",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Twilight (UA)",
+							"source": "UADruid"
+						}
+					}
 				]
 			}
 		},
@@ -14033,7 +14100,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Passage)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -14219,7 +14286,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -14395,13 +14462,13 @@
 				},
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -14754,7 +14821,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Storm)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -14803,7 +14870,6 @@
 				"intelligence"
 			],
 			"miscTags": [
-				"HL",
 				"SGT"
 			],
 			"areaTags": [
@@ -15041,7 +15107,6 @@
 				"You can't have more than one steed bonded by this spell at a time. As an action, you can release the steed from its bond at any time, causing it to disappear."
 			],
 			"miscTags": [
-				"HL",
 				"SMN"
 			],
 			"classes": {
@@ -15175,7 +15240,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -15758,6 +15823,16 @@
 							"name": "Genie (UA)",
 							"source": "UA2020SubclassesRevisited"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
 					}
 				]
 			},
@@ -15766,7 +15841,8 @@
 					"name": "Kiss of Mephistopheles",
 					"source": "UAWarlockAndWizard"
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flame Blade",
@@ -16398,6 +16474,18 @@
 						"name": "Artificer",
 						"source": "TCE"
 					}
+				],
+				"fromSubclass": [
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
+					}
 				]
 			}
 		},
@@ -16551,7 +16639,7 @@
 				},
 				{
 					"name": "Half-Elf (Mark of Storm)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -16597,7 +16685,7 @@
 				"ritual": true
 			},
 			"entries": [
-				"You create a ward against magical travel that protects up to 40,000 square feet of floor space to a height of 30 feet above the floor. For the duration, creatures can't teleport into the area or use portals, such as those created by the {@spell gate} spell, to enter the area. The spell proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, Ethereal Plane, Feywild, Shadowfell, or the plane shift spell.",
+				"You create a ward against magical travel that protects up to 40,000 square feet of floor space to a height of 30 feet above the floor. For the duration, creatures can't teleport into the area or use portals, such as those created by the {@spell gate} spell, to enter the area. The spell proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, Ethereal Plane, Feywild, Shadowfell, or the {@spell plane shift} spell.",
 				"In addition, the spell damages types of creatures that you choose when you cast it. Choose one or more of the following: celestials, elementals, fey, fiends, and undead. When a chosen creature enters the spell's area for the first time on a turn or starts its turn there, the creature takes {@damage 5d10} radiant or necrotic damage (your choice when you cast this spell).",
 				"When you cast this spell, you can designate a password. A creature that speaks the password as it enters the area takes no damage from the spell.",
 				"The spell's area can't overlap with the area of another forbiddance spell. If you cast forbiddance every day for 30 days in the same location, the spell lasts until it is dispelled, and the material components are consumed on the last casting."
@@ -16956,7 +17044,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Passage)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -17262,6 +17350,16 @@
 						"subclass": {
 							"name": "Swarmkeeper",
 							"source": "TCE"
+						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
 						}
 					}
 				]
@@ -17924,7 +18022,7 @@
 			"races": [
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -17987,7 +18085,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -18371,7 +18469,7 @@
 			"races": [
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				}
@@ -18526,7 +18624,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Healing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -18680,11 +18778,12 @@
 			"races": [
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Guards and Wards",
@@ -19107,6 +19206,16 @@
 							"name": "Genie (UA)",
 							"source": "UA2020SubclassesRevisited"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
 					}
 				],
 				"fromClassListVariant": [
@@ -19129,7 +19238,7 @@
 				},
 				{
 					"name": "Half-Elf (Mark of Storm)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -19367,7 +19476,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -19463,7 +19572,7 @@
 			"races": [
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				}
@@ -19841,7 +19950,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Healing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -20768,6 +20877,16 @@
 							"name": "Land",
 							"source": "PHB"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
 					}
 				]
 			},
@@ -20995,13 +21114,13 @@
 			"races": [
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -21388,7 +21507,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -21458,7 +21577,7 @@
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -21876,6 +21995,17 @@
 					},
 					{
 						"class": {
+							"name": "Druid",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Land",
+							"source": "PHB",
+							"subSubclass": "Underdark"
+						}
+					},
+					{
+						"class": {
 							"name": "Paladin",
 							"source": "PHB"
 						},
@@ -21936,16 +22066,6 @@
 					},
 					{
 						"class": {
-							"name": "Druid",
-							"source": "PHB"
-						},
-						"subclass": {
-							"name": "Land",
-							"source": "PHB"
-						}
-					},
-					{
-						"class": {
 							"name": "Ranger",
 							"source": "PHB"
 						},
@@ -21981,7 +22101,8 @@
 					"name": "Golgari Agent",
 					"source": "GGR"
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Invisibility",
@@ -22160,7 +22281,7 @@
 				},
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				}
@@ -22270,7 +22391,7 @@
 				},
 				{
 					"name": "Human (Mark of Passage)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -22351,7 +22472,7 @@
 			"races": [
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -22475,7 +22596,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -22556,7 +22677,7 @@
 			"races": [
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -22650,7 +22771,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -22785,7 +22906,7 @@
 				},
 				{
 					"name": "Halfling (Mark of Healing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -22897,7 +23018,7 @@
 				},
 				{
 					"name": "Half-Elf (Mark of Storm)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -23307,13 +23428,13 @@
 			"races": [
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -23472,13 +23593,13 @@
 			"races": [
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -23576,13 +23697,13 @@
 			"races": [
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -23671,13 +23792,13 @@
 			"races": [
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -23740,7 +23861,7 @@
 			"races": [
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -24081,7 +24202,7 @@
 			"races": [
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -24334,7 +24455,7 @@
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -24511,7 +24632,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -24595,7 +24716,7 @@
 			"races": [
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				}
@@ -24868,7 +24989,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Healing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -25315,7 +25436,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -25407,7 +25528,7 @@
 				},
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -25611,6 +25732,16 @@
 							"name": "Illusion",
 							"source": "PHB"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Shadow",
+							"source": "PHB"
+						}
 					}
 				]
 			},
@@ -25641,7 +25772,7 @@
 				},
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				}
@@ -25985,7 +26116,7 @@
 			"races": [
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				}
@@ -26175,7 +26306,7 @@
 				},
 				{
 					"name": "Human (Mark of Passage)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -26491,7 +26622,7 @@
 			"races": [
 				{
 					"name": "Dwarf (Mark of Warding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
 				}
@@ -26640,7 +26771,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -26711,7 +26842,8 @@
 						"source": "PHB"
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Move Earth",
@@ -26879,7 +27011,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -27323,6 +27455,16 @@
 							"name": "Land",
 							"source": "PHB"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Shadow",
+							"source": "PHB"
+						}
 					}
 				]
 			},
@@ -27335,13 +27477,13 @@
 				},
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Passage)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -27808,7 +27950,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Passage)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -28670,7 +28812,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Healing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -28774,7 +28916,7 @@
 				},
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -28914,7 +29056,8 @@
 						"definedInSource": "TCE"
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Prismatic Wall",
@@ -29496,7 +29639,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -29892,7 +30035,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -31500,6 +31643,26 @@
 							"name": "Genie (UA)",
 							"source": "UA2020SubclassesRevisited"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Open Hand",
+							"source": "PHB"
+						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Tranquility (UA)",
+							"source": "UAMonk"
+						}
 					}
 				]
 			}
@@ -31666,7 +31829,8 @@
 					"name": "Boros Legionnaire",
 					"source": "GGR"
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Scrying",
@@ -32112,7 +32276,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Detection)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -32387,7 +32551,7 @@
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -32661,6 +32825,16 @@
 							"name": "Armorer",
 							"source": "TCE"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
 					}
 				]
 			},
@@ -32819,7 +32993,7 @@
 				},
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -32920,7 +33094,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -33209,13 +33383,23 @@
 							"name": "Undead (UA)",
 							"source": "UA2020SubclassesPt4"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Shadow",
+							"source": "PHB"
+						}
 					}
 				]
 			},
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -33283,7 +33467,7 @@
 			"races": [
 				{
 					"name": "Elf (Mark of Shadow)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
 				}
@@ -33336,9 +33520,6 @@
 				"The simulacrum is friendly to you and creatures you designate. It obeys your spoken commands, moving and acting in accordance with your wishes and acting on your turn in combat. The simulacrum lacks the ability to learn or become more powerful, so it never increases its level or other abilities, nor can it regain expended spell slots.",
 				"If the simulacrum is damaged, you can repair it in an alchemical laboratory, using rare herbs and minerals worth 100 gp per hit point it regains. The simulacrum lasts until it drops to 0 hit points, at which point it reverts to snow and melts instantly.",
 				"If you cast this spell again, any currently active duplicates you created with this spell are instantly destroyed."
-			],
-			"miscTags": [
-				"HL"
 			],
 			"areaTags": [
 				"ST"
@@ -33487,7 +33668,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -33662,7 +33843,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Storm)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -33985,7 +34166,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Handling)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -34189,13 +34370,13 @@
 			"races": [
 				{
 					"name": "Half-Orc (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Orc",
 					"baseSource": "PHB"
 				},
 				{
 					"name": "Human (Mark of Finding)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -35047,7 +35228,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -35212,6 +35393,27 @@
 						"subclass": {
 							"name": "Strength (PSA)",
 							"source": "PSA"
+						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
+					},
+					{
+						"class": {
+							"name": "Druid",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Land",
+							"source": "PHB",
+							"subSubclass": "Mountain"
 						}
 					}
 				]
@@ -36302,7 +36504,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Passage)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -36376,7 +36578,7 @@
 				},
 				{
 					"name": "Human (Mark of Making)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -36840,6 +37042,16 @@
 							"name": "Genie (UA)",
 							"source": "UA2020SubclassesRevisited"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
 					}
 				],
 				"fromClassListVariant": [
@@ -36993,7 +37205,7 @@
 			"races": [
 				{
 					"name": "Gnome (Mark of Scribing)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Gnome",
 					"baseSource": "PHB"
 				}
@@ -37525,7 +37737,7 @@
 			"races": [
 				{
 					"name": "Halfling (Mark of Hospitality)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Halfling",
 					"baseSource": "PHB"
 				}
@@ -37890,6 +38102,16 @@
 						"subclass": {
 							"name": "Artillerist",
 							"source": "TCE"
+						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
 						}
 					}
 				]
@@ -38257,6 +38479,16 @@
 							"name": "Genie (UA)",
 							"source": "UA2020SubclassesRevisited"
 						}
+					},
+					{
+						"class": {
+							"name": "Monk",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Four Elements",
+							"source": "PHB"
+						}
 					}
 				]
 			}
@@ -38475,7 +38707,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}
@@ -38882,7 +39114,8 @@
 					"baseName": "Tiefling",
 					"baseSource": "PHB"
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Weird",
@@ -39137,7 +39370,7 @@
 			"races": [
 				{
 					"name": "Half-Elf (Mark of Storm)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Half-Elf",
 					"baseSource": "PHB"
 				}
@@ -39593,7 +39826,7 @@
 			"races": [
 				{
 					"name": "Human (Mark of Sentinel)",
-					"source": "TCE",
+					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
 				}

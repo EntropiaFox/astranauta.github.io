@@ -19,13 +19,13 @@ class RewardsPage extends ListPage {
 	getListItem (reward, rwI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(reward, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(reward.source);
 		const hash = UrlUtil.autoEncodeHash(reward);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-2 text-center pl-0">${reward.type}</span>
 			<span class="bold col-8">${reward.name}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(reward.source)} pr-0" title="${Parser.sourceJsonToFull(reward.source)}" ${BrewUtil.sourceJsonToStyle(reward.source)}>${source}</span>
@@ -61,13 +61,14 @@ class RewardsPage extends ListPage {
 	getSublistItem (reward, pinId) {
 		const hash = UrlUtil.autoEncodeHash(reward);
 
-		const $ele = $(`<li class="row">
-			<a href="#${hash}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="name col-2 pl-0 text-center">${reward.type}</span>
 				<span class="name col-10 pr-0">${reward.name}</span>
 			</a>
-		</li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,

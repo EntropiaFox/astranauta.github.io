@@ -22,13 +22,13 @@ class CultsBoonsPage extends ListPage {
 		it._lType = it.__prop === "cult" ? "Cult" : "Boon";
 		it._lSubType = it.type || "\u2014";
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-2 text-center pl-0">${it._lType}</span>
 			<span class="col-2 text-center">${it._lSubType}</span>
 			<span class="bold col-6">${it.name}</span>
@@ -66,14 +66,15 @@ class CultsBoonsPage extends ListPage {
 	getSublistItem (it, pinId) {
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		const $ele = $(`<li class="row">
-			<a href="#${hash}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="col-2 text-center pl-0">${it._lType}</span>
 				<span class="col-2 text-center">${it._lSubType}</span>
 				<span class="bold col-8 pr-0">${it.name}</span>
 			</a>
-		</li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,

@@ -158,7 +158,8 @@
 						]
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hollow One",
@@ -431,7 +432,8 @@
 						]
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nyxborn",
@@ -660,7 +662,8 @@
 						}
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Pious",

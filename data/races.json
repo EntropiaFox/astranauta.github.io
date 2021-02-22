@@ -131,18 +131,14 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aasimar",
 			"source": "DMG",
 			"page": 286,
-			"otherSources": [
-				{
-					"source": "EGW",
-					"page": 166
-				}
-			],
 			"size": "M",
 			"speed": 30,
 			"ability": [
@@ -176,14 +172,14 @@
 							"light"
 						],
 						"3": {
-							"rest": {
+							"daily": {
 								"1": [
 									"lesser restoration"
 								]
 							}
 						},
 						"5": {
-							"rest": {
+							"daily": {
 								"1": [
 									"daylight"
 								]
@@ -232,7 +228,7 @@
 				{
 					"name": "Celestial Legacy",
 					"entries": [
-						"You know the {@spell light} cantrip. Once you reach 3rd level, you can cast the {@spell lesser restoration} spell once with this trait, and you regain the ability to do so when you finish a long rest. Once you reach 5th level, you can cast the {@spell daylight} spell once with this trait as a 3rd-level spell, and you regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+						"You know the {@spell light} cantrip. Once you reach 3rd level, you can cast the {@spell lesser restoration} spell once with this trait, and you regain the ability to do so when you finish a long rest. Once you reach 5th level, you can cast the {@spell daylight} spell once with this trait, and you regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
 					],
 					"type": "entries"
 				},
@@ -248,6 +244,12 @@
 		{
 			"name": "Aasimar",
 			"source": "VGM",
+			"otherSources": [
+				{
+					"source": "EGW",
+					"page": 166
+				}
+			],
 			"page": 104,
 			"size": "M",
 			"speed": 30,
@@ -367,7 +369,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Protector",
@@ -387,7 +391,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Scourge",
@@ -407,9 +413,13 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aetherborn",
@@ -897,7 +907,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bullywug",
@@ -965,6 +977,9 @@
 			"name": "Centaur",
 			"source": "GGR",
 			"page": 15,
+			"creatureTypes": [
+				"fey"
+			],
 			"size": "M",
 			"speed": 40,
 			"ability": [
@@ -1068,7 +1083,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Centaur",
@@ -1114,12 +1130,18 @@
 						}
 					]
 				}
-			}
+			},
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Centaur",
 			"source": "UACentaursMinotaurs",
 			"page": 1,
+			"creatureTypes": [
+				"humanoid",
+				"monstrosity"
+			],
 			"size": "M",
 			"speed": 40,
 			"ability": [
@@ -1208,7 +1230,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Changeling",
@@ -1309,7 +1333,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Changeling",
@@ -1492,6 +1518,7 @@
 				}
 			],
 			"darkvision": 60,
+			"feats": 1,
 			"traitTags": [
 				"Skill Proficiency",
 				"Feat"
@@ -1566,6 +1593,74 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Dhampir",
+			"source": "UA2021GothicLineages",
+			"page": 2,
+			"lineage": true,
+			"creatureTypes": [
+				"humanoid",
+				"undead"
+			],
+			"size": "V",
+			"speed": {
+				"walk": 35,
+				"climb": 35
+			},
+			"darkvision": 60,
+			"traitTags": [
+				"Unarmed Strike"
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Type:",
+							"entry": "Humanoid and Undead"
+						},
+						{
+							"type": "item",
+							"name": "Size:",
+							"entry": "Medium or Small (choose when you gain this lineage)"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Darkvision",
+					"entries": [
+						"You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spider Climb",
+					"entries": [
+						"You have a climbing speed equal to your walking speed. In addition, at 3rd level, you can move up, down, and across vertical surfaces and upside down along ceilings, while leaving your hands free."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Vampiric Bite",
+					"entries": [
+						"Your fanged bite is a natural weapon, which counts as a simple melee weapon with which you are proficient. You add your Constitution modifier to the attack and damage rolls when you attack with your bite. Your bite deals {@dice 1d4} piercing damage on a hit. While you are missing half or more of your hit points, you have advantage on attack rolls you make with this bite.",
+						"When you use your bite and hit a creature that isn't a Construct or an Undead, you can empower yourself in one of the following ways of your choice:",
+						{
+							"type": "list",
+							"items": [
+								"regain hit points equal to the damage dealt by the bite",
+								"gain a bonus to the next ability check or attack roll you make; the bonus equals the damage dealt by the bite"
+							]
+						},
+						"You can empower yourself with your bite a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+					]
+				}
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Dragonborn",
@@ -1732,7 +1827,9 @@
 				}
 			],
 			"subraces": [
-				{},
+				{
+					"srd": true
+				},
 				{
 					"name": "Draconblood",
 					"source": "EGW",
@@ -1844,7 +1941,9 @@
 					"overwrite": {
 						"ability": true,
 						"traitTags": true
-					}
+					},
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Ravenite",
@@ -1957,9 +2056,13 @@
 					"overwrite": {
 						"ability": true,
 						"traitTags": true
-					}
+					},
+					"hasFluff": true,
+					"hasFluffImages": true
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dwarf",
@@ -2095,14 +2198,14 @@
 						{
 							"innate": {
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"enlarge/reduce"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"invisibility"
 										]
@@ -2160,7 +2263,8 @@
 					],
 					"overwrite": {
 						"languageProficiencies": true
-					}
+					},
+					"hasFluff": true
 				},
 				{
 					"name": "Hill",
@@ -2185,7 +2289,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Mark of Warding",
@@ -2321,9 +2427,13 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dwarf (Kaladesh)",
@@ -2568,14 +2678,14 @@
 									"dancing lights"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"faerie fire"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"darkness"
 										]
@@ -2617,7 +2727,8 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true
 				},
 				{
 					"name": "Eladrin",
@@ -2631,6 +2742,20 @@
 					"traitTags": [
 						"Weapon Proficiency",
 						"Spellcasting"
+					],
+					"additionalSpells": [
+						{
+							"innate": {
+								"1": {
+									"rest": {
+										"1": [
+											"misty step"
+										]
+									}
+								}
+							},
+							"ability": "cha"
+						}
 					],
 					"entries": [
 						{
@@ -2700,7 +2825,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Eladrin",
@@ -2872,7 +2999,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "High; Aereni",
@@ -2977,7 +3106,7 @@
 									"minor illusion"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"invisibility"
 										]
@@ -3091,14 +3220,14 @@
 									"light"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"sleep"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"invisibility"
 										]
@@ -3123,7 +3252,9 @@
 								"You know the {@spell light} cantrip. When you reach 3rd level, you can cast the {@spell sleep} spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the {@spell invisibility} spell (targeting yourself only) once with this trait and regain the ability to do so when you finish a long rest. Casting these spells with this trait doesn't require material components. Wisdom is your spellcasting ability for these spells."
 							]
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Sea",
@@ -3183,7 +3314,8 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true
 				},
 				{
 					"name": "Sea",
@@ -3267,7 +3399,8 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true
 				},
 				{
 					"name": "Shadar-kai",
@@ -3384,7 +3517,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Wood; Aereni",
@@ -3460,7 +3595,9 @@
 						}
 					]
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elf (Kaladesh)",
@@ -3738,14 +3875,14 @@
 									"chill touch"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"hex"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"darkness"
 										]
@@ -3841,7 +3978,8 @@
 						}
 					]
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Firbolg",
@@ -3884,11 +4022,16 @@
 			},
 			"additionalSpells": [
 				{
+					"ability": "wis",
 					"innate": {
-						"1": [
-							"detect magic",
-							"disguise self"
-						]
+						"1": {
+							"rest": {
+								"1": [
+									"detect magic",
+									"disguise self"
+								]
+							}
+						}
 					}
 				}
 			],
@@ -3949,7 +4092,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Genasi",
@@ -4057,7 +4202,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Earth",
@@ -4095,7 +4242,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Fire",
@@ -4119,7 +4268,7 @@
 									"produce flame"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"burning hands"
 										]
@@ -4151,7 +4300,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Water",
@@ -4179,9 +4330,9 @@
 									"shape water|xge"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"create or destroy water"
+											"create or destroy water#2"
 										]
 									}
 								}
@@ -4218,9 +4369,13 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gith",
@@ -4319,14 +4474,14 @@
 									"mage hand"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"jump"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"misty step"
 										]
@@ -4393,14 +4548,14 @@
 									"mage hand"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"shield"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"detect thoughts"
 										]
@@ -4528,14 +4683,14 @@
 									"mage hand"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"jump"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"misty step"
 										]
@@ -4596,14 +4751,14 @@
 									"mage hand"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"shield"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"detect thoughts"
 										]
@@ -4921,7 +5076,8 @@
 					],
 					"overwrite": {
 						"languageProficiencies": true
-					}
+					},
+					"hasFluff": true
 				},
 				{
 					"name": "Forest",
@@ -4959,7 +5115,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Mark of Scribing",
@@ -4983,12 +5141,18 @@
 					"additionalSpells": [
 						{
 							"innate": {
-								"1": [
-									"comprehend languages",
-									"message"
-								],
-								"3": {
+								"1": {
 									"rest": {
+										"1": [
+											"comprehend languages"
+										]
+									},
+									"_": [
+										"message"
+									]
+								},
+								"3": {
+									"daily": {
 										"1": [
 											"magic mouth"
 										]
@@ -5126,15 +5290,19 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnome (Deep)",
 			"source": "DMG",
 			"page": 282,
-			"size": "M",
+			"size": "S",
 			"speed": 20,
 			"ability": [
 				{
@@ -5346,7 +5514,8 @@
 					]
 				}
 			},
-			"traitTags": null
+			"traitTags": null,
+			"hasFluff": true
 		},
 		{
 			"name": "Goblin",
@@ -5431,7 +5600,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Goblin (Dankwood)",
@@ -5473,7 +5644,8 @@
 					"wis": 1
 				}
 			],
-			"heightAndWeight": null
+			"heightAndWeight": null,
+			"hasFluff": true
 		},
 		{
 			"name": "Goblin (Ixalan)",
@@ -5661,7 +5833,8 @@
 						}
 					]
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Goliath",
@@ -5773,7 +5946,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grimlock",
@@ -6057,7 +6232,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Half-Elf (Variant)",
@@ -6294,14 +6471,14 @@
 									"dancing lights"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"faerie fire"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"darkness"
 										]
@@ -6384,7 +6561,7 @@
 									"detect poison and disease"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"see invisibility"
 										]
@@ -6866,7 +7043,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Half-Orc (Mark of Finding)",
@@ -6914,7 +7093,7 @@
 							"hunter's mark"
 						],
 						"3": {
-							"rest": {
+							"daily": {
 								"1": [
 									"locate object"
 								]
@@ -7134,7 +7313,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Lightfoot",
@@ -7153,7 +7334,9 @@
 							],
 							"type": "entries"
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Lotusden",
@@ -7174,14 +7357,14 @@
 									"druidcraft"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"entangle"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"spike growth"
 										]
@@ -7206,7 +7389,9 @@
 								"Ability checks made to track you have disadvantage, and you can move across difficult terrain made of nonmagical plants and undergrowth without expending extra movement."
 							]
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Mark of Healing",
@@ -7234,7 +7419,7 @@
 									"cure wounds"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"lesser restoration"
 										]
@@ -7452,9 +7637,92 @@
 							],
 							"type": "entries"
 						}
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Hexblood",
+			"source": "UA2021GothicLineages",
+			"page": 3,
+			"lineage": true,
+			"creatureTypes": [
+				"humanoid",
+				"fey"
+			],
+			"size": "V",
+			"speed": 30,
+			"darkvision": 60,
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": [
+							"disguise self",
+							"hex"
+						]
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Type:",
+							"entry": "Fey and Humanoid"
+						},
+						{
+							"type": "item",
+							"name": "Size:",
+							"entry": "Medium or Small (choose when you gain this lineage)"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Darkvision",
+					"entries": [
+						"You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fey Resilience",
+					"entries": [
+						"You have advantage on saving throws you make to avoid or end the {@condition charmed} condition on yourself."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Hex Magic",
+					"entries": [
+						"You can cast the {@spell disguise self} and {@spell hex} spells with this trait. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells (choose when you gain this lineage). Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast these spells using any spells slots you have."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Magic Token",
+					"entries": [
+						"As an action, you can harmlessly pull out one of your nails, a tooth, or a lock of hair. This token is imbued with magic until you finish a long rest. While the token is imbued in this way, you can use an action to send a telepathic message to the creature holding or carrying the token, as long as you are on the same plane of existence and are within 10 miles of it. The message can contain up to twenty-five words.",
+						"In addition, while you are within 10 miles of the token, you can use an action to enter a trance for 1 minute, during which you can see and hear from the token as if you were located where it is. While you are using your senses at the token's location, you are {@condition blinded} and {@condition deafened} in regard to your own surroundings. Afterward, the token is harmlessly destroyed.",
+						"Once you create a token using this feature, you can't do so again until you finish a long rest, at which point your missing part regrows."
 					]
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Hobgoblin",
@@ -7621,7 +7889,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Human",
@@ -7809,7 +8079,7 @@
 									"hunter's mark"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"locate object"
 										]
@@ -7950,6 +8220,16 @@
 					],
 					"additionalSpells": [
 						{
+							"innate": {
+								"1": {
+									"rest": {
+										"1": [
+											"animal friendship",
+											"speak with animals"
+										]
+									}
+								}
+							},
 							"expanded": {
 								"s1": [
 									"animal friendship",
@@ -8431,6 +8711,7 @@
 							}
 						}
 					],
+					"feats": 1,
 					"traitTags": [
 						"Skill Proficiency",
 						"Feat"
@@ -8478,7 +8759,9 @@
 						}
 					]
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Human (Amonkhet)",
@@ -8881,7 +9164,8 @@
 					"wis": 1,
 					"cha": 1
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Kalashtar",
@@ -8975,7 +9259,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kalashtar",
@@ -9222,7 +9508,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Khenra",
@@ -9426,7 +9714,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kor",
@@ -9515,7 +9805,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Kuo-Toa",
@@ -9679,7 +9970,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lizardfolk",
@@ -9853,7 +10146,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Locathah",
@@ -9944,7 +10239,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Loxodon",
@@ -10046,7 +10343,8 @@
 						"You can speak, read, and write Common and Loxodon."
 					]
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Loxodon",
@@ -10147,7 +10445,9 @@
 						"You can speak, read, and write Common."
 					]
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Merfolk",
@@ -10493,7 +10793,8 @@
 						}
 					]
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Minotaur",
@@ -10596,7 +10897,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Minotaur",
@@ -10631,12 +10934,18 @@
 						}
 					]
 				}
-			}
+			},
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Minotaur",
 			"source": "UACentaursMinotaurs",
 			"page": 2,
+			"creatureTypes": [
+				"humanoid",
+				"monstrosity"
+			],
 			"size": "M",
 			"speed": 30,
 			"ability": [
@@ -11335,7 +11644,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orc (Ixalan)",
@@ -11422,6 +11733,82 @@
 					"type": "entries"
 				}
 			]
+		},
+		{
+			"name": "Reborn",
+			"source": "UA2021GothicLineages",
+			"page": 4,
+			"lineage": true,
+			"creatureTypes": [
+				"humanoid",
+				{
+					"choose": [
+						"construct",
+						"undead"
+					]
+				}
+			],
+			"size": "V",
+			"speed": 30,
+			"darkvision": 60,
+			"traitTags": [
+				"Improved Resting"
+			],
+			"resist": [
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Type:",
+							"entry": "Humanoid, as well as Construct or Undead (choose when you gain this lineage)"
+						},
+						{
+							"type": "item",
+							"name": "Size:",
+							"entry": "Medium or Small (choose when you gain this lineage)"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Darkvision",
+					"entries": [
+						"You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Deathless Nature",
+					"entries": [
+						"You have escaped death, a fact represented by the following benefits:",
+						{
+							"type": "list",
+							"items": [
+								"You have advantage on saving throws against disease and being {@condition poisoned}, and you have resistance to poison damage.",
+								"You have advantage on death saving throws.",
+								"You don't need to eat, drink, or breathe.",
+								"You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in an inactive, motionless state, during which you retain consciousness."
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Knowledge from a Past Life",
+					"entries": [
+						"You temporarily remember sporadic glimpses of the past, perhaps faded memories from ages ago or a previous life. When you make an ability check that uses a skill, you can roll a {@dice d6} and add the number rolled to the check. You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+					]
+				}
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Revenant",
@@ -11513,6 +11900,9 @@
 			"name": "Satyr",
 			"source": "MOT",
 			"page": 24,
+			"creatureTypes": [
+				"fey"
+			],
 			"size": "M",
 			"speed": 35,
 			"ability": [
@@ -11610,7 +12000,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shifter",
@@ -11722,7 +12114,9 @@
 								"Whenever you shift, you gain {@dice 1d6} additional temporary hit points. While shifted, you have a +1 bonus to your Armor Class."
 							]
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Longtooth",
@@ -11757,7 +12151,9 @@
 								"While shifted, you can use your elongated fangs to make an unarmed strike as a bonus action. If you hit with your fangs, you can deal piercing damage equal to {@dice 1d6} + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
 							]
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Swiftstride",
@@ -11791,7 +12187,9 @@
 								"While shifted, your walking speed increases by 10 feet. Additionally, you can move up to 10 feet as a reaction when a creature ends its turn within 5 feet of you. This reactive movement doesn't provoke opportunity attacks."
 							]
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Wildhunt",
@@ -11825,9 +12223,13 @@
 								"While shifted, you have advantage on Wisdom checks, and no creature within 30 feet of you can make an attack roll with advantage against you, unless you're {@condition incapacitated}."
 							]
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shifter",
@@ -12354,7 +12756,8 @@
 						}
 					]
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Simic Hybrid",
@@ -12478,7 +12881,9 @@
 						"You can speak, read, and write Common and Elvish."
 					]
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Siren",
@@ -12711,7 +13116,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tiefling",
@@ -12757,14 +13164,14 @@
 							"thaumaturgy"
 						],
 						"3": {
-							"rest": {
+							"daily": {
 								"1": [
-									"hellish rebuke"
+									"hellish rebuke#2"
 								]
 							}
 						},
 						"5": {
-							"rest": {
+							"daily": {
 								"1": [
 									"darkness"
 								]
@@ -12862,7 +13269,7 @@
 									"prestidigitation"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"burning hands",
 											"charm person",
@@ -12874,7 +13281,7 @@
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"alter self",
 											"darkness",
@@ -12985,7 +13392,9 @@
 				{
 					"name": "Asmodeus",
 					"source": "MTF",
-					"page": 21
+					"page": 21,
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Asmodeus",
@@ -13003,14 +13412,14 @@
 									"thaumaturgy"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"ray of sickness"
+											"ray of sickness#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"crown of madness"
 										]
@@ -13031,7 +13440,9 @@
 								"overwrite": "Infernal Legacy"
 							}
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Baalzebul",
@@ -13044,14 +13455,14 @@
 									"thaumaturgy"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"ray of sickness"
+											"ray of sickness#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"crown of madness"
 										]
@@ -13091,14 +13502,14 @@
 									"thaumaturgy"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"disguise self"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"detect thoughts"
 										]
@@ -13122,7 +13533,9 @@
 					],
 					"overwrite": {
 						"ability": true
-					}
+					},
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Dispater",
@@ -13141,14 +13554,14 @@
 									"thaumaturgy"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"disguise self"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"invisibility"
 										]
@@ -13191,14 +13604,14 @@
 									"friends"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"charm person"
+											"charm person#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"suggestion"
 										]
@@ -13222,7 +13635,9 @@
 					],
 					"overwrite": {
 						"ability": true
-					}
+					},
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Fierna",
@@ -13241,14 +13656,14 @@
 									"friends"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"charm person"
+											"charm person#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"suggestion"
 										]
@@ -13291,14 +13706,14 @@
 									"minor illusion"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"disguise self"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"invisibility"
 										]
@@ -13322,7 +13737,9 @@
 					],
 					"overwrite": {
 						"ability": true
-					}
+					},
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Glasya",
@@ -13341,14 +13758,14 @@
 									"minor illusion"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"disguise self"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"invisibility"
 										]
@@ -13391,14 +13808,14 @@
 									"ray of frost"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"armor of agathys"
+											"armor of agathys#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"darkness"
 										]
@@ -13422,7 +13839,9 @@
 					],
 					"overwrite": {
 						"ability": true
-					}
+					},
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Levistus",
@@ -13444,14 +13863,14 @@
 									"ray of frost"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"armor of agathys"
+											"armor of agathys#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"darkness"
 										]
@@ -13488,14 +13907,14 @@
 									"mage hand"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"tenser's floating disk"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"arcane lock"
 										]
@@ -13516,7 +13935,9 @@
 								"overwrite": "Infernal Legacy"
 							}
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Mammon",
@@ -13529,14 +13950,14 @@
 									"mage hand"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"tenser's floating disk"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"arcane lock"
 										]
@@ -13570,14 +13991,14 @@
 									"mage hand"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"burning hands"
+											"burning hands#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"flame blade"
 										]
@@ -13598,7 +14019,9 @@
 								"overwrite": "Infernal Legacy"
 							}
 						}
-					]
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Mephistopheles",
@@ -13611,14 +14034,14 @@
 									"mage hand"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"magic missile"
+											"magic missile#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"web"
 										]
@@ -13665,14 +14088,14 @@
 									"vicious mockery"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"charm person"
+											"charm person#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"enthrall"
 										]
@@ -13729,14 +14152,14 @@
 									"thaumaturgy"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"burning hands"
+											"burning hands#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"darkness"
 										]
@@ -13793,14 +14216,14 @@
 									"thaumaturgy"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
 											"hellish rebuke"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"darkness"
 										]
@@ -13889,14 +14312,14 @@
 									"thaumaturgy"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"searing smite"
+											"searing smite#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"branding smite"
 										]
@@ -13920,7 +14343,9 @@
 					],
 					"overwrite": {
 						"ability": true
-					}
+					},
+					"hasFluff": true,
+					"hasFluffImages": true
 				},
 				{
 					"name": "Zariel",
@@ -13939,14 +14364,14 @@
 									"thaumaturgy"
 								],
 								"3": {
-									"rest": {
+									"daily": {
 										"1": [
-											"searing smite"
+											"searing smite#2"
 										]
 									}
 								},
 								"5": {
-									"rest": {
+									"daily": {
 										"1": [
 											"branding smite"
 										]
@@ -13972,7 +14397,9 @@
 						"ability": true
 					}
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tortle",
@@ -14078,7 +14505,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Triton",
@@ -14102,7 +14531,9 @@
 						}
 					]
 				}
-			}
+			},
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Triton",
@@ -14151,14 +14582,14 @@
 							"fog cloud"
 						],
 						"3": {
-							"rest": {
+							"daily": {
 								"1": [
 									"gust of wind"
 								]
 							}
 						},
 						"5": {
-							"rest": {
+							"daily": {
 								"1": [
 									"wall of water|xge"
 								]
@@ -14239,7 +14670,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Troglodyte",
@@ -14463,7 +14896,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Vedalken",
@@ -14556,7 +14990,8 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Vedalken",
@@ -14682,7 +15117,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Verdan",
@@ -14768,7 +15205,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Viashino",
@@ -14852,7 +15291,8 @@
 						"You can speak, read, and write Common and Draconic."
 					]
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Warforged",
@@ -15008,7 +15448,9 @@
 						"You can speak, read, and write Common and one other language of your choice."
 					]
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Warforged",
@@ -15365,7 +15807,7 @@
 							"animal friendship"
 						],
 						"3": {
-							"rest": {
+							"daily": {
 								"1": [
 									"suggestion"
 								]
@@ -15432,7 +15874,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zombie",

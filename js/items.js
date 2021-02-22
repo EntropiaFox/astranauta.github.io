@@ -29,14 +29,14 @@ class ItemsPage {
 
 		this._pageFilter.mutateAndAddToFilters(item, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(item.source);
 		const type = item._typeListText.join(", ").toTitleCase();
 
 		if (item._fIsMundane) {
-			eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+			eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="col-3-5 pl-0 bold">${item.name}</span>
 				<span class="col-4-5">${type}</span>
 				<span class="col-1-5 text-center">${item.value || item.valueMult ? Parser.itemValueToFullMultiCurrency(item, {isShortForm: true}).replace(/ +/g, "\u00A0") : "\u2014"}</span>
@@ -64,11 +64,11 @@ class ItemsPage {
 			eleLi.addEventListener("contextmenu", (evt) => ListUtil.openContextMenu(evt, this._mundaneList, listItem));
 			return {mundane: listItem};
 		} else {
-			eleLi.innerHTML += `<a href="#${hash}" class="lst--border">
+			eleLi.innerHTML += `<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="col-3-5 pl-0 bold">${item.name}</span>
 				<span class="col-4">${type}</span>
 				<span class="col-1-5 text-center">${Parser.itemWeightToFull(item, true) || "\u2014"}</span>
-				<span class="attunement col-0-6 text-center">${item._attunementCategory !== "No" ? "×" : ""}</span>
+				<span class="attunement col-0-6 text-center">${item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT ? "×" : ""}</span>
 				<span class="rarity col-1-4">${(item.rarity || "").toTitleCase()}</span>
 				<span class="source col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0" title="${Parser.sourceJsonToFull(item.source)}" ${BrewUtil.sourceJsonToStyle(item.source)}>${source}</span>
 			</a>`;
@@ -82,7 +82,7 @@ class ItemsPage {
 					hash,
 					type,
 					rarity: item.rarity,
-					attunement: item._attunementCategory !== "No",
+					attunement: item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT,
 					weight: Parser.weightValueToNumber(item.weight),
 				},
 				{uniqueId: item.uniqueId ? item.uniqueId : itI},
@@ -109,14 +109,16 @@ class ItemsPage {
 		const count = addCount || 1;
 
 		const $dispCount = $(`<span class="text-center col-2 pr-0">${count}</span>`);
-		const $ele = $$`<li class="row">
-			<a href="#${hash}" class="lst--border">
+		const $ele = $$`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-6 pl-0">${item.name}</span>
 				<span class="text-center col-2">${item.weight ? `${item.weight} lb${item.weight > 1 ? "s" : ""}.` : "\u2014"}</span>
 				<span class="text-center col-2">${item.value || item.valueMult ? Parser.itemValueToFullMultiCurrency(item, {isShortForm: true}).replace(/ +/g, "\u00A0") : "\u2014"}</span>
 				${$dispCount}
 			</a>
-		</li>`.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,
@@ -154,25 +156,28 @@ class ItemsPage {
 			});
 		}
 
-		const statTab = Renderer.utils.tabButton(
-			"Item",
-			() => {},
-			buildStatsTab,
-		);
-		const infoTab = Renderer.utils.tabButton(
-			"Info",
-			() => {},
-			buildFluffTab,
-		);
-		const picTab = Renderer.utils.tabButton(
-			"Images",
-			() => {},
-			buildFluffTab.bind(null, true),
-		);
+		const tabMetas = [
+			new Renderer.utils.TabButton({
+				label: "Item",
+				fnPopulate: buildStatsTab,
+				isVisible: true,
+			}),
+			new Renderer.utils.TabButton({
+				label: "Info",
+				fnPopulate: buildFluffTab,
+				isVisible: Renderer.utils.hasFluffText(item),
+			}),
+			new Renderer.utils.TabButton({
+				label: "Images",
+				fnPopulate: buildFluffTab.bind(null, true),
+				isVisible: Renderer.utils.hasFluffImages(item),
+			}),
+		];
 
-		// only display the "Info" tab if there's some fluff info--currently (2018-12-13), no official item has text fluff
-		if (item.fluff && item.fluff.entries) Renderer.utils.bindTabButtons(statTab, infoTab, picTab);
-		else Renderer.utils.bindTabButtons(statTab, picTab);
+		Renderer.utils.bindTabButtons({
+			tabButtons: tabMetas.filter(it => it.isVisible),
+			tabLabelReference: tabMetas.map(it => it.label),
+		});
 
 		ListUtil.updateSelected();
 	}

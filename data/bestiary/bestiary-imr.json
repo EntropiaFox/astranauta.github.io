@@ -164,7 +164,8 @@
 				"charmed",
 				"incapacitated",
 				"stunned"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Andras",
@@ -664,7 +665,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Moghadam",
@@ -842,7 +844,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Neo-Otyugh",
@@ -971,7 +974,9 @@
 			"conditionInflictSpell": [
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Seodra",
@@ -1157,7 +1162,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Skeletal Giant Owl",
@@ -1339,7 +1345,7 @@
 			],
 			"hp": {
 				"average": 104,
-				"formula": "7d10 + 14"
+				"formula": "19d8 + 19"
 			},
 			"speed": {
 				"walk": 30
@@ -1484,7 +1490,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thessalar's Homunculus",
@@ -1592,7 +1600,9 @@
 			"conditionInflict": [
 				"poisoned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thessalkraken",
@@ -1774,7 +1784,8 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Tiefling Muralist",
@@ -1973,7 +1984,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		}
 	]
 }

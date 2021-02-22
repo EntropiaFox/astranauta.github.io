@@ -728,28 +728,58 @@ SpellcastingTypeTag.CLASSES = {
 
 class DamageTypeTag {
 	static _handleProp (m, prop, typeSet) {
-		if (m[prop]) {
-			m[prop].forEach(it => {
-				if (it.entries) {
-					const str = JSON.stringify(it.entries, null, "\t");
+		if (!m[prop]) return;
 
-					str.replace(RollerUtil.REGEX_DAMAGE_DICE, (m0, average, prefix, diceExp, suffix) => {
-						suffix.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, type) => typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]));
-					});
+		m[prop].forEach(it => {
+			if (
+				it.name
+				&& DamageTypeTag._BLACKLIST_NAMES.has(it.name.toLowerCase().trim().replace(/\([^)]+\)/g, ""))
+			) return;
 
-					str.replace(DamageTypeTag._ONE_DAMAGE_REGEX, (m0, type) => {
-						typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]);
-					});
-				}
-			})
-		}
+			if (it.entries) {
+				DamageTypeTag._WALKER.walk(
+					it.entries,
+					{
+						string: (str) => {
+							// if (str.includes("your spell attack modifier")) debugger
+							str.replace(RollerUtil.REGEX_DAMAGE_DICE, (m0, average, prefix, diceExp, suffix) => {
+								suffix.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, pre, type) => typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]));
+							});
+
+							str.replace(DamageTypeTag._STATIC_DAMAGE_REGEX, (m0, type) => {
+								typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]);
+							});
+
+							str.replace(DamageTypeTag._TARGET_TASKES_DAMAGE_REGEX, (m0, type) => {
+								typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]);
+							});
+
+							if (DamageTypeTag._isSummon(m)) {
+								str.split(/[.?!]/g)
+									.forEach(sentence => {
+										let isSentenceMatch = DamageTypeTag._SUMMON_DAMAGE_REGEX.test(sentence);
+										if (!isSentenceMatch) return;
+
+										// debugger
+										sentence.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, pre, type) => {
+											typeSet.add(DamageTypeTag._TYPE_LOOKUP[type])
+										});
+									});
+							}
+						},
+					},
+				);
+			}
+		})
 	}
 
 	static tryRun (m) {
 		if (!DamageTypeTag._isInit) {
 			DamageTypeTag._isInit = true;
+			DamageTypeTag._WALKER = MiscUtil.getWalker({isNoModification: true, keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
 			Object.entries(Parser.DMGTYPE_JSON_TO_FULL).forEach(([k, v]) => DamageTypeTag._TYPE_LOOKUP[v] = k);
 		}
+
 		const typeSet = new Set();
 		DamageTypeTag._handleProp(m, "action", typeSet);
 		DamageTypeTag._handleProp(m, "reaction", typeSet);
@@ -760,10 +790,47 @@ class DamageTypeTag {
 		DamageTypeTag._handleProp(m, "variant", typeSet);
 		if (typeSet.size) m.damageTags = [...typeSet];
 	}
+
+	/** Attempt to detect an e.g. TCE summon creature. */
+	static _isSummon (m) {
+		let isSummon = false;
+
+		const reProbableSummon = /level of the spell|spell level|\+\s*PB(?:\W|$)|your (?:[^?!.]+)?level/g;
+
+		DamageTypeTag._WALKER.walk(
+			m.ac,
+			{
+				string: (str) => {
+					if (isSummon) return;
+					if (reProbableSummon.test(str)) isSummon = true;
+				},
+			},
+		);
+		if (isSummon) return true;
+
+		DamageTypeTag._WALKER.walk(
+			m.hp,
+			{
+				string: (str) => {
+					if (isSummon) return;
+					if (reProbableSummon.test(str)) isSummon = true;
+				},
+			},
+		);
+		if (isSummon) return true;
+	}
 }
 DamageTypeTag._isInit = false;
-DamageTypeTag._ONE_DAMAGE_REGEX = new RegExp(`1 ${ConverterConst.STR_RE_DAMAGE_TYPE} damage`, "gi");
+DamageTypeTag._WALKER = null;
+DamageTypeTag._STATIC_DAMAGE_REGEX = new RegExp(`\\d+ ${ConverterConst.STR_RE_DAMAGE_TYPE} damage`, "gi");
+DamageTypeTag._TARGET_TASKES_DAMAGE_REGEX = new RegExp(`(?:a|the) target takes (?:{@dice |{@damage )[^}]+} ?${ConverterConst.STR_RE_DAMAGE_TYPE} damage`, "gi");
+DamageTypeTag._SUMMON_DAMAGE_REGEX = /(?:{@dice |{@damage )[^}]+}(?:\s*\+\s*the spell's level)? ([a-z]+( \([-a-zA-Z0-9 ]+\))?( or [a-z]+( \([-a-zA-Z0-9 ]+\))?)? damage)/gi;
 DamageTypeTag._TYPE_LOOKUP = {};
+// Avoid parsing these, as they commonly have e.g. "self-damage" sections
+//   Note that these names should exclude parenthetical parts (as these are removed before lookup)
+DamageTypeTag._BLACKLIST_NAMES = new Set([
+	"vampire weaknesses",
+]);
 
 class MiscTag {
 	static _handleProp (m, prop, tagSet) {

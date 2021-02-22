@@ -1194,23 +1194,6 @@
 			]
 		},
 		{
-			"name": "Investigator",
-			"source": "SCAG",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Rarer than watch or patrol members are a community's investigators, who are responsible for solving crimes after the fact. Though such folk are seldom found in rural areas, nearly every settlement of decent size has at least one or two watch members who have the skill to investigate crime scenes and track down criminals. If your prior experience is as an investigator, you have proficiency in {@skill Investigation} rather than {@skill Athletics}."
-							]
-						}
-					]
-				}
-			]
-		},
-		{
 			"name": "Iron Route Bandit",
 			"source": "ALCurseOfStrahd",
 			"entries": [
@@ -1848,6 +1831,23 @@
 										"You might be a fair-haired barbarian of the Reghed, dwelling in the shadow of the Reghed Glacier in the far North near Icewind Dale. You might also be of the nomadic Rashemi, noted for their savage berserkers and their masked witches. Perhaps you hail from one of the wood elf tribes in the Chondalwood, or the magic-hating human tribes of the sweltering jungles of Chult."
 									]
 								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Variant City Watch (Investigator)",
+			"source": "SCAG",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								"Rarer than watch or patrol members are a community's investigators, who are responsible for solving crimes after the fact. Though such folk are seldom found in rural areas, nearly every settlement of decent size has at least one or two watch members who have the skill to investigate crime scenes and track down criminals. If your prior experience is as an investigator, you have proficiency in {@skill Investigation} rather than {@skill Athletics}."
 							]
 						}
 					]

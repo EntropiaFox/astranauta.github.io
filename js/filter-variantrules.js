@@ -12,7 +12,7 @@ class PageFilterVariantRules extends PageFilter {
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isSrdFilter: true});
 	}
 
-	mutateForFilters (rule) {
+	static mutateForFilters (rule) {
 		rule._fMisc = rule.srd ? ["SRD"] : [];
 		rule._fRuleType = rule.ruleType || "U";
 	}

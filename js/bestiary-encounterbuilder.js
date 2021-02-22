@@ -1,5 +1,9 @@
 "use strict";
 
+/**
+ * TODO rework this to use doubled multipliers for XP, so we avoid the 0.5x issue for 6+ party sizes. Then scale
+ *   everything back down at the end.
+ */
 class EncounterBuilder extends ProxyBase {
 	constructor () {
 		super();
@@ -446,11 +450,11 @@ class EncounterBuilder extends ProxyBase {
 			if (partyMeta.cntPlayers > 5) {
 				const NUM_SAMPLES = 10; // should ideally be divisible by 2
 				const solutions = [...new Array(NUM_SAMPLES)]
-					.map((_, i) => this._pDoGenerateEncounter_generateClosestEncounter(partyMeta, budget * ((i >= Math.floor(NUM_SAMPLES / 2)) + 1)));
+					.map((_, i) => this._pDoGenerateEncounter_generateClosestEncounter(partyMeta, budget * ((i >= Math.floor(NUM_SAMPLES / 2)) + 1), budget));
 				const validSolutions = solutions.filter(it => it.adjustedXp >= (budget * 0.6) && it.adjustedXp <= (budget * 1.1));
 				if (validSolutions.length) return RollerUtil.rollOnArray(validSolutions);
 				return null;
-			} else return this._pDoGenerateEncounter_generateClosestEncounter(partyMeta, budget);
+			} else return this._pDoGenerateEncounter_generateClosestEncounter(partyMeta, budget, budget);
 		})();
 
 		if (closestSolution) {
@@ -468,7 +472,7 @@ class EncounterBuilder extends ProxyBase {
 		}
 	}
 
-	_pDoGenerateEncounter_generateClosestEncounter (partyMeta, budget) {
+	_pDoGenerateEncounter_generateClosestEncounter (partyMeta, budget, rawBudget) {
 		const _xps = Object.keys(this._cache).map(it => Number(it)).sort(SortUtil.ascSort).reverse();
 		/*
 		Sorted array of:
@@ -499,11 +503,19 @@ class EncounterBuilder extends ProxyBase {
 			const budgetRemaining = budget - curr.adjustedXp;
 
 			const meta = _meta.filter(it => it.xp <= budgetRemaining);
+
+			// If we're a large party and we're doing a "single creature worth less XP" generation, force the generation
+			//   to stop.
+			if (rawBudget !== budget && curr.count === 1 && (rawBudget - curr.baseXp) <= 0) {
+				return 0;
+			}
+
 			// if the highest CR creature has CR greater than the cutoff, adjust for next multiplier
 			if (meta.length && meta[0].crNum >= curr.meta.crCutoff) {
 				const nextMult = Parser.numMonstersToXpMult(curr.relevantCount + 1, partyMeta.cntPlayers);
 				return Math.floor((budget - (nextMult * curr.baseXp)) / nextMult);
 			}
+
 			// otherwise, no creature has CR greater than the cutoff, don't worry about multipliers
 			return budgetRemaining;
 		};
@@ -630,6 +642,8 @@ class EncounterBuilder extends ProxyBase {
 		document.title = "Encounter Builder - 5etools";
 		$(`body`).addClass("ecgen_active");
 		this.updateDifficulty();
+		ListUtil.doDeselectAll();
+		ListUtil.doSublistDeselectAll();
 	}
 
 	hide () {
@@ -642,7 +656,7 @@ class EncounterBuilder extends ProxyBase {
 
 	handleClick (evt, ix, add, customHashId) {
 		const data = customHashId ? {customHashId} : undefined;
-		if (add) ListUtil.pDoSublistAdd(ix, true, evt.shiftKey ? 5 : 1, data);
+		if (add) ListUtil.pDoSublistAdd(ix, {doFinalize: true, addCount: evt.shiftKey ? 5 : 1, data});
 		else ListUtil.pDoSublistSubtract(ix, evt.shiftKey ? 5 : 1, data);
 	}
 
@@ -785,11 +799,13 @@ class EncounterBuilder extends ProxyBase {
 			$(`.ecgen__raw_total`).text(`Total XP: ${encounter.baseXp.toLocaleString()}`);
 			$(`.ecgen__raw_per_player`).text(`(${Math.floor(encounter.baseXp / partyMeta.cntPlayers).toLocaleString()} per player)`);
 
+			// TODO(Future) update this based on the actual method being used
 			const infoEntry = {
 				type: "entries",
 				entries: [
 					`{@b Adjusted by a ${encounter.meta.playerAdjustedXpMult}× multiplier, based on a minimum challenge rating threshold of approximately ${`${encounter.meta.crCutoff.toFixed(2)}`.replace(/[,.]?0+$/, "")}*&dagger;, and a party size of ${encounter.meta.playerCount} players.}`,
-					`{@note * If the maximum challenge rating is two or less, there is no minimum threshold. Similarly, if less than a third of the party are level 5 or higher, there is no minimum threshold. Otherwise, for each creature in the encounter, the average CR of the encounter is calculated while excluding that creature. The highest of these averages is then halved to produce a minimum CR threshold. CRs less than this minimum are ignored for the purposes of calculating the final CR multiplier.}`,
+					// `{@note * If the maximum challenge rating is two or less, there is no minimum threshold. Similarly, if less than a third of the party are level 5 or higher, there is no minimum threshold. Otherwise, for each creature in the encounter, the average CR of the encounter is calculated while excluding that creature. The highest of these averages is then halved to produce a minimum CR threshold. CRs less than this minimum are ignored for the purposes of calculating the final CR multiplier.}`,
+					`{@note * If the maximum challenge rating is two or less, there is no minimum threshold. Similarly, if less than a third of the party are level 5 or higher, there is no minimum threshold. Otherwise, for each creature in the encounter in lowest-to-highest CR order, the average CR of the encounter is calculated while excluding that creature. Then, if the removed creature's CR is more than one deviation less than  this average, the process repeats. Once the process halts, this threshold value (average minus one deviation) becomes the final CR cutoff.}`,
 					`<hr>`,
 					{
 						type: "quote",
@@ -797,6 +813,45 @@ class EncounterBuilder extends ProxyBase {
 							`&dagger; [...] don't count any monsters whose challenge rating is significantly below the average challenge rating of the other monsters in the group [...]`,
 						],
 						"by": "{@book Dungeon Master's Guide, page 82|DMG|3|4 Modify Total XP for Multiple Monsters}",
+					},
+					`<hr>`,
+					{
+						"type": "table",
+						"caption": "Encounter Multipliers",
+						"colLabels": [
+							"Number of Monsters",
+							"Multiplier",
+						],
+						"colStyles": [
+							"col-6 text-center",
+							"col-6 text-center",
+						],
+						"rows": [
+							[
+								"1",
+								"×1",
+							],
+							[
+								"2",
+								"×1.5",
+							],
+							[
+								"3-6",
+								"×2",
+							],
+							[
+								"7-10",
+								"×2.5",
+							],
+							[
+								"11-14",
+								"×3",
+							],
+							[
+								"15 or more",
+								"×4",
+							],
+						],
 					},
 				],
 			};
@@ -859,7 +914,7 @@ class EncounterBuilder extends ProxyBase {
 		const mon = monsters[ixMon];
 
 		const hash = UrlUtil.autoEncodeHash(mon);
-		const preloadId = scaledTo != null ? `${VeCt.HASH_MON_SCALED}:${scaledTo}` : null;
+		const preloadId = scaledTo != null ? `${VeCt.HASH_SCALED}:${scaledTo}` : null;
 		return Renderer.hover.pHandleLinkMouseOver(evt, ele, UrlUtil.PG_BESTIARY, mon.source, hash, preloadId);
 	}
 

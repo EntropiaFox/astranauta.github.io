@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.4.7",
+	"$id": "races.json",
+	"version": "1.4.10",
 	"type": "object",
 
 	"definitions": {
@@ -116,6 +117,9 @@
 				"darkvision": {
 					"type": "integer"
 				},
+				"feats": {
+					"type": "integer"
+				},
 				"traitTags": {
 					"oneOf": [
 						{
@@ -194,7 +198,9 @@
 							"type": "null"
 						}
 					]
-				}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
 			},
 			"additionalProperties": false
 		},
@@ -249,6 +255,9 @@
 					}
 				},
 				"darkvision": {
+					"type": "integer"
+				},
+				"feats": {
 					"type": "integer"
 				},
 				"traitTags": {
@@ -333,7 +342,35 @@
 				},
 				"conditionImmune": {
 					"$ref": "#/definitions/conditionImmune"
-				}
+				},
+				"lineage": {
+					"type": "boolean"
+				},
+				"creatureTypes": {
+					"type": "array",
+					"items": {
+						"oneOf": [
+							{
+								"type": "object",
+								"properties": {
+									"choose": {
+										"type": "array",
+										"items": {
+											"$ref": "util.json#/definitions/creatureType"
+										}
+									}
+								},
+								"required": ["choose"],
+								"additionalProperties": false
+							},
+							{
+								"$ref": "util.json#/definitions/creatureType"
+							}
+						]
+					}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
 			},
 			"additionalProperties": false
 		},

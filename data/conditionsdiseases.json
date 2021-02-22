@@ -13,7 +13,8 @@
 						"Attack rolls against the creature have advantage, and the creature's attack rolls have disadvantage."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Charmed",
@@ -28,7 +29,8 @@
 						"The charmer has advantage on any ability check to interact socially with the creature."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deafened",
@@ -42,7 +44,8 @@
 						"A deafened creature can't hear and automatically fails any ability check that requires hearing."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Exhaustion",
@@ -107,7 +110,8 @@
 						"The creature can't willingly move closer to the source of its fear."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grappled",
@@ -123,7 +127,8 @@
 						"The condition also ends if an effect removes the grappled creature from the reach of the grappler or grappling effect, such as when a creature is hurled away by the {@spell thunderwave} spell."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Incapacitated",
@@ -152,7 +157,8 @@
 						"Attack rolls against the creature have disadvantage, and the creature's attack rolls have advantage."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Paralyzed",
@@ -169,7 +175,8 @@
 						"Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Petrified",
@@ -188,7 +195,8 @@
 						"The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Poisoned",
@@ -202,7 +210,8 @@
 						"A poisoned creature has disadvantage on attack rolls and ability checks."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Prone",
@@ -218,7 +227,8 @@
 						"An attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the attack roll has disadvantage."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Restrained",
@@ -234,7 +244,8 @@
 						"The creature has disadvantage on Dexterity saving throws."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stunned",
@@ -250,7 +261,8 @@
 						"Attack rolls against the creature have advantage."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Unconscious",
@@ -268,7 +280,8 @@
 						"Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature."
 					]
 				}
-			]
+			],
+			"hasFluffImages": true
 		}
 	],
 	"disease": [

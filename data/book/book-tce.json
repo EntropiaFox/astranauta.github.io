@@ -1442,6 +1442,15 @@
 									"title": "Gnome Swarmkeeper"
 								}
 							]
+						},
+						{
+							"type": "entries",
+							"name": "Beast Master Companions",
+							"id": "170",
+							"entries": [
+								"The {@class ranger|phb|Beast Master|Beast Master} in the {@book Player's Handbook|PHB} forms a mystical bond with an animal. As an alternative, a Beast Master can take the feature below to form a bond with a special primal beast instead.",
+								"{@subclassFeature Primal Companion|Ranger|PHB|Beast Master|PHB|3|TCE} ({@i 3rd-level Beast Master feature, which replaces the Ranger's Companion feature})"
+							]
 						}
 					]
 				},
@@ -5614,7 +5623,12 @@
 								}
 							]
 						}
-					]
+					],
+					"data": {
+						"variantRuleInclude": {
+							"ruleType": "O"
+						}
+					}
 				},
 				{
 					"type": "section",
@@ -6456,37 +6470,13 @@
 									"entries": [
 										"When magical currents become trapped amid winds and clouds, eldritch storms can result.",
 										{
-											"type": "entries",
-											"name": "Flaywind",
-											"page": 163,
-											"id": "384",
-											"entries": [
-												"Supernaturally powerful winds\u2014like those from planes such as Pandemonium or Minethys, the third layer of Carceri\u2014can spawn flaywinds. A flaywind is an intense sandstorm, gathering large rocks and other debris in addition to sand or grit. The area within the storm is heavily obscured, and a creature exposed to the storm takes {@dice 1d4} slashing damage at the start of each of its turns. Only substantial cover or shelter offers protection against the flensing grit.",
-												" A flaywind leaves {@dice 4d6} feet of sand or debris in its wake. A successful DC 15 Intelligence ({@skill Arcana}) or ({@skill Nature}) check or Wisdom ({@skill Survival}) check allows a character to recognize a flaywind 1 minute before it strikes, allowing time to seek shelter. A flaywind typically lasts {@dice 1d4 × 10} hours."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Flame Storm",
-											"page": 163,
-											"id": "385",
-											"entries": [
-												"Sooty thunderclouds shot through with red and orange lightning release a deluge of fiery droplets. Any creature caught in the burning rain takes {@dice 2d6} fire damage at the start of each of its turns. The droplets ignite any flammable objects that aren't being worn or carried; otherwise, the droplets burn out immediately. The smoke, soot, crackle, and low roar of the storm impose disadvantage on Wisdom ({@skill Perception}) checks and ranged attack rolls.",
-												" A flame storm usually lasts {@dice 2d4} minutes, though the originating storm clouds can persist for days, creating multiple flame storms."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Necrotic Tempest",
-											"page": 163,
-											"id": "386",
-											"entries": [
-												"Storms infused with the essence of death roil with dark clouds that manifest leering skulls and bone-white lightning. Any creature exposed to the storm that isn't a construct or an undead must succeed on a DC 13 Constitution saving throw at the end of each minute or take {@dice 3d6} necrotic damage.",
-												" A creature that dies in a necrotic tempest rises as a {@creature skeleton} or {@creature zombie} (your choice) {@dice 1d10} minutes later.",
-												" A necrotic tempest lasts for {@dice 1d4} hours and leaves crops withered and wells undrinkable for {@dice 1d4} days after its passing.",
-												"{@b Thrym's Howl}. These bone-chilling blizzards drive a wall of wind and snow like a living glacier. The storm projects {@book extreme cold|DMG|5|Extreme Cold} (see the {@book Dungeon Master's Guide|DMG}). Due to the howling wind and dense blue-white ice particles, the area in the storm is heavily obscured, and ranged attack rolls and Wisdom ({@skill Perception}) checks made within it have disadvantage.",
-												" Any creature exposed to the storm at the start of its turn takes {@dice 2d6} cold damage and can't regain hit points until it spends at least 1 hour in a warm environment. A creature that dies in the storm freezes solid. Creatures that are immune to cold damage are immune to the effects of the storm and can see normally within it.",
-												" Thrym's howl typically lasts {@dice 2d10} hours."
+											"type": "list",
+											"columns": 3,
+											"items": [
+												"{@hazard Flaywind|TCE}",
+												"{@hazard Flame Storm|TCE}",
+												"{@hazard Necrotic Tempest|TCE}",
+												"{@hazard Thrym's Howl|TCE}"
 											]
 										}
 									]

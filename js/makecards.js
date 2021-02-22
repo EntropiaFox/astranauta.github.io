@@ -18,6 +18,8 @@ class MakeCards extends BaseComponent {
 		this._modalFilterBestiary = new ModalFilterBestiary({namespace: "makecards.bestiary"});
 		this._modalFilterSpells = new ModalFilterSpells({namespace: "makecards.spells"});
 		this._modalFilterRaces = new ModalFilterRaces({namespace: "makecards.race"});
+		this._modalFilterBackgrounds = new ModalFilterBackgrounds({namespace: "makecards.background"});
+		this._modalFilterFeats = new ModalFilterFeats({namespace: "makecards.feat"});
 
 		this._doSaveStateDebounced = MiscUtil.debounce(() => this._pDoSaveState(), 50);
 	}
@@ -234,6 +236,8 @@ class MakeCards extends BaseComponent {
 						case "item": return this._modalFilterItems;
 						case "spell": return this._modalFilterSpells;
 						case "race": return this._modalFilterRaces;
+						case "background": return this._modalFilterBackgrounds;
+						case "feat": return this._modalFilterFeats;
 						default: throw new Error(`Unhandled branch!`);
 					}
 				})();
@@ -366,7 +370,7 @@ class MakeCards extends BaseComponent {
 				this._doSaveStateDebounced();
 			});
 
-		const $ele = $$`<label class="flex-v-center my-1 w-100 lst--border">
+		const $ele = $$`<label class="flex-v-center my-1 w-100 lst__row lst--border lst__row-inner">
 			<div class="col-1 mr-2 flex-vh-center">${$cbSel}</div>
 			<div class="col-3 mr-2 flex-v-center">${loaded.name}</div>
 			<div class="col-1-5 mr-2 flex-vh-center ${Parser.sourceJsonToColor(loaded.source)}" title="${Parser.sourceJsonToFull(loaded.source)}" ${BrewUtil.sourceJsonToStyle(loaded.source)}>${Parser.sourceJsonToAbv(loaded.source)}</div>
@@ -441,10 +445,10 @@ class MakeCards extends BaseComponent {
 			this._ct_rule(),
 			mon.save ? this._ct_property("Saving Throws", this._ct_htmlToText(Renderer.monster.getSavesPart(mon))) : null,
 			mon.skill ? this._ct_property("Skills", this._ct_htmlToText(Renderer.monster.getSkillsString(Renderer.get(), mon))) : null,
-			mon.vulnerable ? this._ct_property("Damage Vulnerabilities", this._ct_htmlToText(Parser.monImmResToFull(mon.vulnerable))) : null,
-			mon.resist ? this._ct_property("Damage Resistances", this._ct_htmlToText(Parser.monImmResToFull(mon.resist))) : null,
-			mon.immune ? this._ct_property("Damage Immunities", this._ct_htmlToText(Parser.monImmResToFull(mon.immune))) : null,
-			mon.conditionImmune ? this._ct_property("Condition Immunities", this._ct_htmlToText(Parser.monCondImmToFull(mon.conditionImmune))) : null,
+			mon.vulnerable ? this._ct_property("Damage Vulnerabilities", this._ct_htmlToText(Parser.getFullImmRes(mon.vulnerable))) : null,
+			mon.resist ? this._ct_property("Damage Resistances", this._ct_htmlToText(Parser.getFullImmRes(mon.resist))) : null,
+			mon.immune ? this._ct_property("Damage Immunities", this._ct_htmlToText(Parser.getFullImmRes(mon.immune))) : null,
+			mon.conditionImmune ? this._ct_property("Condition Immunities", this._ct_htmlToText(Parser.getFullCondImm(mon.conditionImmune))) : null,
 			this._ct_property("Senses", this._ct_htmlToText(Renderer.monster.getSensesPart(mon))),
 			this._ct_property("Languages", this._ct_htmlToText(Renderer.monster.getRenderedLanguages(mon.languages))),
 			this._ct_property("Challenge", this._ct_htmlToText(Parser.monCrToFull(mon.cr, {isMythic: !!mon.mythic}))),
@@ -524,6 +528,22 @@ class MakeCards extends BaseComponent {
 			this._ct_property("Speed", Parser.getSpeedString(race)),
 			this._ct_rule(),
 			...this._ct_renderEntries(race.entries, 2),
+		].filter(Boolean);
+	}
+
+	static _getCardContents_background (bg) {
+		return [
+			...this._ct_renderEntries(bg.entries, 2),
+		].filter(Boolean);
+	}
+
+	static _getCardContents_feat (feat) {
+		const prerequisite = Renderer.utils.getPrerequisiteText(feat.prerequisite, true);
+		Renderer.feat.mergeAbilityIncrease(feat);
+		return [
+			prerequisite ? this._ct_property("Prerequisites", prerequisite) : null,
+			prerequisite ? this._ct_rule() : null,
+			...this._ct_renderEntries(feat.entries, 2),
 		].filter(Boolean);
 	}
 	// endregion
@@ -679,7 +699,7 @@ MakeCards._AVAILABLE_TYPES = {
 		pageTitle: "Items",
 		page: UrlUtil.PG_ITEMS,
 		colorDefault: "#696969",
-		iconDefault: "mixed-swords",
+		iconDefault: "crossed-swords",
 		pFnSearch: SearchWidget.pGetUserItemSearch,
 		fnGetContents: MakeCards._getCardContents_item.bind(MakeCards),
 		fnGetTags: (item) => {
@@ -711,6 +731,30 @@ MakeCards._AVAILABLE_TYPES = {
 		fnGetContents: MakeCards._getCardContents_race.bind(MakeCards),
 		fnGetTags: (race) => {
 			return ["race", Parser.sourceJsonToAbv(race.source)];
+		},
+	},
+	background: {
+		searchTitle: "Background",
+		pageTitle: "Backgrounds",
+		page: UrlUtil.PG_BACKGROUNDS,
+		colorDefault: "#a74b8d",
+		iconDefault: "farmer",
+		pFnSearch: SearchWidget.pGetUserBackgroundSearch,
+		fnGetContents: MakeCards._getCardContents_background.bind(MakeCards),
+		fnGetTags: (bg) => {
+			return ["background", Parser.sourceJsonToAbv(bg.source)];
+		},
+	},
+	feat: {
+		searchTitle: "Feat",
+		pageTitle: "Feats",
+		page: UrlUtil.PG_FEATS,
+		colorDefault: "#aca300",
+		iconDefault: "mighty-force",
+		pFnSearch: SearchWidget.pGetUserFeatSearch,
+		fnGetContents: MakeCards._getCardContents_feat.bind(MakeCards),
+		fnGetTags: (feat) => {
+			return ["feat", Parser.sourceJsonToAbv(feat.source)];
 		},
 	},
 	// TODO add more entities

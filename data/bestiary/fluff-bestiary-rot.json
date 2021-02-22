@@ -51,19 +51,6 @@
 			]
 		},
 		{
-			"name": "Rath Modar",
-			"source": "RoT",
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/RoT/Rath Modar.jpg"
-					}
-				}
-			]
-		},
-		{
 			"name": "Severin",
 			"source": "RoT",
 			"images": [

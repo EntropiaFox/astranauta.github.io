@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.1.0",
+	"version": "1.2.0",
 
 	"definitions" : {
 		"metaBlock": {
@@ -221,28 +221,30 @@
 		},
 
 		"skillProficiencies": {
-			"athletics": {"type": "boolean"},
-			"acrobatics":{"type": "boolean"},
-			"sleight of hand": {"type": "boolean"},
-			"stealth":{"type": "boolean"},
-			"arcana": {"type": "boolean"},
-			"history":{"type": "boolean"},
-			"investigation": {"type": "boolean"},
-			"nature":{"type": "boolean"},
-			"religion": {"type": "boolean"},
-			"animal handling":{"type": "boolean"},
-			"insight": {"type": "boolean"},
-			"medicine":{"type": "boolean"},
-			"perception": {"type": "boolean"},
-			"survival":{"type": "boolean"},
-			"deception": {"type": "boolean"},
-			"intimidation":{"type": "boolean"},
-			"performance": {"type": "boolean"},
-			"persuasion":{"type": "boolean"},
+			"type": "object",
+			"properties": {
+				"athletics": {"type": "boolean"},
+				"acrobatics":{"type": "boolean"},
+				"sleight of hand": {"type": "boolean"},
+				"stealth":{"type": "boolean"},
+				"arcana": {"type": "boolean"},
+				"history":{"type": "boolean"},
+				"investigation": {"type": "boolean"},
+				"nature":{"type": "boolean"},
+				"religion": {"type": "boolean"},
+				"animal handling":{"type": "boolean"},
+				"insight": {"type": "boolean"},
+				"medicine":{"type": "boolean"},
+				"perception": {"type": "boolean"},
+				"survival":{"type": "boolean"},
+				"deception": {"type": "boolean"},
+				"intimidation":{"type": "boolean"},
+				"performance": {"type": "boolean"},
+				"persuasion":{"type": "boolean"},
 
-			"choose": {
-				"type": "array",
-				"items": {
+				"tool": {"type": "boolean"},
+
+				"choose": {
 					"type": "object",
 					"properties": {
 						"from": {
@@ -294,10 +296,11 @@
 							}
 						}
 					}
-				}
-			}
-		},
 
+				}
+			},
+			"additionalProperties": false
+		},
 		"_speedVal": {
 			"oneOf": [
 				{
@@ -659,6 +662,13 @@
 			]
 		},
 
+		"dataOptionalfeatureType": {
+			"type": "string",
+			"enum": [
+				"ED", "EI", "MM", "MV", "MV:B", "OTH", "FS:F", "FS:B", "FS:R", "FS:P", "MV:C2-UA", "AS:V1-UA", "AS:V2-UA", "AS", "PB", "AI", "SHP:H", "SHP:M", "SHP:W", "SHP:F", "SHP:O", "IWM:W", "IWM:A", "IWM:G", "OR", "RN", "AF"
+			]
+		},
+
 		"damageImmunityArray": {
 			"oneOf": [
 				{
@@ -867,11 +877,9 @@
 					]
 				},
 				"entries": {
-					"entries": {
-						"type": "array",
-						"items": {
-							"$ref": "entry.json"
-						}
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
 					}
 				}
 			},
@@ -1212,16 +1220,13 @@
 		},
 
 		"_additionalSpellObject": {
+			"type": "object",
 			"patternProperties": {
 				"^\\d+$": {
 					"description": "Spells keyed by character/class level.",
 					"oneOf": [
 						{
-							"type": "array",
-							"items": {
-								"type": "string"
-							},
-							"uniqueItems": true
+							"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"
 						},
 						{
 							"$ref": "#/definitions/_additionalSpellLevelObject"
@@ -1232,11 +1237,7 @@
 					"description": "Spells keyed by spell level, access to which is gated behind the character advancing to a point where they could cast those spells with e.g. a Spellcasting class feature (Mark spells from ERLW races)",
 					"oneOf": [
 						{
-							"type": "array",
-							"items": {
-								"type": "string"
-							},
-							"uniqueItems": true
+							"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"
 						},
 						{
 							"$ref": "#/definitions/_additionalSpellLevelObject"
@@ -1250,21 +1251,104 @@
 			"type": "object",
 			"properties": {
 				"rest": {
-					"$ref": "entry.json#/definitions/entrySpellcasting_frequency"
+					"description": "Spells which recharge on short or long rest",
+					"$ref": "#/definitions/_additionalSpellRechargeObject"
+				},
+				"daily": {
+					"description": "Spells which recharge on long rest",
+					"$ref": "#/definitions/_additionalSpellRechargeObject"
+				},
+				"will": {
+					"description": "At-will spells",
+					"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"
+				},
+				"ritual": {
+					"description": "Ritual-only spells",
+					"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"
+				},
+				"_": {
+					"description": "Spells which do not fall into the above categories (i.e. have no specific recharge, and are simply known)",
+					"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"
 				}
-			}
+			},
+			"additionalProperties": false
+		},
+
+		"_additionalSpellRechargeObject": {
+			"type": "object",
+			"properties": {
+				"9e": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"8e": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"7e": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"6e": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"5e": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"4e": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"3e": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"2e": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"1e": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+
+				"9": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"8": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"7": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"6": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"5": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"4": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"3": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"2": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"},
+				"1": {"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"}
+			},
+			"additionalProperties": false
+		},
+
+		"_additionalSpellArrayOfStringOrChoiceObject": {
+			"type": "array",
+			"items": {
+				"oneOf": [
+					{"type": "string"},
+
+					{
+						"type": "object",
+						"properties": {
+							"choose": {"type": "string"},
+							"count": {"type": "integer"}
+						},
+						"required": ["choose"],
+						"additionalProperties": false
+					}
+				]
+			},
+			"uniqueItems": true
 		},
 
 		"additionalSpellsArray": {
-			"description": "A collection of additional spells which this subclass grants.",
+			"description": "A collection of additional spells which a feature grants.",
 			"type": "array",
 			"items": {
 				"type": "object",
 				"properties": {
 					"ability": {
-						"description": "Optionally specify the ability score used for e.g. racial spellcasting.",
-						"type": "string",
-						"enum": ["str", "dex", "con", "int", "wis", "cha"]
+						"description": "Optionally specify the ability score used for e.g. racial spellcasting",
+						"oneOf": [
+							{
+								"type": "object",
+								"properties": {
+									"choose": {
+										"type": "array",
+										"items":{
+											"type": "string",
+											"enum": ["str", "dex", "con", "int", "wis", "cha"]
+										}
+									}
+								},
+								"required": ["choose"],
+								"additionalProperties": false
+							},
+							{
+								"description": "\"inherit\" is used for special cases, where the ability score matches a choice the player made when taking the feature",
+								"type": "string",
+								"enum": ["str", "dex", "con", "int", "wis", "cha", "inherit"]
+							}
+						]
 					},
 					"innate": {
 						"$ref": "#/definitions/_additionalSpellObject"

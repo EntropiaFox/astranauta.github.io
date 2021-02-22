@@ -554,7 +554,58 @@
 			mon.ac = mon.ac.map(acItem => this._getAdjustedAcItem(mon, crIn, crOut, acItem));
 		},
 
+		/** Update an existing AC to use our new DEX score, if we have one. */
+		_doPreAdjustAcs (mon, acItem) {
+			if (mon.dexOld == null || mon.dex === mon.dexOld) return;
+			if (!acItem.from) return;
+
+			const originalDexMod = Parser.getAbilityModNumber(mon.dexOld);
+			const currentDexMod = Parser.getAbilityModNumber(mon.dex);
+
+			if (originalDexMod === currentDexMod) return;
+
+			// Handle mage armor, light armor, and medium armor.
+			//   Note that natural armor and "unarmored" also include DEX, but these are handled in the main loop.
+
+			if (this._isMageArmor(acItem)) {
+				acItem._acBeforePreAdjustment = acItem.ac;
+				acItem.ac = 13 + Parser.getAbilityModNumber(mon.dex);
+				return;
+			}
+
+			const lightTags = this._ALL_LIGHT_VARIANTS.map(it => it.tag);
+			const mediumTags = this._ALL_MEDIUM_VARIANTS.map(it => it.tag);
+
+			for (let i = 0; i < acItem.from.length; ++i) {
+				const from = acItem.from[i];
+
+				const lightTag = this._isStringContainsTag(lightTags, from);
+				if (lightTag) {
+					acItem._acBeforePreAdjustment = acItem.ac;
+
+					acItem.ac = acItem.ac - originalDexMod + currentDexMod;
+
+					return;
+				}
+
+				const mediumTag = this._isStringContainsTag(mediumTags, from);
+				if (mediumTag) {
+					const originalDexModMedium = Math.min(2, originalDexMod);
+					const currentDexModMedium = Math.min(2, currentDexMod);
+
+					const curAc = acItem.ac;
+					acItem.ac = acItem.ac - originalDexModMedium + currentDexModMedium;
+					if (curAc !== acItem.ac) acItem._acBeforePreAdjustment = curAc;
+
+					return;
+				}
+			}
+		},
+
 		_getAdjustedAcItem (mon, crIn, crOut, acItem) {
+			// Pre-adjust ACs to match our new DEX score, if we have one
+			this._doPreAdjustAcs(mon, acItem);
+
 			// region Attempt to adjust this item until we find some output that works
 			let iter = 0;
 			let out = null;
@@ -610,12 +661,14 @@
 			return out;
 		},
 
+		_isMageArmor (acItem) {
+			return acItem.condition && acItem.condition.toLowerCase().includes(this._MAGE_ARMOR);
+		},
+
 		_getAdjustedAcItem_getAdjusted (mon, crIn, crOut, acItem, iter) {
 			const getEnchTotal = () => acItem._enchTotal || 0;
 			const getBaseGearBonus = () => acItem._gearBonus || 0;
 			const getDexCap = () => acItem._dexCap || 999;
-
-			const isMageArmor = () => acItem.condition && acItem.condition.toLowerCase().includes(this._MAGE_ARMOR);
 
 			// strip enchantments and total bonuses
 			if (typeof acItem !== "number") {
@@ -628,7 +681,7 @@
 				acItem.from = acItem.from.map(f => {
 					if (f._) f = f._; // if a previous loop modified it
 
-					const m = /@item (\+\d+) ([^+\d]+)\|([^|}]+)/gi.exec(f); // e.g. {@item +1 chain mail +1}
+					const m = /@item (\+\d+) ([^+\d]+)\|([^|}]+)/gi.exec(f); // e.g. {@item +1 chain mail}
 					if (m) {
 						const [_, name, bonus, source] = m;
 
@@ -671,19 +724,24 @@
 
 			// for armored creatures, try to calculate the expected AC, and use this as a starting point for scaling
 			const expectedBaseScore = mon.dexOld != null
-				? (getBaseGearBonus() + Math.min(Parser.getAbilityModNumber(mon.dexOld), getDexCap()) + (isMageArmor() ? 13 : 10))
+				? (getBaseGearBonus() + Math.min(Parser.getAbilityModNumber(mon.dexOld), getDexCap()) + (this._isMageArmor(acItem) ? 13 : 10))
 				: null;
 
 			let canAdjustDex = mon.dexOld == null;
 			const dexGain = Parser.getAbilityModNumber(mon.dex) - Parser.getAbilityModNumber((mon.dexOld || mon.dex));
 
-			const curr = acItem.ac || acItem;
+			const curr = acItem._acBeforePreAdjustment != null
+				? acItem._acBeforePreAdjustment
+				: (acItem.ac || acItem);
 			// don't include enchantments in AC-CR calculations
 			const currWithoutEnchants = curr - (iter === 0 ? getEnchTotal() : 0); // only take it off on the first iteration, as it gets saved
 
 			// ignore any other misc modifications from abilities, enchanted items, etc
 			if (typeof acItem !== "number") {
-				acItem._miscOffset = acItem._miscOffset || (expectedBaseScore != null ? currWithoutEnchants - expectedBaseScore : null); // maintain this between loops, keep the original "pure" version
+				// maintain this between loops, keep the original "pure" version
+				acItem._miscOffset = acItem._miscOffset != null
+					? acItem._miscOffset
+					: (expectedBaseScore != null ? currWithoutEnchants - expectedBaseScore : null);
 			}
 
 			const idealAcIn = ScaleCreature._crToAc(crIn);
@@ -723,13 +781,15 @@
 
 			const handleMageArmor = () => {
 				// if there's mage armor, try adjusting dex
-				if (isMageArmor()) {
+				if (this._isMageArmor(acItem)) {
 					if (canAdjustDex) {
 						acItem.ac = target;
+						delete acItem._acBeforePreAdjustment;
 						return adjustDex();
 					} else {
-						acItem.ac = 13 + Parser.getAbilityModNumber(mon.dex);
-						return true; // mage armor means there was no other armor, so stop here
+						// We have already set the AC in the pre-adjustment step.
+						//   Mage armor means there was no other armor, so stop here.
+						return true;
 					}
 				}
 				return false;
@@ -811,11 +871,11 @@
 					if (nonEnch) return `${nonEnch}|phb`;
 					switch (ac) {
 						case 19:
-							return [`plate armor +1|dmg`, `splint armor +2|dmg`][RollerUtil.roll(1, ScaleCreature._rng)];
+							return [`+1 plate armor|dmg`, `+2 splint armor|dmg`][RollerUtil.roll(1, ScaleCreature._rng)];
 						case 20:
-							return `plate armor +2|dmg`;
+							return `+2 plate armor|dmg`;
 						case PL3_PLATE:
-							return `plate armor +3|dmg`
+							return `+3 plate armor|dmg`
 					}
 				};
 
@@ -828,23 +888,27 @@
 								if (bumpOne) targetNoShield++;
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, heavyTag, getHeavy(targetNoShield));
 								acItem.ac = target + (bumpOne ? 1 : 0);
+								delete acItem._acBeforePreAdjustment;
 								return true;
 							} else if (this._canDropShield(mon) && isHeavy(target)) {
 								const targetWithBump = target + (target === 15 ? 1 : 0); // there's no heavy armor with 15 AC
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, heavyTag, getHeavy(targetWithBump));
 								acItem.ac = targetWithBump;
+								delete acItem._acBeforePreAdjustment;
 								this._dropShield(acItem);
 								return true;
 							} else if (isBeyondHeavy(targetNoShield)) { // cap it at +3 plate and call it a day
 								const max = PL3_PLATE;
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, heavyTag, getHeavy(max));
 								acItem.ac = max;
+								delete acItem._acBeforePreAdjustment;
 								return true;
 							} else { // drop to medium
 								const [tagBase, tagMod] = this._getAcBaseAndMod(this._LIGHT, heavyTag);
 								const tagAc = tagBase + tagMod;
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, heavyTag, `half plate armor|phb`);
 								acItem.ac = (acItem.ac - tagAc) + 15 + Math.min(2, Parser.getAbilityModNumber(mon.dex));
+								delete acItem._acBeforePreAdjustment;
 								return false;
 							}
 						}
@@ -870,11 +934,11 @@
 							case 14:
 								return [`scale mail|phb`, `breastplate|phb`][RollerUtil.roll(1, ScaleCreature._rng)];
 							case 16:
-								return [`half plate armor +1|dmg`, `breastplate +2|dmg`, `scale mail +2|dmg`][RollerUtil.roll(2, ScaleCreature._rng)];
+								return [`+1 half plate armor|dmg`, `+2 breastplate|dmg`, `+2 scale mail|dmg`][RollerUtil.roll(2, ScaleCreature._rng)];
 							case 17:
-								return `half plate armor +2|dmg`;
+								return `+2 half plate armor|dmg`;
 							case 18:
-								return `half plate armor +3|dmg`;
+								return `+3 half plate armor|dmg`;
 							default: {
 								const nonEnch = Object.keys(this._MEDIUM).find(it => this._MEDIUM[it] === base);
 								return `${nonEnch}|phb`;
@@ -933,20 +997,24 @@
 							if (isMedium(targetNoShield)) {
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, mediumTag, getMedium(targetNoShield, {tag: mediumTag, ac: tagAc}));
 								acItem.ac = target;
+								delete acItem._acBeforePreAdjustment;
 								return true;
 							} else if (this._canDropShield(mon) && isMedium(target)) {
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, mediumTag, getMedium(target, {tag: mediumTag, ac: tagAc}));
 								acItem.ac = target;
+								delete acItem._acBeforePreAdjustment;
 								this._dropShield(acItem);
 								return true;
 							} else if (canAdjustDex && isMedium(targetNoShield, true) === -1) { // drop to light
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, mediumTag, `studded leather armor|phb`);
 								acItem.ac = (acItem.ac - tagAc - Math.min(2, Parser.getAbilityModNumber(mon.dex))) + 12 + Parser.getAbilityModNumber(mon.dex);
+								delete acItem._acBeforePreAdjustment;
 								return false;
 							} else {
 								// if we need more AC, switch to heavy, and restart the conversion
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, mediumTag, `ring mail|phb`);
-								acItem.ac = (acItem.ac - tagAc - Math.min(2, Parser.getAbilityModNumber(mon.dex))) + 14;
+								acItem.ac = 14;
+								delete acItem._acBeforePreAdjustment;
 								return -1;
 							}
 						}
@@ -974,11 +1042,11 @@
 							case 12:
 								return `studded leather armor|phb`;
 							case 13:
-								return [`padded armor +1|dmg`, `leather armor +1|dmg`][RollerUtil.roll(1, ScaleCreature._rng)];
+								return [`+1 padded armor|dmg`, `+1 leather armor|dmg`][RollerUtil.roll(1, ScaleCreature._rng)];
 							case 14:
-								return [`padded armor +2|dmg`, `leather armor +2|dmg`, `studded leather armor +1|dmg`][RollerUtil.roll(2, ScaleCreature._rng)];
+								return [`+2 padded armor|dmg`, `+2 leather armor|dmg`, `+1 studded leather armor|dmg`][RollerUtil.roll(2, ScaleCreature._rng)];
 							case 15:
-								return `studded leather armor +2|dmg`;
+								return `+2 studded leather armor|dmg`;
 						}
 					};
 
@@ -1031,10 +1099,12 @@
 							if (isLight(targetNoShield)) {
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, lightTag, getLight(targetNoShield, {tag: lightTag, ac: tagAc}));
 								acItem.ac = target;
+								delete acItem._acBeforePreAdjustment;
 								return true;
 							} else if (this._canDropShield(mon) && isLight(target)) {
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, lightTag, getLight(target, {tag: lightTag, ac: tagAc}));
 								acItem.ac = target;
+								delete acItem._acBeforePreAdjustment;
 								this._dropShield(acItem);
 								return true;
 							} else if (!canAdjustDex && isLight(targetNoShield, true) === -1) { // drop armor
@@ -1044,12 +1114,14 @@
 								} else { // revert to base 10
 									acItem.from.splice(i, 1);
 									acItem.ac = (acItem.ac - tagAc) + 10;
+									delete acItem._acBeforePreAdjustment;
 									return -1;
 								}
 							} else {
 								// if we need more, switch to medium, and restart the conversion
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, lightTag, `chain shirt|phb`);
 								acItem.ac = (acItem.ac - tagAc - Parser.getAbilityModNumber(mon.dex)) + 13 + Math.min(2, Parser.getAbilityModNumber(mon.dex));
+								delete acItem._acBeforePreAdjustment;
 								return -1;
 							}
 						}
@@ -1064,9 +1136,11 @@
 				if (acItem.from && acItem.from.map(it => it._).includes("natural armor")) {
 					if (canAdjustDex) {
 						acItem.ac = target;
+						delete acItem._acBeforePreAdjustment;
 						return adjustDex();
 					} else {
 						acItem.ac = target; // natural armor of all modifiers is still just "natural armor," so this works
+						delete acItem._acBeforePreAdjustment;
 						return true;
 					}
 				}
@@ -1090,7 +1164,10 @@
 				}
 
 				// if there was no reasonable way to adjust the AC, forcibly set it here as a fallback
-				if (!lastVal) acItem.ac = target;
+				if (!lastVal) {
+					acItem.ac = target;
+					delete acItem._acBeforePreAdjustment;
+				}
 				return acItem;
 			} else {
 				return handleNoArmor();
@@ -1102,7 +1179,7 @@
 	 * X in L-H
 	 * --L---X------H--
 	 *   \   \     |
-	 * 	  \   \    |
+	 *    \   \    |
 	 *   --M---Y---I--
 	 * to Y; relative position in M-I
 	 * so (where D is "delta;" fractional position in L-H range)
@@ -1303,9 +1380,15 @@
 		const strMod = Parser.getAbilityModNumber(mon.str);
 		const dexMod = Parser.getAbilityModNumber(mon.dex);
 
-		// prefer scaling to-hits by a flat difference, rather than using a ratio
-		// this keeps ability scores more sane, and better maintains bounded accuracy
-		const getAdjustedHitFlat = (toHitIn) => toHitIn + (idealHitOut - idealHitIn);
+		const getAdjustedHitFlat = toHitIn => {
+			// For low CR -> high CR,
+			// prefer scaling to-hits by a flat difference, rather than using a ratio
+			// this keeps ability scores more sane, and better maintains bounded accuracy.
+			if (crIn < crOut) return toHitIn + (idealHitOut - idealHitIn);
+
+			// Otherwise, for high CR -> low CR
+			return this._getScaledToRatio(toHitIn, idealHitIn, idealHitOut);
+		}
 
 		const handleHit = (str, name) => {
 			const offsetEnchant = name != null ? this._getEnchantmentBonus(name) : 0;
@@ -1324,9 +1407,15 @@
 				if (modBeingScaled != null) {
 					const modDiff = (targetToHitNoEnch - pbOut) - (origToHitNoEnch - pbIn);
 					const modFromAbilOut = modFromAbil + modDiff;
-					const tempKey = `_${modBeingScaled}TmpMods`;
-					mon[tempKey] = mon[tempKey] || [];
-					mon[tempKey].push(modFromAbilOut);
+
+					// Written out in full to make ctrl-F easier
+					const tmpModListProp = {
+						"str": `_strTmpMods`,
+						"dex": `_dexTmpMods`,
+					}[modBeingScaled];
+
+					mon[tmpModListProp] = mon[tmpModListProp] || [];
+					mon[tmpModListProp].push(modFromAbilOut);
 				}
 				return `{@hit ${targetToHitNoEnch + offsetEnchant}}`;
 			})
@@ -1360,7 +1449,7 @@
 							mon[oldKey] = mon[castingAbility];
 							const dcDiff = outDc - origDc;
 							const curMod = Parser.getAbilityModNumber(mon[castingAbility]);
-							mon[castingAbility] = this._calcNewAbility(mon, castingAbility, curMod + dcDiff);
+							mon[castingAbility] = this._calcNewAbility(mon, castingAbility, curMod + dcDiff + pbIn - pbOut);
 						}
 					}
 					return `DC ${outDc}`;
@@ -1395,23 +1484,39 @@
 		handleGenericEntries("mythic");
 		handleGenericEntries("variant");
 
+		// Apply any changes required by the to-hit adjustment to our ability scores
 		const checkSetTempMod = (abil) => {
-			const k = `_${abil}TmpMods`;
-			if (mon[k]) {
-				const nxtK = `_${abil}TmpMod`;
-				if (mon[k].length === 0) throw new Error("Should never occur!");
-				else if (mon[k].length > 1) {
-					const base = mon[k][0];
-					const notEqualBase = mon[k].find(it => it !== base);
-					if (notEqualBase == null) {
-						mon[nxtK] = mon[k][0];
-					}
-				} else {
-					mon[nxtK] = mon[k][0];
+			// Written out in full to make ctrl-F easier
+			const tmpModListProp = {
+				"str": `_strTmpMods`,
+				"dex": `_dexTmpMods`,
+			}[abil];
+
+			if (!mon[tmpModListProp]) return;
+
+			const nxtK = `_${abil}TmpMod`;
+			if (mon[tmpModListProp].length === 0) throw new Error("Should never occur!");
+			else if (mon[tmpModListProp].length > 1) {
+				const cntEachMod = {};
+				mon[tmpModListProp].forEach(mod => cntEachMod[mod] = (cntEachMod[mod] || 0) + 1);
+
+				// If all changes are equal, apply the first
+				if (Object.keys(cntEachMod).length === 1) mon[nxtK] = mon[tmpModListProp][0];
+				// Otherwise, apply the one we found the most. Failing that, apply the first one.
+				else {
+					const maxCount = Math.max(...Object.values(cntEachMod));
+					const mostPopularMods = Object.entries(cntEachMod)
+						.filter(([, cnt]) => cnt === maxCount)
+						.map(([mod]) => Number(mod));
+					mon[nxtK] = mostPopularMods[0];
 				}
-				delete mon[k];
+			} else {
+				mon[nxtK] = mon[tmpModListProp][0];
 			}
+
+			delete mon[tmpModListProp];
 		};
+
 		checkSetTempMod("str");
 		checkSetTempMod("dex");
 	},
@@ -1448,228 +1553,231 @@
 			const dexMod = mon._dexTmpMod || originalDexMod;
 
 			const handleDpr = (prop) => {
-				if (mon[prop]) {
-					let allSucceeded = true;
+				if (!mon[prop]) return true; // if there was nothing to do, the operation was a success
 
-					mon[prop].forEach((it, idxProp) => {
-						const toUpdate = JSON.stringify(it.entries);
+				let allSucceeded = true;
 
-						// handle flat values first, as we may convert dice values to flats
-						let out = toUpdate.replace(RollerUtil.REGEX_DAMAGE_FLAT, (m0, prefix, flatVal, suffix) => {
-							const adjDpr = getAdjustedDpr(flatVal);
-							return `${prefix}${adjDpr}${suffix}`;
-						});
+				mon[prop].forEach((it, idxProp) => {
+					const toUpdate = JSON.stringify(it.entries);
 
-						// track attribute adjustment requirements (unused except for dbgging)
-						const reqAbilAdjust = [];
-
-						// pre-calculate enchanted weapon offsets
-						const offsetEnchant = this._getEnchantmentBonus(it.name);
-
-						out = out.replace(RollerUtil.REGEX_DAMAGE_DICE, (m0, average, prefix, diceExp, suffix) => {
-							diceExp = diceExp.replace(/\s+/g, "");
-							const avgDpr = getAvgDpr(diceExp);
-							const adjustedDpr = getAdjustedDpr(avgDpr);
-
-							const targetDprRange = [ // cap min damage range at 0-1
-								Math.max(0, Math.floor(adjustedDpr - crOutDprVariance)),
-								Math.ceil(Math.max(1, adjustedDpr + crOutDprVariance)),
-							];
-
-							const inRange = (num) => {
-								return num >= targetDprRange[0] && num <= targetDprRange[1];
-							};
-
-							// in official data, there are no dice expressions with more than one type of dice
-							const [dice, modifier] = diceExp.split(/[-+]/);
-							const [numDice, diceFaces] = dice.split("d").map(it => Number(it));
-							const modFromAbil = modifier ? Number(modifier) - offsetEnchant : null;
-
-							// try to figure out which mod we're going to be scaling
-							const modBeingScaled = this._getModBeingScaled(originalStrMod, originalDexMod, modFromAbil, it.name, toUpdate);
-							const originalAbilMod = modBeingScaled === "str" ? strMod : modBeingScaled === "dex" ? dexMod : null;
-
-							const getAdjustedDamMod = () => {
-								if (modBeingScaled === "str" && mon._strTmpMod != null) return mon._strTmpMod;
-								if (modBeingScaled === "dex" && mon._dexTmpMod != null) return mon._dexTmpMod;
-
-								if (modFromAbil == null) return 0 - offsetEnchant; // ensure enchanted equipment is ignored even with +0 base damage mod
-
-								// calculate this without enchanted equipment; ignore them and add them back at the end
-								return this._interpAndTranslateToSpace(modFromAbil, this._crToEstimatedDamageMod[crIn], this._crToEstimatedDamageMod[crOut]);
-							};
-
-							let numDiceOut = numDice;
-							let diceFacesOut = diceFaces;
-							let modOut = getAdjustedDamMod();
-
-							const doPostCalc = () => {
-								// prevent ability scores going below zero
-								// should be mathematically impossible, if the recalculation is working correctly as:
-								// - minimum damage dice is a d4
-								// - minimum number of dice is 1
-								// - minimum DPR range is 0-1, which can be achieved with e.g. 1d4-1 (avg 1) or 1d4-2 (avg 0)
-								// therefore, this provides a sanity check: this should only occur when something's broken
-								if (modOut < -5) throw new Error(`Ability modifier ${modBeingScaled != null ? `(${modBeingScaled})` : ""} was below -5 (${modOut})! Original dice expression was ${diceExp}.`);
-
-								if (originalAbilMod != null && modOut !== originalAbilMod) {
-									const tmpKey = `_${modBeingScaled}TmpMod`;
-									const maxDprKey = `_maxDpr${modBeingScaled.uppercaseFirst()}`;
-									let updateTempMod = true;
-									if (mon[tmpKey] != null && mon[tmpKey] !== modOut) {
-										if (mon[maxDprKey] >= adjustedDpr) {
-											updateTempMod = false;
-										} else {
-											// TODO test this -- none of the official monsters require attribute re-calculation but homebrew might. The story so far:
-											//   - A previous damage roll required an adjusted ability modifier to make the numbers line up
-											//   - This damage roll requires a _different_ adjustment to the same modifier to make the numbers line up
-											//   - This damage roll has a bigger average DPR, so should be prioritised. Update the modifier using this roll's requirements.
-											//   - Since this will effectively invalidate the previous roll adjustments, break out of whatever we're doing here, and restart the entire adjustment process
-											//   - As we've set our new attribute modifier on the creature, the next loop will respect it, and use it by default
-											//   - Additionally, track the largest DPR, so we don't get stuck in a loop doing this on the next DPR adjustment iteration
-											mon[tmpKey] = modOut;
-											mon[maxDprKey] = adjustedDpr;
-											allSucceeded = false;
-											return "";
-										}
-									}
-
-									if (updateTempMod) {
-										mon[maxDprKey] = Math.max((mon[maxDprKey] || 0), adjustedDpr);
-										mon[tmpKey] = modOut;
-									}
-
-									reqAbilAdjust.push({
-										ability: modBeingScaled,
-										mod: modOut,
-										adjustedDpr,
-									})
-								}
-							};
-
-							const getDiceExp = (a = numDiceOut, b = diceFacesOut, c = modOut) => `${a}d${b}${c !== 0 ? ` ${c > 0 ? "+" : ""} ${c}` : ""}`;
-							let loops = 0;
-							while (1) {
-								if (inRange(getAvgDpr(getDiceExp()))) break;
-								if (loops > 100) throw new Error(`Failed to find new DPR! Current formula is: ${getDiceExp()}`);
-
-								const tryAdjustNumDice = (diceFacesTemp = diceFacesOut, modTemp = modOut) => {
-									let numDiceTemp = numDice;
-									let tempAvgDpr = getAvgDpr(getDiceExp(numDiceTemp, diceFacesTemp, modTemp));
-
-									let found = false;
-
-									if (adjustedDpr < tempAvgDpr) {
-										while (numDiceTemp > 1 && tempAvgDpr >= targetDprRange[0]) {
-											numDiceTemp -= 1;
-											tempAvgDpr -= (diceFacesTemp + 1) / 2;
-
-											if (inRange(getAvgDpr(getDiceExp(numDiceTemp, diceFacesTemp, modTemp)))) {
-												found = true;
-												break;
-											}
-										}
-									} else {
-										while (tempAvgDpr <= targetDprRange[1]) {
-											numDiceTemp += 1;
-											tempAvgDpr += (diceFacesTemp + 1) / 2;
-
-											if (inRange(getAvgDpr(getDiceExp(numDiceTemp, diceFacesTemp, modTemp)))) {
-												found = true;
-												break;
-											}
-										}
-									}
-
-									if (found) {
-										numDiceOut = numDiceTemp;
-										return true;
-									}
-									return false;
-								};
-
-								const tryAdjustDiceFaces = () => {
-									if (diceFaces === 4 || diceFaces === 20) return; // can't be scaled
-									let diceFacesTemp = diceFaces;
-									let tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
-									let found = false;
-
-									if (adjustedDpr < tempAvgDpr) {
-										while (diceFacesTemp > 4 && tempAvgDpr >= targetDprRange[0]) {
-											diceFacesTemp = Renderer.dice.getPreviousDice(diceFacesTemp);
-											tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
-
-											if (inRange(getAvgDpr(getDiceExp(numDice, diceFacesTemp, modOut)))) {
-												found = true;
-												break;
-											} else {
-												found = tryAdjustNumDice(diceFacesTemp);
-												if (found) break;
-											}
-										}
-									} else {
-										while (diceFacesTemp < 20 && tempAvgDpr <= targetDprRange[1]) {
-											diceFacesTemp = Renderer.dice.getNextDice(diceFacesTemp);
-											tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
-
-											if (inRange(getAvgDpr(getDiceExp(numDice, diceFacesTemp, modOut)))) {
-												found = true;
-												break;
-											} else {
-												found = tryAdjustNumDice(diceFacesTemp);
-												if (found) break;
-											}
-										}
-									}
-
-									if (found) {
-										diceFacesOut = diceFacesTemp;
-										return true;
-									}
-									return false;
-								};
-
-								const tryAdjustMod = () => {
-									// alternating sequence, going further from origin each time.
-									// E.g. original modOut == 0 => 1, -1, 2, -2, 3, -3, ... modOut+n, modOut-n
-									modOut += (1 - ((loops % 2) * 2)) * (loops + 1);
-								};
-
-								// order of preference for scaling:
-								// - adjusting number of dice
-								// - adjusting number of faces
-								// - adjusting modifier
-								if (tryAdjustNumDice()) break;
-								if (tryAdjustDiceFaces()) break;
-								tryAdjustMod();
-
-								loops++;
-							}
-
-							doPostCalc();
-							const diceExpOut = getDiceExp(undefined, undefined, modOut + offsetEnchant);
-							const avgDamOut = Math.floor(getAvgDpr(diceExpOut));
-							if (avgDamOut <= 0) return `1 ${suffix.replace(/^[^\w]+/, " ").replace(/ +/, " ")}`;
-							return `${Math.floor(getAvgDpr(diceExpOut))}${prefix}${diceExpOut}${suffix}`;
-						});
-
-						// skip remaining entries, to let the outer loop continue
-						if (!allSucceeded) return false;
-
-						if (toUpdate !== out) {
-							scaledEntries.push({
-								prop,
-								idxProp,
-								entriesStrOriginal: toUpdate, // unused/debug
-								entriesStr: out,
-								reqAbilAdjust, // unused/debug
-							});
-						}
+					// handle flat values first, as we may convert dice values to flats
+					let out = toUpdate.replace(RollerUtil.REGEX_DAMAGE_FLAT, (m0, prefix, flatVal, suffix) => {
+						const adjDpr = getAdjustedDpr(flatVal);
+						return `${prefix}${adjDpr}${suffix}`;
 					});
 
-					return allSucceeded;
-				}
-				return true; // if there was nothing to do, the operation was a success
+					// track attribute adjustment requirements (unused except for dbgging)
+					const reqAbilAdjust = [];
+
+					// pre-calculate enchanted weapon offsets
+					const offsetEnchant = this._getEnchantmentBonus(it.name);
+
+					out = out.replace(RollerUtil.REGEX_DAMAGE_DICE, (m0, average, prefix, diceExp, suffix) => {
+						diceExp = diceExp.replace(/\s+/g, "");
+						const avgDpr = getAvgDpr(diceExp);
+						const adjustedDpr = getAdjustedDpr(avgDpr);
+
+						const targetDprRange = [ // cap min damage range at 0-1
+							Math.max(0, Math.floor(adjustedDpr - crOutDprVariance)),
+							Math.ceil(Math.max(1, adjustedDpr + crOutDprVariance)),
+						];
+
+						const inRange = (num) => {
+							return num >= targetDprRange[0] && num <= targetDprRange[1];
+						};
+
+						// in official data, there are no dice expressions with more than one type of dice
+						const [dice, modifier] = diceExp.split(/[-+]/);
+						const [numDice, diceFaces] = dice.split("d").map(it => Number(it));
+						const modFromAbil = modifier ? Number(modifier) - offsetEnchant : null;
+
+						// try to figure out which mod we're going to be scaling
+						const modBeingScaled = this._getModBeingScaled(originalStrMod, originalDexMod, modFromAbil, it.name, toUpdate);
+						const originalAbilMod = modBeingScaled === "str" ? strMod : modBeingScaled === "dex" ? dexMod : null;
+
+						const getAdjustedDamMod = () => {
+							if (modBeingScaled === "str" && mon._strTmpMod != null) return mon._strTmpMod;
+							if (modBeingScaled === "dex" && mon._dexTmpMod != null) return mon._dexTmpMod;
+
+							if (modFromAbil == null) return 0 - offsetEnchant; // ensure enchanted equipment is ignored even with +0 base damage mod
+
+							// calculate this without enchanted equipment; ignore them and add them back at the end
+							return this._interpAndTranslateToSpace(modFromAbil, this._crToEstimatedDamageMod[crIn], this._crToEstimatedDamageMod[crOut]);
+						};
+
+						let numDiceOut = numDice;
+						let diceFacesOut = diceFaces;
+						let modOut = getAdjustedDamMod();
+
+						const doPostCalc = () => {
+							// prevent ability scores going below zero
+							// should be mathematically impossible, if the recalculation is working correctly as:
+							// - minimum damage dice is a d4
+							// - minimum number of dice is 1
+							// - minimum DPR range is 0-1, which can be achieved with e.g. 1d4-1 (avg 1) or 1d4-2 (avg 0)
+							// therefore, this provides a sanity check: this should only occur when something's broken
+							if (modOut < -5) throw new Error(`Ability modifier ${modBeingScaled != null ? `(${modBeingScaled})` : ""} was below -5 (${modOut})! Original dice expression was ${diceExp}.`);
+
+							if (originalAbilMod != null && modOut !== originalAbilMod) {
+								// Written out in full to make ctrl-F easier
+								const [tmpModProp, maxDprKey] = {
+									"str": [`_strTmpMod`, `_maxDprStr`],
+									"dex": [`_dexTmpMod`, `_maxDprDex`],
+								}[modBeingScaled];
+
+								let updateTempMod = true;
+								if (mon[tmpModProp] != null && mon[tmpModProp] !== modOut) {
+									if (mon[maxDprKey] >= adjustedDpr) {
+										updateTempMod = false;
+									} else {
+										// TODO test this -- none of the official monsters require attribute re-calculation but homebrew might. The story so far:
+										//   - A previous damage roll required an adjusted ability modifier to make the numbers line up
+										//   - This damage roll requires a _different_ adjustment to the same modifier to make the numbers line up
+										//   - This damage roll has a bigger average DPR, so should be prioritised. Update the modifier using this roll's requirements.
+										//   - Since this will effectively invalidate the previous roll adjustments, break out of whatever we're doing here, and restart the entire adjustment process
+										//   - As we've set our new attribute modifier on the creature, the next loop will respect it, and use it by default
+										//   - Additionally, track the largest DPR, so we don't get stuck in a loop doing this on the next DPR adjustment iteration
+										mon[tmpModProp] = modOut;
+										mon[maxDprKey] = adjustedDpr;
+										allSucceeded = false;
+										return "";
+									}
+								}
+
+								if (updateTempMod) {
+									mon[maxDprKey] = Math.max((mon[maxDprKey] || 0), adjustedDpr);
+									mon[tmpModProp] = modOut;
+								}
+
+								reqAbilAdjust.push({
+									ability: modBeingScaled,
+									mod: modOut,
+									adjustedDpr,
+								})
+							}
+						};
+
+						const getDiceExp = (a = numDiceOut, b = diceFacesOut, c = modOut) => `${a}d${b}${c !== 0 ? ` ${c > 0 ? "+" : ""} ${c}` : ""}`;
+						let loops = 0;
+						while (1) {
+							if (inRange(getAvgDpr(getDiceExp()))) break;
+							if (loops > 100) throw new Error(`Failed to find new DPR! Current formula is: ${getDiceExp()}`);
+
+							const tryAdjustNumDice = (diceFacesTemp = diceFacesOut, modTemp = modOut) => {
+								let numDiceTemp = numDice;
+								let tempAvgDpr = getAvgDpr(getDiceExp(numDiceTemp, diceFacesTemp, modTemp));
+
+								let found = false;
+
+								if (adjustedDpr < tempAvgDpr) {
+									while (numDiceTemp > 1 && tempAvgDpr >= targetDprRange[0]) {
+										numDiceTemp -= 1;
+										tempAvgDpr -= (diceFacesTemp + 1) / 2;
+
+										if (inRange(getAvgDpr(getDiceExp(numDiceTemp, diceFacesTemp, modTemp)))) {
+											found = true;
+											break;
+										}
+									}
+								} else {
+									while (tempAvgDpr <= targetDprRange[1]) {
+										numDiceTemp += 1;
+										tempAvgDpr += (diceFacesTemp + 1) / 2;
+
+										if (inRange(getAvgDpr(getDiceExp(numDiceTemp, diceFacesTemp, modTemp)))) {
+											found = true;
+											break;
+										}
+									}
+								}
+
+								if (found) {
+									numDiceOut = numDiceTemp;
+									return true;
+								}
+								return false;
+							};
+
+							const tryAdjustDiceFaces = () => {
+								if (diceFaces === 4 || diceFaces === 20) return; // can't be scaled
+								let diceFacesTemp = diceFaces;
+								let tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
+								let found = false;
+
+								if (adjustedDpr < tempAvgDpr) {
+									while (diceFacesTemp > 4 && tempAvgDpr >= targetDprRange[0]) {
+										diceFacesTemp = Renderer.dice.getPreviousDice(diceFacesTemp);
+										tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
+
+										if (inRange(getAvgDpr(getDiceExp(numDice, diceFacesTemp, modOut)))) {
+											found = true;
+											break;
+										} else {
+											found = tryAdjustNumDice(diceFacesTemp);
+											if (found) break;
+										}
+									}
+								} else {
+									while (diceFacesTemp < 20 && tempAvgDpr <= targetDprRange[1]) {
+										diceFacesTemp = Renderer.dice.getNextDice(diceFacesTemp);
+										tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
+
+										if (inRange(getAvgDpr(getDiceExp(numDice, diceFacesTemp, modOut)))) {
+											found = true;
+											break;
+										} else {
+											found = tryAdjustNumDice(diceFacesTemp);
+											if (found) break;
+										}
+									}
+								}
+
+								if (found) {
+									diceFacesOut = diceFacesTemp;
+									return true;
+								}
+								return false;
+							};
+
+							const tryAdjustMod = () => {
+								// alternating sequence, going further from origin each time.
+								// E.g. original modOut == 0 => 1, -1, 2, -2, 3, -3, ... modOut+n, modOut-n
+								modOut += (1 - ((loops % 2) * 2)) * (loops + 1);
+							};
+
+							// order of preference for scaling:
+							// - adjusting number of dice
+							// - adjusting number of faces
+							// - adjusting modifier
+							if (tryAdjustNumDice()) break;
+							if (tryAdjustDiceFaces()) break;
+							tryAdjustMod();
+
+							loops++;
+						}
+
+						doPostCalc();
+						const diceExpOut = getDiceExp(undefined, undefined, modOut + offsetEnchant);
+						const avgDamOut = Math.floor(getAvgDpr(diceExpOut));
+						if (avgDamOut <= 0) return `1 ${suffix.replace(/^[^\w]+/, " ").replace(/ +/, " ")}`;
+						return `${Math.floor(getAvgDpr(diceExpOut))}${prefix}${diceExpOut}${suffix}`;
+					});
+
+					// skip remaining entries, to let the outer loop continue
+					if (!allSucceeded) return false;
+
+					if (toUpdate !== out) {
+						scaledEntries.push({
+							prop,
+							idxProp,
+							entriesStrOriginal: toUpdate, // unused/debug
+							entriesStr: out,
+							reqAbilAdjust, // unused/debug
+						});
+					}
+				});
+
+				return allSucceeded;
 			};
 
 			if (!handleDpr("trait")) continue;
@@ -1690,18 +1798,16 @@
 		// update ability scores, as required
 		const updateAbility = (prop) => {
 			// Written out in full to make ctrl-F easier
-			const [tempKey, oldKey] = (() => {
-				switch (prop) {
-					case "str": return [`_strTmpMod`, `strOld`];
-					case "dex": return [`_dexTmpMod`, `dexOld`];
-					default: throw new Error(`Unimplemented!`);
-				}
-			})();
-			if (mon[tempKey] != null) {
-				mon[oldKey] = mon[prop];
-				mon[prop] = this._calcNewAbility(mon, prop, mon[tempKey])
+			const [tmpModProp, oldScoreProp] = {
+				"str": [`_strTmpMod`, `strOld`],
+				"dex": [`_dexTmpMod`, `dexOld`],
+			}[prop];
+
+			if (mon[tmpModProp] != null) {
+				mon[oldScoreProp] = mon[prop];
+				mon[prop] = this._calcNewAbility(mon, prop, mon[tmpModProp])
 			}
-			delete mon[tempKey];
+			delete mon[tmpModProp];
 		};
 		updateAbility("str");
 		updateAbility("dex");
@@ -1808,222 +1914,222 @@
 			}
 		};
 
-		if (mon.spellcasting) {
-			const idealClvlIn = this._crToCasterLevel(crIn);
-			const idealClvlOut = this._crToCasterLevel(crOut);
+		if (!mon.spellcasting) return;
 
-			const isWarlock = this._adjustSpellcasting_isWarlock(mon);
-			// favor the first result as primary
-			let primaryInLevel = null;
-			let primaryOutLevel = null;
+		const idealClvlIn = this._crToCasterLevel(crIn);
+		const idealClvlOut = this._crToCasterLevel(crOut);
 
-			mon.spellcasting.forEach(sc => {
-				// attempt to ascertain class spells
-				let spellsFromClass = null;
+		const isWarlock = this._adjustSpellcasting_isWarlock(mon);
+		// favor the first result as primary
+		let primaryInLevel = null;
+		let primaryOutLevel = null;
 
-				if (sc.headerEntries) {
-					const inStr = JSON.stringify(sc.headerEntries);
+		mon.spellcasting.forEach(sc => {
+			// attempt to ascertain class spells
+			let spellsFromClass = null;
 
-					let anyChange = false;
-					const outStr = inStr.replace(/(an?) (\d+)[A-Za-z]+-level/i, (...m) => {
-						const level = Number(m[2]);
-						const outLevel = Math.max(1, Math.min(20, this._getScaledToRatio(level, idealClvlIn, idealClvlOut)));
-						anyChange = level !== outLevel;
-						if (anyChange) {
-							if (primaryInLevel == null) primaryInLevel = level;
-							if (primaryOutLevel == null) primaryOutLevel = outLevel;
-							return `${Parser.getArticle(outLevel)} ${Parser.spLevelToFull(outLevel)}-level`;
-						} else return m[0];
-					});
+			if (sc.headerEntries) {
+				const inStr = JSON.stringify(sc.headerEntries);
 
-					const mClasses = /(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard) spell(?:s)?/i.exec(outStr);
-					if (mClasses) spellsFromClass = mClasses[1];
-					else {
-						const mClasses2 = /(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard)(?:'s)? spell list/i.exec(outStr);
-						if (mClasses2) spellsFromClass = mClasses2[1]
-					}
+				let anyChange = false;
+				const outStr = inStr.replace(/(an?) (\d+)[A-Za-z]+-level/i, (...m) => {
+					const level = Number(m[2]);
+					const outLevel = Math.max(1, Math.min(20, this._getScaledToRatio(level, idealClvlIn, idealClvlOut)));
+					anyChange = level !== outLevel;
+					if (anyChange) {
+						if (primaryInLevel == null) primaryInLevel = level;
+						if (primaryOutLevel == null) primaryOutLevel = outLevel;
+						return `${Parser.getArticle(outLevel)} ${Parser.spLevelToFull(outLevel)}-level`;
+					} else return m[0];
+				});
 
-					if (anyChange) sc.headerEntries = JSON.parse(outStr);
+				const mClasses = /(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard) spell(?:s)?/i.exec(outStr);
+				if (mClasses) spellsFromClass = mClasses[1];
+				else {
+					const mClasses2 = /(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard)(?:'s)? spell list/i.exec(outStr);
+					if (mClasses2) spellsFromClass = mClasses2[1]
 				}
 
-				// calculate spell level from caster levels
-				let maxSpellLevel = null;
-				if (primaryOutLevel) {
-					maxSpellLevel = Math.min(9, Math.ceil(primaryOutLevel / 2));
+				if (anyChange) sc.headerEntries = JSON.parse(outStr);
+			}
 
-					// cap half-caster slots at 5
-					if (/paladin|ranger|warlock/i.exec(spellsFromClass)) {
-						maxSpellLevel = Math.min(5, primaryOutLevel);
+			// calculate spell level from caster levels
+			let maxSpellLevel = null;
+			if (primaryOutLevel) {
+				maxSpellLevel = Math.min(9, Math.ceil(primaryOutLevel / 2));
+
+				// cap half-caster slots at 5
+				if (/paladin|ranger|warlock/i.exec(spellsFromClass)) {
+					maxSpellLevel = Math.min(5, primaryOutLevel);
+				}
+			}
+
+			if (sc.spells && primaryOutLevel != null) {
+				const spells = sc.spells;
+
+				// "lower" is the property defining a set of spell slots as having a lower bound, e.g. "1st-5th level"
+				const isWarlockCasting = /warlock/i.exec(spellsFromClass) && Object.values(spells).filter(it => it.slots && it.lower).length === 1;
+
+				// cantrips
+				if (spells[0]) {
+					const curCantrips = spells[0].spells.length;
+					const idealCantripsIn = this._casterLevelAndClassToCantrips(primaryInLevel, spellsFromClass);
+					const idealCantripsOut = this._casterLevelAndClassToCantrips(primaryOutLevel, spellsFromClass);
+					const targetCantripCount = this._getScaledToRatio(curCantrips, idealCantripsIn, idealCantripsOut);
+
+					if (curCantrips < targetCantripCount) {
+						const cantrips = Object.keys((this._spells[SRC_PHB][spellsFromClass.toLowerCase()] || {})[0]).map(it => it.toLowerCase());
+						if (cantrips.length) {
+							const extraCantrips = [];
+							const numNew = Math.min(targetCantripCount - curCantrips, cantrips.length);
+							for (let n = 0; n < numNew; ++n) {
+								const ix = RollerUtil.roll(cantrips.length, this._rng);
+								extraCantrips.push(cantrips[ix]);
+								cantrips.splice(ix, 1);
+							}
+							spells[0].spells = spells[0].spells.concat(extraCantrips.map(it => `{@spell ${it}}`));
+						}
+					} else {
+						const keepThese = this._protectedCantrips.map(it => `@spell ${it}`);
+						while (spells[0].spells.length > targetCantripCount) {
+							const ixs = spells[0].spells.filterIndex(it => !~keepThese.findIndex(x => it.includes(x)));
+							if (ixs.length) {
+								const ix = RollerUtil.roll(ixs.length, this._rng);
+								spells[0].spells.splice(ix, 1);
+							} else spells[0].spells.pop();
+						}
 					}
 				}
 
-				if (sc.spells && primaryOutLevel != null) {
-					const spells = sc.spells;
+				// spells
+				if (isWarlockCasting) {
+					const curCastingLevel = Object.keys(spells).find(k => spells[k].lower);
+					if (maxSpellLevel === Number(curCastingLevel)) return;
+					if (maxSpellLevel === 0) {
+						Object.keys(spells).filter(lvl => lvl !== "0").forEach(lvl => delete spells[lvl]);
+						return;
+					}
 
-					// "lower" is the property defining a set of spell slots as having a lower bound, e.g. "1st-5th level"
-					const isWarlockCasting = /warlock/i.exec(spellsFromClass) && Object.values(spells).filter(it => it.slots && it.lower).length === 1;
+					const numSpellsKnown = this._adjustSpellcasting_getWarlockNumSpellsKnown(primaryOutLevel);
+					const warlockSpells = this._spells[SRC_PHB].warlock;
+					let spellList = [];
+					for (let i = 1; i < maxSpellLevel + 1; ++i) {
+						spellList = spellList.concat(Object.keys(warlockSpells[i]).map(sp => sp.toSpellCase()));
+					}
+					const spellsKnown = []; // TODO maintain original spell list if possible -- add them to this list, and remove them from the list being rolled against
+					for (let i = 0; i < numSpellsKnown; ++i) {
+						const ix = RollerUtil.roll(spellList.length, this._rng);
+						spellsKnown.push(spellList[ix]);
+						spellList.splice(ix, 1);
+					}
+					Object.keys(spells).filter(lvl => lvl !== "0").forEach(lvl => delete spells[lvl]);
+					const slots = this._adjustSpellcasting_getWarlockNumSpellSlots(maxSpellLevel);
+					spells[maxSpellLevel] = {
+						slots,
+						lower: 1,
+						spells: [
+							`A selection of ${maxSpellLevel === 1 ? `{@filter 1st-level warlock spells|spells|level=${1}|class=warlock}.` : `{@filter 1st- to ${Parser.spLevelToFull(maxSpellLevel)}-level warlock spells|spells|level=${[...new Array(maxSpellLevel)].map((_, i) => i + 1).join(";")}|class=warlock}.`}  Examples include: ${spellsKnown.sort(SortUtil.ascSortLower).map(it => `{@spell ${it}}`).joinConjunct(", ", " and ")}`,
+						],
+					}
+				} else {
+					let lastRatio = 1; // adjust for higher/lower than regular spell slot counts
+					for (let i = 1; i < 10; ++i) {
+						const atLevel = spells[i];
+						const idealSlotsIn = getSlotsAtLevel(primaryInLevel, i);
+						const idealSlotsOut = getSlotsAtLevel(primaryOutLevel, i);
 
-					// cantrips
-					if (spells[0]) {
-						const curCantrips = spells[0].spells.length;
-						const idealCantripsIn = this._casterLevelAndClassToCantrips(primaryInLevel, spellsFromClass);
-						const idealCantripsOut = this._casterLevelAndClassToCantrips(primaryOutLevel, spellsFromClass);
-						const targetCantripCount = this._getScaledToRatio(curCantrips, idealCantripsIn, idealCantripsOut);
+						if (atLevel) {
+							// TODO grow/shrink the spell list at this level as required
+							if (atLevel.slots) { // no "slots" signifies at-wills
+								const adjustedSlotsOut = this._getScaledToRatio(atLevel.slots, idealSlotsIn, idealSlotsOut);
+								lastRatio = adjustedSlotsOut / idealSlotsOut;
 
-						if (curCantrips < targetCantripCount) {
-							const cantrips = Object.keys((this._spells[SRC_PHB][spellsFromClass.toLowerCase()] || {})[0]).map(it => it.toLowerCase());
-							if (cantrips.length) {
-								const extraCantrips = [];
-								const numNew = Math.min(targetCantripCount - curCantrips, cantrips.length);
-								for (let n = 0; n < numNew; ++n) {
-									const ix = RollerUtil.roll(cantrips.length, this._rng);
-									extraCantrips.push(cantrips[ix]);
-									cantrips.splice(ix, 1);
+								atLevel.slots = adjustedSlotsOut;
+								if (adjustedSlotsOut <= 0) {
+									delete spells[i];
 								}
-								spells[0].spells = spells[0].spells.concat(extraCantrips.map(it => `{@spell ${it}}`));
+							}
+						} else if (i <= maxSpellLevel) {
+							const slots = Math.max(1, Math.round(idealSlotsOut * lastRatio));
+							if (spellsFromClass && (this._spells[SRC_PHB][spellsFromClass.toLowerCase()] || {})[i]) {
+								const examples = [];
+								const levelSpells = Object.keys(this._spells[SRC_PHB][spellsFromClass.toLowerCase()][i]).map(it => it.toSpellCase());
+								const numExamples = Math.min(5, levelSpells.length);
+								for (let n = 0; n < numExamples; ++n) {
+									const ix = RollerUtil.roll(levelSpells.length, this._rng);
+									examples.push(levelSpells[ix]);
+									levelSpells.splice(ix, 1);
+								}
+								spells[i] = {
+									slots,
+									spells: [
+										`A selection of {@filter ${Parser.spLevelToFull(i)}-level ${spellsFromClass} spells|spells|level=${i}|class=${spellsFromClass}}. Examples include: ${examples.sort(SortUtil.ascSortLower).map(it => `{@spell ${it}}`).joinConjunct(", ", " and ")}`,
+									],
+								};
+							} else {
+								spells[i] = {
+									slots,
+									spells: [
+										`A selection of {@filter ${Parser.spLevelToFull(i)}-level spells|spells|level=${i}}`,
+									],
+								};
 							}
 						} else {
-							const keepThese = this._protectedCantrips.map(it => `@spell ${it}`);
-							while (spells[0].spells.length > targetCantripCount) {
-								const ixs = spells[0].spells.filterIndex(it => !~keepThese.findIndex(x => it.includes(x)));
-								if (ixs.length) {
-									const ix = RollerUtil.roll(ixs.length, this._rng);
-									spells[0].spells.splice(ix, 1);
-								} else spells[0].spells.pop();
-							}
-						}
-					}
-
-					// spells
-					if (isWarlockCasting) {
-						const curCastingLevel = Object.keys(spells).find(k => spells[k].lower);
-						if (maxSpellLevel === Number(curCastingLevel)) return;
-						if (maxSpellLevel === 0) {
-							Object.keys(spells).filter(lvl => lvl !== "0").forEach(lvl => delete spells[lvl]);
-							return;
-						}
-
-						const numSpellsKnown = this._adjustSpellcasting_getWarlockNumSpellsKnown(primaryOutLevel);
-						const warlockSpells = this._spells[SRC_PHB].warlock;
-						let spellList = [];
-						for (let i = 1; i < maxSpellLevel + 1; ++i) {
-							spellList = spellList.concat(Object.keys(warlockSpells[i]).map(sp => sp.toSpellCase()));
-						}
-						const spellsKnown = []; // TODO maintain original spell list if possible -- add them to this list, and remove them from the list being rolled against
-						for (let i = 0; i < numSpellsKnown; ++i) {
-							const ix = RollerUtil.roll(spellList.length, this._rng);
-							spellsKnown.push(spellList[ix]);
-							spellList.splice(ix, 1);
-						}
-						Object.keys(spells).filter(lvl => lvl !== "0").forEach(lvl => delete spells[lvl]);
-						const slots = this._adjustSpellcasting_getWarlockNumSpellSlots(maxSpellLevel);
-						spells[maxSpellLevel] = {
-							slots,
-							lower: 1,
-							spells: [
-								`A selection of ${maxSpellLevel === 1 ? `{@filter 1st-level warlock spells|spells|level=${1}|class=warlock}.` : `{@filter 1st- to ${Parser.spLevelToFull(maxSpellLevel)}-level warlock spells|spells|level=${[...new Array(maxSpellLevel)].map((_, i) => i + 1).join(";")}|class=warlock}.`}  Examples include: ${spellsKnown.sort(SortUtil.ascSortLower).map(it => `{@spell ${it}}`).joinConjunct(", ", " and ")}`,
-							],
-						}
-					} else {
-						let lastRatio = 1; // adjust for higher/lower than regular spell slot counts
-						for (let i = 1; i < 10; ++i) {
-							const atLevel = spells[i];
-							const idealSlotsIn = getSlotsAtLevel(primaryInLevel, i);
-							const idealSlotsOut = getSlotsAtLevel(primaryOutLevel, i);
-
-							if (atLevel) {
-								// TODO grow/shrink the spell list at this level as required
-								if (atLevel.slots) { // no "slots" signifies at-wills
-									const adjustedSlotsOut = this._getScaledToRatio(atLevel.slots, idealSlotsIn, idealSlotsOut);
-									lastRatio = adjustedSlotsOut / idealSlotsOut;
-
-									atLevel.slots = adjustedSlotsOut;
-									if (adjustedSlotsOut <= 0) {
-										delete spells[i];
-									}
-								}
-							} else if (i <= maxSpellLevel) {
-								const slots = Math.max(1, Math.round(idealSlotsOut * lastRatio));
-								if (spellsFromClass && (this._spells[SRC_PHB][spellsFromClass.toLowerCase()] || {})[i]) {
-									const examples = [];
-									const levelSpells = Object.keys(this._spells[SRC_PHB][spellsFromClass.toLowerCase()][i]).map(it => it.toSpellCase());
-									const numExamples = Math.min(5, levelSpells.length);
-									for (let n = 0; n < numExamples; ++n) {
-										const ix = RollerUtil.roll(levelSpells.length, this._rng);
-										examples.push(levelSpells[ix]);
-										levelSpells.splice(ix, 1);
-									}
-									spells[i] = {
-										slots,
-										spells: [
-											`A selection of {@filter ${Parser.spLevelToFull(i)}-level ${spellsFromClass} spells|spells|level=${i}|class=${spellsFromClass}}. Examples include: ${examples.sort(SortUtil.ascSortLower).map(it => `{@spell ${it}}`).joinConjunct(", ", " and ")}`,
-										],
-									};
-								} else {
-									spells[i] = {
-										slots,
-										spells: [
-											`A selection of {@filter ${Parser.spLevelToFull(i)}-level spells|spells|level=${i}}`,
-										],
-									};
-								}
-							} else {
-								delete spells[i];
-							}
+							delete spells[i];
 						}
 					}
 				}
-			});
+			}
+		});
 
-			mon.spellcasting.forEach(sc => {
-				// adjust Mystic Arcanum spells
-				if (isWarlock && sc.daily && sc.daily["1e"]) {
-					const numArcanum = this._adjustSpellcasting_getWarlockNumArcanum(primaryOutLevel);
+		mon.spellcasting.forEach(sc => {
+			// adjust Mystic Arcanum spells
+			if (isWarlock && sc.daily && sc.daily["1e"]) {
+				const numArcanum = this._adjustSpellcasting_getWarlockNumArcanum(primaryOutLevel);
 
-					const curNumSpells = sc.daily["1e"].length;
+				const curNumSpells = sc.daily["1e"].length;
 
-					if (sc.daily["1e"].length === numArcanum) return;
-					if (numArcanum === 0) return delete sc.daily["1e"];
+				if (sc.daily["1e"].length === numArcanum) return;
+				if (numArcanum === 0) return delete sc.daily["1e"];
 
-					if (curNumSpells > numArcanum) {
-						// map each existing spell e.g. `{@spell gate}` to an object of the form `{original: "{@spell gate}", level: 9}`
-						const curSpells = sc.daily["1e"].map(it => {
-							const m = /{@spell ([^|}]+)(?:\|([^|}]+))?[|}]/.exec(it);
-							if (m) {
-								const nameTag = m[1].toLowerCase();
-								const srcTag = (m[2] || SRC_PHB).toLowerCase();
+				if (curNumSpells > numArcanum) {
+					// map each existing spell e.g. `{@spell gate}` to an object of the form `{original: "{@spell gate}", level: 9}`
+					const curSpells = sc.daily["1e"].map(it => {
+						const m = /{@spell ([^|}]+)(?:\|([^|}]+))?[|}]/.exec(it);
+						if (m) {
+							const nameTag = m[1].toLowerCase();
+							const srcTag = (m[2] || SRC_PHB).toLowerCase();
 
-								const src = Object.keys(this._spells).find(it => it.toLowerCase() === srcTag);
-								if (src) {
-									const levelStr = Object.keys(this._spells[src].warlock || {}).find(lvl => Object.keys((this._spells[src].warlock || {})[lvl]).some(nm => nm.toLowerCase() === nameTag));
+							const src = Object.keys(this._spells).find(it => it.toLowerCase() === srcTag);
+							if (src) {
+								const levelStr = Object.keys(this._spells[src].warlock || {}).find(lvl => Object.keys((this._spells[src].warlock || {})[lvl]).some(nm => nm.toLowerCase() === nameTag));
 
-									if (levelStr) return {original: it, level: Number(levelStr)};
-								}
+								if (levelStr) return {original: it, level: Number(levelStr)};
 							}
-							return {original: it, level: null};
-						});
-
-						for (let i = 9; i > 5; --i) {
-							const ixToRemove = curSpells.map(it => it.level === i ? curSpells.indexOf(it) : -1).filter(it => ~it);
-							while (ixToRemove.length && curSpells.length > numArcanum) {
-								curSpells.splice(ixToRemove.pop(), 1);
-							}
-							if (curSpells.length === numArcanum) break;
 						}
+						return {original: it, level: null};
+					});
 
-						sc.daily["1e"] = curSpells.map(it => it.original);
-					} else {
-						for (let i = 5 + curNumSpells; i < 5 + numArcanum; ++i) {
-							const rollOn = Object.keys(this._spells[SRC_PHB].warlock[i]);
-							const ix = RollerUtil.roll(rollOn.length, this._rng);
-							sc.daily["1e"].push(`{@spell ${rollOn[ix].toSpellCase()}}`);
+					for (let i = 9; i > 5; --i) {
+						const ixToRemove = curSpells.map(it => it.level === i ? curSpells.indexOf(it) : -1).filter(it => ~it);
+						while (ixToRemove.length && curSpells.length > numArcanum) {
+							curSpells.splice(ixToRemove.pop(), 1);
 						}
-
-						sc.daily["1e"].sort(SortUtil.ascSortLower);
+						if (curSpells.length === numArcanum) break;
 					}
+
+					sc.daily["1e"] = curSpells.map(it => it.original);
+				} else {
+					for (let i = 5 + curNumSpells; i < 5 + numArcanum; ++i) {
+						const rollOn = Object.keys(this._spells[SRC_PHB].warlock[i]);
+						const ix = RollerUtil.roll(rollOn.length, this._rng);
+						sc.daily["1e"].push(`{@spell ${rollOn[ix].toSpellCase()}}`);
+					}
+
+					sc.daily["1e"].sort(SortUtil.ascSortLower);
 				}
-			});
-		}
+			}
+		});
 	},
 
 	_adjustSpellcasting_isWarlock (mon) {

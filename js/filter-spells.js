@@ -56,11 +56,16 @@ class PageFilterSpells extends PageFilter {
 		if (s.components && s.components.m) out.push(PageFilterSpells._META_ADD_M);
 		if (s.components && s.components.r) out.push(PageFilterSpells._META_ADD_R);
 		if (s.components && s.components.m && s.components.m.cost) out.push(PageFilterSpells._META_ADD_M_COST);
-		if (s.components && s.components.m && s.components.m.consume) out.push(PageFilterSpells._META_ADD_M_CONSUMED);
+		if (s.components && s.components.m && s.components.m.consume) {
+			if (s.components.m.consume === "optional") out.push(PageFilterSpells._META_ADD_M_CONSUMED_OPTIONAL);
+			else out.push(PageFilterSpells._META_ADD_M_CONSUMED);
+		}
 		if (s.miscTags) out.push(...s.miscTags);
 		if ((!s.miscTags || (s.miscTags && !s.miscTags.includes("PRM"))) && s.duration.filter(it => it.type === "permanent").length) out.push("PRM");
 		if ((!s.miscTags || (s.miscTags && !s.miscTags.includes("SCL"))) && s.entriesHigherLevel) out.push("SCL");
 		if (s.srd) out.push("SRD");
+		if (s.hasFluff) out.push("Has Info");
+		if (s.hasFluffImages) out.push("Has Images");
 		return out;
 	}
 
@@ -192,8 +197,10 @@ class PageFilterSpells extends PageFilter {
 	static getTblTimeStr (time) {
 		return (time.number === 1 && Parser.SP_TIME_SINGLETONS.includes(time.unit))
 			? `${time.unit.uppercaseFirst()}${time.unit === Parser.SP_TM_B_ACTION ? " acn." : ""}`
-			: `${time.number} ${time.unit === Parser.SP_TM_B_ACTION ? "Bonus acn." : time.unit.uppercaseFirst()}${time.number > 1 ? "s" : ""}`;
+			: `${time.number ? `${time.number} ` : ""}${time.unit === Parser.SP_TM_B_ACTION ? "Bonus acn." : time.unit.uppercaseFirst()}${time.number > 1 ? "s" : ""}`;
 	}
+
+	static getTblLevelStr (spell) { return `${Parser.spLevelToFull(spell.level)}${spell.meta && spell.meta.ritual ? " (rit.)" : ""}${spell.meta && spell.meta.technomagic ? " (tec.)" : ""}`; }
 
 	static getClassFilterItem (c) {
 		return this._getClassFilterItem(c);
@@ -265,7 +272,7 @@ class PageFilterSpells extends PageFilter {
 		const backgroundFilter = new Filter({header: "Background"});
 		const metaFilter = new Filter({
 			header: "Components & Miscellaneous",
-			items: [...PageFilterSpells._META_FILTER_BASE_ITEMS, "Ritual", "Technomagic", "SRD"],
+			items: [...PageFilterSpells._META_FILTER_BASE_ITEMS, "Ritual", "SRD", "Has Images", "Has Token"],
 			itemSortFn: PageFilterSpells.sortMetaFilter,
 			isSrdFilter: true,
 			displayFn: it => Parser.spMiscTagToFull(it),
@@ -368,7 +375,7 @@ class PageFilterSpells extends PageFilter {
 		this._areaTypeFilter = areaTypeFilter;
 	}
 
-	mutateForFilters (spell) {
+	static mutateForFilters (spell) {
 		Renderer.spell.initClasses(spell);
 
 		// used for sorting
@@ -378,7 +385,7 @@ class PageFilterSpells extends PageFilter {
 		// used for filtering
 		spell._fSources = SourceFilter.getCompleteFilterSources(spell);
 		spell._fMeta = PageFilterSpells.getMetaFilterObj(spell);
-		spell._fClasses = Renderer.spell.getCombinedClasses(spell, "fromClassList").map(PageFilterSpells.getClassFilterItem.bind(this.constructor));
+		spell._fClasses = Renderer.spell.getCombinedClasses(spell, "fromClassList").map(PageFilterSpells.getClassFilterItem.bind(this));
 		spell._fSubclasses = Renderer.spell.getCombinedClasses(spell, "fromSubclass")
 			.map(c => {
 				return new FilterItem({
@@ -396,9 +403,9 @@ class PageFilterSpells extends PageFilter {
 					},
 				});
 			});
-		spell._fVariantClasses = spell.classes && spell.classes.fromClassListVariant ? spell.classes.fromClassListVariant.map(PageFilterSpells.getOptionalVariantClassFilterItem.bind(this.constructor)) : [];
-		spell._fRaces = spell.races ? spell.races.map(PageFilterSpells.getRaceFilterItem) : [];
-		spell._fBackgrounds = spell.backgrounds ? spell.backgrounds.map(bg => bg.name) : [];
+		spell._fVariantClasses = Renderer.spell.getCombinedClasses(spell, "fromClassListVariant").map(PageFilterSpells.getOptionalVariantClassFilterItem.bind(this));
+		spell._fRaces = Renderer.spell.getCombinedRaces(spell).map(PageFilterSpells.getRaceFilterItem);
+		spell._fBackgrounds = Renderer.spell.getCombinedBackgrounds(spell).map(bg => bg.name);
 		spell._fEldritchInvocations = spell.eldritchInvocations ? spell.eldritchInvocations.map(ei => ei.name) : [];
 		spell._fTimeType = spell.time.map(t => t.unit);
 		spell._fDurationType = PageFilterSpells.getFilterDuration(spell);
@@ -490,6 +497,7 @@ PageFilterSpells._META_ADD_M = "Material";
 PageFilterSpells._META_ADD_R = "Royalty";
 PageFilterSpells._META_ADD_M_COST = "Material with Cost";
 PageFilterSpells._META_ADD_M_CONSUMED = "Material is Consumed";
+PageFilterSpells._META_ADD_M_CONSUMED_OPTIONAL = "Material is Optionally Consumed";
 
 PageFilterSpells.F_RNG_POINT = "Point";
 PageFilterSpells.F_RNG_SELF_AREA = "Self (Area)";
@@ -497,7 +505,7 @@ PageFilterSpells.F_RNG_SELF = "Self";
 PageFilterSpells.F_RNG_TOUCH = "Touch";
 PageFilterSpells.F_RNG_SPECIAL = "Special";
 
-PageFilterSpells._META_FILTER_BASE_ITEMS = [PageFilterSpells._META_ADD_CONC, PageFilterSpells._META_ADD_V, PageFilterSpells._META_ADD_S, PageFilterSpells._META_ADD_M, PageFilterSpells._META_ADD_R, PageFilterSpells._META_ADD_M_COST, PageFilterSpells._META_ADD_M_CONSUMED, ...Object.keys(Parser.SP_MISC_TAG_TO_FULL)];
+PageFilterSpells._META_FILTER_BASE_ITEMS = [PageFilterSpells._META_ADD_CONC, PageFilterSpells._META_ADD_V, PageFilterSpells._META_ADD_S, PageFilterSpells._META_ADD_M, PageFilterSpells._META_ADD_R, PageFilterSpells._META_ADD_M_COST, PageFilterSpells._META_ADD_M_CONSUMED, PageFilterSpells._META_ADD_M_CONSUMED_OPTIONAL, ...Object.keys(Parser.SP_MISC_TAG_TO_FULL)];
 
 PageFilterSpells.INCHES_PER_FOOT = 12;
 PageFilterSpells.FEET_PER_MILE = 5280;
@@ -513,7 +521,7 @@ class ModalFilterSpells extends ModalFilter {
 		opts = opts || {};
 		super({
 			...opts,
-			modalTitle: "Spells",
+			modalTitle: `Spell${opts.isRadio ? "" : "s"}`,
 			pageFilter: new PageFilterSpells(),
 			fnSort: PageFilterSpells.sortSpells,
 		});
@@ -545,17 +553,17 @@ class ModalFilterSpells extends ModalFilter {
 
 	_getListItem (pageFilter, spell, spI) {
 		const eleLabel = document.createElement("label");
-		eleLabel.className = "row lst--border no-select lst__wrp-cells";
+		eleLabel.className = "w-100 flex-vh-center lst--border no-select lst__wrp-cells";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_SPELLS](spell);
 		const source = Parser.sourceJsonToAbv(spell.source);
-		const levelText = `${Parser.spLevelToFull(spell.level)}${spell.meta && spell.meta.ritual ? " (rit.)" : ""}${spell.meta && spell.meta.technomagic ? " (tec.)" : ""}`;
+		const levelText = PageFilterSpells.getTblLevelStr(spell);
 		const time = PageFilterSpells.getTblTimeStr(spell.time[0]);
 		const school = Parser.spSchoolAndSubschoolsAbvsShort(spell.school, spell.subschools);
 		const concentration = spell._isConc ? "×" : "";
 		const range = Parser.spRangeToFull(spell.range);
 
-		eleLabel.innerHTML = `<div class="col-1 pl-0 flex-vh-center"><input type="checkbox" class="no-events"></div>
+		eleLabel.innerHTML = `<div class="col-1 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 		<div class="bold col-3">${spell.name}</div>
 		<div class="col-1-5 text-center">${levelText}</div>
 		<div class="col-2 text-center">${time}</div>

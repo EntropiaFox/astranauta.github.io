@@ -95,6 +95,10 @@
 			"languageTags": [
 				"DS"
 			],
+			"damageTags": [
+				"S",
+				"Y"
+			],
 			"miscTags": [
 				"MW"
 			]
@@ -189,6 +193,9 @@
 			"actionTags": [
 				"Multiattack"
 			],
+			"damageTags": [
+				"P"
+			],
 			"miscTags": [
 				"MW"
 			]
@@ -270,6 +277,9 @@
 			],
 			"languageTags": [
 				"CE"
+			],
+			"damageTags": [
+				"R"
 			],
 			"miscTags": [
 				"MW",
@@ -395,6 +405,10 @@
 			"languageTags": [
 				"P"
 			],
+			"damageTags": [
+				"B",
+				"F"
+			],
 			"miscTags": [
 				"MW"
 			]
@@ -485,6 +499,10 @@
 			],
 			"languageTags": [
 				"S"
+			],
+			"damageTags": [
+				"O",
+				"P"
 			],
 			"miscTags": [
 				"AOE",
@@ -628,6 +646,11 @@
 				"I",
 				"TP"
 			],
+			"damageTags": [
+				"F",
+				"N",
+				"S"
+			],
 			"miscTags": [
 				"MW"
 			]
@@ -720,6 +743,9 @@
 				"Multiattack"
 			],
 			"languageTags": [
+				"C"
+			],
+			"damageTags": [
 				"C"
 			],
 			"miscTags": [
@@ -830,6 +856,11 @@
 			],
 			"languageTags": [
 				"C"
+			],
+			"damageTags": [
+				"N",
+				"O",
+				"S"
 			],
 			"miscTags": [
 				"MW"

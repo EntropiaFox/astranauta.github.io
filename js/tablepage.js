@@ -43,12 +43,12 @@ class TablePage {
 
 			const $ulContents = this._$getContentsBlock(i, loc);
 
-			const $li = $$`<li>
+			const $wrp = $$`<div>
 				${$btnHeader}
 				${$ulContents}
-			</li>`
+			</div>`
 
-			const listItem = new ListItem(i, $li, loc.name);
+			const listItem = new ListItem(i, $wrp, loc.name);
 
 			this._list.addItem(listItem);
 		}
@@ -72,11 +72,11 @@ class TablePage {
 	}
 
 	_$getContentsBlock (i, meta) {
-		const $out = $(`<ul/>`);
+		const $out = $(`<div class="flex-col w-100"></div>`);
 		let stack = ""
 		meta.tables.forEach((table, j) => {
 			const tableName = this._fnGetTableName(meta, table);
-			stack += `<li><a id="${i},${j}" class="lst--border" href="#${this._fnGetTableHash(meta, table)}" title="${tableName}">${tableName}</a></li>`;
+			stack += `<div class="lst__row flex-col"><a id="${i},${j}" class="lst--border lst__row-inner" href="#${this._fnGetTableHash(meta, table)}" title="${tableName}">${tableName}</a></div>`;
 		});
 		$out.fastSetHtml(stack);
 		return $out;

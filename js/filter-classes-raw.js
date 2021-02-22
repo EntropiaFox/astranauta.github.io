@@ -95,7 +95,15 @@ class PageFilterClassesRaw extends PageFilterClasses {
 				sc.classSource = sc.classSource || cls.source || SRC_PHB;
 			});
 
-			cls.subclasses.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source || cls.source, b.source || cls.source))
+			cls.subclasses.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source || cls.source, b.source || cls.source));
+
+			cls._cntStartingSkillChoices = (MiscUtil.get(cls, "startingProficiencies", "skills") || [])
+				.map(it => it.choose ? (it.choose.count || 1) : 0)
+				.reduce((a, b) => a + b, 0);
+
+			cls._cntStartingSkillChoicesMutliclass = (MiscUtil.get(cls, "multiclassing", "proficienciesGained", "skills") || [])
+				.map(it => it.choose ? (it.choose.count || 1) : 0)
+				.reduce((a, b) => a + b, 0);
 		});
 		data.class.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
 
@@ -287,10 +295,13 @@ class PageFilterClassesRaw extends PageFilterClasses {
 
 						const isIgnored = await this._pGetIgnoredAndApplySideData(entity, "classFeature");
 						if (isIgnored) continue;
-						if (ent._displayNamePrefix) entity._displayName = `${ent._displayNamePrefix}${entity.name}`;
 
-						entity._ancestorClassName = ancestorClassName;
-						if (ancestorSubclassName) entity._ancestorSubclassName = ancestorSubclassName;
+						this.populateEntityTempData({
+							entity,
+							ancestorClassName: ancestorClassName,
+							ancestorSubclassName: ancestorSubclassName,
+							displayName: ent._displayNamePrefix ? `${ent._displayNamePrefix}${entity.name}` : null,
+						});
 
 						out.push({
 							type: "classFeature",
@@ -321,10 +332,13 @@ class PageFilterClassesRaw extends PageFilterClasses {
 
 						const isIgnored = await this._pGetIgnoredAndApplySideData(entity, "subclassFeature");
 						if (isIgnored) continue;
-						if (ent._displayNamePrefix) entity._displayName = `${ent._displayNamePrefix}${entity.name}`;
 
-						entity._ancestorClassName = ancestorClassName;
-						if (ancestorSubclassName) entity._ancestorSubclassName = ancestorSubclassName;
+						this.populateEntityTempData({
+							entity,
+							ancestorClassName: ancestorClassName,
+							ancestorSubclassName: ancestorSubclassName,
+							displayName: ent._displayNamePrefix ? `${ent._displayNamePrefix}${entity.name}` : null,
+						});
 
 						out.push({
 							type: "subclassFeature",
@@ -354,12 +368,18 @@ class PageFilterClassesRaw extends PageFilterClasses {
 							continue;
 						}
 
-						if (ent._displayNamePrefix) entity._displayName = `${ent._displayNamePrefix}${entity.name}`;
-						entity._foundryData = {
-							requirements: `${loadedRoot.className} ${loadedRoot.level}${loadedRoot.subclassShortName ? ` (${loadedRoot.subclassShortName})` : ""}`,
-						};
+						this.populateEntityTempData({
+							entity,
+							// Cache this so we can determine if this optional feature is from a "classFeature" or a "subclassFeature"
+							ancestorType: ancestorSubclassName ? "subclassFeature" : "classFeature",
+							ancestorClassName: ancestorClassName,
+							ancestorSubclassName: ancestorSubclassName,
+							displayName: ent._displayNamePrefix ? `${ent._displayNamePrefix}${entity.name}` : null,
+							foundryData: {
+								requirements: `${loadedRoot.className} ${loadedRoot.level}${loadedRoot.subclassShortName ? ` (${loadedRoot.subclassShortName})` : ""}`,
+							},
+						});
 
-						// Cache this so we can determine if this optional feature is from a "classFeature" or a "subclassFeature"
 						entity._ancestorType = ancestorSubclassName ? "subclassFeature" : "classFeature";
 						entity._ancestorClassName = ancestorClassName;
 						if (ancestorSubclassName) entity._ancestorSubclassName = ancestorSubclassName;
@@ -387,6 +407,23 @@ class PageFilterClassesRaw extends PageFilterClasses {
 		return out;
 	}
 
+	static populateEntityTempData (
+		{
+			entity,
+			ancestorType,
+			ancestorClassName,
+			ancestorSubclassName,
+			displayName,
+			foundryData,
+		},
+	) {
+		if (ancestorType) entity._ancestorType = ancestorType;
+		if (ancestorClassName) entity._ancestorClassName = ancestorClassName;
+		if (ancestorSubclassName) entity._ancestorSubclassName = ancestorSubclassName;
+		if (displayName) entity._displayName = displayName;
+		if (foundryData) entity._foundryData = foundryData;
+	}
+
 	static _handleReferenceError (msg) {
 		JqueryUtil.doToast({type: "danger", content: msg});
 	}
@@ -394,11 +431,17 @@ class PageFilterClassesRaw extends PageFilterClasses {
 }
 
 class ModalFilterClasses extends ModalFilter {
-	constructor (namespace) {
+	/**
+	 * @param opts
+	 * @param opts.namespace
+	 */
+	constructor (opts) {
+		opts = opts || {};
+
 		super({
 			modalTitle: "Class and Subclass",
 			pageFilter: new PageFilterClassesRaw(),
-			namespace: namespace,
+			namespace: opts.namespace,
 			fnSort: ModalFilterClasses.fnSort,
 		});
 
@@ -472,11 +515,6 @@ class ModalFilterClasses extends ModalFilter {
 		});
 	}
 
-	/**
-	 * Pre-heat the modal, thus allowing access to the filter box underneath.
-	 *
-	 * @param [$modalInner]
-	 */
 	async pPreloadHidden ($modalInner) {
 		// If we're rendering in "hidden" mode, create a dummy element to attach the UI to.
 		$modalInner = $modalInner || $(`<div></div>`);
@@ -501,7 +539,7 @@ class ModalFilterClasses extends ModalFilter {
 			</div>`);
 
 			const $wrpForm = $$`<div class="flex-col w-100 mb-2">${$wrpFormTop}${$wrpFormBottom}${$wrpFormHeaders}</div>`;
-			const $wrpList = $(`<ul class="list mb-2 h-100"></ul>`);
+			const $wrpList = this._$getWrpList();
 
 			const $btnConfirm = $(`<button class="btn btn-default">Confirm</button>`);
 
@@ -629,7 +667,7 @@ class ModalFilterClasses extends ModalFilter {
 
 	_getListItems_getClassItem (pageFilter, cls, clsI) {
 		const eleLabel = document.createElement("label");
-		eleLabel.className = "row lst--border no-select lst__wrp-cells";
+		eleLabel.className = "w-100 flex lst--border no-select lst__wrp-cells";
 
 		const source = Parser.sourceJsonToAbv(cls.source);
 
@@ -653,7 +691,7 @@ class ModalFilterClasses extends ModalFilter {
 
 	_getListItems_getSubclassItem (pageFilter, cls, clsI, sc, scI) {
 		const eleLabel = document.createElement("label");
-		eleLabel.className = "row lst--border no-select lst__wrp-cells";
+		eleLabel.className = "w-100 flex lst--border no-select lst__wrp-cells";
 
 		const source = Parser.sourceJsonToAbv(sc.source);
 

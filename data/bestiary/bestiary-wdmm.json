@@ -98,7 +98,8 @@
 			],
 			"miscTags": [
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Animated Jade Serpent",
@@ -305,7 +306,8 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Animated Wand",
@@ -451,7 +453,9 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ashtyrranthor",
@@ -668,7 +672,8 @@
 				"DS",
 				"OTH",
 				"U"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Big Xorn",
@@ -830,7 +835,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Captain N'ghathrod",
@@ -912,7 +918,8 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Cassiok Shadowdusk",
@@ -1063,7 +1070,8 @@
 				"I",
 				"U"
 			],
-			"miscTags": []
+			"miscTags": [],
+			"hasFluff": true
 		},
 		{
 			"name": "Copper Stormforge",
@@ -1098,7 +1106,8 @@
 				"C",
 				"D",
 				"X"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Crow",
@@ -1182,7 +1191,8 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Deformed Duergar",
@@ -1222,7 +1232,8 @@
 				"RCH",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Dezmyr Shadowdusk",
@@ -1298,7 +1309,8 @@
 					"ability": "cha"
 				}
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drivvin Freth",
@@ -1391,7 +1403,8 @@
 			"damageTags": [
 				"F",
 				"S"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Ezzat",
@@ -1556,7 +1569,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Fidelio",
@@ -1813,7 +1827,8 @@
 			"languageTags": [
 				"D",
 				"U"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gorzil's Gang Troglodyte",
@@ -2113,6 +2128,9 @@
 				"I",
 				"U"
 			],
+			"damageTags": [
+				"T"
+			],
 			"spellcastingTags": [
 				"CW",
 				"I"
@@ -2127,7 +2145,9 @@
 				"invisible",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Halaster Horror",
@@ -2267,9 +2287,19 @@
 					"entries": [
 						"A creature that uses an action to touch the living snail gains 6 temporary hit points that last for 24 hours. Any creature or object that touches the living snail also gains the benefit of a {@spell remove curse} spell. The snail loses these magical properties if it dies."
 					]
+				},
+				{
+					"name": "Spider Climb",
+					"entries": [
+						"The snail can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+					]
 				}
 			],
-			"hasToken": true
+			"hasToken": true,
+			"traitTags": [
+				"Spider Climb"
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Horned Sister",
@@ -2285,8 +2315,8 @@
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
-						"replace": "mage",
-						"with": "horned sister"
+						"replace": "(^| )mage",
+						"with": "$1horned sister"
 					}
 				}
 			},
@@ -2294,13 +2324,21 @@
 				"L",
 				"E"
 			],
+			"languages": [
+				"Common",
+				"Draconic",
+				"Infernal",
+				"Undercommon"
+			],
 			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
 			"languageTags": [
+				"C",
+				"DR",
 				"I",
-				"X"
+				"U"
 			],
 			"spellcastingTags": [
 				"CW",
@@ -2353,8 +2391,7 @@
 				"Multiattack"
 			],
 			"damageTags": [
-				"A",
-				"B"
+				"A"
 			]
 		},
 		{
@@ -2624,7 +2661,8 @@
 			"hasToken": true,
 			"spellcastingTags": [
 				"CW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Kol'daan",
@@ -2791,7 +2829,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Living Unseen Servant",
@@ -2869,7 +2909,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Mad Golem",
@@ -2920,7 +2961,8 @@
 				"E",
 				"I",
 				"U"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Maddgoth's Homunculus",
@@ -2964,7 +3006,9 @@
 				"DR",
 				"G"
 			],
-			"damageTags": []
+			"damageTags": [
+				"P"
+			]
 		},
 		{
 			"name": "Marta Moonshadow",
@@ -3027,7 +3071,8 @@
 				"DR",
 				"E",
 				"U"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Melissara Shadowdusk",
@@ -3352,7 +3397,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nerozar the Defeated",
@@ -3376,10 +3423,36 @@
 							"name": "Eye Ray",
 							"entries": [
 								"The zombie uses a random magical eye ray, choosing a target that it can see within 60 feet of it.",
-								"1. Paralyzing Ray. The targeted creature must succeed on a {@dc 14} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-								"2. Fear Ray. The targeted creature must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-								"3. Enervation Ray. The targeted creature must make a {@dc 14} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one.",
-								"4. Telekinetic Ray. If the target is a creature, it must succeed on a DC 14 Strength saving throw, or the zombie moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the zombie's next turn or until the zombie is incapacitated. If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The zombie can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or container."
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"type": "item",
+											"name": "1. Paralyzing Ray.",
+											"style": "italic",
+											"entry": "The targeted creature must succeed on a {@dc 14} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+										},
+										{
+											"type": "item",
+											"name": "2. Fear Ray.",
+											"style": "italic",
+											"entry": "The targeted creature must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+										},
+										{
+											"type": "item",
+											"name": "3. Enervation Ray.",
+											"style": "italic",
+											"entry": "The targeted creature must make a {@dc 14} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one."
+										},
+										{
+											"type": "item",
+											"name": "4. Telekinetic Ray.",
+											"style": "italic",
+											"entry": "If the target is a creature, it must succeed on a DC 14 Strength saving throw, or the zombie moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the zombie's next turn or until the zombie is incapacitated. If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The zombie can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or container."
+										}
+									]
+								}
 							]
 						}
 					}
@@ -3457,7 +3530,8 @@
 				"DR",
 				"GI",
 				"T"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Old Troglodyte",
@@ -3520,7 +3594,9 @@
 			"str": 18,
 			"cr": "3",
 			"hasToken": true,
-			"damageTags": []
+			"damageTags": [
+				"P"
+			]
 		},
 		{
 			"name": "Play-by-Play Generator",
@@ -3735,7 +3811,8 @@
 			"conditionInflict": [
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Rabbithead",
@@ -3911,7 +3988,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadow Assassin",
@@ -4042,7 +4121,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Shapechanged Roper",
@@ -4214,7 +4294,8 @@
 				"L",
 				"E"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true
 		},
 		{
 			"name": "Sing-Along",
@@ -4394,7 +4475,8 @@
 				"E",
 				"I",
 				"U"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sundeth",
@@ -4433,7 +4515,8 @@
 			"languageTags": [
 				"C",
 				"GI"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Thwad Underbrew",
@@ -4494,7 +4577,8 @@
 			"damageTags": [
 				"B",
 				"P"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Torbit",
@@ -4530,7 +4614,8 @@
 				"OTH",
 				"TC",
 				"X"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Trenzia",
@@ -4612,7 +4697,8 @@
 			"hasToken": true,
 			"damageTags": [
 				"L"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Trobriand",
@@ -4722,7 +4808,8 @@
 			"hasToken": true,
 			"spellcastingTags": [
 				"CW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Umbraxakar",
@@ -4809,7 +4896,8 @@
 					]
 				}
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true
 		},
 		{
 			"name": "Valtagar Steelshadow",
@@ -4866,7 +4954,8 @@
 				"OTH",
 				"T",
 				"U"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Vertrand Shadowdusk",
@@ -5067,7 +5156,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wooden Donkey",
@@ -5103,7 +5194,8 @@
 			"hasToken": true,
 			"senseTags": [
 				"B"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Wyllow",
@@ -5146,7 +5238,8 @@
 				"C",
 				"DU",
 				"E"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Zalthar Shadowdusk",

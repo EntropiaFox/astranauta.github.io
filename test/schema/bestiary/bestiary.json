@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.16.1",
+	"version": "1.16.3",
 	"title": "Bestiary Schema",
 	"$id": "bestiary.json",
 	"type": "object",
@@ -363,59 +363,25 @@
 								"properties": {
 									"oneOf": {
 										"type": "object",
-										"acrobatics": {
-											"type": "string"
-										},
-										"animal handling": {
-											"type": "string"
-										},
-										"arcana": {
-											"type": "string"
-										},
-										"athletics": {
-											"type": "string"
-										},
-										"deception": {
-											"type": "string"
-										},
-										"history": {
-											"type": "string"
-										},
-										"insight": {
-											"type": "string"
-										},
-										"intimidation": {
-											"type": "string"
-										},
-										"investigation": {
-											"type": "string"
-										},
-										"medicine": {
-											"type": "string"
-										},
-										"nature": {
-											"type": "string"
-										},
-										"perception": {
-											"type": "string"
-										},
-										"performance": {
-											"type": "string"
-										},
-										"persuasion": {
-											"type": "string"
-										},
-										"religion": {
-											"type": "string"
-										},
-										"sleight of hand": {
-											"type": "string"
-										},
-										"stealth": {
-											"type": "string"
-										},
-										"survival": {
-											"type": "string"
+										"properties": {
+											"acrobatics": {"type": "string"},
+											"animal handling": {"type": "string"},
+											"arcana": {"type": "string"},
+											"athletics": {"type": "string"},
+											"deception": {"type": "string"},
+											"history": {"type": "string"},
+											"insight": {"type": "string"},
+											"intimidation": {"type": "string"},
+											"investigation": {"type": "string"},
+											"medicine": {"type": "string"},
+											"nature": {"type": "string"},
+											"perception": {"type": "string"},
+											"performance": {"type": "string"},
+											"persuasion": {"type": "string"},
+											"religion": {"type": "string"},
+											"sleight of hand": {"type": "string"},
+											"stealth": {"type": "string"},
+											"survival": {"type": "string"}
 										}
 									}
 								}
@@ -968,7 +934,9 @@
 				"_isCopy": {
 					"description": "An internal flag indicating this creature is a copy of another, and is a temporary/placeholder entry which will be factored out using the \"_copy\" format at a later date.",
 					"type": "boolean"
-				}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
 			},
 			"additionalProperties": false
 		},

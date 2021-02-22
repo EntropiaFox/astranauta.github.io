@@ -9,16 +9,18 @@ class PageFilterEquipment extends PageFilter {
 		this._costFilter = new RangeFilter({header: "Cost", min: 0, max: 100, isAllowGreater: true, suffix: " gp"});
 		this._weightFilter = new RangeFilter({header: "Weight", min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
 		this._focusFilter = new Filter({header: "Spellcasting Focus", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES]});
-		this._damageTypeFilter = new Filter({header: "Damage Type", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a), Parser.dmgTypeToFull(b))});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Item Group", "SRD"], isSrdFilter: true});
+		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a), Parser.dmgTypeToFull(b))});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Item Group", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
 		this._poisonTypeFilter = new Filter({header: "Poison Type", items: ["ingested", "injury", "inhaled", "contact"], displayFn: StrUtil.toTitleCase});
 	}
 
-	mutateForFilters (item) {
+	static mutateForFilters (item) {
 		item._fProperties = item.property ? item.property.map(p => Renderer.item.propertyMap[p].name).filter(n => n) : [];
 
 		item._fMisc = item.srd ? ["SRD"] : [];
 		if (item._isItemGroup) item._fMisc.push("Item Group");
+		if (item.hasFluff) item._fMisc.push("Has Info");
+		if (item.hasFluffImages) item._fMisc.push("Has Images");
 
 		if (item.focus || item.type === "INS" || item.type === "SCF") {
 			item._fFocus = item.focus ? item.focus === true ? [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES] : [...item.focus] : [];
@@ -133,19 +135,19 @@ class PageFilterItems extends PageFilterEquipment {
 			itemSortFn: null,
 			displayFn: StrUtil.toTitleCase,
 		});
-		this._attunementFilter = new Filter({header: "Attunement", items: ["Yes", "By...", "Optional", "No"], itemSortFn: null});
+		this._attunementFilter = new Filter({header: "Attunement", items: ["Requires Attunement", "Requires Attunement By...", "Attunement Optional", VeCt.STR_NO_ATTUNEMENT], itemSortFn: null});
 		this._categoryFilter = new Filter({
 			header: "Category",
 			items: ["Basic", "Generic Variant", "Specific Variant", "Other"],
 			deselFn: (it) => it === "Specific Variant",
 			itemSortFn: null,
 		});
-		this._bonusFilter = new Filter({header: "Bonus", items: ["Armor Class", "Spell Attacks", "Saving Throws", "Weapon Attack and Damage Rolls", "Weapon Attack Rolls", "Weapon Damage Rolls"]});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Ability Score Adjustment", "Charges", "Cursed", "Grants Proficiency", "Item Group", "Magic", "Mundane", "Sentient", "SRD"], isSrdFilter: true});
+		this._bonusFilter = new Filter({header: "Bonus", items: ["Armor Class", "Proficiency Bonus", "Spell Attacks", "Spell Save DC", "Saving Throws", "Weapon Attack and Damage Rolls", "Weapon Attack Rolls", "Weapon Damage Rolls"]});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Ability Score Adjustment", "Charges", "Cursed", "Grants Proficiency", "Has Images", "Has Info", "Item Group", "Magic", "Mundane", "Sentient", "SRD"], isSrdFilter: true});
 		this._baseSourceFilter = new SourceFilter({header: "Base Source", selFn: null});
 	}
 
-	mutateForFilters (item) {
+	static mutateForFilters (item) {
 		super.mutateForFilters(item);
 
 		item._fTier = [item.tier ? item.tier : "none"];
@@ -165,7 +167,9 @@ class PageFilterItems extends PageFilterEquipment {
 		if (item.bonusWeaponAttack) item._fBonus.push("Weapon Attack Rolls");
 		if (item.bonusWeaponDamage) item._fBonus.push("Weapon Damage Rolls");
 		if (item.bonusSpellAttack) item._fBonus.push("Spell Attacks");
+		if (item.bonusSpellSaveDc) item._fBonus.push("Spell Save DC");
 		if (item.bonusSavingThrow) item._fBonus.push("Saving Throws");
+		if (item.bonusProficiencyBonus) item._fBonus.push("Proficiency Bonus");
 	}
 
 	addToFilters (item, isExcluded) {
@@ -272,7 +276,7 @@ class ModalFilterItems extends ModalFilter {
 		pageFilter.mutateAndAddToFilters(item);
 
 		const eleLabel = document.createElement("label");
-		eleLabel.className = "row lst--border no-select lst__wrp-cells";
+		eleLabel.className = "w-100 flex-vh-center lst--border no-select lst__wrp-cells";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](item);
 		const source = Parser.sourceJsonToAbv(item.source);

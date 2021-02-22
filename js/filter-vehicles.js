@@ -7,26 +7,13 @@ class PageFilterVehicles extends PageFilter {
 		this._sourceFilter = new SourceFilter();
 		this._vehicleTypeFilter = new Filter({
 			header: "Vehicle Type",
-			items: [
-				"SHIP",
-				"INFWAR",
-				"CREATURE",
-			],
+			items: [],
 			displayFn: Parser.vehicleTypeToFull,
 			isSortByDisplayItems: true,
 		});
 		this._upgradeTypeFilter = new Filter({
 			header: "Upgrade Type",
-			items: [
-				"SHP:H",
-				"SHP:M",
-				"SHP:W",
-				"SHP:F",
-				"SHP:O",
-				"IWM:W",
-				"IWM:A",
-				"IWM:G",
-			],
+			items: [],
 			displayFn: Parser.vehicleTypeToFull,
 			isSortByDisplayItems: true,
 		});
@@ -36,10 +23,10 @@ class PageFilterVehicles extends PageFilter {
 		this._hpFilter = new RangeFilter({header: "Hit Points"});
 		this._hpFilter = new RangeFilter({header: "Hit Points"});
 		this._creatureCapacityFilter = new RangeFilter({header: "Creature Capacity"});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Has Images", "Has Info", "Has Token"], isSrdFilter: true});
 	}
 
-	mutateForFilters (it) {
+	static mutateForFilters (it) {
 		it._fSpeed = 0;
 		if (typeof it.speed === "number" && it.speed > 0) {
 			it._fSpeed = it.speed;
@@ -71,6 +58,8 @@ class PageFilterVehicles extends PageFilter {
 		it._fCreatureCapacity = (it.capCrew || 0) + (it.capPassenger || 0) + (it.capCreature || 0);
 
 		it._fMisc = it.srd ? ["SRD"] : [];
+		if (it.hasFluff) it._fMisc.push("Has Info");
+		if (it.hasFluffImages) it._fMisc.push("Has Images");
 	}
 
 	addToFilters (it, isExcluded) {

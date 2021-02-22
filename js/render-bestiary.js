@@ -116,14 +116,14 @@ class RenderBestiary {
 
 		${mon.save ? `<tr><td colspan="6"><strong>Saving Throws</strong> ${Renderer.monster.getSavesPart(mon)}</td></tr>` : ""}
 		${mon.skill ? `<tr><td colspan="6"><strong>Skills</strong> ${Renderer.monster.getSkillsString(renderer, mon)}</td></tr>` : ""}
-		${mon.vulnerable ? `<tr><td colspan="6"><strong>Damage Vulnerabilities</strong> ${Parser.monImmResToFull(mon.vulnerable)}</td></tr>` : ""}
-		${mon.resist ? `<tr><td colspan="6"><strong>Damage Resistances</strong> ${Parser.monImmResToFull(mon.resist)}</td></tr>` : ""}
-		${mon.immune ? `<tr><td colspan="6"><strong>Damage Immunities</strong> ${Parser.monImmResToFull(mon.immune)}</td></tr>` : ""}
-		${mon.conditionImmune ? `<tr><td colspan="6"><strong>Condition Immunities</strong> ${Parser.monCondImmToFull(mon.conditionImmune)}</td></tr>` : ""}
+		${mon.vulnerable ? `<tr><td colspan="6"><strong>Damage Vulnerabilities</strong> ${Parser.getFullImmRes(mon.vulnerable)}</td></tr>` : ""}
+		${mon.resist ? `<tr><td colspan="6"><strong>Damage Resistances</strong> ${Parser.getFullImmRes(mon.resist)}</td></tr>` : ""}
+		${mon.immune ? `<tr><td colspan="6"><strong>Damage Immunities</strong> ${Parser.getFullImmRes(mon.immune)}</td></tr>` : ""}
+		${mon.conditionImmune ? `<tr><td colspan="6"><strong>Condition Immunities</strong> ${Parser.getFullCondImm(mon.conditionImmune)}</td></tr>` : ""}
 		<tr><td colspan="6"><strong>Senses</strong> ${Renderer.monster.getSensesPart(mon)}</td></tr>
 		<tr><td colspan="6"><strong>Languages</strong> ${Renderer.monster.getRenderedLanguages(mon.languages)}</td></tr>
 
-		<tr>${Parser.crToNumber(mon.cr) !== 100 ? $$`
+		<tr>${Parser.crToNumber(mon.cr) < VeCt.CR_UNKNOWN ? $$`
 		<td colspan="6" style="position: relative;"><strong>Challenge</strong>
 			<span>${Parser.monCrToFull(mon.cr, {isMythic: !!mon.mythic})}</span>
 			${options.$btnScaleCr || ""}

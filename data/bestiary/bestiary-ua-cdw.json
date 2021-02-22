@@ -88,6 +88,9 @@
 			"senseTags": [
 				"D"
 			],
+			"damageTags": [
+				"F"
+			],
 			"miscTags": [
 				"RW"
 			]

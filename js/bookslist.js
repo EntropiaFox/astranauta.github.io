@@ -31,11 +31,12 @@ class BooksList {
 
 		const fnSort = (a, b, o) => this._fnSort(this._dataList, a, b, o);
 		this._list = new List({
-			$wrpList: $("ul.books"),
+			$wrpList: $(".books"),
 			$iptSearch,
 			fnSort,
 			sortByInitial: this._sortByInitial,
 			sortDirInitial: this._sortDirInitial,
+			isUseJquery: true,
 		});
 		SortUtil.initBtnSortHandlers($(`#filtertools`), this._list);
 
@@ -51,11 +52,8 @@ class BooksList {
 			this._list.reset();
 			this._listAlt.reset();
 
-			$(`.showhide`).each((i, ele) => {
-				const $ele = $(ele);
-				if (!$ele.data("hidden")) {
-					BookUtil.indexListToggle(null, ele);
-				}
+			this._list.items.forEach(li => {
+				if (li.data.$btnToggleExpand.text() === "[\u2012]") li.data.$btnToggleExpand.click();
 			});
 		});
 
@@ -80,25 +78,63 @@ class BooksList {
 			const it = this._dataList[this._dataIx];
 			if (this._enhanceRowDataFn) this._enhanceRowDataFn(it);
 
-			const eleLi = document.createElement("li");
+			const $elesContents = [];
+			it.contents.map((chapter, ixChapter) => {
+				const $lnkChapter = $$`<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)},${ixChapter}" class="flex w-100 bklist__row-chapter lst--border lst__row-inner lst__row lst__wrp-cells bold">
+					${Parser.bookOrdinalToAbv(chapter.ordinal)}${chapter.name}
+				</a>`;
+				$elesContents.push($lnkChapter);
 
-			eleLi.innerHTML = `<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="book-name lst--border">
-				<span class="w-100">${this._rowBuilderFn(it)}</span>
-				<span class="showhide px-2 py-1px bold" onclick="BookUtil.indexListToggle(event, this)" data-hidden="true">[+]</span>
-			</a>
-			${BookUtil.makeContentsBlock({book: it, addPrefix: this._rootPage, defaultHidden: true})}`;
+				if (!chapter.headers) return;
+
+				const headerCounts = {};
+
+				chapter.headers.forEach(header => {
+					const headerText = BookUtil.getHeaderText(header);
+
+					const headerTextClean = headerText.toLowerCase().trim();
+					const headerPos = headerCounts[headerTextClean] || 0;
+					headerCounts[headerTextClean] = (headerCounts[headerTextClean] || 0) + 1;
+
+					const $lnk = $$`<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)},${ixChapter},${UrlUtil.encodeForHash(headerText)}${headerPos > 0 ? `,${headerPos}` : ""}" class="lst__row lst--border lst__row-inner lst__wrp-cells bklist__row-section flex w-100">
+						${BookUtil.getContentsSectionHeader(header)}
+					</a>`;
+					$elesContents.push($lnk);
+				});
+			});
+
+			const $wrpContents = $$`<div class="flex w-100 relative">
+				<div class="vr-0 absolute bklist__vr-contents"></div>
+				<div class="flex-col w-100 bklist__wrp-rows-inner">${$elesContents}</div>
+			</div>`.hideVe();
+
+			const $btnToggleExpand = $(`<span class="px-2 py-1px bold">[+]</span>`)
+				.click(evt => {
+					evt.stopPropagation();
+					evt.preventDefault();
+					$btnToggleExpand.text($btnToggleExpand.text() === "[+]" ? "[\u2012]" : "[+]");
+					$wrpContents.toggleVe();
+				});
+
+			const $eleLi = $$`<div class="flex-col w-100">
+				<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="split-v-center lst--border lst__row-inner lst__row">
+					<span class="w-100">${this._rowBuilderFn(it)}</span>
+					${$btnToggleExpand}
+				</a>
+				${$wrpContents}
+			</div>`;
 
 			const listItem = new ListItem(
 				this._dataIx,
-				eleLi,
+				$eleLi,
 				it.name,
 				{source: it.id},
-				{uniqueId: it.uniqueId},
+				{uniqueId: it.uniqueId, $btnToggleExpand},
 			);
 
 			this._list.addItem(listItem);
 
-			// region alt
+			// region Alt list (covers/thumbnails)
 			const eleLiAlt = $(`<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="flex-col flex-v-center m-3 bks__wrp-bookshelf-item py-3 px-2 ${Parser.sourceJsonToColor(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>
 				<img src="${it.coverUrl || `${Renderer.get().baseMediaUrls["img"] || Renderer.get().baseUrl}img/covers/blank.png`}" class="mb-2 bks__bookshelf-image">
 				<div class="bks__bookshelf-item-name flex-vh-center text-center">${it.name}</div>

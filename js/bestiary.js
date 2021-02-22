@@ -26,8 +26,8 @@ class BestiaryPage {
 
 		this._pageFilter.mutateAndAddToFilters(mon, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 		eleLi.addEventListener("click", (evt) => handleBestiaryLiClick(evt, listItem));
 		eleLi.addEventListener("contextmenu", (evt) => handleBestiaryLiContext(evt, listItem));
 
@@ -35,7 +35,7 @@ class BestiaryPage {
 		const type = mon._pTypes.asText.uppercaseFirst();
 		const cr = mon._pCr;
 
-		eleLi.innerHTML += `<a href="#${hash}" onclick="handleBestiaryLinkClick(event)" class="lst--border">
+		eleLi.innerHTML += `<a href="#${hash}" onclick="handleBestiaryLinkClick(event)" class="lst--border lst__row-inner">
 			${EncounterBuilder.getButtons(mI)}
 			<span class="ecgen__name bold col-4-2 pl-0">${mon.name}</span>
 			<span class="type col-4-1">${type}</span>
@@ -76,10 +76,12 @@ class BestiaryPage {
 		encounterBuilder.resetCache();
 	}
 
-	async pGetSublistItem (monRaw, pinId, addCount, data = {}) {
+	async pGetSublistItem (monRaw, pinId, addCount, data) {
+		data = data || {};
+
 		const mon = await (data.scaled ? ScaleCreature.scale(monRaw, data.scaled) : monRaw);
 		Renderer.monster.updateParsed(mon);
-		const subHash = data.scaled ? `${HASH_PART_SEP}${VeCt.HASH_MON_SCALED}${HASH_SUB_KV_SEP}${data.scaled}` : "";
+		const subHash = data.scaled ? `${HASH_PART_SEP}${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}${data.scaled}` : "";
 
 		const name = mon._displayName || mon.name;
 		const hash = `${UrlUtil.autoEncodeHash(mon)}${subHash}`;
@@ -114,15 +116,15 @@ class BestiaryPage {
 		const $eleCount1 = $(`<span class="col-2 text-center">${count}</span>`);
 		const $eleCount2 = $(`<span class="col-2 pr-0 text-center">${count}</span>`);
 
-		const $ele = $$`<li class="row row--bestiary_sublist">
-			<a href="#${hash}" draggable="false" class="ecgen__hidden lst--border">
+		const $ele = $$`<div class="lst__row lst__row--sublist flex-col lst__row--bestiary-sublist">
+			<a href="#${hash}" draggable="false" class="ecgen__hidden lst--border lst__row-inner">
 				<span class="bold col-5 pl-0">${name}</span>
 				<span class="col-3-8">${type}</span>
 				<span class="col-1-2 text-center">${cr}</span>
 				${$eleCount1}
 			</a>
 
-			<div class="lst__wrp-cells ecgen__visible--flex lst--border">
+			<div class="lst__wrp-cells ecgen__visible--flex lst--border lst__row-inner">
 				${EncounterBuilder.$getSublistButtons(pinId, getMonCustomHashId(mon))}
 				<span class="ecgen__name--sub col-3-5">${name}</span>
 				${$hovStatblock}
@@ -131,8 +133,9 @@ class BestiaryPage {
 				${$ptCr}
 				${$eleCount2}
 			</div>
-		</li>`
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => handleBestiaryLinkClickSub(evt, listItem));
 
 		const listItem = new ListItem(
 			pinId,
@@ -186,9 +189,9 @@ class BestiaryPage {
 
 		await printBookView.pHandleSub(sub);
 
-		const scaledHash = sub.find(it => it.startsWith(VeCt.HASH_MON_SCALED));
+		const scaledHash = sub.find(it => it.startsWith(VeCt.HASH_SCALED));
 		if (scaledHash) {
-			const scaleTo = Number(UrlUtil.unpackSubHash(scaledHash)[VeCt.HASH_MON_SCALED][0]);
+			const scaleTo = Number(UrlUtil.unpackSubHash(scaledHash)[VeCt.HASH_SCALED][0]);
 			const scaleToStr = Parser.numberToCr(scaleTo);
 			const mon = monsters[Hist.lastLoadedId];
 			if (Parser.isValidCr(scaleToStr) && scaleTo !== Parser.crToNumber(lastRendered.mon.cr)) {
@@ -255,9 +258,9 @@ class BestiaryPage {
 					},
 				);
 			} else {
-				const pageUrl = `#${UrlUtil.autoEncodeHash(toRender)}${toRender._isScaledCr ? `${HASH_PART_SEP}${VeCt.HASH_MON_SCALED}${HASH_SUB_KV_SEP}${toRender._isScaledCr}` : ""}`;
+				const pageUrl = `#${UrlUtil.autoEncodeHash(toRender)}${toRender._isScaledCr ? `${HASH_PART_SEP}${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}${toRender._isScaledCr}` : ""}`;
 
-				const renderFn = Renderer.hover._pageToRenderFn(UrlUtil.getCurrentPage());
+				const renderFn = Renderer.hover.getFnRenderCompact(UrlUtil.getCurrentPage());
 				const $content = $$`<table class="stats">${renderFn(toRender)}</table>`;
 				Renderer.hover.getShowWindow(
 					$content,
@@ -338,8 +341,8 @@ async function pPageInit (loadedSources) {
 		return (evt, proxyEvt) => {
 			evt = proxyEvt || evt;
 			if (lastRendered.isScaled) {
-				if (evt.shiftKey) ListUtil.pDoSublistAdd(Hist.lastLoadedId, true, 5, getScaledData());
-				else ListUtil.pDoSublistAdd(Hist.lastLoadedId, true, 1, getScaledData());
+				if (evt.shiftKey) ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, addCount: 5, data: getScaledData()});
+				else ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, addCount: 1, data: getScaledData()});
 			} else ListUtil.genericAddButtonHandler(evt, baseHandlerOptions);
 		};
 	}
@@ -360,7 +363,7 @@ async function pPageInit (loadedSources) {
 	printBookView = new BookModeView({
 		hashKey: "bookview",
 		$openBtn: $(`#btn-printbook`),
-		noneVisibleMsg: "If you wish to view multiple creatures, please first make a list",
+		$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple creatures, please first make a list</span>`),
 		pageTitle: "Bestiary Printer View",
 		popTblGetNumShown: async ($wrpContent, $dispName, $wrpControlsToPass) => {
 			const toShow = await Promise.all(ListUtil.genericPinKeyMapper());
@@ -451,6 +454,7 @@ class EncounterBuilderUtils {
 				const crScaled = it.data.customHashId ? Number(getUnpackedCustomHashId(it.data.customHashId).scaled) : null;
 				return {
 					cr: it.values.cr,
+					crNumber: Parser.crToNumber(it.values.cr),
 					count: Number(it.values.count),
 
 					approxHp: it.data.approxHp,
@@ -462,7 +466,7 @@ class EncounterBuilderUtils {
 					hash: UrlUtil.autoEncodeHash(mon),
 				}
 			}
-		}).filter(it => it && it.cr !== 100).sort((a, b) => SortUtil.ascSort(b.cr, a.cr));
+		}).filter(it => it && it.crNumber < VeCt.CR_CUSTOM).sort((a, b) => SortUtil.ascSort(b.crNumber, a.crNumber));
 	}
 
 	static calculateListEncounterXp (partyMeta) {
@@ -470,15 +474,22 @@ class EncounterBuilderUtils {
 	}
 
 	static getCrCutoff (data, partyMeta) {
-		data = data.filter(it => getCr(it) !== 100).sort((a, b) => SortUtil.ascSort(getCr(b), getCr(a)));
+		data = data.filter(it => getCr(it) < VeCt.CR_CUSTOM).sort((a, b) => SortUtil.ascSort(getCr(b), getCr(a)));
 		if (!data.length) return 0;
 
 		// no cutoff for CR 0-2
 		if (getCr(data[0]) <= 2) return 0;
 
+		// ===============================================================================================================
 		// "When making this calculation, don't count any monsters whose challenge rating is significantly below the average
 		// challenge rating of the other monsters in the group unless you think the weak monsters significantly contribute
 		// to the difficulty of the encounter." -- DMG, p. 82
+		// ===============================================================================================================
+
+		// "unless you think the weak monsters significantly contribute to the difficulty of the encounter"
+		// For player levels <5, always include every monster. We assume that levels 5> will have strong
+		//   AoE/multiattack, allowing trash to be quickly cleared.
+		if (!partyMeta.isPartyLevelFivePlus()) return 0;
 
 		// Spread the CRs into a single array
 		const crValues = [];
@@ -487,34 +498,73 @@ class EncounterBuilderUtils {
 			for (let i = 0; i < it.count; ++i) crValues.push(cr);
 		});
 
-		const crMetas = [];
+		// TODO(Future) allow this to be controlled by the user
+		let CR_THRESH_MODE = "statisticallySignificant";
 
-		// If there's precisely one CR value, use it
-		if (crValues.length === 1) {
-			crMetas.push({
-				mean: crValues[0],
-				deviation: 0,
-			});
-		} else {
-			// Get an average CR for every possible encounter without one of the creatures in the encounter
-			for (let i = 0; i < crValues.length; ++i) {
-				const crValueFilt = crValues.filter((_, j) => i !== j);
-				const crMean = crValueFilt.mean();
-				const crStdDev = Math.sqrt((1 / crValueFilt.length) * crValueFilt.map(it => (it - crMean) ** 2).reduce((a, b) => a + b, 0));
-				crMetas.push({mean: crMean, deviation: crStdDev});
+		switch (CR_THRESH_MODE) {
+			// "Statistically significant" method--note that even with custom butchering of the terminology, this produces
+			//   very passive filtering; the threshold is 0 in the vast majority of cases.
+			case "statisticallySignificant": {
+				let cutoff = 0;
+				const cpy = MiscUtil.copy(crValues)
+					.sort(SortUtil.ascSort);
+				while (cpy.length > 1) {
+					const avgRest = cpy.slice(1).mean();
+					const deviationRest = cpy.slice(1).meanAbsoluteDeviation();
+
+					// This should really be `(deviationRest * 2)`, as two deviations = "statistically significant", however
+					//   using real maths produces awkward results for our tiny sample size.
+					cutoff = avgRest - deviationRest;
+
+					if (cpy[0] < cutoff) {
+						cpy.shift();
+					} else {
+						break;
+					}
+				}
+
+				return cutoff;
 			}
+
+			case "5etools": {
+				// The ideal interpretation of this:
+				//   "don't count any monsters whose challenge rating is significantly below the average
+				//   challenge rating of the other monsters in the group"
+				// Is:
+				//   Arrange the creatures in CR order, lowest to highest. Remove the lowest CR creature (or one of them, if there
+				//   are ties). Calculate the average CR without this removed creature. If the removed creature's CR is
+				//   "significantly below" this average, repeat the process with the next lowest CR creature.
+				// However, this can produce a stair-step pattern where our average CR keeps climbing as we remove more and more
+				//   creatures. Therefore, only do this "remove creature -> calculate average CR" step _once_, and use the
+				//   resulting average CR to calculate a cutoff.
+
+				const crMetas = [];
+
+				// If there's precisely one CR value, use it
+				if (crValues.length === 1) {
+					crMetas.push({
+						mean: crValues[0],
+						deviation: 0,
+					});
+				} else {
+					// Get an average CR for every possible encounter without one of the creatures in the encounter
+					for (let i = 0; i < crValues.length; ++i) {
+						const crValueFilt = crValues.filter((_, j) => i !== j);
+						const crMean = crValueFilt.mean();
+						const crStdDev = Math.sqrt((1 / crValueFilt.length) * crValueFilt.map(it => (it - crMean) ** 2).reduce((a, b) => a + b, 0));
+						crMetas.push({mean: crMean, deviation: crStdDev});
+					}
+				}
+
+				// Sort by descending average CR -> ascending deviation
+				crMetas.sort((a, b) => SortUtil.ascSort(b.mean, a.mean) || SortUtil.ascSort(a.deviation, b.deviation));
+
+				// "significantly below the average" -> cutoff at half the average
+				return crMetas[0].mean / 2;
+			}
+
+			default: return 0;
 		}
-
-		// "unless you think the weak monsters significantly contribute to the difficulty of the encounter"
-		// For player levels <5, always include every monster. We assume that levels 5> will have strong
-		//   AoE/multiattack, allowing trash to be quickly cleared.
-		if (!partyMeta.isPartyLevelFivePlus()) return 0;
-
-		// Sort by descending CR -> ascending deviation
-		crMetas.sort((a, b) => SortUtil.ascSort(b.mean, a.mean) || SortUtil.ascSort(a.deviation, b.deviation));
-
-		// "significantly below the average" -> cutoff at half the average
-		return crMetas[0].mean / 2;
 	}
 
 	/**
@@ -525,23 +575,25 @@ class EncounterBuilderUtils {
 		// Make a default, generic-sized party of level 1 players
 		if (partyMeta == null) partyMeta = new EncounterPartyMeta([{level: 1, count: ECGEN_BASE_PLAYERS}])
 
-		data = data.filter(it => getCr(it) !== 100)
+		data = data.filter(it => getCr(it) < VeCt.CR_CUSTOM)
 			.sort((a, b) => SortUtil.ascSort(getCr(b), getCr(a)));
 
 		let baseXp = 0;
 		let relevantCount = 0;
-		if (!data.length) return {baseXp: 0, relevantCount: 0, adjustedXp: 0};
+		let count = 0;
+		if (!data.length) return {baseXp: 0, relevantCount: 0, count: 0, adjustedXp: 0};
 
 		const crCutoff = EncounterBuilderUtils.getCrCutoff(data, partyMeta);
 		data.forEach(it => {
 			if (getCr(it) >= crCutoff) relevantCount += it.count;
+			count += it.count;
 			baseXp += (Parser.crToXpNumber(Parser.numberToCr(getCr(it))) || 0) * it.count;
 		});
 
 		const playerAdjustedXpMult = Parser.numMonstersToXpMult(relevantCount, partyMeta.cntPlayers);
 
 		const adjustedXp = playerAdjustedXpMult * baseXp;
-		return {baseXp, relevantCount, adjustedXp, meta: {crCutoff, playerCount: partyMeta.cntPlayers, playerAdjustedXpMult}};
+		return {baseXp, relevantCount, count, adjustedXp, meta: {crCutoff, playerCount: partyMeta.cntPlayers, playerAdjustedXpMult}};
 	}
 }
 
@@ -573,16 +625,21 @@ function getMonCustomHashId (mon) {
 }
 
 function handleBestiaryLiClick (evt, listItem) {
-	if (encounterBuilder.isActive()) Renderer.hover.doPopoutCurPage(evt, monsters, listItem.ix);
+	if (encounterBuilder.isActive()) Renderer.hover.doPopoutCurPage(evt, monsters[listItem.ix]);
 	else list.doSelect(listItem, evt);
 }
 
 function handleBestiaryLiContext (evt, listItem) {
-	if (!encounterBuilder.isActive()) ListUtil.openContextMenu(evt, list, listItem);
+	ListUtil.openContextMenu(evt, list, listItem);
 }
 
 function handleBestiaryLinkClick (evt) {
 	if (encounterBuilder.isActive()) evt.preventDefault();
+}
+
+function handleBestiaryLinkClickSub (evt, listItem) {
+	if (encounterBuilder.isActive()) evt.preventDefault();
+	else subList.doSelect(listItem, evt);
 }
 
 const _addedHashes = new Set();
@@ -611,7 +668,14 @@ function addMonsters (data) {
 	});
 
 	const $btnPop = ListUtil.getOrTabRightButton(`btn-popout`, `new-window`);
-	Renderer.hover.bindPopoutButton($btnPop, monsters, BestiaryPage.popoutHandlerGenerator.bind(BestiaryPage), "Popout Window (SHIFT for Source Data; CTRL for Markdown Render)");
+	Renderer.hover.bindPopoutButton(
+		$btnPop,
+		monsters,
+		{
+			handlerGenerator: BestiaryPage.popoutHandlerGenerator.bind(BestiaryPage),
+			title: "Popout Window (SHIFT for Source Data; CTRL for Markdown Render)",
+		},
+	);
 	UrlUtil.bindLinkExportButton(bestiaryPage._pageFilter.filterBox);
 	ListUtil.bindOtherButtons({
 		download: true,
@@ -674,15 +738,15 @@ function renderStatblock (mon, isScaled) {
 				const lastCr = lastRendered.mon ? lastRendered.mon.cr.cr || lastRendered.mon.cr : mon.cr.cr || mon.cr;
 				Renderer.monster.getCrScaleTarget(win, $btnScaleCr, lastCr, (targetCr) => {
 					if (targetCr === Parser.crToNumber(mon.cr)) renderStatblock(mon);
-					else Hist.setSubhash(VeCt.HASH_MON_SCALED, targetCr);
+					else Hist.setSubhash(VeCt.HASH_SCALED, targetCr);
 				});
-			}).toggle(Parser.crToNumber(mon.cr.cr || mon.cr) !== 100) : null;
+			}).toggle(Parser.crToNumber(mon.cr.cr || mon.cr) < VeCt.CR_CUSTOM) : null;
 
 		const $btnResetScaleCr = mon.cr != null ? $(`
 			<button id="btn-reset-cr" title="Reset CR Scaling" class="mon__btn-reset-cr btn btn-xs btn-default">
 				<span class="glyphicon glyphicon-refresh"></span>
 			</button>`)
-			.click(() => Hist.setSubhash(VeCt.HASH_MON_SCALED, null))
+			.click(() => Hist.setSubhash(VeCt.HASH_SCALED, null))
 			.toggle(isScaled) : null;
 
 		$content.append(RenderBestiary.$getRenderedCreature(mon, {$btnScaleCr, $btnResetScaleCr}));
@@ -942,31 +1006,40 @@ function renderStatblock (mon, isScaled) {
 	}
 
 	// reset tabs
-	const statTab = Renderer.utils.tabButton(
-		"Statblock",
-		() => {
-			$wrpBtnProf.append($btnProf);
-			$(`#float-token`).show();
-		},
-		buildStatsTab,
-	);
-	const infoTab = Renderer.utils.tabButton(
-		"Info",
-		() => {
-			$btnProf = $wrpBtnProf.children().length ? $wrpBtnProf.children().detach() : $btnProf;
-			$(`#float-token`).hide();
-		},
-		buildFluffTab,
-	);
-	const picTab = Renderer.utils.tabButton(
-		"Images",
-		() => {
-			$btnProf = $wrpBtnProf.children().length ? $wrpBtnProf.children().detach() : $btnProf;
-			$(`#float-token`).hide();
-		},
-		() => buildFluffTab(true),
-	);
-	Renderer.utils.bindTabButtons(statTab, infoTab, picTab);
+	const tabMetas = [
+		new Renderer.utils.TabButton({
+			label: "Statblock",
+			fnChange: () => {
+				$wrpBtnProf.append($btnProf);
+				$(`#float-token`).show();
+			},
+			fnPopulate: buildStatsTab,
+			isVisible: true,
+		}),
+		new Renderer.utils.TabButton({
+			label: "Info",
+			fnChange: () => {
+				$btnProf = $wrpBtnProf.children().length ? $wrpBtnProf.children().detach() : $btnProf;
+				$(`#float-token`).hide();
+			},
+			fnPopulate: buildFluffTab,
+			isVisible: Renderer.utils.hasFluffText(mon),
+		}),
+		new Renderer.utils.TabButton({
+			label: "Images",
+			fnChange: () => {
+				$btnProf = $wrpBtnProf.children().length ? $wrpBtnProf.children().detach() : $btnProf;
+				$(`#float-token`).hide();
+			},
+			fnPopulate: () => buildFluffTab(true),
+			isVisible: Renderer.utils.hasFluffImages(mon),
+		}),
+	];
+
+	Renderer.utils.bindTabButtons({
+		tabButtons: tabMetas.filter(it => it.isVisible),
+		tabLabelReference: tabMetas.map(it => it.label),
+	});
 }
 
 async function pHandleUnknownHash (link, sub) {

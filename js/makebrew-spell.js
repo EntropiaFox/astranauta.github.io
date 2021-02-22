@@ -7,11 +7,16 @@ class SpellBuilder extends Builder {
 			titleSidebarDownloadJson: "Download Spells as JSON",
 			prop: "spell",
 			titleSelectDefaultSource: "(Same as Spell)",
+			typeRenderData: "dataSpell",
 		});
 
 		this._subclassLookup = {};
 
 		this._renderOutputDebounced = MiscUtil.debounce(() => this._renderOutput(), 50);
+	}
+
+	static _getAsMarkdown (sp) {
+		return RendererMarkdown.get().render({entries: [{type: "dataSpell", dataSpell: sp}]});
 	}
 
 	async pHandleSidebarLoadExistingClick () {
@@ -22,13 +27,22 @@ class SpellBuilder extends Builder {
 		}
 	}
 
-	async pHandleSidebarLoadExistingData (spell) {
+	/**
+	 * @param spell
+	 * @param [opts]
+	 * @param [opts.meta]
+	 */
+	async pHandleSidebarLoadExistingData (spell, opts) {
+		opts = opts || {};
+
 		spell.source = this._ui.source;
 
 		delete spell.srd;
 		delete spell.uniqueId;
 
-		this.setStateFromLoaded({s: spell, m: this.getInitialMetaState()});
+		const meta = {...(opts.meta || {}), ...this.getInitialMetaState()};
+
+		this.setStateFromLoaded({s: spell, m: meta});
 
 		this.renderInput();
 		this.renderOutput();
@@ -126,7 +140,7 @@ class SpellBuilder extends Builder {
 
 		// initialise tabs
 		this._resetTabs("input");
-		const tabs = ["Info", "Details", "Sources", "Misc"].map((it, ix) => this._getTab(ix, it, {hasBorder: true, tabGroup: "input", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		const tabs = ["Info", "Details", "Sources", "Flavor/Misc"].map((it, ix) => this._getTab(ix, it, "meta", {hasBorder: true, tabGroup: "input", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
 		const [infoTab, detailsTab, sourcesTab, miscTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink ui-tab__wrp-tab-heads--border">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
@@ -163,7 +177,8 @@ class SpellBuilder extends Builder {
 		this.__$getRaces(cb).appendTo(sourcesTab.$wrpTab);
 		this.__$getBackgrounds(cb).appendTo(sourcesTab.$wrpTab);
 
-		// MISC
+		// FLAVOR/MISC
+		this.$getFluffInput(cb).appendTo(miscTab.$wrpTab);
 		$(`<div class="flex-vh-center w-100 mb-2"><i>Note: the following data is used by filters on the Spells page.</i></div>`).appendTo(miscTab.$wrpTab);
 		BuilderUi.$getStateIptBooleanArray(
 			"Damage Inflicted",
@@ -480,6 +495,7 @@ class SpellBuilder extends Builder {
 					out.m = {
 						text: $iptMaterial.val().trim() || true,
 					};
+					// TODO add support for "optional" consume type
 					if ($cbConsumed.prop("checked")) out.m.consumed = true;
 					if ($iptCost.val().trim()) {
 						out.m.cost = UiUtil.strToInt($iptCost.val());
@@ -989,8 +1005,9 @@ class SpellBuilder extends Builder {
 
 		// initialise tabs
 		this._resetTabs("output");
-		const tabs = ["Spell", "Data"].map((it, ix) => this._getTab(ix, it, {tabGroup: "output", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
-		const [spellTab, dataTab] = tabs;
+
+		const tabs = ["Spell", "Info", "Images", "Data", "Markdown"].map((it, ix) => this._getTab(ix, it, "meta", {tabGroup: "output", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		const [spellTab, infoTab, imageTab, dataTab, markdownTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
 
@@ -1000,6 +1017,24 @@ class SpellBuilder extends Builder {
 		const procSpell = MiscUtil.copy(this._state);
 		Renderer.spell.initClasses(procSpell);
 		RenderSpells.$getRenderedSpell(procSpell, this._subclassLookup).appendTo($tblSpell);
+
+		// Info
+		const $tblInfo = $(`<table class="stats"/>`).appendTo(infoTab.$wrpTab);
+		Renderer.utils.pBuildFluffTab({
+			isImageTab: false,
+			$content: $tblInfo,
+			entity: this._state,
+			pFnGetFluff: Renderer.spell.pGetFluff,
+		});
+
+		// Images
+		const $tblImages = $(`<table class="stats"/>`).appendTo(imageTab.$wrpTab);
+		Renderer.utils.pBuildFluffTab({
+			isImageTab: true,
+			$content: $tblImages,
+			entity: this._state,
+			pFnGetFluff: Renderer.spell.pGetFluff,
+		});
 
 		// Data
 		const $tblData = $(`<table class="stats stats--book mkbru__wrp-output-tab-data"/>`).appendTo(dataTab.$wrpTab);
@@ -1016,6 +1051,12 @@ class SpellBuilder extends Builder {
 		$tblData.append(Renderer.utils.getBorderTr());
 		$tblData.append(`<tr><td colspan="6">${asCode}</td></tr>`);
 		$tblData.append(Renderer.utils.getBorderTr());
+
+		// Markdown
+		const $tblMarkdown = $(`<table class="stats stats--book mkbru__wrp-output-tab-data"/>`).appendTo(markdownTab.$wrpTab);
+		$tblMarkdown.append(Renderer.utils.getBorderTr());
+		$tblMarkdown.append(`<tr><td colspan="6">${this._getRenderedMarkdownCode()}</td></tr>`);
+		$tblMarkdown.append(Renderer.utils.getBorderTr());
 	}
 }
 
