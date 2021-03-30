@@ -15,16 +15,60 @@
 			],
 			"spellcastingAbility": "cha",
 			"casterProgression": "full",
+			"cantripProgression": [
+				2,
+				2,
+				2,
+				3,
+				3,
+				3,
+				3,
+				3,
+				3,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4
+			],
+			"spellsKnownProgression": [
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				14,
+				15,
+				15,
+				16,
+				18,
+				19,
+				19,
+				20,
+				22,
+				22,
+				22
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light"
 				],
 				"weapons": [
 					"simple",
-					"hand crossbows",
-					"longswords",
-					"rapiers",
-					"shortswords"
+					"{@item hand crossbow|phb|hand crossbows}",
+					"{@item longsword|phb|longswords}",
+					"{@item rapier|phb|rapiers}",
+					"{@item shortsword|phb|shortswords}"
 				],
 				"tools": [
 					"three {@item musical instrument|PHB|musical instruments} of your choice"

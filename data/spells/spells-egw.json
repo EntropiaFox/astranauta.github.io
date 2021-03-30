@@ -67,7 +67,8 @@
 						}
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fortune's Favor",
@@ -84,7 +85,8 @@
 			"range": {
 				"type": "point",
 				"distance": {
-					"type": "touch"
+					"type": "feet",
+					"amount": 60
 				}
 			},
 			"components": {
@@ -524,6 +526,9 @@
 			"savingThrow": [
 				"constitution"
 			],
+			"miscTags": [
+				"FMV"
+			],
 			"areaTags": [
 				"N"
 			],
@@ -725,7 +730,8 @@
 						}
 					}
 				]
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sapping Sting",
@@ -920,7 +926,6 @@
 				"constitution"
 			],
 			"miscTags": [
-				"HL",
 				"SGT"
 			],
 			"areaTags": [

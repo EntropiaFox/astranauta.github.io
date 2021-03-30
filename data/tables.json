@@ -1,17 +1,17 @@
 {
 	"table": [
 		{
-			"name": "2,500 GP Art Objects",
+			"name": "2,500 gp Art Objects",
 			"source": "PSX",
 			"page": 26,
-			"caption": "2500 GP Art Objects",
+			"caption": "2,500 gp Art Objects",
 			"colLabels": [
 				"d10",
 				"Object"
 			],
 			"colStyles": [
 				"col-2 text-center",
-				"col-12"
+				"col-10"
 			],
 			"rows": [
 				[
@@ -57,17 +57,17 @@
 			]
 		},
 		{
-			"name": "25 GP Art Objects",
+			"name": "25 gp Art Objects",
 			"source": "PSX",
 			"page": 24,
-			"caption": "25 GP Art Objects",
+			"caption": "25 gp Art Objects",
 			"colLabels": [
 				"d10",
 				"Object"
 			],
 			"colStyles": [
 				"col-2 text-center",
-				"col-12"
+				"col-10"
 			],
 			"rows": [
 				[
@@ -113,17 +113,17 @@
 			]
 		},
 		{
-			"name": "250 GP Art Objects",
+			"name": "250 gp Art Objects",
 			"source": "PSX",
 			"page": 24,
-			"caption": "250 GP Art Objects",
+			"caption": "250 gp Art Objects",
 			"colLabels": [
 				"d10",
 				"Object"
 			],
 			"colStyles": [
 				"col-2 text-center",
-				"col-12"
+				"col-10"
 			],
 			"rows": [
 				[
@@ -169,17 +169,17 @@
 			]
 		},
 		{
-			"name": "7,500 GP Art Objects",
+			"name": "7,500 gp Art Objects",
 			"source": "PSX",
 			"page": 25,
-			"caption": "7500 GP Art Objects",
+			"caption": "7,500 gp Art Objects",
 			"colLabels": [
 				"d10",
 				"Object"
 			],
 			"colStyles": [
 				"col-2 text-center",
-				"col-12"
+				"col-10"
 			],
 			"rows": [
 				[
@@ -225,17 +225,17 @@
 			]
 		},
 		{
-			"name": "750 GP Art Objects",
+			"name": "750 gp Art Objects",
 			"source": "PSX",
 			"page": 24,
-			"caption": "750 GP Art Objects",
+			"caption": "750 gp Art Objects",
 			"colLabels": [
 				"d10",
 				"Object"
 			],
 			"colStyles": [
 				"col-2 text-center",
-				"col-12"
+				"col-10"
 			],
 			"rows": [
 				[
@@ -494,7 +494,7 @@
 			],
 			"colStyles": [
 				"col-2 text-center",
-				"col-12"
+				"col-10"
 			],
 			"rows": [
 				[

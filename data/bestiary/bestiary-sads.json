@@ -202,7 +202,8 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		}
 	]
 }

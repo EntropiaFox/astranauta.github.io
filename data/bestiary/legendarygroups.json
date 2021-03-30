@@ -45,9 +45,10 @@
 					"items": [
 						"Supernatural shadow turns all bright light to dim light in underground regions within 6 miles of the lair.",
 						"Intermittent, echoing caws can be heard coming from all directions within 6 miles of the lair.",
-						"Subterranean beasts within 1 mile of the ancient deep crow's lair serve as the creature's eyes and ears, alerting it to the presence of intruders and making it all but impossible to surprise the ancient deep crow. If the ancient deep crow dies, these effects fade immediately."
+						"Subterranean beasts within 1 mile of the ancient deep crow's lair serve as the creature's eyes and ears, alerting it to the presence of intruders and making it all but impossible to surprise the ancient deep crow."
 					]
-				}
+				},
+				"If the ancient deep crow dies, these effects fade immediately."
 			]
 		},
 		{
@@ -1078,6 +1079,21 @@
 			]
 		},
 		{
+			"name": "Lichen Lich",
+			"source": "CM",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), the lichen lich can take a lair action to cause one of the following effects:",
+				{
+					"type": "list",
+					"items": [
+						"Poisonous spores fill a 10-foot cube that the lich can see within 120 feet of it. Any creature that enters the cloud for the first time on a turn or starts its turn there must succeed on a DC 19 Constitution saving throw or be poisoned until the end of its next turn. The cloud lasts for 1 minute or until it is dispersed by a strong wind.",
+						"The lich commands the might of its diseased grove, creating a shambling mound. The shambling mound appears in an unoccupied space within 30 feet of the lich, acts on its own initiative count, and obeys the lich's commands. The shambling mound dies after 1 hour or when the lich uses this lair action again.",
+						"Rotten roots and vines magically erupt in a 20-foot radius centered on a point on the ground that the lich can see within 120 feet of it. The lich is unaffected by the roots and vines. For all other creatures, the area becomes difficult terrain, and each creature in the area must succeed on a DC 19 Strength saving throw or be restrained by the roots. As an action, a creature can try to free itself or another creature within its reach, doing so with a successful DC 19 Strength (Athletics) check. The roots and vines wilt away when the lich uses this lair action again or when the lich dies."
+					]
+				}
+			]
+		},
+		{
 			"name": "Marlos Urnrayle",
 			"source": "PotA",
 			"lairActions": [
@@ -1164,6 +1180,20 @@
 					]
 				},
 				"If the mummy lord is destroyed, these regional effects end immediately."
+			]
+		},
+		{
+			"name": "Nintra Siotta",
+			"source": "CM",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties) Nintra can take a lair action to cause one of the following effects; she can't use the same effect two rounds in a row:",
+				{
+					"type": "list",
+					"items": [
+						"Nintra targets one pane of shadow glass in her lair, causing it to explode into shards. Each creature within 20 feet of the exploding pane must make a DC 18 Dexterity saving throw, taking 13 ({@dice 3d8}) piercing damage on a failed save, or half as much damage on a successful one. The shards fade away to vapor and the pane is restored to normal at the next initiative count 20.",
+						"Nintra targets one pane of shadow glass in her lair, briefly transforming it into a swirling vortex. One creature of her choice within 20 feet of the pane must succeed on a DC 20 Strength saving throw or be drawn into the vortex, taking 11 ({@dice 2d10}) necrotic damage. The creature is then teleported to an unoccupied space within 5 feet of another pane of shadow glass in Nintra's lair (determined randomly)."
+					]
+				}
 			]
 		},
 		{
@@ -1504,6 +1534,33 @@
 			]
 		},
 		{
+			"name": "Valin Sarnaster",
+			"source": "CM",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties), Valin takes a lair action to cause one of the following effects; Valin can't use the same effect two rounds in a row.",
+				{
+					"type": "list",
+					"items": [
+						"Each undead creature in the lair can pinpoint the location of each living creature within 120 feet of it until initiative count 20 on the next round.",
+						"Each undead in the lair has advantage on saving throws against effects that turn undead until initiative count 20 on the next round.",
+						"Until initiative count 20 on the next round, any non-undead creature that tries to cast a spell of 4th level or lower in Valin's lair is wracked with pain. The creature can choose another action, but if it tries to cast the spell, it must make a DC 16 Constitution saving throw. On a failed save, it takes {@dice 1d6} necrotic damage per level of the spell, and the spell has no effect and is wasted."
+					]
+				}
+			],
+			"regionalEffects": [
+				"Valin's tomb is warped in any of the following ways by the creature's dark presence:",
+				{
+					"type": "list",
+					"items": [
+						"Food instantly molders and water instantly evaporates when brought into the lair. Other nonmagical drinks are spoiled\u2014wine turning to vinegar, for instance.",
+						"Divination spells cast within the lair by creatures other than Valin have a 25 percent chance to provide misleading results, as determined by the DM. If a divination spell already has a chance to fail or become unreliable when cast multiple times, that chance increases by 25 percent.",
+						"A creature that takes treasure from the lair is cursed until the treasure is returned. The cursed target has disadvantage on all saving throws. The curse lasts until removed by a remove curse spell or other magic."
+					]
+				},
+				"If Valin is destroyed, these regional effects end immediately."
+			]
+		},
+		{
 			"name": "Vampire",
 			"source": "MM",
 			"regionalEffects": [
@@ -1676,6 +1733,21 @@
 					]
 				},
 				"If Zariel dies, these effects fade over the course of {@dice 1d10} days."
+			]
+		},
+		{
+			"name": "Zikzokrishka",
+			"source": "CM",
+			"lairActions": [
+				"On initiative count 20 (losing initiative ties) whenever she is in the are V3, Zikzokrishka can take a lair action to cause one of the following effects. She can't use the same effect two rounds in a row:",
+				{
+					"type": "list",
+					"items": [
+						"Part of the ceiling collapses above one creature that Zikzokrishka can see. The creature must succeed on a DC 15 Dexterity saving throw or take 21 ({@dice 6d6}) bludgeoning damage and be knocked prone and buried under rubble. A buried creature is restrained and unable to stand up. A creature can use an action to try to pull itself or another creature out of the rubble, doing so with a successful DC 10 Strength (Athletics) check.",
+						"A cloud of sand swirls in a 20-foot-radius sphere centered on a point Zikzokrishka can see within 60 feet of it. The cloud spreads around corners. Each creature in the cloud must succeed on a DC 15 Constitution saving throw or be blinded for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+						"Zikzokrishka chooses two points that it can see, each of which must be on a solid surface, and creates a 5-foot-wide line of lightning between them. The two points must be within 60 feet of Zikzokrishka and 60 feet of each other. Each creature in the line must succeed on a DC 15 Dexterity saving throw or take 10 ({@dice 3d6}) lightning damage."
+					]
+				}
 			]
 		},
 		{

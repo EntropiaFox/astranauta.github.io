@@ -1,28 +1,17 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.0.2",
+	"$id": "loot.json",
+	"version": "1.2.0",
 	"definitions": {
 		"cr": {
 			"type": "integer",
 			"minimum": 0,
-			"maximum": 30,
-			"required": [
-				"type",
-				"minimum",
-				"maximum"
-			],
-			"additionalProperties": false
+			"maximum": 30
 		},
 		"d100": {
 			"type": "integer",
 			"minimum": 1,
-			"maximum": 100,
-			"required": [
-				"type",
-				"minimum",
-				"maximum"
-			],
-			"additionalProperties": false
+			"maximum": 100
 		},
 		"coin": {
 			"type": "object",
@@ -46,6 +35,22 @@
 			"additionalProperties": false
 		},
 		"lootTypeAmount": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "integer"
+				},
+				"amount": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"type",
+				"amount"
+			],
+			"additionalProperties": false
+		},
+		"lootTypeAmountMagicItems": {
 			"type": "object",
 			"properties": {
 				"type": {
@@ -77,7 +82,7 @@
 						"type": "integer"
 					},
 					"type": {
-						"type": "string"
+						"type": "integer"
 					},
 					"table": {
 						"type": "array",
@@ -249,7 +254,7 @@
 									"$ref": "#/definitions/lootTypeAmount"
 								},
 								"magicitems": {
-									"$ref": "#/definitions/lootTypeAmount"
+									"$ref": "#/definitions/lootTypeAmountMagicItems"
 								}
 							},
 							"required": [

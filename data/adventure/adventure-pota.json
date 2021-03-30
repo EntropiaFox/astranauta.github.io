@@ -157,7 +157,7 @@
 							"name": "Prophet of Earth",
 							"id": "008",
 							"entries": [
-								"A medusa named {@creature Marlos Urnrayle|PotA} leads the Black Earth cult. He wields the elemental weapon {@item Ironfang|PotA}, a war pick infused with the power of Ogremoch, the Prince of Evil Earth. Marlos is vain and cruel, an extreme narcissist who delights in surrounding himself with objects of beauty and luxurious comforts. Beneath this sneering self-assurance lies a bitter being who loathes himself and holds everyone around him in contempt.",
+								"A medusa named {@creature Marlos Urnrayle|PotA} leads the Black Earth cult. He wields the elemental weapon {@item Ironfang|PotA}, a war pick infused with the power of Ogrémoch, the Prince of Evil Earth. Marlos is vain and cruel, an extreme narcissist who delights in surrounding himself with objects of beauty and luxurious comforts. Beneath this sneering self-assurance lies a bitter being who loathes himself and holds everyone around him in contempt.",
 								"Marlos began life as a human aristocrat, born into a wealthy Cormyrean family. He squandered his familys wealth on endless self-indulgence, seeking more questionable forms of entertainment through the years. The Urnrayle estate became known as a place of outrageous masquerades, bizarre banquets, and grotesque orgies. Marlos required his guests to don ugly or monstrous masks, thus ensuring that no ones beauty would outshine his own.",
 								"As he aged, Marlos turned to magic to preserve his fading beauty. After searching for years, he found a ring that contained the stolen vitality of a lovely fey creature. As long as he wore the ring, his imperfections vanished and no one could resist his physical charms-until the day the ring transformed Marlos into a medusa. The horror of his fate drove Marlos mad. He fled his ancestral home, taking his collection of masks with him.",
 								"After years of wandering and hiding in one ruined estate or another across the Western Heartlands, Marlos felt drawn to the desolate Sumber Hills by troubling dreams and visions. A long stairway beneath a ruined monastery brought him to an ancient cavern with a hideous altar, upon which lay a war pick of iron. When the medusa claimed {@item Ironfang|PotA}, his purpose finally became clear to him. He established his lair in the dungeon nearby and began building the Cult of the Black Earth.",
@@ -8219,7 +8219,7 @@
 								" Miraj is rational, deliberate, and slow to anger. He supports the cult because it deepens his understanding of elemental magic. If challenged, he attempts to persuade his attackers to turn their efforts against the fire cult. Miraj isn't above offering a bribe to entice enemies, then reneging on the deal if they come back to collect."
 							]
 						},
-						"Miraj calls himself a \"mud sorcerer\" because he practices earth and water magic, and he reveres both Ogremoch and Olhydra. He bears the water cultists no ill will and sometimes acts as an advocate or emissary on their behalf.",
+						"Miraj calls himself a \"mud sorcerer\" because he practices earth and water magic, and he reveres both Ogrémoch and Olhydra. He bears the water cultists no ill will and sometimes acts as an advocate or emissary on their behalf.",
 						"In battle, Miraj commands the golem to defend him. He then retreats to the back of the room to cast spells. Miraj turns invisible and flees if death seems imminent.",
 						"The worktables and shelves hold common alchemical ingredients and notebooks, including unusual mineral salts and solutions. The notes indicate that the melted statues are golems that Miraj experimented on without success.",
 						{
@@ -8488,7 +8488,7 @@
 				},
 				{
 					"type": "entries",
-					"name": "B19. Statue of Ogremoch",
+					"name": "B19. Statue of Ogrémoch",
 					"id": "361",
 					"entries": [
 						{
@@ -8498,7 +8498,7 @@
 								"Three hallways meet at this room. An alcove in gthe middle of the west wall holds a ten-foot-tall statue depicting a crude humanoid form composed of earth, boulders, and sharp crystals. One massive, rocky fist is raised above its blunt head. Shattered rubble from an older statue lies heaped around the pedestal on which this figure stands."
 							]
 						},
-						"The statue depicts Ogremoch, the Prince of Evil Earth. Marlos Urnrayle sculpted it."
+						"The statue depicts Ogrémoch, the Prince of Evil Earth. Marlos Urnrayle sculpted it."
 					]
 				},
 				{
@@ -11660,7 +11660,7 @@
 					"name": "The Black Geode",
 					"id": "4cb",
 					"entries": [
-						"The Black Geode is a natural cavern distinguished by the seams of luminous violet crystal. Marlos Urnrayle used Ironfang to transform these caverns into an earth node. In the Black Geodes largest cavern lies a portal that leads to Ogremochs domain on the Elemental Plane of Earth. Bizarre creatures from that place have crossed through the gate and now inhabit the caverns, while the raw energy of the elemental plane seeps out and is slowly transforming the Black Geode into a reflection of Ogremochs domain.",
+						"The Black Geode is a natural cavern distinguished by the seams of luminous violet crystal. Marlos Urnrayle used Ironfang to transform these caverns into an earth node. In the Black Geodes largest cavern lies a portal that leads to Ogrémochs domain on the Elemental Plane of Earth. Bizarre creatures from that place have crossed through the gate and now inhabit the caverns, while the raw energy of the elemental plane seeps out and is slowly transforming the Black Geode into a reflection of Ogrémochs domain.",
 						{
 							"type": "image",
 							"href": {
@@ -11852,12 +11852,12 @@
 							"name": "Roleplaying Keltar",
 							"id": "4da",
 							"entries": [
-								" Keltar believes the xorn, called Gorx, is an emissary from Ogremoch sent to test the cults worth. In fact, the creature wandered through the earth portal out of curiosity. Since Keltar was eager to please Gorx, it has done nothing to dissuade him."
+								" Keltar believes the xorn, called Gorx, is an emissary from Ogrémoch sent to test the cults worth. In fact, the creature wandered through the earth portal out of curiosity. Since Keltar was eager to please Gorx, it has done nothing to dissuade him."
 							]
 						},
-						"The xorn has convinced Keltar that Ogremoch wants tribute, and so Keltar extracts offerings from everyone who passes through. Keltar is so obsessed with offerings that he ignores the appearance of passersby and the usual pass phrase. When he notices the characters, he asks, \"Do you bring an offering?\"",
-						"Making an offering involves throwing precious metals or gems into the xorns maw. Keltar soberly informs contributors the treasure is transported to Ogremochs domain.",
-						"The xorn can smell the partys wealth, and so it demands a tribute of 500 gp in Terran. If the party complies, Keltar asks, \"Is our prince satisfied with the offering?\" to which Gorx replies, \"The prince finds this sacrifice pleasing.\" Keltar believes the xorn has deemed the party worthy, so he allows them to pass. He also helpfully responds to inquiries. If the characters are undisguised, he directs them toward {@area G3|4dc}, as another test of their worthiness. Keltar directs the characters toward {@area G6|4e5} if he believes them to be cultists and also reminds them of the pass phrase to cross the stone bridge ({@area G9|4f0}) safely: \"We walk in the shadow of Ogremoch!\"",
+						"The xorn has convinced Keltar that Ogrémoch wants tribute, and so Keltar extracts offerings from everyone who passes through. Keltar is so obsessed with offerings that he ignores the appearance of passersby and the usual pass phrase. When he notices the characters, he asks, \"Do you bring an offering?\"",
+						"Making an offering involves throwing precious metals or gems into the xorns maw. Keltar soberly informs contributors the treasure is transported to Ogrémochs domain.",
+						"The xorn can smell the partys wealth, and so it demands a tribute of 500 gp in Terran. If the party complies, Keltar asks, \"Is our prince satisfied with the offering?\" to which Gorx replies, \"The prince finds this sacrifice pleasing.\" Keltar believes the xorn has deemed the party worthy, so he allows them to pass. He also helpfully responds to inquiries. If the characters are undisguised, he directs them toward {@area G3|4dc}, as another test of their worthiness. Keltar directs the characters toward {@area G6|4e5} if he believes them to be cultists and also reminds them of the pass phrase to cross the stone bridge ({@area G9|4f0}) safely: \"We walk in the shadow of Ogrémoch!\"",
 						"If the characters refuse to pay, the xorn attacks the character carrying the most treasure. Meanwhile, Keltar flees to {@area G6|4e5}.",
 						{
 							"type": "entries",
@@ -12045,7 +12045,7 @@
 							]
 						},
 						"The bridge is 40 feet long and sturdy. A creature on the bridge that takes 10 damage or more from a single source must make a DC 10 Dexterity saving throw. If the save fails by 5 or more, the creature is knocked off the bridge and falls. On any other failed result, the creature is knocked prone but manages not to fall off the bridge. The bridge is 40 feet above the floor of the surrounding cavern ({@area G10|4f3}).",
-						"Two {@creature galeb duhr||galeb duhrs} guard the bridge-one at each end. They look like ordinary boulders until they open their eyes and move. To cross the bridge without rousing the galeb duhrs, someone among the passersby must speak the cults pass phrase: \"We walk in the shadow of Ogremoch!\" Otherwise, the galeb duhrs wait until intruders are halfway across the bridge before attacking, first by animating the boulders set near them and commanding them to roll across the bridge.",
+						"Two {@creature galeb duhr||galeb duhrs} guard the bridge-one at each end. They look like ordinary boulders until they open their eyes and move. To cross the bridge without rousing the galeb duhrs, someone among the passersby must speak the cults pass phrase: \"We walk in the shadow of Ogrémoch!\" Otherwise, the galeb duhrs wait until intruders are halfway across the bridge before attacking, first by animating the boulders set near them and commanding them to roll across the bridge.",
 						"The clacking noises are made by the hook horrors in the surrounding cavern.",
 						{
 							"type": "entries",
@@ -12238,23 +12238,23 @@
 								"This colossal cavern is an alien landscape filled with soaring stone buttresses, weirdly twisting columns, and gargantuan shards of glowing crystal. A long path of steps is cut into the uneven floor and wends its way between the mighty stone pillars to the caverns core. There, the steps climb to the base of a stone monolith that is constantly changing its shape, filling the great cavern with a thunderous grinding noise."
 							]
 						},
-						"If Marlos Urnrayle has been defeated elsewhere, this cavern is guarded by two {@creature earth elemental myrmidon|mtf|earth elemental myrmidons} (see chapter 7) that stand before the monolith in plain view. If Marlos has retreated to this cavern and the characters have defeated two other prophets, use the \"Encounter with Marlos Urnrayle\" section. Use the \"Encounter with Ogremoch\" section if Marlos is the last remaining prophet.",
+						"If Marlos Urnrayle has been defeated elsewhere, this cavern is guarded by two {@creature earth elemental myrmidon|mtf|earth elemental myrmidons} (see chapter 7) that stand before the monolith in plain view. If Marlos has retreated to this cavern and the characters have defeated two other prophets, use the \"Encounter with Marlos Urnrayle\" section. Use the \"Encounter with Ogrémoch\" section if Marlos is the last remaining prophet.",
 						{
 							"type": "entries",
 							"name": "Encounter With Marlos Urnrayle",
 							"id": "50a",
 							"entries": [
-								"{@creature Marlos Urnrayle|PotA} (see chapter 7) stands before the earth portal, attempting to summon Ogremoch. The characters find him with his back turned and the hood of his rich cloak pulled up, so he looks like a finely dressed cult priest. Two {@creature black earth guard|PotA|Black Earth guards} (see chapter 7) attend him, and four {@creature gargoyle||gargoyles} cling to the four nearest columns. Marlos continues incantations until he becomes aware of the characters. Then, he pulls back his hood and attacks.",
+								"{@creature Marlos Urnrayle|PotA} (see chapter 7) stands before the earth portal, attempting to summon {@creature Ogrémoch|pota}. The characters find him with his back turned and the hood of his rich cloak pulled up, so he looks like a finely dressed cult priest. Two {@creature black earth guard|PotA|Black Earth guards} (see chapter 7) attend him, and four {@creature gargoyle||gargoyles} cling to the four nearest columns. Marlos continues incantations until he becomes aware of the characters. Then, he pulls back his hood and attacks.",
 								"Marlos taunts the characters, challenging those who avert their eyes to behold his power and beauty. The medusa is infuriated if anyone manages to meet his gaze and survive, concentrating his attacks on such characters.",
 								"The prophet stands his ground here. He cant flee through the earth portal with Ironfang, and his pride doesn't allow him to relinquish his power in the node. When the characters defeat him, he turns to mud and melts away. Ironfang and the portal remain."
 							]
 						},
 						{
 							"type": "entries",
-							"name": "Encounter With Ogremoch",
+							"name": "Encounter With Ogrémoch",
 							"id": "50b",
 							"entries": [
-								"Marlos Urnrayle appears much as he does in the previous section. When the characters arrive, he holds Ironfang aloft and intones, \"With this key, I call forth the Mountain of Doom, the great and terrible Ogremoch!\" He steps back as the earth portal liquifies and the colossal form of Ogremoch emerges (see chapter 7). Ogremoch focuses on destroying the characters with little concern for the consequences to Marlos. The elemental princes aim is to remain in the world and consolidate power here before sowing chaos."
+								"Marlos Urnrayle appears much as he does in the previous section. When the characters arrive, he holds Ironfang aloft and intones, \"With this key, I call forth the Mountain of Doom, the great and terrible Ogrémoch!\" He steps back as the earth portal liquifies and the colossal form of Ogrémoch emerges (see chapter 7). Ogrémoch focuses on destroying the characters with little concern for the consequences to Marlos. The elemental princes aim is to remain in the world and consolidate power here before sowing chaos."
 							]
 						},
 						{
@@ -12262,8 +12262,8 @@
 							"name": "The Earth Portal",
 							"id": "50c",
 							"entries": [
-								"The monolith is a portal leading to the Elemental Plane of Earth. Part of the monolith is in a liquid state at any given time, and any creature that touches the liquid stone is pulled into the Plane of Earth, near Ogremochs dwelling place. The Prince of Evil Earth can attack intruders on his home plane but cant pursue them through the portal into the world until the proper ritual is complete.",
-								"Characters can close the portal only by striking the monolith with {@item Ironfang|PotA}. When the elemental weapon strikes the monolith, it chips the otherwise indestructible stone, causing the portal to implode in a grinding display, showering the area with pulverized rock and crystal. Ogremoch is forced back to his home plane when this event happens, serving the cult. Cultists other than Marlos cower and flee. After the portal is destroyed, Ironfang turns to rust and disintegrates.",
+								"The monolith is a portal leading to the Elemental Plane of Earth. Part of the monolith is in a liquid state at any given time, and any creature that touches the liquid stone is pulled into the Plane of Earth, near Ogrémochs dwelling place. The Prince of Evil Earth can attack intruders on his home plane but cant pursue them through the portal into the world until the proper ritual is complete.",
+								"Characters can close the portal only by striking the monolith with {@item Ironfang|PotA}. When the elemental weapon strikes the monolith, it chips the otherwise indestructible stone, causing the portal to implode in a grinding display, showering the area with pulverized rock and crystal. Ogrémoch is forced back to his home plane when this event happens, serving the cult. Cultists other than Marlos cower and flee. After the portal is destroyed, Ironfang turns to rust and disintegrates.",
 								"When the portal implodes, an earthquake spell is triggered, centered at the point where the monolith once stood. Five minutes later, this entire cavern collapses, killing and burying any creatures still inside. The bridge at {@area G9|4f0} collapses as well, while other areas of the Black Geode remain intact. Cut off from the influence of the Plane of Earth, the Black Geode no longer experiences tremors and weird magical effects, reverting to its natural state over a few days."
 							]
 						}
@@ -12795,7 +12795,7 @@
 							"name": "Encounter With Imix",
 							"id": "545",
 							"entries": [
-								"This encounter features the same antagonists as described in the \"Encounter with Vanifer,\" above. When the characters arrive, Vanifer holds {@item Tinderstrike|PotA} aloft and cries, \"With this key, I call forth my master, the Eternal Flame!\" The fire portal flares, and a gout of flame strikes Incinerath. With a howl of glee, the elemental transforms into Imix (see chapter 7). The Prince of Evil Elemental Fire then focuses on destroying the characters with little concern for the consequences to Vanifer. Imix wants to annihilate the characters, but he also knows he must keep the fire portal open. He summons fire elementals to aid him."
+								"This encounter features the same antagonists as described in the \"Encounter with Vanifer,\" above. When the characters arrive, Vanifer holds {@item Tinderstrike|PotA} aloft and cries, \"With this key, I call forth my master, the Eternal Flame!\" The fire portal flares, and a gout of flame strikes Incinerath. With a howl of glee, the elemental transforms into {@creature Imix|pota} (see chapter 7). The Prince of Evil Elemental Fire then focuses on destroying the characters with little concern for the consequences to Vanifer. Imix wants to annihilate the characters, but he also knows he must keep the fire portal open. He summons fire elementals to aid him."
 							]
 						},
 						{

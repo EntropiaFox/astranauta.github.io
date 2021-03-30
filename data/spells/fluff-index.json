@@ -1,6 +1,6 @@
 {
-	"EGW": "fluff-spell-egw.json",
-	"PHB": "fluff-spell-phb.json",
-	"TCE": "fluff-spell-tce.json",
-	"XGE": "fluff-spell-xge.json"
+	"EGW": "fluff-spells-egw.json",
+	"PHB": "fluff-spells-phb.json",
+	"TCE": "fluff-spells-tce.json",
+	"XGE": "fluff-spells-xge.json"
 }

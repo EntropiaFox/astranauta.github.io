@@ -1,5 +1,640 @@
 "use strict";
 
+class AbilityScoreFilter extends FilterBase {
+	constructor (opts) {
+		super(opts);
+
+		this._items = [];
+		this._isItemsDirty = false;
+		this._itemsLookup = {}; // Cache items for fast lookup
+		this._seenUids = {};
+
+		this.__$wrpFilter = null;
+		this.__wrpPills = null;
+		this.__wrpPillsRows = {};
+		this.__wrpMiniPills = null;
+
+		this._maxMod = 2;
+		this._minMod = 0;
+
+		// region Init state
+		Parser.ABIL_ABVS.forEach(ab => {
+			const itemAnyIncrease = new AbilityScoreFilter.FilterItem({isAnyIncrease: true, ability: ab});
+			const itemAnyDecrease = new AbilityScoreFilter.FilterItem({isAnyDecrease: true, ability: ab});
+			this._items.push(itemAnyIncrease, itemAnyDecrease);
+			this._itemsLookup[itemAnyIncrease.uid] = itemAnyIncrease;
+			this._itemsLookup[itemAnyDecrease.uid] = itemAnyDecrease;
+			if (this.__state[itemAnyIncrease.uid] == null) this.__state[itemAnyIncrease.uid] = 0;
+			if (this.__state[itemAnyDecrease.uid] == null) this.__state[itemAnyDecrease.uid] = 0;
+		})
+
+		for (let i = this._minMod; i <= this._maxMod; ++i) {
+			if (i === 0) continue;
+			Parser.ABIL_ABVS.forEach(ab => {
+				const item = new AbilityScoreFilter.FilterItem({modifier: i, ability: ab});
+				this._items.push(item);
+				this._itemsLookup[item.uid] = item;
+				if (this.__state[item.uid] == null) this.__state[item.uid] = 0;
+			})
+		}
+		// endregion
+	}
+
+	/**
+	 * @param opts Options.
+	 * @param opts.filterBox The FilterBox to which this filter is attached.
+	 * @param opts.isFirst True if this is visually the first filter in the box.
+	 * @param opts.$wrpMini The form mini-view element.
+	 * @param opts.isMulti The name of the MultiFilter this filter belongs to, if any.
+	 */
+	$render (opts) {
+		this._filterBox = opts.filterBox;
+		this.__wrpMiniPills = e_({ele: opts.$wrpMini[0]});
+
+		const wrpControls = this._getHeaderControls(opts);
+
+		this.__wrpPills = e_({tag: "div", clazz: `fltr__wrp-pills overflow-x-auto flex-col w-100`});
+		const hook = () => this.__wrpPills.toggleVe(!this._meta.isHidden);
+		this._addHook("meta", "isHidden", hook);
+		hook();
+
+		this._doRenderPills();
+
+		// FIXME refactor this so we're not stealing the private method
+		const btnMobToggleControls = Filter.prototype._getBtnMobToggleControls.bind(this)(wrpControls);
+
+		this.__$wrpFilter = $$`<div>
+			${opts.isFirst ? "" : `<div class="fltr__dropdown-divider ${opts.isMulti ? "fltr__dropdown-divider--indented" : ""} mb-1"></div>`}
+			<div class="split fltr__h mb-1">
+				<div class="ml-2 fltr__h-text flex-h-center">${opts.isMulti ? `<span class="mr-2">\u2012</span>` : ""}${this._getRenderedHeader()}${btnMobToggleControls}</div>
+				${wrpControls}
+			</div>
+			${this.__wrpPills}
+		</div>`;
+
+		this.update(); // Force an update, to properly mute/unmute our pills
+
+		return this.__$wrpFilter;
+	}
+
+	_getHeaderControls (opts) {
+		const btnClear = e_({
+			tag: "button",
+			clazz: `btn btn-default ${opts.isMulti ? "btn-xxs" : "btn-xs"} fltr__h-btn--clear w-100`,
+			click: () => this._doSetPillsClear(),
+			html: "Clear",
+		});
+
+		const wrpStateBtnsOuter = e_({
+			tag: "div",
+			clazz: "flex-v-center fltr__h-wrp-state-btns-outer",
+			children: [
+				e_({
+					tag: "div",
+					clazz: "btn-group flex-v-center w-100",
+					children: [
+						btnClear,
+					],
+				}),
+			],
+		});
+
+		const wrpSummary = e_({tag: "div", clazz: "flex-vh-center ve-hidden"});
+
+		const btnShowHide = e_({
+			tag: "button",
+			clazz: `btn btn-default ${opts.isMulti ? "btn-xxs" : "btn-xs"} ml-2`,
+			click: () => this._meta.isHidden = !this._meta.isHidden,
+			html: "Hide",
+		});
+		const hookShowHide = () => {
+			e_({ele: btnShowHide}).toggleClass("active", this._meta.isHidden);
+			wrpStateBtnsOuter.toggleVe(!this._meta.isHidden);
+
+			// TODO
+			// region Render summary
+			const cur = this.getValues()[this.header];
+
+			const htmlSummary = [
+				cur._totals?.yes
+					? `<span class="fltr__summary_item fltr__summary_item--include" title="${cur._totals.yes} hidden &quot;required&quot; tags">${cur._totals.yes}</span>`
+					: null,
+			].filter(Boolean).join("");
+			e_({ele: wrpSummary, html: htmlSummary}).toggleVe(this._meta.isHidden);
+			// endregion
+		};
+		this._addHook("meta", "isHidden", hookShowHide);
+		hookShowHide();
+
+		return e_({
+			tag: "div",
+			clazz: `flex-v-center fltr__h-wrp-btns-outer`,
+			children: [
+				wrpSummary,
+				wrpStateBtnsOuter,
+				btnShowHide,
+			],
+		});
+	}
+
+	_doRenderPills () {
+		this._items.sort(this.constructor._ascSortItems.bind(this.constructor));
+
+		if (!this.__wrpPills) return;
+		this._items.forEach(it => {
+			if (!it.rendered) it.rendered = this._getPill(it);
+			if (!it.isAnyIncrease && !it.isAnyDecrease) it.rendered.toggleClass("fltr__pill--muted", !this._seenUids[it.uid]);
+
+			if (!this.__wrpPillsRows[it.ability]) {
+				this.__wrpPillsRows[it.ability] = {
+					row: e_({
+						tag: "div",
+						clazz: "flex-v-center w-100 my-1",
+						children: [
+							e_({
+								tag: "div",
+								clazz: "mr-3 text-right fltr__label-ability-score no-shrink no-grow",
+								text: Parser.attAbvToFull(it.ability),
+							}),
+						],
+					}).appendTo(this.__wrpPills),
+					searchText: Parser.attAbvToFull(it.ability).toLowerCase(),
+				};
+			}
+
+			it.rendered.appendTo(this.__wrpPillsRows[it.ability].row);
+		});
+	}
+
+	_getPill (item) {
+		const unsetRow = () => {
+			const nxtState = {};
+			for (let i = this._minMod; i <= this._maxMod; ++i) {
+				if (!i || i === item.modifier) continue;
+				const siblingUid = AbilityScoreFilter.FilterItem.getUid_({ability: item.ability, modifier: i});
+				nxtState[siblingUid] = 0;
+			}
+
+			if (!item.isAnyIncrease) nxtState[AbilityScoreFilter.FilterItem.getUid_({ability: item.ability, isAnyIncrease: true})] = 0;
+			if (!item.isAnyDecrease) nxtState[AbilityScoreFilter.FilterItem.getUid_({ability: item.ability, isAnyDecrease: true})] = 0;
+
+			this._proxyAssignSimple("state", nxtState);
+		};
+
+		const btnPill = e_({
+			tag: "div",
+			clazz: `fltr__pill fltr__pill--ability-bonus px-2`,
+			html: item.getPillDisplayHtml(),
+			click: evt => {
+				if (evt.shiftKey) {
+					const nxtState = {};
+					Object.keys(this._state).forEach(k => nxtState[k] = 0);
+					this._proxyAssign("state", "_state", "__state", nxtState, true);
+				}
+
+				this._state[item.uid] = this._state[item.uid] ? 0 : 1;
+				if (this._state[item.uid]) unsetRow();
+			},
+			contextmenu: (evt) => {
+				evt.preventDefault();
+
+				this._state[item.uid] = this._state[item.uid] ? 0 : 1;
+				if (this._state[item.uid]) unsetRow();
+			},
+		});
+
+		const hook = () => {
+			const val = FilterBox._PILL_STATES[this._state[item.uid] || 0];
+			btnPill.attr("state", val);
+		};
+		this._addHook("state", item.uid, hook);
+		hook();
+
+		return btnPill;
+	}
+
+	_doRenderMiniPills () {
+		// create a list view so we can freely sort
+		this._items.slice(0)
+			.sort(this.constructor._ascSortMiniPills.bind(this.constructor))
+			.forEach(it => {
+				// re-append existing elements to sort them
+				(it.btnMini = it.btnMini || this._getBtnMini(it)).appendTo(this.__wrpMiniPills);
+			});
+	}
+
+	_getBtnMini (item) {
+		const btnMini = e_({
+			tag: "div",
+			clazz: `fltr__mini-pill ${this._filterBox.isMinisHidden(this.header) ? "ve-hidden" : ""}`,
+			text: item.getMiniPillDisplayText(),
+			title: `Filter: ${this.header}`,
+			click: () => {
+				this._state[item.uid] = 0;
+				this._filterBox.fireChangeEvent();
+			},
+		}).attr("state", FilterBox._PILL_STATES[this._state[item.uid] || 0]);
+
+		const hook = () => btnMini.attr("state", FilterBox._PILL_STATES[this._state[item.uid] || 0]);
+		this._addHook("state", item.uid, hook);
+
+		const hideHook = () => btnMini.toggleClass("ve-hidden", this._filterBox.isMinisHidden(this.header));
+		this._filterBox.registerMinisHiddenHook(this.header, hideHook);
+
+		return btnMini;
+	}
+
+	static _ascSortItems (a, b) {
+		return SortUtil.ascSort(Number(b.isAnyIncrease), Number(a.isAnyIncrease))
+			|| SortUtil.ascSortAtts(a.ability, b.ability)
+			// Offset ability scores to ensure they're all in positive space. This forces the "any decrease" section to
+			//   appear last.
+			|| SortUtil.ascSort(b.modifier ? b.modifier + AbilityScoreFilter._MODIFIER_SORT_OFFSET : b.modifier, a.modifier ? a.modifier + AbilityScoreFilter._MODIFIER_SORT_OFFSET : a.modifier)
+			|| SortUtil.ascSort(Number(b.isAnyDecrease), Number(a.isAnyDecrease));
+	}
+
+	static _ascSortMiniPills (a, b) {
+		return SortUtil.ascSort(Number(b.isAnyIncrease), Number(a.isAnyIncrease))
+			|| SortUtil.ascSort(Number(b.isAnyDecrease), Number(a.isAnyDecrease))
+			// Offset ability scores to ensure they're all in positive space. This forces the "any decrease" section to
+			//   appear last.
+			|| SortUtil.ascSort(b.modifier ? b.modifier + AbilityScoreFilter._MODIFIER_SORT_OFFSET : b.modifier, a.modifier ? a.modifier + AbilityScoreFilter._MODIFIER_SORT_OFFSET : a.modifier)
+			|| SortUtil.ascSortAtts(a.ability, b.ability);
+	}
+
+	/**
+	 * @param opts Options.
+	 * @param opts.filterBox The FilterBox to which this filter is attached.
+	 * @param opts.isFirst True if this is visually the first filter in the box.
+	 * @param opts.$wrpMini The form mini-view element.
+	 * @param opts.isMulti The name of the MultiFilter this filter belongs to, if any.
+	 */
+	$renderMinis (opts) {
+		this._filterBox = opts.filterBox;
+		this.__wrpMiniPills = e_({ele: opts.$wrpMini[0]});
+
+		this._doRenderMiniPills();
+	}
+
+	getValues () {
+		const out = {
+			_totals: {yes: 0},
+		};
+
+		Object.entries(this.__state)
+			.filter(([, value]) => value)
+			.forEach(([uid]) => {
+				out._totals.yes++;
+				out[uid] = true;
+			});
+
+		return {[this.header]: out};
+	}
+
+	reset (isResetAll) {
+		if (isResetAll) this.resetBase();
+		Object.keys(this._state).forEach(k => delete this._state[k]);
+	}
+
+	resetShallow () { return this.reset(); }
+
+	update () {
+		if (this._isItemsDirty) {
+			this._isItemsDirty = false;
+
+			this._doRenderPills();
+		}
+
+		// always render the mini-pills, to ensure the overall order in the grid stays correct (shared between multiple filters)
+		this._doRenderMiniPills();
+	}
+
+	_doSetPillsClear () {
+		Object.keys(this._state).forEach(k => {
+			if (this._state[k] !== 0) this._state[k] = 0;
+		});
+	}
+
+	toDisplay (boxState, entryVal) {
+		const filterState = boxState[this.header];
+		if (!filterState) return true;
+
+		const activeItems = Object.keys(filterState)
+			.filter(it => !it.startsWith("_"))
+			.map(it => this._itemsLookup[it])
+			.filter(Boolean);
+
+		if (!activeItems.length) return true;
+		if ((!entryVal || !entryVal.length) && activeItems.length) return false;
+
+		return entryVal.some(abilObject => {
+			const cpyAbilObject = MiscUtil.copy(abilObject);
+			const vewActiveItems = [...activeItems];
+
+			// region Stage 1. Exact ability score match.
+			Parser.ABIL_ABVS.forEach(ab => {
+				if (!cpyAbilObject[ab] || !vewActiveItems.length) return;
+
+				const ixExact = vewActiveItems.findIndex(it => it.ability === ab && it.modifier === cpyAbilObject[ab]);
+				if (~ixExact) return vewActiveItems.splice(ixExact, 1);
+			});
+			if (!vewActiveItems.length) return true;
+			// endregion
+
+			// region Stage 2. "Choice" ability score match
+			if (cpyAbilObject.choose?.from) {
+				const amount = cpyAbilObject.choose.amount || 1;
+				const count = cpyAbilObject.choose.count || 1;
+
+				for (let i = 0; i < count; ++i) {
+					if (!vewActiveItems.length) break;
+
+					const ix = vewActiveItems.findIndex(it => cpyAbilObject.choose.from.includes(it.ability) && amount === it.modifier);
+					if (~ix) {
+						const [cpyActiveItem] = vewActiveItems.splice(ix, 1);
+						cpyAbilObject.choose.from = cpyAbilObject.choose.from.filter(it => it !== cpyActiveItem.ability);
+					}
+				}
+			} else if (cpyAbilObject.choose?.weighted?.weights && cpyAbilObject.choose?.weighted?.from) {
+				cpyAbilObject.choose.weighted.weights.forEach(weight => {
+					const ix = vewActiveItems.findIndex(it => cpyAbilObject.choose.weighted.from.includes(it.ability) && weight === it.modifier);
+					if (~ix) {
+						const [cpyActiveItem] = vewActiveItems.splice(ix, 1);
+						cpyAbilObject.choose.weighted.from = cpyAbilObject.choose.weighted.from.filter(it => it !== cpyActiveItem.ability);
+					}
+				});
+			}
+			if (!vewActiveItems.length) return true;
+			// endregion
+
+			// region Stage 3. "Any" ability score match
+			Parser.ABIL_ABVS.forEach(ab => {
+				if (!cpyAbilObject[ab] || !vewActiveItems.length) return;
+
+				const ix = vewActiveItems.findIndex(it => it.ability === ab && ((cpyAbilObject[ab] > 0 && it.isAnyIncrease) || (cpyAbilObject[ab] < 0 && it.isAnyDecrease)));
+				if (~ix) return vewActiveItems.splice(ix, 1);
+			});
+			if (!vewActiveItems.length) return true;
+
+			if (cpyAbilObject.choose?.from) {
+				const amount = cpyAbilObject.choose.amount || 1;
+				const count = cpyAbilObject.choose.count || 1;
+
+				for (let i = 0; i < count; ++i) {
+					if (!vewActiveItems.length) return true;
+
+					const ix = vewActiveItems.findIndex(it => cpyAbilObject.choose.from.includes(it.ability) && ((amount > 0 && it.isAnyIncrease) || (amount < 0 && it.isAnyDecrease)));
+					if (~ix) {
+						const [cpyActiveItem] = vewActiveItems.splice(ix, 1);
+						cpyAbilObject.choose.from = cpyAbilObject.choose.from.filter(it => it !== cpyActiveItem.ability);
+					}
+				}
+			} else if (cpyAbilObject.choose?.weighted?.weights && cpyAbilObject.choose?.weighted?.from) {
+				cpyAbilObject.choose.weighted.weights.forEach(weight => {
+					if (!vewActiveItems.length) return;
+
+					const ix = vewActiveItems.findIndex(it => cpyAbilObject.choose.weighted.from.includes(it.ability) && ((weight > 0 && it.isAnyIncrease) || (weight < 0 && it.isAnyDecrease)));
+					if (~ix) {
+						const [cpyActiveItem] = vewActiveItems.splice(ix, 1);
+						cpyAbilObject.choose.weighted.from = cpyAbilObject.choose.weighted.from.filter(it => it !== cpyActiveItem.ability);
+					}
+				});
+			}
+			return !vewActiveItems.length;
+			// endregion
+		});
+	}
+
+	addItem (abilArr) {
+		if (!abilArr?.length) return;
+
+		// region Update our min/max scores
+		let nxtMaxMod = this._maxMod;
+		let nxtMinMod = this._minMod;
+
+		abilArr.forEach(abilObject => {
+			Parser.ABIL_ABVS.forEach(ab => {
+				if (abilObject[ab] != null) {
+					nxtMaxMod = Math.max(nxtMaxMod, abilObject[ab]);
+					nxtMinMod = Math.min(nxtMinMod, abilObject[ab]);
+
+					const uid = AbilityScoreFilter.FilterItem.getUid_({ability: ab, modifier: abilObject[ab]});
+					if (!this._seenUids[uid]) this._isItemsDirty = true;
+					this._seenUids[uid] = true;
+				}
+			});
+
+			if (abilObject.choose?.from) {
+				const amount = abilObject.choose.amount || 1;
+				nxtMaxMod = Math.max(nxtMaxMod, amount);
+				nxtMinMod = Math.min(nxtMinMod, amount);
+
+				abilObject.choose.from.forEach(ab => {
+					const uid = AbilityScoreFilter.FilterItem.getUid_({ability: ab, modifier: amount});
+					if (!this._seenUids[uid]) this._isItemsDirty = true;
+					this._seenUids[uid] = true;
+				});
+			}
+
+			if (abilObject.choose?.weighted?.weights) {
+				nxtMaxMod = Math.max(nxtMaxMod, ...abilObject.choose.weighted.weights);
+				nxtMinMod = Math.min(nxtMinMod, ...abilObject.choose.weighted.weights);
+
+				abilObject.choose.weighted.from.forEach(ab => {
+					abilObject.choose.weighted.weights.forEach(weight => {
+						const uid = AbilityScoreFilter.FilterItem.getUid_({ability: ab, modifier: weight});
+						if (!this._seenUids[uid]) this._isItemsDirty = true;
+						this._seenUids[uid] = true;
+					});
+				});
+			}
+		});
+		// endregion
+
+		// region If we have a new max score, populate items
+		if (nxtMaxMod > this._maxMod) {
+			for (let i = this._maxMod + 1; i <= nxtMaxMod; ++i) {
+				if (i === 0) continue;
+				Parser.ABIL_ABVS.forEach(ab => {
+					const item = new AbilityScoreFilter.FilterItem({modifier: i, ability: ab});
+					this._items.push(item);
+					this._itemsLookup[item.uid] = item;
+					if (this.__state[item.uid] == null) this.__state[item.uid] = 0;
+				});
+			}
+
+			this._isItemsDirty = true;
+			this._maxMod = nxtMaxMod;
+		}
+		// endregion
+
+		// region If we have a new min score, populate items
+		if (nxtMinMod < this._minMod) {
+			for (let i = nxtMinMod; i < this._minMod; ++i) {
+				if (i === 0) continue;
+				Parser.ABIL_ABVS.forEach(ab => {
+					const item = new AbilityScoreFilter.FilterItem({modifier: i, ability: ab});
+					this._items.push(item);
+					this._itemsLookup[item.uid] = item;
+					if (this.__state[item.uid] == null) this.__state[item.uid] = 0;
+				});
+			}
+
+			this._isItemsDirty = true;
+			this._minMod = nxtMinMod;
+		}
+		// endregion
+	}
+
+	getSaveableState () {
+		return {
+			[this.header]: {
+				...this.getBaseSaveableState(),
+				state: {...this.__state},
+			},
+		};
+	}
+
+	setStateFromLoaded (filterState) {
+		if (!filterState || !filterState[this.header]) return;
+		const toLoad = filterState[this.header];
+		this.setBaseStateFromLoaded(toLoad);
+		Object.assign(this._state, toLoad.state);
+	}
+
+	getSubHashes () {
+		const out = [];
+
+		const baseMeta = this.getMetaSubHashes();
+		if (baseMeta) out.push(...baseMeta);
+
+		const areNotDefaultState = Object.entries(this._state).filter(([k, v]) => {
+			if (k.startsWith("_")) return false;
+			return !!v;
+		});
+		if (areNotDefaultState.length) {
+			// serialize state as `key=value` pairs
+			const serPillStates = areNotDefaultState.map(([k, v]) => `${k.toUrlified()}=${v}`);
+			out.push(UrlUtil.packSubHash(this.getSubHashPrefix("state", this.header), serPillStates));
+		}
+
+		if (!out.length) return null;
+
+		return out;
+	}
+
+	setFromSubHashState (state) {
+		this.setMetaFromSubHashState(state);
+
+		let hasState = false;
+
+		Object.entries(state).forEach(([k, vals]) => {
+			const prop = FilterBase.getProp(k);
+			switch (prop) {
+				case "state": {
+					hasState = true;
+					const nxtState = {};
+
+					Object.keys(this._state).forEach(k => nxtState[k] = 0);
+
+					vals.forEach(v => {
+						const [statePropLower, state] = v.split("=");
+						const stateProp = Object.keys(this._state).find(k => k.toLowerCase() === statePropLower);
+						if (stateProp) nxtState[stateProp] = Number(state) ? 1 : 0;
+					});
+					this._proxyAssignSimple("state", nxtState, true);
+					break;
+				}
+			}
+		});
+
+		if (!hasState) this.reset();
+	}
+
+	setFromValues (values) {
+		if (!values[this.header]) return;
+		const nxtState = {};
+		Object.keys(this._state).forEach(k => nxtState[k] = 0);
+		Object.assign(nxtState, values[this.header]);
+	}
+
+	handleSearch (searchTerm) {
+		const isHeaderMatch = this.header.toLowerCase().includes(searchTerm);
+
+		if (isHeaderMatch) {
+			Object.values(this.__wrpPillsRows).forEach(meta => meta.row.removeClass("fltr__hidden--search"));
+
+			if (this.__$wrpFilter) this.__$wrpFilter.toggleClass("fltr__hidden--search", false);
+
+			return true;
+		}
+
+		// Simply display all if the user searched a "+x" or "-x" value; we don't care if this produces false positives.
+		const isModNumber = /^[-+]\d*$/.test(searchTerm);
+
+		let visibleCount = 0;
+		Object.values(this.__wrpPillsRows).forEach(({row, searchText}) => {
+			const isVisible = isModNumber || searchText.includes(searchTerm);
+			row.toggleClass("fltr__hidden--search", !isVisible);
+			if (isVisible) visibleCount++;
+		});
+
+		if (this.__$wrpFilter) this.__$wrpFilter.toggleClass("fltr__hidden--search", visibleCount === 0);
+
+		return visibleCount !== 0;
+	}
+
+	_doTeardown () {
+		this._items.forEach(it => {
+			if (it.rendered) it.rendered.detach();
+			if (it.btnMini) it.btnMini.detach();
+		});
+
+		Object.values(this.__wrpPillsRows).forEach(meta => meta.row.detach());
+	}
+}
+AbilityScoreFilter._MODIFIER_SORT_OFFSET = 10000; // Arbitrarily large value
+
+AbilityScoreFilter.FilterItem = class {
+	static getUid_ ({ability = null, isAnyIncrease = false, isAnyDecrease = false, modifier = null}) {
+		return `${Parser.attAbvToFull(ability)} ${modifier != null ? UiUtil.intToBonus(modifier) : (isAnyIncrease ? `+any` : isAnyDecrease ? `-any` : "?")}`;
+	}
+
+	constructor ({isAnyIncrease = false, isAnyDecrease = false, modifier = null, ability = null}) {
+		if (isAnyIncrease && isAnyDecrease) throw new Error(`Invalid arguments!`);
+		if ((isAnyIncrease || isAnyDecrease) && modifier != null) throw new Error(`Invalid arguments!`);
+
+		this._ability = ability;
+		this._modifier = modifier;
+		this._isAnyIncrease = isAnyIncrease;
+		this._isAnyDecrease = isAnyDecrease;
+		this._uid = AbilityScoreFilter.FilterItem.getUid_({
+			isAnyIncrease: this._isAnyIncrease,
+			isAnyDecrease: this._isAnyDecrease,
+			modifier: this._modifier,
+			ability: this._ability,
+		});
+	}
+
+	get ability () { return this._ability; }
+	get modifier () { return this._modifier; }
+	get isAnyIncrease () { return this._isAnyIncrease; }
+	get isAnyDecrease () { return this._isAnyDecrease; }
+	get uid () { return this._uid; }
+
+	getMiniPillDisplayText () {
+		if (this._isAnyIncrease) return `+Any ${Parser.attAbvToFull(this._ability)}`;
+		if (this._isAnyDecrease) return `\u2012Any ${Parser.attAbvToFull(this._ability)}`;
+		return `${UiUtil.intToBonus(this._modifier)} ${Parser.attAbvToFull(this._ability)}`;
+	}
+
+	getPillDisplayHtml () {
+		if (this._isAnyIncrease) return `+Any`;
+		if (this._isAnyDecrease) return `\u2012Any`;
+		return UiUtil.intToBonus(this._modifier);
+	}
+}
+
 class PageFilterRaces extends PageFilter {
 	// region static
 	static getLanguageProficiencyTags (lProfs) {
@@ -92,9 +727,12 @@ class PageFilterRaces extends PageFilter {
 	constructor () {
 		super();
 
-		const sizeFilter = new Filter({header: "Size", displayFn: Parser.sizeAbvToFull, itemSortFn: PageFilterRaces.filterAscSortSize});
-		const asiFilter = new Filter({
+		this._sizeFilter = new Filter({header: "Size", displayFn: Parser.sizeAbvToFull, itemSortFn: PageFilterRaces.filterAscSortSize});
+		this._asiFilter = new AbilityScoreFilter({
 			header: "Ability Bonus (Including Subrace)",
+		});
+		this._asiFilterLegacy = new Filter({
+			header: "Ability Bonus (Including Subrace) (Legacy)",
 			items: [
 				"Player Choice",
 				"Any Strength Increase",
@@ -118,9 +756,9 @@ class PageFilterRaces extends PageFilter {
 			],
 			itemSortFn: PageFilterRaces.filterAscSortAsi,
 		});
-		const baseRaceFilter = new Filter({header: "Base Race"});
-		const speedFilter = new Filter({header: "Speed", items: ["Climb", "Fly", "Swim", "Walk (Fast)", "Walk", "Walk (Slow)"]});
-		const traitFilter = new Filter({
+		this._baseRaceFilter = new Filter({header: "Base Race"});
+		this._speedFilter = new Filter({header: "Speed", items: ["Climb", "Fly", "Swim", "Walk (Fast)", "Walk", "Walk (Slow)"]});
+		this._traitFilter = new Filter({
 			header: "Traits",
 			items: [
 				"Amphibious",
@@ -139,6 +777,7 @@ class PageFilterRaces extends PageFilter {
 				"Powerful Build",
 				"Skill Proficiency",
 				"Spellcasting",
+				"Sunlight Sensitivity",
 				"Tool Proficiency",
 				"Unarmed Strike",
 				"Uncommon Race",
@@ -148,7 +787,7 @@ class PageFilterRaces extends PageFilter {
 				return it === "NPC Race";
 			},
 		});
-		const languageFilter = new Filter({
+		this._languageFilter = new Filter({
 			header: "Languages",
 			items: [
 				"Abyssal",
@@ -171,18 +810,39 @@ class PageFilterRaces extends PageFilter {
 			],
 			umbrellaItems: ["Choose"],
 		});
-		const miscFilter = new Filter({header: "Miscellaneous", items: ["Base Race", "Key Race", "Modified Copy", "SRD"], isSrdFilter: true});
-
-		this._sizeFilter = sizeFilter;
-		this._asiFilter = asiFilter;
-		this._baseRaceFilter = baseRaceFilter;
-		this._speedFilter = speedFilter;
-		this._traitFilter = traitFilter;
-		this._languageFilter = languageFilter;
-		this._miscFilter = miscFilter;
+		this._creatureTypeFilter = new Filter({
+			header: "Creature Type",
+			items: Parser.MON_TYPES,
+			displayFn: StrUtil.toTitleCase,
+			itemSortFn: SortUtil.ascSortLower,
+		});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Base Race", "Key Race", "Modified Copy", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
 	}
 
-	mutateForFilters (race) {
+	static mutateForFilters (race) {
+		race._fSpeed = race.speed ? race.speed.walk ? [race.speed.climb ? "Climb" : null, race.speed.fly ? "Fly" : null, race.speed.swim ? "Swim" : null, PageFilterRaces.getSpeedRating(race.speed.walk)].filter(it => it) : [PageFilterRaces.getSpeedRating(race.speed)] : [];
+		race._fTraits = [
+			race.darkvision === 120 ? "Superior Darkvision" : race.darkvision ? "Darkvision" : null,
+			race.resist ? "Damage Resistance" : null,
+			race.immune ? "Damage Immunity" : null,
+			race.conditionImmune ? "Condition Immunity" : null,
+			race.skillProficiencies ? "Skill Proficiency" : null,
+			race.feats ? "Feat" : null,
+			race.additionalSpells ? "Spellcasting" : null,
+			race.armorProficiencies ? "Armor Proficiency" : null,
+			race.weaponProficiencies ? "Weapon Proficiency" : null,
+		].filter(it => it);
+		race._fTraits.push(...(race.traitTags || []));
+		race._fSources = SourceFilter.getCompleteFilterSources(race);
+		race._fLangs = PageFilterRaces.getLanguageProficiencyTags(race.languageProficiencies);
+		race._fCreatureTypes = race.creatureTypes ? race.creatureTypes.map(it => it.choose || it).flat() : ["humanoid"];
+		race._fMisc = race.srd ? ["SRD"] : [];
+		if (race._isBaseRace) race._fMisc.push("Base Race");
+		if (race._isBaseRace || !race._isSubRace) race._fMisc.push("Key Race");
+		if (race._isCopy) race._fMisc.push("Modified Copy");
+		if (race.hasFluff) race._fMisc.push("Has Info");
+		if (race.hasFluffImages) race._fMisc.push("Has Images");
+
 		if (race.ability) {
 			const abils = PageFilterRaces.getAbilityObjs(race.ability);
 			race._fAbility = abils.map(a => PageFilterRaces.mapAbilityObjToFull(a));
@@ -191,21 +851,6 @@ class PageFilterRaces extends PageFilter {
 			Object.keys(increases).forEach(it => race._fAbility.push(`Any ${Parser.attAbvToFull(it)} Increase`));
 			if (race.ability.some(it => it.choose)) race._fAbility.push("Player Choice");
 		} else race._fAbility = [];
-		race._fSpeed = race.speed ? race.speed.walk ? [race.speed.climb ? "Climb" : null, race.speed.fly ? "Fly" : null, race.speed.swim ? "Swim" : null, PageFilterRaces.getSpeedRating(race.speed.walk)].filter(it => it) : [PageFilterRaces.getSpeedRating(race.speed)] : [];
-		race._fTraits = [
-			race.darkvision === 120 ? "Superior Darkvision" : race.darkvision ? "Darkvision" : null,
-			race.hasSpellcasting ? "Spellcasting" : null,
-			race.resist ? "Damage Resistance" : null,
-			race.immune ? "Damage Immunity" : null,
-			race.conditionImmune ? "Condition Immunity" : null,
-		].filter(it => it);
-		race._fTraits.push(...(race.traitTags || []));
-		race._fSources = SourceFilter.getCompleteFilterSources(race);
-		race._fLangs = PageFilterRaces.getLanguageProficiencyTags(race.languageProficiencies);
-		race._fMisc = race.srd ? ["SRD"] : [];
-		if (race._isBaseRace) race._fMisc.push("Base Race");
-		if (race._isBaseRace || !race._isSubRace) race._fMisc.push("Key Race");
-		if (race._isCopy) race._fMisc.push("Modified Copy");
 
 		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "None"};
 		race._slAbility = ability.asTextShort;
@@ -216,9 +861,11 @@ class PageFilterRaces extends PageFilter {
 
 		this._sourceFilter.addItem(race._fSources);
 		this._sizeFilter.addItem(race.size);
-		this._asiFilter.addItem(race._fAbility);
+		this._asiFilter.addItem(race.ability);
 		this._baseRaceFilter.addItem(race._baseName);
+		this._creatureTypeFilter.addItem(race._fCreatureTypes);
 		this._traitFilter.addItem(race._fTraits);
+		this._asiFilterLegacy.addItem(race._fAbility);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -230,7 +877,10 @@ class PageFilterRaces extends PageFilter {
 			this._traitFilter,
 			this._languageFilter,
 			this._baseRaceFilter,
+			this._creatureTypeFilter,
 			this._miscFilter,
+
+			this._asiFilterLegacy,
 		];
 	}
 
@@ -238,13 +888,16 @@ class PageFilterRaces extends PageFilter {
 		return this._filterBox.toDisplay(
 			values,
 			r._fSources,
-			r._fAbility,
+			r.ability,
 			r.size,
 			r._fSpeed,
 			r._fTraits,
 			r._fLangs,
 			r._baseName,
+			r._fCreatureTypes,
 			r._fMisc,
+
+			r._fAbility,
 		)
 	}
 
@@ -300,28 +953,36 @@ class ModalFilterRaces extends ModalFilter {
 	}
 
 	async _pLoadAllData () {
-		const rawRaceData = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/races.json`);
-		return Renderer.race.mergeSubraces(rawRaceData.race);
+		const fromData = await DataUtil.race.loadJSON();
+		const fromBrew = await DataUtil.race.loadBrew();
+		return [...fromData.race, ...fromBrew.race];
 	}
 
 	_getListItem (pageFilter, race, rI) {
-		const eleLabel = document.createElement("label");
-		eleLabel.className = "row lst--border no-select lst__wrp-cells";
+		const eleRow = document.createElement("div");
+		eleRow.className = "px-0 w-100 flex-col no-shrink";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](race);
 		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "None"};
-		const size = Parser.sizeAbvToFull(race.size || SZ_VARIES);
+		const size = (race.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/");
 		const source = Parser.sourceJsonToAbv(race.source);
 
-		eleLabel.innerHTML = `<div class="col-1 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
-		<div class="bold col-4">${race.name}</div>
-		<div class="col-4">${ability.asTextShort}</div>
-		<div class="col-2 text-center">${size}</div>
-		<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(race.source)}" title="${Parser.sourceJsonToFull(race.source)}" ${BrewUtil.sourceJsonToStyle(race.source)}>${source}</div>`;
+		eleRow.innerHTML = `<div class="w-100 flex-vh-center lst--border no-select lst__wrp-cells">
+			<div class="col-0-5 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 
-		return new ListItem(
+			<div class="col-0-5 px-1 flex-vh-center">
+				<div class="ui-list__btn-inline px-2" title="Toggle Preview">[+]</div>
+			</div>
+
+			<div class="col-4 ${this._getNameStyle()}">${race.name}</div>
+			<div class="col-4">${ability.asTextShort}</div>
+			<div class="col-2 text-center">${size}</div>
+			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(race.source)}" title="${Parser.sourceJsonToFull(race.source)}" ${BrewUtil.sourceJsonToStyle(race.source)}>${source}</div>
+		</div>`;
+
+		const listItem = new ListItem(
 			rI,
-			eleLabel,
+			eleRow,
 			race.name,
 			{
 				hash,
@@ -333,8 +994,13 @@ class ModalFilterRaces extends ModalFilter {
 				alias: PageFilterRaces.getListAliases(race),
 			},
 			{
-				cbSel: eleLabel.firstElementChild.firstElementChild,
+				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 			},
 		);
+
+		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
+		ListUiUtil.bindPreviewButton(UrlUtil.PG_RACES, this._allData, listItem, btnShowHidePreview);
+
+		return listItem;
 	}
 }

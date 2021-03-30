@@ -4,7 +4,7 @@ class LanguagesPage extends ListPage {
 	constructor () {
 		const pageFilter = new PageFilterLanguages();
 		super({
-			dataSource: "data/languages.json",
+			dataSource: DataUtil.language.loadJSON,
 
 			pageFilter,
 
@@ -19,13 +19,13 @@ class LanguagesPage extends ListPage {
 	getListItem (it, anI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-6 bold pl-0">${it.name}</span>
 			<span class="col-2 text-center">${(it.type || "\u2014").uppercaseFirst()}</span>
 			<span class="col-2 text-center">${(it.script || "\u2014").toTitleCase()}</span>
@@ -64,14 +64,15 @@ class LanguagesPage extends ListPage {
 	getSublistItem (it, pinId) {
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		const $ele = $(`<li class="row">
-			<a href="#${hash}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-8 pl-0">${it.name}</span>
 				<span class="col-2 text-center">${(it.type || "\u2014").uppercaseFirst()}</span>
 				<span class="col-2 text-center pr-0">${(it.script || "\u2014").toTitleCase()}</span>
 			</a>
-		</li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,
@@ -103,100 +104,112 @@ class LanguagesPage extends ListPage {
 			});
 		}
 
-		const statTab = Renderer.utils.tabButton(
-			"Traits",
-			() => {},
-			buildStatsTab,
-		);
-		const picTab = Renderer.utils.tabButton(
-			"Images",
-			() => {},
-			buildFluffTab.bind(null, true),
-		);
-		const fontTab = Renderer.utils.tabButton(
-			"Fonts",
-			() => {},
-			() => {
-				$content.append(Renderer.utils.getBorderTr());
-				$content.append(Renderer.utils.getNameTr(it));
-				const $td = $(`<td colspan="6" class="text"/>`);
-				$$`<tr class="text">${$td}</tr>`.appendTo($content);
-				$content.append(Renderer.utils.getBorderTr());
+		const tabMetas = [
+			new Renderer.utils.TabButton({
+				label: "Traits",
+				fnPopulate: buildStatsTab,
+				isVisible: true,
+			}),
+			new Renderer.utils.TabButton({
+				label: "Info",
+				fnPopulate: buildFluffTab,
+				isVisible: Renderer.utils.hasFluffText(it),
+			}),
+			new Renderer.utils.TabButton({
+				label: "Images",
+				fnPopulate: buildFluffTab.bind(null, true),
+				isVisible: Renderer.utils.hasFluffImages(it),
+			}),
+			new Renderer.utils.TabButton({
+				label: "Fonts",
+				fnPopulate: () => {
+					$content.append(Renderer.utils.getBorderTr());
+					$content.append(Renderer.utils.getNameTr(it));
+					const $td = $(`<td colspan="6" class="text"/>`);
+					$$`<tr class="text">${$td}</tr>`.appendTo($content);
+					$content.append(Renderer.utils.getBorderTr());
 
-				if (!it.fonts) {
-					$td.append("<i>No fonts available.</i>");
-					return;
-				}
+					const allFonts = [...it.fonts || [], ...it._fonts || []];
 
-				const $styleFont = $(`<style/>`);
+					if (!allFonts || !allFonts.length) {
+						$td.append("<i>No fonts available.</i>");
+						return;
+					}
 
-				let lastStyleIndex = null;
-				let lastStyleClass = null;
-				const renderStyle = (ix) => {
-					if (ix === lastStyleIndex) return;
+					const $styleFont = $(`<style/>`);
 
-					const font = it.fonts[ix];
-					const slugName = Parser.stringToSlug(font.split("/").last().split(".")[0]);
+					let lastStyleIndex = null;
+					let lastStyleClass = null;
+					const renderStyle = (ix) => {
+						if (ix === lastStyleIndex) return;
 
-					const styleClass = `languages__sample--${slugName}`;
+						const font = allFonts[ix];
+						const slugName = Parser.stringToSlug(font.split("/").last().split(".")[0]);
 
-					$styleFont.empty().append(`
+						const styleClass = `languages__sample--${slugName}`;
+
+						$styleFont.empty().append(`
 						@font-face { font-family: ${slugName}; src: url('${font}'); }
 						.${styleClass} { font-family: ${slugName}, sans-serif; }
 					`);
 
-					if (lastStyleClass) $ptOutput.removeClass(lastStyleClass);
-					lastStyleClass = styleClass;
-					$ptOutput.addClass(styleClass);
-					lastStyleIndex = ix;
-				};
+						if (lastStyleClass) $ptOutput.removeClass(lastStyleClass);
+						lastStyleClass = styleClass;
+						$ptOutput.addClass(styleClass);
+						lastStyleIndex = ix;
+					};
 
-				const saveTextDebounced = MiscUtil.debounce((text) => StorageUtil.pSetForPage("sampleText", text), 500);
-				const updateText = (val) => {
-					if (val === undefined) val = $iptSample.val();
-					else $iptSample.val(val);
-					$ptOutput.text(val);
-					saveTextDebounced(val);
-				};
+					const saveTextDebounced = MiscUtil.debounce((text) => StorageUtil.pSetForPage("sampleText", text), 500);
+					const updateText = (val) => {
+						if (val === undefined) val = $iptSample.val();
+						else $iptSample.val(val);
+						$ptOutput.text(val);
+						saveTextDebounced(val);
+					};
 
-				const DEFAULT_TEXT = "The big quick brown flumph jumped over the lazy dire xorn";
+					const DEFAULT_TEXT = "The big quick brown flumph jumped over the lazy dire xorn";
 
-				const $iptSample = $(`<textarea class="form-control w-100 mr-2 resize-vertical font-ui mb-2" style="height: 110px">${DEFAULT_TEXT}</textarea>`)
-					.keyup(() => updateText())
-					.change(() => updateText());
+					const $iptSample = $(`<textarea class="form-control w-100 mr-2 resize-vertical font-ui mb-2" style="height: 110px">${DEFAULT_TEXT}</textarea>`)
+						.keyup(() => updateText())
+						.change(() => updateText());
 
-				const $selFont = it.fonts.length === 1
-					? null
-					: $(`<select class="form-control font-ui languages__sel-sample input-xs">${it.fonts.map((f, i) => `<option value="${i}">${f.split("/").last().split(".")[0]}</option>`).join("")}</select>`)
-						.change(() => {
-							const ix = Number($selFont.val());
-							renderStyle(ix);
+					const $selFont = allFonts.length === 1
+						? null
+						: $(`<select class="form-control font-ui languages__sel-sample input-xs">${allFonts.map((f, i) => `<option value="${i}">${f.split("/").last().split(".")[0]}</option>`).join("")}</select>`)
+							.change(() => {
+								const ix = Number($selFont.val());
+								renderStyle(ix);
+							});
+
+					const $ptOutput = $(`<pre class="languages__sample p-2 mb-0">${DEFAULT_TEXT}</pre>`);
+
+					renderStyle(0);
+
+					StorageUtil.pGetForPage("sampleText")
+						.then(val => {
+							if (val != null) updateText(val);
 						});
 
-				const $ptOutput = $(`<pre class="languages__sample p-2 mb-0">${DEFAULT_TEXT}</pre>`);
+					$$`<div class="flex-col w-100">
+						${$styleFont}
+						${$selFont ? $$`<label class="flex-v-center mb-2"><div class="mr-2">Font:</div>${$selFont}</div>` : ""}
+						${$iptSample}
+						${$ptOutput}
+						<hr class="hr-4">
+						<h5 class="mb-2 mt-0">Downloads</h5>
+						<ul class="pl-5 mb-0">
+							${allFonts.map(f => `<li><a href="${f}" target="_blank">${f.split("/").last()}</a></li>`).join("")}
+						</ul>
+					</div>`.appendTo($td);
+				},
+				isVisible: [...it.fonts || [], ...it._fonts || []].length > 0,
+			}),
+		];
 
-				renderStyle(0);
-
-				StorageUtil.pGetForPage("sampleText")
-					.then(val => {
-						if (val != null) updateText(val);
-					});
-
-				$$`<div class="flex-col w-100">
-					${$styleFont}
-					${$selFont ? $$`<label class="flex-v-center mb-2"><div class="mr-2">Font:</div>${$selFont}</div>` : ""}
-					${$iptSample}
-					${$ptOutput}
-					<hr class="hr-4">
-					<h5 class="mb-2 mt-0">Downloads</h5>
-					<ul class="pl-5 mb-0">
-						${it.fonts.map(f => `<li><a href="${f}" target="_blank">${f.split("/").last()}</a></li>`).join("")}
-					</ul>
-				</div>`.appendTo($td);
-			},
-		);
-
-		Renderer.utils.bindTabButtons(statTab, picTab, fontTab);
+		Renderer.utils.bindTabButtons({
+			tabButtons: tabMetas.filter(it => it.isVisible),
+			tabLabelReference: tabMetas.map(it => it.label),
+		});
 
 		ListUtil.updateSelected();
 	}

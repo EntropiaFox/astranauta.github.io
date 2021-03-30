@@ -3,7 +3,7 @@
 		{
 			"name": "Cleric",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"hd": {
 				"number": 1,
@@ -15,11 +15,34 @@
 			],
 			"spellcastingAbility": "wis",
 			"casterProgression": "full",
+			"preparedSpells": "<$level$> + <$wis_mod$>",
+			"cantripProgression": [
+				3,
+				3,
+				3,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light",
 					"medium",
-					"shields"
+					"{@item shield|phb|shields}"
 				],
 				"weapons": [
 					"simple"
@@ -104,7 +127,7 @@
 					"armor": [
 						"light",
 						"medium",
-						"shields"
+						"{@item shield|phb|shields}"
 					]
 				}
 			},
@@ -1884,7 +1907,7 @@
 		{
 			"name": "Divine Domain",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -1904,7 +1927,7 @@
 		{
 			"name": "Spellcasting",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -1968,7 +1991,7 @@
 		{
 			"name": "Channel Divinity (1/rest)",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2013,7 +2036,7 @@
 		{
 			"name": "Divine Domain feature",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2025,7 +2048,7 @@
 		{
 			"name": "Turn Undead",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2039,7 +2062,7 @@
 		{
 			"name": "Ability Score Improvement",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2079,7 +2102,7 @@
 		{
 			"name": "Destroy Undead (CR 1/2)",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2091,7 +2114,7 @@
 		{
 			"name": "Channel Divinity (2/rest)",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2103,7 +2126,7 @@
 		{
 			"name": "Divine Domain feature",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2115,7 +2138,7 @@
 		{
 			"name": "Ability Score Improvement",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2128,7 +2151,7 @@
 		{
 			"name": "Destroy Undead (CR 1)",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2140,7 +2163,7 @@
 		{
 			"name": "Divine Domain feature",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2166,7 +2189,7 @@
 		{
 			"name": "Divine Intervention",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2180,19 +2203,19 @@
 		{
 			"name": "Destroy Undead (CR 2)",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 11,
 			"entries": [
-				"Starting at 11th level, when an {@filter undead of CR 2 or lower|bestiary|challenge rating=[&0;&2]|type=undead|miscellaneous=!swarm} or lower fails its saving throw against your Turn Undead feature, the creature is instantly destroyed."
+				"Starting at 11th level, when an {@filter undead of CR 2 or lower|bestiary|challenge rating=[&0;&2]|type=undead|miscellaneous=!swarm} fails its saving throw against your Turn Undead feature, the creature is instantly destroyed."
 			]
 		},
 		{
 			"name": "Ability Score Improvement",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2219,7 +2242,7 @@
 		{
 			"name": "Destroy Undead (CR 3)",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2231,7 +2254,7 @@
 		{
 			"name": "Ability Score Improvement",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2258,7 +2281,7 @@
 		{
 			"name": "Destroy Undead (CR 4)",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2270,7 +2293,7 @@
 		{
 			"name": "Divine Domain feature",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2282,7 +2305,7 @@
 		{
 			"name": "Channel Divinity (3/rest)",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2294,7 +2317,7 @@
 		{
 			"name": "Ability Score Improvement",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2321,7 +2344,7 @@
 		{
 			"name": "Divine Intervention Improvement",
 			"source": "PHB",
-			"page": 36,
+			"page": 56,
 			"srd": true,
 			"className": "Cleric",
 			"classSource": "PHB",
@@ -2413,7 +2436,7 @@
 			"level": 1,
 			"header": 1,
 			"entries": [
-				"At 1st level, the cleric learns one necromancy cantrip of his or her choice from any spell list. When the cleric casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other."
+				"At 1st level, the cleric learns one {@filter necromancy cantrip|spells|level=0|school=N} of his or her choice from any spell list. When the cleric casts a necromancy cantrip that normally targets only one creature, the spell can instead target two creatures within range and within 5 feet of each other."
 			]
 		},
 		{

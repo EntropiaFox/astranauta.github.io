@@ -288,8 +288,10 @@ class TagDc {
 }
 
 class AlignmentConvert {
-	static tryConvertAlignment (m, cbMan) {
-		const orParts = (m.alignment || "").split(/ or /g).map(it => it.trim().replace(/[.,;]$/g, "").trim());
+	static tryConvertAlignment (stats, cbMan) {
+		if (!stats.alignment.trim()) return delete stats.alignment;
+
+		const orParts = (stats.alignment || "").split(/ or /g).map(it => it.trim().replace(/[.,;]$/g, "").trim());
 		const out = [];
 
 		orParts.forEach(part => {
@@ -304,9 +306,9 @@ class AlignmentConvert {
 			})
 		});
 
-		if (out.length === 1) m.alignment = out[0].alignment;
-		else if (out.length) m.alignment = out;
-		else if (cbMan) cbMan(m.alignment);
+		if (out.length === 1) stats.alignment = out[0].alignment;
+		else if (out.length) stats.alignment = out;
+		else if (cbMan) cbMan(stats.alignment);
 	}
 }
 AlignmentConvert.ALIGNMENTS = {
@@ -499,6 +501,7 @@ TraitActionTag.tags = { // true = map directly; string = map to this string
 		"swallow": "Swallow",
 		"tentacle": "Tentacles",
 		"tentacles": "Tentacles",
+		"change shape": "Shapechanger",
 	},
 	reaction: {
 		"parry": "Parry",
@@ -728,28 +731,58 @@ SpellcastingTypeTag.CLASSES = {
 
 class DamageTypeTag {
 	static _handleProp (m, prop, typeSet) {
-		if (m[prop]) {
-			m[prop].forEach(it => {
-				if (it.entries) {
-					const str = JSON.stringify(it.entries, null, "\t");
+		if (!m[prop]) return;
 
-					str.replace(RollerUtil.REGEX_DAMAGE_DICE, (m0, average, prefix, diceExp, suffix) => {
-						suffix.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, type) => typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]));
-					});
+		m[prop].forEach(it => {
+			if (
+				it.name
+				&& DamageTypeTag._BLACKLIST_NAMES.has(it.name.toLowerCase().trim().replace(/\([^)]+\)/g, ""))
+			) return;
 
-					str.replace(DamageTypeTag._ONE_DAMAGE_REGEX, (m0, type) => {
-						typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]);
-					});
-				}
-			})
-		}
+			if (it.entries) {
+				DamageTypeTag._WALKER.walk(
+					it.entries,
+					{
+						string: (str) => {
+							// if (str.includes("your spell attack modifier")) debugger
+							str.replace(RollerUtil.REGEX_DAMAGE_DICE, (m0, average, prefix, diceExp, suffix) => {
+								suffix.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, pre, type) => typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]));
+							});
+
+							str.replace(DamageTypeTag._STATIC_DAMAGE_REGEX, (m0, type) => {
+								typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]);
+							});
+
+							str.replace(DamageTypeTag._TARGET_TASKES_DAMAGE_REGEX, (m0, type) => {
+								typeSet.add(DamageTypeTag._TYPE_LOOKUP[type]);
+							});
+
+							if (DamageTypeTag._isSummon(m)) {
+								str.split(/[.?!]/g)
+									.forEach(sentence => {
+										let isSentenceMatch = DamageTypeTag._SUMMON_DAMAGE_REGEX.test(sentence);
+										if (!isSentenceMatch) return;
+
+										// debugger
+										sentence.replace(ConverterConst.RE_DAMAGE_TYPE, (m0, pre, type) => {
+											typeSet.add(DamageTypeTag._TYPE_LOOKUP[type])
+										});
+									});
+							}
+						},
+					},
+				);
+			}
+		})
 	}
 
 	static tryRun (m) {
 		if (!DamageTypeTag._isInit) {
 			DamageTypeTag._isInit = true;
+			DamageTypeTag._WALKER = MiscUtil.getWalker({isNoModification: true, keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
 			Object.entries(Parser.DMGTYPE_JSON_TO_FULL).forEach(([k, v]) => DamageTypeTag._TYPE_LOOKUP[v] = k);
 		}
+
 		const typeSet = new Set();
 		DamageTypeTag._handleProp(m, "action", typeSet);
 		DamageTypeTag._handleProp(m, "reaction", typeSet);
@@ -760,10 +793,47 @@ class DamageTypeTag {
 		DamageTypeTag._handleProp(m, "variant", typeSet);
 		if (typeSet.size) m.damageTags = [...typeSet];
 	}
+
+	/** Attempt to detect an e.g. TCE summon creature. */
+	static _isSummon (m) {
+		let isSummon = false;
+
+		const reProbableSummon = /level of the spell|spell level|\+\s*PB(?:\W|$)|your (?:[^?!.]+)?level/g;
+
+		DamageTypeTag._WALKER.walk(
+			m.ac,
+			{
+				string: (str) => {
+					if (isSummon) return;
+					if (reProbableSummon.test(str)) isSummon = true;
+				},
+			},
+		);
+		if (isSummon) return true;
+
+		DamageTypeTag._WALKER.walk(
+			m.hp,
+			{
+				string: (str) => {
+					if (isSummon) return;
+					if (reProbableSummon.test(str)) isSummon = true;
+				},
+			},
+		);
+		if (isSummon) return true;
+	}
 }
 DamageTypeTag._isInit = false;
-DamageTypeTag._ONE_DAMAGE_REGEX = new RegExp(`1 ${ConverterConst.STR_RE_DAMAGE_TYPE} damage`, "gi");
+DamageTypeTag._WALKER = null;
+DamageTypeTag._STATIC_DAMAGE_REGEX = new RegExp(`\\d+ ${ConverterConst.STR_RE_DAMAGE_TYPE} damage`, "gi");
+DamageTypeTag._TARGET_TASKES_DAMAGE_REGEX = new RegExp(`(?:a|the) target takes (?:{@dice |{@damage )[^}]+} ?${ConverterConst.STR_RE_DAMAGE_TYPE} damage`, "gi");
+DamageTypeTag._SUMMON_DAMAGE_REGEX = /(?:{@dice |{@damage )[^}]+}(?:\s*\+\s*the spell's level)? ([a-z]+( \([-a-zA-Z0-9 ]+\))?( or [a-z]+( \([-a-zA-Z0-9 ]+\))?)? damage)/gi;
 DamageTypeTag._TYPE_LOOKUP = {};
+// Avoid parsing these, as they commonly have e.g. "self-damage" sections
+//   Note that these names should exclude parenthetical parts (as these are removed before lookup)
+DamageTypeTag._BLACKLIST_NAMES = new Set([
+	"vampire weaknesses",
+]);
 
 class MiscTag {
 	static _handleProp (m, prop, tagSet) {
@@ -851,143 +921,141 @@ MiscTag._RANGED_WEAPON_MATCHERS = MiscTag._RANGED_WEAPONS.map(it => new RegExp(`
 class SpellcastingTraitConvert {
 	static init (spellData) {
 		// reversed so official sources take precedence over 3pp
-		spellData.forEach(s => SpellcastingTraitConvert.SPELL_SRC_MAP[s.name.toLowerCase()] = s.source)
+		spellData.forEach(s => SpellcastingTraitConvert.SPELL_SRC_MAP[s.name.toLowerCase()] = s.source);
 	}
 
-	static tryParseSpellcasting (trait, isMarkdown, cbErr) {
-		let spellcasting = [];
-
-		function parseSpellcasting (trait) {
-			const splitter = StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX;
-
-			function getParsedSpells (thisLine) {
-				let spellPart = thisLine.substring(thisLine.indexOf(": ") + 2).trim();
-				if (isMarkdown) {
-					const cleanPart = (part) => {
-						part = part.trim();
-						while (part.startsWith("*") && part.endsWith("*")) {
-							part = part.replace(/^\*(.*)\*$/, "$1");
-						}
-						return part;
-					};
-
-					const cleanedInner = spellPart.split(splitter).map(it => cleanPart(it)).filter(it => it);
-					spellPart = cleanedInner.join(", ");
-
-					while (spellPart.startsWith("*") && spellPart.endsWith("*")) {
-						spellPart = spellPart.replace(/^\*(.*)\*$/, "$1");
-					}
-				}
-
-				// move asterisks before commas (e.g. "chaos bolt,*" -> "chaos bolt*,")
-				spellPart = spellPart.replace(/,\s*\*/g, "*,");
-
-				return spellPart.split(splitter).map(i => parseSpell(i));
-			}
-
-			let name = trait.name;
-			let spellcastingEntry = {"name": name, "headerEntries": [parseToHit(trait.entries[0])]};
-			let doneHeader = false;
-			trait.entries.forEach((thisLine, i) => {
-				thisLine = thisLine.replace(/,\s*\*/g, ",*"); // put asterisks on the correct side of commas
-				if (i === 0) return;
-				if (thisLine.includes("/rest")) {
-					doneHeader = true;
-					let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
-					const value = getParsedSpells(thisLine);
-					if (!spellcastingEntry.rest) spellcastingEntry.rest = {};
-					spellcastingEntry.rest[property] = value;
-				} else if (thisLine.includes("/day")) {
-					doneHeader = true;
-					let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
-					const value = getParsedSpells(thisLine);
-					if (!spellcastingEntry.daily) spellcastingEntry.daily = {};
-					spellcastingEntry.daily[property] = value;
-				} else if (thisLine.includes("/week")) {
-					doneHeader = true;
-					let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
-					const value = getParsedSpells(thisLine);
-					if (!spellcastingEntry.weekly) spellcastingEntry.weekly = {};
-					spellcastingEntry.weekly[property] = value;
-				} else if (thisLine.startsWith("Constant: ")) {
-					doneHeader = true;
-					spellcastingEntry.constant = getParsedSpells(thisLine);
-				} else if (thisLine.startsWith("At will: ")) {
-					doneHeader = true;
-					spellcastingEntry.will = getParsedSpells(thisLine);
-				} else if (thisLine.includes("Cantrip")) {
-					doneHeader = true;
-					const value = getParsedSpells(thisLine);
-					if (!spellcastingEntry.spells) spellcastingEntry.spells = {"0": {"spells": []}};
-					spellcastingEntry.spells["0"].spells = value;
-				} else if (thisLine.includes(" level") && thisLine.includes(": ")) {
-					doneHeader = true;
-					let property = thisLine.substr(0, 1);
-					const allSpells = getParsedSpells(thisLine);
-					spellcastingEntry.spells = spellcastingEntry.spells || {};
-
-					const out = {};
-					if (thisLine.includes(" slot")) {
-						const mWarlock = /^(\d)..(?: level)?-(\d).. level \((\d) (\d)..-level slots?\)/.exec(thisLine);
-						if (mWarlock) {
-							out.lower = parseInt(mWarlock[1]);
-							out.slots = parseInt(mWarlock[3]);
-							property = mWarlock[4];
-						} else {
-							const mSlots = /\((\d) slots?\)/.exec(thisLine);
-							if (!mSlots) throw new Error(`Could not find slot count!`);
-							out.slots = parseInt(mSlots[1]);
-						}
-					}
-					// add these last, to have nicer ordering
-					out.spells = allSpells;
-
-					spellcastingEntry.spells[property] = out;
-				} else {
-					if (doneHeader) {
-						if (!spellcastingEntry.footerEntries) spellcastingEntry.footerEntries = [];
-						spellcastingEntry.footerEntries.push(parseToHit(thisLine));
-					} else {
-						spellcastingEntry.headerEntries.push(parseToHit(thisLine));
-					}
-				}
-			});
-
-			SpellcastingTraitConvert.mutSpellcastingAbility(spellcastingEntry);
-
-			spellcasting.push(spellcastingEntry);
-		}
-
-		function parseSpell (name) {
-			function getSourcePart (spellName) {
-				const source = SpellcastingTraitConvert._getSpellSource(spellName);
-				return `${source && source !== SRC_PHB ? `|${source}` : ""}`;
-			}
-
-			name = name.trim();
-			let asterix = name.indexOf("*");
-			let brackets = name.indexOf(" (");
-			if (asterix !== -1) {
-				const trueName = name.substr(0, asterix);
-				return `{@spell ${trueName}${getSourcePart(trueName)}}*`;
-			} else if (brackets !== -1) {
-				const trueName = name.substr(0, brackets);
-				return `{@spell ${trueName}${getSourcePart(trueName)}}${name.substring(brackets)}`;
-			}
-			return `{@spell ${name}${getSourcePart(name)}}`;
-		}
-
-		function parseToHit (line) {
-			return line.replace(/( \+)(\d+)( to hit with spell)/g, (m0, m1, m2, m3) => ` {@hit ${m2}}${m3}`);
-		}
-
+	static tryParseSpellcasting (ent, {isMarkdown, cbErr, displayAs, actions, reactions}) {
 		try {
-			parseSpellcasting(trait);
-			return {out: spellcasting, success: true};
+			return this._parseSpellcasting({ent, isMarkdown, displayAs, actions, reactions});
 		} catch (e) {
 			cbErr && cbErr(`Failed to parse spellcasting: ${e.message}`);
-			return {out: trait, success: false};
+			return null;
 		}
+	}
+
+	static _parseSpellcasting ({ent, isMarkdown, displayAs, actions, reactions}) {
+		let hasAnyHeader = false;
+		const spellcastingEntry = {"name": ent.name, "headerEntries": [this._parseToHit(ent.entries[0])]};
+		ent.entries.forEach((thisLine, i) => {
+			thisLine = thisLine.replace(/,\s*\*/g, ",*"); // put asterisks on the correct side of commas
+			if (i === 0) return;
+			if (thisLine.includes("/rest")) {
+				hasAnyHeader = true;
+				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
+				const value = this._getParsedSpells({thisLine, isMarkdown});
+				if (!spellcastingEntry.rest) spellcastingEntry.rest = {};
+				spellcastingEntry.rest[property] = value;
+			} else if (thisLine.includes("/day")) {
+				hasAnyHeader = true;
+				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
+				const value = this._getParsedSpells({thisLine, isMarkdown});
+				if (!spellcastingEntry.daily) spellcastingEntry.daily = {};
+				spellcastingEntry.daily[property] = value;
+			} else if (thisLine.includes("/week")) {
+				hasAnyHeader = true;
+				let property = thisLine.substr(0, 1) + (thisLine.includes(" each:") ? "e" : "");
+				const value = this._getParsedSpells({thisLine, isMarkdown});
+				if (!spellcastingEntry.weekly) spellcastingEntry.weekly = {};
+				spellcastingEntry.weekly[property] = value;
+			} else if (thisLine.startsWith("Constant: ")) {
+				hasAnyHeader = true;
+				spellcastingEntry.constant = this._getParsedSpells({thisLine, isMarkdown});
+			} else if (thisLine.startsWith("At will: ")) {
+				hasAnyHeader = true;
+				spellcastingEntry.will = this._getParsedSpells({thisLine, isMarkdown});
+			} else if (thisLine.includes("Cantrip")) {
+				hasAnyHeader = true;
+				const value = this._getParsedSpells({thisLine, isMarkdown});
+				if (!spellcastingEntry.spells) spellcastingEntry.spells = {"0": {"spells": []}};
+				spellcastingEntry.spells["0"].spells = value;
+			} else if (thisLine.includes(" level") && thisLine.includes(": ")) {
+				hasAnyHeader = true;
+				let property = thisLine.substr(0, 1);
+				const allSpells = this._getParsedSpells({thisLine, isMarkdown});
+				spellcastingEntry.spells = spellcastingEntry.spells || {};
+
+				const out = {};
+				if (thisLine.includes(" slot")) {
+					const mWarlock = /^(\d)..(?: level)?-(\d).. level \((\d) (\d)..-level slots?\)/.exec(thisLine);
+					if (mWarlock) {
+						out.lower = parseInt(mWarlock[1]);
+						out.slots = parseInt(mWarlock[3]);
+						property = mWarlock[4];
+					} else {
+						const mSlots = /\((\d) slots?\)/.exec(thisLine);
+						if (!mSlots) throw new Error(`Could not find slot count!`);
+						out.slots = parseInt(mSlots[1]);
+					}
+				}
+				// add these last, to have nicer ordering
+				out.spells = allSpells;
+
+				spellcastingEntry.spells[property] = out;
+			} else {
+				if (hasAnyHeader) {
+					if (!spellcastingEntry.footerEntries) spellcastingEntry.footerEntries = [];
+					spellcastingEntry.footerEntries.push(this._parseToHit(thisLine));
+				} else {
+					spellcastingEntry.headerEntries.push(this._parseToHit(thisLine));
+				}
+			}
+		});
+
+		SpellcastingTraitConvert.mutSpellcastingAbility(spellcastingEntry);
+		SpellcastingTraitConvert._mutDisplayAs(spellcastingEntry, displayAs);
+
+		this._addSplitOutSpells({spellcastingEntry, arrayOther: actions});
+		this._addSplitOutSpells({spellcastingEntry, arrayOther: reactions});
+
+		return spellcastingEntry;
+	}
+
+	static _getParsedSpells ({thisLine, isMarkdown}) {
+		let spellPart = thisLine.substring(thisLine.indexOf(": ") + 2).trim();
+		if (isMarkdown) {
+			const cleanPart = (part) => {
+				part = part.trim();
+				while (part.startsWith("*") && part.endsWith("*")) {
+					part = part.replace(/^\*(.*)\*$/, "$1");
+				}
+				return part;
+			};
+
+			const cleanedInner = spellPart.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => cleanPart(it)).filter(it => it);
+			spellPart = cleanedInner.join(", ");
+
+			while (spellPart.startsWith("*") && spellPart.endsWith("*")) {
+				spellPart = spellPart.replace(/^\*(.*)\*$/, "$1");
+			}
+		}
+
+		// move asterisks before commas (e.g. "chaos bolt,*" -> "chaos bolt*,")
+		spellPart = spellPart.replace(/,\s*\*/g, "*,");
+
+		return spellPart.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX).map(it => this._parseSpell(it));
+	}
+
+	static _parseSpell (name) {
+		name = name.trim();
+		let asterisk = name.indexOf("*");
+		let brackets = name.indexOf(" (");
+		if (asterisk !== -1) {
+			const trueName = name.substr(0, asterisk);
+			return `{@spell ${trueName}${this._parseSpell_getSourcePart(trueName)}}*`;
+		} else if (brackets !== -1) {
+			const trueName = name.substr(0, brackets);
+			return `{@spell ${trueName}${this._parseSpell_getSourcePart(trueName)}}${name.substring(brackets)}`;
+		}
+		return `{@spell ${name}${this._parseSpell_getSourcePart(name)}}`;
+	}
+
+	static _parseSpell_getSourcePart (spellName) {
+		const source = SpellcastingTraitConvert._getSpellSource(spellName);
+		return `${source && source !== SRC_PHB ? `|${source}` : ""}`;
+	}
+
+	static _parseToHit (line) {
+		return line.replace(/( \+)(\d+)( to hit with spell)/g, (m0, m1, m2, m3) => ` {@hit ${m2}}${m3}`);
 	}
 
 	static mutSpellcastingAbility (spellcastingEntry) {
@@ -997,9 +1065,73 @@ class SpellcastingTraitConvert {
 		}
 	}
 
+	static _mutDisplayAs (spellcastingEntry, displayAs) {
+		if (!displayAs || displayAs === "trait") return;
+		spellcastingEntry.displayAs = displayAs;
+	}
+
 	static _getSpellSource (spellName) {
 		if (spellName && SpellcastingTraitConvert.SPELL_SRC_MAP[spellName.toLowerCase()]) return SpellcastingTraitConvert.SPELL_SRC_MAP[spellName.toLowerCase()];
 		return null;
+	}
+
+	/**
+	 * Add other actions/reactions with names such as:
+	 * - "Fire Storm (7th-Level Spell; 1/Day)"
+	 * - "Shocking Grasp (Cantrip)"
+	 * - "Shield (1st-Level Spell; 3/Day)"
+	 * as hidden spells (if they don't already exist). */
+	static _addSplitOutSpells ({spellcastingEntry, arrayOther}) {
+		if (!arrayOther?.length) return;
+		arrayOther.forEach(ent => {
+			if (!ent.name) return;
+			const mName = /^(.*?) \((\d(?:st|nd|rd|th)-level spell; (\d+\/day)|cantrip)\)/i.exec(ent.name);
+			if (!mName) return;
+
+			const [, spellName, spellLevelRecharge, spellRecharge] = mName;
+
+			const spellTag = this._parseSpell(spellName);
+			const uids = this._getSpellUids(spellTag);
+
+			if (spellLevelRecharge.toLowerCase() === "cantrip") {
+				spellcastingEntry.will = spellcastingEntry.will || [];
+				if (this._isExistingSpell(spellcastingEntry.will, uids)) return;
+				spellcastingEntry.will.push({entry: spellTag, hidden: true});
+				return;
+			}
+
+			const [numCharges, rechargeDuration] = spellRecharge.toLowerCase().split("/").map(it => it.trim()).filter(Boolean);
+			switch (rechargeDuration) {
+				case "day": {
+					const chargeKey = `${numCharges}e`;
+					const tgt = MiscUtil.getOrSet(spellcastingEntry, "daily", chargeKey, []);
+					if (this._isExistingSpell(tgt, uids)) return;
+					tgt.push({entry: spellTag, hidden: true});
+					break;
+				}
+
+				// (expand this as required)
+
+				default: throw new Error(`Unhandled recharge duration "${rechargeDuration}"`);
+			}
+		});
+	}
+
+	static _getSpellUids (str) {
+		const uids = []
+		str.replace(/{@spell ([^}]+)}/gi, (...m) => {
+			const [name, source = SRC_PHB.toLowerCase()] = m[1].toLowerCase().split("|").map(it => it.trim());
+			uids.push(`${name}|${source}`);
+		});
+		return uids;
+	}
+
+	static _isExistingSpell (spellArray, uids) {
+		return spellArray.some(it => {
+			const str = (it.entry || it).toLowerCase().trim();
+			const existingUids = this._getSpellUids(str);
+			return existingUids.some(it => uids.includes(it));
+		});
 	}
 }
 SpellcastingTraitConvert.SPELL_SRC_MAP = {};
@@ -1115,6 +1247,8 @@ SpeedConvert._SPEED_TYPES = new Set(["walk", "fly", "swim", "climb", "burrow"]);
 class DetectNamedCreature {
 	static tryRun (mon) {
 		const totals = {yes: 0, no: 0};
+		this._doCheckProp(mon, totals, "trait");
+		this._doCheckProp(mon, totals, "spellcasting");
 		this._doCheckProp(mon, totals, "action");
 		this._doCheckProp(mon, totals, "reaction");
 		this._doCheckProp(mon, totals, "bonus");
@@ -1130,13 +1264,14 @@ class DetectNamedCreature {
 		if (!mon[prop]) return;
 
 		mon[prop].forEach(it => {
-			if (!it.entries || !it.entries.length) return;
-			if (typeof it.entries[0] !== "string") return;
+			const prop = it.entries?.length ? "entries" : it.headerEntries?.length ? "headerEntries" : null;
+			if (!prop) return;
+			if (typeof it[prop][0] !== "string") return;
 
-			const namePart = mon.name.split(/[ ,:.!;]/g)[0] || "".trim();
+			const namePart = (mon.name.split(/[ ,:.!;]/g)[0] || "").trim().escapeRegexp();
 
-			const isNotNamedCreature = new RegExp(`^The ${namePart}`).test(it.entries[0]);
-			const isNamedCreature = new RegExp(`^${namePart}`).test(it.entries[0]);
+			const isNotNamedCreature = new RegExp(`^The ${namePart}`).test(it[prop][0]);
+			const isNamedCreature = new RegExp(`^${namePart}`).test(it[prop][0]);
 
 			if (isNotNamedCreature && isNamedCreature) return;
 			if (isNamedCreature) totals.yes++;
@@ -1153,7 +1288,7 @@ class TagImmResVulnConditional {
 	}
 
 	static _handleProp (mon, prop) {
-		if (!mon[prop]) return;
+		if (!mon[prop] || !(mon[prop] instanceof Array)) return;
 		mon[prop].forEach(it => this._handleProp_recurse(it, prop));
 	}
 

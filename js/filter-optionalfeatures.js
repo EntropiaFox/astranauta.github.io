@@ -5,6 +5,15 @@ class PageFilterOptionalFeatures extends PageFilter {
 	static _filterFeatureTypeSort (a, b) {
 		return SortUtil.ascSort(Parser.optFeatureTypeToFull(a.item), Parser.optFeatureTypeToFull(b.item))
 	}
+
+	static sortOptionalFeatures (itemA, itemB, options) {
+		if (options.sortBy === "level") {
+			const aValue = Number(itemA.values.level) || 0;
+			const bValue = Number(itemB.values.level) || 0;
+			return SortUtil.ascSort(aValue, bValue) || SortUtil.listSort(itemA, itemB, options);
+		}
+		return SortUtil.listSort(itemA, itemB, options);
+	}
 	// endregion
 
 	constructor () {
@@ -12,23 +21,23 @@ class PageFilterOptionalFeatures extends PageFilter {
 
 		this._typeFilter = new Filter({
 			header: "Feature Type",
-			items: ["AI", "ED", "EI", "MM", "MV", "MV:B", "OTH", "FS:F", "FS:B", "FS:P", "FS:R", "PB"],
+			items: [],
 			displayFn: Parser.optFeatureTypeToFull,
 			itemSortFn: PageFilterOptionalFeatures._filterFeatureTypeSort,
 		});
 		this._pactFilter = new Filter({
 			header: "Pact Boon",
-			items: ["Blade", "Chain", "Tome"],
+			items: [],
 			displayFn: Parser.prereqPactToFull,
 		});
 		this._patronFilter = new Filter({
 			header: "Otherworldly Patron",
-			items: ["The Archfey", "The Fiend", "The Great Old One", "The Hexblade", "The Raven Queen", "The Seeker"],
+			items: [],
 			displayFn: Parser.prereqPatronToShort,
 		});
 		this._spellFilter = new Filter({
 			header: "Spell",
-			items: ["eldritch blast", "hex/curse"],
+			items: [],
 			displayFn: StrUtil.toTitleCase,
 		});
 		this._featureFilter = new Filter({
@@ -53,27 +62,17 @@ class PageFilterOptionalFeatures extends PageFilter {
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isSrdFilter: true});
 	}
 
-	mutateForFilters (it) {
-		it.featureType = it.featureType || "OTH";
+	static mutateForFilters (it) {
+		// (Convert legacy string format to array)
+		it.featureType = it.featureType && it.featureType instanceof Array ? it.featureType : it.featureType ? [it.featureType] : ["OTH"];
 		if (it.prerequisite) {
 			it._sPrereq = true;
-			it._fPrereqPact = it.prerequisite.filter(it => it.pact).map(it => {
-				this._pactFilter.addItem(it.pact);
-				return it.pact;
-			});
-			it._fPrereqPatron = it.prerequisite.filter(it => it.patron).map(it => {
-				this._patronFilter.addItem(it.patron);
-				return it.patron;
-			});
+			it._fPrereqPact = it.prerequisite.filter(it => it.pact).map(it => it.pact);
+			it._fPrereqPatron = it.prerequisite.filter(it => it.patron).map(it => it.patron);
 			it._fprereqSpell = it.prerequisite.filter(it => it.spell).map(it => {
-				const mapped = (it.spell || []).map(it => it.split("#")[0].split("|")[0]);
-				this._spellFilter.addItem(mapped);
-				return mapped;
+				return (it.spell || []).map(it => it.split("#")[0].split("|")[0]);
 			});
-			it._fprereqFeature = it.prerequisite.filter(it => it.feature).map(it => {
-				this._featureFilter.addItem(it.feature);
-				return it.feature;
-			});
+			it._fprereqFeature = it.prerequisite.filter(it => it.feature).map(it => it.feature);
 			it._fPrereqLevel = it.prerequisite.filter(it => it.level).map(it => {
 				const lvlMeta = it.level;
 
@@ -93,20 +92,13 @@ class PageFilterOptionalFeatures extends PageFilter {
 					});
 				}
 
-				this._levelFilter.addNest(className, {isHidden: true});
-				this._levelFilter.addItem(item);
 				return item;
 			});
 		}
 
-		if (it.featureType instanceof Array) {
-			it._dFeatureType = it.featureType.map(ft => Parser.optFeatureTypeToFull(ft));
-			it._lFeatureType = it.featureType.join(", ");
-			it.featureType.sort((a, b) => SortUtil.ascSortLower(Parser.optFeatureTypeToFull(a), Parser.optFeatureTypeToFull(b)));
-		} else {
-			it._dFeatureType = Parser.optFeatureTypeToFull(it.featureType);
-			it._lFeatureType = it.featureType;
-		}
+		it._dFeatureType = it.featureType.map(ft => Parser.optFeatureTypeToFull(ft));
+		it._lFeatureType = it.featureType.join(", ");
+		it.featureType.sort((a, b) => SortUtil.ascSortLower(Parser.optFeatureTypeToFull(a), Parser.optFeatureTypeToFull(b)));
 
 		it._fMisc = it.srd ? ["SRD"] : [];
 	}
@@ -116,6 +108,15 @@ class PageFilterOptionalFeatures extends PageFilter {
 
 		this._sourceFilter.addItem(it.source);
 		this._typeFilter.addItem(it.featureType);
+		this._pactFilter.addItem(it._fPrereqPact);
+		this._patronFilter.addItem(it._fPrereqPatron);
+		this._spellFilter.addItem(it._fprereqSpell);
+		this._featureFilter.addItem(it._fprereqFeature);
+
+		(it._fPrereqLevel || []).forEach(it => {
+			this._levelFilter.addNest(it.nest, {isHidden: true});
+			this._levelFilter.addItem(it);
+		});
 	}
 
 	async _pPopulateBoxOptions (opts) {

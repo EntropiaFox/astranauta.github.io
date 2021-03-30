@@ -18,11 +18,11 @@ class RenderObjects {
 				${obj.ac != null ? `<b>Armor Class:</b> ${obj.ac}<br>` : ""}
 				<b>Hit Points:</b> ${obj.hp}<br>
 				${obj.speed != null ? `<b>Speed:</b> ${Parser.getSpeedString(obj)}<br>` : ""}
-				<b>Damage Immunities:</b> ${Parser.monImmResToFull(obj.immune)}<br>
+				<b>Damage Immunities:</b> ${Parser.getFullImmRes(obj.immune)}<br>
 				${Parser.ABIL_ABVS.some(ab => obj[ab] != null) ? `<b>Ability Scores:</b> ${Parser.ABIL_ABVS.filter(ab => obj[ab] != null).map(ab => renderer.render(`${ab.toUpperCase()} ${Renderer.utils.getAbilityRoller(obj, ab)}`)).join(", ")}` : ""}
-				${obj.resist ? `<b>Damage Resistances:</b> ${Parser.monImmResToFull(obj.resist)}<br>` : ""}
-				${obj.vulnerable ? `<b>Damage Vulnerabilities:</b> ${Parser.monImmResToFull(obj.vulnerable)}<br>` : ""}
-				${obj.conditionImmune ? `<b>Condition Immunities:</b> ${Parser.monCondImmToFull(obj.conditionImmune)}<br>` : ""}
+				${obj.resist ? `<b>Damage Resistances:</b> ${Parser.getFullImmRes(obj.resist)}<br>` : ""}
+				${obj.vulnerable ? `<b>Damage Vulnerabilities:</b> ${Parser.getFullImmRes(obj.vulnerable)}<br>` : ""}
+				${obj.conditionImmune ? `<b>Condition Immunities:</b> ${Parser.getFullCondImm(obj.conditionImmune)}<br>` : ""}
 			</td></tr>
 			<tr class="text"><td colspan="6">${renderStack.join("")}</td></tr>
 			${Renderer.utils.getPageTr(obj)}

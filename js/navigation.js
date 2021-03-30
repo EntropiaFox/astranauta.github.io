@@ -58,6 +58,8 @@ class NavBar {
 		addLi(ulBooks, "book.html", "Mythic Odysseys of Theros", {aHash: "MOT", date: null});
 		addLi(ulBooks, "book.html", "Tasha's Cauldron of Everything", {aHash: "TCE", date: null});
 		addDivider(ulBooks);
+		addLi(ulBooks, "book.html", "Dungeon Master's Screen: Wilderness Kit", {aHash: "ScreenWildernessKit", date: "2020"});
+		addDivider(ulBooks);
 		addLi(ulBooks, "book.html", "Adventurers League", {aHash: "AL", date: "2016"});
 		addLi(ulBooks, "book.html", "Sage Advice Compendium", {aHash: "SAC", date: "2019"});
 
@@ -67,6 +69,7 @@ class NavBar {
 		addLi(ulPlayers, "feats.html", "Feats");
 		addLi(ulPlayers, "races.html", "Races");
 		addLi(ulPlayers, "charcreationoptions.html", "Other Character Creation Options");
+		addLi(ulPlayers, "optionalfeatures.html", "Other Options & Features");
 		addDivider(ulPlayers);
 		addLi(ulPlayers, "statgen.html", "Stat Generator");
 		addDivider(ulPlayers);
@@ -117,6 +120,7 @@ class NavBar {
 		addLi(ulAdventures, "adventure.html", "Wildemount: Unwelcome Spirits", {isSide: true, aHash: "US", date: null});
 		addLi(ulAdventures, "adventure.html", "Theros: No Silent Secret", {isSide: true, aHash: "MOT-NSS", date: null});
 		addLi(ulAdventures, "adventure.html", "Icewind Dale: Rime of the Frostmaiden", {isSide: true, aHash: "IDRotF", date: null});
+		addLi(ulAdventures, "adventure.html", "Candlekeep Mysteries", {isSide: true, aHash: "CM", date: "2021"});
 		addLi(ulDms, "cultsboons.html", "Cults & Supernatural Boons");
 		addLi(ulDms, "objects.html", "Objects");
 		addLi(ulDms, "trapshazards.html", "Traps & Hazards");
@@ -132,11 +136,12 @@ class NavBar {
 		addLi(ulReferences, "deities.html", "Deities");
 		addLi(ulReferences, "items.html", "Items");
 		addLi(ulReferences, "languages.html", "Languages");
-		addLi(ulReferences, "optionalfeatures.html", "Other Options & Features");
 		addLi(ulReferences, "rewards.html", "Supernatural Gifts & Rewards");
 		addLi(ulReferences, "psionics.html", "Psionics");
 		addLi(ulReferences, "spells.html", "Spells");
 		addLi(ulReferences, "vehicles.html", "Vehicles");
+		addDivider(ulReferences);
+		addLi(ulReferences, "recipes.html", "Recipes");
 
 		const ulUtils = addDropdown(navBar, "Utilities");
 		addLi(ulUtils, "search.html", "Search");
@@ -166,10 +171,14 @@ class NavBar {
 		addButton(
 			ulSettings,
 			{
-				html: styleSwitcher.getActiveDayNight() === StyleSwitcher.STYLE_NIGHT ? "Day Mode" : "Night Mode",
+				html: styleSwitcher.getDayNightButtonText(),
 				click: (evt) => {
 					evt.preventDefault();
-					styleSwitcher.toggleDayNight();
+					styleSwitcher.cycleDayNightMode();
+				},
+				context: (evt) => {
+					evt.preventDefault();
+					styleSwitcher.cycleDayNightMode(-1);
 				},
 				className: "nightModeToggle",
 			},
@@ -427,6 +436,7 @@ class NavBar {
 		 * @param options Options.
 		 * @param options.html Button text.
 		 * @param options.click Button click handler.
+		 * @param [options.context] Button context menu handler.
 		 * @param options.title Button title.
 		 * @param options.className Additional button classes.
 		 */
@@ -439,6 +449,8 @@ class NavBar {
 			if (options.className) a.className = options.className;
 			a.onclick = options.click;
 			a.innerHTML = options.html;
+
+			if (options.context) a.oncontextmenu = options.context;
 
 			if (options.title) li.setAttribute("title", options.title);
 
@@ -461,10 +473,10 @@ class NavBar {
 		let isSecondLevel = false;
 		if (currentPage.toLowerCase() === "book.html" || currentPage.toLowerCase() === "adventure.html") {
 			const hashPart = window.location.hash.split(",")[0];
-			if (currentPage.toLowerCase() === "adventure.html") isSecondLevel = true;
+			if (currentPage.toLowerCase() === "adventure.html" || currentPage.toLowerCase() === "book.html") isSecondLevel = true;
 			currentPage += hashPart.toLowerCase();
 		}
-		if (currentPage.toLowerCase() === "adventures.html") isSecondLevel = true;
+		if (currentPage.toLowerCase() === "adventures.html" || currentPage.toLowerCase() === "books.html") isSecondLevel = true;
 
 		if (typeof _SEO_PAGE !== "undefined") currentPage = `${_SEO_PAGE}.html`;
 

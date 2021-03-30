@@ -14,9 +14,7 @@
 	<title>Items 5e</title>
 
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/jquery-ui.css">
-	<link rel="stylesheet" href="css/jquery-ui-slider-pips.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css">
 
 	<!-- Favicons -->
 	<link rel="icon" type="image/svg+xml" href="favicon.svg?v=1.115">
@@ -30,7 +28,7 @@
 
 	<!-- Chrome Web App Icons -->
 	<link rel="manifest" href="manifest.webmanifest">
-	<meta name="application-name" content="5eTools">
+	<meta name="application-name" content="5etools">
 	<meta name="theme-color" content="#006bc4">
 
 	<!-- Windows Start Menu tiles -->
@@ -43,7 +41,7 @@
 	<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
-	<meta name="apple-mobile-web-app-title" content="5eTools">
+	<meta name="apple-mobile-web-app-title" content="5etools">
 
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
@@ -54,13 +52,13 @@
 	<script type="text/javascript" src="js/navigation.js"></script>
 	<script type="text/javascript" src="js/browsercheck.js"></script>
 	<style>
-		ul.list {
+		.list {
 			height: initial;
 			max-height: 100%;
 			min-height: 100px;
 		}
 
-		ul.list.subitems {
+		.list.subitems {
 			min-height: initial;
 		}
 
@@ -85,13 +83,13 @@
 		}
 
 		@media (max-width: 991px) {
-			ul.list {
+			.list {
 				max-height: 20em;
 			}
 		}
 
 		@media (max-device-height: 700px) {
-			ul.list {
+			.list {
 				max-height: 20em;
 			}
 
@@ -105,7 +103,7 @@
 				height: auto;
 			}
 
-			ul.list {
+			.list {
 				max-height: 20em;
 			}
 		}
@@ -207,7 +205,7 @@
 						<button class="sort btn btn-default btn-xs ve-grow" data-sort="source" data-sortby="asc">Source <span class="caret_wrp"></span></button>
 					</div>
 
-					<ul class="list list--stats mundane ele-mundane"></ul>
+					<div class="list list--stats mundane ele-mundane"></div>
 					<h3 class="ele-mundane"><span class="side-label side-label--mundane clickable"></span></h3>
 				</div>
 
@@ -223,7 +221,7 @@
 						<button class="fullborder sort btn btn-default btn-xs ve-grow" data-sort="source" data-sortby="asc">Source <span class="caret_wrp"></span></button>
 					</div>
 
-					<ul class="list list--stats magic ele-magic"></ul>
+					<div class="list list--stats magic ele-magic"></div>
 					<h3 class="ele-magic"><span class="side-label side-label--magic clickable"></span></h3>
 				</div>
 			</div>
@@ -236,9 +234,9 @@
 						<button class="col-2 sort btn btn-default btn-xs" data-sort="cost">Cost <span class="caret_wrp"></span></button>
 						<button class="col-2 sort btn btn-default btn-xs" data-sort="count">Number <span class="caret_wrp"></span></button>
 					</div>
-					<ul class="list subitems">
+					<div class="list subitems">
 						<!-- populate with JS -->
-					</ul>
+					</div>
 					<div class="row ve-small">
 						<span class="col-6 text-right pr-2">Total:</span>
 						<span class="col-2 text-center no-wrap" id="totalweight"></span>
@@ -259,7 +257,7 @@
 					</table>
 				</div>
 
-				<div class="text-center wrp-footer-buttons">
+				<div class="text-center mt-2 no-print">
 					<button class="btn btn-default btn-xs" id="btn-show-table" title="View and Download Items in Tabular Format">Table View</button>
 					<button class="btn btn-xs btn-info" id="manage-brew">Manage Homebrew</button>
 				</div>
@@ -269,8 +267,6 @@
 </div>    <!--5ETOOLS_SCRIPT_ANCHOR-->
 <!--5ETOOLS_AD_ADHESION-->
 <script type="text/javascript" src="lib/jquery.js"></script>
-<script type="text/javascript" src="lib/jquery-ui.js"></script>
-<script type="text/javascript" src="lib/jquery-ui-slider-pip.js"></script>
 <script type="text/javascript" src="js/parser.js"></script>
 <script type="text/javascript" src="js/utils.js"></script>
 <script type="text/javascript" src="js/utils-list.js"></script>
@@ -284,6 +280,7 @@
 <script type="text/javascript" src="js/render-items.js"></script>
 <script type="text/javascript" src="js/scalecreature.js"></script>
 <script type="text/javascript" src="js/hist.js"></script>
+<script type="text/javascript" src="js/listpage.js"></script>
 <script type="text/javascript" src="js/filter-items.js"></script>
 <script type="text/javascript" src="js/items.js"></script>
 <script type="text/javascript" src="js/list2.js"></script>

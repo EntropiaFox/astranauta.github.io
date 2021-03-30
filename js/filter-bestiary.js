@@ -89,7 +89,7 @@ class PageFilterBestiary extends PageFilter {
 		this._tagFilter = new Filter({header: "Tag", displayFn: StrUtil.uppercaseFirst});
 		this._alignmentFilter = new Filter({
 			header: "Alignment",
-			items: ["L", "NX", "C", "G", "NY", "E", "N", "U", "A"],
+			items: ["L", "NX", "C", "G", "NY", "E", "N", "U", "A", "No Alignment"],
 			displayFn: alignment => Parser.alignmentAbvToFull(alignment).toTitleCase(),
 			itemSortFn: null,
 		});
@@ -124,6 +124,7 @@ class PageFilterBestiary extends PageFilter {
 			header: "Senses",
 			displayFn: (it) => Parser.monSenseTagToFull(it).toTitleCase(),
 			items: ["B", "D", "SD", "T", "U"],
+			itemSortFn: SortUtil.ascSortLower,
 		});
 		this._skillFilter = new Filter({
 			header: "Skills",
@@ -176,7 +177,7 @@ class PageFilterBestiary extends PageFilter {
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			items: ["Familiar", ...Object.keys(Parser.MON_MISC_TAG_TO_FULL), "Bonus Actions", "Lair Actions", "Legendary", "Mythic", "Adventure NPC", "Spellcaster", ...Object.values(Parser.ATB_ABV_TO_FULL).map(it => `${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${it}`), "Regional Effects", "Reactions", "Swarm", "Has Variants", "Modified Copy", "Has Alternate Token", "Has Token", "SRD", "AC from Item(s)", "AC from Natural Armor", "AC from Unarmored Defense"],
+			items: ["Familiar", ...Object.keys(Parser.MON_MISC_TAG_TO_FULL), "Bonus Actions", "Lair Actions", "Legendary", "Mythic", "Adventure NPC", "Spellcaster", ...Object.values(Parser.ATB_ABV_TO_FULL).map(it => `${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${it}`), "Regional Effects", "Reactions", "Swarm", "Has Variants", "Modified Copy", "Has Alternate Token", "Has Info", "Has Images", "Has Token", "SRD", "AC from Item(s)", "AC from Natural Armor", "AC from Unarmored Defense"],
 			displayFn: (it) => Parser.monMiscTagToFull(it).uppercaseFirst(),
 			deselFn: (it) => it === "Adventure NPC",
 			itemSortFn: PageFilterBestiary.ascSortMiscFilter,
@@ -189,7 +190,7 @@ class PageFilterBestiary extends PageFilter {
 		});
 	}
 
-	mutateForFilters (mon) {
+	static mutateForFilters (mon) {
 		Renderer.monster.initParsed(mon);
 
 		if (typeof mon.speed === "number" && mon.speed > 0) {
@@ -214,7 +215,7 @@ class PageFilterBestiary extends PageFilter {
 			else if (tempAlign.length === 1 && tempAlign.includes("N")) Array.prototype.push.apply(tempAlign, PageFilterBestiary._NEUT_ALIGNS);
 			mon._fAlign = tempAlign;
 		} else {
-			mon._fAlign = null;
+			mon._fAlign = ["No Alignment"];
 		}
 		mon._fVuln = mon.vulnerable ? PageFilterBestiary.getAllImmRest(mon.vulnerable, "vulnerable") : [];
 		mon._fRes = mon.resist ? PageFilterBestiary.getAllImmRest(mon.resist, "resist") : [];
@@ -248,6 +249,8 @@ class PageFilterBestiary extends PageFilter {
 		if (mon.srd) mon._fMisc.push("SRD");
 		if (mon.tokenUrl || mon.hasToken) mon._fMisc.push("Has Token");
 		if (mon.mythic) mon._fMisc.push("Mythic");
+		if (mon.hasFluff) mon._fMisc.push("Has Info");
+		if (mon.hasFluffImages) mon._fMisc.push("Has Images");
 		(mon.ac || []).forEach(it => {
 			if (!it.from) return;
 			if (it.from.includes("natural armor")) mon._fMisc.push("AC from Natural Armor");
@@ -277,6 +280,7 @@ class PageFilterBestiary extends PageFilter {
 		this._vulnerableFilter.addItem(mon._fVuln);
 		this._resistFilter.addItem(mon._fRes);
 		this._immuneFilter.addItem(mon._fImm);
+		this._senseFilter.addItem(mon.senseTags);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -391,7 +395,7 @@ class ModalFilterBestiary extends ModalFilter {
 		opts = opts || {};
 		super({
 			...opts,
-			modalTitle: "Creatures",
+			modalTitle: `Creature${opts.isRadio ? "" : "s"}`,
 			pageFilter: new PageFilterBestiary(),
 			fnSort: PageFilterBestiary.sortMonsters,
 		})
@@ -418,23 +422,30 @@ class ModalFilterBestiary extends ModalFilter {
 		Renderer.monster.initParsed(mon);
 		pageFilter.mutateAndAddToFilters(mon);
 
-		const eleLabel = document.createElement("label");
-		eleLabel.className = "row lst--border no-select lst__wrp-cells";
+		const eleRow = document.createElement("div");
+		eleRow.className = "px-0 w-100 flex-col no-shrink";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY](mon);
 		const source = Parser.sourceJsonToAbv(mon.source);
 		const type = mon._pTypes.asText.uppercaseFirst();
 		const cr = mon._pCr;
 
-		eleLabel.innerHTML = `<div class="col-1 pl-0 flex-vh-center"><input type="checkbox" class="no-events"></div>
-		<div class="col-4 bold">${mon.name}</div>
-		<div class="col-4">${type}</div>
-		<div class="col-2 text-center">${cr}</div>
-		<div class="col-1 text-center ${Parser.sourceJsonToColor(mon.source)} pr-0" title="${Parser.sourceJsonToFull(mon.source)}" ${BrewUtil.sourceJsonToStyle(mon.source)}>${source}</div>`;
+		eleRow.innerHTML = `<div class="w-100 flex-vh-center lst--border no-select lst__wrp-cells">
+			<div class="col-0-5 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 
-		return new ListItem(
+			<div class="col-0-5 px-1 flex-vh-center">
+				<div class="ui-list__btn-inline px-2" title="Toggle Preview">[+]</div>
+			</div>
+
+			<div class="col-4 ${this._getNameStyle()}">${mon.name}</div>
+			<div class="col-4">${type}</div>
+			<div class="col-2 text-center">${cr}</div>
+			<div class="col-1 text-center ${Parser.sourceJsonToColor(mon.source)} pr-0" title="${Parser.sourceJsonToFull(mon.source)}" ${BrewUtil.sourceJsonToStyle(mon.source)}>${source}</div>
+		</div>`;
+
+		const listItem = new ListItem(
 			itI,
-			eleLabel,
+			eleRow,
 			mon.name,
 			{
 				hash,
@@ -444,8 +455,13 @@ class ModalFilterBestiary extends ModalFilter {
 				cr,
 			},
 			{
-				cbSel: eleLabel.firstElementChild.firstElementChild,
+				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 			},
 		);
+
+		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
+		ListUiUtil.bindPreviewButton(UrlUtil.PG_BESTIARY, this._allData, listItem, btnShowHidePreview);
+
+		return listItem;
 	}
 }

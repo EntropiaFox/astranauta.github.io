@@ -20,14 +20,14 @@ class VehiclesPage extends ListPage {
 	getListItem (it, vhI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		eleLi.innerHTML = `<a href="#${UrlUtil.autoEncodeHash(it)}" class="lst--border">
-			<span class="col-6 pl-0 text-center">${Parser.vehicleTypeToFull(it.vehicleType || it.upgradeType)}</span>
+		eleLi.innerHTML = `<a href="#${UrlUtil.autoEncodeHash(it)}" class="lst--border lst__row-inner">
+			<span class="col-6 pl-0 text-center">${it.vehicleType ? Parser.vehicleTypeToFull(it.vehicleType) : it.upgradeType.map(t => Parser.vehicleTypeToFull(t))}</span>
 			<span class="bold col-4">${it.name}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
@@ -63,11 +63,12 @@ class VehiclesPage extends ListPage {
 	getSublistItem (it, pinId) {
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		const $ele = $(`<li class="row"><a href="#${hash}" class="lst--border">
-			<span class="col-8 pl-0 text-center">${Parser.vehicleTypeToFull(it.vehicleType || it.upgradeType)}</span>
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col"><a href="#${hash}" class="lst--border lst__row-inner">
+			<span class="col-8 pl-0 text-center">${it.vehicleType ? Parser.vehicleTypeToFull(it.vehicleType) : it.upgradeType.map(t => Parser.vehicleTypeToFull(t))}</span>
 			<span class="bold col-4 pr-0">${it.name}</span>
-		</a></li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</a></div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,
@@ -111,23 +112,31 @@ class VehiclesPage extends ListPage {
 			});
 		}
 
-		const statTab = Renderer.utils.tabButton(
-			"Item",
-			() => $floatToken.show(),
-			buildStatsTab,
-		);
-		const infoTab = Renderer.utils.tabButton(
-			"Info",
-			() => $floatToken.hide(),
-			buildFluffTab,
-		);
-		const picTab = Renderer.utils.tabButton(
-			"Images",
-			() => $floatToken.hide(),
-			() => buildFluffTab(true),
-		);
+		const tabMetas = [
+			new Renderer.utils.TabButton({
+				label: "Item",
+				fnChange: () => $floatToken.show(),
+				fnPopulate: buildStatsTab,
+				isVisible: true,
+			}),
+			new Renderer.utils.TabButton({
+				label: "Info",
+				fnChange: () => $floatToken.hide(),
+				fnPopulate: buildFluffTab,
+				isVisible: Renderer.utils.hasFluffText(veh),
+			}),
+			new Renderer.utils.TabButton({
+				label: "Images",
+				fnChange: () => $floatToken.hide(),
+				fnPopulate: buildFluffTab.bind(null, true),
+				isVisible: Renderer.utils.hasFluffImages(veh),
+			}),
+		];
 
-		Renderer.utils.bindTabButtons(statTab, infoTab, picTab);
+		Renderer.utils.bindTabButtons({
+			tabButtons: tabMetas.filter(it => it.isVisible),
+			tabLabelReference: tabMetas.map(it => it.label),
+		});
 
 		ListUtil.updateSelected();
 	}
@@ -136,7 +145,27 @@ class VehiclesPage extends ListPage {
 		sub = this._filterBox.setFromSubHashes(sub);
 		await ListUtil.pSetFromSubHashes(sub);
 	}
+
+	_getSearchCache (entity) {
+		if (this.constructor._INDEXABLE_PROPS.every(it => !entity[it])) return "";
+		const ptrOut = {_: ""};
+		this.constructor._INDEXABLE_PROPS.forEach(it => this._getSearchCache_handleEntryProp(entity, it, ptrOut));
+		return ptrOut._;
+	}
 }
+VehiclesPage._INDEXABLE_PROPS = [
+	"control",
+	"movement",
+	"weapon",
+	"other",
+	"entries",
+
+	"actionStation",
+
+	"action",
+	"trait",
+	"reaction",
+];
 
 const vehiclesPage = new VehiclesPage();
 window.addEventListener("load", () => vehiclesPage.pOnLoad());

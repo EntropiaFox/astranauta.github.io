@@ -4,10 +4,38 @@ const ListUtil = {
 	SUB_HASH_PREFIX: "sublistselected",
 
 	_firstInit: true,
+	_isPreviewable: false,
+	_isFindHotkeyBound: false,
 	initList (listOpts) {
 		const $iptSearch = $("#lst__search");
-		const $wrpList = $(`ul.list.${listOpts.listClass}`);
+		const $wrpList = $(`.list.${listOpts.listClass}`);
 		const list = new List({$iptSearch, $wrpList, ...listOpts});
+
+		if (listOpts.isPreviewable) ListUtil._isPreviewable = true;
+
+		const helpText = [];
+
+		if (listOpts.isBindFindHotkey && !ListUtil._isFindHotkeyBound) {
+			helpText.push(`Hotkey: f.`);
+
+			$(document.body).on("keypress", (e) => {
+				if (!EventUtil.noModifierKeys(e) || EventUtil.isInInput(e)) return;
+				if (e.key === "f") {
+					e.preventDefault();
+					$iptSearch.select().focus();
+				}
+			});
+		}
+
+		if (listOpts.syntax) {
+			Object.values(listOpts.syntax)
+				.filter(({help}) => help)
+				.forEach(({help}) => {
+					helpText.push(help);
+				});
+		}
+
+		if (helpText.length) $iptSearch.title(helpText.join(" "));
 
 		$("#reset").click(function () {
 			$iptSearch.val("");
@@ -30,7 +58,7 @@ const ListUtil = {
 		if (ListUtil._firstInit) {
 			ListUtil._firstInit = false;
 			const $headDesc = $(`.page__subtitle`);
-			$headDesc.html(`${$headDesc.html()} Press J/K to navigate rows.`);
+			$headDesc.html(`${$headDesc.html()} Press J/K to navigate${ListUtil._isPreviewable ? `, M to expand` : ""}.`);
 			ListUtil._initList_bindWindowHandlers();
 		}
 
@@ -117,6 +145,10 @@ const ListUtil = {
 						}
 					}
 				}
+			} else if (ListUtil._isPreviewable && e.key === "m") {
+				if (EventUtil.isInInput(e)) return;
+				const it = Hist.getSelectedListElementWithLocation();
+				$(it.item.ele.firstElementChild.firstElementChild).click();
 			}
 		});
 	},
@@ -151,8 +183,17 @@ const ListUtil = {
 
 	openSubContextMenu (evt, listItem) {
 		const menu = ListUtil.contextMenuPinnableListSub || ListUtil.contextMenuAddableListSub;
+
+		const listSelected = ListUtil.sublist.getSelected();
+		const isItemInSelection = listSelected.length && listSelected.some(li => li === listItem);
+		const selection = isItemInSelection ? listSelected : [listItem];
+		if (!isItemInSelection) {
+			ListUtil.sublist.deselectAll();
+			ListUtil.sublist.doSelect(listItem);
+		}
+
 		const ele = listItem.ele instanceof $ ? listItem.ele[0] : listItem.ele;
-		ContextUtil.pOpenMenu(evt, menu, {ele: ele, selection: [listItem]});
+		ContextUtil.pOpenMenu(evt, menu, {ele: ele, selection});
 	},
 
 	$sublistContainer: null,
@@ -171,7 +212,7 @@ const ListUtil = {
 		if (options.customHashUnpacker !== undefined) ListUtil._customHashUnpackFn = options.customHashUnpacker; delete options.customHashUnpacker;
 
 		ListUtil.$sublistContainer = $("#sublistcontainer");
-		const $wrpSublist = $(`ul.${options.listClass}`);
+		const $wrpSublist = $(`.${options.listClass}`);
 		const sublist = new List({...options, $wrpList: $wrpSublist, isUseJquery: true});
 		ListUtil.sublist = sublist;
 
@@ -234,19 +275,25 @@ const ListUtil = {
 		return $btn;
 	},
 
-	bindPinButton: () => {
+	/**
+	 * @param [opts]
+	 * @param [opts.fnGetData]
+	 */
+	bindPinButton: (opts) => {
+		opts = opts || {};
 		ListUtil.getOrTabRightButton(`btn-pin`, `pushpin`)
 			.off("click")
 			.on("click", () => {
-				if (!ListUtil.isSublisted(Hist.lastLoadedId)) ListUtil.pDoSublistAdd(Hist.lastLoadedId, true);
-				else ListUtil.pDoSublistRemove(Hist.lastLoadedId);
+				const data = opts.fnGetData ? opts.fnGetData() : undefined;
+				if (!ListUtil.isSublisted(Hist.lastLoadedId, data)) ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, data});
+				else ListUtil.pDoSublistRemove(Hist.lastLoadedId, {doFinalize: true, data});
 			})
 			.title("Pin (Toggle)");
 	},
 
 	genericAddButtonHandler (evt, options = {}) {
-		if (evt.shiftKey) ListUtil.pDoSublistAdd(Hist.lastLoadedId, true, options.shiftCount || 20);
-		else ListUtil.pDoSublistAdd(Hist.lastLoadedId, true);
+		if (evt.shiftKey) ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, addCount: options.shiftCount || 20});
+		else ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true});
 	},
 	bindAddButton: (handlerGenerator, options = {}) => {
 		ListUtil.getOrTabRightButton(`btn-sublist-add`, `plus`)
@@ -399,7 +446,7 @@ const ListUtil = {
 		}
 	},
 
-	async pDoSublistAdd (index, doFinalise, addCount, data) {
+	async pDoSublistAdd (index, {doFinalize = false, addCount = 1, data = null} = {}) {
 		if (index == null) {
 			return JqueryUtil.doToast({
 				content: "Please first view something from the list.",
@@ -413,11 +460,11 @@ const ListUtil = {
 
 		if (count !== 0) {
 			ListUtil._setViewCount(index, count + addCount, data);
-			if (doFinalise) await ListUtil._pFinaliseSublist();
+			if (doFinalize) await ListUtil._pFinaliseSublist();
 		} else {
 			const listItem = await ListUtil._getSublistRow(ListUtil._allItems[index], index, addCount, data);
 			ListUtil.sublist.addItem(listItem);
-			if (doFinalise) await ListUtil._pFinaliseSublist();
+			if (doFinalize) await ListUtil._pFinaliseSublist();
 		}
 	},
 
@@ -430,7 +477,7 @@ const ListUtil = {
 			ListUtil.sublist.update();
 			await ListUtil._pSaveSublist();
 			ListUtil._handleCallUpdateFn();
-		} else if (count) await ListUtil.pDoSublistRemove(index, data);
+		} else if (count) await ListUtil.pDoSublistRemove(index, {doFinalize: true, data});
 	},
 
 	getSublisted () {
@@ -485,14 +532,12 @@ const ListUtil = {
 		else ListUtil.$sublistContainer.removeClass("sublist--visible");
 	},
 
-	async pDoSublistRemove (index, data) {
-		ListUtil._deletePinnedCount(index, data);
-		if (data && data.customHashId) ListUtil.sublist.removeItemByData("customHashId", data.customHashId);
+	async pDoSublistRemove (index, opts = {doFinalize: true, data: null}) {
+		ListUtil._deletePinnedCount(index, opts.data);
+		if (opts.data && opts.data.customHashId) ListUtil.sublist.removeItemByData("customHashId", opts.data.customHashId);
 		else ListUtil.sublist.removeItem(index);
-		ListUtil.sublist.update();
-		ListUtil._updateSublistVisibility();
-		await ListUtil._pSaveSublist();
-		ListUtil._handleCallUpdateFn();
+
+		if (opts.doFinalize) await ListUtil._pFinaliseSublist();
 	},
 
 	async pDoSublistRemoveAll (noSave) {
@@ -506,14 +551,6 @@ const ListUtil = {
 
 	isSublisted: (index, data) => {
 		return ListUtil._getPinnedCount(index, data);
-	},
-
-	mapSelectedWithDeslect (list, mapFunc) {
-		return list.getSelected()
-			.map(it => {
-				it.isSelected = false;
-				mapFunc(it.ix);
-			});
 	},
 
 	_handleCallUpdateFn: () => {
@@ -551,7 +588,7 @@ const ListUtil = {
 		// Do this in series to ensure sublist items are added before having their counts updated
 		//  This only becomes a problem when there are duplicate items in the list, but as we're not finalizing, the
 		//  performance implications are negligible.
-		for (const it of toLoad) await ListUtil.pDoSublistAdd(it.index, false, it.addCount, it.data);
+		for (const it of toLoad) await ListUtil.pDoSublistAdd(it.index, {doFinalize: false, addCount: it.addCount, data: it.data});
 		await ListUtil._pFinaliseSublist(true);
 	},
 
@@ -581,9 +618,13 @@ const ListUtil = {
 			new ContextUtil.Action(
 				"Pin",
 				async () => {
-					await Promise.all(
-						ListUtil._primaryLists.map(l => Promise.all(ListUtil.mapSelectedWithDeslect(l, (it) => ListUtil.isSublisted(it) ? Promise.resolve() : ListUtil.pDoSublistAdd(it)))),
-					);
+					for (const list of ListUtil._primaryLists) {
+						for (const li of list.getSelected()) {
+							li.isSelected = false;
+							if (!ListUtil.isSublisted(li.ix)) await ListUtil.pDoSublistAdd(li.ix);
+						}
+					}
+
 					await ListUtil._pFinaliseSublist();
 				},
 			),
@@ -599,9 +640,12 @@ const ListUtil = {
 			),
 			new ContextUtil.Action(
 				"Unpin",
-				(evt, userData) => {
+				async (evt, userData) => {
 					const {selection} = userData;
-					selection.forEach(item => ListUtil.pDoSublistRemove(item.ix));
+					for (const item of selection) {
+						await ListUtil.pDoSublistRemove(item.ix, {isFinalize: false});
+					}
+					await ListUtil._pFinaliseSublist();
 				},
 			),
 			new ContextUtil.Action(
@@ -647,9 +691,13 @@ const ListUtil = {
 			new ContextUtil.Action(
 				"Add",
 				async () => {
-					await Promise.all(
-						ListUtil._primaryLists.map(l => Promise.all(ListUtil.mapSelectedWithDeslect(l, (it) => ListUtil.pDoSublistAdd(it)))),
-					);
+					for (const list of ListUtil._primaryLists) {
+						for (const li of list.getSelected()) {
+							li.isSelected = false;
+							await ListUtil.pDoSublistAdd(li.ix);
+						}
+					}
+
 					await ListUtil._pFinaliseSublist();
 					ListUtil.updateSelected();
 				},
@@ -669,7 +717,7 @@ const ListUtil = {
 				(evt, userData) => {
 					const {selection} = userData;
 					selection.forEach(item => {
-						if (item.data.customHashId) ListUtil.pDoSublistRemove(item.ix, {customHashId: item.data.customHashId});
+						if (item.data.customHashId) ListUtil.pDoSublistRemove(item.ix, {data: {customHashId: item.data.customHashId}});
 						else ListUtil.pDoSublistRemove(item.ix);
 					});
 				},
@@ -751,8 +799,9 @@ const ListUtil = {
 			const hash = UrlUtil.autoEncodeHash(toRender);
 			const posOffset = Renderer.hover._BAR_HEIGHT * i;
 
+			const page = UrlUtil.getCurrentPage();
 			Renderer.hover.getShowWindow(
-				Renderer.hover.$getHoverContent_stats(UrlUtil.getCurrentPage(), toRender),
+				Renderer.hover.$getHoverContent_stats(page, toRender),
 				Renderer.hover.getWindowPositionExact(
 					elePos.x + posOffset,
 					elePos.y + posOffset,
@@ -762,6 +811,7 @@ const ListUtil = {
 					title: toRender.name,
 					isPermanent: true,
 					pageUrl: `${page}#${hash}`,
+					isBookContent: page === UrlUtil.PG_RECIPES,
 				},
 			);
 		}
@@ -941,4 +991,7 @@ const ListUtil = {
 			$btnHideSearch.show();
 		});
 	},
+
+	doDeselectAll () { ListUtil.getPrimaryLists().forEach(list => list.deselectAll()); },
+	doSublistDeselectAll () { ListUtil.sublist.deselectAll(); },
 };

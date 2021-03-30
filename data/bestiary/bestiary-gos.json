@@ -96,7 +96,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Barnacle Bess",
@@ -245,7 +246,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Bullywug Royal",
@@ -385,7 +387,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Captain Xendros",
@@ -534,7 +537,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drowned Assassin",
@@ -665,7 +670,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drowned Blade",
@@ -770,7 +777,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drowned Master",
@@ -901,7 +910,9 @@
 			],
 			"conditionInflict": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fish",
@@ -982,7 +993,8 @@
 			],
 			"conditionInflict": [
 				"stunned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant Sea Eel",
@@ -1055,7 +1067,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant White Moray Eel",
@@ -1219,7 +1232,8 @@
 			"conditionInflict": [
 				"charmed",
 				"incapacitated"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Juvenile Kraken",
@@ -1399,7 +1413,9 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Koalinth",
@@ -1494,7 +1510,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Koalinth Sergeant",
@@ -1607,7 +1625,8 @@
 				"GO"
 			],
 			"damageTags": [
-				"P"
+				"P",
+				"S"
 			],
 			"miscTags": [
 				"MW",
@@ -1616,7 +1635,9 @@
 			],
 			"conditionInflict": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Krell Grohlg",
@@ -1780,7 +1801,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Living Iron Statue",
@@ -1891,7 +1913,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Lizardfolk Commoner",
@@ -1967,7 +1990,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Lizardfolk Render",
@@ -2083,7 +2107,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Lizardfolk Scaleshield",
@@ -2189,7 +2214,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Lizardfolk Subchief",
@@ -2332,7 +2358,8 @@
 				"deafened",
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Locathah",
@@ -2431,7 +2458,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Locathah Hunter",
@@ -2535,7 +2564,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Master Refrum",
@@ -2693,7 +2724,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Merfolk Salvager",
@@ -2783,7 +2815,8 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Merfolk Scout",
@@ -2935,7 +2968,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Monstrous Peryton",
@@ -3074,7 +3108,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mr. Dory",
@@ -3218,7 +3254,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Oceanus",
@@ -3321,7 +3359,8 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Othokent",
@@ -3443,7 +3482,8 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Pirate Captain",
@@ -3547,7 +3587,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Pirate Deck Wizard",
@@ -3658,7 +3699,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Pirate First Mate",
@@ -3739,7 +3781,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Rip Tide Priest",
@@ -3850,7 +3893,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sahuagin Blademaster",
@@ -3976,7 +4020,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sahuagin Champion",
@@ -4090,7 +4135,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sahuagin Coral Smasher",
@@ -4212,7 +4258,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sahuagin Deep Diver",
@@ -4357,7 +4404,8 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sahuagin Hatchling Swarm",
@@ -4456,11 +4504,13 @@
 				"SD"
 			],
 			"damageTags": [
-				"P"
+				"P",
+				"S"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sahuagin High Priestess",
@@ -4633,7 +4683,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sahuagin Wave Shaper",
@@ -4774,7 +4825,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sanbalet",
@@ -4872,7 +4924,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sauriv",
@@ -5018,7 +5071,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Skeletal Alchemist",
@@ -5116,7 +5170,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Skeletal Juggernaut",
@@ -5217,7 +5273,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Skeletal Swarm",
@@ -5318,7 +5375,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Skum",
@@ -5436,7 +5494,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thousand Teeth",
@@ -5555,7 +5615,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vampiric Jade Statue",
@@ -5679,12 +5741,14 @@
 				"CS"
 			],
 			"damageTags": [
+				"N",
 				"P",
 				"S"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Yalaga Maladwyn",

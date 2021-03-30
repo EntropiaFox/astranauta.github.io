@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.1.0",
+	"$id": "books.json",
+	"version": "1.2.0",
 	"type": "object",
 	"properties": {
 		"book": {
@@ -49,10 +50,14 @@
 													},
 													"header": {
 														"type": "string"
+													},
+													"index": {
+														"description": "The relative index of this header in the current chapter, i.e. if \"Treasure\" appears twice and you wish the contents entry to link to the second instance, set the \"index\" to 1.",
+														"type": "integer"
 													}
 												},
 												"required": [
-													"depth", "header"
+													"header"
 												]
 											}
 										]

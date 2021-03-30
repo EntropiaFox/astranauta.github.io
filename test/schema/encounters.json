@@ -1,11 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "encounters.json",
 	"version": "1.2.1",
 	"title": "EncounterArray",
 	"type": "object",
 
 	"definitions": {
 		"encounterTableRow": {
+			"type": "object",
 			"properties": {
 				"min": {
 					"type": "integer"
@@ -26,6 +28,7 @@
 		},
 
 		"encounterTable": {
+			"type": "object",
 			"properties": {
 				"minlvl": {
 					"type": "integer"
@@ -52,6 +55,7 @@
 		},
 
 		"encounter": {
+			"type": "object",
 			"properties": {
 				"name": {
 					"type": "string"

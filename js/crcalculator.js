@@ -300,8 +300,8 @@ function calculateCr () {
 
 function calculateHd () {
 	const avgHp = $("#hdval").html().split("d")[1] / 2 + 0.5;
-	const conMod = Math.floor(($("#con").val() - 10) / 2);
-	let curHd = Math.floor(parseInt($("#hp").val()) / (avgHp + conMod));
+	const conMod = Math.round(($("#con").val() - 10) / 2);
+	let curHd = Math.round(parseInt($("#hp").val()) / (avgHp + conMod));
 	if (!curHd) curHd = 1;
 	return curHd;
 }
@@ -309,7 +309,7 @@ function calculateHd () {
 function calculateHp () {
 	const avgHp = $("#hdval").html().split("d")[1] / 2 + 0.5;
 	const conMod = Math.floor(($("#con").val() - 10) / 2);
-	return Math.round((avgHp + conMod) * $("#hd").val());
+	return Math.floor((avgHp + conMod) * $("#hd").val());
 }
 
 function fractionStrToDecimal (str) {

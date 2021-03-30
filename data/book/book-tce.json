@@ -50,7 +50,9 @@
 							"href": {
 								"type": "internal",
 								"path": "book/TCE/000-00-003.png"
-							}
+							},
+							"width": 800,
+							"height": 1000
 						},
 						{
 							"type": "entries",
@@ -189,7 +191,9 @@
 						"type": "internal",
 						"path": "book/TCE/001-01-001.jpg"
 					},
-					"title": "The wizard Tasha studies magic outside the hut of her adoptive mother, Baba Yaga"
+					"title": "The wizard Tasha studies magic outside the hut of her adoptive mother, Baba Yaga",
+					"width": 1131,
+					"height": 1500
 				},
 				{
 					"type": "section",
@@ -292,7 +296,9 @@
 										"type": "internal",
 										"path": "book/TCE/003-01-004.artificer-vi.png"
 									},
-									"title": "The gnome artificer Vi and her cockatrice-like Eldritch Cannon battle foes atop a lightning train."
+									"title": "The gnome artificer Vi and her cockatrice-like Eldritch Cannon battle foes atop a lightning train.",
+									"width": 1200,
+									"height": 800
 								},
 								{
 									"type": "image",
@@ -300,7 +306,9 @@
 										"type": "internal",
 										"path": "book/TCE/004-01-005.artificer.png"
 									},
-									"title": "Dwarf Alchemist with Homunculus Servant"
+									"title": "Dwarf Alchemist with Homunculus Servant",
+									"width": 800,
+									"height": 939
 								},
 								{
 									"type": "image",
@@ -308,7 +316,9 @@
 										"type": "internal",
 										"path": "book/TCE/005-01-006.png"
 									},
-									"title": "Armorers, a Drow Infiltrator and a Tiefling Guardian"
+									"title": "Armorers, a Drow Infiltrator and a Tiefling Guardian",
+									"width": 1200,
+									"height": 785
 								},
 								{
 									"type": "image",
@@ -316,7 +326,9 @@
 										"type": "internal",
 										"path": "book/TCE/006-01-007.png"
 									},
-									"title": "Human Artillerist with Eldritch Cannon"
+									"title": "Human Artillerist with Eldritch Cannon",
+									"width": 800,
+									"height": 1197
 								},
 								{
 									"type": "image",
@@ -324,7 +336,9 @@
 										"type": "internal",
 										"path": "book/TCE/007-01-008.png"
 									},
-									"title": "Gnome Battle Smith with Steel Defender"
+									"title": "Gnome Battle Smith with Steel Defender",
+									"width": 800,
+									"height": 780
 								},
 								{
 									"type": "image",
@@ -332,7 +346,9 @@
 										"type": "internal",
 										"path": "book/TCE/008-01-009.png"
 									},
-									"title": "Homunculus Servants"
+									"title": "Homunculus Servants",
+									"width": 1200,
+									"height": 835
 								}
 							]
 						}
@@ -383,7 +399,9 @@
 										"type": "internal",
 										"path": "book/TCE/010-01-012.png"
 									},
-									"title": "Human Barbarian of the Beast"
+									"title": "Human Barbarian of the Beast",
+									"width": 1000,
+									"height": 834
 								},
 								{
 									"type": "image",
@@ -391,7 +409,9 @@
 										"type": "internal",
 										"path": "book/TCE/011-01-013.png"
 									},
-									"title": "Wood Elf Barbarian of Wild Magic"
+									"title": "Wood Elf Barbarian of Wild Magic",
+									"width": 1000,
+									"height": 831
 								}
 							]
 						}
@@ -466,7 +486,9 @@
 										"type": "internal",
 										"path": "book/TCE/013-01-016.png"
 									},
-									"title": "A dragonborn bard of the College of Creation animates a statue to dance."
+									"title": "A dragonborn bard of the College of Creation animates a statue to dance.",
+									"width": 1200,
+									"height": 802
 								},
 								{
 									"type": "image",
@@ -474,7 +496,9 @@
 										"type": "internal",
 										"path": "book/TCE/014-01-017.png"
 									},
-									"title": "Drow Bard of Eloquence"
+									"title": "Drow Bard of Eloquence",
+									"width": 800,
+									"height": 1527
 								}
 							]
 						}
@@ -549,7 +573,9 @@
 										"type": "internal",
 										"path": "book/TCE/016-01-020.png"
 									},
-									"title": "A cleric harnesses divine power"
+									"title": "A cleric harnesses divine power",
+									"width": 800,
+									"height": 1013
 								},
 								{
 									"type": "image",
@@ -557,7 +583,9 @@
 										"type": "internal",
 										"path": "book/TCE/017-01-021.png"
 									},
-									"title": "Dragonborn Cleric of Order"
+									"title": "Dragonborn Cleric of Order",
+									"width": 800,
+									"height": 1643
 								},
 								{
 									"type": "image",
@@ -565,7 +593,9 @@
 										"type": "internal",
 										"path": "book/TCE/018-01-022.png"
 									},
-									"title": "Human Cleric of Peace"
+									"title": "Human Cleric of Peace",
+									"width": 800,
+									"height": 1535
 								},
 								{
 									"type": "image",
@@ -573,7 +603,9 @@
 										"type": "internal",
 										"path": "book/TCE/019-01-023.png"
 									},
-									"title": "Human Cleric of Twilight"
+									"title": "Human Cleric of Twilight",
+									"width": 800,
+									"height": 1072
 								}
 							]
 						}
@@ -648,7 +680,9 @@
 										"type": "internal",
 										"path": "book/TCE/021-01-026.png"
 									},
-									"title": "Druid with Wild Companion"
+									"title": "Druid with Wild Companion",
+									"width": 822,
+									"height": 1000
 								},
 								{
 									"type": "image",
@@ -656,7 +690,9 @@
 										"type": "internal",
 										"path": "book/TCE/022-01-027.png"
 									},
-									"title": "A gnome druid of spores picks mushrooms with his bullywug zombie companion."
+									"title": "A gnome druid of spores picks mushrooms with his bullywug zombie companion.",
+									"width": 1200,
+									"height": 802
 								},
 								{
 									"type": "image",
@@ -664,7 +700,9 @@
 										"type": "internal",
 										"path": "book/TCE/023-01-028.png"
 									},
-									"title": "Tiefling Druid of Stars"
+									"title": "Tiefling Druid of Stars",
+									"width": 675,
+									"height": 1000
 								},
 								{
 									"type": "image",
@@ -672,7 +710,9 @@
 										"type": "internal",
 										"path": "book/TCE/024-01-029.png"
 									},
-									"title": "Dwarf Druid of Wildfire"
+									"title": "Dwarf Druid of Wildfire",
+									"width": 1200,
+									"height": 832
 								}
 							]
 						}
@@ -764,7 +804,9 @@
 										"type": "internal",
 										"path": "book/TCE/026-01-032.png"
 									},
-									"title": "A young fighter spars with an instructor."
+									"title": "A young fighter spars with an instructor.",
+									"width": 1200,
+									"height": 802
 								},
 								{
 									"type": "image",
@@ -772,7 +814,9 @@
 										"type": "internal",
 										"path": "book/TCE/027-01-033.png"
 									},
-									"title": "High Elf Psi Warrior"
+									"title": "High Elf Psi Warrior",
+									"width": 823,
+									"height": 1000
 								},
 								{
 									"type": "image",
@@ -780,7 +824,9 @@
 										"type": "internal",
 										"path": "book/TCE/028-01-034.png"
 									},
-									"title": "Orc Rune Knight"
+									"title": "Orc Rune Knight",
+									"width": 800,
+									"height": 1693
 								}
 							]
 						},
@@ -793,7 +839,9 @@
 										"type": "internal",
 										"path": "book/TCE/029-01-035.png"
 									},
-									"title": "Shock Trooper"
+									"title": "Shock Trooper",
+									"width": 800,
+									"height": 1000
 								}
 							]
 						},
@@ -1208,7 +1256,9 @@
 										"type": "internal",
 										"path": "book/TCE/031-01-038.png"
 									},
-									"title": "An orc monk of the Four Elements unleashes a ki-fueled attack."
+									"title": "An orc monk of the Four Elements unleashes a ki-fueled attack.",
+									"width": 1200,
+									"height": 802
 								},
 								{
 									"type": "image",
@@ -1216,7 +1266,9 @@
 										"type": "internal",
 										"path": "book/TCE/032-01-039.png"
 									},
-									"title": "Wood Elf Monk of Mercy"
+									"title": "Wood Elf Monk of Mercy",
+									"width": 838,
+									"height": 1000
 								},
 								{
 									"type": "image",
@@ -1224,7 +1276,9 @@
 										"type": "internal",
 										"path": "book/TCE/033-01-040.png"
 									},
-									"title": "Dragonborn Monk of the Astral Self"
+									"title": "Dragonborn Monk of the Astral Self",
+									"width": 1000,
+									"height": 992
 								}
 							]
 						}
@@ -1312,7 +1366,9 @@
 										"type": "internal",
 										"path": "book/TCE/035-01-043.png"
 									},
-									"title": "A young paladin seeks divine guidance."
+									"title": "A young paladin seeks divine guidance.",
+									"width": 1200,
+									"height": 797
 								},
 								{
 									"type": "image",
@@ -1320,7 +1376,9 @@
 										"type": "internal",
 										"path": "book/TCE/036-01-044.png"
 									},
-									"title": "Tiefling Paladin of Glory"
+									"title": "Tiefling Paladin of Glory",
+									"width": 800,
+									"height": 1320
 								},
 								{
 									"type": "image",
@@ -1328,7 +1386,9 @@
 										"type": "internal",
 										"path": "book/TCE/037-01-045.png"
 									},
-									"title": "Dwarf Paladin of the Watchers"
+									"title": "Dwarf Paladin of the Watchers",
+									"width": 936,
+									"height": 1000
 								}
 							]
 						}
@@ -1423,7 +1483,9 @@
 										"type": "internal",
 										"path": "book/TCE/039-01-048.png"
 									},
-									"title": "A Halfling Ranger explores the wilds"
+									"title": "A Halfling Ranger explores the wilds",
+									"width": 800,
+									"height": 1000
 								},
 								{
 									"type": "image",
@@ -1431,7 +1493,9 @@
 										"type": "internal",
 										"path": "book/TCE/040-01-049.png"
 									},
-									"title": "Human Fey Wanderer"
+									"title": "Human Fey Wanderer",
+									"width": 800,
+									"height": 1265
 								},
 								{
 									"type": "image",
@@ -1439,8 +1503,19 @@
 										"type": "internal",
 										"path": "book/TCE/041-01-050.png"
 									},
-									"title": "Gnome Swarmkeeper"
+									"title": "Gnome Swarmkeeper",
+									"width": 860,
+									"height": 1000
 								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Beast Master Companions",
+							"id": "170",
+							"entries": [
+								"The {@class ranger|phb|Beast Master|Beast Master} in the {@book Player's Handbook|PHB} forms a mystical bond with an animal. As an alternative, a Beast Master can take the feature below to form a bond with a special primal beast instead.",
+								"{@subclassFeature Primal Companion|Ranger|PHB|Beast Master|PHB|3|TCE} ({@i 3rd-level Beast Master feature, which replaces the Ranger's Companion feature})"
 							]
 						}
 					]
@@ -1488,7 +1563,9 @@
 										"type": "internal",
 										"path": "book/TCE/043-01-053.png"
 									},
-									"title": "A Drow Rogue takes aim."
+									"title": "A Drow Rogue takes aim.",
+									"width": 932,
+									"height": 1000
 								},
 								{
 									"type": "image",
@@ -1496,7 +1573,9 @@
 										"type": "internal",
 										"path": "book/TCE/044-01-054.png"
 									},
-									"title": "Tiefling Phantom"
+									"title": "Tiefling Phantom",
+									"width": 800,
+									"height": 1380
 								},
 								{
 									"type": "image",
@@ -1504,7 +1583,9 @@
 										"type": "internal",
 										"path": "book/TCE/045-01-055.png"
 									},
-									"title": "Halfling Soulknife"
+									"title": "Halfling Soulknife",
+									"width": 800,
+									"height": 1016
 								}
 							]
 						}
@@ -1581,7 +1662,9 @@
 										"type": "internal",
 										"path": "book/TCE/047-01-058.png"
 									},
-									"title": "A Sorcerer uses transmuted spell"
+									"title": "A Sorcerer uses transmuted spell",
+									"width": 987,
+									"height": 1000
 								},
 								{
 									"type": "image",
@@ -1589,7 +1672,9 @@
 										"type": "internal",
 										"path": "book/TCE/048-01-059.png"
 									},
-									"title": "Tiefling Aberrant Mind"
+									"title": "Tiefling Aberrant Mind",
+									"width": 800,
+									"height": 1463
 								},
 								{
 									"type": "image",
@@ -1597,7 +1682,9 @@
 										"type": "internal",
 										"path": "book/TCE/049-01-060.png"
 									},
-									"title": "Human Clockwork Soul"
+									"title": "Human Clockwork Soul",
+									"width": 800,
+									"height": 1332
 								}
 							]
 						}
@@ -1703,7 +1790,9 @@
 										"type": "internal",
 										"path": "book/TCE/051-01-063.png"
 									},
-									"title": "A tiefling warlock calls on the power of his talisman."
+									"title": "A tiefling warlock calls on the power of his talisman.",
+									"width": 800,
+									"height": 1466
 								},
 								{
 									"type": "image",
@@ -1711,7 +1800,9 @@
 										"type": "internal",
 										"path": "book/TCE/052-01-064.png"
 									},
-									"title": "Human Warlock of the Fathomless"
+									"title": "Human Warlock of the Fathomless",
+									"width": 800,
+									"height": 1290
 								},
 								{
 									"type": "image",
@@ -1719,7 +1810,9 @@
 										"type": "internal",
 										"path": "book/TCE/053-01-065.png"
 									},
-									"title": "A warlock uses a genie's vessel to battle a cyclops."
+									"title": "A warlock uses a genie's vessel to battle a cyclops.",
+									"width": 1200,
+									"height": 802
 								}
 							]
 						}
@@ -1792,7 +1885,9 @@
 										"type": "internal",
 										"path": "book/TCE/055-01-068.png"
 									},
-									"title": "A Drow and a High Elf Bladesinger"
+									"title": "A Drow and a High Elf Bladesinger",
+									"width": 1200,
+									"height": 935
 								},
 								{
 									"type": "image",
@@ -1800,7 +1895,9 @@
 										"type": "internal",
 										"path": "book/TCE/056-01-069.png"
 									},
-									"title": "Human Wizard, Order of Scribes"
+									"title": "Human Wizard, Order of Scribes",
+									"width": 800,
+									"height": 1353
 								}
 							]
 						}
@@ -1843,7 +1940,9 @@
 										"type": "internal",
 										"path": "book/TCE/057-01-070.png"
 									},
-									"title": "Eldritch Adept"
+									"title": "Eldritch Adept",
+									"width": 800,
+									"height": 1214
 								},
 								{
 									"type": "image",
@@ -1851,7 +1950,9 @@
 										"type": "internal",
 										"path": "book/TCE/058-01-071.png"
 									},
-									"title": "Astride a unicorn, a telepathic bard inspires her wizard companion."
+									"title": "Astride a unicorn, a telepathic bard inspires her wizard companion.",
+									"width": 1200,
+									"height": 802
 								}
 							]
 						}
@@ -1873,7 +1974,9 @@
 						"type": "internal",
 						"path": "book/TCE/059-02-001.jpg"
 					},
-					"title": "A group of wizards pledges themselves to their patron, Tasha, the Witch Queen"
+					"title": "A group of wizards pledges themselves to their patron, Tasha, the Witch Queen",
+					"width": 1133,
+					"height": 1500
 				},
 				{
 					"type": "section",
@@ -2000,7 +2103,9 @@
 												"type": "internal",
 												"path": "book/TCE/060-02-002.png"
 											},
-											"title": "Wizardly boyfriends relax while their classmates practice magic at an arcane enclave"
+											"title": "Wizardly boyfriends relax while their classmates practice magic at an arcane enclave",
+											"width": 1200,
+											"height": 786
 										}
 									]
 								},
@@ -2279,7 +2384,9 @@
 												"type": "internal",
 												"path": "book/TCE/061-02-003.png"
 											},
-											"title": "Azalin, the lich, spies on Castle Ravenloft"
+											"title": "Azalin, the lich, spies on Castle Ravenloft",
+											"width": 800,
+											"height": 1049
 										},
 										{
 											"type": "entries",
@@ -2540,7 +2647,9 @@
 												"type": "internal",
 												"path": "book/TCE/062-02-004.png"
 											},
-											"title": "A Wood Elf Aristocrat"
+											"title": "A Wood Elf Aristocrat",
+											"width": 800,
+											"height": 1728
 										},
 										{
 											"type": "entries",
@@ -2895,7 +3004,9 @@
 												"type": "internal",
 												"path": "book/TCE/063-02-005.png"
 											},
-											"title": "Ott Steeltoes holds aloft Sylgar, the infamous fish of the crime lord Xanathar"
+											"title": "Ott Steeltoes holds aloft Sylgar, the infamous fish of the crime lord Xanathar",
+											"width": 800,
+											"height": 1043
 										}
 									]
 								},
@@ -3063,7 +3174,9 @@
 												"type": "internal",
 												"path": "book/TCE/064-02-006.png"
 											},
-											"title": "A hero fights the bullywug who guards the villainous master of the bakers' guild"
+											"title": "A hero fights the bullywug who guards the villainous master of the bakers' guild",
+											"width": 1200,
+											"height": 776
 										}
 									]
 								},
@@ -3333,7 +3446,9 @@
 												"type": "internal",
 												"path": "book/TCE/065-02-007.png"
 											},
-											"title": "A Dragonborn Messenger of the Purple Dragon Knights"
+											"title": "A Dragonborn Messenger of the Purple Dragon Knights",
+											"width": 836,
+											"height": 1000
 										},
 										{
 											"type": "entries",
@@ -3594,7 +3709,9 @@
 												"type": "internal",
 												"path": "book/TCE/066-02-008.png"
 											},
-											"title": "Acolytes prepare for a couatl festival"
+											"title": "Acolytes prepare for a couatl festival",
+											"width": 1200,
+											"height": 784
 										}
 									]
 								},
@@ -3855,7 +3972,9 @@
 												"type": "internal",
 												"path": "book/TCE/067-02-009.png"
 											},
-											"title": "A Merfolk Sovereign"
+											"title": "A Merfolk Sovereign",
+											"width": 800,
+											"height": 1053
 										},
 										"With the sovereign as your group's patron, you gain the following perks.",
 										{
@@ -4056,7 +4175,9 @@
 								"type": "internal",
 								"path": "book/TCE/068-02-010.png"
 							},
-							"title": "In the city of Sigil, Guildmaster Rhys realizes that finding capable recruits is one of the main challenges of being a patron"
+							"title": "In the city of Sigil, Guildmaster Rhys realizes that finding capable recruits is one of the main challenges of being a patron",
+							"width": 1200,
+							"height": 848
 						},
 						"For some players, the idea of running a crime syndicate, mercenary company, arcane scholars' collective, or other organization is far more exciting than working for someone else. Founding your own organization offers a greater degree of autonomy, though potentially at the cost of support and reliable work.",
 						" When you're the boss, the perks of belonging to an organization become expenses you have to worry about; when you run your own mercenary company, for example, you need to stock your own armory, rather than drawing on an existing organization's stockpile. The organization brings in income, but you'll have to spend it to keep the organization running.",
@@ -4081,7 +4202,9 @@
 						"type": "internal",
 						"path": "book/TCE/069-03-001.jpg"
 					},
-					"title": "In her lab, Tasha confers with the demon lord Graz'zt through a magic mirror"
+					"title": "In her lab, Tasha confers with the demon lord Graz'zt through a magic mirror",
+					"width": 1129,
+					"height": 1500
 				},
 				{
 					"type": "section",
@@ -4368,7 +4491,9 @@
 								"type": "internal",
 								"path": "book/TCE/075-03-007.png"
 							},
-							"title": "A farmer sorcerer hurls magic missiles that look like chickens"
+							"title": "A farmer sorcerer hurls magic missiles that look like chickens",
+							"width": 1200,
+							"height": 800
 						}
 					]
 				},
@@ -4653,7 +4778,9 @@
 										"type": "internal",
 										"path": "book/TCE/076-03-008.png"
 									},
-									"title": "An orc artist creates a tattoo on his elf friend"
+									"title": "An orc artist creates a tattoo on his elf friend",
+									"width": 1200,
+									"height": 800
 								},
 								{
 									"type": "table",
@@ -4772,7 +4899,9 @@
 						"type": "internal",
 						"path": "book/TCE/090-04-001.jpg"
 					},
-					"title": "Tasha prepares to win another game of wizardly chess against her rival Mordenkainen."
+					"title": "Tasha prepares to win another game of wizardly chess against her rival Mordenkainen.",
+					"width": 1128,
+					"height": 1500
 				},
 				{
 					"type": "section",
@@ -4874,7 +5003,9 @@
 												"type": "internal",
 												"path": "book/TCE/091-04-002.png"
 											},
-											"title": "During a festival below one of the walking statues of Waterdeep, young friends dream of embarking on adventures together."
+											"title": "During a festival below one of the walking statues of Waterdeep, young friends dream of embarking on adventures together.",
+											"width": 1200,
+											"height": 800
 										}
 									]
 								}
@@ -5063,7 +5194,9 @@
 										"type": "internal",
 										"path": "book/TCE/092-04-003.png"
 									},
-									"title": "Experts, Left to Right: a Tortle, a Winged Kobold, and a Kenku"
+									"title": "Experts, Left to Right: a Tortle, a Winged Kobold, and a Kenku",
+									"width": 1200,
+									"height": 584
 								},
 								{
 									"type": "image",
@@ -5071,7 +5204,9 @@
 										"type": "internal",
 										"path": "book/TCE/093-04-004.png"
 									},
-									"title": "Spellcasters, Left to Right: a Bullywug, a Goblin, and a Tabaxi"
+									"title": "Spellcasters, Left to Right: a Bullywug, a Goblin, and a Tabaxi",
+									"width": 1200,
+									"height": 749
 								},
 								{
 									"type": "image",
@@ -5079,7 +5214,9 @@
 										"type": "internal",
 										"path": "book/TCE/094-04-005.png"
 									},
-									"title": "Warriors, Left to Right: an Aasimar, a Firbolg, and a Wolf"
+									"title": "Warriors, Left to Right: an Aasimar, a Firbolg, and a Wolf",
+									"width": 1200,
+									"height": 862
 								}
 							]
 						}
@@ -5105,7 +5242,9 @@
 								"type": "internal",
 								"path": "book/TCE/095-04-006.png"
 							},
-							"title": "Adventurers offer meat to an owlbear."
+							"title": "Adventurers offer meat to an owlbear.",
+							"width": 1200,
+							"height": 800
 						},
 						{
 							"type": "entries",
@@ -5614,7 +5753,12 @@
 								}
 							]
 						}
-					]
+					],
+					"data": {
+						"variantRuleInclude": {
+							"ruleType": "O"
+						}
+					}
 				},
 				{
 					"type": "section",
@@ -5674,7 +5818,9 @@
 												"type": "internal",
 												"path": "book/TCE/096-04-007.png"
 											},
-											"title": "A Blessed Ki-rin Shrine"
+											"title": "A Blessed Ki-rin Shrine",
+											"width": 1200,
+											"height": 800
 										},
 										{
 											"type": "table",
@@ -5783,7 +5929,9 @@
 												"type": "internal",
 												"path": "book/TCE/097-04-008.png"
 											},
-											"title": "A Far Realm Incursion with Mind Flayer Nautiloids"
+											"title": "A Far Realm Incursion with Mind Flayer Nautiloids",
+											"width": 1200,
+											"height": 776
 										},
 										{
 											"type": "table",
@@ -5877,7 +6025,9 @@
 												"type": "internal",
 												"path": "book/TCE/098-04-009.png"
 											},
-											"title": "A Haunted Manor"
+											"title": "A Haunted Manor",
+											"width": 1200,
+											"height": 800
 										},
 										{
 											"type": "table",
@@ -5998,7 +6148,9 @@
 												"type": "internal",
 												"path": "book/TCE/099-04-010.png"
 											},
-											"title": "An Infested City"
+											"title": "An Infested City",
+											"width": 1200,
+											"height": 800
 										},
 										{
 											"type": "table",
@@ -6115,7 +6267,9 @@
 												"type": "internal",
 												"path": "book/TCE/100-04-011.png"
 											},
-											"title": "A Tailor Shop in a Mirror Zone"
+											"title": "A Tailor Shop in a Mirror Zone",
+											"width": 1200,
+											"height": 800
 										},
 										{
 											"type": "table",
@@ -6220,7 +6374,9 @@
 												"type": "internal",
 												"path": "book/TCE/101-04-012.png"
 											},
-											"title": "Animals converse after gaining sapience from ambient psychic energy."
+											"title": "Animals converse after gaining sapience from ambient psychic energy.",
+											"width": 1200,
+											"height": 800
 										},
 										{
 											"type": "table",
@@ -6333,7 +6489,9 @@
 												"type": "internal",
 												"path": "book/TCE/102-04-013.png"
 											},
-											"title": "A wood elf child reaches for unraveling magic."
+											"title": "A wood elf child reaches for unraveling magic.",
+											"width": 1200,
+											"height": 800
 										},
 										{
 											"type": "table",
@@ -6446,7 +6604,9 @@
 										"type": "internal",
 										"path": "book/TCE/103-04-014.png"
 									},
-									"title": "Eldritch Storm"
+									"title": "Eldritch Storm",
+									"width": 1200,
+									"height": 800
 								},
 								{
 									"type": "entries",
@@ -6456,37 +6616,13 @@
 									"entries": [
 										"When magical currents become trapped amid winds and clouds, eldritch storms can result.",
 										{
-											"type": "entries",
-											"name": "Flaywind",
-											"page": 163,
-											"id": "384",
-											"entries": [
-												"Supernaturally powerful winds\u2014like those from planes such as Pandemonium or Minethys, the third layer of Carceri\u2014can spawn flaywinds. A flaywind is an intense sandstorm, gathering large rocks and other debris in addition to sand or grit. The area within the storm is heavily obscured, and a creature exposed to the storm takes {@dice 1d4} slashing damage at the start of each of its turns. Only substantial cover or shelter offers protection against the flensing grit.",
-												" A flaywind leaves {@dice 4d6} feet of sand or debris in its wake. A successful DC 15 Intelligence ({@skill Arcana}) or ({@skill Nature}) check or Wisdom ({@skill Survival}) check allows a character to recognize a flaywind 1 minute before it strikes, allowing time to seek shelter. A flaywind typically lasts {@dice 1d4 × 10} hours."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Flame Storm",
-											"page": 163,
-											"id": "385",
-											"entries": [
-												"Sooty thunderclouds shot through with red and orange lightning release a deluge of fiery droplets. Any creature caught in the burning rain takes {@dice 2d6} fire damage at the start of each of its turns. The droplets ignite any flammable objects that aren't being worn or carried; otherwise, the droplets burn out immediately. The smoke, soot, crackle, and low roar of the storm impose disadvantage on Wisdom ({@skill Perception}) checks and ranged attack rolls.",
-												" A flame storm usually lasts {@dice 2d4} minutes, though the originating storm clouds can persist for days, creating multiple flame storms."
-											]
-										},
-										{
-											"type": "entries",
-											"name": "Necrotic Tempest",
-											"page": 163,
-											"id": "386",
-											"entries": [
-												"Storms infused with the essence of death roil with dark clouds that manifest leering skulls and bone-white lightning. Any creature exposed to the storm that isn't a construct or an undead must succeed on a DC 13 Constitution saving throw at the end of each minute or take {@dice 3d6} necrotic damage.",
-												" A creature that dies in a necrotic tempest rises as a {@creature skeleton} or {@creature zombie} (your choice) {@dice 1d10} minutes later.",
-												" A necrotic tempest lasts for {@dice 1d4} hours and leaves crops withered and wells undrinkable for {@dice 1d4} days after its passing.",
-												"{@b Thrym's Howl}. These bone-chilling blizzards drive a wall of wind and snow like a living glacier. The storm projects {@book extreme cold|DMG|5|Extreme Cold} (see the {@book Dungeon Master's Guide|DMG}). Due to the howling wind and dense blue-white ice particles, the area in the storm is heavily obscured, and ranged attack rolls and Wisdom ({@skill Perception}) checks made within it have disadvantage.",
-												" Any creature exposed to the storm at the start of its turn takes {@dice 2d6} cold damage and can't regain hit points until it spends at least 1 hour in a warm environment. A creature that dies in the storm freezes solid. Creatures that are immune to cold damage are immune to the effects of the storm and can see normally within it.",
-												" Thrym's howl typically lasts {@dice 2d10} hours."
+											"type": "list",
+											"columns": 3,
+											"items": [
+												"{@hazard Flaywind|TCE}",
+												"{@hazard Flame Storm|TCE}",
+												"{@hazard Necrotic Tempest|TCE}",
+												"{@hazard Thrym's Howl|TCE}"
 											]
 										}
 									]
@@ -6581,7 +6717,9 @@
 												"type": "internal",
 												"path": "book/TCE/104-04-015.png"
 											},
-											"title": "Enchanted Spring"
+											"title": "Enchanted Spring",
+											"width": 1200,
+											"height": 800
 										},
 										{
 											"type": "table",
@@ -6651,7 +6789,9 @@
 												"type": "internal",
 												"path": "book/TCE/105-04-016.png"
 											},
-											"title": "Magic Mushrooms"
+											"title": "Magic Mushrooms",
+											"width": 884,
+											"height": 1000
 										}
 									]
 								},
@@ -6760,7 +6900,9 @@
 														"type": "internal",
 														"path": "book/TCE/106-04-017.png"
 													},
-													"title": "Mimic Colony"
+													"title": "Mimic Colony",
+													"width": 1200,
+													"height": 800
 												}
 											]
 										}
@@ -6781,7 +6923,9 @@
 												"type": "internal",
 												"path": "book/TCE/107-04-018.png"
 											},
-											"title": "Tressym fly around a primal tree"
+											"title": "Tressym fly around a primal tree",
+											"width": 1200,
+											"height": 800
 										},
 										{
 											"type": "table",
@@ -6903,7 +7047,9 @@
 										"type": "internal",
 										"path": "book/TCE/108-04-019.png"
 									},
-									"title": "Falling into Water"
+									"title": "Falling into Water",
+									"width": 1200,
+									"height": 800
 								},
 								{
 									"type": "entries",
@@ -7138,7 +7284,9 @@
 									"href": {
 										"type": "internal",
 										"path": "book/TCE/109-04-020.png"
-									}
+									},
+									"width": 810,
+									"height": 1000
 								},
 								"{@i Difficulty: Easy}",
 								"This short puzzle works anywhere that makes sense for characters to peruse several paintings, such as in a museum or manor. These paintings could even appear in a sketchbook found in a dusty old drawer. This counting puzzle leads to a name of a creature.",
@@ -7276,7 +7424,9 @@
 									"href": {
 										"type": "internal",
 										"path": "book/TCE/110-04-021.png"
-									}
+									},
+									"width": 1200,
+									"height": 800
 								},
 								{
 									"type": "entries",
@@ -7312,7 +7462,9 @@
 												"type": "internal",
 												"path": "book/TCE/111-04-022.png"
 											},
-											"title": "Diagram 4.1: Reckless Steps Puzzle Solution"
+											"title": "Diagram 4.1: Reckless Steps Puzzle Solution",
+											"width": 974,
+											"height": 1127
 										}
 									]
 								},
@@ -7440,7 +7592,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/112-04-023.png"
-											}
+											},
+											"width": 1000,
+											"height": 941
 										},
 										"Show the players {@area puzzle handout 2|43a|x} (see the end of this chapter) when their characters examine the keys. Each key has a different number of teeth: six, five, four, and three, respectively.",
 										"Each lock has a creature molded in iron above it: a bat, snake, spider, or wolf, respectively. These locks can't be picked. If anything other than the correct key is placed inside a lock, creatures corresponding to the image above the lock ({@dice 1d4} {@creature Giant Bat||giant bats}, {@dice 1d4} {@creature Giant Poisonous Snake||giant poisonous snakes}, {@dice 1d4} {@creature Giant Wolf Spider||giant wolf spiders}, or {@dice 1d4} {@creature Wolf||wolves}) are summoned into the room. Each summoned creature is hostile and disappears after 10 minutes or when reduced to 0 hit points. These beasts can't be {@condition charmed} or {@condition frightened}."
@@ -7564,7 +7718,9 @@
 												"type": "internal",
 												"path": "book/TCE/113-04-024.png"
 											},
-											"title": "A spirit escapes a gemstone."
+											"title": "A spirit escapes a gemstone.",
+											"width": 800,
+											"height": 1369
 										},
 										"The statue, which is impervious to damage, depicts Ioun or some other god of knowledge or order. Any character who succeeds on a DC 10 Intelligence ({@skill Religion}) check can identify the figure being depicted.",
 										{
@@ -7819,7 +7975,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/114-04-025.png"
-											}
+											},
+											"width": 800,
+											"height": 1495
 										},
 										{
 											"type": "entries",
@@ -7925,7 +8083,9 @@
 									"href": {
 										"type": "internal",
 										"path": "book/TCE/115-04-026.png"
-									}
+									},
+									"width": 800,
+									"height": 1000
 								},
 								"{@i Difficulty: Medium}",
 								"This puzzle is easily situated in a dungeon, a dusty mausoleum, or an abandoned shrine.",
@@ -7954,7 +8114,9 @@
 												"type": "internal",
 												"path": "book/TCE/116-04-027.png"
 											},
-											"title": "Diagram 4.2: Four by Four Puzzle Solution"
+											"title": "Diagram 4.2: Four by Four Puzzle Solution",
+											"width": 976,
+											"height": 976
 										}
 									]
 								},
@@ -8073,7 +8235,9 @@
 												"type": "internal",
 												"path": "book/TCE/117-04-028.jpg"
 											},
-											"title": "Diagram 4.3: Illusive Island Puzzle Solution"
+											"title": "Diagram 4.3: Illusive Island Puzzle Solution",
+											"width": 1000,
+											"height": 804
 										}
 									]
 								},
@@ -8172,7 +8336,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/118-04-030.png"
-											}
+											},
+											"width": 800,
+											"height": 1030
 										},
 										{
 											"type": "entries",
@@ -8208,7 +8374,9 @@
 												"type": "internal",
 												"path": "book/TCE/119-04-029.jpg"
 											},
-											"title": "Diagram 4.4: Material Components Puzzle Solution"
+											"title": "Diagram 4.4: Material Components Puzzle Solution",
+											"width": 1020,
+											"height": 827
 										}
 									]
 								},
@@ -8511,7 +8679,9 @@
 												"type": "internal",
 												"path": "book/TCE/120-04-031.png"
 											},
-											"title": "Diagram 4.5: Exact Change Puzzle Solution"
+											"title": "Diagram 4.5: Exact Change Puzzle Solution",
+											"width": 930,
+											"height": 930
 										}
 									]
 								},
@@ -8575,7 +8745,9 @@
 									"href": {
 										"type": "internal",
 										"path": "book/TCE/121-04-032.png"
-									}
+									},
+									"width": 1200,
+									"height": 800
 								},
 								{
 									"type": "entries",
@@ -8645,7 +8817,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/122-04-033.png"
-											}
+											},
+											"width": 1200,
+											"height": 211
 										},
 										"The odd-numbered tiles form a recurring pattern of open triangles that alternate between pointing up and down. Tiles 1, 5, 9, and 13 are upward-pointing triangles, while tiles 3, 7, and 11 are downward-pointing triangles.",
 										"The even-numbered tiles display a different pattern. Tiles 2 and 4 point downward, but the first of them has a line through the triangle. Tiles 6 and 8 follow the same pattern, but the triangles point up. The pattern then repeats, with tiles 10 and 12 being the same as tiles 2 and 4 and tile 14 being the same as tile 6.",
@@ -8726,7 +8900,9 @@
 									"href": {
 										"type": "internal",
 										"path": "book/TCE/123-04-034.png"
-									}
+									},
+									"width": 982,
+									"height": 1000
 								},
 								"The spirit, Dolora, is a harmless apparition who won't engage the party in combat. If threatened, she vanishes and reappears at the opposite end of the hall, sobbing anew.",
 								"If approached with compassion, Dolora bemoans the fact that she can't pick up her doll until she speaks its name, which she has forgotten. She refuses to leave this place without the doll.",
@@ -8919,7 +9095,9 @@
 									"href": {
 										"type": "internal",
 										"path": "book/TCE/124-04-035.png"
-									}
+									},
+									"width": 800,
+									"height": 1066
 								},
 								"{@i Difficulty: Hard}",
 								"The characters discover that a popular local tavern is a front for a secret organization that they seek to join or infiltrate. The name of the tavern can be whatever you want it to be. One suggestion is the Cloak & Dagger.",
@@ -9132,7 +9310,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/125-04-036.jpg"
-											}
+											},
+											"width": 1294,
+											"height": 1500
 										}
 									]
 								},
@@ -9147,7 +9327,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/126-04-037.jpg"
-											}
+											},
+											"width": 1200,
+											"height": 722
 										}
 									]
 								},
@@ -9162,7 +9344,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/127-04-038.png"
-											}
+											},
+											"width": 1200,
+											"height": 1143
 										}
 									]
 								},
@@ -9177,7 +9361,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/128-04-039.png"
-											}
+											},
+											"width": 1795,
+											"height": 2500
 										}
 									]
 								},
@@ -9192,7 +9378,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/129-04-040.png"
-											}
+											},
+											"width": 1500,
+											"height": 1096
 										}
 									]
 								},
@@ -9207,7 +9395,9 @@
 											"href": {
 												"type": "internal",
 												"path": "book/TCE/130-04-041.png"
-											}
+											},
+											"width": 1600,
+											"height": 611
 										}
 									]
 								}

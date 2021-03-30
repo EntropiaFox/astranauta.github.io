@@ -159,7 +159,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Akroan Hoplite",
@@ -247,7 +249,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Alseid",
@@ -370,7 +373,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Anvilwrought Raptor",
@@ -487,7 +492,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aphemia",
@@ -616,7 +623,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Arasta",
@@ -818,7 +827,9 @@
 				"S"
 			],
 			"damageTags": [
+				"F",
 				"I",
+				"O",
 				"P",
 				"S"
 			],
@@ -830,7 +841,9 @@
 				"paralyzed",
 				"poisoned",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Archon of Falling Stars",
@@ -994,7 +1007,9 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ashen Rider",
@@ -1156,7 +1171,9 @@
 			"conditionInflictSpell": [
 				"incapacitated",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blood-Toll Harpy",
@@ -1240,7 +1257,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Broken King Antigonos",
@@ -1351,7 +1370,8 @@
 			"conditionInflict": [
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Bronze Sable",
@@ -1459,7 +1479,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Burnished Hart",
@@ -1573,7 +1595,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Colossus of Akros",
@@ -1732,7 +1755,9 @@
 				"RCH",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Doomwake Giant",
@@ -1847,7 +1872,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Eater of Hope",
@@ -1966,7 +1993,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fleecemane Lion",
@@ -2087,7 +2116,9 @@
 			"conditionInflict": [
 				"frightened",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flitterstep Eidolon",
@@ -2212,7 +2243,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Ghostblade Eidolon",
@@ -2325,7 +2357,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gold-Forged Sentinel",
@@ -2437,7 +2471,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hippocamp",
@@ -2523,7 +2559,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hundred-Handed One",
@@ -2638,7 +2676,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hythonia",
@@ -2832,7 +2872,9 @@
 			"conditionInflict": [
 				"petrified",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ironscale Hydra",
@@ -2939,7 +2981,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lampad",
@@ -3057,7 +3101,9 @@
 			],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Leonin Iconoclast",
@@ -3188,12 +3234,19 @@
 			],
 			"conditionInflictSpell": [
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Medusa",
 			"source": "MOT",
 			"page": 206,
+			"otherSources": [
+				{
+					"source": "CM"
+				}
+			],
 			"_copy": {
 				"name": "Medusa",
 				"source": "MM",
@@ -3220,7 +3273,13 @@
 						}
 					]
 				}
-			}
+			},
+			"damageTags": [
+				"B",
+				"I",
+				"P"
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Meletian Hoplite",
@@ -3354,13 +3413,19 @@
 				"blinded",
 				"invisible",
 				"unconscious"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Naiad",
 			"group": "Nymph",
 			"source": "MOT",
 			"page": 236,
+			"otherSources": [
+				{
+					"source": "CM"
+				}
+			],
 			"size": "M",
 			"type": "fey",
 			"alignment": [
@@ -3486,7 +3551,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nightmare Shepherd",
@@ -3636,7 +3703,9 @@
 			],
 			"conditionInflictSpell": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nyx-Fleece Ram",
@@ -3712,7 +3781,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Oracle",
@@ -3822,7 +3893,9 @@
 			],
 			"conditionInflictSpell": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Oread",
@@ -3955,7 +4028,9 @@
 			],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Phylaskia",
@@ -4076,7 +4151,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Polukranos",
@@ -4231,7 +4308,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Returned Drifter",
@@ -4322,7 +4400,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Returned Kakomantis",
@@ -4422,7 +4501,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Returned Palamnite",
@@ -4524,7 +4604,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Returned Sentry",
@@ -4624,7 +4705,8 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Satyr Reveler",
@@ -4725,7 +4807,9 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Satyr Thornbearer",
@@ -4829,7 +4913,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Setessan Hoplite",
@@ -4923,7 +5009,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Theran Chimera",
@@ -5032,7 +5119,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Triton Master of Waves",
@@ -5176,7 +5265,9 @@
 			],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Triton Shorestalker",
@@ -5300,7 +5391,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tromokratis",
@@ -5499,7 +5592,8 @@
 			"damageTags": [
 				"A",
 				"B",
-				"P"
+				"P",
+				"S"
 			],
 			"miscTags": [
 				"MW",
@@ -5510,7 +5604,9 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Two-Headed Cerberus",
@@ -5620,7 +5716,9 @@
 			],
 			"conditionInflict": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Typhon",
@@ -5734,7 +5832,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Underworld Cerberus",
@@ -5857,7 +5957,9 @@
 			],
 			"conditionInflict": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Winged Bull",
@@ -5919,7 +6021,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Winged Lion",
@@ -5991,7 +6094,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Woe Strider",
@@ -6090,7 +6194,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

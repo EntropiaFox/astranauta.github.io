@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "2.0.0",
+	"$id": "fluff-races.json",
+	"version": "2.1.0",
 	"type": "object",
 
 	"definitions": {
@@ -27,11 +28,9 @@
 					]
 				},
 				"entries": {
-					"entries": {
-						"type": "array",
-						"items": {
-							"$ref": "entry.json"
-						}
+					"type": "array",
+					"items": {
+						"$ref": "entry.json"
 					}
 				},
 				"uncommon": {

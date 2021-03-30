@@ -174,6 +174,12 @@
 			"name": "Angharradh",
 			"source": "MTF",
 			"page": 43,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Elven",
 			"alignment": [
 				"C",
@@ -183,7 +189,8 @@
 			"domains": [
 				"Knowledge",
 				"Life",
-				"War"
+				"War",
+				"Peace"
 			],
 			"province": "Wisdom, growth, protection",
 			"symbol": "Three interlocking circles"
@@ -192,6 +199,12 @@
 			"name": "Angharradh",
 			"source": "SCAG",
 			"page": 23,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Elven",
 			"alignment": [
 				"C",
@@ -200,7 +213,8 @@
 			"title": "Triple goddess of wisdom and protection",
 			"domains": [
 				"Knowledge",
-				"Life"
+				"Life",
+				"Peace"
 			],
 			"symbol": "Triangle with three interlocking circles within"
 		},
@@ -630,6 +644,7 @@
 					"path": "deities/MOT/024-02-03-athreos.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -1070,6 +1085,12 @@
 			"name": "Azuth",
 			"source": "PHB",
 			"page": 294,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"L",
@@ -1077,7 +1098,8 @@
 			],
 			"title": "God of wizards",
 			"domains": [
-				"Knowledge"
+				"Knowledge",
+				"Arcana"
 			],
 			"symbol": "Left hand pointing upward, outlined in fire"
 		},
@@ -1090,6 +1112,12 @@
 			],
 			"source": "SCAG",
 			"page": 21,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Faerûnian",
 			"alignment": [
 				"L",
@@ -1564,6 +1592,12 @@
 			"name": "Berronar Truesilver",
 			"source": "MTF",
 			"page": 73,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Dwarven",
 			"alignment": [
 				"L",
@@ -1572,7 +1606,8 @@
 			"category": "The Mordinsamman",
 			"domains": [
 				"Life",
-				"Light"
+				"Light",
+				"Peace"
 			],
 			"province": "Hearth, home, truth",
 			"symbol": "Intertwined silver rings",
@@ -1586,6 +1621,12 @@
 			"name": "Berronar Truesilver",
 			"source": "SCAG",
 			"page": 22,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Dwarven",
 			"alignment": [
 				"L",
@@ -1594,7 +1635,8 @@
 			"title": "Goddess of hearth and home",
 			"domains": [
 				"Life",
-				"Light"
+				"Light",
+				"Peace"
 			],
 			"symbol": "Intertwined silver rings"
 		},
@@ -1745,13 +1787,20 @@
 			"name": "Boccob",
 			"source": "PHB",
 			"page": 295,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Greyhawk",
 			"alignment": [
 				"N"
 			],
 			"title": "God of magic",
 			"domains": [
-				"Knowledge"
+				"Knowledge",
+				"Arcana"
 			],
 			"symbol": "Eye within a pentagram"
 		},
@@ -1759,10 +1808,22 @@
 			"name": "Boldrei",
 			"source": "ERLW",
 			"page": 141,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				},
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Eberron",
 			"category": "The Sovereign Host",
 			"domains": [
-				"Life"
+				"Life",
+				"Peace",
+				"Twilight"
 			],
 			"province": "Community, home",
 			"symbol": "Fire in a stone hearth {@i or} copper dragon",
@@ -1782,6 +1843,16 @@
 			"name": "Boldrei",
 			"source": "PHB",
 			"page": 296,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				},
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Eberron",
 			"alignment": [
 				"L",
@@ -1790,7 +1861,9 @@
 			"title": "Goddess of community and home",
 			"category": "The Sovereign Host",
 			"domains": [
-				"Life"
+				"Life",
+				"Peace",
+				"Twilight"
 			],
 			"symbol": "Fire in a stone hearth"
 		},
@@ -1897,13 +1970,20 @@
 			"name": "Celestian",
 			"source": "PHB",
 			"page": 295,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Greyhawk",
 			"alignment": [
 				"N"
 			],
 			"title": "God of stars and wanderers",
 			"domains": [
-				"Knowledge"
+				"Knowledge",
+				"Twilight"
 			],
 			"symbol": "Arc of seven stars inside a circle"
 		},
@@ -2161,6 +2241,12 @@
 			"name": "Corellon Larethian",
 			"source": "MTF",
 			"page": 43,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Elven",
 			"alignment": [
 				"C",
@@ -2171,7 +2257,8 @@
 				"Arcana",
 				"Life",
 				"Light",
-				"War"
+				"War",
+				"Arcana"
 			],
 			"province": "Primary god of elves",
 			"symbol": "Quarter moon or starburst",
@@ -2205,6 +2292,12 @@
 			"name": "Corellon Larethian",
 			"source": "PHB",
 			"page": 296,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Nonhuman",
 			"alignment": [
 				"C",
@@ -2212,7 +2305,8 @@
 			],
 			"title": "Elf deity of art and magic",
 			"domains": [
-				"Light"
+				"Light",
+				"Arcana"
 			],
 			"symbol": "Quarter moon or starburst"
 		},
@@ -2220,6 +2314,12 @@
 			"name": "Corellon Larethian",
 			"source": "SCAG",
 			"page": 23,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Elven",
 			"alignment": [
 				"C",
@@ -2228,7 +2328,8 @@
 			"title": "God of art and magic",
 			"domains": [
 				"Arcana",
-				"Light"
+				"Light",
+				"Arcana"
 			],
 			"symbol": "Crescent moon"
 		},
@@ -2318,13 +2419,20 @@
 			"name": "Cyrrollalee",
 			"source": "MTF",
 			"page": 104,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Halfling",
 			"alignment": [
 				"L",
 				"G"
 			],
 			"domains": [
-				"Life"
+				"Life",
+				"Peace"
 			],
 			"province": "Hearth, home",
 			"symbol": "An open door",
@@ -2339,6 +2447,12 @@
 			"name": "Cyrrollalee",
 			"source": "SCAG",
 			"page": 23,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Halfling",
 			"alignment": [
 				"L",
@@ -2346,7 +2460,8 @@
 			],
 			"title": "Goddess of hearth and home",
 			"domains": [
-				"Life"
+				"Life",
+				"Peace"
 			],
 			"symbol": "An open door"
 		},
@@ -2601,11 +2716,18 @@
 			"name": "Dol Arrah",
 			"source": "ERLW",
 			"page": 141,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Eberron",
 			"category": "The Sovereign Host",
 			"domains": [
 				"Light",
-				"War"
+				"War",
+				"Twilight"
 			],
 			"province": "Honor, sunlight",
 			"symbol": "Rising sun {@i or} red dragon",
@@ -2625,6 +2747,12 @@
 			"name": "Dol Arrah",
 			"source": "PHB",
 			"page": 296,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Eberron",
 			"alignment": [
 				"L",
@@ -2634,7 +2762,8 @@
 			"category": "The Sovereign Host",
 			"domains": [
 				"Light",
-				"War"
+				"War",
+				"Twilight"
 			],
 			"symbol": "Rising sun"
 		},
@@ -2829,6 +2958,12 @@
 			"name": "Eldath",
 			"source": "PHB",
 			"page": 294,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -2837,7 +2972,8 @@
 			"title": "Goddess of peace",
 			"domains": [
 				"Life",
-				"Nature"
+				"Nature",
+				"Peace"
 			],
 			"symbol": "Waterfall plunging into still pool"
 		},
@@ -2850,6 +2986,12 @@
 			],
 			"source": "SCAG",
 			"page": 21,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Faerûnian",
 			"alignment": [
 				"N",
@@ -2858,7 +3000,8 @@
 			"title": "Goddess of peace",
 			"domains": [
 				"Life",
-				"Nature"
+				"Nature",
+				"Peace"
 			],
 			"symbol": "Waterfall plunging into a still pool",
 			"symbolImg": {
@@ -2908,6 +3051,7 @@
 					"path": "deities/MOT/026-02-03-ephara.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -3280,6 +3424,7 @@
 					"path": "deities/MOT/028-02-03-erebos.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -3766,13 +3911,20 @@
 			"name": "Gaerdal Ironhand",
 			"source": "MTF",
 			"page": 112,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Gnome",
 			"alignment": [
 				"L",
 				"G"
 			],
 			"domains": [
-				"War"
+				"War",
+				"Peace"
 			],
 			"province": "Protection",
 			"symbol": "Iron band",
@@ -3786,6 +3938,12 @@
 			"name": "Gaerdal Ironhand",
 			"source": "SCAG",
 			"page": 24,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Gnomish",
 			"alignment": [
 				"L",
@@ -3793,7 +3951,8 @@
 			],
 			"title": "God of protection",
 			"domains": [
-				"War"
+				"War",
+				"Peace"
 			],
 			"symbol": "Iron band"
 		},
@@ -4388,6 +4547,12 @@
 			"source": "PHB",
 			"page": 298,
 			"srd": true,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Greek",
 			"alignment": [
 				"C",
@@ -4396,7 +4561,8 @@
 			"title": "Goddess of magic and the moon",
 			"domains": [
 				"Knowledge",
-				"Trickery"
+				"Trickery",
+				"Arcana"
 			],
 			"symbol": "Setting moon"
 		},
@@ -4462,6 +4628,7 @@
 					"path": "deities/MOT/030-02-03-heliod.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -4751,6 +4918,12 @@
 			"name": "Helm",
 			"source": "PHB",
 			"page": 294,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"L",
@@ -4759,7 +4932,8 @@
 			"title": "God of protection",
 			"domains": [
 				"Life",
-				"Light"
+				"Light",
+				"Twilight"
 			],
 			"symbol": "Staring eye on upright left gauntlet"
 		},
@@ -4772,6 +4946,12 @@
 			],
 			"source": "SCAG",
 			"page": 21,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Faerûnian",
 			"alignment": [
 				"L",
@@ -4780,7 +4960,8 @@
 			"title": "God of watchfulness",
 			"domains": [
 				"Life",
-				"Light"
+				"Light",
+				"Twilight"
 			],
 			"symbol": "Staring eye on upright left gauntlet",
 			"symbolImg": {
@@ -4981,6 +5162,12 @@
 			"name": "Ilmater",
 			"source": "PHB",
 			"page": 294,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"L",
@@ -4988,7 +5175,8 @@
 			],
 			"title": "God of endurance",
 			"domains": [
-				"Life"
+				"Life",
+				"Twilight"
 			],
 			"symbol": "Hands bound at the wrist with red cord"
 		},
@@ -5001,6 +5189,12 @@
 			],
 			"source": "SCAG",
 			"page": 21,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Faerûnian",
 			"alignment": [
 				"L",
@@ -5008,7 +5202,8 @@
 			],
 			"title": "God of endurance",
 			"domains": [
-				"Life"
+				"Life",
+				"Twilight"
 			],
 			"symbol": "Hands bound at the wrist with red cord",
 			"symbolImg": {
@@ -5186,6 +5381,7 @@
 					"path": "deities/MOT/032-02-03-iroas.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -5461,6 +5657,12 @@
 			"source": "PHB",
 			"page": 299,
 			"srd": true,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Egyptian",
 			"alignment": [
 				"N",
@@ -5469,7 +5671,8 @@
 			"title": "Goddess of fertility and magic",
 			"domains": [
 				"Knowledge",
-				"Life"
+				"Life",
+				"Arcana"
 			],
 			"symbol": "Ankh and star"
 		},
@@ -5588,6 +5791,7 @@
 					"path": "deities/MOT/034-02-03-karametra.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -5973,6 +6177,7 @@
 					"path": "deities/MOT/036-02-03-keranos.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -6341,6 +6546,7 @@
 					"path": "deities/MOT/038-02-03-klothys.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -6775,6 +6981,7 @@
 					"path": "deities/MOT/040-02-03-kruphix.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -7543,12 +7750,21 @@
 			"name": "Lunitari",
 			"source": "PHB",
 			"page": 295,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"N"
 			],
 			"title": "Goddess of neutral magic",
 			"category": "The Gods of Neutrality",
+			"domains": [
+				"Arcana"
+			],
 			"symbol": "Red circle or sphere"
 		},
 		{
@@ -7798,6 +8014,12 @@
 			"source": "PHB",
 			"page": 298,
 			"srd": true,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Celtic",
 			"alignment": [
 				"N",
@@ -7805,7 +8027,8 @@
 			],
 			"title": "God of magic",
 			"domains": [
-				"Knowledge"
+				"Knowledge",
+				"Arcana"
 			],
 			"symbol": "Staff"
 		},
@@ -7996,6 +8219,12 @@
 			"name": "Mishakal",
 			"source": "PHB",
 			"page": 295,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -8005,7 +8234,8 @@
 			"category": "The Gods of Good",
 			"domains": [
 				"Knowledge",
-				"Life"
+				"Life",
+				"Twilight"
 			],
 			"symbol": "Blue infinity sign"
 		},
@@ -8025,6 +8255,7 @@
 					"path": "deities/MOT/042-02-03-mogis.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -8577,6 +8808,12 @@
 			"name": "Mystra",
 			"source": "PHB",
 			"page": 294,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -8584,7 +8821,8 @@
 			],
 			"title": "Goddess of magic",
 			"domains": [
-				"Knowledge"
+				"Knowledge",
+				"Arcana"
 			],
 			"symbol": "Circle of seven stars, or nine stars encircling a flowing red mist, or a single star"
 		},
@@ -8597,6 +8835,12 @@
 			],
 			"source": "SCAG",
 			"page": 21,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Faerûnian",
 			"alignment": [
 				"N",
@@ -8808,6 +9052,12 @@
 			"name": "Nuitari",
 			"source": "PHB",
 			"page": 295,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -8815,6 +9065,9 @@
 			],
 			"title": "God of evil magic",
 			"category": "The Gods of Evil",
+			"domains": [
+				"Arcana"
+			],
 			"symbol": "Black circle or sphere"
 		},
 		{
@@ -8833,6 +9086,7 @@
 					"path": "deities/MOT/044-02-03-nylea.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -9118,14 +9372,14 @@
 			]
 		},
 		{
-			"name": "Obad",
+			"name": "Obad-Hai",
 			"source": "PHB",
 			"page": 295,
 			"pantheon": "Greyhawk",
 			"alignment": [
 				"N"
 			],
-			"title": "Hai, god of nature",
+			"title": "god of nature",
 			"domains": [
 				"Nature"
 			],
@@ -9354,6 +9608,12 @@
 			"name": "Paladine",
 			"source": "PHB",
 			"page": 295,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -9362,7 +9622,8 @@
 			"title": "God of rulers and guardians",
 			"category": "The Gods of Good",
 			"domains": [
-				"War"
+				"War",
+				"Peace"
 			],
 			"symbol": "Silver triangle"
 		},
@@ -9495,6 +9756,7 @@
 					"path": "deities/MOT/046-02-03-pharika.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -9796,6 +10058,7 @@
 					"path": "deities/MOT/048-02-03-phenax.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -10130,6 +10393,7 @@
 					"path": "deities/MOT/050-02-03-purphoros.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -10525,6 +10789,12 @@
 			"name": "Rao",
 			"source": "PHB",
 			"page": 295,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 32
+				}
+			],
 			"pantheon": "Greyhawk",
 			"alignment": [
 				"L",
@@ -10532,7 +10802,8 @@
 			],
 			"title": "God of peace and reason",
 			"domains": [
-				"Knowledge"
+				"Knowledge",
+				"Peace"
 			],
 			"symbol": "White heart"
 		},
@@ -11013,6 +11284,12 @@
 			"name": "Selûne",
 			"source": "PHB",
 			"page": 294,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -11021,7 +11298,8 @@
 			"title": "Goddess of the moon",
 			"domains": [
 				"Knowledge",
-				"Life"
+				"Life",
+				"Twilight"
 			],
 			"symbol": "Pair of eyes surrounded by seven stars"
 		},
@@ -11034,6 +11312,12 @@
 			],
 			"source": "SCAG",
 			"page": 21,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Faerûnian",
 			"alignment": [
 				"C",
@@ -11042,7 +11326,8 @@
 			"title": "Goddess of the moon",
 			"domains": [
 				"Knowledge",
-				"Life"
+				"Life",
+				"Twilight"
 			],
 			"symbol": "Pair of eyes surrounded by seven stars",
 			"symbolImg": {
@@ -11462,6 +11747,12 @@
 			"name": "Solinari",
 			"source": "PHB",
 			"page": 295,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Dragonlance",
 			"alignment": [
 				"L",
@@ -11469,6 +11760,9 @@
 			],
 			"title": "God of good magic",
 			"category": "The Gods of Good",
+			"domains": [
+				"Arcana"
+			],
 			"symbol": "White circle or sphere"
 		},
 		{
@@ -11928,6 +12222,7 @@
 					"path": "deities/MOT/052-02-03-Thassa.png"
 				}
 			},
+			"piety": true,
 			"entries": [
 				{
 					"type": "section",
@@ -13546,6 +13841,12 @@
 			"name": "Vecna",
 			"source": "DMG",
 			"page": 10,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Dawn War",
 			"alignment": [
 				"N",
@@ -13554,7 +13855,8 @@
 			"title": "God of evil secrets",
 			"domains": [
 				"Death",
-				"Knowledge"
+				"Knowledge",
+				"Arcana"
 			],
 			"symbol": "Partially shattered one-eyed skull"
 		},
@@ -13562,6 +13864,12 @@
 			"name": "Vecna",
 			"source": "EGW",
 			"page": 29,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Exandria",
 			"alignment": [
 				"N",
@@ -13626,6 +13934,12 @@
 			"name": "Vecna",
 			"source": "PHB",
 			"page": 295,
+			"additionalSources": [
+				{
+					"source": "SCAG",
+					"page": 125
+				}
+			],
 			"pantheon": "Greyhawk",
 			"alignment": [
 				"N",
@@ -13633,7 +13947,8 @@
 			],
 			"title": "God of evil secrets",
 			"domains": [
-				"Knowledge"
+				"Knowledge",
+				"Arcana"
 			],
 			"symbol": "Hand with eye in the palm"
 		},
@@ -13792,6 +14107,10 @@
 				{
 					"source": "XGE",
 					"page": 19
+				},
+				{
+					"source": "SCAG",
+					"page": 125
 				}
 			],
 			"pantheon": "Greyhawk",
@@ -13804,7 +14123,8 @@
 				"Death",
 				"Grave",
 				"Knowledge",
-				"Order"
+				"Order",
+				"Arcana"
 			],
 			"symbol": "Red skull in front of fireball"
 		},
@@ -13862,13 +14182,20 @@
 			"name": "Yondalla",
 			"source": "MTF",
 			"page": 102,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Halfling",
 			"alignment": [
 				"L",
 				"G"
 			],
 			"domains": [
-				"Life"
+				"Life",
+				"Twilight"
 			],
 			"province": "Primary goddess of halflings",
 			"symbol": "Cornucopia",
@@ -13882,6 +14209,12 @@
 			"name": "Yondalla",
 			"source": "PHB",
 			"page": 296,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Nonhuman",
 			"alignment": [
 				"L",
@@ -13889,7 +14222,8 @@
 			],
 			"title": "Halfling goddess of fertility and protection",
 			"domains": [
-				"Life"
+				"Life",
+				"Twilight"
 			],
 			"symbol": "Shield"
 		},
@@ -13897,6 +14231,12 @@
 			"name": "Yondalla",
 			"source": "SCAG",
 			"page": 23,
+			"additionalSources": [
+				{
+					"source": "TCE",
+					"page": 34
+				}
+			],
 			"pantheon": "Halfling",
 			"alignment": [
 				"L",
@@ -13904,7 +14244,8 @@
 			],
 			"title": "Goddess of fertility and protection",
 			"domains": [
-				"Life"
+				"Life",
+				"Twilight"
 			],
 			"symbol": "Cornucopia on a shield"
 		},

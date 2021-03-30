@@ -1,6 +1,7 @@
 {
 	"AI": "bestiary-ai.json",
 	"BGDIA": "bestiary-bgdia.json",
+	"CM": "bestiary-cm.json",
 	"CoS": "bestiary-cos.json",
 	"DC": "bestiary-dc.json",
 	"DIP": "bestiary-dip.json",

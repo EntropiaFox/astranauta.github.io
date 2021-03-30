@@ -107,6 +107,10 @@
 			"languageTags": [
 				"DS"
 			],
+			"damageTags": [
+				"S",
+				"Y"
+			],
 			"miscTags": [
 				"MW"
 			]
@@ -186,6 +190,9 @@
 			"senseTags": [
 				"D"
 			],
+			"damageTags": [
+				"S"
+			],
 			"miscTags": [
 				"MW"
 			],
@@ -255,6 +262,10 @@
 			"senseTags": [
 				"D"
 			],
+			"damageTags": [
+				"B",
+				"P"
+			],
 			"miscTags": [
 				"MW"
 			],
@@ -323,6 +334,9 @@
 			],
 			"senseTags": [
 				"D"
+			],
+			"damageTags": [
+				"S"
 			],
 			"miscTags": [
 				"MW"
@@ -418,6 +432,9 @@
 			"actionTags": [
 				"Multiattack"
 			],
+			"damageTags": [
+				"P"
+			],
 			"miscTags": [
 				"MW"
 			]
@@ -498,6 +515,9 @@
 			],
 			"languageTags": [
 				"CE"
+			],
+			"damageTags": [
+				"R"
 			],
 			"miscTags": [
 				"MW",
@@ -591,6 +611,10 @@
 			"actionTags": [
 				"Multiattack"
 			],
+			"damageTags": [
+				"B",
+				"F"
+			],
 			"miscTags": [
 				"MW"
 			]
@@ -675,6 +699,9 @@
 			"senseTags": [
 				"D"
 			],
+			"damageTags": [
+				"O"
+			],
 			"miscTags": [
 				"MW"
 			]
@@ -728,20 +755,23 @@
 						"lightning",
 						"thunder"
 					],
-					"note": "(air only)"
+					"cond": true,
+					"note": "(Air only)"
 				},
 				{
 					"resist": [
 						"piercing",
 						"slashing"
 					],
-					"note": "(earth only)"
+					"cond": true,
+					"note": "(Earth only)"
 				},
 				{
 					"resist": [
 						"acid"
 					],
-					"note": "(water only)"
+					"cond": true,
+					"note": "(Water only)"
 				}
 			],
 			"immune": [
@@ -750,7 +780,8 @@
 					"immune": [
 						"fire"
 					],
-					"note": "(fire only)"
+					"cond": true,
+					"note": "(Fire only)"
 				}
 			],
 			"conditionImmune": [
@@ -797,6 +828,10 @@
 			],
 			"languageTags": [
 				"P"
+			],
+			"damageTags": [
+				"B",
+				"F"
 			],
 			"miscTags": [
 				"MW"
@@ -890,6 +925,10 @@
 			],
 			"languageTags": [
 				"S"
+			],
+			"damageTags": [
+				"O",
+				"P"
 			],
 			"miscTags": [
 				"AOE",
@@ -1013,9 +1052,112 @@
 				"I",
 				"TP"
 			],
+			"damageTags": [
+				"F",
+				"N",
+				"S"
+			],
 			"miscTags": [
 				"MW"
 			]
+		},
+		{
+			"name": "Homunculus Servant",
+			"source": "TCE",
+			"page": 22,
+			"otherSources": [
+				{
+					"source": "ERLW",
+					"page": 62
+				}
+			],
+			"size": "T",
+			"type": "construct",
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"special": "1 + your Intelligence modifier + your artificer level (the homunculus has a number of Hit Dice [d4s] equal to your artificer level)"
+			},
+			"speed": {
+				"walk": 20,
+				"fly": 30
+			},
+			"str": 4,
+			"dex": 15,
+			"con": 12,
+			"int": 10,
+			"wis": 10,
+			"cha": 7,
+			"save": {
+				"dex": "+2 plus PB"
+			},
+			"skill": {
+				"perception": "+0 plus PB × 2",
+				"stealth": "+2 plus PB"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": "10 + (PB × 2)",
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages you speak"
+			],
+			"pbNote": "equals your bonus",
+			"trait": [
+				{
+					"name": "Evasion",
+					"entries": [
+						"If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's {@condition incapacitated}."
+					]
+				},
+				{
+					"name": "Might of the Master",
+					"entries": [
+						"The following numbers increase by 1 when your proficiency bonus increases by 1: the homunculus's skill and saving throw bonuses (above) and the bonuses to hit and damage of its attack (below)."
+					]
+				}
+			],
+			"actionNote": "Requires Your Bonus Action",
+			"action": [
+				{
+					"name": "Force Strike",
+					"entries": [
+						"{@atk rw} {@hitYourSpellAttack} to hit, range 30 ft., one target you can see. {@h}{@damage 1d4 + PB} force damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Channel Magic",
+					"entries": [
+						"The homunculus delivers a spell you cast that has a range of touch. The homunculus must be within 120 feet of you."
+					]
+				}
+			],
+			"hasToken": true,
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"RW"
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Juvenile Mimic",
@@ -1066,6 +1208,7 @@
 				"Undercommon",
 				"telepathy 120 ft."
 			],
+			"cr": "0",
 			"trait": [
 				{
 					"name": "False Appearance (Object Form Only)",
@@ -1222,7 +1365,7 @@
 				{
 					"name": "Destructive Fist",
 					"entries": [
-						"{@atk mw} {@hit 17} to hit, reach 10 ft., one target. {@h}36 ({@damage 4d12 + 10}) force damage. Or Ranged Weapon Attack: {@hit 17} to hit, range 120 ft., one target. {@h}36 ({@damage 4d12 + 10}) force damage. If the target is an object, it takes triple damage. If the target is an object, it takes triple damage."
+						"{@atk mw} {@hit 17} to hit, reach 10 ft., one target. {@h}36 ({@damage 4d12 + 10}) force damage. Or Ranged Weapon Attack: {@hit 17} to hit, range 120 ft., one target. {@h}36 ({@damage 4d12 + 10}) force damage. If the target is an object, it takes triple damage."
 					]
 				},
 				{
@@ -1252,7 +1395,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Reflection",
@@ -1379,12 +1523,114 @@
 			"languageTags": [
 				"C"
 			],
+			"damageTags": [
+				"C"
+			],
 			"miscTags": [
 				"MW"
 			],
 			"conditionInflict": [
 				"frightened"
 			]
+		},
+		{
+			"name": "Steel Defender",
+			"source": "TCE",
+			"page": 19,
+			"otherSources": [
+				{
+					"source": "ERLW",
+					"page": 61
+				}
+			],
+			"size": "M",
+			"type": "construct",
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"special": "2 + your Intelligence modifier + five times your artificer level (the defender has a number of Hit Dice [ d8s] equal to your artificer level)"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 14,
+			"dex": 12,
+			"con": 14,
+			"int": 4,
+			"wis": 10,
+			"cha": 6,
+			"save": {
+				"dex": "+1 plus PB",
+				"con": "+2 plus PB"
+			},
+			"skill": {
+				"athletics": "+2 plus PB",
+				"perception": "+0 plus PB × 2"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": "10 + (PB × 2)",
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages you speak"
+			],
+			"pbNote": "equals your bonus",
+			"trait": [
+				{
+					"name": "Vigilant",
+					"entries": [
+						"The defender can't be surprised."
+					]
+				}
+			],
+			"actionNote": "Requires Your Bonus Action",
+			"action": [
+				{
+					"name": "Force-Empowered Rend",
+					"entries": [
+						"{@atk mw} {@hitYourSpellAttack} to hit, reach 5 ft., one target you can see. {@h}{@damage 1d8 + PB} force damage."
+					]
+				},
+				{
+					"name": "Repair (3/Day)",
+					"entries": [
+						"The magical mechanisms inside the defender restore {@dice 2d8 + PB} hit points to itself or to one construct or object within 5 feet of it."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Deflect Attack",
+					"entries": [
+						"The defender imposes disadvantage on the attack roll of one creature it can see that is within 5 feet of it, provided the attack roll is against a creature other than the defender."
+					]
+				}
+			],
+			"hasToken": true,
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Undead Spirit",
@@ -1486,6 +1732,11 @@
 			"languageTags": [
 				"C"
 			],
+			"damageTags": [
+				"N",
+				"O",
+				"S"
+			],
 			"miscTags": [
 				"MW"
 			],
@@ -1546,21 +1797,7 @@
 			"languages": [
 				"understands the languages you speak"
 			],
-			"trait": [
-				{
-					"name": "Appearance",
-					"entries": [
-						"Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a DC Player Dexterity saving throw or take {@damage 2d6} fire damage."
-					]
-				}
-			],
 			"action": [
-				{
-					"name": "Dodge",
-					"entries": [
-						"On its turn, unless otherwise commanded, the Spirit takes the dodge action."
-					]
-				},
 				{
 					"name": "Flame Seed",
 					"entries": [
@@ -1576,6 +1813,9 @@
 			],
 			"senseTags": [
 				"D"
+			],
+			"damageTags": [
+				"F"
 			],
 			"miscTags": [
 				"AOE",

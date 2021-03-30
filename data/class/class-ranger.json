@@ -15,11 +15,33 @@
 			],
 			"spellcastingAbility": "wis",
 			"casterProgression": "1/2",
+			"spellsKnownProgression": [
+				0,
+				2,
+				3,
+				3,
+				4,
+				4,
+				5,
+				5,
+				6,
+				6,
+				7,
+				7,
+				8,
+				8,
+				9,
+				9,
+				10,
+				10,
+				11,
+				11
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light",
 					"medium",
-					"shields"
+					"{@item shield|phb|shields}"
 				],
 				"weapons": [
 					"simple",
@@ -100,7 +122,7 @@
 					"armor": [
 						"light",
 						"medium",
-						"shields"
+						"{@item shield|phb|shields}"
 					],
 					"skills": [
 						{
@@ -371,6 +393,7 @@
 				"Martial Versatility|Ranger||4|TCE",
 				"Extra Attack|Ranger||5",
 				"Favored Enemy and Natural Explorer improvements|Ranger||6",
+				"Deft Explorer Improvement|Ranger||6|TCE",
 				{
 					"classFeature": "Ranger Archetype feature|Ranger||7",
 					"gainSubclassFeature": true
@@ -382,6 +405,7 @@
 				"Fade Away|Ranger||10|UAClassFeatureVariants",
 				"Nature's Veil|Ranger||10|TCE",
 				"Natural Explorer improvement|Ranger||10",
+				"Deft Explorer Improvement|Ranger||10|TCE",
 				{
 					"classFeature": "Ranger Archetype feature|Ranger||11",
 					"gainSubclassFeature": true
@@ -1118,7 +1142,7 @@
 				"armor": [
 					"light",
 					"medium",
-					"shields"
+					"{@item shield|phb|shields}"
 				],
 				"weapons": [
 					"simple",
@@ -1283,6 +1307,7 @@
 				"Extra Attack|Ranger (Spell-less)|UAModifyingClasses|5",
 				"Additional Maneuvers|Ranger (Spell-less)|UAModifyingClasses|5",
 				"Favored Enemy and Natural Explorer improvements|Ranger (Spell-less)|UAModifyingClasses|6",
+				"Deft Explorer Improvement|Ranger (Spell-less)|UAModifyingClasses|6|TCE",
 				{
 					"classFeature": "Ranger Archetype feature|Ranger (Spell-less)|UAModifyingClasses|7",
 					"gainSubclassFeature": true
@@ -1296,6 +1321,7 @@
 				"Fade Away|Ranger (Spell-less)|UAModifyingClasses|10|UAClassFeatureVariants",
 				"Nature's Veil|Ranger (Spell-less)|UAModifyingClasses|10|TCE",
 				"Natural Explorer improvement|Ranger (Spell-less)|UAModifyingClasses|10",
+				"Deft Explorer Improvement|Ranger (Spell-less)|UAModifyingClasses|10|TCE",
 				{
 					"classFeature": "Ranger Archetype feature|Ranger (Spell-less)|UAModifyingClasses|11",
 					"gainSubclassFeature": true
@@ -1845,7 +1871,7 @@
 			"startingProficiencies": {
 				"armor": [
 					"light",
-					"shields"
+					"{@item shield|phb|shields}"
 				],
 				"weapons": [
 					"simple",
@@ -1985,11 +2011,33 @@
 			],
 			"spellcastingAbility": "wis",
 			"casterProgression": "1/2",
+			"spellsKnownProgression": [
+				0,
+				2,
+				3,
+				3,
+				4,
+				4,
+				5,
+				5,
+				6,
+				6,
+				7,
+				7,
+				8,
+				8,
+				9,
+				9,
+				10,
+				10,
+				11,
+				11
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light",
 					"medium",
-					"shields"
+					"{@item shield|phb|shields}"
 				],
 				"weapons": [
 					"simple",
@@ -3056,19 +3104,6 @@
 			]
 		},
 		{
-			"name": "Canny (1st Level)",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger",
-			"classSource": "PHB",
-			"level": 1,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"Choose one of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses the chosen skill.",
-				"You can also speak, read, and write two additional languages of your choice."
-			]
-		},
-		{
 			"name": "Deft Explorer",
 			"source": "TCE",
 			"page": 56,
@@ -3080,21 +3115,11 @@
 				"{@i 1st-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Natural Explorer feature}",
 				"You are an unsurpassed explorer and survivor, both in the wilderness and in dealing with others on your travels. You gain the Canny benefit below, and you gain an additional benefit below when you reach 6th level and 10th level in this class.",
 				{
-					"type": "options",
-					"count": 1,
+					"name": "Canny",
+					"type": "entries",
 					"entries": [
-						{
-							"type": "refClassFeature",
-							"classFeature": "Canny (1st Level)|Ranger|PHB|1|TCE"
-						},
-						{
-							"type": "refClassFeature",
-							"classFeature": "Roving (6th Level)|Ranger|PHB|1|TCE"
-						},
-						{
-							"type": "refClassFeature",
-							"classFeature": "Tireless (10th Level)|Ranger|PHB|1|TCE"
-						}
+						"Choose one of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses the chosen skill.",
+						"You can also speak, read, and write two additional languages of your choice."
 					]
 				}
 			]
@@ -3214,18 +3239,6 @@
 			]
 		},
 		{
-			"name": "Roving (6th Level)",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger",
-			"classSource": "PHB",
-			"level": 1,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
-			]
-		},
-		{
 			"name": "Tireless",
 			"source": "UAClassFeatureVariants",
 			"page": 7,
@@ -3235,19 +3248,6 @@
 			"isClassFeatureVariant": true,
 			"entries": [
 				"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d10} + your Wisdom modifier. You can use this special action a number of times equal to your Wisdom modifier (a minimum of once), and you regain all expended uses when you finish a long rest.",
-				"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
-			]
-		},
-		{
-			"name": "Tireless (10th Level)",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger",
-			"classSource": "PHB",
-			"level": 1,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d8} + your Wisdom modifier (minimum of 1 temporary hit point). You can use this action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
 				"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
 			]
 		},
@@ -3604,6 +3604,25 @@
 			]
 		},
 		{
+			"name": "Deft Explorer Improvement",
+			"source": "TCE",
+			"page": 56,
+			"className": "Ranger",
+			"classSource": "PHB",
+			"level": 6,
+			"isClassFeatureVariant": true,
+			"entries": [
+				"You gain an additional benefit when you reach 6th level in this class.",
+				{
+					"type": "entries",
+					"name": "Roving",
+					"entries": [
+						"Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
+					]
+				}
+			]
+		},
+		{
 			"name": "Favored Enemy and Natural Explorer improvements",
 			"source": "PHB",
 			"page": 89,
@@ -3666,6 +3685,26 @@
 				"{@i 8th-level feature (enhances Ability Score Improvement)}",
 				"When you gain the Ability Score Improvement feature from your class, you can also replace one of your skill proficiencies with a skill proficiency offered by your class at 1st level (the proficiency you replace needn't be from the class).",
 				"This change represents one of your skills atrophying as you focus on a different skill."
+			]
+		},
+		{
+			"name": "Deft Explorer Improvement",
+			"source": "TCE",
+			"page": 56,
+			"className": "Ranger",
+			"classSource": "PHB",
+			"level": 10,
+			"isClassFeatureVariant": true,
+			"entries": [
+				"You gain an additional benefit when you reach 10th level in this class.",
+				{
+					"type": "entries",
+					"name": "Tireless",
+					"entries": [
+						"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d8} + your Wisdom modifier (minimum of 1 temporary hit point). You can use this action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+						"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
+					]
+				}
 			]
 		},
 		{
@@ -3888,19 +3927,6 @@
 			]
 		},
 		{
-			"name": "Canny (1st Level)",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger (Spell-less)",
-			"classSource": "UAModifyingClasses",
-			"level": 1,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"Choose one of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses the chosen skill.",
-				"You can also speak, read, and write two additional languages of your choice."
-			]
-		},
-		{
 			"name": "Deft Explorer",
 			"source": "TCE",
 			"page": 56,
@@ -3913,21 +3939,11 @@
 				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
 				"You are an unsurpassed explorer and survivor, both in the wilderness and in dealing with others on your travels. You gain the Canny benefit below, and you gain an additional benefit below when you reach 6th level and 10th level in this class.",
 				{
-					"type": "options",
-					"count": 1,
+					"type": "entries",
+					"name": "Canny",
 					"entries": [
-						{
-							"type": "refClassFeature",
-							"classFeature": "Canny (1st Level)|Ranger (Spell-less)|UAModifyingClasses|1|TCE"
-						},
-						{
-							"type": "refClassFeature",
-							"classFeature": "Roving (6th Level)|Ranger (Spell-less)|UAModifyingClasses|1|TCE"
-						},
-						{
-							"type": "refClassFeature",
-							"classFeature": "Tireless (10th Level)|Ranger (Spell-less)|UAModifyingClasses|1|TCE"
-						}
+						"Choose one of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses the chosen skill.",
+						"You can also speak, read, and write two additional languages of your choice."
 					]
 				}
 			]
@@ -4048,18 +4064,6 @@
 			]
 		},
 		{
-			"name": "Roving (6th Level)",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger (Spell-less)",
-			"classSource": "UAModifyingClasses",
-			"level": 1,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
-			]
-		},
-		{
 			"name": "Tireless",
 			"source": "UAClassFeatureVariants",
 			"page": 7,
@@ -4069,19 +4073,6 @@
 			"isClassFeatureVariant": true,
 			"entries": [
 				"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d10} + your Wisdom modifier. You can use this special action a number of times equal to your Wisdom modifier (a minimum of once), and you regain all expended uses when you finish a long rest.",
-				"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
-			]
-		},
-		{
-			"name": "Tireless (10th Level)",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger (Spell-less)",
-			"classSource": "UAModifyingClasses",
-			"level": 1,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d8} + your Wisdom modifier (minimum of 1 temporary hit point). You can use this action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
 				"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
 			]
 		},
@@ -4415,6 +4406,25 @@
 			]
 		},
 		{
+			"name": "Deft Explorer Improvement",
+			"source": "TCE",
+			"page": 56,
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"level": 6,
+			"isClassFeatureVariant": true,
+			"entries": [
+				"You gain an additional benefit when you reach 6th level in this class.",
+				{
+					"type": "entries",
+					"name": "Roving",
+					"entries": [
+						"Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
+					]
+				}
+			]
+		},
+		{
 			"name": "Favored Enemy and Natural Explorer improvements",
 			"source": "UAModifyingClasses",
 			"page": 5,
@@ -4496,6 +4506,26 @@
 			"level": 9,
 			"entries": [
 				"Starting at 9th level, you have advantage on saving throws against poison and have resistance to poison damage. Additionally, you can use one of your poultices to cure one poison effect on the creature you are applying it to, in addition to restoring hit points."
+			]
+		},
+		{
+			"name": "Deft Explorer Improvement",
+			"source": "TCE",
+			"page": 56,
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"level": 10,
+			"isClassFeatureVariant": true,
+			"entries": [
+				"You gain an additional benefit when you reach 10th level in this class.",
+				{
+					"type": "entries",
+					"name": "Tireless",
+					"entries": [
+						"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d8} + your Wisdom modifier (minimum of 1 temporary hit point). You can use this action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+						"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
+					]
+				}
 			]
 		},
 		{
@@ -5301,7 +5331,7 @@
 		{
 			"name": "Primal Companion",
 			"source": "TCE",
-			"page": 56,
+			"page": 61,
 			"className": "Ranger",
 			"classSource": "PHB",
 			"subclassShortName": "Beast Master",
@@ -5444,6 +5474,7 @@
 				"At 3rd level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -5506,6 +5537,7 @@
 				"At 7th level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -5583,6 +5615,7 @@
 				"At 11th level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -5671,6 +5704,7 @@
 				"At 15th level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -5892,7 +5926,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 15th-level Fey Wanderer feature}",
-				"You can slip in and out of the Feywild to move in a blink of an eye: you can cast misty step without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
+				"You can slip in and out of the Feywild to move in a blink of an eye: you can cast {@spell misty step} without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
 				"In addition, whenever you cast {@i misty step}, you can bring along one willing creature you can see within 5 feet of you. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space."
 			]
 		},
@@ -6293,8 +6327,7 @@
 			"subclassSource": "UA2020SubclassesPt5",
 			"level": 3,
 			"entries": [
-				"Drakewardens are rangers who use their magical connection with nature to form an enduring bond with a minor dragon, a drake. This bond allows the ranger to summon the",
-				"drake to their side and to share in the awe-inspiring power wielded by dragons. Consider how your ranger gained their bond with the drake. The Drakewarden Origin table offers some examples.",
+				"Drakewardens are rangers who use their magical connection with nature to form an enduring bond with a minor dragon, a drake. This bond allows the ranger to summon the drake to their side and to share in the awe-inspiring power wielded by dragons. Consider how your ranger gained their bond with the drake. The Drakewarden Origin table offers some examples.",
 				{
 					"type": "table",
 					"caption": "",
@@ -7626,7 +7659,7 @@
 		{
 			"name": "Primal Companion",
 			"source": "TCE",
-			"page": 56,
+			"page": 61,
 			"className": "Ranger (Spell-less)",
 			"classSource": "UAModifyingClasses",
 			"subclassShortName": "Beast Master",
@@ -7770,6 +7803,7 @@
 				"At 3rd level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -7832,6 +7866,7 @@
 				"At 7th level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -7909,6 +7944,7 @@
 				"At 11th level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -7997,6 +8033,7 @@
 				"At 15th level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -8218,7 +8255,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 15th-level Fey Wanderer feature}",
-				"You can slip in and out of the Feywild to move in a blink of an eye: you can cast misty step without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
+				"You can slip in and out of the Feywild to move in a blink of an eye: you can cast {@spell misty step} without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
 				"In addition, whenever you cast {@i misty step}, you can bring along one willing creature you can see within 5 feet of you. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space."
 			]
 		},
@@ -9763,7 +9800,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 15th-level Fey Wanderer feature}",
-				"You can slip in and out of the Feywild to move in a blink of an eye: you can cast misty step without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
+				"You can slip in and out of the Feywild to move in a blink of an eye: you can cast {@spell misty step} without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
 				"In addition, whenever you cast {@i misty step}, you can bring along one willing creature you can see within 5 feet of you. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space."
 			]
 		},
@@ -11388,6 +11425,7 @@
 				"At 3rd level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -11461,6 +11499,7 @@
 				"At 7th level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -11534,6 +11573,7 @@
 				"At 11th level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -11617,6 +11657,7 @@
 				"At 15th level, you gain one of the following features of your choice.",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",

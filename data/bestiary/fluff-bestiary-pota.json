@@ -77,7 +77,7 @@
 								{
 									"type": "entries",
 									"entries": [
-										"Black Earth guards are the warriors of the earth cult. They are brutal, heavily armored thugs devoted to Ogremoch. That devotion has granted them an uncanny ability to hold their ground against the buffeting assaults. It has also earned them the right to wear special plate armor of elemental stone, which breaks down when the guard is slain.",
+										"Black Earth guards are the warriors of the earth cult. They are brutal, heavily armored thugs devoted to Ogrémoch. That devotion has granted them an uncanny ability to hold their ground against the buffeting assaults. It has also earned them the right to wear special plate armor of elemental stone, which breaks down when the guard is slain.",
 										"These guards are fanatically loyal to the Black Earth priests and the leaders of the cult. They fight to the death if commanded to do so by their superiors. Those with more potential become burrowsharks."
 									]
 								}
@@ -109,7 +109,7 @@
 								{
 									"type": "entries",
 									"entries": [
-										"The priests of the Black Earth are the drivers and organizers of Ogremoch's cult. They are the true believers, seeing Ogremoch as a divine force, and they have developed a twisted dogma to explain how the evil of elemental earth is destined to remake the world and rule over all. The Black Earth priests form a cabal of leaders whose fanaticism and magical power serve as the backbone of the cult. Individuals of unusual power hold higher rank in the cult, but the priests provide the cult leader with his or her authority over the rest of Ogremoch's followers."
+										"The priests of the Black Earth are the drivers and organizers of Ogrémoch's cult. They are the true believers, seeing Ogrémoch as a divine force, and they have developed a twisted dogma to explain how the evil of elemental earth is destined to remake the world and rule over all. The Black Earth priests form a cabal of leaders whose fanaticism and magical power serve as the backbone of the cult. Individuals of unusual power hold higher rank in the cult, but the priests provide the cult leader with his or her authority over the rest of Ogrémoch's followers."
 									]
 								}
 							]
@@ -141,7 +141,7 @@
 									"type": "entries",
 									"entries": [
 										"Elite warriors of the earth cult, burrowsharks are fierce champions who ride trained bulettes into battle. While their powerful mounts rend and tear foes to pieces, burrowsharks leap to the ground and cut down their foes without mercy.",
-										"Burrowsharks are much like Black Earth guards, since both have uncanny footing and special armor. For burrowsharks, an additional gift of Ogremoch's might establishes a magical bond between the burrowshark and a bulette, allowing the rider to burrow with its mount and sense what its mount senses."
+										"Burrowsharks are much like Black Earth guards, since both have uncanny footing and special armor. For burrowsharks, an additional gift of Ogrémoch's might establishes a magical bond between the burrowshark and a bulette, allowing the rider to burrow with its mount and sense what its mount senses."
 									]
 								}
 							]
@@ -674,7 +674,7 @@
 									"type": "entries",
 									"entries": [
 										"Marlos Urnrayle is the earth prophet of Elemental Evil and the leader of the Black Earth cult in the Sumber Hills. He is a medusa of unusual power who was once a vain and cruel human nobleman. Marlos delights in petrifying his foes, especially those of great physical beauty, and smashing the remains to rubble.",
-										"Marlos wields the magical war pick Ironfang, which he found in the Fane of the Eye after being drawn to the spot by a vision. Because of his medusa curse and his possession of the elemental weapon, the other Black Earth cultists believe that he stands high in Ogremoch's favor and are fanatically loyal to him."
+										"Marlos wields the magical war pick Ironfang, which he found in the Fane of the Eye after being drawn to the spot by a vision. Because of his medusa curse and his possession of the elemental weapon, the other Black Earth cultists believe that he stands high in Ogrémoch's favor and are fanatically loyal to him."
 									]
 								},
 								{
@@ -735,16 +735,16 @@
 								{
 									"type": "entries",
 									"entries": [
-										"The Prince of Evil Earth is Ogremoch (pronounced oh-gray-mock), the Mountain that Walks. His natural form is a shambling, 50-foot-tall colossus of rock, with crystal growths embedded throughout his body. When he bothers to speak, his voice sounds like grinding stones.",
-										"Ogremoch is a miser who regards all the resources and treasures found in the ground as his own. He holds nothing but contempt for mortals (or any other denizens of the Material Plane) and desires nothing more than to crush and subjugate whomever he encounters. What he can't crush, he endures and outlasts.",
-										"Ogremoch especially resents any mortals that dare to remove valuable metal or stone from the earth, and those who shape or build things of stone. He notices each nugget of gold or raw gemstone removed from areas under his influence, seeking to reclaim treasures \"stolen\" from him-and to punish the thieves. When the Prince of Evil Earth gains access to the Material Plane through an elemental node, he begins to methodically locate and destroy every mine, quarry, town, or fortification in the area. It's not that he needs the wealth, but the principle of the thing-extracting treasure from the earth-is anathema to Ogremoch."
+										"The Prince of Evil Earth is Ogrémoch (pronounced oh-gray-mock), the Mountain that Walks. His natural form is a shambling, 50-foot-tall colossus of rock, with crystal growths embedded throughout his body. When he bothers to speak, his voice sounds like grinding stones.",
+										"Ogrémoch is a miser who regards all the resources and treasures found in the ground as his own. He holds nothing but contempt for mortals (or any other denizens of the Material Plane) and desires nothing more than to crush and subjugate whomever he encounters. What he can't crush, he endures and outlasts.",
+										"Ogrémoch especially resents any mortals that dare to remove valuable metal or stone from the earth, and those who shape or build things of stone. He notices each nugget of gold or raw gemstone removed from areas under his influence, seeking to reclaim treasures \"stolen\" from him-and to punish the thieves. When the Prince of Evil Earth gains access to the Material Plane through an elemental node, he begins to methodically locate and destroy every mine, quarry, town, or fortification in the area. It's not that he needs the wealth, but the principle of the thing-extracting treasure from the earth-is anathema to Ogrémoch."
 									]
 								},
 								{
 									"type": "entries",
-									"name": "Ogremoch's Lair",
+									"name": "Ogrémoch's Lair",
 									"entries": [
-										"Ogremoch is normally found in the depths of elemental earth, choosing caverns with black crystals and jagged rock spikes to serve as his throne room. He can enter the Material Plane through large and well-established nodes of elemental earth, with a little help from the proper rituals. Within such a node, Ogremoch wields great power."
+										"Ogrémoch is normally found in the depths of elemental earth, choosing caverns with black crystals and jagged rock spikes to serve as his throne room. He can enter the Material Plane through large and well-established nodes of elemental earth, with a little help from the proper rituals. Within such a node, Ogrémoch wields great power."
 									]
 								}
 							]
@@ -803,7 +803,7 @@
 			]
 		},
 		{
-			"name": "One-eyed Shiver",
+			"name": "One-Eyed Shiver",
 			"source": "PotA",
 			"entries": [
 				{
@@ -978,8 +978,8 @@
 								{
 									"type": "entries",
 									"entries": [
-										"Stonemelders are spellcasters who gain their power from Ogremoch, using elemental earth magic to sheathe their bodies in carapaces of rock. They are elite champions of the cult and answer only to the cult leaders. Not even the Black Earth priests tell stonemelders what to do.",
-										"Each stonemelder carries a weapon known as a Black Earth rod. Such a rod is like an ordinary mace, but in the hands of a stonemelder, it serves as a conduit for Ogremoch's wrath."
+										"Stonemelders are spellcasters who gain their power from Ogrémoch, using elemental earth magic to sheathe their bodies in carapaces of rock. They are elite champions of the cult and answer only to the cult leaders. Not even the Black Earth priests tell stonemelders what to do.",
+										"Each stonemelder carries a weapon known as a Black Earth rod. Such a rod is like an ordinary mace, but in the hands of a stonemelder, it serves as a conduit for Ogrémoch's wrath."
 									]
 								}
 							]

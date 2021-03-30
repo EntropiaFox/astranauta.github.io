@@ -146,7 +146,7 @@
 					"name": "Overview",
 					"id": "008",
 					"entries": [
-						"Lost Mine of Phandelver is divided into four parts. In part 1, \"Goblin Arrows,\" the adventurers are on the road to the town of Phandalin when they stumble into a goblin ambush. They discover that the goblins (who belong to the Cragmaw tribe) have captured their dwarf friend Gundren Rockseeker and his escort, a human warrior named Sildar Hallwinter. The characters must deal with the ambushers and then follow their trail back to the goblins' hideout. They rescue Sildar and learn from him that Gundren and his brothers discovered a famous lost mine. Sildar knows only that Gundren and his map have been taken to somewhere called \"Cragmaw Castle.\"",
+						"Lost Mine of Phandelver is divided into four parts. In part 1, \"Goblin Arrows,\" the adventurers are on the road to the town of Phandalin when they stumble into a goblin ambush. They discover that the goblins (who belong to the Cragmaw tribe) have captured their dwarf friend {@creature Gundren Rockseeker|lmop} and his escort, a human warrior named Sildar Hallwinter. The characters must deal with the ambushers and then follow their trail back to the goblins' hideout. They rescue Sildar and learn from him that Gundren and his brothers discovered a famous lost mine. Sildar knows only that Gundren and his map have been taken to somewhere called \"Cragmaw Castle.\"",
 						"In part 2, \"Phandalin,\" the characters arrive in Phandalin to find it terrorized by the Redbrands, a gang of miscreants led by a mysterious figure called Glasstaff. A number of interesting NPCs can also be found in Phandalin, laying the hooks for short adventures in part 3. The Redbrands try to run the characters out of town, so the characters return the favor and storm the Redbrand lair. In a hidden stronghold beneath an old manor, they find that Iarno \"Glasstaff\" Albrek, the leader of the Redbrands, is taking his orders from someone called the Black Spider-and that the Black Spider wants the adventurers out of the picture.",
 						"Part 3, \"The Spider's Web,\" provides the characters with several short adventures in the region around Phandalin as they search for more information about the Black Spider and the dwarves' lost mine. The clues the characters picked up in Phandalin can lead them to spy on a mysterious wizard at the ruins of Old Owl Well, seek the advice of a dangerous banshee, oust a band of orcs lurking at Wyvern Tor, and investigate the ruins of the town of Thundertree.",
 						"Several of these leads point to Cragmaw Castle, which is the stronghold of King Grol, leader of the Cragmaw goblins. Here the characters discover that the Black Spider is a drow adventurer named Nezznar, and that the Cragmaw goblins work for him (drow are elves who hail from a realm deep underground). More importantly, they recover Gundren Rockseeker's map to the lost mine, or learn the mine's location from one of the other leads they unearth during part 3.",
@@ -604,7 +604,7 @@
 								{
 									"type": "list",
 									"items": [
-										"The three Rockseeker brothers (Gundren, Tharden, and Nundro) recently located an entrance to the long-lost Wave Echo Cave, site of the mines of the Phandelver's Pact. (Share the information in the first two paragraphs of the \"Background\" section to the players at this time.)",
+										"The three Rockseeker brothers ({@creature Gundren Rockseeker|lmop|Gundren}, Tharden, and {@creature Nundro Rockseeker|lmop|Nundro}) recently located an entrance to the long-lost Wave Echo Cave, site of the mines of the Phandelver's Pact. (Share the information in the first two paragraphs of the \"Background\" section to the players at this time.)",
 										"Klarg, the bugbear who leads this goblin band, had orders to waylay Gundren. Sildar heard from the goblins that the Black Spider sent word that the dwarf was to be brought to him. Sildar doesn't know who or what the Black Spider is.",
 										"Gundren had a map showing the secret location of Wave Echo Cave, but the goblins took it when they captured him. Sildar believes that Klarg sent the map and the dwarf to the chief of the Cragmaws at a place called Cragmaw Castle. Sildar doesn't know where that might be, but he suggests someone in Phandalin might know. (It doesn't occur to Sildar immediately, but a captured goblin might also be persuaded to divulge the castle's location. See the \"What the Goblins Know\" sidebar on page 8.)",
 										"Sildar's contact in Phandalin is a human wizard named Iarno Albrek. The wizard traveled to the town two months ago to establish order there. After the Lords' Alliance received no word from Iarno, Sildar decided to investigate."
@@ -1689,7 +1689,7 @@
 							]
 						},
 						"Three {@creature bugbear||bugbears} and one {@creature goblin} are present. The goblin, Droop, falls unconscious at the sight of the party, but another creature can use an action to wake him. Otherwise, Droop remains unconscious for 1d10 minutes.",
-						"The bugbears work for the Black Spider and were sent here to help Iarno keep the Redbrands and the citizens of Phandalin in line. The leader is named Mosk. He wears a jeweled eye patch even though he has both his eyes. Mask wears the eye patch because he thinks it's fancy.",
+						"The bugbears work for the Black Spider and were sent here to help Iarno keep the Redbrands and the citizens of Phandalin in line. The leader is named Mosk. He wears a jeweled eye patch even though he has both his eyes. Mosk wears the eye patch because he thinks it's fancy.",
 						"The bugbears avoid the human members of the Redbrands. If the characters are wearing scarlet cloaks taken from elsewhere, the bugbears assume that they serve Iarno. Clever characters might even persuade the bugbears to help deal with \"traitors\" or \"impostors\" elsewhere in the dungeon. If you don't think the players are doing a great job roleplaying the deception, you can have the character who is doing most of the talking make a DC 15 Charisma (Deception) check to convince the bugbears to do what the party wants.",
 						{
 							"type": "entries",
@@ -2431,7 +2431,7 @@
 							"name": "Joining the Emerald Enclave",
 							"id": "0e2",
 							"entries": [
-								"If the party helps Reidoth by chasing off Venomfang, the druid privately approaches certain members of the group and urges them to join the Emerald Enclave. He speaks with those who exemplify the ideal of protecting the natural order. If a character agrees, Reidoth gives the individual the title of Springwarden."
+								"If the party helps Reidoth by chasing off {@creature Venomfang|lmop}, the druid privately approaches certain members of the group and urges them to join the Emerald Enclave. He speaks with those who exemplify the ideal of protecting the natural order. If a character agrees, Reidoth gives the individual the title of Springwarden."
 							]
 						}
 					]
@@ -4016,7 +4016,7 @@
 								"Dusty draperies adorn the walls of this room, which also contains a bed and brazier. A badly disheveled dwarf lies bound and unconscious on the cold stone floor."
 							]
 						},
-						"This room formerly belonged to the priest in charge of Dumathoin's temple ({@area 19|18b}), but Nezznar has appropriated it for use as a cell. The figure lying on the floor is Nundro, a dwarf {@creature commoner} and the youngest of the three Rockseeker brothers. Nezznar spared him because he thought the dwarf might know more about the mine than he admitted. The drow has interrogated Nundro harshly once or twice a day ever since capturing him.",
+						"This room formerly belonged to the priest in charge of Dumathoin's temple ({@area 19|18b}), but Nezznar has appropriated it for use as a cell. The figure lying on the floor is {@creature Nundro Rockseeker|lmop|Nundro}, a dwarf {@creature commoner} and the youngest of the three Rockseeker brothers. Nezznar spared him because he thought the dwarf might know more about the mine than he admitted. The drow has interrogated Nundro harshly once or twice a day ever since capturing him.",
 						{
 							"type": "entries",
 							"name": "Developments",
@@ -4196,6 +4196,7 @@
 					"type": "list",
 					"columns": 3,
 					"items": [
+						"{@creature ash zombie|LMoP}",
 						"{@creature Bugbear}",
 						"{@creature Commoner}",
 						"{@creature Cultist}",
@@ -4206,10 +4207,12 @@
 						"{@creature Giant Spider}",
 						"{@creature Goblin}",
 						"{@creature Grick}",
+						"{@creature Gundren Rockseeker|lmop}",
 						"{@creature Hobgoblin}",
 						"{@creature Mormesk the Wraith|LMoP}",
 						"{@creature Nezznar the Black Spider|LMoP}",
 						"{@creature Nothic}",
+						"{@creature Nundro Rockseeker|lmop}",
 						"{@creature Ochre Jelly}",
 						"{@creature Ogre}",
 						"{@creature Orc}",
@@ -4221,7 +4224,7 @@
 						"{@creature Stirge}",
 						"{@creature Twig Blight}",
 						"{@creature Wolf}",
-						"{@creature Young Green Dragon}",
+						"{@creature Young Green Dragon} ({@creature Venomfang|lmop})",
 						"{@creature Zombie}"
 					]
 				}

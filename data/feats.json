@@ -20,6 +20,27 @@
 					"con": 1
 				}
 			],
+			"additionalSpells": [
+				{
+					"ability": "con",
+					"innate": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=Sorcerer"
+								}
+							],
+							"rest": {
+								"1": [
+									{
+										"choose": "level=1|class=Sorcerer"
+									}
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You have manifested an aberrant dragonmark. Determine its appearance and the flaw associated with it. You gain the following benefits:",
 				{
@@ -105,6 +126,11 @@
 					"dex": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"acrobatics": true
+				}
+			],
 			"entries": [
 				"You become more nimble, gaining the following benefits:",
 				{
@@ -145,6 +171,11 @@
 					"int": 1
 				}
 			],
+			"toolProficiencies": [
+				{
+					"alchemist's supplies": true
+				}
+			],
 			"entries": [
 				"You have studied the secrets of alchemy and are an expert in its practice, gaining the following benefits:",
 				{
@@ -182,6 +213,11 @@
 					"wis": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"animal handling": true
+				}
+			],
 			"entries": [
 				"You master the techniques needed to train and handle animals. You gain the following benefits:",
 				{
@@ -202,6 +238,27 @@
 					"int": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"arcana": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"_": [
+								"prestidigitation"
+							],
+							"daily": {
+								"1": [
+									"detect magic"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You study the arcane arts, gaining the following benefits:",
 				{
@@ -217,6 +274,32 @@
 			"name": "Artificer Initiate",
 			"source": "TCE",
 			"page": 79,
+			"toolProficiencies": [
+				{
+					"artisan's tools": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "int",
+					"innate": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=Artificer"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Artificer"
+									}
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You've learned some of an artificer's inventiveness:",
 				{
@@ -233,6 +316,32 @@
 			"name": "Artificer Initiate",
 			"source": "UA2020Feats",
 			"page": 1,
+			"toolProficiencies": [
+				{
+					"artisan's tools": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "int",
+					"innate": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=Artificer"
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Artificer"
+									}
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You've learned some of an artificer's inventiveness, granting you the following benefits:",
 				{
@@ -294,6 +403,11 @@
 						],
 						"amount": 1
 					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"intimidation": true
 				}
 			],
 			"entries": [
@@ -368,6 +482,11 @@
 					"str": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"athletics": true
+				}
+			],
 			"entries": [
 				"You become stronger, gaining the following benefits:",
 				{
@@ -386,6 +505,11 @@
 			"ability": [
 				{
 					"dex": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"thieves' tools": true
 				}
 			],
 			"entries": [
@@ -422,6 +546,11 @@
 					}
 				}
 			],
+			"toolProficiencies": [
+				{
+					"cook's utensils": true
+				}
+			],
 			"entries": [
 				"Time spent mastering the culinary arts has paid off, granting you the following benefits:",
 				{
@@ -449,6 +578,11 @@
 					}
 				}
 			],
+			"toolProficiencies": [
+				{
+					"cook's utensils": true
+				}
+			],
 			"entries": [
 				"Time and effort spent mastering the culinary arts has paid off. You gain the following benefits:",
 				{
@@ -473,6 +607,28 @@
 							"subrace": "forest"
 						}
 					]
+				}
+			],
+			"skillProficiencies": [
+				{
+					"animal handling": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "int",
+					"innate": {
+						"1": {
+							"will": [
+								"speak with animals"
+							],
+							"daily": {
+								"1": [
+									"animal friendship"
+								]
+							}
+						}
+					}
 				}
 			],
 			"entries": [
@@ -578,6 +734,11 @@
 			"ability": [
 				{
 					"cha": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"persuasion": true
 				}
 			],
 			"entries": [
@@ -761,6 +922,37 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"detect magic"
+								]
+							},
+							"_": [
+								"mage hand"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"detect thoughts"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"clairvoyance"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"Your have the magical mark of Detection, the dragonmark of House Medani, and are a member of that house.",
 				"You gain the ability to innately cast spells and cantrips, using Wisdom as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
@@ -803,6 +995,37 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"identify"
+								]
+							},
+							"_": [
+								"mage hand"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"locate object"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"clairvoyance"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"Your have the magical mark of Finding, the dragonmark of House Tharashk, and are a member of that house.",
 				"You gain the ability to innately cast spells and cantrips, using Wisdom as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
@@ -840,6 +1063,37 @@
 							"name": "human"
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"speak with animals"
+								]
+							},
+							"_": [
+								"druidcraft"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"beast sense"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"conjure animals"
+								]
+							}
+						}
+					},
+					"ability": "wis"
 				}
 			],
 			"entries": [
@@ -881,6 +1135,37 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"cure wounds"
+								]
+							},
+							"_": [
+								"spare the dying"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"lesser restoration"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"revivify"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"Your have the magical mark of Healing, the dragonmark of House Jorasco, and are a member of that house.",
 				"You gain the ability to innately cast spells and cantrips, using Wisdom as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
@@ -918,6 +1203,37 @@
 							"name": "halfling"
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"unseen servant"
+								]
+							},
+							"_": [
+								"friends"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"rope trick"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"Leomund's tiny hut"
+								]
+							}
+						}
+					},
+					"ability": "cha"
 				}
 			],
 			"entries": [
@@ -959,6 +1275,37 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"identify"
+								]
+							},
+							"_": [
+								"mending"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"magic weapon"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"fabricate"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"Your have the magical mark of Making, the dragonmark of House Cannith, and are a member of that house.",
 				"You gain the ability to innately cast spells and cantrips, using Intelligence as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
@@ -996,6 +1343,37 @@
 							"name": "human"
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"expeditious retreat"
+								]
+							},
+							"_": [
+								"light"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"misty step"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"teleportation circle"
+								]
+							}
+						}
+					},
+					"ability": "wis"
 				}
 			],
 			"entries": [
@@ -1037,6 +1415,37 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"comprehend languages"
+								]
+							},
+							"_": [
+								"message"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"sending"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"tongues"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"Your have the magical mark of Scribing, the dragonmark of House Sivis, and are a member of that house.",
 				"You gain the ability to innately cast spells and cantrips, using Intelligence as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
@@ -1074,6 +1483,37 @@
 							"name": "human"
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"compelled duel"
+								]
+							},
+							"_": [
+								"blade ward"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"blur"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"protection from energy"
+								]
+							}
+						}
+					},
+					"ability": "wis"
 				}
 			],
 			"entries": [
@@ -1115,6 +1555,37 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"dancing lights"
+								]
+							},
+							"_": [
+								"disguise self"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"darkness"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"nondetection"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"Your have the magical mark of Shadow, the dragonmark of House Phiarlan and House Thuranni, and are a member of one of those houses.",
 				"You gain the ability to innately cast spells and cantrips, using Charisma as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
@@ -1154,6 +1625,37 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"fog cloud"
+								]
+							},
+							"_": [
+								"shocking grasp"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"gust of wind"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"sleet storm"
+								]
+							}
+						}
+					},
+					"ability": "wis"
+				}
+			],
 			"entries": [
 				"Your have the magical mark of Storm, the dragonmark of House Lyrander, and are a member of that house.",
 				"You gain the ability to innately cast spells and cantrips, using Intelligence as your spellcasting ability. You cast each spell at its lowest level. Once you cast a given spell this way, you must finish a long rest before you can cast it innately again. You must still expend any material components. Your dragonmark confers the following benefits:",
@@ -1191,6 +1693,37 @@
 							"name": "dwarf"
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"alarm"
+								]
+							},
+							"_": [
+								"resistance"
+							]
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"arcane lock"
+								]
+							}
+						},
+						"9": {
+							"daily": {
+								"1": [
+									"magic circle"
+								]
+							}
+						}
+					},
+					"ability": "wis"
 				}
 			],
 			"entries": [
@@ -1233,6 +1766,24 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"ability": "cha",
+					"innate": {
+						"1": {
+							"will": [
+								"detect magic"
+							],
+							"daily": {
+								"1e": [
+									"levitate",
+									"dispel magic"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You learn more of the spells typical for your people. You learn {@spell detect magic} and can cast it at will, without expending a spell slot. You also learn {@spell levitate} and {@spell dispel magic}, each of which you can cast once without expending a spell slot. You regain the ability to cast the spell in this way when you finish a long rest. Charisma is your spellcasting ability for these spells."
 			]
@@ -1249,6 +1800,24 @@
 							"subrace": "drow"
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "cha",
+					"innate": {
+						"1": {
+							"will": [
+								"detect magic"
+							],
+							"daily": {
+								"1e": [
+									"levitate",
+									"dispel magic"
+								]
+							}
+						}
+					}
 				}
 			],
 			"entries": [
@@ -1485,6 +2054,11 @@
 					"wis": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"insight": true
+				}
+			],
 			"entries": [
 				"You possess keen insight into how other people think and feel. You gain the following benefits:",
 				{
@@ -1512,6 +2086,12 @@
 			"ability": [
 				{
 					"cha": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"deception": true,
+					"persuasion": true
 				}
 			],
 			"entries": [
@@ -1622,6 +2202,20 @@
 					"int": 1
 				}
 			],
+			"additionalSpells": [
+				{
+					"ability": "int",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"misty step"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"Drawing on your fey ancestry, you have learned how to teleport. You gain the following benefits:",
 				{
@@ -1657,12 +2251,31 @@
 					}
 				}
 			],
+			"languageProficiencies": [
+				{
+					"sylvan": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "int",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"misty step"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"Your study of high elven lore has unlocked fey power that few other elves possess, except your eladrin cousins. Drawing on your fey ancestry, you can momentarily stride through the Feywild to shorten your path from one place to another. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You learn to speak, read, and write Sylvan.",
+						"You learn to speak, read, and write {@language Sylvan}.",
 						"You learn the {@spell misty step} spell and can cast it once without expending a spell slot. You regain the ability to cast it in this way when you finish a short or long rest. Intelligence is your spellcasting ability for this spell."
 					]
 				}
@@ -1681,6 +2294,23 @@
 							"cha"
 						],
 						"amount": 1
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"innate": {
+						"1": {
+							"daily": {
+								"1e": [
+									"misty step",
+									{
+										"choose": "level=1|school=E;D"
+									}
+								]
+							}
+						}
 					}
 				}
 			],
@@ -1707,6 +2337,23 @@
 							"cha"
 						],
 						"amount": 1
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"innate": {
+						"1": {
+							"daily": {
+								"1e": [
+									"misty step",
+									{
+										"choose": "level=1|school=E;D"
+									}
+								]
+							}
+						}
 					}
 				}
 			],
@@ -1851,6 +2498,11 @@
 					"con": 1
 				}
 			],
+			"toolProficiencies": [
+				{
+					"cook's utensils": true
+				}
+			],
 			"entries": [
 				"You have mastered a variety of special recipes, allowing you to prepare exotic dishes with useful effects. You gain the following benefits:",
 				{
@@ -1949,6 +2601,11 @@
 					"dex": 1
 				}
 			],
+			"weaponProficiencies": [
+				{
+					"firearms": true
+				}
+			],
 			"entries": [
 				"You have a quick hand and keen eye when employing firearms, granting you the following benefits:",
 				{
@@ -1968,6 +2625,11 @@
 			"ability": [
 				{
 					"dex": 1
+				}
+			],
+			"weaponProficiencies": [
+				{
+					"firearms": true
 				}
 			],
 			"entries": [
@@ -2015,6 +2677,11 @@
 					"str": 1
 				}
 			],
+			"armorProficiencies": [
+				{
+					"heavy": true
+				}
+			],
 			"entries": [
 				"You have trained to master the use of heavy armor, gaining the following benefits:",
 				{
@@ -2060,6 +2727,11 @@
 			"ability": [
 				{
 					"int": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"history": true
 				}
 			],
 			"entries": [
@@ -2195,6 +2867,11 @@
 					"int": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"investigation": true
+				}
+			],
 			"entries": [
 				"You have an eye for detail and can pick out the smallest clues. You gain the following benefits:",
 				{
@@ -2242,6 +2919,11 @@
 					}
 				}
 			],
+			"armorProficiencies": [
+				{
+					"light": true
+				}
+			],
 			"entries": [
 				"You have trained to master the use of light armor, gaining the following benefits:",
 				{
@@ -2259,6 +2941,11 @@
 			"ability": [
 				{
 					"int": 1
+				}
+			],
+			"languageProficiencies": [
+				{
+					"any": 3
 				}
 			],
 			"entries": [
@@ -2303,6 +2990,128 @@
 			"name": "Magic Initiate",
 			"source": "PHB",
 			"page": 168,
+			"additionalSpells": [
+				{
+					"ability": "cha",
+					"innate": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=Bard",
+									"count": 2
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Bard"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "wis",
+					"innate": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=Cleric",
+									"count": 2
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Cleric"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "wis",
+					"innate": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=Druid",
+									"count": 2
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Druid"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "cha",
+					"innate": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=Sorcerer",
+									"count": 2
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Sorcerer"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "cha",
+					"innate": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=Warlock",
+									"count": 2
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Warlock"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "int",
+					"innate": {
+						"1": {
+							"_": [
+								{
+									"choose": "level=0|class=Wizard",
+									"count": 2
+								}
+							],
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Wizard"
+									}
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"Choose a class: {@filter bard|spells|level=0;1|class=bard}, {@filter cleric|spells|level=0;1|class=cleric}, {@filter druid|spells|level=0;1|class=druid}, {@filter sorcerer|spells|level=0;1|class=sorcerer}, {@filter warlock|spells|level=0;1|class=warlock}, or {@filter wizard|spells|level=0;1|class=wizard}. You learn two cantrips of your choice from that class's spell list.",
 				"In addition, choose one 1st-level spell from that same list. You learn that spell and can cast it at its lowest level. Once you cast it, you must finish a long rest before you can cast it again using this feat.",
@@ -2333,6 +3142,11 @@
 					"cha": 1
 				}
 			],
+			"toolProficiencies": [
+				{
+					"disguise kit": true
+				}
+			],
 			"entries": [
 				"You have honed your ability to shape your personality and to read the personalities of others. You gain the following benefits:",
 				{
@@ -2351,6 +3165,11 @@
 			"ability": [
 				{
 					"wis": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"medicine": true
 				}
 			],
 			"entries": [
@@ -2395,6 +3214,11 @@
 			"ability": [
 				{
 					"cha": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"intimidation": true
 				}
 			],
 			"entries": [
@@ -2520,6 +3344,12 @@
 					}
 				}
 			],
+			"armorProficiencies": [
+				{
+					"medium": true,
+					"shield|phb": true
+				}
+			],
 			"entries": [
 				"You have trained to master the use of medium armor and shields, gaining the following benefits:",
 				{
@@ -2553,6 +3383,27 @@
 			"ability": [
 				{
 					"int": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"nature": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"_": [
+								"druidcraft"
+							],
+							"daily": {
+								"1": [
+									"detect poison and disease"
+								]
+							}
+						}
+					}
 				}
 			],
 			"entries": [
@@ -2688,6 +3539,11 @@
 					"wis": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
 			"entries": [
 				"You hone your senses until they become razor sharp. You gain the following benefits:",
 				{
@@ -2706,6 +3562,11 @@
 			"ability": [
 				{
 					"cha": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"performance": true
 				}
 			],
 			"entries": [
@@ -2775,6 +3636,11 @@
 			"name": "Poisoner",
 			"source": "TCE",
 			"page": 80,
+			"toolProficiencies": [
+				{
+					"poisoner's kit": true
+				}
+			],
 			"entries": [
 				"You can prepare and deliver deadly poisons, granting you the following benefits:",
 				{
@@ -2791,6 +3657,11 @@
 			"name": "Poisoner",
 			"source": "UA2020Feats",
 			"page": 2,
+			"toolProficiencies": [
+				{
+					"poisoner's kit": true
+				}
+			],
 			"entries": [
 				"You can prepare and deliver deadly poisons, gaining the following benefits:",
 				{
@@ -2837,6 +3708,35 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion",
+							{
+								"tool": true
+							}
+						]
+					}
+				}
+			],
 			"entries": [
 				"You have honed your proficiency with particular skills or tools, gaining the following benefits:",
 				{
@@ -2879,12 +3779,46 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion",
+							{
+								"tool": true
+							}
+						]
+					}
+				}
+			],
+			"languageProficiencies": [
+				{
+					"any": 1
+				}
+			],
 			"entries": [
 				"You have a knack for learning new things. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice."
+						"You gain one {@table skills|phb|skill proficiency} of your choice, one {@filter tool proficiency|items|type=tool;artisan's tools} of your choice, and fluency in one language of your choice."
 					]
 				}
 			]
@@ -2908,12 +3842,48 @@
 					]
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion"
+						]
+					}
+				}
+			],
+			"languageProficiencies": [
+				{
+					"any": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"any": 1
+				}
+			],
 			"entries": [
 				"You have a knack for learning new things. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain one skill proficiency of your choice, one tool proficiency of your choice, and fluency in one language of your choice.",
+						"You gain one {@table skills|phb|skill proficiency} of your choice, one {@filter tool proficiency|items|type=tool;artisan's tools} of your choice, and fluency in one language of your choice.",
 						"Choose one skill in which you have proficiency. You gain expertise with that skill, which means your proficiency bonus is doubled for any ability check you make with it. The skill you choose must be one that isn't already benefiting from a feature, such as Expertise, that doubles your proficiency bonus."
 					]
 				}
@@ -2926,6 +3896,11 @@
 			"ability": [
 				{
 					"dex": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"sleight of hand": true
 				}
 			],
 			"entries": [
@@ -2950,6 +3925,11 @@
 							"int": 13
 						}
 					]
+				}
+			],
+			"toolProficiencies": [
+				{
+					"artisan's tools": true
 				}
 			],
 			"entries": [
@@ -3042,7 +4022,7 @@
 				}
 			],
 			"entries": [
-				"You are descended from a master of the double-bladed scimitar, and some of that mastery has passed on to you. You gain the following benefits:",
+				"You are descended from a master of the {@item double-bladed scimitar|ERLW}, and some of that mastery has passed on to you. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
@@ -3066,6 +4046,98 @@
 							"wis": 13
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "cha",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Bard|components & miscellaneous=ritual",
+										"count": 2
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "wis",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Cleric|components & miscellaneous=ritual",
+										"count": 2
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "wis",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Druid|components & miscellaneous=ritual",
+										"count": 2
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "cha",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Sorcerer|components & miscellaneous=ritual",
+										"count": 2
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "cha",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Warlock|components & miscellaneous=ritual",
+										"count": 2
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"ability": "int",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									{
+										"choose": "level=1|class=Wizard|components & miscellaneous=ritual",
+										"count": 2
+									}
+								]
+							}
+						}
+					}
 				}
 			],
 			"entries": [
@@ -3181,6 +4253,17 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"ritual": [
+								"find familiar"
+							]
+						}
+					}
+				}
+			],
 			"entries": [
 				"You are skilled in the creation of servos\u2014tiny constructs that function as personal assistants. You can cast the {@spell find familiar} spell as a ritual, creating a servo to serve as your familiar instead of an animal. A servo's statistics appear in the \"Artifact Creatures\" section of this document. In every other way, a servo familiar functions as described in the {@spell find familiar} spell.",
 				"You can communicate telepathically with your servo familiar and perceive through its senses as long as you are on the same plane of existence. You can speak through your servo in your own voice.",
@@ -3200,6 +4283,23 @@
 							"cha"
 						],
 						"amount": 1
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"innate": {
+						"1": {
+							"daily": {
+								"1e": [
+									"invisibility",
+									{
+										"choose": "level=1|school=I;N"
+									}
+								]
+							}
+						}
 					}
 				}
 			],
@@ -3226,6 +4326,23 @@
 							"cha"
 						],
 						"amount": 1
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"innate": {
+						"1": {
+							"daily": {
+								"1e": [
+									"invisibility",
+									{
+										"choose": "level=1|school=I;N"
+									}
+								]
+							}
+						}
 					}
 				}
 			],
@@ -3287,6 +4404,11 @@
 					}
 				}
 			],
+			"armorProficiencies": [
+				{
+					"shield|phb": true
+				}
+			],
 			"entries": [
 				"You've trained in the effective use of shields. You gain the following benefits:",
 				{
@@ -3306,6 +4428,11 @@
 			"ability": [
 				{
 					"cha": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"deception": true
 				}
 			],
 			"entries": [
@@ -3338,6 +4465,32 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion"
+						]
+					}
+				}
+			],
 			"entries": [
 				"You have honed your proficiency with particular skills, granting you the following benefits:",
 				{
@@ -3353,8 +4506,38 @@
 			"name": "Skilled",
 			"source": "PHB",
 			"page": 170,
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion",
+							{
+								"tool": true
+							}
+						],
+						"count": 3
+					}
+				}
+			],
 			"entries": [
-				"You gain proficiency in any combination of three {@book skills|phb|7|skills} or {@filter tools|items|type=tool;artisan's tools} of your choice."
+				"You gain proficiency in any combination of three {@table skills|phb} or {@filter tools|items|type=tools;artisan's tools;instrument;gaming set;vehicle (land);vehicle (water)} of your choice."
 			]
 		},
 		{
@@ -3460,6 +4643,74 @@
 					"spellcasting": true
 				}
 			],
+			"additionalSpells": [
+				{
+					"ability": "cha",
+					"innate": {
+						"1": [
+							{
+								"choose": "level=0|class=Bard|spell attack=m;r;o",
+								"count": 2
+							}
+						]
+					}
+				},
+				{
+					"ability": "wis",
+					"innate": {
+						"1": [
+							{
+								"choose": "level=0|class=Cleric|spell attack=m;r;o",
+								"count": 2
+							}
+						]
+					}
+				},
+				{
+					"ability": "wis",
+					"innate": {
+						"1": [
+							{
+								"choose": "level=0|class=Druid|spell attack=m;r;o",
+								"count": 2
+							}
+						]
+					}
+				},
+				{
+					"ability": "cha",
+					"innate": {
+						"1": [
+							{
+								"choose": "level=0|class=Sorcerer|spell attack=m;r;o",
+								"count": 2
+							}
+						]
+					}
+				},
+				{
+					"ability": "cha",
+					"innate": {
+						"1": [
+							{
+								"choose": "level=0|class=Warlock|spell attack=m;r;o",
+								"count": 2
+							}
+						]
+					}
+				},
+				{
+					"ability": "int",
+					"innate": {
+						"1": [
+							{
+								"choose": "level=0|class=Wizard|spell attack=m;r;o",
+								"count": 2
+							}
+						]
+					}
+				}
+			],
 			"entries": [
 				"You have learned techniques to enhance your attacks with certain kinds of spells, gaining the following benefits:",
 				{
@@ -3502,6 +4753,16 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics"
+						]
+					}
+				}
+			],
 			"entries": [
 				"You are uncommonly nimble for your race. You gain the following benefits:",
 				{
@@ -3541,6 +4802,16 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"acrobatics",
+							"athletics"
+						]
+					}
+				}
+			],
 			"entries": [
 				"You are uncommonly nimble for your race. You gain the following benefits:",
 				{
@@ -3562,6 +4833,11 @@
 					"dex": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"stealth": true
+				}
+			],
 			"entries": [
 				"You know how best to hide. You gain the following benefits:",
 				{
@@ -3580,6 +4856,24 @@
 			"ability": [
 				{
 					"wis": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"survival": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"alarm"
+								]
+							}
+						}
+					}
 				}
 			],
 			"entries": [
@@ -3615,6 +4909,25 @@
 							"subrace": "deep"
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "int",
+					"innate": {
+						"1": {
+							"will": [
+								"nondetection"
+							],
+							"daily": {
+								"1e": [
+									"blindness/deafness",
+									"blur",
+									"disguise self"
+								]
+							}
+						}
+					}
 				}
 			],
 			"entries": [
@@ -3680,6 +4993,16 @@
 					}
 				}
 			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"innate": {
+						"1": [
+							"mage hand"
+						]
+					}
+				}
+			],
 			"entries": [
 				"You learn to move things with your mind, granting you the following benefits:",
 				{
@@ -3712,6 +5035,16 @@
 					}
 				}
 			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"innate": {
+						"1": [
+							"mage hand"
+						]
+					}
+				}
+			],
 			"entries": [
 				"You learn to move things with your mind. You gain the following benefits:",
 				{
@@ -3730,6 +5063,15 @@
 			"ability": [
 				{
 					"int": 1
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": [
+							"mage hand"
+						]
+					}
 				}
 			],
 			"entries": [
@@ -3756,6 +5098,20 @@
 							"cha"
 						],
 						"amount": 1
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"detect thoughts"
+								]
+							}
+						}
 					}
 				}
 			],
@@ -3791,6 +5147,20 @@
 					}
 				}
 			],
+			"additionalSpells": [
+				{
+					"ability": "inherit",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"detect thoughts"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You awaken the ability to mentally connect with others. You gain the following benefits:",
 				{
@@ -3811,6 +5181,18 @@
 					"int": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"insight",
+							"deception",
+							"intimidation",
+							"persuasion"
+						]
+					}
+				}
+			],
 			"entries": [
 				"You awaken the ability to mentally connect with others. You gain the following benefits:",
 				{
@@ -3829,6 +5211,27 @@
 			"ability": [
 				{
 					"int": 1
+				}
+			],
+			"skillProficiencies": [
+				{
+					"religion": true
+				}
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"_": [
+								"thaumaturgy"
+							],
+							"daily": {
+								"1": [
+									"detect evil and good"
+								]
+							}
+						}
+					}
 				}
 			],
 			"entries": [
@@ -3870,6 +5273,20 @@
 			"ability": [
 				{
 					"wis": 1
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "wis",
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"hunter's mark"
+								]
+							}
+						}
+					}
 				}
 			],
 			"entries": [
@@ -3943,6 +5360,14 @@
 							"dex"
 						],
 						"amount": 1
+					}
+				}
+			],
+			"weaponProficiencies": [
+				{
+					"choose": {
+						"from": "type=martial weapon;mundane weapon|miscellaneous=mundane",
+						"count": 4
 					}
 				}
 			],
@@ -4105,6 +5530,21 @@
 					]
 				}
 			],
+			"additionalSpells": [
+				{
+					"ability": "wis",
+					"innate": {
+						"1": {
+							"daily": {
+								"1e": [
+									"longstrider",
+									"pass without trace"
+								]
+							}
+						}
+					}
+				}
+			],
 			"entries": [
 				"You learn the magic of the primeval woods. You learn one druid cantrip of your choice. You also learn {@spell longstrider} and {@spell pass without trace}, each of which you can cast once without expending a spell slot. You regain the ability to cast the spell in this way when you finish a long rest. Wisdom is your spellcasting ability for these spells."
 			]
@@ -4121,6 +5561,21 @@
 							"subrace": "wood"
 						}
 					]
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": "wis",
+					"innate": {
+						"1": {
+							"daily": {
+								"1e": [
+									"longstrider",
+									"pass without trace"
+								]
+							}
+						}
+					}
 				}
 			],
 			"entries": [

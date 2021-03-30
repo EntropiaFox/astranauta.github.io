@@ -15,13 +15,59 @@
 			],
 			"spellcastingAbility": "int",
 			"casterProgression": "full",
+			"preparedSpells": "<$level$> + <$int_mod$>",
+			"cantripProgression": [
+				3,
+				3,
+				3,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5
+			],
+			"spellsKnownProgressionFixed": [
+				6,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2
+			],
+			"spellsKnownProgressionFixedAllowLowerLevel": true,
 			"startingProficiencies": {
 				"weapons": [
-					"daggers",
-					"darts",
-					"slings",
-					"quarterstaffs",
-					"light crossbows"
+					"{@item dagger|phb|daggers}",
+					"{@item dart|phb|darts}",
+					"{@item sling|phb|slings}",
+					"{@item quarterstaff|phb|quarterstaffs}",
+					"{@item light crossbow|phb|light crossbows}"
 				],
 				"skills": [
 					{
@@ -1121,7 +1167,15 @@
 										"When you find a wizard spell of 1st level or higher, you can add it to your spellbook if it is of a spell level you can prepare and if you can spare the time to decipher and copy it.",
 										"Copying a spell into your spellbook involves reproducing the basic form of the spell, then deciphering the unique system of notation used by the wizard who wrote it. You must practice the spell until you understand the sounds or gestures required, then transcribe it into your spellbook using your own notation.",
 										"For each level of the spell, the process takes 2 hours and costs 50 gp. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it. Once you have spent this time and money, you can prepare the spell just like your other spells.",
-										"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When you copy a spell from a spell scroll, you must succeed on an Intelligence ({@skill Arcana}) check with a DC equal to 10 + the spell's level. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
+										{
+											"type": "entries",
+											"name": "Copying from a Spell Scroll",
+											"source": "DMG",
+											"page": 139,
+											"entries": [
+												"A wizard spell on a spell scroll can be copied just as spells in spellbooks can be copied. When you copy a spell from a spell scroll, you must succeed on an Intelligence ({@skill Arcana}) check with a DC equal to 10 + the spell's level. If the check succeeds, the spell is successfully copied. Whether the check succeeds or fails, the spell scroll is destroyed."
+											]
+										}
 									]
 								}
 							]
@@ -1609,7 +1663,7 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"Starting at 2nd level, you can weave magic around yourself for protection. When you cast an {@filter abjuration spell of 1st level or higher|spells|school=A|level=!0}, you can simultaneously use a strand of the spell's magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + your Intelligence modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage.",
+				"Starting at 2nd level, you can weave magic around yourself for protection. When you cast an {@filter abjuration spell of 1st level or higher|spells|school=A|level=!0}, you can simultaneously use a strand of the spell's magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has a hit point maximum equal to twice your wizard level + your Intelligence modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage.",
 				"While the ward has 0 hit points, it can't absorb damage, but its magic remains. Whenever you cast an {@filter abjuration spell of 1st level or higher|spells|school=A|level=!0}, the ward regains a number of hit points equal to twice the level of the spell.",
 				"Once you create the ward, you can't create it again until you finish a long rest."
 			]
@@ -1811,7 +1865,7 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"Beginning at 6th level, casting divination spells comes so easily to you that it expends only a fraction of your spellcasting efforts. When you cast a divination spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast and can't be higher than 5th level."
+				"Beginning at 6th level, casting divination spells comes so easily to you that it expends only a fraction of your spellcasting efforts. When you cast a {@filter divination spell of 2nd level or higher|spells|school=D} using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast and can't be higher than 5th level."
 			]
 		},
 		{
@@ -2674,7 +2728,7 @@
 				"While manifested, the spectral mind can hear and see, and it has {@sense darkvision} with a range of 60 feet. The mind can telepathically share with you what it sees and hears (no action required).",
 				"Whenever you cast a wizard spell on your turn, you can cast it as if you were in the spectral mind's space, instead of your own, using its senses. You can do so a number of times per day equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
 				"As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects.",
-				"The spectral mind stops manifesting if it is ever more than 300 feet away from you, if someone casts dispel magic on it, if the Awakened Spellbook is destroyed, if you die, or if you dismiss the spectral mind as a bonus action.",
+				"The spectral mind stops manifesting if it is ever more than 300 feet away from you, if someone casts {@spell dispel magic} on it, if the Awakened Spellbook is destroyed, if you die, or if you dismiss the spectral mind as a bonus action.",
 				"Once you conjure the mind, you can't do so again until you finish a long rest, unless you expend a spell slot of any level to conjure it again."
 			]
 		},

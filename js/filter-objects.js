@@ -8,7 +8,7 @@ class PageFilterObjects extends PageFilter {
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isSrdFilter: true});
 	}
 
-	mutateForFilters (obj) {
+	static mutateForFilters (obj) {
 		obj._fMisc = obj.srd ? ["SRD"] : [];
 	}
 

@@ -15,6 +15,92 @@
 			],
 			"spellcastingAbility": "cha",
 			"casterProgression": "pact",
+			"cantripProgression": [
+				2,
+				2,
+				2,
+				3,
+				3,
+				3,
+				3,
+				3,
+				3,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4,
+				4
+			],
+			"spellsKnownProgression": [
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				10,
+				11,
+				11,
+				12,
+				12,
+				13,
+				13,
+				14,
+				14,
+				15,
+				15
+			],
+			"spellsKnownProgressionFixedByLevel": {
+				"11": {
+					"6": 1
+				},
+				"13": {
+					"7": 1
+				},
+				"15": {
+					"8": 1
+				},
+				"17": {
+					"9": 1
+				}
+			},
+			"optionalfeatureProgression": [
+				{
+					"name": "Eldritch Invocations",
+					"featureType": "EI",
+					"progression": [
+						0,
+						2,
+						2,
+						2,
+						3,
+						3,
+						4,
+						4,
+						5,
+						5,
+						5,
+						6,
+						6,
+						6,
+						7,
+						7,
+						7,
+						8,
+						8,
+						8
+					]
+				}
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light"
@@ -1530,14 +1616,9 @@
 			"level": 2,
 			"entries": [
 				"In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability.",
-				{
-					"type": "inlineBlock",
-					"entries": [
-						"At 2nd level, you gain two eldritch invocations of your choice. A list of the available options can be found on the {@filter Optional Features|optionalfeatures|Feature Type=EI} page. When you gain certain warlock levels, you gain additional invocations of your choice."
-					]
-				},
+				"At 2nd level, you gain two eldritch invocations of your choice. A list of the available options can be found on the {@filter Optional Features|optionalfeatures|Feature Type=EI} page. When you gain certain warlock levels, you gain additional invocations of your choice, as shown in the Invocations Known column of the Warlock table.",
 				"Additionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level.",
-				"A level prerequisite in an invocation refers to warlock level, not character level."
+				"If an eldritch invocation has prerequisites, you must meet them to learn it. You can learn the invocation at the same time that you meet its prerequisites. A level prerequisite refers to your level in this class."
 			]
 		},
 		{
@@ -1611,9 +1692,10 @@
 					"items": [
 						"Replace one cantrip you learned from this class's Pact Magic feature with another cantrip from the {@filter warlock spell list|spells|level=0|class=Warlock}.",
 						"Replace the option you chose for the Pact Boon feature with one of that feature's other options.",
-						"If you're 12th level or higher, replace one spell from your Mystic Arcanum feature with another warlock spell of the same level. If this change makes you ineligible for any of your Eldritch Invocations, you must also replace them now, choosing invocations for which you qualify."
+						"If you're 12th level or higher, replace one spell from your Mystic Arcanum feature with another warlock spell of the same level."
 					]
-				}
+				},
+				"If this change makes you ineligible for any of your Eldritch Invocations, you must also replace them now, choosing invocations for which you qualify."
 			]
 		},
 		{
@@ -2150,7 +2232,7 @@
 			"level": 1,
 			"header": 1,
 			"entries": [
-				"Starting at 1st level, your alien knowledge gives you the ability to touch the minds of other creatures. You can communicate telepathically with any creature you can see within 30 feet of you. You don't need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language."
+				"Starting at 1st level, your alien knowledge gives you the ability to touch the minds of other creatures. You can telepathically speak to any creature you can see within 30 feet of you. You don't need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language."
 			]
 		},
 		{
@@ -2673,7 +2755,9 @@
 							"subclassFeature": "Genie's Wrath|Warlock|TCE|Genie|TCE|1"
 						}
 					]
-				}
+				},
+				"The vessel's AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus, and it is immune to poison and psychic damage.",
+				"If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die."
 			]
 		},
 		{
@@ -4632,9 +4716,7 @@
 			"subclassSource": "TCE",
 			"level": 1,
 			"entries": [
-				"Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).",
-				"The vessel's AC equals your spell save DC. Its hit points equal your warlock level plus your proficiency bonus, and it is immune to poison and psychic damage.",
-				"If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die."
+				"Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid)."
 			]
 		}
 	]

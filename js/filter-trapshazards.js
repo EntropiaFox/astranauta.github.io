@@ -23,7 +23,7 @@ class PageFilterTrapsHazards extends PageFilter {
 		});
 	}
 
-	mutateForFilters (it) {
+	static mutateForFilters (it) {
 		it.trapHazType = it.trapHazType || "HAZ";
 	}
 

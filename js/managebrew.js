@@ -39,14 +39,14 @@ class ManageBrew {
 							$wrpSect.empty();
 							if (keys.length) {
 								$wrpSect.append(`<div class="bold">${title}:</div>`);
-								const $lst = $(`<ul class="list-display-only" style="padding-top: 0"/>`).appendTo($wrpSect);
+								const $lst = $(`<div class="list-display-only pt-0"></div>`).appendTo($wrpSect);
 
 								keys.forEach(k => {
 									const toDisplay = displayFn ? displayFn(BrewUtil.homebrewMeta, metaType, k) : k.toTitleCase();
 
-									const $row = $(`<li class="row manbrew__row lst--border">
-										<span class="action col-10 manbrew__col--tall">${toDisplay}</span>
-									</li>`).appendTo($lst);
+									const $row = $(`<div class="lst__row manbrew__row lst--border flex-v-center lst__row-inner">
+										<span class="action col-10">${toDisplay}</span>
+									</div>`).appendTo($lst);
 
 									const $btns = $(`<span class="col-2 text-right"/>`).appendTo($row);
 									$(`<button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>`).appendTo($btns).click(() => {
@@ -66,7 +66,7 @@ class ManageBrew {
 						case "spellDistanceUnits": populateGenericSection("Spell Distance Units"); break;
 						case "spellSchools": populateGenericSection("Spell Schools", (brew, metaType, k) => brew[metaType][k].full || k); break;
 						case "currencyConversions": populateGenericSection("Currency Conversion Tables", (brew, metaType, k) => `${k}: ${brew[metaType][k].map(it => `${it.coin}=${it.mult}`).join(", ")}`); break;
-						case "skill": populateGenericSection("Skills"); break;
+						case "skills": populateGenericSection("Skills"); break;
 						case "senses": populateGenericSection("Senses"); break;
 						case "optionalFeatureTypes": populateGenericSection("Optional Feature Types", (brew, metaType, k) => brew[metaType][k] || k); break;
 						case "charOption": populateGenericSection("Character Creation Option Types", (brew, metaType, k) => brew[metaType][k] || k); break;

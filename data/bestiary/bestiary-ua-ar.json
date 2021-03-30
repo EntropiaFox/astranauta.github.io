@@ -98,6 +98,9 @@
 			"senseTags": [
 				"D"
 			],
+			"damageTags": [
+				"A"
+			],
 			"miscTags": [
 				"RW"
 			]
@@ -189,6 +192,9 @@
 			"hasToken": true,
 			"senseTags": [
 				"D"
+			],
+			"damageTags": [
+				"P"
 			],
 			"miscTags": [
 				"MW"

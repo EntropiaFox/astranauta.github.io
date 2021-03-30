@@ -6,7 +6,7 @@
 			"id": "8f5",
 			"entries": [
 				"An elder warlock from the goblinoid swamp village of Urzin has been kidnapped by soldiers of the Dwendalian Empire. Now the machinations of an evil imperial inquisitor might unleash an evil that could threaten the garrison at Fort Venture and the goblinoids of Urzin alike. \"Unwelcome Spirits\" is a Wildemount adventure that takes characters from 1st to 3rd level, and which introduces them to Wildemount's desolate and foreboding Eastern Wynandir region.",
-				"If your players are using the heroic chronicle to create their characters (see {@book chapter 4|EGW|14|Heroic Chronicle}), you can talk with them about creating characters with ties to Urzin or nearby Xhorhasian settlements. Alternatively, characters from elsewhere might be traveling to Urzin, whether individually or as a group. Since this adventure ties directly to the Kryn Dynasty's conflict with the Dwendalian Empire, you can also ask each player to consider their character's stance on the war and how the war might tie into their background.",
+				"If your players are using the heroic chronicle to create their characters (see {@book chapter 4|EGW|5|Heroic Chronicle}), you can talk with them about creating characters with ties to Urzin or nearby Xhorhasian settlements. Alternatively, characters from elsewhere might be traveling to Urzin, whether individually or as a group. Since this adventure ties directly to the Kryn Dynasty's conflict with the Dwendalian Empire, you can also ask each player to consider their character's stance on the war and how the war might tie into their background.",
 				{
 					"type": "section",
 					"name": "Story Overview",
@@ -30,7 +30,7 @@
 					"name": "Setup and Starting Points",
 					"id": "8f8",
 					"entries": [
-						"Before starting the adventure, work with your players as they talk about why their characters have come to Urzin. Details regarding this unique settlement and its politics can be found in {@book chapter 3|EGW|10|Urzin}. The {@creature Horizonback Tortoise|EGW|horizonback tortoises} that give the village its mobility are detailed in {@book chapter 7|EGW|17|Horizonback Tortoise}. Goblinoid or orc characters might be residents of Urzin, but characters of other races are probably visitors to this remote settlement\u2014and are probably feeling very much out of their element.",
+						"Before starting the adventure, work with your players as they talk about why their characters have come to Urzin. Details regarding this unique settlement and its politics can be found in {@book chapter 3|EGW|4|Urzin}. The {@creature Horizonback Tortoise|EGW|horizonback tortoises} that give the village its mobility are detailed in {@book chapter 7|EGW|8|Horizonback Tortoise}. Goblinoid or orc characters might be residents of Urzin, but characters of other races are probably visitors to this remote settlement\u2014and are probably feeling very much out of their element.",
 						"This is also a good time to figure out if the characters already know each other or if this adventure is the first time they've met. If none of the characters are goblinoids, they most likely already make up an adventuring party and have traveled to Urzin together."
 					]
 				},
@@ -514,7 +514,7 @@
 									"name": "Attendant of the Broken Veil",
 									"id": "922",
 									"entries": [
-										"Long-term proximity to the eldritch phenomena of the marsh has granted the {@creature Mossback Steward|EGW} a modest array of magical abilities. This unique creature is a {@creature horizonback tortoise|EGW} (see {@book chapter 7 |EGW|17|Horizonback Tortoise} for its stat block) with these changes:",
+										"Long-term proximity to the eldritch phenomena of the marsh has granted the {@creature Mossback Steward|EGW} a modest array of magical abilities. This unique creature is a {@creature horizonback tortoise|EGW} (see {@book chapter 7 |EGW|8|Horizonback Tortoise} for its stat block) with these changes:",
 										{
 											"type": "list",
 											"items": [
@@ -606,7 +606,7 @@
 													},
 													"title": "Map 5.12: Fort Venture",
 													"width": 2550,
-													"height": 1560
+													"height": 1650
 												},
 												{
 													"type": "image",
@@ -894,7 +894,7 @@
 								"1st level (4 slots): {@spell command}, {@spell cure wounds}, {@spell guiding bolt}",
 								"2nd level (3 slots): {@spell lesser restoration}, {@spell spiritual weapon}",
 								"3rd level (2 slots): {@spell dispel magic}, {@spell revivify}",
-								"Pellinost has a {@item prosthetic limb|ERLW} (right hand), as described in {@book chapter 6|EGW|16|Prosthetic Limb}, as well as keys to the main hall, the chapel door, and the altar manacles.",
+								"Pellinost has a {@item prosthetic limb|TCE} (right hand), as described in {@book chapter 6|EGW|7|Prosthetic Limb}, as well as keys to the main hall, the chapel door, and the altar manacles.",
 								{
 									"type": "entries",
 									"name": "Chapel Door",
@@ -924,7 +924,7 @@
 									"name": "Treasure",
 									"id": "94e",
 									"entries": [
-										"In addition to his {@item prosthetic limb|ERLW} (right hand), Pellinost carries a solid ring of polished bloodstone on a tarnished silver chain (worth 50 gp)\u2014a holy symbol of Vesh, the Bloody Siren."
+										"In addition to his {@item prosthetic limb|TCE} (right hand), Pellinost carries a solid ring of polished bloodstone on a tarnished silver chain (worth 50 gp)\u2014a holy symbol of Vesh, the Bloody Siren."
 									]
 								},
 								{
@@ -981,7 +981,7 @@
 									"id": "955",
 									"entries": [
 										"The solitary prisoner is a neutral evil hollow one {@creature cultist} of Ceratos named Alonne Frith, a Far Realm scholar from Rotthold. Frith was captured by a Fort Venture patrol during his journey through the Brokenveil Marsh seeking eldritch relics. His distinctly undead nature was quickly identified as a point of interest for {@creature Parson Pellinost|EGW}, and Frith has since become a reluctant yet reliable subject for Pellinost's experiments.",
-										"Alonne Frith is toilworn and weary after several days of interrogation by Pellinost. He wears a bloodstained {@item hunter's coat|EGW} (see {@book chapter 6|EGW|16|Hunter's Coat}) whose magical properties have gone unnoticed by Pellinost and his cronies."
+										"Alonne Frith is toilworn and weary after several days of interrogation by Pellinost. He wears a bloodstained {@item hunter's coat|EGW} (see {@book chapter 6|EGW|7|Hunter's Coat}) whose magical properties have gone unnoticed by Pellinost and his cronies."
 									]
 								},
 								{
@@ -998,7 +998,7 @@
 									"name": "Treasure",
 									"id": "957",
 									"entries": [
-										"In addition to the playing card set and dice they use for entertainment, the two guards each have a coin purse containing 26 cp and 17 cp, respectively. In addition to the{@i hunter's coat} Alonne Frith wears (see {@book chapter 6|EGW|16|Hunter's Coat}), one guard also carries Frith's weapon, a {@item +1 Scimitar||black-bladed +1 scimitar}, but is unaware of its magical properties and doesn't use the weapon in combat."
+										"In addition to the playing card set and dice they use for entertainment, the two guards each have a coin purse containing 26 cp and 17 cp, respectively. In addition to the{@i hunter's coat} Alonne Frith wears (see {@book chapter 6|EGW|7|Hunter's Coat}), one guard also carries Frith's weapon, a {@item +1 Scimitar||black-bladed +1 scimitar}, but is unaware of its magical properties and doesn't use the weapon in combat."
 									]
 								},
 								{

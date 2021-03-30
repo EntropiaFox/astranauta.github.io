@@ -90,6 +90,7 @@ class Omnidexer {
 
 		const pHandleItem = async (it, i, name) => {
 			if (it.noDisplay) return;
+			if (name) name = name.toAscii();
 
 			const toAdd = getToAdd(it, {n: name}, i);
 
@@ -125,10 +126,6 @@ class Omnidexer {
 	pushToIndex (item) {
 		item.id = this.id++;
 		this._index.push(item);
-	}
-
-	static arrIncludesOrEquals (checkAgainst, item) {
-		return checkAgainst instanceof Array ? checkAgainst.includes(item) : checkAgainst === item;
 	}
 
 	getMetaId (k, v) {
@@ -377,6 +374,7 @@ class IndexableFile {
 	 * @param [opts.postLoad] a function which takes the data set, does some post-processing, and runs a callback when done (synchronously)
 	 * @param opts.isOnlyDeep
 	 * @param opts.additionalIndexes
+	 * @param opts.isSkipBrew
 	 */
 	constructor (opts) {
 		this.category = opts.category;
@@ -394,6 +392,7 @@ class IndexableFile {
 		this.postLoad = opts.postLoad;
 		this.isOnlyDeep = opts.isOnlyDeep;
 		this.additionalIndexes = opts.additionalIndexes;
+		this.isSkipBrew = opts.isSkipBrew;
 	}
 
 	/**
@@ -555,7 +554,7 @@ class IndexableFileOptFeatures_EldritchInvocations extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "EI"),
+			include: (it) => it.featureType.includes("EI"),
 		});
 	}
 }
@@ -568,7 +567,7 @@ class IndexableFileOptFeatures_Metamagic extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "MM"),
+			include: (it) => it.featureType.includes("MM"),
 		});
 	}
 }
@@ -581,7 +580,7 @@ class IndexableFileOptFeatures_ManeuverBattlemaster extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "MV:B"),
+			include: (it) => it.featureType.includes("MV:B"),
 		});
 	}
 }
@@ -594,7 +593,7 @@ class IndexableFileOptFeatures_ManeuverCavalier extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "MV:C2-UA"),
+			include: (it) => it.featureType.includes("MV:C2-UA"),
 		});
 	}
 }
@@ -607,9 +606,7 @@ class IndexableFileOptFeatures_ArcaneShot extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => {
-				return Omnidexer.arrIncludesOrEquals(it.featureType, "AS:V1-UA") || Omnidexer.arrIncludesOrEquals(it.featureType, "AS:V2-UA") || Omnidexer.arrIncludesOrEquals(it.featureType, "AS")
-			},
+			include: (it) => it.featureType.includes("AS:V1-UA") || it.featureType.includes("AS:V2-UA") || it.featureType.includes("AS"),
 		});
 	}
 }
@@ -623,9 +620,8 @@ class IndexableFileOptFeatures_Other extends IndexableFile {
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
 			include: (it) => {
-				const asArray = it.featureType instanceof Array ? it.featureType : [it.featureType];
 				// Any optional features that don't have a known type (i.e. are custom homebrew types) get lumped into here
-				return Omnidexer.arrIncludesOrEquals(asArray, "OTH") || asArray.some(it => !Parser.OPT_FEATURE_TYPE_TO_FULL[it]);
+				return it.featureType.includes("OTH") || it.featureType.some(it => !Parser.OPT_FEATURE_TYPE_TO_FULL[it]);
 			},
 		});
 	}
@@ -639,7 +635,7 @@ class IndexableFileOptFeatures_FightingStyle extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "FS:F") || Omnidexer.arrIncludesOrEquals(it.featureType, "FS:B") || Omnidexer.arrIncludesOrEquals(it.featureType, "FS:R") || Omnidexer.arrIncludesOrEquals(it.featureType, "FS:P"),
+			include: (it) => it.featureType.includes("FS:F") || it.featureType.includes("FS:B") || it.featureType.includes("FS:R") || it.featureType.includes("FS:P"),
 		});
 	}
 }
@@ -652,7 +648,7 @@ class IndexableFileOptFeatures_PactBoon extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "PB"),
+			include: (it) => it.featureType.includes("PB"),
 		});
 	}
 }
@@ -665,7 +661,7 @@ class IndexableFileOptFeatures_ElementalDiscipline extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "ED"),
+			include: (it) => it.featureType.includes("ED"),
 		});
 	}
 }
@@ -678,7 +674,7 @@ class IndexableFileOptFeatures_ArtificerInfusion extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "AI"),
+			include: (it) => it.featureType.includes("AI"),
 		});
 	}
 }
@@ -691,7 +687,7 @@ class IndexableFileOptFeatures_OnomancyResonant extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "OR"),
+			include: (it) => it.featureType.includes("OR"),
 		});
 	}
 }
@@ -704,7 +700,7 @@ class IndexableFileOptFeatures_RuneKnightRune extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "RN"),
+			include: (it) => it.featureType.includes("RN"),
 		});
 	}
 }
@@ -717,7 +713,7 @@ class IndexableFileOptFeatures_AlchemicalFormula extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "AF"),
+			include: (it) => it.featureType.includes("AF"),
 		});
 	}
 }
@@ -730,7 +726,7 @@ class IndexableFileOptFeatures_Maneuver extends IndexableFile {
 			listProp: "optionalfeature",
 			baseUrl: "optionalfeatures.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.featureType, "MV"),
+			include: (it) => it.featureType.includes("MV"),
 		});
 	}
 }
@@ -803,6 +799,7 @@ class IndexableFileRewards extends IndexableFile {
 	}
 }
 
+// region Variant rules
 class IndexableFileVariantRules extends IndexableFile {
 	constructor () {
 		super({
@@ -813,26 +810,20 @@ class IndexableFileVariantRules extends IndexableFile {
 			isHover: true,
 		});
 	}
-
-	// FIXME is this still needed?
-	pGetDeepIndex (indexer, primary, it) {
-		// const names = [];
-		// it.entries.forEach(e => {
-		// 	Renderer.getNames(names, e, 1);
-		// });
-		// const allNames = Renderer.getNumberedNames(it);
-		// const nameKeys = Object.keys(allNames).filter(it => names.includes(it));
-		// return nameKeys.map(n => {
-		// 	const ix = allNames[n];
-		// 	return {
-		// 		u: `${UrlUtil.encodeForHash([it.name, it.source])}${HASH_PART_SEP}${ix}`,
-		// 		d: 1,
-		// 		n: `${primary.parentName}; ${n}`
-		// 	};
-		// });
-		return [];
+}
+class IndexableFileVariantRulesGenerated extends IndexableFile {
+	constructor () {
+		super({
+			category: Parser.CAT_ID_VARIANT_OPTIONAL_RULE,
+			file: "generated/gendata-variantrules.json",
+			listProp: "variantrule",
+			baseUrl: "variantrules.html",
+			isHover: true,
+			isSkipBrew: true,
+		});
 	}
 }
+// endregion
 
 class IndexableFileAdventures extends IndexableFile {
 	constructor () {
@@ -997,7 +988,20 @@ class IndexableFileBoons extends IndexableFile {
 	}
 }
 
+// region Tables
 class IndexableFileTables extends IndexableFile {
+	constructor () {
+		super({
+			category: Parser.CAT_ID_TABLE,
+			file: "tables.json",
+			listProp: "table",
+			baseUrl: "tables.html",
+			isHover: true,
+		});
+	}
+}
+
+class IndexableFileTablesGenerated extends IndexableFile {
 	constructor () {
 		super({
 			category: Parser.CAT_ID_TABLE,
@@ -1020,6 +1024,7 @@ class IndexableFileTableGroups extends IndexableFile {
 		});
 	}
 }
+// endregion
 
 class IndexableFileVehicles extends IndexableFile {
 	constructor () {
@@ -1041,7 +1046,7 @@ class IndexableFileVehicles_ShipUpgrade extends IndexableFile {
 			listProp: "vehicleUpgrade",
 			baseUrl: "vehicles.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.upgradeType, "SHP:H") || Omnidexer.arrIncludesOrEquals(it.upgradeType, "SHP:M") || Omnidexer.arrIncludesOrEquals(it.upgradeType, "SHP:W") || Omnidexer.arrIncludesOrEquals(it.upgradeType, "SHP:F"),
+			include: (it) => it.upgradeType.includes("SHP:H") || it.upgradeType.includes("SHP:M") || it.upgradeType.includes("SHP:W") || it.upgradeType.includes("SHP:F"),
 		});
 	}
 }
@@ -1054,7 +1059,7 @@ class IndexableFileVehicles_InfernalWarMachineUpgrade extends IndexableFile {
 			listProp: "vehicleUpgrade",
 			baseUrl: "vehicles.html",
 			isHover: true,
-			include: (it) => Omnidexer.arrIncludesOrEquals(it.upgradeType, "IWM:W") || Omnidexer.arrIncludesOrEquals(it.upgradeType, "IWM:A") || Omnidexer.arrIncludesOrEquals(it.upgradeType, "IWM:G"),
+			include: (it) => it.upgradeType.includes("IWM:W") || it.upgradeType.includes("IWM:A") || it.upgradeType.includes("IWM:G"),
 		});
 	}
 }
@@ -1101,6 +1106,18 @@ class IndexableFileCharCreationOptions extends IndexableFile {
 	}
 }
 
+class IndexableFileRecipes extends IndexableFile {
+	constructor () {
+		super({
+			category: Parser.CAT_ID_RECIPES,
+			file: "recipes.json",
+			listProp: "recipe",
+			baseUrl: "recipes.html",
+			isHover: true,
+		});
+	}
+}
+
 Omnidexer.TO_INDEX = [
 	new IndexableFileBackgrounds(),
 	new IndexableFileConditions(),
@@ -1131,6 +1148,7 @@ Omnidexer.TO_INDEX = [
 	new IndexableFileRaces(),
 	new IndexableFileRewards(),
 	new IndexableFileVariantRules(),
+	new IndexableFileVariantRulesGenerated(),
 	new IndexableFileAdventures(),
 	new IndexableFileBooks(),
 	new IndexableFileQuickReference(),
@@ -1141,6 +1159,7 @@ Omnidexer.TO_INDEX = [
 	new IndexableFileCults(),
 	new IndexableFileBoons(),
 	new IndexableFileTables(),
+	new IndexableFileTablesGenerated(),
 	new IndexableFileTableGroups(),
 
 	new IndexableFileVehicles(),
@@ -1150,6 +1169,7 @@ Omnidexer.TO_INDEX = [
 	new IndexableFileActions(),
 	new IndexableFileLanguages(),
 	new IndexableFileCharCreationOptions(),
+	new IndexableFileRecipes(),
 ];
 
 class IndexableSpecial {

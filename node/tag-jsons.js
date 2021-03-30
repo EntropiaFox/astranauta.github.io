@@ -111,7 +111,13 @@ class TagJsons {
 		});
 	}
 }
-TagJsons.WALKER = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+TagJsons.WALKER = MiscUtil.getWalker({
+	keyBlacklist: new Set([
+		...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+		"dataCreature",
+		"dataObject",
+	]),
+});
 
 class SpellTag {
 	static init () {

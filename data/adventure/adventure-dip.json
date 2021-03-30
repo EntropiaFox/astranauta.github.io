@@ -5687,7 +5687,9 @@
 									"href": {
 										"type": "internal",
 										"path": "adventure/DIP/056-ynkgo-donnabella.png"
-									}
+									},
+									"width": 850,
+									"height": 1000
 								}
 							]
 						},
@@ -5731,7 +5733,9 @@
 									"href": {
 										"type": "internal",
 										"path": "adventure/DIP/057-leeom-galandro.png"
-									}
+									},
+									"width": 850,
+									"height": 1000
 								}
 							]
 						},
@@ -5775,7 +5779,9 @@
 									"href": {
 										"type": "internal",
 										"path": "adventure/DIP/058-l3v6r-inverna.png"
-									}
+									},
+									"width": 850,
+									"height": 1000
 								}
 							]
 						},
@@ -5819,7 +5825,9 @@
 									"href": {
 										"type": "internal",
 										"path": "adventure/DIP/059-3krsm-nib.png"
-									}
+									},
+									"width": 850,
+									"height": 1000
 								}
 							]
 						},
@@ -5863,7 +5871,9 @@
 									"href": {
 										"type": "internal",
 										"path": "adventure/DIP/060-pu4f2-pete.png"
-									}
+									},
+									"width": 850,
+									"height": 1000
 								}
 							]
 						},
@@ -5907,7 +5917,9 @@
 									"href": {
 										"type": "internal",
 										"path": "adventure/DIP/061-gttxp-quinn.png"
-									}
+									},
+									"width": 850,
+									"height": 1000
 								}
 							]
 						},
@@ -5951,7 +5963,9 @@
 									"href": {
 										"type": "internal",
 										"path": "adventure/DIP/062-1qyge-ruby.png"
-									}
+									},
+									"width": 850,
+									"height": 1000
 								}
 							]
 						},
@@ -5995,7 +6009,9 @@
 									"href": {
 										"type": "internal",
 										"path": "adventure/DIP/063-nemem-shanjan.png"
-									}
+									},
+									"width": 850,
+									"height": 1000
 								}
 							]
 						},
@@ -6039,7 +6055,9 @@
 									"href": {
 										"type": "internal",
 										"path": "adventure/DIP/064-nrqv1-talon.png"
-									}
+									},
+									"width": 850,
+									"height": 1000
 								}
 							]
 						}

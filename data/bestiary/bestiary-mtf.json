@@ -195,7 +195,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Oblex",
@@ -360,7 +362,9 @@
 				"blinded",
 				"charmed",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Air Elemental Myrmidon",
@@ -497,7 +501,9 @@
 			],
 			"conditionInflict": [
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Alkilith",
@@ -653,7 +659,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Allip",
@@ -793,7 +801,9 @@
 			],
 			"conditionInflict": [
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Amnizu",
@@ -1008,7 +1018,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Armanite",
@@ -1142,7 +1154,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Astral Dreadnought",
@@ -1324,7 +1338,9 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Autumn Eladrin",
@@ -1491,7 +1507,9 @@
 			],
 			"conditionInflictSpell": [
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bael",
@@ -1727,7 +1745,9 @@
 				"invisible",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Balhannoth",
@@ -1869,7 +1889,9 @@
 			],
 			"conditionInflictLegendary": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Baphomet",
@@ -2107,7 +2129,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Berbalang",
@@ -2232,7 +2256,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Black Abishai",
@@ -2392,7 +2418,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blue Abishai",
@@ -2617,7 +2645,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Boneclaw",
@@ -2770,7 +2800,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bronze Scout",
@@ -2884,7 +2916,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bulezau",
@@ -2998,7 +3032,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cadaver Collector",
@@ -3126,7 +3162,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Canoloth",
@@ -3289,7 +3327,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Choker",
@@ -3413,7 +3453,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Corpse Flower",
@@ -3529,7 +3571,9 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deathlock",
@@ -3699,7 +3743,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deathlock Mastermind",
@@ -3894,7 +3940,9 @@
 				"charmed",
 				"invisible",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deathlock Wight",
@@ -4048,7 +4096,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Demogorgon",
@@ -4266,7 +4316,9 @@
 				"deafened",
 				"frightened",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Derro",
@@ -4380,7 +4432,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Derro Savant",
@@ -4526,7 +4580,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dhergoloth",
@@ -4690,7 +4746,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dire Troll",
@@ -4826,7 +4884,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Arachnomancer",
@@ -5059,7 +5119,8 @@
 				"paralyzed",
 				"restrained",
 				"unconscious"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Drow Favored Consort",
@@ -5281,7 +5342,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow House Captain",
@@ -5446,7 +5509,8 @@
 				"RCH",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Drow Inquisitor",
@@ -5693,7 +5757,8 @@
 				"incapacitated",
 				"poisoned",
 				"stunned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Drow Matron Mother",
@@ -5987,7 +6052,9 @@
 				"poisoned",
 				"prone",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Shadowblade",
@@ -6154,7 +6221,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Despot",
@@ -6315,7 +6383,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Hammerer",
@@ -6433,7 +6502,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Kavalrachni",
@@ -6566,7 +6636,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Mind Master",
@@ -6708,7 +6779,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Screamer",
@@ -6816,7 +6889,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Soulblade",
@@ -6959,7 +7033,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Stone Guard",
@@ -7088,7 +7163,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Warlord",
@@ -7230,7 +7307,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Xarrorn",
@@ -7353,7 +7431,8 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Dybbuk",
@@ -7526,7 +7605,9 @@
 			],
 			"conditionInflictSpell": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Earth Elemental Myrmidon",
@@ -7647,7 +7728,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Eidolon",
@@ -7792,7 +7875,8 @@
 			"conditionInflict": [
 				"frightened",
 				"stunned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Elder Oblex",
@@ -7958,7 +8042,9 @@
 				"incapacitated",
 				"paralyzed",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elder Tempest",
@@ -8133,7 +8219,9 @@
 			"conditionInflict": [
 				"prone",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Female Steeder",
@@ -8232,7 +8320,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fire Elemental Myrmidon",
@@ -8366,7 +8456,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fraz-Urb'luu",
@@ -8588,7 +8680,9 @@
 				"deafened",
 				"incapacitated",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frost Salamander",
@@ -8704,7 +8798,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Geryon",
@@ -8955,7 +9051,9 @@
 				"invisible",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giff",
@@ -9064,7 +9162,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githyanki Gish",
@@ -9242,7 +9342,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githyanki Kith'rak",
@@ -9378,7 +9480,9 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githyanki Supreme Commander",
@@ -9527,7 +9631,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githzerai Anarch",
@@ -9675,7 +9781,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githzerai Enlightened",
@@ -9805,7 +9913,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gloom Weaver",
@@ -9996,7 +10106,9 @@
 				"frightened",
 				"incapacitated",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gray Render",
@@ -10095,7 +10207,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Graz'zt",
@@ -10323,7 +10437,9 @@
 				"charmed",
 				"invisible",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Green Abishai",
@@ -10507,7 +10623,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hellfire Engine",
@@ -10660,7 +10778,9 @@
 			"conditionInflict": [
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Howler",
@@ -10783,7 +10903,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hutijin",
@@ -11037,7 +11159,9 @@
 				"paralyzed",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hydroloth",
@@ -11223,14 +11347,17 @@
 			],
 			"damageTags": [
 				"P",
-				"S"
+				"S",
+				"Y"
 			],
 			"spellcastingTags": [
 				"I"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Iron Cobra",
@@ -11341,7 +11468,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Juiblex",
@@ -11577,7 +11706,9 @@
 				"blinded",
 				"poisoned",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kruthik Hive Lord",
@@ -11699,7 +11830,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Leviathan",
@@ -11850,12 +11983,15 @@
 			],
 			"damageTags": [
 				"A",
-				"B"
+				"B",
+				"C"
 			],
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Male Steeder",
@@ -11954,7 +12090,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Marut",
@@ -12115,13 +12253,19 @@
 			"languageTags": [
 				"XX"
 			],
+			"damageTags": [
+				"O",
+				"R"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Maurezhi",
@@ -12267,7 +12411,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Meazel",
@@ -12372,7 +12518,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Merregon",
@@ -12515,7 +12663,9 @@
 				"RCH",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Merrenoloth",
@@ -12700,7 +12850,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Moloch",
@@ -12938,7 +13090,9 @@
 				"incapacitated",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Molydeus",
@@ -13154,7 +13308,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Nabassu",
@@ -13312,7 +13467,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nagpa",
@@ -13512,7 +13669,9 @@
 				"paralyzed",
 				"petrified",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Narzugon",
@@ -13679,7 +13838,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nightwalker",
@@ -13807,7 +13968,9 @@
 			"conditionInflict": [
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nupperibo",
@@ -13923,7 +14086,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Oaken Bolter",
@@ -14051,7 +14216,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Oblex Spawn",
@@ -14139,7 +14306,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ogre Battering Ram",
@@ -14228,7 +14397,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ogre Bolt Launcher",
@@ -14308,7 +14479,8 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Ogre Chain Brute",
@@ -14397,7 +14569,8 @@
 			"conditionInflict": [
 				"prone",
 				"unconscious"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Ogre Howdah",
@@ -14476,7 +14649,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Oinoloth",
@@ -14675,7 +14850,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orcus",
@@ -14895,7 +15072,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orthon",
@@ -15094,7 +15273,9 @@
 				"paralyzed",
 				"poisoned",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Phoenix",
@@ -15268,7 +15449,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Red Abishai",
@@ -15446,7 +15629,9 @@
 			"conditionInflict": [
 				"charmed",
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Retriever",
@@ -15610,7 +15795,9 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rot Troll",
@@ -15720,7 +15907,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rutterkin",
@@ -15812,7 +16001,9 @@
 				"frightened",
 				"poisoned",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sacred Statue",
@@ -15958,7 +16149,8 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Shadow Dancer",
@@ -16089,7 +16281,9 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sibriex",
@@ -16414,7 +16608,9 @@
 				"charmed",
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Skulk",
@@ -16517,7 +16713,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Skull Lord",
@@ -16750,7 +16948,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Soul Monger",
@@ -16922,7 +17122,9 @@
 			],
 			"conditionInflictSpell": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spirit Troll",
@@ -17060,7 +17262,9 @@
 			],
 			"conditionInflict": [
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spring Eladrin",
@@ -17231,7 +17435,9 @@
 				"charmed",
 				"incapacitated",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Star Spawn Grue",
@@ -17306,7 +17512,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Star Spawn Hulk",
@@ -17422,7 +17629,8 @@
 			"conditionInflict": [
 				"prone",
 				"stunned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Star Spawn Larva Mage",
@@ -17605,7 +17813,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Star Spawn Mangler",
@@ -17728,7 +17938,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Star Spawn Seer",
@@ -17872,7 +18083,8 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Steel Predator",
@@ -18036,7 +18248,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stone Cursed",
@@ -18134,7 +18348,9 @@
 			"conditionInflict": [
 				"petrified",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stone Defender",
@@ -18253,7 +18469,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Summer Eladrin",
@@ -18400,7 +18618,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sword Wraith Commander",
@@ -18547,7 +18767,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sword Wraith Warrior",
@@ -18666,7 +18888,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "The Angry",
@@ -18774,7 +18998,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "The Hungry",
@@ -18885,7 +19111,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "The Lonely",
@@ -19003,7 +19231,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "The Lost",
@@ -19119,7 +19349,9 @@
 			"conditionInflict": [
 				"frightened",
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "The Wretched",
@@ -19204,7 +19436,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Titivilus",
@@ -19446,7 +19680,9 @@
 				"invisible",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tortle",
@@ -19558,7 +19794,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tortle Druid",
@@ -19703,7 +19941,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vampiric Mist",
@@ -19841,8 +20081,11 @@
 				"D"
 			],
 			"damageTags": [
-				"N"
-			]
+				"N",
+				"R"
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Venom Troll",
@@ -19972,7 +20215,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wastrilith",
@@ -20135,7 +20380,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Water Elemental Myrmidon",
@@ -20260,7 +20507,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "White Abishai",
@@ -20429,7 +20678,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Winter Eladrin",
@@ -20583,7 +20834,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yagnoloth",
@@ -20780,7 +21033,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yeenoghu",
@@ -21002,7 +21257,9 @@
 			"conditionInflictSpell": [
 				"frightened",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Kruthik",
@@ -21099,7 +21356,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zaratan",
@@ -21293,7 +21552,8 @@
 			],
 			"damageTags": [
 				"B",
-				"P"
+				"P",
+				"T"
 			],
 			"miscTags": [
 				"AOE",
@@ -21304,7 +21564,9 @@
 			"conditionInflict": [
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zariel",
@@ -21535,7 +21797,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zuggtmoy",
@@ -21752,7 +22016,9 @@
 			"conditionInflictSpell": [
 				"poisoned",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

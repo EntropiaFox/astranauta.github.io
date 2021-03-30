@@ -4,7 +4,9 @@
 			"name": "Absorption",
 			"source": "UAClericDruidWizard",
 			"page": 5,
-			"featureType": "OR",
+			"featureType": [
+				"OR"
+			],
 			"entries": [
 				"When you cast a spell that deals damage to the named target, you gain {@dice 3d6} temporary hit points. The number of temporary hit points you gain increases by {@dice 1d6} when you reach 10th level ({@dice 4d6}) and 14th level ({@dice 5d6}) in this class."
 			]
@@ -14,7 +16,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"spell": [
@@ -30,7 +34,9 @@
 			"name": "Alchemical Acid",
 			"source": "UAArtificer",
 			"page": 5,
-			"featureType": "AF",
+			"featureType": [
+				"AF"
+			],
 			"entries": [
 				"As an action, you can reach into your Alchemist's Satchel, pull out a vial of acid, and hurl the vial at a creature or object within 30 feet of you (the vial and its contents disappear if you don't hurl the vial by the end of the current turn). The vial shatters on impact. A creature must succeed on a Dexterity saving throw or take {@damage 1d6} acid damage. An object automatically takes that damage, and the damage is maximized. This formula's damage increases by {@damage 1d6} when you reach certain levels in this class: 3rd level ({@damage 2d6}), 5th level ({@damage 3d6}), 7th level ({@damage 4d6}), 9th level ({@damage 5d6}), 11th level ({@damage 6d6}), 13th level ({@damage 7d6}), 15th level ({@damage 8d6}), 17th level ({@damage 9d6}), and 19th level ({@damage 10d6})."
 			]
@@ -39,7 +45,9 @@
 			"name": "Alchemical Fire",
 			"source": "UAArtificer",
 			"page": 5,
-			"featureType": "AF",
+			"featureType": [
+				"AF"
+			],
 			"entries": [
 				"As an action, you can reach into your Alchemist's Satchel, pull out a vial of volatile liquid, and hurl the vial at a creature, object, or surface within 30 feet of you (the vial and its contents disappear if you don't hurl the vial by the end of the current turn). On impact, the vial detonates in a 5-foot radius. Any creature in that area must succeed on a Dexterity saving throw or take {@damage 1d6} fire damage. This formula's damage increases by {@damage 1d6} when you reach certain levels in this class: 4th level ({@damage 2d6}), 7th level ({@damage 3d6}), 10th level ({@damage 4d6}), 13th level ({@damage 5d6}), 16th level ({@damage 6d6}), and 19th level ({@damage 7d6})."
 			]
@@ -61,7 +69,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 5,
 			"isClassFeatureVariant": true,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you make a Dexterity ({@skill Stealth}) check or an initiative roll, you can expend one superiority die and add the die to the roll."
 			]
@@ -70,7 +80,9 @@
 			"name": "Arcane Gunslinger",
 			"source": "UAModernMagic",
 			"page": 3,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade"
@@ -84,7 +96,9 @@
 			"name": "Arcane Propulsion Armor",
 			"source": "TCE",
 			"page": 20,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -138,7 +152,9 @@
 			"name": "Armor of Magical Strength",
 			"source": "TCE",
 			"page": 20,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -162,7 +178,9 @@
 			"name": "Armor of Magical Strength",
 			"source": "UA2020SubclassesPt3",
 			"page": 3,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -186,7 +204,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can cast {@spell mage armor} on yourself at will, without expending a spell slot or material components."
 			]
@@ -195,7 +215,9 @@
 			"name": "Armor of Tools",
 			"source": "UA2020SubclassesPt3",
 			"page": 3,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -213,7 +235,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -236,7 +260,9 @@
 				"name": "Aspect of the Moon",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Tome"
@@ -250,7 +276,9 @@
 			"name": "Aspect of the Moon",
 			"source": "UAWarlockAndWizard",
 			"page": 3,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Archfey"
@@ -264,7 +292,9 @@
 			"name": "Aspect of the Moon",
 			"source": "XGE",
 			"page": 56,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Tome"
@@ -292,7 +322,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 5,
 			"isClassFeatureVariant": true,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you're within 5 feet of an ally on your turn, you can expend one superiority die and switch places with that ally, provided you spend at least 5 feet of movement. This movement doesn't provoke opportunity attacks.",
 				"Roll the superiority die. Until the start of your next turn, the ally gains a bonus to AC equal to the number rolled."
@@ -302,7 +334,9 @@
 			"name": "Banishing Arrow",
 			"source": "UARevisedSubclasses",
 			"page": 3,
-			"featureType": "AS:V2-UA",
+			"featureType": [
+				"AS:V2-UA"
+			],
 			"entries": [
 				"You use abjuration magic to try to temporarily banish your target to a harmless location in the Feywild. If the arrow hits a creature, the target must also succeed on a Charisma saving throw or be banished. While banished in this way, its speed is 0, and it is {@condition incapacitated}. At the end of its next turn, the target reappears in the space it vacated or in the nearest unoccupied space if that space is occupied.",
 				"After you reach 18th level in this class, a target also takes {@damage 2d6} force damage when the arrow hits it."
@@ -312,7 +346,9 @@
 			"name": "Banishing Arrow",
 			"source": "XGE",
 			"page": 29,
-			"featureType": "AS",
+			"featureType": [
+				"AS"
+			],
 			"entries": [
 				"You use abjuration magic to try to temporarily banish your target to a harmless location in the Feywild. The creature hit by the arrow must also succeed on a Charisma saving throw or be banished. While banished in this way, the target's speed is 0, and it is {@condition incapacitated}. At the end of its next turn, the target reappears in the space it vacated or in the nearest unoccupied space if that space is occupied.",
 				"After you reach 18th level in this class, a target also takes {@damage 2d6} force damage when the arrow hits it."
@@ -323,7 +359,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can cast {@spell speak with animals} at will, without expending a spell slot."
 			]
@@ -332,7 +370,9 @@
 			"name": "Beguiling Arrow",
 			"source": "UAFighter",
 			"page": 1,
-			"featureType": "AS:V1-UA",
+			"featureType": [
+				"AS:V1-UA"
+			],
 			"entries": [
 				"Your enchantment magic causes this arrow to temporarily beguile its target. Choose one of your allies within 30 feet of the target. If the arrow hits the target, the target can't attack the chosen ally or include that ally in a harmful area of effect until the end of your next turn. The target ignores this effect if it is immune to the {@condition charmed} condition. This effect also ends if the chosen ally deals any damage to the target."
 			]
@@ -341,7 +381,9 @@
 			"name": "Beguiling Arrow",
 			"source": "XGE",
 			"page": 29,
-			"featureType": "AS",
+			"featureType": [
+				"AS"
+			],
 			"entries": [
 				"Your enchantment magic causes this arrow to temporarily beguile its target. The creature hit by the arrow takes an extra {@damage 2d6} psychic damage, and choose one of your allies within 30 feet of the target. The target must succeed on a Wisdom saving throw, or it is {@condition charmed} by the chosen ally until the start of your next turn. This effect ends early if the chosen ally attacks the {@condition charmed} target, deals damage to it, or forces it to make a saving throw.",
 				"The psychic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -352,7 +394,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You gain proficiency in the {@skill Deception} and {@skill Persuasion} skills."
 			]
@@ -362,7 +406,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -434,7 +480,9 @@
 			"source": "TCE",
 			"page": 70,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -455,7 +503,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 11,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -476,7 +526,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Tome"
@@ -497,7 +549,9 @@
 					"page": 62
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -519,7 +573,9 @@
 			"name": "Boots of the Winding Path",
 			"source": "UAArtificerRevisited",
 			"page": 12,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -554,7 +610,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 5,
 			"isClassFeatureVariant": true,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When an enemy you can see moves within 5 feet of you, you can use your reaction to expend one superiority die and make one weapon attack against that creature. If the attack hits, add the superiority die to the attack's damage roll."
 			]
@@ -563,7 +621,9 @@
 			"name": "Breath of Winter",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -585,7 +645,9 @@
 			"name": "Brute Bane Arrow",
 			"source": "UAFighter",
 			"page": 1,
-			"featureType": "AS:V1-UA",
+			"featureType": [
+				"AS:V1-UA"
+			],
 			"entries": [
 				"You weave necromantic magic into your arrow. If a creature is hit by the arrow, any bludgeoning, piercing, or slashing damage dealt by the creature's attacks is halved until the end of your next turn."
 			]
@@ -594,7 +656,9 @@
 			"name": "Brute Bane Arrow",
 			"source": "UARevisedSubclasses",
 			"page": 3,
-			"featureType": "AS:V2-UA",
+			"featureType": [
+				"AS:V2-UA"
+			],
 			"entries": [
 				"You weave necromantic magic into your arrow. If your arrow hits a creature, the target takes an extra {@damage 2d6} necrotic damage and must make a Constitution saving throw. On a failed save, the damage of the target's attacks is halved until the next turn.",
 				"The necrotic damage increases to {@damage 4d6} when you reach 18th level with this class."
@@ -604,7 +668,9 @@
 			"name": "Burning Hex",
 			"source": "UAWarlockAndWizard",
 			"page": 3,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Hexblade"
@@ -618,7 +684,9 @@
 			"name": "Bursting Arrow",
 			"source": "UAFighter",
 			"page": 2,
-			"featureType": "AS:V1-UA",
+			"featureType": [
+				"AS:V1-UA"
+			],
 			"entries": [
 				"You imbue your arrow with a blast of force energy drawn from the school of evocation. If you hit a creature with this arrow, each creature within 10 feet of it takes {@damage 2d6} force damage."
 			]
@@ -627,7 +695,9 @@
 			"name": "Bursting Arrow",
 			"source": "UARevisedSubclasses",
 			"page": 3,
-			"featureType": "AS:V2-UA",
+			"featureType": [
+				"AS:V2-UA"
+			],
 			"entries": [
 				"You imbue your arrow with a blast of force energy drawn from the school of evocation. If the arrow hits a creature, the target and each creature within 10 feet of it takes {@damage 2d6} force damage.",
 				"The force damage increases to {@damage 4d6} when you reach 18th level with this class."
@@ -637,7 +707,9 @@
 			"name": "Bursting Arrow",
 			"source": "XGE",
 			"page": 29,
-			"featureType": "AS",
+			"featureType": [
+				"AS"
+			],
 			"entries": [
 				"You imbue your arrow with force energy drawn from the school of evocation. The energy detonates after your attack. Immediately after the arrow hits the creature, the target and all other creatures within 10 feet of it take {@damage 2d6} force damage each.",
 				"The force damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -647,7 +719,9 @@
 			"name": "Caiphon's Beacon",
 			"source": "UAWarlockAndWizard",
 			"page": 3,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Great Old One"
@@ -662,7 +736,9 @@
 			"source": "PHB",
 			"page": 102,
 			"srd": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell."
 			]
@@ -672,7 +748,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 11,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -693,7 +771,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Chain",
@@ -713,7 +793,9 @@
 			"name": "Chilling Hex",
 			"source": "UAWarlockAndWizard",
 			"page": 3,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Hexblade"
@@ -727,7 +809,9 @@
 			"name": "Chronicle of the Raven Queen",
 			"source": "UAWarlockAndWizard",
 			"page": 3,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Tome",
@@ -742,7 +826,9 @@
 			"name": "Claw of Acamar",
 			"source": "UAWarlockAndWizard",
 			"page": 3,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -757,7 +843,9 @@
 			"name": "Clench of the North Wind",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -779,7 +867,9 @@
 			"name": "Cloak of Baalzebul",
 			"source": "UAWarlockAndWizard",
 			"page": 3,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Fiend"
@@ -797,7 +887,9 @@
 				"name": "Cloak of Baalzebul",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -818,7 +910,9 @@
 			"name": "Cloak of Flies",
 			"source": "XGE",
 			"page": 56,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -852,7 +946,9 @@
 			"name": "Cloud Rune",
 			"source": "TCE",
 			"page": 44,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"This rune emulates the deceptive magic used by some cloud giants. While wearing or carrying an object inscribed with this rune, you have advantage on Dexterity ({@skill Sleight of Hand}) checks and Charisma ({@skill Deception}) checks.",
 				"In addition, when you or a creature you can see within 30 feet of you is hit by an attack roll, you can use your reaction to invoke the rune and choose a different creature within 30 feet of you, other than the attacker. The chosen creature becomes the target of the attack, using the same roll. This magic can transfer the attack's effects regardless of the attack's range. Once you invoke this rune, you can't do so again until you finish a short or long rest."
@@ -862,7 +958,9 @@
 			"name": "Commander's Strike",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you take the {@action Attack} action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack's damage roll."
 			]
@@ -883,7 +981,9 @@
 			"name": "Control Mount",
 			"source": "UARevisedClassOptions",
 			"page": 3,
-			"featureType": "MV:C2-UA",
+			"featureType": [
+				"MV:C2-UA"
+			],
 			"entries": [
 				"When you make a Wisdom ({@skill Animal Handling}) check to influence a creature that you or an ally is riding, you can expend one superiority die, roll it, and add the number rolled to the check. You can do this before or after rolling the {@dice d20}, but before applying the results of the check."
 			]
@@ -892,7 +992,9 @@
 			"name": "Curse Bringer",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -908,7 +1010,9 @@
 			"name": "Defending Arrow",
 			"source": "UAFighter",
 			"page": 2,
-			"featureType": "AS:V1-UA",
+			"featureType": [
+				"AS:V1-UA"
+			],
 			"entries": [
 				"You use abjuration magic to weave a charm that disrupts your enemy's magic. A creature hit by this arrow suffers disadvantage on the next attack roll it makes before the end of your next turn."
 			]
@@ -945,7 +1049,9 @@
 			"name": "Devastation",
 			"source": "UAClericDruidWizard",
 			"page": 5,
-			"featureType": "OR",
+			"featureType": [
+				"OR"
+			],
 			"entries": [
 				"If the spell requires the named creature to make a saving throw, that creature has disadvantage on the first save it makes against the spell."
 			]
@@ -955,7 +1061,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet."
 			]
@@ -964,7 +1072,9 @@
 			"name": "Disarming Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it's holding. You add the superiority die to the attack's damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet."
 			]
@@ -973,7 +1083,9 @@
 			"name": "Dissolution",
 			"source": "UAClericDruidWizard",
 			"page": 5,
-			"featureType": "OR",
+			"featureType": [
+				"OR"
+			],
 			"entries": [
 				"The first time the named creature takes damage from the spell, that creature takes an extra {@damage 2d8} force damage. The extra force damage increases by {@damage 1d8} when you reach 10th level ({@damage 3d8}) and 14th level ({@damage 4d8}) in this class."
 			]
@@ -983,7 +1095,9 @@
 			"source": "PHB",
 			"page": 102,
 			"srd": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell.",
 				"When you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feet."
@@ -993,7 +1107,9 @@
 			"name": "Distracting Strike",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to distract the creature, giving your allies an opening. You add the superiority die to the attack's damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn."
 			]
@@ -1003,7 +1119,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1084,7 +1202,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 11,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade"
@@ -1099,7 +1219,9 @@
 			"source": "TCE",
 			"page": 71,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You have advantage on Constitution saving throws that you make to maintain your concentration on a spell."
 			]
@@ -1109,7 +1231,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 11,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Tome"
@@ -1124,7 +1248,9 @@
 			"source": "PHB",
 			"page": 110,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can cast {@spell detect magic} at will, without expending a spell slot."
 			]
@@ -1137,7 +1263,9 @@
 				"name": "Mace of Dispater",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -1157,7 +1285,9 @@
 			"name": "Eldritch Smite",
 			"source": "XGE",
 			"page": 56,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -1178,7 +1308,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"spell": [
@@ -1194,7 +1326,9 @@
 			"name": "Elemental Attunement",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"entries": [
 				"You can use your action to briefly control elemental forces within 30 feet of you, causing one of the following effects of your choice:",
 				{
@@ -1213,7 +1347,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 10,
 			"isClassFeatureVariant": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell that deals a type of damage from the following list, you can spend 1 sorcery point to change that damage type to one of the other listed types: acid, cold, fire, lightning, thunder."
 			]
@@ -1223,7 +1359,9 @@
 			"source": "PHB",
 			"page": 102,
 			"srd": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.",
 				"You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell."
@@ -1233,7 +1371,9 @@
 			"name": "Enfeebling Arrow",
 			"source": "XGE",
 			"page": 29,
-			"featureType": "AS",
+			"featureType": [
+				"AS"
+			],
 			"entries": [
 				"You weave necromantic magic into your arrow. The creature hit by the arrow takes an extra {@damage 2d6} necrotic damage. The target must also succeed on a Constitution saving throw, or the damage dealt by its weapon attacks is halved until the start of your next turn.",
 				"The necrotic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -1249,7 +1389,9 @@
 					"page": 62
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -1272,7 +1414,9 @@
 					"page": 62
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -1289,7 +1433,9 @@
 			"name": "Enhanced Defense",
 			"source": "UAArtificerRevisited",
 			"page": 12,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -1306,7 +1452,9 @@
 			"name": "Enhanced Wand",
 			"source": "UAArtificerRevisited",
 			"page": 12,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -1329,7 +1477,9 @@
 					"page": 62
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -1346,7 +1496,9 @@
 			"name": "Enhanced Weapon",
 			"source": "UAArtificerRevisited",
 			"page": 12,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -1363,7 +1515,9 @@
 			"name": "Eternal Mountain Defense",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1385,7 +1539,9 @@
 			"name": "Evasive Footwork",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until you stop moving."
 			]
@@ -1395,7 +1551,9 @@
 			"source": "PHB",
 			"page": 102,
 			"srd": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours."
 			]
@@ -1405,7 +1563,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can read all writing."
 			]
@@ -1414,7 +1574,9 @@
 			"name": "Fangs of the Fire Snake",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"entries": [
 				"When you use the {@action Attack} action on your turn, you can spend 1 ki point to cause tendrils of flame to stretch out from your fists and feet. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn. A hit with such an attack deals fire damage instead of bludgeoning damage, and if you spend 1 ki point when the attack hits, it also deals an extra {@damage 1d10} fire damage."
 			]
@@ -1424,7 +1586,9 @@
 			"source": "TCE",
 			"page": 71,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1447,7 +1611,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 11,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1469,7 +1635,9 @@
 			"name": "Feinting Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"You can expend one superiority die and use a bonus action on your turn to feint, choosing one creature within 5 feet of you as your target. You have advantage on your next attack roll this turn against that creature. If that attack hits, add the superiority die to the attack's damage roll.",
 				"The advantage is lost if not used on the turn you gain it."
@@ -1480,7 +1648,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can cast {@spell false life} on yourself at will as a 1st-level spell, without expending a spell slot or material components."
 			]
@@ -1489,7 +1659,9 @@
 			"name": "Fire Rune",
 			"source": "TCE",
 			"page": 44,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"This rune's magic channels the masterful craftsmanship of great smiths. While wearing or carrying an object inscribed with this rune, your proficiency bonus is doubled for any ability check you make that uses your proficiency with a tool.",
 				"In addition, when you hit a creature with an attack using a weapon, you can invoke the rune to summon fiery shackles: the target takes an extra {@damage 2d6} fire damage, and it must succeed on a Strength saving throw or be {@condition restrained} for 1 minute. While {@condition restrained} by the shackles, the target takes {@damage 2d6} fire damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, banishing the shackles on a success. Once you invoke this rune, you can't do so again until you finish a short or long rest."
@@ -1499,7 +1671,9 @@
 			"name": "Fist of Four Thunders",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"entries": [
 				"You can spend 2 ki points to cast {@spell thunderwave}."
 			]
@@ -1508,7 +1682,9 @@
 			"name": "Flames of the Phoenix",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1534,7 +1710,9 @@
 				"name": "Frost Lance",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"spell": [
@@ -1550,7 +1728,9 @@
 			"name": "Frost Lance",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Archfey",
@@ -1567,7 +1747,9 @@
 			"name": "Frost Rune",
 			"source": "TCE",
 			"page": 45,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"This rune's magic evokes the might of those who survive in the wintry wilderness, such as frost giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom ({@skill Animal Handling}) checks and Charisma ({@skill Intimidation}) checks.",
 				"In addition, you can invoke the rune as a bonus action to increase your sturdiness. For 10 minutes, you gain a +2 bonus to all ability checks and saving throws that use Strength or Constitution. Once you invoke this rune, you can't do so again until you finish a short or long rest."
@@ -1577,7 +1759,9 @@
 			"name": "Gaze of Khirad",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1598,7 +1782,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you are {@condition blinded} and {@condition deafened} to your own surroundings."
 			]
@@ -1611,7 +1797,9 @@
 				"name": "Gaze of Khirad",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1630,7 +1818,9 @@
 			"name": "Ghostly Gaze",
 			"source": "XGE",
 			"page": 56,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1654,7 +1844,9 @@
 				"name": "Sea Twins' Gift",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1673,7 +1865,9 @@
 			"name": "Gift of the Depths",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1697,7 +1891,9 @@
 				"name": "Green Lord's Gift",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Chain"
@@ -1711,7 +1907,9 @@
 			"name": "Gift of the Ever-Living Ones",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Chain"
@@ -1726,7 +1924,9 @@
 			"source": "TCE",
 			"page": 71,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1749,7 +1949,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 11,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1771,7 +1973,9 @@
 			"name": "Goading Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to goad the target into attacking you. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn."
 			]
@@ -1780,7 +1984,9 @@
 			"name": "Gong of the Summit",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1818,7 +2024,9 @@
 				"name": "Grasp of Hadar",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"spell": [
@@ -1834,7 +2042,9 @@
 			"name": "Grasp of Hadar",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Great Old One",
@@ -1851,7 +2061,9 @@
 			"name": "Grasp of Hadar",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"spell": [
@@ -1867,7 +2079,9 @@
 			"name": "Grasping Arrow",
 			"source": "UAFighter",
 			"page": 2,
-			"featureType": "AS:V1-UA",
+			"featureType": [
+				"AS:V1-UA"
+			],
 			"entries": [
 				"When this arrow strikes its target, conjuration magic creates grasping, thorny brambles that wrap around the target. The target hit by the arrow takes a -10 penalty to speed, and it takes {@damage 2d6} slashing damage if it moves 1 foot or more without teleporting. The target or any creature that can touch it can use its action to try to remove the brambles, which requires a successful DC 10 Strength check. Otherwise, the brambles last for 1 minute."
 			]
@@ -1876,7 +2090,9 @@
 			"name": "Grasping Arrow",
 			"source": "UARevisedSubclasses",
 			"page": 3,
-			"featureType": "AS:V2-UA",
+			"featureType": [
+				"AS:V2-UA"
+			],
 			"entries": [
 				"When this arrow strikes its target, conjuration magic creates grasping, thorny brambles that wrap around the target. If the arrow hits a creature, the target takes an extra {@damage 2d6} poison damage, its speed is reduced by 10 feet, and it takes {@damage 2d6} slashing damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength ({@skill Athletics}) check against your Arcane Shot save DC. Otherwise, the brambles last for 1 minute or until you use this option again.",
 				"The poison and slashing damage both increase to {@damage 4d6} when you reach 18th level in this class."
@@ -1886,7 +2102,9 @@
 			"name": "Grasping Arrow",
 			"source": "XGE",
 			"page": 29,
-			"featureType": "AS",
+			"featureType": [
+				"AS"
+			],
 			"entries": [
 				"When this arrow strikes its target, conjuration magic creates grasping, poisonous brambles, which wrap around the target. The creature hit by the arrow takes an extra {@damage 2d6} poison damage, its speed is reduced by 10 feet, and it takes {@damage 2d6} slashing damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength ({@skill Athletics}) check against your Arcane Shot save DC. Otherwise, the brambles last for 1 minute or until you use this option again.",
 				"The poison damage and slashing damage both increase to {@damage 4d6} when you reach 18th level in this class."
@@ -1915,7 +2133,9 @@
 			"name": "Green Lord's Gift",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Archfey"
@@ -1929,7 +2149,9 @@
 			"name": "Haug (Hill Rune)",
 			"source": "UAFighterRangerRogue",
 			"page": 1,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"This rune's magic bestows a resilience reminiscent of a hill giant. While wearing or carrying an object inscribed with this rune, you have advantage on saving throws against being {@condition poisoned}, and you have resistance against poison damage.",
 				"In addition, you can invoke the rune as a bonus action, gaining resistance to bludgeoning, piercing, and slashing damage for 1 minute. Once you invoke the rune, you can't do so again until you finish a short or long rest."
@@ -1939,7 +2161,9 @@
 			"name": "Healing Draught",
 			"source": "UAArtificer",
 			"page": 5,
-			"featureType": "AF",
+			"featureType": [
+				"AF"
+			],
 			"entries": [
 				"As an action, you can reach into your Alchemist's Satchel and pull out a vial of healing liquid. A creature can drink it as an action to regain {@dice 1d8} hit points. The vial then disappears. Once a creature regains hit points from this alchemical formula, the creature can't do so again until it finishes a long rest. If not used, the vial and its contents disappear after 1 hour. While the vial exists, you can't use this formula. This formula's healing increases by {@dice 1d8} when you reach certain levels in this class: 3rd level ({@dice 2d8}), 5th level ({@dice 3d8}), 7th level ({@dice 4d8}), 9th level ({@dice 5d8}), 11th level ({@dice 6d8}), 13th level ({@dice 7d8}), 15th level ({@dice 8d8}), 17th level ({@dice 9d8}), and 19th level ({@dice 10d8})."
 			]
@@ -1949,7 +2173,9 @@
 			"source": "PHB",
 			"page": 102,
 			"srd": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell."
 			]
@@ -1958,7 +2184,9 @@
 			"name": "Helm of Awareness",
 			"source": "TCE",
 			"page": 21,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -1980,7 +2208,9 @@
 			"name": "Helm of Awareness",
 			"source": "UA2020SubclassesPt3",
 			"page": 3,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2002,7 +2232,9 @@
 			"name": "Hill Rune",
 			"source": "TCE",
 			"page": 45,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2031,7 +2263,9 @@
 					"page": 62
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -2040,7 +2274,7 @@
 				}
 			],
 			"entries": [
-				"You learn intricate methods for magically creating a special {@creature Homunculus Servant|ERLW|homunculus} that serves you. The item you infuse serves as the creature's heart, around which the creature's body instantly forms.",
+				"You learn intricate methods for magically creating a special {@creature Homunculus Servant|TCE|homunculus} that serves you. The item you infuse serves as the creature's heart, around which the creature's body instantly forms.",
 				"You determine the homunculus's appearance. Some artificers prefer mechanical-looking birds, whereas some like winged vials or miniature, animate cauldrons.",
 				"The homunculus is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the Homunculus Servant stat block, which uses your proficiency bonus (PB) in several places.",
 				"In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the {@action Dodge} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition incapacitated}, the homunculus can take any action of its choice, not just {@action Dodge}.",
@@ -2051,7 +2285,9 @@
 			"name": "Ild (Fire Rune)",
 			"source": "UAFighterRangerRogue",
 			"page": 1,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"This rune's magic channels the masterful craftsmanship of fire giant smiths. While wearing or carrying an object inscribed with this rune, your proficiency bonus is doubled for any ability check you make that uses your proficiency with a tool.",
 				"In addition, when you hit a creature with a weapon attack, you can invoke the rune to summon fiery shackles: the target must succeed on a Strength saving throw or be {@condition restrained} for 1 minute. While {@condition restrained} by the shackles, the target takes  {@damage 2d6} fire damage at the start of each of its turns. The target can repeat the saving throw at the end of each of its turns, banishing the shackles on a success. Once you invoke the rune, you can't do so again until you finish a short or long rest."
@@ -2065,7 +2301,9 @@
 				"name": "Improved Pact Weapon",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade"
@@ -2079,7 +2317,9 @@
 			"name": "Improved Pact Weapon",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -2099,7 +2339,9 @@
 			"name": "Improved Pact Weapon",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade"
@@ -2143,7 +2385,9 @@
 			"source": "TCE",
 			"page": 71,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Chain"
@@ -2168,7 +2412,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 11,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Chain"
@@ -2191,7 +2437,9 @@
 			"name": "Ise (Frost Rune)",
 			"source": "UAFighterRangerRogue",
 			"page": 1,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"This rune's magic evokes a frost giant's stoic calm. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom ({@skill Animal Handling}) checks and Charisma ({@skill Intimidation}) checks.",
 				"In addition, you can invoke the rune as a bonus action to increase your Strength score by 2 for 10 minutes. This increase can cause your score to exceed 20, but not 30. Once you invoke the rune, you can't do so again until you finish a short or long rest."
@@ -2205,7 +2453,9 @@
 				"name": "Kiss of Mephistopheles",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2220,14 +2470,16 @@
 				}
 			],
 			"entries": [
-				"When you hit a creature with your {@spell eldritch blast}, you can cast fireball as a bonus action using a warlock spell slot. The spell must be centered on the creature you hit with {@spell eldritch blast}."
+				"When you hit a creature with your {@spell eldritch blast}, you can cast {@spell fireball} as a bonus action using a warlock spell slot. The spell must be centered on the creature you hit with {@spell eldritch blast}."
 			]
 		},
 		{
 			"name": "Kiss of Mephistopheles",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2250,7 +2502,9 @@
 			"name": "Lance of Lethargy",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"spell": [
@@ -2267,7 +2521,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2287,7 +2543,9 @@
 			"name": "Lunging Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you make a melee weapon attack on your turn, you can expend one superiority die to increase your reach for that attack by 5 feet. If you hit, you add the superiority die to the attack's damage roll."
 			]
@@ -2296,7 +2554,9 @@
 			"name": "Mace of Dispater",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -2315,7 +2575,9 @@
 				"name": "Chilling Hex",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2334,7 +2596,9 @@
 			"name": "Maddening Hex",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2356,7 +2620,9 @@
 			"name": "Maneuvering Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to maneuver one of your comrades into a more advantageous position. You add the superiority die to the attack's damage roll, and you choose a friendly creature who can see or hear you. That creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of your attack."
 			]
@@ -2365,7 +2631,9 @@
 			"name": "Many-Handed Pouch",
 			"source": "UAArtificerRevisited",
 			"page": 13,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2402,7 +2670,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can cast {@spell disguise self} at will, without expending a spell slot."
 			]
@@ -2412,7 +2682,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2431,7 +2703,9 @@
 			"name": "Menacing Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, it is {@condition frightened} of you until the end of your next turn."
 			]
@@ -2440,7 +2714,9 @@
 			"name": "Mind Sharpener",
 			"source": "TCE",
 			"page": 22,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -2456,7 +2732,9 @@
 			"name": "Mind Sharpener",
 			"source": "UA2020SubclassesPt3",
 			"page": 3,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -2472,7 +2750,9 @@
 			"name": "Mind-Scrambling Arrow",
 			"source": "UARevisedSubclasses",
 			"page": 4,
-			"featureType": "AS:V2-UA",
+			"featureType": [
+				"AS:V2-UA"
+			],
 			"entries": [
 				"Your enchantment magic causes this arrow to temporarily beguile its target. Choose one of your allies within 30 feet of the target. If the arrow hits a creature, the target takes an extra {@damage 2d6} psychic damage, and it must succeed on a Wisdom saving throw or it can't attack the chosen ally or include that ally in a harmful area of effect until the start of your next turn. This effect ends early if the chosen ally deals any damage to the target.",
 				"The psychic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -2483,7 +2763,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2503,7 +2785,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2522,7 +2806,9 @@
 			"name": "Mist Stance",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2545,7 +2831,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can cast {@spell silent image} at will, without expending a spell slot or material components."
 			]
@@ -2554,7 +2842,9 @@
 			"name": "Moon Bow",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -2569,7 +2859,9 @@
 			"name": "Nullification",
 			"source": "UAClericDruidWizard",
 			"page": 5,
-			"featureType": "OR",
+			"featureType": [
+				"OR"
+			],
 			"entries": [
 				"If the named target is affected by any other spells, you know what those spells are, and you can attempt to end one of your choice by succeeding on an Intelligence check with a DC equal to 10 + the level of the chosen spell."
 			]
@@ -2579,7 +2871,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2599,7 +2893,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2619,7 +2915,9 @@
 			"source": "PHB",
 			"page": 107,
 			"srd": true,
-			"featureType": "PB",
+			"featureType": [
+				"PB"
+			],
 			"entries": [
 				"You can use your action to create a pact weapon in your empty hand. You can choose the form that this melee weapon takes each time you create it (see chapter 5 for weapon options). You are proficient with it while you wield it. This weapon counts as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.",
 				"Your pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.",
@@ -2631,7 +2929,9 @@
 			"source": "PHB",
 			"page": 107,
 			"srd": true,
-			"featureType": "PB",
+			"featureType": [
+				"PB"
+			],
 			"entries": [
 				"You learn the {@spell find familiar} spell and can cast it as a ritual. The spell doesn't count against your number of spells known.",
 				"When you cast the spell, you can choose one of the normal forms for your familiar or one of the following special forms: {@creature imp}, {@creature pseudodragon}, {@creature quasit}, or {@creature sprite}.",
@@ -2642,7 +2942,9 @@
 			"name": "Pact of the Star Chain",
 			"source": "UATheFaithful",
 			"page": 1,
-			"featureType": "PB",
+			"featureType": [
+				"PB"
+			],
 			"entries": [
 				"At 3rd level, a character dedicated to the {@class Warlock|phb|Seeker|Seeker (UA)|UATheFaithful} can select this option instead of one of the warlock's existing Pact Boon options.",
 				"The Seeker grants you a chain forged from starlight, decorated with seven gleaming motes of brightness. While the chain is on your person, you know the {@spell augury} spell and can cast it as a ritual. The spell doesn't count against your number of spells known.",
@@ -2656,7 +2958,9 @@
 			"source": "TCE",
 			"page": 71,
 			"isClassFeatureVariant": true,
-			"featureType": "PB",
+			"featureType": [
+				"PB"
+			],
 			"entries": [
 				"Your patron gives you an amulet, a talisman that can aid the wearer when the need is great. When the wearer fails an ability check, they can add a {@dice d4} to the roll, potentially turning the roll into a success. This benefit can be used a number of times equal to your proficiency bonus, and all expended uses are restored when you finish a long rest.",
 				"If you lose the talisman, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and it destroys the previous amulet. The talisman turns to ash when you die."
@@ -2667,7 +2971,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 11,
 			"isClassFeatureVariant": true,
-			"featureType": "PB",
+			"featureType": [
+				"PB"
+			],
 			"entries": [
 				"Your patron gives you a special amulet, a talisman that can aid you, or anyone else who wears it, when the need is great. When the wearer makes an ability check with a skill in which they lack proficiency, they can add a {@dice d4} to the roll.",
 				"If you lose the talisman, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and it destroys the previous amulet.",
@@ -2679,7 +2985,9 @@
 			"source": "PHB",
 			"page": 108,
 			"srd": true,
-			"featureType": "PB",
+			"featureType": [
+				"PB"
+			],
 			"entries": [
 				"Your patron gives you a grimoire called a Book of Shadows. When you gain this feature, choose three {@filter cantrips|spells|level=0} from any class's spell list. The cantrips do not need to be from the same spell list. While the book is on your person, you can cast those cantrips at will. They don't count against your number of cantrips known. Any cantrip you cast with this feature is considered a warlock cantrip for you. If you lose your Book of Shadows, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and it destroys the previous book. The book turns to ash when you die."
 			]
@@ -2688,7 +2996,9 @@
 			"name": "Parry",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When another creature damages you with a melee attack, you can use your reaction and expend one superiority die to reduce the damage by the number you roll on your superiority die + your Dexterity modifier."
 			]
@@ -2697,7 +3007,9 @@
 			"name": "Path of the Seeker",
 			"source": "UAWarlockAndWizard",
 			"page": 4,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Seeker"
@@ -2711,7 +3023,9 @@
 			"name": "Piercing Arrow",
 			"source": "UAFighter",
 			"page": 2,
-			"featureType": "AS:V1-UA",
+			"featureType": [
+				"AS:V1-UA"
+			],
 			"entries": [
 				"You use transmutation magic to transform your arrow into an ethereal dart that passes through its targets. When you attack with this arrow, it fires forward in a line that is 1 foot wide and 30 feet long. You make a separate attack using your Arcane Arrow against each creature in that line."
 			]
@@ -2720,7 +3034,9 @@
 			"name": "Piercing Arrow",
 			"source": "UARevisedSubclasses",
 			"page": 4,
-			"featureType": "AS:V2-UA",
+			"featureType": [
+				"AS:V2-UA"
+			],
 			"entries": [
 				"You use transmutation magic to transform your arrow into an ethereal dart that passes through its targets. You use transmutation magic to give your arrow an ethereal quality. When you use this option, you don't make an attack roll for the attack. Instead, the arrow fires forward in a line that is 1 foot wide and 30 feet long, before disappearing. The arrow passes harmlessly through objects, ignoring cover. Each creature in that line must make a Dexterity saving throw. On a failed save, a target takes damage as if it were hit by the arrow, plus an extra {@damage 1d6} piercing damage. On a successful save, a target takes half as much damage.",
 				"The piercing damage increases to {@damage 2d6} when you reach 18th level in this class."
@@ -2730,7 +3046,9 @@
 			"name": "Piercing Arrow",
 			"source": "XGE",
 			"page": 29,
-			"featureType": "AS",
+			"featureType": [
+				"AS"
+			],
 			"entries": [
 				"You use transmutation magic to give your arrow an ethereal quality. When you use this option, you don't make an attack roll for the attack. Instead, the arrow shoots forward in a line, which is 1 foot wide and 30 feet long, before disappearing. The arrow passes harmlessly through objects, ignoring cover. Each creature in that line must make a Dexterity saving throw. On a failed save, a creature takes damage as if it were hit by the arrow, plus an extra {@damage 1d6} piercing damage. On a successful save, a target takes half as much damage.",
 				"The piercing damage increases to {@damage 2d6} when you reach 18th level in this class."
@@ -2740,7 +3058,9 @@
 			"name": "Precision Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you make a weapon attack roll against a creature, you can expend one superiority die to add it to the roll. You can use this maneuver before or after making the attack roll, but before any effects of the attack are applied."
 			]
@@ -2749,7 +3069,9 @@
 			"name": "Precision Attack",
 			"source": "UARevisedClassOptions",
 			"page": 3,
-			"featureType": "MV:C2-UA",
+			"featureType": [
+				"MV:C2-UA"
+			],
 			"entries": [
 				"When you make a weapon attack against a creature, you can expend one superiority die, roll it, and add it to the attack roll. You can use this ability before or after rolling the {@dice d20}, but before any of the effects of the attack are applied."
 			]
@@ -2778,7 +3100,9 @@
 			"source": "TCE",
 			"page": 71,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2799,7 +3123,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 12,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2819,7 +3145,9 @@
 			"name": "Puppetry",
 			"source": "UAClericDruidWizard",
 			"page": 5,
-			"featureType": "OR",
+			"featureType": [
+				"OR"
+			],
 			"entries": [
 				"The first time the named creature takes damage from the spell, you can knock the creature {@condition prone} or move it up to 10 feet, either directly toward you or away from you."
 			]
@@ -2828,7 +3156,9 @@
 			"name": "Pushing Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to drive the target back. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 15 feet away from you."
 			]
@@ -2850,7 +3180,9 @@
 			"source": "PHB",
 			"page": 102,
 			"srd": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell that has a casting time of 1 action, you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting."
 			]
@@ -2865,7 +3197,9 @@
 					"page": 62
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2888,7 +3222,9 @@
 			"name": "Radiant Weapon",
 			"source": "UAArtificerRevisited",
 			"page": 13,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2911,7 +3247,9 @@
 			"name": "Rally",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Charisma modifier."
 			]
@@ -2920,7 +3258,9 @@
 			"name": "Raven Queen's Blessing",
 			"source": "UAWarlockAndWizard",
 			"page": 5,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Raven Queen",
@@ -2938,7 +3278,9 @@
 			"source": "TCE",
 			"page": 71,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Talisman"
@@ -2953,7 +3295,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 12,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Talisman"
@@ -2971,7 +3315,9 @@
 				"name": "Relentless Hex",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -2990,7 +3336,9 @@
 			"name": "Relentless Hex",
 			"source": "UAWarlockAndWizard",
 			"page": 5,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3010,7 +3358,9 @@
 			"name": "Relentless Hex",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3038,7 +3388,9 @@
 					"page": 62
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -3055,7 +3407,9 @@
 			"name": "Repeating Shot",
 			"source": "UAArtificerRevisited",
 			"page": 13,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -3073,7 +3427,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"spell": [
@@ -3095,9 +3451,11 @@
 					"page": 63
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"entries": [
-				"Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table's title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the common magic items in the game, not including potions or scrolls.",
+				"Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table's title tells you the level you must be in the class to choose an item from the table. Alternatively, you can choose the magic item from among the {@filter common magic items|items|type=!potion;!scroll|rarity=common} in the game, not including potions or scrolls.",
 				"In the tables, an item's entry tells you whether the item requires attunement. See the item's description in the {@book Dungeon Master's Guide|DMG} for more information about it, including the type of object required for its making.",
 				{
 					"type": "table",
@@ -3365,7 +3723,9 @@
 			"name": "Replicate Magic Item",
 			"source": "UAArtificerRevisited",
 			"page": 9,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"otherSummary": {
@@ -3623,7 +3983,9 @@
 					"page": 63
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3646,7 +4008,9 @@
 			"name": "Repulsion Shield",
 			"source": "UAArtificerRevisited",
 			"page": 14,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3674,7 +4038,9 @@
 					"page": 63
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3696,7 +4062,9 @@
 			"name": "Resistant Armor",
 			"source": "UAArtificerRevisited",
 			"page": 14,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3719,7 +4087,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 5,
 			"isClassFeatureVariant": true,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"Immediately after you hit a creature with a melee weapon attack on your turn, you can expend one superiority die and use a bonus action to grapple the target (see chapter 9 in the Player's Handbook for rules on grappling). Add the superiority die to your Strength ({@skill Athletics}) check. The target is also {@condition restrained} while {@condition grappled} in this way."
 			]
@@ -3734,7 +4104,9 @@
 					"page": 63
 				}
 			],
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -3750,7 +4122,9 @@
 			"name": "Returning Weapon",
 			"source": "UAArtificerRevisited",
 			"page": 10,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"item": [
@@ -3766,7 +4140,9 @@
 			"name": "Ride the Wind",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3788,7 +4164,9 @@
 			"name": "Riposte",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When a creature misses you with a melee attack, you can use your reaction and expend one superiority die to make a melee weapon attack against the creature. If you hit, you add the superiority die to the attack's damage roll."
 			]
@@ -3797,7 +4175,9 @@
 			"name": "River of Hungry Flame",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3819,7 +4199,9 @@
 			"name": "Rush of the Gale Spirits",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"entries": [
 				"You can spend 2 ki points to cast {@spell gust of wind}."
 			]
@@ -3829,7 +4211,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3848,7 +4232,9 @@
 			"name": "Sea Twins' Gift",
 			"source": "UAWarlockAndWizard",
 			"page": 5,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Archfey"
@@ -3863,7 +4249,9 @@
 			"name": "Seeker's Speech",
 			"source": "UAWarlockAndWizard",
 			"page": 5,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Seeker"
@@ -3877,7 +4265,9 @@
 			"name": "Seeking Arrow",
 			"source": "UAFighter",
 			"page": 2,
-			"featureType": "AS:V1-UA",
+			"featureType": [
+				"AS:V1-UA"
+			],
 			"entries": [
 				"Using divination magic, you grant your arrow the ability to seek out your target, allowing the arrow to curve and twist its path in search of its prey. As an action, choose one creature you have seen in the past minute, and make a ranged attack against it, using the Arcane Arrow. The arrow flies around corners if necessary, and this attack ignores three-quarters cover, half cover, and disadvantage caused by the target being out of sight or being at long range. The attack automatically misses if the target is out of the weapon's range or if there is no path large enough for the arrow to travel to the target. If the arrow hits its target, you know it, but you don't learn the target's location unless it's within your line of sight."
 			]
@@ -3886,7 +4276,9 @@
 			"name": "Seeking Arrow",
 			"source": "UARevisedSubclasses",
 			"page": 4,
-			"featureType": "AS:V2-UA",
+			"featureType": [
+				"AS:V2-UA"
+			],
 			"entries": [
 				"Using divination magic, you grant your arrow the ability to seek out your target, allowing the arrow to curve and twist its path in search of its prey. When you use this option, you don't make an attack roll for the attack. Instead, choose one creature you have seen in the past minute. The arrow flies toward that creature, moving around corners if necessary and ignoring three-quarters cover and half cover. If the target is within the weapon's range and there is a path large enough for the arrow to travel to the target, the target must make a Dexterity saving throw. On a failed save, it takes damage as if it were hit by the arrow, plus an extra {@damage 1d6} force damage, and you learn the target's current location. On a successful save, the target takes half as much damage, and you don't learn its location.",
 				"The force damage increases to {@damage 2d6} when you reach 18th level in this class."
@@ -3896,7 +4288,9 @@
 			"name": "Seeking Arrow",
 			"source": "XGE",
 			"page": 30,
-			"featureType": "AS",
+			"featureType": [
+				"AS"
+			],
 			"entries": [
 				"Using divination magic, you grant your arrow the ability to seek out a target. When you use this option, you don't make an attack roll for the attack. Instead, choose one creature you have seen in the past minute. The arrow flies toward that creature, moving around corners if necessary and ignoring three-quarters cover and half cover. If the target is within the weapon's range and there is a path large enough for the arrow to travel to the target, the target must make a Dexterity saving throw. Otherwise, the arrow disappears after traveling as far as it can. On a failed save, the target takes damage as if it were hit by the arrow, plus an extra {@damage 1d6} force damage, and you learn the target's current location. On a successful save, the target takes half as much damage, and you don't learn its location.",
 				"The force damage increases to {@damage 2d6} when you reach 18th level in this class."
@@ -3907,7 +4301,9 @@
 			"source": "TCE",
 			"page": 66,
 			"isClassFeatureVariant": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"If you make an attack roll for a spell and miss, you can spend 2 sorcery points to reroll the {@dice d20}, and you must use the new roll.",
 				"You can use Seeking Spell even if you have already used a different Metamagic option during the casting of the spell."
@@ -3918,7 +4314,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 10,
 			"isClassFeatureVariant": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell that requires you to make a spell attack roll or that forces a target to make a Dexterity saving throw, you can spend 1 sorcery point to ignore the effects of half- and three-quarters cover against targets of the spell."
 			]
@@ -3927,7 +4325,9 @@
 			"name": "Shadow Arrow",
 			"source": "UAFighter",
 			"page": 2,
-			"featureType": "AS:V1-UA",
+			"featureType": [
+				"AS:V1-UA"
+			],
 			"entries": [
 				"You weave illusion magic into your arrow, causing it to occlude your foe's vision with grasping shadows. Until the end of your next turn, the target hit by the arrow can't see more than 30 feet away."
 			]
@@ -3936,7 +4336,9 @@
 			"name": "Shadow Arrow",
 			"source": "UARevisedSubclasses",
 			"page": 4,
-			"featureType": "AS:V2-UA",
+			"featureType": [
+				"AS:V2-UA"
+			],
 			"entries": [
 				"You weave illusion magic into your arrow, causing it to occlude your foe's vision with grasping shadows. If the arrow hits a creature, the target takes an extra {@damage 2d6} psychic damage, and it must succeed on a Wisdom saving throw or be unable to see anything farther than 5 feet away until the start of your next turn.",
 				"The psychic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -3946,7 +4348,9 @@
 			"name": "Shadow Arrow",
 			"source": "XGE",
 			"page": 30,
-			"featureType": "AS",
+			"featureType": [
+				"AS"
+			],
 			"entries": [
 				"You weave illusion magic into your arrow, causing it to occlude your foe's vision with shadows. The creature hit by the arrow takes an extra {@damage 2d6} psychic damage, and it must succeed on a Wisdom saving throw or be unable to see anything farther than 5 feet away until the start of your next turn.",
 				"The psychic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -3956,7 +4360,9 @@
 			"name": "Shape the Flowing River",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"entries": [
 				"As an action, you can spend 1 ki point to choose an area of ice or water no larger than 30 feet on a side within 120 feet of you. You can change water to ice within the area and vice versa, and you can reshape ice in the area in any manner you choose. You can raise or lower the ice's elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimension. For example, if you affect a 30-foot square, you can create a pillar up to 15 feet high. raise or lower the square's elevation by up to 15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the ice to trap or injure a creature in the area."
 			]
@@ -3969,7 +4375,9 @@
 				"name": "Shroud of Ulban",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -3988,7 +4396,9 @@
 			"name": "Shroud of Shadow",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4007,7 +4417,9 @@
 			"name": "Shroud of Ulban",
 			"source": "UAWarlockAndWizard",
 			"page": 5,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4028,7 +4440,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4048,7 +4462,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 5,
 			"isClassFeatureVariant": true,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you make a Charisma ({@skill Deception}) check or a Charisma ({@skill Persuasion}) check, you can expend one superiority die, and add the superiority die to the ability check."
 			]
@@ -4057,7 +4473,9 @@
 			"name": "Skye (Cloud Rune)",
 			"source": "UAFighterRangerRogue",
 			"page": 2,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"This rune's magic emulates the deceptiveness of a cloud giant. While wearing or carrying an object inscribed with this rune, you have advantage on Dexterity ({@skill Sleight of Hand}) checks and Charisma ({@skill Deception}) checks.",
 				"In addition, when you or a creature you can see within 30 feet of you is hit by an attack roll, you can use your reaction to invoke the rune and cause that attack to target a different creature within 30 feet of you (other than the attacker), using the same roll. This magic can transfer the attack regardless of the attack's range. Once you invoke the rune, you can't do so again until you finish a short or long rest."
@@ -4067,7 +4485,9 @@
 			"name": "Smoke Stick",
 			"source": "UAArtificer",
 			"page": 5,
-			"featureType": "AF",
+			"featureType": [
+				"AF"
+			],
 			"entries": [
 				"As an action, you can reach into your Alchemist's Satchel and pull out a stick that produces a thick plume of smoke. You can hold on to the stick or throw it to a point up to 30 feet away as part of the action used to produce it. The area in a 10-foot radius around the stick is filled with thick smoke that blocks vision, including {@sense darkvision}. The stick and smoke persist for 1 minute and then disappear. After using this formula, you can't do so again for 1 minute."
 			]
@@ -4077,7 +4497,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 5,
 			"isClassFeatureVariant": true,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"As a bonus action, you can expend one superiority die and make a ranged weapon attack. You can draw a thrown weapon as part of making this attack. If you hit, add the superiority die to the attack's damage roll."
 			]
@@ -4086,7 +4508,9 @@
 			"name": "Spell-Refueling Ring",
 			"source": "TCE",
 			"page": 23,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4108,7 +4532,9 @@
 			"name": "Spell-Refueling Ring",
 			"source": "UA2020SubclassesPt3",
 			"page": 3,
-			"featureType": "AI",
+			"featureType": [
+				"AI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4130,7 +4556,9 @@
 			"name": "Stein (Stone Rune)",
 			"source": "UAFighterRangerRogue",
 			"page": 2,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"This rune's magic channels the insightfulness of a stone giant. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom ({@skill Insight}) checks, and you have {@sense darkvision} out to a range of 60 feet. If you already have {@sense darkvision}, its range increases by 30 feet.",
 				"In addition, when a creature you can see ends its turn within 30 feet of you, you can use your reaction to invoke the rune and force the creature to make a Wisdom saving throw. Unless the save succeeds, the creature is {@condition charmed} by you for 1 minute. While {@condition charmed} in this way, the creature has a speed of 0 and is {@condition incapacitated}, descending into a dreamy stupor. The effect ends if the {@condition charmed} creature takes any damage or if someone else uses an action to shake the creature out of its haze. Once you invoke the rune, you can't do so again until you finish a short or long rest."
@@ -4140,7 +4568,9 @@
 			"name": "Stone Rune",
 			"source": "TCE",
 			"page": 45,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"This rune's magic channels the judiciousness associated with stone giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom ({@skill Insight}) checks, and you have {@sense darkvision} out to a range of 120 feet.",
 				"In addition, when a creature you can see ends its turn within 30 feet of you, you can use your reaction to invoke the rune and force the creature to make a Wisdom saving throw. Unless the save succeeds, the creature is {@condition charmed} by you for 1 minute. While {@condition charmed} in this way, the creature has a speed of 0 and is {@condition incapacitated}, descending into a dreamy stupor. The creature repeats the saving throw at the end of each of its turns, ending the effect on a success. Once you invoke this rune, you can't do so again until you finish a short or long rest."
@@ -4150,7 +4580,9 @@
 			"name": "Storm Rune",
 			"source": "TCE",
 			"page": 45,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4174,7 +4606,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 5,
 			"isClassFeatureVariant": true,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you make a Wisdom ({@skill Insight}) check or an Intelligence ({@skill Investigation}) check, you can expend one superiority die, and add the superiority die to the ability check."
 			]
@@ -4184,7 +4618,9 @@
 			"source": "PHB",
 			"page": 102,
 			"srd": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components."
 			]
@@ -4193,7 +4629,9 @@
 			"name": "Superior Pact Weapon",
 			"source": "UAWarlockAndWizard",
 			"page": 5,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -4239,7 +4677,9 @@
 			"name": "Sweeping Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you hit a creature with a melee weapon attack, you can expend one superiority die to attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your superiority die. The damage is of the same type dealt by the original attack."
 			]
@@ -4248,7 +4688,9 @@
 			"name": "Sweeping Cinder Strike",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"entries": [
 				"You can spend 2 ki points to cast {@spell burning hands}."
 			]
@@ -4257,7 +4699,9 @@
 			"name": "Swift Step Draught",
 			"source": "UAArtificer",
 			"page": 5,
-			"featureType": "AF",
+			"featureType": [
+				"AF"
+			],
 			"entries": [
 				"As a bonus action, you can reach into your Alchemist's Satchel and pull out a vial filled with a bubbling, brown liquid. As an action, a creature can drink it. Doing so increases the creature's speed by 20 feet for 1 minute, and the vial disappears. If not used, the vial and its contents disappear after 1 minute. After using this formula, you can't do so again for 1 minute."
 			]
@@ -4266,7 +4710,9 @@
 			"name": "Sympathy",
 			"source": "UAClericDruidWizard",
 			"page": 5,
-			"featureType": "OR",
+			"featureType": [
+				"OR"
+			],
 			"entries": [
 				"If the named creature is within range of the spell, you can target the creature with the spell even if you can't see the creature or it has total cover against the spell."
 			]
@@ -4287,7 +4733,9 @@
 			"name": "Tanglefoot",
 			"source": "UAArtificer",
 			"page": 6,
-			"featureType": "AF",
+			"featureType": [
+				"AF"
+			],
 			"entries": [
 				"As an action, you can reach into your Alchemist's Satchel and pull out a bag filled with writhing, sticky black tar and hurl it at a point on the ground within 30 feet of you (the bag and its contents disappear if you don't hurl the bag by the end of the current turn). The bag bursts on impact and covers the ground in a 5-foot radius with sticky goo. That area becomes difficult terrain for 1 minute, and any creature that starts its turn on the ground in that area has its speed halved for that turn. After using this formula, you can't do so again for 1 minute."
 			]
@@ -4297,7 +4745,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"entries": [
 				"You can cast {@spell bane} once using a warlock spell slot. You can't do so again until you finish a long rest."
 			]
@@ -4307,7 +4757,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -4356,7 +4808,9 @@
 			"name": "Thunderstone",
 			"source": "UAArtificer",
 			"page": 6,
-			"featureType": "AF",
+			"featureType": [
+				"AF"
+			],
 			"entries": [
 				"As an action, you can reach into your Alchemist's Satchel and pull out a crystalline shard and hurl it at a creature, object, or surface within 30 feet of you (the shard disappears if you don't hurl it by the end of the current turn). The shard shatters on impact with a blast of concussive energy. Each creature within 10 feet of the point of impact must succeed on a Constitution saving throw or be knocked {@condition prone} and pushed 10 feet away from that point."
 			]
@@ -4369,7 +4823,9 @@
 				"name": "Tomb of Levistus",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4389,7 +4845,9 @@
 			"name": "Tomb of Levistus",
 			"source": "UAWarlockAndWizard",
 			"page": 5,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"patron": "The Fiend"
@@ -4404,7 +4862,9 @@
 			"name": "Tomb of Levistus",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4425,7 +4885,9 @@
 			"source": "TCE",
 			"page": 66,
 			"isClassFeatureVariant": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell that deals a type of damage from the following list, you can spend 1 sorcery point to change that damage type to one of the other listed types: acid, cold, fire, lightning, poison, thunder."
 			]
@@ -4438,7 +4900,9 @@
 				"name": "Path of the Seeker",
 				"source": "UAWarlockAndWizard"
 			},
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4457,7 +4921,9 @@
 			"name": "Trickster's Escape",
 			"source": "XGE",
 			"page": 57,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4476,7 +4942,9 @@
 			"name": "Trip Attack",
 			"source": "PHB",
 			"page": 74,
-			"featureType": "MV:B",
+			"featureType": [
+				"MV:B"
+			],
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target {@condition prone}."
 			]
@@ -4485,7 +4953,9 @@
 			"name": "Trip Attack",
 			"source": "UARevisedClassOptions",
 			"page": 3,
-			"featureType": "MV:C2-UA",
+			"featureType": [
+				"MV:C2-UA"
+			],
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. Roll the die, and add it to the attack's damage roll. If the target is Large or smaller, it must also succeed on a Strength saving throw (DC 8 + your proficiency bonus + your Strength modifier) or be knocked {@condition prone}."
 			]
@@ -4508,7 +4978,9 @@
 			"source": "PHB",
 			"page": 102,
 			"srd": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"When you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).",
 				"To be eligible, a spell must be incapable of targeting more than one creature at the spell's current level. For example, {@spell magic missile} and {@spell scorching ray} aren't eligible, but {@spell ray of frost} and {@spell chromatic orb} are."
@@ -4550,7 +5022,9 @@
 			"name": "Ultimate Pact Weapon",
 			"source": "UAWarlockAndWizard",
 			"page": 5,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Blade",
@@ -4598,7 +5072,9 @@
 			"name": "Unbroken Air",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"entries": [
 				"You can create a blast of compressed air that strikes like a mighty fist. As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes {@damage 3d10} bludgeoning damage, plus an extra {@damage 1d10} bludgeoning damage for each additional ki point you spend, and you can push the creature up to 20 feet away from you and knock it {@condition prone}. On a successful save, the creature takes half as much damage, and you don't push it or knock it {@condition prone}."
 			]
@@ -4608,7 +5084,9 @@
 			"source": "TCE",
 			"page": 71,
 			"isClassFeatureVariant": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4628,7 +5106,9 @@
 			"source": "UAClassFeatureVariants",
 			"page": 10,
 			"isClassFeatureVariant": true,
-			"featureType": "MM",
+			"featureType": [
+				"MM"
+			],
 			"entries": [
 				"If you make an attack roll for a spell and miss, you can spend 2 sorcery points to reroll the attack roll. You must use the result of the second roll.",
 				"You can use Unerring Spell even if you have already used a different Metamagic option during the casting of the spell."
@@ -4638,7 +5118,9 @@
 			"name": "Uvar (Storm Rune)",
 			"source": "UAFighterRangerRogue",
 			"page": 2,
-			"featureType": "RN",
+			"featureType": [
+				"RN"
+			],
 			"entries": [
 				"Using this rune, you can glimpse the future like a storm giant. While wearing or carrying an object inscribed with this rune, you have advantage on Intelligence ({@skill Arcana}) checks, and you can't be surprised as long as you are not {@condition incapacitated}.",
 				"In addition, you can invoke the rune as a bonus action to enter a prophetic state for 1 minute or until you're {@condition incapacitated}. Until the state ends, when you or another creature you can see within 60 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to cause the roll to have advantage or disadvantage. Once you invoke the rune, you can't do so again until you finish a short or long rest."
@@ -4649,7 +5131,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4669,7 +5153,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"pact": "Chain"
@@ -4683,7 +5169,9 @@
 			"name": "Warding Maneuver",
 			"source": "UARevisedClassOptions",
 			"page": 3,
-			"featureType": "MV:C2-UA",
+			"featureType": [
+				"MV:C2-UA"
+			],
 			"entries": [
 				"If you or a creature within 5 feet of you is hit by an attack, you can expend one superiority die as a reaction if you're wielding a weapon or a shield. Roll the die, and add the number rolled to the target's AC against that attack. If the attack still hits, the target has resistance against the attack's damage."
 			]
@@ -4692,7 +5180,9 @@
 			"name": "Water Whip",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"entries": [
 				"You can spend 2 ki points as an action to create a whip of water that shoves and pulls a creature to unbalance it. A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes {@damage 3d10} bludgeoning damage, plus an extra {@damage 1d10} bludgeoning damage for each additional ki point you spend, and you can either knock it {@condition prone} or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don't pull it or knock it {@condition prone}."
 			]
@@ -4701,7 +5191,9 @@
 			"name": "Wave of Rolling Earth",
 			"source": "PHB",
 			"page": 81,
-			"featureType": "ED",
+			"featureType": [
+				"ED"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4724,7 +5216,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {
@@ -4744,7 +5238,9 @@
 			"source": "PHB",
 			"page": 111,
 			"srd": true,
-			"featureType": "EI",
+			"featureType": [
+				"EI"
+			],
 			"prerequisite": [
 				{
 					"level": {

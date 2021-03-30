@@ -375,6 +375,10 @@ class RendererMarkdown {
 	_renderAttack (entry, textStack, meta, options) {
 		// TODO
 	}
+
+	_renderIngredient (entry, textStack, meta, options) {
+		// (Use base implementation)
+	}
 	// endregion
 
 	*/
@@ -426,15 +430,18 @@ class RendererMarkdown {
 		this.isSkipStylingItemLinks = false;
 		const savePart = mon.save ? `\n>- **Saving Throws** ${Object.keys(mon.save).sort(SortUtil.ascSortAtts).map(it => RendererMarkdown.monster.getSave(it, mon.save[it])).join(", ")}` : "";
 		const skillPart = mon.skill ? `\n>- **Skills** ${RendererMarkdown.monster.getSkillsString(mon)}` : "";
-		const damVulnPart = mon.vulnerable ? `\n>- **Damage Vulnerabilities** ${Parser.monImmResToFull(mon.vulnerable)}` : "";
-		const damResPart = mon.resist ? `\n>- **Damage Resistances** ${Parser.monImmResToFull(mon.resist)}` : "";
-		const damImmPart = mon.immune ? `\n>- **Damage Immunities** ${Parser.monImmResToFull(mon.immune)}` : "";
-		const condImmPart = mon.conditionImmune ? `\n>- **Condition Immunities** ${Parser.monCondImmToFull(mon.conditionImmune, true)}` : "";
+		const damVulnPart = mon.vulnerable ? `\n>- **Damage Vulnerabilities** ${Parser.getFullImmRes(mon.vulnerable)}` : "";
+		const damResPart = mon.resist ? `\n>- **Damage Resistances** ${Parser.getFullImmRes(mon.resist)}` : "";
+		const damImmPart = mon.immune ? `\n>- **Damage Immunities** ${Parser.getFullImmRes(mon.immune)}` : "";
+		const condImmPart = mon.conditionImmune ? `\n>- **Condition Immunities** ${Parser.getFullCondImm(mon.conditionImmune, true)}` : "";
 
-		const traitArray = RendererMarkdown.monster.getOrderedTraits(mon, meta);
-		const traitsPart = traitArray && traitArray.length ? `\n${RendererMarkdown.monster._getRenderedSection(traitArray, 1, meta)}` : "";
+		const fnGetSpellTraits = RendererMarkdown.monster.getSpellcastingRenderedTraits.bind(RendererMarkdown.monster, meta);
+		const traitArray = Renderer.monster.getOrderedTraits(mon, {fnGetSpellTraits});
+		const actionArray = Renderer.monster.getOrderedActions(mon, {fnGetSpellTraits});
 
-		const actionsPart = mon.action ? `\n>### Actions\n${RendererMarkdown.monster._getRenderedSection(mon.action, 1, meta)}` : "";
+		const traitsPart = traitArray?.length ? `\n${RendererMarkdown.monster._getRenderedSection(traitArray, 1, meta)}` : "";
+
+		const actionsPart = actionArray?.length ? `\n>### Actions\n${RendererMarkdown.monster._getRenderedSection(actionArray, 1, meta)}` : "";
 		const bonusActionsPart = mon.bonus ? `\n>### Bonus Actions\n${RendererMarkdown.monster._getRenderedSection(mon.bonus, 1, meta)}` : "";
 		const reactionsPart = mon.reaction ? `\n>### Reactions\n${RendererMarkdown.monster._getRenderedSection(mon.reaction, 1, meta)}` : "";
 		const legendaryActionsPart = mon.legendary ? `\n>### Legendary Actions\n>${Renderer.monster.getLegendaryActionIntro(mon, RendererMarkdown.get())}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(mon.legendary, 1, meta)}` : "";
@@ -513,8 +520,31 @@ ___
 	_renderDataTrapHazard (entry, textStack, meta, options) {
 		// TODO
 	}
-	// endregion
+
+	_renderDataObject (entry, textStack, meta, options) {
+		// TODO
+	}
+
+	_renderDataItem (entry, textStack, meta, options) {
+		// TODO
+	}
 	*/
+
+	_renderDataLegendaryGroup (entry, textStack, meta, options) {
+		const lg = entry.dataLegendaryGroup;
+
+		const subEntry = Renderer.monster.getLegendaryGroupSummaryEntry(entry.dataLegendaryGroup);
+		if (!subEntry) return "";
+
+		const subStack = [""];
+
+		subStack[0] += `## ${lg._displayName || lg.name}`;
+		this._recursiveRender(subEntry, subStack, meta, {suffix: "\n"});
+
+		const lgRender = subStack.join("").trim();
+		textStack[0] += `\n${lgRender}\n\n`;
+	}
+	// endregion
 
 	// region images
 	_renderImage (entry, textStack, meta, options) {
@@ -763,7 +793,7 @@ ___
 
 					return $$`<div class="m-1 stripe-even"><label class="split-v-center">
 						<div class="w-100 mr-2">${v.name}</div>
-						${$ipt.addClass("mw-33")}
+						${$ipt.addClass("max-w-33")}
 					</label></div>`
 				});
 
@@ -868,18 +898,12 @@ RendererMarkdown.monster = class {
 		return renderStack.join("");
 	}
 
-	static getOrderedTraits (mon, meta) {
-		let traits = mon.trait ? MiscUtil.copy(mon.trait) : null;
-		if (mon.spellcasting) traits = (traits || []).concat(RendererMarkdown.monster.getSpellcastingRenderedTraits(mon, meta));
-		if (traits) return traits.sort((a, b) => SortUtil.monTraitSort(a, b));
-	}
-
-	static getSpellcastingRenderedTraits (mon, meta) {
+	static getSpellcastingRenderedTraits (meta, mon, displayAsProp = "trait") {
 		const renderer = RendererMarkdown.get();
 		const out = [];
 		const cacheDepth = meta.depth;
 		meta.depth = 2;
-		mon.spellcasting.forEach(entry => {
+		(mon.spellcasting || []).filter(it => (it.displayAs || "trait") === displayAsProp).forEach(entry => {
 			entry.type = entry.type || "spellcasting";
 			const renderStack = [""];
 			renderer._recursiveRender(entry, renderStack, meta, {prefix: ">"});

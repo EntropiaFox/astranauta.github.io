@@ -75,6 +75,9 @@
 			"senseTags": [
 				"D"
 			],
+			"damageTags": [
+				"S"
+			],
 			"miscTags": [
 				"MW"
 			]
@@ -160,6 +163,9 @@
 			],
 			"senseTags": [
 				"D"
+			],
+			"damageTags": [
+				"S"
 			],
 			"miscTags": [
 				"MW"

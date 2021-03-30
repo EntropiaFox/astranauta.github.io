@@ -106,7 +106,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aboleth",
@@ -280,7 +282,9 @@
 			],
 			"conditionInflictLegendary": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Abominable Yeti",
@@ -298,6 +302,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -419,7 +426,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Acolyte",
@@ -462,6 +471,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -550,7 +562,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Adult Black Dragon",
@@ -570,6 +583,9 @@
 				},
 				{
 					"source": "GoS"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -742,7 +758,9 @@
 			],
 			"conditionInflictLegendary": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Blue Dracolich",
@@ -751,6 +769,9 @@
 			"otherSources": [
 				{
 					"source": "WDMM"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -935,7 +956,9 @@
 				"blinded",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Blue Dragon",
@@ -1121,7 +1144,9 @@
 				"blinded",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Brass Dragon",
@@ -1317,7 +1342,9 @@
 			"conditionInflictLegendary": [
 				"blinded",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Bronze Dragon",
@@ -1536,7 +1563,9 @@
 			],
 			"conditionInflictLegendary": [
 				"deafened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Copper Dragon",
@@ -1547,6 +1576,9 @@
 			"otherSources": [
 				{
 					"source": "GoS"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -1726,7 +1758,9 @@
 			"conditionInflict": [
 				"frightened",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Gold Dragon",
@@ -1935,7 +1969,9 @@
 			"conditionInflict": [
 				"frightened",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Green Dragon",
@@ -1949,6 +1985,9 @@
 				},
 				{
 					"source": "GoS"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -2128,7 +2167,9 @@
 			"conditionInflictLegendary": [
 				"charmed",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Red Dragon",
@@ -2319,7 +2360,9 @@
 				"incapacitated",
 				"poisoned",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Silver Dragon",
@@ -2521,7 +2564,9 @@
 				"frightened",
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult White Dragon",
@@ -2719,7 +2764,9 @@
 			"conditionInflict": [
 				"frightened",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Air Elemental",
@@ -2768,6 +2815,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -2884,7 +2934,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Allosaurus",
@@ -2972,7 +3024,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Black Dragon",
@@ -3150,7 +3204,9 @@
 			],
 			"conditionInflictLegendary": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Blue Dragon",
@@ -3332,7 +3388,9 @@
 				"blinded",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Brass Dragon",
@@ -3530,7 +3588,9 @@
 			"conditionInflictLegendary": [
 				"blinded",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Bronze Dragon",
@@ -3737,7 +3797,9 @@
 			],
 			"conditionInflictLegendary": [
 				"deafened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Copper Dragon",
@@ -3934,7 +3996,9 @@
 			"conditionInflict": [
 				"frightened",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Gold Dragon",
@@ -4135,7 +4199,9 @@
 			"conditionInflict": [
 				"frightened",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Green Dragon",
@@ -4328,7 +4394,9 @@
 			"conditionInflictLegendary": [
 				"charmed",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Red Dragon",
@@ -4513,7 +4581,9 @@
 				"incapacitated",
 				"poisoned",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Silver Dragon",
@@ -4707,7 +4777,9 @@
 				"frightened",
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient White Dragon",
@@ -4893,7 +4965,9 @@
 			"conditionInflict": [
 				"frightened",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Androsphinx",
@@ -4906,6 +4980,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -5152,7 +5229,9 @@
 			"conditionInflictSpell": [
 				"incapacitated",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Animated Armor",
@@ -5193,6 +5272,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -5288,7 +5370,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ankheg",
@@ -5385,7 +5469,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ankylosaurus",
@@ -5450,7 +5536,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ape",
@@ -5469,6 +5557,9 @@
 				},
 				{
 					"source": "GoS"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -5810,7 +5901,9 @@
 				"incapacitated",
 				"invisible",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Archmage",
@@ -5850,6 +5943,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -5903,6 +5999,7 @@
 						"slashing"
 					],
 					"note": "(from stoneskin)",
+					"cond": true,
 					"preNote": "nonmagical"
 				}
 			],
@@ -6051,7 +6148,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Assassin",
@@ -6103,6 +6202,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -6227,7 +6329,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Awakened Shrub",
@@ -6315,7 +6418,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Awakened Tree",
@@ -6346,6 +6450,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -6419,7 +6526,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Axe Beak",
@@ -6488,7 +6596,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Azer",
@@ -6592,7 +6701,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Baboon",
@@ -6605,6 +6716,9 @@
 				},
 				{
 					"source": "ToA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "S",
@@ -6914,7 +7028,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bandit",
@@ -6963,6 +7079,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -7051,7 +7170,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Bandit Captain",
@@ -7100,6 +7220,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -7210,7 +7333,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Banshee",
@@ -7370,7 +7495,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Barbed Devil",
@@ -7545,7 +7672,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Barlgura",
@@ -7722,7 +7851,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Basilisk",
@@ -7816,7 +7947,9 @@
 			"conditionInflict": [
 				"petrified",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bat",
@@ -8064,7 +8197,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Behir",
@@ -8077,6 +8212,9 @@
 				},
 				{
 					"source": "EGW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -8188,7 +8326,9 @@
 				"blinded",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Beholder",
@@ -8213,6 +8353,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -8289,18 +8432,78 @@
 					"name": "Eye Rays",
 					"entries": [
 						"The beholder shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:",
-						"{@i 1. Charm Ray.} The targeted creature must succeed on a {@dc 16} Wisdom saving throw or be {@condition charmed} by the beholder for 1 hour, or until the beholder harms the creature.",
-						"{@i 2. Paralyzing Ray.} The targeted creature must succeed on a {@dc 16} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"{@i 3. Fear Ray.} The targeted creature must succeed on a {@dc 16} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"{@i 4. Slowing Ray.} The targeted creature must succeed on a {@dc 16} Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"{@i 5. Enervation Ray.} The targeted creature must make a {@dc 16} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one.",
-						"{@i 6. Telekinetic Ray.} If the target is a creature, it must succeed on a {@dc 16} Strength saving throw or the beholder moves it up to 30 feet in any direction. It is {@condition restrained} by the ray's telekinetic grip until the start of the beholder's next turn or until the beholder is {@condition incapacitated}.",
-						"If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The beholder can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container.",
-						"{@i 7. Sleep Ray.} The targeted creature must succeed on a {@dc 16} Wisdom saving throw or fall asleep and remain {@condition unconscious} for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead.",
-						"{@i 8. Petrification Ray.} The targeted creature must make a {@dc 16} Dexterity saving throw. On a failed save, the creature begins to turn to stone and is {@condition restrained}. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is {@condition petrified} until freed by the  {@spell greater restoration} spell or other magic.",
-						"{@i 9. Disintegration Ray.} If the target is a creature, it must succeed on a {@dc 16} Dexterity saving throw or take 45 ({@damage 10d8}) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust.",
-						"If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it.",
-						"{@i 10. Death Ray.} The targeted creature must succeed on a {@dc 16} Dexterity saving throw or take 55 ({@damage 10d10}) necrotic damage. The target dies if the ray reduces it to 0 hit points."
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1. Charm Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 16} Wisdom saving throw or be {@condition charmed} by the beholder for 1 hour, or until the beholder harms the creature."
+								},
+								{
+									"type": "item",
+									"name": "2. Paralyzing Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 16} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "3. Fear Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 16} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "4. Slowing Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 16} Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "5. Enervation Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must make a {@dc 16} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one."
+								},
+								{
+									"type": "item",
+									"name": "6. Telekinetic Ray.",
+									"style": "italic",
+									"entries": [
+										"If the target is a creature, it must succeed on a {@dc 16} Strength saving throw or the beholder moves it up to 30 feet in any direction. It is {@condition restrained} by the ray's telekinetic grip until the start of the beholder's next turn or until the beholder is {@condition incapacitated}.",
+										"If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The beholder can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container."
+									]
+								},
+								{
+									"type": "item",
+									"name": "7. Sleep Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 16} Wisdom saving throw or fall asleep and remain {@condition unconscious} for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead."
+								},
+								{
+									"type": "item",
+									"name": "8. Petrification Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must make a {@dc 16} Dexterity saving throw. On a failed save, the creature begins to turn to stone and is {@condition restrained}. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is {@condition petrified} until freed by the  {@spell greater restoration} spell or other magic."
+								},
+								{
+									"type": "item",
+									"name": "9. Disintegration Ray.",
+									"style": "italic",
+									"entries": [
+										"If the target is a creature, it must succeed on a {@dc 16} Dexterity saving throw or take 45 ({@damage 10d8}) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust.",
+										"If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it."
+									]
+								},
+								{
+									"type": "item",
+									"name": "10. Death Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 16} Dexterity saving throw or take 55 ({@damage 10d10}) necrotic damage. The target dies if the ray reduces it to 0 hit points."
+								}
+							]
+						}
 					]
 				}
 			],
@@ -8353,7 +8556,9 @@
 			],
 			"conditionInflictLegendary": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Beholder Zombie",
@@ -8436,11 +8641,39 @@
 					"name": "Eye Ray",
 					"entries": [
 						"The zombie uses a random magical eye ray, choosing a target that it can see within 60 feet of it.",
-						"1. Paralyzing Ray. The targeted creature must succeed on a {@dc 14} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"2. Fear Ray. The targeted creature must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"3. Enervation Ray. The targeted creature must make a {@dc 14} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one.",
-						"4. Disintegration Ray. If the target is a creature, it must succeed on a {@dc 14} Dexterity saving throw or take 45 ({@damage 10d8}) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust.",
-						"If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger nonmagical object or creation of magical force, this ray disintegrates a 10-foot cube of it."
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1. Paralyzing Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 14} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "2. Fear Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "3. Enervation Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must make a {@dc 14} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one."
+								},
+								{
+									"type": "item",
+									"name": "4. Disintegration Ray.",
+									"style": "italic",
+									"entries": [
+										"If the target is a creature, it must succeed on a {@dc 14} Dexterity saving throw or take 45 ({@damage 10d8}) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust.",
+										"If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger nonmagical object or creation of magical force, this ray disintegrates a 10-foot cube of it."
+									]
+								}
+							]
+						}
 					]
 				}
 			],
@@ -8475,7 +8708,9 @@
 			"conditionInflict": [
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Berserker",
@@ -8521,6 +8756,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -8602,7 +8840,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Black Bear",
@@ -8814,7 +9053,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Black Pudding",
@@ -8845,6 +9086,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -8945,7 +9189,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blink Dog",
@@ -9044,7 +9290,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blood Hawk",
@@ -9063,6 +9311,9 @@
 				},
 				{
 					"source": "EGW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "S",
@@ -9136,7 +9387,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Blue Dragon Wyrmling",
@@ -9233,7 +9485,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blue Slaad",
@@ -9365,7 +9619,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Boar",
@@ -9387,6 +9643,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -9648,7 +9907,9 @@
 			"conditionInflict": [
 				"grappled",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bone Naga (Guardian)",
@@ -9777,7 +10038,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bone Naga (Spirit)",
@@ -9898,7 +10161,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Brass Dragon Wyrmling",
@@ -10009,7 +10274,9 @@
 			],
 			"conditionInflict": [
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bronze Dragon Wyrmling",
@@ -10128,7 +10395,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Brown Bear",
@@ -10386,7 +10655,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bugbear Chief",
@@ -10468,7 +10739,7 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The bugbear makes two melee attacks"
+						"The bugbear makes two melee attacks."
 					]
 				},
 				{
@@ -10514,7 +10785,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bulette",
@@ -10614,7 +10887,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bullywug",
@@ -10753,7 +11028,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cambion",
@@ -10765,6 +11042,9 @@
 				},
 				{
 					"source": "BGDIA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -10963,7 +11243,9 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Camel",
@@ -10973,6 +11255,9 @@
 			"otherSources": [
 				{
 					"source": "GoS"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -11147,7 +11432,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cat",
@@ -11178,6 +11465,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -11464,7 +11754,9 @@
 				"RCH",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chain Devil",
@@ -11618,7 +11910,9 @@
 				"frightened",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chasme",
@@ -11758,7 +12052,9 @@
 			],
 			"conditionInflict": [
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chimera",
@@ -11889,7 +12185,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chuul",
@@ -12022,7 +12320,9 @@
 				"grappled",
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Clay Golem",
@@ -12179,7 +12479,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cloaker",
@@ -12324,7 +12626,9 @@
 			"conditionInflict": [
 				"blinded",
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cloud Giant",
@@ -12518,7 +12822,9 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cockatrice",
@@ -12594,7 +12900,9 @@
 			"conditionInflict": [
 				"petrified",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Commoner",
@@ -12664,6 +12972,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -12738,7 +13049,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Constrictor Snake",
@@ -12929,7 +13241,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Couatl",
@@ -13115,7 +13429,9 @@
 				"poisoned",
 				"restrained",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Crab",
@@ -13228,6 +13544,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -13306,7 +13625,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Crocodile",
@@ -13469,6 +13790,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -13604,7 +13928,9 @@
 			"conditionInflictSpell": [
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cultist",
@@ -13665,6 +13991,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -13752,7 +14081,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cyclops",
@@ -13773,6 +14104,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -13861,7 +14195,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dao",
@@ -13886,6 +14222,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -14058,7 +14397,9 @@
 			"conditionInflictSpell": [
 				"frightened",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Darkmantle",
@@ -14156,7 +14497,9 @@
 			],
 			"conditionInflict": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Death Dog",
@@ -14252,7 +14595,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Death Knight",
@@ -14276,6 +14621,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -14452,7 +14800,9 @@
 				"incapacitated",
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Death Slaad",
@@ -14476,6 +14826,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -14660,7 +15013,9 @@
 			"conditionInflictSpell": [
 				"frightened",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Death Tyrant",
@@ -14670,6 +15025,9 @@
 			"otherSources": [
 				{
 					"source": "WDMM"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -14757,18 +15115,78 @@
 					"name": "Eye Rays",
 					"entries": [
 						"The death tyrant shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:",
-						"1. Charm Ray. The targeted creature must succeed on a {@dc 17} Wisdom saving throw or be {@condition charmed} by the death tyrant for 1 hour, or until the death tyrant harms the creature.",
-						"2. Paralyzing Ray. The targeted creature must succeed on a {@dc 17} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"3. Fear Ray. The targeted creature must succeed on a {@dc 17} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"4. Slowing Ray. The targeted creature must succeed on a {@dc 17} Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"5. Enervation Ray. The targeted creature must make a {@dc 17} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one.",
-						"6. Telekinetic Ray. If the target is a creature, it must succeed on a {@dc 17} Strength saving throw or the death tyrant moves it up to 30 feet in any direction. It is {@condition restrained} by the ray's telekinetic grip until the start of the death tyrant's next turn or until the death tyrant is {@condition incapacitated}.",
-						"If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The death tyrant can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container.",
-						"7. Sleep Ray. The targeted creature must succeed on a {@dc 17} Wisdom saving throw or fall asleep and remain {@condition unconscious} for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead.",
-						"8. Petrification Ray. The targeted creature must make a {@dc 17} Dexterity saving throw. On a failed save, the creature begins to turn to stone and is {@condition restrained}. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is {@condition petrified} until freed by the  {@spell greater restoration} spell or other magic.",
-						"9. Disintegration Ray. If the target is a creature, it must succeed on a {@dc 17} Dexterity saving throw or take 45 ({@damage 10d8}) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust.",
-						"If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it.",
-						"10. Death Ray. The targeted creature must succeed on a {@dc 17} Dexterity saving throw or take 55 ({@damage 10d10}) necrotic damage. The target dies if the ray reduces it to 0 hit points."
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1. Charm Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 17} Wisdom saving throw or be {@condition charmed} by the death tyrant for 1 hour, or until the death tyrant harms the creature."
+								},
+								{
+									"type": "item",
+									"name": "2. Paralyzing Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 17} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "3. Fear Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 17} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "4. Slowing Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 17} Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "5. Enervation Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must make a {@dc 17} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one."
+								},
+								{
+									"type": "item",
+									"name": "6. Telekinetic Ray.",
+									"style": "italic",
+									"entries": [
+										"If the target is a creature, it must succeed on a {@dc 17} Strength saving throw or the death tyrant moves it up to 30 feet in any direction. It is {@condition restrained} by the ray's telekinetic grip until the start of the death tyrant's next turn or until the death tyrant is {@condition incapacitated}.",
+										"If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The death tyrant can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container."
+									]
+								},
+								{
+									"type": "item",
+									"name": "7. Sleep Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 17} Wisdom saving throw or fall asleep and remain {@condition unconscious} for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead."
+								},
+								{
+									"type": "item",
+									"name": "8. Petrification Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must make a {@dc 17} Dexterity saving throw. On a failed save, the creature begins to turn to stone and is {@condition restrained}. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is {@condition petrified} until freed by the  {@spell greater restoration} spell or other magic."
+								},
+								{
+									"type": "item",
+									"name": "9. Disintegration Ray.",
+									"style": "italic",
+									"entries": [
+										"If the target is a creature, it must succeed on a {@dc 17} Dexterity saving throw or take 45 ({@damage 10d8}) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust.",
+										"If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it."
+									]
+								},
+								{
+									"type": "item",
+									"name": "10. Death Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 17} Dexterity saving throw or take 55 ({@damage 10d10}) necrotic damage. The target dies if the ray reduces it to 0 hit points."
+								}
+							]
+						}
 					]
 				}
 			],
@@ -14815,7 +15233,9 @@
 				"petrified",
 				"restrained",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deep Gnome (Svirfneblin)",
@@ -14960,7 +15380,9 @@
 			"conditionInflictSpell": [
 				"blinded",
 				"deafened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deer",
@@ -15059,7 +15481,7 @@
 			],
 			"hp": {
 				"average": 80,
-				"formula": "20d4"
+				"formula": "32d4"
 			},
 			"speed": {
 				"walk": 0,
@@ -15235,7 +15657,9 @@
 			],
 			"conditionInflictLegendary": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deva",
@@ -15396,7 +15820,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dire Wolf",
@@ -15597,7 +16023,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Djinni",
@@ -15614,6 +16042,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -15778,7 +16209,9 @@
 			"conditionInflictSpell": [
 				"incapacitated",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Doppelganger",
@@ -15931,7 +16364,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Draft Horse",
@@ -16021,6 +16456,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "G",
@@ -16142,7 +16580,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dretch",
@@ -16269,7 +16709,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drider",
@@ -16449,7 +16891,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow",
@@ -16477,6 +16921,9 @@
 				},
 				{
 					"source": "EGW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -16614,7 +17061,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Elite Warrior",
@@ -16807,7 +17256,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Mage",
@@ -16840,6 +17291,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -17023,7 +17477,9 @@
 			"conditionInflictSpell": [
 				"invisible",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Priestess of Lolth",
@@ -17254,7 +17710,9 @@
 				"charmed",
 				"poisoned",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Druid",
@@ -17297,6 +17755,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -17406,7 +17867,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dryad",
@@ -17431,6 +17894,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -17563,7 +18029,9 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar",
@@ -17703,7 +18171,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duodrone",
@@ -17811,7 +18281,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dust Mephit",
@@ -17950,13 +18422,20 @@
 			],
 			"conditionInflictSpell": [
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Eagle",
 			"source": "MM",
 			"page": 322,
 			"srd": true,
+			"otherSources": [
+				{
+					"source": "CM"
+				}
+			],
 			"size": "S",
 			"type": "beast",
 			"alignment": [
@@ -18164,7 +18643,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Efreeti",
@@ -18340,7 +18821,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elephant",
@@ -18714,7 +19197,9 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Erinyes",
@@ -18817,7 +19302,7 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The erinyes makes three attacks"
+						"The erinyes makes three attacks."
 					]
 				},
 				{
@@ -18881,7 +19366,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ettercap",
@@ -18912,6 +19399,9 @@
 				},
 				{
 					"source": "EGW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -19040,7 +19530,9 @@
 				"grappled",
 				"poisoned",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ettin",
@@ -19163,7 +19655,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Faerie Dragon (Blue)",
@@ -19305,7 +19799,9 @@
 			],
 			"conditionInflictSpell": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Faerie Dragon (Green)",
@@ -19451,7 +19947,9 @@
 			],
 			"conditionInflictSpell": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Faerie Dragon (Indigo)",
@@ -19594,7 +20092,9 @@
 			],
 			"conditionInflictSpell": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Faerie Dragon (Orange)",
@@ -19733,12 +20233,19 @@
 			],
 			"conditionInflictSpell": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Faerie Dragon (Red)",
 			"source": "MM",
 			"page": 133,
+			"otherSources": [
+				{
+					"source": "CM"
+				}
+			],
 			"size": "T",
 			"type": "dragon",
 			"alignment": [
@@ -19868,7 +20375,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Faerie Dragon (Violet)",
@@ -20023,7 +20532,9 @@
 			],
 			"conditionInflictSpell": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Faerie Dragon (Yellow)",
@@ -20163,7 +20674,9 @@
 			],
 			"conditionInflictSpell": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fire Elemental",
@@ -20200,6 +20713,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -20266,7 +20782,7 @@
 				{
 					"name": "Illumination",
 					"entries": [
-						"The elemental sheds bright light in a 30-foot radius and dim light in an additional 30 ft.."
+						"The elemental sheds bright light in a 30-foot radius and dim light in an additional 30 feet."
 					]
 				},
 				{
@@ -20317,7 +20833,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fire Giant",
@@ -20464,7 +20982,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fire Snake",
@@ -20586,7 +21106,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flameskull",
@@ -20625,6 +21147,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -20789,7 +21314,9 @@
 			],
 			"miscTags": [
 				"AOE"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flesh Golem",
@@ -20832,6 +21359,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -20962,7 +21492,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flumph",
@@ -21074,7 +21606,9 @@
 			"conditionInflict": [
 				"poisoned",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flying Snake",
@@ -21162,7 +21696,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flying Sword",
@@ -21206,6 +21742,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "S",
@@ -21299,7 +21838,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fomorian",
@@ -21308,6 +21849,9 @@
 			"otherSources": [
 				{
 					"source": "WDMM"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -21402,7 +21946,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frog",
@@ -21449,7 +21995,7 @@
 				{
 					"name": "Amphibious",
 					"entries": [
-						"The frog can breathe air and water"
+						"The frog can breathe air and water."
 					]
 				},
 				{
@@ -21470,7 +22016,9 @@
 			],
 			"senseTags": [
 				"D"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frost Giant",
@@ -21607,7 +22155,9 @@
 			],
 			"conditionInflict": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Galeb Duhr",
@@ -21737,7 +22287,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gargoyle",
@@ -21777,6 +22329,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -21889,7 +22444,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gas Spore",
@@ -21993,7 +22550,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gelatinous Cube",
@@ -22104,7 +22663,9 @@
 			],
 			"conditionInflict": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ghast",
@@ -22247,7 +22808,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ghost",
@@ -22305,6 +22868,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -22441,7 +23007,9 @@
 			"conditionInflict": [
 				"frightened",
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ghoul",
@@ -22490,6 +23058,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -22575,7 +23146,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Ape",
@@ -23142,6 +23715,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -23417,7 +23993,6 @@
 				"AU",
 				"C",
 				"CS",
-				"GI",
 				"OTH"
 			],
 			"damageTags": [
@@ -23426,7 +24001,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Elk",
@@ -23513,7 +24090,6 @@
 				"C",
 				"CS",
 				"E",
-				"GI",
 				"OTH",
 				"S"
 			],
@@ -23526,7 +24102,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant Fire Beetle",
@@ -23611,7 +24188,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Frog",
@@ -23673,7 +24252,7 @@
 				{
 					"name": "Amphibious",
 					"entries": [
-						"The frog can breathe air and water"
+						"The frog can breathe air and water."
 					]
 				},
 				{
@@ -24004,7 +24583,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant Octopus",
@@ -24125,7 +24705,8 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Owl",
@@ -24224,7 +24805,6 @@
 				"C",
 				"CS",
 				"E",
-				"GI",
 				"OTH",
 				"S"
 			],
@@ -24233,7 +24813,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Poisonous Snake",
@@ -24355,6 +24937,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "S",
@@ -24463,6 +25048,9 @@
 				},
 				{
 					"source": "EGW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -24623,7 +25211,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant Shark",
@@ -24728,7 +25317,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant Spider",
@@ -24891,7 +25481,9 @@
 				"paralyzed",
 				"poisoned",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Toad",
@@ -24943,7 +25535,7 @@
 				{
 					"name": "Amphibious",
 					"entries": [
-						"The toad can breathe air and water"
+						"The toad can breathe air and water."
 					]
 				},
 				{
@@ -25116,7 +25708,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant Wasp",
@@ -25383,7 +25976,8 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Gibbering Mouther",
@@ -25498,7 +26092,9 @@
 			"conditionInflict": [
 				"blinded",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githyanki Knight",
@@ -25610,7 +26206,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githyanki Warrior",
@@ -25717,7 +26315,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githzerai Monk",
@@ -25828,7 +26428,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githzerai Zerth",
@@ -25949,7 +26551,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Glabrezu",
@@ -26133,7 +26737,9 @@
 			],
 			"conditionInflictSpell": [
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gladiator",
@@ -26173,6 +26779,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -26290,7 +26899,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Gnoll",
@@ -26417,7 +27027,9 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnoll Fang of Yeenoghu",
@@ -26536,7 +27148,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnoll Pack Lord",
@@ -26665,7 +27279,9 @@
 				"RCH",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Goat",
@@ -26918,7 +27534,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Goblin Boss",
@@ -27057,7 +27675,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gold Dragon Wyrmling",
@@ -27176,7 +27796,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gorgon",
@@ -27290,7 +27912,9 @@
 				"petrified",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Goristro",
@@ -27446,7 +28070,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gray Ooze",
@@ -27581,7 +28207,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gray Slaad",
@@ -27778,7 +28406,9 @@
 			"conditionInflictSpell": [
 				"frightened",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Green Dragon Wyrmling",
@@ -27884,7 +28514,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Green Hag",
@@ -27909,6 +28541,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -28110,7 +28745,9 @@
 				"paralyzed",
 				"poisoned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Green Slaad",
@@ -28301,7 +28938,9 @@
 			"conditionInflictSpell": [
 				"frightened",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grell",
@@ -28325,6 +28964,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -28424,7 +29066,9 @@
 				"paralyzed",
 				"poisoned",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grick",
@@ -28446,6 +29090,9 @@
 				},
 				{
 					"source": "WDMM"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -28541,7 +29188,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grick Alpha",
@@ -28550,6 +29199,9 @@
 			"otherSources": [
 				{
 					"source": "WDMM"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -28653,7 +29305,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Griffon",
@@ -28774,7 +29428,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grimlock",
@@ -28880,7 +29536,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Guard",
@@ -28932,6 +29590,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -29004,7 +29665,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Guardian Naga",
@@ -29181,7 +29843,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gynosphinx",
@@ -29396,7 +30060,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Half-Ogre (Ogrillon)",
@@ -29503,7 +30169,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Half-Red Dragon Veteran",
@@ -29631,7 +30299,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Harpy",
@@ -29747,7 +30417,9 @@
 			"conditionInflict": [
 				"charmed",
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hawk",
@@ -29763,6 +30435,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -29822,7 +30497,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hell Hound",
@@ -29865,6 +30541,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -29963,7 +30642,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Helmed Horror",
@@ -30114,7 +30795,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hezrou",
@@ -30276,7 +30959,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hill Giant",
@@ -30406,7 +31091,9 @@
 			"conditionInflict": [
 				"grappled",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hippogriff",
@@ -30507,7 +31194,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hobgoblin",
@@ -30640,7 +31329,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hobgoblin Captain",
@@ -30768,7 +31459,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hobgoblin Warlord",
@@ -30915,7 +31608,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Homunculus",
@@ -30937,6 +31632,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -31017,7 +31715,9 @@
 			"conditionInflict": [
 				"poisoned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hook Horror",
@@ -31128,7 +31828,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Horned Devil",
@@ -31276,7 +31978,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hunter Shark",
@@ -31381,7 +32085,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Hydra",
@@ -31520,7 +32225,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hyena",
@@ -31530,6 +32237,9 @@
 			"otherSources": [
 				{
 					"source": "PotA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -31593,7 +32303,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ice Devil",
@@ -31775,7 +32486,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ice Mephit",
@@ -31797,6 +32510,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "S",
@@ -31927,7 +32643,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Imp",
@@ -31958,6 +32676,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -32096,7 +32817,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Incubus",
@@ -32262,7 +32985,9 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Intellect Devourer",
@@ -32391,7 +33116,9 @@
 			],
 			"conditionInflict": [
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Invisible Stalker",
@@ -32550,7 +33277,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Iron Golem",
@@ -32717,7 +33446,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Jackal",
@@ -32810,6 +33541,9 @@
 				},
 				{
 					"source": "BGDIA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -32927,7 +33661,9 @@
 			],
 			"conditionInflict": [
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kenku",
@@ -32948,6 +33684,9 @@
 				},
 				{
 					"source": "ERLW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -33038,7 +33777,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Killer Whale",
@@ -33193,6 +33934,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -33298,7 +34042,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Kobold",
@@ -33436,7 +34181,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kraken",
@@ -33646,7 +34393,9 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kuo-toa",
@@ -33790,7 +34539,8 @@
 				"U"
 			],
 			"damageTags": [
-				"P"
+				"P",
+				"S"
 			],
 			"miscTags": [
 				"MW",
@@ -33800,7 +34550,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kuo-toa Archpriest",
@@ -33992,7 +34744,9 @@
 			],
 			"conditionInflictSpell": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kuo-toa Monitor",
@@ -34129,7 +34883,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kuo-toa Whip",
@@ -34294,7 +35050,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lamia",
@@ -34307,6 +35065,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -34427,7 +35188,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lemure",
@@ -34531,7 +35294,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lich",
@@ -34803,7 +35568,9 @@
 				"charmed",
 				"invisible",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lion",
@@ -35112,7 +35879,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lizard Queen",
@@ -35242,7 +36011,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lizardfolk",
@@ -35393,7 +36164,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lizardfolk Shaman",
@@ -35566,7 +36339,9 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mage",
@@ -35630,6 +36405,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -35767,7 +36545,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Magma Mephit",
@@ -35920,7 +36699,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Magmin",
@@ -36032,7 +36813,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mammoth",
@@ -36115,7 +36898,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Manes",
@@ -36213,7 +36997,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Manticore",
@@ -36350,7 +37136,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Marid",
@@ -36553,7 +37341,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Marilith",
@@ -36741,7 +37531,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mastiff",
@@ -36834,7 +37626,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Medusa",
@@ -36967,7 +37761,9 @@
 			"conditionInflict": [
 				"petrified",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Merfolk",
@@ -37057,7 +37853,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Merrow",
@@ -37187,7 +37985,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mezzoloth",
@@ -37386,7 +38186,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mimic",
@@ -37423,6 +38225,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -37536,7 +38341,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mind Flayer",
@@ -37705,7 +38512,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mind Flayer Arcanist",
@@ -37916,7 +38725,9 @@
 				"invisible",
 				"restrained",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Minotaur",
@@ -38048,7 +38859,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Minotaur Skeleton",
@@ -38175,7 +38988,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Monodrone",
@@ -38188,6 +39003,9 @@
 				},
 				{
 					"source": "BGDIA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -38282,7 +39100,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mud Mephit",
@@ -38408,7 +39228,9 @@
 			],
 			"conditionInflict": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mule",
@@ -38517,6 +39339,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -38629,7 +39454,9 @@
 			"conditionInflict": [
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mummy Lord",
@@ -38645,6 +39472,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -38892,7 +39722,8 @@
 				"poisoned",
 				"prone",
 				"stunned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Myconid Adult",
@@ -39030,7 +39861,9 @@
 				"exhaustion",
 				"poisoned",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Myconid Sovereign",
@@ -39196,7 +40029,9 @@
 				"incapacitated",
 				"poisoned",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Myconid Sprout",
@@ -39280,7 +40115,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nalfeshnee",
@@ -39299,6 +40136,9 @@
 				},
 				{
 					"source": "BGDIA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -39449,7 +40289,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Needle Blight",
@@ -39546,7 +40388,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Night Hag",
@@ -39580,6 +40424,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -39807,7 +40654,9 @@
 				"paralyzed",
 				"poisoned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nightmare",
@@ -39910,7 +40759,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Noble",
@@ -39971,6 +40822,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -40046,7 +40900,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nothic",
@@ -40185,7 +41041,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nycaloth",
@@ -40385,7 +41243,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ochre Jelly",
@@ -40514,7 +41374,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Octopus",
@@ -40674,6 +41536,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -40757,7 +41622,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ogre Zombie",
@@ -40863,7 +41730,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Oni",
@@ -41037,7 +41906,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orc",
@@ -41186,7 +42057,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orc Eye of Gruumsh",
@@ -41343,7 +42216,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orc War Chief",
@@ -41489,7 +42364,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orog",
@@ -41625,7 +42502,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Otyugh",
@@ -41757,7 +42636,9 @@
 				"poisoned",
 				"restrained",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Owl",
@@ -41773,6 +42654,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -41989,7 +42873,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Panther",
@@ -42170,7 +43056,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Pentadrone",
@@ -42287,7 +43175,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Peryton",
@@ -42423,7 +43313,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Phase Spider",
@@ -42543,7 +43435,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Piercer",
@@ -42645,7 +43539,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Pit Fiend",
@@ -42842,7 +43738,9 @@
 			],
 			"conditionInflictSpell": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Pixie",
@@ -42956,7 +43854,9 @@
 			"conditionInflictSpell": [
 				"restrained",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Planetar",
@@ -43127,7 +44027,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Plesiosaurus",
@@ -43213,7 +44115,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Poisonous Snake",
@@ -43412,6 +44316,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -43542,7 +44449,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Pony",
@@ -43662,6 +44570,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -43778,7 +44689,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Pseudodragon",
@@ -43933,7 +44845,9 @@
 			"conditionInflict": [
 				"poisoned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Pteranodon",
@@ -44017,7 +44931,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Purple Worm",
@@ -44027,6 +44943,9 @@
 			"otherSources": [
 				{
 					"source": "EGW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "G",
@@ -44124,7 +45043,9 @@
 			"conditionInflict": [
 				"blinded",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Quadrone",
@@ -44244,7 +45165,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Quaggoth",
@@ -44352,7 +45275,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Quaggoth Spore Servant",
@@ -44441,7 +45366,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Quaggoth Thonot",
@@ -44574,7 +45500,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Quasit",
@@ -44599,6 +45527,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -44737,7 +45668,9 @@
 			"conditionInflict": [
 				"frightened",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Quipper",
@@ -44829,7 +45762,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rakshasa",
@@ -44851,6 +45786,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -44991,7 +45929,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rat",
@@ -45084,7 +46024,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Raven",
@@ -45097,6 +46038,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -45261,7 +46205,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Red Slaad",
@@ -45397,7 +46343,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Reef Shark",
@@ -45491,7 +46439,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Remorhaz",
@@ -45609,7 +46558,9 @@
 				"blinded",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Revenant",
@@ -45784,7 +46735,9 @@
 			"conditionInflict": [
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rhinoceros",
@@ -45940,7 +46893,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Roc",
@@ -45971,6 +46925,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "G",
@@ -46068,7 +47025,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Roper",
@@ -46203,7 +47162,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rug of Smothering",
@@ -46241,6 +47202,9 @@
 				},
 				{
 					"source": "EGW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -46332,7 +47296,9 @@
 				"blinded",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rust Monster",
@@ -46439,7 +47405,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Saber-Toothed Tiger",
@@ -46677,7 +47645,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sahuagin Baron",
@@ -46816,7 +47786,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sahuagin Priestess",
@@ -46987,7 +47959,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Salamander",
@@ -47128,7 +48102,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Satyr",
@@ -47141,6 +48117,9 @@
 				},
 				{
 					"source": "IMR"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -47277,7 +48256,9 @@
 				"charmed",
 				"frightened",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Scarecrow",
@@ -47289,6 +48270,9 @@
 				},
 				{
 					"source": "WDH"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -47403,7 +48387,9 @@
 			"conditionInflict": [
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Scorpion",
@@ -47526,6 +48512,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -47620,7 +48609,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sea Hag",
@@ -47840,7 +48831,9 @@
 				"paralyzed",
 				"poisoned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sea Horse",
@@ -47926,6 +48919,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -48040,7 +49036,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadow Demon",
@@ -48204,7 +49202,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shambling Mound",
@@ -48235,6 +49235,9 @@
 				},
 				{
 					"source": "MOT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -48340,7 +49343,9 @@
 				"blinded",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shield Guardian",
@@ -48490,7 +49495,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shrieker",
@@ -48565,7 +49572,9 @@
 			],
 			"senseTags": [
 				"B"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Silver Dragon Wyrmling",
@@ -48683,7 +49692,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Skeleton",
@@ -48821,7 +49832,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Slaad Tadpole",
@@ -48833,6 +49846,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -48911,7 +49927,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Smoke Mephit",
@@ -49050,7 +50067,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Solar",
@@ -49061,6 +50080,9 @@
 			"otherSources": [
 				{
 					"source": "BGDIA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -49264,7 +50286,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spectator",
@@ -49347,10 +50371,36 @@
 					"name": "Eye Rays",
 					"entries": [
 						"The spectator shoots up to two of the following magical eye rays at one or two creatures it can see within 90 feet of it. It can use each ray only once on a turn.",
-						"1. Confusion Ray. The target must succeed on a {@dc 13} Wisdom saving throw, or it can't take reactions until the end of its next turn. On its turn, the target can't move, and it uses its action to make a melee or ranged attack against a randomly determined creature within range. If the target can't attack, it does nothing on its turn.",
-						"2. Paralyzing Ray. The target must succeed on a {@dc 13} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"3. Fear Ray. The target must succeed on a {@dc 13} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the spectator is visible to the target, ending the effect on itself on a success.",
-						"4. Wounding Ray. The target must make a {@dc 13} Constitution saving throw, taking 16 ({@damage 3d10}) necrotic damage on a failed save, or half as much damage on a successful one."
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1. Confusion Ray.",
+									"style": "italic",
+									"entry": "The target must succeed on a {@dc 13} Wisdom saving throw, or it can't take reactions until the end of its next turn. On its turn, the target can't move, and it uses its action to make a melee or ranged attack against a randomly determined creature within range. If the target can't attack, it does nothing on its turn."
+								},
+								{
+									"type": "item",
+									"name": "2. Paralyzing Ray.",
+									"style": "italic",
+									"entry": "The target must succeed on a {@dc 13} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "3. Fear Ray.",
+									"style": "italic",
+									"entry": "The target must succeed on a {@dc 13} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the spectator is visible to the target, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "4. Wounding Ray.",
+									"style": "italic",
+									"entry": "The target must make a {@dc 13} Constitution saving throw, taking 16 ({@damage 3d10}) necrotic damage on a failed save, or half as much damage on a successful one."
+								}
+							]
+						}
 					]
 				},
 				{
@@ -49400,7 +50450,9 @@
 			"conditionInflict": [
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Specter",
@@ -49461,6 +50513,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -49574,7 +50629,9 @@
 			"damageTags": [
 				"N",
 				"O"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spider",
@@ -49825,7 +50882,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spirit Naga",
@@ -49995,7 +51054,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sprite",
@@ -50020,6 +51081,9 @@
 				},
 				{
 					"source": "IMR"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -50112,7 +51176,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spy",
@@ -50167,6 +51233,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -50270,7 +51339,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Steam Mephit",
@@ -50407,7 +51477,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stirge",
@@ -50520,7 +51592,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stone Giant",
@@ -50679,7 +51753,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stone Golem",
@@ -50719,6 +51795,9 @@
 				},
 				{
 					"source": "IMR"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -50840,7 +51919,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Storm Giant",
@@ -51020,7 +52101,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Succubus",
@@ -51189,7 +52272,9 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swarm of Bats",
@@ -51217,6 +52302,9 @@
 				},
 				{
 					"source": "EGW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -51314,7 +52402,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swarm of Beetles",
@@ -51406,7 +52496,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Swarm of Centipedes",
@@ -51509,7 +52600,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Swarm of Insects",
@@ -51627,7 +52719,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Swarm of Poisonous Snakes",
@@ -51739,7 +52832,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Swarm of Quippers",
@@ -51861,7 +52955,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swarm of Rats",
@@ -51892,6 +52988,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -51980,7 +53079,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Swarm of Ravens",
@@ -52008,6 +53108,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -52087,7 +53190,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swarm of Spiders",
@@ -52224,7 +53329,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Swarm of Wasps",
@@ -52326,7 +53432,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Tarrasque",
@@ -52535,7 +53642,9 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thri-kreen",
@@ -52700,7 +53809,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thug",
@@ -52746,6 +53857,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -52848,7 +53962,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tiger",
@@ -52995,6 +54111,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "H",
@@ -53106,7 +54225,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tribal Warrior",
@@ -53212,7 +54333,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Triceratops",
@@ -53292,7 +54414,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tridrone",
@@ -53405,7 +54529,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Troglodyte",
@@ -53550,7 +54676,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Troll",
@@ -53736,7 +54864,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Twig Blight",
@@ -53849,7 +54979,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tyrannosaurus Rex",
@@ -53938,7 +55070,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ultroloth",
@@ -54152,7 +55286,9 @@
 				"charmed",
 				"frightened",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Umber Hulk",
@@ -54268,7 +55404,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Unicorn",
@@ -54471,7 +55609,9 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vampire",
@@ -54508,6 +55648,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -54707,7 +55850,9 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vampire Spawn",
@@ -54878,7 +56023,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vampire Spellcaster",
@@ -55149,7 +56296,9 @@
 				"charmed",
 				"invisible",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vampire Warrior",
@@ -55365,7 +56514,9 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Veteran",
@@ -55426,6 +56577,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -55514,7 +56668,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Vine Blight",
@@ -55629,7 +56784,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Violet Fungus",
@@ -55723,7 +56880,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vrock",
@@ -55751,6 +56910,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -55901,7 +57063,9 @@
 			"conditionInflict": [
 				"poisoned",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vulture",
@@ -55917,6 +57081,9 @@
 				},
 				{
 					"source": "BGDIA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -56069,8 +57236,8 @@
 								"Barding"
 							],
 							"colStyles": [
-								"col-6",
-								"col-6"
+								"col-6 text-center",
+								"col-6 text-center"
 							],
 							"rows": [
 								[
@@ -56135,6 +57302,9 @@
 				},
 				{
 					"source": "SKT"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -56200,7 +57370,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Water Elemental",
@@ -56237,6 +57408,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -56362,7 +57536,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Water Weird",
@@ -56386,6 +57562,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -56489,7 +57668,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Weasel",
@@ -56710,7 +57891,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wereboar",
@@ -56739,6 +57922,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -56880,7 +58066,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wererat",
@@ -56912,6 +58100,9 @@
 				},
 				{
 					"source": "EGW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -57044,7 +58235,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Weretiger",
@@ -57210,7 +58403,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Werewolf",
@@ -57248,6 +58443,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -57387,7 +58585,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "White Dragon Wyrmling",
@@ -57491,7 +58691,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wight",
@@ -57537,6 +58739,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -57664,7 +58869,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Will-o'-Wisp",
@@ -57701,6 +58908,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "T",
@@ -57832,7 +59042,9 @@
 			],
 			"miscTags": [
 				"AOE"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Winged Kobold",
@@ -57847,6 +59059,9 @@
 				},
 				{
 					"source": "GoS"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "S",
@@ -57948,7 +59163,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Winter Wolf",
@@ -58071,7 +59288,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wolf",
@@ -58108,6 +59327,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -58208,6 +59430,9 @@
 				},
 				{
 					"source": "IDRotF"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -58293,7 +59518,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wraith",
@@ -58345,6 +59572,9 @@
 				},
 				{
 					"source": "TCE"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -58464,7 +59694,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wyvern",
@@ -58492,6 +59724,9 @@
 				},
 				{
 					"source": "BGDIA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -58578,7 +59813,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Xorn",
@@ -58707,7 +59944,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yeti",
@@ -58839,7 +60078,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yochlol",
@@ -59044,7 +60285,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Black Dragon",
@@ -59184,7 +60427,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Blue Dragon",
@@ -59229,7 +60474,7 @@
 			},
 			"speed": {
 				"walk": 40,
-				"burrow": 40,
+				"burrow": 20,
 				"fly": 80
 			},
 			"str": 21,
@@ -59317,7 +60562,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Brass Dragon",
@@ -59457,7 +60704,9 @@
 			],
 			"conditionInflict": [
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Bronze Dragon",
@@ -59471,6 +60720,9 @@
 				},
 				{
 					"source": "GoS"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -59608,7 +60860,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Copper Dragon",
@@ -59745,7 +60999,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Gold Dragon",
@@ -59890,7 +61146,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Green Dragon",
@@ -60043,7 +61301,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Red Dragon",
@@ -60173,7 +61433,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Red Shadow Dragon",
@@ -60264,13 +61526,13 @@
 				{
 					"name": "Bite",
 					"entries": [
-						"{@atk mw} {@hit 10} to hit, reach 10 ft., one target. {@h}17 ({@damage 2d10 + 6}) piercing damage plus 3 ({@damage 1d6}) necrotic damage."
+						"{@atk mw} {@hit 11} to hit, reach 10 ft., one target. {@h}17 ({@damage 2d10 + 6}) piercing damage plus 3 ({@damage 1d6}) necrotic damage."
 					]
 				},
 				{
 					"name": "Claw",
 					"entries": [
-						"{@atk mw} {@hit 10} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d6 + 6}) slashing damage."
+						"{@atk mw} {@hit 11} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d6 + 6}) slashing damage."
 					]
 				},
 				{
@@ -60312,7 +61574,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Remorhaz",
@@ -60400,7 +61664,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Silver Dragon",
@@ -60541,7 +61807,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young White Dragon",
@@ -60679,7 +61947,9 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Abomination",
@@ -60700,6 +61970,9 @@
 				},
 				{
 					"source": "SLW"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "L",
@@ -60869,7 +62142,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Malison (Type 1)",
@@ -60887,6 +62162,9 @@
 				},
 				{
 					"source": "ToA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -61059,7 +62337,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Malison (Type 2)",
@@ -61234,7 +62514,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Malison (Type 3)",
@@ -61252,6 +62534,9 @@
 				},
 				{
 					"source": "ToA"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -61438,7 +62723,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Pureblood",
@@ -61459,6 +62746,9 @@
 				},
 				{
 					"source": "WDMM"
+				},
+				{
+					"source": "CM"
 				}
 			],
 			"size": "M",
@@ -61592,7 +62882,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zombie",
@@ -61730,7 +63022,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

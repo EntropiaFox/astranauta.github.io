@@ -96,7 +96,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Azbara Jos",
@@ -244,7 +245,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blagothkus",
@@ -399,7 +401,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Captain Othelstan",
@@ -507,7 +510,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dragonclaw",
@@ -906,7 +910,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frulam Mondath",
@@ -1035,7 +1040,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Golden Stag",
@@ -1276,7 +1282,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Langdedrosa Cyanwrath",
@@ -1399,7 +1406,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Leosin Erlanthar",
@@ -1652,7 +1660,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Raggnar Redtooth",
@@ -1841,7 +1850,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rezmir",
@@ -2017,7 +2027,8 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sandesyl Morgia",
@@ -2210,7 +2221,8 @@
 				"blinded",
 				"deafened",
 				"prone"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Trepsin",
@@ -2309,7 +2321,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

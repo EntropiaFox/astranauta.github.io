@@ -4,7 +4,7 @@ class TablesPage extends ListPage {
 	constructor () {
 		const pageFilter = new PageFilterTables();
 		super({
-			dataSource: DataUtil.table.pLoadAll,
+			dataSource: DataUtil.table.loadJSON,
 
 			pageFilter,
 
@@ -24,13 +24,13 @@ class TablesPage extends ListPage {
 
 		const sortName = it.name.replace(/^\s*([\d,.]+)\s*gp/, (...m) => m[1].replace(Parser._numberCleanRegexp, "").padStart(9, "0"));
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-10 pl-0">${it.name}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
@@ -65,8 +65,9 @@ class TablesPage extends ListPage {
 	getSublistItem (it, pinId) {
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		const $ele = $(`<li class="row"><a href="#${hash}" class="lst--border" title="${it.name}"><span class="bold col-12 px-0">${it.name}</span></a></li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col"><a href="#${hash}" class="lst--border lst__row-inner" title="${it.name}"><span class="bold col-12 px-0">${it.name}</span></a></div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,
@@ -91,6 +92,14 @@ class TablesPage extends ListPage {
 	async pDoLoadSubHash (sub) {
 		sub = this._filterBox.setFromSubHashes(sub);
 		await ListUtil.pSetFromSubHashes(sub);
+	}
+
+	_getSearchCache (entity) {
+		if (!entity.rows && !entity.tables) return "";
+		const ptrOut = {_: ""};
+		this._getSearchCache_handleEntryProp(entity, "rows", ptrOut);
+		this._getSearchCache_handleEntryProp(entity, "tables", ptrOut);
+		return ptrOut._;
 	}
 }
 

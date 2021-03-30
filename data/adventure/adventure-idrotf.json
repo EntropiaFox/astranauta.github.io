@@ -14787,7 +14787,7 @@
 												"{@b Chest 5} contains a folded {@item Piwafwi (Cloak of Elvenkind)|OotA|piwafwi}\u2014a dark spider-silk cloak made by drow. This item has the properties of a {@item cloak of elvenkind} but loses its magic if it's exposed to sunlight for 1 hour without interruption.",
 												"{@b Chest 6} holds an amber headdress set with three large purple pearls (2,500 gp).",
 												"{@b Chest 7} contains a 2-foot-tall stone statuette of Demogorgon that weighs 50 pounds. Anyone who looks into the statue's eyes must succeed on a DC 14 Charisma saving throw or contract a random form of short-term madness (see \"{@table indefinite madness||Madness}\" in the {@book Dungeon Master's Guide|DMG}). A creature can be affected only once by the statue, after which it becomes immune to the effect.",
-												"{@b Chest 8} houses an inanimate svirfneblin skeleton encrusted with yellow mold (see \"{@book Dungeon Hazards|DMG|5|Dungeon Hazards}\" in the {@book Dungeon Master's Guide|DMG}). The mold releases its spores as soon as the chest's lid is opened. Embedded in one of the skull's eye sockets is a false eye made of moonstone (75 gp)."
+												"{@b Chest 8} houses an inanimate svirfneblin skeleton encrusted with {@hazard yellow mold} (see \"{@book Dungeon Hazards|DMG|5|Dungeon Hazards}\" in the {@book Dungeon Master's Guide|DMG}). The mold releases its spores as soon as the chest's lid is opened. Embedded in one of the skull's eye sockets is a false eye made of moonstone (75 gp)."
 											]
 										}
 									]
@@ -21345,7 +21345,9 @@
 						"type": "internal",
 						"path": "adventure/IDRotF/263-icewind-dale.jpg"
 					},
-					"title": "Poster Map: Icewind Dale"
+					"title": "Poster Map: Icewind Dale",
+					"width": 6000,
+					"height": 4215
 				},
 				{
 					"type": "image",
@@ -21353,7 +21355,9 @@
 						"type": "internal",
 						"path": "adventure/IDRotF/264-ten-towns.jpg"
 					},
-					"title": "Poster Map: Icewind Dale (Ten Towns)"
+					"title": "Poster Map: Icewind Dale (Ten Towns)",
+					"width": 6000,
+					"height": 4215
 				}
 			]
 		}

@@ -3161,11 +3161,12 @@
 						{
 							"type": "list",
 							"items": [
-								"{@creature Expert|ESK}",
-								"{@creature Spellcaster|ESK}",
-								"{@creature Warrior|ESK}"
+								"{@creature Expert|SDW}",
+								"{@creature Spellcaster (Healer)|SDW}",
+								"{@creature Spellcaster (Mage)|SDW}",
+								"{@creature Warrior|SDW}"
 							],
-							"columns": 3
+							"columns": 4
 						}
 					]
 				},

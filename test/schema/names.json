@@ -1,11 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "names.json",
 	"version": "1.2.0",
 	"title": "NameArray",
 	"type": "object",
 
 	"definitions": {
 		"nameTableRow": {
+			"type": "object",
 			"properties": {
 				"min": {
 					"type": "integer"
@@ -26,6 +28,7 @@
 		},
 
 		"nameTable": {
+			"type": "object",
 			"properties": {
 				"option": {
 					"type": "string"
@@ -48,6 +51,7 @@
 		},
 
 		"name": {
+			"type": "object",
 			"properties": {
 				"name": {
 					"type": "string"

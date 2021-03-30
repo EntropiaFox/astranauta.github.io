@@ -23,14 +23,14 @@ class TrapsHazardsPage extends ListPage {
 	getListItem (it, thI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
 		const trapType = Parser.trapHazTypeToFull(it.trapHazType);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-3 pl-0 text-center">${trapType}</span>
 			<span class="bold col-7">${it.name}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
@@ -67,13 +67,14 @@ class TrapsHazardsPage extends ListPage {
 		const hash = UrlUtil.autoEncodeHash(it);
 		const trapType = Parser.trapHazTypeToFull(it.trapHazType);
 
-		const $ele = $(`<li class="row">
-			<a href="#${hash}" class="lst--border">
-				<span class="col-4 pr-0">${trapType}</span>
-				<span class="bold col-8 pl-0">${it.name}</span>
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${hash}" class="lst--border lst__row-inner">
+				<span class="col-4 text-center pl-0">${trapType}</span>
+				<span class="bold col-8 pr-0">${it.name}</span>
 			</a>
-		</li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,
@@ -99,6 +100,16 @@ class TrapsHazardsPage extends ListPage {
 	async pDoLoadSubHash (sub) {
 		sub = this._filterBox.setFromSubHashes(sub);
 		await ListUtil.pSetFromSubHashes(sub);
+	}
+
+	_getSearchCache (entity) {
+		if (!entity.effect && !entity.trigger && !entity.countermeasures && !entity.entries) return "";
+		const ptrOut = {_: ""};
+		this._getSearchCache_handleEntryProp(entity, "effect", ptrOut);
+		this._getSearchCache_handleEntryProp(entity, "trigger", ptrOut);
+		this._getSearchCache_handleEntryProp(entity, "countermeasures", ptrOut);
+		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
+		return ptrOut._;
 	}
 }
 

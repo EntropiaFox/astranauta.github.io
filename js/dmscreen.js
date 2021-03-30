@@ -167,7 +167,7 @@ class Board {
 	}
 
 	doShowLoading () {
-		$(`<div class="dm-screen-loading"><span class="initial-message">Loading...</span></div>`).css({
+		$(`<div class="dm-screen-loading"><span class="initial-message initial-message--large">Loading...</span></div>`).css({
 			gridColumnStart: "1",
 			gridColumnEnd: String(this.width + 1),
 			gridRowStart: "1",
@@ -973,7 +973,7 @@ class Panel {
 			source,
 			hash,
 		).then(it => {
-			const fn = Renderer.hover._pageToRenderFn(page);
+			const fn = Renderer.hover.getFnRenderCompact(page);
 
 			const $contentInner = $(`<div class="panel-content-wrapper-inner"/>`);
 			const $contentStats = $(`<table class="stats"/>`).appendTo($contentInner);
@@ -3137,12 +3137,10 @@ class NoteBox {
 
 						if (beltsAtPos === 2 && belts === 0) {
 							const str = beltStack.join("");
-							if (/^([1-9]\d*)?d([1-9]\d*)(\s?[+-]\s?\d+)?$/i.exec(str)) {
-								await Renderer.dice.pRoll2(str.replace(`[[`, "").replace(`]]`, ""), {
-									isUser: false,
-									name: "DM Screen",
-								});
-							}
+							await Renderer.dice.pRoll2(str.replace(`[[`, "").replace(`]]`, ""), {
+								isUser: false,
+								name: "DM Screen",
+							});
 						} else if (bracesAtPos === 1 && braces === 0) {
 							const str = braceStack.join("");
 							const tag = str.split(" ")[0].replace(/^@/, "");
@@ -3201,20 +3199,20 @@ class UnitConverter {
 			$(`<td class="col-3 code">×${u.x2.padStart(5)}</td>`).click(clickR).appendTo($tr);
 		});
 
-		const $wrpIpt = $(`<div class="split wrp-ipt"/>`).appendTo($wrpConverter);
+		const $wrpIpt = $(`<div class="split dm-unitconv__wrp-ipt"/>`).appendTo($wrpConverter);
 
-		const $wrpLeft = $(`<div class="split-column wrp-ipt-inner"/>`).appendTo($wrpIpt);
+		const $wrpLeft = $(`<div class="split-column dm-unitconv__wrp-ipt-inner"/>`).appendTo($wrpIpt);
 		const $lblLeft = $(`<span class="bold"/>`).appendTo($wrpLeft);
-		const $iptLeft = $(`<textarea class="ipt form-control">${state.i || ""}</textarea>`).appendTo($wrpLeft);
+		const $iptLeft = $(`<textarea class="dm-unitconv__ipt form-control">${state.i || ""}</textarea>`).appendTo($wrpLeft);
 
-		const $btnSwitch = $(`<button class="btn btn-primary btn-switch">⇆</button>`).click(() => {
+		const $btnSwitch = $(`<button class="btn btn-primary dm-unitconv__btn-switch">⇆</button>`).click(() => {
 			dirConv = Number(!dirConv);
 			updateDisplay();
 		}).appendTo($wrpIpt);
 
-		const $wrpRight = $(`<div class="split-column wrp-ipt-inner"/>`).appendTo($wrpIpt);
+		const $wrpRight = $(`<div class="split-column dm-unitconv__wrp-ipt-inner"/>`).appendTo($wrpIpt);
 		const $lblRight = $(`<span class="bold"/>`).appendTo($wrpRight);
-		const $iptRight = $(`<textarea class="ipt form-control" disabled style="background: #0000"/>`).appendTo($wrpRight);
+		const $iptRight = $(`<textarea class="dm-unitconv__ipt form-control" disabled style="background: #0000"/>`).appendTo($wrpRight);
 
 		const updateDisplay = () => {
 			const it = units[ixConv];

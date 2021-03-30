@@ -1,8 +1,25 @@
 const fs = require("fs");
 require("../js/utils");
-const Ajv = require("ajv");
+const Ajv = require("ajv").default;
 
-const ajv = new Ajv();
+// region Set up validator
+const ajv = new Ajv({
+	allowUnionTypes: true,
+});
+
+ajv.addKeyword({
+	keyword: "version",
+	validate: false,
+});
+
+const DATE_REGEX = /^\d\d\d\d-\d\d-\d\d$/;
+ajv.addFormat(
+	"date",
+	{
+		validate: (str) => DATE_REGEX.test(str),
+	},
+);
+// endregion
 
 function loadJSON (file) {
 	const data = fs.readFileSync(file, "utf8")
@@ -121,7 +138,7 @@ async function main () {
 		"items.json",
 	];
 
-	ajv.addSchema(preprocess(loadJSON("spells/spell.json", "utf8")), "spell.json");
+	ajv.addSchema(preprocess(loadJSON("spells/spells.json", "utf8")), "spells.json");
 	ajv.addSchema(preprocess(loadJSON("bestiary/bestiary.json", "utf8")), "bestiary.json");
 	PRELOAD_SINGLE_FILE_SCHEMAS.forEach(schemaName => {
 		ajv.addSchema(preprocess(loadJSON(schemaName, "utf8")), schemaName);

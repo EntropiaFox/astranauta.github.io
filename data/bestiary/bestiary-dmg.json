@@ -94,7 +94,8 @@
 				"N",
 				"O",
 				"S"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant Fly",

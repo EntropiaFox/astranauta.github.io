@@ -4,11 +4,7 @@ class RacesPage extends ListPage {
 	constructor () {
 		const pageFilter = new PageFilterRaces();
 		super({
-			dataSource: async () => {
-				const rawRaceData = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/races.json`);
-				const raceData = Renderer.race.mergeSubraces(rawRaceData.race, {isAddBaseRaces: true});
-				return {race: raceData};
-			},
+			dataSource: DataUtil.race.loadJSON.bind(DataUtil.race, {isAddBaseRaces: true}),
 			dataSourceFluff: "data/fluff-races.json",
 
 			pageFilter,
@@ -55,15 +51,15 @@ class RacesPage extends ListPage {
 	getListItem (race, rcI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(race, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const hash = UrlUtil.autoEncodeHash(race);
 		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "None"};
-		const size = Parser.sizeAbvToFull(race.size || SZ_VARIES);
+		const size = (race.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/");
 		const source = Parser.sourceJsonToAbv(race.source);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-4 pl-0">${race.name}</span>
 			<span class="col-4">${ability.asTextShort}</span>
 			<span class="col-2 text-center">${size}</span>
@@ -103,15 +99,16 @@ class RacesPage extends ListPage {
 	getSublistItem (race, pinId) {
 		const hash = UrlUtil.autoEncodeHash(race);
 
-		const $ele = $(`
-			<li class="row">
-				<a href="#${UrlUtil.autoEncodeHash(race)}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+				<a href="#${UrlUtil.autoEncodeHash(race)}" class="lst--border lst__row-inner">
 					<span class="bold col-5 pl-0">${race.name}</span>
 					<span class="col-5">${race._slAbility}</span>
-					<span class="col-2 text-center pr-0">${Parser.sizeAbvToFull(race.size || SZ_VARIES)}</span>
+					<span class="col-2 text-center pr-0">${(race.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/")}</span>
 				</a>
-			</li>
-		`).contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+			</div>
+		`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,
@@ -144,23 +141,28 @@ class RacesPage extends ListPage {
 			});
 		}
 
-		const traitTab = Renderer.utils.tabButton(
-			"Traits",
-			() => {},
-			buildStatsTab,
-		);
-		const infoTab = Renderer.utils.tabButton(
-			"Info",
-			() => {},
-			buildFluffTab,
-		);
-		const picTab = Renderer.utils.tabButton(
-			"Images",
-			() => {},
-			buildFluffTab.bind(null, true),
-		);
+		const tabMetas = [
+			new Renderer.utils.TabButton({
+				label: "Traits",
+				fnPopulate: buildStatsTab,
+				isVisible: true,
+			}),
+			new Renderer.utils.TabButton({
+				label: "Info",
+				fnPopulate: buildFluffTab,
+				isVisible: Renderer.utils.hasFluffText(race),
+			}),
+			new Renderer.utils.TabButton({
+				label: "Images",
+				fnPopulate: buildFluffTab.bind(null, true),
+				isVisible: Renderer.utils.hasFluffImages(race),
+			}),
+		];
 
-		Renderer.utils.bindTabButtons(traitTab, infoTab, picTab);
+		Renderer.utils.bindTabButtons({
+			tabButtons: tabMetas.filter(it => it.isVisible),
+			tabLabelReference: tabMetas.map(it => it.label),
+		});
 
 		ListUtil.updateSelected();
 	}

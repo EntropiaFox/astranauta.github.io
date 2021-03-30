@@ -117,7 +117,7 @@
 				{
 					"name": "Ram",
 					"entries": [
-						"{@atk mw} +6, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) bludgeoning damage."
+						"{@atk mw} {@hit 6}, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) bludgeoning damage."
 					]
 				}
 			],
@@ -138,7 +138,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ashdra",
@@ -438,7 +440,8 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Centaur Mummy",
@@ -567,7 +570,9 @@
 			"conditionInflict": [
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chief Nosnra",
@@ -775,7 +780,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Drevin",
@@ -997,7 +1003,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Durnn",
@@ -1084,7 +1091,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Eira",
@@ -1260,7 +1268,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Estia",
@@ -1369,7 +1378,11 @@
 			"immune": [
 				"fire"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"damageTags": [
+				"B",
+				"S"
+			]
 		},
 		{
 			"name": "Flying Shield",
@@ -1709,7 +1722,8 @@
 				"blinded",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant Lightning Eel",
@@ -1909,7 +1923,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Giant Subterranean Lizard",
@@ -2201,7 +2216,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Grenl",
@@ -2289,13 +2305,13 @@
 				{
 					"name": "Scimitar",
 					"entries": [
-						"{@atk mw} +4, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+						"{@atk mw} {@hit 4}, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
 					]
 				},
 				{
 					"name": "Shortbow",
 					"entries": [
-						"{@atk rw} +4, range 80/320 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+						"{@atk rw} {@hit 4}, range 80/320 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
 					]
 				}
 			],
@@ -2317,7 +2333,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Grutha",
@@ -2386,7 +2403,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Hedrun Arnsfirth",
@@ -2838,7 +2856,8 @@
 			"conditionInflictSpell": [
 				"invisible",
 				"unconscious"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Kalka-Kylla",
@@ -3320,9 +3339,29 @@
 			"page": 224,
 			"_copy": {
 				"name": "Mummy Lord",
-				"source": "MM"
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Special Equipment",
+							"entries": [
+								"The mummy wears a {@item ring of fire resistance}."
+							]
+						}
+					}
+				}
+			},
+			"resist": [
+				"fire"
+			],
+			"vulnerable": null,
+			"cr": {
+				"cr": "15",
+				"xp": 6500
 			},
 			"spellcasting": null,
+			"legendary": null,
 			"hasToken": true,
 			"spellcastingTags": []
 		},
@@ -3487,7 +3526,8 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Mennek Ariz",
@@ -3781,7 +3821,8 @@
 			"conditionInflict": [
 				"blinded",
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Nimira",
@@ -3833,7 +3874,12 @@
 			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
-			]
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Obmi",
@@ -4724,7 +4770,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sentient Gray Ooze",
@@ -4894,7 +4942,7 @@
 				{
 					"name": "Dagger",
 					"entries": [
-						"{@atk mw} +4, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+						"{@atk mw} {@hit 4}, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
 					]
 				}
 			],
@@ -5305,7 +5353,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Snow Leopard",
@@ -5474,7 +5523,8 @@
 			"conditionInflictSpell": [
 				"blinded",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Stone Dragon Statue",
@@ -5742,7 +5792,9 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tecuziztecatl",
@@ -5870,7 +5922,8 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Thayan Apprentice",
@@ -6361,7 +6414,8 @@
 			],
 			"conditionInflictSpell": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Torlin Silvershield",
@@ -6793,7 +6847,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		}
 	]
 }

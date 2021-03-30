@@ -77,24 +77,24 @@ class MiscTagsTagger {
 	static tryRun (sp, options) {
 		const tags = new Set(sp.miscTags || []);
 
-		const strEntries = JSON.stringify([sp.entries, sp.entriesHigherLevel]);
-
-		if (/becomes permanent/ig.test(strEntries)) tags.add("PRM");
-		if (/when you reach/ig.test(strEntries)) tags.add("SCL");
-		if ((/regain|restore/ig.test(strEntries) && /hit point/ig.test(strEntries)) || /heal/ig.test(strEntries)) tags.add("HL");
-		if (/temporary hit points/ig.test(strEntries)) tags.add("THP");
-		if (/you summon/ig.test(strEntries)) tags.add("SMN");
-		if (/you can see/ig.test(strEntries)) tags.add("SGT");
-		if (/you (?:can then )?teleport/i.test(strEntries) || /instantly (?:transports you|teleport)/i.test(strEntries) || /enters(?:[^.]+)portal instantly/i.test(strEntries) || /entering the portal exits from the other portal/i.test(strEntries)) tags.add("TP");
-
 		MiscTagsTagger._WALKER = MiscTagsTagger._WALKER || MiscUtil.getWalker({isNoModification: true, keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
 		MiscTagsTagger._WALKER.walk(
-			sp.entries,
+			[sp.entries, sp.entriesHigherLevel],
 			{
 				string: (str) => {
+					if (/becomes permanent/ig.test(str)) tags.add("PRM");
+					if (/when you reach/ig.test(str)) tags.add("SCL");
+					if ((/regain|restore/ig.test(str) && /hit point/ig.test(str)) || /heal/ig.test(str)) tags.add("HL");
+					if (/temporary hit points/ig.test(str)) tags.add("THP");
+					if (/you summon/ig.test(str)) tags.add("SMN");
+					if (/you can see/ig.test(str)) tags.add("SGT");
+					if (/you (?:can then )?teleport/i.test(str) || /instantly (?:transports you|teleport)/i.test(str) || /enters(?:[^.]+)portal instantly/i.test(str) || /entering the portal exits from the other portal/i.test(str)) tags.add("TP");
+
 					if ((str.includes("bonus") || str.includes("penalty")) && str.includes("AC")) tags.add("MAC");
 					if (/target's (?:base )?AC becomes/.exec(str)) tags.add("MAC");
 					if (/target's AC can't be less than/.exec(str)) tags.add("MAC");
+
+					if (/(?:^|\W)(?:pull(?:|ed|s)|push(?:|ed|s)) [^.!?:]*\d+\s+(?:ft|feet|foot|mile|square)/ig.test(str)) tags.add("FMV");
 				},
 			},
 		);
@@ -120,7 +120,7 @@ class ScalingLevelDiceTagger {
 
 			const mDamageType = ConverterConst.RE_DAMAGE_TYPE.exec(strEntries);
 			if (mDamageType) {
-				label = `${mDamageType[1]} damage`
+				label = `${mDamageType[2]} damage`
 			}
 
 			ConverterConst.RE_DAMAGE_TYPE.lastIndex = 0;

@@ -573,19 +573,6 @@
 			]
 		},
 		{
-			"name": "Homunculus Servant",
-			"source": "ERLW",
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/ERLW/Homunculus Servant.jpg"
-					}
-				}
-			]
-		},
-		{
 			"name": "Inspired",
 			"source": "ERLW",
 			"entries": [
@@ -1247,19 +1234,6 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/ERLW/Shifter.png"
-					}
-				}
-			]
-		},
-		{
-			"name": "Steel Defender",
-			"source": "ERLW",
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/ERLW/Steel Defender.png"
 					}
 				}
 			]

@@ -1,11 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.0.1",
+	"$id": "roll20.json",
+	"version": "1.0.3",
 	"title": "SpellMetaArray",
 	"type": "object",
 
 	"definitions": {
 		"spellMeta": {
+			"type": "object",
 			"properties": {
 				"name": {
 					"type": "string"
@@ -72,6 +74,15 @@
 							"type": "string"
 						},
 						"Secondary Add Casting Modifier": {
+							"type": "string"
+						},
+						"data-Cantrip Scaling": {
+							"type": "string"
+						},
+						"Crit": {
+							"type": "string"
+						},
+						"Crit Range": {
 							"type": "string"
 						}
 					},

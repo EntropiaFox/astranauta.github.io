@@ -4702,81 +4702,6 @@
 			]
 		},
 		{
-			"name": "Shadow Mastiff Alpha",
-			"source": "VGM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								{
-									"type": "entries",
-									"entries": [
-										"These black hounds of the Shadowfell move invisibly through the shadows, always on the hunt. In gloomy places where the veil between the Shadowfell and the Material Plane is thinnest, they can cross over into the dark realms of the world.",
-										{
-											"name": "Ravenous Lurkers",
-											"entries": [
-												" Shadow mastiffs hunt in packs on the Shadowfell, so when one of them enters a rift between the planes, several more are sure to follow. Each pack is led by an alpha (male or female) that is the smartest and toughest one of the group. The alpha must remain sharp to keep the rest of the pack in line, lest it be killed and replaced.",
-												"When a shadow mastiff pack is hungry and senses prey nearby, the alpha lets loose a howl that strikes fear into the hearts of nearby beasts and humanoids. Its howl is also a signal to the rest of the pack to move in for the kill. Gloom provides a shadow mastiff with supernatural protection, granting it resistance to nonmagical weapons while in dim light or darkness. Shadow mastiffs can tolerate bright light, but they shun sunlight."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Summoned for Service",
-											"entries": [
-												" Some faiths devoted to deities of gloom and night, such as Shar in the Forgotten Realms, perform unholy rites to summon shadow mastiffs from the Shadowfell and then put them to work as temple sentinels, bodyguards, and punishers of nonbelievers, heretics, and apostates. The method for bringing shadow mastiffs into the world is also known by other strong-willed and evil-minded individuals, who find use for the hounds as guards in their strongholds."
-											],
-											"type": "entries"
-										},
-										{
-											"name": "Ethereal Sight",
-											"entries": [
-												" In addition to its other capabilities, a shadow mastiff can see creatures and objects on the Ethereal Plane. This extraplanar perception makes a mastiff an especially skilled guardian, especially in situations when magical or spiritual incursion is likely."
-											],
-											"type": "entries"
-										}
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Shadow Mastiff Alpha",
-									"entries": [
-										"A shadow mastiff alpha has the statistics of a normal shadow mastiff, with the following modifications:",
-										{
-											"type": "list",
-											"items": [
-												"The alpha has above average (42\u201354) hit points.",
-												"It has an Intelligence of 6 (-2).",
-												"It has the Terrifying Howl action option described below."
-											]
-										},
-										{
-											"name": "Terrifying Howl",
-											"entries": [
-												"The shadow mastiff howls. Any beast or humanoid within 300 feet of the mastiff and able to hear its howl must succeed on a DC 11 Wisdom saving throw or be {@condition frightened} for 1 minute. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to any shadow mastiff's Terrifying Howl for the next 24 hours."
-											],
-											"type": "entries"
-										}
-									]
-								}
-							]
-						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/VGM/Shadow Mastiff.jpg"
-					}
-				}
-			]
-		},
-		{
 			"name": "Shoosuva",
 			"source": "VGM",
 			"entries": [
@@ -5092,7 +5017,7 @@
 									"type": "entries",
 									"entries": [
 										"Rot grubs are finger-sized maggots that eat living or dead flesh, although they can survive on plant matter. They infest corpses and piles of decaying matter and attack living creatures that disturb them. After burrowing into the flesh of a living creature, a rot grub instinctively chews its way toward the heart in order to kill its host.",
-										"Rot grubs pose a threat both singly and as a swarm. See the accompanying stat block for the mechanics of a swarm of rot grubs. A single rot grub has no stat block. Any creature that comes into contact with it must make a DC 10 Dexterity saving throw. On a failed save, the rot grub burrows into the creature's flesh and deals 3 ({@damage 1d6}) piercing damage at the start of each of the host creature's turns. Applying fire to the wound before the end of the host creature's next turn deals 1 fire damage to the host and kills the infesting rot grub. After this time, the rot grub is too far under the host creature's skin to be burned. If a creature infested by one or more rot grubs ends its turn with 0 hit points, it dies as the grubs burrow into its heart and kill it. Any effect that cures disease kills all rot grubs infesting the target. Burning a body kills any rot grubs infesting it"
+										"Rot grubs pose a threat both singly and as a swarm. See the accompanying stat block for the mechanics of a swarm of rot grubs. A single rot grub has no stat block. Any creature that comes into contact with it must make a DC 10 Dexterity saving throw. On a failed save, the rot grub burrows into the creature's flesh and deals 3 ({@damage 1d6}) piercing damage at the start of each of the host creature's turns. Applying fire to the wound before the end of the host creature's next turn deals 1 fire damage to the host and kills the infesting rot grub. After this time, the rot grub is too far under the host creature's skin to be burned. If a creature infested by one or more rot grubs ends its turn with 0 hit points, it dies as the grubs burrow into its heart and kill it. Any effect that cures disease kills all rot grubs infesting the target. Burning a body kills any rot grubs infesting it."
 									]
 								}
 							]
@@ -6109,7 +6034,7 @@
 			]
 		},
 		{
-			"name": "Yuan-ti Malison Type 4 and 5",
+			"name": "Yuan-ti Malison (Type 4)",
 			"source": "VGM",
 			"entries": [
 				{
@@ -6206,6 +6131,14 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Yuan-ti Malison (Type 5)",
+			"source": "VGM",
+			"_copy": {
+				"name": "Yuan-ti Malison (Type 4)",
+				"source": "VGM"
+			}
 		},
 		{
 			"name": "Yuan-ti Mind Whisperer",

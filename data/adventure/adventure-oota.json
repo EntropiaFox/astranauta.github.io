@@ -7325,7 +7325,7 @@
 					"name": "Animated Drow Statues",
 					"id": "1e7",
 					"entries": [
-						"Once part of a expedition from Menzoberranzan, these drow were petrified by a medusa and later animated by Ogremoch's Bane (see \"Settlers, Squatters, and Invaders\" later in this chapter). They have the statistics of {@creature animated armor}, except they are elementals instead of constructs."
+						"Once part of a expedition from Menzoberranzan, these drow were petrified by a medusa and later animated by Ogrémoch's Bane (see \"Settlers, Squatters, and Invaders\" later in this chapter). They have the statistics of {@creature animated armor}, except they are elementals instead of constructs."
 					]
 				},
 				{
@@ -7633,11 +7633,11 @@
 						},
 						{
 							"type": "entries",
-							"name": "Ogremoch's Bane",
+							"name": "Ogrémoch's Bane",
 							"id": "1fb",
 							"entries": [
-								"Ogremoch's Bane is a drifting cloud of transparent, magical dust that first appeared in Blingdenstone over a century ago. Believed to be sentient, it is found roaming the Rockblight section of the settlement. Elemental creatures touched by the cloud fall under its control.",
-								"The cloud's origin remains a mystery, but it is known to have something to do with Ogremoch, Prince of Evil Earth. A medusa named Neheedra serves Ogremoch's Bane and leads some of the elemental creatures that have become enslaved by the evil cloud (see the \"Rockblight\" section and {@area 19|237} in particular)."
+								"Ogrémoch's Bane is a drifting cloud of transparent, magical dust that first appeared in Blingdenstone over a century ago. Believed to be sentient, it is found roaming the Rockblight section of the settlement. Elemental creatures touched by the cloud fall under its control.",
+								"The cloud's origin remains a mystery, but it is known to have something to do with Ogrémoch, Prince of Evil Earth. A medusa named Neheedra serves Ogrémoch's Bane and leads some of the elemental creatures that have become enslaved by the evil cloud (see the \"Rockblight\" section and {@area 19|237} in particular)."
 							]
 						},
 						{
@@ -7646,7 +7646,7 @@
 							"id": "1fc",
 							"entries": [
 								"After Blingdenstone's fall, a gang of wererats tried to make a home in the ruined city. The last handful of svirfneblin hiding in Blingdenstone after the drow armies abandoned the city managed to kill or drive off the wererats, but many of the deep gnomes became infected with lycanthropy.",
-								"Today, deep gnome wererats claims a large chunk of the ruins under the name of Clan Goldwhisker, holding territory against new settlers and engaging in urban warfare against them. The pack leader is the cunning and charismatic Chipgrin, whose concern for his pack's safety has him hoping to negotiate a truce with the Diggermattocks and stop his svirfneblin cousins from seeing his people as dangerous monsters fit only for extermination. Chipgrin is all too aware of the threat posed by Ogremoch's Bane and the oozes plaguing the settlement, and he hopes that making common cause against those threats will force the other svirfneblin to recognize Clan Goldwhisker's right to remain in Blingdenstone."
+								"Today, deep gnome wererats claims a large chunk of the ruins under the name of Clan Goldwhisker, holding territory against new settlers and engaging in urban warfare against them. The pack leader is the cunning and charismatic Chipgrin, whose concern for his pack's safety has him hoping to negotiate a truce with the Diggermattocks and stop his svirfneblin cousins from seeing his people as dangerous monsters fit only for extermination. Chipgrin is all too aware of the threat posed by Ogrémoch's Bane and the oozes plaguing the settlement, and he hopes that making common cause against those threats will force the other svirfneblin to recognize Clan Goldwhisker's right to remain in Blingdenstone."
 							]
 						},
 						{
@@ -7804,7 +7804,7 @@
 							"name": "Elemental Healing",
 							"id": "205",
 							"entries": [
-								"Nomi Pathshutter is aware of Ogremoch's Bane and has made it her life's work to protect elementals from its influence. She studies samples of corrupted elementals as part of her efforts, and rewards characters who bring her a sample from any out-of-control earth elemental creature found in the unexplored areas of Blingdenstone. She pays 10 gp per Hit Die of the creature from which the sample was taken."
+								"Nomi Pathshutter is aware of Ogrémoch's Bane and has made it her life's work to protect elementals from its influence. She studies samples of corrupted elementals as part of her efforts, and rewards characters who bring her a sample from any out-of-control earth elemental creature found in the unexplored areas of Blingdenstone. She pays 10 gp per Hit Die of the creature from which the sample was taken."
 							]
 						}
 					]
@@ -8082,7 +8082,7 @@
 								"3d6 trillimacs"
 							]
 						},
-						"Two blocked-off tunnels lead north and northeast to areas that have not been resettled. All elementals are kept away from the passages because the Stoneheart Enclave believes they lead to the caverns where Ogremoch's Bane lurks."
+						"Two blocked-off tunnels lead north and northeast to areas that have not been resettled. All elementals are kept away from the passages because the Stoneheart Enclave believes they lead to the caverns where Ogrémoch's Bane lurks."
 					]
 				},
 				{
@@ -8090,7 +8090,7 @@
 					"name": "10. Staging Area",
 					"id": "21e",
 					"entries": [
-						"This cave is fortified with barricades and defended by eight {@b deep gnomes} and four {@b cave badgers}. There are no earth elementals reinforcing security here because the passage on the north wall-sealed at either end with a locked door-leads to areas where the deep gnomes have confirmed the influence of Ogremoch's Bane.",
+						"This cave is fortified with barricades and defended by eight {@b deep gnomes} and four {@b cave badgers}. There are no earth elementals reinforcing security here because the passage on the north wall-sealed at either end with a locked door-leads to areas where the deep gnomes have confirmed the influence of Ogrémoch's Bane.",
 						{
 							"type": "entries",
 							"name": "Unseen Evil",
@@ -8149,7 +8149,7 @@
 							"id": "225",
 							"entries": [
 								"Gurnik Tapfinger, head priest of Callarduran Smoothhands in the Stoneheart Enclave, approaches the characters if they show any interest in the Speaking Stones (use the {@creature priest} statistics in the Monster Manual, but also give Gurnik the Stone Camouflage, Gnome Cunning, and Innate Spellcasting features of a {@b deep gnome}). He asks them to undertake a task in a closedoff area of the old city known as Rockblight, where the temple of his god stands desecrated. If the characters agree, he gives them a ruby spell gem containing the hallow spell and asks them to place the gem in the Steadfast Stone's menhir (see {@area 22|242}).",
-								"Gurnik warns them that once they place the gem, Ogremoch's Bane will send its servants to stop them. They must defeat these servants until the gem awakens three temple guardians, at which point the temple will be cleansed and the characters can leave. Once the characters accomplish this task, Gurnik channels the power of the cleansed temple, bestowing a {@i blessing of protection} or a {@i blessing of weapon enhancement} on each of the characters (each player's choice); see \"Other Rewards\" in chapter 7 of the Dungeon Master's Guide for more information on blessings."
+								"Gurnik warns them that once they place the gem, Ogrémoch's Bane will send its servants to stop them. They must defeat these servants until the gem awakens three temple guardians, at which point the temple will be cleansed and the characters can leave. Once the characters accomplish this task, Gurnik channels the power of the cleansed temple, bestowing a {@i blessing of protection} or a {@i blessing of weapon enhancement} on each of the characters (each player's choice); see \"Other Rewards\" in chapter 7 of the Dungeon Master's Guide for more information on blessings."
 							]
 						}
 					]
@@ -8216,7 +8216,7 @@
 									"items": [
 										"Blingdenstone's ghost problem is getting worse, and there are even spirits haunting the catacombs.",
 										"There was a crazy svirfneblin back in the first days of reclamation who disappeared. Some of the scouts claim to have seen him, skulking around the unrecovered areas of the settlement. (The scouts don't know that this gnome is the Pudding King.)",
-										"The Stoneheart Enclave is closing in on a solution to the threat of Ogremoch's Bane (untrue). The gnomes call a large unclaimed area in the northeast of the settlement \"Rockblight,\" as earth elementals go mad whenever they go near it.",
+										"The Stoneheart Enclave is closing in on a solution to the threat of Ogrémoch's Bane (untrue). The gnomes call a large unclaimed area in the northeast of the settlement \"Rockblight,\" as earth elementals go mad whenever they go near it.",
 										"People are divided as to what to do about the wererats living in the southwest caverns. Some want them out, while others propose an alliance of mutual defense.",
 										"A merchant from Gracklstugh says there's an influx of surface-world coins there, but nobody knows where they come from. (See chapter 4 for more information.)",
 										"A svirfneblin caravan returning from Whiteshell Mines encountered a parade of dancing myconids. Through their rapport spores, the myconids told the gnomes about a \"wedding celebration,\" which is strange considering that myconids don't celebrate or have weddings. (See chapter 5 for more information.)"
@@ -8232,11 +8232,11 @@
 					"name": "Rockblight",
 					"id": "22d",
 					"entries": [
-						"When the drow attacked Blingdenstone, Ogremoch's Bane retreated to the far corners of the ruined city, waiting for the time to reemerge and seek out earth elementals to corrupt. The malevolent entity didn't have to wait long, as the drow sent teams of scavengers to loot the treasures the deep gnomes left behind, bringing their own elemental creatures with them.",
-						"Ogremoch's Bane haunted the drow with the same relentless cruelty it did the svirfneblin, turning their elemental servants against them. Eventually, the drow armies departed the city, but when they did, a drow priestess of Lolth named Neheedra Duskryn stayed behind. Neheedra was obsessed with collecting spell gems for their power and beauty, intent on making herself the regal and powerful master of her own underground realm. She commanded a force of drow servants and soldiers with unabashed cruelty, relentlessly driving them to seek out spell gems and increase her own wealth and power.",
+						"When the drow attacked Blingdenstone, Ogrémoch's Bane retreated to the far corners of the ruined city, waiting for the time to reemerge and seek out earth elementals to corrupt. The malevolent entity didn't have to wait long, as the drow sent teams of scavengers to loot the treasures the deep gnomes left behind, bringing their own elemental creatures with them.",
+						"Ogrémoch's Bane haunted the drow with the same relentless cruelty it did the svirfneblin, turning their elemental servants against them. Eventually, the drow armies departed the city, but when they did, a drow priestess of Lolth named Neheedra Duskryn stayed behind. Neheedra was obsessed with collecting spell gems for their power and beauty, intent on making herself the regal and powerful master of her own underground realm. She commanded a force of drow servants and soldiers with unabashed cruelty, relentlessly driving them to seek out spell gems and increase her own wealth and power.",
 						"Overcome by her own greed and vanity, Neheedra engaged in dark rituals designed to secure her hold on power, imagining that Blingdenstone would one day become a drow enclave with her as its immortal leader. Unfortunately, the magical pacts she struck eventually transformed the vain priestess into a medusa.",
-						"Enraged by her fate, Neheedra turned her servants to stone and descended into madness. Over decades, she petrified any creature she encountered, eventually catching the attention of Ogremoch's Bane. Now, the medusa works in concert with the fell entity, creating stone servants animated by its power.",
-						"Since the return of the svirfneblin to Blingdenstone, the deep gnomes have studiously avoided sections of the old city that Ogremoch's Bane and Neheedra inhabit, blocking it off from the rest of the settlement and giving it the name \"Rockblight.\"",
+						"Enraged by her fate, Neheedra turned her servants to stone and descended into madness. Over decades, she petrified any creature she encountered, eventually catching the attention of Ogrémoch's Bane. Now, the medusa works in concert with the fell entity, creating stone servants animated by its power.",
+						"Since the return of the svirfneblin to Blingdenstone, the deep gnomes have studiously avoided sections of the old city that Ogrémoch's Bane and Neheedra inhabit, blocking it off from the rest of the settlement and giving it the name \"Rockblight.\"",
 						{
 							"type": "image",
 							"href": {
@@ -8398,15 +8398,15 @@
 					"name": "21. Drow Statues",
 					"id": "23e",
 					"entries": [
-						"This cave is filled with thirty statues of drow warriors, all standing as if on guard. In her madness, Neheedra turned these warriors of her house to stone. Over long years, Ogremoch's Bane has used its power to animate these statues, turning them into elemental creatures.",
+						"This cave is filled with thirty statues of drow warriors, all standing as if on guard. In her madness, Neheedra turned these warriors of her house to stone. Over long years, Ogrémoch's Bane has used its power to animate these statues, turning them into elemental creatures.",
 						"When the characters step inside the chamber, six of the statues animate and attack. The statues have the statistics of {@creature animated armor}, except that they are elementals instead of constructs.",
 						"The statues attack until destroyed but don't leave this area. If the characters spend 1 round or longer in the chamber after defeating the last statue, six more statues animate. This process repeats until either all of the statues are destroyed or until the characters leave the cave. A statue also animates and attacks if touched or otherwise disturbed.",
 						{
 							"type": "entries",
-							"name": "Ogremoch's Bane",
+							"name": "Ogrémoch's Bane",
 							"id": "23f",
 							"entries": [
-								"If every statue in this cave is destroyed, Ogremoch's Bane appears.",
+								"If every statue in this cave is destroyed, Ogrémoch's Bane appears.",
 								{
 									"type": "inset",
 									"id": "240",
@@ -8414,7 +8414,7 @@
 										"As the last statue crumbles, a cloud of dust erupts from its shattered remains and expands to fill the cave."
 									]
 								},
-								"The cloud is Ogremoch's Bane. Characters within the cloud can sense its malevolence, and a successful DC 15 Intelligence (Arcana) check confirms that the cloud is of extraplanar origin. The cloud has a flying speed of 20 feet and is impervious to all damage and spells except the following.",
+								"The cloud is Ogrémoch's Bane. Characters within the cloud can sense its malevolence, and a successful DC 15 Intelligence (Arcana) check confirms that the cloud is of extraplanar origin. The cloud has a flying speed of 20 feet and is impervious to all damage and spells except the following.",
 								{
 									"type": "list",
 									"items": [
@@ -8422,7 +8422,7 @@
 										"Casting a {@spell banishment} spell on the cloud sends it back to the Elemental Plane of Air if it fails its Charisma saving throw (it has a +4 modifier to the roll). A {@spell dispel evil and good} spell is equally effective and doesn't require a successful attack roll; however, the caster must be in contact with the cloud."
 									]
 								},
-								"Creatures native to the Elemental Plane of Earth (including earth elementals, galeb duhr, gargoyles, and xorn) that come in contact with Ogremoch's Bane instantly fall under the cloud's sway. The effect lasts as long as the enslaved elementals and Ogremoch's Bane are on the same plane of existence."
+								"Creatures native to the Elemental Plane of Earth (including earth elementals, galeb duhr, gargoyles, and xorn) that come in contact with Ogrémoch's Bane instantly fall under the cloud's sway. The effect lasts as long as the enslaved elementals and Ogrémoch's Bane are on the same plane of existence."
 							]
 						},
 						{
@@ -8430,7 +8430,7 @@
 							"name": "XP Awards",
 							"id": "241",
 							"entries": [
-								"If Ogremoch's Bane is banished back to the Elemental Plane of Earth, award each character 150 XP."
+								"If Ogrémoch's Bane is banished back to the Elemental Plane of Earth, award each character 150 XP."
 							]
 						}
 					]
@@ -8463,7 +8463,7 @@
 									]
 								},
 								"An {@creature earth elemental} materializes out of the wall and attacks. When the elemental is reduced to 0 hit points, it crumbles, and a galeb duhr emerges from the ground near the menhir in an unoccupied space. The {@creature galeb duhr} faces outward in a guarding pose, but doesn't move or respond. Another earth elemental then emerges from the wall of the chamber and attacks, when it is destroyed, a second stoic galeb duhr appears. This summoning process repeats once more, until the third earth elemental appears and is destroyed. The elementals ignore the galeb duhr, which continue to stand motionless throughout the fight.",
-								"When the characters reduce three earth elementals to 0 hit points and summon three galeb duhr, a white light shines from the menhir, producing a hallow effect protecting the galeb duhr from the influence of Ogremoch's Bane. The galeb duhr then animate and acknowledge the characters with a grave nod, before settling down in their boulder guise around the menhir.",
+								"When the characters reduce three earth elementals to 0 hit points and summon three galeb duhr, a white light shines from the menhir, producing a hallow effect protecting the galeb duhr from the influence of Ogrémoch's Bane. The galeb duhr then animate and acknowledge the characters with a grave nod, before settling down in their boulder guise around the menhir.",
 								"Gurnik delivers his promised blessings when the characters return to notify him of their success in the temple. He can sense whether or not the temple has been restored to its former glory, so if the characters fail to cleanse the temple but tell him they succeeded, he knows they're lying, and the deep gnomes' attitude toward the party worsens. If the characters accomplish Gurnik's task, they can make a DC 15 group Charisma check to improve the gnomes' attitude, with all characters making the check with advantage."
 							]
 						},
@@ -8768,8 +8768,8 @@
 							"id": "262",
 							"entries": [
 								"Stone is a resilient defense against oozes, making earth elementals the perfect force to combat them. Nomi Pathshutter suggests that if Entemoch's Boon could be found and its summoning circle put to use, the likelihood of victory would increase greatly.",
-								"Gurnik Tapfinger says that with Ogremoch's Bane still lurking, any elemental brought to the battle runs the risk of being driven insane.",
-								"Nomi and Gurnik agree that if the Steadfast Stone is cleansed and Ogremoch's Bane is banished, the Stoneheart Enclave can protect its elementals during the battle."
+								"Gurnik Tapfinger says that with Ogrémoch's Bane still lurking, any elemental brought to the battle runs the risk of being driven insane.",
+								"Nomi and Gurnik agree that if the Steadfast Stone is cleansed and Ogrémoch's Bane is banished, the Stoneheart Enclave can protect its elementals during the battle."
 							]
 						},
 						{

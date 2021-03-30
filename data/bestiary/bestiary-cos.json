@@ -23,7 +23,8 @@
 				"name": "Stone Golem",
 				"source": "MM"
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Anastrasya Karelova",
@@ -153,6 +154,7 @@
 		},
 		{
 			"name": "Baba Lysaga",
+			"group": "Hags",
 			"isNpc": true,
 			"source": "CoS",
 			"page": 228,
@@ -342,7 +344,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Baba Lysaga's Creeping Hut",
@@ -458,7 +461,8 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Baron Vargas Vallakovich",
@@ -644,7 +648,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Beucephalus",
@@ -804,7 +810,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Clovin Belview",
@@ -1222,7 +1229,8 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Gadof Blinsky",
@@ -1375,7 +1383,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Helga Ruvak",
@@ -1569,7 +1579,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Kasimir Velikov",
@@ -2115,7 +2126,8 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Majesto",
@@ -2341,7 +2353,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Morgantha",
@@ -2609,7 +2622,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Piccolo",
@@ -2715,7 +2730,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Rahadin",
@@ -2860,10 +2876,14 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Rictavio",
+			"alias": [
+				"Rudolph van Richten"
+			],
 			"isNpc": true,
 			"source": "CoS",
 			"page": 238,
@@ -3022,7 +3042,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Rosavalda \"Rose\" Durst",
@@ -3592,9 +3613,9 @@
 				"I"
 			],
 			"damageTags": [
-				"B",
 				"N",
-				"P"
+				"P",
+				"S"
 			],
 			"spellcastingTags": [
 				"CW"
@@ -3608,7 +3629,8 @@
 			"conditionInflictSpell": [
 				"invisible",
 				"unconscious"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Strahd Zombie",
@@ -3705,7 +3727,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Strahd's Animated Armor",
@@ -3829,7 +3852,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Szoldar Szoldarovich",
@@ -4138,7 +4163,8 @@
 			],
 			"damageTags": [
 				"B",
-				"P"
+				"P",
+				"S"
 			],
 			"miscTags": [
 				"MW",
@@ -4146,7 +4172,8 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Vasilka",
@@ -4367,7 +4394,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Volenta Popofsky",
@@ -4393,6 +4421,11 @@
 			"group": "Lycanthropes",
 			"source": "CoS",
 			"page": 242,
+			"otherSources": [
+				{
+					"source": "CM"
+				}
+			],
 			"size": "M",
 			"type": {
 				"type": "humanoid",
@@ -4429,17 +4462,6 @@
 				"perception": "+6"
 			},
 			"passive": 16,
-			"immune": [
-				{
-					"immune": [
-						"bludgeoning",
-						"piercing",
-						"slashing"
-					],
-					"note": "from nonmagical attacks not made with silvered weapons",
-					"cond": true
-				}
-			],
 			"languages": [
 				"Common (can't speak in raven form)"
 			],
@@ -4455,6 +4477,12 @@
 					"name": "Mimicry",
 					"entries": [
 						"The wereraven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful {@dc 10} Wisdom (Insight) check."
+					]
+				},
+				{
+					"name": "Regeneration",
+					"entries": [
+						"The wereraven regains 10 hit points at the start of its turn. If the wereraven takes damage from a silvered weapon or a spell, this trait doesn't function at the start of the wereraven's next turn. The wereraven dies only if it starts its turn with 0 hit points and doesn't regenerate."
 					]
 				}
 			],
@@ -4486,6 +4514,7 @@
 			],
 			"hasToken": true,
 			"traitTags": [
+				"Regeneration",
 				"Shapechanger"
 			],
 			"actionTags": [
@@ -4502,7 +4531,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Yevgeni Krushkin",

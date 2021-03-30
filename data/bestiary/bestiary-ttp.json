@@ -87,7 +87,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Geonid",
@@ -161,7 +163,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Slug",
@@ -386,7 +390,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

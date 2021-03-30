@@ -1,5 +1,10 @@
 "use strict";
 
+if (typeof module !== "undefined") {
+	const cv = require("./converterutils.js");
+	Object.assign(global, cv);
+}
+
 class ConverterUtilsItem {}
 ConverterUtilsItem.BASIC_WEAPONS = [
 	"club",
@@ -190,6 +195,7 @@ class BonusTag {
 			delete obj.bonusAc;
 			delete obj.bonusSavingThrow;
 			delete obj.bonusSpellAttack;
+			delete obj.bonusSpellSaveDc;
 		}
 
 		strEntries = strEntries.replace(/\+\s*(\d)([^.]+(?:bonus )?(?:to|on) [^.]*(?:attack|hit) and damage rolls)/ig, (...m) => {
@@ -212,14 +218,25 @@ class BonusTag {
 			return opts.isVariant ? `{=bonusAc}${m[2]}` : m[0];
 		});
 
+		// FIXME(Future) false positives:
+		//   - Black Dragon Scale Mail
 		strEntries = strEntries.replace(/\+\s*(\d)([^.]+(?:bonus )?(?:to|on) [^.]*saving throws)/g, (...m) => {
 			obj.bonusSavingThrow = `+${m[1]}`;
 			return opts.isVariant ? `{=bonusSavingThrow}${m[2]}` : m[0];
 		});
 
+		// FIXME(Future) false negatives:
+		//   - Robe of the Archmagi
 		strEntries = strEntries.replace(/\+\s*(\d)([^.]+(?:bonus )?(?:to|on) [^.]*spell attack rolls)/g, (...m) => {
 			obj.bonusSpellAttack = `+${m[1]}`;
 			return opts.isVariant ? `{=bonusSpellAttack}${m[2]}` : m[0];
+		});
+
+		// FIXME(Future) false negatives:
+		//   - Robe of the Archmagi
+		strEntries = strEntries.replace(/\+\s*(\d)([^.]+(?:bonus )?(?:to|on) [^.]*saving throw DCs)/g, (...m) => {
+			obj.bonusSpellSaveDc = `+${m[1]}`;
+			return opts.isVariant ? `{=bonusSpellSaveDc}${m[2]}` : m[0];
 		});
 
 		strEntries = strEntries.replace(BonusTag._RE_BASIC_WEAPONS, (...m) => {
@@ -288,6 +305,7 @@ class BasicTextClean {
 
 					if (/^\s*Proficiency with .*? allows you to add your proficiency bonus to the attack roll for any attack you make with it\.\s*$/i.test(it)) return false;
 					if (/^\s*A shield is made from wood or metal and is carried in one hand\. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time\.\s*$/i.test(it)) return false;
+					if (/^\s*This armor consists of a coat and leggings \(and perhaps a separate skirt\) of leather covered with overlapping pieces of metal, much like the scales of a fish\. The suit includes gauntlets\.\s*$/i.test(it)) return false;
 
 					return true;
 				})
@@ -363,6 +381,108 @@ class ItemSpellcastingFocusTag {
 }
 ItemSpellcastingFocusTag._RE_CLASS_NAMES = null;
 
+class DamageResistanceTag {
+	static tryRun (it, opts) {
+		DamageResistanceImmunityVulnerabilityTag.tryRun(
+			"resist",
+			/you (?:have|gain|are) (?:resistance|resistant) (?:to|against) [^?.!]+/ig,
+			it,
+			opts,
+		);
+	}
+}
+
+class DamageImmunityTag {
+	static tryRun (it, opts) {
+		DamageResistanceImmunityVulnerabilityTag.tryRun(
+			"immune",
+			/you (?:have|gain|are) (?:immune|immunity) (?:to|against) [^?.!]+/ig,
+			it,
+			opts,
+		);
+	}
+}
+
+class DamageVulnerabilityTag {
+	static tryRun (it, opts) {
+		DamageResistanceImmunityVulnerabilityTag.tryRun(
+			"vulnerable",
+			/you (?:have|gain|are) (?:vulnerable|vulnerability) (?:to|against) [^?.!]+/ig,
+			it,
+			opts,
+		);
+	}
+}
+
+class DamageResistanceImmunityVulnerabilityTag {
+	static _checkAndTag (prop, reOuter, obj, opts) {
+		if (prop === "resist" && obj.hasRefs) return; // Assume these are already tagged
+
+		const all = new Set();
+		const outer = [];
+		DamageResistanceImmunityVulnerabilityTag._WALKER.walk(
+			obj.entries,
+			{
+				string: (str) => {
+					str.replace(reOuter, (full, ..._) => {
+						outer.push(full);
+						full = full.split(/ except /gi)[0];
+						full.replace(ConverterConst.RE_DAMAGE_TYPE, (full, prefix, dmgType) => {
+							all.add(dmgType);
+						});
+					});
+				},
+			},
+		);
+		if (all.size) obj[prop] = [...all].sort(SortUtil.ascSortLower);
+		else delete obj[prop];
+
+		if (outer.length && !all.size) {
+			if (opts.cbMan) opts.cbMan(`Could not find damage types in string(s) ${outer.map(it => `"${it}"`).join(", ")}`);
+		}
+	}
+
+	static tryRun (prop, reOuter, it, opts) {
+		DamageResistanceImmunityVulnerabilityTag._WALKER = DamageResistanceImmunityVulnerabilityTag._WALKER || MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST, isNoModification: true});
+
+		if (it.entries) this._checkAndTag(prop, reOuter, it, opts);
+		if (it.inherits && it.inherits.entries) this._checkAndTag(prop, reOuter, it.inherits, opts);
+	}
+}
+DamageResistanceImmunityVulnerabilityTag._WALKER = null;
+
+class ConditionImmunityTag {
+	static _checkAndTag (obj) {
+		const all = new Set();
+		ConditionImmunityTag._WALKER.walk(
+			obj.entries,
+			{
+				string: (str) => {
+					str.replace(/you (?:have|gain|are) (?:[^.!?]+ )?immun(?:e|ity) to disease/gi, (...m) => {
+						all.add("disease");
+					})
+
+					str.replace(/you (?:have|gain|are) (?:[^.!?]+ )?(?:immune) ([^.!?]+)/, (...m) => {
+						m[1].replace(/{@condition ([^}]+)}/gi, (...n) => {
+							all.add(n[1].toLowerCase());
+						});
+					});
+				},
+			},
+		);
+		if (all.size) obj.conditionImmune = [...all].sort(SortUtil.ascSortLower);
+		else delete obj.conditionImmune;
+	}
+
+	static tryRun (it, opts) {
+		ConditionImmunityTag._WALKER = ConditionImmunityTag._WALKER || MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST, isNoModification: true});
+
+		if (it.entries) this._checkAndTag(it, opts);
+		if (it.inherits && it.inherits.entries) this._checkAndTag(it.inherits, opts);
+	}
+}
+ConditionImmunityTag._WALKER = null;
+
 if (typeof module !== "undefined") {
 	module.exports = {
 		ConverterUtilsItem,
@@ -373,5 +493,9 @@ if (typeof module !== "undefined") {
 		BasicTextClean,
 		ItemMiscTag,
 		ItemSpellcastingFocusTag,
+		DamageResistanceTag,
+		DamageImmunityTag,
+		DamageVulnerabilityTag,
+		ConditionImmunityTag,
 	};
 }

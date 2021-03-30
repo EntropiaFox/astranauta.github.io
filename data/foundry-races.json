@@ -1,0 +1,367 @@
+{
+	"raceFeature": [
+		{
+			"name": "Radiant Soul",
+			"source": "VGM",
+			"raceName": "Aasimar (Protector)",
+			"raceSource": "VGM",
+			"data": {
+				"activation.type": "action",
+				"activation.cost": 1
+			}
+		},
+		{
+			"name": "Monastic Training",
+			"source": "UAEladrinAndGith",
+			"raceName": "Gith (Githzerai)",
+			"raceSource": "UAEladrinAndGith",
+			"effects": [
+				{
+					"name": "Lightly Armored Defense",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Grit",
+			"source": "PSZ",
+			"raceName": "Goblin (Zendikar)",
+			"raceSource": "PSZ",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": "11 + @abilities.dex.mod"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Natural Armor",
+			"source": "DMG",
+			"raceName": "Lizardfolk",
+			"raceSource": "DMG",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 3
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Natural Armor",
+			"source": "VGM",
+			"raceName": "Lizardfolk",
+			"raceSource": "VGM",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": "13 + @abilities.dex.mod"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Natural Armor",
+			"source": "LR",
+			"raceName": "Locathah",
+			"raceSource": "LR",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": "12 + @abilities.dex.mod"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Natural Armor",
+			"source": "GGR",
+			"raceName": "Loxodon",
+			"raceSource": "GGR",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": "12 + @abilities.con.mod"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Natural Armor",
+			"source": "UARacesOfRavnica",
+			"raceName": "Loxodon",
+			"raceSource": "UARacesOfRavnica",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": "13 + @abilities.dex.mod"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Shifting Feature",
+			"source": "ERLW",
+			"raceName": "Shifter (Beasthide)",
+			"raceSource": "ERLW",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"disabled": true
+				}
+			]
+		},
+		{
+			"name": "Shifting Feature",
+			"source": "UAEberron",
+			"raceName": "Shifter (Beasthide)",
+			"raceSource": "UAEberron",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"disabled": true
+				}
+			]
+		},
+		{
+			"name": "Shifting Feature",
+			"source": "UARacesOfEberron",
+			"raceName": "Shifter (Beasthide)",
+			"raceSource": "UARacesOfEberron",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"disabled": true
+				}
+			]
+		},
+		{
+			"name": "Animal Enhancement",
+			"source": "GGR",
+			"raceName": "Simic Hybrid",
+			"raceSource": "GGR",
+			"effects": [
+				{
+					"name": "Carapace",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"disabled": true
+				}
+			]
+		},
+		{
+			"name": "Animal Enhancement",
+			"source": "UARacesOfRavnica",
+			"raceName": "Simic Hybrid",
+			"raceSource": "UARacesOfRavnica",
+			"effects": [
+				{
+					"name": "Carapace",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 1
+						}
+					],
+					"disabled": true
+				}
+			]
+		},
+		{
+			"name": "Natural Armor",
+			"source": "TTP",
+			"raceName": "Tortle",
+			"raceSource": "TTP",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": 17
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Shell Defense",
+			"source": "TTP",
+			"raceName": "Tortle",
+			"raceSource": "TTP",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 4
+						}
+					],
+					"disabled": true
+				}
+			]
+		},
+		{
+			"name": "Natural Armor",
+			"source": "DMG",
+			"raceName": "Troglodyte",
+			"raceSource": "DMG",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Integrated Protection",
+			"source": "ERLW",
+			"raceName": "Warforged",
+			"raceSource": "ERLW",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Composite Plating",
+			"source": "UAEberron",
+			"raceName": "Warforged",
+			"raceSource": "UAEberron",
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "ADD",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Integrated Protection",
+			"source": "UARacesOfEberron",
+			"raceName": "Warforged",
+			"raceSource": "UARacesOfEberron",
+			"effects": [
+				{
+					"name": "Darkwood Core",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": "11 + @abilities.dex.mod + @prof"
+						}
+					],
+					"disabled": true
+				},
+				{
+					"name": "Composite Plating",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": "13 + {2, @abilities.dex.mod}kl + @prof"
+						}
+					],
+					"disabled": true
+				},
+				{
+					"name": "Heavy Plating",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": "16 + @prof"
+						}
+					],
+					"disabled": true
+				}
+			]
+		}
+	]
+}

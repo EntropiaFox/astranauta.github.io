@@ -15,42 +15,8 @@ class PageFilterDeities extends PageFilter {
 	constructor () {
 		super();
 		this._sourceFilter = new SourceFilter();
-		this._pantheonFilter = new Filter({
-			header: "Pantheon",
-			items: [
-				"Celtic",
-				"Dawn War",
-				"Dragonlance",
-				"Drow",
-				"Dwarven",
-				"Eberron",
-				"Egyptian",
-				"Elven",
-				"Faerûnian",
-				"Forgotten Realms",
-				"Gnomish",
-				"Greek",
-				"Greyhawk",
-				"Halfling",
-				"Nonhuman",
-				"Norse",
-				"Orc",
-				"Theros",
-			],
-		});
-		this._categoryFilter = new Filter({
-			header: "Category",
-			items: [
-				VeCt.STR_NONE,
-				"Other Faiths of Eberron",
-				"The Dark Six",
-				"The Gods of Evil",
-				"The Gods of Good",
-				"The Gods of Neutrality",
-				"The Sovereign Host",
-			],
-			itemSortFn: null,
-		});
+		this._pantheonFilter = new Filter({header: "Pantheon", items: []});
+		this._categoryFilter = new Filter({header: "Category", items: [VeCt.STR_NONE]});
 		this._alignmentFilter = new Filter({
 			header: "Alignment",
 			items: ["L", "NX", "C", "G", "NY", "E", "N"],
@@ -59,18 +25,18 @@ class PageFilterDeities extends PageFilter {
 		});
 		this._domainFilter = new Filter({
 			header: "Domain",
-			items: ["Arcana", "Death", "Forge", "Grave", "Knowledge", "Life", "Light", "Nature", VeCt.STR_NONE, "Order", "Tempest", "Trickery", "War"],
+			items: ["Death", "Knowledge", "Life", "Light", "Nature", VeCt.STR_NONE, "Tempest", "Trickery", "War"],
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			items: ["Has Info", PageFilterDeities._STR_REPRINTED, "SRD"],
+			items: ["Grants Piety Features", "Has Info", PageFilterDeities._STR_REPRINTED, "SRD"],
 			displayFn: StrUtil.uppercaseFirst,
 			deselFn: (it) => { return it === PageFilterDeities._STR_REPRINTED },
 			isSrdFilter: true,
 		});
 	}
 
-	mutateForFilters (g) {
+	static mutateForFilters (g) {
 		g._fAlign = g.alignment ? PageFilterDeities.unpackAlignment(g) : [];
 		if (!g.category) g.category = VeCt.STR_NONE;
 		if (!g.domains) g.domains = [VeCt.STR_NONE];
@@ -79,6 +45,7 @@ class PageFilterDeities extends PageFilter {
 		g._fMisc = g.reprinted ? [PageFilterDeities._STR_REPRINTED] : [];
 		if (g.srd) g._fMisc.push("SRD");
 		if (g.entries || g.symbolImg) g._fMisc.push("Has Info");
+		if (g.piety) g._fMisc.push("Grants Piety Features");
 	}
 
 	addToFilters (g, isExcluded) {

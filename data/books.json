@@ -54,6 +54,7 @@
 					"name": "Personality and Background",
 					"headers": [
 						"Character Details",
+						"Personal Characteristics",
 						"Alignment",
 						"Languages",
 						"Inspiration",
@@ -74,7 +75,10 @@
 						"Adventuring Gear",
 						"Tools",
 						"Mounts and Vehicles",
-						"Trade Goods",
+						{
+							"index": 1,
+							"header": "Trade Goods"
+						},
 						"Expenses",
 						"Trinkets"
 					],
@@ -348,7 +352,10 @@
 					"headers": [
 						"Types of Treasure",
 						"Random Treasure",
-						"Magic Items",
+						{
+							"header": "Magic Items",
+							"index": 1
+						},
 						"Sentient Magic Items",
 						"Artifacts",
 						"Other Rewards"
@@ -1505,7 +1512,11 @@
 						"Prime Deities",
 						"Betrayer Gods",
 						"Lesser Idols"
-					]
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 1
+					}
 				},
 				{
 					"name": "Factions and Societies",
@@ -1523,113 +1534,226 @@
 						"Claret Orders",
 						"Golden Grin",
 						"The Revelry"
-					]
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 2
+					}
 				},
 				{
 					"name": "Wildemount Gazetteer",
 					"headers": [
-						"Regions"
-					]
-				},
-				{
-					"name": "Menagerie Coast",
-					"headers": [
-						"Areas (A-C)",
-						"Areas (D-F)",
-						"Areas (G-O)",
-						"Areas (P-R)",
-						"Areas (S-Z)"
-					]
-				},
-				{
-					"name": "Marrow Valley",
-					"headers": [
-						"Areas (A-C)",
-						"Areas (D-K)",
-						"Areas (L-Z)"
-					]
-				},
-				{
-					"name": "Zemni Fields",
-					"headers": [
-						"Areas (A-K)",
-						"Areas (N-R)",
-						"Areas (S-Z)"
-					]
-				},
-				{
-					"name": "Greying Wildlands",
-					"headers": [
-						"Areas (A-M)",
-						"Areas (P-Z)"
-					]
-				},
-				{
-					"name": "Eiselcross",
-					"headers": [
-						"Encounters in Eiselcross",
-						"Islands of Eiselcross",
-						"Wildfolk of Eiselcross",
-						"Areas (A-M)",
-						"Areas (R-Z)"
-					]
-				},
-				{
-					"name": "Wastes of Xhorhas",
-					"headers": [
-						"Areas (A-D)",
-						"Areas (F-R)",
-						"Areas (S-Z)"
-					]
-				},
-				{
-					"name": "Blightshore"
-				},
-				{
-					"name": "Distant Lands of Exandria"
+						"Regions",
+						"Menagerie Coast",
+						{
+							"depth": 1,
+							"header": "Areas (A-C)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (D-F)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (G-O)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (P-R)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (S-Z)"
+						},
+						"Marrow Valley",
+						{
+							"depth": 1,
+							"header": "Areas (A-C)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (D-K)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (L-Z)"
+						},
+						"Zemni Fields",
+						{
+							"depth": 1,
+							"header": "Areas (A-K)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (N-R)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (S-Z)"
+						},
+						"Greying Wildlands",
+						{
+							"depth": 1,
+							"header": "Areas (A-M)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (P-Z)"
+						},
+						"Eiselcross",
+						{
+							"depth": 1,
+							"header": "Encounters in Eiselcross"
+						},
+						{
+							"depth": 1,
+							"header": "Islands of Eiselcross"
+						},
+						{
+							"depth": 1,
+							"header": "Wildfolk of Eiselcross"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (A-M)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (R-Z)"
+						},
+						"Wastes of Xhorhas",
+						{
+							"depth": 1,
+							"header": "Areas (A-D)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (F-R)"
+						},
+						{
+							"depth": 1,
+							"header": "Areas (S-Z)"
+						},
+						"Blightshore",
+						"Distant Lands of Exandria"
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 3
+					}
 				},
 				{
 					"name": "Character Options",
 					"headers": [
 						"Races",
-						"Dwarves",
-						"Elves",
-						"Halflings",
-						"Humans",
-						"Aarakocra",
-						"Aasimar",
-						"Dragonborn",
-						"Firbolgs",
-						"Genasi",
-						"Gnomes",
-						"Goblinkin",
-						"Goliaths",
-						"Half-Elves",
-						"Kenku",
-						"Orcs and Half-Orcs",
-						"Tabaxi",
-						"Tieflings",
-						"Tortles",
-						"Hollow One"
-					]
-				},
-				{
-					"name": "Subclasses",
-					"headers": [
-						"Dunamis and Dunamancy",
-						"Fighter",
-						"Wizard",
+						{
+							"depth": 1,
+							"header": "Dwarves"
+						},
+						{
+							"depth": 1,
+							"header": "Elves"
+						},
+						{
+							"depth": 1,
+							"header": "Halflings"
+						},
+						{
+							"depth": 1,
+							"header": "Humans"
+						},
+						{
+							"depth": 1,
+							"header": "Aarakocra"
+						},
+						{
+							"depth": 1,
+							"header": "Aasimar"
+						},
+						{
+							"depth": 1,
+							"header": "Dragonborn"
+						},
+						{
+							"depth": 1,
+							"header": "Firbolgs"
+						},
+						{
+							"depth": 1,
+							"header": "Genasi"
+						},
+						{
+							"depth": 1,
+							"header": "Gnomes"
+						},
+						{
+							"depth": 1,
+							"header": "Goblinkin"
+						},
+						{
+							"depth": 1,
+							"header": "Goliaths"
+						},
+						{
+							"depth": 1,
+							"header": "Half-Elves"
+						},
+						{
+							"depth": 1,
+							"header": "Kenku"
+						},
+						{
+							"depth": 1,
+							"header": "Orcs and Half-Orcs"
+						},
+						{
+							"depth": 1,
+							"header": "Tabaxi"
+						},
+						{
+							"depth": 1,
+							"header": "Tieflings"
+						},
+						{
+							"depth": 1,
+							"header": "Tortles"
+						},
+						{
+							"depth": 1,
+							"header": "Hollow One"
+						},
+						"Subclasses",
+						{
+							"depth": 1,
+							"header": "Dunamis and Dunamancy"
+						},
+						{
+							"depth": 1,
+							"header": "Fighter"
+						},
+						{
+							"depth": 1,
+							"header": "Wizard"
+						},
 						"Dunamancy Spells",
 						"Spell Descriptions",
 						"Heroic Chronicle",
 						"Backgrounds"
-					]
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 4
+					}
 				},
 				{
 					"name": "Adventures in Wildemount",
 					"headers": [
 						"Using These Adventures"
-					]
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 5
+					}
 				},
 				{
 					"name": "Wildemount Treasures",
@@ -1638,7 +1762,11 @@
 						"Vestiges of Divergence",
 						"Arms of the Betrayers",
 						"Artifact Descriptions"
-					]
+					],
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 6
+					}
 				},
 				{
 					"name": "Wildemount Bestiary"
@@ -1921,6 +2049,21 @@
 						"type": "chapter",
 						"identifier": 4
 					}
+				}
+			]
+		},
+		{
+			"name": "Dungeon Master's Screen: Wilderness Kit",
+			"id": "ScreenWildernessKit",
+			"source": "ScreenWildernessKit",
+			"coverUrl": "img/covers/ScreenWildernessKit.png",
+			"published": "2020-11-17",
+			"contents": [
+				{
+					"name": "Wilderness Journeys"
+				},
+				{
+					"name": "Wilderness Chases"
 				}
 			]
 		}

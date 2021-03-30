@@ -2502,6 +2502,43 @@
 			}
 		},
 		{
+			"name": "Water Genasi",
+			"source": "EEPC",
+			"page": 10,
+			"ref": "{@race Genasi (Water)|eepc|Water Genasi}",
+			"apply": {
+				"_root": {
+					"type": {
+						"type": "humanoid",
+						"tags": [
+							"water genasi"
+						]
+					},
+					"speed": {
+						"walk": 30,
+						"swim": 30
+					}
+				},
+				"_mod": {
+					"resist": {
+						"mode": "appendIfNotExistsArr",
+						"items": "acid"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Amphibious",
+								"entries": [
+									"<$title_short_name$> can breathe air and water."
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
 			"name": "Wood Elf",
 			"source": "PHB",
 			"page": 21,

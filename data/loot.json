@@ -188,7 +188,7 @@
 					"min": 7,
 					"max": 16,
 					"gems": {
-						"type": "10",
+						"type": 10,
 						"amount": "2d6"
 					}
 				},
@@ -196,7 +196,7 @@
 					"min": 17,
 					"max": 26,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					}
 				},
@@ -204,7 +204,7 @@
 					"min": 27,
 					"max": 36,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "2d6"
 					}
 				},
@@ -212,7 +212,7 @@
 					"min": 37,
 					"max": 44,
 					"gems": {
-						"type": "10",
+						"type": 10,
 						"amount": "2d6"
 					},
 					"magicitems": {
@@ -224,7 +224,7 @@
 					"min": 45,
 					"max": 52,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -236,7 +236,7 @@
 					"min": 53,
 					"max": 60,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "2d6"
 					},
 					"magicitems": {
@@ -248,7 +248,7 @@
 					"min": 61,
 					"max": 65,
 					"gems": {
-						"type": "10",
+						"type": 10,
 						"amount": "2d6"
 					},
 					"magicitems": {
@@ -260,7 +260,7 @@
 					"min": 66,
 					"max": 70,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -272,7 +272,7 @@
 					"min": 71,
 					"max": 75,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "2d6"
 					},
 					"magicitems": {
@@ -284,7 +284,7 @@
 					"min": 76,
 					"max": 78,
 					"gems": {
-						"type": "10",
+						"type": 10,
 						"amount": "2d6"
 					},
 					"magicitems": {
@@ -296,7 +296,7 @@
 					"min": 79,
 					"max": 80,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -308,7 +308,7 @@
 					"min": 81,
 					"max": 85,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "2d6"
 					},
 					"magicitems": {
@@ -320,7 +320,7 @@
 					"min": 86,
 					"max": 92,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -332,7 +332,7 @@
 					"min": 93,
 					"max": 97,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "2d6"
 					},
 					"magicitems": {
@@ -344,7 +344,7 @@
 					"min": 98,
 					"max": 99,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -356,7 +356,7 @@
 					"min": 100,
 					"max": 100,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "2d6"
 					},
 					"magicitems": {
@@ -387,7 +387,7 @@
 					"min": 5,
 					"max": 10,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					}
 				},
@@ -395,7 +395,7 @@
 					"min": 11,
 					"max": 16,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "3d6"
 					}
 				},
@@ -403,7 +403,7 @@
 					"min": 17,
 					"max": 22,
 					"gems": {
-						"type": "100",
+						"type": 100,
 						"amount": "3d6"
 					}
 				},
@@ -411,7 +411,7 @@
 					"min": 23,
 					"max": 28,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					}
 				},
@@ -419,7 +419,7 @@
 					"min": 29,
 					"max": 32,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -431,7 +431,7 @@
 					"min": 33,
 					"max": 36,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -443,7 +443,7 @@
 					"min": 37,
 					"max": 40,
 					"gems": {
-						"type": "100",
+						"type": 100,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -455,7 +455,7 @@
 					"min": 41,
 					"max": 44,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -467,7 +467,7 @@
 					"min": 45,
 					"max": 49,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -479,7 +479,7 @@
 					"min": 50,
 					"max": 54,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -491,7 +491,7 @@
 					"min": 55,
 					"max": 59,
 					"gems": {
-						"type": "100",
+						"type": 100,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -503,7 +503,7 @@
 					"min": 60,
 					"max": 63,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -515,7 +515,7 @@
 					"min": 64,
 					"max": 66,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -527,7 +527,7 @@
 					"min": 67,
 					"max": 69,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -539,7 +539,7 @@
 					"min": 70,
 					"max": 72,
 					"gems": {
-						"type": "100",
+						"type": 100,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -551,7 +551,7 @@
 					"min": 73,
 					"max": 74,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -563,7 +563,7 @@
 					"min": 75,
 					"max": 76,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -575,7 +575,7 @@
 					"min": 77,
 					"max": 78,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -587,7 +587,7 @@
 					"min": 79,
 					"max": 79,
 					"gems": {
-						"type": "100",
+						"type": 100,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -599,7 +599,7 @@
 					"min": 80,
 					"max": 80,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -611,7 +611,7 @@
 					"min": 81,
 					"max": 84,
 					"artobjects": {
-						"type": "25",
+						"type": 25,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -623,7 +623,7 @@
 					"min": 85,
 					"max": 88,
 					"gems": {
-						"type": "50",
+						"type": 50,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -635,7 +635,7 @@
 					"min": 89,
 					"max": 91,
 					"gems": {
-						"type": "100",
+						"type": 100,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -647,7 +647,7 @@
 					"min": 92,
 					"max": 94,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -659,7 +659,7 @@
 					"min": 95,
 					"max": 96,
 					"gems": {
-						"type": "100",
+						"type": 100,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -671,7 +671,7 @@
 					"min": 97,
 					"max": 98,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -683,7 +683,7 @@
 					"min": 99,
 					"max": 99,
 					"gems": {
-						"type": "100",
+						"type": 100,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -695,7 +695,7 @@
 					"min": 100,
 					"max": 100,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -724,7 +724,7 @@
 					"min": 4,
 					"max": 6,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					}
 				},
@@ -732,7 +732,7 @@
 					"min": 7,
 					"max": 9,
 					"artobjects": {
-						"type": "750",
+						"type": 750,
 						"amount": "2d4"
 					}
 				},
@@ -740,7 +740,7 @@
 					"min": 10,
 					"max": 12,
 					"gems": {
-						"type": "500",
+						"type": 500,
 						"amount": "3d6"
 					}
 				},
@@ -748,7 +748,7 @@
 					"min": 13,
 					"max": 15,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					}
 				},
@@ -756,7 +756,7 @@
 					"min": 16,
 					"max": 19,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -768,7 +768,7 @@
 					"min": 20,
 					"max": 23,
 					"artobjects": {
-						"type": "750",
+						"type": 750,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -780,7 +780,7 @@
 					"min": 24,
 					"max": 26,
 					"gems": {
-						"type": "500",
+						"type": 500,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -792,7 +792,7 @@
 					"min": 27,
 					"max": 29,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -804,7 +804,7 @@
 					"min": 30,
 					"max": 35,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -816,7 +816,7 @@
 					"min": 36,
 					"max": 40,
 					"artobjects": {
-						"type": "750",
+						"type": 750,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -828,7 +828,7 @@
 					"min": 41,
 					"max": 45,
 					"gems": {
-						"type": "500",
+						"type": 500,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -840,7 +840,7 @@
 					"min": 46,
 					"max": 50,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -852,7 +852,7 @@
 					"min": 51,
 					"max": 54,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -864,7 +864,7 @@
 					"min": 55,
 					"max": 58,
 					"artobjects": {
-						"type": "750",
+						"type": 750,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -876,7 +876,7 @@
 					"min": 59,
 					"max": 62,
 					"gems": {
-						"type": "500",
+						"type": 500,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -888,7 +888,7 @@
 					"min": 63,
 					"max": 66,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -900,7 +900,7 @@
 					"min": 67,
 					"max": 68,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -912,7 +912,7 @@
 					"min": 69,
 					"max": 70,
 					"artobjects": {
-						"type": "750",
+						"type": 750,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -924,7 +924,7 @@
 					"min": 71,
 					"max": 72,
 					"gems": {
-						"type": "500",
+						"type": 500,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -936,7 +936,7 @@
 					"min": 73,
 					"max": 74,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -948,7 +948,7 @@
 					"min": 75,
 					"max": 76,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -960,7 +960,7 @@
 					"min": 77,
 					"max": 78,
 					"artobjects": {
-						"type": "750",
+						"type": 750,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -972,7 +972,7 @@
 					"min": 79,
 					"max": 80,
 					"gems": {
-						"type": "500",
+						"type": 500,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -984,7 +984,7 @@
 					"min": 81,
 					"max": 82,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -996,7 +996,7 @@
 					"min": 83,
 					"max": 85,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -1008,7 +1008,7 @@
 					"min": 86,
 					"max": 88,
 					"artobjects": {
-						"type": "750",
+						"type": 750,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -1020,7 +1020,7 @@
 					"min": 89,
 					"max": 90,
 					"gems": {
-						"type": "500",
+						"type": 500,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1032,7 +1032,7 @@
 					"min": 91,
 					"max": 92,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1044,7 +1044,7 @@
 					"min": 93,
 					"max": 94,
 					"artobjects": {
-						"type": "250",
+						"type": 250,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -1056,7 +1056,7 @@
 					"min": 95,
 					"max": 96,
 					"artobjects": {
-						"type": "750",
+						"type": 750,
 						"amount": "2d4"
 					},
 					"magicitems": {
@@ -1068,7 +1068,7 @@
 					"min": 97,
 					"max": 98,
 					"gems": {
-						"type": "500",
+						"type": 500,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1080,7 +1080,7 @@
 					"min": 99,
 					"max": 100,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1109,7 +1109,7 @@
 					"min": 3,
 					"max": 5,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1121,7 +1121,7 @@
 					"min": 6,
 					"max": 8,
 					"artobjects": {
-						"type": "2500",
+						"type": 2500,
 						"amount": "1d10"
 					},
 					"magicitems": {
@@ -1133,7 +1133,7 @@
 					"min": 9,
 					"max": 11,
 					"artobjects": {
-						"type": "7500",
+						"type": 7500,
 						"amount": "1d4"
 					},
 					"magicitems": {
@@ -1145,7 +1145,7 @@
 					"min": 12,
 					"max": 14,
 					"gems": {
-						"type": "5000",
+						"type": 5000,
 						"amount": "1d8"
 					},
 					"magicitems": {
@@ -1157,7 +1157,7 @@
 					"min": 15,
 					"max": 22,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1169,7 +1169,7 @@
 					"min": 23,
 					"max": 30,
 					"artobjects": {
-						"type": "2500",
+						"type": 2500,
 						"amount": "1d10"
 					},
 					"magicitems": {
@@ -1181,7 +1181,7 @@
 					"min": 31,
 					"max": 38,
 					"artobjects": {
-						"type": "7500",
+						"type": 7500,
 						"amount": "1d4"
 					},
 					"magicitems": {
@@ -1193,7 +1193,7 @@
 					"min": 39,
 					"max": 46,
 					"gems": {
-						"type": "5000",
+						"type": 5000,
 						"amount": "1d8"
 					},
 					"magicitems": {
@@ -1205,7 +1205,7 @@
 					"min": 47,
 					"max": 52,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1217,7 +1217,7 @@
 					"min": 53,
 					"max": 58,
 					"artobjects": {
-						"type": "2500",
+						"type": 2500,
 						"amount": "1d10"
 					},
 					"magicitems": {
@@ -1229,7 +1229,7 @@
 					"min": 59,
 					"max": 63,
 					"artobjects": {
-						"type": "7500",
+						"type": 7500,
 						"amount": "1d4"
 					},
 					"magicitems": {
@@ -1241,7 +1241,7 @@
 					"min": 64,
 					"max": 68,
 					"gems": {
-						"type": "5000",
+						"type": 5000,
 						"amount": "1d8"
 					},
 					"magicitems": {
@@ -1253,7 +1253,7 @@
 					"min": 69,
 					"max": 69,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1265,7 +1265,7 @@
 					"min": 70,
 					"max": 70,
 					"artobjects": {
-						"type": "7500",
+						"type": 7500,
 						"amount": "1d10"
 					},
 					"magicitems": {
@@ -1277,7 +1277,7 @@
 					"min": 71,
 					"max": 71,
 					"artobjects": {
-						"type": "7500",
+						"type": 7500,
 						"amount": "1d4"
 					},
 					"magicitems": {
@@ -1289,7 +1289,7 @@
 					"min": 72,
 					"max": 72,
 					"gems": {
-						"type": "5000",
+						"type": 5000,
 						"amount": "1d8"
 					},
 					"magicitems": {
@@ -1301,7 +1301,7 @@
 					"min": 73,
 					"max": 74,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1313,7 +1313,7 @@
 					"min": 75,
 					"max": 76,
 					"artobjects": {
-						"type": "2500",
+						"type": 2500,
 						"amount": "1d10"
 					},
 					"magicitems": {
@@ -1325,7 +1325,7 @@
 					"min": 77,
 					"max": 78,
 					"artobjects": {
-						"type": "7500",
+						"type": 7500,
 						"amount": "1d4"
 					},
 					"magicitems": {
@@ -1337,7 +1337,7 @@
 					"min": 79,
 					"max": 80,
 					"gems": {
-						"type": "5000",
+						"type": 5000,
 						"amount": "1d8"
 					},
 					"magicitems": {
@@ -1349,7 +1349,7 @@
 					"min": 81,
 					"max": 85,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1361,7 +1361,7 @@
 					"min": 86,
 					"max": 90,
 					"artobjects": {
-						"type": "2500",
+						"type": 2500,
 						"amount": "1d10"
 					},
 					"magicitems": {
@@ -1373,7 +1373,7 @@
 					"min": 91,
 					"max": 95,
 					"artobjects": {
-						"type": "7500",
+						"type": 7500,
 						"amount": "1d4"
 					},
 					"magicitems": {
@@ -1385,7 +1385,7 @@
 					"min": 96,
 					"max": 100,
 					"gems": {
-						"type": "1000",
+						"type": 1000,
 						"amount": "3d6"
 					},
 					"magicitems": {
@@ -1401,100 +1401,100 @@
 			"name": "10 gp Gemstones",
 			"source": "DMG",
 			"page": 134,
-			"type": "10",
+			"type": 10,
 			"table": [
-				"Azurite (opaque mottled deep blue)",
-				"Banded agate (translucent striped brown, blue, white, or red)",
-				"Blue quartz (transparent pale blue)",
-				"Eye agate (translucent circles of gray, white brown, blue, or green)",
-				"Hematite (opaque gray-black)",
-				"Lapis lazuli (opaque light and dark blue with yellow flecks)",
-				"Malachite (opaque striated light and dark green)",
-				"Moss agate (translucent pink or yellow-white with mossy gray or green markings)",
-				"Obsidian (opaque black)",
-				"Rhodochrosite (opaque light pink)",
-				"Tiger eye (translucent brown with golden center)",
-				"Turquoise (opaque light blue-green)"
+				"{@item Azurite} (opaque mottled deep blue)",
+				"{@item Banded agate} (translucent striped brown, blue, white, or red)",
+				"{@item Blue quartz} (transparent pale blue)",
+				"{@item Eye agate} (translucent circles of gray, white brown, blue, or green)",
+				"{@item Hematite} (opaque gray-black)",
+				"{@item Lapis lazuli} (opaque light and dark blue with yellow flecks)",
+				"{@item Malachite} (opaque striated light and dark green)",
+				"{@item Moss agate} (translucent pink or yellow-white with mossy gray or green markings)",
+				"{@item Obsidian} (opaque black)",
+				"{@item Rhodochrosite} (opaque light pink)",
+				"{@item Tiger eye} (translucent brown with golden center)",
+				"{@item Turquoise} (opaque light blue-green)"
 			]
 		},
 		{
 			"name": "50 gp Gemstones",
 			"source": "DMG",
 			"page": 134,
-			"type": "50",
+			"type": 50,
 			"table": [
-				"Bloodstone (opaque dark gray with red flecks)",
-				"Carnelian (opaque orange to red-brown)",
-				"Chalcedony (opaque white)",
-				"Chrysoprase (translucent green)",
-				"Citrine (transparent pale yellow-brown)",
-				"Jasper (opaque blue, black, or brown)",
-				"Moonstone (translucent white with pale blue glow)",
-				"Onyx (opaque bands of black and white, or pure black or white)",
-				"Quartz (transparent white, smoky gray, or yellow)",
-				"Sardonyx (opaque bands of red and white)",
-				"Star rose quartz (translucent rosy stone with white star-shaped center)",
-				"Zircon (transparent pale blue-green)"
+				"{@item Bloodstone} (opaque dark gray with red flecks)",
+				"{@item Carnelian} (opaque orange to red-brown)",
+				"{@item Chalcedony} (opaque white)",
+				"{@item Chrysoprase} (translucent green)",
+				"{@item Citrine} (transparent pale yellow-brown)",
+				"{@item Jasper} (opaque blue, black, or brown)",
+				"{@item Moonstone} (translucent white with pale blue glow)",
+				"{@item Onyx} (opaque bands of black and white, or pure black or white)",
+				"{@item Quartz} (transparent white, smoky gray, or yellow)",
+				"{@item Sardonyx} (opaque bands of red and white)",
+				"{@item Star rose quartz} (translucent rosy stone with white star-shaped center)",
+				"{@item Zircon} (transparent pale blue-green)"
 			]
 		},
 		{
 			"name": "100 gp Gemstones",
 			"source": "DMG",
 			"page": 134,
-			"type": "100",
+			"type": 100,
 			"table": [
-				"Amber (transparent watery gold to rich gold)",
-				"Amethyst (transparent deep purple)",
-				"Chrysoberyl (transparent yellow-green to pale green)",
-				"Coral (opaque crimson)",
-				"Garnet (transparent red, brown-green, or violet)",
-				"Jade (translucent light green, deep green, or white)",
-				"Jet (opaque deep black)",
-				"Pearl (opaque lustrous white, yellow, or pink)",
-				"Spinel (transparent red, red-brown, or deep green)",
-				"Tourmaline (transparent pale green, blue, brown , or red)"
+				"{@item Amber} (transparent watery gold to rich gold)",
+				"{@item Amethyst} (transparent deep purple)",
+				"{@item Chrysoberyl} (transparent yellow-green to pale green)",
+				"{@item Coral} (opaque crimson)",
+				"{@item Garnet} (transparent red, brown-green, or violet)",
+				"{@item Jade} (translucent light green, deep green, or white)",
+				"{@item Jet} (opaque deep black)",
+				"{@item Pearl} (opaque lustrous white, yellow, or pink)",
+				"{@item Spinel} (transparent red, red-brown, or deep green)",
+				"{@item Tourmaline} (transparent pale green, blue, brown , or red)"
 			]
 		},
 		{
 			"name": "500 gp Gemstones",
 			"source": "DMG",
 			"page": 134,
-			"type": "500",
+			"type": 500,
 			"table": [
-				"Alexandrite (transparent dark green)",
-				"Aquamarine (transparent pale blue-green)",
-				"Black pearl (opaque pure black)",
-				"Blue spinel (transparent deep blue)",
-				"Peridot (transparent rich olive green)",
-				"Topaz (transparent golden yellow)"
+				"{@item Alexandrite} (transparent dark green)",
+				"{@item Aquamarine} (transparent pale blue-green)",
+				"{@item Black pearl} (opaque pure black)",
+				"{@item Blue spinel} (transparent deep blue)",
+				"{@item Peridot} (transparent rich olive green)",
+				"{@item Topaz} (transparent golden yellow)"
 			]
 		},
 		{
 			"name": "1,000 gp Gemstones",
 			"source": "DMG",
 			"page": 134,
-			"type": "1000",
+			"type": 1000,
 			"table": [
-				"Black opal (translucent dark green with black mottling and golden flecks)",
-				"Blue sapphire (transparent blue-white to medium blue)",
-				"Emerald (transparent deep bright green)",
-				"Fire opal (translucent fiery red)",
-				"Opal (translucent pale blue with green and golden mottling)",
-				"Star ruby (translucent ruby with white star-shaped center)",
-				"Star sapphire (translucent blue sapphire with white star-shaped center)",
-				"Yellow sapphire (transparent fiery yellow or yellow-green)"
+				"{@item Black opal} (translucent dark green with black mottling and golden flecks)",
+				"{@item Blue sapphire} (transparent blue-white to medium blue)",
+				"{@item Emerald} (transparent deep bright green)",
+				"{@item Fire opal} (translucent fiery red)",
+				"{@item Opal} (translucent pale blue with green and golden mottling)",
+				"{@item Star ruby} (translucent ruby with white star-shaped center)",
+				"{@item Star sapphire} (translucent blue sapphire with white star-shaped center)",
+				"{@item Yellow sapphire} (transparent fiery yellow or yellow-green)"
 			]
 		},
 		{
 			"name": "5,000 gp Gemstones",
 			"source": "DMG",
 			"page": 134,
-			"type": "5000",
+			"type": 5000,
 			"table": [
-				"Black sapphire (translucent lustrous black with glowing highlights)",
-				"Diamond (transparent blue-white, canary, pink, brown, or blue)",
-				"Jacinth (transparent fiery orange)",
-				"Ruby (transparent clear red to deep crimson)"
+				"{@item Black sapphire} (translucent lustrous black with glowing highlights)",
+				"{@item Diamond} (transparent blue-white, canary, pink, brown, or blue)",
+				"{@item Jacinth} (transparent fiery orange)",
+				"{@item Ruby} (transparent clear red to deep crimson)"
 			]
 		}
 	],
@@ -1503,88 +1503,88 @@
 			"name": "25 gp Art Objects",
 			"source": "DMG",
 			"page": 134,
-			"type": "25",
+			"type": 25,
 			"table": [
-				"Silver ewer",
-				"Carved bone statuette",
-				"Small gold bracelet",
-				"Cloth-of-gold vestments",
-				"Black velvet mask stitched with silver thread",
-				"Copper chalice with silver filigree",
-				"Pair of engraved bone dice",
-				"Small mirror set in a painted wooden frame",
-				"Embroidered silk handkerchief",
-				"Gold locket with a painted portrait inside"
+				"{@item Silver ewer}",
+				"{@item Carved bone statuette}",
+				"{@item Small gold bracelet}",
+				"{@item Cloth-of-gold vestments}",
+				"{@item Black velvet mask stitched with silver thread}",
+				"{@item Copper chalice with silver filigree}",
+				"{@item Pair of engraved bone dice}",
+				"{@item Small mirror set in a painted wooden frame}",
+				"{@item Embroidered silk handkerchief}",
+				"{@item Gold locket with a painted portrait inside}"
 			]
 		},
 		{
 			"name": "250 gp Art Objects",
 			"source": "DMG",
 			"page": 135,
-			"type": "250",
+			"type": 250,
 			"table": [
-				"Gold ring set with bloodstones",
-				"Carved ivory statuette",
-				"Large gold bracelet",
-				"Silver necklace with a gemstone pendant",
-				"Bronze crown",
-				"Silk robe with gold embroidery",
-				"Large well-made tapestry",
-				"Brass mug with jade inlay",
-				"Box of turquoise animal figurines",
-				"Gold bird cage with electrum filigree"
+				"{@item Gold ring set with bloodstones}",
+				"{@item Carved ivory statuette}",
+				"{@item Large gold bracelet}",
+				"{@item Silver necklace with a gemstone pendant}",
+				"{@item Bronze crown}",
+				"{@item Silk robe with gold embroidery}",
+				"{@item Large well-made tapestry}",
+				"{@item Brass mug with jade inlay}",
+				"{@item Box of turquoise animal figurines}",
+				"{@item Gold bird cage with electrum filigree}"
 			]
 		},
 		{
 			"name": "750 gp Art Objects",
 			"source": "DMG",
 			"page": 135,
-			"type": "750",
+			"type": 750,
 			"table": [
-				"Silver chalice set with moonstones",
-				"Silver-plated steel longsword with jet set in hilt",
-				"Carved harp of exotic wood with ivory inlay and zircon gems",
-				"Small gold idol",
-				"Gold dragon comb set with red garnets as eyes",
-				"Bottle stopper cork embossed with gold leaf and",
-				"set with amethysts",
-				"Ceremonial electrum dagger with a black pearl in the pommel",
-				"Silver and gold brooch",
-				"Obsidian statuette with gold fittings and inlay",
-				"Painted gold war mask"
+				"{@item Silver chalice set with moonstones}",
+				"{@item Silver-plated steel longsword with jet set in hilt}",
+				"{@item Carved harp of exotic wood with ivory inlay and zircon gems}",
+				"{@item Small gold idol}",
+				"{@item Gold dragon comb set with red garnets as eyes}",
+				"{@item Bottle stopper cork embossed with gold leaf and set with amethysts}",
+				"{@item Ceremonial electrum dagger with a black pearl in the pommel}",
+				"{@item Silver and gold brooch}",
+				"{@item Obsidian statuette with gold fittings and inlay}",
+				"{@item Painted gold war mask}"
 			]
 		},
 		{
 			"name": "2,500 gp Art Objects",
 			"source": "DMG",
 			"page": 135,
-			"type": "2500",
+			"type": 2500,
 			"table": [
-				"Fine gold chain set with a fire opal",
-				"Old masterpiece painting",
-				"Embroidered silk and velvet mantle set with numerous moonstones",
-				"Platinum bracelet set with a sapphire",
-				"Embroidered glove set with jewel chips jeweled anklet",
-				"Gold music box",
-				"Gold circlet set with four aquamarines",
-				"Eye patch with a mock eye set in blue sapphire and moonstone",
-				"A necklace string of small pink pearls"
+				"{@item Fine gold chain set with a fire opal}",
+				"{@item Old masterpiece painting}",
+				"{@item Embroidered silk and velvet mantle set with numerous moonstones}",
+				"{@item Platinum bracelet set with a sapphire}",
+				"{@item Embroidered glove set with jewel chips}",
+				"{@item Jeweled anklet}",
+				"{@item Gold music box}",
+				"{@item Gold circlet set with four aquamarines}",
+				"{@item Eye patch with a mock eye set in blue sapphire and moonstone}",
+				"A {@item necklace string of small pink pearls}"
 			]
 		},
 		{
 			"name": "7,500 gp Art Objects",
 			"source": "DMG",
 			"page": 135,
-			"type": "7500",
+			"type": 7500,
 			"table": [
-				"Jeweled gold crown",
-				"Jeweled platinum ring",
-				"Small gold statuette set with rubies",
-				"Gold cup set with emeralds",
-				"Gold jewelry box with platinum filigree",
-				"Painted gold child's sarcophagus",
-				"Jade game board with solid gold playing pieces",
-				"Bejeweled ivory drinking horn with gold filigree"
+				"{@item Jeweled gold crown}",
+				"{@item Jeweled platinum ring}",
+				"{@item Small gold statuette set with rubies}",
+				"{@item Gold cup set with emeralds}",
+				"{@item Gold jewelry box with platinum filigree}",
+				"{@item Painted gold child's sarcophagus}",
+				"{@item Jade game board with solid gold playing pieces}",
+				"{@item Bejeweled ivory drinking horn with gold filigree}"
 			]
 		}
 	],
@@ -3092,7 +3092,7 @@
 				{
 					"min": 27,
 					"max": 28,
-					"item": "{@item Rod of absorption}"
+					"item": "{@item Rod of Absorption}"
 				},
 				{
 					"min": 29,

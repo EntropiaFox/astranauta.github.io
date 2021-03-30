@@ -26,36 +26,15 @@ const MSG = {
 	DuplicateEntityCheck: "",
 	ClassDataCheck: "",
 	RaceDataCheck: "",
+	RefTagCheck: "",
 };
 
-const TAG_TO_PAGE = {
-	"spell": UrlUtil.PG_SPELLS,
-	"item": UrlUtil.PG_ITEMS,
-	"class": UrlUtil.PG_CLASSES,
-	"creature": UrlUtil.PG_BESTIARY,
-	"condition": UrlUtil.PG_CONDITIONS_DISEASES,
-	"disease": UrlUtil.PG_CONDITIONS_DISEASES,
-	"background": UrlUtil.PG_BACKGROUNDS,
-	"race": UrlUtil.PG_RACES,
-	"optfeature": UrlUtil.PG_OPT_FEATURES,
-	"reward": UrlUtil.PG_REWARDS,
-	"feat": UrlUtil.PG_FEATS,
-	"psionic": UrlUtil.PG_PSIONICS,
-	"object": UrlUtil.PG_OBJECTS,
-	"cult": UrlUtil.PG_CULTS_BOONS,
-	"boon": UrlUtil.PG_CULTS_BOONS,
-	"trap": UrlUtil.PG_TRAPS_HAZARDS,
-	"hazard": UrlUtil.PG_TRAPS_HAZARDS,
-	"deity": UrlUtil.PG_DEITIES,
-	"variantrule": UrlUtil.PG_VARIANTRULES,
-	"action": UrlUtil.PG_ACTIONS,
-	"language": UrlUtil.PG_LANGUAGES,
-	"classFeature": UrlUtil.PG_CLASSES,
-	"subclassFeature": UrlUtil.PG_CLASSES,
-	"charoption": UrlUtil.PG_CHAR_CREATION_OPTIONS,
-	"vehicle": UrlUtil.PG_VEHICLES,
-	"vehupgrade": UrlUtil.PG_VEHICLES,
-};
+const WALKER = MiscUtil.getWalker({
+	keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+	isNoModification: true,
+});
+
+const TAG_TO_PAGE = Renderer.hover.TAG_TO_PAGE;
 
 const VALID_SKILLS = new Set([
 	"Acrobatics",
@@ -99,8 +78,18 @@ function fileRecurse (file, fileHandler, doParse, filenameMatcher) {
 }
 
 class TestTagsUtil {
-	static _testAdditionalSpells_testSpellExists (file, msgProp, spell) {
-		const url = getEncoded(spell, "spell");
+	static _testAdditionalSpells_testSpellExists (file, msgProp, spellOrObj) {
+		if (typeof spellOrObj === "object") {
+			if (spellOrObj.choose) {
+				// e.g. "level=0|class=Sorcerer"
+				// (no-op)
+			} else throw new Error(`Unhandled additionalSpells special object: ${JSON.stringify(spellOrObj)}`);
+
+			return;
+		}
+
+		spellOrObj = spellOrObj.split("#")[0]; // An optional "cast at spell level" can be added with a "#", remove it
+		const url = getEncoded(spellOrObj, "spell");
 
 		if (!ALL_URLS.has(url)) {
 			MSG[msgProp] += `Missing link: ${url} in file ${file} (evaluates to "${url}") in "additionalSpells"\nSimilar URLs were:\n${getSimilar(url)}\n`;
@@ -111,17 +100,27 @@ class TestTagsUtil {
 		if (!obj.additionalSpells) return;
 		obj.additionalSpells
 			.forEach(additionalSpellOption => {
-				Object.values(additionalSpellOption)
-					.forEach(levelToSpells => {
+				Object.entries(additionalSpellOption)
+					.forEach(([k, levelToSpells]) => {
+						if (k === "ability") return;
+
 						Object.values(levelToSpells).forEach(spellListOrMeta => {
 							if (spellListOrMeta instanceof Array) {
 								return spellListOrMeta.forEach(sp => this._testAdditionalSpells_testSpellExists(file, msgProp, sp));
-							} else if (typeof spellListOrMeta === "string") return; // Skip any single strings, e.g. ability
+							}
 
 							Object.entries(spellListOrMeta)
 								.forEach(([prop, val]) => {
 									switch (prop) {
-										case "rest": Object.values(val).forEach(spellList => spellList.forEach(sp => this._testAdditionalSpells_testSpellExists(file, msgProp, sp))); break;
+										case "daily":
+										case "rest":
+											Object.values(val).forEach(spellList => spellList.forEach(sp => this._testAdditionalSpells_testSpellExists(file, msgProp, sp)));
+											break;
+										case "will":
+										case "ritual":
+										case "_":
+											val.forEach(sp => this._testAdditionalSpells_testSpellExists(file, msgProp, sp))
+											break;
 										default: throw new Error(`Unhandled additionalSpells prop "${prop}"`);
 									}
 								});
@@ -712,11 +711,6 @@ SpellDataCheck._CLASS_LIST = [];
 
 class ClassDataCheck {
 	static _doCheckClass (file, data, cls) {
-		const walker = MiscUtil.getWalker({
-			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
-			isNoModification: true,
-		});
-
 		// region Check `classFeatures` -> `classFeature` links
 		const featureLookup = {};
 		(data.classFeature || []).forEach(cf => {
@@ -746,7 +740,7 @@ class ClassDataCheck {
 			},
 		};
 		(data.classFeature || []).forEach(cf => {
-			walker.walk(cf.entries, handlersNestedRefsClass);
+			WALKER.walk(cf.entries, handlersNestedRefsClass);
 		});
 		// endregion
 
@@ -775,7 +769,7 @@ class ClassDataCheck {
 				},
 			};
 			(data.subclassFeature || []).forEach(scf => {
-				walker.walk(scf.entries, handlersNestedRefsSubclass);
+				WALKER.walk(scf.entries, handlersNestedRefsSubclass);
 			});
 		}
 		// endregion
@@ -793,10 +787,10 @@ class ClassDataCheck {
 			},
 		};
 		(data.classFeature || []).forEach(cf => {
-			walker.walk(cf.entries, handlersNestedRefsOptionalFeatures);
+			WALKER.walk(cf.entries, handlersNestedRefsOptionalFeatures);
 		});
 		(data.subclassFeature || []).forEach(scf => {
-			walker.walk(scf.entries, handlersNestedRefsOptionalFeatures);
+			WALKER.walk(scf.entries, handlersNestedRefsOptionalFeatures);
 		});
 		// endregion
 	}
@@ -894,6 +888,13 @@ class DuplicateEntityCheck {
 							}
 							break;
 						}
+						case "raceFeature": {
+							if (name && source) {
+								const key = `${source} :: ${ent.raceSource} :: ${ent.raceName} :: ${name}`;
+								(positions[key] = positions[key] || []).push(i);
+							}
+							break;
+						}
 						default: {
 							if (name && source) {
 								const key = `${source} :: ${name}`;
@@ -917,6 +918,52 @@ class DuplicateEntityCheck {
 			});
 	}
 }
+
+class RefTagCheck {
+	static checkFile (file, contents) {
+		Object.entries(contents)
+			.filter(([_, arr]) => arr instanceof Array)
+			.forEach(([prop, arr]) => {
+				arr.forEach(ent => {
+					if (!ent.hasRefs) return;
+					WALKER.walk(
+						ent,
+						{
+							object: (obj) => {
+								if (!obj.type || !RefTagCheck._RE_TAG.test(obj.type)) return;
+								const prop = obj.type.slice(3).lowercaseFirst();
+								RefTagCheck._TO_CHECK.push(`{#${prop} ${obj[prop]}}`);
+							},
+							string: (str) => {
+								if (!str.startsWith("{#") || !str.endsWith("}")) return;
+								RefTagCheck._TO_CHECK.push(str);
+							},
+						},
+					)
+				});
+			});
+	}
+
+	static async pPostRun () {
+		if (!RefTagCheck._TO_CHECK.length) return;
+
+		for (const toCheck of RefTagCheck._TO_CHECK) {
+			const toCheckMeta = Renderer.hover.getRefMetaFromTag(toCheck);
+
+			const prop = toCheckMeta.type.slice(3).lowercaseFirst();
+
+			const refUnpacked = DataUtil.generic.unpackUid(toCheckMeta[prop], prop);
+			const refHash = UrlUtil.URL_TO_HASH_BUILDER[prop](refUnpacked);
+
+			const cpy = await Renderer.hover.pCacheAndGetHash(prop, refHash, {isCopy: true});
+			if (!cpy) {
+				MSG.RefTagCheck += `Missing ref tag: ${toCheck}\n`;
+			}
+		}
+	}
+}
+RefTagCheck._RE_TAG = /^ref[A-Z]/;
+RefTagCheck._TO_CHECK = [];
 
 async function main () {
 	const primaryIndex = od.Omnidexer.decompressIndex(await utS.UtilSearchIndex.pGetIndex(false, true));
@@ -965,7 +1012,12 @@ async function main () {
 	ParsedJsonChecker.register(AreaCheck.checkFile.bind(AreaCheck));
 	ParsedJsonChecker.register(EscapeCharacterCheck.checkFile.bind(EscapeCharacterCheck));
 	ParsedJsonChecker.register(DuplicateEntityCheck.checkFile.bind(DuplicateEntityCheck));
+	ParsedJsonChecker.register(RefTagCheck.checkFile.bind(RefTagCheck));
 	ParsedJsonChecker.runAll();
+
+	ut.patchLoadJson();
+	await RefTagCheck.pPostRun();
+	ut.unpatchLoadJson();
 
 	ItemDataCheck.run();
 	ActionData.run();

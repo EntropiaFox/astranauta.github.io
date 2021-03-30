@@ -129,7 +129,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Don-Jon Raskin",
@@ -227,7 +229,9 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Falcon the Hunter",
@@ -329,7 +333,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gorthok the Thunder Boar",
@@ -433,7 +439,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rock Gnome Recluse",
@@ -547,7 +555,8 @@
 			],
 			"spellcastingTags": [
 				"CW"
-			]
+			],
+			"hasFluff": true
 		}
 	]
 }

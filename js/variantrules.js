@@ -4,7 +4,7 @@ class VariantRulesPage extends ListPage {
 	constructor () {
 		const pageFilter = new PageFilterVariantRules();
 		super({
-			dataSource: "data/variantrules.json",
+			dataSource: DataUtil.variantrule.loadJSON,
 
 			pageFilter,
 
@@ -24,13 +24,13 @@ class VariantRulesPage extends ListPage {
 			Renderer.getNames(searchStack, e1);
 		}
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(rule.source);
 		const hash = UrlUtil.autoEncodeHash(rule);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-7 pl-0">${rule.name}</span>
 			<span class="col-3 text-center">${rule.ruleType ? Parser.ruleTypeToFull(rule.ruleType) : "\u2014"}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(rule.source)} pr-0" title="${Parser.sourceJsonToFull(rule.source)}" ${BrewUtil.sourceJsonToStyle(rule.source)}>${source}</span>
@@ -67,11 +67,12 @@ class VariantRulesPage extends ListPage {
 	getSublistItem (it, pinId) {
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		const $ele = $(`<li class="row"><a href="#${hash}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col"><a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-10 pl-0">${it.name}</span>
 				<span class="col-3 text-center pr-0">${it.ruleType ? Parser.ruleTypeToFull(it.ruleType) : "\u2014"}</span>
-			</a></li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+			</a></div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,

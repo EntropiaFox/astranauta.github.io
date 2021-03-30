@@ -32,7 +32,7 @@ class PsionicsPage extends ListPage {
 
 			bookViewOptions: {
 				$btnOpen: $(`#btn-psibook`),
-				noneVisibleMsg: "If you wish to view multiple psionics, please first make a list",
+				$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple psionics, please first make a list</span>`),
 				pageTitle: "Psionics Book View",
 				popTblGetNumShown: $wrpContent => {
 					const toShow = ListUtil.getSublistedIds().map(id => this._dataList[id]);
@@ -85,17 +85,17 @@ class PsionicsPage extends ListPage {
 	getListItem (p, psI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(p, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(p.source);
 		const hash = UrlUtil.autoEncodeHash(p);
 		const typeMeta = Parser.psiTypeToMeta(p.type);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-6 pl-0">${p.name}</span>
-			<span class="col-2">${typeMeta.short}</span>
-			<span class="col-2 ${p._fOrder === VeCt.STR_NONE ? "list-entry-none" : ""}">${p._fOrder}</span>
+			<span class="col-2 text-center">${typeMeta.short}</span>
+			<span class="col-2 text-center ${p._fOrder === VeCt.STR_NONE ? "list-entry-none" : ""}">${p._fOrder}</span>
 			<span class="col-2 text-center pr-0" title="${Parser.sourceJsonToFull(p.source)}" ${BrewUtil.sourceJsonToStyle(p.source)}>${source}</span>
 		</a>`;
 
@@ -132,14 +132,15 @@ class PsionicsPage extends ListPage {
 		const hash = UrlUtil.autoEncodeHash(p);
 		const typeMeta = Parser.psiTypeToMeta(p.type);
 
-		const $ele = $(`<li class="row">
-			<a href="#${hash}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-6 pl-0">${p.name}</span>
 				<span class="col-3">${typeMeta.short}</span>
 				<span class="col-3 ${p._fOrder === VeCt.STR_NONE ? "list-entry-none" : ""} pr-0">${p._fOrder}</span>
 			</a>
-		</li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,
@@ -167,6 +168,15 @@ class PsionicsPage extends ListPage {
 		await ListUtil.pSetFromSubHashes(sub);
 
 		await this._bookView.pHandleSub(sub);
+	}
+
+	_getSearchCache (entity) {
+		if (!entity.entries && !entity.modes && !entity.focus) return "";
+		const ptrOut = {_: ""};
+		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
+		this._getSearchCache_handleEntryProp(entity, "modes", ptrOut);
+		this._getSearchCache_handleEntryProp(entity, "focus", ptrOut);
+		return ptrOut._;
 	}
 }
 

@@ -16,7 +16,7 @@
 			"startingProficiencies": {
 				"weapons": [
 					"simple",
-					"shortswords"
+					"{@item shortsword|phb|shortswords}"
 				],
 				"tools": [
 					"any one type of {@item artisan's tools|PHB} or any one {@item musical instrument|PHB} of your choice"
@@ -82,7 +82,7 @@
 				"proficienciesGained": {
 					"weapons": [
 						"simple",
-						"shortswords"
+						"{@item shortsword|phb|shortswords}"
 					]
 				}
 			},
@@ -2008,7 +2008,7 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"entries": [
-				"A monk who follows the Way of the Astral Self believes their body is an illusion. They see their ki as a representation of their true form, an astral self. This astral self has the capacity to be a force of order or disorder, with some monasteries training students to use their power to protect the weak and other instructing aspirants in how to manifest their rue selves in service to the mighty.",
+				"A monk who follows the Way of the Astral Self believes their body is an illusion. They see their ki as a representation of their true form, an astral self. This astral self has the capacity to be a force of order or disorder, with some monasteries training students to use their power to protect the weak and other instructing aspirants in how to manifest their true selves in service to the mighty.",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "Forms of Your Astral Self|Monk||Astral Self|TCE|3"

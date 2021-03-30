@@ -51,4 +51,4 @@ swFiles = swFiles.concat([
 	"https://cdn.jsdelivr.net/combine/npm/jquery@3.4.1/dist/jquery.min.js,gh/weixsong/elasticlunr.js@0.9/elasticlunr.min.js",
 ]);
 
-fs.writeFileSync("./js/sw-files.js", `this.filesToCache = ${JSON.stringify(swFiles)};`, "utf-8");
+fs.writeFileSync("./js/sw-files.js", `/* eslint-disable */\nthis.filesToCache = ${JSON.stringify(swFiles)};`, "utf-8");

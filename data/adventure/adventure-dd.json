@@ -6,7 +6,7 @@
 			"id": "7be",
 			"entries": [
 				"A war criminal is broken out of prison by well-armed kobolds working for a mysterious mastermind who threatens the gnomish city of Hupperdook. \"Dangerous Designs\" is an adventure that takes characters from 1st to 3rd level, and which introduces them to the Western Wynandir region of the continent under the rule of the Dwendalian Empire. This region is geared toward adventures that involve monster hunting, political intrigue, and the war with Xhorhas.",
-				"If your players are using the heroic chronicle to create their characters (see {@book chapter 4|EGW|14|Heroic Chronicle}), they might wish to create characters who grew up in the Zemni Fields or Marrow Valley, giving them a closer connection to this region and to the Dwendalian Empire. For characters not from Western Wynandir, the players should consider what has drawn those characters to Hupperdook. Because this adventure ties directly to the Kryn Dynasty's conflict with the Dwendalian Empire, you can also ask each player to consider their character's stance on the war and how the war might tie into their background.",
+				"If your players are using the heroic chronicle to create their characters (see {@book chapter 4|EGW|5|Heroic Chronicle}), they might wish to create characters who grew up in the Zemni Fields or Marrow Valley, giving them a closer connection to this region and to the Dwendalian Empire. For characters not from Western Wynandir, the players should consider what has drawn those characters to Hupperdook. Because this adventure ties directly to the Kryn Dynasty's conflict with the Dwendalian Empire, you can also ask each player to consider their character's stance on the war and how the war might tie into their background.",
 				{
 					"type": "section",
 					"name": "Story Overview",
@@ -39,7 +39,7 @@
 							"name": "Setup and Starting Points",
 							"id": "7c1",
 							"entries": [
-								"Before the adventure begins, talk to your players about why their characters might have made the journey to Hupperdook. You can provide details regarding the city and the surrounding region as outlined in {@book chapter 3|EGW|6|Hupperdook}. You can also ask the players if they want to share any of their characters' goals, which might provide reasons for their group to come together. Seeking paying work, purchasing equipment, and wanting to join the war effort are all common reasons for traveling to the gnomish enclave.",
+								"Before the adventure begins, talk to your players about why their characters might have made the journey to Hupperdook. You can provide details regarding the city and the surrounding region as outlined in {@book chapter 3|EGW|4|Hupperdook}. You can also ask the players if they want to share any of their characters' goals, which might provide reasons for their group to come together. Seeking paying work, purchasing equipment, and wanting to join the war effort are all common reasons for traveling to the gnomish enclave.",
 								"Use this time to also discuss if the characters are meeting for the first time or if any of them already know each other."
 							]
 						}
@@ -282,7 +282,7 @@
 									"name": "Treasure",
 									"id": "7d5",
 									"entries": [
-										"If the characters are particularly interested in the functionality of the broken automaton, Cleff offers to repair it. Doing so takes a few hours and costs 15 gp for materials, whereupon the characters are the owners of a {@item vox seeker|EGW} (see {@book chapter 6|EGW|16|Vox Seeker})."
+										"If the characters are particularly interested in the functionality of the broken automaton, Cleff offers to repair it. Doing so takes a few hours and costs 15 gp for materials, whereupon the characters are the owners of a {@item vox seeker|EGW} (see {@book chapter 6|EGW|7|Vox Seeker})."
 									]
 								}
 							]
@@ -367,8 +367,8 @@
 												"path": "book/EGW/114-5.6-nima-cinnarids-house.jpg"
 											},
 											"title": "Map 5.6: Nima Cinnarid's House",
-											"width": 2400,
-											"height": 3000
+											"width": 1200,
+											"height": 1500
 										},
 										{
 											"type": "image",
@@ -712,7 +712,7 @@
 									"name": " Treasure",
 									"id": "7fd",
 									"entries": [
-										"After defeating Sken, the characters can claim her {@item ring of obscuring|EGW} (see {@book chapter 6|EGW|16|Ring of Obscuring}). The workbench Nima was working at holds {@dice 1d4 + 1} {@item Explosive Seed|EGW|explosive seeds} (see the earlier \"{@adventure Alchemical Items|DD|0|Alchemical Items}\" sidebar)."
+										"After defeating Sken, the characters can claim her {@item ring of obscuring|EGW} (see {@book chapter 6|EGW|7|Ring of Obscuring}). The workbench Nima was working at holds {@dice 1d4 + 1} {@item Explosive Seed|EGW|explosive seeds} (see the earlier \"{@adventure Alchemical Items|DD|0|Alchemical Items}\" sidebar)."
 									]
 								}
 							]
@@ -762,7 +762,7 @@
 									},
 									"title": "Map 5.8: Stahlmast's Lair",
 									"width": 2550,
-									"height": 1650
+									"height": 1638
 								},
 								{
 									"type": "image",
@@ -816,7 +816,7 @@
 										{
 											"type": "list",
 											"items": [
-												"The Master is planning to make many tiny metal crabs ({@creature Vox Seeker|EGW|vox seekers}, as described in {@book chapter 6|EGW|16|Vox Seeker}).",
+												"The Master is planning to make many tiny metal crabs ({@creature Vox Seeker|EGW|vox seekers}, as described in {@book chapter 6|EGW|7|Vox Seeker}).",
 												"The gray dwarf is obsessed with his ugly statue.",
 												"The scary elf visits every few weeks to train the kobolds, and then vanishes into the Master's fire room."
 											]
@@ -964,7 +964,7 @@
 									"name": "Vox Seeker",
 									"id": "818",
 									"entries": [
-										"Clinging to the underside of the table is a {@item vox seeker|EGW} (see {@book chapter 6|EGW|16|Vox Seeker}). There is a 25 percent chance that the automaton is wound up when discovered, allowing it to attack for up to 5 minutes."
+										"Clinging to the underside of the table is a {@item vox seeker|EGW} (see {@book chapter 6|EGW|7|Vox Seeker}). There is a 25 percent chance that the automaton is wound up when discovered, allowing it to attack for up to 5 minutes."
 									]
 								},
 								{

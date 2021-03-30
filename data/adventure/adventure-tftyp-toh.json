@@ -1826,7 +1826,7 @@
 							"name": "Creature",
 							"id": "092",
 							"entries": [
-								"The gem has an evil magic placed upon it, and if it is removed from the mummy, the remains become a true {@creature mummy lord} that has no spells and no legendary actions (defeating it awards half XP). Magic upon the mummy lord's wrappings makes them nonflammable, and the creature wears a {@i ring of resistance (fire})."
+								"The gem has an evil magic placed upon it, and if it is removed from the mummy, the remains become a true {@creature mummy lord} that has no spells and no legendary actions (defeating it awards half XP). Magic upon the mummy lord's wrappings makes them nonflammable, and the creature wears a {@item ring of fire resistance||ring of resistance (fire)}."
 							]
 						}
 					]

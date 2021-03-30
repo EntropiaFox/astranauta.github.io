@@ -293,6 +293,10 @@ class RendererCard {
 	_renderAttack (entry, textStack, meta, options) {
 		// TODO?
 	}
+
+	_renderIngredient (entry, textStack, meta, options) {
+		// (Use base implementation)
+	}
 	// endregion
 
 	*/
@@ -336,6 +340,18 @@ class RendererCard {
 
 	_renderDataTrapHazard (entry, textStack, meta, options) {
 		textStack[0] += `text | (Inline trap/hazard rendering within cards is not supported.)\n`
+	}
+
+	_renderDataObject (entry, textStack, meta, options) {
+		textStack[0] += `text | (Inline object rendering within cards is not supported.)\n`
+	}
+
+	_renderDataItem (entry, textStack, meta, options) {
+		textStack[0] += `text | (Inline item rendering within cards is not supported.)\n`
+	}
+
+	_renderDataLegendaryGroup (entry, textStack, meta, options) {
+		textStack[0] += `text | (Inline legendary group rendering within cards is not supported.)\n`
 	}
 	// endregion
 

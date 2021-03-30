@@ -385,121 +385,121 @@
 											],
 											"rows": [
 												[
-													"Asmodeus, god of tyranny",
+													"{@deity Asmodeus|dawn war|dmg}, god of tyranny",
 													"LE",
 													"Trickery",
 													"Three triangles in tight formation"
 												],
 												[
-													"Avandra, goddess of change and luck",
+													"{@deity Avandra|dawn war|dmg}, goddess of change and luck",
 													"CG",
 													"Trickery",
 													"Three stacked wavy lines"
 												],
 												[
-													"Bahamut, god of justice and nobility",
+													"{@deity Bahamut|dawn war|dmg}, god of justice and nobility",
 													"LG",
 													"Life, War",
 													"Dragon's head, in profile, facing left"
 												],
 												[
-													"Bane, god of war and conquest",
+													"{@deity Bane|dawn war|dmg}, god of war and conquest",
 													"LE",
 													"War",
 													"Claw with three talons pointing down"
 												],
 												[
-													"Corellon, god of magic and the arts",
+													"{@deity Corellon|dawn war|dmg}, god of magic and the arts",
 													"CG",
 													"Light",
 													"Eight-pointed star"
 												],
 												[
-													"Erathis, goddess of civilization and invention",
+													"{@deity Erathis|dawn war|dmg}, goddess of civilization and invention",
 													"LN",
 													"Knowledge",
 													"Upper half of a clockwork gear"
 												],
 												[
-													"Gruumsh, god of destruction",
+													"{@deity Gruumsh|dawn war|dmg}, god of destruction",
 													"CE",
 													"Tempest, War",
 													"Triangular eye with bony protrusions"
 												],
 												[
-													"Ioun, goddess of knowledge",
+													"{@deity Ioun|dawn war|dmg}, goddess of knowledge",
 													"N",
 													"Knowledge",
 													"Crook shaped like a stylized eye"
 												],
 												[
-													"Kord, god of strength and storms",
+													"{@deity Kord|dawn war|dmg}, god of strength and storms",
 													"CN",
 													"Tempest",
 													"Sword with a lightning bolt cross guard"
 												],
 												[
-													"Lolth, goddess of spiders and lies",
+													"{@deity Lolth|dawn war|dmg}, goddess of spiders and lies",
 													"CE",
 													"Trickery",
 													"Eight-pointed star with a web motif"
 												],
 												[
-													"Melora, goddess of wilderness and the sea",
+													"{@deity Melora|dawn war|dmg}, goddess of wilderness and the sea",
 													"N",
 													"Nature, Tempest",
 													"Wavelike swirl"
 												],
 												[
-													"Moradin, god of creation",
+													"{@deity Moradin|dawn war|dmg}, god of creation",
 													"LG",
 													"Knowledge, War",
 													"Flaming anvil"
 												],
 												[
-													"Pelor, god of the sun and agriculture",
+													"{@deity Pelor|dawn war|dmg}, god of the sun and agriculture",
 													"NG",
 													"Life, Light",
 													"Circle with six outwardly radiating points"
 												],
 												[
-													"Raven Queen, goddess of death",
+													"{@deity Raven Queen|dawn war|dmg}, goddess of death",
 													"LN",
 													"Life, Death",
 													"Raven's head, in profile, facing left"
 												],
 												[
-													"Sehanine, goddess of the moon",
+													"{@deity Sehanine|dawn war|dmg}, goddess of the moon",
 													"CG",
 													"Trickery",
 													"Crescent moon"
 												],
 												[
-													"Tharizdun, god of madness",
+													"{@deity Tharizdun|dawn war|dmg}, god of madness",
 													"CE",
 													"Trickery",
 													"Jagged counter-clockwise spiral"
 												],
 												[
-													"Tiamat, goddess of wealth, greed, and vengeance",
+													"{@deity Tiamat|dawn war|dmg}, goddess of wealth, greed, and vengeance",
 													"LE",
 													"Trickery, War",
 													"Five-pointed star with curved points"
 												],
 												[
-													"Torog, god of the Underdark",
+													"{@deity Torog|dawn war|dmg}, god of the Underdark",
 													"NE",
 													"Death",
 													"T attached to a circular shackle"
 												],
 												[
-													"Vecna, god of evil secrets",
+													"{@deity Vecna|dawn war|dmg}, god of evil secrets",
 													"NE",
 													"Death, Knowledge",
 													"Partially shattered one-eyed skull"
 												],
 												[
-													"Zehir, god of darkness and poison",
+													"{@deity Zehir|dawn war|dmg}, god of darkness and poison",
 													"CE",
 													"Trickery, Death",
 													"Snake in the shape of a dagger"
@@ -6823,27 +6823,27 @@
 													"rows": [
 														[
 															"1",
-															"x 1"
+															"×1"
 														],
 														[
 															"2",
-															"x 1.5"
+															"×1.5"
 														],
 														[
 															"3-6",
-															"x 2"
+															"×2"
 														],
 														[
 															"7-10",
-															"x 2.5"
+															"×2.5"
 														],
 														[
 															"11-14",
-															"x 3"
+															"×3"
 														],
 														[
 															"15 or more",
-															"x 4"
+															"×4"
 														]
 													]
 												}
@@ -13114,7 +13114,7 @@
 														],
 														[
 															"45-49",
-															"{@dice 2d4} (5) 25 gp art objects.",
+															"{@dice 2d4} (5) 25 gp art objects",
 															"Roll {@dice 1d4} times on {@table Magic Item Table B}."
 														],
 														[
@@ -13321,7 +13321,7 @@
 														[
 															"41-45",
 															"{@dice 3d6} (10) 500 gp gems",
-															"Roll {@dice 1d6} times on {@table Magic Item Table C}.."
+															"Roll {@dice 1d6} times on {@table Magic Item Table C}."
 														],
 														[
 															"46-50",
@@ -14676,7 +14676,7 @@
 									"entries": [
 										"Some magic items allow the user to cast a spell from the item, often by expending charges from it. The spell is cast at the lowest possible spell and caster level, doesn't expend any of the user's spell slots, and requires no components unless the item's description says otherwise. The spell uses its normal casting time, range, and duration, and the user of the item must concentrate if the spell requires concentration. Certain items make exceptions to these rules, changing the casting time, duration, or other parts of a spell.",
 										"Many items, such as potions, bypass the casting of the spell and confer the spell's effects. Such an item still uses the spell's duration unless the item's description says otherwise.",
-										"A magic item, such as certain staffs, may require you to use your own spellcasting ability when you cast a spell from the item. If you have more than one spellcasting ability, you choose which one to use with the item. If you don't have a spellcasting ability - perhaps you're a rogue with the Use Magic Device feature - your spellcasting ability modifier is +0 for the item, and your proficiency bonus does apply."
+										"A magic item, such as certain staffs, may require you to use your own spellcasting ability when you cast a spell from the item. If you have more than one spellcasting ability, you choose which one to use with the item. If you don't have a spellcasting ability\u2014perhaps you're a rogue with the Use Magic Device feature\u2014your spellcasting ability modifier is +0 for the item, and your proficiency bonus does apply."
 									],
 									"id": "264"
 								},
@@ -16179,7 +16179,7 @@
 										],
 										[
 											"27-28",
-											"{@item Rod of absorption}"
+											"{@item Rod of Absorption}"
 										],
 										[
 											"29-30",

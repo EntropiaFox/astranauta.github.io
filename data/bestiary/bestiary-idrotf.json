@@ -126,7 +126,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Auril (First Form)",
@@ -317,7 +318,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Auril (Second Form)",
@@ -448,7 +451,7 @@
 				{
 					"name": "Create Ice Mephit (3/Day)",
 					"entries": [
-						"Auril breaks off an icicle from her body and hurls it into an unoccupied space she can see within 20 feet of her, where it magically transforms into an ice mephit (see its entry in the Monster Manual). The mephit acts immediately after Auril in the initiative order and obeys her commands."
+						"Auril breaks off an icicle from her body and hurls it into an unoccupied space she can see within 20 feet of her, where it magically transforms into an {@creature ice mephit} (see its entry in the Monster Manual). The mephit acts immediately after Auril in the initiative order and obeys her commands."
 					]
 				},
 				{
@@ -503,7 +506,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Auril (Third Form)",
@@ -682,7 +687,9 @@
 			],
 			"conditionInflict": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Avarice",
@@ -857,7 +864,9 @@
 			],
 			"conditionInflictSpell": [
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Awakened White Moose",
@@ -949,7 +958,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Battlehammer Dwarf",
@@ -1157,7 +1168,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Brain in a Jar",
@@ -1306,7 +1319,9 @@
 				"paralyzed",
 				"prone",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chardalyn Berserker",
@@ -1403,7 +1418,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chardalyn Dragon",
@@ -1453,7 +1470,8 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks"
+					"note": "from nonmagical attacks",
+					"cond": true
 				}
 			],
 			"immune": [
@@ -1560,7 +1578,9 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chimeric Baboon",
@@ -1683,7 +1703,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Chimeric Fox",
@@ -1748,7 +1769,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Chimeric Hare",
@@ -1791,7 +1813,8 @@
 						"The hare can take the Dash, Disengage, or Hide action as a bonus action on each of its turns."
 					]
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Chimeric Rat",
@@ -1824,10 +1847,6 @@
 				"perception": "+3",
 				"stealth": "+4"
 			},
-			"senses": [
-				"blindsight 60 ft.",
-				"tremorsense 60 ft."
-			],
 			"passive": 10,
 			"cr": "0",
 			"trait": [
@@ -1938,7 +1957,9 @@
 			"_copy": {
 				"name": "Chwinga",
 				"source": "ToA"
-			}
+			},
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Coldlight Walker",
@@ -2048,7 +2069,9 @@
 			],
 			"conditionInflict": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Demos Magen",
@@ -2153,7 +2176,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dzaan",
@@ -2301,7 +2326,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dzaan's Simulacrum",
@@ -2422,7 +2449,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "F'yorl",
@@ -2451,7 +2480,8 @@
 			},
 			"cr": "0",
 			"spellcasting": null,
-			"action": null
+			"action": null,
+			"spellcastingTags": []
 		},
 		{
 			"name": "Fox",
@@ -2517,7 +2547,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frost Druid",
@@ -2697,7 +2729,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frost Giant Skeleton",
@@ -2798,7 +2832,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Galvan Magen",
@@ -2901,7 +2937,9 @@
 			],
 			"miscTags": [
 				"AOE"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Walrus",
@@ -2978,7 +3016,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnoll Vampire",
@@ -3032,7 +3072,8 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks"
+					"note": "from nonmagical attacks",
+					"cond": true
 				}
 			],
 			"languages": [
@@ -3145,7 +3186,9 @@
 			"conditionInflict": [
 				"frightened",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnome Ceremorph",
@@ -3290,7 +3333,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnome Squidling",
@@ -3396,7 +3441,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Goliath Warrior",
@@ -3505,7 +3552,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Goliath Werebear",
@@ -3568,7 +3617,8 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks that aren't silvered"
+					"note": "from nonmagical attacks that aren't silvered",
+					"cond": true
 				}
 			],
 			"vulnerable": [
@@ -3658,7 +3708,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grandolpha Muzgardt",
@@ -3774,7 +3826,9 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gunvald Halraggson",
@@ -3882,7 +3936,8 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Hare",
@@ -3925,7 +3980,9 @@
 				}
 			],
 			"familiar": true,
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Headless Iron Golem",
@@ -3972,7 +4029,8 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks that aren't adamantine"
+					"note": "from nonmagical attacks that aren't adamantine",
+					"cond": true
 				}
 			],
 			"conditionImmune": [
@@ -4062,7 +4120,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Hengar Aesnvaard",
@@ -4182,7 +4241,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Hypnos Magen",
@@ -4269,7 +4329,9 @@
 			],
 			"damageTags": [
 				"Y"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ice Piercer",
@@ -4352,7 +4414,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Ice Troll",
@@ -4460,7 +4523,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Icewind Kobold",
@@ -4563,7 +4628,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Icewind Kobold Zombie",
@@ -4652,7 +4719,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Isarr Kronenstrom",
@@ -4767,7 +4835,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Jarund Elkhardt",
@@ -4875,7 +4944,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Kadroth",
@@ -5012,7 +5082,9 @@
 			"conditionInflictSpell": [
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kingsport",
@@ -5081,7 +5153,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Knight of the Black Sword",
@@ -5216,7 +5290,8 @@
 			"conditionInflictSpell": [
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Knucklehead Trout",
@@ -5284,7 +5359,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kobold Vampire Spawn",
@@ -5333,7 +5410,8 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks"
+					"note": "from nonmagical attacks",
+					"cond": true
 				}
 			],
 			"languages": [
@@ -5398,7 +5476,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Living Bigby's Hand",
@@ -5503,7 +5583,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Living Blade of Disaster",
@@ -5553,7 +5635,8 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks"
+					"note": "from nonmagical attacks",
+					"cond": true
 				}
 			],
 			"conditionImmune": [
@@ -5613,7 +5696,9 @@
 			],
 			"damageTags": [
 				"O"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Living Demiplane",
@@ -5702,7 +5787,9 @@
 			],
 			"senseTags": [
 				"D"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lonelywood Banshee",
@@ -5755,7 +5842,8 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks"
+					"note": "from nonmagical attacks",
+					"cond": true
 				}
 			],
 			"immune": [
@@ -5830,7 +5918,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mjenir",
@@ -5932,7 +6022,8 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Mountain Goat",
@@ -5996,7 +6087,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nass Lantomir's Ghost",
@@ -6041,7 +6134,8 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks"
+					"note": "from nonmagical attacks",
+					"cond": true
 				}
 			],
 			"immune": [
@@ -6165,7 +6259,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Prisoner 237",
@@ -6284,7 +6380,9 @@
 			],
 			"conditionInflictSpell": [
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Reghed Chieftain",
@@ -6401,7 +6499,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Reghed Great Warrior",
@@ -6519,7 +6618,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Reghed Shaman",
@@ -6622,7 +6722,8 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Reghed Warrior",
@@ -6698,7 +6799,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Reindeer",
@@ -6714,7 +6816,8 @@
 						"with": "reindeer"
 					}
 				}
-			}
+			},
+			"hasFluff": true
 		},
 		{
 			"name": "Seal",
@@ -6782,7 +6885,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sephek Kaltro",
@@ -6891,7 +6996,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Snow Golem",
@@ -6931,7 +7038,8 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks"
+					"note": "from nonmagical attacks",
+					"cond": true
 				}
 			],
 			"vulnerable": [
@@ -7010,7 +7118,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Snowy Owlbear",
@@ -7096,7 +7206,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Spellix Romwod",
@@ -7222,7 +7333,8 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sperm Whale",
@@ -7320,7 +7432,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spitting Mimic",
@@ -7452,7 +7566,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Telepathic Pentacle",
@@ -7552,7 +7668,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Tomb Tapper",
@@ -7682,7 +7799,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tribal Warrior Spore Servants",
@@ -7898,7 +8017,9 @@
 				"paralyzed",
 				"poisoned",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Verbeeg Longstrider",
@@ -8019,7 +8140,8 @@
 			],
 			"conditionInflictSpell": [
 				"deafened"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Verbeeg Marauder",
@@ -8105,7 +8227,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Walrus",
@@ -8160,7 +8284,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Xardorok Sunblight",
@@ -8321,7 +8446,9 @@
 			],
 			"conditionInflictSpell": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yeti Tyke",
@@ -8405,7 +8532,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Griffon (Medium)",
@@ -8485,7 +8614,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Griffon (Small)",
@@ -8565,7 +8696,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Griffon (Tiny)",
@@ -8645,7 +8778,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

@@ -19,15 +19,15 @@ class DeitiesPage extends ListPage {
 	getListItem (g, dtI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(g, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(g.source);
 		const hash = UrlUtil.autoEncodeHash(g);
 		const alignment = g.alignment ? g.alignment.join("") : "\u2014";
 		const domains = g.domains.join(", ");
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-3 pl-0">${g.name}</span>
 			<span class="col-2 text-center">${g.pantheon}</span>
 			<span class="col-2 text-center">${alignment}</span>
@@ -71,15 +71,16 @@ class DeitiesPage extends ListPage {
 		const alignment = g.alignment ? g.alignment.join("") : "\u2014";
 		const domains = g.domains.join(", ");
 
-		const $ele = $(`<li class="row">
-			<a href="#${hash}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-4 pl-0">${g.name}</span>
 				<span class="col-2">${g.pantheon}</span>
 				<span class="col-2">${alignment}</span>
 				<span class="col-4 ${g.domains[0] === VeCt.STR_NONE ? `list-entry-none` : ""} pr-0">${domains}</span>
 			</a>
-		</li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,

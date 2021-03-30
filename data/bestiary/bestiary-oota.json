@@ -76,7 +76,11 @@
 				"N",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"damageTags": [
+				"B",
+				"P"
+			]
 		},
 		{
 			"name": "Animated Drow Statue",
@@ -183,7 +187,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Blurg",
@@ -825,7 +830,9 @@
 			],
 			"conditionInflictSpell": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Acolyte",
@@ -1061,7 +1068,12 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"damageTags": [
+				"A",
+				"F",
+				"P"
+			]
 		},
 		{
 			"name": "Duergar Darkhaft",
@@ -1196,7 +1208,8 @@
 			],
 			"conditionInflictSpell": [
 				"unconscious"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Keeper of the Flame",
@@ -1362,7 +1375,8 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Spore Servant",
@@ -1628,7 +1642,10 @@
 					]
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"damageTags": [
+				"S"
+			]
 		},
 		{
 			"name": "Gash",
@@ -2206,7 +2223,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ixitxachitl Cleric",
@@ -2320,7 +2339,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Jade Giant Spider",
@@ -2716,20 +2736,62 @@
 							"name": "Eye Rays",
 							"entries": [
 								"The beholder shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:",
-								"{@i 1. Charm Ray.} The targeted creature must succeed on a {@dc 16} Wisdom saving throw or be {@condition charmed} by the beholder for 1 hour, or until the beholder harms the creature.",
-								"{@i 2. Paralyzing Ray.} The targeted creature must succeed on a {@dc 16} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-								"{@i 3. Fear Ray.} The targeted creature must succeed on a {@dc 16} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-								"{@i 4. Slowing Ray.} The targeted creature must succeed on a {@dc 16} Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-								"{@i 5. Enervation Ray.} The targeted creature must make a {@dc 16} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one.",
-								"{@i 6. Telekinetic Ray.} If the target is a creature, it must succeed on a {@dc 16} Strength saving throw or the beholder moves it up to 30 feet in any direction. It is {@condition restrained} by the ray's telekinetic grip until the start of the beholder's next turn or until the beholder is {@condition incapacitated}.",
-								"If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The beholder can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container."
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"type": "item",
+											"name": "1. Charm Ray.",
+											"style": "italic",
+											"entry": "The targeted creature must succeed on a {@dc 16} Wisdom saving throw or be {@condition charmed} by the beholder for 1 hour, or until the beholder harms the creature."
+										},
+										{
+											"type": "item",
+											"name": "2. Paralyzing Ray.",
+											"style": "italic",
+											"entry": "The targeted creature must succeed on a {@dc 16} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+										},
+										{
+											"type": "item",
+											"name": "3. Fear Ray.",
+											"style": "italic",
+											"entry": "The targeted creature must succeed on a {@dc 16} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+										},
+										{
+											"type": "item",
+											"name": "4. Slowing Ray.",
+											"style": "italic",
+											"entry": "The targeted creature must succeed on a {@dc 16} Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+										},
+										{
+											"type": "item",
+											"name": "5. Enervation Ray.",
+											"style": "italic",
+											"entry": "The targeted creature must make a {@dc 16} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one."
+										},
+										{
+											"type": "item",
+											"name": "6. Telekinetic Ray.",
+											"style": "italic",
+											"entries": [
+												"If the target is a creature, it must succeed on a {@dc 16} Strength saving throw or the beholder moves it up to 30 feet in any direction. It is {@condition restrained} by the ray's telekinetic grip until the start of the beholder's next turn or until the beholder is {@condition incapacitated}.",
+												"If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The beholder can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container."
+											]
+										}
+									]
+								}
 							]
 						}
 					}
 				}
 			},
 			"cr": "9",
-			"hasToken": true
+			"hasToken": true,
+			"damageTags": [
+				"N",
+				"P"
+			]
 		},
 		{
 			"name": "Narrak",
@@ -3225,40 +3287,41 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"damageTags": [
+				"B",
+				"I"
+			],
+			"conditionInflict": [
+				"incapacitated",
+				"poisoned",
+				"stunned"
+			]
 		},
 		{
 			"name": "Spider King",
 			"isNpc": true,
 			"source": "OotA",
 			"page": 74,
-			"size": "L",
-			"type": "beast",
-			"alignment": [
-				"U"
-			],
-			"ac": [
-				{
-					"ac": 14,
-					"from": [
-						"natural armor"
-					]
+			"_copy": {
+				"name": "Giant Spider",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Two Heads",
+							"entries": [
+								"Because of its two heads, the Spider King has advantage on Wisdom ({@skill Perception}) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, and knocked {@condition unconscious}."
+							]
+						}
+					}
 				}
-			],
+			},
 			"hp": {
 				"average": 44,
 				"formula": "4d10 + 4"
 			},
-			"speed": {
-				"walk": 30,
-				"climb": 30
-			},
-			"str": 14,
-			"dex": 16,
-			"con": 12,
-			"int": 2,
-			"wis": 11,
-			"cha": 4,
 			"save": {
 				"con": "+3",
 				"wis": "+2"
@@ -3267,52 +3330,7 @@
 				"stealth": "+7",
 				"perception": "+4"
 			},
-			"senses": [
-				"blindsight 10 ft.",
-				"darkvision 60 ft."
-			],
 			"passive": 14,
-			"cr": "1",
-			"trait": [
-				{
-					"name": "Two Heads",
-					"entries": [
-						"Because of its two heads, the Spider King has advantage on Wisdom ({@skill Perception}) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, and knocked {@condition unconscious}."
-					]
-				},
-				{
-					"name": "Spider Climb",
-					"entries": [
-						"The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
-					]
-				},
-				{
-					"name": "Web Sense",
-					"entries": [
-						"While in contact with a web, the spider knows the exact location of any other creature in contact with the same web."
-					]
-				},
-				{
-					"name": "Web Walker",
-					"entries": [
-						"The spider ignores movement restrictions caused by webbing."
-					]
-				}
-			],
-			"action": [
-				{
-					"name": "Bite",
-					"entries": [
-						"{@atk mw} {@hit 5} to hit, reach 5 ft., one creature. {@h}7 ({@damage 1d8 + 3}) piercing damage, and the target must make a {@dc 11} Constitution saving throw, taking 9 ({@damage 2d8}) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but {@condition poisoned} for 1 hour, even after regaining hit points, and is {@condition paralyzed} while {@condition poisoned} in this way."
-					]
-				},
-				{
-					"name": "Web {@recharge 5}",
-					"entries": [
-						"{@atk rw} {@hit 5} to hit, range 30/60 ft., one creature. {@h}The target is {@condition restrained} by webbing. As an action, the {@condition restrained} target can make a {@dc 12} Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage)."
-					]
-				}
-			],
 			"hasToken": true,
 			"traitTags": [
 				"Spider Climb",
@@ -3322,19 +3340,6 @@
 			"senseTags": [
 				"B",
 				"D"
-			],
-			"damageTags": [
-				"I",
-				"P"
-			],
-			"miscTags": [
-				"MW",
-				"RW"
-			],
-			"conditionInflict": [
-				"paralyzed",
-				"poisoned",
-				"restrained"
 			]
 		},
 		{
@@ -3587,7 +3592,8 @@
 				"charmed",
 				"deafened",
 				"poisoned"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Themberchaud",
@@ -3751,7 +3757,8 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Turvy",
@@ -3843,7 +3850,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Vampiric Ixitxachitl Cleric",
@@ -3957,7 +3965,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Veldyskar",
@@ -4267,7 +4276,8 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Basilisk",

@@ -9,16 +9,18 @@ class PageFilterEquipment extends PageFilter {
 		this._costFilter = new RangeFilter({header: "Cost", min: 0, max: 100, isAllowGreater: true, suffix: " gp"});
 		this._weightFilter = new RangeFilter({header: "Weight", min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
 		this._focusFilter = new Filter({header: "Spellcasting Focus", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES]});
-		this._damageTypeFilter = new Filter({header: "Damage Type", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a), Parser.dmgTypeToFull(b))});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Item Group", "SRD"], isSrdFilter: true});
+		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a), Parser.dmgTypeToFull(b))});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Item Group", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
 		this._poisonTypeFilter = new Filter({header: "Poison Type", items: ["ingested", "injury", "inhaled", "contact"], displayFn: StrUtil.toTitleCase});
 	}
 
-	mutateForFilters (item) {
+	static mutateForFilters (item) {
 		item._fProperties = item.property ? item.property.map(p => Renderer.item.propertyMap[p].name).filter(n => n) : [];
 
 		item._fMisc = item.srd ? ["SRD"] : [];
 		if (item._isItemGroup) item._fMisc.push("Item Group");
+		if (item.hasFluff) item._fMisc.push("Has Info");
+		if (item.hasFluffImages) item._fMisc.push("Has Images");
 
 		if (item.focus || item.type === "INS" || item.type === "SCF") {
 			item._fFocus = item.focus ? item.focus === true ? [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES] : [...item.focus] : [];
@@ -113,6 +115,14 @@ class PageFilterItems extends PageFilterEquipment {
 		else return 0;
 	}
 
+	static _getBaseItemDisplay (baseItem) {
+		if (!baseItem) return null;
+		let [name, source = SRC_DMG] = baseItem.split("|");
+		name = name.toTitleCase();
+		if (source.toLowerCase() === SRC_PHB.toLowerCase()) return name;
+		return `${name} (${Parser.sourceJsonToAbv(source)})`;
+	}
+
 	// endregion
 	constructor () {
 		super();
@@ -133,19 +143,20 @@ class PageFilterItems extends PageFilterEquipment {
 			itemSortFn: null,
 			displayFn: StrUtil.toTitleCase,
 		});
-		this._attunementFilter = new Filter({header: "Attunement", items: ["Yes", "By...", "Optional", "No"], itemSortFn: null});
+		this._attunementFilter = new Filter({header: "Attunement", items: ["Requires Attunement", "Requires Attunement By...", "Attunement Optional", VeCt.STR_NO_ATTUNEMENT], itemSortFn: null});
 		this._categoryFilter = new Filter({
 			header: "Category",
 			items: ["Basic", "Generic Variant", "Specific Variant", "Other"],
 			deselFn: (it) => it === "Specific Variant",
 			itemSortFn: null,
 		});
-		this._bonusFilter = new Filter({header: "Bonus", items: ["Armor Class", "Spell Attacks", "Saving Throws", "Weapon Attack and Damage Rolls", "Weapon Attack Rolls", "Weapon Damage Rolls"]});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Ability Score Adjustment", "Charges", "Cursed", "Grants Proficiency", "Item Group", "Magic", "Mundane", "Sentient", "SRD"], isSrdFilter: true});
+		this._bonusFilter = new Filter({header: "Bonus", items: ["Armor Class", "Proficiency Bonus", "Spell Attacks", "Spell Save DC", "Saving Throws", "Weapon Attack and Damage Rolls", "Weapon Attack Rolls", "Weapon Damage Rolls"]});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Ability Score Adjustment", "Charges", "Cursed", "Grants Proficiency", "Has Images", "Has Info", "Item Group", "Magic", "Mundane", "Sentient", "SRD"], isSrdFilter: true});
 		this._baseSourceFilter = new SourceFilter({header: "Base Source", selFn: null});
+		this._baseItemFilter = new Filter({header: "Base Item", displayFn: this.constructor._getBaseItemDisplay.bind(this.constructor)});
 	}
 
-	mutateForFilters (item) {
+	static mutateForFilters (item) {
 		super.mutateForFilters(item);
 
 		item._fTier = [item.tier ? item.tier : "none"];
@@ -165,7 +176,9 @@ class PageFilterItems extends PageFilterEquipment {
 		if (item.bonusWeaponAttack) item._fBonus.push("Weapon Attack Rolls");
 		if (item.bonusWeaponDamage) item._fBonus.push("Weapon Damage Rolls");
 		if (item.bonusSpellAttack) item._fBonus.push("Spell Attacks");
+		if (item.bonusSpellSaveDc) item._fBonus.push("Spell Save DC");
 		if (item.bonusSavingThrow) item._fBonus.push("Saving Throws");
+		if (item.bonusProficiencyBonus) item._fBonus.push("Proficiency Bonus");
 	}
 
 	addToFilters (item, isExcluded) {
@@ -177,6 +190,7 @@ class PageFilterItems extends PageFilterEquipment {
 		this._tierFilter.addItem(item._fTier)
 		this._attachedSpellsFilter.addItem(item.attachedSpells);
 		this._lootTableFilter.addItem(item.lootTables);
+		this._baseItemFilter.addItem(item.baseItem);
 		this._baseSourceFilter.addItem(item._baseSource);
 	}
 
@@ -198,6 +212,7 @@ class PageFilterItems extends PageFilterEquipment {
 			this._bonusFilter,
 			this._miscFilter,
 			this._lootTableFilter,
+			this._baseItemFilter,
 			this._baseSourceFilter,
 			this._poisonTypeFilter,
 			this._attachedSpellsFilter,
@@ -221,6 +236,7 @@ class PageFilterItems extends PageFilterEquipment {
 			it._fBonus,
 			it._fMisc,
 			it.lootTables,
+			it.baseItem,
 			it._baseSource,
 			it.poisonTypes,
 			it.attachedSpells,
@@ -240,15 +256,15 @@ class ModalFilterItems extends ModalFilter {
 		opts = opts || {};
 		super({
 			...opts,
-			modalTitle: "Items",
+			modalTitle: `Item${opts.isRadio ? "" : "s"}`,
 			pageFilter: new PageFilterItems(),
 		})
 	}
 
 	_$getColumnHeaders () {
 		const btnMeta = [
-			{sort: "name", text: "Name", width: "5"},
-			{sort: "type", text: "Type", width: "5"},
+			{sort: "name", text: "Name", width: "4"},
+			{sort: "type", text: "Type", width: "6"},
 			{sort: "source", text: "Source", width: "1"},
 		];
 		return ModalFilter._$getFilterColumnHeaders(btnMeta);
@@ -261,7 +277,7 @@ class ModalFilterItems extends ModalFilter {
 	async _pLoadAllData () {
 		const brew = await BrewUtil.pAddBrewData();
 		const fromData = await Renderer.item.pBuildList({isAddGroups: true, isBlacklistVariants: true});
-		const fromBrew = await Renderer.item.getItemsFromHomebrew(brew);
+		const fromBrew = await Renderer.item.pGetItemsFromHomebrew(brew);
 		return [...fromData, ...fromBrew];
 	}
 
@@ -271,21 +287,28 @@ class ModalFilterItems extends ModalFilter {
 		Renderer.item.enhanceItem(item);
 		pageFilter.mutateAndAddToFilters(item);
 
-		const eleLabel = document.createElement("label");
-		eleLabel.className = "row lst--border no-select lst__wrp-cells";
+		const eleRow = document.createElement("div");
+		eleRow.className = "px-0 w-100 flex-col no-shrink";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](item);
 		const source = Parser.sourceJsonToAbv(item.source);
 		const type = item._typeListText.join(", ");
 
-		eleLabel.innerHTML = `<div class="col-1 pl-0 flex-vh-center"><input type="checkbox" class="no-events"></div>
-		<div class="col-5 bold">${item.name}</div>
-		<div class="col-5">${type.uppercaseFirst()}</div>
-		<div class="col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0" title="${Parser.sourceJsonToFull(item.source)}" ${BrewUtil.sourceJsonToStyle(item.source)}>${source}</div>`;
+		eleRow.innerHTML = `<div class="w-100 flex-vh-center lst--border no-select lst__wrp-cells">
+			<div class="col-0-5 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 
-		return new ListItem(
+			<div class="col-0-5 px-1 flex-vh-center">
+				<div class="ui-list__btn-inline px-2" title="Toggle Preview">[+]</div>
+			</div>
+
+			<div class="col-5 ${this._getNameStyle()}">${item.name}</div>
+			<div class="col-5">${type.uppercaseFirst()}</div>
+			<div class="col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0" title="${Parser.sourceJsonToFull(item.source)}" ${BrewUtil.sourceJsonToStyle(item.source)}>${source}</div>
+		</div>`;
+
+		const listItem = new ListItem(
 			itI,
-			eleLabel,
+			eleRow,
 			item.name,
 			{
 				hash,
@@ -294,8 +317,13 @@ class ModalFilterItems extends ModalFilter {
 				type,
 			},
 			{
-				cbSel: eleLabel.firstElementChild.firstElementChild,
+				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
 			},
 		);
+
+		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
+		ListUiUtil.bindPreviewButton(UrlUtil.PG_ITEMS, this._allData, listItem, btnShowHidePreview);
+
+		return listItem;
 	}
 }

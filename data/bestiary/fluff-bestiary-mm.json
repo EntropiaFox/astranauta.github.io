@@ -4143,8 +4143,15 @@
 							"type": "entries",
 							"entries": [
 								"Dragon turtles are among the most fearsome creatures of the oceans. As large and voracious as the oldest of its land-based dragon kin, a dragon turtle strikes with its deadly jaws, steaming breath, and crushing tail.",
-								"A dragon turtle's rough shell is the same dark green color as the deep water where this monster dwells. Silver highlights lining the shell resemble light dancing on open water, and a surfacing dragon turtle is sometimes mistaken for the reflection of the sun or moon on the waves. Dragons of the Deep. Like true dragons, dragon turtles collect treasure, first by sinking ships and then by sifting through the wreckage for coins and other precious items. A dragon turtle swallows treasure for transport, then regurgitates it when it reaches its lair.",
-								"Dragon turtles dwell in caves hidden in coral reefs or beneath the seafloor, or along rugged stretches of coastline. If a choice cave is already inhabited, a dragon turtle attacks its current residents in an attempt to take over.",
+								"A dragon turtle's rough shell is the same dark green color as the deep water where this monster dwells. Silver highlights lining the shell resemble light dancing on open water, and a surfacing dragon turtle is sometimes mistaken for the reflection of the sun or moon on the waves.",
+								{
+									"type": "entries",
+									"name": "Dragons of the Deep",
+									"entries": [
+										"Like true dragons, dragon turtles collect treasure, first by sinking ships and then by sifting through the wreckage for coins and other precious items. A dragon turtle swallows treasure for transport, then regurgitates it when it reaches its lair.",
+										"Dragon turtles dwell in caves hidden in coral reefs or beneath the seafloor, or along rugged stretches of coastline. If a choice cave is already inhabited, a dragon turtle attacks its current residents in an attempt to take over."
+									]
+								},
 								{
 									"name": "Mercenary Monsters",
 									"type": "entries",
@@ -6185,23 +6192,6 @@
 			]
 		},
 		{
-			"name": "Giant Rat (Diseased)",
-			"source": "MM",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Some giant rats carry vile diseases that they spread with their bites."
-							]
-						}
-					]
-				}
-			]
-		},
-		{
 			"name": "Giant Sea Horse",
 			"source": "MM",
 			"entries": [
@@ -7479,8 +7469,15 @@
 						{
 							"type": "entries",
 							"entries": [
-								"The degenerate subterranean grimlocks were once human, but their worship of the mind flayers over generations of prowling the Underdark transformed them into blind, monstrous cannibals long ago. Debased Cultists. The empire of the mind flayers once spread across many worlds, enslaving countless races. Among those were human cultures whose high priests the mind flayers subverted using their insidious powers of thought control. Those leaders gradually turned the faiths of their followers toward the illithids, which they worshiped as blasphemous deities.",
-								"Over time, the rituals of these enslaved humans created fervent cannibal cults that regarded the brain eating of the mind flayers as a holy sacrament. The illithids commanded their worshipers to abduct other sentient creatures to be sacrificed. After the victims' brains had been consumed, the mind flayers gave the lifeless bodies to the cultists.",
+								"The degenerate subterranean grimlocks were once human, but their worship of the mind flayers over generations of prowling the Underdark transformed them into blind, monstrous cannibals long ago.",
+								{
+									"type": "entries",
+									"name": "Debased Cultists",
+									"entries": [
+										"The empire of the mind flayers once spread across many worlds, enslaving countless races. Among those were human cultures whose high priests the mind flayers subverted using their insidious powers of thought control. Those leaders gradually turned the faiths of their followers toward the illithids, which they worshiped as blasphemous deities.",
+										"Over time, the rituals of these enslaved humans created fervent cannibal cults that regarded the brain eating of the mind flayers as a holy sacrament. The illithids commanded their worshipers to abduct other sentient creatures to be sacrificed. After the victims' brains had been consumed, the mind flayers gave the lifeless bodies to the cultists."
+									]
+								},
 								{
 									"name": "Blind Hunters",
 									"type": "entries",
@@ -9760,7 +9757,7 @@
 									"name": "Whimsical Storytellers",
 									"type": "entries",
 									"entries": [
-										"Marids are champion tale. Tellers, whose favorite legends emphasize the prowess of marids in general and of the speaker in particular. Fanciful genies, they lie often and creatively. They aren't always malicious in their deception, but embellishments suit their fancy. Marids consider it a crime for a lesser being to interrupt one of their tales, and offending a marid is a sure way to invoke its wrath."
+										"Marids are champion tale-tellers, whose favorite legends emphasize the prowess of marids in general and of the speaker in particular. Fanciful genies, they lie often and creatively. They aren't always malicious in their deception, but embellishments suit their fancy. Marids consider it a crime for a lesser being to interrupt one of their tales, and offending a marid is a sure way to invoke its wrath."
 									]
 								},
 								{
@@ -14542,14 +14539,6 @@
 					}
 				}
 			]
-		},
-		{
-			"name": "Thri-kreen (Psionic)",
-			"source": "MM",
-			"_copy": {
-				"name": "Thri-kreen",
-				"source": "MM"
-			}
 		},
 		{
 			"name": "Thug",

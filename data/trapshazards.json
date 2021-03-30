@@ -24,6 +24,7 @@
 			"name": "Collapsing Roof",
 			"source": "DMG",
 			"page": 122,
+			"srd": true,
 			"trapHazType": "MECH",
 			"entries": [
 				"This trap uses a trip wire to collapse the supports keeping an unstable section of a ceiling in place.",
@@ -57,6 +58,7 @@
 			"name": "Falling Net",
 			"source": "DMG",
 			"page": 122,
+			"srd": true,
 			"trapHazType": "MECH",
 			"entries": [
 				"This trap uses a trip wire to release a net suspended from the ceiling.",
@@ -110,6 +112,7 @@
 			"name": "Fire-Breathing Statue",
 			"source": "DMG",
 			"page": 122,
+			"srd": true,
 			"trapHazType": "MAG",
 			"entries": [
 				"This trap is activated when an intruder steps on a hidden pressure plate, releasing a magical gout of flame from a nearby statue. The statue can be of anything, including a dragon or a wizard casting a spell.",
@@ -278,6 +281,7 @@
 			"name": "Pits",
 			"source": "DMG",
 			"page": 122,
+			"srd": true,
 			"trapHazType": "MECH",
 			"entries": [
 				{
@@ -319,6 +323,7 @@
 			"name": "Poison Darts",
 			"source": "DMG",
 			"page": 123,
+			"srd": true,
 			"trapHazType": "MECH",
 			"entries": [
 				"When a creature steps on a hidden pressure plate, poison-tipped darts shoot from spring-loaded or pressurized tubes cleverly embedded in the surrounding walls. An area might include multiple pressure plates, each one rigged to its own set of darts.",
@@ -330,6 +335,7 @@
 			"name": "Poison Needle",
 			"source": "DMG",
 			"page": 123,
+			"srd": true,
 			"trapHazType": "MECH",
 			"entries": [
 				"A poisoned needle is hidden within a treasure chest's lock, or in something else that a creature might open. Opening the chest without the proper key causes the needle to spring out, delivering a dose of poison.",
@@ -474,6 +480,7 @@
 			"name": "Rolling Sphere",
 			"source": "DMG",
 			"page": 123,
+			"srd": true,
 			"trapHazType": "MECH",
 			"entries": [
 				"When 20 or more pounds of pressure are placed on this trap's pressure plate, a hidden trapdoor in the ceiling opens, releasing a 10-foot-diameter rolling sphere of solid stone.",
@@ -529,6 +536,7 @@
 			"name": "Sphere of Annihilation",
 			"source": "DMG",
 			"page": 123,
+			"srd": true,
 			"trapHazType": "MAG",
 			"entries": [
 				"Magical, impenetrable darkness fills the gaping mouth of a stone face carved into a wall. The mouth is 2 feet in diameter and roughly circular. No sound issues from it, no light can illuminate the inside of it, and any matter that enters it is instantly obliterated.",
@@ -821,6 +829,26 @@
 			]
 		},
 		{
+			"name": "Flame Storm",
+			"source": "TCE",
+			"page": 163,
+			"trapHazType": "EST",
+			"entries": [
+				"Sooty thunderclouds shot through with red and orange lightning release a deluge of fiery droplets. Any creature caught in the burning rain takes {@dice 2d6} fire damage at the start of each of its turns. The droplets ignite any flammable objects that aren't being worn or carried; otherwise, the droplets burn out immediately. The smoke, soot, crackle, and low roar of the storm impose disadvantage on Wisdom ({@skill Perception}) checks and ranged attack rolls.",
+				"A flame storm usually lasts {@dice 2d4} minutes, though the originating storm clouds can persist for days, creating multiple flame storms."
+			]
+		},
+		{
+			"name": "Flaywind",
+			"source": "TCE",
+			"page": 163,
+			"trapHazType": "EST",
+			"entries": [
+				"Supernaturally powerful winds\u2014like those from planes such as Pandemonium or Minethys, the third layer of Carceri\u2014can spawn flaywinds. A flaywind is an intense sandstorm, gathering large rocks and other debris in addition to sand or grit. The area within the storm is heavily obscured, and a creature exposed to the storm takes {@dice 1d4} slashing damage at the start of each of its turns. Only substantial cover or shelter offers protection against the flensing grit.",
+				"A flaywind leaves {@dice 4d6} feet of sand or debris in its wake. A successful DC 15 Intelligence ({@skill Arcana}) or ({@skill Nature}) check or Wisdom ({@skill Survival}) check allows a character to recognize a flaywind 1 minute before it strikes, allowing time to seek shelter. A flaywind typically lasts {@dice 1d4 × 10} hours."
+			]
+		},
+		{
 			"name": "Frigid Water",
 			"source": "DMG",
 			"page": 110,
@@ -953,6 +981,17 @@
 			]
 		},
 		{
+			"name": "Necrotic Tempest",
+			"source": "TCE",
+			"page": 163,
+			"trapHazType": "EST",
+			"entries": [
+				"Storms infused with the essence of death roil with dark clouds that manifest leering skulls and bone-white lightning. Any creature exposed to the storm that isn't a construct or an undead must succeed on a DC 13 Constitution saving throw at the end of each minute or take {@dice 3d6} necrotic damage.",
+				"A creature that dies in a necrotic tempest rises as a {@creature skeleton} or {@creature zombie} (your choice) {@dice 1d10} minutes later.",
+				" A necrotic tempest lasts for {@dice 1d4} hours and leaves crops withered and wells undrinkable for {@dice 1d4} days after its passing."
+			]
+		},
+		{
 			"name": "Quicksand",
 			"source": "DMG",
 			"page": 110,
@@ -1008,6 +1047,17 @@
 			"trapHazType": "WLD",
 			"entries": [
 				"Thin ice has a weight tolerance of 3d10 × 10 pounds per 10-foot-square area. Whenever the total weight on an area of thin ice exceeds its tolerance, the ice in that area breaks. All creatures on broken ice fall through."
+			]
+		},
+		{
+			"name": "Thrym's Howl",
+			"source": "TCE",
+			"page": 163,
+			"trapHazType": "EST",
+			"entries": [
+				"These bone-chilling blizzards drive a wall of wind and snow like a living glacier. The storm projects {@book extreme cold|DMG|5|Extreme Cold} (see the {@book Dungeon Master's Guide|DMG}). Due to the howling wind and dense blue-white ice particles, the area in the storm is heavily obscured, and ranged attack rolls and Wisdom ({@skill Perception}) checks made within it have disadvantage.",
+				"Any creature exposed to the storm at the start of its turn takes {@dice 2d6} cold damage and can't regain hit points until it spends at least 1 hour in a warm environment. A creature that dies in the storm freezes solid. Creatures that are immune to cold damage are immune to the effects of the storm and can see normally within it.",
+				"Thrym's howl typically lasts {@dice 2d10} hours."
 			]
 		},
 		{

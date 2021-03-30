@@ -42,6 +42,7 @@ class CreatureParser extends BaseParser {
 				"SENSES",
 				"LANGUAGES",
 				"CHALLENGE",
+				"PROFICIENCY BONUS",
 			];
 			const NO_ABSORB_TITLES = [
 				"ACTION",
@@ -173,7 +174,7 @@ class CreatureParser extends BaseParser {
 			if (!curLine.indexOf_handleColon("Damage Vulnerabilities ")) {
 				// noinspection StatementWithEmptyBodyJS
 				while (absorbBrokenLine());
-				this._setCleanDamageVuln(stats, curLine);
+				this._setCleanDamageVuln(stats, curLine, options);
 				continue;
 			}
 
@@ -181,7 +182,7 @@ class CreatureParser extends BaseParser {
 			if (!curLine.indexOf_handleColon("Damage Resistance")) {
 				// noinspection StatementWithEmptyBodyJS
 				while (absorbBrokenLine());
-				this._setCleanDamageRes(stats, curLine);
+				this._setCleanDamageRes(stats, curLine, options);
 				continue;
 			}
 
@@ -189,7 +190,7 @@ class CreatureParser extends BaseParser {
 			if (!curLine.indexOf_handleColon("Damage Immunities ")) {
 				// noinspection StatementWithEmptyBodyJS
 				while (absorbBrokenLine());
-				this._setCleanDamageImm(stats, curLine);
+				this._setCleanDamageImm(stats, curLine, options);
 				continue;
 			}
 
@@ -217,12 +218,19 @@ class CreatureParser extends BaseParser {
 				continue;
 			}
 
-			// challenges and traits
-			// goes into actions
+			// challenge rating
 			if (!curLine.indexOf_handleColon("Challenge ")) {
 				// noinspection StatementWithEmptyBodyJS
 				while (absorbBrokenLine(true));
 				this._setCleanCr(stats, curLine);
+				continue;
+			}
+
+			// proficiency bonus
+			if (!curLine.indexOf_handleColon("Proficiency Bonus ")) {
+				// noinspection StatementWithEmptyBodyJS
+				while (absorbBrokenLine());
+				// (Ignored)
 				continue;
 			}
 
@@ -318,19 +326,7 @@ class CreatureParser extends BaseParser {
 					// convert dice tags
 					DiceConvert.convertTraitActionDice(curTrait);
 
-					// convert spellcasting
-					if (isTraits) {
-						if (curTrait.name.toLowerCase().includes("spellcasting")) {
-							curTrait = this._tryParseSpellcasting(curTrait, false, options);
-							if (curTrait.success) {
-								// merge in e.g. innate spellcasting
-								if (stats.spellcasting) stats.spellcasting = stats.spellcasting.concat(curTrait.out);
-								else stats.spellcasting = curTrait.out;
-							} else stats.trait.push(curTrait.out);
-						} else {
-							if (this._hasEntryContent(curTrait)) stats.trait.push(curTrait);
-						}
-					}
+					if (isTraits && this._hasEntryContent(curTrait)) stats.trait.push(curTrait);
 					if (isActions && this._hasEntryContent(curTrait)) stats.action.push(curTrait);
 					if (isReactions && this._hasEntryContent(curTrait)) stats.reaction.push(curTrait);
 					if (isBonusActions && this._hasEntryContent(curTrait)) stats.bonus.push(curTrait);
@@ -362,7 +358,7 @@ class CreatureParser extends BaseParser {
 			}
 		})();
 
-		this._doStatblockPostProcess(stats, options);
+		this._doStatblockPostProcess(stats, false, options);
 		const statsOut = PropOrder.getOrdered(stats, "monster");
 		options.cbOutput(statsOut, options.isAppend);
 	}
@@ -413,7 +409,7 @@ class CreatureParser extends BaseParser {
 		const doOutputStatblock = () => {
 			if (trait != null) doAddFromParsed();
 			if (stats) {
-				this._doStatblockPostProcess(stats, options);
+				this._doStatblockPostProcess(stats, true, options);
 				const statsOut = PropOrder.getOrdered(stats, "monster");
 				options.cbOutput(statsOut, options.isAppend);
 			}
@@ -456,27 +452,6 @@ class CreatureParser extends BaseParser {
 			}
 		};
 
-		const doAddTrait = () => {
-			if (this._hasEntryContent(trait)) {
-				stats.trait = stats.trait || [];
-
-				DiceConvert.convertTraitActionDice(trait);
-
-				// convert spellcasting
-				if (trait.name.toLowerCase().includes("spellcasting")) {
-					trait = this._tryParseSpellcasting(trait, true, options);
-					if (trait.success) {
-						// merge in e.g. innate spellcasting
-						if (stats.spellcasting) stats.spellcasting = stats.spellcasting.concat(trait.out);
-						else stats.spellcasting = trait.out;
-					} else stats.trait.push(trait.out);
-				} else {
-					stats.trait.push(trait)
-				}
-			}
-			trait = null;
-		};
-
 		const _doAddGenericAction = (prop) => {
 			if (this._hasEntryContent(trait)) {
 				stats[prop] = stats[prop] || [];
@@ -487,6 +462,7 @@ class CreatureParser extends BaseParser {
 			trait = null;
 		};
 
+		const doAddTrait = () => _doAddGenericAction("trait");
 		const doAddAction = () => _doAddGenericAction("action");
 		const doAddReaction = () => _doAddGenericAction("reaction");
 		const doAddBonusAction = () => _doAddGenericAction("bonus");
@@ -822,16 +798,9 @@ class CreatureParser extends BaseParser {
 	}
 
 	// SHARED UTILITY FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
-	static _doStatblockPostProcess (stats, options) {
-		const doCleanup = () => {
-			// remove any empty arrays
-			Object.keys(stats).forEach(k => {
-				if (stats[k] instanceof Array && stats[k].length === 0) {
-					delete stats[k];
-				}
-			});
-		};
-
+	static _doStatblockPostProcess (stats, isMarkdown, options) {
+		this._doFilterAddSpellcasting(stats, "trait", isMarkdown, options);
+		this._doFilterAddSpellcasting(stats, "action", isMarkdown, options);
 		if (stats.trait) stats.trait.forEach(trait => RechargeConvert.tryConvertRecharge(trait, () => {}, () => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Manual recharge tagging required for trait "${trait.name}"`)));
 		if (stats.action) stats.action.forEach(action => RechargeConvert.tryConvertRecharge(action, () => {}, () => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Manual recharge tagging required for action "${action.name}"`)));
 		AcConvert.tryPostProcessAc(
@@ -852,7 +821,30 @@ class CreatureParser extends BaseParser {
 		DamageTypeTag.tryRun(stats);
 		MiscTag.tryRun(stats);
 		DetectNamedCreature.tryRun(stats);
-		doCleanup();
+		TagImmResVulnConditional.tryRun(stats);
+		this._doStatblockPostProcess_doCleanup(stats, options);
+	}
+
+	static _doFilterAddSpellcasting (stats, prop, isMarkdown, options) {
+		if (!stats[prop]) return;
+		const spellcasting = [];
+		stats[prop] = stats[prop].map(ent => {
+			if (!ent.name || !ent.name.toLowerCase().includes("spellcasting")) return ent;
+			const parsed = SpellcastingTraitConvert.tryParseSpellcasting(ent, {isMarkdown, cbErr: options.cbErr, displayAs: prop, actions: stats.action, reactions: stats.reaction});
+			if (!parsed) return ent;
+			spellcasting.push(parsed);
+			return null;
+		}).filter(Boolean);
+		if (spellcasting.length) stats.spellcasting = [...stats.spellcasting || [], ...spellcasting];
+	}
+
+	static _doStatblockPostProcess_doCleanup (stats, options) {
+		// remove any empty arrays
+		Object.keys(stats).forEach(k => {
+			if (stats[k] instanceof Array && stats[k].length === 0) {
+				delete stats[k];
+			}
+		});
 	}
 
 	static _tryConvertNumber (strNumber) {
@@ -898,24 +890,91 @@ class CreatureParser extends BaseParser {
 
 	/**
 	 * Tries to parse immunities, resistances, and vulnerabilities
-	 * @param strDamage The string to parse.
+	 * @param ipt The string to parse.
 	 * @param modProp the output property (e.g. "vulnerable").
+	 * @param options
+	 * @param options.cbWarning
 	 */
-	static _tryParseDamageResVulnImmune (strDamage, modProp) {
+	static _tryParseDamageResVulnImmune (ipt, modProp, options) {
 		// handle the case where a comma is mistakenly used instead of a semicolon
-		if (strDamage.toLowerCase().includes(", bludgeoning, piercing, and slashing from")) {
-			strDamage = strDamage.replace(/, (bludgeoning, piercing, and slashing from)/gi, "; $1")
+		if (ipt.toLowerCase().includes(", bludgeoning, piercing, and slashing from")) {
+			ipt = ipt.replace(/, (bludgeoning, piercing, and slashing from)/gi, "; $1")
 		}
 
-		const splSemi = strDamage.toLowerCase().split(";");
+		const splSemi = ipt.toLowerCase().split(";").map(it => it.trim()).filter(Boolean);
+		const newDamage = [];
+		try {
+			splSemi.forEach(section => {
+				let note;
+				let preNote;
+				const newDamageGroup = [];
+
+				section
+					.split(/,/g)
+					.forEach(pt => {
+						pt = pt.trim().replace(/^and /i, "").trim();
+
+						// region `"damage from spells"`
+						const mDamageFromThing = /^damage from .*$/i.exec(pt);
+						if (mDamageFromThing) return newDamage.push({special: pt});
+						// endregion
+
+						pt = pt.replace(/\(from [^)]+\)$/i, (...m) => {
+							note = m[0];
+							return "";
+						}).trim();
+
+						pt = pt.replace(/from [^)]+$/i, (...m) => {
+							if (note) throw new Error(`Already has note!`);
+							note = m[0];
+							return "";
+						}).trim();
+
+						const ixFirstDamageType = Math.min(Parser.DMG_TYPES.map(it => pt.toLowerCase().indexOf(it)).filter(ix => ~ix));
+						if (ixFirstDamageType > 0) {
+							preNote = pt.slice(0, ixFirstDamageType).trim();
+							pt = pt.slice(ixFirstDamageType).trim();
+						}
+
+						newDamageGroup.push(pt);
+					});
+
+				if (note || preNote) {
+					newDamage.push({
+						[modProp]: newDamageGroup,
+						note,
+						preNote,
+					});
+				} else {
+					// If there is no group metadata, flatten into the main array
+					newDamage.push(...newDamageGroup);
+				}
+			});
+
+			return newDamage;
+		} catch (ignored) {
+			options.cbWarning(`Res/imm/vuln ("${modProp}") "${ipt}" requires manual conversion`);
+			return ipt;
+		}
+	}
+
+	/**
+	 * Tries to parse immunities, resistances, and vulnerabilities
+	 * @param ipt The string to parse.
+	 * @param options the output property (e.g. "vulnerable").
+	 * TODO(future) this is a stripped-down, outdated version of `_tryParseDamageResVulnImmune`. Consider revising to
+	 *   look more like `_tryParseDamageResVulnImmune`.
+	 */
+	static _tryParseConditionImmune (ipt, options) {
+		const splSemi = ipt.toLowerCase().split(";");
 		const newDamage = [];
 		try {
 			splSemi.forEach(section => {
 				const tempDamage = {};
 				let pushArray = newDamage;
 				if (section.includes("from")) {
-					tempDamage[modProp] = [];
-					pushArray = tempDamage[modProp];
+					tempDamage.conditionImmune = [];
+					pushArray = tempDamage.conditionImmune;
 					tempDamage["note"] = /from .*/.exec(section)[0];
 					section = /(.*) from /.exec(section)[1];
 				}
@@ -925,12 +984,9 @@ class CreatureParser extends BaseParser {
 			});
 			return newDamage;
 		} catch (ignored) {
-			return strDamage;
+			options.cbWarning(`Condition immunity "${ipt}" requires manual conversion`);
+			return ipt;
 		}
-	}
-
-	static _tryParseSpellcasting (trait, isMarkdown, options) {
-		return SpellcastingTraitConvert.tryParseSpellcasting(trait, isMarkdown, (err) => options.cbWarning(err));
 	}
 
 	// SHARED PARSING FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////
@@ -1030,24 +1086,24 @@ class CreatureParser extends BaseParser {
 		}
 	}
 
-	static _setCleanDamageVuln (stats, line) {
+	static _setCleanDamageVuln (stats, line, options) {
 		stats.vulnerable = line.split_handleColon("Vulnerabilities", 1)[1].trim();
-		stats.vulnerable = this._tryParseDamageResVulnImmune(stats.vulnerable, "vulnerable");
+		stats.vulnerable = this._tryParseDamageResVulnImmune(stats.vulnerable, "vulnerable", options);
 	}
 
-	static _setCleanDamageRes (stats, line) {
+	static _setCleanDamageRes (stats, line, options) {
 		stats.resist = (line.toLowerCase().includes("resistances") ? line.split_handleColon("Resistances", 1) : line.split_handleColon("Resistance", 1))[1].trim();
-		stats.resist = this._tryParseDamageResVulnImmune(stats.resist, "resist");
+		stats.resist = this._tryParseDamageResVulnImmune(stats.resist, "resist", options);
 	}
 
-	static _setCleanDamageImm (stats, line) {
+	static _setCleanDamageImm (stats, line, options) {
 		stats.immune = line.split_handleColon("Immunities", 1)[1].trim();
-		stats.immune = this._tryParseDamageResVulnImmune(stats.immune, "immune");
+		stats.immune = this._tryParseDamageResVulnImmune(stats.immune, "immune", options);
 	}
 
-	static _setCleanConditionImm (stats, line) {
+	static _setCleanConditionImm (stats, line, options) {
 		stats.conditionImmune = line.split_handleColon("Immunities", 1)[1];
-		stats.conditionImmune = this._tryParseDamageResVulnImmune(stats.conditionImmune, "conditionImmune");
+		stats.conditionImmune = this._tryParseConditionImmune(stats.conditionImmune, "conditionImmune", options);
 	}
 
 	static _setCleanSenses (stats, line) {

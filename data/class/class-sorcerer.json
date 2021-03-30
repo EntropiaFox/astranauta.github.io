@@ -15,13 +15,57 @@
 			],
 			"spellcastingAbility": "cha",
 			"casterProgression": "full",
+			"cantripProgression": [
+				4,
+				4,
+				4,
+				5,
+				5,
+				5,
+				5,
+				5,
+				5,
+				6,
+				6,
+				6,
+				6,
+				6,
+				6,
+				6,
+				6,
+				6,
+				6,
+				6
+			],
+			"spellsKnownProgression": [
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				12,
+				13,
+				13,
+				14,
+				14,
+				15,
+				15,
+				15,
+				15
+			],
 			"startingProficiencies": {
 				"weapons": [
-					"daggers",
-					"darts",
-					"slings",
-					"quarterstaffs",
-					"light crossbows"
+					"{@item dagger|phb|daggers}",
+					"{@item dart|phb|darts}",
+					"{@item sling|phb|slings}",
+					"{@item quarterstaff|phb|quarterstaffs}",
+					"{@item light crossbow|phb|light crossbows}"
 				],
 				"skills": [
 					{
@@ -747,7 +791,7 @@
 					"additionalSpells": [
 						{
 							"prepared": {
-								"2": [
+								"3": [
 									"darkness"
 								]
 							}
@@ -1695,7 +1739,7 @@
 			"level": 5,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 5th-level sorcerer feature}",
+				"{@i 5th-level sorcerer {@variantrule optional class features|tce|optional feature}}",
 				"You can tap into your inner wellspring of magic to try to conjure success from failure. When you make an ability check that fails, you can spend 1 sorcery point to reroll the {@dice d20}, and you must use the new roll, potentially turning the failure into a success."
 			]
 		},
@@ -2022,7 +2066,7 @@
 						]
 					]
 				},
-				"You can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check."
+				"You can speak, read, and write {@language Draconic}. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check."
 			]
 		},
 		{
@@ -2527,7 +2571,7 @@
 			"entries": [
 				"{@i 1st-level Aberrant Mind feature}",
 				"You learn additional spells when you reach certain levels in this class, as shown on the Psionic Spells table. Each of these spells counts as a sorcerer spell for you, but it doesn't count against the number of sorcerer spells you know.",
-				"Whenever you gain a sorcerer level, you can replace one spell you gained from this feature with another spell of the same level. The new spell must be a divination or an enchantment spell from the sorcerer, warlock, or wizard spell list.",
+				"Whenever you gain a sorcerer level, you can replace one spell you gained from this feature with another spell of the same level. The new spell must be a {@filter divination or an enchantment spell from the sorcerer, warlock, or wizard spell list|spells|class=sorcerer;warlock;wizard|school=D;E|level=1;2;3;4;5}.",
 				{
 					"type": "table",
 					"caption": "Psionic Spells",
@@ -2542,7 +2586,7 @@
 					"rows": [
 						[
 							"1st",
-							"{@spell arms of Hadar}, {@spell dissonant whispers}"
+							"{@spell arms of Hadar}, {@spell dissonant whispers}, {@spell mind sliver|tce}"
 						],
 						[
 							"3rd",
@@ -2685,7 +2729,7 @@
 			"entries": [
 				"{@i 1st-level Clockwork Soul feature}",
 				"You learn additional spells when you reach certain levels in this class, as shown on the Clockwork Spells table. Each of these spells counts as a sorcerer spell for you, but it doesn't count against the number of sorcerer spells you know.",
-				"Whenever you gain a sorcerer level, you can replace one spell you gained from this feature with another spell of the same level. The new spell must be an abjuration or a transmutation spell from the sorcerer, warlock, or wizard spell list.",
+				"Whenever you gain a sorcerer level, you can replace one spell you gained from this feature with another spell of the same level. The new spell must be an {@filter abjuration or a transmutation spell from the sorcerer, warlock, or wizard spell list|spells|class=sorcerer;warlock;wizard|school=A;T|level=1;2;3;4;5}.",
 				{
 					"type": "table",
 					"caption": "Clockwork Spells",

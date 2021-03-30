@@ -19,14 +19,14 @@ class ObjectsPage extends ListPage {
 	getListItem (obj, obI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(obj, isExcluded);
 
-		const eleLi = document.createElement("li");
-		eleLi.className = `row ${isExcluded ? "row--blacklisted" : ""}`;
+		const eleLi = document.createElement("div");
+		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(obj.source);
 		const hash = UrlUtil.autoEncodeHash(obj);
 		const size = Parser.sizeAbvToFull(obj.size);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border">
+		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-8 pl-0">${obj.name}</span>
 			<span class="col-2 text-center">${size}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(obj.source)} pr-0" title="${Parser.sourceJsonToFull(obj.source)}" ${BrewUtil.sourceJsonToStyle(obj.source)}>${source}</span>
@@ -63,13 +63,14 @@ class ObjectsPage extends ListPage {
 		const hash = UrlUtil.autoEncodeHash(obj);
 		const size = Parser.sizeAbvToFull(obj.size);
 
-		const $ele = $(`<li class="row">
-			<a href="#${hash}" class="lst--border">
+		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-9 pl-0">${obj.name}</span>
 				<span class="col-3 pr-0 text-center">${size}</span>
 			</a>
-		</li>`)
-			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem));
+		</div>`)
+			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
+			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
 			pinId,
@@ -107,6 +108,14 @@ class ObjectsPage extends ListPage {
 	async pDoLoadSubHash (sub) {
 		sub = this._filterBox.setFromSubHashes(sub);
 		await ListUtil.pSetFromSubHashes(sub);
+	}
+
+	_getSearchCache (entity) {
+		if (!entity.entries && !entity.actionEntries) return "";
+		const ptrOut = {_: ""};
+		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
+		this._getSearchCache_handleEntryProp(entity, "actionEntries", ptrOut);
+		return ptrOut._;
 	}
 }
 

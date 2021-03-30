@@ -9125,55 +9125,55 @@
 							],
 							"rows": [
 								[
-									"Arawai",
+									"{@deity Arawai|eberron|erlw}",
 									"Life, love",
 									"Life, Nature",
 									"Sheaf of wheat tied with green ribbon {@i or} bronze dragon"
 								],
 								[
-									"Aureon",
+									"{@deity Aureon|eberron|erlw}",
 									"Knowledge, law",
 									"Knowledge, Order*",
 									"Open tome {@i or} blue dragon"
 								],
 								[
-									"Balinor",
+									"{@deity Balinor|eberron|erlw}",
 									"Beasts, the hunt",
 									"Nature, War",
 									"Pair of antlers {@i or} green dragon"
 								],
 								[
-									"Boldrei",
+									"{@deity Boldrei|eberron|erlw}",
 									"Community, home",
 									"Life",
 									"Fire in a stone hearth {@i or} copper dragon"
 								],
 								[
-									"Dol Arrah",
+									"{@deity Dol Arrah|eberron|erlw}",
 									"Honor, sunlight",
 									"Light, War",
 									"Rising sun {@i or} red dragon"
 								],
 								[
-									"Dol Dorn",
+									"{@deity Dol Dorn|eberron|erlw}",
 									"Strength at arms",
 									"War",
 									"Longsword crossed over a shield {@i or} silver dragon"
 								],
 								[
-									"Kol Korran",
+									"{@deity Kol Korran|eberron|erlw}",
 									"Trade, travel",
 									"Trickery",
 									"Nine-sided gold coin {@i or} white dragon"
 								],
 								[
-									"Olladra",
+									"{@deity Olladra|eberron|erlw}",
 									"Good fortune",
 									"Life, Trickery",
 									"Domino {@i or} black dragon"
 								],
 								[
-									"Onatar",
+									"{@deity Onatar|eberron|erlw}",
 									"Artifice, the forge",
 									"Forge**, Knowledge",
 									"Crossed hammer and tongs {@i or} brass dragon"
@@ -9196,37 +9196,37 @@
 							],
 							"rows": [
 								[
-									"The Devourer",
+									"{@deity The Devourer|eberron|erlw}",
 									"Nature's wrath",
 									"Tempest",
 									"Bundle of five sharpened bones {@i or} dragon turtle"
 								],
 								[
-									"The Fury",
+									"{@deity The Fury|eberron|erlw}",
 									"Passion, revenge",
 									"War",
 									"Winged wyrm with woman's head and arms"
 								],
 								[
-									"The Keeper",
+									"{@deity The Keeper|eberron|erlw}",
 									"Death, greed",
 									"Death",
 									"Dragonshard in the shape of a fang {@i or} dracolich"
 								],
 								[
-									"The Mockery",
+									"{@deity The Mockery|eberron|erlw}",
 									"Betrayal, bloodshed",
 									"Trickery, War",
 									"Five blood-spattered blades {@i or} flayed dragon"
 								],
 								[
-									"The Shadow",
+									"{@deity The Shadow|eberron|erlw}",
 									"Ambition, dark magic",
 									"Knowledge",
 									"Obsidian tower"
 								],
 								[
-									"The Traveler",
+									"{@deity The Traveler|eberron|erlw}",
 									"Change, chaos",
 									"Forge**, Knowledge, Trickery",
 									"Four crossed, rune-inscribed bones"
@@ -9249,37 +9249,37 @@
 							],
 							"rows": [
 								[
-									"The Silver Flame",
+									"{@deity The Silver Flame|eberron|erlw}",
 									"Good, protection",
 									"Life, Light, War",
 									"Flame drawn on silver or molded from silver"
 								],
 								[
-									"The Blood of Vol",
+									"{@deity The Blood of Vol|eberron|erlw}",
 									"Immortality",
 									"Death, Life",
 									"Red teardrop gem"
 								],
 								[
-									"Cults of the Dragon Below",
+									"{@deity Cults of the Dragon Below|eberron|erlw}",
 									"Madness",
 									"Trickery",
 									"Varies"
 								],
 								[
-									"The Path of Light",
+									"{@deity The Path of Light|eberron|erlw}",
 									"Light, self-improvement",
 									"Life, Light",
 									"Brilliant crystal"
 								],
 								[
-									"The Spirits of the Past",
+									"{@deity The Spirits of the Past|eberron|erlw}",
 									"Elven ancestors",
 									"Nature, War",
 									"Varies"
 								],
 								[
-									"The Undying Court",
+									"{@deity The Undying Court|eberron|erlw}",
 									"Elven ancestors",
 									"Grave**, Knowledge, Life",
 									"Golden mask"
@@ -19588,7 +19588,7 @@
 								"{@item Living Armor|ERLW}",
 								"{@item Living Gloves|ERLW}",
 								"{@item Orb of Shielding|ERLW}",
-								"{@item Prosthetic Limb|ERLW}",
+								"{@item Prosthetic Limb|TCE}",
 								"{@item Scribe's Pen|ERLW}",
 								"{@item Shiftweave|ERLW}",
 								"{@item Speaking Stone|ERLW}",
@@ -19837,7 +19837,7 @@
 						"{@creature Radiant Idol|ERLW}",
 						"{@creature Rak Tulkhesh|ERLW}",
 						"{@creature Shifter|ERLW}",
-						"{@creature Steel Defender|ERLW}",
+						"{@creature Steel Defender|TCE}",
 						"{@creature Sul Khatesh|ERLW}",
 						"{@creature Tarkanan Assassin|ERLW}",
 						"{@creature The Lord of Blades|ERLW}",

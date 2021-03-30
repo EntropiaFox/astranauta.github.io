@@ -147,6 +147,532 @@
 			"conditionInflict": [
 				"frightened",
 				"incapacitated"
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "Expert",
+			"source": "DC",
+			"level": 11,
+			"size": "M",
+			"type": "humanoid",
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"{@item studded leather armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 66,
+				"formula": "12d8 + 12"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 20,
+			"con": 12,
+			"int": 14,
+			"wis": 10,
+			"cha": 14,
+			"save": {
+				"dex": "+9"
+			},
+			"skill": {
+				"acrobatics": "+13",
+				"performance": "+6",
+				"persuasion": "+6",
+				"sleight of hand": "+9",
+				"stealth": "+13"
+			},
+			"passive": 10,
+			"languages": [
+				"Common",
+				"plus one of your choice"
+			],
+			"trait": [
+				{
+					"name": "Helpful",
+					"entries": [
+						"The expert can take the Help action as a bonus action, and the creature who receives the help gains a {@dice 1d6} bonus to the {@dice d20} roll. If that roll is an attack roll, the creature can forgo adding the bonus to it, and then if the attack hits, the creature can add the bonus to the attack's damage roll against one target."
+					]
+				},
+				{
+					"name": "Evasion",
+					"entries": [
+						"When the expert is not {@condition incapacitated} and subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it failed."
+					]
+				},
+				{
+					"name": "Reliable Talent",
+					"entries": [
+						"Whenever the expert makes an ability check that includes its whole proficiency bonus, it can treat a {@dice d20} roll of 9 or lower as a 10."
+					]
+				},
+				{
+					"name": "Tools",
+					"entries": [
+						"The expert has {@item thieves' tools|phb} and a musical instrument."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Extra Attack",
+					"entries": [
+						"The expert can attack twice, instead of once, whenever it takes the attack action on its turn."
+					]
+				},
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d6 + 5}) piercing damage."
+					]
+				},
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 9} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}7 ({@damage 1d4 + 5}) piercing damage."
+					]
+				},
+				{
+					"name": "Shortbow",
+					"entries": [
+						"{@atk rw} {@hit 9} to hit, range 80/320 ft., one target. {@h}8 ({@damage 1d6 + 5}) piercing damage."
+					]
+				}
+			],
+			"hasToken": true,
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RNG",
+				"RW",
+				"THW"
+			]
+		},
+		{
+			"name": "Spellcaster (Healer)",
+			"source": "DC",
+			"level": 11,
+			"size": "M",
+			"type": "humanoid",
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"{@item studded leather armor|PHB|studded leather}"
+					]
+				}
+			],
+			"hp": {
+				"average": 54,
+				"formula": "12d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 12,
+			"con": 10,
+			"int": 15,
+			"wis": 18,
+			"cha": 13,
+			"save": {
+				"wis": "+8"
+			},
+			"skill": {
+				"arcana": "+6",
+				"investigation": "+6",
+				"religion": "+6"
+			},
+			"passive": 14,
+			"languages": [
+				"Common",
+				"plus one of your choice"
+			],
+			"spellcasting": [
+				{
+					"name": "Spellcasting (Healer)",
+					"headerEntries": [
+						"The spellcaster's spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to hit with spell attacks). The spellcaster has following cleric spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell guidance}",
+								"{@spell light}",
+								"{@spell resistance}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell bless}",
+								"{@spell cure wounds}",
+								"{@spell shield of faith}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell aid}",
+								"{@spell lesser restoration}"
+							]
+						},
+						"3": {
+							"slots": 3,
+							"spells": [
+								"{@spell protection from energy}",
+								"{@spell revivify}"
+							]
+						},
+						"4": {
+							"slots": 3,
+							"spells": [
+								"{@spell banishment}",
+								"{@spell death ward}"
+							]
+						},
+						"5": {
+							"slots": 2,
+							"spells": [
+								"{@spell greater restoration}",
+								"{@spell mass cure wounds}"
+							]
+						},
+						"6": {
+							"slots": 1,
+							"spells": [
+								"{@spell heal}"
+							]
+						}
+					},
+					"ability": "wis"
+				}
+			],
+			"trait": [
+				{
+					"name": "Empowered Spells",
+					"entries": [
+						"Whenever the spellcaster casts a spell of the evocation school by expending a spell slot, the spellcaster can add its spellcasting ability modifier to the spell's damage roll or healing roll, if any."
+					]
+				},
+				{
+					"name": "Potent Cantrip",
+					"entries": [
+						"The spellcaster can add its spellcasting ability modifier to the damage it deals with any cantrip."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Quarterstaff",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, or 4 ({@damage 1d8}) bludgeoning damage if used with two hands."
+					]
+				}
+			],
+			"hasToken": true,
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B"
+			],
+			"spellcastingTags": [
+				"CC"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflictSpell": [
+				"incapacitated"
+			]
+		},
+		{
+			"name": "Spellcaster (Mage)",
+			"source": "DC",
+			"level": 11,
+			"size": "M",
+			"type": "humanoid",
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"{@item studded leather armor|PHB|studded leather}"
+					]
+				}
+			],
+			"hp": {
+				"average": 54,
+				"formula": "12d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 12,
+			"con": 10,
+			"int": 18,
+			"wis": 14,
+			"cha": 14,
+			"save": {
+				"wis": "+6"
+			},
+			"skill": {
+				"arcana": "+8",
+				"investigation": "+8",
+				"religion": "+8"
+			},
+			"passive": 12,
+			"languages": [
+				"Common",
+				"plus one of your choice"
+			],
+			"spellcasting": [
+				{
+					"name": "Spellcasting (Mage)",
+					"headerEntries": [
+						"The spellcaster's spellcasting ability is Intelligence (spell save {@dc 16}, {@hit 8} to hit with spell attacks). The spellcaster has following wizard spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell fire bolt}",
+								"{@spell light}",
+								"{@spell mage hand}",
+								"{@spell minor illusion}",
+								"{@spell shocking grasp}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell burning hands}",
+								"{@spell shield}",
+								"{@spell sleep}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell flaming sphere}",
+								"{@spell invisibility}"
+							]
+						},
+						"3": {
+							"slots": 3,
+							"spells": [
+								"{@spell fireball}",
+								"{@spell fly}"
+							]
+						},
+						"4": {
+							"slots": 3,
+							"spells": [
+								"{@spell polymorph}",
+								"{@spell wall of fire}"
+							]
+						},
+						"5": {
+							"slots": 2,
+							"spells": [
+								"{@spell cone of cold}",
+								"{@spell hold monster}"
+							]
+						},
+						"6": {
+							"slots": 1,
+							"spells": [
+								"{@spell chain lightning}"
+							]
+						}
+					},
+					"ability": "int"
+				}
+			],
+			"trait": [
+				{
+					"name": "Empowered Spells",
+					"entries": [
+						"Whenever the spellcaster casts a spell of the evocation school by expending a spell slot, the spellcaster can add its spellcasting ability modifier to the spell's damage roll or healing roll, if any."
+					]
+				},
+				{
+					"name": "Potent Cantrip",
+					"entries": [
+						"The spellcaster can add its spellcasting ability modifier to the damage it deals with any cantrip."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Quarterstaff",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d6}) bludgeoning damage, or 4 ({@damage 1d8}) bludgeoning damage if used with two hands."
+					]
+				}
+			],
+			"hasToken": true,
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B"
+			],
+			"spellcastingTags": [
+				"CW"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflictSpell": [
+				"invisible",
+				"paralyzed",
+				"unconscious"
+			]
+		},
+		{
+			"name": "Warrior",
+			"source": "DC",
+			"level": 11,
+			"size": "M",
+			"type": "humanoid",
+			"ac": [
+				{
+					"ac": 21,
+					"from": [
+						"{@item plate armor|PHB|plate}",
+						"{@item shield|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 78,
+				"formula": "12d8 + 24"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18,
+			"dex": 14,
+			"con": 14,
+			"int": 10,
+			"wis": 12,
+			"cha": 10,
+			"save": {
+				"con": "+6"
+			},
+			"skill": {
+				"athletics": "+8",
+				"perception": "+5",
+				"survival": "+5"
+			},
+			"passive": 15,
+			"languages": [
+				"Common",
+				"plus one of your choice"
+			],
+			"trait": [
+				{
+					"name": "Battle Readiness",
+					"entries": [
+						"The warrior has advantage on initiative rolls."
+					]
+				},
+				{
+					"name": "Improved Critical",
+					"entries": [
+						"The warrior's attack rolls score a critical hit on a roll of 19 or 20 on the {@dice d20}."
+					]
+				},
+				{
+					"name": "Improved Defense",
+					"entries": [
+						"The warrior's AC increases by 1."
+					]
+				},
+				{
+					"name": "Indomitable (1/Day)",
+					"entries": [
+						"The warriorcan reroll a saving throw that it fails, but it must use the new result."
+					]
+				},
+				{
+					"name": "Martial Role",
+					"entries": [
+						"The warrior has one of the following traits of your choice:"
+					]
+				},
+				{
+					"name": "Attacker",
+					"entries": [
+						"The warrior gains a +2 bonus to attack rolls."
+					]
+				},
+				{
+					"name": "Defender",
+					"entries": [
+						"The warrior gains the Protection reaction below."
+					]
+				},
+				{
+					"name": "Second Wind (Recharges after a Short or Long Rest)",
+					"entries": [
+						"The warrior can use a bonus action on its turn to regain hit points equal to {@dice 1d10} + its level."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Extra Attack",
+					"entries": [
+						"The warrior can attack three times, instead of once, whenever it takes the attack action on its turn."
+					]
+				},
+				{
+					"name": "Longsword",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) slashing damage, or 9 ({@damage 1d10 + 4}) slashing damage if used with two hands."
+					]
+				},
+				{
+					"name": "Longbow",
+					"entries": [
+						"{@atk rw} {@hit 6} to hit, range 150/600 ft., one target. {@h}6 ({@damage 1d8 + 2}) piercing damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Protection (Defender Only)",
+					"entries": [
+						"When a creature the warrior can see attacks a target other than the warrior that is within 5 feet of the warrior, the warrior can use their reaction to impose disadvantage on the attack roll. The warrior must be wielding a shield."
+					]
+				}
+			],
+			"hasToken": true,
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MW",
+				"RNG",
+				"RW"
 			]
 		}
 	]

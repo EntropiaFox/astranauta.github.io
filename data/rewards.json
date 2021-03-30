@@ -96,7 +96,7 @@
 			"page": 232,
 			"type": "Boon",
 			"entries": [
-				"When another creature that you can see within 60 feet of you makes an ability check, an attack roll, or a saving throw, you can roll a d10 and apply the result as a bonus or penalty to the roll. Once you use this boon, you can't use it again until you finish a short rest."
+				"When another creature that you can see within 60 feet of you makes an ability check, an attack roll, or a saving throw, you can roll a {@dice d10} and apply the result as a bonus or penalty to the roll. Once you use this boon, you can't use it again until you finish a short rest."
 			]
 		},
 		{
@@ -150,7 +150,7 @@
 			"page": 232,
 			"type": "Boon",
 			"entries": [
-				"You can add a d10 roll to any ability check, attack roll, or saving throw you make. Once you use this boon, you can't use it again until you finish a short rest. "
+				"You can add a {@dice d10} roll to any ability check, attack roll, or saving throw you make. Once you use this boon, you can't use it again until you finish a short rest. "
 			]
 		},
 		{
@@ -231,7 +231,7 @@
 			"page": 232,
 			"type": "Boon",
 			"entries": [
-				"Your walking speed increases by 30 feet. In addition, you can use a bonus action to take the Dash or Disengage action. Once you do so, you can't do so again until you finish a short rest."
+				"Your walking speed increases by 30 feet. In addition, you can use a bonus action to take the {@action Dash} or {@action Disengage} action. Once you do so, you can't do so again until you finish a short rest."
 			]
 		},
 		{
@@ -267,7 +267,7 @@
 			"page": 232,
 			"type": "Boon",
 			"entries": [
-				"While completely in an area of dim light or darkness, you can become {@condition invisible} as an action. You remain invisible until you take an action or a reaction. "
+				"While completely in an area of dim light or darkness, you can become {@condition invisible} as an action. You remain {@condition invisible} until you take an action or a reaction. "
 			]
 		},
 		{
@@ -294,7 +294,7 @@
 			"page": 232,
 			"type": "Boon",
 			"entries": [
-				"You have truesight out to a range of 60 feet."
+				"You have {@sense truesight} out to a range of 60 feet."
 			]
 		},
 		{
@@ -331,7 +331,7 @@
 			"type": "Charm",
 			"entries": [
 				"{@note This charm can be bestowed by a {@creature chwinga|ToA} living in Icewind Dale or other cold regions by using their Magical Gift action.}",
-				"This charm has 3 charges. As a bonus action, you can expend 1 of the charm's charges to wreathe your weapon attacks with biting cold for 1 minute. Until this effect ends, you deal an extra {@dice 1d6} cold damage when you hit with a melee or ranged weapon attack. Once all its charges have been expended, this charm vanishes from you."
+				"This charm has 3 charges. As a bonus action, you can expend 1 of the charm's charges to wreathe your weapon attacks with biting cold for 1 minute. Until this effect ends, you deal an extra {@damage 1d6} cold damage when you hit with a melee or ranged weapon attack. Once all its charges have been expended, this charm vanishes from you."
 			]
 		},
 		{
@@ -406,7 +406,7 @@
 			"type": "Charm",
 			"entries": [
 				"{@note This charm can be bestowed by a {@creature chwinga|ToA} living in Icewind Dale or other cold regions by using their Magical Gift action.}",
-				"This charm has 5 charges. As a bonus action, you can expend 1 of the charm's charges to create a magical snowball in your hand and throw it. You must have a hand free to hold the snowball, or the charge is wasted. The snowball is a magic ranged weapon with which you are proficient. It has a normal range of 20 feet and a long range of 60 feet, it deals {@dice 1d4} cold damage on a hit, and it scores a critical hit on a roll of 19 or 20. If you score a critical hit with the snowball, the target is {@condition blinded} until the end of its next turn. The snowball vanishes immediately after you hit or miss with it, or at the end of your turn if you don't throw it. Once all its charges have been expended, this charm vanishes from you."
+				"This charm has 5 charges. As a bonus action, you can expend 1 of the charm's charges to create a magical snowball in your hand and throw it. You must have a hand free to hold the snowball, or the charge is wasted. The snowball is a magic ranged weapon with which you are proficient. It has a normal range of 20 feet and a long range of 60 feet, it deals {@damage 1d4} cold damage on a hit, and it scores a critical hit on a roll of 19 or 20. If you score a critical hit with the snowball, the target is {@condition blinded} until the end of its next turn. The snowball vanishes immediately after you hit or miss with it, or at the end of your turn if you don't throw it. Once all its charges have been expended, this charm vanishes from you."
 			]
 		},
 		{
@@ -424,7 +424,7 @@
 			"page": 167,
 			"type": "Charm",
 			"entries": [
-				"This charm allows you to use an action to eat a mouthful of flesh from a humanoid that has been dead no longer than 1 day. When you do, you regain 3d8+3 hit points. Once used three times, the charm goes away."
+				"This charm allows you to use an action to eat a mouthful of flesh from a humanoid that has been dead no longer than 1 day. When you do, you regain {@dice 3d8 + 3} hit points. Once used three times, the charm goes away."
 			]
 		},
 		{
@@ -444,6 +444,15 @@
 			"type": "Charm",
 			"entries": [
 				"This charm allows you to regrow a lost appendage or organ, such as an arm, a foot, or an eye. After it is used once, the charm goes away."
+			]
+		},
+		{
+			"name": "Charm of the Mirage",
+			"source": "CM",
+			"type": "Charm",
+			"entries": [
+				"{@note This charm can be bestowed by a {@creature chwinga|CM} living a desert by using their Magical Gift action.}",
+				"This charm allows you to cast the {@spell hallucinatory terrain} spell (save DC 15) as an action. Once used, this charm vanishes from you."
 			]
 		},
 		{
@@ -500,6 +509,15 @@
 			"entries": [
 				"{@note This charm can be bestowed by a {@creature chwinga|ToA} living in Icewind Dale or other cold regions by using their Magical Gift action.}",
 				"This charm has 3 charges. As an action, you can expend 1 of the charm's charges to cast the {@spell Leomund's tiny hut} spell, no components required. Once all its charges have been expended, this charm vanishes from you."
+			]
+		},
+		{
+			"name": "Charm of the Water Bearer",
+			"source": "CM",
+			"type": "Charm",
+			"entries": [
+				"{@note This charm can be bestowed by a {@creature chwinga|CM} living a desert by using their Magical Gift action.}",
+				"This charm allows you to create up to 1 gallon of fresh water, which fills one or more empty containers in your possession. You can do this up to thrice per day for 10 days, after which this charm vanishes from you."
 			]
 		},
 		{
@@ -698,7 +716,7 @@
 			"page": 193,
 			"type": "Charm",
 			"entries": [
-				"Yrrga's gift is the power of true seeing. This dark gift grants its beneficiary the benefits of truesight out to a range of 60 feet. These benefits last for 30 days, after which the dark gift vanishes.",
+				"Yrrga's gift is the power of true seeing. This dark gift grants its beneficiary the benefits of {@sense truesight} out to a range of 60 feet. These benefits last for 30 days, after which the dark gift vanishes.",
 				"The eyes of the beneficiary become starry voids until the dark gift vanishes. The beneficiary of this dark gift also gains the following flaw: \"I believe that all life is pointless and look forward to death when it finally comes.\""
 			]
 		},
@@ -916,7 +934,7 @@
 						{
 							"type": "item",
 							"name": "Power:",
-							"entry": "The host can use an action to turn invisible. Anything the host is wearing or carrying is invisible as long as it is on the host's person. The effect ends if the host attacks, casts a spell, forces a saving throw, or deals damage."
+							"entry": "The host can use an action to turn {@condition invisible}. Anything the host is wearing or carrying is {@condition invisible} as long as it is on the host's person. The effect ends if the host attacks, casts a spell, forces a saving throw, or deals damage."
 						}
 					]
 				}
@@ -1119,7 +1137,7 @@
 						{
 							"type": "item",
 							"name": "Power:",
-							"entry": "The host can make one extra attack when taking the Attack action on its turn."
+							"entry": "The host can make one extra attack when taking the {@action Attack} action on its turn."
 						}
 					]
 				}
@@ -1221,6 +1239,15 @@
 			]
 		},
 		{
+			"name": "Vlagomir's Spark",
+			"source": "IDRotF",
+			"page": 228,
+			"type": "Charm",
+			"entries": [
+				"You gain 1 foot of height every hour and become proportionately heavier until you stand 21 feet tall and weigh 7,700 pounds. When you are 9 feet tall, your Strength becomes 19 unless it is already higher. For every 3 additional feet of height you gain, your Strength increases by 1, to a maximum of 23. Armor and clothing you are wearing and weapons you are carrying magically increase in size to match your growth. If you are the recipient of a {@spell greater restoration} spell or similar magic, this charm vanishes from you, and you immediately shrink back to normal size, along with any armor, clothing, and weapons in your possession."
+			]
+		},
+		{
 			"name": "Wongo",
 			"source": "ToA",
 			"page": 129,
@@ -1258,7 +1285,7 @@
 						{
 							"type": "item",
 							"name": "Power:",
-							"entry": "The host can use an action to unleash a psionic assault on a creature it can see within 60 feet of it. The target must succeed on a DC 16 Wisdom saving throw or be stunned until the end of the target's next turn."
+							"entry": "The host can use an action to unleash a psionic assault on a creature it can see within 60 feet of it. The target must succeed on a DC 16 Wisdom saving throw or be {@condition stunned} until the end of the target's next turn."
 						}
 					]
 				}
@@ -1296,7 +1323,7 @@
 					"type": "entries",
 					"name": "Poison Immunity",
 					"entries": [
-						"You are immune to poison damage and the poisoned condition."
+						"You are immune to poison damage and the {@condition poisoned} condition."
 					]
 				}
 			]

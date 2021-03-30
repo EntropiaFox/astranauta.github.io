@@ -1141,7 +1141,7 @@
 							"name": "Creatures",
 							"id": "060",
 							"entries": [
-								"Four {@creature orc||orcs}, three in area 4 and one in area 4, overlook the stairs leading up to {@area 2|049}. These orcs aren't particularly vigilant, but they do start shooting if the sentries in {@area 1|044} call for help. The orcs are armed with longbows instead of javelins: +3 to hit (range 150/600 ft.); 5 (1d8+1) piercing damage on a hit."
+								"Four {@creature orc||orcs}, three in area 4a and one in area 4, overlook the stairs leading up to {@area 2|049}. These orcs aren't particularly vigilant, but they do start shooting if the sentries in {@area 1|044} call for help. The orcs are armed with longbows instead of javelins: +3 to hit (range 150/600 ft.); 5 (1d8+1) piercing damage on a hit."
 							]
 						},
 						"When the characters turn the corner into {@area 2|049}, the archer in area 4a joins the attack while one of the archers from area 4 circles around through the secret door in an attempt to shut the double doors to {@area 3|055} (see \"Mountain Door Defenses,\" {@area 3|055}).",
@@ -1397,7 +1397,7 @@
 							]
 						},
 						"The skeletons near the door are those of orcs killed by the trap long ago; their remains show signs of severe scorching. Rusted axe heads lie near the bodies, with no sign of the weapons' hafts.",
-						"If the door is pulled open before the trap is disabled, a counterweight drops and pumps a flammable substance resembling alchemist's fire from the spouts. Each creature within 15 feet of the door takes 10 (4d4) fire damage, or half damage with a successful DC 10 Dexterity saving throw. At the start of each of its turns thereafter, an affected creature takes 5 (2d4) fire damage. A crea ture can fight the flames around itself by making a suc cessful DC 10 Dexterity check as an action; a successful check reduces the fire damage it takes at the start of each of its turns to 2 (1d4). Making another successful Dexterity check as an action quenches the flames around the creature entirely.",
+						"If the door is pulled open before the trap is disabled, a counterweight drops and pumps a flammable substance resembling alchemist's fire from the spouts. Each creature within 15 feet of the door takes 10 (4d4) fire damage, or half damage with a successful DC 10 Dexterity saving throw. At the start of each of its turns thereafter, an affected creature takes 5 (2d4) fire damage. A creature can fight the flames around itself by making a successful DC 10 Dexterity check as an action; a successful check reduces the fire damage it takes at the start of each of its turns to 2 (1d4). Making another successful Dexterity check as an action quenches the flames around the creature entirely.",
 						"After the door is opened, the counterweight pulls it shut again in 2 rounds, resetting the trap. The characters can prevent this from happening by jamming the door open. If the trap resets, it can be activated only once more before its fiery substance is depleted.",
 						"The spouts on the wall can be detected by someone who succeeds on a DC 15 Wisdom (Perception) check. With a successful DC 10 Intelligence (Investigation) check afterward, a character deduces that they form part of a trap mechanism. A character who makes a successful DC 12 Dexterity check using thieves' tools, or someone who tightly plugs the holes with durable material, renders the trap inactive. Someone who succeeds on a DC 10 Intelligence (Investigation) check while examining the door identifies the counterweight mechanism that activates the trap; it can be deactivated afterward by someone who makes a successful DC 10 Dexterity check using thieves' tools.",
 						{
@@ -3309,7 +3309,7 @@
 										"Do the duergar have some of Durgeddin's items? If so, are they guarding them or using them?"
 									]
 								},
-								"You can also use this adventure to sow the seeds of the characters' next activity. Perhaps the party encounters a legend of a magical treasure from Khundrukar's fall, buried in the tomb of an evil knight. Maybe Great Ulfe's ogre clan is terrorizing a nearby area, or an ore war chief wields a legendary weapon that was crafted by Durgeddin."
+								"You can also use this adventure to sow the seeds of the characters' next activity. Perhaps the party encounters a legend of a magical treasure from Khundrukar's fall, buried in the tomb of an evil knight. Maybe Great Ulfe's ogre clan is terrorizing a nearby area, or an {@creature orc war chief} wields a legendary weapon that was crafted by Durgeddin."
 							]
 						}
 					]

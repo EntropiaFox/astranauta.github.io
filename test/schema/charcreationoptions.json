@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.0.0",
+	"$id": "charcreationoptions.json",
+	"version": "1.0.1",
 	"title": "Character Creation Options",
 	"type": "object",
 
@@ -11,6 +12,7 @@
 		},
 
 		"charoption": {
+			"type": "object",
 			"properties": {
 				"name": {
 					"type": "string"
@@ -45,7 +47,9 @@
 				},
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
-				}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
 			},
 			"required": [
 				"name",

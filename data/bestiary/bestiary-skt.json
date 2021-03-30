@@ -236,7 +236,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Axe of Mirabar Soldier",
@@ -419,7 +421,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Braxow",
@@ -516,7 +520,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chief Kartha-Kaya",
@@ -1079,7 +1085,9 @@
 				"charmed",
 				"incapacitated",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Crag Cat",
@@ -1171,7 +1179,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cressaro",
@@ -1312,7 +1322,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Darz Helgar",
@@ -1403,7 +1415,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deadstone Cleft Stone Giant",
@@ -1623,7 +1637,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duvessa Shane",
@@ -1717,7 +1733,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Eigeron's Ghost",
@@ -2002,7 +2020,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Raven",
@@ -2177,7 +2197,8 @@
 			],
 			"conditionInflict": [
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Hellenhild",
@@ -2291,7 +2312,8 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Hydia Moonmusk",
@@ -2664,7 +2686,8 @@
 				"blinded",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Jarl Storvald",
@@ -2796,7 +2819,9 @@
 				"RCH",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Jasper Dimmerchasm",
@@ -3110,7 +3135,8 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Klauth",
@@ -3154,7 +3180,7 @@
 				"cha": "+14"
 			},
 			"skill": {
-				"perception": "+17",
+				"perception": "+16",
 				"stealth": "+8"
 			},
 			"senses": [
@@ -3389,7 +3415,8 @@
 				"invisible",
 				"petrified",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Knight of the Mithral Shield",
@@ -3495,7 +3522,6 @@
 			"languages": [
 				"Common"
 			],
-			"cr": "0",
 			"trait": [
 				{
 					"name": "False Appearance",
@@ -3543,7 +3569,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Maegera the Dawn Titan",
@@ -3714,7 +3742,8 @@
 				"AOE",
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Markham Southwell",
@@ -3811,7 +3840,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Miros Xelbrin",
@@ -3900,7 +3931,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mirran",
@@ -4102,7 +4135,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Naxene Drathkala",
@@ -4231,7 +4266,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nimir",
@@ -4474,7 +4511,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orlekto",
@@ -4687,7 +4726,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Pig",
@@ -4893,7 +4934,8 @@
 			"conditionInflict": [
 				"blinded",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Rool",
@@ -5187,7 +5229,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sharda",
@@ -5462,7 +5506,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sirac of Suzail",
@@ -5563,7 +5609,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Slarkrethel",
@@ -5854,7 +5902,9 @@
 				"petrified",
 				"restrained",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stone Giant Statue",
@@ -6095,7 +6145,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "The Weevil",
@@ -6315,7 +6367,7 @@
 				{
 					"name": "Detect Invisibility",
 					"entries": [
-						"Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight"
+						"Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight."
 					]
 				},
 				{
@@ -6362,7 +6414,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tug",
@@ -6565,7 +6619,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Uthgardt Barbarian Leader",
@@ -6735,7 +6791,9 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vaal",
@@ -7059,7 +7117,8 @@
 				"incapacitated",
 				"paralyzed",
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Yakfolk Warrior",
@@ -7150,7 +7209,9 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Cloud Giant",
@@ -7496,7 +7557,9 @@
 				"charmed",
 				"invisible",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zi Liang",
@@ -7599,7 +7662,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

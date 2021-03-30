@@ -93,6 +93,7 @@
 				"DU"
 			],
 			"damageTags": [
+				"F",
 				"P"
 			],
 			"miscTags": [
@@ -101,7 +102,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blindheim",
@@ -184,7 +187,9 @@
 			],
 			"conditionInflict": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Crab Folk",
@@ -262,7 +267,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dire Corby",
@@ -305,6 +312,9 @@
 				"acrobatics": "+4",
 				"perception": "+3"
 			},
+			"senses": [
+				"darkvision 60 ft."
+			],
 			"passive": 13,
 			"vulnerable": [
 				"thunder"
@@ -348,6 +358,9 @@
 			"traitTags": [
 				"Keen Senses"
 			],
+			"senseTags": [
+				"D"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -359,7 +372,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Eye of Fear and Flame",
@@ -517,7 +532,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fog Giant",
@@ -648,7 +665,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Forlarren",
@@ -686,6 +705,9 @@
 				"deception": "+8",
 				"stealth": "+5"
 			},
+			"senses": [
+				"darkvision 30 ft."
+			],
 			"passive": 10,
 			"languages": [
 				"Common",
@@ -757,6 +779,9 @@
 			"traitTags": [
 				"Magic Resistance"
 			],
+			"senseTags": [
+				"D"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -776,7 +801,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Jermlaine",
@@ -878,7 +905,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Khargra",
@@ -967,7 +996,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Killmoulis",
@@ -1000,6 +1031,9 @@
 				"perception": "+4",
 				"stealth": "+8"
 			},
+			"senses": [
+				"darkvision 30 ft."
+			],
 			"passive": 14,
 			"languages": [
 				"Common",
@@ -1027,6 +1061,9 @@
 					]
 				}
 			],
+			"senseTags": [
+				"D"
+			],
 			"languageTags": [
 				"C",
 				"S",
@@ -1037,7 +1074,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mite",
@@ -1071,6 +1110,9 @@
 				"deception": "+3",
 				"stealth": "+6"
 			},
+			"senses": [
+				"darkvision 60 ft."
+			],
 			"passive": 9,
 			"languages": [
 				"Sylvan",
@@ -1100,6 +1142,9 @@
 				}
 			],
 			"hasToken": true,
+			"senseTags": [
+				"D"
+			],
 			"languageTags": [
 				"S",
 				"U"
@@ -1111,7 +1156,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Needle Lord",
@@ -1216,7 +1263,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Needle Spawn",
@@ -1303,7 +1352,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Norker",
@@ -1344,6 +1395,9 @@
 			"skill": {
 				"athletics": "+3"
 			},
+			"senses": [
+				"darkvision 60 ft."
+			],
 			"passive": 9,
 			"languages": [
 				"Common",
@@ -1379,6 +1433,9 @@
 				}
 			],
 			"hasToken": true,
+			"senseTags": [
+				"D"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1392,7 +1449,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Norker War Leader",
@@ -1435,6 +1494,9 @@
 				"intimidation": "+3",
 				"perception": "+2"
 			},
+			"senses": [
+				"darkvision 60 ft."
+			],
 			"passive": 12,
 			"languages": [
 				"Common",
@@ -1476,6 +1538,9 @@
 				}
 			],
 			"hasToken": true,
+			"senseTags": [
+				"D"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1489,7 +1554,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Screaming Devilkin",
@@ -1523,6 +1590,9 @@
 			"int": 5,
 			"wis": 8,
 			"cha": 11,
+			"senses": [
+				"darkvision 30 ft."
+			],
 			"passive": 9,
 			"languages": [
 				"Sylvan"
@@ -1558,6 +1628,9 @@
 				}
 			],
 			"hasToken": true,
+			"senseTags": [
+				"D"
+			],
 			"languageTags": [
 				"S"
 			],
@@ -1569,7 +1642,9 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Xill",
@@ -1607,6 +1682,9 @@
 				"athletics": "+4",
 				"perception": "+4"
 			},
+			"senses": [
+				"darkvision 60 ft."
+			],
 			"passive": 14,
 			"languages": [
 				"Common"
@@ -1641,6 +1719,9 @@
 				}
 			],
 			"hasToken": true,
+			"senseTags": [
+				"D"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1657,7 +1738,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ygorl, Lord of Entropy",
@@ -1884,7 +1967,9 @@
 				"incapacitated",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

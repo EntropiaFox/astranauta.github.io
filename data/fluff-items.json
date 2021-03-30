@@ -21,7 +21,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Alchemy Jug.jpg"
+						"path": "items/DMG/Alchemy Jug.jpg"
 					}
 				}
 			]
@@ -34,7 +34,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Amulet of Health.jpg"
+						"path": "items/DMG/Amulet of Health.jpg"
 					}
 				}
 			]
@@ -47,7 +47,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Amulet of Proof against Detection and Location.jpg"
+						"path": "items/DMG/Amulet of Proof against Detection and Location.jpg"
 					}
 				}
 			]
@@ -73,7 +73,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Amulet of the Planes.jpg"
+						"path": "items/DMG/Amulet of the Planes.jpg"
 					}
 				}
 			]
@@ -86,7 +86,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Animated Shield.jpg"
+						"path": "items/DMG/Animated Shield.jpg"
 					}
 				}
 			]
@@ -99,7 +99,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Apparatus of Kwalish.jpg"
+						"path": "items/DMG/Apparatus of Kwalish.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Armblade",
+			"source": "ERLW",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/ERLW/Armblade.png"
 					}
 				}
 			]
@@ -112,7 +125,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Armor of Invulnerability.jpg"
+						"path": "items/DMG/Armor of Invulnerability.jpg"
 					}
 				}
 			]
@@ -125,20 +138,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Armor of Resistance.jpg"
+						"path": "items/DMG/Armor of Resistance.jpg"
 					}
 				}
 			]
 		},
 		{
-			"name": "Arrow of Slaying",
+			"name": "Arrow of Slaying (*)",
 			"source": "DMG",
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Arrow of Slaying.jpg"
+						"path": "items/DMG/Arrow of Slaying.jpg"
 					}
 				}
 			]
@@ -164,7 +177,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Axe of the Dwarvish Lords.jpg"
+						"path": "items/DMG/Axe of the Dwarvish Lords.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Azorius Guild Signet",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Azorius Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Azorius Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Azorius Keyrune.jpg"
 					}
 				}
 			]
@@ -190,7 +229,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Badge of the Watch.png"
+						"path": "items/WDH/Badge of the Watch.png"
 					}
 				}
 			]
@@ -203,7 +242,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Bag of Beans.jpg"
+						"path": "items/DMG/Bag of Beans.jpg"
 					}
 				}
 			]
@@ -216,7 +255,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Bag of Devouring.jpg"
+						"path": "items/DMG/Bag of Devouring.jpg"
 					}
 				}
 			]
@@ -229,7 +268,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Bag of Holding.jpg"
+						"path": "items/DMG/Bag of Holding.jpg"
 					}
 				}
 			]
@@ -242,7 +281,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Bag of Tricks.jpg"
+						"path": "items/DMG/Bag of Tricks.jpg"
 					}
 				}
 			]
@@ -268,7 +307,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Belt of Dwarvenkind.jpg"
+						"path": "items/DMG/Belt of Dwarvenkind.jpg"
 					}
 				}
 			]
@@ -281,7 +320,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Belt of Giant Strength.png"
+						"path": "items/DMG/Belt of Giant Strength.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Belt of Stone Giant Strength",
+			"source": "DMG",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/DMG/Belt of Stone Giant Strength.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Belt of Storm Giant Strength",
+			"source": "DMG",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/DMG/Belt of Storm Giant Strength.jpg"
 					}
 				}
 			]
@@ -294,7 +359,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Berserker Axe.jpg"
+						"path": "items/DMG/Berserker Axe.jpg"
 					}
 				}
 			]
@@ -307,7 +372,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Blood Spear.png"
+						"path": "items/CoS/Blood Spear.png"
 					}
 				}
 			]
@@ -320,7 +385,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Book of Exalted Deeds.jpg"
+						"path": "items/DMG/Book of Exalted Deeds.jpg"
 					}
 				}
 			]
@@ -333,7 +398,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Book of Vile Darkness.jpg"
+						"path": "items/DMG/Book of Vile Darkness.jpg"
 					}
 				}
 			]
@@ -346,7 +411,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Boots of Elvenkind.jpg"
+						"path": "items/DMG/Boots of Elvenkind.jpg"
 					}
 				}
 			]
@@ -359,7 +424,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Boots of Speed.jpg"
+						"path": "items/DMG/Boots of Speed.jpg"
 					}
 				}
 			]
@@ -372,7 +437,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Boots of Striding and Springing.jpg"
+						"path": "items/DMG/Boots of Striding and Springing.jpg"
 					}
 				}
 			]
@@ -385,7 +450,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Boots of the Winterlands.jpg"
+						"path": "items/DMG/Boots of the Winterlands.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Boros Guild Signet",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Boros Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Boros Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Boros Keyrune.jpg"
 					}
 				}
 			]
@@ -398,7 +489,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Bowl of Commanding Water Elementals.jpg"
+						"path": "items/DMG/Bowl of Commanding Water Elementals.jpg"
 					}
 				}
 			]
@@ -411,7 +502,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Bracers of Archery.jpg"
+						"path": "items/DMG/Bracers of Archery.jpg"
 					}
 				}
 			]
@@ -424,7 +515,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Bracers of Defense.jpg"
+						"path": "items/DMG/Bracers of Defense.jpg"
 					}
 				}
 			]
@@ -437,7 +528,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Brazier of Commanding Fire Elementals.jpg"
+						"path": "items/DMG/Brazier of Commanding Fire Elementals.jpg"
 					}
 				}
 			]
@@ -450,7 +541,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Brooch of Shielding.jpg"
+						"path": "items/DMG/Brooch of Shielding.jpg"
 					}
 				}
 			]
@@ -463,7 +554,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Broom of Flying.jpg"
+						"path": "items/DMG/Broom of Flying.jpg"
 					}
 				}
 			]
@@ -489,7 +580,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Candle of Invocation.jpg"
+						"path": "items/DMG/Candle of Invocation.jpg"
 					}
 				}
 			]
@@ -502,7 +593,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Cape of the Mountebank.jpg"
+						"path": "items/DMG/Cape of the Mountebank.jpg"
 					}
 				}
 			]
@@ -541,7 +632,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Censer of Controlling Air Elementals.jpg"
+						"path": "items/DMG/Censer of Controlling Air Elementals.jpg"
 					}
 				}
 			]
@@ -554,7 +645,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Chime of Opening.jpg"
+						"path": "items/DMG/Chime of Opening.jpg"
 					}
 				}
 			]
@@ -567,7 +658,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Circlet of Blasting.jpg"
+						"path": "items/DMG/Circlet of Blasting.jpg"
 					}
 				}
 			]
@@ -580,7 +671,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Cloak of Displacement.jpg"
+						"path": "items/DMG/Cloak of Displacement.jpg"
 					}
 				}
 			]
@@ -593,7 +684,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Cloak of Elvenkind.jpg"
+						"path": "items/DMG/Cloak of Elvenkind.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Cloak of Invisibility",
+			"source": "DMG",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/DMG/Cloak of Invisibility.png"
 					}
 				}
 			]
@@ -606,7 +710,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Cloak of Protection.jpg"
+						"path": "items/DMG/Cloak of Protection.jpg"
 					}
 				}
 			]
@@ -619,7 +723,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Cloak of the Manta Ray.jpg"
+						"path": "items/DMG/Cloak of the Manta Ray.jpg"
 					}
 				}
 			]
@@ -645,7 +749,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Conch of Teleportation.png"
+						"path": "items/SKT/Conch of Teleportation.png"
 					}
 				}
 			]
@@ -658,7 +762,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Copper (cp).jpg"
+						"path": "items/PHB/Copper (cp).jpg"
 					}
 				}
 			]
@@ -697,7 +801,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Cube of Force.jpg"
+						"path": "items/DMG/Cube of Force.jpg"
 					}
 				}
 			]
@@ -710,7 +814,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Cubic Gate.jpg"
+						"path": "items/DMG/Cubic Gate.jpg"
 					}
 				}
 			]
@@ -723,7 +827,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Daern's Instant Fortress.jpg"
+						"path": "items/DMG/Daern's Instant Fortress.jpg"
 					}
 				}
 			]
@@ -736,7 +840,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dagger of Venom.jpg"
+						"path": "items/DMG/Dagger of Venom.jpg"
 					}
 				}
 			]
@@ -749,7 +853,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dancing Sword.jpg"
+						"path": "items/DMG/Dancing Sword.jpg"
 					}
 				}
 			]
@@ -788,7 +892,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Decanter of Endless Water.jpg"
+						"path": "items/DMG/Decanter of Endless Water.jpg"
 					}
 				}
 			]
@@ -801,7 +905,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Deck of Many Things.png"
+						"path": "items/DMG/Deck of Many Things.png"
 					}
 				}
 			]
@@ -814,7 +918,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Defender.jpg"
+						"path": "items/DMG/Defender.jpg"
 					}
 				}
 			]
@@ -840,7 +944,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Demon Armor.jpg"
+						"path": "items/DMG/Demon Armor.jpg"
 					}
 				}
 			]
@@ -879,7 +983,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dimensional Shackles.jpg"
+						"path": "items/DMG/Dimensional Shackles.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Dimir Guild Signet",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Dimir Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Dimir Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Dimir Keyrune.jpg"
 					}
 				}
 			]
@@ -922,7 +1052,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Draakhorn.png"
+						"path": "items/RoT/Draakhorn.png"
 					}
 				}
 			]
@@ -935,7 +1065,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dragon Scale Mail.jpg"
+						"path": "items/DMG/Dragon Scale Mail.jpg"
 					}
 				}
 			]
@@ -948,7 +1078,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dragon Slayer.jpg"
+						"path": "items/DMG/Dragon Slayer.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Dragonstaff of Ahghairon",
+			"source": "WDH",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/WDH/Dragonstaff of Ahghairon.jpg"
 					}
 				}
 			]
@@ -961,7 +1104,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dragontooth Dagger.png"
+						"path": "items/RoT/Dragontooth Dagger.png"
 					}
 				}
 			]
@@ -974,7 +1117,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Driftglobe.jpg"
+						"path": "items/DMG/Driftglobe.jpg"
 					}
 				}
 			]
@@ -987,7 +1130,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Drown.png"
+						"path": "items/PotA/Drown.png"
 					}
 				}
 			]
@@ -1013,7 +1156,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dust of Disappearance.jpg"
+						"path": "items/DMG/Dust of Disappearance.jpg"
 					}
 				}
 			]
@@ -1026,7 +1169,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dust of Sneezing and Choking.jpg"
+						"path": "items/DMG/Dust of Sneezing and Choking.jpg"
 					}
 				}
 			]
@@ -1039,7 +1182,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dwarven Plate.jpg"
+						"path": "items/DMG/Dwarven Plate.jpg"
 					}
 				}
 			]
@@ -1052,7 +1195,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Dwarven Thrower.jpg"
+						"path": "items/DMG/Dwarven Thrower.jpg"
 					}
 				}
 			]
@@ -1065,7 +1208,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Efreeti Bottle.jpg"
+						"path": "items/DMG/Efreeti Bottle.jpg"
 					}
 				}
 			]
@@ -1078,7 +1221,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Efreeti Chain.jpg"
+						"path": "items/DMG/Efreeti Chain.jpg"
 					}
 				}
 			]
@@ -1091,7 +1234,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Electrum (ep).jpg"
+						"path": "items/PHB/Electrum (ep).jpg"
 					}
 				}
 			]
@@ -1104,7 +1247,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Elemental Gem.jpg"
+						"path": "items/DMG/Elemental Gem.jpg"
 					}
 				}
 			]
@@ -1117,7 +1260,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Elven Chain.jpg"
+						"path": "items/DMG/Elven Chain.jpg"
 					}
 				}
 			]
@@ -1143,7 +1286,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Eversmoking Bottle.jpg"
+						"path": "items/DMG/Eversmoking Bottle.jpg"
 					}
 				}
 			]
@@ -1156,7 +1299,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Eye of Vecna.jpg"
+						"path": "items/DMG/Eye of Vecna.jpg"
 					}
 				}
 			]
@@ -1169,7 +1312,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Eyes of Charming.jpg"
+						"path": "items/DMG/Eyes of Charming.jpg"
 					}
 				}
 			]
@@ -1182,7 +1325,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Eyes of the Eagle.jpg"
+						"path": "items/DMG/Eyes of the Eagle.jpg"
 					}
 				}
 			]
@@ -1221,7 +1364,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Figurine of Wondrous Power.jpg"
+						"path": "items/DMG/Figurine of Wondrous Power.jpg"
 					}
 				}
 			]
@@ -1234,7 +1377,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Flame Tongue.jpg"
+						"path": "items/DMG/Flame Tongue.jpg"
 					}
 				}
 			]
@@ -1260,7 +1403,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Folding Boat.jpg"
+						"path": "items/DMG/Folding Boat.jpg"
 					}
 				}
 			]
@@ -1273,7 +1416,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Frost Brand.jpg"
+						"path": "items/DMG/Frost Brand.jpg"
 					}
 				}
 			]
@@ -1299,7 +1442,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Gauntlets of Ogre Power.jpg"
+						"path": "items/DMG/Gauntlets of Ogre Power.jpg"
 					}
 				}
 			]
@@ -1312,7 +1455,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Gem of Brightness.jpg"
+						"path": "items/DMG/Gem of Brightness.jpg"
 					}
 				}
 			]
@@ -1325,7 +1468,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Gem of Seeing.jpg"
+						"path": "items/DMG/Gem of Seeing.jpg"
 					}
 				}
 			]
@@ -1338,7 +1481,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ghost Lantern.png"
+						"path": "items/ToA/Ghost Lantern.png"
 					}
 				}
 			]
@@ -1351,7 +1494,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Giant Slayer.jpg"
+						"path": "items/DMG/Giant Slayer.jpg"
 					}
 				}
 			]
@@ -1364,7 +1507,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Gloves of Missile Snaring.jpg"
+						"path": "items/DMG/Gloves of Missile Snaring.jpg"
 					}
 				}
 			]
@@ -1377,7 +1520,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Goggles of Night.jpg"
+						"path": "items/DMG/Goggles of Night.jpg"
 					}
 				}
 			]
@@ -1390,7 +1533,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Gold (gp).jpg"
+						"path": "items/PHB/Gold (gp).jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Golgari Guild Signet",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Golgari Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Golgari Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Golgari Keyrune.png"
 					}
 				}
 			]
@@ -1435,14 +1604,27 @@
 			]
 		},
 		{
-			"name": "Guild Keyrune",
+			"name": "Gruul Guild Signet",
 			"source": "GGR",
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Guild Keyrune.png"
+						"path": "items/GGR/Gruul Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Gruul Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Gruul Keyrune.jpg"
 					}
 				}
 			]
@@ -1455,7 +1637,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Gulthias Staff.png"
+						"path": "items/CoS/Gulthias Staff.png"
 					}
 				}
 			]
@@ -1468,7 +1650,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Hammer of Thunderbolts.jpg"
+						"path": "items/DMG/Hammer of Thunderbolts.jpg"
 					}
 				}
 			]
@@ -1481,7 +1663,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Hand of Vecna.jpg"
+						"path": "items/DMG/Hand of Vecna.jpg"
 					}
 				}
 			]
@@ -1494,7 +1676,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Headband of Intellect.jpg"
+						"path": "items/DMG/Headband of Intellect.jpg"
 					}
 				}
 			]
@@ -1507,7 +1689,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Healer's Kit.jpg"
+						"path": "items/PHB/Healer's Kit.jpg"
 					}
 				}
 			]
@@ -1533,7 +1715,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Helm of Brilliance.jpg"
+						"path": "items/DMG/Helm of Brilliance.jpg"
 					}
 				}
 			]
@@ -1546,7 +1728,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Helm of Comprehending Languages.jpg"
+						"path": "items/DMG/Helm of Comprehending Languages.jpg"
 					}
 				}
 			]
@@ -1572,7 +1754,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Helm of Telepathy.jpg"
+						"path": "items/DMG/Helm of Telepathy.jpg"
 					}
 				}
 			]
@@ -1585,7 +1767,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Helm of Teleportation.jpg"
+						"path": "items/DMG/Helm of Teleportation.jpg"
 					}
 				}
 			]
@@ -1598,7 +1780,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Heward's Handy Haversack.jpg"
+						"path": "items/DMG/Heward's Handy Haversack.jpg"
 					}
 				}
 			]
@@ -1611,7 +1793,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Holy Avenger.jpg"
+						"path": "items/DMG/Holy Avenger.jpg"
 					}
 				}
 			]
@@ -1624,7 +1806,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Holy Symbol of Ravenkind.png"
+						"path": "items/CoS/Holy Symbol of Ravenkind.png"
 					}
 				}
 			]
@@ -1637,7 +1819,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Horn of Blasting.jpg"
+						"path": "items/DMG/Horn of Blasting.jpg"
 					}
 				}
 			]
@@ -1650,7 +1832,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Horn of Valhalla.jpg"
+						"path": "items/DMG/Horn of Valhalla.jpg"
 					}
 				}
 			]
@@ -1676,7 +1858,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Icon of Ravenloft.png"
+						"path": "items/CoS/Icon of Ravenloft.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Illusionist's Bracers",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Illusionist's Bracers.jpg"
 					}
 				}
 			]
@@ -1689,7 +1884,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Immovable Rod.jpg"
+						"path": "items/DMG/Immovable Rod.jpg"
 					}
 				}
 			]
@@ -1708,19 +1903,6 @@
 			]
 		},
 		{
-			"name": "Instrument of the Bards",
-			"source": "DMG",
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "items/Instrument of the Bards.jpg"
-					}
-				}
-			]
-		},
-		{
 			"name": "Instrument of the Bards, Anstruth Harp",
 			"source": "DMG",
 			"images": [
@@ -1728,7 +1910,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Instrument of the Bards, Anstruth Harp.jpg"
+						"path": "items/DMG/Instrument of the Bards, Anstruth Harp.jpg"
 					}
 				}
 			]
@@ -1741,7 +1923,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Instrument of the Bards, Canaith Mandolin.jpg"
+						"path": "items/DMG/Instrument of the Bards, Canaith Mandolin.jpg"
 					}
 				}
 			]
@@ -1754,7 +1936,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Instrument of the Bards, Cli Lyre.jpg"
+						"path": "items/DMG/Instrument of the Bards, Cli Lyre.jpg"
 					}
 				}
 			]
@@ -1767,7 +1949,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Instrument of the Bards, Doss Lute.jpg"
+						"path": "items/DMG/Instrument of the Bards, Doss Lute.jpg"
 					}
 				}
 			]
@@ -1780,7 +1962,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Instrument of the Bards, Fochlucan Bandore.jpg"
+						"path": "items/DMG/Instrument of the Bards, Fochlucan Bandore.jpg"
 					}
 				}
 			]
@@ -1793,7 +1975,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Instrument of the Bards, Mac-Fuirmidh Cittern.jpg"
+						"path": "items/DMG/Instrument of the Bards, Mac-Fuirmidh Cittern.jpg"
 					}
 				}
 			]
@@ -1806,7 +1988,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Instrument of the Bards, Ollamh Harp.jpg"
+						"path": "items/DMG/Instrument of the Bards, Ollamh Harp.jpg"
 					}
 				}
 			]
@@ -1819,7 +2001,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Iron Bands of Bilarro.jpg"
+						"path": "items/DMG/Iron Bands of Bilarro.jpg"
 					}
 				}
 			]
@@ -1832,7 +2014,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Iron Flask.jpg"
+						"path": "items/DMG/Iron Flask.jpg"
 					}
 				}
 			]
@@ -1845,7 +2027,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ironfang.png"
+						"path": "items/PotA/Ironfang.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Izzet Guild Signet",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Izzet Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Izzet Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Izzet Keyrune.jpg"
 					}
 				}
 			]
@@ -1858,7 +2066,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Javelin of Lightning.jpg"
+						"path": "items/DMG/Javelin of Lightning.jpg"
 					}
 				}
 			]
@@ -1871,7 +2079,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Keoghtom's Ointment.jpg"
+						"path": "items/DMG/Keoghtom's Ointment.jpg"
 					}
 				}
 			]
@@ -1897,7 +2105,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Lantern of Revealing.jpg"
+						"path": "items/DMG/Lantern of Revealing.jpg"
 					}
 				}
 			]
@@ -1936,7 +2144,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Lord's Ensemble.png"
+						"path": "items/WDH/Lord's Ensemble.png"
 					}
 				}
 			]
@@ -1962,7 +2170,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Luck Blade.jpg"
+						"path": "items/DMG/Luck Blade.jpg"
 					}
 				}
 			]
@@ -1988,7 +2196,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Mace of Disruption.jpg"
+						"path": "items/DMG/Mace of Disruption.jpg"
 					}
 				}
 			]
@@ -2001,7 +2209,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Mace of Smiting.jpg"
+						"path": "items/DMG/Mace of Smiting.jpg"
 					}
 				}
 			]
@@ -2014,7 +2222,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Mace of Terror.jpg"
+						"path": "items/DMG/Mace of Terror.jpg"
 					}
 				}
 			]
@@ -2040,7 +2248,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Mantle of Spell Resistance.jpg"
+						"path": "items/DMG/Mantle of Spell Resistance.jpg"
 					}
 				}
 			]
@@ -2053,7 +2261,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Manual of Bodily Health.jpg"
+						"path": "items/DMG/Manual of Bodily Health.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Manual of Clay Golems",
+			"source": "DMG",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/DMG/Manual of Clay Golems.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Manual of Flesh Golems",
+			"source": "DMG",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/DMG/Manual of Flesh Golems.jpg"
 					}
 				}
 			]
@@ -2066,7 +2300,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Manual of Golems.png"
+						"path": "items/DMG/Manual of Golems.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Manual of Iron Golems",
+			"source": "DMG",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/DMG/Manual of Iron Golems.jpg"
 					}
 				}
 			]
@@ -2079,7 +2326,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Manual of Quickness of Action.jpg"
+						"path": "items/DMG/Manual of Quickness of Action.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Manual of Stone Golems",
+			"source": "DMG",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/DMG/Manual of Stone Golems.png"
 					}
 				}
 			]
@@ -2092,7 +2352,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Mask of the Beast.png"
+						"path": "items/ToA/Mask of the Beast.png"
 					}
 				}
 			]
@@ -2105,7 +2365,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Mask of the Dragon Queen.jpg"
+						"path": "items/RoT/Mask of the Dragon Queen.jpg"
 					}
 				}
 			]
@@ -2124,6 +2384,19 @@
 			]
 		},
 		{
+			"name": "Matalotok",
+			"source": "BGDIA",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/BGDIA/Matalotok.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Medallion of Thoughts",
 			"source": "DMG",
 			"images": [
@@ -2131,7 +2404,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Medallion of Thoughts.jpg"
+						"path": "items/DMG/Medallion of Thoughts.jpg"
 					}
 				}
 			]
@@ -2157,7 +2430,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Mirror of Life Trapping.jpg"
+						"path": "items/DMG/Mirror of Life Trapping.jpg"
 					}
 				}
 			]
@@ -2170,7 +2443,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Mizzium Apparatus.png"
+						"path": "items/GGR/Mizzium Apparatus.png"
 					}
 				}
 			]
@@ -2183,7 +2456,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Moodmark Paint.png"
+						"path": "items/GGR/Moodmark Paint.png"
 					}
 				}
 			]
@@ -2196,7 +2469,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Moonblade.jpg"
+						"path": "items/DMG/Moonblade.jpg"
 					}
 				}
 			]
@@ -2222,7 +2495,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Necklace of Adaptation.jpg"
+						"path": "items/DMG/Necklace of Adaptation.jpg"
 					}
 				}
 			]
@@ -2235,7 +2508,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Necklace of Fireballs.jpg"
+						"path": "items/DMG/Necklace of Fireballs.jpg"
 					}
 				}
 			]
@@ -2248,7 +2521,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Necklace of Prayer Beads.jpg"
+						"path": "items/DMG/Necklace of Prayer Beads.jpg"
 					}
 				}
 			]
@@ -2261,7 +2534,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Nine Lives Stealer.jpg"
+						"path": "items/DMG/Nine Lives Stealer.jpg"
 					}
 				}
 			]
@@ -2274,7 +2547,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Nolzur's Marvelous Pigments.jpg"
+						"path": "items/DMG/Nolzur's Marvelous Pigments.jpg"
 					}
 				}
 			]
@@ -2287,7 +2560,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Oathbow.jpg"
+						"path": "items/DMG/Oathbow.jpg"
 					}
 				}
 			]
@@ -2313,7 +2586,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Orb of Dragonkind.jpg"
+						"path": "items/DMG/Orb of Dragonkind.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Orcus Figurine",
+			"source": "CM",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/CM/Orcus Figurine.jpg"
 					}
 				}
 			]
@@ -2332,6 +2618,32 @@
 			]
 		},
 		{
+			"name": "Orzhov Guild Signet",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Orzhov Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Orzhov Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Orzhov Keyrune.jpg"
+					}
+				}
+			]
+		},
+		{
 			"name": "Paper Bird",
 			"source": "WDH",
 			"images": [
@@ -2339,7 +2651,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Paper Bird.png"
+						"path": "items/WDH/Paper Bird.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Pariah's Shield",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Pariah's Shield.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Peregrine Mask",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Peregrine Mask.png"
 					}
 				}
 			]
@@ -2352,7 +2690,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Periapt of Health.jpg"
+						"path": "items/DMG/Periapt of Health.jpg"
 					}
 				}
 			]
@@ -2365,7 +2703,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Periapt of Wound Closure.jpg"
+						"path": "items/DMG/Periapt of Wound Closure.jpg"
 					}
 				}
 			]
@@ -2378,7 +2716,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Pipes of Haunting.jpg"
+						"path": "items/DMG/Pipes of Haunting.jpg"
 					}
 				}
 			]
@@ -2391,7 +2729,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Pipes of the Sewers.jpg"
+						"path": "items/DMG/Pipes of the Sewers.jpg"
 					}
 				}
 			]
@@ -2417,20 +2755,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Platinum (pp).jpg"
+						"path": "items/PHB/Platinum (pp).jpg"
 					}
 				}
 			]
 		},
 		{
 			"name": "Prosthetic Limb",
-			"source": "ERLW",
+			"source": "TCE",
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/ERLW/Prosthetic Limb.png"
+						"path": "items/TCE/Prosthetic Limb.png"
 					}
 				}
 			]
@@ -2444,6 +2782,19 @@
 					"href": {
 						"type": "internal",
 						"path": "items/IDRotF/Psi Crystal.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Pyroconverger",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Pyroconverger.jpg"
 					}
 				}
 			]
@@ -2469,7 +2820,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Quaal's Feather Token.jpg"
+						"path": "items/DMG/Quaal's Feather Token.jpg"
 					}
 				}
 			]
@@ -2482,7 +2833,46 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Quiver of Ehlonna.jpg"
+						"path": "items/DMG/Quiver of Ehlonna.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Rakdos Guild Signet",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Rakdos Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Rakdos Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Rakdos Keyrune.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Rakdos Riteknife",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Rakdos Riteknife.jpg"
 					}
 				}
 			]
@@ -2495,7 +2885,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Air Elemental Command.jpg"
+						"path": "items/DMG/Ring of Air Elemental Command.jpg"
 					}
 				}
 			]
@@ -2508,7 +2898,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Animal Influence.jpg"
+						"path": "items/DMG/Ring of Animal Influence.jpg"
 					}
 				}
 			]
@@ -2521,20 +2911,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Djinni Summoning.jpg"
-					}
-				}
-			]
-		},
-		{
-			"name": "Ring of Elemental Command",
-			"source": "DMG",
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "items/Ring of Elemental Command.jpg"
+						"path": "items/DMG/Ring of Djinni Summoning.jpg"
 					}
 				}
 			]
@@ -2547,7 +2924,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Evasion.jpg"
+						"path": "items/DMG/Ring of Evasion.jpg"
 					}
 				}
 			]
@@ -2560,7 +2937,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Feather Falling.jpg"
+						"path": "items/DMG/Ring of Feather Falling.jpg"
 					}
 				}
 			]
@@ -2573,7 +2950,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Free Action.jpg"
+						"path": "items/DMG/Ring of Free Action.jpg"
 					}
 				}
 			]
@@ -2586,7 +2963,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Invisibility.jpg"
+						"path": "items/DMG/Ring of Invisibility.jpg"
 					}
 				}
 			]
@@ -2599,7 +2976,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Mind Shielding.jpg"
+						"path": "items/DMG/Ring of Mind Shielding.jpg"
 					}
 				}
 			]
@@ -2625,7 +3002,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Protection.png"
+						"path": "items/DMG/Ring of Protection.png"
 					}
 				}
 			]
@@ -2638,7 +3015,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Regeneration.jpg"
+						"path": "items/DMG/Ring of Regeneration.jpg"
 					}
 				}
 			]
@@ -2651,7 +3028,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Resistance.jpg"
+						"path": "items/DMG/Ring of Resistance.jpg"
 					}
 				}
 			]
@@ -2664,7 +3041,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Shooting Stars.jpg"
+						"path": "items/DMG/Ring of Shooting Stars.jpg"
 					}
 				}
 			]
@@ -2677,7 +3054,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Spell Storing.jpg"
+						"path": "items/DMG/Ring of Spell Storing.jpg"
 					}
 				}
 			]
@@ -2690,7 +3067,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Spell Turning.jpg"
+						"path": "items/DMG/Ring of Spell Turning.jpg"
 					}
 				}
 			]
@@ -2703,7 +3080,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Telekinesis.jpg"
+						"path": "items/DMG/Ring of Telekinesis.jpg"
 					}
 				}
 			]
@@ -2716,7 +3093,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of the Ram.jpg"
+						"path": "items/DMG/Ring of the Ram.jpg"
 					}
 				}
 			]
@@ -2729,7 +3106,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Three Wishes.jpg"
+						"path": "items/DMG/Ring of Three Wishes.jpg"
 					}
 				}
 			]
@@ -2742,7 +3119,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Water Walking.jpg"
+						"path": "items/DMG/Ring of Water Walking.jpg"
 					}
 				}
 			]
@@ -2755,7 +3132,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of Winter.png"
+						"path": "items/ToA/Ring of Winter.png"
 					}
 				}
 			]
@@ -2768,7 +3145,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Ring of X-ray Vision.jpg"
+						"path": "items/DMG/Ring of X-ray Vision.jpg"
 					}
 				}
 			]
@@ -2781,7 +3158,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Robe of Eyes.jpg"
+						"path": "items/DMG/Robe of Eyes.jpg"
 					}
 				}
 			]
@@ -2794,7 +3171,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Robe of Stars.jpg"
+						"path": "items/DMG/Robe of Stars.jpg"
 					}
 				}
 			]
@@ -2807,7 +3184,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Robe of the Archmagi.jpg"
+						"path": "items/DMG/Robe of the Archmagi.jpg"
 					}
 				}
 			]
@@ -2820,7 +3197,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Robe of Useful Items.jpg"
+						"path": "items/DMG/Robe of Useful Items.jpg"
 					}
 				}
 			]
@@ -2833,7 +3210,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Rod of Absorption.jpg"
+						"path": "items/DMG/Rod of Absorption.jpg"
 					}
 				}
 			]
@@ -2846,7 +3223,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Rod of Lordly Might.jpg"
+						"path": "items/DMG/Rod of Lordly Might.jpg"
 					}
 				}
 			]
@@ -2859,7 +3236,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Rod of Resurrection.jpg"
+						"path": "items/DMG/Rod of Resurrection.jpg"
 					}
 				}
 			]
@@ -2872,7 +3249,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Rod of Rulership.jpg"
+						"path": "items/DMG/Rod of Rulership.jpg"
 					}
 				}
 			]
@@ -2885,7 +3262,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Rope of Entanglement.jpg"
+						"path": "items/DMG/Rope of Entanglement.jpg"
 					}
 				}
 			]
@@ -2911,7 +3288,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Saint Markovia's Thighbone.png"
+						"path": "items/CoS/Saint Markovia's Thighbone.png"
 					}
 				}
 			]
@@ -2924,7 +3301,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Scarab of Protection.jpg"
+						"path": "items/DMG/Scarab of Protection.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Selesnya Guild Signet",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Selesnya Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Selesnya Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Selesnya Keyrune.jpg"
 					}
 				}
 			]
@@ -2950,7 +3353,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Sending Stones.jpg"
+						"path": "items/DMG/Sending Stones.jpg"
 					}
 				}
 			]
@@ -2989,7 +3392,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Shield of Missile Attraction.jpg"
+						"path": "items/DMG/Shield of Missile Attraction.jpg"
 					}
 				}
 			]
@@ -3015,7 +3418,33 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Silver (sp).jpg"
+						"path": "items/PHB/Silver (sp).jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Simic Guild Signet",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Simic Guild Signet.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Simic Keyrune",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Simic Keyrune.jpg"
 					}
 				}
 			]
@@ -3028,7 +3457,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Skyblinder Staff.png"
+						"path": "items/GGR/Skyblinder Staff.png"
 					}
 				}
 			]
@@ -3041,7 +3470,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Slippers of Spider Climbing.jpg"
+						"path": "items/DMG/Slippers of Spider Climbing.jpg"
 					}
 				}
 			]
@@ -3067,7 +3496,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Sovereign Glue.jpg"
+						"path": "items/DMG/Sovereign Glue.jpg"
 					}
 				}
 			]
@@ -3093,7 +3522,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Spellguard Shield.jpg"
+						"path": "items/DMG/Spellguard Shield.jpg"
 					}
 				}
 			]
@@ -3106,7 +3535,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of Charming.jpg"
+						"path": "items/DMG/Staff of Charming.jpg"
 					}
 				}
 			]
@@ -3119,7 +3548,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of Fire.jpg"
+						"path": "items/DMG/Staff of Fire.jpg"
 					}
 				}
 			]
@@ -3132,7 +3561,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of Frost.jpg"
+						"path": "items/DMG/Staff of Frost.jpg"
 					}
 				}
 			]
@@ -3145,7 +3574,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of Healing.jpg"
+						"path": "items/DMG/Staff of Healing.jpg"
 					}
 				}
 			]
@@ -3158,7 +3587,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of Power.jpg"
+						"path": "items/DMG/Staff of Power.jpg"
 					}
 				}
 			]
@@ -3171,7 +3600,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of Swarming Insects.jpg"
+						"path": "items/DMG/Staff of Swarming Insects.jpg"
 					}
 				}
 			]
@@ -3184,7 +3613,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of the Adder.jpg"
+						"path": "items/DMG/Staff of the Adder.jpg"
 					}
 				}
 			]
@@ -3197,7 +3626,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of the Magi.jpg"
+						"path": "items/DMG/Staff of the Magi.jpg"
 					}
 				}
 			]
@@ -3210,7 +3639,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of the Python.jpg"
+						"path": "items/DMG/Staff of the Python.jpg"
 					}
 				}
 			]
@@ -3223,7 +3652,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of the Woodlands.jpg"
+						"path": "items/DMG/Staff of the Woodlands.jpg"
 					}
 				}
 			]
@@ -3236,7 +3665,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of Thunder and Lightning.jpg"
+						"path": "items/DMG/Staff of Thunder and Lightning.jpg"
 					}
 				}
 			]
@@ -3249,7 +3678,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Staff of Withering.jpg"
+						"path": "items/DMG/Staff of Withering.jpg"
 					}
 				}
 			]
@@ -3262,7 +3691,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Stone of Controlling Earth Elementals.jpg"
+						"path": "items/DMG/Stone of Controlling Earth Elementals.jpg"
 					}
 				}
 			]
@@ -3275,7 +3704,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Stone of Golorr.png"
+						"path": "items/WDH/Stone of Golorr.png"
 					}
 				}
 			]
@@ -3288,7 +3717,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Stone of Good Luck.jpg"
+						"path": "items/DMG/Stone of Good Luck.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Stonespeaker Crystal",
+			"source": "OotA",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/OotA/Stonespeaker Crystal.png"
 					}
 				}
 			]
@@ -3301,7 +3743,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Sun Blade.jpg"
+						"path": "items/DMG/Sun Blade.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Sunforger",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Sunforger.jpg"
 					}
 				}
 			]
@@ -3314,7 +3769,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Sunsword.png"
+						"path": "items/CoS/Sunsword.png"
 					}
 				}
 			]
@@ -3327,7 +3782,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Sword of Kas.jpg"
+						"path": "items/DMG/Sword of Kas.jpg"
 					}
 				}
 			]
@@ -3340,7 +3795,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Sword of Life Stealing.jpg"
+						"path": "items/DMG/Sword of Life Stealing.jpg"
 					}
 				}
 			]
@@ -3353,7 +3808,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Sword of Sharpness.jpg"
+						"path": "items/DMG/Sword of Sharpness.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Sword of the Paruns",
+			"source": "GGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/GGR/Sword of the Paruns.jpg"
 					}
 				}
 			]
@@ -3379,7 +3847,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Talisman of the Sphere.jpg"
+						"path": "items/DMG/Talisman of the Sphere.jpg"
 					}
 				}
 			]
@@ -3392,7 +3860,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Talisman of Ultimate Evil.jpg"
+						"path": "items/DMG/Talisman of Ultimate Evil.jpg"
 					}
 				}
 			]
@@ -3418,7 +3886,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Tentacle Rod.jpg"
+						"path": "items/DMG/Tentacle Rod.jpg"
 					}
 				}
 			]
@@ -3457,7 +3925,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Thieves' Tools.jpg"
+						"path": "items/PHB/Thieves' Tools.jpg"
 					}
 				}
 			]
@@ -3470,7 +3938,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Tinderstrike.png"
+						"path": "items/PotA/Tinderstrike.png"
 					}
 				}
 			]
@@ -3483,7 +3951,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Tome of Clear Thought.jpg"
+						"path": "items/DMG/Tome of Clear Thought.jpg"
 					}
 				}
 			]
@@ -3496,7 +3964,20 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Tome of Leadership and Influence.jpg"
+						"path": "items/DMG/Tome of Leadership and Influence.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Tome of Strahd",
+			"source": "CoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/CoS/Tome of Strahd.jpg"
 					}
 				}
 			]
@@ -3509,7 +3990,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Tome of Understanding.jpg"
+						"path": "items/DMG/Tome of Understanding.jpg"
 					}
 				}
 			]
@@ -3535,13 +4016,13 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Trident of Fish Command.jpg"
+						"path": "items/DMG/Trident of Fish Command.jpg"
 					}
 				}
 			]
 		},
 		{
-			"name": "Trinket (AI)",
+			"name": "Trinket",
 			"source": "AI",
 			"images": [
 				{
@@ -3568,14 +4049,27 @@
 			]
 		},
 		{
-			"name": "Trinket (PHB)",
+			"name": "Trinket",
 			"source": "PHB",
 			"images": [
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Trinket (PHB).png"
+						"path": "items/PHB/Trinket (PHB).png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Unbreakable Arrow",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/XGE/Unbreakable Arrow.png"
 					}
 				}
 			]
@@ -3588,7 +4082,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Universal Solvent.jpg"
+						"path": "items/DMG/Universal Solvent.jpg"
 					}
 				}
 			]
@@ -3601,7 +4095,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Vicious Weapon.jpg"
+						"path": "items/DMG/Vicious Weapon.jpg"
 					}
 				}
 			]
@@ -3614,7 +4108,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Vorpal Sword.jpg"
+						"path": "items/DMG/Vorpal Sword.jpg"
 					}
 				}
 			]
@@ -3627,7 +4121,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Binding.jpg"
+						"path": "items/DMG/Wand of Binding.jpg"
 					}
 				}
 			]
@@ -3640,7 +4134,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Enemy Detection.jpg"
+						"path": "items/DMG/Wand of Enemy Detection.jpg"
 					}
 				}
 			]
@@ -3653,7 +4147,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Fear.jpg"
+						"path": "items/DMG/Wand of Fear.jpg"
 					}
 				}
 			]
@@ -3666,7 +4160,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Fireballs.jpg"
+						"path": "items/DMG/Wand of Fireballs.jpg"
 					}
 				}
 			]
@@ -3679,7 +4173,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Lightning Bolts.jpg"
+						"path": "items/DMG/Wand of Lightning Bolts.jpg"
 					}
 				}
 			]
@@ -3692,7 +4186,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Magic Detection.jpg"
+						"path": "items/DMG/Wand of Magic Detection.jpg"
 					}
 				}
 			]
@@ -3705,7 +4199,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Magic Missiles.png"
+						"path": "items/DMG/Wand of Magic Missiles.png"
 					}
 				}
 			]
@@ -3718,7 +4212,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Orcus.jpg"
+						"path": "items/DMG/Wand of Orcus.jpg"
 					}
 				}
 			]
@@ -3731,7 +4225,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Paralysis.jpg"
+						"path": "items/DMG/Wand of Paralysis.jpg"
 					}
 				}
 			]
@@ -3744,7 +4238,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Polymorph.jpg"
+						"path": "items/DMG/Wand of Polymorph.jpg"
 					}
 				}
 			]
@@ -3757,7 +4251,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Secrets.jpg"
+						"path": "items/DMG/Wand of Secrets.jpg"
 					}
 				}
 			]
@@ -3770,7 +4264,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Web.jpg"
+						"path": "items/DMG/Wand of Web.jpg"
 					}
 				}
 			]
@@ -3783,7 +4277,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Winter.png"
+						"path": "items/HotDQ/Wand of Winter.png"
 					}
 				}
 			]
@@ -3796,7 +4290,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wand of Wonder.jpg"
+						"path": "items/DMG/Wand of Wonder.jpg"
 					}
 				}
 			]
@@ -3809,7 +4303,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Weapon of Warning.jpg"
+						"path": "items/DMG/Weapon of Warning.jpg"
 					}
 				}
 			]
@@ -3822,7 +4316,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Weird Tank.png"
+						"path": "items/PotA/Weird Tank.png"
 					}
 				}
 			]
@@ -3848,7 +4342,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wind Fan.jpg"
+						"path": "items/DMG/Wind Fan.jpg"
 					}
 				}
 			]
@@ -3861,7 +4355,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Windvane.png"
+						"path": "items/PotA/Windvane.png"
 					}
 				}
 			]
@@ -3874,7 +4368,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Winged Boots.png"
+						"path": "items/DMG/Winged Boots.png"
 					}
 				}
 			]
@@ -3887,7 +4381,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wings of Flying.jpg"
+						"path": "items/DMG/Wings of Flying.jpg"
 					}
 				}
 			]
@@ -3913,7 +4407,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/Wyrmskull Throne.png"
+						"path": "items/SKT/Wyrmskull Throne.png"
 					}
 				}
 			]

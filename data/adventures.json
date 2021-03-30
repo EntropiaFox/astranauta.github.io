@@ -16197,6 +16197,1041 @@
 					"name": "Maps"
 				}
 			]
+		},
+		{
+			"name": "Candlekeep Mysteries",
+			"id": "CM",
+			"source": "CM",
+			"published": "2021-03-16",
+			"storyline": "Candlekeep Mysteries",
+			"level": {
+				"start": 1,
+				"end": 16
+			},
+			"contents": [
+				{
+					"name": "A Book of Books",
+					"headers": [
+						"Using the Adventures"
+					]
+				},
+				{
+					"name": "Candlekeep",
+					"headers": [
+						"Entering Candlekeep",
+						"Defenses and Decorum",
+						"Sages and Master Sages",
+						"The Avowed",
+						"Candlekeep Locations"
+					]
+				},
+				{
+					"name": "The Joy of Extradimensional Spaces",
+					"headers": [
+						"Finding the Book",
+						"Opening the Portal",
+						"Fistandia's Mansion",
+						{
+							"depth": 1,
+							"header": "M1. Foyer and Hallway"
+						},
+						{
+							"depth": 1,
+							"header": "M2. Patio"
+						},
+						{
+							"depth": 1,
+							"header": "M3. Library"
+						},
+						{
+							"depth": 1,
+							"header": "M4. Exercise Room"
+						},
+						{
+							"depth": 1,
+							"header": "M5. Study"
+						},
+						{
+							"depth": 1,
+							"header": "M6. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "M7. Pantry"
+						},
+						{
+							"depth": 1,
+							"header": "M8. Dining Room"
+						},
+						{
+							"depth": 1,
+							"header": "M9. Arboretum"
+						},
+						{
+							"depth": 1,
+							"header": "M10. Stairs"
+						},
+						{
+							"depth": 1,
+							"header": "M11. Laboratory"
+						},
+						{
+							"depth": 1,
+							"header": "M12. Planetarium"
+						},
+						{
+							"depth": 1,
+							"header": "M13. The Chained Library"
+						},
+						{
+							"depth": 1,
+							"header": "M14. Trophy Room"
+						},
+						{
+							"depth": 1,
+							"header": "M15. Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "M16. Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "M17. Alchemical Laboratory"
+						},
+						{
+							"depth": 1,
+							"header": "M18. Summoning Room"
+						},
+						{
+							"depth": 1,
+							"header": "M19. Preserved Menagerie"
+						},
+						"Conclusion"
+					]
+				},
+				{
+					"name": "Mazfroth's Mighty Digressions",
+					"headers": [
+						"Finding the Book",
+						"What's Going On?",
+						"Monstrous Books",
+						"Journey to Baldur's Gate",
+						"The Wide",
+						"Blackgate",
+						"Amberdune Hideout",
+						{
+							"depth": 1,
+							"header": "A1. Common Room"
+						},
+						{
+							"depth": 1,
+							"header": "A2. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "A3. Corridor Dormitory"
+						},
+						{
+							"depth": 1,
+							"header": "A4. Korvala's Office"
+						},
+						{
+							"depth": 1,
+							"header": "A5. Storage Room"
+						},
+						{
+							"depth": 1,
+							"header": "A6. Hidden Vault"
+						},
+						"Conclusion"
+					]
+				},
+				{
+					"name": "Book of the Raven",
+					"headers": [
+						"Finding the Book",
+						"Map of Mystery",
+						"Chalet Brantifax",
+						{
+							"depth": 1,
+							"header": "C1. Storage Cellar"
+						},
+						{
+							"depth": 1,
+							"header": "C2. Servants' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "C3. Haunted Well"
+						},
+						{
+							"depth": 1,
+							"header": "C4. Cloakroom"
+						},
+						{
+							"depth": 1,
+							"header": "C5. Den"
+						},
+						{
+							"depth": 1,
+							"header": "C6. Dining Room"
+						},
+						{
+							"depth": 1,
+							"header": "C7. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "C8. Parlor"
+						},
+						{
+							"depth": 1,
+							"header": "C9. Graveyard"
+						},
+						{
+							"depth": 1,
+							"header": "C10. Guest Room"
+						},
+						{
+							"depth": 1,
+							"header": "C11. Guest Room"
+						},
+						{
+							"depth": 1,
+							"header": "C12. Study"
+						},
+						{
+							"depth": 1,
+							"header": "C13. Master Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "C14. Baron's Loft"
+						},
+						{
+							"depth": 1,
+							"header": "C15. Attic Nursery"
+						},
+						{
+							"depth": 1,
+							"header": "C16. Servants' Attic"
+						},
+						{
+							"depth": 1,
+							"header": "C17. Storage Attic"
+						},
+						"Shadow Crossing",
+						"Wereraven"
+					]
+				},
+				{
+					"name": "A Deep and Creeping Darkness",
+					"headers": [
+						"Finding the Book",
+						"Maerin",
+						"Vermeillon",
+						{
+							"depth": 1,
+							"header": "V1. The Wand and Hammer"
+						},
+						{
+							"depth": 1,
+							"header": "V2. Stonemason's Workshop"
+						},
+						{
+							"depth": 1,
+							"header": "V3. Mayor's House"
+						},
+						{
+							"depth": 1,
+							"header": "V4. Tree"
+						},
+						{
+							"depth": 1,
+							"header": "V5. Graveyard"
+						},
+						{
+							"depth": 1,
+							"header": "V6. Merchant's Cart"
+						},
+						{
+							"depth": 1,
+							"header": "H1. Entryway"
+						},
+						{
+							"depth": 1,
+							"header": "H2. Assembly Room"
+						},
+						{
+							"depth": 1,
+							"header": "H3. Meeting Room"
+						},
+						{
+							"depth": 1,
+							"header": "H4. Dining Room"
+						},
+						{
+							"depth": 1,
+							"header": "H5. Parlor"
+						},
+						{
+							"depth": 1,
+							"header": "H6. Upstairs Landing"
+						},
+						{
+							"depth": 1,
+							"header": "H7. Daughter's Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "H8. Master Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "H9. Library"
+						},
+						{
+							"depth": 1,
+							"header": "H10. Guest Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "H11. Son's Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "M1. Main Tunnel"
+						},
+						{
+							"depth": 1,
+							"header": "M2. Southern Wing"
+						},
+						{
+							"depth": 1,
+							"header": "M3. Northern Wing"
+						},
+						{
+							"depth": 1,
+							"header": "M4. Cave-In"
+						},
+						{
+							"depth": 1,
+							"header": "M5. Entrance to the Meenlock Lair"
+						},
+						{
+							"depth": 1,
+							"header": "M6. Chamber of Weeping"
+						},
+						{
+							"depth": 1,
+							"header": "M7. Mossy Maze"
+						},
+						{
+							"depth": 1,
+							"header": "M8. Pools"
+						},
+						{
+							"depth": 1,
+							"header": "M9. Transformation Chamber"
+						},
+						"Fate of Vermeillon",
+						"Meenlock"
+					]
+				},
+				{
+					"name": "Shemshime's Bedtime Rhyme",
+					"headers": [
+						"Adventure Overview",
+						"Player Handout: Shemshime's Rhyme",
+						"Finding the Book",
+						"Cellar Inhabitants",
+						"Starting the Adventure",
+						"Events",
+						"The Firefly Cellar",
+						{
+							"depth": 1,
+							"header": "F1. The Stacks, Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "F2. The Stacks"
+						},
+						{
+							"depth": 1,
+							"header": "F3. Scriptorium"
+						},
+						{
+							"depth": 1,
+							"header": "F4. Firefly Room"
+						},
+						{
+							"depth": 1,
+							"header": "F5. Bindery"
+						},
+						{
+							"depth": 1,
+							"header": "F6. The Worm Tunnel"
+						},
+						{
+							"depth": 1,
+							"header": "F7. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "F8. Avowed Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "F9. Gailby's Room"
+						},
+						{
+							"depth": 1,
+							"header": "F10. Ebder's Room"
+						},
+						{
+							"depth": 1,
+							"header": "F11. Crinkle's Room"
+						},
+						{
+							"depth": 1,
+							"header": "F12. Avowed Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "F13. K'Tulah's Room"
+						},
+						{
+							"depth": 1,
+							"header": "F14. Varnyr's Room"
+						}
+					]
+				},
+				{
+					"name": "The Price of Beauty",
+					"headers": [
+						"Beginning the Adventure",
+						"Temple of the Restful Lily",
+						{
+							"depth": 1,
+							"header": "T1. Lobby"
+						},
+						{
+							"depth": 1,
+							"header": "T2. Changing Rooms"
+						},
+						{
+							"depth": 1,
+							"header": "T3. Lounge"
+						},
+						{
+							"depth": 1,
+							"header": "T4. Garden"
+						},
+						{
+							"depth": 1,
+							"header": "T5. Bath and Hot Spring"
+						},
+						{
+							"depth": 1,
+							"header": "T6. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "T7. Treatment Rooms"
+						},
+						{
+							"depth": 1,
+							"header": "T8. Storage"
+						},
+						{
+							"depth": 1,
+							"header": "T9. Guest Rooms"
+						},
+						{
+							"depth": 1,
+							"header": "T10. Ilmar's Room"
+						},
+						{
+							"depth": 1,
+							"header": "T11. Abandoned Shrine"
+						},
+						{
+							"depth": 1,
+							"header": "T12. Sacred Pool"
+						},
+						{
+							"depth": 1,
+							"header": "T13. Tower Foyer"
+						},
+						{
+							"depth": 1,
+							"header": "T14. Saeth's Room"
+						},
+						{
+							"depth": 1,
+							"header": "T15. Tower Studio"
+						},
+						{
+							"depth": 1,
+							"header": "T16. Tower Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "T17. Victims' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "T18. Hags' Lair"
+						},
+						"Conclusion"
+					]
+				},
+				{
+					"name": "Book of Cylinders",
+					"headers": [
+						"Beginning the Adventure",
+						"Northward Ho!",
+						"Helping the Grippli",
+						{
+							"depth": 1,
+							"header": "T1. Courtyard "
+						},
+						{
+							"depth": 1,
+							"header": "T2. Upper Court"
+						},
+						"Aftermath",
+						"Grippli"
+					]
+				},
+				{
+					"name": "Sarah of Yellowcrest Manor",
+					"headers": [
+						"Beginning the Adventure",
+						"Grieving Ghost",
+						"Secrets in Waterdeep",
+						"Greenfast",
+						{
+							"depth": 1,
+							"header": "G1. Mayor's House"
+						},
+						{
+							"depth": 1,
+							"header": "G2. The Bulging Cauldron"
+						},
+						{
+							"depth": 1,
+							"header": "G3. Lord Viallis's House"
+						},
+						{
+							"depth": 1,
+							"header": "G4. Faerl's House"
+						},
+						{
+							"depth": 1,
+							"header": "G5. Barn"
+						},
+						"Temple of the Burnt Tongue Cult ",
+						{
+							"depth": 1,
+							"header": "B1. Antechamber"
+						},
+						{
+							"depth": 1,
+							"header": "B2. Arcane Study"
+						},
+						{
+							"depth": 1,
+							"header": "B3. Dungeon Access"
+						},
+						{
+							"depth": 1,
+							"header": "B4. Office"
+						},
+						{
+							"depth": 1,
+							"header": "B5. Symbol Workshop"
+						},
+						{
+							"depth": 1,
+							"header": "B6. Study"
+						},
+						{
+							"depth": 1,
+							"header": "B7. Dark Chapel"
+						},
+						{
+							"depth": 1,
+							"header": "B8. Secret Vault"
+						},
+						{
+							"depth": 1,
+							"header": "B9. Secret Library"
+						},
+						{
+							"depth": 1,
+							"header": "B10. Ossuary"
+						},
+						{
+							"depth": 1,
+							"header": "B11. Cells"
+						},
+						{
+							"depth": 1,
+							"header": "B12. Acolytes' Training Room"
+						},
+						{
+							"depth": 1,
+							"header": "B13. Sacrificial Remains"
+						},
+						"Conclusion"
+					]
+				},
+				{
+					"name": "Lore of Lurue",
+					"headers": [
+						"Finding The Book",
+						"Lore Comes to Life",
+						"Into the Wood",
+						{
+							"depth": 1,
+							"header": "H1. Dry Well"
+						},
+						{
+							"depth": 1,
+							"header": "H2. Hag Shack"
+						},
+						{
+							"depth": 1,
+							"header": "H3. Hag's Menagerie"
+						},
+						"Peril at the Pool",
+						"Conclusion"
+					]
+				},
+				{
+					"name": "Kandlekeep Dekonstruktion",
+					"headers": [
+						"Beginning the Adventure",
+						"Earthquake!",
+						"The Barn Door",
+						{
+							"depth": 1,
+							"header": "B1. Library"
+						},
+						{
+							"depth": 1,
+							"header": "B2. Main Room"
+						},
+						{
+							"depth": 1,
+							"header": "B3. Stonky's Study"
+						},
+						{
+							"depth": 1,
+							"header": "B4. Observatory"
+						},
+						"Under the Barn Door",
+						{
+							"depth": 1,
+							"header": "U1. Descending Staircase"
+						},
+						{
+							"depth": 1,
+							"header": "U2. Rocket Boosters"
+						},
+						{
+							"depth": 1,
+							"header": "U3. Unlit Hallway"
+						},
+						{
+							"depth": 1,
+							"header": "U4. Forge"
+						},
+						{
+							"depth": 1,
+							"header": "U5. Stonky's Missing Ring"
+						},
+						{
+							"depth": 1,
+							"header": "U6. Workshop "
+						},
+						{
+							"depth": 1,
+							"header": "U7. Stonky's Command Center"
+						},
+						"Conclusion",
+						"New Monsters"
+					]
+				},
+				{
+					"name": "Zikran's Zephyrean Tome",
+					"headers": [
+						"Finding the Book",
+						"Gazre-Azam's Predicament",
+						"Zikran's Laboratory",
+						{
+							"depth": 1,
+							"header": "L1. Coral Spire"
+						},
+						{
+							"depth": 1,
+							"header": "L2. Flooded Cave"
+						},
+						{
+							"depth": 1,
+							"header": "L3. Tidal Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "L4. Zikran's Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "L5. Laboratory and Lair"
+						},
+						"The Cloud Peaks",
+						"Cloud Giants' Keep",
+						{
+							"depth": 1,
+							"header": "C1. Front Yard"
+						},
+						{
+							"depth": 1,
+							"header": "C2. Entrance Hall"
+						},
+						{
+							"depth": 1,
+							"header": "C3. Armory"
+						},
+						{
+							"depth": 1,
+							"header": "C4. Mess Hall"
+						},
+						{
+							"depth": 1,
+							"header": "C5. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "C6. Second Floor Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "C7. Zikran's Basement Workshop"
+						},
+						"Conclusion"
+					]
+				},
+				{
+					"name": "The Curious Tale of Wisteria Vale",
+					"headers": [
+						"Finding the Book",
+						"The Cure",
+						"Adventure Summary",
+						"Into the Demiplane",
+						"Wisteria Vale",
+						{
+							"depth": 1,
+							"header": "W1. Vyridian Forest"
+						},
+						{
+							"depth": 1,
+							"header": "W2. Farms"
+						},
+						{
+							"depth": 1,
+							"header": "W3. Blossom's Rest"
+						},
+						{
+							"depth": 1,
+							"header": "W4. Silks and Soles"
+						},
+						{
+							"depth": 1,
+							"header": "W5. Marketplace"
+						},
+						{
+							"depth": 1,
+							"header": "W6. Manor"
+						},
+						"Exploring the Manor",
+						{
+							"depth": 1,
+							"header": "M1. Lounge"
+						},
+						{
+							"depth": 1,
+							"header": "M2. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "M3. Dining Room"
+						},
+						{
+							"depth": 1,
+							"header": "M4. Storage"
+						},
+						{
+							"depth": 1,
+							"header": "M5. Backstage"
+						},
+						{
+							"depth": 1,
+							"header": "M6. Ballroom"
+						},
+						{
+							"depth": 1,
+							"header": "M7. Library"
+						},
+						{
+							"depth": 1,
+							"header": "M8. Master Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "M9. Guest Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "M10. Guest Bathroom"
+						},
+						"Finding Quill",
+						"Quill's Party",
+						"Aftermath"
+					]
+				},
+				{
+					"name": "The Book of Inner Alchemy",
+					"headers": [
+						"Finding the Book",
+						"Order of the Immortal Lotus",
+						"Into the Cloakwood",
+						"Temple of the Immortal Lotus",
+						{
+							"depth": 1,
+							"header": "L1. Stele Forest"
+						},
+						{
+							"depth": 1,
+							"header": "L2. Living Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "L3. Hall of Knowledge"
+						},
+						{
+							"depth": 1,
+							"header": "L4. Training Grounds"
+						},
+						{
+							"depth": 1,
+							"header": "L5. Jagged Sanctum"
+						},
+						"Aftermath"
+					]
+				},
+				{
+					"name": "The Canopic Being",
+					"headers": [
+						"Beginning the Adventure",
+						"Player Handout: Xemru's Note",
+						"Mission to Tashluta",
+						"Valin's Tomb",
+						{
+							"depth": 1,
+							"header": "T1. Portal"
+						},
+						{
+							"depth": 1,
+							"header": "T2. Alessia's Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "T3. Mirrors of Fortune"
+						},
+						{
+							"depth": 1,
+							"header": "T4. Testing Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "T5. Scrying Pool"
+						},
+						{
+							"depth": 1,
+							"header": "T6. False Tomb"
+						},
+						{
+							"depth": 1,
+							"header": "T7. Meditation Room"
+						},
+						{
+							"depth": 1,
+							"header": "T8. Antechamber"
+						},
+						{
+							"depth": 1,
+							"header": "T9. Observatory of Fate"
+						},
+						{
+							"depth": 1,
+							"header": "T10. Treasure Room"
+						},
+						{
+							"depth": 1,
+							"header": "T11. Observatory of History"
+						},
+						"Conclusion"
+					]
+				},
+				{
+					"name": "The Scrivener's Tale",
+					"headers": [
+						"Beginning the Adventure",
+						"The Scrivener's Mark",
+						"A Mysterious Dream",
+						"A Troubled Journey",
+						"Baldur's Gate",
+						"Haven of the Red Quill",
+						{
+							"depth": 1,
+							"header": "H1. Deep Stairwell"
+						},
+						{
+							"depth": 1,
+							"header": "H2. Collapsing Room"
+						},
+						{
+							"depth": 1,
+							"header": "H3. Central Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "H4. Reading Room"
+						},
+						{
+							"depth": 1,
+							"header": "H5. Dragon Fresco"
+						},
+						{
+							"depth": 1,
+							"header": "H6. Bunkroom"
+						},
+						{
+							"depth": 1,
+							"header": "H7. Deep Spring"
+						},
+						{
+							"depth": 1,
+							"header": "H8. Great Library"
+						},
+						"Conclusion",
+						"Nintra Siotta, Princess of the Shadow Glass"
+					]
+				},
+				{
+					"name": "Alkazaar's Appendix",
+					"headers": [
+						"Adventure Overview",
+						"Finding the Books",
+						"Adventure Background",
+						"Arriving in Anauroch",
+						"Travel in Anauroch",
+						"Arrival at Haruun",
+						{
+							"depth": 1,
+							"header": "H1. Cave Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "H2. Worm Rubble"
+						},
+						{
+							"depth": 1,
+							"header": "H3. Hall of Rainbows"
+						},
+						"Travel to the Necropolis",
+						"Necropolis of Azumar",
+						{
+							"depth": 1,
+							"header": "V1. Mastaba"
+						},
+						{
+							"depth": 1,
+							"header": "V2. Mausoleum"
+						},
+						{
+							"depth": 1,
+							"header": "V3. Dracolich's Antechamber"
+						},
+						{
+							"depth": 1,
+							"header": "V4. Hall of Records"
+						},
+						{
+							"depth": 1,
+							"header": "V5. Vault"
+						},
+						"What Happens Next?",
+						"Chwinga"
+					]
+				},
+				{
+					"name": "Xanthoria",
+					"headers": [
+						"Beginning the Adventure",
+						"The Lykortha Expanse",
+						{
+							"depth": 1,
+							"header": "L1. Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "L2. Alchemist's Alcove"
+						},
+						{
+							"depth": 1,
+							"header": "L3. Cavern of Souls"
+						},
+						{
+							"depth": 1,
+							"header": "L4. Moldy Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "L5. Faerie Ring"
+						},
+						{
+							"depth": 1,
+							"header": "L6. Flooded Cavern"
+						},
+						{
+							"depth": 1,
+							"header": "L7. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "L8. Meditation Cavern"
+						},
+						{
+							"depth": 1,
+							"header": "L9. Cove of Experimentation "
+						},
+						{
+							"depth": 1,
+							"header": "L10. Charnel Pit "
+						},
+						{
+							"depth": 1,
+							"header": "L11. Xanthoria's Grove of Horrors"
+						},
+						"Xanthoria's Defeat ",
+						"Lichen Lich"
+					]
+				}
+			]
 		}
 	]
 }

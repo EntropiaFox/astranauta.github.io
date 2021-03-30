@@ -21,7 +21,7 @@
 				{
 					"type": "list",
 					"items": [
-						"Style tags; {@bold some text to be bolded} (alternative {@b shorthand}), {@italic some text to be italicised} (alternative {@i shorthand}), {@strike some text to strike-through}, (alternative {@s shorthand}), {@color color|e40707} tags",
+						"Style tags; {@bold some text to be bolded} (alternative {@b shorthand}), {@italic some text to be italicised} (alternative {@i shorthand}), {@underline some text to be underlined} (alternative {@u shorthand}), {@strike some text to strike-through}, (alternative {@s shorthand}), {@color color|e40707} tags",
 						"Additionally, {@note note tags}, used for adding errata or Twitter \"designer footnotes.\"",
 						"Dice roller tags; {@dice 1d2-2+2d3+5} for regular dice rolls ({@dice 1d6;2d6} for multiple options; {@dice 1d6 + #$prompt_number:min=1,title=Enter a Number!,default=123$#} for input prompts), with extended {@dice 1d20+2|display text} and {@dice 1d20+2|display text|rolled by name}, and a special 'hit' version which assumes a d20 is to be rolled {@hit +7} (and rolls advantage on shift-click, disadvantage on alt-click). There's also {@damage 1d12+3} which will roll critical hits on shift-click and half damage (rounding down) on alt-click, and {@d20 -4} which will also roll advantage/disadvantage, although @hit tags are preferred where appropriate. Spells can have scaling-dice tags, (damage of 2d6 or 3d6 at level 1, add an extra {@scaledice 2d6;3d6|2-9|1d6} for each level beyond 2nd), for when a spell effect scales at higher levels.",
 						"Chance tags; similar to dice roller tags, but output success/failure. Similar syntax as dice tags: {@chance 50}, {@chance 50|display text}, and {@chance 50|display text|rolled by name}.",
@@ -59,7 +59,8 @@
 								"Tables: {@table 25 gp Art Objects} assumes DMG by default, {@table Adventuring Gear|phb} can have sources added with a pipe, {@table Adventuring Gear|phb|and optional link text added with another pipe}.",
 								"Actions: {@action Attack} assumes PHB by default, {@action Tumble|DMG} can have sources added with a pipe, {@action Tumble|DMG|and optional link text added with another pipe}.",
 								"Languages: {@language common} assumes PHB by default, {@language Dambrathan|SCAG} can have sources added with a pipe, {@language Dambrathan|SCAG|and optional link text added with another pipe}.",
-								"Other Character Creation Options: {@charoption Anvilwrought} assumes MOT by default, {@charoption Hollow One|EGW} can have sources added with a pipe, {@charoption Hollow One|EGW|and optional link text added with another pipe}."
+								"Other Character Creation Options: {@charoption Anvilwrought} assumes MOT by default, {@charoption Hollow One|EGW} can have sources added with a pipe, {@charoption Hollow One|EGW|and optional link text added with another pipe}.",
+								"Recipes: {@recipe Elven Bread} assumes Heroes' Feast by default, {@recipe Elven Bread|HF} can have sources added with a pipe, {@recipe Elven Bread|HF|and optional link text added with another pipe}."
 							]
 						},
 						{
@@ -72,7 +73,7 @@
 								"The purpose of this tag is to open the given page, pre-filtered with the specified filtering options. There's one major caveat that makes this tricky to use for aspiring JSONtranauts\u2014the filter values use the {@i internal} version, as you'd find in the data. So, for example, ..|school=D|.. would filter spells to Divination school spells, as 'D' is the Divination identifier in the data. Trying to do e.g. ..|school=Divination|.. will not work.",
 								"The 'filter_name_X' here matches the literal text name of the filter, as displayed in the dropdown.",
 								"Some examples of the tag in action:",
-								"{@filter Races that have a bonus to Intelligence|races|Ability Bonus (Including Subrace)=Intelligence +2;Intelligence +1}",
+								"{@filter Races that have a bonus to Intelligence|races|Ability Bonus (Including Subrace)=Intelligence +any}",
 								"{@filter Bard cantrips and first-level spells|spells|level=0;1|class=bard}",
 								"{@filter Beast with challenge rating 1 or lower|bestiary|challenge rating=[&0;&1]|type=beast}",
 								"{@filter Creatures with a Strength score of 18 or more|bestiary|strength=[18;]}",
@@ -441,7 +442,7 @@
 					"value": 3
 				},
 				"We don't use that one much. It's useful because it allows us to store the data as a number, and render it with a plus sign as required, but it's mostly just forgotten about.",
-				"Similar story with 'bonusSpeed' type (these 'bonus' flavours are mainly used in the class tables)",
+				"Similar story with 'bonusSpeed' type (these 'bonus' flavors are mainly used in the class tables)",
 				{
 					"type": "bonusSpeed",
 					"value": 100

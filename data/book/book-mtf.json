@@ -2252,203 +2252,203 @@
 							],
 							"rows": [
 								[
-									"Aerdrie Faenya",
+									"{@deity Aerdrie Faenya|elven|mtf}",
 									"CG",
 									"Air, rain, fertility, birth",
 									"Life, Tempest, Trickery",
 									"Bird silhouetted against a cloud"
 								],
 								[
-									"Angharradh",
+									"{@deity Angharradh|elven|mtf}",
 									"CG",
 									"Wisdom, growth, protection",
 									"Knowledge, Life, War",
 									"Three interlocking circles"
 								],
 								[
-									"Alathrien Druanna",
+									"{@deity Alathrien Druanna|elven|mtf}",
 									"N",
 									"Runes, writing, spellcasting",
 									"Arcana,** Knowledge",
 									"A quill or glyph"
 								],
 								[
-									"Alobal Lorfiril",
+									"{@deity Alobal Lorfiril|elven|mtf}",
 									"CG",
 									"Revelry, mirth",
 									"Life, Trickery",
 									"Wine glass"
 								],
 								[
-									"Araleth Letheranil",
+									"{@deity Araleth Letheranil|elven|mtf}",
 									"CG",
 									"Light, stars, revelations",
 									"Knowledge, Light",
 									"Shaft of light"
 								],
 								[
-									"Corellon Larethian",
+									"{@deity Corellon Larethian|elven|mtf}",
 									"CG",
 									"Primary god of elves",
 									"Arcana,** Life, Light, War",
 									"Quarter moon or starburst"
 								],
 								[
-									"Darahl Tilvenar",
+									"{@deity Darahl Tilvenar|elven|mtf}",
 									"LN",
 									"Fire, earth, metalwork",
 									"Forge,* Light",
 									"Flame between hands"
 								],
 								[
-									"Deep Sashelas",
+									"{@deity Deep Sashelas|elven|mtf}",
 									"CG",
 									"Creativity, knowledge, sea",
 									"Knowledge, Nature, Tempest",
 									"Dolphin"
 								],
 								[
-									"Elebrin Liothiel",
+									"{@deity Elebrin Liothiel|elven|mtf}",
 									"CG",
 									"Abundance, gardens, the harvest",
 									"Life, Nature",
 									"Acorn"
 								],
 								[
-									"Erevan Ilesere",
+									"{@deity Erevan Ilesere|elven|mtf}",
 									"CN",
 									"Mischief, change",
 									"Trickery",
 									"Asymmetrical starburst"
 								],
 								[
-									"Fenmarel Mestarine",
+									"{@deity Fenmarel Mestarine|elven|mtf}",
 									"CN",
 									"Solitude, outcasts",
 									"Nature, Trickery",
 									"Two peering elven eyes"
 								],
 								[
-									"Gadhelyn",
+									"{@deity Gadhelyn|elven|mtf}",
 									"CN",
 									"Independence, outlawry",
 									"Nature, Trickery",
 									"Leaf-shaped arrowhead"
 								],
 								[
-									"Hanali Celanil",
+									"{@deity Hanali Celanil|elven|mtf}",
 									"CG",
 									"Love, beauty, the arts",
 									"Life",
 									"Golden heart"
 								],
 								[
-									"Kirith Sotheril",
+									"{@deity Kirith Sotheril|elven|mtf}",
 									"NG",
 									"Divination, illusion",
 									"Knowledge, Trickery",
 									"Rainbow sphere"
 								],
 								[
-									"Labelas Enoreth",
+									"{@deity Labelas Enoreth|elven|mtf}",
 									"CG",
 									"Time, history, memory",
 									"Arcana,** Knowledge, Life",
 									"Setting sun"
 								],
 								[
-									"Melira Taralen",
+									"{@deity Melira Taralen|elven|mtf}",
 									"CG",
 									"Poetry, songs",
 									"Knowledge, Life, Trickery",
 									"Lute"
 								],
 								[
-									"Mythrien Sarath",
+									"{@deity Mythrien Sarath|elven|mtf}",
 									"CG",
 									"Abjuration, mythals",
 									"Arcana,** Forge,* Knowledge",
 									"Row of three intertwined rings"
 								],
 								[
-									"Naralis Analor",
+									"{@deity Naralis Analor|elven|mtf}",
 									"NG",
 									"Healing, suffering, death",
 									"Life, Grave*",
 									"White dove"
 								],
 								[
-									"Rellavar Danuvien",
+									"{@deity Rellavar Danuvien|elven|mtf}",
 									"NG",
 									"Winter, harsh weather",
 									"Tempest",
 									"Spear between two circles"
 								],
 								[
-									"Rillifane Rallathil",
+									"{@deity Rillifane Rallathil|elven|mtf}",
 									"CG",
 									"Nature, beasts, the seasons",
 									"Nature",
 									"Oak"
 								],
 								[
-									"Sarula Iliene",
+									"{@deity Sarula Iliene|elven|mtf}",
 									"CG",
 									"Lakes, streams",
 									"Tempest, Trickery",
 									"Three lines symbolizing waves"
 								],
 								[
-									"Sehanine Moonbow",
+									"{@deity Sehanine Moonbow|elven|mtf}",
 									"CG",
 									"Dreams, death, travel",
 									"Grave,* Knowledge, Light",
 									"Full moon under a moonbow"
 								],
 								[
-									"Shevarash",
+									"{@deity Shevarash|elven|mtf}",
 									"CN",
 									"Vengeance, loss, hatred",
 									"War",
 									"Broken arrow over a tear"
 								],
 								[
-									"Solonor Thelandira",
+									"{@deity Solonor Thelandira|elven|mtf}",
 									"CG",
 									"Archery, hunting, survival",
 									"Nature, War",
 									"Silver arrow with green fletching"
 								],
 								[
-									"Tarsellis Meunniduin",
+									"{@deity Tarsellis Meunniduin|elven|mtf}",
 									"CN",
 									"Mountains, rivers, wild places",
 									"Nature, Tempest",
 									"Mountain with a river"
 								],
 								[
-									"Tethrin Veraldé",
+									"{@deity Tethrin Veraldé|elven|mtf}",
 									"NG",
 									"Battle, sword fighting",
 									"War",
 									"Crossed swords beneath a quarter moon and above a full moon"
 								],
 								[
-									"Vandria Gilmadrith",
+									"{@deity Vandria Gilmadrith|elven|mtf}",
 									"LN",
 									"War, grief, justice, vigilance",
 									"Grave,* War",
 									"Weeping eye"
 								],
 								[
-									"Ye'Cind",
+									"{@deity Ye'Cind|elven|mtf}",
 									"CG",
 									"Music, enchantment",
 									"Life, Trickery",
 									"Recorder"
 								],
 								[
-									"Zandilar",
+									"{@deity Zandilar|elven|mtf}",
 									"CN",
 									"Romance, lust, dance",
 									"Life",
@@ -2775,63 +2775,63 @@
 									],
 									"rows": [
 										[
-											"Eilistraee",
+											"{@deity Eilistraee|drow|mtf}",
 											"CG",
 											"Freedom, moonlight, song",
 											"Life, Light, Nature",
 											"Sword-wielding, dancing female drow silhouetted against the full moon"
 										],
 										[
-											"Ghaunadaur",
+											"{@deity Ghaunadaur|drow|mtf}",
 											"CE",
 											"Oozes, slimes, outcasts",
 											"War",
 											"Purple eye with black sclera"
 										],
 										[
-											"Keptolo",
+											"{@deity Keptolo|drow|mtf}",
 											"CE",
 											"Beauty, hedonism, fertility",
 											"Nature, Trickery",
 											"Mushroom"
 										],
 										[
-											"Kiaransalee",
+											"{@deity Kiaransalee|drow|mtf}",
 											"CE",
 											"Necromancy",
 											"Arcana,* Death",
 											"Drow hand wearing many silver rings"
 										],
 										[
-											"Malyk",
+											"{@deity Malyk|drow|mtf}",
 											"CE",
 											"Chaos, rebellion, wild magic",
 											"Tempest, Trickery",
 											"A flame in a tear or a multihued vortex"
 										],
 										[
-											"Lolth",
+											"{@deity Lolth|drow|mtf}",
 											"CE",
 											"Primary god of drow, spiders",
 											"Trickery, War",
 											"Spider"
 										],
 										[
-											"Selvetarm",
+											"{@deity Selvetarm|drow|mtf}",
 											"CE",
 											"Warriors, slaughter",
 											"War",
 											"Spider over crossed sword and mace"
 										],
 										[
-											"Vhaeraun",
+											"{@deity Vhaeraun|drow|mtf}",
 											"CE",
 											"Arrogance, thieves",
 											"Trickery, War",
 											"Black mask with blue glass lenses inset over eyes"
 										],
 										[
-											"Zinzerena",
+											"{@deity Zinzerena|drow|mtf}",
 											"CN",
 											"Assassination, illusion, lies",
 											"Trickery",
@@ -3765,140 +3765,140 @@
 									],
 									"rows": [
 										[
-											"Abbathor",
+											"{@deity Abbathor|dwarven|mtf}",
 											"NE",
 											"Greed",
 											"Trickery",
 											"Jeweled dagger, point down"
 										],
 										[
-											"Berronar Truesilver",
+											"{@deity Berronar Truesilver|dwarven|mtf}",
 											"LG",
 											"Hearth, home, truth",
 											"Life, Light",
 											"Intertwined silver rings"
 										],
 										[
-											"Clangeddin Silverbeard",
+											"{@deity Clangeddin Silverbeard|dwarven|mtf}",
 											"LG",
 											"War, strategy",
 											"War",
 											"Crossed silver battleaxes"
 										],
 										[
-											"Dugmaren Brightmantle",
+											"{@deity Dugmaren Brightmantle|dwarven|mtf}",
 											"CG",
 											"Discovery",
 											"Knowledge",
 											"Open book"
 										],
 										[
-											"Dumathoin",
+											"{@deity Dumathoin|dwarven|mtf}",
 											"N",
 											"Buried secrets",
 											"Grave,* Knowledge",
 											"Gemstone in a mountain"
 										],
 										[
-											"Gorm Gulthyn",
+											"{@deity Gorm Gulthyn|dwarven|mtf}",
 											"LG",
 											"Vigilance",
 											"War",
 											"Bronze half-mask"
 										],
 										[
-											"Haela Brightaxe",
+											"{@deity Haela Brightaxe|dwarven|mtf}",
 											"CG",
 											"Combat prowess, luck in battle",
 											"War",
 											"Upright sword with blade sheathed in flame"
 										],
 										[
-											"Hanseath",
+											"{@deity Hanseath|dwarven|mtf}",
 											"CN",
 											"Festivity, brewing, song",
 											"Trickery, War",
 											"Beer stein"
 										],
 										[
-											"Marthammor Duin",
+											"{@deity Marthammor Duin|dwarven|mtf}",
 											"NG",
 											"Explorers, wanderers, the lost",
 											"Nature, Trickery",
 											"Upright mace in front of a tall boot"
 										],
 										[
-											"Moradin",
+											"{@deity Moradin|dwarven|mtf}",
 											"LG",
 											"Primary deity of dwarves",
 											"Forge,* Knowledge",
 											"Hammer and anvil"
 										],
 										[
-											"Muamman Duathal",
+											"{@deity Muamman Duathal|dwarven|mtf}",
 											"NG",
 											"Storms, travel",
 											"Tempest",
 											"Mace held in gauntlets"
 										],
 										[
-											"Mya",
+											"{@deity Mya|dwarven|mtf}",
 											"NG",
 											"Clan, family, wisdom",
 											"Knowledge, Life",
 											"A faceless mother figure"
 										],
 										[
-											"Roknar",
+											"{@deity Roknar|dwarven|mtf}",
 											"NE",
 											"Lies, intrigue",
 											"Trickery",
 											"Hands filled with coins"
 										],
 										[
-											"Sharindlar",
+											"{@deity Sharindlar|dwarven|mtf}",
 											"CG",
 											"Healing, love",
 											"Life",
 											"Burning needle"
 										],
 										[
-											"Thard Harr",
+											"{@deity Thard Harr|dwarven|mtf}",
 											"CG",
 											"Wilderness, hunting",
 											"Nature",
 											"Two clawed gauntlets"
 										],
 										[
-											"Tharmekhûl",
+											"{@deity Tharmekhûl|dwarven|mtf}",
 											"N",
 											"Fire, forges, molten rock",
 											"Forge,* Light",
 											"Fiery axe"
 										],
 										[
-											"Thautam",
+											"{@deity Thautam|dwarven|mtf}",
 											"N",
 											"Mysteries, darkness, lost treasures",
 											"Knowledge, Trickery",
 											"Blindfold"
 										],
 										[
-											"Ulaa",
+											"{@deity Ulaa|dwarven|mtf}",
 											"LG",
 											"Mining, quarrying",
 											"Forge*",
 											"A miner's pick"
 										],
 										[
-											"Valkauna",
+											"{@deity Valkauna|dwarven|mtf}",
 											"LN",
 											"Oaths, birth, aging, death",
 											"Grave,* Life",
 											"A silver ewer"
 										],
 										[
-											"Vergadain",
+											"{@deity Vergadain|dwarven|mtf}",
 											"N",
 											"Luck, wealth",
 											"Trickery",
@@ -4329,14 +4329,14 @@
 											],
 											"rows": [
 												[
-													"Deep Duerra",
+													"{@deity Deep Duerra|duergar|mtf}",
 													"LE",
 													"Conquest, psionics",
 													"Knowledge, War",
 													"Mind flayer skull"
 												],
 												[
-													"Laduguer",
+													"{@deity Laduguer|duergar|mtf}",
 													"LE",
 													"Labor, slavery",
 													"Death, Forge*",
@@ -6936,49 +6936,49 @@
 											],
 											"rows": [
 												[
-													"Arvoreen",
+													"{@deity Arvoreen|halfling|mtf}",
 													"LG",
 													"Vigilance, war",
 													"War",
 													"Crossed short swords"
 												],
 												[
-													"Brandobaris",
+													"{@deity Brandobaris|halfling|mtf}",
 													"N",
 													"Adventure, thievery",
 													"Trickery",
 													"Halfling footprint"
 												],
 												[
-													"Charmalaine",
+													"{@deity Charmalaine|halfling|mtf}",
 													"N",
 													"Keen senses, luck",
 													"Trickery",
 													"Burning boot print"
 												],
 												[
-													"Cyrrollalee",
+													"{@deity Cyrrollalee|halfling|mtf}",
 													"LG",
 													"Hearth, home",
 													"Life",
 													"An open door"
 												],
 												[
-													"Sheela Peryroyl",
+													"{@deity Sheela Peryroyl|halfling|mtf}",
 													"NG",
 													"Agriculture, nature, weather",
 													"Nature, Tempest",
 													"A flower"
 												],
 												[
-													"Urogalan",
+													"{@deity Urogalan|halfling|mtf}",
 													"LN",
 													"Earth, death",
 													"Death, Grave,* Knowledge",
 													"Silhouette of a dog's head"
 												],
 												[
-													"Yondalla",
+													"{@deity Yondalla|halfling|mtf}",
 													"LG",
 													"Primary goddess of halflings",
 													"Life",
@@ -7597,91 +7597,91 @@
 									],
 									"rows": [
 										[
-											"Baervan Wildwanderer",
+											"{@deity Baervan Wildwanderer|gnome|mtf}",
 											"NG",
 											"Woodlands",
 											"Nature",
 											"Face of a raccoon"
 										],
 										[
-											"Baravar Cloakshadow",
+											"{@deity Baravar Cloakshadow|gnome|mtf}",
 											"NG",
 											"Illusion, deception",
 											"Arcana,** Trickery",
 											"Dagger against a hooded cloak"
 										],
 										[
-											"Bleredd",
+											"{@deity Bleredd|gnome|mtf}",
 											"N",
 											"Labor, craft",
 											"Forge,* Light",
 											"Iron mule"
 										],
 										[
-											"Callarduran Smoothhands",
+											"{@deity Callarduran Smoothhands|gnome|mtf}",
 											"N",
 											"Mining, stone carving",
 											"Knowledge, Nature",
 											"Golden signet ring with six pointed star"
 										],
 										[
-											"Flandal Steelskin",
+											"{@deity Flandal Steelskin|gnome|mtf}",
 											"NG",
 											"Metalwork Forge,*",
 											"Knowledge",
 											"Flaming hammer"
 										],
 										[
-											"Gaerdal Ironhand",
+											"{@deity Gaerdal Ironhand|gnome|mtf}",
 											"LG",
 											"Protection",
 											"War",
 											"Iron band"
 										],
 										[
-											"Garl Glittergold",
+											"{@deity Garl Glittergold|gnome|mtf}",
 											"LG",
 											"Primary god of gnomes",
 											"Trickery",
 											"Gold nugget"
 										],
 										[
-											"Gelf Darkhearth",
+											"{@deity Gelf Darkhearth|gnome|mtf}",
 											"CN",
 											"Frustration, destruction",
 											"War",
 											"Broken anvil"
 										],
 										[
-											"Nebelun",
+											"{@deity Nebelun|gnome|mtf}",
 											"CG",
 											"Invention, luck",
 											"Forge,* Knowledge, Trickery",
 											"Bellows and lizard tail"
 										],
 										[
-											"Rill Cleverthrush",
+											"{@deity Rill Cleverthrush|gnome|mtf}",
 											"LN",
 											"Law, thought",
 											"Knowledge",
 											"Interlocking gears"
 										],
 										[
-											"Segojan Earthcaller",
+											"{@deity Segojan Earthcaller|gnome|mtf}",
 											"NG",
 											"Earth, the dead",
 											"Grave,* Light",
 											"Glowing gemstone"
 										],
 										[
-											"Sheyanna Flaxenstrand",
+											"{@deity Sheyanna Flaxenstrand|gnome|mtf}",
 											"CG",
 											"Love, beauty, passion",
 											"Light",
 											"Two silver goblets"
 										],
 										[
-											"Urdlen",
+											"{@deity Urdlen|gnome|mtf}",
 											"CE",
 											"Greed, murder",
 											"Death, War",

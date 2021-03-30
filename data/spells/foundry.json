@@ -291,6 +291,44 @@
 			}
 		},
 		{
+			"name": "Spiritual Weapon",
+			"source": "PHB",
+			"data": {
+				"damage.parts": [
+					[
+						"(floor((@item.level) / 2))d8 + @mod",
+						"force"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Spirit Shroud",
+			"source": "TCE",
+			"data": {
+				"damage.parts": [],
+				"scaling.mode": "none",
+				"scaling.formula": "",
+				"formula": "(floor(((@item.level) - 1) / 2))d8"
+			}
+		},
+		{
+			"name": "Flame Blade",
+			"source": "PHB",
+			"data": {
+				"damage.parts": [
+					[
+						"(floor((@item.level) / 2) + 2)d6",
+						"fire"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
 			"name": "Major Image",
 			"source": "PHB",
 			"data": {
@@ -976,23 +1014,47 @@
 		},
 		{
 			"name": "Booming Blade",
-			"source": "SCAG",
+			"source": "TCE",
 			"data": {
 				"target.value": 1,
-				"target.type": "creature"
+				"target.type": "creature",
+				"damage.parts": [
+					[
+						"(floor((@details.level + 1) / 6))d8[on hit]",
+						"thunder"
+					],
+					[
+						"(floor((@details.level + 1) / 6) + 1)d8[on willing movement]",
+						"thunder"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
 			}
 		},
 		{
 			"name": "Green-Flame Blade",
-			"source": "SCAG",
+			"source": "TCE",
 			"data": {
 				"target.value": 1,
-				"target.type": "creature"
+				"target.type": "creature",
+				"damage.parts": [
+					[
+						"(floor((@details.level + 1) / 6))d8[on hit]",
+						"fire"
+					],
+					[
+						"@mod + (floor((@details.level + 1) / 6))d8[splash]",
+						"fire"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
 			}
 		},
 		{
 			"name": "Lightning Lure",
-			"source": "SCAG",
+			"source": "TCE",
 			"data": {
 				"target.value": 1,
 				"target.type": "creature"
@@ -1000,7 +1062,7 @@
 		},
 		{
 			"name": "Sword Burst",
-			"source": "SCAG",
+			"source": "TCE",
 			"data": {
 				"target.value": 5,
 				"target.units": "ft",
@@ -1053,7 +1115,70 @@
 			"source": "XGE",
 			"data": {
 				"target.value": 1,
-				"target.type": "creature"
+				"target.type": "creature",
+				"damage.parts": [
+					[
+						"(floor((@details.level + 1) / 6) + 1)d8[if uninjured]",
+						"necrotic"
+					]
+				],
+				"damage.versatile": "(floor((@details.level + 1) / 6) + 1)d12[if injured]",
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Ice Knife",
+			"source": "XGE",
+			"data": {
+				"damage.parts": [
+					[
+						"1d10[to target]",
+						"piercing"
+					],
+					[
+						"(floor(@item.level + 1))d6[splash]",
+						"cold"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Melf's Acid Arrow",
+			"source": "PHB",
+			"data": {
+				"damage.parts": [
+					[
+						"4d4[immediate]",
+						"acid"
+					],
+					[
+						"(@item.level)d4[end of turn]",
+						"acid"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Lightning Arrow",
+			"source": "PHB",
+			"data": {
+				"damage.parts": [
+					[
+						"((@item.level) + 1)[on hit]",
+						"lightning"
+					],
+					[
+						"((@item.level) - 1)d8[area]",
+						"lightning"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
 			}
 		}
 	]

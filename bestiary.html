@@ -14,9 +14,7 @@
 	<title>Bestiary - 5etools</title>
 
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/jquery-ui.css">
-	<link rel="stylesheet" href="css/jquery-ui-slider-pips.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css">
 
 	<!-- Favicons -->
 	<link rel="icon" type="image/svg+xml" href="favicon.svg?v=1.115">
@@ -30,7 +28,7 @@
 
 	<!-- Chrome Web App Icons -->
 	<link rel="manifest" href="manifest.webmanifest">
-	<meta name="application-name" content="5eTools">
+	<meta name="application-name" content="5etools">
 	<meta name="theme-color" content="#006bc4">
 
 	<!-- Windows Start Menu tiles -->
@@ -43,7 +41,7 @@
 	<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
-	<meta name="apple-mobile-web-app-title" content="5eTools">
+	<meta name="apple-mobile-web-app-title" content="5etools">
 
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
@@ -64,11 +62,11 @@
 			display: inline-block;
 		}
 
-		.ecgen_active .row--bestiary_sublist {
+		.ecgen_active .lst__row--bestiary-sublist {
 			cursor: default;
 		}
 
-		.ecgen_active .row--bestiary_sublist:hover {
+		.ecgen_active .lst__row--bestiary-sublist:hover {
 			background: initial;
 		}
 
@@ -188,9 +186,9 @@
 					<button class="sort btn btn-default btn-xs ve-grow" data-sort="source">Source<span class="caret_wrp"></span></button>
 				</div>
 
-				<ul class="list list--stats monsters">
+				<div class="list list--stats monsters">
 					<!-- populate with JS -->
-				</ul>
+				</div>
 			</div>
 
 			<div id="contentwrapper" class="view-col">
@@ -236,9 +234,9 @@
 						<button class="col-1-2 sort btn btn-default btn-xs" data-sort="cr">CR <span class="caret_wrp"></span></button>
 						<button class="col-2 sort btn btn-default btn-xs" data-sort="count">Number <span class="caret_wrp"></span></button>
 					</div>
-					<ul class="list submonsters">
+					<div class="list submonsters">
 						<!-- populate with JS -->
-					</ul>
+					</div>
 					<div class="row ecgen__hidden ve-small">
 						<span class="col-6 text-right pr-2">Total:</span>
 						<span class="col-6 no-wrap pl-0" id="totalcr"></span>
@@ -259,7 +257,7 @@
 					</table>
 				</div>
 
-				<div class="text-center wrp-footer-buttons ecgen__hidden">
+				<div class="text-center mt-2 no-print ecgen__hidden">
 					<button class="btn btn-success btn-xs" id="btn-encounterbuild">Encounter Builder</button>
 					<div id="wrp-profbonusdice" class=>
 						<button class="btn btn-default btn-xs" id="profbonusdice"
@@ -361,8 +359,6 @@
 </div>    <!--5ETOOLS_SCRIPT_ANCHOR-->
 <!--5ETOOLS_AD_ADHESION-->
 <script type="text/javascript" src="lib/jquery.js"></script>
-<script type="text/javascript" src="lib/jquery-ui.js"></script>
-<script type="text/javascript" src="lib/jquery-ui-slider-pip.js"></script>
 <script type="text/javascript" src="js/parser.js"></script>
 <script type="text/javascript" src="js/utils.js"></script>
 <script type="text/javascript" src="js/utils-list.js"></script>
@@ -370,7 +366,6 @@
 <script type="text/javascript" src="lib/localforage.js"></script>
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
-<script type="text/javascript" src="js/hist.js"></script>
 <script type="text/javascript" src="js/multisource.js"></script>
 <script type="text/javascript" src="js/filter.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
@@ -378,6 +373,8 @@
 <script type="text/javascript" src="js/render-markdown.js"></script>
 <script type="text/javascript" src="js/render-bestiary.js"></script>
 <script type="text/javascript" src="js/scalecreature.js"></script>
+<script type="text/javascript" src="js/hist.js"></script>
+<script type="text/javascript" src="js/listpage.js"></script>
 <script type="text/javascript" src="js/filter-bestiary.js"></script>
 <script type="text/javascript" src="js/bestiary.js"></script>
 <script type="text/javascript" src="js/bestiary-encounterbuilder.js"></script>

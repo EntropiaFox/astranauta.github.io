@@ -168,7 +168,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Alhoon",
@@ -404,7 +405,9 @@
 				"incapacitated",
 				"invisible",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Annis Hag",
@@ -779,7 +782,9 @@
 				"restrained",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Apprentice Wizard",
@@ -893,7 +898,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Archdruid",
@@ -1088,7 +1095,8 @@
 				"paralyzed",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Archer",
@@ -1196,7 +1204,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aurochs",
@@ -1267,7 +1277,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Babau",
@@ -1408,7 +1420,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Banderhobb",
@@ -1527,7 +1541,9 @@
 				"blinded",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bard",
@@ -1673,7 +1689,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Barghest",
@@ -1857,7 +1875,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bheur Hag",
@@ -2224,7 +2244,9 @@
 				"restrained",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Black Guard Drake",
@@ -2327,7 +2349,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blackguard",
@@ -2490,7 +2514,8 @@
 			"conditionInflictSpell": [
 				"blinded",
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Blue Guard Drake",
@@ -2582,7 +2607,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bodak",
@@ -2717,6 +2744,7 @@
 			"damageTags": [
 				"B",
 				"N",
+				"R",
 				"Y"
 			],
 			"miscTags": [
@@ -2724,7 +2752,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Boggle",
@@ -2838,7 +2868,9 @@
 			"conditionInflict": [
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Booyahg Booyahg Booyahg",
@@ -2855,8 +2887,8 @@
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
-						"replace": "mage",
-						"with": "goblin"
+						"replace": "(^| )mage",
+						"with": "$1goblin"
 					},
 					"trait": {
 						"mode": "appendArr",
@@ -2868,7 +2900,8 @@
 						}
 					}
 				}
-			}
+			},
+			"hasFluff": true
 		},
 		{
 			"name": "Booyahg Caster",
@@ -2886,7 +2919,8 @@
 					],
 					"ability": "int"
 				}
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Booyahg Slave of the Archfey",
@@ -2914,7 +2948,8 @@
 						}
 					]
 				}
-			}
+			},
+			"hasFluff": true
 		},
 		{
 			"name": "Booyahg Slave of the Fiend",
@@ -2942,7 +2977,8 @@
 						}
 					]
 				}
-			}
+			},
+			"hasFluff": true
 		},
 		{
 			"name": "Booyahg Slave of the Great Old One",
@@ -2970,7 +3006,8 @@
 						}
 					]
 				}
-			}
+			},
+			"hasFluff": true
 		},
 		{
 			"name": "Booyahg Whip",
@@ -2990,7 +3027,8 @@
 						}
 					}
 				}
-			}
+			},
+			"hasFluff": true
 		},
 		{
 			"name": "Booyahg Wielder",
@@ -3010,7 +3048,8 @@
 						}
 					}
 				}
-			}
+			},
+			"hasFluff": true
 		},
 		{
 			"name": "Brontosaurus",
@@ -3085,7 +3124,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Catoblepas",
@@ -3180,7 +3220,9 @@
 			"conditionInflict": [
 				"poisoned",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cave Fisher",
@@ -3287,7 +3329,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Champion",
@@ -3407,7 +3451,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chitine",
@@ -3523,7 +3569,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Choldrith",
@@ -3689,7 +3737,9 @@
 			],
 			"conditionInflictSpell": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cloud Giant Smiling One",
@@ -3872,7 +3922,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Conjurer",
@@ -4023,7 +4075,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Cow",
@@ -4089,7 +4142,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Cranium Rat",
@@ -4171,7 +4225,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Darkling",
@@ -4275,7 +4331,9 @@
 			],
 			"conditionInflict": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Darkling Elder",
@@ -4384,7 +4442,9 @@
 			],
 			"conditionInflict": [
 				"blinded"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Death Kiss",
@@ -4503,7 +4563,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deep Rothé",
@@ -4588,7 +4650,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Deep Scion",
@@ -4728,7 +4791,9 @@
 			],
 			"conditionInflict": [
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deinonychus",
@@ -4824,7 +4889,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Devourer",
@@ -4928,7 +4994,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dimetrodon",
@@ -4994,7 +5062,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Diviner",
@@ -5161,7 +5230,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Dolphin",
@@ -5250,7 +5320,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Draegloth",
@@ -5392,7 +5463,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elder Brain",
@@ -5588,7 +5661,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Enchanter",
@@ -5738,7 +5813,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Evoker",
@@ -5904,7 +5980,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Fire Giant Dreadnought",
@@ -6020,7 +6097,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Firenewt Warlock of Imix",
@@ -6166,7 +6245,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Firenewt Warrior",
@@ -6274,7 +6355,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flail Snail",
@@ -6335,9 +6418,30 @@
 					"name": "Antimagic Shell",
 					"entries": [
 						"The snail has advantage on saving throws against spells, and any creature making a spell attack against the snail has disadvantage on the attack roll. If the snail succeeds on its saving throw against a spell or a spell attack misses it, an additional effect might occur, as determined by rolling a {@dice d6}:",
-						"1\u20132: If the spell affects an area or has multiple targets, it fails and has no effect. If the spell targets only the snail, it has no effect on the snail and is reflected back at the caster, using the spell slot level, spell save DC, attack bonus, and spellcasting ability of the caster.",
-						"3\u20134: No additional effect.",
-						"5\u20136: The snail's shell converts some of the spell's energy into a burst of destructive force. Each creature within 30 feet of the snail must make a {@dc 15} Constitution saving throw, taking {@dice 1d6} force damage per level of the spell on a failed save, or half as much damage on a successful one."
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1\u20132.",
+									"style": "italic",
+									"entry": "If the spell affects an area or has multiple targets, it fails and has no effect. If the spell targets only the snail, it has no effect on the snail and is reflected back at the caster, using the spell slot level, spell save DC, attack bonus, and spellcasting ability of the caster."
+								},
+								{
+									"type": "item",
+									"name": "3\u20134.",
+									"style": "italic",
+									"entry": "No additional effect."
+								},
+								{
+									"type": "item",
+									"name": "5\u20136.",
+									"style": "italic",
+									"entry": "The snail's shell converts some of the spell's energy into a burst of destructive force. Each creature within 30 feet of the snail must make a {@dc 15} Constitution saving throw, taking {@dice 1d6} force damage per level of the spell on a failed save, or half as much damage on a successful one."
+								}
+							]
+						}
 					]
 				},
 				{
@@ -6400,7 +6504,9 @@
 			],
 			"conditionInflict": [
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flind",
@@ -6528,7 +6634,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Froghemoth",
@@ -6657,7 +6765,9 @@
 				"blinded",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frost Giant Everlasting One",
@@ -6787,7 +6897,9 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gauth",
@@ -6871,12 +6983,48 @@
 					"name": "Eye Rays",
 					"entries": [
 						"The gauth shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:",
-						"1. Devour Magic Ray: The targeted creature must succeed on a {@dc 14} Dexterity saving throw or have one of its magic items lose all magical properties until the start of the gauth's next turn. If the object is a charged item, it also loses {@dice 1d4} charges. Determine the affected item randomly, ignoring single-use items such as potions and scrolls.",
-						"2. Enervation Ray: The targeted creature must make a {@dc 14} Constitution saving throw, taking 18 ({@damage 4d8}) necrotic damage on a failed save, or half as much damage on a successful one.",
-						"3. Pushing Ray: The targeted creature must succeed on a {@dc 14} Strength saving throw or be pushed up to 15 feet directly away from the gauth and have its speed halved until the start of the gauth's next turn.",
-						"4. Fire Ray: The targeted creature must succeed on a {@dc 14} Dexterity saving throw or take 22 ({@damage 4d10}) fire damage.",
-						"5. Paralyzing Ray: The targeted creature must succeed on a {@dc 14} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"6. Sleep Ray: The targeted creature must succeed on a {@dc 14} Wisdom saving throw or fall asleep and remain {@condition unconscious} for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead."
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1. Devour Magic Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 14} Dexterity saving throw or have one of its magic items lose all magical properties until the start of the gauth's next turn. If the object is a charged item, it also loses {@dice 1d4} charges. Determine the affected item randomly, ignoring single-use items such as potions and scrolls."
+								},
+								{
+									"type": "item",
+									"name": "2. Enervation Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must make a {@dc 14} Constitution saving throw, taking 18 ({@damage 4d8}) necrotic damage on a failed save, or half as much damage on a successful one."
+								},
+								{
+									"type": "item",
+									"name": "3. Pushing Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 14} Strength saving throw or be pushed up to 15 feet directly away from the gauth and have its speed halved until the start of the gauth's next turn."
+								},
+								{
+									"type": "item",
+									"name": "4. Fire Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 14} Dexterity saving throw or take 22 ({@damage 4d10}) fire damage."
+								},
+								{
+									"type": "item",
+									"name": "5. Paralyzing Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 14} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "6. Sleep Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 14} Wisdom saving throw or fall asleep and remain {@condition unconscious} for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead."
+								}
+							]
+						}
 					]
 				}
 			],
@@ -6911,7 +7059,9 @@
 				"paralyzed",
 				"stunned",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gazer",
@@ -6990,11 +7140,39 @@
 					"name": "Eye Rays",
 					"entries": [
 						"The gazer shoots two of the following magical eye rays at random (reroll duplicates), choosing one or two targets it can see within 60 feet of it:",
-						"1. Dazing Ray: The targeted creature must succeed on a {@dc 12} Wisdom saving throw or be {@condition charmed} until the start of the gazer's next turn. While the target is {@condition charmed} in this way, its speed is halved, and it has disadvantage on attack rolls.",
-						"2. Fear Ray: The targeted creature must succeed on a {@dc 12} Wisdom saving throw or be {@condition frightened} until the start of the gazer's next turn.",
-						"3. Frost Ray: The targeted creature must succeed on a {@dc 12} Dexterity saving throw or take 10 ({@damage 3d6}) cold damage.",
-						"4. Telekinetic Ray: If the target is a creature that is Medium or smaller, it must succeed on a {@dc 12} Strength saving throw or be moved up to 30 feet directly away from the gazer.",
-						"If the target is an object weighing 10 pounds or less that isn't being worn or carried, the gazer moves it up to 30 feet in any direction. The gazer can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a container."
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1. Dazing Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 12} Wisdom saving throw or be {@condition charmed} until the start of the gazer's next turn. While the target is {@condition charmed} in this way, its speed is halved, and it has disadvantage on attack rolls."
+								},
+								{
+									"type": "item",
+									"name": "2. Fear Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 12} Wisdom saving throw or be {@condition frightened} until the start of the gazer's next turn."
+								},
+								{
+									"type": "item",
+									"name": "3. Frost Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 12} Dexterity saving throw or take 10 ({@damage 3d6}) cold damage."
+								},
+								{
+									"type": "item",
+									"name": "4. Telekinetic Ray.",
+									"style": "italic",
+									"entries": [
+										"If the target is a creature that is Medium or smaller, it must succeed on a {@dc 12} Strength saving throw or be moved up to 30 feet directly away from the gazer.",
+										"If the target is an object weighing 10 pounds or less that isn't being worn or carried, the gazer moves it up to 30 feet in any direction. The gazer can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a container."
+									]
+								}
+							]
+						}
 					]
 				}
 			],
@@ -7039,7 +7217,9 @@
 			"conditionInflict": [
 				"charmed",
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Strider",
@@ -7124,7 +7304,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Girallon",
@@ -7175,6 +7357,12 @@
 					"entries": [
 						"As a bonus action, the girallon can move up to its speed toward a hostile creature that it can see."
 					]
+				},
+				{
+					"name": "Keen Smell",
+					"entries": [
+						"The girallon has advantage on Wisdom (Perception) checks that rely on smell."
+					]
 				}
 			],
 			"action": [
@@ -7206,7 +7394,8 @@
 				"path": "bestiary/girallon.mp3"
 			},
 			"traitTags": [
-				"Aggressive"
+				"Aggressive",
+				"Keen Senses"
 			],
 			"senseTags": [
 				"D"
@@ -7221,7 +7410,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnoll Flesh Gnawer",
@@ -7332,7 +7523,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnoll Hunter",
@@ -7447,7 +7640,8 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Gnoll Witherling",
@@ -7561,7 +7755,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Green Guard Drake",
@@ -7664,7 +7860,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grung",
@@ -7829,7 +8027,9 @@
 				"charmed",
 				"frightened",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grung Elite Warrior",
@@ -8008,7 +8208,9 @@
 				"frightened",
 				"poisoned",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grung Wildling",
@@ -8214,7 +8416,9 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hadrosaurus",
@@ -8279,7 +8483,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Hobgoblin Devastator",
@@ -8425,7 +8630,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hobgoblin Iron Shadow",
@@ -8564,7 +8771,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Illithilich",
@@ -8880,7 +9089,9 @@
 				"charmed",
 				"invisible",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Illusionist",
@@ -9027,7 +9238,8 @@
 				"blinded",
 				"frightened",
 				"invisible"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Ki-rin",
@@ -9293,7 +9505,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kobold Dragonshield",
@@ -9424,7 +9638,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kobold Inventor",
@@ -9505,14 +9721,60 @@
 					"name": "Weapon Invention",
 					"entries": [
 						"The kobold uses one of the following options (roll a {@dice d8} or choose one); the kobold can use each one no more than once per day:",
-						"{@i 1. Acid}. The kobold hurls a flask of {@item Acid (vial)|phb|acid}. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}7 ({@damage 2d6}) acid damage.",
-						"{@i 2. Alchemist's fire}. The kobold throws a flask of {@item Alchemist's Fire (flask)|phb|alchemist's fire}. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}2 ({@damage 1d4}) fire damage at the start of each of the target's turns. A creature can end this damage by using its action to make a {@dc 10} Dexterity check to extinguish the flames.",
-						"{@i 3. Basket of Centipedes}. The kobold throws a small basket into a 5-foot-square space within 20 feet of it. A {@creature swarm of centipedes||swarm of insects (centipedes)} with 11 hit points emerges from the basket and rolls initiative. At the end of each of the swarm's turns, there's a {@chance 50} chance that the swarm disperses.",
-						"{@i 4. Green Slime Pot}. The kobold throws a clay pot full of green slime at the target, and it breaks open on impact. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}The target is covered in a patch of {@hazard green slime} (see chapter 5 of the Dungeon Master's Guide). Miss: A patch of green slime covers a randomly determined 5-foot-square section of wall or floor within 5 feet of the target.",
-						"{@i 5. Rot Grub Pot}. The kobold throws a clay pot into a 5-foot-square space within 20 feet of it, and it breaks open on impact. A {@creature Swarm of Rot Grubs|vgm|swarm of rot grubs} (see appendix A) emerges from the shattered pot and remains a hazard in that square.",
-						"{@i 6. Scorpion on a Stick}. The kobold makes a melee attack with a scorpion tied to the end of a 5-foot-long pole. {@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}1 piercing damage, and the target must make a {@dc 9} Constitution saving throw, taking 4 ({@damage 1d8}) poison damage on a failed save, or half as much damage on a successful one.",
-						"{@i 7. Skunk in a Cage}. The kobold releases a skunk into an unoccupied space within 5 feet of it. The skunk has a walking speed of 20 feet, AC 10, 1 hit point, and no effective attacks. It rolls initiative and, on its turn, uses its action to spray musk at a random creature within 5 feet of it. The target must make a {@dc 9} Constitution saving throw. On a failed save, the target retches and can't take actions for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. A creature that doesn't need to breathe or is immune to poison automatically succeeds on the saving throw. Once the skunk has sprayed its musk, it can't do so again until it finishes a short or long rest.",
-						"{@i 8. Wasp Nest in a Bag}. The kobold throws a small bag into a 5-foot-square space within 20 feet of it. A {@creature swarm of wasps||swarm of insects (wasps)} with 11 hit points emerges from the bag and rolls initiative. At the end of each of the swarm's turns, there's a {@chance 50} chance that the swarm disperses."
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1. Acid.",
+									"style": "italic",
+									"entry": "The kobold hurls a flask of {@item Acid (vial)|phb|acid}. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}7 ({@damage 2d6}) acid damage."
+								},
+								{
+									"type": "item",
+									"name": "2. Alchemist's fire.",
+									"style": "italic",
+									"entry": "The kobold throws a flask of {@item Alchemist's Fire (flask)|phb|alchemist's fire}. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}2 ({@damage 1d4}) fire damage at the start of each of the target's turns. A creature can end this damage by using its action to make a {@dc 10} Dexterity check to extinguish the flames."
+								},
+								{
+									"type": "item",
+									"name": "3. Basket of Centipedes.",
+									"style": "italic",
+									"entry": "The kobold throws a small basket into a 5-foot-square space within 20 feet of it. A {@creature swarm of centipedes||swarm of insects (centipedes)} with 11 hit points emerges from the basket and rolls initiative. At the end of each of the swarm's turns, there's a {@chance 50} chance that the swarm disperses."
+								},
+								{
+									"type": "item",
+									"name": "4. Green Slime Pot.",
+									"style": "italic",
+									"entry": "The kobold throws a clay pot full of green slime at the target, and it breaks open on impact. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}The target is covered in a patch of {@hazard green slime} (see chapter 5 of the Dungeon Master's Guide). Miss: A patch of green slime covers a randomly determined 5-foot-square section of wall or floor within 5 feet of the target."
+								},
+								{
+									"type": "item",
+									"name": "5. Rot Grub Pot.",
+									"style": "italic",
+									"entry": "The kobold throws a clay pot into a 5-foot-square space within 20 feet of it, and it breaks open on impact. A {@creature Swarm of Rot Grubs|vgm|swarm of rot grubs} (see appendix A) emerges from the shattered pot and remains a hazard in that square."
+								},
+								{
+									"type": "item",
+									"name": "6. Scorpion on a Stick.",
+									"style": "italic",
+									"entry": "The kobold makes a melee attack with a scorpion tied to the end of a 5-foot-long pole. {@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}1 piercing damage, and the target must make a {@dc 9} Constitution saving throw, taking 4 ({@damage 1d8}) poison damage on a failed save, or half as much damage on a successful one."
+								},
+								{
+									"type": "item",
+									"name": "7. Skunk in a Cage.",
+									"style": "italic",
+									"entry": "The kobold releases a skunk into an unoccupied space within 5 feet of it. The skunk has a walking speed of 20 feet, AC 10, 1 hit point, and no effective attacks. It rolls initiative and, on its turn, uses its action to spray musk at a random creature within 5 feet of it. The target must make a {@dc 9} Constitution saving throw. On a failed save, the target retches and can't take actions for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. A creature that doesn't need to breathe or is immune to poison automatically succeeds on the saving throw. Once the skunk has sprayed its musk, it can't do so again until it finishes a short or long rest."
+								},
+								{
+									"type": "item",
+									"name": "8. Wasp Nest in a Bag.",
+									"style": "italic",
+									"entry": "The kobold throws a small bag into a 5-foot-square space within 20 feet of it. A {@creature swarm of wasps||swarm of insects (wasps)} with 11 hit points emerges from the bag and rolls initiative. At the end of each of the swarm's turns, there's a {@chance 50} chance that the swarm disperses."
+								}
+							]
+						}
 					]
 				}
 			],
@@ -9551,7 +9813,9 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kobold Scale Sorcerer",
@@ -9706,7 +9970,9 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Korred",
@@ -9868,7 +10134,9 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kraken Priest",
@@ -10011,7 +10279,9 @@
 			"conditionInflictSpell": [
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Leucrotta",
@@ -10140,7 +10410,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Martial Arts Adept",
@@ -10264,7 +10536,8 @@
 			"conditionInflict": [
 				"prone",
 				"stunned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Master Thief",
@@ -10409,7 +10682,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Maw Demon",
@@ -10512,12 +10786,19 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Meenlock",
 			"source": "VGM",
 			"page": 170,
+			"otherSources": [
+				{
+					"source": "CM"
+				}
+			],
 			"size": "S",
 			"type": "fey",
 			"alignment": [
@@ -10617,7 +10898,9 @@
 			"conditionInflict": [
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mind Flayer Psion",
@@ -10799,7 +11082,9 @@
 				"frightened",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mindwitness",
@@ -10888,13 +11173,51 @@
 					"name": "Eye Rays",
 					"entries": [
 						"The mindwitness shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:",
-						"1. Aversion Ray: The targeted creature must make a {@dc 13} Charisma saving throw. On a failed save, the target has disadvantage on attack rolls for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"2. Fear Ray: The targeted creature must succeed on a {@dc 13} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"3. Psychic Ray: The target must succeed on a {@dc 13} Intelligence saving throw or take 27 ({@damage 6d8}) psychic damage.",
-						"4. Slowing Ray: The targeted creature must make a {@dc 13} Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn but not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
-						"5. Stunning Ray: The targeted creature must succeed on a {@dc 13} Constitution saving throw or be {@condition stunned} for 1 minute. The target can repeat the saving throw at the start of each of its turns, ending the effect on itself on a success.",
-						"6. Telekinetic Ray: If the target is a creature, it must make a {@dc 13} Strength saving throw. On a failed save, the mindwitness moves it up to 30 feet in any direction, and it is {@condition restrained} by the ray's telekinetic grip until the start of the mindwitness's next turn or until the mindwitness is {@condition incapacitated}.",
-						"If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is telekinetically moved up to 30 feet in any direction. The mindwitness can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container."
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1. Aversion Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must make a {@dc 13} Charisma saving throw. On a failed save, the target has disadvantage on attack rolls for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "2. Fear Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 13} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "3. Psychic Ray.",
+									"style": "italic",
+									"entry": "The target must succeed on a {@dc 13} Intelligence saving throw or take 27 ({@damage 6d8}) psychic damage."
+								},
+								{
+									"type": "item",
+									"name": "4. Slowing Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must make a {@dc 13} Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn but not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "5. Stunning Ray.",
+									"style": "italic",
+									"entry": "The targeted creature must succeed on a {@dc 13} Constitution saving throw or be {@condition stunned} for 1 minute. The target can repeat the saving throw at the start of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "6. Telekinetic Ray.",
+									"style": "italic",
+									"entries": [
+										"If the target is a creature, it must make a {@dc 13} Strength saving throw. On a failed save, the mindwitness moves it up to 30 feet in any direction, and it is {@condition restrained} by the ray's telekinetic grip until the start of the mindwitness's next turn or until the mindwitness is {@condition incapacitated}.",
+										"If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is telekinetically moved up to 30 feet in any direction. The mindwitness can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container."
+									]
+								}
+							]
+						}
 					]
 				}
 			],
@@ -10930,7 +11253,9 @@
 				"grappled",
 				"restrained",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Morkoth",
@@ -11152,7 +11477,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mouth of Grolantor",
@@ -11247,7 +11574,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Necromancer",
@@ -11411,7 +11740,8 @@
 			],
 			"spellcastingTags": [
 				"CW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Neogi",
@@ -11533,7 +11863,9 @@
 			"conditionInflict": [
 				"charmed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Neogi Hatchling",
@@ -11613,7 +11945,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Neogi Master",
@@ -11787,7 +12121,9 @@
 				"frightened",
 				"invisible",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Neothelid",
@@ -11921,7 +12257,9 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nilbog",
@@ -12061,7 +12399,9 @@
 			"conditionInflictSpell": [
 				"incapacitated",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orc Blade of Ilneval",
@@ -12190,7 +12530,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Orc Claw of Luthic",
@@ -12335,7 +12676,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orc Hand of Yurtrus",
@@ -12469,7 +12812,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Orc Nurtured One of Yurtrus",
@@ -12577,7 +12921,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orc Red Fang of Shargaas",
@@ -12711,7 +13057,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ox",
@@ -12783,7 +13131,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Quetzalcoatlus",
@@ -12868,7 +13217,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Quickling",
@@ -12964,7 +13314,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Red Guard Drake",
@@ -13057,7 +13409,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Redcap",
@@ -13197,7 +13551,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rothé",
@@ -13264,7 +13620,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Sea Spawn",
@@ -13387,7 +13744,9 @@
 			"conditionInflict": [
 				"grappled",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadow Mastiff",
@@ -13518,7 +13877,9 @@
 			"conditionInflict": [
 				"frightened",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shoosuva",
@@ -13656,7 +14017,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Slithering Tracker",
@@ -13823,7 +14186,9 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spawn of Kyuss",
@@ -13932,7 +14297,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stegosaurus",
@@ -13995,7 +14362,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stench Kow",
@@ -14073,7 +14442,8 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Stone Giant Dreamwalker",
@@ -14199,7 +14569,9 @@
 				"charmed",
 				"petrified",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Storm Giant Quintessent",
@@ -14363,7 +14735,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swarm of Cranium Rats",
@@ -14493,7 +14867,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swarm of Rot Grubs",
@@ -14575,9 +14951,14 @@
 			"senseTags": [
 				"B"
 			],
+			"damageTags": [
+				"F",
+				"P"
+			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Swashbuckler",
@@ -14702,7 +15083,9 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tanarukk",
@@ -14832,7 +15215,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thorny",
@@ -14894,6 +15279,12 @@
 					"entries": [
 						"The thorny regains 5 hit points at the start of its turn. If it takes cold, fire, or necrotic damage, this trait doesn't function at the start of the thorny's next turn. The thorny dies only if it starts its turn with 0 hit points and doesn't regenerate."
 					]
+				},
+				{
+					"name": "Thorny Body",
+					"entries": [
+						"At the start of its turn, the thorny deals 2 ({@damage 1d4}) piercing damage to any creature grappling it."
+					]
 				}
 			],
 			"action": [
@@ -14924,7 +15315,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tlincalli",
@@ -15027,7 +15420,9 @@
 				"paralyzed",
 				"poisoned",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Transmuter",
@@ -15181,7 +15576,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Trapper",
@@ -15274,7 +15670,9 @@
 				"blinded",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ulitharid",
@@ -15445,7 +15843,9 @@
 				"frightened",
 				"restrained",
 				"unconscious"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vargouille",
@@ -15543,7 +15943,9 @@
 			"conditionInflict": [
 				"frightened",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vegepygmy",
@@ -15650,7 +16052,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vegepygmy Chief",
@@ -15777,7 +16181,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Velociraptor",
@@ -15869,7 +16275,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "War Priest",
@@ -16044,7 +16451,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Warlock of the Archfey",
@@ -16205,7 +16613,8 @@
 				"frightened",
 				"paralyzed",
 				"unconscious"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Warlock of the Fiend",
@@ -16378,7 +16787,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Warlock of the Great Old One",
@@ -16550,7 +16961,8 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"restrained"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Warlord",
@@ -16687,7 +17099,8 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "White Guard Drake",
@@ -16780,7 +17193,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wood Woad",
@@ -16912,7 +17327,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Xvart",
@@ -17018,7 +17435,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Xvart Speaker",
@@ -17127,7 +17546,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Xvart Warlock of Raxivort",
@@ -17272,7 +17693,8 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Yeth Hound",
@@ -17401,7 +17823,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Anathema",
@@ -17447,7 +17871,8 @@
 				"stealth": "+5"
 			},
 			"senses": [
-				"darkvision 60 ft."
+				"darkvision 60 ft.",
+				"blindsight 30 ft."
 			],
 			"passive": 17,
 			"resist": [
@@ -17582,6 +18007,7 @@
 				"Shapechanger"
 			],
 			"senseTags": [
+				"B",
 				"D"
 			],
 			"actionTags": [
@@ -17619,7 +18045,9 @@
 				"frightened",
 				"restrained",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Broodguard",
@@ -17766,7 +18194,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Malison (Type 4)",
@@ -17942,7 +18372,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Malison (Type 5)",
@@ -18118,7 +18550,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Mind Whisperer",
@@ -18330,7 +18764,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Nightmare Speaker",
@@ -18559,7 +18995,9 @@
 				"charmed",
 				"frightened",
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Pit Master",
@@ -18771,7 +19209,9 @@
 				"charmed",
 				"invisible",
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

@@ -64,7 +64,7 @@ String.prototype.indexOf_handleColon = String.prototype.indexOf_handleColon || f
 
 class ConverterConst {}
 ConverterConst.STR_RE_DAMAGE_TYPE = "(acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)";
-ConverterConst.RE_DAMAGE_TYPE = new RegExp(ConverterConst.STR_RE_DAMAGE_TYPE, "gi");
+ConverterConst.RE_DAMAGE_TYPE = new RegExp(`(^|\\W)${ConverterConst.STR_RE_DAMAGE_TYPE}(\\W|$)`, "g");
 
 class BaseParser {
 	static _getValidOptions (options) {

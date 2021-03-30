@@ -64,7 +64,7 @@
 										"Aarakocra enjoy peace and solitude. Most of them have little interest in dealing with other peoples and less interest in spending time on the ground. For this reason, it takes an exceptional circumstance for an aarakocra to leave his or her tribe and undertake the adventurer's life. Neither treasure nor glory is enough to lure them from their tribes; a dire threat to their people, a mission of vengeance, or a catastrophe typically lies at the heart of the aarakocra adventurer's chosen path.",
 										"Two other circumstances might call an aarakocra to adventure. First, aarakocra have historical ties to the Wind Dukes of Aqaa. Exceptional individuals honor that connection and might seek out the missing pieces of the Rod of Seven Parts, the remains of an artifact fashioned by the Wind Dukes long ago to defeat the Queen of Chaos's monstrous champion, Miska the Wolf-Spider.",
 										"When plunged into Miska's body, the chaos in his blood sundered the rod and scattered its pieces across the multiverse. Recovering the pieces means gaining honor and esteem in the eyes of the vaati who forged it and could possibly restore a powerful weapon for defense against the agents of elemental evil.",
-										"Second, aarakocra are sworn foes of elemental earth, in particular the gargoyles that serve Ogremoch, the Prince of Earth. The Aarakocra word for gargoyle is loosely translated as \"flying rock,\" and battles between aarakocra and gargoyles have raged across the Elemental Planes of Earth and Air, occasionally spilling into a world on the Material Plane. Aarakocra on that plane might leave their colonies to lend aid to other humanoids committed to fighting earth cults and thwarting their efforts."
+										"Second, aarakocra are sworn foes of elemental earth, in particular the gargoyles that serve Ogrémoch, the Prince of Earth. The Aarakocra word for gargoyle is loosely translated as \"flying rock,\" and battles between aarakocra and gargoyles have raged across the Elemental Planes of Earth and Air, occasionally spilling into a world on the Material Plane. Aarakocra on that plane might leave their colonies to lend aid to other humanoids committed to fighting earth cults and thwarting their efforts."
 									]
 								},
 								{
@@ -583,6 +583,7 @@
 									"entries": [
 										"Long ago there was a woman named Jes, and she had one hundred children. Her rivals conspired against her and swore to kill her children. Jes begged the Sovereigns for help, but their only answer was the wind and rain. In the depths of her despair, a lonely traveler took her hand. \"I will protect your children if they follow my path. Let them wander the world. They may be shunned and feared, but they will never be destroyed.\" Jes agreed, and the traveler gave her his cloak. When she draped it over her children, their old faces melted away and they could be whoever they wanted to be. And so it remains. Though the children are shunned by all, the gift of the Traveler protects them still."
 									],
+									"skipMarks": true,
 									"by": "Chance, changeling priest"
 								},
 								"Changelings can shift their forms with a thought. Many changelings use this gift as a form of artistic and emotional expression. It's also an invaluable tool for grifters, spies, and others who wish to deceive. This leads many people to treat changelings with suspicion.",
@@ -631,6 +632,125 @@
 						"type": "internal",
 						"path": "races/ERLW/Changeling 001.png"
 					}
+				}
+			]
+		},
+		{
+			"name": "Dhampir",
+			"source": "UA2021GothicLineages",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"Poised between the worlds of the living and the dead, dhampirs retain their grip on life yet are endlessly tested by vicious hungers. Their ties to the undead grant dhampirs a taste of a vampire's deathless prowess in the form of increased speed, {@sense darkvision}, and a life-draining bite. With unique insights into the nature of the undead, many dhampirs turn to the lives of adventurers and monster hunters. Their reasons are often deeply personal. Some seek danger, imagining monsters as personifications of their own hungers. Others pursue revenge against whatever turned them into a dhampir. And still others embrace the solitude of the hunt, striving to distance themselves from those who'd tempt their hunger.",
+						{
+							"type": "entries",
+							"name": "Dhampir Hungers",
+							"entries": [
+								"Every dhampir knows a thirst slaked only by the living. This desire is a whisper in the mind, a tinge to the sight, a reflex constantly needing to be suppressed. Those who overindulge their thirst risk losing control and forever viewing others as prey. Those who resist might find exceptional ways of controlling their urges or suppress it through constant, molar-grinding restraint. In any case, temptation haunts dhampirs, and circumstances conspire to give them endless reasons to indulge.",
+								"While many dhampirs thirst for blood, your character might otherwise gain sustenance from the living. Roll on or choose an option from the Dhampir Hungers table to determine what tempts your character to feed.",
+								{
+									"type": "table",
+									"caption": "Dhampir Hungers",
+									"colLabels": [
+										"d8",
+										"Hunger"
+									],
+									"colStyles": [
+										"col-2 text-center",
+										"col-10"
+									],
+									"rows": [
+										[
+											"1",
+											"Blood"
+										],
+										[
+											"2",
+											"Flesh or raw meat"
+										],
+										[
+											"3",
+											"Cerebral spinal fluid"
+										],
+										[
+											"4",
+											"Esoteric humors"
+										],
+										[
+											"5",
+											"Psychic energy"
+										],
+										[
+											"6",
+											"A color from one's appearance"
+										],
+										[
+											"7",
+											"Dreams"
+										],
+										[
+											"8",
+											"Life energy"
+										]
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Dhampir Origins",
+							"entries": [
+								"Dhampirs often arise from encounters with vampires, but all manner of macabre bargains, necromantic influences, and encounters with mysterious immortals might have transformed your character. The Dhampir Origins table provides suggestions for how your character gained their lineage.",
+								{
+									"type": "table",
+									"caption": "Dhampir Origins",
+									"colLabels": [
+										"d8",
+										"Origin"
+									],
+									"colStyles": [
+										"col-2 text-center",
+										"col-10"
+									],
+									"rows": [
+										[
+											"1",
+											"You are the reincarnation of an ancestor who was a vampiric tyrant."
+										],
+										[
+											"2",
+											"Your pact with a predatory deity, fiend, fey, or spirit causes you to share their hunger."
+										],
+										[
+											"3",
+											"You survived being attacked by a vampire but were forever changed."
+										],
+										[
+											"4",
+											"A parasite inhabits your body. You indulge your hunger to sate it."
+										],
+										[
+											"5",
+											"You loved an immortal and were willing to be transformed into a vampire to join them, but tragedy interrupted the transformation."
+										],
+										[
+											"6",
+											"You are a diminished manifestation of an otherworldly being. Slaking your hunger hastens your renewal."
+										],
+										[
+											"7",
+											"You don't know your origins, but you were raised by vampires or other monsters."
+										],
+										[
+											"8",
+											"A radical experiment changed your body, making you reliant on others for vital fluids."
+										]
+									]
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -690,7 +810,7 @@
 												{
 													"type": "item",
 													"name": "Clan Names:",
-													"entry": "Clethtinthiallor, Daardendrian, Delmirev, Drachedandion, Fenkenkabradon, Kepeshkmolik, Kerrhylon, Kimbatuul, Linxakasendalor, Myastan, Nemmonis, Narixius, Ophinstalajiir, Prexijandilin, Shestendeliath, Turnuroth, Verthisathurgiesh, Yarjerit"
+													"entry": "Clethtinthiallor, Daardendrian, Delmirev, Drachedandion, Fenkenkabradon, Kepeshkmolik, Kerrhylon, Kimbatuul, Linxakasendalor, Myastan, Nemmonis, Norixius, Ophinshtalajiir, Prexijandilin, Shestendeliath, Turnuroth, Verthisathurgiesh, Yarjerit"
 												}
 											]
 										}
@@ -1630,6 +1750,60 @@
 			}
 		},
 		{
+			"name": "Fairy",
+			"source": "UA2021FolkOfTheFeywild",
+			"entries": [
+				"The Feywild is home to many fantastic peoples, including fairies. Fairies are a wee folk, but not nearly as much so as their pixie and sprite friends.",
+				"Infused with the magic of the Feywild, fairies share a few commonalities with one another but can differ widely in appearance, behavior, and attitude. Many fairies have a special physical characteristic that sets them apart from other creatures of their kind. For your fairy, roll on the Fey Characteristic table or choose an option from it. The Feywild is a wild place, so come up with your own characteristic if none of these fit your character.",
+				{
+					"type": "table",
+					"caption": "Fey Characteristics",
+					"colLabels": [
+						"d8",
+						"Characteristic"
+					],
+					"colStyles": [
+						"col-2 text-center",
+						"col-10"
+					],
+					"rows": [
+						[
+							"1",
+							"You have small wings like those of an insect."
+						],
+						[
+							"2",
+							"You have shimmering, multicolored skin."
+						],
+						[
+							"3",
+							"You have exceptionally large ears."
+						],
+						[
+							"4",
+							"A constant, glittering mist surrounds you."
+						],
+						[
+							"5",
+							"You have a small spectral horn on your forehead, like a little unicorn horn."
+						],
+						[
+							"6",
+							"Your hands never look dirty."
+						],
+						[
+							"7",
+							"You smell like fresh brownies."
+						],
+						[
+							"8",
+							"A noticeable, harmless chill surrounds you."
+						]
+					]
+				}
+			]
+		},
+		{
 			"name": "Firbolg",
 			"source": "VGM",
 			"entries": [
@@ -1925,6 +2099,21 @@
 			}
 		},
 		{
+			"name": "Gith",
+			"source": "MTF",
+			"entries": [
+				{
+					"type": "section",
+					"entries": [
+						"The story of the gith is rooted in a cruel twist of cosmic fate. Inspired by the great leader for whom the race is named, the gith rose up to overthrow the mind flayers that held them in servitude. But after they won their freedom, two factions among the gith disagreed on what kind of civilization they would forge. That disagreement quickly flared into open hostility, and the two groups distanced themselves from one another to pursue their separate agendas. They remain bitter enemies today, each side willing to fight to the death whenever they cross paths.",
+						"The githyanki were motivated by revenge and convinced that they deserved to take whatever they wanted from the worlds they traveled. Ranging out from the titanic city of Tu'narath on the Astral Plane, they send raiders out to plunder the Material Plane and other worlds, bringing treasures and slaves back to their ageless realm. At the same time, they hunt down and kill mind flayers whenever possible, as recompense for what the illithids did to them.",
+						"The githzerai believed that the path to an enlightened civilization lay in seclusion, not conflict. Their dedication to the principles of order is so strong that they can manipulate the stuff of chaos and use it to their benefit; thus, they have carved out a stronghold for themselves on the plane of Limbo that is virtually impervious. Though the githzerai are pacifists by nature, they share the githyanki's racial hatred for mind flayers, and from time to time they send out squads to destroy illithid outposts.",
+						"If the two races were ever to team up against the illithids, a combined force of gith could conceivably tip the balance in their favor. But as long as the githyanki and githzerai stay at each other's throats, their goal of ultimate victory over their original common enemy will likely remain unachieved."
+					]
+				}
+			]
+		},
+		{
 			"name": "Gith (Githyanki)",
 			"source": "MTF",
 			"_copy": {
@@ -1998,7 +2187,7 @@
 									"type": "entries",
 									"name": "Vibrant Expression",
 									"entries": [
-										"A gnome's energy and enthusiasm for living shines through every inch his or her tiny body. Gnomes average slightly over 3 feet tall and weigh 40 to 45 pounds. Their tan or brown face's are usually adorned with broad smiles (beneath their prodigious noses), and their bright eyes shine with excitement. Their fair hair has a tendency to stick out in every direction, as if expressing the gnome's insatiable interest in everything around.",
+										"A gnome's energy and enthusiasm for living shines through every inch his or her tiny body. Gnomes average slightly over 3 feet tall and weigh 40 to 45 pounds. Their tan or brown faces are usually adorned with broad smiles (beneath their prodigious noses), and their bright eyes shine with excitement. Their fair hair has a tendency to stick out in every direction, as if expressing the gnome's insatiable interest in everything around.",
 										"A gnome's personality is writ large in his or her appearance. A male gnome's beard, in contrast to his wild hair, is kept carefully trimmed but often styled into curious forks or neat points. A gnome's clothing, though usually made in modest earth tones, is elaborately decorated with embroidery, embossing, or gleaming jewels."
 									]
 								},
@@ -2846,6 +3035,95 @@
 					}
 				}
 			}
+		},
+		{
+			"name": "Hexblood",
+			"source": "UA2021GothicLineages",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"Where wishing fails, ancient magic can offer a heart's desire\u2014at least, for a time. Hexbloods are individuals infused with eldritch magic, fey energy, or mysterious witchcraft. Some who enter into bargains with hags gain their deepest wishes but eventually find themselves transformed. These changes evidence a hag's influence: ears that split in forked points, skin in wild shades, lengthy hair that regrows if cut, and an irremovable living crown. Along with these marks, hexbloods manifest hag-like traits, such as long life, {@sense darkvision}, and a variety of magical methods to beguile the senses and avoid the same.",
+						"While many hexbloods gain their lineage after making a deal with a hag, others reveal their nature as they age\u2014particularly if a hag influenced them early in life or even before their birth. Many hexbloods turn to lives of adventure, seeking to discover the mysteries of their magic, to forge a connection with their fey natures, or to avoid a hag that obsesses over them.",
+						{
+							"type": "entries",
+							"name": "Heir of Hags",
+							"entries": [
+								"One way hags create more of their kind is through the creation of hexbloods. Every hexblood exhibits features suggestive of the hag whose magic inspires their powers. This includes an unusual crown, often called a \"eldercross\" or \"witch's turn.\" This living, garland-like part of a hexblood's body extends from their temples and wraps behind the head, serving as a visible mark of the bargain between hag and hexblood, a debt owed, or a change to come."
+							]
+						},
+						{
+							"type": "inset",
+							"name": "Becoming a Hag",
+							"entries": [
+								"Hags can undertake a ritual to irreversibly transform a hexblood they created into a new hag, either one of their own kind or that embodies the hexblood's nature. This requires that both the hag and hexblood be in the same place and consent to the lengthy ritual\u2014circumstances most hexbloods shun but might come to accept over the course of centuries. Once a hexblood undergoes this irreversible ritual, they emerge as a hag NPC no longer under the control of the hexblood's player, unless the DM rules otherwise."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Hexblood Origins",
+							"entries": [
+								"A bargain with a hag or other eerie forces transformed your character into a magical being. Roll on or choose an option from the Hexblood Origins table to determine how your character gained their lineage.",
+								{
+									"type": "table",
+									"caption": "Hexblood Origins",
+									"colLabels": [
+										"d8",
+										"Origin"
+									],
+									"colStyles": [
+										"col-2 text-center",
+										"col-10"
+									],
+									"rows": [
+										[
+											"1",
+											"Seeking a child, your parent made a bargain with a hag. You are the result of that arrangement."
+										],
+										[
+											"2",
+											"Fey kidnappers swapped you and your parents' child."
+										],
+										[
+											"3",
+											"A coven of hags lost one of their members. You were created to replace the lost hag."
+										],
+										[
+											"4",
+											"You were cursed as a child. A deal with the spirits of the forest transformed you into a hexblood, now free of the curse."
+										],
+										[
+											"5",
+											"You began life as a fey creature, but an accident or crime changed you and forced you from your home."
+										],
+										[
+											"6",
+											"A slighted druid transformed you and bound you to live only so long as a sacred tree bears fruit."
+										],
+										[
+											"7",
+											"You made a deal with a hag, but they twisted your words and transformed you."
+										],
+										[
+											"8",
+											"You are a child of the wilds. Animals and mysterious whispers were the only family you ever knew."
+										]
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hobgoblin",
+			"source": "UA2021FolkOfTheFeywild",
+			"entries": [
+				"Hobgoblins trace their origins to the Feywild, where they first appeared with their goblin and bugbear kin. That history has left its mark, for though hobgoblins are found throughout the Material Plane, they continue to channel an aspect of the Feywild's rule of reciprocity, which creates a mystical bond between the giver and the receiver of a gift.",
+				"On some worlds, such bonds lead hobgoblins to form communities with deep ties to each other. In the Forgotten Realms, vast hobgoblin legions have emerged, with ranks upon ranks of devoted soldiers noteworthy for how effective they are at fighting as a unit.",
+				"Hobgoblins are generally taller than their goblin cousins but not quite as big as bugbears. They have curved, pointed ears and noses that turn red or blue during displays of emotion."
+			]
 		},
 		{
 			"name": "Hobgoblin",
@@ -4136,6 +4414,142 @@
 						"type": "internal",
 						"path": "races/Orc.png"
 					}
+				}
+			]
+		},
+		{
+			"name": "Owlfolk",
+			"source": "UA2021FolkOfTheFeywild",
+			"entries": [
+				"Distant kin of giant owls, owlfolk come in many shapes and sizes, from petite and fluffy to widewinged and majestic. Owlfolk have arms and legs like other Humanoids, as well as wings that extend from their back and shoulders.",
+				"Because of their ancestral tie to the Feywild, owlfolk can innately see the magic of their surroundings. Like owls, owlfolk are graced with feathers that make no sound when they move or fly, making it easy for them to sneak up on you in the library.",
+				"Your owlfolk character might be nocturnal. Or perhaps your character is simply prone to rise later, embodying the common nickname of night owl."
+			]
+		},
+		{
+			"name": "Rabbitfolk",
+			"source": "UA2021FolkOfTheFeywild",
+			"entries": [
+				"Bounding across the wilds, rabbitfolk from the Feywild embody a spirit of freedom and travel.",
+				"Rabbitfolk are bipedal, with the characteristic long feet of the animal they resemble and fur in a variety of colors. They share the keen senses and powerful legs of leporine creatures and are full of energy, like a wound-up spring. Rabbitfolk are blessed with a little fey luck, and they often find themselves a few fortunate feet away from dangers during adventures."
+			]
+		},
+		{
+			"name": "Reborn",
+			"source": "UA2021GothicLineages",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						"Death isn't always the end. The reborn exemplify this, being individuals who have died yet, somehow, still live. Some reborn exhibit the scars of fatal fates, their ashen flesh, missing limbs, or bloodless veins making it clear that they've been touched by death. Other reborn are marvels of magic or science, being stitched together from disparate beings or bearing mysterious minds in manufactured bodies. Whatever their origins, reborn know a new life and seek experiences and answers all their own.",
+						{
+							"type": "entries",
+							"name": "Faded Memories",
+							"entries": [
+								"Reborn suffer from some manner of discontinuity, an interruption of their lives or physical state that their minds are ill equipped to deal with. Their memories of events before this interruption are often vague or absent. Occasionally, the most unexpected experiences might cause sensations or visions of the past to come rushing back.",
+								"Rather than sleeping, reborn regularly sit and dwell on the past, hoping for some revelation of what came before. Most of the time, these are dark, silent stretches. Occasionally, though, in a moment of peace, stress, or excitement, a reborn gains a glimpse of what came before. When you desire to have such a dreamlike vision, roll on the Lost Memories table to inspire its details.",
+								{
+									"type": "table",
+									"caption": "Lost Memories",
+									"colLabels": [
+										"d8",
+										"Memory"
+									],
+									"colStyles": [
+										"col-2 text-center",
+										"col-10"
+									],
+									"rows": [
+										[
+											"1",
+											"You recall a physically painful moment. What mark or scar on your body does it relate to?"
+										],
+										[
+											"2",
+											"A memory causes you to shed a tear. Is it a bitter or cheerful memory? Does recalling it make you feel the same way?"
+										],
+										[
+											"3",
+											"You recall a childhood memory. What about that event or who you were still influences you?"
+										],
+										[
+											"4",
+											"A memory brings with it the voice of someone once close to you. How do they advise you?"
+										],
+										[
+											"5",
+											"You recall enjoying something that you can't stand doing now. What is it? Why don't you like it now?"
+										],
+										[
+											"6",
+											"A memory carries a vivid smell or sensation. What are you going to do to recreate that experience?"
+										],
+										[
+											"7",
+											"You faintly remember a place that couldn't possibly exist. What is this vision? How does it make you feel?"
+										],
+										[
+											"8",
+											"You experience a memory you're certain isn't your own. How does it seem unnatural? Could it be a glimpse of a past nightmare or something worse?"
+										]
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Reborn Origins",
+							"entries": [
+								"Reborn might originate from circumstances similar to those of various undead or constructs. Roll on or choose an option from the Reborn Origins table to determine how your character gained their lineage.",
+								{
+									"type": "table",
+									"caption": "Reborn Origins",
+									"colLabels": [
+										"d8",
+										"Origins"
+									],
+									"colStyles": [
+										"col-2 text-center",
+										"col-10"
+									],
+									"rows": [
+										[
+											"1",
+											"You were magically resurrected but something went wrong."
+										],
+										[
+											"2",
+											"Stitches bind your body's mismatched pieces, and your memories come from multiple different lives."
+										],
+										[
+											"3",
+											"After clawing free from your grave, you realized you have no memories except for a single name."
+										],
+										[
+											"4",
+											"You were a necromancer's undead servant for years. One day, your consciousness returned."
+										],
+										[
+											"5",
+											"You awoke in an abandoned laboratory alongside complex designs for clockwork organs."
+										],
+										[
+											"6",
+											"You were released after being petrified for generations. Your memories have faded, though, and your body is not what it once was."
+										],
+										[
+											"7",
+											"Your body hosts a possessing spirit that shares its memories and replaces your missing appendages with phantasmal limbs."
+										],
+										[
+											"8",
+											"In public, you pass as an unremarkable individual, but you can feel the itchy straw stuffing inside you."
+										]
+									]
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -5679,6 +6093,7 @@
 										"\"What makes you think he has a soul?\" Gerrion said",
 										"\"What makes you think you do?\""
 									],
+									"skipMarks": true,
 									"by": "Keith Baker, {@i The Shattered Land}"
 								},
 								"The warforged were built to fight in the Last War. While the first warforged were mindless automatons, House Cannith devoted vast resources to improving these steel soldiers. An unexpected breakthrough produced sapient soldiers, giving rise to what some have only grudgingly accepted as a new species. Warforged are made from wood and metal, but they can feel pain and emotion. Built as weapons, they must now find a purpose beyond war. A warforged can be a steadfast ally, a cold-hearted killer, or a visionary in search of meaning.",

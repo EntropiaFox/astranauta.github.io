@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "1.4.7",
+	"$id": "races.json",
+	"version": "1.6.0",
 	"type": "object",
 
 	"definitions": {
@@ -116,6 +117,9 @@
 				"darkvision": {
 					"type": "integer"
 				},
+				"feats": {
+					"type": "integer"
+				},
 				"traitTags": {
 					"oneOf": [
 						{
@@ -133,10 +137,13 @@
 					"$ref": "util.json#/definitions/languageProficiencies"
 				},
 				"skillProficiencies": {
-					"type": "array",
-					"items": {
-						"$ref": "util.json#/definitions/skillProficiencies"
-					}
+					"$ref": "util.json#/definitions/skillProficiencies"
+				},
+				"weaponProficiencies": {
+					"$ref": "util.json#/definitions/weaponProficiencies"
+				},
+				"armorProficiencies": {
+					"$ref": "util.json#/definitions/armorProficiencies"
 				},
 				"overwrite": {
 					"description": "Map of 'property' -> true where 'property' is a property on the base race which should be overwritten by that of the subrace",
@@ -194,7 +201,9 @@
 							"type": "null"
 						}
 					]
-				}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
 			},
 			"additionalProperties": false
 		},
@@ -230,8 +239,12 @@
 					"$ref": "util.json#/definitions/speed"
 				},
 				"size": {
-					"type": "string",
-					"enum": ["M", "S", "V"]
+					"description": "An array of choices.",
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": ["M", "S", "V"]
+					}
 				},
 				"entries": {
 					"type": "array",
@@ -251,6 +264,9 @@
 				"darkvision": {
 					"type": "integer"
 				},
+				"feats": {
+					"type": "integer"
+				},
 				"traitTags": {
 					"oneOf": [
 						{
@@ -268,10 +284,13 @@
 					"$ref": "util.json#/definitions/languageProficiencies"
 				},
 				"skillProficiencies": {
-					"type": "array",
-					"items": {
-						"$ref": "util.json#/definitions/skillProficiencies"
-					}
+					"$ref": "util.json#/definitions/skillProficiencies"
+				},
+				"weaponProficiencies": {
+					"$ref": "util.json#/definitions/weaponProficiencies"
+				},
+				"armorProficiencies": {
+					"$ref": "util.json#/definitions/armorProficiencies"
 				},
 				"fluff": {
 					"description": "Homebrew use only.",
@@ -333,7 +352,36 @@
 				},
 				"conditionImmune": {
 					"$ref": "#/definitions/conditionImmune"
-				}
+				},
+				"lineage": {
+					"type": "string",
+					"enum": ["UA1", "UA2"]
+				},
+				"creatureTypes": {
+					"type": "array",
+					"items": {
+						"oneOf": [
+							{
+								"type": "object",
+								"properties": {
+									"choose": {
+										"type": "array",
+										"items": {
+											"$ref": "util.json#/definitions/creatureType"
+										}
+									}
+								},
+								"required": ["choose"],
+								"additionalProperties": false
+							},
+							{
+								"$ref": "util.json#/definitions/creatureType"
+							}
+						]
+					}
+				},
+				"hasFluff": {"type": "boolean"},
+				"hasFluffImages": {"type": "boolean"}
 			},
 			"additionalProperties": false
 		},
@@ -342,22 +390,18 @@
 			"type": "string",
 			"enum": [
 				"Amphibious",
-				"Armor Proficiency",
 				"Blindsight",
 				"Dragonmark",
-				"Feat",
 				"Improved Resting",
 				"Magic Resistance",
 				"Monstrous Race",
 				"Natural Armor",
 				"NPC Race",
 				"Powerful Build",
-				"Skill Proficiency",
-				"Spellcasting",
+				"Sunlight Sensitivity",
 				"Tool Proficiency",
 				"Unarmed Strike",
-				"Uncommon Race",
-				"Weapon Proficiency"
+				"Uncommon Race"
 			]
 		},
 

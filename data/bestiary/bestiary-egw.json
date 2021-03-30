@@ -142,7 +142,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aeorian Nullifier",
@@ -285,7 +287,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aeorian Reverser",
@@ -397,7 +401,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Allowak Abominable Yeti",
@@ -420,7 +426,8 @@
 			"languageTags": [
 				"C",
 				"OTH"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Allowak Yeti",
@@ -649,7 +656,9 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bol'bara",
@@ -886,7 +895,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Core Spawn Crawler",
@@ -991,7 +1001,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Core Spawn Emissary",
@@ -1114,7 +1126,9 @@
 			"conditionInflict": [
 				"charmed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Core Spawn Seer",
@@ -1244,7 +1258,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Core Spawn Worm",
@@ -1375,7 +1391,9 @@
 				"blinded",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Damaged Flesh Golem",
@@ -1534,7 +1552,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frost Worm",
@@ -1649,7 +1669,9 @@
 				"blinded",
 				"restrained",
 				"stunned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gearkeeper Construct",
@@ -1784,7 +1806,9 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gloomstalker",
@@ -1911,7 +1935,9 @@
 				"grappled",
 				"paralyzed",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Guardian Wolf",
@@ -2111,7 +2137,9 @@
 			"conditionInflict": [
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hulil Lutan",
@@ -2246,11 +2274,14 @@
 				"LF"
 			],
 			"damageTags": [
+				"I",
 				"S"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ishel",
@@ -2274,7 +2305,8 @@
 				"formula": "3d8"
 			},
 			"cr": "1/2",
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true
 		},
 		{
 			"name": "Karkethzerethzerus, the Sable Despoiler",
@@ -2293,6 +2325,12 @@
 			"traitTags": [
 				"Legendary Resistances",
 				"Sunlight Sensitivity"
+			],
+			"damageTags": [
+				"B",
+				"N",
+				"P",
+				"S"
 			]
 		},
 		{
@@ -2389,7 +2427,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Merrow Shallowpriest",
@@ -2517,7 +2556,9 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Moorbounder",
@@ -2579,7 +2620,9 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mossback Steward",
@@ -2634,7 +2677,8 @@
 				"GO",
 				"P",
 				"TP"
-			]
+			],
+			"hasFluff": true
 		},
 		{
 			"name": "Nergaliid",
@@ -2758,7 +2802,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ogre Lord Buhfal II",
@@ -2782,7 +2828,8 @@
 				"E"
 			],
 			"int": 10,
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true
 		},
 		{
 			"name": "Old Croaker",
@@ -2894,7 +2941,8 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true
 		},
 		{
 			"name": "Raegrin Mau",
@@ -3069,6 +3117,7 @@
 				"OTH"
 			],
 			"damageTags": [
+				"L",
 				"O",
 				"P",
 				"S"
@@ -3087,10 +3136,13 @@
 				"blinded",
 				"charmed",
 				"invisible"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sea Fury",
+			"group": "Hags",
 			"source": "EGW",
 			"page": 299,
 			"size": "M",
@@ -3272,7 +3324,9 @@
 			],
 			"conditionInflictSpell": [
 				"frightened"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadowghast",
@@ -3371,7 +3425,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sharkbody Abomination",
@@ -3402,7 +3458,8 @@
 				"walk": 20,
 				"swim": 40
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true
 		},
 		{
 			"name": "Sken Zabriss",
@@ -3547,7 +3604,8 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swarm of Undead Snakes",
@@ -3671,7 +3729,9 @@
 				"grappled",
 				"petrified",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Three Earrings",
@@ -3697,7 +3757,8 @@
 				"N",
 				"E"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true
 		},
 		{
 			"name": "Udaak",
@@ -3827,7 +3888,9 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vox Seeker",
@@ -3909,6 +3972,7 @@
 				"B"
 			],
 			"damageTags": [
+				"L",
 				"P"
 			],
 			"miscTags": [
