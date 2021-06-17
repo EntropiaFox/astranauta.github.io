@@ -1,0 +1,52 @@
+@import "vars";
+
+.clickable {
+	&--link {
+		color: $rgb-link-blue !important;
+	}
+}
+
+.plain {
+	font-weight: initial !important;
+	font-style: initial !important;
+	text-decoration: none !important;
+}
+
+.fade {
+	transition: opacity $time-3-frames linear;
+}
+
+.float-clear {
+	clear: both;
+}
+
+.stripe- {
+	&even {
+		&:nth-child(even) {
+			background: $rgb-stripe-grey;
+		}
+
+		&--faint:nth-child(even) {
+			background: $rgb-stripe-grey--faint;
+		}
+	}
+
+	&odd {
+		&:nth-child(odd) {
+			background: $rgb-stripe-grey;
+		}
+
+		&--faint:nth-child(odd) {
+			background: $rgb-stripe-grey--faint;
+		}
+	}
+}
+
+.last-mr-0:last-child {
+	margin-right: 0 !important;
+}
+
+// redefine this here to ensure it overrides all the important display types above
+.hidden {
+	display: none !important;
+}

@@ -1,0 +1,91 @@
+{
+	"monster": [
+		{
+			"name": "Ancient Companion",
+			"source": "UA2021MagesOfStrixhaven",
+			"page": 3,
+			"size": "M",
+			"type": "construct",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"special": "14 (natural armor) + 2 (Warrior only)"
+				}
+			],
+			"hp": {
+				"special": "5 + 5 times your level in this class (the companion has a number of Hit Dice [d8s] equal to your level in this class)"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 14,
+			"dex": 9,
+			"con": 15,
+			"int": 14,
+			"wis": 14,
+			"cha": 11,
+			"save": {
+				"con": "+2 + PB",
+				"int": "+2 + PB",
+				"wis": "+2 + PB"
+			},
+			"skill": {
+				"history": "+2 + PB",
+				"perception": "+ 2 + (PB × 2)"
+			},
+			"passive": "12 + (PB × 2)",
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion"
+			],
+			"languages": [
+				"speaks and understands the languages you speak"
+			],
+			"pbNote": "equals your bonus",
+			"trait": [
+				{
+					"name": "Ancient Fortitude",
+					"entries": [
+						"If damage reduces the companion to 0 hit points, it can make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is from a critical hit. On a success, the companion drops to 1 hit point instead."
+					]
+				},
+				{
+					"name": "Sage's Counsel (Sage Only)",
+					"entries": [
+						"While within 15 feet of the companion, you and your allies gain a +2 bonus to Intelligence and Wisdom checks."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Spirit Strike",
+					"entries": [
+						"{@atk mw} your spell attack modifier to hit, reach 5 ft., one target you can see. {@h}{@damage 1d8 + 2 + PB} force damage."
+					]
+				},
+				{
+					"name": "Healer's Light (Healer Only)",
+					"entries": [
+						"The companion chooses a creature it can see within 15 feet of itself and flares with invigorating light. The creature gains {@dice 1d8 + PB} temporary hit points."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Warrior's Protection (Warrior Only)",
+					"entries": [
+						"When a creature within 5 feet of the companion makes a Strength or Dexterity saving throw, the companion imposes itself between the creature and the danger. The creature can roll a {@dice d4} and add the number rolled to the saving throw."
+					]
+				}
+			],
+			"miscTags": [
+				"MW"
+			]
+		}
+	]
+}

@@ -1,0 +1,98 @@
+@import "vars";
+
+// If it's anything less than full desktop size, enable these styles
+.mobile-ish__ {
+	@media only screen and (min-width: $width-screen-lg) {
+		&visible {
+			display: none !important;
+		}
+	}
+
+	@media only screen and (max-width: $width-screen-lg) {
+		&hidden {
+			display: none !important;
+		}
+
+		&flex-col {
+			display: flex !important;
+			flex-direction: column !important;
+		}
+
+		&mr-0 {
+			margin-right: 0 !important;
+		}
+	}
+}
+
+.mobile__ {
+	@media only screen and (min-width: $width-screen-sm) {
+		&visible {
+			display: none !important;
+		}
+	}
+
+	@media only screen and (max-width: $width-screen-sm) {
+		&hidden {
+			display: none !important;
+		}
+
+		&text-center {
+			text-align: center !important;
+		}
+
+		&flex-col {
+			display: flex !important;
+			flex-direction: column !important;
+		}
+
+		&flex-row {
+			display: flex !important;
+			flex-direction: row !important;
+		}
+
+		&flex-col-reverse {
+			display: flex !important;
+			flex-direction: column-reverse !important;
+		}
+
+		&flex-ai-start {
+			align-items: flex-start !important;
+		}
+
+		&w-100 {
+			width: 100% !important;
+		}
+
+		&max-w-100 {
+			max-width: 100% !important;
+		}
+
+		&m-1 {
+			margin: ($spacer * 0.25) !important;
+		}
+
+		&mt-2 {
+			margin-top: ($spacer * 0.5) !important;
+		}
+
+		&mt-3 {
+			margin-top: $spacer !important;
+		}
+
+		&mt-4 {
+			margin-top: ($spacer * 1.5) !important;
+		}
+
+		&mr-0 {
+			margin-right: 0 !important;
+		}
+
+		&mb-2 {
+			margin-bottom: ($spacer * 0.5) !important;
+		}
+
+		&ml-0 {
+			margin-left: 0 !important;
+		}
+	}
+}
