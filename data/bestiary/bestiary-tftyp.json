@@ -600,7 +600,8 @@
 				}
 			],
 			"immune": null,
-			"hasToken": true
+			"hasToken": true,
+			"conditionInflict": []
 		},
 		{
 			"name": "Cloud Giant Noble",
@@ -642,6 +643,7 @@
 		},
 		{
 			"name": "Dragonpriest",
+			"isNpc": true,
 			"source": "TftYP",
 			"page": 16,
 			"_copy": {

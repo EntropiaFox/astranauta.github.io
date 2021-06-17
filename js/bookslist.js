@@ -25,7 +25,7 @@ class BooksList {
 
 	async pOnPageLoad () {
 		ExcludeUtil.pInitialise(); // don't await, as this is only used for search
-		const data = await DataUtil.loadJSON(this._contentsUrl);
+		const data = await DataUtil.loadJSON(`${Renderer.get().baseUrl}${this._contentsUrl}`);
 
 		const $iptSearch = $(`#search`);
 
@@ -107,7 +107,7 @@ class BooksList {
 				<div class="flex-col w-100 bklist__wrp-rows-inner">${$elesContents}</div>
 			</div>`.hideVe();
 
-			const $btnToggleExpand = $(`<span class="px-2 py-1px bold">[+]</span>`)
+			const $btnToggleExpand = $(`<span class="px-2 py-1p bold">[+]</span>`)
 				.click(evt => {
 					evt.stopPropagation();
 					evt.preventDefault();
@@ -117,7 +117,7 @@ class BooksList {
 
 			const $eleLi = $$`<div class="flex-col w-100">
 				<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="split-v-center lst--border lst__row-inner lst__row">
-					<span class="w-100">${this._rowBuilderFn(it)}</span>
+					<span class="w-100 flex">${this._rowBuilderFn(it)}</span>
 					${$btnToggleExpand}
 				</a>
 				${$wrpContents}
@@ -135,7 +135,7 @@ class BooksList {
 
 			// region Alt list (covers/thumbnails)
 			const eleLiAlt = $(`<a href="${this._rootPage}#${UrlUtil.encodeForHash(it.id)}" class="flex-col flex-v-center m-3 bks__wrp-bookshelf-item py-3 px-2 ${Parser.sourceJsonToColor(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>
-				<img src="${it.coverUrl || `${Renderer.get().baseMediaUrls["img"] || Renderer.get().baseUrl}img/covers/blank.png`}" class="mb-2 bks__bookshelf-image">
+				<img src="${it.coverUrl || `${Renderer.get().baseMediaUrls["img"] || Renderer.get().baseUrl}img/covers/blank.png`}" class="mb-2 bks__bookshelf-image" loading="lazy" alt="Cover Image: ${(it.name || "").qq()}">
 				<div class="bks__bookshelf-item-name flex-vh-center text-center">${it.name}</div>
 			</a>`)[0];
 			const listItemAlt = new ListItem(

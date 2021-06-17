@@ -41,12 +41,12 @@
 						],
 						[
 							"Bag of Nails",
-							"-",
+							"\u2014",
 							"Unhinged tabaxi hunter in Omu"
 						],
 						[
 							"Dragonbait",
-							"-",
+							"\u2014",
 							"Saurial paladin aiding Artus Cimber"
 						],
 						[
@@ -81,7 +81,7 @@
 						],
 						[
 							"Flask of Wine",
-							"-",
+							"\u2014",
 							"Tabaxi guide in Port Nyanzaru"
 						],
 						[
@@ -91,7 +91,7 @@
 						],
 						[
 							"Grabstab",
-							"-",
+							"\u2014",
 							"Queen of the Biting Ant goblin tribe and ruler of Yellyark"
 						],
 						[
@@ -101,7 +101,7 @@
 						],
 						[
 							"Hew Hackinstone",
-							"-",
+							"\u2014",
 							"Shield dwarf guide in Port Nyanzaru"
 						],
 						[
@@ -161,7 +161,7 @@
 						],
 						[
 							"Niles Breakbone",
-							"-",
+							"\u2014",
 							"Commander of Camp Vengeance and Order of the Gauntlet member"
 						],
 						[
@@ -186,7 +186,7 @@
 						],
 						[
 							"River Mist",
-							"-",
+							"\u2014",
 							"Tabaxi guide in Port Nyanzaru"
 						],
 						[
@@ -226,7 +226,7 @@
 						],
 						[
 							"Withers",
-							"-",
+							"\u2014",
 							"Spellcasting wight working for Acererak"
 						],
 						[
@@ -236,7 +236,7 @@
 						],
 						[
 							"Yorb",
-							"-",
+							"\u2014",
 							"Grung chief in Omu"
 						],
 						[
@@ -354,7 +354,7 @@
 										],
 										[
 											"NPC = nonplayer character",
-											"-"
+											"\u2014"
 										]
 									]
 								}
@@ -1274,7 +1274,7 @@
 							"name": "9. Save an Innocent Man",
 							"id": "04a",
 							"entries": [
-								" Belym (LG male Chultan human commoner) is distraught because his husband, Draza (LG male Chultan {@creature commoner}), has been sentenced to Executioner's Run for stealing. Belym asserts that his husband was a victim of mistaken identity and sentenced without a proper hearing or trial. He's been unable to persuade anyone in authority that Draza is innocent. He'll give the characters 25 sp (all his savings) if they can help Draza from the sidelines so he survives the run. Draza is about to be thrown into the pit with a pair of {@creature velociraptor|VGM|velociraptors}, so the characters must act quickly. Both the authorities and the gamblers take a dim view of interference."
+								" Belym (LG male Chultan human {@creature commoner}) is distraught because his husband, Draza (LG male Chultan {@creature commoner}), has been sentenced to Executioner's Run for stealing. Belym asserts that his husband was a victim of mistaken identity and sentenced without a proper hearing or trial. He's been unable to persuade anyone in authority that Draza is innocent. He'll give the characters 25 sp (all his savings) if they can help Draza from the sidelines so he survives the run. Draza is about to be thrown into the pit with a pair of {@creature velociraptor|VGM|velociraptors}, so the characters must act quickly. Both the authorities and the gamblers take a dim view of interference."
 							]
 						},
 						{
@@ -2633,77 +2633,76 @@
 								"Racer Example"
 							],
 							"colStyles": [
-								"",
-								"",
-								"",
-								"",
+								"text-center",
+								"text-center",
+								"text-center",
+								"text-center",
 								""
 							],
 							"rows": [
 								[
 									"7/1",
-									"d8",
+									"{@dice d8}",
 									"2-8",
 									"Wager ÷ 7",
-									"Big Honker (crowd-pleasing young tyrannosaurus rex)"
+									"Big Honker (crowd-pleasing young {@creature tyrannosaurus rex})"
 								],
 								[
 									"5/1",
-									"d6",
+									"{@dice d6}",
 									"2-6",
 									"Wager ÷ 5",
-									"Ubtao's Favorite (young triceratops on a streak)"
+									"Ubtao's Favorite (young {@creature triceratops} on a streak)"
 								],
 								[
 									"3/1",
-									"d4",
+									"{@dice d4}",
 									"2-4",
 									"Wager ÷ 3",
-									"Banana Candy (well-trained hadrosaurus)"
+									"Banana Candy (well-trained {@creature hadrosaurus|vgm})"
 								],
 								[
 									"2/1",
-									"d3",
+									"{@dice d3}",
 									"2-3",
 									"Wager ÷ 2",
-									"Bonecruncher (young, ill-tempered allosaurus)"
+									"Bonecruncher (young, ill-tempered {@creature allosaurus})"
 								],
 								[
 									"1/1",
 									"Any",
 									"Even",
 									"Wager",
-									"Grung Stomper (young ankylosaurus)"
+									"Grung Stomper (young {@creature ankylosaurus})"
 								],
 								[
 									"1/2",
-									"d3",
+									"{@dice d3}",
 									"1",
 									"Wager × 2",
-									"Scarback (young tyrannosaurus rex on its last race)"
+									"Scarback (young {@creature tyrannosaurus rex} on its last race)"
 								],
 								[
 									"1/3",
-									"d4",
+									"{@dice d4}",
 									"1",
 									"Wager × 3",
-									"Nasty Boy (allosaurus with famous trainer)"
+									"Nasty Boy ({@creature allosaurus} with famous trainer)"
 								],
 								[
 									"1/5",
-									"d6",
+									"{@dice d6}",
 									"1",
 									"Wager × 5",
-									"Jungle Princess (deinonychus with frightened jockey)"
+									"Jungle Princess ({@creature deinonychus|vgm} with frightened jockey)"
 								],
 								[
 									"1/7",
-									"d8",
+									"{@dice d8}",
 									"1",
 									"Wager × 7",
-									"Mountain Thunder (aging dimetrodon)"
-								],
-								[]
+									"Mountain Thunder (aging {@creature dimetrodon|vgm})"
+								]
 							]
 						}
 					]
@@ -7826,7 +7825,7 @@
 							"name": "Pits",
 							"id": "25f",
 							"entries": [
-								" Three covered pits are spaced along the corridor in the positions marked X on the shrine map. Their covers remain locked until the puzzle cube is moved from the pedestal in {@area 6C|260}. Thereafter, a creature stepping on a pit cover causes it to swing open and falls in unless it succeeds on a DC 15 Dexterity saving throw. Each pit is 10 feet deep and has a patch of green slime (see chapter 5 of the {@i Dungeon Master's Guide}) at the bottom of it."
+								" Three covered pits are spaced along the corridor in the positions marked X on the shrine map. Their covers remain locked until the puzzle cube is moved from the pedestal in {@area 6C|260}. Thereafter, a creature stepping on a pit cover causes it to swing open and falls in unless it succeeds on a DC 15 Dexterity saving throw. Each pit is 10 feet deep and has a patch of {@hazard green slime} (see chapter 5 of the {@i Dungeon Master's Guide}) at the bottom of it."
 							]
 						},
 						"A character who searches the hallway floor for traps finds a pit trap with a successful DC 15 Wisdom (Perception) check. The lids are cleverly constructed and can be jammed shut only by using magic such as an {@spell arcane lock} spell."
@@ -10434,8 +10433,8 @@
 								"The passage widens into a cavern filled with fungi. Toadstools, puffballs, and other tuberous growths cover the walls and floor. Against the far wall, a malformed skeleton lies buried under a patch of buttery mold. A brass key hangs around its neck."
 							]
 						},
-						"A patch of green slime (see chapter 5 of the {@i Dungeon Master's Guide}) clings to the ceiling above the entrance and drops on the first creature that passes underneath.",
-						"A patch of yellow mold (see chapter 5 of the {@i Dungeon Master's Guide}) covers the skeletal corpse. If a creature touches the mold, it ejects a cloud of deadly spores.",
+						"A patch of {@hazard green slime} (see chapter 5 of the {@i Dungeon Master's Guide}) clings to the ceiling above the entrance and drops on the first creature that passes underneath.",
+						"A patch of {@hazard yellow mold} (see chapter 5 of the {@i Dungeon Master's Guide}) covers the skeletal corpse. If a creature touches the mold, it ejects a cloud of deadly spores.",
 						"The corpse belongs to Kukuga, a yuan-ti pureblood who secretly worshiped Zuggtmoy (the demon queen of fungi). Kukuga concocted a fungal brew that would transform his body into a form closer to that of his demonic mistress. Instead, it led to his sudden and horrific death. Xopal ({@area 14|333}) occasionally ventures into the cavern to harvest poisonous toadstools from his corpse.",
 						"To remove the brass key without disturbing the mold, a character must succeed on a DC 12 Dexterity (Sleight of Hand) check. The key unlocks the door to the venom distillery ({@area 14|333})."
 					]
@@ -12185,7 +12184,7 @@
 								"Ancient cobwebs fill this narrow corridor, whose midpoint features an arched alcove. Within the alcove, a dusty bottle stands on a table."
 							]
 						},
-						"The bottle is stoppered and contains a {@creature dao} named Keshma al-Wazir, who was trapped centuries ago by Acererak. Anyone examining the bottle spots the genie waving from within and hears her muffled voice calling out. Keshma speaks Terran only. At first, she orders the characters to release her. If they refuse, she tries to bargain with them (see \"Roleplaying the Dao\" below). While trapped inside the bottle, Keshma can't attack or cast spells. Once she's released, she can cast the tongues spell to better communicate with her liberators.",
+						"The bottle is stoppered and contains a {@creature dao} named Keshma al-Wazir, who was trapped centuries ago by Acererak. Anyone examining the bottle spots the genie waving from within and hears her muffled voice calling out. Keshma speaks Terran only. At first, she orders the characters to release her. If they refuse, she tries to bargain with them (see \"Roleplaying the Dao\" below). While trapped inside the bottle, Keshma can't attack or cast spells. Once she's released, she can cast the {@spell tongues} spell to better communicate with her liberators.",
 						"If the bottle is broken or unplugged, the dao emerges in a whirlwind of sand. She fulfills whatever promise she made to the characters in exchange for her freedom, then casts {@spell plane shift} in an effort to return to the Elemental Plane of Earth. (The attempt fails, naturally, and she winds up trapped in {@area 57|4c0}.)",
 						{
 							"type": "entries",
@@ -14113,10 +14112,10 @@
 								"Reaction if Released"
 							],
 							"colStyles": [
-								"",
-								"",
-								"",
-								""
+								"col-1 text-center",
+								"col-2",
+								"col-4-5",
+								"col-4-5"
 							],
 							"rows": [
 								[
@@ -14127,9 +14126,9 @@
 								],
 								[
 									"2",
-									"-",
-									"-",
-									"-"
+									"\u2014",
+									"\u2014",
+									"\u2014"
 								],
 								[
 									"3",
@@ -14139,15 +14138,15 @@
 								],
 								[
 									"4",
-									"Zaal (minotaur)",
+									"Zaal ({@creature minotaur})",
 									"Trapped by Acererak shortly after Omu's fall",
 									"Attacks any other creature it sees except Lukanu, whom it obeys"
 								],
 								[
 									"5",
-									"-",
-									"-",
-									"-"
+									"\u2014",
+									"\u2014",
+									"\u2014"
 								],
 								[
 									"6",
@@ -14175,9 +14174,9 @@
 								],
 								[
 									"10",
-									"-",
-									"-",
-									"-"
+									"\u2014",
+									"\u2014",
+									"\u2014"
 								],
 								[
 									"11",
@@ -20211,42 +20210,42 @@
 							"name": "Zombies",
 							"id": "5f4",
 							"entries": [
-								" Characters catch the scent of death on the air and hear the undead lumbering through the jungle."
-							]
-						},
-						"Roll on the table below to determine what appears:",
-						{
-							"type": "table",
-							"caption": "Zombies",
-							"colLabels": [
-								"d10",
-								"Zombies Appearing"
-							],
-							"colStyles": [
-								"col-2 text-center",
-								"col-10"
-							],
-							"rows": [
-								[
-									"1-3",
-									"Zombies"
-								],
-								[
-									"4-5",
-									"Ankylosaurus Zombie"
-								],
-								[
-									"6-7",
-									"Girallon Zombies"
-								],
-								[
-									"8-9",
-									"Ogre Zombies"
-								],
-								[
-									"10",
-									"Tyrannosaurus Zombie"
-								]
+								"Characters catch the scent of death on the air and hear the undead lumbering through the jungle.",
+								"Roll on the table below to determine what appears:",
+								{
+									"type": "table",
+									"caption": "Zombies",
+									"colLabels": [
+										"d10",
+										"Zombies Appearing"
+									],
+									"colStyles": [
+										"col-2 text-center",
+										"col-10"
+									],
+									"rows": [
+										[
+											"1-3",
+											"{@dice 3d6} {@creature Zombie||Zombies}"
+										],
+										[
+											"4-5",
+											"1 {@creature Ankylosaurus Zombie|ToA}"
+										],
+										[
+											"6-7",
+											"{@dice 1d4} {@creature Girallon Zombie|ToA|Girallon Zombies}"
+										],
+										[
+											"8-9",
+											"{@dice 1d4} {@creature Ogre Zombie||Ogre Zombies}"
+										],
+										[
+											"10",
+											"1 {@creature Tyrannosaurus Zombie|ToA}"
+										]
+									]
+								}
 							]
 						}
 					]

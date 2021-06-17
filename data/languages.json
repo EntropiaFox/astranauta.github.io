@@ -146,7 +146,7 @@
 			"page": 6,
 			"type": "exotic",
 			"typicalSpeakers": [
-				"{@filter celestials|source=ERLW|type=celestial}"
+				"{@filter celestials|bestiary|source=ERLW|type=celestial}"
 			],
 			"script": "Celestial"
 		},
@@ -156,7 +156,7 @@
 			"page": 9,
 			"type": "standard",
 			"typicalSpeakers": [
-				"{@filter angels|source=GGR|tag=angel}"
+				"{@filter angels|bestiary|source=GGR|tag=angel}"
 			],
 			"script": "Celestial"
 		},
@@ -1269,7 +1269,7 @@
 			"source": "MOT",
 			"page": 9,
 			"typicalSpeakers": [
-				"Centaurs, satyrs"
+				"Centaurs, {@filter satyrs|bestiary|source=MOT|search=satyr}"
 			],
 			"script": "Elvish"
 		},

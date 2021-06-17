@@ -303,16 +303,13 @@
 				{
 					"name": "Ethereal Sight",
 					"entries": [
-						"The geist can see 60 feet into the Ethereal Plane when",
-						"it is on the Material Plane, and vice versa."
+						"The geist can see 60 feet into the Ethereal Plane when it is on the Material Plane, and vice versa."
 					]
 				},
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The geist can move through other creatures",
-						"and objects as if they were difficult terrain. It takes 5 ({@dice 1d10}) force",
-						"damage if it ends its turn inside an object."
+						"The geist can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@dice 1d10}) force damage if it ends its turn inside an object."
 					]
 				},
 				{
@@ -461,6 +458,9 @@
 					},
 					"ability": "wis"
 				}
+			],
+			"spellcastingTags": [
+				"CD"
 			]
 		},
 		{

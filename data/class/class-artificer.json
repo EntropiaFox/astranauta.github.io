@@ -355,35 +355,7 @@
 				"Proficiency Versatility|Artificer|UAArtificer|18|UAClassFeatureVariants",
 				"Soul of Artifice|Artificer|UAArtificer|20"
 			],
-			"subclassTitle": "Artificer Specialist",
-			"subclasses": [
-				{
-					"name": "Alchemist",
-					"shortName": "Alchemist",
-					"source": "UAArtificer",
-					"page": 5,
-					"subclassFeatures": [
-						"Alchemist|Artificer|UAArtificer|Alchemist|UAArtificer|1",
-						"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|3",
-						"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|9",
-						"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|14",
-						"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|17"
-					]
-				},
-				{
-					"name": "Gunsmith",
-					"shortName": "Gunsmith",
-					"source": "UAArtificer",
-					"page": 6,
-					"subclassFeatures": [
-						"Gunsmith|Artificer|UAArtificer|Gunsmith|UAArtificer|1",
-						"Thunder Monger|Artificer|UAArtificer|Gunsmith|UAArtificer|3",
-						"Blast Wave|Artificer|UAArtificer|Gunsmith|UAArtificer|9",
-						"Piercing Round|Artificer|UAArtificer|Gunsmith|UAArtificer|14",
-						"Explosive Round|Artificer|UAArtificer|Gunsmith|UAArtificer|17"
-					]
-				}
-			]
+			"subclassTitle": "Artificer Specialist"
 		},
 		{
 			"name": "Artificer (Revisited)",
@@ -840,53 +812,6 @@
 				"Soul of Artifice|Artificer (Revisited)|UAArtificerRevisited|20"
 			],
 			"subclassTitle": "Artificer Specialist",
-			"subclasses": [
-				{
-					"name": "Alchemist",
-					"shortName": "Alchemist",
-					"source": "UAArtificerRevisited",
-					"page": 6,
-					"subclassFeatures": [
-						"Alchemist|Artificer (Revisited)|UAArtificerRevisited|Alchemist|UAArtificerRevisited|3",
-						"Alchemical Mastery|Artificer (Revisited)|UAArtificerRevisited|Alchemist|UAArtificerRevisited|6",
-						"Chemical Savant|Artificer (Revisited)|UAArtificerRevisited|Alchemist|UAArtificerRevisited|14"
-					]
-				},
-				{
-					"name": "Archivist",
-					"shortName": "Archivist",
-					"source": "UAArtificerRevisited",
-					"page": 7,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Archivist|Artificer (Revisited)|UAArtificerRevisited|Archivist|UAArtificerRevisited|3",
-						"Mind Network|Artificer (Revisited)|UAArtificerRevisited|Archivist|UAArtificerRevisited|6",
-						"Pure Information|Artificer (Revisited)|UAArtificerRevisited|Archivist|UAArtificerRevisited|14"
-					]
-				},
-				{
-					"name": "Artillerist",
-					"shortName": "Artillerist",
-					"source": "UAArtificerRevisited",
-					"page": 9,
-					"subclassFeatures": [
-						"Artillerist|Artificer (Revisited)|UAArtificerRevisited|Artillerist|UAArtificerRevisited|3",
-						"Wand Prototype|Artificer (Revisited)|UAArtificerRevisited|Artillerist|UAArtificerRevisited|6",
-						"Fortified Position|Artificer (Revisited)|UAArtificerRevisited|Artillerist|UAArtificerRevisited|14"
-					]
-				},
-				{
-					"name": "Battle Smith",
-					"shortName": "Battle Smith",
-					"source": "UAArtificerRevisited",
-					"page": 11,
-					"subclassFeatures": [
-						"Battle Smith|Artificer (Revisited)|UAArtificerRevisited|Battle Smith|UAArtificerRevisited|3",
-						"Arcane Jolt|Artificer (Revisited)|UAArtificerRevisited|Battle Smith|UAArtificerRevisited|6",
-						"Improved Defender|Artificer (Revisited)|UAArtificerRevisited|Battle Smith|UAArtificerRevisited|14"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Artificer",
@@ -1443,217 +1368,6 @@
 				"Soul of Artifice|Artificer|TCE|20"
 			],
 			"subclassTitle": "Artificer Specialist",
-			"subclasses": [
-				{
-					"name": "Armorer (UA)",
-					"shortName": "Armorer (UA)",
-					"source": "UA2020SubclassesPt3",
-					"page": 1,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"magic missile",
-									"shield"
-								],
-								"5": [
-									"mirror image",
-									"shatter"
-								],
-								"9": [
-									"hypnotic pattern",
-									"lightning bolt"
-								],
-								"13": [
-									"fire shield",
-									"greater invisibility"
-								],
-								"17": [
-									"passwall",
-									"wall of force"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Armorer|Artificer|TCE|Armorer (UA)|UA2020SubclassesPt3|3",
-						"Extra Attack|Artificer|TCE|Armorer (UA)|UA2020SubclassesPt3|5",
-						"Armor Modifications|Artificer|TCE|Armorer (UA)|UA2020SubclassesPt3|9",
-						"Perfected Armor|Artificer|TCE|Armorer (UA)|UA2020SubclassesPt3|15"
-					]
-				},
-				{
-					"name": "Alchemist",
-					"shortName": "Alchemist",
-					"source": "TCE",
-					"page": 14,
-					"otherSources": [
-						{
-							"source": "ERLW",
-							"page": 58
-						}
-					],
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"healing word",
-									"ray of sickness"
-								],
-								"5": [
-									"flaming sphere",
-									"melf's acid arrow"
-								],
-								"9": [
-									"gaseous form",
-									"mass healing word"
-								],
-								"13": [
-									"blight",
-									"death ward"
-								],
-								"17": [
-									"cloudkill",
-									"raise dead"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Alchemist|Artificer|TCE|Alchemist|TCE|3",
-						"Alchemical Savant|Artificer|TCE|Alchemist|TCE|5",
-						"Restorative Reagents|Artificer|TCE|Alchemist|TCE|9",
-						"Chemical Mastery|Artificer|TCE|Alchemist|TCE|15"
-					]
-				},
-				{
-					"name": "Armorer",
-					"shortName": "Armorer",
-					"source": "TCE",
-					"page": 15,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"magic missile",
-									"thunderwave"
-								],
-								"5": [
-									"mirror image",
-									"shatter"
-								],
-								"9": [
-									"hypnotic pattern",
-									"lightning bolt"
-								],
-								"13": [
-									"fire shield",
-									"greater invisibility"
-								],
-								"17": [
-									"passwall",
-									"wall of force"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Armorer|Artificer|TCE|Armorer|TCE|3",
-						"Extra Attack|Artificer|TCE|Armorer|TCE|5",
-						"Armor Modifications|Artificer|TCE|Armorer|TCE|9",
-						"Perfected Armor|Artificer|TCE|Armorer|TCE|15"
-					]
-				},
-				{
-					"name": "Artillerist",
-					"shortName": "Artillerist",
-					"source": "TCE",
-					"page": 17,
-					"otherSources": [
-						{
-							"source": "ERLW",
-							"page": 59
-						}
-					],
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"shield",
-									"thunderwave"
-								],
-								"5": [
-									"scorching ray",
-									"shatter"
-								],
-								"9": [
-									"fireball",
-									"wind wall"
-								],
-								"13": [
-									"ice storm",
-									"wall of fire"
-								],
-								"17": [
-									"cone of cold",
-									"wall of force"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Artillerist|Artificer|TCE|Artillerist|TCE|3",
-						"Arcane Firearm|Artificer|TCE|Artillerist|TCE|5",
-						"Explosive Cannon|Artificer|TCE|Artillerist|TCE|9",
-						"Fortified Position|Artificer|TCE|Artillerist|TCE|15"
-					]
-				},
-				{
-					"name": "Battle Smith",
-					"shortName": "Battle Smith",
-					"source": "TCE",
-					"page": 18,
-					"otherSources": [
-						{
-							"source": "ERLW",
-							"page": 60
-						}
-					],
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"heroism",
-									"shield"
-								],
-								"5": [
-									"branding smite",
-									"warding bond"
-								],
-								"9": [
-									"aura of vitality",
-									"conjure barrage"
-								],
-								"13": [
-									"aura of purity",
-									"fire shield"
-								],
-								"17": [
-									"banishing smite",
-									"mass cure wounds"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Battle Smith|Artificer|TCE|Battle Smith|TCE|3",
-						"Extra Attack|Artificer|TCE|Battle Smith|TCE|5",
-						"Arcane Jolt|Artificer|TCE|Battle Smith|TCE|9",
-						"Improved Defender|Artificer|TCE|Battle Smith|TCE|15"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Artificer",
@@ -1793,6 +1507,310 @@
 					"source": "ERLW",
 					"page": 54
 				}
+			]
+		}
+	],
+	"subclass": [
+		{
+			"name": "Alchemist",
+			"shortName": "Alchemist",
+			"source": "UAArtificer",
+			"className": "Artificer",
+			"classSource": "UAArtificer",
+			"page": 5,
+			"subclassFeatures": [
+				"Alchemist|Artificer|UAArtificer|Alchemist|UAArtificer|1",
+				"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|3",
+				"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|9",
+				"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|14",
+				"Extra Alchemical Formula|Artificer|UAArtificer|Alchemist|UAArtificer|17"
+			]
+		},
+		{
+			"name": "Gunsmith",
+			"shortName": "Gunsmith",
+			"source": "UAArtificer",
+			"className": "Artificer",
+			"classSource": "UAArtificer",
+			"page": 6,
+			"subclassFeatures": [
+				"Gunsmith|Artificer|UAArtificer|Gunsmith|UAArtificer|1",
+				"Thunder Monger|Artificer|UAArtificer|Gunsmith|UAArtificer|3",
+				"Blast Wave|Artificer|UAArtificer|Gunsmith|UAArtificer|9",
+				"Piercing Round|Artificer|UAArtificer|Gunsmith|UAArtificer|14",
+				"Explosive Round|Artificer|UAArtificer|Gunsmith|UAArtificer|17"
+			]
+		},
+		{
+			"name": "Alchemist",
+			"shortName": "Alchemist",
+			"source": "UAArtificerRevisited",
+			"className": "Artificer (Revisited)",
+			"classSource": "UAArtificerRevisited",
+			"page": 6,
+			"subclassFeatures": [
+				"Alchemist|Artificer (Revisited)|UAArtificerRevisited|Alchemist|UAArtificerRevisited|3",
+				"Alchemical Mastery|Artificer (Revisited)|UAArtificerRevisited|Alchemist|UAArtificerRevisited|6",
+				"Chemical Savant|Artificer (Revisited)|UAArtificerRevisited|Alchemist|UAArtificerRevisited|14"
+			]
+		},
+		{
+			"name": "Archivist",
+			"shortName": "Archivist",
+			"source": "UAArtificerRevisited",
+			"className": "Artificer (Revisited)",
+			"classSource": "UAArtificerRevisited",
+			"page": 7,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Archivist|Artificer (Revisited)|UAArtificerRevisited|Archivist|UAArtificerRevisited|3",
+				"Mind Network|Artificer (Revisited)|UAArtificerRevisited|Archivist|UAArtificerRevisited|6",
+				"Pure Information|Artificer (Revisited)|UAArtificerRevisited|Archivist|UAArtificerRevisited|14"
+			]
+		},
+		{
+			"name": "Artillerist",
+			"shortName": "Artillerist",
+			"source": "UAArtificerRevisited",
+			"className": "Artificer (Revisited)",
+			"classSource": "UAArtificerRevisited",
+			"page": 9,
+			"subclassFeatures": [
+				"Artillerist|Artificer (Revisited)|UAArtificerRevisited|Artillerist|UAArtificerRevisited|3",
+				"Wand Prototype|Artificer (Revisited)|UAArtificerRevisited|Artillerist|UAArtificerRevisited|6",
+				"Fortified Position|Artificer (Revisited)|UAArtificerRevisited|Artillerist|UAArtificerRevisited|14"
+			]
+		},
+		{
+			"name": "Battle Smith",
+			"shortName": "Battle Smith",
+			"source": "UAArtificerRevisited",
+			"className": "Artificer (Revisited)",
+			"classSource": "UAArtificerRevisited",
+			"page": 11,
+			"subclassFeatures": [
+				"Battle Smith|Artificer (Revisited)|UAArtificerRevisited|Battle Smith|UAArtificerRevisited|3",
+				"Arcane Jolt|Artificer (Revisited)|UAArtificerRevisited|Battle Smith|UAArtificerRevisited|6",
+				"Improved Defender|Artificer (Revisited)|UAArtificerRevisited|Battle Smith|UAArtificerRevisited|14"
+			]
+		},
+		{
+			"name": "Armorer (UA)",
+			"shortName": "Armorer (UA)",
+			"source": "UA2020SubclassesPt3",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"page": 1,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"magic missile",
+							"shield"
+						],
+						"5": [
+							"mirror image",
+							"shatter"
+						],
+						"9": [
+							"hypnotic pattern",
+							"lightning bolt"
+						],
+						"13": [
+							"fire shield",
+							"greater invisibility"
+						],
+						"17": [
+							"passwall",
+							"wall of force"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Armorer|Artificer|TCE|Armorer (UA)|UA2020SubclassesPt3|3",
+				"Extra Attack|Artificer|TCE|Armorer (UA)|UA2020SubclassesPt3|5",
+				"Armor Modifications|Artificer|TCE|Armorer (UA)|UA2020SubclassesPt3|9",
+				"Perfected Armor|Artificer|TCE|Armorer (UA)|UA2020SubclassesPt3|15"
+			]
+		},
+		{
+			"name": "Alchemist",
+			"shortName": "Alchemist",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"page": 14,
+			"otherSources": [
+				{
+					"source": "ERLW",
+					"page": 58
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"healing word",
+							"ray of sickness"
+						],
+						"5": [
+							"flaming sphere",
+							"melf's acid arrow"
+						],
+						"9": [
+							"gaseous form",
+							"mass healing word"
+						],
+						"13": [
+							"blight",
+							"death ward"
+						],
+						"17": [
+							"cloudkill",
+							"raise dead"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Alchemist|Artificer|TCE|Alchemist|TCE|3",
+				"Alchemical Savant|Artificer|TCE|Alchemist|TCE|5",
+				"Restorative Reagents|Artificer|TCE|Alchemist|TCE|9",
+				"Chemical Mastery|Artificer|TCE|Alchemist|TCE|15"
+			]
+		},
+		{
+			"name": "Armorer",
+			"shortName": "Armorer",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"page": 15,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"magic missile",
+							"thunderwave"
+						],
+						"5": [
+							"mirror image",
+							"shatter"
+						],
+						"9": [
+							"hypnotic pattern",
+							"lightning bolt"
+						],
+						"13": [
+							"fire shield",
+							"greater invisibility"
+						],
+						"17": [
+							"passwall",
+							"wall of force"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Armorer|Artificer|TCE|Armorer|TCE|3",
+				"Extra Attack|Artificer|TCE|Armorer|TCE|5",
+				"Armor Modifications|Artificer|TCE|Armorer|TCE|9",
+				"Perfected Armor|Artificer|TCE|Armorer|TCE|15"
+			]
+		},
+		{
+			"name": "Artillerist",
+			"shortName": "Artillerist",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"page": 17,
+			"otherSources": [
+				{
+					"source": "ERLW",
+					"page": 59
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"shield",
+							"thunderwave"
+						],
+						"5": [
+							"scorching ray",
+							"shatter"
+						],
+						"9": [
+							"fireball",
+							"wind wall"
+						],
+						"13": [
+							"ice storm",
+							"wall of fire"
+						],
+						"17": [
+							"cone of cold",
+							"wall of force"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Artillerist|Artificer|TCE|Artillerist|TCE|3",
+				"Arcane Firearm|Artificer|TCE|Artillerist|TCE|5",
+				"Explosive Cannon|Artificer|TCE|Artillerist|TCE|9",
+				"Fortified Position|Artificer|TCE|Artillerist|TCE|15"
+			]
+		},
+		{
+			"name": "Battle Smith",
+			"shortName": "Battle Smith",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"page": 18,
+			"otherSources": [
+				{
+					"source": "ERLW",
+					"page": 60
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"heroism",
+							"shield"
+						],
+						"5": [
+							"branding smite",
+							"warding bond"
+						],
+						"9": [
+							"aura of vitality",
+							"conjure barrage"
+						],
+						"13": [
+							"aura of purity",
+							"fire shield"
+						],
+						"17": [
+							"banishing smite",
+							"mass cure wounds"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Battle Smith|Artificer|TCE|Battle Smith|TCE|3",
+				"Extra Attack|Artificer|TCE|Battle Smith|TCE|5",
+				"Arcane Jolt|Artificer|TCE|Battle Smith|TCE|9",
+				"Improved Defender|Artificer|TCE|Battle Smith|TCE|15"
 			]
 		}
 	],

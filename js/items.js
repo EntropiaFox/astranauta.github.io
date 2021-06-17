@@ -32,20 +32,36 @@ class ItemsPage extends ListPage {
 
 		this._pageFilter.mutateAndAddToFilters(item, isExcluded);
 
-		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
-
 		const source = Parser.sourceJsonToAbv(item.source);
 		const type = item._typeListText.join(", ").toTitleCase();
 
 		if (item._fIsMundane) {
-			eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-				<span class="col-3-5 pl-0 bold">${item.name}</span>
-				<span class="col-4-5">${type}</span>
-				<span class="col-1-5 text-center">${item.value || item.valueMult ? Parser.itemValueToFullMultiCurrency(item, {isShortForm: true}).replace(/ +/g, "\u00A0") : "\u2014"}</span>
-				<span class="col-1-5 text-center">${Parser.itemWeightToFull(item, true) || "\u2014"}</span>
-				<span class="col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0" title="${Parser.sourceJsonToFull(item.source)}" ${BrewUtil.sourceJsonToStyle(item.source)}>${source}</span>
-			</a>`;
+			const eleLi = e_({
+				tag: "div",
+				clazz: `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
+				click: (evt) => this._mundaneList.doSelect(listItem, evt),
+				contextmenu: (evt) => ListUtil.openContextMenu(evt, this._mundaneList, listItem),
+				children: [
+					e_({
+						tag: "a",
+						href: `#${hash}`,
+						clazz: "lst--border lst__row-inner",
+						children: [
+							e_({tag: "span", clazz: `col-3-5 pl-0 bold`, text: item.name}),
+							e_({tag: "span", clazz: `col-4-5`, text: type}),
+							e_({tag: "span", clazz: `col-1-5 text-center`, text: `${item.value || item.valueMult ? Parser.itemValueToFullMultiCurrency(item, {isShortForm: true}).replace(/ +/g, "\u00A0") : "\u2014"}`}),
+							e_({tag: "span", clazz: `col-1-5 text-center`, text: Parser.itemWeightToFull(item, true) || "\u2014"}),
+							e_({
+								tag: "span",
+								clazz: `col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0`,
+								style: BrewUtil.sourceJsonToStylePart(item.source),
+								title: `${Parser.sourceJsonToFull(item.source)}${Renderer.utils.getSourceSubText(item)}`,
+								text: source,
+							}),
+						],
+					}),
+				],
+			});
 
 			const listItem = new ListItem(
 				itI,
@@ -63,18 +79,36 @@ class ItemsPage extends ListPage {
 					isExcluded,
 				},
 			);
-			eleLi.addEventListener("click", (evt) => this._mundaneList.doSelect(listItem, evt));
-			eleLi.addEventListener("contextmenu", (evt) => ListUtil.openContextMenu(evt, this._mundaneList, listItem));
+
 			return {mundane: listItem};
 		} else {
-			eleLi.innerHTML += `<a href="#${hash}" class="lst--border lst__row-inner">
-				<span class="col-3-5 pl-0 bold">${item.name}</span>
-				<span class="col-4">${type}</span>
-				<span class="col-1-5 text-center">${Parser.itemWeightToFull(item, true) || "\u2014"}</span>
-				<span class="attunement col-0-6 text-center">${item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT ? "×" : ""}</span>
-				<span class="rarity col-1-4">${(item.rarity || "").toTitleCase()}</span>
-				<span class="source col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0" title="${Parser.sourceJsonToFull(item.source)}" ${BrewUtil.sourceJsonToStyle(item.source)}>${source}</span>
-			</a>`;
+			const eleLi = e_({
+				tag: "div",
+				clazz: `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
+				click: (evt) => this._magicList.doSelect(listItem, evt),
+				contextmenu: (evt) => ListUtil.openContextMenu(evt, this._magicList, listItem),
+				children: [
+					e_({
+						tag: "a",
+						href: `#${hash}`,
+						clazz: "lst--border lst__row-inner",
+						children: [
+							e_({tag: "span", clazz: `col-3-5 pl-0 bold`, text: item.name}),
+							e_({tag: "span", clazz: `col-4`, text: type}),
+							e_({tag: "span", clazz: `col-1-5 text-center`, text: Parser.itemWeightToFull(item, true) || "\u2014"}),
+							e_({tag: "span", clazz: `col-0-6 text-center`, text: item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT ? "×" : ""}),
+							e_({tag: "span", clazz: `col-1-4 text-center`, text: (item.rarity || "").toTitleCase()}),
+							e_({
+								tag: "span",
+								clazz: `col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0`,
+								style: BrewUtil.sourceJsonToStylePart(item.source),
+								title: `${Parser.sourceJsonToFull(item.source)}${Renderer.utils.getSourceSubText(item)}`,
+								text: source,
+							}),
+						],
+					}),
+				],
+			});
 
 			const listItem = new ListItem(
 				itI,
@@ -90,8 +124,7 @@ class ItemsPage extends ListPage {
 				},
 				{uniqueId: item.uniqueId ? item.uniqueId : itI},
 			);
-			eleLi.addEventListener("click", (evt) => this._magicList.doSelect(listItem, evt));
-			eleLi.addEventListener("contextmenu", (evt) => ListUtil.openContextMenu(evt, this._magicList, listItem));
+
 			return {magic: listItem};
 		}
 	}
@@ -168,12 +201,12 @@ class ItemsPage extends ListPage {
 			new Renderer.utils.TabButton({
 				label: "Info",
 				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(item),
+				isVisible: Renderer.utils.hasFluffText(item, "itemFluff"),
 			}),
 			new Renderer.utils.TabButton({
 				label: "Images",
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(item),
+				isVisible: Renderer.utils.hasFluffImages(item, "itemFluff"),
 			}),
 		];
 
@@ -302,16 +335,16 @@ class ItemsPage extends ListPage {
 
 		const $elesMundaneAndMagic = $(`.ele-mundane-and-magic`);
 		$(`.side-label--mundane`).click(() => {
-			const filterValues = itemsPage._pageFilter.filterBox.getValues();
+			const filterValues = this._pageFilter.filterBox.getValues();
 			const curValue = MiscUtil.get(filterValues, "Miscellaneous", "Mundane");
-			itemsPage._pageFilter.filterBox.setFromValues({Miscellaneous: {Mundane: curValue === 1 ? 0 : 1}});
-			itemsPage.handleFilterChange();
+			this._pageFilter.filterBox.setFromValues({Miscellaneous: {Mundane: curValue === 1 ? 0 : 1}});
+			this.handleFilterChange();
 		});
 		$(`.side-label--magic`).click(() => {
-			const filterValues = itemsPage._pageFilter.filterBox.getValues();
+			const filterValues = this._pageFilter.filterBox.getValues();
 			const curValue = MiscUtil.get(filterValues, "Miscellaneous", "Magic");
-			itemsPage._pageFilter.filterBox.setFromValues({Miscellaneous: {Magic: curValue === 1 ? 0 : 1}});
-			itemsPage.handleFilterChange();
+			this._pageFilter.filterBox.setFromValues({Miscellaneous: {Magic: curValue === 1 ? 0 : 1}});
+			this.handleFilterChange();
 		});
 		const $outVisibleResults = $(`.lst__wrp-search-visible`);
 		const $wrpListMundane = $(`.itm__wrp-list--mundane`);
@@ -350,9 +383,9 @@ class ItemsPage extends ListPage {
 		});
 
 		// filtering function
-		itemsPage._pageFilter.filterBox.on(
+		this._pageFilter.filterBox.on(
 			FilterBox.EVNT_VALCHANGE,
-			itemsPage.handleFilterChange.bind(itemsPage),
+			this.handleFilterChange.bind(this),
 		);
 
 		SortUtil.initBtnSortHandlers($("#filtertools-mundane"), this._mundaneList);
@@ -361,8 +394,8 @@ class ItemsPage extends ListPage {
 		this._listSub = ListUtil.initSublist({
 			listClass: "subitems",
 			fnSort: PageFilterItems.sortItems,
-			getSublistRow: itemsPage.getSublistItem.bind(itemsPage),
-			onUpdate: itemsPage.onSublistChange.bind(itemsPage),
+			getSublistRow: this.getSublistItem.bind(this),
+			onUpdate: this.onSublistChange.bind(this),
 		});
 		SortUtil.initBtnSortHandlers($("#sublistsort"), this._listSub);
 		ListUtil.initGenericAddable();
@@ -374,7 +407,7 @@ class ItemsPage extends ListPage {
 			.then(() => BrewUtil.pAddLocalBrewData())
 			.then(async () => {
 				BrewUtil.makeBrewButton("manage-brew");
-				BrewUtil.bind({lists: [this._mundaneList, this._magicList], filterBox: itemsPage._pageFilter.filterBox, sourceFilter: itemsPage._pageFilter.sourceFilter});
+				BrewUtil.bind({lists: [this._mundaneList, this._magicList], filterBox: this._pageFilter.filterBox, sourceFilter: this._pageFilter.sourceFilter});
 				await ListUtil.pLoadState();
 				RollerUtil.addListRollButton();
 				ListUtil.addListShowHide();
@@ -387,12 +420,12 @@ class ItemsPage extends ListPage {
 						name: {name: "Name", transform: true},
 						source: {name: "Source", transform: (it) => `<span class="${Parser.sourceJsonToColor(it)}" title="${Parser.sourceJsonToFull(it)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${Parser.sourceJsonToAbv(it)}</span>`},
 						rarity: {name: "Rarity", transform: true},
-						_type: {name: "Type", transform: it => it._typeHtml},
+						_type: {name: "Type", transform: it => [it._typeHtml || "", it._subTypeHtml || ""].filter(Boolean).join(", ")},
 						_attunement: {name: "Attunement", transform: it => it._attunement ? it._attunement.slice(1, it._attunement.length - 1) : ""},
 						_properties: {name: "Properties", transform: it => Renderer.item.getDamageAndPropertiesText(it).filter(Boolean).join(", ")},
 						_weight: {name: "Weight", transform: it => Parser.itemWeightToFull(it)},
 						_value: {name: "Value", transform: it => Parser.itemValueToFullMultiCurrency(it)},
-						_entries: {name: "Text", transform: (it) => Renderer.item.getRenderedEntries(it, true), flex: 3},
+						_entries: {name: "Text", transform: (it) => Renderer.item.getRenderedEntries(it, {isCompact: true}), flex: 3},
 					},
 					{generator: ListUtil.basicFilterGenerator},
 					(a, b) => SortUtil.ascSort(a.name, b.name) || SortUtil.ascSort(a.source, b.source),
@@ -421,7 +454,7 @@ class ItemsPage extends ListPage {
 
 		for (; this._ixData < this._dataList.length; this._ixData++) {
 			const item = this._dataList[this._ixData];
-			const listItem = itemsPage.getListItem(item, this._ixData);
+			const listItem = this.getListItem(item, this._ixData);
 			if (!listItem) continue;
 			if (listItem.mundane) this._mundaneList.addItem(listItem.mundane);
 			if (listItem.magic) this._magicList.addItem(listItem.magic);
@@ -434,19 +467,19 @@ class ItemsPage extends ListPage {
 		this._mundaneList.update();
 		this._magicList.update();
 
-		itemsPage._pageFilter.filterBox.render();
-		itemsPage.handleFilterChange();
+		this._pageFilter.filterBox.render();
+		this.handleFilterChange();
 
 		ListUtil.setOptions({
 			itemList: this._dataList,
-			getSublistRow: itemsPage.getSublistItem.bind(itemsPage),
+			getSublistRow: this.getSublistItem.bind(this),
 			primaryLists: [this._mundaneList, this._magicList],
 		});
 		ListUtil.bindAddButton();
 		ListUtil.bindSubtractButton();
 		const $btnPop = ListUtil.getOrTabRightButton(`btn-popout`, `new-window`);
 		Renderer.hover.bindPopoutButton($btnPop, this._dataList);
-		UrlUtil.bindLinkExportButton(itemsPage._pageFilter.filterBox);
+		UrlUtil.bindLinkExportButton(this._pageFilter.filterBox);
 		ListUtil.bindOtherButtons({
 			download: true,
 			upload: true,

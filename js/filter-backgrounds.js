@@ -11,6 +11,7 @@ class PageFilterBackgrounds extends PageFilter {
 	}
 
 	static mutateForFilters (bg) {
+		bg._fSources = SourceFilter.getCompleteFilterSources(bg);
 		const skillDisplay = Renderer.background.getSkillSummary(bg.skillProficiencies, true, bg._fSkills = []);
 		Renderer.background.getToolSummary(bg.toolProficiencies, true, bg._fTools = []);
 		Renderer.background.getLanguageSummary(bg.languageProficiencies, true, bg._fLangs = []);
@@ -23,7 +24,7 @@ class PageFilterBackgrounds extends PageFilter {
 	addToFilters (bg, isExcluded) {
 		if (isExcluded) return;
 
-		this._sourceFilter.addItem(bg.source);
+		this._sourceFilter.addItem(bg._fSources);
 		this._skillFilter.addItem(bg._fSkills);
 		this._toolFilter.addItem(bg._fTools);
 		this._languageFilter.addItem(bg._fLangs);
@@ -42,7 +43,7 @@ class PageFilterBackgrounds extends PageFilter {
 	toDisplay (values, bg) {
 		return this._filterBox.toDisplay(
 			values,
-			bg.source,
+			bg._fSources,
 			bg._fSkills,
 			bg._fTools,
 			bg._fLangs,
@@ -102,6 +103,8 @@ class ModalFilterBackgrounds extends ModalFilter {
 			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(bg.source)}" title="${Parser.sourceJsonToFull(bg.source)}" ${BrewUtil.sourceJsonToStyle(bg.source)}>${source}</div>
 		</div>`;
 
+		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
+
 		const listItem = new ListItem(
 			bgI,
 			eleRow,
@@ -114,10 +117,10 @@ class ModalFilterBackgrounds extends ModalFilter {
 			},
 			{
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
+				btnShowHidePreview,
 			},
 		);
 
-		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
 		ListUiUtil.bindPreviewButton(UrlUtil.PG_BACKGROUNDS, this._allData, listItem, btnShowHidePreview);
 
 		return listItem;

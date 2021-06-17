@@ -86,8 +86,20 @@ class LegendaryGroupBuilder extends Builder {
 		this._cbCache = cb; // cache for use when updating sources
 
 		// initialise tabs
-		this._resetTabs("input");
-		const tabs = ["Info", "Lair Actions", "Regional Effects", "Mythic Encounter"].map((it, ix) => this._getTab(ix, it, "meta", {hasBorder: true, tabGroup: "input", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		this._resetTabs({tabGroup: "input"});
+
+		const tabs = this._renderTabs(
+			[
+				new TabUiUtil.TabMeta({name: "Info", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Lair Actions", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Regional Effects", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Mythic Encounter", hasBorder: true}),
+			],
+			{
+				tabGroup: "input",
+				cbTabChange: this.doUiSave.bind(this),
+			},
+		);
 		const [infoTab, lairActionsTab, regionalEffectsTab, mythicEncounterTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink ui-tab__wrp-tab-heads--border">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
@@ -127,8 +139,17 @@ class LegendaryGroupBuilder extends Builder {
 		const $wrp = this._ui.$wrpOutput.empty();
 
 		// initialise tabs
-		this._resetTabs("output");
-		const tabs = ["Legendary Group", "Data"].map((it, ix) => this._getTab(ix, it, "meta", {tabGroup: "output", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		this._resetTabs({tabGroup: "output"});
+		const tabs = this._renderTabs(
+			[
+				new TabUiUtil.TabMeta({name: "Legendary Group"}),
+				new TabUiUtil.TabMeta({name: "Data"}),
+			],
+			{
+				tabGroup: "output",
+				cbTabChange: this.doUiSave.bind(this),
+			},
+		);
 		const [legGroupTab, dataTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));

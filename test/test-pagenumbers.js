@@ -45,7 +45,6 @@ const BLACKLIST_SOURCES = new Set([
 ]);
 
 const SUB_KEYS = {
-	class: ["subclasses"],
 	race: ["subraces"],
 };
 

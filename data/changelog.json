@@ -1587,14 +1587,14 @@
 		"ver": "1.123.0",
 		"date": "2021-02-27",
 		"title": "Not Racis', Just Don't Like Custom Lineages",
-		"txt": "- Reworked Races page Ability Score filter, giving it unique logic which hopefully better matches user expectations. The old filter has been moved to the bottom of the filter window, and given a \"Legacy\" suffix (as it fulfills some use cases the new filter does not).\n- Added \"Forced Movement\" filter to Spells page \n- (Brew) Added Bestiary filter support for custom senses\n- (Brew) Added support for homebrew race spell sources (that is, spells which are gained by choosing a certain race), by using the `raceSpells` property on a race\n- (Brew) Fixed Omnisearch double-indexing rules\n- (Fixed typos/added tags)"
+		"txt": "- Reworked Races page Ability Score filter, giving it unique logic which hopefully better matches user expectations. The old filter has been moved to the bottom of the filter window, and given a \"Legacy\" suffix (as it fulfills some use cases the new filter does not).\n- Added \"Forced Movement\" filter to Spells page \n- (Homebrew) Added Bestiary filter support for custom senses\n- (Homebrew) Added support for homebrew race spell sources (that is, spells which are gained by choosing a certain race), by using the `raceSpells` property on a race\n- (Homebrew) Fixed Omnisearch double-indexing rules\n- (Fixed typos/added tags)"
 	},
 	{
 		"ver": "1.124.0",
 		"date": "2021-03-12",
 		"title": "Folk Tales",
 		"titleAlt": "Me → 💀🍷 ← That Fey Shit",
-		"txt": "- Added UA 2021 Folk of the Feywild\n- Added rudimentary text indexing to list pages; this can be used by searching `text:<text>`. Note that this only searches the body text of entities, and so will not search creature types, spell durations, etc. (generally, anything covered by a filter will not be searchable as text, and vice versa).\n- Added \"Randomly Assign\" button to Statgen Roll and Standard Array tabs\n- Added Blacklist support for recipes\n- Added Sunlight Sensitivity filter to Races page\n- (Brew) Fixed custom image max sizing breaking layout\n- (Fixed typos/added tags)"
+		"txt": "- Added UA 2021 Folk of the Feywild\n- Added rudimentary text indexing to list pages; this can be used by searching `text:<text>`. Note that this only searches the body text of entities, and so will not search creature types, spell durations, etc. (generally, anything covered by a filter will not be searchable as text, and vice versa).\n- Added \"Randomly Assign\" button to Statgen Roll and Standard Array tabs\n- Added Blacklist support for recipes\n- Added Sunlight Sensitivity filter to Races page\n- (Homebrew) Fixed custom image max sizing breaking layout\n- (Fixed typos/added tags)"
 	},
 	{
 		"ver": "1.124.1",
@@ -1615,6 +1615,97 @@
 	{
 		"ver": "1.125.2",
 		"date": "2021-03-28",
-		"txt": "- Added Base Item filter to Items page\n- Improved search tooltips to include new `text:<text>` info\n- Fixed Omnisearch and list page search failing to tolerate diacritics\n- Tweaked CR Calculator HP rounding to avoid missing steps\n- Fixed Statgen custom Point Buy scores disallowing negative costs\n- (Fixed typos/added tags)\n"
+		"txt": "- Added Base Item filter to Items page\n- Improved search tooltips to include new `text:<text>` info\n- Fixed Omnisearch and list page search failing to tolerate diacritics\n- Tweaked CR Calculator HP rounding to avoid missing steps\n- Fixed Statgen custom Point Buy scores disallowing negative costs\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.125.3",
+		"date": "2021-03-31",
+		"txt": "- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.126.0",
+		"date": "2021-04-11",
+		"title": "Garden Variety",
+		"txt": "- Reworked Spells page \"Class\" filter to include TCE's optional/variant lists by default. This can be enabled/disabled by using the \"Include Variants\" button in the filter header.\n- Added file typing to uploaded/downloaded JSON files; this allows for an \"are you sure?\" prompt when uploading a file which does not contain data appropriate to the function being used. While this is not retroactive, it should prevent \"I uploaded my bank details as a DM screen save\" data-loss issues going forward.\n- Reworked Items page \"Base Item\" filter to include \"specific variant\" base items\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.127.0",
+		"date": "2021-04-14",
+		"title": "Three Dragon Aunties",
+		"txt": "- Added UA 2021 Draconic Options\n- Tweaked Spells page Class filter logic, to hopefully better match user expectations\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.127.1",
+		"date": "2021-04-17",
+		"txt": "- Added subclass name prefixes to subclass features on the Classes page when multiple subclasses are being viewed at the same time\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.127.2",
+		"date": "2021-04-25",
+		"txt": "- \"Basic\" filters now reset their blue/red AND/OR state when doing a normal reset (as opposed to previously only resetting on a hard [SHIFT-click] reset) \n- Fixed Bestiary Encounter Builder failing to load save files\n- Fixed layout issues on Adventures/Books list pages\n- (Homebrew) Hovering an @tag of a not-currently-loaded homebrew will now trigger a load of that homebrew\n- (Homebrew) Fixed Creature Homebrew Builder failing to CR-scale creatures when loading from URL\n- (Homebrew) Fixed Homebrew Builder \"Source\" screen showing all its UI at the same time\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.127.3",
+		"date": "2021-05-01",
+		"txt": "- (Homebrew) Ensured `\"dependencies\"` are always loaded if specified (as opposed to only being loaded when they are later referenced in a homebrew), and added support for `\"optionalfeature\"` dependencies.\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.127.4",
+		"date": "2021-05-04",
+		"txt": "- (Homebrew) Fixed fluff references (e.g. \"_monsterFluff\") failing to reveal Info/Image UI\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.127.5",
+		"date": "2021-05-07",
+		"txt": "- Fixed Items page filter failing to auto-hide Treasure/Renaissance/Modern/Futuristic items\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.128.0",
+		"title": "Cleaning the Crypt",
+		"date": "2021-05-16",
+		"txt": "- Overhauled Curse of Strahd adventure content, improving layout, image quality, and contents, and adding Dynamic Map Viewer support for all maps\n- Fixed Cards JSON Builder rendering HTML links\n- (Homebrew) Improved DM Screen handling of missing adventure/book content\n- (Homebrew) Added support for a \"Classes\" line in the spell converter (thanks @ Delta-Duhr)\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.129.0",
+		"date": "2021-05-16",
+		"title": "Horrifying",
+		"txt": "- Added Van Richten's Guide to Ravenloft https://5e.tools/book.html#vrgr\n- Added page numbers to Heroes Feast content\n- Fixed Spells page Subclass filter items\n- Fixed Source filters failing to be applied on Bestiary/Spells pages when refreshing without changing the defaults\n- (Homebrew) Added support for `\"includes\"` meta-prop. This allows the contents of another file to be \"included\" as part of a file when it is loaded; this is mainly relevant for Plutonium which \"instances\" lists.\n- (Homebrew) Fixed Renderer Demo layout on mobile\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.130.0",
+		"date": "2021-05-30",
+		"title": "Here In Spirit",
+		"txt": "- Added \"Spell Level\" dropdown to TCE's summon \"<X> Spirit\" creature statblocks, allowing the level of the summon spell to be set, and the statblock updated (HP, AC, number of attacks,...) as appropriate \n- Expanded Items Page \"Attunement\" filter to include Class, Background, Race, Alignment, etc. attunement requirements\n- Added VRGR and TCE creature tokens\n- Added special handling for \"+ the spell's level\" in statblock damage rolls; the roll will now prompt for the spell level (if one is not already specified), or use the current spell level used to summon the creature\n- (Homebrew) Reworked Homebrew Manager search to be \"fuzzy,\" and deep-search source names within files\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.130.1",
+		"date": "2021-05-30",
+		"txt": "- Fixed Bestiary Info/Images tabs failing to render"
+	},
+	{
+		"ver": "1.130.2",
+		"date": "2021-06-01",
+		"txt": "- Fixed DM Screen creature tiles failing to display CR scaler\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.130.3",
+		"date": "2021-06-03",
+		"txt": "- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.131.0",
+		"date": "2021-06-10",
+		"title": "School of Witchcraft and Spaghetti",
+		"txt": "- Added UA 2021 Mages of Strixhaven\n- Fixed hover links including apostrophe characters failing to load\n- Fixed Printer View/Book View screens displaying as empty when re-opening without refreshing\n- Fixed DM Screen Clock/Calendar displaying the wrong day name when \"Year Start Weekday Offset\" was used\n- (Brew) Deprecated \"embedded subclasses in classes\" subclass format in favor of free-standing subclass entities\n- (Brew) Fixed homebrew base race names being un-hoverable\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.131.1",
+		"date": "2021-06-11",
+		"txt": "- (Brew) Fixed crash when loading homebrew subclasses"
+	},
+	{
+		"ver": "1.131.2",
+		"date": "2021-06-12",
+		"txt": "- Added \"Passive Perception\" filter to Bestiary\n- (Fixed typos/added tags)"
 	}
 ]

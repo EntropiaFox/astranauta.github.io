@@ -47,7 +47,8 @@
 								}
 							]
 						}
-					]
+					],
+					"id": "001"
 				},
 				{
 					"type": "entries",
@@ -67,7 +68,8 @@
 						},
 						"The DM lets the group know when they are in one or more of those circumstances, and then the characters choose one of their number who must make a Wisdom ({@skill Survival}) check against a DC appropriate to the terrain (see \"Wilderness navigation\" on the DM's screen). Other members of the group can take the {@action Help} action on this check as normal, and traveling at a fast pace imposes disadvantage on the check.",
 						"If the check fails, the group spends {@dice 1d6} hours (short cycle) or {@dice 1d6} days (long cycle) traveling in a random direction. The DM may roll a die to determine which hex the group ends up in on a map, such as the ones provided in this kit."
-					]
+					],
+					"id": "002"
 				},
 				{
 					"type": "entries",
@@ -108,7 +110,8 @@
 								]
 							]
 						}
-					]
+					],
+					"id": "003"
 				},
 				{
 					"type": "table",
@@ -313,7 +316,7 @@
 											"Small",
 											"1 unit",
 											"5 sp",
-											"3 gp, 5sp"
+											"3 gp, 5 sp"
 										],
 										[
 											"Medium",
@@ -341,7 +344,8 @@
 										]
 									]
 								}
-							]
+							],
+							"id": "005"
 						},
 						{
 							"type": "entries",
@@ -349,18 +353,22 @@
 							"entries": [
 								"Use the accompanying Supply Tracker to note whether you are tracking a short or long cycle journey and how many units of food and water you are carrying. At the Supply step of each cycle, mark off a box for each unit of food or water consumed.",
 								"A character unable to eat or drink gains 1 level of {@condition exhaustion} for each requirement they fail to meet. Exhaustion gained in this way can't be removed until the character is able to consume sufficient food and water."
-							]
+							],
+							"id": "006"
 						},
 						{
 							"type": "entries",
 							"name": "Foraging",
 							"entries": [
 								"Characters can hunt or gather food and water while the party travels at a normal or slow pace. A foraging character makes a Wisdom ({@skill Survival}) check against a DC determined by the terrain (see the Foraging table on the DM's screen). On a successful check, the character gathers units of food equal to {@dice 1d6} + their Wisdom modifier. Repeat the roll for drinkable water."
-							]
+							],
+							"id": "007"
 						}
-					]
+					],
+					"id": "004"
 				}
-			]
+			],
+			"id": "000"
 		},
 		{
 			"type": "section",
@@ -468,16 +476,19 @@
 							"entries": [
 								"Over the course of a chase, you can take the {@action Dash} action a limited number of times before you risk {@condition exhaustion}. That number equals 3 + your Constitution modifier. Each additional {@action Dash} action you take after that number during the chase requires you to succeed on a DC 10 Constitution check at the end of your turn or gain | level of {@condition exhaustion}.",
 								"You drop out of the chase if your {@condition exhaustion} reaches level 5, since your speed becomes0. By finishing a short or long rest, you can remove all the levels of {@condition exhaustion} you gained by taking the {@action Dash} action additional times during the chase."
-							]
+							],
+							"id": "00a"
 						},
 						{
 							"type": "entries",
 							"name": "Reactions",
 							"entries": [
 								"During a chase, you can take reactions as normal, but you can't make opportunity attacks against other chase participants, since you are all assumed to be moving in the same direction at the same time. However, chase participants can still be the targets of opportunity attacks from creatures not participating in the chase. For example, an adventurer who chases a bandit past a wolf in the woods might provoke an opportunity attack from the wolf."
-							]
+							],
+							"id": "00b"
 						}
-					]
+					],
+					"id": "009"
 				},
 				{
 					"type": "entries",
@@ -521,23 +532,27 @@
 							]
 						},
 						"Escape doesn't necessarily mean a quarry has outpaced pursuers. For example, in the mountains, escape might mean the quarry ducked into a crevice or a hollow log."
-					]
+					],
+					"id": "00c"
 				},
 				{
 					"type": "entries",
 					"name": "Splitting Up",
 					"entries": [
 						"Creatures being chased can split up into smaller groups. This tactic forces pursuers to either divide their forces or allow some of the quarry to escape. If a pursuit splits into several smaller chases, resolve each chase separately. Run a round of one chase, then a round of the next, and so on, tracking the distances for each separate group."
-					]
+					],
+					"id": "00d"
 				},
 				{
 					"type": "entries",
 					"name": "Role Reversal",
 					"entries": [
 						"During a chase,it's possible for the pursuers to become the quarry. For example, characters chasing a bandit through the woods might draw unwanted attention from other bandits. As they pursue the fleeing bandit, they must also evade the bandits pursuing them. Roll initiative for the new arrivals, and run both chases simultaneously. In another scenario, the fleeing bandit might run into the waiting arms of their accomplices. The outnumbered characters might decide to flee with the bandits in pursuit"
-					]
+					],
+					"id": "00e"
 				}
-			]
+			],
+			"id": "008"
 		}
 	]
 }

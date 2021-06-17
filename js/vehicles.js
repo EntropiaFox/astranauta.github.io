@@ -94,7 +94,7 @@ class VehiclesPage extends ListPage {
 				const hasToken = veh.tokenUrl || veh.hasToken;
 				if (hasToken) {
 					const imgLink = Renderer.vehicle.getTokenUrl(veh);
-					$floatToken.append(`<a href="${imgLink}" target="_blank" rel="noopener noreferrer"><img src="${imgLink}" id="token_image" class="token" alt="${veh.name}"></a>`);
+					$floatToken.append(`<a href="${imgLink}" target="_blank" rel="noopener noreferrer"><img src="${imgLink}" id="token_image" class="token" alt="Token Image: ${(veh.name || "").qq()}"></a>`);
 				}
 
 				$content.append(RenderVehicles.$getRenderedVehicle(veh));
@@ -123,13 +123,13 @@ class VehiclesPage extends ListPage {
 				label: "Info",
 				fnChange: () => $floatToken.hide(),
 				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(veh),
+				isVisible: Renderer.utils.hasFluffText(veh, "vehicleFluff"),
 			}),
 			new Renderer.utils.TabButton({
 				label: "Images",
 				fnChange: () => $floatToken.hide(),
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(veh),
+				isVisible: Renderer.utils.hasFluffImages(veh, "vehicleFluff"),
 			}),
 		];
 

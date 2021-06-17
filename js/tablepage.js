@@ -155,7 +155,7 @@ class TablePage {
 			return `<span class="roller" onmousedown="event.preventDefault()" onclick="tablePage.reroll(this)">${match}</span> (<span class="result">${r}</span>)`
 		});
 
-		Renderer.dice.addRoll({name: `${meta.name} - ${table.option}`}, `<span><strong>${TablePage._pad(roll)}</strong> ${result}</span>`);
+		Renderer.dice.addRoll({name: this._fnGetTableName(meta, table)}, `<span><strong>${TablePage._pad(roll)}</strong> ${result}</span>`);
 	}
 
 	reroll (ele) {

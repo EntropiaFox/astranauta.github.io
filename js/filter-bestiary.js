@@ -126,6 +126,7 @@ class PageFilterBestiary extends PageFilter {
 			items: ["B", "D", "SD", "T", "U"],
 			itemSortFn: SortUtil.ascSortLower,
 		});
+		this._passivePerceptionFilter = new RangeFilter({header: "Passive Perception", min: 10, max: 10});
 		this._skillFilter = new Filter({
 			header: "Skills",
 			displayFn: (it) => it.toTitleCase(),
@@ -224,6 +225,7 @@ class PageFilterBestiary extends PageFilter {
 		mon._fSave = mon.save ? Object.keys(mon.save) : [];
 		mon._fSkill = mon.skill ? Object.keys(mon.skill) : [];
 		mon._fSources = SourceFilter.getCompleteFilterSources(mon);
+		mon._fPassive = !isNaN(mon.passive) ? Number(mon.passive) : null;
 
 		mon._fMisc = mon.legendary ? ["Legendary"] : [];
 		if (mon.familiar) mon._fMisc.push("Familiar");
@@ -281,6 +283,7 @@ class PageFilterBestiary extends PageFilter {
 		this._resistFilter.addItem(mon._fRes);
 		this._immuneFilter.addItem(mon._fImm);
 		this._senseFilter.addItem(mon.senseTags);
+		this._passivePerceptionFilter.addItem(mon._fPassive);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -307,6 +310,7 @@ class PageFilterBestiary extends PageFilter {
 			this._saveFilter,
 			this._skillFilter,
 			this._senseFilter,
+			this._passivePerceptionFilter,
 			this._languageFilter,
 			this._damageTypeFilter,
 			this._conditionsInflictedFilter,
@@ -341,6 +345,7 @@ class PageFilterBestiary extends PageFilter {
 			m._fSave,
 			m._fSkill,
 			m.senseTags,
+			m._fPassive,
 			m.languageTags,
 			m.damageTags,
 			[
@@ -443,6 +448,8 @@ class ModalFilterBestiary extends ModalFilter {
 			<div class="col-1 text-center ${Parser.sourceJsonToColor(mon.source)} pr-0" title="${Parser.sourceJsonToFull(mon.source)}" ${BrewUtil.sourceJsonToStyle(mon.source)}>${source}</div>
 		</div>`;
 
+		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
+
 		const listItem = new ListItem(
 			itI,
 			eleRow,
@@ -456,10 +463,10 @@ class ModalFilterBestiary extends ModalFilter {
 			},
 			{
 				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
+				btnShowHidePreview,
 			},
 		);
 
-		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
 		ListUiUtil.bindPreviewButton(UrlUtil.PG_BESTIARY, this._allData, listItem, btnShowHidePreview);
 
 		return listItem;

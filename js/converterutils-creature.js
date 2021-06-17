@@ -295,7 +295,7 @@ class AlignmentConvert {
 		const out = [];
 
 		orParts.forEach(part => {
-			Object.values(AlignmentConvert.ALIGNMENTS).forEach(it => {
+			Object.values(AlignmentUtil.ALIGNMENTS).forEach(it => {
 				if (it.regex.test(part)) out.push({alignment: it.output});
 				else {
 					const mChange = it.regexChance.exec(part);
@@ -311,45 +311,6 @@ class AlignmentConvert {
 		else if (cbMan) cbMan(stats.alignment);
 	}
 }
-AlignmentConvert.ALIGNMENTS = {
-	"lawful good": ["L", "G"],
-	"neutral good": ["N", "G"],
-	"chaotic good": ["C", "G"],
-	"chaotic neutral": ["C", "N"],
-	"lawful evil": ["L", "E"],
-	"lawful neutral": ["L", "N"],
-	"neutral evil": ["N", "E"],
-	"chaotic evil": ["C", "E"],
-
-	"good": ["G"],
-	"lawful": ["L"],
-	"neutral": ["N"],
-	"chaotic": ["C"],
-	"evil": ["E"],
-
-	"unaligned": ["U"],
-
-	"any alignment": ["A"],
-
-	"any non-good( alignment)?": ["L", "NX", "C", "NY", "E"],
-	"any non-lawful( alignment)?": ["NX", "C", "G", "NY", "E"],
-	"any non-evil( alignment)?": ["L", "NX", "C", "NY", "G"],
-	"any non-chaotic( alignment)?": ["NX", "L", "G", "NY", "E"],
-
-	"any chaotic( alignment)?": ["C", "G", "NY", "E"],
-	"any evil( alignment)?": ["L", "NX", "C", "E"],
-	"any lawful( alignment)?": ["L", "G", "NY", "E"],
-	"any good( alignment)?": ["L", "NX", "C", "G"],
-
-	"any neutral( alignment)?": ["NX", "NY", "N"],
-};
-Object.entries(AlignmentConvert.ALIGNMENTS).forEach(([k, v]) => {
-	AlignmentConvert.ALIGNMENTS[k] = {
-		output: v,
-		regex: RegExp(`^${k}$`),
-		regexChance: RegExp(`^${k}\\s*\\((\\d+)\\s*%\\)$`),
-	}
-});
 
 class TraitActionTag {
 	static tryRun (m, cbMan) {

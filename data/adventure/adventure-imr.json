@@ -130,35 +130,40 @@
 											"name": "Chapter 1: The Unicorn and the Hags",
 											"entries": [
 												"Traveling through fey woods, the characters find themselves surrounded by dangerous, corrupted trees. \"Rescued\" by a trio of hags disguised as dryads, the characters might choose to help them rid the woods of a supposedly evil unicorn. Alternatively, they might meet the unicorn\u2014actually a good creature under assault by the hags that needs their help to fight back. Either way, they encounter a fallen clock tower holding mysterious magical components that can alter the flow of time."
-											]
+											],
+											"id": "1b0"
 										},
 										{
 											"type": "flowBlock",
 											"name": "Chapter 2: An Invitation Extended",
 											"entries": [
 												"Two agents, Lynx Creatlach and Sir Ursas, compete to hire the characters onto an expedition. Both seek additional components to rebuild the fabled artifact, the {@i Infernal Machine of Lum the Mad}\u2014and are looking to history to find them. The characters choose which of two legendary locations in the ancient past to use as the starting point for their search for the components."
-											]
+											],
+											"id": "1b1"
 										},
 										{
 											"type": "flowBlock",
 											"name": "Chapter 3: Construction of Horrors",
 											"entries": [
 												"Traveling to the distant past, the characters explore a version of the Tomb of Horrors still under construction. To obtain the missing components, they must contend with the tomb's architect, Moghadam, and disrupt the evil ceremony that keeps a powerful balor imprisoned."
-											]
+											],
+											"id": "1b2"
 										},
 										{
 											"type": "flowBlock",
 											"name": "Chapter 4: Temple of Moloch",
 											"entries": [
 												"The characters explore the ancient Temple of Moloch, also known as the laboratory of Thessalar, creator of numerous monsters. To obtain the components, they must contend with Thessalar, his lizardfolk guards, and the temple's monstrous denizens."
-											]
+											],
+											"id": "1b3"
 										},
 										{
 											"type": "flowBlock",
 											"name": "Chapter 5: Final Showdown",
 											"entries": [
 												"The characters return to the present with any components recovered. The agent who receives the components installs them in their framework for the {@i Infernal Machine of Lum the Mad}, while the other agent launches a raid to seize the machine. The characters are forced to determine who retains possession of this powerful artifact."
-											]
+											],
+											"id": "1b4"
 										}
 									]
 								}

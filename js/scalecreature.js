@@ -329,7 +329,8 @@
 		else mon.cr = crOutStr;
 
 		mon._displayName = `${mon.name} (CR ${crOutStr})`;
-		mon._isScaledCr = toCr;
+		mon._scaledCr = toCr;
+		mon._isScaledCr = true;
 		mon._originalCr = mon._originalCr || crIn;
 
 		return mon;
@@ -2149,4 +2150,105 @@
 	_adjustSpellcasting_getWarlockNumArcanum (level) {
 		return level < 11 ? 0 : level < 13 ? 1 : level < 15 ? 2 : level < 17 ? 3 : 4;
 	},
+};
+
+(typeof module !== "undefined" ? global : window).ScaleSummonCreature = {
+	async scale (mon, toSpellLevel) {
+		mon = MiscUtil.copy(mon);
+
+		if (!mon.summonedBySpell || mon._summonedBySpell_levelBase == null) return mon;
+
+		ScaleSummonCreature._WALKER = ScaleSummonCreature._WALKER || MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+
+		const state = new ScaleSummonCreature.State({});
+
+		mon._displayName = `${mon.name} (${Parser.getOrdinalForm(toSpellLevel)}-Level Spell)`;
+
+		this._scale_ac(mon, toSpellLevel, state);
+		this._scale_hp(mon, toSpellLevel, state);
+
+		this._scale_traits(mon, toSpellLevel, state);
+		this._scale_actions(mon, toSpellLevel, state);
+		this._scale_reactions(mon, toSpellLevel, state);
+
+		mon._summonedBySpell_level = toSpellLevel;
+		mon._scaledSummonLevel = toSpellLevel;
+		mon._isScaledSummon = true;
+
+		return mon;
+	},
+
+	_scale_ac (mon, toSpellLevel, state) {
+		if (!mon.ac) return;
+		mon.ac = mon.ac.map(it => {
+			if (!it.special) return it;
+
+			it.special = it.special
+				// "11 + the level of the spell (natural armor)"
+				.replace(/(\d+)\s*\+\s*the level of the spell/g, (...m) => Number(m[1]) + toSpellLevel)
+			;
+
+			// Try to convert to "from" AC
+			const mSimpleNatural = /^(\d+) \(natural armor\)$/i.exec(it.special);
+			if (mSimpleNatural) {
+				delete it.special;
+				it.ac = Number(mSimpleNatural[1]);
+				it.from = ["natural armor"];
+			}
+
+			return it;
+		})
+	},
+
+	_scale_hp (mon, toSpellLevel, state) {
+		if (!mon.hp?.special) return;
+		mon.hp.special = mon.hp.special
+			// "40 + 10 for each spell level above 4th"
+			.replace(/(\d+)\s*\+\s*(\d+) for each spell level above (\d+)(?:st|nd|rd|th)/g, (...m) => {
+				const [, hpBase, hpPlus, spLevelMin] = m;
+				return Number(hpBase) + (Number(hpPlus) * (toSpellLevel - Number(spLevelMin)));
+			})
+			// "equal the aberration's Constitution modifier + your spellcasting ability modifier + ten times the spell's level"
+			.replace(/(ten) times the spell's level/g, (...m) => {
+				const [, numMult] = m;
+				return Parser.textToNumber(numMult) * toSpellLevel;
+			})
+		;
+	},
+
+	_scale_genericEntries (mon, toSpellLevel, state, prop) {
+		if (!mon[prop]) return
+		mon[prop] = ScaleSummonCreature._WALKER.walk(
+			mon[prop],
+			{
+				string: (str) => {
+					str = str
+						// "The aberration makes a number of attacks equal to half this spell's level (rounded down)."
+						.replace(/a number of attacks equal to half this spell's level \(rounded down\)/g, (...m) => {
+							return `${Parser.numberToText(Math.floor(toSpellLevel / 2))} attacks`
+						})
+						// "{@damage 1d8 + 3 + summonSpellLevel}"
+						.replace(/{@(?:dice|damage|hit|d20) [^}]+}/g, (...m) => {
+							return m[0]
+								.replace(/\bsummonSpellLevel\b/g, (...n) => toSpellLevel)
+							;
+						})
+					;
+
+					return str;
+				},
+			},
+		)
+	},
+
+	_scale_traits (mon, toSpellLevel, state) { this._scale_genericEntries(mon, toSpellLevel, state, "trait"); },
+	_scale_actions (mon, toSpellLevel, state) { this._scale_genericEntries(mon, toSpellLevel, state, "action"); },
+	_scale_reactions (mon, toSpellLevel, state) { this._scale_genericEntries(mon, toSpellLevel, state, "reaction"); },
+
+	State: function () {
+		// (Implement as required)
+		// this.whatever = null;
+	},
+
+	_WALKER: null,
 };

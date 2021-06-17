@@ -78,12 +78,29 @@ class CreatureParser extends BaseParser {
 
 		if (!inText || !inText.trim()) return options.cbWarning("No input!");
 		const toConvert = (() => {
-			const clean = this._getCleanInput(inText);
-			const spl = clean.split(/(Challenge)/i);
-			spl[0] = spl[0]
-				.replace(/(\d\d?\s+\([-—+]\d+\)\s*)+/gi, (...m) => `${m[0].replace(/\n/g, " ").replace(/\s+/g, " ")}\n`); // collapse multi-line ability scores
-			return spl.join("").split("\n").filter(it => it && it.trim());
+			let clean = this._getCleanInput(inText);
+
+			const statsHeadFootSpl = clean.split(/(Challenge|Proficiency Bonus \(PB\))/i);
+
+			statsHeadFootSpl[0] = statsHeadFootSpl[0]
+				// collapse multi-line ability scores
+				.replace(/(\d\d?\s+\([-—+]\d+\)\s*)+/gi, (...m) => `${m[0].replace(/\n/g, " ").replace(/\s+/g, " ")}\n`);
+
+			// (re-assemble after cleaning ability scores and) split into lines
+			clean = statsHeadFootSpl.join("").split("\n").filter(it => it && it.trim());
+
+			// Split apart "Challenge" and "Proficiency Bonus" if they are on the same line
+			const ixChallengePb = clean.findIndex(line => /^Challenge/.test(line.trim()) && /Proficiency Bonus/.test(line));
+			if (~ixChallengePb) {
+				let line = clean[ixChallengePb];
+				const [challengePart, pbLabel, pbRest] = line.split(/(Proficiency Bonus)/);
+				clean[ixChallengePb] = challengePart;
+				clean.splice(ixChallengePb + 1, 0, [pbLabel, pbRest].join(""));
+			}
+
+			return clean;
 		})();
+
 		const stats = {};
 		stats.source = options.source || "";
 		// for the user to fill out
@@ -227,10 +244,10 @@ class CreatureParser extends BaseParser {
 			}
 
 			// proficiency bonus
-			if (!curLine.indexOf_handleColon("Proficiency Bonus ")) {
+			if (!curLine.indexOf_handleColon("Proficiency Bonus (PB) ") || !curLine.indexOf_handleColon("Proficiency Bonus ")) {
 				// noinspection StatementWithEmptyBodyJS
 				while (absorbBrokenLine());
-				// (Ignored)
+				this._setCleanPbNote(stats, curLine);
 				continue;
 			}
 
@@ -601,17 +618,23 @@ class CreatureParser extends BaseParser {
 				// CR
 				if (~curLine.indexOf("Challenge")) {
 					this._setCleanCr(stats, stripDashStarStar(curLine));
-
-					const [nextLine1, nextLine2] = this._getNextLinesMarkdown(toConvert, {ixCur: i, isPrevBlank, nextPrevBlank}, 2);
-
-					// Skip past Giffyglyph builder junk
-					if (nextLine1 && nextLine2 && ~nextLine1.indexOf("Attacks") && ~nextLine2.indexOf("Attack DCs")) {
-						i = this._advanceLinesMarkdown(toConvert, {ixCur: i, isPrevBlank, nextPrevBlank}, 2);
-					}
-
-					step++;
 					continue;
 				}
+
+				// PB
+				if (~curLine.indexOf("Proficiency Bonus")) {
+					this._setCleanPbNote(stats, stripDashStarStar(curLine));
+					continue;
+				}
+
+				const [nextLine1, nextLine2] = this._getNextLinesMarkdown(toConvert, {ixCur: i, isPrevBlank, nextPrevBlank}, 2);
+
+				// Skip past Giffyglyph builder junk
+				if (nextLine1 && nextLine2 && ~nextLine1.indexOf("Attacks") && ~nextLine2.indexOf("Attack DCs")) {
+					i = this._advanceLinesMarkdown(toConvert, {ixCur: i, isPrevBlank, nextPrevBlank}, 2);
+				}
+
+				step++;
 			}
 
 			const cleanedLine = stripTripleHash(curLine);
@@ -1142,6 +1165,14 @@ class CreatureParser extends BaseParser {
 
 	static _setCleanCr (stats, line) {
 		stats.cr = line.split_handleColon("Challenge", 1)[1].trim().split("(")[0].trim();
+		if (stats.cr && /^[-\u2012-\u2014]$/.test(stats.cr.trim())) delete stats.cr;
+	}
+
+	static _setCleanPbNote (stats, line) {
+		if (line.includes("Proficiency Bonus (PB)")) stats.pbNote = line.split_handleColon("Proficiency Bonus (PB)", 1)[1].trim();
+		else stats.pbNote = line.split_handleColon("Proficiency Bonus", 1)[1].trim();
+
+		if (stats.pbNote && !isNaN(stats.pbNote) && Parser.crToPb(stats.cr) === Number(stats.pbNote)) delete stats.pbNote;
 	}
 }
 CreatureParser.SKILL_SPACE_MAP = {

@@ -11,6 +11,34 @@
 			}
 		},
 		{
+			"name": "Hooves",
+			"source": "GGR",
+			"raceName": "Centaur",
+			"raceSource": "GGR",
+			"data": {
+				"activation.type": "action",
+				"activation.cost": 1
+			}
+		},
+		{
+			"name": "Dwarven Toughness",
+			"source": "PHB",
+			"raceName": "Dwarf (Hill)",
+			"raceSource": "PHB",
+			"effects": [
+				{
+					"name": "HP Increase",
+					"changes": [
+						{
+							"key": "data.attributes.hp.max",
+							"mode": "ADD",
+							"value": "@details.level"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Monastic Training",
 			"source": "UAEladrinAndGith",
 			"raceName": "Gith (Githzerai)",

@@ -4,7 +4,7 @@
 
 	"title": "Entry",
 	"description": "A recursively renderable object.",
-	"version": "1.4.3",
+	"version": "1.4.5",
 
 	"definitions" : {
 		"_arrayOfSpell": {
@@ -214,6 +214,9 @@
 						},
 						"skipMarks": {
 							"description": "If the automatically-inserted quotation marks should be skipped.",
+							"type": "boolean"
+						},
+						"skipItalics": {
 							"type": "boolean"
 						}
 					},
@@ -1515,6 +1518,23 @@
 			},
 			"additionalProperties": false
 		},
+		"entryWrapped": {
+			"allOf" : [
+				{"$ref" : "#/definitions/entry"},
+				{
+					"type": "object",
+					"properties": {
+						"type": {"const": "wrapper"},
+						"wrapped": {}
+					},
+					"required": [
+						"wrapper",
+						"wrapped"
+					],
+					"additionalProperties": false
+				}
+			]
+		},
 
 
 		"dataDamImmune": {
@@ -1637,6 +1657,7 @@
 		{"$ref": "#/definitions/entryFlowchart"},
 		{"$ref": "#/definitions/entryFlowBlock"},
 		{"$ref": "#/definitions/entryIngredient"},
+		{"$ref": "#/definitions/entryWrapped"},
 		{"type": "string"},
 		{"type": "integer"}
 	]

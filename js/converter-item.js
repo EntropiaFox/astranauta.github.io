@@ -103,6 +103,8 @@ class ItemParser extends BaseParser {
 			stats.entries = SkillTag.tryRun(stats.entries);
 			stats.entries = ActionTag.tryRun(stats.entries);
 			stats.entries = SenseTag.tryRun(stats.entries);
+
+			if (/is a (tiny|small|medium|large|huge|gargantuan) object/.test(JSON.stringify(stats.entries))) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Item may be an object!`);
 		}
 		this._doItemPostProcess_addTags(stats, options);
 		BasicTextClean.tryRun(stats);
@@ -120,6 +122,7 @@ class ItemParser extends BaseParser {
 		DamageImmunityTag.tryRun(stats);
 		DamageVulnerabilityTag.tryRun(stats);
 		ConditionImmunityTag.tryRun(stats);
+		ReqAttuneTagTag.tryRun(stats);
 
 		// TODO
 		//  - tag damage type?

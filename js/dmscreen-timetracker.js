@@ -181,6 +181,7 @@ class TimeTrackerBase extends TimeTrackerComponent {
 		// offsets
 		out.year += this._state.offsetYears;
 		out.monthStartDay += this._state.offsetMonthStartDay; out.monthStartDay %= daysPerWeek;
+		out.dayInfo = dayInfos[(dayOfWeek + this._state.offsetMonthStartDay) % daysPerWeek];
 
 		// track the current week of the year, compensated for offsets
 		out.weekOfYear = (out.year * (daysPerYear % daysPerWeek)) % daysPerWeek;
@@ -1029,10 +1030,21 @@ class TimeTrackerRoot_Clock extends TimeTrackerComponent {
 									{
 										type: "list",
 										items: encounter.data.l.items.map(it => {
-											const spl = decodeURIComponent(it.h).split("_");
-											const crPart = it.customHashId ? Parser.numberToCr(Number(it.customHashId.split("_").last())) : null;
+											const spl = UrlUtil.decodeHash(it.h);
+
 											const name = spl[0].toTitleCase();
-											return `${it.c || 1}× {@creature ${name}|${spl[1]}${crPart != null ? `|${name} (CR ${crPart})|${crPart}` : ""}}`;
+											const source = spl[1];
+
+											const {_scaledCr: scaledCr, _scaledSummonLevel: scaledSummonLevel} = Renderer.monster.getUnpackedCustomHashId(it.customHashId) || {};
+
+											const parts = [name, source];
+											if (scaledCr != null || scaledSummonLevel != null) {
+												parts.push(
+													"", // Display text
+													scaledCr != null ? `${VeCt.HASH_SCALED}=${Parser.numberToCr(scaledCr)}` : scaledSummonLevel != null ? `${VeCt.HASH_SCALED_SUMMON}=${scaledSummonLevel}` : "",
+												);
+											}
+											return `${it.c || 1}× {@creature ${parts.join("|")}}`;
 										}),
 									},
 								],
@@ -1349,7 +1361,7 @@ class TimeTrackerRoot_Clock_Weather extends TimeTrackerComponent {
 			$hovEnvEffects.show();
 			if (hashes.length === 1) {
 				const ele = $hovEnvEffects[0];
-				$hovEnvEffects.mouseover(evt => Renderer.hover.pHandleLinkMouseOver(evt, ele, UrlUtil.PG_TRAPS_HAZARDS, SRC_DMG, hashes[0]));
+				$hovEnvEffects.mouseover(evt => Renderer.hover.pHandleLinkMouseOver(evt, ele, {page: UrlUtil.PG_TRAPS_HAZARDS, source: SRC_DMG, hash: hashes[0]}));
 				$hovEnvEffects.mouseleave(evt => Renderer.hover.handleLinkMouseLeave(evt, ele));
 				$hovEnvEffects.mousemove(evt => Renderer.hover.handleLinkMouseMove(evt, ele));
 			} else if (hashes.length) {
@@ -2155,8 +2167,9 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 					break;
 				}
 				case 2: {
-					const json = await DataUtil.pUserUpload();
-					if (json) {
+					const jsons = await DataUtil.pUserUpload({expectedFileType: "encounter"});
+					if (jsons?.length) {
+						const json = jsons[0];
 						const name = await InputUiUtil.pGetUserString({
 							title: "Enter Encounter Name",
 							default: EncounterUtil.getEncounterName(json),
@@ -2342,7 +2355,7 @@ class TimeTrackerRoot_Calendar extends TimeTrackerComponent {
 
 						if (!toSave) return JqueryUtil.doToast({content: "Could not find encounter data! Has the encounter been deleted?", type: "warning"});
 
-						DataUtil.userDownload("encounter", toSave.data);
+						DataUtil.userDownload("encounter", toSave.data, {fileType: "encounter"});
 					});
 
 				const $cbHasTime = $(`<input type="checkbox">`)
@@ -2910,10 +2923,10 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 		const $sectSeasons = $$`<div class="no-shrink w-100">
 			<div class="flex w-100 mb-1 mt-1">
 				<div class="w-100 flex-v-center">Name</div>
-				<div class="w-15 no-shrink text-center mr-2 help--subtle" title="In hours. For example, to have the sun rise at 05:00, enter &quot;5&quot;.">Sunrise</div>
-				<div class="w-15 no-shrink text-center mr-2 help--subtle" title="In hours. For example, to have the sun set at 22:00, enter &quot;22&quot;.">Sunset</div>
-				<div class="w-15 no-shrink text-center mr-2 help--subtle" title="For example, to have a season start on the 1st day of the year, enter &quot;1&quot;.">Start</div>
-				<div class="w-15 no-shrink text-center mr-2 help--subtle" title="For example, to have a season end on the 90th day of the year, enter &quot;90&quot;.">End</div>
+				<div class="w-15 no-shrink text-center mr-2 help-subtle" title="In hours. For example, to have the sun rise at 05:00, enter &quot;5&quot;.">Sunrise</div>
+				<div class="w-15 no-shrink text-center mr-2 help-subtle" title="In hours. For example, to have the sun set at 22:00, enter &quot;22&quot;.">Sunset</div>
+				<div class="w-15 no-shrink text-center mr-2 help-subtle" title="For example, to have a season start on the 1st day of the year, enter &quot;1&quot;.">Start</div>
+				<div class="w-15 no-shrink text-center mr-2 help-subtle" title="For example, to have a season end on the 90th day of the year, enter &quot;90&quot;.">End</div>
 				${metaSeasons.$btnAdd.addClass("no-shrink")}
 			</div>
 			${metaSeasons.$wrp}
@@ -2948,8 +2961,8 @@ class TimeTrackerRoot_Settings extends TimeTrackerComponent {
 		const $sectMoons = $$`<div class="no-shrink w-100">
 			<div class="flex w-100 mb-1 mt-1">
 				<div class="w-100 flex-v-center">Moon</div>
-				<div class="w-25 no-shrink text-center mr-2 help--subtle" title="For example, to have a new moon appear on the third day of the first year, enter &quot;3&quot;.">Offset</div>
-				<div class="w-25 no-shrink text-center mr-2 help--subtle" title="Measured in days. Multiples of eight are recommended, as there are eight distinct moon phases.">Period</div>
+				<div class="w-25 no-shrink text-center mr-2 help-subtle" title="For example, to have a new moon appear on the third day of the first year, enter &quot;3&quot;.">Offset</div>
+				<div class="w-25 no-shrink text-center mr-2 help-subtle" title="Measured in days. Multiples of eight are recommended, as there are eight distinct moon phases.">Period</div>
 				${metaMoons.$btnAdd.addClass("no-shrink")}
 			</div>
 			${metaMoons.$wrp}

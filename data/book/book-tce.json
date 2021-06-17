@@ -762,7 +762,7 @@
 							"page": 42,
 							"id": "0e3",
 							"entries": [
-								"If you have access to maneuvers, the following maneuvers are added to the list of options available to you. Maneuvers are available to Battle Masters but also to characters who have a special feature like the Superior Technique fighting style or the Martial Adept feat.",
+								"If you have access to maneuvers, the following maneuvers are added to the list of options available to you. Maneuvers are available to Battle Masters but also to characters who have a special feature like the {@optfeature Superior Technique|TCE} fighting style or the {@feat Martial Adept} feat.",
 								{
 									"type": "list",
 									"columns": 2,
@@ -5183,7 +5183,8 @@
 										"{@class Warrior Sidekick|TCE}"
 									]
 								}
-							]
+							],
+							"id": "012"
 						},
 						{
 							"type": "gallery",

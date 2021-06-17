@@ -117,7 +117,7 @@ class MakeCards extends BaseComponent {
 						tags: entityMeta.fnGetTags(it.values.entity),
 					}
 				});
-				DataUtil.userDownload("rpg-cards", toDownload);
+				DataUtil.userDownload("rpg-cards", toDownload, {isSipAdditionalMetadata: true});
 			});
 		$$`<div class="w-100 no-shrink flex-v-center mb-3">${$iptSearch}${$btnAdd}${$btnReset}${$btnExport}</div>`.appendTo($wrpContainer);
 		// endregion
@@ -513,7 +513,7 @@ class MakeCards extends BaseComponent {
 		}
 
 		return [
-			this._ct_subtitle(Renderer.item.getTypeRarityAndAttunementText(item).uppercaseFirst()),
+			this._ct_subtitle(Renderer.item.getTypeRarityAndAttunementText(item).join(", ").uppercaseFirst()),
 			ptValueWeight || ptDamageProperties ? this._ct_rule() : null,
 			ptValueWeight ? this._ct_text(ptValueWeight) : null,
 			ptDamageProperties ? this._ct_text(ptDamageProperties) : null,
@@ -526,7 +526,7 @@ class MakeCards extends BaseComponent {
 	static _getCardContents_race (race) {
 		return [
 			this._ct_property("Ability Scores", Renderer.getAbilityData(race.ability).asText),
-			this._ct_property("Size", (race.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz))).join("/"),
+			this._ct_property("Size", (race.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/")),
 			this._ct_property("Speed", Parser.getSpeedString(race)),
 			this._ct_rule(),
 			...this._ct_renderEntries(race.entries, 2),

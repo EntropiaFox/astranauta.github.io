@@ -17,7 +17,7 @@ String.prototype.split_handleColon = String.prototype.split_handleColon || funct
 	const colonStr = `${str.trim()}:`;
 	const isColon = this.toLowerCase().startsWith(colonStr.toLowerCase());
 
-	const re = isColon ? new RegExp(colonStr, "ig") : new RegExp(str, "ig");
+	const re = isColon ? new RegExp(colonStr.escapeRegexp(), "ig") : new RegExp(str.escapeRegexp(), "ig");
 	const targetString = isColon ? colonStr : str;
 
 	let m = re.exec(this);
@@ -84,7 +84,9 @@ class BaseParser {
 		const iptClean = ipt
 			.replace(/[−–‒]/g, "-") // convert minus signs to hyphens
 		;
-		return CleanUtil.getCleanString(iptClean, false);
+		return CleanUtil.getCleanString(iptClean, false)
+			// Ensure CR always has a space before the dash
+			.replace(/(Challenge)([-\u2012-\u2014])/, "$1 $2");
 	}
 
 	static _hasEntryContent (trait) {
@@ -448,8 +450,8 @@ class DiceConvert {
 		}
 
 		// re-tag + format dice
-		str = str.replace(/((\s*[-+]\s*)?(([1-9]\d*)?d([1-9]\d*)(\s*?[-+×x*÷/]\s*?(\d,\d|\d)+(\.\d+)?)?))+/gi, (...m) => {
-			const expanded = m[0].replace(/([^0-9d.,])/gi, " $1 ").replace(/\s+/g, " ");
+		str = str.replace(/(\s*[-+]\s*)?(([1-9]\d*)?d([1-9]\d*)(\s*?[-+×x*÷/]\s*?(\d,\d|\d)+(\.\d+)?)?)+(?:\s*\+\s*\bPB\b)/gi, (...m) => {
+			const expanded = m[0].replace(/([^0-9d.,PB])/gi, " $1 ").replace(/\s+/g, " ");
 			return `{@dice ${expanded}}`;
 		});
 
@@ -476,10 +478,10 @@ class DiceConvert {
 		} while (last !== str);
 
 		// tag @damage (creature style)
-		str = str.replace(/\d+ \({@dice (?:[-+0-9d ]*)}\)(?:\s+[-+]\s+[-+a-zA-Z0-9 ]*?)?(?: [a-z]+(?:(?:, |, or | or )[a-z]+)*)? damage/ig, (...m) => m[0].replace(/{@dice /gi, "{@damage "));
+		str = str.replace(/\d+ \({@dice (?:[-+0-9d PB]*)}\)(?:\s+[-+]\s+[-+a-zA-Z0-9 ]*?)?(?: [a-z]+(?:(?:, |, or | or )[a-z]+)*)? damage/ig, (...m) => m[0].replace(/{@dice /gi, "{@damage "));
 
 		// tag @damage (spell/etc style)
-		str = str.replace(/{@dice (?:[-+0-9d ]*)}(?:\s+[-+]\s+[-+a-zA-Z0-9 ]*?)?(?:\s+[-+]\s+the spell's level)?(?: [a-z]+(?:(?:, |, or | or )[a-z]+)*)? damage/ig, (...m) => m[0].replace(/{@dice /gi, "{@damage "));
+		str = str.replace(/{@dice (?:[-+0-9d PB]*)}(?:\s+[-+]\s+[-+a-zA-Z0-9 ]*?)?(?:\s+[-+]\s+the spell's level)?(?: [a-z]+(?:(?:, |, or | or )[a-z]+)*)? damage/ig, (...m) => m[0].replace(/{@dice /gi, "{@damage "));
 
 		return str;
 	}
@@ -883,6 +885,52 @@ class ConvertUtil {
 	static cleanDashes (str) { return str.replace(/[-\u2011-\u2015]/g, "-"); }
 }
 
+class AlignmentUtil {
+
+}
+// These are arranged in order of preferred precedence
+AlignmentUtil.ALIGNMENTS_RAW = {
+	"lawful good": ["L", "G"],
+	"neutral good": ["N", "G"],
+	"chaotic good": ["C", "G"],
+	"chaotic neutral": ["C", "N"],
+	"lawful evil": ["L", "E"],
+	"lawful neutral": ["L", "N"],
+	"neutral evil": ["N", "E"],
+	"chaotic evil": ["C", "E"],
+
+	"(?:any )?non-good( alignment)?": ["L", "NX", "C", "NY", "E"],
+	"(?:any )?non-lawful( alignment)?": ["NX", "C", "G", "NY", "E"],
+	"(?:any )?non-evil( alignment)?": ["L", "NX", "C", "NY", "G"],
+	"(?:any )?non-chaotic( alignment)?": ["NX", "L", "G", "NY", "E"],
+
+	"(?:any )?chaotic( alignment)?": ["C", "G", "NY", "E"],
+	"(?:any )?evil( alignment)?": ["L", "NX", "C", "E"],
+	"(?:any )?lawful( alignment)?": ["L", "G", "NY", "E"],
+	"(?:any )?good( alignment)?": ["L", "NX", "C", "G"],
+
+	"good": ["G"],
+	"lawful": ["L"],
+	"neutral": ["N"],
+	"chaotic": ["C"],
+	"evil": ["E"],
+
+	"(?:any )?neutral( alignment)?": ["NX", "NY", "N"],
+
+	"unaligned": ["U"],
+
+	"any alignment": ["A"],
+};
+AlignmentUtil.ALIGNMENTS = {};
+Object.entries(AlignmentUtil.ALIGNMENTS_RAW).forEach(([k, v]) => {
+	AlignmentUtil.ALIGNMENTS[k] = {
+		output: v,
+		regex: RegExp(`^${k}$`, "i"),
+		regexChance: RegExp(`^${k}\\s*\\((\\d+)\\s*%\\)$`, "i"),
+		regexWeak: RegExp(k, "i"),
+	}
+});
+
 if (typeof module !== "undefined") {
 	module.exports = {
 		ConvertUtil,
@@ -897,5 +945,6 @@ if (typeof module !== "undefined") {
 		ActionTag,
 		TaggerUtils,
 		TagUtil,
+		AlignmentUtil,
 	};
 }

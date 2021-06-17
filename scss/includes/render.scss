@@ -2,13 +2,13 @@
 Renderer
  */
 
-@import 'vars';
+@import "vars";
 
 $rgb-inset-border: #656565;
 
 @mixin rd__h--large() {
 	color: $rgb-name-red;
-	font-family: 'Andada', serif;
+	font-family: "Andada", serif;
 	font-variant: small-caps;
 	font-weight: 500;
 	display: flex;
@@ -137,6 +137,11 @@ $rgb-inset-border: #656565;
 				text-align: right;
 				display: block;
 			}
+		}
+
+		&p-list-item {
+			// This prevents e.g. "italic" on the list item name from affecting the list item"s text.
+			font-style: initial;
 		}
 
 		&p-cont-indent {
@@ -349,7 +354,7 @@ $rgb-inset-border: #656565;
 		&data-embed {
 			&-header {
 				cursor: pointer;
-				font-family: 'Andada', serif;
+				font-family: "Andada", serif;
 				font-variant: small-caps;
 				text-transform: uppercase;
 				font-weight: bold;
@@ -391,7 +396,7 @@ $rgb-inset-border: #656565;
 		}
 
 		&comic {
-			font-family: 'Blambot Casual', sans-serif;
+			font-family: "Blambot Casual", sans-serif;
 			color: #1942be;
 
 			&--h1 {
@@ -432,7 +437,7 @@ $rgb-inset-border: #656565;
 				}
 
 				&::after {
-					content: '';
+					content: "";
 					clear: both;
 					display: block;
 				}
@@ -469,7 +474,7 @@ $rgb-inset-border: #656565;
 		}
 
 		&stats-name-page {
-			font-family: 'Convergence', Arial, sans-serif;
+			font-family: "Convergence", Arial, sans-serif;
 			font-size: 12px;
 			color: $rgb-off-black;
 			font-weight: 100;
@@ -491,7 +496,6 @@ $rgb-inset-border: #656565;
 
 	&-item__ {
 		&type-rarity-attunement {
-			font-style: italic;
 			color: $rgb-off-black;
 		}
 	}

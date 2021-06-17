@@ -301,18 +301,21 @@ Renderer.dice = {
 		return wrpTree.tree.evl({});
 	},
 
-	_pRollerClick_getMsgBug (total) { return `<span class="message">No result found matching roll ${total}?! <span class="help--subtle" title="Bug!">🐛</span></span>`; },
+	_pRollerClick_getMsgBug (total) { return `<span class="message">No result found matching roll ${total}?! <span class="help-subtle" title="Bug!">🐛</span></span>`; },
 
 	async pRollerClick (evtMock, ele, packed, name) {
 		const $ele = $(ele);
 		const entry = JSON.parse(packed);
+		const additionalRollData = $ele.data("roll-additional");
+
+		// Aka "getTableName", probably
 		function attemptToGetNameOfRoll () {
 			// try use table caption
 			let titleMaybe = $(ele).closest(`table:not(.stats)`).children(`caption`).text();
 			if (titleMaybe) return titleMaybe.trim();
 
 			// try use list item title
-			titleMaybe = $(ele).parent().children(`.list-item-title`).text();
+			titleMaybe = $(ele).parent().children(`.rd__list-item-name`).text();
 			if (titleMaybe) return titleMaybe.trim();
 
 			// use the section title, where applicable
@@ -430,9 +433,9 @@ Renderer.dice = {
 			if (isRoller && $parent.attr("data-rd-namegeneratorrolls")) {
 				pRollGeneratorTable();
 			} else {
-				Renderer.dice.pRollEntry(modRollMeta.entry, rolledBy, {fnGetMessage: fnGetMessageTable, rollCount: modRollMeta.rollCount});
+				Renderer.dice.pRollEntry(modRollMeta.entry, rolledBy, {fnGetMessage: fnGetMessageTable, rollCount: modRollMeta.rollCount, additionalData: additionalRollData});
 			}
-		} else Renderer.dice.pRollEntry(modRollMeta.entry, rolledBy, {rollCount: modRollMeta.rollCount});
+		} else Renderer.dice.pRollEntry(modRollMeta.entry, rolledBy, {rollCount: modRollMeta.rollCount, additionalData: additionalRollData});
 	},
 
 	getEventModifiedRollMeta (evt, entry) {
@@ -509,6 +512,7 @@ Renderer.dice = {
 	 * @param [opts] Options object.
 	 * @param [opts.isResultUsed] If an input box should be provided for the user to enter the result (manual mode only).
 	 * @param [opts.rollCount]
+	 * @param [opts.additionalData]
 	 */
 	async pRollEntry (entry, rolledBy, opts) {
 		opts = opts || {};
@@ -538,6 +542,7 @@ Renderer.dice = {
 	 * @param [opts] Options object.
 	 * @param [opts.fnGetMessage]
 	 * @param [opts.isResultUsed]
+	 * @param [opts.additionalData]
 	 */
 	async _pHandleRoll2 (wrpTree, rolledBy, opts) {
 		opts = opts || {};
@@ -555,6 +560,19 @@ Renderer.dice = {
 			opts.pb = userPb;
 		}
 
+		if (wrpTree.meta && wrpTree.meta.hasSummonSpellLevel) {
+			const predefinedSpellLevel = opts.additionalData ? opts.additionalData.map(it => it.summonedBySpell_level).filter(it => it != null)[0] : null;
+
+			const userSummonSpellLevel = await InputUiUtil.pGetUserNumber({
+				min: predefinedSpellLevel ?? 0,
+				int: true,
+				title: "Enter Spell Level",
+				default: predefinedSpellLevel ?? 1,
+			});
+			if (userSummonSpellLevel == null) return null;
+			opts.summonSpellLevel = userSummonSpellLevel;
+		}
+
 		if (Renderer.dice._isManualMode) return Renderer.dice._pHandleRoll2_manual(wrpTree.tree, rolledBy, opts);
 		else return Renderer.dice._pHandleRoll2_automatic(wrpTree.tree, rolledBy, opts);
 	},
@@ -565,6 +583,7 @@ Renderer.dice = {
 	 * @param [opts] Options object.
 	 * @param [opts.fnGetMessage]
 	 * @param [opts.pb] User-entered proficiency bonus, to be propagated to the meta.
+	 * @param [opts.summonSpellLevel] User-entered summon spell level, to be propagated to the meta.
 	 */
 	_pHandleRoll2_automatic (tree, rolledBy, opts) {
 		opts = opts || {};
@@ -576,6 +595,8 @@ Renderer.dice = {
 		if (tree) {
 			const meta = {};
 			if (opts.pb) meta.pb = opts.pb;
+			if (opts.summonSpellLevel) meta.summonSpellLevel = opts.summonSpellLevel;
+
 			const result = tree.evl(meta);
 			const fullHtml = (meta.html || []).join("");
 			const allMax = meta.allMax && meta.allMax.length && !(meta.allMax.filter(it => !it).length);
@@ -848,6 +869,7 @@ Renderer.dice.lang = {
 			mode: null,
 			token: "",
 			hasPb: false,
+			hasSummonSpellLevel: false,
 		};
 
 		str = str
@@ -870,7 +892,7 @@ Renderer.dice.lang = {
 
 		this._lex3_lex(self, str);
 
-		return {lexed: self.tokenStack, lexedMeta: {hasPb: self.hasPb}};
+		return {lexed: self.tokenStack, lexedMeta: {hasPb: self.hasPb, hasSummonSpellLevel: self.hasSummonSpellLevel}};
 	},
 
 	_lex3_lex (self, l) {
@@ -946,6 +968,7 @@ Renderer.dice.lang = {
 			case "/": self.tokenStack.push(Renderer.dice.tk.DIV); break;
 			case "^": self.tokenStack.push(Renderer.dice.tk.POW); break;
 			case "pb": self.tokenStack.push(Renderer.dice.tk.PB); self.hasPb = true; break;
+			case "summonspelllevel": self.tokenStack.push(Renderer.dice.tk.SUMMON_SPELL_LEVEL); self.hasSummonSpellLevel = true; break;
 			case "floor": self.tokenStack.push(Renderer.dice.tk.FLOOR); break;
 			case "ceil": self.tokenStack.push(Renderer.dice.tk.CEIL); break;
 			case "round": self.tokenStack.push(Renderer.dice.tk.ROUND); break;
@@ -1055,6 +1078,8 @@ Renderer.dice.lang = {
 			}
 		} else if (this._parse3_accept(self, Renderer.dice.tk.PB)) {
 			return new Renderer.dice.parsed.Factor(Renderer.dice.tk.PB);
+		} else if (this._parse3_accept(self, Renderer.dice.tk.SUMMON_SPELL_LEVEL)) {
+			return new Renderer.dice.parsed.Factor(Renderer.dice.tk.SUMMON_SPELL_LEVEL);
 		} else if (
 			this._parse3_match(self, Renderer.dice.tk.FLOOR)
 			|| this._parse3_match(self, Renderer.dice.tk.CEIL)
@@ -1236,6 +1261,7 @@ Renderer.dice.tk.MULT = Renderer.dice.tk._new("MULT", "*");
 Renderer.dice.tk.DIV = Renderer.dice.tk._new("DIV", "/");
 Renderer.dice.tk.POW = Renderer.dice.tk._new("POW", "^");
 Renderer.dice.tk.PB = Renderer.dice.tk._new("PB", "pb");
+Renderer.dice.tk.SUMMON_SPELL_LEVEL = Renderer.dice.tk._new("SUMMON_SPELL_LEVEL", "summonspelllevel");
 Renderer.dice.tk.FLOOR = Renderer.dice.tk._new("FLOOR", "floor");
 Renderer.dice.tk.CEIL = Renderer.dice.tk._new("CEIL", "ceil");
 Renderer.dice.tk.ROUND = Renderer.dice.tk._new("ROUND", "round");
@@ -1625,6 +1651,10 @@ Renderer.dice.parsed = {
 					this.addToMeta(meta, this.toString(meta));
 					return meta.pb == null ? 0 : meta.pb;
 				}
+				case Renderer.dice.tk.SUMMON_SPELL_LEVEL.type: {
+					this.addToMeta(meta, this.toString(meta));
+					return meta.summonSpellLevel == null ? 0 : meta.summonSpellLevel;
+				}
 				default: throw new Error(`Unimplemented!`);
 			}
 		}
@@ -1635,6 +1665,7 @@ Renderer.dice.parsed = {
 				case Renderer.dice.tk.TYP_NUMBER: out = this._node.value; break;
 				case Renderer.dice.tk.TYP_SYMBOL: out = this._node.toString(); break;
 				case Renderer.dice.tk.PB.type: out = this.meta ? (this.meta.pb || 0) : "PB"; break;
+				case Renderer.dice.tk.SUMMON_SPELL_LEVEL.type: out = this.meta ? (this.meta.summonSpellLevel || 0) : "the spell's level"; break;
 				default: throw new Error(`Unimplemented!`);
 			}
 			return this._hasParens ? `(${out})` : out;

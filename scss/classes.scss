@@ -1,4 +1,4 @@
-@import 'includes/vars';
+@import "includes/vars";
 
 // region class
 .cls__ {
@@ -254,7 +254,7 @@
 // endregion
 
 // region class table
-@import 'includes/classes-table';
+@import "includes/classes-table";
 
 .night-mode {
 	.cls-tbl {
@@ -285,7 +285,7 @@
 .cls-side__ {
 	&name {
 		font-size: 1.8em;
-		font-family: 'Andada', serif;
+		font-family: "Andada", serif;
 		font-variant: small-caps;
 		font-weight: 500;
 	}
@@ -390,7 +390,7 @@
 	&msg-no-content {
 		height: 40px;
 		color: $rgb-name-red;
-		font-family: 'Andada', serif;
+		font-family: "Andada", serif;
 		font-variant: small-caps;
 		font-weight: 500;
 		line-height: 2.3em;
@@ -538,7 +538,7 @@
 	max-height: calc(100vh - 30px);
 	padding-right: 9px;
 	padding-left: 9px;
-	font-family: 'Andada', serif;
+	font-family: "Andada", serif;
 	font-variant: small-caps;
 	font-weight: 500;
 
@@ -559,12 +559,12 @@
 
 		&disp-toggle {
 			&::after {
-				content: ' [+]';
+				content: " [+]";
 				font-weight: initial;
 			}
 
 			&--active::after {
-				content: '[\2012]';
+				content: "[\2012]";
 				font-weight: initial;
 			}
 		}
@@ -638,7 +638,7 @@
 				padding-left: 10px;
 
 				&::before {
-					content: '\2022  ';
+					content: "\2022  ";
 				}
 			}
 		}

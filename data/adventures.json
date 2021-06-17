@@ -39,7 +39,10 @@
 						"Encounters in Phandalin",
 						"Important NPCs",
 						"Town Description",
-						"Redbrand Ruffians",
+						{
+							"index": 1,
+							"header": "Redbrand Ruffians"
+						},
 						"Redbrand Hideout"
 					],
 					"ordinal": {
@@ -1888,214 +1891,1357 @@
 			"source": "CoS",
 			"coverUrl": "img/covers/CoS.png",
 			"published": "2016-03-15",
-			"storyline": "Curse of Strahd",
+			"storyline": "Ravenloft",
 			"level": {
 				"start": 1,
 				"end": 10
 			},
 			"contents": [
 				{
+					"name": "Foreword: Ravenloft Revisited"
+				},
+				{
 					"name": "Introduction",
 					"headers": [
 						"Running the Adventure",
-						"A Classic Retold",
 						"Marks of Horror"
 					]
 				},
 				{
 					"name": "Into the Mists",
-					"headers": [
-						"Strahd von Zarovich",
-						"Fortunes of Ravenloft",
-						"Using Regular Playing Cards",
-						"Adventure Hooks"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 1
-					}
+					},
+					"headers": [
+						"Strahd von Zarovich",
+						"Fortunes of Ravenloft",
+						{
+							"depth": 1,
+							"header": "1. The Tome of Strahd"
+						},
+						{
+							"depth": 1,
+							"header": "2. The Holy Symbol of Ravenkind"
+						},
+						{
+							"depth": 1,
+							"header": "3. The Sunsword"
+						},
+						{
+							"depth": 1,
+							"header": "4. Strahd's Enemy"
+						},
+						{
+							"depth": 1,
+							"header": "5. Strahd"
+						},
+						"Adventure Hooks"
+					]
 				},
 				{
 					"name": "The Lands of Barovia",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 2
+					},
 					"headers": [
 						"Lay of the Land",
 						"Alterations to Magic",
 						"Barovians",
-						"Barovian Names",
-						"Barovian Lore",
 						"Vistani",
 						"Random Encounters",
-						"Strahd's Spies",
-						"Areas of Barovia",
-						"The Lands of Barovia: Common Features"
-					],
-					"ordinal": {
-						"type": "chapter",
-						"identifier": 2
-					}
+						"Areas of Barovia"
+					]
 				},
 				{
 					"name": "The Village of Barovia",
-					"headers": [
-						"Approaching the Village",
-						"Areas of the Village",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 3
-					}
+					},
+					"headers": [
+						"Approaching the Village",
+						"Areas of the Village",
+						{
+							"depth": 1,
+							"header": "E1. Bildrath's Mercantile"
+						},
+						{
+							"depth": 1,
+							"header": "E2. Blood of the Vine Tavern"
+						},
+						{
+							"depth": 1,
+							"header": "E3. Mad Mary's Townhouse"
+						},
+						{
+							"depth": 1,
+							"header": "E4. Burgomaster's Mansion"
+						},
+						{
+							"depth": 1,
+							"header": "E5. Church"
+						},
+						{
+							"depth": 1,
+							"header": "E6. Cemetery"
+						},
+						{
+							"depth": 1,
+							"header": "E7. Haunted House"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "Castle Ravenloft",
-					"headers": [
-						"Random Encounters",
-						"Walls of Ravenloft",
-						"Main Floor",
-						"Court of the Count",
-						"Rooms of Weeping",
-						"Spires of Ravenloft",
-						"Larders of Ill Omen",
-						"Dungeon and Catacombs"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 4
-					}
+					},
+					"headers": [
+						"Random Encounters",
+						"Walls of Ravenloft",
+						{
+							"depth": 1,
+							"header": "K1. Front Courtyard"
+						},
+						{
+							"depth": 1,
+							"header": "K2. Center Court Gate"
+						},
+						{
+							"depth": 1,
+							"header": "K3. Servants' Courtyard"
+						},
+						{
+							"depth": 1,
+							"header": "K4. Carriage House"
+						},
+						{
+							"depth": 1,
+							"header": "K5. Chapel Garden"
+						},
+						{
+							"depth": 1,
+							"header": "K6. Overlook"
+						},
+						"Main Floor",
+						{
+							"depth": 1,
+							"header": "K7. Entry"
+						},
+						{
+							"depth": 1,
+							"header": "K8. Great Entry"
+						},
+						{
+							"depth": 1,
+							"header": "K9. Guests' Hall"
+						},
+						{
+							"depth": 1,
+							"header": "K10. Dining Hall"
+						},
+						{
+							"depth": 1,
+							"header": "K11. South Archers' Post"
+						},
+						{
+							"depth": 1,
+							"header": "K12. Turret Post"
+						},
+						{
+							"depth": 1,
+							"header": "K13. Turret Post Access Hall"
+						},
+						{
+							"depth": 1,
+							"header": "K14. Hall of Faith"
+						},
+						{
+							"depth": 1,
+							"header": "K15. Chapel"
+						},
+						{
+							"depth": 1,
+							"header": "K16. North Chapel Access"
+						},
+						{
+							"depth": 1,
+							"header": "K17. South Chapel Access"
+						},
+						{
+							"depth": 1,
+							"header": "K18. High Tower Staircase"
+						},
+						{
+							"depth": 1,
+							"header": "K19. Grand Landing"
+						},
+						{
+							"depth": 1,
+							"header": "K20. Heart of Sorrow"
+						},
+						{
+							"depth": 1,
+							"header": "K21. South Tower Stair"
+						},
+						{
+							"depth": 1,
+							"header": "K22. North Archers' Post"
+						},
+						{
+							"depth": 1,
+							"header": "K23. Servants' Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "K24. Servants' Quarters"
+						},
+						"Court of the Count",
+						{
+							"depth": 1,
+							"header": "K25. Audience Hall"
+						},
+						{
+							"depth": 1,
+							"header": "K26. Guards' Post"
+						},
+						{
+							"depth": 1,
+							"header": "K27. King's Hall"
+						},
+						{
+							"depth": 1,
+							"header": "K28. King's Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "K29. Creaky Landing"
+						},
+						{
+							"depth": 1,
+							"header": "K30. King's Accountant"
+						},
+						{
+							"depth": 1,
+							"header": "K31. Trapworks"
+						},
+						{
+							"depth": 1,
+							"header": "K32. Maid in Hell"
+						},
+						{
+							"depth": 1,
+							"header": "K33. King's Apartment Stair"
+						},
+						{
+							"depth": 1,
+							"header": "K34. Servants' Upper Floor"
+						},
+						"Rooms of Weeping",
+						{
+							"depth": 1,
+							"header": "K35. Guardian Vermin"
+						},
+						{
+							"depth": 1,
+							"header": "K36. Dining Hall of the Count"
+						},
+						{
+							"depth": 1,
+							"header": "K37. Study"
+						},
+						{
+							"depth": 1,
+							"header": "K38. False Treasury"
+						},
+						{
+							"depth": 1,
+							"header": "K39. Hall of Webs"
+						},
+						{
+							"depth": 1,
+							"header": "K40. Belfry"
+						},
+						{
+							"depth": 1,
+							"header": "K41. Treasury"
+						},
+						{
+							"depth": 1,
+							"header": "K42. King's Bedchamber"
+						},
+						{
+							"depth": 1,
+							"header": "K43. Bath Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "K44. Closet"
+						},
+						{
+							"depth": 1,
+							"header": "K45. Hall of Heroes"
+						},
+						{
+							"depth": 1,
+							"header": "K46. Parapets"
+						},
+						"Spires of Ravenloft",
+						{
+							"depth": 1,
+							"header": "K47. Portrait of Strahd"
+						},
+						{
+							"depth": 1,
+							"header": "K48. Offstair"
+						},
+						{
+							"depth": 1,
+							"header": "K49. Lounge"
+						},
+						{
+							"depth": 1,
+							"header": "K50. Guest Room"
+						},
+						{
+							"depth": 1,
+							"header": "K51. Closet"
+						},
+						{
+							"depth": 1,
+							"header": "K52. Smokestack"
+						},
+						{
+							"depth": 1,
+							"header": "K53. Rooftop"
+						},
+						{
+							"depth": 1,
+							"header": "K54. Familiar Room"
+						},
+						{
+							"depth": 1,
+							"header": "K55. Element Room"
+						},
+						{
+							"depth": 1,
+							"header": "K56. Cauldron"
+						},
+						{
+							"depth": 1,
+							"header": "K57. Tower Roof"
+						},
+						{
+							"depth": 1,
+							"header": "K58. Bridge"
+						},
+						{
+							"depth": 1,
+							"header": "K59. High Tower Peak"
+						},
+						{
+							"depth": 1,
+							"header": "K60. North Tower Peak"
+						},
+						"Larders of Ill Omen",
+						{
+							"depth": 1,
+							"header": "K61. Elevator Trap"
+						},
+						{
+							"depth": 1,
+							"header": "K62. Servants' Hall"
+						},
+						{
+							"depth": 1,
+							"header": "K63. Wine Cellar"
+						},
+						{
+							"depth": 1,
+							"header": "K64. Guards' Stair"
+						},
+						{
+							"depth": 1,
+							"header": "K65. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "K66. Butler's Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "K67. Hall of Bones"
+						},
+						{
+							"depth": 1,
+							"header": "K68. Guards' Run"
+						},
+						{
+							"depth": 1,
+							"header": "K69. Guards' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "K70. Kingsmen Hall"
+						},
+						{
+							"depth": 1,
+							"header": "K71. Kingsmen Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "K72. Chamberlain's Office"
+						},
+						"Dungeon and Catacombs",
+						{
+							"depth": 1,
+							"header": "K73. Dungeon Hall"
+						},
+						{
+							"depth": 1,
+							"header": "K74. North Dungeon"
+						},
+						{
+							"depth": 1,
+							"header": "K75. South Dungeon"
+						},
+						{
+							"depth": 1,
+							"header": "K76. Torture Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "K77. Observation Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "K78. Brazier Room"
+						},
+						{
+							"depth": 1,
+							"header": "K79. Western Stair"
+						},
+						{
+							"depth": 1,
+							"header": "K80. Center Stair"
+						},
+						{
+							"depth": 1,
+							"header": "K81. Tunnel"
+						},
+						{
+							"depth": 1,
+							"header": "K82. Marble Slide"
+						},
+						{
+							"depth": 1,
+							"header": "K83. Spiral Stair"
+						},
+						{
+							"depth": 1,
+							"header": "K84. Catacombs"
+						},
+						{
+							"depth": 1,
+							"header": "K85. Sergei's Tomb"
+						},
+						{
+							"depth": 1,
+							"header": "K86. Strahd's Tomb"
+						},
+						{
+							"depth": 1,
+							"header": "K87. Guardians"
+						},
+						{
+							"depth": 1,
+							"header": "K88. Tomb of King Barov and Queen Ravenovia"
+						}
+					]
 				},
 				{
 					"name": "The Town of Vallaki",
-					"headers": [
-						"Approaching the Town",
-						"Areas of Vallaki",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 5
-					}
+					},
+					"headers": [
+						"Approaching the Town",
+						"Areas of Vallaki",
+						{
+							"depth": 1,
+							"header": "N1. St. Andral's Church"
+						},
+						{
+							"depth": 1,
+							"header": "N2. Blue Water Inn"
+						},
+						{
+							"depth": 1,
+							"header": "N3. Burgomaster's Mansion"
+						},
+						{
+							"depth": 1,
+							"header": "N4. Wachterhaus"
+						},
+						{
+							"depth": 1,
+							"header": "N5. Arasek Stockyard"
+						},
+						{
+							"depth": 1,
+							"header": "N6. Coffin Maker's Shop"
+						},
+						{
+							"depth": 1,
+							"header": "N7. Blinsky Toys"
+						},
+						{
+							"depth": 1,
+							"header": "N8. Town Square"
+						},
+						{
+							"depth": 1,
+							"header": "N9. Vistani Camp"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "Old Bonegrinder",
-					"headers": [
-						"Approaching the Windmill",
-						"Areas of the Windmill",
-						"The Megaliths"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 6
-					}
+					},
+					"headers": [
+						"Morgantha's Coven",
+						"Dream Pastries",
+						"Approaching the Windmill",
+						"Areas of the Windmill",
+						{
+							"depth": 1,
+							"header": "O1. Ground Floor"
+						},
+						{
+							"depth": 1,
+							"header": "O2. Bone Mill"
+						},
+						{
+							"depth": 1,
+							"header": "O3. Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "O4. Domed Attic"
+						},
+						"The Megaliths"
+					]
 				},
 				{
 					"name": "Argynvostholt",
-					"headers": [
-						"The Order of the Silver Dragon",
-						"Revenants of Barovia",
-						"Approaching the Mansion",
-						"Areas of Argynvostholt",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 7
-					}
+					},
+					"headers": [
+						"The Order of the Silver Dragon",
+						"Approaching the Mansion",
+						"Areas of Argynvostholt",
+						{
+							"depth": 1,
+							"header": "Q1. Dragon Statue"
+						},
+						{
+							"depth": 1,
+							"header": "Q2. Main Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "Q3. Dragon's Foyer"
+						},
+						{
+							"depth": 1,
+							"header": "Q4. Spiders' Ballroom"
+						},
+						{
+							"depth": 1,
+							"header": "Q5. Ruined Stable"
+						},
+						{
+							"depth": 1,
+							"header": "Q6. Dragon's Den"
+						},
+						{
+							"depth": 1,
+							"header": "Q7. Parlor"
+						},
+						{
+							"depth": 1,
+							"header": "Q8. Iron Gate"
+						},
+						{
+							"depth": 1,
+							"header": "Q9. Servants' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "Q10. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "Q11. Wine Storage"
+						},
+						{
+							"depth": 1,
+							"header": "Q12. Dining Hall"
+						},
+						{
+							"depth": 1,
+							"header": "Q13. Chapel of Morning"
+						},
+						{
+							"depth": 1,
+							"header": "Q14. Chapel Staircases"
+						},
+						{
+							"depth": 1,
+							"header": "Q15. Cemetery"
+						},
+						{
+							"depth": 1,
+							"header": "Q16. Dragon's Mausoleum"
+						},
+						{
+							"depth": 1,
+							"header": "Q17. West Staircases"
+						},
+						{
+							"depth": 1,
+							"header": "Q18. Balconies"
+						},
+						{
+							"depth": 1,
+							"header": "Q19. Ruined Bedchambers"
+						},
+						{
+							"depth": 1,
+							"header": "Q20. South Alcove"
+						},
+						{
+							"depth": 1,
+							"header": "Q21. North Alcove"
+						},
+						{
+							"depth": 1,
+							"header": "Q22. Bathroom"
+						},
+						{
+							"depth": 1,
+							"header": "Q23. Storage Room"
+						},
+						{
+							"depth": 1,
+							"header": "Q24. Chapel Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "Q25. Trapped Hallway"
+						},
+						{
+							"depth": 1,
+							"header": "Q26. Northeast Guest Room"
+						},
+						{
+							"depth": 1,
+							"header": "Q27. Knights' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "Q28. Knights' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "Q29. Northwest Guest Room"
+						},
+						{
+							"depth": 1,
+							"header": "Q30. Curtained Staircase"
+						},
+						{
+							"depth": 1,
+							"header": "Q31. East Staircases"
+						},
+						{
+							"depth": 1,
+							"header": "Q32. Ruined Bedchambers"
+						},
+						{
+							"depth": 1,
+							"header": "Q33. Collapsed Ceiling"
+						},
+						{
+							"depth": 1,
+							"header": "Q34. Ruined Bathroom"
+						},
+						{
+							"depth": 1,
+							"header": "Q35. Upstairs Gallery"
+						},
+						{
+							"depth": 1,
+							"header": "Q36. Dragon's Audience Hall"
+						},
+						{
+							"depth": 1,
+							"header": "Q37. Knights of the Order"
+						},
+						{
+							"depth": 1,
+							"header": "Q38. Closet"
+						},
+						{
+							"depth": 1,
+							"header": "Q39. Vladimir's Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "Q40. Argynvost's Study"
+						},
+						{
+							"depth": 1,
+							"header": "Q41. Dragon's Vault"
+						},
+						{
+							"depth": 1,
+							"header": "Q42. Argynvost's Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "Q43. Hole in Roof"
+						},
+						{
+							"depth": 1,
+							"header": "Q44. Dragon Gargoyle"
+						},
+						{
+							"depth": 1,
+							"header": "Q45. Ancient Ballista"
+						},
+						{
+							"depth": 1,
+							"header": "Q46. Destroyed Ballista"
+						},
+						{
+							"depth": 1,
+							"header": "Q47. Roof Turrets"
+						},
+						{
+							"depth": 1,
+							"header": "Q48. Roof's Edge"
+						},
+						{
+							"depth": 1,
+							"header": "Q49. Beacon Tower Door"
+						},
+						{
+							"depth": 1,
+							"header": "Q50. Beacon, Lower Landing"
+						},
+						{
+							"depth": 1,
+							"header": "Q51. Beacon, Upper Landing"
+						},
+						{
+							"depth": 1,
+							"header": "Q52. Beacon Turrets"
+						},
+						{
+							"depth": 1,
+							"header": "Q53. Beacon of Argynvostholt"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "The Village of Krezk",
-					"headers": [
-						"Areas of Krezk",
-						"Areas of the Abbey",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 8
-					}
+					},
+					"headers": [
+						"Areas of Krezk",
+						{
+							"depth": 1,
+							"header": "S1. Road Junction"
+						},
+						{
+							"depth": 1,
+							"header": "S2. Gatehouse"
+						},
+						{
+							"depth": 1,
+							"header": "S3. Village of Krezk"
+						},
+						{
+							"depth": 1,
+							"header": "S4. Pool and Shrine"
+						},
+						{
+							"depth": 1,
+							"header": "S5. Winding Road"
+						},
+						{
+							"depth": 1,
+							"header": "S6. North Gate"
+						},
+						{
+							"depth": 1,
+							"header": "S7. Graveyard"
+						},
+						{
+							"depth": 1,
+							"header": "S8. Garden Gatehouse"
+						},
+						{
+							"depth": 1,
+							"header": "S9. Gardens"
+						},
+						{
+							"depth": 1,
+							"header": "S10. Abbey Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "S11. Inner Gatehouses"
+						},
+						{
+							"depth": 1,
+							"header": "S12. Courtyard"
+						},
+						{
+							"depth": 1,
+							"header": "S13. Main Hall"
+						},
+						{
+							"depth": 1,
+							"header": "S14. Foyer"
+						},
+						{
+							"depth": 1,
+							"header": "S15. Madhouse"
+						},
+						{
+							"depth": 1,
+							"header": "S16. Wine Cellar"
+						},
+						{
+							"depth": 1,
+							"header": "S17. Loft and Belfry"
+						},
+						{
+							"depth": 1,
+							"header": "S18. Curtain Wall"
+						},
+						{
+							"depth": 1,
+							"header": "S19. Barracks"
+						},
+						{
+							"depth": 1,
+							"header": "S20. Upstairs Office"
+						},
+						{
+							"depth": 1,
+							"header": "S21. Haunted Hospital"
+						},
+						{
+							"depth": 1,
+							"header": "S22. Operating Room"
+						},
+						{
+							"depth": 1,
+							"header": "S23. Nursery"
+						},
+						{
+							"depth": 1,
+							"header": "S24. Morgue"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "Tsolenka Pass",
-					"headers": [
-						"Areas of the Pass",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 9
-					}
+					},
+					"headers": [
+						"Areas of the Pass",
+						{
+							"depth": 1,
+							"header": "T1. Gatehouse Portcullis"
+						},
+						{
+							"depth": 1,
+							"header": "T2. Demon Statues"
+						},
+						{
+							"depth": 1,
+							"header": "T3. Curtain of Green Flame"
+						},
+						{
+							"depth": 1,
+							"header": "T4. Guard Tower, Ground Floor"
+						},
+						{
+							"depth": 1,
+							"header": "T5. Guard Tower, Upper Floor"
+						},
+						{
+							"depth": 1,
+							"header": "T6. Guard Tower Rooftop"
+						},
+						{
+							"depth": 1,
+							"header": "T7. Western Arch"
+						},
+						{
+							"depth": 1,
+							"header": "T8. Stone Bridge"
+						},
+						{
+							"depth": 1,
+							"header": "T9. Eastern Arch"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "The Ruins of Berez",
-					"headers": [
-						"Approaching the Ruins",
-						"Areas of Berez",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 10
-					}
+					},
+					"headers": [
+						"Approaching the Ruins",
+						"Areas of Berez",
+						{
+							"depth": 1,
+							"header": "U1. Abandoned Cottages"
+						},
+						{
+							"depth": 1,
+							"header": "U2. Ulrich Mansion"
+						},
+						{
+							"depth": 1,
+							"header": "U3. Baba Lysaga's Hut"
+						},
+						{
+							"depth": 1,
+							"header": "U4. Churchyard"
+						},
+						{
+							"depth": 1,
+							"header": "U5. Marina's Monument"
+						},
+						{
+							"depth": 1,
+							"header": "U6. Standing Stones"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "Van Richten's Tower",
-					"headers": [
-						"Approaching the Tower",
-						"Areas of the Tower",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 11
-					}
+					},
+					"headers": [
+						"Approaching the Tower",
+						"Areas of the Tower",
+						{
+							"depth": 1,
+							"header": "V1. Ezmerelda's Magic Wagon"
+						},
+						{
+							"depth": 1,
+							"header": "V2. Tower Door"
+						},
+						{
+							"depth": 1,
+							"header": "V3. Rickety Scaffolding"
+						},
+						{
+							"depth": 1,
+							"header": "V4. Tower, First Floor"
+						},
+						{
+							"depth": 1,
+							"header": "V5. Tower, Second Floor"
+						},
+						{
+							"depth": 1,
+							"header": "V6. Tower, Third Floor"
+						},
+						{
+							"depth": 1,
+							"header": "V7. Tower, Fourth Floor"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "The Wizard of Wines",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 12
+					},
 					"headers": [
 						"Approaching the Vineyard",
 						"Approaching the Winery",
 						"Areas of the Winery",
+						{
+							"depth": 1,
+							"header": "W1. Stables"
+						},
+						{
+							"depth": 1,
+							"header": "W2. Loading Dock"
+						},
+						{
+							"depth": 1,
+							"header": "W3. Barrel Maker's Workshop"
+						},
+						{
+							"depth": 1,
+							"header": "W4. Barrel Storage"
+						},
+						{
+							"depth": 1,
+							"header": "W5. Veranda"
+						},
+						{
+							"depth": 1,
+							"header": "W6. Well"
+						},
+						{
+							"depth": 1,
+							"header": "W7. Outhouse"
+						},
+						{
+							"depth": 1,
+							"header": "W8. Storage"
+						},
+						{
+							"depth": 1,
+							"header": "W9. Fermentation Vats"
+						},
+						{
+							"depth": 1,
+							"header": "W10. Glassblower's Workshop"
+						},
+						{
+							"depth": 1,
+							"header": "W11. Spiral Staircase"
+						},
+						{
+							"depth": 1,
+							"header": "W12. Ramp"
+						},
+						{
+							"depth": 1,
+							"header": "W13. Back Staircase"
+						},
+						{
+							"depth": 1,
+							"header": "W14. Wine Cellar"
+						},
+						{
+							"depth": 1,
+							"header": "W15. Brown Mold"
+						},
+						{
+							"depth": 1,
+							"header": "W16. Loading Winch"
+						},
+						{
+							"depth": 1,
+							"header": "W17. Master Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "W18. Kitchen and Dining Room"
+						},
+						{
+							"depth": 1,
+							"header": "W19. Sleeping Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "W20. Printing Press"
+						},
 						"Special Events"
-					],
-					"ordinal": {
-						"type": "chapter",
-						"identifier": 12
-					}
+					]
 				},
 				{
 					"name": "The Amber Temple",
-					"headers": [
-						"Extreme Cold",
-						"Areas of the Temple",
-						"Amber Sarcophagi",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 13
-					}
+					},
+					"headers": [
+						"Areas of the Temple",
+						{
+							"depth": 1,
+							"header": "X1. Temple Facade"
+						},
+						{
+							"depth": 1,
+							"header": "X2. Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "X3. Empty Barracks"
+						},
+						{
+							"depth": 1,
+							"header": "X4. Overlook"
+						},
+						{
+							"depth": 1,
+							"header": "X5. Temple of Lost Secrets"
+						},
+						{
+							"depth": 1,
+							"header": "X6. Southeast Annex"
+						},
+						{
+							"depth": 1,
+							"header": "X7. Secret Scroll Repository"
+						},
+						{
+							"depth": 1,
+							"header": "X8. Upper East Hall"
+						},
+						{
+							"depth": 1,
+							"header": "X9. Lecture Hall"
+						},
+						{
+							"depth": 1,
+							"header": "X10. Northeast Annex"
+						},
+						{
+							"depth": 1,
+							"header": "X11. Northeast Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "X12. East Shrine"
+						},
+						{
+							"depth": 1,
+							"header": "X13. East Archer Post"
+						},
+						{
+							"depth": 1,
+							"header": "X14. North Staircase"
+						},
+						{
+							"depth": 1,
+							"header": "X15. Southwest Annex"
+						},
+						{
+							"depth": 1,
+							"header": "X16. West Scroll Repository"
+						},
+						{
+							"depth": 1,
+							"header": "X17. Upper West Hall"
+						},
+						{
+							"depth": 1,
+							"header": "X18. Hallway"
+						},
+						{
+							"depth": 1,
+							"header": "X19. Potion Storage"
+						},
+						{
+							"depth": 1,
+							"header": "X20. Architect's Room"
+						},
+						{
+							"depth": 1,
+							"header": "X21. West Staircase"
+						},
+						{
+							"depth": 1,
+							"header": "X22. Northwest Annex"
+						},
+						{
+							"depth": 1,
+							"header": "X23. Northwest Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "X24. West Shrine"
+						},
+						{
+							"depth": 1,
+							"header": "X25. West Archer Post"
+						},
+						{
+							"depth": 1,
+							"header": "X26. Secret Alcove"
+						},
+						{
+							"depth": 1,
+							"header": "X27. Lich's Lair"
+						},
+						{
+							"depth": 1,
+							"header": "X28. Hidden Phylactery"
+						},
+						{
+							"depth": 1,
+							"header": "X29. Secret Room"
+						},
+						{
+							"depth": 1,
+							"header": "X30. Preserved Library"
+						},
+						{
+							"depth": 1,
+							"header": "X31. Central Catacombs"
+						},
+						{
+							"depth": 1,
+							"header": "X32. Lower East Hall"
+						},
+						{
+							"depth": 1,
+							"header": "X33. Amber Vaults"
+						},
+						{
+							"depth": 1,
+							"header": "X34. Wizard's Bedchamber"
+						},
+						{
+							"depth": 1,
+							"header": "X35. Sleeping Guardian"
+						},
+						{
+							"depth": 1,
+							"header": "X36. Lower West Hall"
+						},
+						{
+							"depth": 1,
+							"header": "X37. Wizard's Bedchamber"
+						},
+						{
+							"depth": 1,
+							"header": "X38. Haunted Room"
+						},
+						{
+							"depth": 1,
+							"header": "X39. Plundered Treasury"
+						},
+						{
+							"depth": 1,
+							"header": "X40. Sealed Treasury"
+						},
+						{
+							"depth": 1,
+							"header": "X41. Fissure"
+						},
+						{
+							"depth": 1,
+							"header": "X42. Amber Vault"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "Yester Hill",
-					"headers": [
-						"Areas of the Hill",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 14
-					}
+					},
+					"headers": [
+						"Areas of the Hill",
+						{
+							"depth": 1,
+							"header": "Y1. Trail"
+						},
+						{
+							"depth": 1,
+							"header": "Y2. Berserker Cairns"
+						},
+						{
+							"depth": 1,
+							"header": "Y3. Druids' Circle"
+						},
+						{
+							"depth": 1,
+							"header": "Y4. Gulthias Tree"
+						},
+						{
+							"depth": 1,
+							"header": "Y5. Wall of Fog"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "Werewolf Den",
-					"headers": [
-						"Travel through the Mists",
-						"Areas of the Den",
-						"Special Events"
-					],
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 15
-					}
+					},
+					"headers": [
+						"Approaching the Den",
+						"Areas of the Den",
+						{
+							"depth": 1,
+							"header": "Z1. Cave Mouth"
+						},
+						{
+							"depth": 1,
+							"header": "Z2. Guard Post"
+						},
+						{
+							"depth": 1,
+							"header": "Z3. Wolf Den"
+						},
+						{
+							"depth": 1,
+							"header": "Z4. Underground Spring"
+						},
+						{
+							"depth": 1,
+							"header": "Z5. Deep Caves"
+						},
+						{
+							"depth": 1,
+							"header": "Z6. Kiril's Cave"
+						},
+						{
+							"depth": 1,
+							"header": "Z7. Shrine of Mother Night"
+						},
+						{
+							"depth": 1,
+							"header": "Z8. Ring of Stone"
+						},
+						"Special Events"
+					]
 				},
 				{
 					"name": "Epilogue",
@@ -2109,25 +3255,210 @@
 					"ordinal": {
 						"type": "appendix",
 						"identifier": "A"
-					}
+					},
+					"headers": [
+						"Haunted One",
+						"Gothic Trinkets"
+					]
 				},
 				{
 					"name": "Death House",
 					"ordinal": {
 						"type": "appendix",
 						"identifier": "B"
-					}
+					},
+					"headers": [
+						"History",
+						"Areas of the House",
+						{
+							"depth": 1,
+							"header": "1. Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "2. Main Hall"
+						},
+						{
+							"depth": 1,
+							"header": "3. Den of Wolves"
+						},
+						{
+							"depth": 1,
+							"header": "4. Kitchen and Pantry"
+						},
+						{
+							"depth": 1,
+							"header": "5. Dining Room"
+						},
+						{
+							"depth": 1,
+							"header": "6. Upper Hall"
+						},
+						{
+							"depth": 1,
+							"header": "7. Servants' Room"
+						},
+						{
+							"depth": 1,
+							"header": "8. Library"
+						},
+						{
+							"depth": 1,
+							"header": "9. Secret Room"
+						},
+						{
+							"depth": 1,
+							"header": "10. Conservatory"
+						},
+						{
+							"depth": 1,
+							"header": "11. Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "12. Master Suite"
+						},
+						{
+							"depth": 1,
+							"header": "13. Bathroom"
+						},
+						{
+							"depth": 1,
+							"header": "14. Storage Room"
+						},
+						{
+							"depth": 1,
+							"header": "15. Nursemaid's Suite"
+						},
+						{
+							"depth": 1,
+							"header": "16. Attic Hall"
+						},
+						{
+							"depth": 1,
+							"header": "17. Spare Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "18. Storage Room"
+						},
+						{
+							"depth": 1,
+							"header": "19. Spare Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "20. Children's Room"
+						},
+						{
+							"depth": 1,
+							"header": "21. Secret Stairs"
+						},
+						{
+							"depth": 1,
+							"header": "22. Dungeon Level Access"
+						},
+						{
+							"depth": 1,
+							"header": "23. Family Crypts"
+						},
+						{
+							"depth": 1,
+							"header": "23A. Empty Crypt"
+						},
+						{
+							"depth": 1,
+							"header": "23B. Walter's Crypt"
+						},
+						{
+							"depth": 1,
+							"header": "23C. Gustav's Crypt"
+						},
+						{
+							"depth": 1,
+							"header": "23D. Elisabeth's Crypt"
+						},
+						{
+							"depth": 1,
+							"header": "23E. Rose's Crypt"
+						},
+						{
+							"depth": 1,
+							"header": "23F. Thorn's Crypt"
+						},
+						{
+							"depth": 1,
+							"header": "24. Cult Initiates' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "25. Well and Cultist Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "26. Hidden Spiked Pit"
+						},
+						{
+							"depth": 1,
+							"header": "27. Dining Hall"
+						},
+						{
+							"depth": 1,
+							"header": "28. Larder"
+						},
+						{
+							"depth": 1,
+							"header": "29. Ghoulish Encounter"
+						},
+						{
+							"depth": 1,
+							"header": "30. Stairs Down"
+						},
+						{
+							"depth": 1,
+							"header": "31. Darklord's Shrine"
+						},
+						{
+							"depth": 1,
+							"header": "32. Hidden Trapdoor"
+						},
+						{
+							"depth": 1,
+							"header": "33. Cult Leaders' Den"
+						},
+						{
+							"depth": 1,
+							"header": "34. Cult Leaders' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "35. Reliquary"
+						},
+						{
+							"depth": 1,
+							"header": "36. Prison"
+						},
+						{
+							"depth": 1,
+							"header": "37. Portcullis"
+						},
+						{
+							"depth": 1,
+							"header": "38. Ritual Chamber"
+						},
+						"Endings"
+					]
 				},
 				{
 					"name": "Treasures",
-					"headers": [
-						"Tome of Strahd",
-						"Magic Items"
-					],
 					"ordinal": {
 						"type": "appendix",
 						"identifier": "C"
-					}
+					},
+					"headers": [
+						"Tome of Strahd",
+						"Magic Items"
+					]
 				},
 				{
 					"name": "Monsters and NPCs",
@@ -2141,14 +3472,28 @@
 					"ordinal": {
 						"type": "appendix",
 						"identifier": "E"
-					}
+					},
+					"headers": [
+						"Composition",
+						"High Deck",
+						"Common Deck",
+						"Tarokka Cards"
+					]
 				},
 				{
 					"name": "Handouts",
 					"ordinal": {
 						"type": "appendix",
 						"identifier": "F"
-					}
+					},
+					"headers": [
+						"Kolyan Indirovich's Letter (version 1)",
+						"Strahd's Invitation",
+						"From the Tome of Strahd",
+						"Journal of Rudolph van Richten",
+						"Kolyan Indirovich's Letter (version 2)",
+						"Journal of Argynvost"
+					]
 				}
 			]
 		},
@@ -4083,7 +5428,7 @@
 			]
 		},
 		{
-			"name": "Tales from the Yawning Portal: Tomb of Horrors",
+			"name": "Tomb of Horrors",
 			"id": "TftYP-ToH",
 			"source": "TftYP-ToH",
 			"coverUrl": "img/covers/TftYP.png",
@@ -4095,52 +5440,162 @@
 			},
 			"contents": [
 				{
-					"name": "Preface",
+					"name": "Introduction",
 					"headers": [
 						"Using This Book",
-						"The Yawning Portal",
-						"Tomb of Horrors"
+						"The Yawning Portal"
 					]
 				},
 				{
 					"name": "Tomb of Horrors",
 					"headers": [
-						"1. False Entrance Tunnel",
-						"2. False Entrance Tunnel",
-						"3. Entrance to the Tomb of Horrors",
-						"4. Fresco of the Wizardly Work Room",
-						"5. The Arch of Mist",
-						"6. The Face of the Great Green Devil",
-						"7. The Forsaken Prison",
-						"8. Gargoyle Lair",
-						"9. Complex of Secret Doors",
-						"10. Great Hall of Spheres",
-						"11. The Three-Armed Statue",
-						"12. Trapped False Doors",
-						"13. Chamber of Three Chests",
-						"14. Chapel of Evil",
-						"15. Stone Gate",
-						"16. Locked Oaken Door",
-						"17. Magical Secret Door",
-						"18. Corridor Protected by Fear Gas",
-						"18A. False Crypt",
-						"19. Laboratory and Mummy Preparation Room",
-						"20. Huge Pit Filled with Spikes",
-						"21. The Agitated Chamber",
-						"22. The Cavern of Gold and Silver Mists",
-						"23. False/True Door",
-						"23A. Knockout Corridor",
-						"24. Adamantine Door",
-						"25. Pillared Throne Room",
-						"26. Small Room with a Door of Electric Blue",
-						"27. The Portal of Scintillating Violet",
-						"27A. Chamber of Hopelessness",
-						"28. The Wondrous Foyer",
-						"29. The Valves of Mithral",
-						"30. False Treasure Room",
-						"31. One-Way Doors",
-						"32. Secret Door",
-						"33. The Crypt of Acererak the Demilich"
+						"Legend of the Tomb",
+						"Running the Adventure",
+						"Locations in the Tomb",
+						{
+							"depth": 1,
+							"header": "1. False Entrance Tunnel"
+						},
+						{
+							"depth": 1,
+							"header": "2. False Entrance Tunnel"
+						},
+						{
+							"depth": 1,
+							"header": "3. Entrance to the Tomb of Horrors"
+						},
+						{
+							"depth": 1,
+							"header": "4. Fresco of the Wizardly Work Room"
+						},
+						{
+							"depth": 1,
+							"header": "5. The Arch of Mist"
+						},
+						{
+							"depth": 1,
+							"header": "6. The Face of the Great Green Devil"
+						},
+						{
+							"depth": 1,
+							"header": "7. The Forsaken Prison"
+						},
+						{
+							"depth": 1,
+							"header": "8. Gargoyle Lair"
+						},
+						{
+							"depth": 1,
+							"header": "9. Complex of Secret Doors"
+						},
+						{
+							"depth": 1,
+							"header": "10. Great Hall of Spheres"
+						},
+						{
+							"depth": 1,
+							"header": "11. The Three-Armed Statue"
+						},
+						{
+							"depth": 1,
+							"header": "12. Trapped False Doors"
+						},
+						{
+							"depth": 1,
+							"header": "13. Chamber of Three Chests"
+						},
+						{
+							"depth": 1,
+							"header": "14. Chapel of Evil"
+						},
+						{
+							"depth": 1,
+							"header": "15. Stone Gate"
+						},
+						{
+							"depth": 1,
+							"header": "16. Locked Oaken Door"
+						},
+						{
+							"depth": 1,
+							"header": "17. Magical Secret Door"
+						},
+						{
+							"depth": 1,
+							"header": "18. Corridor Protected by Fear Gas"
+						},
+						{
+							"depth": 1,
+							"header": "18A. False Crypt"
+						},
+						{
+							"depth": 1,
+							"header": "19. Laboratory and Mummy Preparation Room"
+						},
+						{
+							"depth": 1,
+							"header": "20. Huge Pit Filled with Spikes"
+						},
+						{
+							"depth": 1,
+							"header": "21. The Agitated Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "22. The Cavern of Gold and Silver Mists"
+						},
+						{
+							"depth": 1,
+							"header": "23. False/True Door"
+						},
+						{
+							"depth": 1,
+							"header": "23A. Knockout Corridor"
+						},
+						{
+							"depth": 1,
+							"header": "24. Adamantine Door"
+						},
+						{
+							"depth": 1,
+							"header": "25. Pillared Throne Room"
+						},
+						{
+							"depth": 1,
+							"header": "26. Small Room with a Door of Electric Blue"
+						},
+						{
+							"depth": 1,
+							"header": "27. The Portal of Scintillating Violet"
+						},
+						{
+							"depth": 1,
+							"header": "27A. Chamber of Hopelessness"
+						},
+						{
+							"depth": 1,
+							"header": "28. The Wondrous Foyer"
+						},
+						{
+							"depth": 1,
+							"header": "29. The Valves of Mithral"
+						},
+						{
+							"depth": 1,
+							"header": "30. False Treasure Room"
+						},
+						{
+							"depth": 1,
+							"header": "31. One-Way Doors"
+						},
+						{
+							"depth": 1,
+							"header": "32. Secret Door"
+						},
+						{
+							"depth": 1,
+							"header": "33. The Crypt of Acererak the Demilich"
+						}
 					]
 				},
 				{
@@ -4697,6 +6152,9 @@
 						"type": "appendix",
 						"identifier": "C"
 					}
+				},
+				{
+					"name": "Poster Map"
 				}
 			]
 		},
@@ -16202,6 +17660,7 @@
 			"name": "Candlekeep Mysteries",
 			"id": "CM",
 			"source": "CM",
+			"coverUrl": "img/covers/CM.png",
 			"published": "2021-03-16",
 			"storyline": "Candlekeep Mysteries",
 			"level": {
@@ -17229,6 +18688,165 @@
 						},
 						"Xanthoria's Defeat ",
 						"Lichen Lich"
+					]
+				}
+			]
+		},
+		{
+			"name": "The House of Lament",
+			"id": "HoL",
+			"source": "HoL",
+			"coverUrl": "img/covers/VRGR.png",
+			"published": "2021-05-18",
+			"storyline": "Ravenloft",
+			"level": {
+				"start": 1,
+				"end": 3
+			},
+			"contents": [
+				{
+					"name": "The House of Lament",
+					"headers": [
+						"Story Overview",
+						"Running the Adventure",
+						"The Hauntings of Halvhrest House",
+						"Starting the Adventure",
+						"Adventure Flowchart",
+						"House of Lament Features",
+						"House of Lament Locations (1-9)",
+						{
+							"depth": 1,
+							"header": "1. Porch"
+						},
+						{
+							"depth": 1,
+							"header": "2. Foyer"
+						},
+						{
+							"depth": 1,
+							"header": "3. Parlor"
+						},
+						{
+							"depth": 1,
+							"header": "4. Gallery"
+						},
+						{
+							"depth": 1,
+							"header": "5a. Tower Base"
+						},
+						{
+							"depth": 1,
+							"header": "5b. Tower Heights"
+						},
+						{
+							"depth": 1,
+							"header": "6. Sitting Room"
+						},
+						{
+							"depth": 1,
+							"header": "7. Conservatory"
+						},
+						{
+							"depth": 1,
+							"header": "8. Ballroom"
+						},
+						{
+							"depth": 1,
+							"header": "9. First Floor Hall"
+						},
+						"House of Lament Locations (10-18)",
+						{
+							"depth": 1,
+							"header": "10. Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "11. Dining Room"
+						},
+						{
+							"depth": 1,
+							"header": "12. Music Room"
+						},
+						{
+							"depth": 1,
+							"header": "13. Second-Floor Hall"
+						},
+						{
+							"depth": 1,
+							"header": "14. Guest Bedrooms"
+						},
+						{
+							"depth": 1,
+							"header": "15. Morning Room"
+						},
+						{
+							"depth": 1,
+							"header": "16. Master Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "17. Master Bath"
+						},
+						{
+							"depth": 1,
+							"header": "18. Office"
+						},
+						"House of Lament Locations (19-27)",
+						{
+							"depth": 1,
+							"header": "19. Exterior Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "20. Third-Floor Hall"
+						},
+						{
+							"depth": 1,
+							"header": "21. Servants' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "22. Family Room"
+						},
+						{
+							"depth": 1,
+							"header": "23. Nursery"
+						},
+						{
+							"depth": 1,
+							"header": "24. Children's Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "25. Widow's Walk"
+						},
+						{
+							"depth": 1,
+							"header": "26. Tower Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "27. Wine Cellar"
+						},
+						"House of Lament Locations (28-31)",
+						{
+							"depth": 1,
+							"header": "28. Storage"
+						},
+						{
+							"depth": 1,
+							"header": "29. Buried Ruins"
+						},
+						{
+							"depth": 1,
+							"header": "30. Buried Tower"
+						},
+						{
+							"depth": 1,
+							"header": "31. Amber Cavity"
+						},
+						"Escaping the House",
+						"Beyond the House"
 					]
 				}
 			]

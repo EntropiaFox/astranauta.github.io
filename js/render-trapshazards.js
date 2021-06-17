@@ -2,7 +2,7 @@ class RenderTrapsHazards {
 	static $getRenderedTrapHazard (it) {
 		const renderStack = [];
 
-		Renderer.get().recursiveRender({entries: it.entries}, renderStack, {depth: 2});
+		Renderer.get().recursiveRender({entries: it.entries}, renderStack, {depth: 1});
 
 		const simplePart = Renderer.traphazard.getSimplePart(Renderer.get(), it);
 		const complexPart = Renderer.traphazard.getComplexPart(Renderer.get(), it);

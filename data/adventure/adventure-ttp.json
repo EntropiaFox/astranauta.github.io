@@ -101,7 +101,8 @@
 								"Frightened of subterranean places, Eeyal won't voluntarily travel underground unless there's no other alternative.",
 								"Eeyal is trustworthy and charges 5 gp per day. She also offers a discount rate of 40 gp for a tenday, but the payment must be made up front and is non-refundable."
 							],
-							"prerequisite": "tortle guide (fort beluarian)"
+							"prerequisite": "tortle guide (fort beluarian)",
+							"id": "06b"
 						},
 						{
 							"type": "optfeature",
@@ -113,7 +114,8 @@
 								"Although he's an able and honest guide, Kwilgok won't stick his neck out for his employers. He gets steady work because of his easy-going demeanor and his willingness to lead an expedition to any corner of Chult. He has traveled up the River Soshenstar many times and knows the Aldani Basin and the surrounding region quite well. He's also led expeditions to Orolunga, though he's never encountered the elusive oracle rumored to dwell there. One place he'd rather not revisit is Dangwaru, the Typhoon Palace. When he was young, Kwilgok decided on a lark to explore the ruins and encountered evil shadows there. The shadows nearly spelled his doom, but he managed to flee the palace in a weakened state. The shadows still haunt Kwilgok's dreams, and he has no wish to face them again.",
 								"Kwilgok is 26 years old, stands just shy of 6 feet tall, and weighs 450 pounds."
 							],
-							"prerequisite": "tortle guide (port nyanzaru)"
+							"prerequisite": "tortle guide (port nyanzaru)",
+							"id": "06c"
 						},
 						{
 							"type": "optfeature",
@@ -123,7 +125,8 @@
 								"Mudgraw's only visit to Omu, three years ago, ended in disaster. He and a company of human treasure-hunters from the city of Athkatla were ambushed by yuan-ti, and Mudgraw was forced to abandon his companions. He hid in a ruin that was once a shrine to the god Ubtao, was transfixed by the maze-like imagery on the walls, and found a wooden holy symbol left behind by the shrine's previous inhabitants. He believes that Ubtao helped him escape the city and now wears the holy symbol around his neck. He regrets abandoning the expedition and prefers not to speak of it. One of his favorite new sayings is, \"Life is a maze.\" Mudgraw uses it whenever he's vexed or when he has information he'd rather not divulge.",
 								"Mudgraw is 44 years old, stands 6 feet tall, and weighs 480 pounds. He charges 5 gp per day but will waive his fee if he is given the chance to lead another expedition to Omu. Mudgraw sees any such expedition as an opportunity for atonement."
 							],
-							"prerequisite": "tortle druid guide (ahoyhoy)"
+							"prerequisite": "tortle druid guide (ahoyhoy)",
+							"id": "06d"
 						}
 					]
 				}

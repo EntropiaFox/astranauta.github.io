@@ -100,8 +100,8 @@ class InitiativeTracker {
 			new ContextUtil.Action(
 				"From Bestiary Encounter File",
 				async () => {
-					const json = await DataUtil.pUserUpload();
-					if (json) await pConvertAndLoadBestiaryList(json);
+					const jsons = await DataUtil.pUserUpload();
+					if (jsons?.length) await pConvertAndLoadBestiaryList(jsons[0]);
 				},
 			),
 			null,
@@ -652,7 +652,8 @@ class InitiativeTracker {
 				const n = $iptDisplayName.length ? {
 					n: $row.find(`input.name`).val(),
 					d: $iptDisplayName.val(),
-					s: $row.find(`input.scaledCr`).val() || "",
+					scr: $row.find(`input.scaledCr`).val() || "",
+					ssp: $row.find(`input.scaledSummonSpellLevel`).val() || "",
 				} : $row.find(`input.name`).val();
 				const out = {
 					n,
@@ -826,7 +827,8 @@ class InitiativeTracker {
 				// unpack saved
 				nameOrMeta.name = nameOrMeta.name || nameOrMeta.n;
 				nameOrMeta.displayName = nameOrMeta.displayName || nameOrMeta.d;
-				nameOrMeta.scaledTo = nameOrMeta.scaledTo || (nameOrMeta.s ? Number(nameOrMeta.s) : null);
+				nameOrMeta.scaledToCr = nameOrMeta.scaledToCr || (nameOrMeta.scr ? Number(nameOrMeta.scr) : null);
+				nameOrMeta.scaledToSummonSpellLevel = nameOrMeta.scaledToSummonSpellLevel || (nameOrMeta.ssp ? Number(nameOrMeta.ssp) : null);
 			}
 			const displayName = nameOrMeta instanceof Object ? nameOrMeta.displayName : null;
 			const name = nameOrMeta instanceof Object ? nameOrMeta.name : nameOrMeta;
@@ -857,9 +859,9 @@ class InitiativeTracker {
 				}
 
 				const getLink = () => {
-					if (typeof nameOrMeta === "string" || nameOrMeta.scaledTo == null) return Renderer.get().render(`{@creature ${name}|${source}}`);
+					if (typeof nameOrMeta === "string" || (nameOrMeta.scaledToCr == null && nameOrMeta.scaledToSummonSpellLevel == null)) return Renderer.get().render(`{@creature ${name}|${source}}`);
 					else {
-						const parts = [name, source, displayName, Parser.numberToCr(nameOrMeta.scaledTo)];
+						const parts = [name, source, displayName, nameOrMeta.scaledToCr != null ? `${VeCt.HASH_SCALED}=${Parser.numberToCr(nameOrMeta.scaledToCr)}` : `${VeCt.HASH_SCALED_SUMMON}=${nameOrMeta.scaledToSummonSpellLevel}`];
 						return Renderer.get().render(`{@creature ${parts.join("|")}}`);
 					}
 				};
@@ -906,9 +908,10 @@ class InitiativeTracker {
 
 				$(`<input class="source hidden" value="${source}">`).appendTo($wrpLhs);
 
-				if (nameOrMeta instanceof Object && nameOrMeta.scaledTo) {
+				if (nameOrMeta instanceof Object && (nameOrMeta.scaledToCr != null || nameOrMeta.scaledToSummonSpellLevel != null)) {
 					$(`<input class="displayName hidden" value="${displayName}">`).appendTo($wrpLhs);
-					$(`<input class="scaledCr hidden" value="${nameOrMeta.scaledTo}">`).appendTo($wrpLhs);
+					if (nameOrMeta.scaledToCr != null) $(`<input class="scaledCr hidden" value="${nameOrMeta.scaledToCr}">`).appendTo($wrpLhs);
+					if (nameOrMeta.scaledToSummonSpellLevel != null) $(`<input class="scaledSummonSpellLevel hidden" value="${nameOrMeta.scaledToSummonSpellLevel}">`).appendTo($wrpLhs);
 				}
 			}
 
@@ -1288,7 +1291,7 @@ class InitiativeTracker {
 					conditions: row.c,
 					statsCols: row.k,
 					isVisible: row.v,
-					isRollInit: row.i == null,
+					isRollInit: row.i == null && cfg.isRollInit,
 				});
 			}
 
@@ -1419,20 +1422,23 @@ class InitiativeTracker {
 				const toAdd = await Promise.all(bestiaryList.l.items.map(it => {
 					const count = Number(it.c);
 					const hash = it.h;
-					const scaling = (() => {
-						if (it.customHashId) {
-							const m = /_([\d.,]+)$/.exec(it.customHashId);
-							if (m) {
-								return Number(m[1]);
-							} else return null;
-						} else return null;
-					})();
-					const source = decodeURIComponent(hash.split(HASH_LIST_SEP)[1]);
+
+					const {_scaledCr: scaledCr, _scaledSummonLevel: scaledSummonLevel} = Renderer.monster.getUnpackedCustomHashId(it.customHashId) || {};
+
+					const source = UrlUtil.decodeHash(hash)[1];
+					if (!source) return null;
 					return new Promise(resolve => {
 						Renderer.hover.pCacheAndGet(UrlUtil.PG_BESTIARY, source, hash)
 							.then(mon => {
-								if (scaling != null) {
-									ScaleCreature.scale(mon, scaling).then(scaled => {
+								if (scaledCr != null) {
+									ScaleCreature.scale(mon, scaledCr).then(scaled => {
+										resolve({
+											count,
+											monster: scaled,
+										});
+									});
+								} else if (scaledSummonLevel != null) {
+									ScaleSummonCreature.scale(mon, scaledSummonLevel).then(scaled => {
 										resolve({
 											count,
 											monster: scaled,
@@ -1447,7 +1453,7 @@ class InitiativeTracker {
 							});
 					})
 				}));
-				await Promise.all(toAdd.map(async it => {
+				await Promise.all(toAdd.filter(Boolean).map(async it => {
 					const groupInit = cfg.importIsRollGroups && cfg.isRollInit ? await pRollInitiative(it.monster) : null;
 					const groupHp = cfg.importIsRollGroups ? await pGetOrRollHp(it.monster) : null;
 
@@ -1457,7 +1463,8 @@ class InitiativeTracker {
 							n: {
 								name: it.monster.name,
 								displayName: it.monster._displayName,
-								scaledTo: it.monster._isScaledCr,
+								scaledToCr: it.monster._scaledCr,
+								scaledToSummonSpellLevel: it.monster._summonedBySpell_level,
 							},
 							i: cfg.isRollInit ? `${cfg.importIsRollGroups ? groupInit : await pRollInitiative(it.monster)}` : null,
 							a: 0,

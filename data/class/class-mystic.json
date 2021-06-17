@@ -261,80 +261,6 @@
 				"Psionic Body|Mystic|UATheMysticClass|20"
 			],
 			"subclassTitle": "Mystic Order",
-			"subclasses": [
-				{
-					"name": "Order of the Avatar",
-					"shortName": "Avatar",
-					"source": "UATheMysticClass",
-					"page": 5,
-					"subclassFeatures": [
-						"Order of the Avatar|Mystic|UATheMysticClass|Avatar|UATheMysticClass|1",
-						"Avatar of Battle|Mystic|UATheMysticClass|Avatar|UATheMysticClass|3",
-						"Avatar of Healing|Mystic|UATheMysticClass|Avatar|UATheMysticClass|6",
-						"Avatar of Speed|Mystic|UATheMysticClass|Avatar|UATheMysticClass|14"
-					]
-				},
-				{
-					"name": "Order of the Awakened",
-					"shortName": "Awakened",
-					"source": "UATheMysticClass",
-					"page": 6,
-					"subclassFeatures": [
-						"Order of the Awakened|Mystic|UATheMysticClass|Awakened|UATheMysticClass|1",
-						"Psionic Investigation|Mystic|UATheMysticClass|Awakened|UATheMysticClass|3",
-						"Psionic Surge|Mystic|UATheMysticClass|Awakened|UATheMysticClass|6",
-						"Spectral Form|Mystic|UATheMysticClass|Awakened|UATheMysticClass|14"
-					]
-				},
-				{
-					"name": "Order of the Immortal",
-					"shortName": "Immortal",
-					"source": "UATheMysticClass",
-					"page": 6,
-					"subclassFeatures": [
-						"Order of the Immortal|Mystic|UATheMysticClass|Immortal|UATheMysticClass|1",
-						"Psionic Resilience|Mystic|UATheMysticClass|Immortal|UATheMysticClass|3",
-						"Surge of Health|Mystic|UATheMysticClass|Immortal|UATheMysticClass|6",
-						"Immortal Will|Mystic|UATheMysticClass|Immortal|UATheMysticClass|14"
-					]
-				},
-				{
-					"name": "Order of the Nomad",
-					"shortName": "Nomad",
-					"source": "UATheMysticClass",
-					"page": 7,
-					"subclassFeatures": [
-						"Order of the Nomad|Mystic|UATheMysticClass|Nomad|UATheMysticClass|1",
-						"Memory of One Thousand Steps|Mystic|UATheMysticClass|Nomad|UATheMysticClass|3",
-						"Superior Teleportation|Mystic|UATheMysticClass|Nomad|UATheMysticClass|6",
-						"Effortless Journey|Mystic|UATheMysticClass|Nomad|UATheMysticClass|14"
-					]
-				},
-				{
-					"name": "Order of the Soul Knife",
-					"shortName": "Soul Knife",
-					"source": "UATheMysticClass",
-					"page": 7,
-					"subclassFeatures": [
-						"Order of the Soul Knife|Mystic|UATheMysticClass|Soul Knife|UATheMysticClass|1",
-						"Hone the Blade|Mystic|UATheMysticClass|Soul Knife|UATheMysticClass|3",
-						"Consumptive Knife|Mystic|UATheMysticClass|Soul Knife|UATheMysticClass|6",
-						"Phantom Knife|Mystic|UATheMysticClass|Soul Knife|UATheMysticClass|14"
-					]
-				},
-				{
-					"name": "Order of the Wu Jen",
-					"shortName": "Wu Jen",
-					"source": "UATheMysticClass",
-					"page": 8,
-					"subclassFeatures": [
-						"Order of the Wu Jen|Mystic|UATheMysticClass|Wu Jen|UATheMysticClass|1",
-						"Elemental Attunement|Mystic|UATheMysticClass|Wu Jen|UATheMysticClass|3",
-						"Arcane Dabbler|Mystic|UATheMysticClass|Wu Jen|UATheMysticClass|6",
-						"Elemental Mastery|Mystic|UATheMysticClass|Wu Jen|UATheMysticClass|14"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"type": "section",
@@ -482,6 +408,92 @@
 					"source": "UATheMysticClass",
 					"page": 1
 				}
+			]
+		}
+	],
+	"subclass": [
+		{
+			"name": "Order of the Avatar",
+			"shortName": "Avatar",
+			"source": "UATheMysticClass",
+			"className": "Mystic",
+			"classSource": "UATheMysticClass",
+			"page": 5,
+			"subclassFeatures": [
+				"Order of the Avatar|Mystic|UATheMysticClass|Avatar|UATheMysticClass|1",
+				"Avatar of Battle|Mystic|UATheMysticClass|Avatar|UATheMysticClass|3",
+				"Avatar of Healing|Mystic|UATheMysticClass|Avatar|UATheMysticClass|6",
+				"Avatar of Speed|Mystic|UATheMysticClass|Avatar|UATheMysticClass|14"
+			]
+		},
+		{
+			"name": "Order of the Awakened",
+			"shortName": "Awakened",
+			"source": "UATheMysticClass",
+			"className": "Mystic",
+			"classSource": "UATheMysticClass",
+			"page": 6,
+			"subclassFeatures": [
+				"Order of the Awakened|Mystic|UATheMysticClass|Awakened|UATheMysticClass|1",
+				"Psionic Investigation|Mystic|UATheMysticClass|Awakened|UATheMysticClass|3",
+				"Psionic Surge|Mystic|UATheMysticClass|Awakened|UATheMysticClass|6",
+				"Spectral Form|Mystic|UATheMysticClass|Awakened|UATheMysticClass|14"
+			]
+		},
+		{
+			"name": "Order of the Immortal",
+			"shortName": "Immortal",
+			"source": "UATheMysticClass",
+			"className": "Mystic",
+			"classSource": "UATheMysticClass",
+			"page": 6,
+			"subclassFeatures": [
+				"Order of the Immortal|Mystic|UATheMysticClass|Immortal|UATheMysticClass|1",
+				"Psionic Resilience|Mystic|UATheMysticClass|Immortal|UATheMysticClass|3",
+				"Surge of Health|Mystic|UATheMysticClass|Immortal|UATheMysticClass|6",
+				"Immortal Will|Mystic|UATheMysticClass|Immortal|UATheMysticClass|14"
+			]
+		},
+		{
+			"name": "Order of the Nomad",
+			"shortName": "Nomad",
+			"source": "UATheMysticClass",
+			"className": "Mystic",
+			"classSource": "UATheMysticClass",
+			"page": 7,
+			"subclassFeatures": [
+				"Order of the Nomad|Mystic|UATheMysticClass|Nomad|UATheMysticClass|1",
+				"Memory of One Thousand Steps|Mystic|UATheMysticClass|Nomad|UATheMysticClass|3",
+				"Superior Teleportation|Mystic|UATheMysticClass|Nomad|UATheMysticClass|6",
+				"Effortless Journey|Mystic|UATheMysticClass|Nomad|UATheMysticClass|14"
+			]
+		},
+		{
+			"name": "Order of the Soul Knife",
+			"shortName": "Soul Knife",
+			"source": "UATheMysticClass",
+			"className": "Mystic",
+			"classSource": "UATheMysticClass",
+			"page": 7,
+			"subclassFeatures": [
+				"Order of the Soul Knife|Mystic|UATheMysticClass|Soul Knife|UATheMysticClass|1",
+				"Hone the Blade|Mystic|UATheMysticClass|Soul Knife|UATheMysticClass|3",
+				"Consumptive Knife|Mystic|UATheMysticClass|Soul Knife|UATheMysticClass|6",
+				"Phantom Knife|Mystic|UATheMysticClass|Soul Knife|UATheMysticClass|14"
+			]
+		},
+		{
+			"name": "Order of the Wu Jen",
+			"shortName": "Wu Jen",
+			"source": "UATheMysticClass",
+			"className": "Mystic",
+			"classSource": "UATheMysticClass",
+			"page": 8,
+			"subclassFeatures": [
+				"Order of the Wu Jen|Mystic|UATheMysticClass|Wu Jen|UATheMysticClass|1",
+				"Elemental Attunement|Mystic|UATheMysticClass|Wu Jen|UATheMysticClass|3",
+				"Arcane Dabbler|Mystic|UATheMysticClass|Wu Jen|UATheMysticClass|6",
+				"Elemental Mastery|Mystic|UATheMysticClass|Wu Jen|UATheMysticClass|14"
 			]
 		}
 	],

@@ -279,6 +279,25 @@
 			}
 		},
 		{
+			"name": "Magic Stone",
+			"source": "XGE",
+			"data": {
+				"activation.cost": 1,
+				"activation.type": "action",
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature",
+				"range.value": 60,
+				"range.units": "ft",
+				"damage.parts": [
+					[
+						"1d6 + @mod",
+						"bludgeoning"
+					]
+				]
+			}
+		},
+		{
 			"name": "Magic Missile",
 			"source": "PHB",
 			"data": {
@@ -1001,6 +1020,7 @@
 			"source": "EGW",
 			"data": {
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature"
 			}
 		},
@@ -1009,6 +1029,7 @@
 			"source": "PHB",
 			"data": {
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature"
 			}
 		},
@@ -1016,7 +1037,9 @@
 			"name": "Booming Blade",
 			"source": "TCE",
 			"data": {
+				"actionType": "mwak",
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature",
 				"damage.parts": [
 					[
@@ -1036,7 +1059,9 @@
 			"name": "Green-Flame Blade",
 			"source": "TCE",
 			"data": {
+				"actionType": "mwak",
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature",
 				"damage.parts": [
 					[
@@ -1057,6 +1082,7 @@
 			"source": "TCE",
 			"data": {
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature"
 			}
 		},
@@ -1083,6 +1109,7 @@
 			"source": "TCE",
 			"data": {
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature"
 			}
 		},
@@ -1091,6 +1118,7 @@
 			"source": "XGE",
 			"data": {
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature"
 			}
 		},
@@ -1099,6 +1127,7 @@
 			"source": "XGE",
 			"data": {
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature"
 			}
 		},
@@ -1107,6 +1136,7 @@
 			"source": "XGE",
 			"data": {
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature"
 			}
 		},
@@ -1115,6 +1145,7 @@
 			"source": "XGE",
 			"data": {
 				"target.value": 1,
+				"target.units": "",
 				"target.type": "creature",
 				"damage.parts": [
 					[

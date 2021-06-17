@@ -38,7 +38,7 @@ class OptionalFeaturesPage extends ListPage {
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-0-3 px-0 flex-vh-center lst__btn-toggle-expand self-flex-stretch">[+]</span>
-			<span class="bold col-3">${it.name}</span>
+			<span class="bold col-3 px-1">${it.name}</span>
 			<span class="col-1-5 text-center" title="${it._dFeatureType}">${it._lFeatureType}</span>
 			<span class="col-4-7 text-center">${prerequisite}</span>
 			<span class="col-1 text-center">${level}</span>

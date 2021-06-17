@@ -34,7 +34,7 @@ class ActionsPage extends ListPage {
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-0-3 px-0 flex-vh-center lst__btn-toggle-expand self-flex-stretch">[+]</span>
-			<span class="col-5-7 bold">${it.name}</span>
+			<span class="col-5-7 px-1 bold">${it.name}</span>
 			<span class="col-4 bold">${time}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>

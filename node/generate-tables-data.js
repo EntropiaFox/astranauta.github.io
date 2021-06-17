@@ -3,6 +3,8 @@ require("../js/utils");
 const ut = require("./util");
 const UtilGenTables = require("./util-generate-tables-data.js");
 
+Object.assign(global, require("../js/hist.js"));
+
 class GenTables {
 	_doLoadAdventureData () {
 		return ut.readJson(`./data/adventures.json`).adventure
@@ -87,6 +89,11 @@ class GenTables {
 
 		classData.class.forEach(cls => {
 			const {table: foundTables} = UtilGenTables.getClassTables(cls);
+			output.tables.push(...foundTables);
+		});
+
+		classData.subclass.forEach(sc => {
+			const {table: foundTables} = UtilGenTables.getSubclassTables(sc);
 			output.tables.push(...foundTables);
 		});
 	}

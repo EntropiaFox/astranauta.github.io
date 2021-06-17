@@ -194,7 +194,7 @@ class SearchPage {
 											if (hasToken) {
 												isImagePopulated = true;
 												const tokenUrl = Renderer.monster.getTokenUrl(ent);
-												$dispImage.html(`<img src="${tokenUrl}" class="w-100 h-100">`);
+												$dispImage.html(`<img src="${tokenUrl}" class="w-100 h-100" alt="Token Image: ${(ent.name || "").qq()}" loading="lazy">`);
 											}
 										}
 

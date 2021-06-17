@@ -2374,6 +2374,8 @@
 						"{@creature Umber Hulk}",
 						"{@creature Vampire}",
 						"{@creature Vampire Spawn}",
+						"{@creature Wraith}",
+						"{@creature The Wretched|MTF}",
 						{
 							"type": "image",
 							"href": {
@@ -2383,7 +2385,6 @@
 							"width": 1000,
 							"height": 425
 						},
-						"{@creature Wraith}",
 						"{@creature Xorn}"
 					]
 				}

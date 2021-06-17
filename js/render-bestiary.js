@@ -33,14 +33,23 @@ class RenderBestiary {
 	}
 
 	/**
-	 * @param {Object} mon Creature data.
-	 * @param {Object} options
-	 * @param {jQuery} options.$btnScaleCr CR scaler button.
-	 * @param {jQuery} options.$btnResetScaleCr CR scaler reset button.
+	 * @param mon Creature data.
+	 * @param [options]
+	 * @param [options.$btnScaleCr] CR scaler button.
+	 * @param [options.$btnResetScaleCr] CR scaler reset button.
+	 * @param [options.selSummonSpellLevel] Summon spell level selector.
 	 */
 	static $getRenderedCreature (mon, options) {
-		options = options || {};
 		const renderer = Renderer.get();
+		return Renderer.monster.getRenderWithPlugins({
+			renderer,
+			mon,
+			fn: () => RenderBestiary._$getRenderedCreature(mon, options, renderer),
+		});
+	}
+
+	static _$getRenderedCreature (mon, options, renderer) {
+		options = options || {};
 		Renderer.monster.initParsed(mon);
 
 		const fnGetSpellTraits = Renderer.monster.getSpellcastingRenderedTraits.bind(Renderer.monster, renderer);
@@ -97,7 +106,7 @@ class RenderBestiary {
 		return $$`
 		${Renderer.utils.getBorderTr()}
 		${Renderer.utils.getExcludedTr(mon, "monster", UrlUtil.PG_BESTIARY)}
-		${Renderer.utils.getNameTr(mon, {controlRhs: mon.soundClip ? RenderBestiary._getPronunciationButton(mon) : "", extraThClasses, page: UrlUtil.PG_BESTIARY, extensionData: mon._isScaledCr})}
+		${Renderer.utils.getNameTr(mon, {controlRhs: mon.soundClip ? RenderBestiary._getPronunciationButton(mon) : "", extraThClasses, page: UrlUtil.PG_BESTIARY, extensionData: {_scaledCr: mon._scaledCr, _scaledSummonLevel: mon._scaledSummonLevel}})}
 		<tr><td colspan="6">
 			<div ${hasToken ? `class="mon__wrp-size-type-align--token"` : ""}><i>${Renderer.monster.getTypeAlignmentPart(mon)}</i></div>
 		</td></tr>
@@ -126,14 +135,14 @@ class RenderBestiary {
 		<tr><td colspan="6"><strong>Languages</strong> ${Renderer.monster.getRenderedLanguages(mon.languages)}</td></tr>
 
 		<tr>${Parser.crToNumber(mon.cr) < VeCt.CR_UNKNOWN ? $$`
-		<td colspan="6" style="position: relative;"><strong>Challenge</strong>
+		<td colspan="3" class="relative"><strong>Challenge</strong>
 			<span>${Parser.monCrToFull(mon.cr, {isMythic: !!mon.mythic})}</span>
 			${options.$btnScaleCr || ""}
 			${options.$btnResetScaleCr || ""}
 		</td>
-		` : ""}</tr>
+		` : `<td colspan="3" class="relative"><strong>Challenge</strong> <span>\u2014</span></td>`}${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_UNKNOWN ? `<td colspan="3" class="text-right"><strong>Proficiency Bonus</strong> ${mon.pbNote ?? UiUtil.intToBonus(Parser.crToPb(mon.cr))}</td>` : ""}</tr>
 
-		${mon.pbNote ? `<tr><td colspan="6"><strong>Proficiency Bonus (PB)</strong> ${mon.pbNote}</td></tr>` : ""}
+		<tr>${options.selSummonSpellLevel ? $$`<td colspan="6"><strong>Spell Level</strong> ${options.selSummonSpellLevel}</td>` : ""}</tr>
 
 		${allTraits ? `<tr><td class="divider" colspan="6"><div></div></td></tr>${RenderBestiary._getRenderedSection("trait", allTraits, 1)}` : ""}
 		${allActions ? `<tr><td colspan="6" class="mon__stat-header-underline"><span class="mon__sect-header-inner">Actions${mon.actionNote ? ` (<span class="small">${mon.actionNote}</span>)` : ""}</span></td></tr>
@@ -156,6 +165,7 @@ class RenderBestiary {
 
 		${renderedVariants ? `<tr>${renderedVariants}</tr>` : ""}
 		${mon.footer ? `<tr><td colspan=6 class="mon__sect-row-inner">${renderer.render({entries: mon.footer})}</td></tr>` : ""}
+		${mon.summonedBySpell ? `<tr><td colspan="6"><b>Summoned By:</b> ${renderer.render(`{@spell ${mon.summonedBySpell}}`)}</td></tr>` : ""}
 		${htmlSourceAndEnvironment.length === 2 ? `<tr><td colspan="6">${htmlSourceAndEnvironment[1]}</td></tr>` : ""}
 		<tr><td colspan="6">${htmlSourceAndEnvironment[0]}</td></tr>
 		${Renderer.utils.getBorderTr()}`;
@@ -168,7 +178,7 @@ class RenderBestiary {
 		<tr class="text"><td colspan="6" class="text">
 			${legGroup.lairActions && legGroup.lairActions.length ? Renderer.get().render({type: "entries", entries: [{type: "entries", name: "Lair Actions", entries: legGroup.lairActions}]}) : ""}
 			${legGroup.regionalEffects && legGroup.regionalEffects.length ? Renderer.get().render({type: "entries", entries: [{type: "entries", name: "Regional Effects", entries: legGroup.regionalEffects}]}) : ""}
-			${legGroup.mythicEncounter && legGroup.mythicEncounter.length ? Renderer.get().render({type: "entries", entries: [{type: "entries", name: `<i title="This will display the creature's name when this legendary group is referenced from a creature statblock." class="help--subtle">&lt;Creature Name&gt;</i> as a Mythic Encounter`, entries: legGroup.mythicEncounter}]}) : ""}
+			${legGroup.mythicEncounter && legGroup.mythicEncounter.length ? Renderer.get().render({type: "entries", entries: [{type: "entries", name: `<i title="This will display the creature's name when this legendary group is referenced from a creature statblock." class="help-subtle">&lt;Creature Name&gt;</i> as a Mythic Encounter`, entries: legGroup.mythicEncounter}]}) : ""}
 		</td></tr>
 		${Renderer.utils.getBorderTr()}`;
 	}

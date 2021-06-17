@@ -464,6 +464,7 @@ class RendererMarkdown {
 >- **Senses** ${mon.senses ? `${Renderer.monster.getRenderedSenses(mon.senses, true)}, ` : ""}passive Perception ${mon.passive || "\u2014"}
 >- **Languages** ${Renderer.monster.getRenderedLanguages(mon.languages)}
 >- **Challenge** ${mon.cr ? Parser.monCrToFull(mon.cr, {isMythic: !!mon.mythic}) : "\u2014"}
+${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_UNKNOWN ? `>- **Proficiency Bonus** ${mon.pbNote ?? UiUtil.intToBonus(Parser.crToPb(mon.cr))}` : ""}
 >___`;
 
 		let breakablePart = `${traitsPart}${actionsPart}${bonusActionsPart}${reactionsPart}${legendaryActionsPart}${mythicActionsPart}${footerPart}`;

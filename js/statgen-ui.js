@@ -16,7 +16,8 @@ class StatGenUi extends BaseComponent {
 		super();
 		opts = opts || {};
 
-		TabUiUtilSide.decorate(this);
+		if (opts.isFvttMode) TabUiUtil.decorate(this);
+		else TabUiUtilSide.decorate(this);
 
 		this.__meta = {};
 		this._meta = null;
@@ -45,16 +46,27 @@ class StatGenUi extends BaseComponent {
 		// endregion
 	}
 
-	get ixActiveTab () { return this._meta.ixActiveTab; }
-	set ixActiveTab (ix) { this._meta.ixActiveTab = ix; }
+	get ixActiveTab () { return this._getIxActiveTab(); }
+	set ixActiveTab (ix) { this._setIxActiveTab({ixActiveTab: ix}); }
 
 	// region Expose for external use
 	addHookAbilityScores (hook) { Parser.ABIL_ABVS.forEach(ab => this._addHookBase(`common_export_${ab}`, hook)); }
 	addHookPulseAsi (hook) { this._addHookBase("common_pulseAsi", hook); }
 	getFormDataAsi () { return this._compAsi.getFormData(); }
 
+	getMode (ix, namespace) {
+		const {propMode} = this.getPropsAsi(ix, namespace);
+		return this._state[propMode];
+	}
+
 	setIxFeat (ix, namespace, ixFeat) {
 		const {propMode, propIxFeat} = this.getPropsAsi(ix, namespace);
+
+		if (ixFeat == null && (this._state[propMode] === "asi" || this._state[propMode] == null)) {
+			this._state[propIxFeat] = null;
+			return;
+		}
+
 		this._state[propMode] = "feat";
 		this._state[propIxFeat] = ixFeat;
 	}
@@ -90,7 +102,7 @@ class StatGenUi extends BaseComponent {
 		}
 
 		return {
-			mode: StatGenUi.MODES[this._meta.ixActiveTab || 0],
+			mode: StatGenUi.MODES[this.ixActiveTab || 0],
 			totals: {
 				rolled: this._getTotals_rolled(),
 				array: this._getTotals_array(),
@@ -111,6 +123,8 @@ class StatGenUi extends BaseComponent {
 		this._addHookAll(hookProp, hook);
 		this._compAsi._addHookAll(hookProp, hook);
 	}
+
+	addHookActiveTag (hook) { this._addHookActiveTab(hook); }
 
 	async pInit () {
 		await this._modalFilterRaces.pPreloadHidden();
@@ -149,41 +163,30 @@ class StatGenUi extends BaseComponent {
 
 		const iptTabMetas = this._isLevelUp
 			? [
-				{
-					name: "Existing",
-					icon: this._isFvttMode ? `fas fa-user` : `far fa-user`,
-				},
+				new TabUiUtil.TabMeta({name: "Existing", icon: this._isFvttMode ? `fas fa-user` : `far fa-user`, hasBorder: true}),
 				...this._tabMetasAdditional || [],
 			]
 			: [
-				{
-					name: "Roll",
-					icon: this._isFvttMode ? `fas fa-dice` : `far fa-dice`,
-				},
-				{
-					name: "Standard Array",
-					icon: this._isFvttMode ? `fas fa-signal` : `far fa-signal-alt`,
-				},
-				{
-					name: "Point Buy",
-					icon: this._isFvttMode ? `fas fa-chart-bar` : `far fa-chart-bar`,
-				},
-				{
-					name: "Manual",
-					icon: this._isFvttMode ? `fas fa-tools` : `far fa-tools`,
-				},
+				new TabUiUtil.TabMeta({name: "Roll", icon: this._isFvttMode ? `fas fa-dice` : `far fa-dice`, hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Standard Array", icon: this._isFvttMode ? `fas fa-signal` : `far fa-signal-alt`, hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Point Buy", icon: this._isFvttMode ? `fas fa-chart-bar` : `far fa-chart-bar`, hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Manual", icon: this._isFvttMode ? `fas fa-tools` : `far fa-tools`, hasBorder: true}),
 				...this._tabMetasAdditional || [],
 			]
 
-		const tabMetas = this._renderTabs($parent, "meta", iptTabMetas);
+		const tabMetas = this._renderTabs(iptTabMetas, {$parent: this._isFvttMode ? null : $parent});
+		if (this._isFvttMode) {
+			$$`<div class="flex-v-center w-100 no-shrink ui-tab__wrp-tab-heads--border">${tabMetas.map(it => it.$btnTab)}</div>`.appendTo($parent);
+			tabMetas.forEach(it => it.$wrpTab.appendTo($parent));
+		}
 
 		const $wrpAll = $(`<div class="flex-col w-100 h-100"></div>`);
 		this._render_all($wrpAll);
 
 		const hkTab = () => {
-			tabMetas[this._meta.ixActiveTab || 0].$wrpTab.append($wrpAll);
+			tabMetas[this.ixActiveTab || 0].$wrpTab.append($wrpAll);
 		};
-		this._addHook("meta", "ixActiveTab", hkTab);
+		this._addHookActiveTab(hkTab);
 		hkTab();
 
 		this._addHookBase("common_cntAsi", () => this._state.common_pulseAsi = !this._state.common_pulseAsi);
@@ -229,7 +232,7 @@ class StatGenUi extends BaseComponent {
 
 			$wrpRolled.html(this._state.rolled_rolls.map((it, i) => {
 				const cntPrevRolls = this._state.rolled_rolls.slice(0, i).filter(r => r.total === it.total).length;
-				return `<div class="px-3 py-1 help--subtle flex-vh-center" title="${it.text}"><div class="ve-muted">[</div><div class="flex-vh-center statgen-rolled__disp-result">${it.total}${cntPrevRolls ? Parser.numberToSubscript(cntPrevRolls) : ""}</div><div class="ve-muted">]</div></div>`;
+				return `<div class="px-3 py-1 help-subtle flex-vh-center" title="${it.text}"><div class="ve-muted">[</div><div class="flex-vh-center statgen-rolled__disp-result">${it.total}${cntPrevRolls ? Parser.numberToSubscript(cntPrevRolls) : ""}</div><div class="ve-muted">]</div></div>`;
 			}));
 		};
 		this._addHookBase("rolled_rolls", hkRolled);
@@ -279,7 +282,7 @@ class StatGenUi extends BaseComponent {
 
 		const nxtState = this._getDefaultStateCommonResettable();
 
-		switch (this._meta.ixActiveTab) {
+		switch (this.ixActiveTab) {
 			case StatGenUi._IX_TAB_ROLLED: Object.assign(nxtState, this._getDefaultStateRolledResettable()); break;
 			case StatGenUi._IX_TAB_ARRAY: Object.assign(nxtState, this._getDefaultStateArrayResettable()); break;
 			case StatGenUi._IX_TAB_PB: Object.assign(nxtState, this._getDefaultStatePointBuyResettable()); break;
@@ -492,8 +495,8 @@ class StatGenUi extends BaseComponent {
 
 		// region Rolled header
 		const $stgRolledHeader = this._render_$getStgRolledHeader();
-		const hkStgRolled = () => $stgRolledHeader.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_ROLLED);
-		this._addHook("meta", "ixActiveTab", hkStgRolled)
+		const hkStgRolled = () => $stgRolledHeader.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_ROLLED);
+		this._addHookActiveTab(hkStgRolled);
 		hkStgRolled();
 		// endregion
 
@@ -503,43 +506,43 @@ class StatGenUi extends BaseComponent {
 		const $vrPbCustom = $(`<div class="vr-5 mobile-ish__hidden"></div>`);
 		const $hrPbCustom = $(`<hr class="hr-5 mobile-ish__visible">`);
 		const hkStgPb = () => {
-			$stgPbHeader.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_PB);
-			$stgPbCustom.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_PB);
-			$vrPbCustom.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_PB);
-			$hrPbCustom.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_PB);
+			$stgPbHeader.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_PB);
+			$stgPbCustom.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_PB);
+			$vrPbCustom.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_PB);
+			$hrPbCustom.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_PB);
 		}
-		this._addHook("meta", "ixActiveTab", hkStgPb)
+		this._addHookActiveTab(hkStgPb);
 		hkStgPb();
 		// endregion
 
 		// region Array header
 		const $stgArrayHeader = this._render_$getStgArrayHeader();
-		const hkStgArray = () => $stgArrayHeader.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_ARRAY);
-		this._addHook("meta", "ixActiveTab", hkStgArray)
+		const hkStgArray = () => $stgArrayHeader.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_ARRAY);
+		this._addHookActiveTab(hkStgArray);
 		hkStgArray();
 		// endregion
 
 		// region Manual header
 		const $stgManualHeader = this._render_$getStgManualHeader();
-		const hkStgManual = () => $stgManualHeader.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_MANUAL);
-		this._addHook("meta", "ixActiveTab", hkStgManual)
+		const hkStgManual = () => $stgManualHeader.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_MANUAL);
+		this._addHookActiveTab(hkStgManual);
 		hkStgManual();
 		// endregion
 
 		// region Other elements
 		const hkElesMode = () => {
-			$elesRolled.forEach($ele => $ele.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_ROLLED));
-			$elesArray.forEach($ele => $ele.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_ARRAY));
-			$elesPb.forEach($ele => $ele.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_PB));
-			$elesManual.forEach($ele => $ele.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_MANUAL));
+			$elesRolled.forEach($ele => $ele.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_ROLLED));
+			$elesArray.forEach($ele => $ele.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_ARRAY));
+			$elesPb.forEach($ele => $ele.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_PB));
+			$elesManual.forEach($ele => $ele.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_MANUAL));
 		}
-		this._addHook("meta", "ixActiveTab", hkElesMode)
+		this._addHookActiveTab(hkElesMode);
 		// endregion
 
 		const $btnResetRolledOrArrayOrManual = $(`<button class="btn btn-default btn-xxs relative statgen-shared__btn-reset" title="Reset"><span class="glyphicon glyphicon-refresh"></span></button>`)
 			.click(() => this._doReset());
-		const hkRolledOrArray = () => $btnResetRolledOrArrayOrManual.toggleVe(this._meta.ixActiveTab === StatGenUi._IX_TAB_ROLLED || this._meta.ixActiveTab === StatGenUi._IX_TAB_ARRAY || this._meta.ixActiveTab === StatGenUi._IX_TAB_MANUAL);
-		this._addHook("meta", "ixActiveTab", hkRolledOrArray);
+		const hkRolledOrArray = () => $btnResetRolledOrArrayOrManual.toggleVe(this.ixActiveTab === StatGenUi._IX_TAB_ROLLED || this.ixActiveTab === StatGenUi._IX_TAB_ARRAY || this.ixActiveTab === StatGenUi._IX_TAB_MANUAL);
+		this._addHookActiveTab(hkRolledOrArray);
 		hkRolledOrArray();
 
 		const $wrpsBase = Parser.ABIL_ABVS.map(ab => {
@@ -938,11 +941,11 @@ class StatGenUi extends BaseComponent {
 			const hk = () => {
 				const totalScore = this._isLevelUp
 					? this._levelUp_getTotalScore(ab)
-					: this._meta.ixActiveTab === StatGenUi._IX_TAB_ROLLED
+					: this.ixActiveTab === StatGenUi._IX_TAB_ROLLED
 						? this._rolled_getTotalScore(ab)
-						: this._meta.ixActiveTab === StatGenUi._IX_TAB_ARRAY
+						: this.ixActiveTab === StatGenUi._IX_TAB_ARRAY
 							? this._array_getTotalScore(ab)
-							: this._meta.ixActiveTab === StatGenUi._IX_TAB_PB
+							: this.ixActiveTab === StatGenUi._IX_TAB_PB
 								? this._pb_getTotalScore(ab)
 								: this._manual_getTotalScore(ab);
 
@@ -956,7 +959,7 @@ class StatGenUi extends BaseComponent {
 				this._state[exportedStateProp] = totalScore;
 			};
 			this._addHookAll("state", hk);
-			this._addHook("meta", "ixActiveTab", hk);
+			this._addHookActiveTab(hk);
 			hk();
 
 			return {
@@ -1435,12 +1438,13 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 	_render_renderAsiFeatSection (propCnt, namespace, $wrpRows) {
 		const hk = () => {
-			let i = 0;
+			let ix = 0;
 
-			for (; i < this._parent.state[propCnt]; ++i) {
-				const {propMode, propIxFeat, propIxAsiPointOne, propIxAsiPointTwo, propIxFeatAbility, propFeatAbilityChooseFrom} = this._parent.getPropsAsi(i, namespace);
+			for (; ix < this._parent.state[propCnt]; ++ix) {
+				const ix_ = ix;
+				const {propMode, propIxFeat, propIxAsiPointOne, propIxAsiPointTwo, propIxFeatAbility, propFeatAbilityChooseFrom} = this._parent.getPropsAsi(ix_, namespace);
 
-				if (!this._metasAsi[namespace][i]) {
+				if (!this._metasAsi[namespace][ix_]) {
 					this._parent.state[propMode] = this._parent.state[propMode] || (namespace === "ability" ? "asi" : "feat");
 
 					const $btnAsi = namespace !== "ability" ? null : $(`<button class="btn btn-xs btn-default w-50p">ASI</button>`)
@@ -1547,7 +1551,7 @@ StatGenUi.CompAsi = class extends BaseComponent {
 					const $dispFeat = $(`<div class="flex-v-center mr-2"></div>`)
 					const $stgSelectAbilitySet = $$`<div class="flex-v-center mr-2"></div>`
 					const $stgFeatNoChoice = $$`<div class="flex-v-center mr-2"></div>`
-					const $stgFeatChooseAsiFrom = $$`<div class="flex-v-bottom"></div>`;
+					const $stgFeatChooseAsiFrom = $$`<div class="flex-v-end"></div>`;
 					const $stgFeatChooseAsiWeighted = $$`<div class="flex-v-center"></div>`;
 
 					const $stgFeat = $$`<div class="flex-v-center">
@@ -1565,21 +1569,21 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 						const feat = this._parent.feats[this._parent.state[propIxFeat]];
 
-						$stgFeat.removeClass("flex-v-bottom").addClass("flex-v-center");
+						$stgFeat.removeClass("flex-v-end").addClass("flex-v-center");
 						$dispFeat.toggleClass("italic ve-muted", !feat);
 						$dispFeat.html(feat ? Renderer.get().render(`{@feat ${feat.name.toLowerCase()}|${feat.source}}`) : `(Choose a feat)`);
 
-						if (this._lastMetasFeatsFnsCleanup[namespace][i]) this._lastMetasFeatsFnsCleanup[namespace][i].forEach(fn => fn());
-						this._lastMetasFeatsFnsCleanup[namespace][i] = null;
+						if (this._lastMetasFeatsFnsCleanup[namespace][ix_]) this._lastMetasFeatsFnsCleanup[namespace][ix_].forEach(fn => fn());
+						this._lastMetasFeatsFnsCleanup[namespace][ix_] = null;
 
-						if (this._lastMetasFeatsAsiChooseFrom[namespace][i]) this._lastMetasFeatsAsiChooseFrom[namespace][i].cleanup();
-						this._lastMetasFeatsAsiChooseFrom[namespace][i] = null;
+						if (this._lastMetasFeatsAsiChooseFrom[namespace][ix_]) this._lastMetasFeatsAsiChooseFrom[namespace][ix_].cleanup();
+						this._lastMetasFeatsAsiChooseFrom[namespace][ix_] = null;
 
 						this._parent.state[propIxFeatAbility] = 0;
 
 						$stgSelectAbilitySet.hideVe();
 						if (feat) {
-							this._lastMetasFeatsFnsCleanup[namespace][i] = [];
+							this._lastMetasFeatsFnsCleanup[namespace][ix_] = [];
 
 							if (feat.ability && feat.ability.length > 1) {
 								const metaChooseAbilitySet = ComponentUiUtil.$getSelEnum(
@@ -1594,12 +1598,12 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 								$stgSelectAbilitySet.showVe().append(metaChooseAbilitySet.$sel);
 								metaChooseAbilitySet.$sel.change(() => this._doPulse());
-								this._lastMetasFeatsFnsCleanup[namespace][i].push(() => metaChooseAbilitySet.unhook());
+								this._lastMetasFeatsFnsCleanup[namespace][ix_].push(() => metaChooseAbilitySet.unhook());
 							}
 
 							const hkAbilitySet = () => {
-								if (this._lastMetasFeatsAsiChooseFrom[namespace][i]) this._lastMetasFeatsAsiChooseFrom[namespace][i].cleanup();
-								this._lastMetasFeatsAsiChooseFrom[namespace][i] = null;
+								if (this._lastMetasFeatsAsiChooseFrom[namespace][ix_]) this._lastMetasFeatsAsiChooseFrom[namespace][ix_].cleanup();
+								this._lastMetasFeatsAsiChooseFrom[namespace][ix_] = null;
 
 								if (!feat.ability) {
 									$stgFeatNoChoice.empty().hideVe();
@@ -1616,13 +1620,14 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 								// region Choices
 								if (abilitySet.choose && abilitySet.choose.from) {
-									$stgFeat.removeClass("flex-v-center").addClass("flex-v-bottom")
+									$stgFeat.removeClass("flex-v-center").addClass("flex-v-end")
 									$stgFeatChooseAsiFrom.showVe().empty();
+									$stgFeatChooseAsiWeighted.empty().hideVe();
 
 									const count = abilitySet.choose.count || 1;
 									const amount = abilitySet.choose.amount || 1;
 
-									this._lastMetasFeatsAsiChooseFrom[namespace][i] = ComponentUiUtil.getMetaWrpMultipleChoice(
+									this._lastMetasFeatsAsiChooseFrom[namespace][ix_] = ComponentUiUtil.getMetaWrpMultipleChoice(
 										this._parent,
 										propFeatAbilityChooseFrom,
 										{
@@ -1634,7 +1639,7 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 									$stgFeatChooseAsiFrom.append(`<div><span class="mr-2">\u2014</span>choose ${count > 1 ? `${count} ` : ""}${UiUtil.intToBonus(amount)}</div>`);
 
-									this._lastMetasFeatsAsiChooseFrom[namespace][i].rowMetas.forEach(meta => {
+									this._lastMetasFeatsAsiChooseFrom[namespace][ix_].rowMetas.forEach(meta => {
 										meta.$cb.change(() => this._doPulse());
 
 										$$`<label class="flex-col no-select">
@@ -1644,15 +1649,21 @@ StatGenUi.CompAsi = class extends BaseComponent {
 									});
 								} else if (abilitySet.choose && abilitySet.choose.weighted) {
 									// TODO(Future) unsupported, for now
-									$stgFeatChooseAsiFrom.showVe().html(`<i class="ve-muted">The selected ability score format is currently unsupported. Please check back later!</i>`);
+									$stgFeatChooseAsiFrom.empty().hideVe();
+									$stgFeatChooseAsiWeighted.showVe().html(`<i class="ve-muted">The selected ability score format is currently unsupported. Please check back later!</i>`);
 								} else {
 									$stgFeatChooseAsiFrom.empty().hideVe();
+									$stgFeatChooseAsiWeighted.empty().hideVe();
 								}
 								// endregion
 							};
-							this._lastMetasFeatsFnsCleanup[namespace][i].push(() => this._parent.removeHookBase(propIxFeatAbility, hkAbilitySet));
+							this._lastMetasFeatsFnsCleanup[namespace][ix_].push(() => this._parent.removeHookBase(propIxFeatAbility, hkAbilitySet));
 							this._parent.addHookBase(propIxFeatAbility, hkAbilitySet);
 							hkAbilitySet();
+						} else {
+							$stgFeatNoChoice.empty().hideVe();
+							$stgFeatChooseAsiFrom.empty().hideVe();
+							$stgFeatChooseAsiWeighted.empty().hideVe();
 						}
 					};
 					this._parent.addHookBase(propIxFeat, hkIxFeat);
@@ -1674,27 +1685,27 @@ StatGenUi.CompAsi = class extends BaseComponent {
 					this._parent.addHookBase(propMode, hkMode);
 					hkMode();
 
-					const $row = $$`<div class="flex-v-bottom py-3 px-1">
+					const $row = $$`<div class="flex-v-end py-3 px-1">
 						<div class="btn-group">${$btnAsi}${$btnFeat}</div>
 						<div class="vr-4"></div>
 						${$stgAsi}
 						${$stgFeat}
 					</div>`.appendTo($wrpRows);
 
-					this._metasAsi[namespace][i] = {
+					this._metasAsi[namespace][ix_] = {
 						$row,
 					};
 				}
 
-				this._metasAsi[namespace][i].$row.showVe().addClass("statgen-asi__row");
+				this._metasAsi[namespace][ix_].$row.showVe().addClass("statgen-asi__row");
 			}
 
 			// Remove border styling from the last visible row
-			if (this._metasAsi[namespace][i - 1]) this._metasAsi[namespace][i - 1].$row.removeClass("statgen-asi__row");
+			if (this._metasAsi[namespace][ix - 1]) this._metasAsi[namespace][ix - 1].$row.removeClass("statgen-asi__row");
 
-			for (; i < this._metasAsi[namespace].length; ++i) {
-				if (!this._metasAsi[namespace][i]) continue;
-				this._metasAsi[namespace][i].$row.hideVe().removeClass("statgen-asi__row");
+			for (; ix < this._metasAsi[namespace].length; ++ix) {
+				if (!this._metasAsi[namespace][ix]) continue;
+				this._metasAsi[namespace][ix].$row.hideVe().removeClass("statgen-asi__row");
 			}
 		};
 		this._parent.addHookBase(propCnt, hk);

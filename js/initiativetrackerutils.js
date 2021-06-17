@@ -99,7 +99,7 @@ class InitiativeTrackerUtil {
 					if (evt.shiftKey) {
 						evt.shiftKey = false;
 						const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES]({name: cond.condName || cond.name, source: SRC_PHB});
-						Renderer.hover.pHandleLinkMouseOver(evt, ele, UrlUtil.PG_CONDITIONS_DISEASES, SRC_PHB, hash);
+						Renderer.hover.pHandleLinkMouseOver(evt, ele, {page: UrlUtil.PG_CONDITIONS_DISEASES, source: SRC_PHB, hash});
 					}
 				});
 				$cond.on("mousemove", (evt) => Renderer.hover.handleLinkMouseMove(evt, ele));

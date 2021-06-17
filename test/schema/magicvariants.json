@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "magicvariants.json",
-	"version": "1.4.1",
+	"version": "1.4.3",
 	"type": "object",
 	"properties": {
 		"variant": {
@@ -78,6 +78,9 @@
 								"type": "string"
 							},
 							"bonusSpellAttack": {
+								"type": "string"
+							},
+							"bonusSpellDamage": {
 								"type": "string"
 							},
 							"bonusSavingThrow": {
@@ -212,6 +215,12 @@
 							"barding": {
 								"type": "boolean"
 							},
+							"reqAttuneTags": {
+								"$ref": "util.json#/definitions/reqAttuneTags"
+							},
+							"reqAttuneAltTags": {
+								"$ref": "util.json#/definitions/reqAttuneTags"
+							},
 							"hasRefs": {"type": "boolean"}
 						},
 						"required": [
@@ -263,6 +272,12 @@
 					},
 					"ammo": {
 						"type": "boolean"
+					},
+					"reqAttuneTags": {
+						"$ref": "util.json#/definitions/reqAttuneTags"
+					},
+					"reqAttuneAltTags": {
+						"$ref": "util.json#/definitions/reqAttuneTags"
 					},
 					"hasFluff": {"type": "boolean"},
 					"hasFluffImages": {"type": "boolean"}

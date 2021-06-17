@@ -46,7 +46,7 @@ class UtilGenTables {
 			data.items.forEach(item => this._doSearch({...opts, data: item}));
 			if (data.name || data.page) path.pop();
 		} else if (data.type === "table" || data.type === "tableGroup") {
-			if (isRequireIncludes && !(data.data && data.data.tableInclude)) return;
+			if (isRequireIncludes && !(data.data && data.data[VeCt.ENTDATA_TABLE_INCLUDE])) return;
 
 			const cpy = MiscUtil.copy(data);
 
@@ -218,38 +218,47 @@ class UtilGenTables {
 			}));
 		});
 
-		if (cls.subclasses) {
-			const gainScFeaturesAt = [];
-			cls.classFeatures.forEach((lvl, i) => {
-				if (lvl.some(it => it.gainSubclassFeature)) gainScFeaturesAt.push(i + 1);
-			});
+		stacks.table.forEach(it => {
+			it.name = it.caption;
+			it.source = it._tmpMeta.subclassSource || it._tmpMeta.classSource;
 
-			cls.subclasses.forEach(sc => {
-				sc.subclassFeatures.forEach((lvl, scI) => {
-					const tmpMeta = {
-						metaType: "subclass",
-						className: cls.name,
-						classSource: cls.source || SRC_PHB,
-						level: gainScFeaturesAt[scI],
-						subclassName: sc.name,
-						subclassSource: sc.source || cls.source || SRC_PHB,
+			this._mutDataAddPage(it);
+			this._mutCleanData(it);
+		});
 
-						// Used to deduplicate headers
-						name: sc.name,
-					};
+		return stacks;
+	}
 
-					lvl.forEach(feat => this._doSearch({
-						sectionOrders,
-						path,
-						tmpMeta,
-						section: cls.name,
-						data: feat,
-						stacks: stacks,
-						isRequireIncludes: true,
-					}));
-				});
-			});
-		}
+	static getSubclassTables (sc) {
+		const sectionOrders = {};
+		const stacks = {table: [], tableGroup: []};
+		const path = [];
+
+		sc.subclassFeatures.forEach(lvl => {
+			const level = lvl[0].level;
+
+			const tmpMeta = {
+				metaType: "subclass",
+				className: sc.className,
+				classSource: sc.classSource || SRC_PHB,
+				level,
+				subclassName: sc.name,
+				subclassSource: sc.source || sc.classSource || SRC_PHB,
+
+				// Used to deduplicate headers
+				name: sc.name,
+			};
+
+			lvl.forEach(feat => this._doSearch({
+				sectionOrders,
+				path,
+				tmpMeta,
+				section: sc.className,
+				data: feat,
+				stacks: stacks,
+				isRequireIncludes: true,
+			}));
+		});
 
 		stacks.table.forEach(it => {
 			it.name = it.caption;

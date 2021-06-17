@@ -188,7 +188,7 @@
 							"type": "link",
 							"href": {
 								"type": "internal",
-								"path": "5etools.html"
+								"path": "index.html"
 							},
 							"text": "such as a link to the homepage"
 						},
@@ -203,7 +203,7 @@
 							"type": "link",
 							"href": {
 								"type": "internal",
-								"path": "5etools.html"
+								"path": "index.html"
 							},
 							"text": "such as a link to the homepage"
 						},

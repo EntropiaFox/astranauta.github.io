@@ -1,27 +1,27 @@
 @font-face {
-	font-family: 'Convergence';
+	font-family: "Convergence";
 	font-style: normal;
 	font-weight: 400;
-	src: local('Convergence-Regular'), url('../fonts/Convergence-Regular.ttf') format('truetype');
+	src: local("Convergence-Regular"), url("../fonts/Convergence-Regular.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: 'Roboto';
+	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 400;
-	src: local('Roboto'), url('../fonts/Roboto-regular.ttf') format('truetype');
+	src: local("Roboto"), url("../fonts/Roboto-regular.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: 'Glyphicons Halflings';
+	font-family: "Glyphicons Halflings";
 	font-style: normal;
 	font-weight: 400;
-	src: local('glyphicons-halflings-regular'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype');
+	src: local("glyphicons-halflings-regular"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: 'Blambot Casual';
-	src: local('Blambot-Casual'), url('../fonts/Blambot-Casual-Regular.ttf') format('truetype');
+	font-family: "Blambot Casual";
+	src: local("Blambot-Casual"), url("../fonts/Blambot-Casual-Regular.ttf") format("truetype");
 }
 
 @keyframes kf-fade-out {
@@ -219,6 +219,12 @@ $w-scroll-body: 15px;
 	white-space: nowrap;
 }
 
+@mixin vr {
+	width: 1px;
+	height: 100%;
+	border-left: 1px solid $rgb-border-grey;
+}
+
 /* *** */
 
 @mixin font-regular {
@@ -251,7 +257,7 @@ $width-screen-lg: 1200px;
 	cursor: copy;
 
 	&:hover::before {
-		content: ' 🔗';
+		content: " 🔗";
 		color: rgba(0, 0, 0, 0.2);
 		position: relative;
 		float: left;

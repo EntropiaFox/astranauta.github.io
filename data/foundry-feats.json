@@ -72,9 +72,70 @@
 					"name": "Saving Throw Proficiency",
 					"changes": [
 						{
-							"key": "data.abilities.<$import.chosenAbilityScoreIncrease$>.keys().proficient",
+							"key": "data.abilities.<$keys(import.chosenAbilityScoreIncrease)$>.proficient",
 							"mode": "UPGRADE",
 							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Observant",
+			"source": "PHB",
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.observantFeat",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Alert",
+			"source": "PHB",
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.initiativeAlert",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Elven Accuracy",
+			"source": "XGE",
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.elvenAccuracy",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Tough",
+			"source": "PHB",
+			"effects": [
+				{
+					"name": "HP Increase",
+					"changes": [
+						{
+							"key": "data.attributes.hp.max",
+							"mode": "ADD",
+							"value": "2 * @details.level"
 						}
 					]
 				}

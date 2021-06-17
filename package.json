@@ -1,7 +1,7 @@
 {
 	"name": "5etools",
 	"author": "TheGiddyLimit",
-	"version": "1.125.2",
+	"version": "1.131.2",
 	"license": "MIT",
 	"description": "A site dedicated to making playing games with your friends as easy as possible.",
 	"scripts": {
@@ -11,7 +11,7 @@
 		"minify:js": "terser --keep-classnames --keep-fnames",
 		"minify:json": "node node/minify-json.js",
 		"test:js": "eslint js node test",
-		"test:styles": "stylelint scss/*.scss",
+		"test:styles": "stylelint scss/*.scss scss/includes/*.scss",
 		"test:data": "node test/test-all.js",
 		"test": "npm run test:js && npm run test:styles && npm run test:data",
 		"build:css": "node-sass --source-map=true --output-style=compressed scss/ -o css/",
@@ -37,8 +37,8 @@
 		"probe-image-size": "^6.0.0",
 		"readline-sync": "^1.4.10",
 		"simple-git": "2.34.2",
-		"stylelint": "^13.10.0",
-		"stylelint-config-sass-guidelines": "^7.0.0",
+		"stylelint": "^13.12.0",
+		"stylelint-config-sass-guidelines": "^8.0.0",
 		"terser": "^5.6.0-beta",
 		"xmlbuilder": "^15.1.1"
 	},

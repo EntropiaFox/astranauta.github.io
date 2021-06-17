@@ -2,7 +2,7 @@
 Shared UI components
  */
 
-@import 'vars';
+@import "vars";
 
 /* region Misc/Shared */
 .ui__ {
@@ -354,7 +354,7 @@ Shared UI components
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-family: 'Andada', serif;
+		font-family: "Andada", serif;
 		font-variant: small-caps;
 		font-weight: 500;
 	}
@@ -372,7 +372,7 @@ Shared UI components
 		user-select: none;
 		border-bottom: 0;
 
-		&--active {
+		&.active {
 			background-color: #e6e6e6;
 			border-color: #adadad;
 		}
@@ -442,16 +442,16 @@ Shared UI components
 	&btn-cycle {
 		@include cb-custom();
 
-		&[data-state='0'] {
+		&[data-state="0"] {
 			background: white;
 		}
 
-		&[data-state='1'] {
+		&[data-state="1"] {
 			background: $rgb-cb-grey;
 			border-color: lighten($rgb-cb-grey, 15%);
 		}
 
-		&[data-state='2'] {
+		&[data-state="2"] {
 			background: $rgb-cb-grey;
 			border-color: lighten($rgb-cb-grey, 15%);
 			display: flex;
@@ -461,17 +461,17 @@ Shared UI components
 			font-style: normal;
 			font-variant: normal;
 			text-rendering: auto;
-			font-family: 'Font Awesome 5 Pro';
+			font-family: "Font Awesome 5 Pro";
 			font-weight: 900;
 			color: white;
 			font-size: 12px;
 
 			&::before {
-				content: '\f005'; /* star */
+				content: "\f005"; /* star */
 			}
 		}
 
-		&[data-state='3'] {
+		&[data-state="3"] {
 			background: repeating-linear-gradient(135deg, white, white 10px, $rgb-cb-grey 10px, $rgb-cb-grey 20px);
 			border-color: lighten($rgb-cb-grey, 15%);
 		}
@@ -818,6 +818,10 @@ Shared UI components
 		background: transparent;
 	}
 
+	&ipt-display {
+		padding-right: 20px;
+	}
+
 	&wrp {
 		&:focus,
 		&:focus-within {
@@ -869,6 +873,13 @@ Shared UI components
 			background: darken($rgb-bg--alt, $pct-darken-active);
 		}
 	}
+
+	&disp-arrow {
+		top: 4px;
+		right: 4px;
+		bottom: 0;
+		font-size: 12px;
+	}
 }
 /* endregion */
 
@@ -881,7 +892,9 @@ Shared UI components
 			font-size: 14px;
 		}
 
-		&wrp-top {}
+		&wrp-top {
+			// (Nothing yet)
+		}
 
 		&thumb {
 			width: 14px;
@@ -924,13 +937,13 @@ Shared UI components
 			}
 
 			&--left {
-				margin-left: 7px;
 				margin-right: 15px;
+				margin-left: 7px;
 			}
 
 			&--right {
-				margin-left: 15px;
 				margin-right: 7px;
+				margin-left: 15px;
 			}
 		}
 

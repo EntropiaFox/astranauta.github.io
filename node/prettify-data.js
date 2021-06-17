@@ -23,7 +23,16 @@ const FILE_BLACKLIST = new Set([
 	"makebrew-creature.json",
 ]);
 
-const KEY_BLACKLIST = new Set(["data", "itemTypeAdditionalEntries", "itemType", "itemProperty"]);
+const _FILE_PROP_ORDER = [
+	"_meta",
+
+	"class",
+	"subclass",
+	"classFeature",
+	"subclassFeature",
+];
+
+const KEY_BLACKLIST = new Set(["data", "itemTypeAdditionalEntries", "itemType", "itemProperty", "itemEntry"]);
 
 const PROPS_TO_UNHANDLED_KEYS = {};
 
@@ -75,6 +84,8 @@ function getFnListSort (prop) {
 			return (a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source) || SortUtil.ascSortLower(a.pantheon, b.pantheon);
 		case "class":
 			return (a, b) => SortUtil.ascSortDateString(Parser.sourceJsonToDate(b.source), Parser.sourceJsonToDate(a.source)) || SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source);
+		case "subclass":
+			return (a, b) => SortUtil.ascSortDateString(Parser.sourceJsonToDate(b.source), Parser.sourceJsonToDate(a.source)) || SortUtil.ascSortLower(a.name, b.name);
 		case "classFeature": return (a, b) => SortUtil.ascSortLower(a.classSource, b.classSource)
 			|| SortUtil.ascSortLower(a.className, b.className)
 			|| SortUtil.ascSort(a.level, b.level)
@@ -102,9 +113,10 @@ function prettifyFolder (folder) {
 		.filter(file => file.endsWith(".json") && !FILE_BLACKLIST.has(file.split("/").last()))
 		.forEach(file => {
 			console.log(`\tPrettifying ${file}...`);
-			const json = ut.readJson(file);
+			let json = ut.readJson(file);
 			let isModified = false;
 
+			// region Sort keys within entities
 			Object.entries(json)
 				.filter(([k, v]) => !KEY_BLACKLIST.has(k) && v instanceof Array)
 				.forEach(([k, v]) => {
@@ -116,8 +128,26 @@ function prettifyFolder (folder) {
 						json[k].sort(getFnListSort(k));
 
 						isModified = true;
-					} else console.warn(`\tUnhandled property "${k}"`);
+					} else console.warn(`\t\tUnhandled property: "${k}"`);
 				});
+			// endregion
+
+			// region Sort file-level properties
+			const keyOrder = Object.keys(json)
+				.sort((a, b) => {
+					const ixA = _FILE_PROP_ORDER.indexOf(a);
+					const ixB = _FILE_PROP_ORDER.indexOf(b)
+					return SortUtil.ascSort(~ixA ? ixA : Number.MAX_SAFE_INTEGER, ~ixB ? ixB : Number.MAX_SAFE_INTEGER);
+				});
+			const numUnhandledKeys = Object.keys(json).filter(it => !~_FILE_PROP_ORDER.indexOf(it));
+			if (numUnhandledKeys > 1) console.warn(`\t\tUnhandled file-level properties: "${numUnhandledKeys}"`);
+			if (!CollectionUtil.deepEquals(Object.keys(json), keyOrder)) {
+				const nxt = {};
+				keyOrder.forEach(k => nxt[k] = json[k]);
+				json = nxt;
+				isModified = true;
+			}
+			// endregion
 
 			if (isModified) fs.writeFileSync(file, CleanUtil.getCleanJson(json), "utf-8");
 		});

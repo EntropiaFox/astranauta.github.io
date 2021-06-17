@@ -540,7 +540,7 @@ class BookUtil {
 
 		$contents.empty();
 		BookUtil.$dispBook.empty().html(`<tr><th class="border" colspan="6"></th></tr>
-			<tr><td colspan="6" class="initial-message book-loading-message">Loading failed\u2014could not find ${Parser.getArticle(BookUtil.contentType)} ${BookUtil.contentType} with ID "${bookId}." You may need to first add it as homebrew.</td></tr><tr><th class="border" colspan="6"></th></tr>`);
+			<tr><td colspan="6" class="initial-message book-loading-message">Loading failed\u2014could not find ${Parser.getArticle(BookUtil.contentType)} ${BookUtil.contentType} with ID "${bookId}". You may need to add it as homebrew first.</td></tr><tr><th class="border" colspan="6"></th></tr>`);
 
 		$(`.bk__overlay-loading`).remove();
 
@@ -601,9 +601,8 @@ class BookUtil {
 		});
 
 		$(document.body)
-			.off("keypress")
 			.on("keypress", (e) => {
-				if (!((e.key === "f" || e.key === "g") && EventUtil.noModifierKeys(e))) return;
+				if ((e.key !== "f" && e.key !== "g") || !EventUtil.noModifierKeys(e)) return;
 				if (EventUtil.isInInput(e)) return;
 				e.preventDefault();
 				BookUtil._showSearchBox(indexData, bookId, e.key === "g");
@@ -727,7 +726,7 @@ class BookUtil {
 		BookUtil.curRender.$lnksChapter = [];
 		BookUtil.curRender.$lnksHeader = {};
 
-		BookUtil.curRender.$btnToggleExpandAll = $(`<span title="Expand All" class="px-2 bold py-1px no-select clickable">${BookUtil.isDefaultExpandedContents ? `[\u2012]` : `[+]`}</span>`)
+		BookUtil.curRender.$btnToggleExpandAll = $(`<span title="Expand All" class="px-2 bold py-1p no-select clickable">${BookUtil.isDefaultExpandedContents ? `[\u2012]` : `[+]`}</span>`)
 			.click(() => {
 				const isExpanded = BookUtil.curRender.$btnToggleExpandAll.text() !== `[+]`;
 				BookUtil.curRender.$btnToggleExpandAll.text(isExpanded ? `[+]` : `[\u2012]`).title(isExpanded ? `Collapse All` : `Expand All`);
@@ -768,7 +767,7 @@ class BookUtil {
 					<span class="name">${book.name}</span>
 				</a>
 				<div class="flex-v-center">
-					<a href="${this._getHrefShowAll(book.id)}" class="bk__contents_show_all px-2 py-1px flex-v-center lst__wrp-cells lst__row-inner" title="View Entire ${BookUtil.contentType.uppercaseFirst()} (Warning: Slow)">
+					<a href="${this._getHrefShowAll(book.id)}" class="bk__contents_show_all px-2 py-1p flex-v-center lst__wrp-cells lst__row-inner" title="View Entire ${BookUtil.contentType.uppercaseFirst()} (Warning: Slow)">
 						<span class="glyphicon glyphicon glyphicon-book" style="top: 0;"/>
 					</a>
 					${BookUtil.curRender.$btnToggleExpandAll}

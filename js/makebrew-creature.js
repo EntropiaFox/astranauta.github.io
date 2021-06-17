@@ -94,6 +94,7 @@ class CreatureBuilder extends Builder {
 
 		delete creature.otherSources;
 		delete creature.srd;
+		delete creature.altArt;
 		delete creature.hasToken;
 		delete creature.uniqueId;
 
@@ -111,10 +112,47 @@ class CreatureBuilder extends Builder {
 				delete scaled._displayName;
 				this.setStateFromLoaded({s: scaled, m: meta});
 			} else this.setStateFromLoaded({s: creature, m: meta});
+		} else if (creature._summonedBySpell_levelBase && !opts.isForce) {
+			const fauxSel = Renderer.monster.getSelSummonSpellLevel(creature);
+			const values = [...fauxSel.options].map(it => it.value === "-1" ? "\u2014" : Number(it.value));
+			const scaleTo = await InputUiUtil.pGetUserEnum({values: values, title: "At Spell Level...", default: values[0], isResolveItem: true});
+
+			if (scaleTo != null) {
+				const scaled = await ScaleSummonCreature.scale(creature, scaleTo);
+				delete scaled._displayName;
+				this.setStateFromLoaded({s: scaled, m: meta});
+			} else this.setStateFromLoaded({s: creature, m: meta});
 		} else this.setStateFromLoaded({s: creature, m: meta});
 
 		this.renderInput();
 		this.renderOutput();
+	}
+
+	async _pHashChange_pHandleSubHashes (sub, toLoad) {
+		if (!sub.length) return toLoad;
+
+		const scaledHash = sub.find(it => it.startsWith(UrlUtil.HASH_START_CREATURE_SCALED));
+		const scaledSummonHash = sub.find(it => it.startsWith(UrlUtil.HASH_START_CREATURE_SCALED_SUMMON));
+
+		if (scaledHash) {
+			const scaleTo = Number(UrlUtil.unpackSubHash(scaledHash)[VeCt.HASH_SCALED][0]);
+			try {
+				toLoad = await ScaleCreature.scale(toLoad, scaleTo);
+				delete toLoad._displayName;
+			} catch (e) {
+				setTimeout(() => { throw e; })
+			}
+		} else if (scaledSummonHash) {
+			const scaleTo = Number(UrlUtil.unpackSubHash(scaledSummonHash)[VeCt.HASH_SCALED_SUMMON][0]);
+			try {
+				toLoad = await ScaleSummonCreature.scale(toLoad, scaleTo);
+				delete toLoad._displayName;
+			} catch (e) {
+				setTimeout(() => { throw e; })
+			}
+		}
+
+		return toLoad;
 	}
 
 	async pInit () {
@@ -346,8 +384,22 @@ class CreatureBuilder extends Builder {
 		this._cbCache = cb; // cache for use when updating sources
 
 		// initialise tabs
-		this._resetTabs("input");
-		const tabs = ["Info", "Species", "Core", "Defence", "Abilities", "Flavor/Misc"].map((it, ix) => this._getTab(ix, it, "meta", {hasBorder: true, tabGroup: "input", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		this._resetTabs({tabGroup: "input"});
+
+		const tabs = this._renderTabs(
+			[
+				new TabUiUtil.TabMeta({name: "Info", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Species", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Core", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Defence", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Abilities", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Flavor/Misc", hasBorder: true}),
+			],
+			{
+				tabGroup: "input",
+				cbTabChange: this.doUiSave.bind(this),
+			},
+		);
 		const [infoTab, speciesTab, coreTab, defenseTab, abilTab, miscTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink ui-tab__wrp-tab-heads--border">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
@@ -1397,7 +1449,7 @@ class CreatureBuilder extends Builder {
 
 			return $$`<div class="flex-v-center mb-2">
 			<span class="mr-2 mkbru__sub-name--33">${name}</span>
-			<div class="text-muted mkbru_mon__skill-attrib-label mr-2 help--subtle" title="This skill is affected by the creature's ${Parser.attAbvToFull((Parser.skillToAbilityAbv(prop)))} score">(${Parser.skillToAbilityAbv(prop).toUpperCase()})</div>
+			<div class="text-muted mkbru_mon__skill-attrib-label mr-2 help-subtle" title="This skill is affected by the creature's ${Parser.attAbvToFull((Parser.skillToAbilityAbv(prop)))} score">(${Parser.skillToAbilityAbv(prop).toUpperCase()})</div>
 			${$iptVal}${$btnProf}${$btnExpert}
 			</div>`;
 		};
@@ -2867,59 +2919,6 @@ class CreatureBuilder extends Builder {
 		return $row;
 	}
 
-	static __$getFluffInput__getImageRow (doUpdateState, doUpdateOrder, options, imageRows, image) {
-		const out = {};
-
-		const getState = () => {
-			const rawUrl = $iptUrl.val().trim();
-			return rawUrl ? {type: "image", href: {type: "external", url: rawUrl}} : null;
-		};
-
-		const $iptUrl = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
-			.change(() => doUpdateState());
-		if (image) {
-			const href = ((image || {}).href || {});
-			if (href.url) $iptUrl.val(href.url);
-			else if (href.path) {
-				$iptUrl.val(`${window.location.origin.replace(/\/+$/, "")}/img/${href.path}`);
-			}
-		}
-
-		const $btnPreview = $(`<button class="btn btn-xs btn-default mr-2" title="Preview Image"><span class="glyphicon glyphicon-fullscreen"/></button>`)
-			.click((evt) => {
-				const toRender = getState();
-				if (!toRender) return JqueryUtil.doToast({content: "Please enter an image URL", type: "warning"});
-
-				const $content = Renderer.hover.$getHoverContent_generic(toRender, {isBookContent: true});
-				Renderer.hover.getShowWindow(
-					$content,
-					Renderer.hover.getWindowPositionFromEvent(evt),
-					{
-						isPermanent: true,
-						title: "Image Preview",
-						isBookContent: true,
-					},
-				);
-			});
-
-		const $btnRemove = $(`<button class="btn btn-xs btn-danger" title="Remove Image"><span class="glyphicon glyphicon-trash"/></button>`)
-			.click(() => {
-				imageRows.splice(imageRows.indexOf(out), 1);
-				out.$ele.empty().remove();
-				doUpdateState();
-			});
-
-		const $dragOrder = BuilderUi.$getDragPad(doUpdateOrder, imageRows, out, {
-			$wrpRowsOuter: options.$wrpRowsOuter,
-		});
-
-		out.$ele = $$`<div class="flex-v-center mb-2 mkbru__wrp-rows--removable">${$iptUrl}${$btnPreview}${$btnRemove}${$dragOrder}</div>`;
-		out.getState = getState;
-		imageRows.push(out);
-
-		return out;
-	}
-
 	__$getEnvironmentInput (cb) {
 		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Environment", {isMarked: true});
 
@@ -3029,8 +3028,21 @@ class CreatureBuilder extends Builder {
 		const $wrp = this._ui.$wrpOutput.empty();
 
 		// initialise tabs
-		this._resetTabs("output");
-		const tabs = ["Statblock", "Info", "Images", "Data", "Markdown"].map((it, ix) => this._getTab(ix, it, "meta", {tabGroup: "output", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		this._resetTabs({tabGroup: "output"});
+
+		const tabs = this._renderTabs(
+			[
+				new TabUiUtil.TabMeta({name: "Statblock"}),
+				new TabUiUtil.TabMeta({name: "Info"}),
+				new TabUiUtil.TabMeta({name: "Images"}),
+				new TabUiUtil.TabMeta({name: "Data"}),
+				new TabUiUtil.TabMeta({name: "Markdown"}),
+			],
+			{
+				tabGroup: "output",
+				cbTabChange: this.doUiSave.bind(this),
+			},
+		);
 		const [statTab, infoTab, imageTab, dataTab, markdownTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));

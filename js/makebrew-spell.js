@@ -49,7 +49,7 @@ class SpellBuilder extends Builder {
 	}
 
 	async pInit () {
-		this._subclassLookup = await RenderSpells.pGetSubclassLookup();
+		this._subclassLookup = await DataUtil.class.pGetSubclassLookup();
 	}
 
 	_getInitialState () {
@@ -139,8 +139,19 @@ class SpellBuilder extends Builder {
 		this._cbCache = cb; // cache for use when updating sources
 
 		// initialise tabs
-		this._resetTabs("input");
-		const tabs = ["Info", "Details", "Sources", "Flavor/Misc"].map((it, ix) => this._getTab(ix, it, "meta", {hasBorder: true, tabGroup: "input", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		this._resetTabs({tabGroup: "input"});
+		const tabs = this._renderTabs(
+			[
+				new TabUiUtil.TabMeta({name: "Info", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Details", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Sources", hasBorder: true}),
+				new TabUiUtil.TabMeta({name: "Flavor/Misc", hasBorder: true}),
+			],
+			{
+				tabGroup: "input",
+				cbTabChange: this.doUiSave.bind(this),
+			},
+		);
 		const [infoTab, detailsTab, sourcesTab, miscTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink ui-tab__wrp-tab-heads--border">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));
@@ -1004,9 +1015,21 @@ class SpellBuilder extends Builder {
 		const $wrp = this._ui.$wrpOutput.empty();
 
 		// initialise tabs
-		this._resetTabs("output");
+		this._resetTabs({tabGroup: "output"});
 
-		const tabs = ["Spell", "Info", "Images", "Data", "Markdown"].map((it, ix) => this._getTab(ix, it, "meta", {tabGroup: "output", stateObj: this._meta, cbTabChange: this.doUiSave.bind(this)}));
+		const tabs = this._renderTabs(
+			[
+				new TabUiUtil.TabMeta({name: "Spell"}),
+				new TabUiUtil.TabMeta({name: "Info"}),
+				new TabUiUtil.TabMeta({name: "Images"}),
+				new TabUiUtil.TabMeta({name: "Data"}),
+				new TabUiUtil.TabMeta({name: "Markdown"}),
+			],
+			{
+				tabGroup: "output",
+				cbTabChange: this.doUiSave.bind(this),
+			},
+		);
 		const [spellTab, infoTab, imageTab, dataTab, markdownTab] = tabs;
 		$$`<div class="flex-v-center w-100 no-shrink">${tabs.map(it => it.$btnTab)}</div>`.appendTo($wrp);
 		tabs.forEach(it => it.$wrpTab.appendTo($wrp));

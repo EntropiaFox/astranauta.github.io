@@ -293,209 +293,6 @@
 				"Primal Champion|Barbarian||20"
 			],
 			"subclassTitle": "Primal Path",
-			"subclasses": [
-				{
-					"name": "Path of the Berserker",
-					"shortName": "Berserker",
-					"source": "PHB",
-					"page": 49,
-					"srd": true,
-					"subclassFeatures": [
-						"Path of the Berserker|Barbarian||Berserker||3",
-						"Mindless Rage|Barbarian||Berserker||6",
-						"Intimidating Presence|Barbarian||Berserker||10",
-						"Retaliation|Barbarian||Berserker||14"
-					]
-				},
-				{
-					"name": "Path of the Totem Warrior",
-					"shortName": "Totem Warrior",
-					"source": "PHB",
-					"page": 50,
-					"additionalSpells": [
-						{
-							"innate": {
-								"3": [
-									"beast sense",
-									"speak with animals"
-								],
-								"10": [
-									"commune with nature"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Path of the Totem Warrior|Barbarian||Totem Warrior||3",
-						"Aspect of the Beast|Barbarian||Totem Warrior||6",
-						"Spirit Walker|Barbarian||Totem Warrior||10",
-						"Totemic Attunement|Barbarian||Totem Warrior||14"
-					]
-				},
-				{
-					"name": "Path of the Battlerager",
-					"shortName": "Battlerager",
-					"source": "SCAG",
-					"page": 121,
-					"subclassFeatures": [
-						"Path of the Battlerager|Barbarian||Battlerager|SCAG|3",
-						"Reckless Abandon|Barbarian||Battlerager|SCAG|6",
-						"Battlerager Charge|Barbarian||Battlerager|SCAG|10",
-						"Spiked Retribution|Barbarian||Battlerager|SCAG|14"
-					]
-				},
-				{
-					"name": "Path of the Ancestral Guardian (UA)",
-					"shortName": "Ancestral Guardian (UA)",
-					"source": "UABarbarianPrimalPaths",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Path of the Ancestral Guardian|Barbarian||Ancestral Guardian (UA)|UABarbarianPrimalPaths|3",
-						"Ancestral Shield|Barbarian||Ancestral Guardian (UA)|UABarbarianPrimalPaths|6",
-						"Consult the Spirits|Barbarian||Ancestral Guardian (UA)|UABarbarianPrimalPaths|10",
-						"Vengeful Ancestors|Barbarian||Ancestral Guardian (UA)|UABarbarianPrimalPaths|14"
-					]
-				},
-				{
-					"name": "Path of the Storm Herald (UA)",
-					"shortName": "Storm Herald (UA)",
-					"source": "UABarbarianPrimalPaths",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Path of the Storm Herald|Barbarian||Storm Herald (UA)|UABarbarianPrimalPaths|3",
-						"Storm Soul|Barbarian||Storm Herald (UA)|UABarbarianPrimalPaths|6",
-						"Shield of the Storm|Barbarian||Storm Herald (UA)|UABarbarianPrimalPaths|10",
-						"Raging Storm|Barbarian||Storm Herald (UA)|UABarbarianPrimalPaths|14"
-					]
-				},
-				{
-					"name": "Path of the Zealot (UA)",
-					"shortName": "Zealot (UA)",
-					"source": "UABarbarianPrimalPaths",
-					"page": 2,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Path of the Zealot|Barbarian||Zealot (UA)|UABarbarianPrimalPaths|3",
-						"Zealous Focus|Barbarian||Zealot (UA)|UABarbarianPrimalPaths|6",
-						"Zealous Presence|Barbarian||Zealot (UA)|UABarbarianPrimalPaths|10",
-						"Rage Beyond Death|Barbarian||Zealot (UA)|UABarbarianPrimalPaths|14"
-					]
-				},
-				{
-					"name": "Path of the Ancestral Guardian v2 (UA)",
-					"shortName": "Ancestral Guardian v2 (UA)",
-					"source": "UARevisedSubclasses",
-					"page": 1,
-					"isReprinted": true,
-					"spellcastingAbility": "wis",
-					"subclassFeatures": [
-						"Path of the Ancestral Guardian v2|Barbarian||Ancestral Guardian v2 (UA)|UARevisedSubclasses|3",
-						"Ancestral Shield|Barbarian||Ancestral Guardian v2 (UA)|UARevisedSubclasses|6",
-						"Consult the Spirits|Barbarian||Ancestral Guardian v2 (UA)|UARevisedSubclasses|10",
-						"Vengeful Ancestors|Barbarian||Ancestral Guardian v2 (UA)|UARevisedSubclasses|14"
-					]
-				},
-				{
-					"name": "Path of the Ancestral Guardian",
-					"shortName": "Ancestral Guardian",
-					"source": "XGE",
-					"page": 9,
-					"spellcastingAbility": "wis",
-					"additionalSpells": [
-						{
-							"innate": {
-								"10": [
-									"augury",
-									"clairvoyance"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Path of the Ancestral Guardian|Barbarian||Ancestral Guardian|XGE|3",
-						"Spirit Shield|Barbarian||Ancestral Guardian|XGE|6",
-						"Consult the Spirits|Barbarian||Ancestral Guardian|XGE|10",
-						"Vengeful Ancestors|Barbarian||Ancestral Guardian|XGE|14"
-					]
-				},
-				{
-					"name": "Path of the Storm Herald",
-					"shortName": "Storm Herald",
-					"source": "XGE",
-					"page": 10,
-					"subclassFeatures": [
-						"Path of the Storm Herald|Barbarian||Storm Herald|XGE|3",
-						"Storm Soul|Barbarian||Storm Herald|XGE|6",
-						"Shielding Storm|Barbarian||Storm Herald|XGE|10",
-						"Raging Storm|Barbarian||Storm Herald|XGE|14"
-					]
-				},
-				{
-					"name": "Path of the Zealot",
-					"shortName": "Zealot",
-					"source": "XGE",
-					"page": 11,
-					"subclassFeatures": [
-						"Path of the Zealot|Barbarian||Zealot|XGE|3",
-						"Fanatical Focus|Barbarian||Zealot|XGE|6",
-						"Zealous Presence|Barbarian||Zealot|XGE|10",
-						"Rage beyond Death|Barbarian||Zealot|XGE|14"
-					]
-				},
-				{
-					"name": "Path of the Wild Soul (UA)",
-					"shortName": "Wild Soul (UA)",
-					"source": "UABarbarianAndMonk",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Path of the Wild Soul|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|3",
-						"Magic Reserves|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|6",
-						"Arcane Rebuke|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|10",
-						"Chaotic Fury|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|14",
-						"Improved Magic Reserves|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|14"
-					]
-				},
-				{
-					"name": "Path of the Beast (UA)",
-					"shortName": "Beast (UA)",
-					"source": "UA2020SubclassesPt1",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Path of the Beast|Barbarian||Beast (UA)|UA2020SubclassesPt1|3",
-						"Bestial Soul|Barbarian||Beast (UA)|UA2020SubclassesPt1|6",
-						"Infectious Fury|Barbarian||Beast (UA)|UA2020SubclassesPt1|10",
-						"Call the Hunt|Barbarian||Beast (UA)|UA2020SubclassesPt1|14"
-					]
-				},
-				{
-					"name": "Path of the Beast",
-					"shortName": "Beast",
-					"source": "TCE",
-					"page": 24,
-					"subclassFeatures": [
-						"Path of the Beast|Barbarian||Beast|TCE|3",
-						"Bestial Soul|Barbarian||Beast|TCE|6",
-						"Infectious Fury|Barbarian||Beast|TCE|10",
-						"Call the Hunt|Barbarian||Beast|TCE|14"
-					]
-				},
-				{
-					"name": "Path of Wild Magic",
-					"shortName": "Wild Magic",
-					"source": "TCE",
-					"page": 25,
-					"subclassFeatures": [
-						"Path of Wild Magic|Barbarian||Wild Magic|TCE|3",
-						"Bolstering Magic|Barbarian||Wild Magic|TCE|6",
-						"Unstable Backlash|Barbarian||Wild Magic|TCE|10",
-						"Controlled Surge|Barbarian||Wild Magic|TCE|14"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Barbarian",
@@ -788,6 +585,237 @@
 					"source": "XGE",
 					"page": 8
 				}
+			]
+		}
+	],
+	"subclass": [
+		{
+			"name": "Path of the Berserker",
+			"shortName": "Berserker",
+			"source": "PHB",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 49,
+			"srd": true,
+			"subclassFeatures": [
+				"Path of the Berserker|Barbarian||Berserker||3",
+				"Mindless Rage|Barbarian||Berserker||6",
+				"Intimidating Presence|Barbarian||Berserker||10",
+				"Retaliation|Barbarian||Berserker||14"
+			]
+		},
+		{
+			"name": "Path of the Totem Warrior",
+			"shortName": "Totem Warrior",
+			"source": "PHB",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 50,
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": [
+							"beast sense",
+							"speak with animals"
+						],
+						"10": [
+							"commune with nature"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Path of the Totem Warrior|Barbarian||Totem Warrior||3",
+				"Aspect of the Beast|Barbarian||Totem Warrior||6",
+				"Spirit Walker|Barbarian||Totem Warrior||10",
+				"Totemic Attunement|Barbarian||Totem Warrior||14"
+			]
+		},
+		{
+			"name": "Path of the Battlerager",
+			"shortName": "Battlerager",
+			"source": "SCAG",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 121,
+			"subclassFeatures": [
+				"Path of the Battlerager|Barbarian||Battlerager|SCAG|3",
+				"Reckless Abandon|Barbarian||Battlerager|SCAG|6",
+				"Battlerager Charge|Barbarian||Battlerager|SCAG|10",
+				"Spiked Retribution|Barbarian||Battlerager|SCAG|14"
+			]
+		},
+		{
+			"name": "Path of the Ancestral Guardian (UA)",
+			"shortName": "Ancestral Guardian (UA)",
+			"source": "UABarbarianPrimalPaths",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Path of the Ancestral Guardian|Barbarian||Ancestral Guardian (UA)|UABarbarianPrimalPaths|3",
+				"Ancestral Shield|Barbarian||Ancestral Guardian (UA)|UABarbarianPrimalPaths|6",
+				"Consult the Spirits|Barbarian||Ancestral Guardian (UA)|UABarbarianPrimalPaths|10",
+				"Vengeful Ancestors|Barbarian||Ancestral Guardian (UA)|UABarbarianPrimalPaths|14"
+			]
+		},
+		{
+			"name": "Path of the Storm Herald (UA)",
+			"shortName": "Storm Herald (UA)",
+			"source": "UABarbarianPrimalPaths",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Path of the Storm Herald|Barbarian||Storm Herald (UA)|UABarbarianPrimalPaths|3",
+				"Storm Soul|Barbarian||Storm Herald (UA)|UABarbarianPrimalPaths|6",
+				"Shield of the Storm|Barbarian||Storm Herald (UA)|UABarbarianPrimalPaths|10",
+				"Raging Storm|Barbarian||Storm Herald (UA)|UABarbarianPrimalPaths|14"
+			]
+		},
+		{
+			"name": "Path of the Zealot (UA)",
+			"shortName": "Zealot (UA)",
+			"source": "UABarbarianPrimalPaths",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 2,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Path of the Zealot|Barbarian||Zealot (UA)|UABarbarianPrimalPaths|3",
+				"Zealous Focus|Barbarian||Zealot (UA)|UABarbarianPrimalPaths|6",
+				"Zealous Presence|Barbarian||Zealot (UA)|UABarbarianPrimalPaths|10",
+				"Rage Beyond Death|Barbarian||Zealot (UA)|UABarbarianPrimalPaths|14"
+			]
+		},
+		{
+			"name": "Path of the Ancestral Guardian v2 (UA)",
+			"shortName": "Ancestral Guardian v2 (UA)",
+			"source": "UARevisedSubclasses",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"spellcastingAbility": "wis",
+			"subclassFeatures": [
+				"Path of the Ancestral Guardian v2|Barbarian||Ancestral Guardian v2 (UA)|UARevisedSubclasses|3",
+				"Ancestral Shield|Barbarian||Ancestral Guardian v2 (UA)|UARevisedSubclasses|6",
+				"Consult the Spirits|Barbarian||Ancestral Guardian v2 (UA)|UARevisedSubclasses|10",
+				"Vengeful Ancestors|Barbarian||Ancestral Guardian v2 (UA)|UARevisedSubclasses|14"
+			]
+		},
+		{
+			"name": "Path of the Ancestral Guardian",
+			"shortName": "Ancestral Guardian",
+			"source": "XGE",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 9,
+			"spellcastingAbility": "wis",
+			"additionalSpells": [
+				{
+					"innate": {
+						"10": [
+							"augury",
+							"clairvoyance"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Path of the Ancestral Guardian|Barbarian||Ancestral Guardian|XGE|3",
+				"Spirit Shield|Barbarian||Ancestral Guardian|XGE|6",
+				"Consult the Spirits|Barbarian||Ancestral Guardian|XGE|10",
+				"Vengeful Ancestors|Barbarian||Ancestral Guardian|XGE|14"
+			]
+		},
+		{
+			"name": "Path of the Storm Herald",
+			"shortName": "Storm Herald",
+			"source": "XGE",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 10,
+			"subclassFeatures": [
+				"Path of the Storm Herald|Barbarian||Storm Herald|XGE|3",
+				"Storm Soul|Barbarian||Storm Herald|XGE|6",
+				"Shielding Storm|Barbarian||Storm Herald|XGE|10",
+				"Raging Storm|Barbarian||Storm Herald|XGE|14"
+			]
+		},
+		{
+			"name": "Path of the Zealot",
+			"shortName": "Zealot",
+			"source": "XGE",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 11,
+			"subclassFeatures": [
+				"Path of the Zealot|Barbarian||Zealot|XGE|3",
+				"Fanatical Focus|Barbarian||Zealot|XGE|6",
+				"Zealous Presence|Barbarian||Zealot|XGE|10",
+				"Rage beyond Death|Barbarian||Zealot|XGE|14"
+			]
+		},
+		{
+			"name": "Path of the Wild Soul (UA)",
+			"shortName": "Wild Soul (UA)",
+			"source": "UABarbarianAndMonk",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Path of the Wild Soul|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|3",
+				"Magic Reserves|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|6",
+				"Arcane Rebuke|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|10",
+				"Chaotic Fury|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|14",
+				"Improved Magic Reserves|Barbarian||Wild Soul (UA)|UABarbarianAndMonk|14"
+			]
+		},
+		{
+			"name": "Path of the Beast (UA)",
+			"shortName": "Beast (UA)",
+			"source": "UA2020SubclassesPt1",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Path of the Beast|Barbarian||Beast (UA)|UA2020SubclassesPt1|3",
+				"Bestial Soul|Barbarian||Beast (UA)|UA2020SubclassesPt1|6",
+				"Infectious Fury|Barbarian||Beast (UA)|UA2020SubclassesPt1|10",
+				"Call the Hunt|Barbarian||Beast (UA)|UA2020SubclassesPt1|14"
+			]
+		},
+		{
+			"name": "Path of the Beast",
+			"shortName": "Beast",
+			"source": "TCE",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 24,
+			"subclassFeatures": [
+				"Path of the Beast|Barbarian||Beast|TCE|3",
+				"Bestial Soul|Barbarian||Beast|TCE|6",
+				"Infectious Fury|Barbarian||Beast|TCE|10",
+				"Call the Hunt|Barbarian||Beast|TCE|14"
+			]
+		},
+		{
+			"name": "Path of Wild Magic",
+			"shortName": "Wild Magic",
+			"source": "TCE",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"page": 25,
+			"subclassFeatures": [
+				"Path of Wild Magic|Barbarian||Wild Magic|TCE|3",
+				"Bolstering Magic|Barbarian||Wild Magic|TCE|6",
+				"Unstable Backlash|Barbarian||Wild Magic|TCE|10",
+				"Controlled Surge|Barbarian||Wild Magic|TCE|14"
 			]
 		}
 	],
@@ -1919,7 +1947,10 @@
 							"8",
 							"A bolt of light shoots from your chest. Another creature of your choice that you can see within 30 feet of you must succeed on a Constitution saving throw or take {@damage 1d6} radiant damage and be {@condition blinded} until the start of your next turn. Until your rage ends, you can use this effect again on each of your turns as a bonus action."
 						]
-					]
+					],
+					"data": {
+						"tableInclude": true
+					}
 				}
 			]
 		},

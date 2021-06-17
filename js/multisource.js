@@ -1,10 +1,6 @@
 "use strict";
 
 class MultiSource {
-	static onFilterChangeMulti (multiList) {
-		FilterBox.selectFirstVisible(multiList);
-	}
-
 	/**
 	 * @param opts Options object.
 	 * @param opts.fnHandleData Data handling function, e.g. "addMonsters"
@@ -17,9 +13,24 @@ class MultiSource {
 		this._prop = opts.prop;
 
 		this._loadedSources = {};
+		this._lastFilterValues = null;
 	}
 
 	get loadedSources () { return this._loadedSources; }
+
+	onFilterChangeMulti (multiList, filterValues) {
+		FilterBox.selectFirstVisible(multiList);
+
+		if (!this._lastFilterValues) {
+			this._lastFilterValues = filterValues;
+			return;
+		}
+
+		if (!filterValues.Source._isActive && this._lastFilterValues.Source._isActive) {
+			this._lastFilterValues = filterValues;
+			this.pForceLoadDefaultSources();
+		}
+	}
 
 	async pLoadSource (src, nextFilterVal) {
 		// We only act when the user changes the filter to "yes", i.e. "load/view the source"
@@ -31,6 +42,12 @@ class MultiSource {
 		const data = await DataUtil.loadJSON(toLoad.url);
 		this._fnHandleData(data[this._prop]);
 		toLoad.loaded = true;
+	}
+
+	async pForceLoadDefaultSources () {
+		const defaultSources = Object.keys(this._loadedSources)
+			.filter(s => PageFilter.defaultSourceSelFn(s));
+		await Promise.all(defaultSources.map(src => this.pLoadSource(src, "yes")));
 	}
 
 	/**
@@ -52,9 +69,9 @@ class MultiSource {
 		const defaultSel = sources.filter(s => PageFilter.defaultSourceSelFn(s));
 		const hashSourceRaw = Hist.getHashSource();
 		const hashSource = hashSourceRaw ? Object.keys(src2UrlMap).find(it => it.toLowerCase() === hashSourceRaw.toLowerCase()) : null;
-		const userSel = [...new Set(
-			(await filterBox.pGetStoredActiveSources() || []).concat(await ListUtil.pGetSelectedSources() || []).concat(hashSource ? [hashSource] : []),
-		)];
+		const filterSel = await filterBox.pGetStoredActiveSources() || defaultSel;
+		const listSel = await ListUtil.pGetSelectedSources() || [];
+		const userSel = [...new Set([...filterSel, ...listSel, hashSource].filter(Boolean))];
 
 		const allSources = [];
 

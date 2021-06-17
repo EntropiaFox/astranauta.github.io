@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "optionalfeatures.json",
-	"version": "1.8.0",
+	"version": "1.10.0",
 	"title": "Optional Features",
 	"type": "object",
 
@@ -70,6 +70,24 @@
 				},
 				"isClassFeatureVariant": {
 					"type": "boolean"
+				},
+				"additionalSpells": {
+					"$ref": "util.json#/definitions/additionalSpellsArray"
+				},
+				"languageProficiencies": {
+					"$ref": "util.json#/definitions/languageProficiencies"
+				},
+				"skillProficiencies": {
+					"$ref": "util.json#/definitions/skillProficiencies"
+				},
+				"weaponProficiencies": {
+					"$ref": "util.json#/definitions/weaponProficiencies"
+				},
+				"armorProficiencies": {
+					"$ref": "util.json#/definitions/armorProficiencies"
+				},
+				"toolProficiencies": {
+					"$ref": "util.json#/definitions/toolProficiencies"
 				}
 			},
 			"required": [

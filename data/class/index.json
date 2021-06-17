@@ -5,6 +5,7 @@
 	"cleric": "class-cleric.json",
 	"druid": "class-druid.json",
 	"fighter": "class-fighter.json",
+	"generic": "class-generic.json",
 	"monk": "class-monk.json",
 	"mystic": "class-mystic.json",
 	"paladin": "class-paladin.json",

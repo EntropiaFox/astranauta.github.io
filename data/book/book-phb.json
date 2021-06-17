@@ -54,7 +54,7 @@
 					"page": 6,
 					"entries": [
 						"The Player's Handbook is divided into three parts.",
-						"{@b Part 1} is about creating a character, providing the rules and guidance you need to make the character you'll play in the game. It includes information on the various races. classes, backgrounds, equipment, and other customization options that you can choose from. Many of the rules in part 1 rely on material in parts 2 and 3. If you come across a game concept in part 1 that you don't understand, consult the book's index.",
+						"{@b Part 1} is about creating a character, providing the rules and guidance you need to make the character you'll play in the game. It includes information on the various races, classes, backgrounds, equipment, and other customization options that you can choose from. Many of the rules in part 1 rely on material in parts 2 and 3. If you come across a game concept in part 1 that you don't understand, consult the book's index.",
 						"{@b Part 2} details the rules of how to play the game, beyond the basics described in this introduction. That part covers the kinds of die rolls you make to determine success or failure at the tasks your character attempts, and describes the three broad categories of activity in the game; exploration, interaction, and combat.",
 						"{@b Part 3} is all about magic. It covers the nature of magic in the worlds of D&D, the rules for spellcasting, and the huge variety of spells available to magic-using characters (and monsters) in the game."
 					],
@@ -221,7 +221,8 @@
 							"page": 12,
 							"entries": [
 								"Bob is sitting down to create his character. He decides that a gruff mountain dwarf fits the character he wants to play. He notes all the racial traits of dwarves on his character sheet, including his speed of 25 feet and the languages he knows: Common and Dwarvish."
-							]
+							],
+							"id": "1e6"
 						}
 					],
 					"id": "011"
@@ -1085,7 +1086,7 @@
 							"d8",
 							"Wisdom",
 							"Intelligence & Wisdom",
-							"Light and medium armor (nonmetal), shields (nonmetal), clubs, daggers, darts, javelins. maces, quarterstaffs, scimitars, sickles, slings, spears"
+							"Light and medium armor (nonmetal), shields (nonmetal), clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears"
 						],
 						[
 							"{@class Fighter}",
@@ -1873,10 +1874,10 @@
 										},
 										{
 											"type": "entries",
-											"name": "Trade Goods",
+											"name": "Trade Goods and Other",
 											"page": 144,
 											"entries": [
-												"Most wealth is not in coins. It is measured in livestock, grain, land, rights to collect taxes, or rights to resources (such as a mine or a forest)."
+												"On the borderlands, many people conduct transactions through barter. Like gems and art objects, trade goods\u2014bars of iron, bags of salt, livestock, and so on\u2014retain their full value in the market and can be used as currency."
 											],
 											"id": "066"
 										}
@@ -5483,7 +5484,7 @@
 					"entries": [
 						"Multiclassing allows you to gain levels in multiple classes. Doing so lets you mix the abilities of those classes to realize a character concept that might not be reflected in one of the standard class options.",
 						"With this rule, you have the option of gaining a level in a new class whenever you advance in level, instead of gaining a level in your current class. Your levels in all your classes are added together to determine your character level. For example, if you have three levels in wizard and two in fighter, you're a 5th-level character.",
-						"As you advance in levels, you might primarily remain a member of your original class with just a few levels in another class, or you might change course entirely. never looking back at the class you left behind. You might even start progressing in a third or fourth class. Compared to a single-class character of the same level, you'll sacrifice some focus in exchange for versatility.",
+						"As you advance in levels, you might primarily remain a member of your original class with just a few levels in another class, or you might change course entirely, never looking back at the class you left behind. You might even start progressing in a third or fourth class. Compared to a single-class character of the same level, you'll sacrifice some focus in exchange for versatility.",
 						{
 							"type": "entries",
 							"name": "Prerequisites",
@@ -5570,7 +5571,7 @@
 							"page": 163,
 							"entries": [
 								"You gain the hit points from your new class as described for levels after 1st. You gain the 1st-level hit points for a class only when you are a 1st-level character.",
-								"You add together the Hit Dice granted by all your classes to form your pool of Hit Dice. if the Hit Dice are the same die type, you can simply pool them together. For example, both the fighter and the paladin have a d10. so if you are a paladin 5/fighter 5, you have ten d10 Hit Dice. If your classes give you Hit Dice of different types, keep track of them separately. If you are a paladin 5/cleric 5, for example, you have five d10 Hit Dice and five d8 Hit Dice."
+								"You add together the Hit Dice granted by all your classes to form your pool of Hit Dice. If the Hit Dice are the same die type, you can simply pool them together. For example, both the fighter and the paladin have a d10, so if you are a paladin 5/fighter 5, you have ten d10 Hit Dice. If your classes give you Hit Dice of different types, keep track of them separately. If you are a paladin 5/cleric 5, for example, you have five d10 Hit Dice and five d8 Hit Dice."
 							],
 							"id": "0f6"
 						},
@@ -8930,7 +8931,7 @@
 							"name": "Areas of Effect",
 							"page": 204,
 							"entries": [
-								"Spells such as burning hands and cone of cold cover an area, allowing them to affect multiple creatures at once. A spell's description specifies its area of effect, which typically has one of five different shapes: cone, cube, cylinder, line, or sphere. Every area of effect has a point of origin, a location from which the spell's energy erupts. The rules for each shape specify how you position its point of origin. Typically, a point of origin is a point in space, but some spells have an area whose origin is a creature or an object.",
+								"Spells such as {@spell burning hands} and {@spell cone of cold} cover an area, allowing them to affect multiple creatures at once. A spell's description specifies its area of effect, which typically has one of five different shapes: cone, cube, cylinder, line, or sphere. Every area of effect has a point of origin, a location from which the spell's energy erupts. The rules for each shape specify how you position its point of origin. Typically, a point of origin is a point in space, but some spells have an area whose origin is a creature or an object.",
 								"A spell's effect expands in straight lines from the point of origin. If no unblocked straight line extends from the point of origin to a location within the area of effect, that location isn't included in the spell's area. To block one of these imaginary lines, an obstruction must provide total cover, as explained in chapter 9.",
 								{
 									"type": "image",
@@ -9003,7 +9004,7 @@
 							"page": 205,
 							"entries": [
 								"The effects of different spells add together while the durations of those spells overlap. The effects of the same spell cast multiple times don't combine, however. Instead, the most potent effect\u2014such as the highest bonus\u2014from those castings applies while their durations overlap, or the most recent effect applies if the castings are equally potent and their durations overlap.",
-								"For example, if two clerics cast bless on the same target, that character gains the spell's benefit only once; he or she doesn't get to roll two bonus dice."
+								"For example, if two clerics cast {@spell bless} on the same target, that character gains the spell's benefit only once; he or she doesn't get to roll two bonus dice."
 							],
 							"id": "1f4"
 						},
@@ -9237,7 +9238,8 @@
 								"{@spell True Polymorph}"
 							]
 						}
-					]
+					],
+					"id": "1e8"
 				},
 				{
 					"type": "entries",
@@ -9429,7 +9431,8 @@
 								"{@spell True Resurrection}"
 							]
 						}
-					]
+					],
+					"id": "1e9"
 				},
 				{
 					"type": "entries",
@@ -9625,7 +9628,8 @@
 								"{@spell True Resurrection}"
 							]
 						}
-					]
+					],
+					"id": "1ea"
 				},
 				{
 					"type": "entries",
@@ -9716,7 +9720,8 @@
 								"{@spell Raise Dead}"
 							]
 						}
-					]
+					],
+					"id": "1eb"
 				},
 				{
 					"type": "entries",
@@ -9808,7 +9813,8 @@
 								"{@spell Tree Stride}"
 							]
 						}
-					]
+					],
+					"id": "1ec"
 				},
 				{
 					"type": "entries",
@@ -10023,7 +10029,8 @@
 								"{@spell Wish}"
 							]
 						}
-					]
+					],
+					"id": "1ed"
 				},
 				{
 					"type": "entries",
@@ -10183,7 +10190,8 @@
 								"{@spell True Polymorph}"
 							]
 						}
-					]
+					],
+					"id": "214"
 				},
 				{
 					"type": "entries",
@@ -10484,7 +10492,8 @@
 								"{@spell Wish}"
 							]
 						}
-					]
+					],
+					"id": "215"
 				},
 				{
 					"type": "section",
@@ -10860,9 +10869,11 @@
 								"{@spell Zone of Truth}"
 							]
 						}
-					]
+					],
+					"id": "216"
 				}
-			]
+			],
+			"id": "1e7"
 		},
 		{
 			"type": "section",

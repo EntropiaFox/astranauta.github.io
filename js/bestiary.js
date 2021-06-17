@@ -25,6 +25,9 @@ class BestiaryPage extends ListPage {
 
 		this._printBookView = null;
 		this._$btnProf = null;
+		this._$dispCrTotal = null;
+
+		this._lastRendered = {mon: null, isScaledCr: false, isScaledSummon: false};
 	}
 
 	getListItem (mon, mI) {
@@ -37,23 +40,37 @@ class BestiaryPage extends ListPage {
 
 		this._pageFilter.mutateAndAddToFilters(mon, isExcluded);
 
-		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
-		eleLi.addEventListener("click", (evt) => this._handleBestiaryLiClick(evt, listItem));
-		eleLi.addEventListener("contextmenu", (evt) => this._handleBestiaryLiContext(evt, listItem));
-
 		const source = Parser.sourceJsonToAbv(mon.source);
 		const type = mon._pTypes.asText.uppercaseFirst();
 		const cr = mon._pCr;
 
-		eleLi.innerHTML += `<a href="#${hash}" class="lst--border lst__row-inner">
-			${EncounterBuilder.getButtons(mI)}
-			<span class="ecgen__name bold col-4-2 pl-0">${mon.name}</span>
-			<span class="type col-4-1">${type}</span>
-			<span class="col-1-7 text-center">${cr}</span>
-			<span title="${Parser.sourceJsonToFull(mon.source)}${Renderer.utils.getSourceSubText(mon)}" class="col-2 text-center ${Parser.sourceJsonToColor(mon.source)} pr-0" ${BrewUtil.sourceJsonToStyle(mon.source)}>${source}</span>
-		</a>`;
-		eleLi.firstElementChild.addEventListener("click", evt => this._handleBestiaryLinkClick(evt));
+		const eleLi = e_({
+			tag: "div",
+			clazz: `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
+			click: (evt) => this._handleBestiaryLiClick(evt, listItem),
+			contextmenu: (evt) => this._handleBestiaryLiContext(evt, listItem),
+			children: [
+				e_({
+					tag: "a",
+					href: `#${hash}`,
+					clazz: "lst--border lst__row-inner",
+					click: evt => this._handleBestiaryLinkClick(evt),
+					children: [
+						EncounterBuilder.getButtons(mI),
+						e_({tag: "span", clazz: `ecgen__name bold col-4-2 pl-0`, text: mon.name}),
+						e_({tag: "span", clazz: `col-4-1`, text: type}),
+						e_({tag: "span", clazz: `col-1-7 text-center`, text: cr}),
+						e_({
+							tag: "span",
+							clazz: `col-2 text-center ${Parser.sourceJsonToColor(mon.source)} pr-0`,
+							style: BrewUtil.sourceJsonToStylePart(mon.source),
+							title: `${Parser.sourceJsonToFull(mon.source)}${Renderer.utils.getSourceSubText(mon)}`,
+							text: source,
+						}),
+					],
+				}),
+			],
+		});
 
 		const listItem = new ListItem(
 			mI,
@@ -84,16 +101,33 @@ class BestiaryPage extends ListPage {
 			const m = this._dataList[li.ix];
 			return this._pageFilter.toDisplay(f, m);
 		});
-		MultiSource.onFilterChangeMulti(this._dataList);
+		this._multiSource.onFilterChangeMulti(this._dataList, f);
 		encounterBuilder.resetCache();
 	}
 
-	async pGetSublistItem (monRaw, pinId, addCount, data) {
-		data = data || {};
+	async _pGetModifiedMon (monRaw, metadata) {
+		if (!metadata?.customHashId) return monRaw;
+		const {_scaledCr, _scaledSummonLevel} = Renderer.monster.getUnpackedCustomHashId(metadata.customHashId);
+		if (_scaledCr) return ScaleCreature.scale(monRaw, _scaledCr);
+		if (_scaledSummonLevel) return ScaleSummonCreature.scale(monRaw, _scaledSummonLevel);
+	}
 
-		const mon = await (data.scaled ? ScaleCreature.scale(monRaw, data.scaled) : monRaw);
+	static _getUrlSubhashes (mon, {isAddLeadingSep = true} = {}) {
+		const subhashesRaw = [
+			mon._isScaledCr ? `${UrlUtil.HASH_START_CREATURE_SCALED}${mon._scaledCr}` : null,
+			mon._summonedBySpell_level ? `${UrlUtil.HASH_START_CREATURE_SCALED_SUMMON}${mon._summonedBySpell_level}` : null,
+		].filter(Boolean);
+
+		if (!subhashesRaw.length) return "";
+		return `${isAddLeadingSep ? HASH_PART_SEP : ""}${subhashesRaw.join(HASH_PART_SEP)}`
+	}
+
+	async pGetSublistItem (monRaw, pinId, addCount, metadata) {
+		metadata = metadata || {};
+
+		const mon = await this._pGetModifiedMon(monRaw, metadata);
 		Renderer.monster.updateParsed(mon);
-		const subHash = data.scaled ? `${HASH_PART_SEP}${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}${data.scaled}` : "";
+		const subHash = this.constructor._getUrlSubhashes(mon);
 
 		const name = mon._displayName || mon.name;
 		const hash = `${UrlUtil.autoEncodeHash(mon)}${subHash}`;
@@ -101,18 +135,18 @@ class BestiaryPage extends ListPage {
 		const count = addCount || 1;
 		const cr = mon._pCr;
 
-		const $hovStatblock = $(`<span class="col-1-4 help--hover ecgen__visible">Statblock</span>`)
-			.mouseover(evt => EncounterBuilder.doStatblockMouseOver(evt, $hovStatblock[0], pinId, mon._isScaledCr))
+		const $hovStatblock = $(`<span class="col-1-4 help help--hover ecgen__visible">Statblock</span>`)
+			.mouseover(evt => EncounterBuilder.doStatblockMouseOver(evt, $hovStatblock[0], pinId, metadata))
 			.mousemove(evt => Renderer.hover.handleLinkMouseMove(evt, $hovStatblock[0]))
 			.mouseleave(evt => Renderer.hover.handleLinkMouseLeave(evt, $hovStatblock[0]));
 
 		const hovTokenMeta = EncounterBuilder.getTokenHoverMeta(mon);
-		const $hovToken = $(`<span class="col-1-2 ecgen__visible help--hover">Token</span>`)
+		const $hovToken = !hovTokenMeta ? $(`<span class="col-1-2 ecgen__visible"></span>`) : $(`<span class="col-1-2 ecgen__visible help help--hover">Token</span>`)
 			.mouseover(evt => hovTokenMeta.mouseOver(evt, $hovToken[0]))
 			.mousemove(evt => hovTokenMeta.mouseMove(evt, $hovToken[0]))
 			.mouseleave(evt => hovTokenMeta.mouseLeave(evt, $hovToken[0]));
 
-		const $hovImage = $(`<span class="col-1-2 ecgen__visible help--hover">Image</span>`)
+		const $hovImage = $(`<span class="col-1-2 ecgen__visible help help--hover">Image</span>`)
 			.mouseover(evt => EncounterBuilder.handleImageMouseOver(evt, $hovImage, pinId));
 
 		const $ptCr = (() => {
@@ -120,7 +154,7 @@ class BestiaryPage extends ListPage {
 
 			const $iptCr = $(`<input value="${cr}" class="ecgen__cr_input form-control form-control--minimal input-xs">`)
 				.click(() => $iptCr.select())
-				.change(() => encounterBuilder.pDoCrChange($iptCr, pinId, mon._isScaledCr));
+				.change(() => encounterBuilder.pDoCrChange($iptCr, pinId, mon._scaledCr));
 
 			return $$`<span class="col-1-2 text-center">${$iptCr}</span>`;
 		})();
@@ -137,7 +171,7 @@ class BestiaryPage extends ListPage {
 			</a>
 
 			<div class="lst__wrp-cells ecgen__visible--flex lst--border lst__row-inner">
-				${EncounterBuilder.$getSublistButtons(pinId, getMonCustomHashId(mon))}
+				${EncounterBuilder.$getSublistButtons(pinId, Renderer.monster.getCustomHashId(mon))}
 				<span class="ecgen__name--sub col-3-5">${name}</span>
 				${$hovStatblock}
 				${$hovToken}
@@ -161,8 +195,8 @@ class BestiaryPage extends ListPage {
 				count,
 			},
 			{
-				uniqueId: data.uniqueId || "",
-				customHashId: getMonCustomHashId(mon),
+				uniqueId: metadata.uniqueId || "",
+				customHashId: Renderer.monster.getCustomHashId(mon),
 				$elesCount: [$eleCount1, $eleCount2],
 				approxHp: this._getApproxHp(mon),
 				approxAc: this._getApproxAc(mon),
@@ -191,23 +225,32 @@ class BestiaryPage extends ListPage {
 
 		this._renderStatblock(mon);
 
-		loadSubHash([]);
+		this.pDoLoadSubHash([]);
 		ListUtil.updateSelected();
 	}
 
 	async pDoLoadSubHash (sub) {
 		sub = this._pageFilter.filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub, pPreloadSublistSources);
+		await ListUtil.pSetFromSubHashes(sub, this.pPreloadSublistSources.bind(this));
 
 		await this._printBookView.pHandleSub(sub);
 
-		const scaledHash = sub.find(it => it.startsWith(VeCt.HASH_SCALED));
+		const scaledHash = sub.find(it => it.startsWith(UrlUtil.HASH_START_CREATURE_SCALED));
+		const scaledSummonHash = sub.find(it => it.startsWith(UrlUtil.HASH_START_CREATURE_SCALED_SUMMON));
+		const mon = this._dataList[Hist.lastLoadedId];
+
 		if (scaledHash) {
 			const scaleTo = Number(UrlUtil.unpackSubHash(scaledHash)[VeCt.HASH_SCALED][0]);
 			const scaleToStr = Parser.numberToCr(scaleTo);
-			const mon = this._dataList[Hist.lastLoadedId];
-			if (Parser.isValidCr(scaleToStr) && scaleTo !== Parser.crToNumber(lastRendered.mon.cr)) {
-				ScaleCreature.scale(mon, scaleTo).then(scaled => this._renderStatblock(scaled, true));
+			if (Parser.isValidCr(scaleToStr) && scaleTo !== Parser.crToNumber(this._lastRendered.mon.cr)) {
+				ScaleCreature.scale(mon, scaleTo)
+					.then(monScaled => this._renderStatblock(monScaled, {isScaledCr: true}));
+			}
+		} else if (scaledSummonHash) {
+			const scaleTo = Number(UrlUtil.unpackSubHash(scaledSummonHash)[VeCt.HASH_SCALED_SUMMON][0]);
+			if (mon._summonedBySpell_levelBase != null && scaleTo >= mon._summonedBySpell_levelBase && scaleTo !== this._lastRendered.mon._summonedBySpell_level) {
+				ScaleSummonCreature.scale(mon, scaleTo)
+					.then(monScaled => this._renderStatblock(monScaled, {isScaledSummon: true}));
 			}
 		}
 
@@ -217,6 +260,7 @@ class BestiaryPage extends ListPage {
 	async pOnLoad () {
 		window.loadHash = this.doLoadHash.bind(this);
 		window.loadSubHash = this.pDoLoadSubHash.bind(this);
+		window.pHandleUnknownHash = this.pHandleUnknownHash.bind(this);
 
 		await this._pageFilter.pInitFilterBox({
 			$iptSearch: $(`#lst__search`),
@@ -224,7 +268,7 @@ class BestiaryPage extends ListPage {
 			$btnReset: $(`#reset`),
 		});
 
-		encounterBuilder = new EncounterBuilder();
+		encounterBuilder = new EncounterBuilder(this);
 		encounterBuilder.initUi();
 		await Promise.all([
 			ExcludeUtil.pInitialise(),
@@ -250,7 +294,7 @@ class BestiaryPage extends ListPage {
 	static popoutHandlerGenerator (toList) {
 		return (evt) => {
 			const mon = toList[Hist.lastLoadedId];
-			const toRender = lastRendered.mon != null && lastRendered.isScaled ? lastRendered.mon : mon;
+			const toRender = bestiaryPage._lastRendered.mon || mon;
 
 			if (evt.shiftKey) {
 				const $content = Renderer.hover.$getHoverContent_statsCode(toRender);
@@ -278,7 +322,7 @@ class BestiaryPage extends ListPage {
 					},
 				);
 			} else {
-				const pageUrl = `#${UrlUtil.autoEncodeHash(toRender)}${toRender._isScaledCr ? `${HASH_PART_SEP}${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}${toRender._isScaledCr}` : ""}`;
+				const pageUrl = `#${UrlUtil.autoEncodeHash(toRender)}${this._getUrlSubhashes(toRender)}`;
 
 				const renderFn = Renderer.hover.getFnRenderCompact(UrlUtil.getCurrentPage());
 				const $content = $$`<table class="stats">${renderFn(toRender)}</table>`;
@@ -292,11 +336,11 @@ class BestiaryPage extends ListPage {
 					},
 				);
 
-				// region Hacky post-process setp to match the hover window rendering pipeline
+				// region Hacky post-process step to match the hover window rendering pipeline
 				const page = UrlUtil.PG_BESTIARY;
 				const source = toRender.source;
 				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY](mon);
-				Renderer.hover.doBindMonsterContentHandlers({
+				Renderer.monster.doBindCompactContentHandlers({
 					$content,
 					sourceData: {
 						type: "stats",
@@ -344,36 +388,28 @@ class BestiaryPage extends ListPage {
 		this._listSub = ListUtil.initSublist({
 			listClass: "submonsters",
 			fnSort: PageFilterBestiary.sortMonsters,
-			onUpdate: onSublistChange,
-			customHashHandler: (mon, uid) => ScaleCreature.scale(mon, Number(uid.split("_").last())),
-			customHashUnpacker: getUnpackedCustomHashId,
+			onUpdate: this._onSublistChange.bind(this),
+			pCustomHashHandler: (mon, customHashId) => {
+				const {_scaledCr, _scaledSummonLevel} = Renderer.monster.getUnpackedCustomHashId(customHashId);
+				if (_scaledCr != null) return ScaleCreature.scale(mon, _scaledCr);
+				if (_scaledSummonLevel != null) return ScaleSummonCreature.scale(mon, _scaledSummonLevel);
+				return mon;
+			},
+			customHashUnpacker: Renderer.monster.getUnpackedCustomHashId.bind(BestiaryPage),
 		});
 		SortUtil.initBtnSortHandlers($("#sublistsort"), this._listSub);
 
-		const baseHandlerOptions = {shiftCount: 5};
-		function addHandlerGenerator () {
-			return (evt, proxyEvt) => {
-				evt = proxyEvt || evt;
-				if (lastRendered.isScaled) {
-					if (evt.shiftKey) ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, addCount: 5, data: getScaledData()});
-					else ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, addCount: 1, data: getScaledData()});
-				} else ListUtil.genericAddButtonHandler(evt, baseHandlerOptions);
-			};
-		}
-		function subtractHandlerGenerator () {
-			return (evt, proxyEvt) => {
-				evt = proxyEvt || evt;
-				if (lastRendered.isScaled) {
-					if (evt.shiftKey) ListUtil.pDoSublistSubtract(Hist.lastLoadedId, 5, getScaledData());
-					else ListUtil.pDoSublistSubtract(Hist.lastLoadedId, 1, getScaledData());
-				} else ListUtil.genericSubtractButtonHandler(evt, baseHandlerOptions);
-			};
-		}
-		ListUtil.bindAddButton(addHandlerGenerator, baseHandlerOptions);
-		ListUtil.bindSubtractButton(subtractHandlerGenerator, baseHandlerOptions);
+		ListUtil.bindAddButton(this._getFnHandleClickSublistAdd.bind(this), BestiaryPage._SUBLIST_CLICK_HANDLER_OPTIONS);
+		ListUtil.bindSubtractButton(this._getFnHandleClickSublistSubtract.bind(this), BestiaryPage._SUBLIST_CLICK_HANDLER_OPTIONS);
 		ListUtil.initGenericAddable();
 
-		// region print view
+		this._pPageInit_printBookView();
+		this._pPageInit_profBonusDiceToggle();
+
+		return {list: this._list, listSub: this._listSub};
+	}
+
+	_pPageInit_printBookView () {
 		this._printBookView = new BookModeView({
 			hashKey: "bookview",
 			$openBtn: $(`#btn-printbook`),
@@ -434,9 +470,9 @@ class BestiaryPage extends ListPage {
 			},
 			hasPrintColumns: true,
 		});
-		// endregion
+	}
 
-		// region proficiency bonus/dice toggle
+	_pPageInit_profBonusDiceToggle () {
 		const profBonusDiceBtn = $("button#profbonusdice");
 		profBonusDiceBtn.click(function () {
 			if (window.PROF_DICE_MODE === PROF_MODE_DICE) {
@@ -457,10 +493,23 @@ class BestiaryPage extends ListPage {
 				});
 			}
 		});
-		// endregion
-
-		return {list: this._list, listSub: this._listSub};
 	}
+
+	_getFnHandleClickSublistAdd () {
+		return (evt, proxyEvt) => {
+			evt = proxyEvt || evt;
+			ListUtil.genericAddButtonHandler(evt, BestiaryPage._SUBLIST_CLICK_HANDLER_OPTIONS, this._getSublistData());
+		};
+	}
+
+	_getFnHandleClickSublistSubtract () {
+		return (evt, proxyEvt) => {
+			evt = proxyEvt || evt;
+			ListUtil.genericSubtractButtonHandler(evt, BestiaryPage._SUBLIST_CLICK_HANDLER_OPTIONS, this._getSublistData());
+		};
+	}
+
+	static get _SUBLIST_CLICK_HANDLER_OPTIONS () { return {shiftCount: 5}; }
 
 	async _pPostLoad () {
 		const homebrew = await BrewUtil.pAddBrewData();
@@ -504,19 +553,19 @@ class BestiaryPage extends ListPage {
 		// build the table
 		for (; this._ixData < this._dataList.length; this._ixData++) {
 			const mon = this._dataList[this._ixData];
-			const listItem = bestiaryPage.getListItem(mon, this._ixData);
+			const listItem = this.getListItem(mon, this._ixData);
 			if (!listItem) continue;
 			this._list.addItem(listItem);
 		}
 
 		this._list.update();
 
-		bestiaryPage._pageFilter.filterBox.render();
-		bestiaryPage.handleFilterChange();
+		this._pageFilter.filterBox.render();
+		this.handleFilterChange();
 
 		ListUtil.setOptions({
 			itemList: this._dataList,
-			getSublistRow: bestiaryPage.pGetSublistItem.bind(bestiaryPage),
+			getSublistRow: this.pGetSublistItem.bind(this),
 			primaryLists: [this._list],
 		});
 
@@ -529,18 +578,18 @@ class BestiaryPage extends ListPage {
 				title: "Popout Window (SHIFT for Source Data; CTRL for Markdown Render)",
 			},
 		);
-		UrlUtil.bindLinkExportButton(bestiaryPage._pageFilter.filterBox);
+		UrlUtil.bindLinkExportButton(this._pageFilter.filterBox);
 		ListUtil.bindOtherButtons({
 			download: true,
 			upload: {
-				pFnPreLoad: pPreloadSublistSources,
+				pFnPreLoad: this.pPreloadSublistSources.bind(this),
 			},
 			sendToBrew: {
 				mode: "creatureBuilder",
 				fnGetMeta: () => ({
 					page: UrlUtil.getCurrentPage(),
 					source: Hist.getHashSource(),
-					hash: Hist.getHashParts()[0],
+					hash: `${UrlUtil.autoEncodeHash(this._lastRendered.mon)}${BestiaryPage._getUrlSubhashes(this._lastRendered.mon)}`,
 				}),
 			},
 		});
@@ -548,9 +597,11 @@ class BestiaryPage extends ListPage {
 		Renderer.utils.bindPronounceButtons();
 	}
 
-	_renderStatblock (mon, isScaled) {
-		lastRendered.mon = mon;
-		lastRendered.isScaled = isScaled;
+	_renderStatblock (mon, {isScaledCr = false, isScaledSummon = false} = {}) {
+		this._lastRendered.mon = mon;
+		this._lastRendered.isScaledCr = isScaledCr;
+		this._lastRendered.isScaledSummon = isScaledSummon;
+
 		Renderer.get().setFirstSection(true);
 
 		const $content = $("#pagecontent").empty();
@@ -561,285 +612,6 @@ class BestiaryPage extends ListPage {
 			this._$btnProf = null;
 		}
 
-		const buildStatsTab = () => {
-			const $btnScaleCr = mon.cr != null ? $(`
-			<button id="btn-scale-cr" title="Scale Creature By CR (Highly Experimental)" class="mon__btn-scale-cr btn btn-xs btn-default">
-				<span class="glyphicon glyphicon-signal"/>
-			</button>`)
-				.off("click").click((evt) => {
-					evt.stopPropagation();
-					const win = (evt.view || {}).window;
-					const mon = this._dataList[Hist.lastLoadedId];
-					const lastCr = lastRendered.mon ? lastRendered.mon.cr.cr || lastRendered.mon.cr : mon.cr.cr || mon.cr;
-					Renderer.monster.getCrScaleTarget(win, $btnScaleCr, lastCr, (targetCr) => {
-						if (targetCr === Parser.crToNumber(mon.cr)) this._renderStatblock(mon);
-						else Hist.setSubhash(VeCt.HASH_SCALED, targetCr);
-					});
-				}).toggle(Parser.crToNumber(mon.cr.cr || mon.cr) < VeCt.CR_CUSTOM) : null;
-
-			const $btnResetScaleCr = mon.cr != null ? $(`
-			<button id="btn-reset-cr" title="Reset CR Scaling" class="mon__btn-reset-cr btn btn-xs btn-default">
-				<span class="glyphicon glyphicon-refresh"></span>
-			</button>`)
-				.click(() => Hist.setSubhash(VeCt.HASH_SCALED, null))
-				.toggle(isScaled) : null;
-
-			$content.append(RenderBestiary.$getRenderedCreature(mon, {$btnScaleCr, $btnResetScaleCr}));
-
-			// tokens
-			(() => {
-				const $tokenImages = [];
-
-				// statblock scrolling handler
-				$(`#wrp-pagecontent`).off("scroll").on("scroll", function () {
-					$tokenImages.forEach($img => {
-						$img
-							.toggle(this.scrollTop < 32)
-							.css({
-								opacity: (32 - this.scrollTop) / 32,
-								top: -this.scrollTop,
-							});
-					});
-				});
-
-				const $floatToken = $(`#float-token`).empty();
-
-				const hasToken = mon.tokenUrl || mon.hasToken;
-				if (!hasToken) return;
-
-				const imgLink = Renderer.monster.getTokenUrl(mon);
-				const $img = $(`<img src="${imgLink}" class="mon__token" alt="${mon.name}">`);
-				$tokenImages.push($img);
-				const $lnkToken = $$`<a href="${imgLink}" class="mon__wrp-token" target="_blank" rel="noopener noreferrer">${$img}</a>`.appendTo($floatToken);
-
-				const altArtMeta = [];
-
-				if (mon.altArt) altArtMeta.push(...MiscUtil.copy(mon.altArt));
-				if (mon.variant) {
-					const variantTokens = mon.variant.filter(it => it.token).map(it => it.token);
-					if (variantTokens.length) altArtMeta.push(...MiscUtil.copy(variantTokens).map(it => ({...it, displayName: `Variant; ${it.name}`})));
-				}
-
-				if (altArtMeta.length) {
-					// make a fake entry for the original token
-					altArtMeta.unshift({$ele: $lnkToken});
-
-					const buildEle = (meta) => {
-						if (!meta.$ele) {
-							const imgLink = Renderer.monster.getTokenUrl({name: meta.name, source: meta.source, tokenUrl: meta.tokenUrl});
-							const $img = $(`<img src="${imgLink}" class="mon__token" alt="${meta.displayName || meta.name}">`)
-								.on("error", () => {
-									$img.attr(
-										"src",
-										`data:image/svg+xml,${encodeURIComponent(`
-										<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
-											<circle cx="200" cy="200" r="175" fill="#b00"/>
-											<rect x="190" y="40" height="320" width="20" fill="#ddd" transform="rotate(45 200 200)"/>
-											<rect x="190" y="40" height="320" width="20" fill="#ddd" transform="rotate(135 200 200)"/>
-										</svg>`,
-										)}`,
-									);
-								});
-							$tokenImages.push($img);
-							meta.$ele = $$`<a href="${imgLink}" class="mon__wrp-token" target="_blank" rel="noopener noreferrer">${$img}</a>`
-								.hide()
-								.css("max-width", "100%") // hack to ensure the token gets shown at max width on first look
-								.appendTo($floatToken);
-						}
-					};
-					altArtMeta.forEach(buildEle);
-
-					let ix = 0;
-					const handleClick = (evt, direction) => {
-						evt.stopPropagation();
-						evt.preventDefault();
-
-						// avoid going off the edge of the list
-						if (ix === 0 && !~direction) return;
-						if (ix === altArtMeta.length - 1 && ~direction) return;
-
-						ix += direction;
-
-						if (!~direction) { // left
-							if (ix === 0) {
-								$btnLeft.hide();
-								$wrpFooter.hide();
-							}
-							$btnRight.show();
-						} else {
-							$btnLeft.show();
-							$wrpFooter.show();
-							if (ix === altArtMeta.length - 1) {
-								$btnRight.hide();
-							}
-						}
-						altArtMeta.filter(it => it.$ele).forEach(it => it.$ele.hide());
-
-						const meta = altArtMeta[ix];
-						meta.$ele.show();
-						setTimeout(() => meta.$ele.css("max-width", ""), 10); // hack to clear the earlier 100% width
-
-						if (meta.name && meta.source) $footer.html(`<div>${meta.displayName || meta.name}; <span title="${Parser.sourceJsonToFull(meta.source)}">${Parser.sourceJsonToAbv(meta.source)}${Renderer.utils.isDisplayPage(meta.page) ? ` p${meta.page}` : ""}</span></div>`);
-						else $footer.html("");
-
-						$wrpFooter.detach().appendTo(meta.$ele);
-						$btnLeft.detach().appendTo(meta.$ele);
-						$btnRight.detach().appendTo(meta.$ele);
-					};
-
-					// append footer first to be behind buttons
-					const $footer = $(`<div class="mon__token-footer"/>`);
-					const $wrpFooter = $$`<div class="mon__wrp-token-footer">${$footer}</div>`.hide().appendTo($lnkToken);
-
-					const $btnLeft = $$`<div class="mon__btn-token-cycle mon__btn-token-cycle--left"><span class="glyphicon glyphicon-chevron-left"/></div>`
-						.click(evt => handleClick(evt, -1)).appendTo($lnkToken)
-						.hide();
-
-					const $btnRight = $$`<div class="mon__btn-token-cycle mon__btn-token-cycle--right"><span class="glyphicon glyphicon-chevron-right"/></div>`
-						.click(evt => handleClick(evt, 1)).appendTo($lnkToken);
-				}
-			})();
-
-			// inline rollers //////////////////////////////////////////////////////////////////////////////////////////////
-			const isProfDiceMode = PROF_DICE_MODE === PROF_MODE_DICE;
-			function _addSpacesToDiceExp (exp) {
-				return exp.replace(/([^0-9d])/gi, " $1 ").replace(/\s+/g, " ");
-			}
-
-			// add proficiency dice stuff for attack rolls, since those _generally_ have proficiency
-			// this is not 100% accurate; for example, ghouls don't get their prof bonus on bite attacks
-			// fixing it would probably involve machine learning though; we need an AI to figure it out on-the-fly
-			// (Siri integration forthcoming)
-			$content.find(".render-roller")
-				.filter(function () {
-					return $(this).text().match(/^([-+])?\d+$/);
-				})
-				.each(function () {
-					const bonus = Number($(this).text());
-					const expectedPB = Parser.crToPb(mon.cr);
-
-					// skills and saves can have expertise
-					let expert = 1;
-					let pB = expectedPB;
-					let fromAbility;
-					let ability;
-					if ($(this).parent().attr("data-mon-save")) {
-						const monSave = $(this).parent().attr("data-mon-save");
-						ability = monSave.split("|")[0].trim().toLowerCase();
-						fromAbility = Parser.getAbilityModNumber(mon[ability]);
-						pB = bonus - fromAbility;
-						expert = (pB === expectedPB * 2) ? 2 : 1;
-					} else if ($(this).parent().attr("data-mon-skill")) {
-						const monSkill = $(this).parent().attr("data-mon-skill");
-						ability = Parser.skillToAbilityAbv(monSkill.split("|")[0].toLowerCase().trim());
-						fromAbility = Parser.getAbilityModNumber(mon[ability]);
-						pB = bonus - fromAbility;
-						expert = (pB === expectedPB * 2) ? 2 : 1;
-					} else if ($(this).data("packed-dice").successThresh !== null) return; // Ignore "recharge"
-
-					const withoutPB = bonus - pB;
-					try {
-						// if we have proficiency bonus, convert the roller
-						if (expectedPB > 0) {
-							const profDiceString = _addSpacesToDiceExp(`${expert}d${pB * (3 - expert)}${withoutPB >= 0 ? "+" : ""}${withoutPB}`);
-
-							$(this).attr("data-roll-prof-bonus", $(this).text());
-							$(this).attr("data-roll-prof-dice", profDiceString);
-
-							// here be (chromatic) dragons
-							const cached = $(this).attr("onclick");
-							const nu = `
-							(function(it) {
-								if (PROF_DICE_MODE === PROF_MODE_DICE) {
-									Renderer.dice.pRollerClick(event, it, '{"type":"dice","rollable":true,"toRoll":"1d20 + ${profDiceString}"}'${$(this).prop("title") ? `, '${$(this).prop("title")}'` : ""})
-								} else {
-									${cached.replace(/this/g, "it")}
-								}
-							})(this)`;
-
-							$(this).attr("onclick", nu);
-
-							if (isProfDiceMode) {
-								$(this).html(profDiceString);
-							}
-						}
-					} catch (e) {
-						setTimeout(() => {
-							throw new Error(`Invalid save or skill roller! Bonus was ${bonus >= 0 ? "+" : ""}${bonus}, but creature's PB was +${expectedPB} and relevant ability score (${ability}) was ${fromAbility >= 0 ? "+" : ""}${fromAbility} (should have been ${expectedPB + fromAbility >= 0 ? "+" : ""}${expectedPB + fromAbility} total)`);
-						}, 0);
-					}
-				});
-
-			$content.find("p, li").each(function () {
-				$(this).find(`.rd__dc`).each((i, e) => {
-					const $e = $(e);
-					const dc = Number($e.html());
-
-					const expectedPB = Parser.crToPb(mon.cr);
-					if (expectedPB > 0) {
-						const withoutPB = dc - expectedPB;
-						const profDiceString = _addSpacesToDiceExp(`1d${(expectedPB * 2)}${withoutPB >= 0 ? "+" : ""}${withoutPB}`);
-
-						$e
-							.addClass("dc-roller")
-							.attr("mode", isProfDiceMode ? "dice" : "")
-							.mousedown((evt) => window.PROF_DICE_MODE === window.PROF_MODE_DICE && evt.preventDefault())
-							.attr("onclick", `dcRollerClick(event, this, '${profDiceString}')`)
-							.attr("data-roll-prof-bonus", `${dc}`)
-							.attr("data-roll-prof-dice", profDiceString)
-							.html(isProfDiceMode ? profDiceString : dc)
-					}
-				});
-			});
-
-			$(`#wrp-pagecontent`).scroll();
-		}
-
-		const buildFluffTab = (isImageTab) => {
-			const pGetFluffEntries = async () => {
-				const mon = this._dataList[Hist.lastLoadedId];
-				const fluff = await Renderer.monster.pGetFluff(mon);
-				return fluff.entries || [];
-			};
-
-			// Add Markdown copy button
-			const $headerControls = isImageTab ? null : (() => {
-				const actions = [
-					new ContextUtil.Action(
-						"Copy as JSON",
-						async () => {
-							const fluffEntries = await pGetFluffEntries();
-							MiscUtil.pCopyTextToClipboard(JSON.stringify(fluffEntries, null, "\t"));
-							JqueryUtil.showCopiedEffect($btnOptions);
-						},
-					),
-					new ContextUtil.Action(
-						"Copy as Markdown",
-						async () => {
-							const fluffEntries = await pGetFluffEntries();
-							const rendererMd = RendererMarkdown.get().setFirstSection(true);
-							MiscUtil.pCopyTextToClipboard(fluffEntries.map(f => rendererMd.render(f)).join("\n"));
-							JqueryUtil.showCopiedEffect($btnOptions);
-						},
-					),
-				]
-				const menu = ContextUtil.getMenu(actions);
-
-				const $btnOptions = $(`<button class="btn btn-default btn-xs btn-stats-name"><span class="glyphicon glyphicon-option-vertical"/></button>`)
-					.click(evt => ContextUtil.pOpenMenu(evt, menu));
-
-				return $$`<div class="flex-v-center btn-group ml-2">${$btnOptions}</div>`;
-			})();
-
-			return Renderer.utils.pBuildFluffTab({
-				isImageTab,
-				$content,
-				entity: mon,
-				pFnGetFluff: Renderer.monster.pGetFluff,
-				$headerControls,
-			});
-		}
-
 		// reset tabs
 		const tabMetas = [
 			new Renderer.utils.TabButton({
@@ -848,7 +620,7 @@ class BestiaryPage extends ListPage {
 					$wrpBtnProf.append(this._$btnProf);
 					$(`#float-token`).show();
 				},
-				fnPopulate: buildStatsTab,
+				fnPopulate: () => this._renderStatblock_doBuildStatsTab({mon, $content, isScaledCr, isScaledSummon}),
 				isVisible: true,
 			}),
 			new Renderer.utils.TabButton({
@@ -857,8 +629,8 @@ class BestiaryPage extends ListPage {
 					this._$btnProf = $wrpBtnProf.children().length ? $wrpBtnProf.children().detach() : this._$btnProf;
 					$(`#float-token`).hide();
 				},
-				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(mon),
+				fnPopulate: () => this._renderStatblock_doBuildFluffTab({$content}),
+				isVisible: Renderer.utils.hasFluffText(mon, "monsterFluff"),
 			}),
 			new Renderer.utils.TabButton({
 				label: "Images",
@@ -866,14 +638,317 @@ class BestiaryPage extends ListPage {
 					this._$btnProf = $wrpBtnProf.children().length ? $wrpBtnProf.children().detach() : this._$btnProf;
 					$(`#float-token`).hide();
 				},
-				fnPopulate: () => buildFluffTab(true),
-				isVisible: Renderer.utils.hasFluffImages(mon),
+				fnPopulate: () => this._renderStatblock_doBuildFluffTab({$content, isImageTab: true}),
+				isVisible: Renderer.utils.hasFluffImages(mon, "monsterFluff"),
 			}),
 		];
 
 		Renderer.utils.bindTabButtons({
 			tabButtons: tabMetas.filter(it => it.isVisible),
 			tabLabelReference: tabMetas.map(it => it.label),
+		});
+	}
+
+	_renderStatblock_doBuildStatsTab (
+		{
+			mon,
+			$content,
+			isScaledCr,
+			isScaledSummon,
+		},
+	) {
+		const $btnScaleCr = mon.cr == null ? null : $(`<button id="btn-scale-cr" title="Scale Creature By CR (Highly Experimental)" class="mon__btn-scale-cr btn btn-xs btn-default"><span class="glyphicon glyphicon-signal"></span></button>`)
+			.click((evt) => {
+				evt.stopPropagation();
+				const win = (evt.view || {}).window;
+				const mon = this._dataList[Hist.lastLoadedId];
+				const lastCr = this._lastRendered.mon ? this._lastRendered.mon.cr.cr || this._lastRendered.mon.cr : mon.cr.cr || mon.cr;
+				Renderer.monster.getCrScaleTarget({
+					win,
+					$btnScale: $btnScaleCr,
+					initialCr: lastCr,
+					cbRender: (targetCr) => {
+						if (targetCr === Parser.crToNumber(mon.cr)) this._renderStatblock(mon);
+						else Hist.setSubhash(VeCt.HASH_SCALED, targetCr);
+					},
+				});
+			})
+			.toggle(Parser.crToNumber(mon.cr.cr || mon.cr) < VeCt.CR_CUSTOM);
+
+		const $btnResetScaleCr = mon.cr == null ? null : $(`<button id="btn-reset-cr" title="Reset CR Scaling" class="mon__btn-reset-cr btn btn-xs btn-default"><span class="glyphicon glyphicon-refresh"></span></button>`)
+			.click(() => Hist.setSubhash(VeCt.HASH_SCALED, null))
+			.toggle(isScaledCr);
+
+		const selSummonSpellLevel = Renderer.monster.getSelSummonSpellLevel(mon)
+		if (selSummonSpellLevel) {
+			selSummonSpellLevel
+				.onChange(evt => {
+					evt.stopPropagation();
+					const scaleTo = Number(selSummonSpellLevel.val());
+					if (!~scaleTo) Hist.setSubhash(VeCt.HASH_SCALED_SUMMON, null)
+					else Hist.setSubhash(VeCt.HASH_SCALED_SUMMON, scaleTo);
+				});
+		}
+		if (isScaledSummon) selSummonSpellLevel.val(`${mon._summonedBySpell_level}`);
+
+		$content.append(RenderBestiary.$getRenderedCreature(mon, {$btnScaleCr, $btnResetScaleCr, selSummonSpellLevel}));
+
+		// tokens
+		(() => {
+			const $tokenImages = [];
+
+			// statblock scrolling handler
+			$(`#wrp-pagecontent`).off("scroll").on("scroll", function () {
+				$tokenImages.forEach($img => {
+					$img
+						.toggle(this.scrollTop < 32)
+						.css({
+							opacity: (32 - this.scrollTop) / 32,
+							top: -this.scrollTop,
+						});
+				});
+			});
+
+			const $floatToken = $(`#float-token`).empty();
+
+			const hasToken = mon.tokenUrl || mon.hasToken;
+			if (!hasToken) return;
+
+			const imgLink = Renderer.monster.getTokenUrl(mon);
+			const $img = $(`<img src="${imgLink}" class="mon__token" alt="Token Image: ${(mon.name || "").qq()}" loading="lazy">`);
+			$tokenImages.push($img);
+			const $lnkToken = $$`<a href="${imgLink}" class="mon__wrp-token" target="_blank" rel="noopener noreferrer">${$img}</a>`
+				.appendTo($floatToken);
+
+			const altArtMeta = [];
+
+			if (mon.altArt) altArtMeta.push(...MiscUtil.copy(mon.altArt));
+			if (mon.variant) {
+				const variantTokens = mon.variant.filter(it => it.token).map(it => it.token);
+				if (variantTokens.length) altArtMeta.push(...MiscUtil.copy(variantTokens).map(it => ({...it, displayName: `Variant; ${it.name}`})));
+			}
+
+			if (altArtMeta.length) {
+				// make a fake entry for the original token
+				altArtMeta.unshift({$ele: $lnkToken});
+
+				const buildEle = (meta) => {
+					if (!meta.$ele) {
+						const imgLink = Renderer.monster.getTokenUrl({name: meta.name, source: meta.source, tokenUrl: meta.tokenUrl});
+						const $img = $(`<img src="${imgLink}" class="mon__token" alt="Token Image: ${(meta.displayName || meta.name || "").qq()}" loading="lazy">`)
+							.on("error", () => {
+								$img.attr(
+									"src",
+									`data:image/svg+xml,${encodeURIComponent(`
+										<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+											<circle cx="200" cy="200" r="175" fill="#b00"/>
+											<rect x="190" y="40" height="320" width="20" fill="#ddd" transform="rotate(45 200 200)"/>
+											<rect x="190" y="40" height="320" width="20" fill="#ddd" transform="rotate(135 200 200)"/>
+										</svg>`,
+									)}`,
+								);
+							});
+						$tokenImages.push($img);
+						meta.$ele = $$`<a href="${imgLink}" class="mon__wrp-token" target="_blank" rel="noopener noreferrer">${$img}</a>`
+							.hide()
+							.css("max-width", "100%") // hack to ensure the token gets shown at max width on first look
+							.appendTo($floatToken);
+					}
+				};
+				altArtMeta.forEach(buildEle);
+
+				let ix = 0;
+				const handleClick = (evt, direction) => {
+					evt.stopPropagation();
+					evt.preventDefault();
+
+					// avoid going off the edge of the list
+					if (ix === 0 && !~direction) return;
+					if (ix === altArtMeta.length - 1 && ~direction) return;
+
+					ix += direction;
+
+					if (!~direction) { // left
+						if (ix === 0) {
+							$btnLeft.hide();
+							$wrpFooter.hide();
+						}
+						$btnRight.show();
+					} else {
+						$btnLeft.show();
+						$wrpFooter.show();
+						if (ix === altArtMeta.length - 1) {
+							$btnRight.hide();
+						}
+					}
+					altArtMeta.filter(it => it.$ele).forEach(it => it.$ele.hide());
+
+					const meta = altArtMeta[ix];
+					meta.$ele.show();
+					setTimeout(() => meta.$ele.css("max-width", ""), 10); // hack to clear the earlier 100% width
+
+					if (meta.name && meta.source) $footer.html(`<div>${meta.displayName || meta.name}; <span title="${Parser.sourceJsonToFull(meta.source)}">${Parser.sourceJsonToAbv(meta.source)}${Renderer.utils.isDisplayPage(meta.page) ? ` p${meta.page}` : ""}</span></div>`);
+					else $footer.html("");
+
+					$wrpFooter.detach().appendTo(meta.$ele);
+					$btnLeft.detach().appendTo(meta.$ele);
+					$btnRight.detach().appendTo(meta.$ele);
+				};
+
+				// append footer first to be behind buttons
+				const $footer = $(`<div class="mon__token-footer"/>`);
+				const $wrpFooter = $$`<div class="mon__wrp-token-footer">${$footer}</div>`.hide().appendTo($lnkToken);
+
+				const $btnLeft = $$`<div class="mon__btn-token-cycle mon__btn-token-cycle--left"><span class="glyphicon glyphicon-chevron-left"/></div>`
+					.click(evt => handleClick(evt, -1)).appendTo($lnkToken)
+					.hide();
+
+				const $btnRight = $$`<div class="mon__btn-token-cycle mon__btn-token-cycle--right"><span class="glyphicon glyphicon-chevron-right"/></div>`
+					.click(evt => handleClick(evt, 1)).appendTo($lnkToken);
+			}
+		})();
+
+		// inline rollers //////////////////////////////////////////////////////////////////////////////////////////////
+		const isProfDiceMode = PROF_DICE_MODE === PROF_MODE_DICE;
+		function _addSpacesToDiceExp (exp) {
+			return exp.replace(/([^0-9d])/gi, " $1 ").replace(/\s+/g, " ");
+		}
+
+		// add proficiency dice stuff for attack rolls, since those _generally_ have proficiency
+		// this is not 100% accurate; for example, ghouls don't get their prof bonus on bite attacks
+		// fixing it would probably involve machine learning though; we need an AI to figure it out on-the-fly
+		// (Siri integration forthcoming)
+		$content.find(".render-roller")
+			.filter(function () {
+				return $(this).text().match(/^([-+])?\d+$/);
+			})
+			.each(function () {
+				const bonus = Number($(this).text());
+				const expectedPB = Parser.crToPb(mon.cr);
+
+				// skills and saves can have expertise
+				let expert = 1;
+				let pB = expectedPB;
+				let fromAbility;
+				let ability;
+				if ($(this).parent().attr("data-mon-save")) {
+					const monSave = $(this).parent().attr("data-mon-save");
+					ability = monSave.split("|")[0].trim().toLowerCase();
+					fromAbility = Parser.getAbilityModNumber(mon[ability]);
+					pB = bonus - fromAbility;
+					expert = (pB === expectedPB * 2) ? 2 : 1;
+				} else if ($(this).parent().attr("data-mon-skill")) {
+					const monSkill = $(this).parent().attr("data-mon-skill");
+					ability = Parser.skillToAbilityAbv(monSkill.split("|")[0].toLowerCase().trim());
+					fromAbility = Parser.getAbilityModNumber(mon[ability]);
+					pB = bonus - fromAbility;
+					expert = (pB === expectedPB * 2) ? 2 : 1;
+				} else if ($(this).data("packed-dice").successThresh !== null) return; // Ignore "recharge"
+
+				const withoutPB = bonus - pB;
+				try {
+					// if we have proficiency bonus, convert the roller
+					if (expectedPB > 0) {
+						const profDiceString = _addSpacesToDiceExp(`${expert}d${pB * (3 - expert)}${withoutPB >= 0 ? "+" : ""}${withoutPB}`);
+
+						$(this).attr("data-roll-prof-bonus", $(this).text());
+						$(this).attr("data-roll-prof-dice", profDiceString);
+
+						// here be (chromatic) dragons
+						const cached = $(this).attr("onclick");
+						const nu = `
+							(function(it) {
+								if (PROF_DICE_MODE === PROF_MODE_DICE) {
+									Renderer.dice.pRollerClick(event, it, '{"type":"dice","rollable":true,"toRoll":"1d20 + ${profDiceString}"}'${$(this).prop("title") ? `, '${$(this).prop("title")}'` : ""})
+								} else {
+									${cached.replace(/this/g, "it")}
+								}
+							})(this)`;
+
+						$(this).attr("onclick", nu);
+
+						if (isProfDiceMode) {
+							$(this).html(profDiceString);
+						}
+					}
+				} catch (e) {
+					setTimeout(() => {
+						throw new Error(`Invalid save or skill roller! Bonus was ${bonus >= 0 ? "+" : ""}${bonus}, but creature's PB was +${expectedPB} and relevant ability score (${ability}) was ${fromAbility >= 0 ? "+" : ""}${fromAbility} (should have been ${expectedPB + fromAbility >= 0 ? "+" : ""}${expectedPB + fromAbility} total)`);
+					}, 0);
+				}
+			});
+
+		$content.find("p, li").each(function () {
+			$(this).find(`.rd__dc`).each((i, e) => {
+				const $e = $(e);
+				const dc = Number($e.html());
+
+				const expectedPB = Parser.crToPb(mon.cr);
+				if (expectedPB > 0) {
+					const withoutPB = dc - expectedPB;
+					const profDiceString = _addSpacesToDiceExp(`1d${(expectedPB * 2)}${withoutPB >= 0 ? "+" : ""}${withoutPB}`);
+
+					$e
+						.addClass("dc-roller")
+						.attr("mode", isProfDiceMode ? "dice" : "")
+						.mousedown((evt) => window.PROF_DICE_MODE === window.PROF_MODE_DICE && evt.preventDefault())
+						.attr("onclick", `dcRollerClick(event, this, '${profDiceString}')`)
+						.attr("data-roll-prof-bonus", `${dc}`)
+						.attr("data-roll-prof-dice", profDiceString)
+						.html(isProfDiceMode ? profDiceString : dc)
+				}
+			});
+		});
+
+		$(`#wrp-pagecontent`).scroll();
+	}
+
+	_renderStatblock_doBuildFluffTab (
+		{
+			$content,
+			isImageTab,
+		},
+	) {
+		const pGetFluffEntries = async () => {
+			const mon = this._dataList[Hist.lastLoadedId];
+			const fluff = await Renderer.monster.pGetFluff(mon);
+			return fluff.entries || [];
+		};
+
+		const $headerControls = isImageTab ? null : (() => {
+			const actions = [
+				new ContextUtil.Action(
+					"Copy as JSON",
+					async () => {
+						const fluffEntries = await pGetFluffEntries();
+						MiscUtil.pCopyTextToClipboard(JSON.stringify(fluffEntries, null, "\t"));
+						JqueryUtil.showCopiedEffect($btnOptions);
+					},
+				),
+				new ContextUtil.Action(
+					"Copy as Markdown",
+					async () => {
+						const fluffEntries = await pGetFluffEntries();
+						const rendererMd = RendererMarkdown.get().setFirstSection(true);
+						MiscUtil.pCopyTextToClipboard(fluffEntries.map(f => rendererMd.render(f)).join("\n"));
+						JqueryUtil.showCopiedEffect($btnOptions);
+					},
+				),
+			]
+			const menu = ContextUtil.getMenu(actions);
+
+			const $btnOptions = $(`<button class="btn btn-default btn-xs btn-stats-name"><span class="glyphicon glyphicon-option-vertical"/></button>`)
+				.click(evt => ContextUtil.pOpenMenu(evt, menu));
+
+			return $$`<div class="flex-v-center btn-group ml-2">${$btnOptions}</div>`;
+		})();
+
+		return Renderer.utils.pBuildFluffTab({
+			isImageTab,
+			$content,
+			entity: this._dataList[Hist.lastLoadedId],
+			pFnGetFluff: Renderer.monster.pGetFluff,
+			$headerControls,
 		});
 	}
 
@@ -885,6 +960,47 @@ class BestiaryPage extends ListPage {
 		if (legGroup) BestiaryPage._INDEXABLE_PROPS_LEG_GROUP.forEach(it => this._getSearchCache_handleEntryProp(legGroup, it, ptrOut));
 		return ptrOut._;
 	}
+
+	_getSublistData () {
+		const customHashId = Renderer.monster.getCustomHashId(this._lastRendered.mon);
+		if (!customHashId) return null;
+		return {customHashId};
+	}
+
+	_onSublistChange () {
+		this._$dispCrTotal = this._$dispCrTotal || $(`#totalcr`);
+		const xp = EncounterBuilderUtils.calculateListEncounterXp(encounterBuilder.lastPartyMeta);
+		const monCount = ListUtil.sublist.items.map(it => it.values.count).reduce((a, b) => a + b, 0);
+		this._$dispCrTotal.html(`${monCount} creature${monCount === 1 ? "" : "s"}; ${xp.baseXp.toLocaleString()} XP (<span class="help" title="Adjusted Encounter XP">Enc</span>: ${(xp.adjustedXp).toLocaleString()} XP)`);
+		if (encounterBuilder.isActive()) encounterBuilder.updateDifficulty();
+		else encounterBuilder.doSaveState();
+	}
+
+	async pPreloadSublistSources (json) {
+		if (json.l && json.l.items && json.l.sources) { // if it's an encounter file
+			json.items = json.l.items;
+			json.sources = json.l.sources;
+		}
+		const loaded = Object.keys(this._multiSource.loadedSources)
+			.filter(it => this._multiSource.loadedSources[it].loaded);
+		const lowerSources = json.sources.map(it => it.toLowerCase());
+		const toLoad = Object.keys(this._multiSource.loadedSources)
+			.filter(it => !loaded.includes(it))
+			.filter(it => lowerSources.includes(it.toLowerCase()));
+		const loadTotal = toLoad.length;
+		if (loadTotal) {
+			await Promise.all(toLoad.map(src => this._multiSource.pLoadSource(src, "yes")));
+		}
+	}
+
+	async pHandleUnknownHash (link, sub) {
+		const src = Object.keys(bestiaryPage._multiSource.loadedSources)
+			.find(src => src.toLowerCase() === (UrlUtil.decodeHash(link)[1] || "").toLowerCase());
+		if (src) {
+			await bestiaryPage._multiSource.pLoadSource(src, "yes");
+			Hist.hashChange();
+		}
+	}
 }
 BestiaryPage._INDEXABLE_PROPS = [
 	"trait",
@@ -894,6 +1010,7 @@ BestiaryPage._INDEXABLE_PROPS = [
 	"reaction",
 	"legendary",
 	"mythic",
+	"variant",
 ];
 BestiaryPage._INDEXABLE_PROPS_LEG_GROUP = [
 	"lairActions",
@@ -905,10 +1022,15 @@ let encounterBuilder;
 
 class EncounterBuilderUtils {
 	static getSublistedEncounter () {
-		return ListUtil.sublist.items.map(it => {
-			const mon = bestiaryPage._dataList[it.ix];
-			if (mon.cr) {
-				const crScaled = it.data.customHashId ? Number(getUnpackedCustomHashId(it.data.customHashId).scaled) : null;
+		return ListUtil.sublist.items
+			.map(it => {
+				const mon = bestiaryPage._dataList[it.ix];
+				if (!mon.cr) return null;
+
+				// (N.b.: we don't handle scaled summon creatures here, as they *shouldn't* have CRs.)
+				const crScaled = it.data.customHashId
+					? Number(Renderer.monster.getUnpackedCustomHashId(it.data.customHashId)._scaledCr)
+					: null;
 				return {
 					cr: it.values.cr,
 					crNumber: Parser.crToNumber(it.values.cr),
@@ -922,8 +1044,9 @@ class EncounterBuilderUtils {
 					customHashId: it.data.customHashId,
 					hash: UrlUtil.autoEncodeHash(mon),
 				}
-			}
-		}).filter(it => it && it.crNumber < VeCt.CR_CUSTOM).sort((a, b) => SortUtil.ascSort(b.crNumber, a.crNumber));
+			})
+			.filter(it => it && it.crNumber < VeCt.CR_CUSTOM)
+			.sort((a, b) => SortUtil.ascSort(b.crNumber, a.crNumber));
 	}
 
 	static calculateListEncounterXp (partyMeta) {
@@ -931,11 +1054,11 @@ class EncounterBuilderUtils {
 	}
 
 	static getCrCutoff (data, partyMeta) {
-		data = data.filter(it => getCr(it) < VeCt.CR_CUSTOM).sort((a, b) => SortUtil.ascSort(getCr(b), getCr(a)));
+		data = data.filter(it => EncounterBuilderUtils.getCr(it) < VeCt.CR_CUSTOM).sort((a, b) => SortUtil.ascSort(EncounterBuilderUtils.getCr(b), EncounterBuilderUtils.getCr(a)));
 		if (!data.length) return 0;
 
 		// no cutoff for CR 0-2
-		if (getCr(data[0]) <= 2) return 0;
+		if (EncounterBuilderUtils.getCr(data[0]) <= 2) return 0;
 
 		// ===============================================================================================================
 		// "When making this calculation, don't count any monsters whose challenge rating is significantly below the average
@@ -951,7 +1074,7 @@ class EncounterBuilderUtils {
 		// Spread the CRs into a single array
 		const crValues = [];
 		data.forEach(it => {
-			const cr = getCr(it);
+			const cr = EncounterBuilderUtils.getCr(it);
 			for (let i = 0; i < it.count; ++i) crValues.push(cr);
 		});
 
@@ -1032,8 +1155,8 @@ class EncounterBuilderUtils {
 		// Make a default, generic-sized party of level 1 players
 		if (partyMeta == null) partyMeta = new EncounterPartyMeta([{level: 1, count: ECGEN_BASE_PLAYERS}])
 
-		data = data.filter(it => getCr(it) < VeCt.CR_CUSTOM)
-			.sort((a, b) => SortUtil.ascSort(getCr(b), getCr(a)));
+		data = data.filter(it => EncounterBuilderUtils.getCr(it) < VeCt.CR_CUSTOM)
+			.sort((a, b) => SortUtil.ascSort(EncounterBuilderUtils.getCr(b), EncounterBuilderUtils.getCr(a)));
 
 		let baseXp = 0;
 		let relevantCount = 0;
@@ -1042,9 +1165,9 @@ class EncounterBuilderUtils {
 
 		const crCutoff = EncounterBuilderUtils.getCrCutoff(data, partyMeta);
 		data.forEach(it => {
-			if (getCr(it) >= crCutoff) relevantCount += it.count;
+			if (EncounterBuilderUtils.getCr(it) >= crCutoff) relevantCount += it.count;
 			count += it.count;
-			baseXp += (Parser.crToXpNumber(Parser.numberToCr(getCr(it))) || 0) * it.count;
+			baseXp += (Parser.crToXpNumber(Parser.numberToCr(EncounterBuilderUtils.getCr(it))) || 0) * it.count;
 		});
 
 		const playerAdjustedXpMult = Parser.numMonstersToXpMult(relevantCount, partyMeta.cntPlayers);
@@ -1052,57 +1175,11 @@ class EncounterBuilderUtils {
 		const adjustedXp = playerAdjustedXpMult * baseXp;
 		return {baseXp, relevantCount, count, adjustedXp, meta: {crCutoff, playerCount: partyMeta.cntPlayers, playerAdjustedXpMult}};
 	}
-}
 
-let _$totalCr;
-function onSublistChange () {
-	_$totalCr = _$totalCr || $(`#totalcr`);
-	const xp = EncounterBuilderUtils.calculateListEncounterXp(encounterBuilder.lastPartyMeta);
-	const monCount = ListUtil.sublist.items.map(it => it.values.count).reduce((a, b) => a + b, 0);
-	_$totalCr.html(`${monCount} creature${monCount === 1 ? "" : "s"}; ${xp.baseXp.toLocaleString()} XP (<span class="help" title="Adjusted Encounter XP">Enc</span>: ${(xp.adjustedXp).toLocaleString()} XP)`);
-	if (encounterBuilder.isActive()) encounterBuilder.updateDifficulty();
-	else encounterBuilder.doSaveState();
-}
-
-let mI = 0;
-const lastRendered = {mon: null, isScaled: false};
-function getScaledData () {
-	const last = lastRendered.mon;
-	return {scaled: last._isScaledCr, customHashId: getMonCustomHashId(last)};
-}
-
-function getCustomHashId (name, source, scaledCr) {
-	return `${name}_${source}_${scaledCr}`.toLowerCase();
-}
-
-function getMonCustomHashId (mon) {
-	if (mon._isScaledCr != null) return getCustomHashId(mon.name, mon.source, mon._isScaledCr);
-	return null;
-}
-
-async function pPreloadSublistSources (json) {
-	if (json.l && json.l.items && json.l.sources) { // if it's an encounter file
-		json.items = json.l.items;
-		json.sources = json.l.sources;
-	}
-	const loaded = Object.keys(bestiaryPage._multiSource.loadedSources)
-		.filter(it => bestiaryPage._multiSource.loadedSources[it].loaded);
-	const lowerSources = json.sources.map(it => it.toLowerCase());
-	const toLoad = Object.keys(bestiaryPage._multiSource.loadedSources)
-		.filter(it => !loaded.includes(it))
-		.filter(it => lowerSources.includes(it.toLowerCase()));
-	const loadTotal = toLoad.length;
-	if (loadTotal) {
-		await Promise.all(toLoad.map(src => bestiaryPage._multiSource.pLoadSource(src, "yes")));
-	}
-}
-
-async function pHandleUnknownHash (link, sub) {
-	const src = Object.keys(bestiaryPage._multiSource.loadedSources)
-		.find(src => src.toLowerCase() === decodeURIComponent(link.split(HASH_LIST_SEP)[1]).toLowerCase());
-	if (src) {
-		await bestiaryPage._multiSource.pLoadSource(src, "yes");
-		Hist.hashChange();
+	static getCr (obj) {
+		if (obj.crScaled != null) return obj.crScaled;
+		if (obj.cr == null || obj.cr === "Unknown" || obj.cr === "\u2014") return null;
+		return typeof obj.cr === "string" ? obj.cr.includes("/") ? Parser.crToNumber(obj.cr) : Number(obj.cr) : obj.cr;
 	}
 }
 
@@ -1115,16 +1192,6 @@ function dcRollerClick (event, ele, exp) {
 		toRoll: exp,
 	};
 	Renderer.dice.pRollerClick(event, ele, JSON.stringify(it));
-}
-
-function getUnpackedCustomHashId (customHashId) {
-	return {scaled: Number(customHashId.split("_").last()), customHashId};
-}
-
-function getCr (obj) {
-	if (obj.crScaled != null) return obj.crScaled;
-	if (obj.cr == null || obj.cr === "Unknown" || obj.cr === "\u2014") return null;
-	return typeof obj.cr === "string" ? obj.cr.includes("/") ? Parser.crToNumber(obj.cr) : Number(obj.cr) : obj.cr;
 }
 
 const bestiaryPage = new BestiaryPage();

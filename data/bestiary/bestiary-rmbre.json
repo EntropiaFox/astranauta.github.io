@@ -15,6 +15,7 @@
 	"monster": [
 		{
 			"name": "Billy Beaver",
+			"isNpc": true,
 			"source": "RMBRE",
 			"page": 27,
 			"size": "L",
@@ -104,6 +105,7 @@
 		},
 		{
 			"name": "Buster the Bear",
+			"isNpc": true,
 			"source": "RMBRE",
 			"page": 27,
 			"size": "M",
@@ -226,6 +228,7 @@
 		},
 		{
 			"name": "Layla the Lizard",
+			"isNpc": true,
 			"source": "RMBRE",
 			"page": 28,
 			"size": "M",
@@ -403,6 +406,7 @@
 		},
 		{
 			"name": "Piggy Wiggle Butt",
+			"isNpc": true,
 			"source": "RMBRE",
 			"page": 28,
 			"size": "M",
@@ -493,6 +497,7 @@
 		},
 		{
 			"name": "Thomas T. Toad",
+			"isNpc": true,
 			"source": "RMBRE",
 			"page": 28,
 			"size": "L",

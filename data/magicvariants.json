@@ -503,6 +503,11 @@
 				],
 				"rarity": "common",
 				"reqAttune": "by a warforged",
+				"reqAttuneTags": [
+					{
+						"race": "warforged|erlw"
+					}
+				],
 				"entries": [
 					"An armblade is a magic weapon that attaches to your arm, becoming inseparable from you as long as you're attuned to it. To attune to this item, you must hold it against your forearm for the entire attunement period.",
 					"As a bonus action, you can retract the armblade into your forearm or extend it from there. While it is extended, you can use the weapon as if you were holding it, and you can't use that hand for other purposes."
@@ -858,7 +863,6 @@
 				"reqAttune": true,
 				"curse": true,
 				"bonusWeapon": "+1",
-				"bonusAc": "+1",
 				"entries": [
 					"You gain a +1 bonus to attack and damage rolls made with this magic weapon. In addition, while you are attuned to this weapon, your hit point maximum increases by 1 for each level you have attained.",
 					{
@@ -1015,7 +1019,6 @@
 				"tier": "major",
 				"rarity": "rare",
 				"bonusWeapon": "+1",
-				"bonusAc": "+1",
 				"entries": [
 					"You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
 					"When you hit a dragon with this weapon, the dragon takes an extra {@dice 3d6} damage of the weapon's type. For the purpose of this weapon, \"dragon\" refers to any creature with the dragon type, including dragon turtles and wyverns."
@@ -1168,7 +1171,6 @@
 				"tier": "major",
 				"rarity": "rare",
 				"bonusWeapon": "+1",
-				"bonusAc": "+1",
 				"entries": [
 					"You gain a +1 bonus to attack and damage rolls made with this magic weapon.",
 					"When you hit a giant with it, the giant takes an extra {@dice 2d6} damage of the weapon's type and must succeed on a DC 15 Strength saving throw or fall {@condition prone}. For the purpose of this weapon, \"giant\" refers to any creature with the giant type, including ettins and trolls."
@@ -1215,8 +1217,12 @@
 				"tier": "major",
 				"rarity": "legendary",
 				"reqAttune": "by a paladin",
+				"reqAttuneTags": [
+					{
+						"class": "paladin"
+					}
+				],
 				"bonusWeapon": "+3",
-				"bonusAc": "+3",
 				"entries": [
 					"You gain a +3 bonus to attack and damage rolls made with this magic weapon. When you hit a fiend or an undead with it, that creature takes an extra {@dice 2d10} radiant damage.",
 					"While you hold the drawn sword, it creates an aura in a 10-foot radius around you. You and all creatures friendly to you in the aura have advantage on saving throws against spells and other magical effects. If you have 17 or more levels in the paladin class, the radius of the aura increases to 30 feet."
@@ -1255,7 +1261,7 @@
 				"rarity": "common",
 				"reqAttune": true,
 				"wondrous": true,
-				"bonusAc": "+1",
+				"bonusSpellDamage": "+1",
 				"entries": [
 					"An imbued wood focus is a rod, staff, or wand cut from a tree infused with extraplanar energy. If you're a spellcaster, you can use this item as a spellcasting focus.",
 					"When you cast a damage-dealing spell using this item as your spellcasting focus, you gain a +1 bonus to one fire damage roll of the spell."
@@ -1290,7 +1296,7 @@
 				"rarity": "common",
 				"reqAttune": true,
 				"wondrous": true,
-				"bonusAc": "+1",
+				"bonusSpellDamage": "+1",
 				"entries": [
 					"An imbued wood focus is a rod, staff, or wand cut from a tree infused with extraplanar energy. If you're a spellcaster, you can use this item as a spellcasting focus.",
 					"When you cast a damage-dealing spell using this item as your spellcasting focus, you gain a +1 bonus to one radiant damage roll of the spell."
@@ -1325,7 +1331,7 @@
 				"rarity": "common",
 				"reqAttune": true,
 				"wondrous": true,
-				"bonusAc": "+1",
+				"bonusSpellDamage": "+1",
 				"entries": [
 					"An imbued wood focus is a rod, staff, or wand cut from a tree infused with extraplanar energy. If you're a spellcaster, you can use this item as a spellcasting focus.",
 					"When you cast a damage-dealing spell using this item as your spellcasting focus, you gain a +1 bonus to one acid or poison damage roll of the spell."
@@ -1360,7 +1366,7 @@
 				"rarity": "common",
 				"reqAttune": true,
 				"wondrous": true,
-				"bonusAc": "+1",
+				"bonusSpellDamage": "+1",
 				"entries": [
 					"An imbued wood focus is a rod, staff, or wand cut from a tree infused with extraplanar energy. If you're a spellcaster, you can use this item as a spellcasting focus.",
 					"When you cast a damage-dealing spell using this item as your spellcasting focus, you gain a +1 bonus to one lightning or thunder damage roll of the spell."
@@ -1395,7 +1401,7 @@
 				"rarity": "common",
 				"reqAttune": true,
 				"wondrous": true,
-				"bonusAc": "+1",
+				"bonusSpellDamage": "+1",
 				"entries": [
 					"An imbued wood focus is a rod, staff, or wand cut from a tree infused with extraplanar energy. If you're a spellcaster, you can use this item as a spellcasting focus.",
 					"When you cast a damage-dealing spell using this item as your spellcasting focus, you gain a +1 bonus to one necrotic damage roll of the spell."
@@ -1430,7 +1436,7 @@
 				"rarity": "common",
 				"reqAttune": true,
 				"wondrous": true,
-				"bonusAc": "+1",
+				"bonusSpellDamage": "+1",
 				"entries": [
 					"An imbued wood focus is a rod, staff, or wand cut from a tree infused with extraplanar energy. If you're a spellcaster, you can use this item as a spellcasting focus.",
 					"When you cast a damage-dealing spell using this item as your spellcasting focus, you gain a +1 bonus to one cold damage roll of the spell."
@@ -1465,7 +1471,7 @@
 				"rarity": "common",
 				"reqAttune": true,
 				"wondrous": true,
-				"bonusAc": "+1",
+				"bonusSpellDamage": "+1",
 				"entries": [
 					"An imbued wood focus is a rod, staff, or wand cut from a tree infused with extraplanar energy. If you're a spellcaster, you can use this item as a spellcasting focus.",
 					"When you cast a damage-dealing spell using this item as your spellcasting focus, you gain a +1 bonus to one force damage roll of the spell."
@@ -1500,7 +1506,7 @@
 				"rarity": "common",
 				"reqAttune": true,
 				"wondrous": true,
-				"bonusAc": "+1",
+				"bonusSpellDamage": "+1",
 				"entries": [
 					"An imbued wood focus is a rod, staff, or wand cut from a tree infused with extraplanar energy. If you're a spellcaster, you can use this item as a spellcasting focus.",
 					"When you cast a damage-dealing spell using this item as your spellcasting focus, you gain a +1 bonus to one psychic damage roll of the spell."
@@ -1595,7 +1601,6 @@
 				"rarity": "legendary",
 				"reqAttune": true,
 				"bonusWeapon": "+1",
-				"bonusAc": "+1",
 				"bonusSavingThrow": "+1",
 				"charges": "{@dice 1d4 - 1}",
 				"entries": [

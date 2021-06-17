@@ -19,7 +19,7 @@ class StatGenPage {
 			tabMetasAdditional: this._getAdditionalTabMetas(),
 		});
 		await this._statGenUi.pInit();
-		this._statGenUi.addHook("meta", "ixActiveTab", () => this._setHashFromTab())
+		this._statGenUi.addHookActiveTag(() => this._setHashFromTab());
 		const savedStateDebounced = MiscUtil.throttle(this._pDoSaveState.bind(this), 100);
 		this._statGenUi.addHookAll("state", () => savedStateDebounced());
 
@@ -38,32 +38,33 @@ class StatGenPage {
 
 	_getAdditionalTabMetas () {
 		return [
-			{
+			new TabUiUtil.TabMeta({
 				type: "buttons",
 				buttons: [
 					{
 						html: `<span class="glyphicon glyphicon-download"></span>`,
 						title: "Save to File",
 						pFnClick: () => {
-							DataUtil.userDownload("statgen", this._statGenUi.getSaveableState());
+							DataUtil.userDownload("statgen", this._statGenUi.getSaveableState(), {fileType: "statgen"});
 						},
 					},
 				],
-			},
-			{
+			}),
+			new TabUiUtil.TabMeta({
 				type: "buttons",
 				buttons: [
 					{
 						html: `<span class="glyphicon glyphicon-upload"></span>`,
 						title: "Load from File",
 						pFnClick: async () => {
-							const json = await DataUtil.pUserUpload();
-							this._statGenUi.setStateFrom(json);
+							const jsons = await DataUtil.pUserUpload({expectedFileType: "statgen"});
+							if (!jsons?.length) return;
+							this._statGenUi.setStateFrom(jsons[0]);
 						},
 					},
 				],
-			},
-			{
+			}),
+			new TabUiUtil.TabMeta({
 				type: "buttons",
 				buttons: [
 					{
@@ -76,7 +77,7 @@ class StatGenPage {
 						},
 					},
 				],
-			},
+			}),
 		];
 	}
 
@@ -87,7 +88,7 @@ class StatGenPage {
 
 	async _pLoadRaces () {
 		const fromData = await DataUtil.race.loadJSON();
-		const fromBrew = await DataUtil.race.loadBrew();
+		const fromBrew = await DataUtil.race.loadBrew({isAddBaseRaces: false});
 
 		let races = [...fromData.race, ...fromBrew.race];
 

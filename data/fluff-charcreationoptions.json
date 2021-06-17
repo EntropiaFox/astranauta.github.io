@@ -47,6 +47,22 @@
 					"height": 1002
 				}
 			]
+		},
+		{
+			"name": "Watchers",
+			"source": "VRGR",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "charcreationoptions/VRGR/Watchers.png"
+					},
+					"title": "A dwarf occultist finds herself watched by the Staring Cats of Uldun-Dar",
+					"width": 850,
+					"height": 1001
+				}
+			]
 		}
 	]
 }

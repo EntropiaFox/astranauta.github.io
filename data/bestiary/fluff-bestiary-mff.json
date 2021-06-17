@@ -1,4 +1,9 @@
 {
+	"_meta": {
+		"internalCopies": [
+			"monsterFluff"
+		]
+	},
 	"monsterFluff": [
 		{
 			"name": "Assassin Bug",
@@ -821,10 +826,5 @@
 				}
 			]
 		}
-	],
-	"_meta": {
-		"internalCopies": [
-			"monsterFluff"
-		]
-	}
+	]
 }

@@ -169,630 +169,6 @@
 				"Extra Attack (3)|Fighter||20"
 			],
 			"subclassTitle": "Martial Archetype",
-			"subclasses": [
-				{
-					"name": "Battle Master",
-					"shortName": "Battle Master",
-					"source": "PHB",
-					"page": 73,
-					"subclassFeatures": [
-						"Battle Master|Fighter||Battle Master||3",
-						"Additional Maneuvers|Fighter||Battle Master||7",
-						"Additional Superiority Die|Fighter||Battle Master||7",
-						"Know Your Enemy|Fighter||Battle Master||7",
-						"Additional Maneuvers|Fighter||Battle Master||10",
-						"Improved Combat Superiority (d10)|Fighter||Battle Master||10",
-						"Additional Maneuvers|Fighter||Battle Master||15",
-						"Additional Superiority Die|Fighter||Battle Master||15",
-						"Relentless|Fighter||Battle Master||15",
-						"Improved Combat Superiority (d12)|Fighter||Battle Master||18"
-					]
-				},
-				{
-					"name": "Champion",
-					"shortName": "Champion",
-					"source": "PHB",
-					"page": 72,
-					"srd": true,
-					"subclassFeatures": [
-						"Champion|Fighter||Champion||3",
-						"Remarkable Athlete|Fighter||Champion||7",
-						"Additional Fighting Style|Fighter||Champion||10",
-						"Superior Critical|Fighter||Champion||15",
-						"Survivor|Fighter||Champion||18"
-					]
-				},
-				{
-					"name": "Eldritch Knight",
-					"shortName": "Eldritch Knight",
-					"source": "PHB",
-					"page": 74,
-					"spellcastingAbility": "int",
-					"casterProgression": "1/3",
-					"cantripProgression": [
-						0,
-						0,
-						2,
-						2,
-						2,
-						2,
-						2,
-						2,
-						2,
-						3,
-						3,
-						3,
-						3,
-						3,
-						3,
-						3,
-						3,
-						3,
-						3,
-						3
-					],
-					"spellsKnownProgression": [
-						0,
-						0,
-						3,
-						4,
-						4,
-						4,
-						5,
-						6,
-						6,
-						7,
-						8,
-						8,
-						9,
-						10,
-						10,
-						11,
-						11,
-						11,
-						12,
-						13
-					],
-					"subclassTableGroups": [
-						{
-							"subclasses": [
-								{
-									"name": "Eldritch Knight",
-									"source": "PHB"
-								}
-							],
-							"colLabels": [
-								"{@filter Cantrips Known|spells|level=0|subclass=Fighter: Eldritch Knight}",
-								"{@filter Spells Known|spells|subclass=Fighter: Eldritch Knight}"
-							],
-							"rows": [
-								[
-									0,
-									0
-								],
-								[
-									0,
-									0
-								],
-								[
-									2,
-									3
-								],
-								[
-									2,
-									4
-								],
-								[
-									2,
-									4
-								],
-								[
-									2,
-									4
-								],
-								[
-									2,
-									5
-								],
-								[
-									2,
-									6
-								],
-								[
-									2,
-									6
-								],
-								[
-									3,
-									7
-								],
-								[
-									3,
-									8
-								],
-								[
-									3,
-									8
-								],
-								[
-									3,
-									9
-								],
-								[
-									3,
-									10
-								],
-								[
-									3,
-									10
-								],
-								[
-									3,
-									11
-								],
-								[
-									3,
-									11
-								],
-								[
-									3,
-									11
-								],
-								[
-									3,
-									12
-								],
-								[
-									3,
-									13
-								]
-							]
-						},
-						{
-							"title": "Spell Slots per Spell Level",
-							"subclasses": [
-								{
-									"name": "Eldritch Knight",
-									"source": "PHB"
-								}
-							],
-							"colLabels": [
-								"{@filter 1st|spells|level=1|subclass=Fighter: Eldritch Knight}",
-								"{@filter 2nd|spells|level=2|subclass=Fighter: Eldritch Knight}",
-								"{@filter 3rd|spells|level=3|subclass=Fighter: Eldritch Knight}",
-								"{@filter 4th|spells|level=4|subclass=Fighter: Eldritch Knight}"
-							],
-							"rows": [
-								[
-									0,
-									0,
-									0,
-									0
-								],
-								[
-									0,
-									0,
-									0,
-									0
-								],
-								[
-									2,
-									0,
-									0,
-									0
-								],
-								[
-									3,
-									0,
-									0,
-									0
-								],
-								[
-									3,
-									0,
-									0,
-									0
-								],
-								[
-									3,
-									0,
-									0,
-									0
-								],
-								[
-									4,
-									2,
-									0,
-									0
-								],
-								[
-									4,
-									2,
-									0,
-									0
-								],
-								[
-									4,
-									2,
-									0,
-									0
-								],
-								[
-									4,
-									3,
-									0,
-									0
-								],
-								[
-									4,
-									3,
-									0,
-									0
-								],
-								[
-									4,
-									3,
-									0,
-									0
-								],
-								[
-									4,
-									3,
-									2,
-									0
-								],
-								[
-									4,
-									3,
-									2,
-									0
-								],
-								[
-									4,
-									3,
-									2,
-									0
-								],
-								[
-									4,
-									3,
-									3,
-									0
-								],
-								[
-									4,
-									3,
-									3,
-									0
-								],
-								[
-									4,
-									3,
-									3,
-									0
-								],
-								[
-									4,
-									3,
-									3,
-									1
-								],
-								[
-									4,
-									3,
-									3,
-									1
-								]
-							]
-						}
-					],
-					"subclassFeatures": [
-						"Eldritch Knight|Fighter||Eldritch Knight||3",
-						"War Magic|Fighter||Eldritch Knight||7",
-						"Eldritch Strike|Fighter||Eldritch Knight||10",
-						"Arcane Charge|Fighter||Eldritch Knight||15",
-						"Improved War Magic|Fighter||Eldritch Knight||18"
-					]
-				},
-				{
-					"name": "Purple Dragon Knight (Banneret)",
-					"shortName": "Purple Dragon Knight (Banneret)",
-					"source": "SCAG",
-					"page": 128,
-					"subclassFeatures": [
-						"Purple Dragon Knight (Banneret)|Fighter||Purple Dragon Knight (Banneret)|SCAG|3",
-						"Royal Envoy|Fighter||Purple Dragon Knight (Banneret)|SCAG|7",
-						"Inspiring Surge|Fighter||Purple Dragon Knight (Banneret)|SCAG|10",
-						"Bulwark|Fighter||Purple Dragon Knight (Banneret)|SCAG|15",
-						"Inspiring Surge|Fighter||Purple Dragon Knight (Banneret)|SCAG|18"
-					]
-				},
-				{
-					"name": "Cavalier (UA)",
-					"shortName": "Cavalier (UA)",
-					"source": "UAKitsOfOld",
-					"page": 3,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Cavalier|Fighter||Cavalier (UA)|UAKitsOfOld|3",
-						"Ferocious Charger|Fighter||Cavalier (UA)|UAKitsOfOld|7",
-						"Improved Combat Superiority|Fighter||Cavalier (UA)|UAKitsOfOld|10",
-						"Relentless|Fighter||Cavalier (UA)|UAKitsOfOld|15",
-						"Improved Combat Superiority|Fighter||Cavalier (UA)|UAKitsOfOld|18"
-					]
-				},
-				{
-					"name": "Scout (UA)",
-					"shortName": "Scout (UA)",
-					"source": "UAKitsOfOld",
-					"page": 4,
-					"subclassFeatures": [
-						"Scout|Fighter||Scout (UA)|UAKitsOfOld|3",
-						"Additional Superiority Die|Fighter||Scout (UA)|UAKitsOfOld|7",
-						"Improved Combat Superiority|Fighter||Scout (UA)|UAKitsOfOld|10",
-						"Relentless|Fighter||Scout (UA)|UAKitsOfOld|15",
-						"Additional Superiority Die|Fighter||Scout (UA)|UAKitsOfOld|15",
-						"Improved Combat Superiority|Fighter||Scout (UA)|UAKitsOfOld|18"
-					]
-				},
-				{
-					"name": "Monster Hunter (UA)",
-					"shortName": "Monster Hunter (UA)",
-					"source": "UAGothicHeroes",
-					"page": 2,
-					"spellcastingAbility": "wis",
-					"subclassFeatures": [
-						"Monster Hunter|Fighter||Monster Hunter (UA)|UAGothicHeroes|3",
-						"Monster Slayer|Fighter||Monster Hunter (UA)|UAGothicHeroes|7",
-						"Improved Combat Superiority|Fighter||Monster Hunter (UA)|UAGothicHeroes|10",
-						"Relentless|Fighter||Monster Hunter (UA)|UAGothicHeroes|15",
-						"Improved Combat Superiority|Fighter||Monster Hunter (UA)|UAGothicHeroes|18"
-					]
-				},
-				{
-					"name": "Arcane Archer (UA)",
-					"shortName": "Arcane Archer (UA)",
-					"source": "UAFighter",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Arcane Archer|Fighter||Arcane Archer (UA)|UAFighter|3",
-						"Conjure Arrows|Fighter||Arcane Archer (UA)|UAFighter|7",
-						"Extra Arcane Shot|Fighter||Arcane Archer (UA)|UAFighter|7",
-						"Extra Arcane Shot|Fighter||Arcane Archer (UA)|UAFighter|10",
-						"Ever-Ready Arrow|Fighter||Arcane Archer (UA)|UAFighter|15",
-						"Extra Arcane Shot|Fighter||Arcane Archer (UA)|UAFighter|15",
-						"Deadly Arrow|Fighter||Arcane Archer (UA)|UAFighter|18",
-						"Extra Arcane Shot|Fighter||Arcane Archer (UA)|UAFighter|18"
-					]
-				},
-				{
-					"name": "Knight (UA)",
-					"shortName": "Knight (UA)",
-					"source": "UAFighter",
-					"page": 2,
-					"subclassFeatures": [
-						"Knight|Fighter||Knight (UA)|UAFighter|3",
-						"Noble Cavalry|Fighter||Knight (UA)|UAFighter|7",
-						"Hold the Line|Fighter||Knight (UA)|UAFighter|10",
-						"Rapid Strike|Fighter||Knight (UA)|UAFighter|15",
-						"Defender's Blade|Fighter||Knight (UA)|UAFighter|18"
-					]
-				},
-				{
-					"name": "Samurai (UA)",
-					"shortName": "Samurai (UA)",
-					"source": "UAFighter",
-					"page": 3,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Samurai|Fighter||Samurai (UA)|UAFighter|3",
-						"Elegant Courtier|Fighter||Samurai (UA)|UAFighter|7",
-						"Unbreakable Will|Fighter||Samurai (UA)|UAFighter|10",
-						"Rapid Strike|Fighter||Samurai (UA)|UAFighter|15",
-						"Strength Before Death|Fighter||Samurai (UA)|UAFighter|18"
-					]
-				},
-				{
-					"name": "Sharpshooter (UA)",
-					"shortName": "Sharpshooter (UA)",
-					"source": "UAFighter",
-					"page": 3,
-					"subclassFeatures": [
-						"Sharpshooter|Fighter||Sharpshooter (UA)|UAFighter|3",
-						"Careful Eyes|Fighter||Sharpshooter (UA)|UAFighter|7",
-						"Close-Quarters Shooting|Fighter||Sharpshooter (UA)|UAFighter|10",
-						"Rapid Strike|Fighter||Sharpshooter (UA)|UAFighter|15",
-						"Snap Shot|Fighter||Sharpshooter (UA)|UAFighter|18"
-					]
-				},
-				{
-					"name": "Arcane Archer v2 (UA)",
-					"shortName": "Arcane Archer v2 (UA)",
-					"source": "UARevisedSubclasses",
-					"page": 2,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Arcane Archer v2|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|3",
-						"Curving Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|7",
-						"Extra Arcane Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|7",
-						"Extra Arcane Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|10",
-						"Ever-Ready Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|15",
-						"Extra Arcane Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|15",
-						"Extra Arcane Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|18"
-					]
-				},
-				{
-					"name": "Cavalier v2 (UA)",
-					"shortName": "Cavalier v2 (UA)",
-					"source": "UARevisedClassOptions",
-					"page": 2,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Cavalier v2|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|3",
-						"Ferocious Charger|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|7",
-						"Improved Combat Superiority|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|10",
-						"Relentless|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|15",
-						"Improved Combat Superiority|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|18"
-					]
-				},
-				{
-					"name": "Arcane Archer",
-					"shortName": "Arcane Archer",
-					"source": "XGE",
-					"page": 28,
-					"additionalSpells": [
-						{
-							"innate": {
-								"3": [
-									"prestidigitation"
-								]
-							}
-						},
-						{
-							"innate": {
-								"3": [
-									"druidcraft"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Arcane Archer|Fighter||Arcane Archer|XGE|3",
-						"Magic Arrow|Fighter||Arcane Archer|XGE|7",
-						"Curving Shot|Fighter||Arcane Archer|XGE|7",
-						"Additional Arcane Shot Option|Fighter||Arcane Archer|XGE|7",
-						"Additional Arcane Shot Option|Fighter||Arcane Archer|XGE|10",
-						"Ever-Ready Shot|Fighter||Arcane Archer|XGE|15",
-						"Additional Arcane Shot Option|Fighter||Arcane Archer|XGE|15",
-						"Additional Arcane Shot Option|Fighter||Arcane Archer|XGE|18"
-					]
-				},
-				{
-					"name": "Cavalier",
-					"shortName": "Cavalier",
-					"source": "XGE",
-					"page": 30,
-					"subclassFeatures": [
-						"Cavalier|Fighter||Cavalier|XGE|3",
-						"Warding Maneuver|Fighter||Cavalier|XGE|7",
-						"Hold the Line|Fighter||Cavalier|XGE|10",
-						"Ferocious Charger|Fighter||Cavalier|XGE|15",
-						"Vigilant Defender|Fighter||Cavalier|XGE|18"
-					]
-				},
-				{
-					"name": "Samurai",
-					"shortName": "Samurai",
-					"source": "XGE",
-					"page": 31,
-					"subclassFeatures": [
-						"Samurai|Fighter||Samurai|XGE|3",
-						"Elegant Courtier|Fighter||Samurai|XGE|7",
-						"Tireless Spirit|Fighter||Samurai|XGE|10",
-						"Rapid Strike|Fighter||Samurai|XGE|15",
-						"Strength before Death|Fighter||Samurai|XGE|18"
-					]
-				},
-				{
-					"name": "Brute (UA)",
-					"shortName": "Brute (UA)",
-					"source": "UAThreeSubclasses",
-					"page": 2,
-					"subclassFeatures": [
-						"Brute|Fighter||Brute (UA)|UAThreeSubclasses|3",
-						"Brutish Durability|Fighter||Brute (UA)|UAThreeSubclasses|7",
-						"Additional Fighting Style|Fighter||Brute (UA)|UAThreeSubclasses|10",
-						"Devastating Critical|Fighter||Brute (UA)|UAThreeSubclasses|15",
-						"Survivor|Fighter||Brute (UA)|UAThreeSubclasses|18"
-					]
-				},
-				{
-					"name": "Rune Knight (UA)",
-					"shortName": "Rune Knight (UA)",
-					"source": "UAFighterRangerRogue",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Rune Knight|Fighter||Rune Knight (UA)|UAFighterRangerRogue|3",
-						"Defensive Runes|Fighter||Rune Knight (UA)|UAFighterRangerRogue|7",
-						"Great Stature|Fighter||Rune Knight (UA)|UAFighterRangerRogue|10",
-						"Rune Magic Mastery|Fighter||Rune Knight (UA)|UAFighterRangerRogue|15",
-						"Blessing of the All Father|Fighter||Rune Knight (UA)|UAFighterRangerRogue|18"
-					]
-				},
-				{
-					"name": "Psychic Warrior (UA)",
-					"shortName": "Psychic Warrior (UA)",
-					"source": "UAFighterRogueWizard",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Psychic Warrior|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|3",
-						"Strength of Mind|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|7",
-						"Telekinetic Bulwark|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|10",
-						"Psionic Armament Improvement|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|10",
-						"Agonizing Strikes|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|15",
-						"Psychic Dreadnaught|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|18"
-					]
-				},
-				{
-					"name": "Echo Knight",
-					"shortName": "Echo Knight",
-					"source": "EGW",
-					"page": 183,
-					"subclassFeatures": [
-						"Echo Knight|Fighter||Echo Knight|EGW|3",
-						"Echo Avatar|Fighter||Echo Knight|EGW|7",
-						"Shadow Martyr|Fighter||Echo Knight|EGW|10",
-						"Reclaim Potential|Fighter||Echo Knight|EGW|15",
-						"Legion of One|Fighter||Echo Knight|EGW|18"
-					]
-				},
-				{
-					"name": "Psi Knight (UA)",
-					"shortName": "Psi Knight (UA)",
-					"source": "UA2020PsionicOptionsRevisited",
-					"page": 2,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Psi Knight|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|3",
-						"Telekinetic Adept|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|7",
-						"Psi-Enhanced Metabolism|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|10",
-						"Bulwark of Force|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|15",
-						"Telekinetic Master|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|18"
-					]
-				},
-				{
-					"name": "Psi Warrior",
-					"shortName": "Psi Warrior",
-					"source": "TCE",
-					"page": 42,
-					"subclassFeatures": [
-						"Psi Warrior|Fighter||Psi Warrior|TCE|3",
-						"Telekinetic Adept|Fighter||Psi Warrior|TCE|7",
-						"Guarded Mind|Fighter||Psi Warrior|TCE|10",
-						"Bulwark of Force|Fighter||Psi Warrior|TCE|15",
-						"Telekinetic Master|Fighter||Psi Warrior|TCE|18"
-					]
-				},
-				{
-					"name": "Rune Knight",
-					"shortName": "Rune Knight",
-					"source": "TCE",
-					"page": 44,
-					"subclassFeatures": [
-						"Rune Knight|Fighter||Rune Knight|TCE|3",
-						"Runic Shield|Fighter||Rune Knight|TCE|7",
-						"Additional Rune Known|Fighter||Rune Knight|TCE|7",
-						"Great Stature|Fighter||Rune Knight|TCE|10",
-						"Additional Rune Known|Fighter||Rune Knight|TCE|10",
-						"Master of Runes|Fighter||Rune Knight|TCE|15",
-						"Additional Rune Known|Fighter||Rune Knight|TCE|15",
-						"Runic Juggernaut|Fighter||Rune Knight|TCE|18"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Fighter",
@@ -1082,6 +458,676 @@
 					"source": "XGE",
 					"page": 27
 				}
+			]
+		}
+	],
+	"subclass": [
+		{
+			"name": "Battle Master",
+			"shortName": "Battle Master",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 73,
+			"subclassFeatures": [
+				"Battle Master|Fighter||Battle Master||3",
+				"Additional Maneuvers|Fighter||Battle Master||7",
+				"Additional Superiority Die|Fighter||Battle Master||7",
+				"Know Your Enemy|Fighter||Battle Master||7",
+				"Additional Maneuvers|Fighter||Battle Master||10",
+				"Improved Combat Superiority (d10)|Fighter||Battle Master||10",
+				"Additional Maneuvers|Fighter||Battle Master||15",
+				"Additional Superiority Die|Fighter||Battle Master||15",
+				"Relentless|Fighter||Battle Master||15",
+				"Improved Combat Superiority (d12)|Fighter||Battle Master||18"
+			]
+		},
+		{
+			"name": "Champion",
+			"shortName": "Champion",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 72,
+			"srd": true,
+			"subclassFeatures": [
+				"Champion|Fighter||Champion||3",
+				"Remarkable Athlete|Fighter||Champion||7",
+				"Additional Fighting Style|Fighter||Champion||10",
+				"Superior Critical|Fighter||Champion||15",
+				"Survivor|Fighter||Champion||18"
+			]
+		},
+		{
+			"name": "Eldritch Knight",
+			"shortName": "Eldritch Knight",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 74,
+			"spellcastingAbility": "int",
+			"casterProgression": "1/3",
+			"cantripProgression": [
+				0,
+				0,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				3,
+				3,
+				3,
+				3,
+				3,
+				3,
+				3,
+				3,
+				3,
+				3,
+				3
+			],
+			"spellsKnownProgression": [
+				0,
+				0,
+				3,
+				4,
+				4,
+				4,
+				5,
+				6,
+				6,
+				7,
+				8,
+				8,
+				9,
+				10,
+				10,
+				11,
+				11,
+				11,
+				12,
+				13
+			],
+			"subclassTableGroups": [
+				{
+					"subclasses": [
+						{
+							"name": "Eldritch Knight",
+							"source": "PHB"
+						}
+					],
+					"colLabels": [
+						"{@filter Cantrips Known|spells|level=0|subclass=Fighter: Eldritch Knight}",
+						"{@filter Spells Known|spells|subclass=Fighter: Eldritch Knight}"
+					],
+					"rows": [
+						[
+							0,
+							0
+						],
+						[
+							0,
+							0
+						],
+						[
+							2,
+							3
+						],
+						[
+							2,
+							4
+						],
+						[
+							2,
+							4
+						],
+						[
+							2,
+							4
+						],
+						[
+							2,
+							5
+						],
+						[
+							2,
+							6
+						],
+						[
+							2,
+							6
+						],
+						[
+							3,
+							7
+						],
+						[
+							3,
+							8
+						],
+						[
+							3,
+							8
+						],
+						[
+							3,
+							9
+						],
+						[
+							3,
+							10
+						],
+						[
+							3,
+							10
+						],
+						[
+							3,
+							11
+						],
+						[
+							3,
+							11
+						],
+						[
+							3,
+							11
+						],
+						[
+							3,
+							12
+						],
+						[
+							3,
+							13
+						]
+					]
+				},
+				{
+					"title": "Spell Slots per Spell Level",
+					"subclasses": [
+						{
+							"name": "Eldritch Knight",
+							"source": "PHB"
+						}
+					],
+					"colLabels": [
+						"{@filter 1st|spells|level=1|subclass=Fighter: Eldritch Knight}",
+						"{@filter 2nd|spells|level=2|subclass=Fighter: Eldritch Knight}",
+						"{@filter 3rd|spells|level=3|subclass=Fighter: Eldritch Knight}",
+						"{@filter 4th|spells|level=4|subclass=Fighter: Eldritch Knight}"
+					],
+					"rows": [
+						[
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							2,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							2,
+							0,
+							0
+						],
+						[
+							4,
+							2,
+							0,
+							0
+						],
+						[
+							4,
+							2,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							2,
+							0
+						],
+						[
+							4,
+							3,
+							2,
+							0
+						],
+						[
+							4,
+							3,
+							2,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							1
+						],
+						[
+							4,
+							3,
+							3,
+							1
+						]
+					]
+				}
+			],
+			"subclassFeatures": [
+				"Eldritch Knight|Fighter||Eldritch Knight||3",
+				"War Magic|Fighter||Eldritch Knight||7",
+				"Eldritch Strike|Fighter||Eldritch Knight||10",
+				"Arcane Charge|Fighter||Eldritch Knight||15",
+				"Improved War Magic|Fighter||Eldritch Knight||18"
+			]
+		},
+		{
+			"name": "Purple Dragon Knight (Banneret)",
+			"shortName": "Purple Dragon Knight (Banneret)",
+			"source": "SCAG",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 128,
+			"subclassFeatures": [
+				"Purple Dragon Knight (Banneret)|Fighter||Purple Dragon Knight (Banneret)|SCAG|3",
+				"Royal Envoy|Fighter||Purple Dragon Knight (Banneret)|SCAG|7",
+				"Inspiring Surge|Fighter||Purple Dragon Knight (Banneret)|SCAG|10",
+				"Bulwark|Fighter||Purple Dragon Knight (Banneret)|SCAG|15",
+				"Inspiring Surge|Fighter||Purple Dragon Knight (Banneret)|SCAG|18"
+			]
+		},
+		{
+			"name": "Cavalier (UA)",
+			"shortName": "Cavalier (UA)",
+			"source": "UAKitsOfOld",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 3,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Cavalier|Fighter||Cavalier (UA)|UAKitsOfOld|3",
+				"Ferocious Charger|Fighter||Cavalier (UA)|UAKitsOfOld|7",
+				"Improved Combat Superiority|Fighter||Cavalier (UA)|UAKitsOfOld|10",
+				"Relentless|Fighter||Cavalier (UA)|UAKitsOfOld|15",
+				"Improved Combat Superiority|Fighter||Cavalier (UA)|UAKitsOfOld|18"
+			]
+		},
+		{
+			"name": "Scout (UA)",
+			"shortName": "Scout (UA)",
+			"source": "UAKitsOfOld",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 4,
+			"subclassFeatures": [
+				"Scout|Fighter||Scout (UA)|UAKitsOfOld|3",
+				"Additional Superiority Die|Fighter||Scout (UA)|UAKitsOfOld|7",
+				"Improved Combat Superiority|Fighter||Scout (UA)|UAKitsOfOld|10",
+				"Relentless|Fighter||Scout (UA)|UAKitsOfOld|15",
+				"Additional Superiority Die|Fighter||Scout (UA)|UAKitsOfOld|15",
+				"Improved Combat Superiority|Fighter||Scout (UA)|UAKitsOfOld|18"
+			]
+		},
+		{
+			"name": "Monster Hunter (UA)",
+			"shortName": "Monster Hunter (UA)",
+			"source": "UAGothicHeroes",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 2,
+			"spellcastingAbility": "wis",
+			"subclassFeatures": [
+				"Monster Hunter|Fighter||Monster Hunter (UA)|UAGothicHeroes|3",
+				"Monster Slayer|Fighter||Monster Hunter (UA)|UAGothicHeroes|7",
+				"Improved Combat Superiority|Fighter||Monster Hunter (UA)|UAGothicHeroes|10",
+				"Relentless|Fighter||Monster Hunter (UA)|UAGothicHeroes|15",
+				"Improved Combat Superiority|Fighter||Monster Hunter (UA)|UAGothicHeroes|18"
+			]
+		},
+		{
+			"name": "Arcane Archer (UA)",
+			"shortName": "Arcane Archer (UA)",
+			"source": "UAFighter",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Arcane Archer|Fighter||Arcane Archer (UA)|UAFighter|3",
+				"Conjure Arrows|Fighter||Arcane Archer (UA)|UAFighter|7",
+				"Extra Arcane Shot|Fighter||Arcane Archer (UA)|UAFighter|7",
+				"Extra Arcane Shot|Fighter||Arcane Archer (UA)|UAFighter|10",
+				"Ever-Ready Arrow|Fighter||Arcane Archer (UA)|UAFighter|15",
+				"Extra Arcane Shot|Fighter||Arcane Archer (UA)|UAFighter|15",
+				"Deadly Arrow|Fighter||Arcane Archer (UA)|UAFighter|18",
+				"Extra Arcane Shot|Fighter||Arcane Archer (UA)|UAFighter|18"
+			]
+		},
+		{
+			"name": "Knight (UA)",
+			"shortName": "Knight (UA)",
+			"source": "UAFighter",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 2,
+			"subclassFeatures": [
+				"Knight|Fighter||Knight (UA)|UAFighter|3",
+				"Noble Cavalry|Fighter||Knight (UA)|UAFighter|7",
+				"Hold the Line|Fighter||Knight (UA)|UAFighter|10",
+				"Rapid Strike|Fighter||Knight (UA)|UAFighter|15",
+				"Defender's Blade|Fighter||Knight (UA)|UAFighter|18"
+			]
+		},
+		{
+			"name": "Samurai (UA)",
+			"shortName": "Samurai (UA)",
+			"source": "UAFighter",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 3,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Samurai|Fighter||Samurai (UA)|UAFighter|3",
+				"Elegant Courtier|Fighter||Samurai (UA)|UAFighter|7",
+				"Unbreakable Will|Fighter||Samurai (UA)|UAFighter|10",
+				"Rapid Strike|Fighter||Samurai (UA)|UAFighter|15",
+				"Strength Before Death|Fighter||Samurai (UA)|UAFighter|18"
+			]
+		},
+		{
+			"name": "Sharpshooter (UA)",
+			"shortName": "Sharpshooter (UA)",
+			"source": "UAFighter",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 3,
+			"subclassFeatures": [
+				"Sharpshooter|Fighter||Sharpshooter (UA)|UAFighter|3",
+				"Careful Eyes|Fighter||Sharpshooter (UA)|UAFighter|7",
+				"Close-Quarters Shooting|Fighter||Sharpshooter (UA)|UAFighter|10",
+				"Rapid Strike|Fighter||Sharpshooter (UA)|UAFighter|15",
+				"Snap Shot|Fighter||Sharpshooter (UA)|UAFighter|18"
+			]
+		},
+		{
+			"name": "Arcane Archer v2 (UA)",
+			"shortName": "Arcane Archer v2 (UA)",
+			"source": "UARevisedSubclasses",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 2,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Arcane Archer v2|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|3",
+				"Curving Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|7",
+				"Extra Arcane Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|7",
+				"Extra Arcane Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|10",
+				"Ever-Ready Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|15",
+				"Extra Arcane Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|15",
+				"Extra Arcane Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|18"
+			]
+		},
+		{
+			"name": "Cavalier v2 (UA)",
+			"shortName": "Cavalier v2 (UA)",
+			"source": "UARevisedClassOptions",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 2,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Cavalier v2|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|3",
+				"Ferocious Charger|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|7",
+				"Improved Combat Superiority|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|10",
+				"Relentless|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|15",
+				"Improved Combat Superiority|Fighter||Cavalier v2 (UA)|UARevisedClassOptions|18"
+			]
+		},
+		{
+			"name": "Arcane Archer",
+			"shortName": "Arcane Archer",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 28,
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": [
+							"prestidigitation"
+						]
+					}
+				},
+				{
+					"innate": {
+						"3": [
+							"druidcraft"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Arcane Archer|Fighter||Arcane Archer|XGE|3",
+				"Magic Arrow|Fighter||Arcane Archer|XGE|7",
+				"Curving Shot|Fighter||Arcane Archer|XGE|7",
+				"Additional Arcane Shot Option|Fighter||Arcane Archer|XGE|7",
+				"Additional Arcane Shot Option|Fighter||Arcane Archer|XGE|10",
+				"Ever-Ready Shot|Fighter||Arcane Archer|XGE|15",
+				"Additional Arcane Shot Option|Fighter||Arcane Archer|XGE|15",
+				"Additional Arcane Shot Option|Fighter||Arcane Archer|XGE|18"
+			]
+		},
+		{
+			"name": "Cavalier",
+			"shortName": "Cavalier",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 30,
+			"subclassFeatures": [
+				"Cavalier|Fighter||Cavalier|XGE|3",
+				"Warding Maneuver|Fighter||Cavalier|XGE|7",
+				"Hold the Line|Fighter||Cavalier|XGE|10",
+				"Ferocious Charger|Fighter||Cavalier|XGE|15",
+				"Vigilant Defender|Fighter||Cavalier|XGE|18"
+			]
+		},
+		{
+			"name": "Samurai",
+			"shortName": "Samurai",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 31,
+			"subclassFeatures": [
+				"Samurai|Fighter||Samurai|XGE|3",
+				"Elegant Courtier|Fighter||Samurai|XGE|7",
+				"Tireless Spirit|Fighter||Samurai|XGE|10",
+				"Rapid Strike|Fighter||Samurai|XGE|15",
+				"Strength before Death|Fighter||Samurai|XGE|18"
+			]
+		},
+		{
+			"name": "Brute (UA)",
+			"shortName": "Brute (UA)",
+			"source": "UAThreeSubclasses",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 2,
+			"subclassFeatures": [
+				"Brute|Fighter||Brute (UA)|UAThreeSubclasses|3",
+				"Brutish Durability|Fighter||Brute (UA)|UAThreeSubclasses|7",
+				"Additional Fighting Style|Fighter||Brute (UA)|UAThreeSubclasses|10",
+				"Devastating Critical|Fighter||Brute (UA)|UAThreeSubclasses|15",
+				"Survivor|Fighter||Brute (UA)|UAThreeSubclasses|18"
+			]
+		},
+		{
+			"name": "Rune Knight (UA)",
+			"shortName": "Rune Knight (UA)",
+			"source": "UAFighterRangerRogue",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Rune Knight|Fighter||Rune Knight (UA)|UAFighterRangerRogue|3",
+				"Defensive Runes|Fighter||Rune Knight (UA)|UAFighterRangerRogue|7",
+				"Great Stature|Fighter||Rune Knight (UA)|UAFighterRangerRogue|10",
+				"Rune Magic Mastery|Fighter||Rune Knight (UA)|UAFighterRangerRogue|15",
+				"Blessing of the All Father|Fighter||Rune Knight (UA)|UAFighterRangerRogue|18"
+			]
+		},
+		{
+			"name": "Psychic Warrior (UA)",
+			"shortName": "Psychic Warrior (UA)",
+			"source": "UAFighterRogueWizard",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Psychic Warrior|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|3",
+				"Strength of Mind|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|7",
+				"Telekinetic Bulwark|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|10",
+				"Psionic Armament Improvement|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|10",
+				"Agonizing Strikes|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|15",
+				"Psychic Dreadnaught|Fighter||Psychic Warrior (UA)|UAFighterRogueWizard|18"
+			]
+		},
+		{
+			"name": "Echo Knight",
+			"shortName": "Echo Knight",
+			"source": "EGW",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 183,
+			"subclassFeatures": [
+				"Echo Knight|Fighter||Echo Knight|EGW|3",
+				"Echo Avatar|Fighter||Echo Knight|EGW|7",
+				"Shadow Martyr|Fighter||Echo Knight|EGW|10",
+				"Reclaim Potential|Fighter||Echo Knight|EGW|15",
+				"Legion of One|Fighter||Echo Knight|EGW|18"
+			]
+		},
+		{
+			"name": "Psi Knight (UA)",
+			"shortName": "Psi Knight (UA)",
+			"source": "UA2020PsionicOptionsRevisited",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 2,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Psi Knight|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|3",
+				"Telekinetic Adept|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|7",
+				"Psi-Enhanced Metabolism|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|10",
+				"Bulwark of Force|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|15",
+				"Telekinetic Master|Fighter||Psi Knight (UA)|UA2020PsionicOptionsRevisited|18"
+			]
+		},
+		{
+			"name": "Psi Warrior",
+			"shortName": "Psi Warrior",
+			"source": "TCE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 42,
+			"subclassFeatures": [
+				"Psi Warrior|Fighter||Psi Warrior|TCE|3",
+				"Telekinetic Adept|Fighter||Psi Warrior|TCE|7",
+				"Guarded Mind|Fighter||Psi Warrior|TCE|10",
+				"Bulwark of Force|Fighter||Psi Warrior|TCE|15",
+				"Telekinetic Master|Fighter||Psi Warrior|TCE|18"
+			]
+		},
+		{
+			"name": "Rune Knight",
+			"shortName": "Rune Knight",
+			"source": "TCE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"page": 44,
+			"subclassFeatures": [
+				"Rune Knight|Fighter||Rune Knight|TCE|3",
+				"Runic Shield|Fighter||Rune Knight|TCE|7",
+				"Additional Rune Known|Fighter||Rune Knight|TCE|7",
+				"Great Stature|Fighter||Rune Knight|TCE|10",
+				"Additional Rune Known|Fighter||Rune Knight|TCE|10",
+				"Master of Runes|Fighter||Rune Knight|TCE|15",
+				"Additional Rune Known|Fighter||Rune Knight|TCE|15",
+				"Runic Juggernaut|Fighter||Rune Knight|TCE|18"
 			]
 		}
 	],
@@ -1820,7 +1866,7 @@
 			"header": 1,
 			"entries": [
 				"{@i 3rd-level fighter {@variantrule optional class features|tce|optional feature}}",
-				"If you have access to maneuvers, the following maneuvers are added to the list of options available to you. Maneuvers are available to Battle Masters but also to characters who have a special feature like the Superior Technique fighting style or the Martial Adept feat.",
+				"If you have access to maneuvers, the following maneuvers are added to the list of options available to you. Maneuvers are available to Battle Masters but also to characters who have a special feature like the {@optfeature Superior Technique|TCE} fighting style or the {@feat Martial Adept} feat.",
 				{
 					"type": "entries",
 					"entries": [
@@ -1874,7 +1920,7 @@
 			"header": 1,
 			"entries": [
 				"{@i 1st-level feature (enhances Maneuvers)}",
-				"If you have access to maneuvers, the following maneuvers are added to the list of options available to you. Maneuvers are available to Battle Masters and to characters who have the Superior Technique fighting style or the Martial Adept feat.",
+				"If you have access to maneuvers, the following maneuvers are added to the list of options available to you. Maneuvers are available to Battle Masters and to characters who have the {@optfeature Superior Technique|TCE} fighting style or the {@feat Martial Adept} feat.",
 				{
 					"type": "entries",
 					"entries": [
@@ -2692,7 +2738,7 @@
 			"header": 1,
 			"entries": [
 				"{@i 3rd-level Rune Knight feature}",
-				"You gain proficiency with {@item smith's tools|PHB}, and you learn to speak, read, and write Giant."
+				"You gain proficiency with {@item smith's tools|PHB}, and you learn to speak, read, and write {@language Giant}."
 			]
 		},
 		{
@@ -3658,7 +3704,7 @@
 			"header": 1,
 			"entries": [
 				"{@i 3rd-level Rune Knight feature}",
-				"You gain proficiency with {@item smith's tools|PHB}, and you learn to speak, read, and write Giant."
+				"You gain proficiency with {@item smith's tools|PHB}, and you learn to speak, read, and write {@language Giant}."
 			]
 		},
 		{
@@ -4061,7 +4107,7 @@
 			"header": 1,
 			"entries": [
 				"At 3rd level, your study of the supernatural gives you a limited ability to use magic. You can cast {@spell detect magic} as a ritual. You can cast {@spell protection from evil and good}, but you cannot cast it again with this feature until you finish a long rest. Wisdom is your spellcasting ability for these spells.",
-				"In addition, you gain the ability to speak one of the following languages of your choice: Abyssal, Celestial, or Infernal."
+				"In addition, you gain the ability to speak one of the following languages of your choice: {@language Abyssal}, {@language Celestial}, or {@language Infernal}."
 			]
 		},
 		{

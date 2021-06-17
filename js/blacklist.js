@@ -71,7 +71,7 @@ class Blacklist {
 		mergeData({spell: await DataUtil.spell.pLoadAll()});
 
 		// classes
-		const classData = await DataUtil.class.loadRawJSON();
+		const classData = MiscUtil.copy(await DataUtil.class.loadRawJSON());
 		for (const c of classData.class) {
 			const classHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](c);
 
@@ -83,28 +83,20 @@ class Blacklist {
 					return {displayName, hash, category: "classFeature", source: it.source};
 				});
 			MiscUtil.set(Blacklist._SUB_BLACKLIST_ENTRIES, "class", classHash, subBlacklist);
-
-			for (const sc of (c.subclasses || [])) {
-				// init className and classSource
-				sc.className = sc.className || c.name
-				sc.classSource = sc.classSource || c.source;
-				sc.source = sc.source || c.source;
-				sc.shortName = sc.shortName || sc.name;
-
-				const subclassHash = UrlUtil.URL_TO_HASH_BUILDER["subclass"](sc);
-
-				const subBlacklist = classData.subclassFeature
-					.filter(it => it.className === c.name && it.classSource === c.source && it.subclassShortName === sc.shortName && it.subclassSource === sc.source)
-					.map(it => {
-						const hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](it);
-						const displayName = `${Blacklist._getDisplayNamePrefix_subclassFeature(it)}${it.name}`;
-						return {displayName, hash, category: "subclassFeature", source: it.source};
-					});
-				MiscUtil.set(Blacklist._SUB_BLACKLIST_ENTRIES, "subclass", subclassHash, subBlacklist);
-			}
 		}
-		classData.subclass = classData.subclass || [];
-		classData.class.forEach(c => classData.subclass = classData.subclass.concat(c.subclasses || []));
+
+		for (const sc of (classData.subclass || [])) {
+			const subclassHash = UrlUtil.URL_TO_HASH_BUILDER["subclass"](sc);
+
+			const subBlacklist = classData.subclassFeature
+				.filter(it => it.className === sc.className && it.classSource === sc.classSource && it.subclassShortName === sc.shortName && it.subclassSource === sc.source)
+				.map(it => {
+					const hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](it);
+					const displayName = `${Blacklist._getDisplayNamePrefix_subclassFeature(it)}${it.name}`;
+					return {displayName, hash, category: "subclassFeature", source: it.source};
+				});
+			MiscUtil.set(Blacklist._SUB_BLACKLIST_ENTRIES, "subclass", subclassHash, subBlacklist);
+		}
 		mergeData(classData);
 
 		// everything else
@@ -316,40 +308,26 @@ class Blacklist {
 	}
 
 	static export () {
-		const filename = `content-blacklist`;
-		DataUtil.userDownload(filename, JSON.stringify({blacklist: ExcludeUtil.getList()}, null, "\t"));
+		DataUtil.userDownload(`content-blacklist`, {fileType: "content-blacklist", blacklist: ExcludeUtil.getList()});
 	}
 
-	static import (evt) {
-		function loadSaved (event, additive) {
-			const input = event.target;
+	static async pImport (evt) {
+		const files = await DataUtil.pUserUpload({expectedFileType: "content-blacklist"});
 
-			const reader = new FileReader();
-			reader.onload = async () => {
-				const text = reader.result;
-				const json = JSON.parse(text);
+		if (!files?.length) return;
 
-				// clear list display
-				Blacklist._list.removeAllItems();
-				Blacklist._list.update();
+		// clear list display
+		Blacklist._list.removeAllItems();
+		Blacklist._list.update();
 
-				// update storage
-				if (!additive) await ExcludeUtil.pSetList(json.blacklist || []);
-				else await ExcludeUtil.pSetList(ExcludeUtil.getList().concat(json.blacklist || []));
+		const json = files[0];
 
-				// render list display
-				Blacklist._renderList();
+		// update storage
+		if (!evt.shiftKey) await ExcludeUtil.pSetList(json.blacklist || []);
+		else await ExcludeUtil.pSetList(ExcludeUtil.getList().concat(json.blacklist || []));
 
-				$iptAdd.remove();
-			};
-			reader.readAsText(input.files[0]);
-		}
-
-		const additive = evt.shiftKey;
-		const $iptAdd = $(`<input type="file" accept=".json" style="position: fixed; top: -100px; left: -100px; display: none;">`).on("change", (evt) => {
-			loadSaved(evt, additive);
-		}).appendTo($(`body`));
-		$iptAdd.click();
+		// render list display
+		Blacklist._renderList();
 	}
 
 	static reset () {

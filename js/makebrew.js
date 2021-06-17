@@ -410,6 +410,10 @@ class Builder extends ProxyBase {
 		this.doUiSave();
 	}
 
+	async _pHashChange_pHandleSubHashes (sub, toLoad) {
+		return toLoad;
+	}
+
 	$getSourceInput (cb) {
 		return BuilderUi.$getStateIptEnum(
 			"Source",
@@ -773,7 +777,7 @@ class Builder extends ProxyBase {
 			.click(async () => {
 				const url = await InputUiUtil.pGetUserString({title: "Enter a URL"});
 				if (!url) return;
-				CreatureBuilder.__$getFluffInput__getImageRow(doUpdateState, doUpdateOrder, rowOptions, imageRows, {href: {url: url}}).$ele.appendTo($wrpRows);
+				Builder.__$getFluffInput__getImageRow(doUpdateState, doUpdateOrder, rowOptions, imageRows, {href: {url: url}}).$ele.appendTo($wrpRows);
 				doUpdateState();
 			});
 
@@ -785,10 +789,63 @@ class Builder extends ProxyBase {
 
 		if (this._state.fluff) {
 			if (this._state.fluff.entries) $iptEntries.val(UiUtil.getEntriesAsText(this._state.fluff.entries));
-			if (this._state.fluff.images) this._state.fluff.images.forEach(img => CreatureBuilder.__$getFluffInput__getImageRow(doUpdateState, doUpdateOrder, rowOptions, imageRows, img).$ele.appendTo($wrpRows));
+			if (this._state.fluff.images) this._state.fluff.images.forEach(img => Builder.__$getFluffInput__getImageRow(doUpdateState, doUpdateOrder, rowOptions, imageRows, img).$ele.appendTo($wrpRows));
 		}
 
 		return $row;
+	}
+
+	static __$getFluffInput__getImageRow (doUpdateState, doUpdateOrder, options, imageRows, image) {
+		const out = {};
+
+		const getState = () => {
+			const rawUrl = $iptUrl.val().trim();
+			return rawUrl ? {type: "image", href: {type: "external", url: rawUrl}} : null;
+		};
+
+		const $iptUrl = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
+			.change(() => doUpdateState());
+		if (image) {
+			const href = ((image || {}).href || {});
+			if (href.url) $iptUrl.val(href.url);
+			else if (href.path) {
+				$iptUrl.val(`${window.location.origin.replace(/\/+$/, "")}/img/${href.path}`);
+			}
+		}
+
+		const $btnPreview = $(`<button class="btn btn-xs btn-default mr-2" title="Preview Image"><span class="glyphicon glyphicon-fullscreen"/></button>`)
+			.click((evt) => {
+				const toRender = getState();
+				if (!toRender) return JqueryUtil.doToast({content: "Please enter an image URL", type: "warning"});
+
+				const $content = Renderer.hover.$getHoverContent_generic(toRender, {isBookContent: true});
+				Renderer.hover.getShowWindow(
+					$content,
+					Renderer.hover.getWindowPositionFromEvent(evt),
+					{
+						isPermanent: true,
+						title: "Image Preview",
+						isBookContent: true,
+					},
+				);
+			});
+
+		const $btnRemove = $(`<button class="btn btn-xs btn-danger" title="Remove Image"><span class="glyphicon glyphicon-trash"/></button>`)
+			.click(() => {
+				imageRows.splice(imageRows.indexOf(out), 1);
+				out.$ele.empty().remove();
+				doUpdateState();
+			});
+
+		const $dragOrder = BuilderUi.$getDragPad(doUpdateOrder, imageRows, out, {
+			$wrpRowsOuter: options.$wrpRowsOuter,
+		});
+
+		out.$ele = $$`<div class="flex-v-center mb-2 mkbru__wrp-rows--removable">${$iptUrl}${$btnPreview}${$btnRemove}${$dragOrder}</div>`;
+		out.getState = getState;
+		imageRows.push(out);
+
+		return out;
 	}
 
 	_getRenderedMarkdownCode () {
@@ -1246,7 +1303,9 @@ class Makebrew {
 				if (!initialLoadMeta.statemeta) return;
 
 				const [page, source, hash] = initialLoadMeta.statemeta;
-				const toLoad = await Renderer.hover.pCacheAndGet(page, source, hash, {isCopy: true});
+				let toLoad = await Renderer.hover.pCacheAndGet(page, source, hash, {isCopy: true});
+
+				toLoad = await builder._pHashChange_pHandleSubHashes(sub, toLoad);
 
 				// Try to link up the ixBrew for homebrew entities, so that we can cleanly edit and save them without
 				//   creating duplicates.

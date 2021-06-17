@@ -1,4 +1,4 @@
-@import 'vars';
+@import "vars";
 
 .source {
 	$rgb-source-PHB: #4a6898;
@@ -14,7 +14,7 @@
 	$rgb-source-SKT: darkcyan;
 	$rgb-source-PotA: #57b6c6;
 	$rgb-source-LMoP: #8da851;
-	$rgb-source-TftYP: red;
+	$rgb-source-TftYP: #c94029;
 	$rgb-source-Homebrew: $rgb-class-brew;
 	$rgb-source-ToA: #666f30;
 	$rgb-source-MTF: #1f6e7b;
@@ -39,6 +39,7 @@
 	$rgb-source-AL: #e50711;
 	$rgb-source-HF: #ac9544;
 	$rgb-source-CM: #e6585e;
+	$rgb-source-VRGR: #bd000f;
 
 	&PHB {
 		color: $rgb-source-PHB !important;
@@ -287,6 +288,13 @@
 		color: $rgb-source-CM !important;
 		border-color: $rgb-source-CM !important;
 		text-decoration-color: $rgb-source-CM !important;
+	}
+
+	&VRGR,
+	&HoL {
+		color: $rgb-source-VRGR !important;
+		border-color: $rgb-source-VRGR !important;
+		text-decoration-color: $rgb-source-VRGR !important;
 	}
 }
 

@@ -1,4 +1,9 @@
 {
+	"_meta": {
+		"internalCopies": [
+			"monsterFluff"
+		]
+	},
 	"monsterFluff": [
 		{
 			"name": "Belashyrra",
@@ -1816,10 +1821,5 @@
 				}
 			]
 		}
-	],
-	"_meta": {
-		"internalCopies": [
-			"monsterFluff"
-		]
-	}
+	]
 }

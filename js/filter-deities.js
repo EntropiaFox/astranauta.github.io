@@ -20,7 +20,7 @@ class PageFilterDeities extends PageFilter {
 		this._alignmentFilter = new Filter({
 			header: "Alignment",
 			items: ["L", "NX", "C", "G", "NY", "E", "N"],
-			displayFn: Parser.alignmentAbvToFull,
+			displayFn: it => Parser.alignmentAbvToFull(it).toTitleCase(),
 			itemSortFn: null,
 		});
 		this._domainFilter = new Filter({

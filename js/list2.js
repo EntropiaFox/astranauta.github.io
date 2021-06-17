@@ -52,13 +52,17 @@ class List {
 	 * @param [opts.sortByInitial] Initial sortBy.
 	 * @param [opts.sortDirInitial] Initial sortDir.
 	 * @param [opts.syntax] A dictionary of search syntax prefixes, each with an item "to display" checker function.
+	 * @param [opts.isFuzzy]
 	 */
 	constructor (opts) {
+		if (opts.fnSearch && opts.isFuzzy) throw new Error(`The options "fnSearch" and "isFuzzy" are mutually incompatible!`);
+
 		this._$iptSearch = opts.$iptSearch;
 		this._$wrpList = opts.$wrpList;
 		this._fnSort = opts.fnSort === undefined ? SortUtil.listSort : opts.fnSort;
 		this._fnSearch = opts.fnSearch;
 		this._syntax = opts.syntax;
+		this._isFuzzy = !!opts.isFuzzy;
 
 		this._items = [];
 		this._eventHandlers = {};
@@ -66,8 +70,12 @@ class List {
 		this._searchTerm = List._DEFAULTS.searchTerm;
 		this._sortBy = opts.sortByInitial || List._DEFAULTS.sortBy;
 		this._sortDir = opts.sortDirInitial || List._DEFAULTS.sortDir;
+		this._sortByInitial = this._sortBy;
+		this._sortDirInitial = this._sortDir;
 		this._fnFilter = null;
 		this._isUseJquery = opts.isUseJquery;
+
+		if (this._isFuzzy) this._initFuzzySearch();
 
 		this._searchedItems = [];
 		this._filteredSortedItems = [];
@@ -140,10 +148,18 @@ class List {
 		if (firstVisibleItem.values.hash) window.location.hash = firstVisibleItem.values.hash;
 	}
 
+	_initFuzzySearch () {
+		elasticlunr.clearStopWords();
+		this._fuzzySearch = elasticlunr(function () {
+			this.addField("s");
+			this.setRef("ix");
+		});
+		SearchUtil.removeStemmer(this._fuzzySearch);
+	}
+
 	update () {
-		if (this._isInit && this._isDirty) {
-			this._doSearch();
-		}
+		if (!this._isInit || !this._isDirty) return;
+		this._doSearch();
 	}
 
 	_doSearch () {
@@ -167,9 +183,26 @@ class List {
 			}
 		}
 
+		if (this._isFuzzy) return this._searchedItems = this._doSearch_doSearchTerm_fuzzy();
+
 		if (this._fnSearch) return this._searchedItems = this._items.filter(it => this._fnSearch(it, this._searchTerm));
 
 		this._searchedItems = this._items.filter(it => it.searchText.includes(this._searchTerm));
+	}
+
+	_doSearch_doSearchTerm_fuzzy () {
+		const results = this._fuzzySearch
+			.search(
+				this._searchTerm,
+				{
+					fields: {
+						s: {expand: true},
+					},
+					expand: true,
+				},
+			);
+
+		return results.map(res => this._items[res.doc.ix]);
 	}
 
 	_doFilter () {
@@ -179,14 +212,20 @@ class List {
 	}
 
 	_doSort () {
-		const opts = {
-			sortBy: this._sortBy,
-			// The sort function should generally ignore this, as we do the reversing here. We expose it in case there
-			//   is specific functionality that requires it.
-			sortDir: this._sortDir,
-		};
-		if (this._fnSort) this._filteredSortedItems.sort((a, b) => this._fnSort(a, b, opts));
-		if (this._sortDir === "desc") this._filteredSortedItems.reverse();
+		const isFuzzySearchActive = this._isFuzzy && this._searchTerm;
+
+		// Temporarily disable sorting, since we want to keep the fuzzy result order (most relevant item first) rather
+		//   than our more general sort.
+		if (!isFuzzySearchActive) {
+			const opts = {
+				sortBy: this._sortBy,
+				// The sort function should generally ignore this, as we do the reversing here. We expose it in case there
+				//   is specific functionality that requires it.
+				sortDir: this._sortDir,
+			};
+			if (this._fnSort) this._filteredSortedItems.sort((a, b) => this._fnSort(a, b, opts));
+			if (this._sortDir === "desc") this._filteredSortedItems.reverse();
+		}
 
 		this._doRender();
 	}
@@ -235,47 +274,45 @@ class List {
 		if (this._searchTerm !== List._DEFAULTS.searchTerm) {
 			this._searchTerm = List._DEFAULTS.searchTerm;
 			this._doSearch();
-		} else if (this._sortBy !== List._DEFAULTS.sortBy || this._sortDir !== List._DEFAULTS.sortDir) {
-			this._sortBy = List._DEFAULTS.sortBy;
-			this._sortDir = List._DEFAULTS.sortDir
+		} else if (this._sortBy !== this._sortByInitial || this._sortDir !== this._sortDirInitial) {
+			this._sortBy = this._sortByInitial;
+			this._sortDir = this._sortDirInitial;
 		}
 	}
 
 	addItem (listItem) {
 		this._isDirty = true;
 		this._items.push(listItem);
+
+		if (this._isFuzzy) this._fuzzySearch.addDoc({ix: listItem.ix, s: listItem.searchText});
 	}
 
-	removeItem (ix) {
-		const ixItem = this._items.findIndex(it => it.ix === ix);
-		if (~ixItem) {
-			this._isDirty = true;
-			const removed = this._items.splice(ixItem, 1);
-			return removed[0];
-		}
+	removeItem (ix, ixItem) {
+		ixItem = ixItem ?? this._items.findIndex(it => it.ix === ix);
+		if (!~ixItem) return;
+
+		this._isDirty = true;
+		const removed = this._items.splice(ixItem, 1);
+
+		if (this._isFuzzy) this._fuzzySearch.removeDocByRef(ix);
+
+		return removed[0];
 	}
 
 	removeItemBy (valueName, value) {
 		const ixItem = this._items.findIndex(it => it.values[valueName] === value);
-		if (~ixItem) {
-			this._isDirty = true;
-			const removed = this._items.splice(ixItem, 1);
-			return removed[0];
-		}
+		return this.removeItem(ixItem, ixItem);
 	}
 
 	removeItemByData (dataName, value) {
 		const ixItem = this._items.findIndex(it => it.data[dataName] === value);
-		if (~ixItem) {
-			this._isDirty = true;
-			const removed = this._items.splice(ixItem, 1);
-			return removed[0];
-		}
+		return this.removeItem(ixItem, ixItem);
 	}
 
 	removeAllItems () {
 		this._isDirty = true;
 		this._items = [];
+		if (this._isFuzzy) this._initFuzzySearch();
 	}
 
 	on (eventName, handler) { (this._eventHandlers[eventName] = this._eventHandlers[eventName] || []).push(handler); }

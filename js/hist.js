@@ -176,3 +176,7 @@ Hist.util = class {
 		return Hist.util.getCleanHash(out.join(HASH_PART_SEP));
 	}
 };
+
+if (typeof module !== "undefined") {
+	module.exports = {Hist};
+}

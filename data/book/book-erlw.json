@@ -7330,7 +7330,7 @@
 							"id": "278",
 							"entries": [
 								"Karrns are somber folk and disapprove of extravagance or excessive shows of emotion. As you develop a Karrnathi character or NPC, consider the following:",
-								"{@b Military Service}. Karrns have a strong tradition of military service, making soldier or sailor appropriate backgrounds for any character. Criminals and charlatans have a difficult time evading the harsh laws of Karrnath. The Martial Adept feat can give a character a strong sense of military experience.",
+								"{@b Military Service}. Karrns have a strong tradition of military service, making soldier or sailor appropriate backgrounds for any character. Criminals and charlatans have a difficult time evading the harsh laws of Karrnath. The {@feat Martial Adept} feat can give a character a strong sense of military experience.",
 								"{@b Martial Tradition}. Karrnathi tradition emphasizes teamwork, focus, and force, and melee warriors prefer heavy armor and weapons. Fighters favor the Champion and Battle Master martial archetypes, and Karrnathi wizards choose the School of Evocation or Necromancy as their arcane tradition.",
 								"{@b The Dead}. Undead soldiers have served in Karrnath's armies for decades. How do you feel about the undead? Are you a follower of the Blood of Vol who considers the undead to be a practical tool? Do you have a relative or friend currently serving? Or do you despise the Blood of Vol and the use of necromancy?"
 							]

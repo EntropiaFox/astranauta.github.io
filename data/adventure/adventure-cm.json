@@ -849,7 +849,7 @@
 					"id": "03e",
 					"entries": [
 						"The characters have come to Candlekeep seeking aid for a stricken town, which could be the home of one or more of them. The settlement has withered this year. Crops have failed, the livestock stands in the fields like stick figures, and the rain has dwindled. A local mage determined that a curse had been levied on the land and recommended that the town seek aid from a sage named Matreous. After some inquiries, the mage found that Matreous was studying in Candlekeep and sent the characters to find him.",
-						"Alternatively, the characters could discover {@i The Joy of Extradimensional Spaces}while researching one of the following topics:",
+						"Alternatively, the characters could discover {@i The Joy of Extradimensional Spaces} while researching one of the following topics:",
 						{
 							"type": "list",
 							"items": [
@@ -857,7 +857,7 @@
 								"Demiplanes, pocket dimensions, and other spaces that exist outside the Material Plane"
 							]
 						},
-						"Tied to {@i The Joy of Extradimensional Spaces} are two mysteries.{@i }The first is the whereabouts of the missing sage Matreous. The characters can resolve this question by opening the portal to the mansion. The larger mystery, however, is how to escape once they are trapped inside.",
+						"Tied to {@i The Joy of Extradimensional Spaces} are two mysteries. The first is the whereabouts of the missing sage Matreous. The characters can resolve this question by opening the portal to the mansion. The larger mystery, however, is how to escape once they are trapped inside.",
 						{
 							"type": "entries",
 							"name": "Book Description",

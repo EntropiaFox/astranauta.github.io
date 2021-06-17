@@ -1,6 +1,10 @@
 class RenderCharCreationOptions {
 	static $getRenderedCharCreationOption (it) {
 		const renderStack = [];
+
+		const preText = Renderer.charoption.getOptionTypePreText(it.optionType);
+		if (preText) renderStack.push(preText);
+
 		const entryList = {type: "entries", entries: it.entries};
 		Renderer.get().setFirstSection(true).recursiveRender(entryList, renderStack);
 

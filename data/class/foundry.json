@@ -1,8 +1,12 @@
 {
-	"class": [
+	"class": [],
+	"classFeature": [
 		{
-			"name": "Monk",
+			"name": "Unarmored Movement",
 			"source": "PHB",
+			"className": "Monk",
+			"classSource": "PHB",
+			"level": 2,
 			"effects": [
 				{
 					"name": "Unarmored Movement",
@@ -10,14 +14,12 @@
 						{
 							"key": "data.attributes.movement.walk",
 							"mode": "ADD",
-							"value": "@classes.monk.levels > 16 ? 30 : @classes.monk.levels > 13 ? 25 : @classes.monk.levels > 9 ? 20 : @classes.monk.levels > 5 ? 15 : @classes.monk.levels > 1 ? 10 : 0"
+							"value": "(ceil((@classes.monk.levels - 1) / 4) * 5) + 5"
 						}
 					]
 				}
 			]
-		}
-	],
-	"classFeature": [
+		},
 		{
 			"name": "Metamagic",
 			"source": "PHB",
@@ -288,7 +290,7 @@
 							"equipped": true,
 							"damage.parts": [
 								[
-									"1d(@classes.monk.levels > 16 ? 10 : @classes.monk.levels > 10 ? 8 : @classes.monk.levels > 4 ? 6 : 4) + @mod",
+									"1d(2 + ceil((@classes.monk.levels + 2) / 6) * 2) + @mod",
 									"bludgeoning"
 								]
 							],
@@ -315,9 +317,274 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Expertise",
+			"source": "PHB",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 2
+					},
+					{
+						"anyProficientSkill": 1,
+						"thieves' tools": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Expertise",
+			"source": "PHB",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"level": 6,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 2
+					},
+					{
+						"anyProficientSkill": 1,
+						"thieves' tools": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Primal Knowledge",
+			"source": "TCE",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"animal handling",
+								"athletics",
+								"intimidation",
+								"nature",
+								"perception",
+								"survival"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "TCE",
+			"className": "Spellcaster Sidekick",
+			"classSource": "TCE",
+			"level": 1,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"arcana",
+								"history",
+								"insight",
+								"investigation",
+								"medicine",
+								"performance",
+								"persuasion",
+								"religion"
+							],
+							"count": 2
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "TCE",
+			"className": "Warrior Sidekick",
+			"classSource": "TCE",
+			"level": 1,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"acrobatics",
+								"animal handling",
+								"athletics",
+								"intimidation",
+								"nature",
+								"perception",
+								"survival"
+							],
+							"count": 2
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Druidic",
+			"source": "PHB",
+			"className": "Druid",
+			"classSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"druidic": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Deft Explorer",
+			"source": "TCE",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"any": 2
+					}
+				],
+				"expertise": [
+					{
+						"anyProficientSkill": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "Thieves' Cant",
+			"source": "PHB",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"thieves' cant": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Slippery Mind",
+			"source": "PHB",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"level": 15,
+			"entryData": {
+				"savingThrowProficiencies": [
+					{
+						"wis": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Jack of All Trades",
+			"source": "PHB",
+			"className": "Bard",
+			"classSource": "PHB",
+			"level": 2,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.jackOfAllTrades",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reliable Talent",
+			"source": "PHB",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"level": 11,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.reliableTalent",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Diamond Soul",
+			"source": "PHB",
+			"className": "Monk",
+			"classSource": "PHB",
+			"level": 14,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.diamondSoul",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			]
 		}
 	],
 	"subclassFeature": [
+		{
+			"name": "Remarkable Athlete",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Champion",
+			"subclassSource": "PHB",
+			"level": 7,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.remarkableAthlete",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Improved Critical",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Champion",
+			"subclassSource": "PHB",
+			"level": 3,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.weaponCriticalThreshold",
+							"mode": "OVERRIDE",
+							"value": 19
+						}
+					]
+				}
+			]
+		},
 		{
 			"name": "Eagle",
 			"source": "PHB",
@@ -908,23 +1175,13 @@
 			"subclassShortName": "Alchemist",
 			"subclassSource": "TCE",
 			"level": 15,
-			"actorDataMod": {
-				"traits.dr.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"acid",
-							"poison"
-						]
-					}
+			"entryData": {
+				"resist": [
+					"acid",
+					"poison"
 				],
-				"traits.ci.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"poisoned"
-						]
-					}
+				"conditionImmune": [
+					"poisoned"
 				]
 			}
 		},
@@ -1120,14 +1377,9 @@
 			"subclassShortName": "Forge",
 			"subclassSource": "XGE",
 			"level": 17,
-			"actorDataMod": {
-				"traits.di.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"fire"
-						]
-					}
+			"entryData": {
+				"immune": [
+					"fire"
 				]
 			}
 		},
@@ -1412,23 +1664,13 @@
 			"subclassShortName": "Land",
 			"subclassSource": "PHB",
 			"level": 10,
-			"actorDataMod": {
-				"traits.di.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"poison"
-						]
-					}
+			"entryData": {
+				"immune": [
+					"poison"
 				],
-				"traits.ci.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"diseased",
-							"poisoned"
-						]
-					}
+				"conditionImmune": [
+					"disease",
+					"poisoned"
 				]
 			}
 		},
@@ -1440,13 +1682,10 @@
 			"subclassShortName": "Shepherd",
 			"subclassSource": "XGE",
 			"level": 2,
-			"actorDataMod": {
-				"traits.languages.value": [
+			"entryData": {
+				"languageProficiencies": [
 					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"sylvan"
-						]
+						"sylvan": true
 					}
 				]
 			}
@@ -1507,17 +1746,12 @@
 			"subclassShortName": "Spores",
 			"subclassSource": "TCE",
 			"level": 14,
-			"actorDataMod": {
-				"traits.ci.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"blinded",
-							"deafened",
-							"frightened",
-							"poisoned"
-						]
-					}
+			"entryData": {
+				"conditionImmune": [
+					"blinded",
+					"deafened",
+					"frightened",
+					"poisoned"
 				]
 			}
 		},
@@ -1930,16 +2164,18 @@
 			"subclassShortName": "Scout",
 			"subclassSource": "XGE",
 			"level": 9,
-			"actorDataMod": {
-				"attributes.speed.value": [
-					{
-						"mode": "scalarAddUnit",
-						"scalar": 10,
-						"unit": "feet",
-						"unitShort": "ft."
-					}
-				]
-			}
+			"effects": [
+				{
+					"name": "Superior Mobility",
+					"changes": [
+						{
+							"key": "data.attributes.movement.walk",
+							"mode": "ADD",
+							"value": "10"
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "Draconic Presence",
@@ -1993,15 +2229,10 @@
 			"subclassShortName": "Storm",
 			"subclassSource": "XGE",
 			"level": 6,
-			"actorDataMod": {
-				"traits.dr.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"lightning",
-							"thunder"
-						]
-					}
+			"entryData": {
+				"resist": [
+					"lightning",
+					"thunder"
 				]
 			},
 			"data": {
@@ -2018,15 +2249,10 @@
 			"subclassShortName": "Storm",
 			"subclassSource": "XGE",
 			"level": 18,
-			"actorDataMod": {
-				"traits.di.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"lightning",
-							"thunder"
-						]
-					}
+			"entryData": {
+				"immune": [
+					"lightning",
+					"thunder"
 				]
 			}
 		},
@@ -2067,14 +2293,9 @@
 			"subclassShortName": "Archfey",
 			"subclassSource": "PHB",
 			"level": 10,
-			"actorDataMod": {
-				"traits.ci.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"charmed"
-						]
-					}
+			"entryData": {
+				"conditionImmune": [
+					"charmed"
 				]
 			}
 		},
@@ -2101,14 +2322,9 @@
 			"subclassShortName": "Celestial",
 			"subclassSource": "XGE",
 			"level": 6,
-			"actorDataMod": {
-				"traits.di.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"radiant"
-						]
-					}
+			"entryData": {
+				"immune": [
+					"radiant"
 				]
 			}
 		},
@@ -2148,14 +2364,9 @@
 			"subclassShortName": "Great Old One",
 			"subclassSource": "PHB",
 			"level": 10,
-			"actorDataMod": {
-				"traits.dr.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"psychic"
-						]
-					}
+			"entryData": {
+				"resist": [
+					"psychic"
 				]
 			}
 		},
@@ -2309,14 +2520,9 @@
 			"subclassShortName": "Necromancy",
 			"subclassSource": "PHB",
 			"level": 10,
-			"actorDataMod": {
-				"traits.dr.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"necrotic"
-						]
-					}
+			"entryData": {
+				"resist": [
+					"necrotic"
 				]
 			}
 		},
@@ -2381,7 +2587,7 @@
 			"source": "TCE",
 			"className": "Bard",
 			"classSource": "PHB",
-			"subclassShortName": "College of Creation",
+			"subclassShortName": "Creation",
 			"subclassSource": "TCE",
 			"level": 3,
 			"data": {
@@ -2396,7 +2602,7 @@
 			"source": "TCE",
 			"className": "Bard",
 			"classSource": "PHB",
-			"subclassShortName": "College of Creation",
+			"subclassShortName": "Creation",
 			"subclassSource": "TCE",
 			"level": 6,
 			"data": {
@@ -2508,14 +2714,9 @@
 			"subclassShortName": "Psi Warrior",
 			"subclassSource": "TCE",
 			"level": 10,
-			"actorDataMod": {
-				"traits.dr.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"psychic"
-						]
-					}
+			"entryData": {
+				"resist": [
+					"psychic"
 				]
 			}
 		},
@@ -2680,15 +2881,28 @@
 				"target.type": "space",
 				"range.value": 60,
 				"range.units": "ft"
-			},
-			"actorDataMod": {
-				"attributes.movement.swim": [
-					{
-						"mode": "setMax",
-						"value": 40
-					}
-				]
 			}
+		},
+		{
+			"name": "Gift of the Sea",
+			"source": "TCE",
+			"className": "Warlock",
+			"classSource": "PHB",
+			"subclassShortName": "Fathomless",
+			"subclassSource": "TCE",
+			"level": 1,
+			"effects": [
+				{
+					"name": "Gift of the Sea",
+					"changes": [
+						{
+							"key": "data.attributes.movement.swim",
+							"mode": "UPGRADE",
+							"value": "40"
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "Oceanic Soul",
@@ -2698,14 +2912,9 @@
 			"subclassShortName": "Fathomless",
 			"subclassSource": "TCE",
 			"level": 6,
-			"actorDataMod": {
-				"traits.dr.value": [
-					{
-						"mode": "appendIfNotExistsArr",
-						"items": [
-							"cold"
-						]
-					}
+			"entryData": {
+				"resist": [
+					"cold"
 				]
 			}
 		},
@@ -3405,6 +3614,967 @@
 							"type": "refOptionalfeature",
 							"optionalfeature": "Wave of Rolling Earth",
 							"name": "Wave of Rolling Earth (17th Level Required)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Blessings of Knowledge",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Knowledge",
+			"subclassSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"arcana",
+								"history",
+								"nature",
+								"religion"
+							]
+						}
+					}
+				],
+				"languageProficiencies": [
+					{
+						"any": 2
+					}
+				]
+			}
+		},
+		{
+			"name": "Tiger",
+			"source": "SCAG",
+			"className": "Barbarian",
+			"classSource": "SCAG",
+			"subclassShortName": "Totem Warrior",
+			"subclassSource": "PHB",
+			"level": 6,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"athletics",
+								"acrobatics",
+								"stealth",
+								"survival"
+							],
+							"count": 2
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Acolyte of Nature",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Nature",
+			"subclassSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"animal handling",
+								"nature",
+								"survival"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Acolyte of Strength",
+			"source": "PSA",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Strength (PSA)",
+			"subclassSource": "PSA",
+			"level": 1,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"animal handling",
+								"athletics",
+								"nature",
+								"survival"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Arcane Initiate",
+			"source": "SCAG",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Arcana",
+			"subclassSource": "SCAG",
+			"level": 1,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"arcana": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "TCE",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Order",
+			"subclassSource": "TCE",
+			"level": 1,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"intimidation",
+								"persuasion"
+							]
+						}
+					}
+				],
+				"armorProficiencies": [
+					{
+						"heavy": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Implement of Peace",
+			"source": "TCE",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Peace",
+			"subclassSource": "TCE",
+			"level": 1,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"insight",
+								"performance",
+								"persuasion"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Royal Envoy",
+			"source": "SCAG",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Purple Dragon Knight (Banneret)",
+			"subclassSource": "SCAG",
+			"level": 7,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"animal handling",
+								"insight",
+								"intimidation",
+								"performance",
+								"persuasion"
+							]
+						}
+					}
+				],
+				"expertise": [
+					{
+						"persuasion": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Arcane Archer Lore",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Arcane Archer",
+			"subclassSource": "XGE",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"arcana",
+								"nature"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiency",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Cavalier",
+			"subclassSource": "XGE",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"animal handling",
+								"history",
+								"insight",
+								"performance",
+								"persuasion"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiency",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Samurai",
+			"subclassSource": "XGE",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"history",
+								"insight",
+								"performance",
+								"persuasion"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Implements of Mercy",
+			"source": "TCE",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Mercy",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"insight",
+								"medicine"
+							]
+						}
+					}
+				],
+				"toolProficiencies": [
+					{
+						"herbalism kit": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "XGE",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Drunken Master",
+			"subclassSource": "XGE",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"performance": true
+					}
+				],
+				"toolProficiencies": [
+					{
+						"brewer's supplies": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Otherworldly Glamour",
+			"source": "TCE",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"subclassShortName": "Fey Wanderer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"deception",
+								"performance",
+								"persuasion"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Survivalist",
+			"source": "XGE",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Scout",
+			"subclassSource": "XGE",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"nature",
+								"survival"
+							]
+						}
+					}
+				],
+				"expertise": [
+					{
+						"nature": true,
+						"survival": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Training in War and Song (Bladesinging)",
+			"source": "TCE",
+			"className": "Wizard",
+			"classSource": "PHB",
+			"subclassShortName": "Bladesinging",
+			"subclassSource": "TCE",
+			"level": 2,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"performance": true
+					}
+				],
+				"armorProficiencies": [
+					{
+						"light": true
+					}
+				],
+				"weaponProficiencies": [
+					{
+						"choose": {
+							"from": "type=melee weapon|property=!two-handed"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "TCE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Rune Knight",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"toolProficiencies": [
+					{
+						"smith's tools": true
+					}
+				],
+				"languageProficiencies": [
+					{
+						"giant": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Dragon Ancestor",
+			"source": "PHB",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Draconic",
+			"subclassSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"draconic": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Wind Speaker",
+			"source": "XGE",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Storm",
+			"subclassSource": "XGE",
+			"level": 1,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"primordial": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Tool Proficiency",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Alchemist",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"toolProficiencies": [
+					{
+						"alchemist's supplies": true
+					},
+					{
+						"artisan's tools": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Tools of the Trade",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"heavy": true
+					}
+				],
+				"toolProficiencies": [
+					{
+						"smith's tools": true
+					},
+					{
+						"artisan's tools": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Tool Proficiency",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Artillerist",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"toolProficiencies": [
+					{
+						"woodcarver's tools": true
+					},
+					{
+						"artisan's tools": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Battle Ready",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Battle Smith",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"weaponProficiencies": [
+					{
+						"martial": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Tool Proficiency",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Battle Smith",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"toolProficiencies": [
+					{
+						"smith's tools": true
+					},
+					{
+						"artisan's tools": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "PHB",
+			"className": "Bard",
+			"classSource": "PHB",
+			"subclassShortName": "Lore",
+			"subclassSource": "PHB",
+			"level": 3,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"athletics",
+								"acrobatics",
+								"sleight of hand",
+								"stealth",
+								"arcana",
+								"history",
+								"investigation",
+								"nature",
+								"religion",
+								"animal handling",
+								"insight",
+								"medicine",
+								"perception",
+								"survival",
+								"deception",
+								"intimidation",
+								"performance",
+								"persuasion"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "PHB",
+			"className": "Bard",
+			"classSource": "PHB",
+			"subclassShortName": "Valor",
+			"subclassSource": "PHB",
+			"level": 3,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"medium": true,
+						"shield|phb": true
+					}
+				],
+				"weaponProficiencies": [
+					{
+						"martial": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "XGE",
+			"className": "Bard",
+			"classSource": "PHB",
+			"subclassShortName": "Swords",
+			"subclassSource": "XGE",
+			"level": 3,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"medium": true
+					}
+				],
+				"weaponProficiencies": [
+					{
+						"scimitar|phb": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiency",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Life",
+			"subclassSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"heavy": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiency",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Nature",
+			"subclassSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"heavy": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Tempest",
+			"subclassSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"heavy": true
+					}
+				],
+				"weaponProficiencies": [
+					{
+						"martial": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "War",
+			"subclassSource": "PHB",
+			"level": 1,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"heavy": true
+					}
+				],
+				"weaponProficiencies": [
+					{
+						"martial": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "TCE",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Twilight",
+			"subclassSource": "TCE",
+			"level": 1,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"heavy": true
+					}
+				],
+				"weaponProficiencies": [
+					{
+						"martial": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiency",
+			"source": "XGE",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Forge",
+			"subclassSource": "XGE",
+			"level": 1,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"heavy": true
+					}
+				],
+				"toolProficiencies": [
+					{
+						"smith's tools": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Student of War",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Battle Master",
+			"subclassSource": "PHB",
+			"level": 3,
+			"entryData": {
+				"toolProficiencies": [
+					{
+						"artisan's tools": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Path of the Kensei",
+			"source": "XGE",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Kensei",
+			"subclassSource": "XGE",
+			"level": 3,
+			"entryData": {
+				"toolProficiencies": [
+					{
+						"choose": {
+							"from": [
+								"calligrapher's supplies",
+								"painter's supplies"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Bonus Proficiencies",
+			"source": "PHB",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Assassin",
+			"subclassSource": "PHB",
+			"level": 3,
+			"entryData": {
+				"toolProficiencies": [
+					{
+						"disguise kit": true,
+						"poisoner's kit": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Master of Intrigue",
+			"source": "XGE",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Mastermind",
+			"subclassSource": "XGE",
+			"level": 3,
+			"entryData": {
+				"toolProficiencies": [
+					{
+						"disguise kit": true,
+						"forgery kit": true,
+						"gaming set": true
+					}
+				],
+				"languageProficiencies": [
+					{
+						"any": 2
+					}
+				]
+			}
+		},
+		{
+			"name": "Hex Warrior",
+			"source": "XGE",
+			"className": "Warlock",
+			"classSource": "PHB",
+			"subclassShortName": "Hexblade",
+			"subclassSource": "XGE",
+			"level": 1,
+			"entryData": {
+				"weaponProficiencies": [
+					{
+						"martial": true
+					}
+				],
+				"armorProficiencies": [
+					{
+						"shield|phb": true,
+						"medium": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Iron Mind",
+			"source": "XGE",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"subclassShortName": "Gloom Stalker",
+			"subclassSource": "XGE",
+			"level": 7,
+			"entryData": {
+				"savingThrowProficiencies": [
+					{
+						"wis": true
+					},
+					{
+						"choose": {
+							"from": [
+								"int",
+								"cha"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Elegant Courtier",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Samurai",
+			"subclassSource": "XGE",
+			"level": 7,
+			"entryData": {
+				"savingThrowProficiencies": [
+					{
+						"wis": true
+					},
+					{
+						"choose": {
+							"from": [
+								"int",
+								"cha"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Tales from Beyond",
+			"source": "VRGR",
+			"className": "Bard",
+			"classSource": "PHB",
+			"subclassShortName": "Spirits",
+			"subclassSource": "VRGR",
+			"level": 3,
+			"data": {
+				"target.value": 1,
+				"target.type": "creature",
+				"range.value": 30,
+				"range.units": "ft"
+			}
+		},
+		{
+			"name": "Necrotic Husk",
+			"source": "VRGR",
+			"className": "Warlock",
+			"classSource": "PHB",
+			"subclassShortName": "Undead",
+			"subclassSource": "VRGR",
+			"level": 10,
+			"entryData": {
+				"resist": [
+					"necrotic"
+				]
+			},
+			"data": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "radius"
+			}
+		},
+		{
+			"name": "Draconic Resilience",
+			"source": "PHB",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Draconic",
+			"subclassSource": "PHB",
+			"level": 1,
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"changes": [
+						{
+							"key": "data.attributes.ac.value",
+							"mode": "UPGRADE",
+							"value": "13 + @abilities.dex.mod"
+						}
+					]
+				},
+				{
+					"name": "HP Increase",
+					"changes": [
+						{
+							"key": "data.attributes.hp.max",
+							"mode": "ADD",
+							"value": "@details.level"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dragon Wings",
+			"source": "PHB",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Draconic",
+			"subclassSource": "PHB",
+			"level": 14,
+			"effects": [
+				{
+					"name": "Flying Speed",
+					"changes": [
+						{
+							"key": "data.attributes.movement.fly",
+							"mode": "UPGRADE",
+							"value": "@attributes.movement.walk"
 						}
 					]
 				}

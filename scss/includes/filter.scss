@@ -1,4 +1,4 @@
-@import 'vars';
+@import "vars";
 
 @media (max-width: $width-screen-md) {
 	.dropdown-menu-filter {
@@ -316,7 +316,7 @@ $flt-ignore--hover: #e6e6e6;
 			display: block;
 
 			&::after {
-				content: '';
+				content: "";
 				clear: both;
 				display: block;
 			}

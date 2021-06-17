@@ -1,4 +1,4 @@
-@import 'includes/vars';
+@import "includes/vars";
 
 body.dm-screen-locked .panel-control-bar,
 body.dm-screen-locked .content-tab-remove,
@@ -41,7 +41,7 @@ label {
 }
 
 .dm-screen-panel.faux-hover .panel-content-wrapper-inner::after {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -60,7 +60,7 @@ label {
 	transition: opacity 0.1s;
 }
 
-.dm-screen-panel[empty='true'] .panel-control-bar {
+.dm-screen-panel[empty="true"] .panel-control-bar {
 	display: none;
 }
 
@@ -80,7 +80,7 @@ label {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 5px;
 	padding: 0 4px;
-	font-family: 'Andada', serif;
+	font-family: "Andada", serif;
 	font-variant: small-caps;
 	color: white;
 	user-select: none;

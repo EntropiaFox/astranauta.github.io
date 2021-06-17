@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.125.2"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.131.2"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -27,6 +27,7 @@ VeCt = {
 	STR_SEE_CONSOLE: "See the console (CTRL+SHIFT+J) for details.",
 
 	HASH_SCALED: "scaled",
+	HASH_SCALED_SUMMON: "scaledsummon",
 
 	FILTER_BOX_SUB_HASH_SEARCH_PREFIX: "fbsr",
 
@@ -44,6 +45,7 @@ VeCt = {
 	DUR_INLINE_NOTIFY: 500,
 
 	PG_NONE: "NO_PAGE",
+	STR_GENERIC: "Generic",
 
 	SYM_UI_SKIP: Symbol("uiSkip"),
 
@@ -53,6 +55,11 @@ VeCt = {
 
 	CR_UNKNOWN: 100,
 	CR_CUSTOM: 99,
+
+	SPELL_LEVEL_MAX: 9,
+
+	ENTDATA_TABLE_INCLUDE: "tableInclude",
+	ENTDATA_ITEM_MERGED_ENTRY_TAG: "item.mergedEntryTag",
 };
 
 // STRING ==============================================================================================================
@@ -721,10 +728,14 @@ ElementUtil = {
 		html,
 		text,
 		ele,
+		name,
 		title,
+		val,
 		children,
+		outer,
+		href,
 	}) {
-		ele = ele || document.createElement(tag);
+		ele = ele || (outer ? (new DOMParser()).parseFromString(outer, "text/html").body.childNodes[0] : document.createElement(tag));
 
 		if (clazz) ele.className = clazz;
 		if (style) ele.setAttribute("style", style);
@@ -735,8 +746,11 @@ ElementUtil = {
 		if (mouseup) ele.addEventListener("mouseup", mouseup);
 		if (mousemove) ele.addEventListener("mousemove", mousemove);
 		if (html != null) ele.innerHTML = html;
-		if (text != null) ele.innerHTML = `${text}`.qq();
+		if (text != null) ele.textContent = text;
+		if (name != null) ele.setAttribute("name", name);
 		if (title != null) ele.setAttribute("title", title);
+		if (href != null) ele.setAttribute("href", href);
+		if (val != null) ele.setAttribute("value", val);
 		if (children) for (let i = 0, len = children.length; i < len; ++i) ele.append(children[i]);
 
 		ele.appends = ele.appends || ElementUtil._appends.bind(ele);
@@ -753,6 +767,9 @@ ElementUtil = {
 		ele.attr = ele.attr || ElementUtil._attr.bind(ele);
 		ele.val = ele.val || ElementUtil._val.bind(ele);
 		ele.html = ele.html || ElementUtil._html.bind(ele);
+		ele.onClick = ele.onClick || ElementUtil._onClick.bind(ele);
+		ele.onContextmenu = ele.onContextmenu || ElementUtil._onContextmenu.bind(ele);
+		ele.onChange = ele.onChange || ElementUtil._onChange.bind(ele);
 
 		return ele;
 	},
@@ -823,6 +840,12 @@ ElementUtil = {
 		this.innerHTML = html;
 		return this;
 	},
+
+	_onClick (fn) { return ElementUtil._onX(this, "click", fn); },
+	_onContextmenu (fn) { return ElementUtil._onX(this, "contextmenu", fn); },
+	_onChange (fn) { return ElementUtil._onX(this, "change", fn); },
+
+	_onX (ele, evtName, fn) { ele.addEventListener(evtName, fn); return ele; },
 
 	_val (val) {
 		if (val !== undefined) {
@@ -1253,7 +1276,7 @@ MiscUtil = {
 	 * @param [opts]
 	 * @param [opts.keyBlacklist]
 	 * @param [opts.isAllowDeleteObjects] If returning `undefined` from an object handler should be treated as a delete.
-	 * @param [opts.isAllowDeleteArrays] (Unimplemented) // TODO
+	 * @param [opts.isAllowDeleteArrays] If returning `undefined` from an array handler should be treated as a delete.
 	 * @param [opts.isAllowDeleteBooleans] (Unimplemented) // TODO
 	 * @param [opts.isAllowDeleteNumbers] (Unimplemented) // TODO
 	 * @param [opts.isAllowDeleteStrings] (Unimplemented) // TODO
@@ -1264,23 +1287,9 @@ MiscUtil = {
 		opts = opts || {};
 		const keyBlacklist = opts.keyBlacklist || new Set();
 
-		function applyHandlers (handlers, obj, lastKey, stack) {
-			if (!(handlers instanceof Array)) handlers = [handlers];
-			handlers.forEach(h => {
-				const out = h(obj, lastKey, stack);
-				if (!opts.isNoModification) obj = out;
-			});
-			return obj;
-		}
-
-		function runHandlers (handlers, obj, lastKey, stack) {
-			if (!(handlers instanceof Array)) handlers = [handlers];
-			handlers.forEach(h => h(obj, lastKey, stack));
-		}
-
 		const fn = (obj, primitiveHandlers, lastKey, stack) => {
 			if (obj == null) {
-				if (primitiveHandlers.null) return applyHandlers(primitiveHandlers.null, obj, lastKey, stack);
+				if (primitiveHandlers.null) return MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.null, obj, lastKey, stack});
 				return obj;
 			}
 
@@ -1297,40 +1306,40 @@ MiscUtil = {
 			const to = typeof obj;
 			switch (to) {
 				case undefined:
-					if (primitiveHandlers.preUndefined) runHandlers(primitiveHandlers.preUndefined, obj, lastKey, stack);
+					if (primitiveHandlers.preUndefined) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preUndefined, obj, lastKey, stack});
 					if (primitiveHandlers.undefined) {
-						const out = applyHandlers(primitiveHandlers.undefined, obj, lastKey, stack);
+						const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.undefined, obj, lastKey, stack});
 						if (!opts.isNoModification) obj = out;
 					}
-					if (primitiveHandlers.postUndefined) runHandlers(primitiveHandlers.postUndefined, obj, lastKey, stack);
+					if (primitiveHandlers.postUndefined) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postUndefined, obj, lastKey, stack});
 					return obj;
 				case "boolean":
-					if (primitiveHandlers.preBoolean) runHandlers(primitiveHandlers.preBoolean, obj, lastKey, stack);
+					if (primitiveHandlers.preBoolean) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preBoolean, obj, lastKey, stack});
 					if (primitiveHandlers.boolean) {
-						const out = applyHandlers(primitiveHandlers.boolean, obj, lastKey, stack);
+						const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.boolean, obj, lastKey, stack});
 						if (!opts.isNoModification) obj = out;
 					}
-					if (primitiveHandlers.postBoolean) runHandlers(primitiveHandlers.postBoolean, obj, lastKey, stack);
+					if (primitiveHandlers.postBoolean) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postBoolean, obj, lastKey, stack});
 					return obj;
 				case "number":
-					if (primitiveHandlers.preNumber) runHandlers(primitiveHandlers.preNumber, obj, lastKey, stack);
+					if (primitiveHandlers.preNumber) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preNumber, obj, lastKey, stack});
 					if (primitiveHandlers.number) {
-						const out = applyHandlers(primitiveHandlers.number, obj, lastKey, stack);
+						const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.number, obj, lastKey, stack});
 						if (!opts.isNoModification) obj = out;
 					}
-					if (primitiveHandlers.postNumber) runHandlers(primitiveHandlers.postNumber, obj, lastKey, stack);
+					if (primitiveHandlers.postNumber) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postNumber, obj, lastKey, stack});
 					return obj;
 				case "string":
-					if (primitiveHandlers.preString) runHandlers(primitiveHandlers.preString, obj, lastKey, stack);
+					if (primitiveHandlers.preString) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preString, obj, lastKey, stack});
 					if (primitiveHandlers.string) {
-						const out = applyHandlers(primitiveHandlers.string, obj, lastKey, stack);
+						const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.string, obj, lastKey, stack});
 						if (!opts.isNoModification) obj = out;
 					}
-					if (primitiveHandlers.postString) runHandlers(primitiveHandlers.postString, obj, lastKey, stack);
+					if (primitiveHandlers.postString) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postString, obj, lastKey, stack});
 					return obj;
 				case "object": {
 					if (obj instanceof Array) {
-						if (primitiveHandlers.preArray) runHandlers(primitiveHandlers.preArray, obj, lastKey, stack);
+						if (primitiveHandlers.preArray) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preArray, obj, lastKey, stack});
 						if (opts.isDepthFirst) {
 							if (stack) stack.push(obj);
 							const out = obj.map(it => fn(it, primitiveHandlers, lastKey, stack));
@@ -1338,28 +1347,35 @@ MiscUtil = {
 							if (stack) stack.pop();
 
 							if (primitiveHandlers.array) {
-								const out = applyHandlers(primitiveHandlers.array, obj, lastKey, stack);
+								const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.array, obj, lastKey, stack});
 								if (!opts.isNoModification) obj = out;
+							}
+							if (obj == null) {
+								if (!opts.isAllowDeleteArrays) throw new Error(`Array handler(s) returned null!`);
 							}
 						} else {
 							if (primitiveHandlers.array) {
-								const out = applyHandlers(primitiveHandlers.array, obj, lastKey, stack);
+								const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.array, obj, lastKey, stack});
 								if (!opts.isNoModification) obj = out;
 							}
-							const out = obj.map(it => fn(it, primitiveHandlers, lastKey, stack));
-							if (!opts.isNoModification) obj = out;
+							if (obj != null) {
+								const out = obj.map(it => fn(it, primitiveHandlers, lastKey, stack));
+								if (!opts.isNoModification) obj = out;
+							} else {
+								if (!opts.isAllowDeleteArrays) throw new Error(`Array handler(s) returned null!`);
+							}
 						}
-						if (primitiveHandlers.postArray) runHandlers(primitiveHandlers.postArray, obj, lastKey, stack);
+						if (primitiveHandlers.postArray) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postArray, obj, lastKey, stack});
 						return obj;
 					} else {
-						if (primitiveHandlers.preObject) runHandlers(primitiveHandlers.preObject, obj, lastKey, stack);
+						if (primitiveHandlers.preObject) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preObject, obj, lastKey, stack});
 						if (opts.isDepthFirst) {
 							if (stack) stack.push(obj);
 							doObjectRecurse();
 							if (stack) stack.pop();
 
 							if (primitiveHandlers.object) {
-								const out = applyHandlers(primitiveHandlers.object, obj, lastKey, stack);
+								const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.object, obj, lastKey, stack});
 								if (!opts.isNoModification) obj = out;
 							}
 							if (obj == null) {
@@ -1367,7 +1383,7 @@ MiscUtil = {
 							}
 						} else {
 							if (primitiveHandlers.object) {
-								const out = applyHandlers(primitiveHandlers.object, obj, lastKey, stack);
+								const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.object, obj, lastKey, stack});
 								if (!opts.isNoModification) obj = out;
 							}
 							if (obj == null) {
@@ -1376,7 +1392,7 @@ MiscUtil = {
 								doObjectRecurse();
 							}
 						}
-						if (primitiveHandlers.postObject) runHandlers(primitiveHandlers.postObject, obj, lastKey, stack);
+						if (primitiveHandlers.postObject) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postObject, obj, lastKey, stack});
 						return obj;
 					}
 				}
@@ -1385,6 +1401,164 @@ MiscUtil = {
 		};
 
 		return {walk: fn};
+	},
+
+	_getWalker_applyHandlers ({opts, handlers, obj, lastKey, stack}) {
+		handlers = handlers instanceof Array ? handlers : [handlers];
+		handlers.forEach(h => {
+			const out = h(obj, lastKey, stack);
+			if (!opts.isNoModification) obj = out;
+		});
+		return obj;
+	},
+
+	_getWalker_runHandlers ({handlers, obj, lastKey, stack}) {
+		handlers = handlers instanceof Array ? handlers : [handlers];
+		handlers.forEach(h => h(obj, lastKey, stack));
+	},
+
+	/**
+	 * @param [opts]
+	 * @param [opts.keyBlacklist]
+	 * @param [opts.isAllowDeleteObjects] If returning `undefined` from an object handler should be treated as a delete.
+	 * @param [opts.isAllowDeleteArrays] If returning `undefined` from an array handler should be treated as a delete.
+	 * @param [opts.isAllowDeleteBooleans] (Unimplemented) // TODO
+	 * @param [opts.isAllowDeleteNumbers] (Unimplemented) // TODO
+	 * @param [opts.isAllowDeleteStrings] (Unimplemented) // TODO
+	 * @param [opts.isDepthFirst] If array/object recursion should occur before array/object primitive handling.
+	 * @param [opts.isNoModification] If the walker should not attempt to modify the data.
+	 */
+	getAsyncWalker (opts) {
+		opts = opts || {};
+		const keyBlacklist = opts.keyBlacklist || new Set();
+
+		const pFn = async (obj, primitiveHandlers, lastKey, stack) => {
+			if (obj == null) {
+				if (primitiveHandlers.null) return MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.null, obj, lastKey, stack});
+				return obj;
+			}
+
+			const pDoObjectRecurse = async () => {
+				await Object.keys(obj).pSerialAwaitMap(async k => {
+					const v = obj[k];
+					if (keyBlacklist.has(k)) return;
+					const out = await pFn(v, primitiveHandlers, k, stack);
+					if (!opts.isNoModification) obj[k] = out;
+				});
+			};
+
+			const to = typeof obj;
+			switch (to) {
+				case undefined:
+					if (primitiveHandlers.preUndefined) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preUndefined, obj, lastKey, stack});
+					if (primitiveHandlers.undefined) {
+						const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.undefined, obj, lastKey, stack});
+						if (!opts.isNoModification) obj = out;
+					}
+					if (primitiveHandlers.postUndefined) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postUndefined, obj, lastKey, stack});
+					return obj;
+				case "boolean":
+					if (primitiveHandlers.preBoolean) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preBoolean, obj, lastKey, stack});
+					if (primitiveHandlers.boolean) {
+						const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.boolean, obj, lastKey, stack});
+						if (!opts.isNoModification) obj = out;
+					}
+					if (primitiveHandlers.postBoolean) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postBoolean, obj, lastKey, stack});
+					return obj;
+				case "number":
+					if (primitiveHandlers.preNumber) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preNumber, obj, lastKey, stack});
+					if (primitiveHandlers.number) {
+						const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.number, obj, lastKey, stack});
+						if (!opts.isNoModification) obj = out;
+					}
+					if (primitiveHandlers.postNumber) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postNumber, obj, lastKey, stack});
+					return obj;
+				case "string":
+					if (primitiveHandlers.preString) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preString, obj, lastKey, stack});
+					if (primitiveHandlers.string) {
+						const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.string, obj, lastKey, stack});
+						if (!opts.isNoModification) obj = out;
+					}
+					if (primitiveHandlers.postString) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postString, obj, lastKey, stack});
+					return obj;
+				case "object": {
+					if (obj instanceof Array) {
+						if (primitiveHandlers.preArray) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preArray, obj, lastKey, stack});
+						if (opts.isDepthFirst) {
+							if (stack) stack.push(obj);
+							const out = await obj.pSerialAwaitMap(it => pFn(it, primitiveHandlers, lastKey, stack));
+							if (!opts.isNoModification) obj = out;
+							if (stack) stack.pop();
+
+							if (primitiveHandlers.array) {
+								const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.array, obj, lastKey, stack});
+								if (!opts.isNoModification) obj = out;
+							}
+							if (obj == null) {
+								if (!opts.isAllowDeleteArrays) throw new Error(`Array handler(s) returned null!`);
+							}
+						} else {
+							if (primitiveHandlers.array) {
+								const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.array, obj, lastKey, stack});
+								if (!opts.isNoModification) obj = out;
+							}
+							if (obj != null) {
+								const out = await obj.pSerialAwaitMap(it => pFn(it, primitiveHandlers, lastKey, stack));
+								if (!opts.isNoModification) obj = out;
+							} else {
+								if (!opts.isAllowDeleteArrays) throw new Error(`Array handler(s) returned null!`);
+							}
+						}
+						if (primitiveHandlers.postArray) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postArray, obj, lastKey, stack});
+						return obj;
+					} else {
+						if (primitiveHandlers.preObject) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preObject, obj, lastKey, stack});
+						if (opts.isDepthFirst) {
+							if (stack) stack.push(obj);
+							await pDoObjectRecurse();
+							if (stack) stack.pop();
+
+							if (primitiveHandlers.object) {
+								const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.object, obj, lastKey, stack});
+								if (!opts.isNoModification) obj = out;
+							}
+							if (obj == null) {
+								if (!opts.isAllowDeleteObjects) throw new Error(`Object handler(s) returned null!`);
+							}
+						} else {
+							if (primitiveHandlers.object) {
+								const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.object, obj, lastKey, stack});
+								if (!opts.isNoModification) obj = out;
+							}
+							if (obj == null) {
+								if (!opts.isAllowDeleteObjects) throw new Error(`Object handler(s) returned null!`);
+							} else {
+								await pDoObjectRecurse();
+							}
+						}
+						if (primitiveHandlers.postObject) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postObject, obj, lastKey, stack});
+						return obj;
+					}
+				}
+				default: throw new Error(`Unhandled type "${to}"`);
+			}
+		};
+
+		return {pWalk: pFn};
+	},
+
+	async _getAsyncWalker_pApplyHandlers ({opts, handlers, obj, lastKey, stack}) {
+		handlers = handlers instanceof Array ? handlers : [handlers];
+		await handlers.pSerialAwaitMap(async pH => {
+			const out = await pH(obj, lastKey, stack);
+			if (!opts.isNoModification) obj = out;
+		});
+		return obj;
+	},
+
+	async _getAsyncWalker_pRunHandlers ({handlers, obj, lastKey, stack}) {
+		handlers = handlers instanceof Array ? handlers : [handlers];
+		await handlers.pSerialAwaitMap(pH => pH(obj, lastKey, stack));
 	},
 
 	pDefer (fn) {
@@ -1574,6 +1748,10 @@ UrlUtil = {
 		return encoder(obj);
 	},
 
+	decodeHash (hash) {
+		return hash.split(HASH_LIST_SEP).map(it => decodeURIComponent(it));
+	},
+
 	getCurrentPage () {
 		if (typeof window === "undefined") return VeCt.PG_NONE;
 		const pSplit = window.location.pathname.split("/");
@@ -1681,11 +1859,10 @@ UrlUtil = {
 	},
 
 	class: {
-		getIndexedEntries (cls) {
+		getIndexedClassEntries (cls) {
 			const out = [];
-			let scFeatureI = 0;
+
 			(cls.classFeatures || []).forEach((lvlFeatureList, ixLvl) => {
-				// class features
 				lvlFeatureList
 					// don't add "you gain a subclass feature" or ASI's
 					.filter(feature => !feature.gainSubclassFeature
@@ -1706,57 +1883,56 @@ UrlUtil = {
 							level: ixLvl + 1,
 						})
 					});
+			});
 
-				// subclass features
-				const ixGainSubclassFeatures = lvlFeatureList.findIndex(feature => feature.gainSubclassFeature);
-				if (~ixGainSubclassFeatures) {
-					cls.subclasses.forEach(sc => {
-						const features = ((sc.subclassFeatures || [])[scFeatureI] || []);
-						sc.source = sc.source || cls.source; // default to class source if required
-						const tempStack = [];
-						features.forEach(feature => {
-							const subclassFeatureHash = `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](cls)}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({subclass: sc, feature: {ixLevel: ixLvl, ixFeature: ixGainSubclassFeatures}})}`;
-							const name = Renderer.findName(feature);
-							if (!name) { // tolerate missing names in homebrew
-								if (BrewUtil.hasSourceJson(sc.source)) return;
-								else throw new Error("Subclass feature had no name!");
-							}
-							tempStack.push({
-								_type: "subclassFeature",
-								name,
+			return out;
+		},
+
+		getIndexedSubclassEntries (sc) {
+			const out = [];
+
+			const lvlFeatures = sc.subclassFeatures || [];
+			sc.source = sc.source || sc.classSource; // default to class source if required
+
+			lvlFeatures.forEach(lvlFeature => {
+				lvlFeature.forEach((feature, ixFeature) => {
+					const subclassFeatureHash = `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: sc.className, source: sc.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({subclass: sc, feature: {ixLevel: feature.level - 1, ixFeature: ixFeature}})}`;
+
+					const name = Renderer.findName(feature);
+					if (!name) { // tolerate missing names in homebrew
+						if (BrewUtil.hasSourceJson(sc.source)) return;
+						else throw new Error("Subclass feature had no name!");
+					}
+					out.push({
+						_type: "subclassFeature",
+						name,
+						subclassName: sc.name,
+						subclassShortName: sc.shortName,
+						source: sc.source.source || sc.source,
+						hash: subclassFeatureHash,
+						entry: feature,
+						level: feature.level,
+					});
+
+					if (feature.entries) {
+						const namedFeatureParts = feature.entries.filter(it => it.name);
+						namedFeatureParts.forEach(it => {
+							if (out.find(existing => it.name === existing.name && feature.level === existing.level)) return;
+							out.push({
+								_type: "subclassFeaturePart",
+								name: it.name,
 								subclassName: sc.name,
 								subclassShortName: sc.shortName,
 								source: sc.source.source || sc.source,
 								hash: subclassFeatureHash,
 								entry: feature,
-								level: ixLvl + 1,
+								level: feature.level,
 							});
-
-							if (feature.entries) {
-								const namedFeatureParts = feature.entries.filter(it => it.name);
-								namedFeatureParts.forEach(it => {
-									const lvl = ixLvl + 1;
-									if (tempStack.find(existing => it.name === existing.name && lvl === existing.level)) return;
-									tempStack.push({
-										_type: "subclassFeaturePart",
-										name: it.name,
-										subclassName: sc.name,
-										subclassShortName: sc.shortName,
-										source: sc.source.source || sc.source,
-										hash: subclassFeatureHash,
-										entry: feature,
-										level: lvl,
-									});
-								});
-							}
 						});
-						out.push(...tempStack);
-					});
-					scFeatureI++;
-				} else if (ixGainSubclassFeatures.length > 1) {
-					setTimeout(() => { throw new Error(`Multiple subclass features gained at level ${ixLvl + 1} for class "${cls.name}" from source "${cls.source}"!`) });
-				}
+					}
+				});
 			});
+
 			return out;
 		},
 	},
@@ -1817,6 +1993,7 @@ UrlUtil.PG_TEXT_CONVERTER = "converter.html";
 UrlUtil.PG_CHANGELOG = "changelog.html";
 UrlUtil.PG_CHAR_CREATION_OPTIONS = "charcreationoptions.html";
 UrlUtil.PG_RECIPES = "recipes.html";
+UrlUtil.PG_CLASS_SUBCLASS_FEATURES = "classfeatures.html";
 
 UrlUtil.URL_TO_HASH_BUILDER = {};
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
@@ -1843,6 +2020,7 @@ UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ACTIONS] = (it) => UrlUtil.encodeForHash(
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_LANGUAGES] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CHAR_CREATION_OPTIONS] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RECIPES] = (it) => `${UrlUtil.encodeForHash([it.name, it.source])}${it._scaleFactor ? `${HASH_PART_SEP}${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}${it._scaleFactor}` : ""}`;
+UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASS_SUBCLASS_FEATURES] = (it) => (it.__prop === "subclassFeature" || it.subclassSource) ? UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](it) : UrlUtil.URL_TO_HASH_BUILDER["classFeature"](it);
 // region Fake pages (props)
 UrlUtil.URL_TO_HASH_BUILDER["subclass"] = it => {
 	const hashParts = [
@@ -1898,6 +2076,7 @@ UrlUtil.PG_TO_NAME[UrlUtil.PG_TEXT_CONVERTER] = "Text Converter";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_CHANGELOG] = "Changelog";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_CHAR_CREATION_OPTIONS] = "Other Character Creation Options";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_RECIPES] = "Recipes";
+UrlUtil.PG_TO_NAME[UrlUtil.PG_CLASS_SUBCLASS_FEATURES] = "Class & Subclass Features";
 
 UrlUtil.CAT_TO_PAGE = {};
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_CREATURE] = UrlUtil.PG_BESTIARY;
@@ -1953,6 +2132,9 @@ UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_RECIPES] = UrlUtil.PG_RECIPES;
 UrlUtil.CAT_TO_HOVER_PAGE = {};
 UrlUtil.CAT_TO_HOVER_PAGE[Parser.CAT_ID_CLASS_FEATURE] = "classfeature";
 UrlUtil.CAT_TO_HOVER_PAGE[Parser.CAT_ID_SUBCLASS_FEATURE] = "subclassfeature";
+
+UrlUtil.HASH_START_CREATURE_SCALED = `${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}`;
+UrlUtil.HASH_START_CREATURE_SCALED_SUMMON = `${VeCt.HASH_SCALED_SUMMON}${HASH_SUB_KV_SEP}`;
 
 if (!IS_DEPLOYED && !IS_VTT && typeof window !== "undefined") {
 	// for local testing, hotkey to get a link to the current page on the main site
@@ -2186,32 +2368,26 @@ DataUtil = {
 	},
 
 	_pDoMetaMerge_handleCopyProp (prop, arr, entry, options) {
-		if (entry._copy) {
-			switch (prop) {
-				case "monster": return DataUtil.monster.pMergeCopy(arr, entry, options);
-				case "monsterFluff": return DataUtil.monsterFluff.pMergeCopy(arr, entry, options);
-				case "spell": return DataUtil.spell.pMergeCopy(arr, entry, options);
-				case "spellFluff": return DataUtil.spellFluff.pMergeCopy(arr, entry, options);
-				case "item": return DataUtil.item.pMergeCopy(arr, entry, options);
-				case "itemFluff": return DataUtil.itemFluff.pMergeCopy(arr, entry, options);
-				case "background": return DataUtil.background.pMergeCopy(arr, entry, options);
-				case "race": return DataUtil.race.pMergeCopy(arr, entry, options);
-				case "raceFluff": return DataUtil.raceFluff.pMergeCopy(arr, entry, options);
-				case "deity": return DataUtil.deity.pMergeCopy(arr, entry, options);
-				default: throw new Error(`No dependency _copy merge strategy specified for property "${prop}"`);
-			}
-		}
+		if (!entry._copy) return;
+		const fnMergeCopy = DataUtil[prop]?.pMergeCopy;
+		if (!fnMergeCopy) throw new Error(`No dependency _copy merge strategy specified for property "${prop}"`);
+		return fnMergeCopy(arr, entry, options);
 	},
 
 	async _pDoMetaMerge (ident, data, options) {
 		if (data._meta) {
+			const loadedSourceIds = new Set();
+
 			if (data._meta.dependencies) {
 				await Promise.all(Object.entries(data._meta.dependencies).map(async ([dataProp, sourceIds]) => {
+					sourceIds.forEach(sourceId => loadedSourceIds.add(sourceId));
+
 					if (!data[dataProp]) return; // if e.g. monster dependencies are declared, but there are no monsters to merge with, bail out
 
 					const isHasInternalCopies = (data._meta.internalCopies || []).includes(dataProp);
 
 					const dependencyData = await Promise.all(sourceIds.map(sourceId => DataUtil.pLoadByMeta(dataProp, sourceId)));
+
 					const flatDependencyData = dependencyData.map(dd => dd[dataProp]).flat();
 					await Promise.all(data[dataProp].map(entry => DataUtil._pDoMetaMerge_handleCopyProp(dataProp, flatDependencyData, entry, {...options, isErrorOnMissing: !isHasInternalCopies})));
 				}));
@@ -2226,6 +2402,28 @@ DataUtil = {
 					}
 				}
 				delete data._meta.internalCopies;
+			}
+
+			// Load any other included data
+			if (data._meta.includes) {
+				const includesData = await Promise.all(Object.entries(data._meta.includes).map(async ([dataProp, sourceIds]) => {
+					// Avoid re-loading any sources we already loaded as dependencies
+					sourceIds = sourceIds.filter(it => !loadedSourceIds.has(it));
+
+					sourceIds.forEach(sourceId => loadedSourceIds.add(sourceId));
+
+					// This loads the brew as a side-effect
+					const includesData = await Promise.all(sourceIds.map(sourceId => DataUtil.pLoadByMeta(dataProp, sourceId)));
+
+					const flatIncludesData = includesData.map(dd => dd[dataProp]).flat();
+					return {dataProp, flatIncludesData};
+				}));
+				delete data._meta.includes;
+
+				// Add the includes data to our current data
+				includesData.forEach(({dataProp, flatIncludesData}) => {
+					data[dataProp] = [...data[dataProp] || [], ...flatIncludesData];
+				});
 			}
 		}
 
@@ -2243,6 +2441,14 @@ DataUtil = {
 			}));
 			delete data._meta.otherSources;
 		}
+
+		const props = Object.keys(data);
+		for (const prop of props) {
+			if (!data[prop] || !(data[prop] instanceof Array) || !data[prop].length) continue;
+
+			if (DataUtil[prop]?.pPostProcess) await DataUtil[prop]?.pPostProcess(data);
+		}
+
 		DataUtil._merged[ident] = data;
 	},
 
@@ -2262,9 +2468,13 @@ DataUtil = {
 		return `${toCsv(headers)}\n${rows.map(r => toCsv(r)).join("\n")}`;
 	},
 
-	userDownload (filename, data) {
-		if (typeof data !== "string") data = JSON.stringify(data, null, "\t");
-		return DataUtil._userDownload(`${filename}.json`, data, "text/json");
+	userDownload (filename, data, {fileType = null, isSipAdditionalMetadata = false} = {}) {
+		filename = `${filename}.json`
+		if (isSipAdditionalMetadata || data instanceof Array) return DataUtil._userDownload(filename, JSON.stringify(data, null, "\t"), "text/json");
+
+		data = {siteVersion: VERSION_NUMBER, ...data};
+		if (fileType != null) data = {fileType, ...data};
+		return DataUtil._userDownload(filename, JSON.stringify(data, null, "\t"), "text/json");
 	},
 
 	userDownloadText (filename, string) {
@@ -2283,20 +2493,41 @@ DataUtil = {
 		document.body.removeChild(a);
 	},
 
-	pUserUpload () {
+	/** Always returns an array of files, even in "single" mode. */
+	pUserUpload ({isMultiple = false, expectedFileType = null} = {}) {
 		return new Promise(resolve => {
-			const $iptAdd = $(`<input type="file" accept=".json" style="position: fixed; top: -100px; left: -100px; display: none;">`).on("change", (evt) => {
+			const $iptAdd = $(`<input type="file" ${isMultiple ? "multiple" : ""} accept=".json" style="position: fixed; top: -100px; left: -100px; display: none;">`).on("change", (evt) => {
 				const input = evt.target;
 
 				const reader = new FileReader();
-				reader.onload = () => {
+				let readIndex = 0;
+				const out = [];
+				reader.onload = async () => {
+					const name = input.files[readIndex - 1].name;
+
 					const text = reader.result;
 					const json = JSON.parse(text);
-					resolve(json);
+
+					const isSkipFile = expectedFileType != null && json.fileType && json.fileType !== expectedFileType && !(await InputUiUtil.pGetUserBoolean({
+						textYes: "Yes",
+						textNo: "Cancel",
+						title: "File Type Mismatch",
+						htmlDescription: `The file "${name}" has the type "${json.fileType}" when the expected file type was "${expectedFileType}".<br>Are you sure you want to upload this file?`,
+					}));
+
+					if (!isSkipFile) {
+						delete json.fileType;
+						delete json.siteVersion;
+
+						out.push(json);
+					}
+
+					if (input.files[readIndex]) reader.readAsText(input.files[readIndex++]);
+					else resolve(out);
 				};
 
-				reader.readAsText(input.files[0]);
-			}).appendTo($(`body`));
+				reader.readAsText(input.files[readIndex++]);
+			}).appendTo(document.body);
 			$iptAdd.click();
 		});
 	},
@@ -2322,8 +2553,23 @@ DataUtil = {
 		}
 	},
 
+	_MULTI_SOURCE_PROP_TO_DIR: {
+		"monster": "bestiary",
+		"monsterFluff": "bestiary",
+		"spell": "spells",
+		"spellFluff": "spells",
+		"class": "class",
+		"subclass": "class",
+	},
+	_MULTI_SOURCE_PROP_TO_INDEX_NAME: {
+		"monster": "index.json",
+		"spell": "index.json",
+		"monsterFluff": "fluff-index.json",
+		"spellFluff": "fluff-index.json",
+		"class": "index.json",
+		"subclass": "index.json",
+	},
 	async pLoadByMeta (prop, source) {
-		// TODO(future) allow value to be e.g. a string (assumed to be an official data's source); an object e.g. `{type: external, url: <>}`,...
 		// TODO(future) expand support
 
 		switch (prop) {
@@ -2331,12 +2577,14 @@ DataUtil = {
 			case "monster":
 			case "spell":
 			case "monsterFluff":
-			case "spellFluff": {
-				const baseUrlPart = `${Renderer.get().baseUrl}data/${(prop === "monster" || prop === "monsterFluff") ? "bestiary" : "spells"}`;
-				const index = await DataUtil.loadJSON(`${baseUrlPart}/${prop === "monster" || prop === "spell" ? "index.json" : "fluff-index.json"}`);
+			case "spellFluff":
+			case "class":
+			case "subclass": {
+				const baseUrlPart = `${Renderer.get().baseUrl}data/${DataUtil._MULTI_SOURCE_PROP_TO_DIR[prop]}`;
+				const index = await DataUtil.loadJSON(`${baseUrlPart}/${DataUtil._MULTI_SOURCE_PROP_TO_INDEX_NAME[prop]}`);
 				if (index[source]) return DataUtil.loadJSON(`${baseUrlPart}/${index[source]}`);
 
-				return DataUtil._pLoadBrewBySource(source);
+				return DataUtil.pLoadBrewBySource(source);
 			}
 			// endregion
 
@@ -2344,17 +2592,19 @@ DataUtil = {
 			// case "itemFluff":
 			// case "deity":
 			case "background":
+			case "optionalfeature":
 			case "raceFluff": {
 				let url;
 				switch (prop) {
 					case "background": url = `${Renderer.get().baseUrl}data/backgrounds.json`; break;
+					case "optionalfeature": url = `${Renderer.get().baseUrl}data/optionalfeatures.json`; break;
 					case "raceFluff": url = `${Renderer.get().baseUrl}data/fluff-races.json`; break;
 				}
 
 				const data = await DataUtil.loadJSON(url);
 				if (data[prop] && data[prop].some(it => it.source === source)) return data;
 
-				return DataUtil._pLoadBrewBySource(source);
+				return DataUtil.pLoadBrewBySource(source);
 			}
 			// endregion
 
@@ -2363,7 +2613,7 @@ DataUtil = {
 			case "race": {
 				const data = await DataUtil.race.loadJSON({isAddBaseRaces: true});
 				if (data[prop] && data[prop].some(it => it.source === source)) return data;
-				return DataUtil._pLoadBrewBySource(source);
+				return DataUtil.pLoadBrewBySource(source);
 			}
 			// endregion
 
@@ -2371,9 +2621,15 @@ DataUtil = {
 		}
 	},
 
-	async _pLoadBrewBySource (source) {
+	// TODO(Future) Note that a case-insensitive variant of this is built into the renderer, which could be factored out
+	//   to this level if required.
+	async pLoadBrewBySource (source, {isSilent = true} = {}) {
 		const brewIndex = await DataUtil.brew.pLoadSourceIndex();
-		if (!brewIndex[source]) throw new Error(`Neither base nor brew index contained source "${source}"`);
+		if (!brewIndex[source]) {
+			if (isSilent) return null;
+			throw new Error(`Neither base nor brew index contained source "${source}"`);
+		}
+
 		const urlRoot = await StorageUtil.pGet(`HOMEBREW_CUSTOM_REPO_URL`);
 		const brewUrl = DataUtil.brew.getFileUrl(brewIndex[source], urlRoot);
 		await BrewUtil.pDoHandleBrewJson((await DataUtil.loadJSON(brewUrl)), UrlUtil.getCurrentPage());
@@ -2387,6 +2643,14 @@ DataUtil = {
 	// endregion
 
 	generic: {
+		_MERGE_REQUIRES_PRESERVE_BASE: {
+			page: true,
+			otherSources: true,
+			srd: true,
+			hasFluff: true,
+			hasFluffImages: true,
+		},
+
 		_walker_replaceTxt: null,
 
 		/**
@@ -2419,7 +2683,7 @@ DataUtil = {
 				if (!it) {
 					if (options.isErrorOnMissing) {
 						// In development/script mode, throw an exception
-						if (!IS_DEPLOYED && !IS_VTT) throw new Error(`Could not find ${page} entity ${entry._copy.name} (${entry._copy.source}) to copy in copier ${entry.name} (${entry.source})`);
+						if (!IS_DEPLOYED && !IS_VTT) throw new Error(`Could not find "${page}" entity "${entry._copy.name}" ("${entry._copy.source}") to copy in copier "${entry.name}" ("${entry.source}")`);
 					}
 					return;
 				}
@@ -2482,7 +2746,7 @@ DataUtil = {
 			Object.keys(copyFrom).forEach(k => {
 				if (copyTo[k] === null) return delete copyTo[k];
 				if (copyTo[k] == null) {
-					if (impl._MERGE_REQUIRES_PRESERVE[k]) {
+					if (DataUtil.generic._MERGE_REQUIRES_PRESERVE_BASE[k] || impl._MERGE_REQUIRES_PRESERVE[k]) {
 						if (copyTo._copy._preserve && copyTo._copy._preserve[k]) copyTo[k] = copyFrom[k];
 					} else copyTo[k] = copyFrom[k];
 				}
@@ -2909,13 +3173,9 @@ DataUtil = {
 			soundClip: true,
 			page: true,
 			altArt: true,
-			otherSources: true,
 			variant: true,
 			dragonCastingColor: true,
-			srd: true,
 			hasToken: true,
-			hasFluff: true,
-			hasFluffImages: true,
 		},
 		_mergeCache: {},
 		async pMergeCopy (monList, mon, options) {
@@ -2955,6 +3215,22 @@ DataUtil = {
 					DataUtil.monster.metaGroupMap[it.source] || {})[it.name] = it;
 			});
 		},
+
+		async pPostProcess (data) {
+			// Load "summoned by spell" info
+			for (const mon of data.monster) {
+				if (!mon.summonedBySpell) continue;
+				let [name, source] = mon.summonedBySpell.split("|");
+				source = source || SRC_PHB;
+				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_SPELLS]({name, source});
+				const spell = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_SPELLS, hash);
+				if (!spell) {
+					setTimeout(() => { throw new Error(`Could not load "${mon.name} (${mon.source})" "summonedBySpell" "${mon.summonedBySpell}"`); })
+					continue;
+				}
+				mon._summonedBySpell_levelBase = spell.level;
+			}
+		},
 	},
 
 	monsterFluff: {
@@ -2966,13 +3242,7 @@ DataUtil = {
 	},
 
 	spell: {
-		_MERGE_REQUIRES_PRESERVE: {
-			page: true,
-			otherSources: true,
-			srd: true,
-			hasFluff: true,
-			hasFluffImages: true,
-		},
+		_MERGE_REQUIRES_PRESERVE: {},
 		_mergeCache: {},
 		async pMergeCopy (spellList, spell, options) {
 			return DataUtil.generic._pMergeCopy(DataUtil.spell, UrlUtil.PG_SPELLS, spellList, spell, options);
@@ -3021,13 +3291,7 @@ DataUtil = {
 	},
 
 	background: {
-		_MERGE_REQUIRES_PRESERVE: {
-			page: true,
-			otherSources: true,
-			srd: true,
-			hasFluff: true,
-			hasFluffImages: true,
-		},
+		_MERGE_REQUIRES_PRESERVE: {},
 		_mergeCache: {},
 		async pMergeCopy (bgList, bg, options) {
 			return DataUtil.generic._pMergeCopy(DataUtil.background, UrlUtil.PG_BACKGROUNDS, bgList, bg, options);
@@ -3037,11 +3301,6 @@ DataUtil = {
 	race: {
 		_MERGE_REQUIRES_PRESERVE: {
 			subraces: true,
-			page: true,
-			otherSources: true,
-			srd: true,
-			hasFluff: true,
-			hasFluffImages: true,
 		},
 		_mergeCache: {},
 		async pMergeCopy (raceList, race, options) {
@@ -3062,7 +3321,7 @@ DataUtil = {
 			return DataUtil.race._loadCache[isAddBaseRaces];
 		},
 
-		async loadBrew ({isAddBaseRaces = false} = {}) {
+		async loadBrew ({isAddBaseRaces = true} = {}) {
 			const brew = await BrewUtil.pAddBrewData();
 			let fromBrew = MiscUtil.copy(brew.race || []);
 			fromBrew = Renderer.race.mergeSubraces(fromBrew, {isAddBaseRaces});
@@ -3079,6 +3338,12 @@ DataUtil = {
 	},
 
 	class: {
+		_MERGE_REQUIRES_PRESERVE: {},
+		_mergeCache: {},
+		async pMergeCopy (classList, cls, options) {
+			return DataUtil.generic._pMergeCopy(DataUtil.class, UrlUtil.PG_CLASSES, classList, cls, options);
+		},
+
 		_pLoadingJson: null,
 		_pLoadingRawJson: null,
 		_loadedJson: null,
@@ -3088,10 +3353,18 @@ DataUtil = {
 
 			DataUtil.class._pLoadingJson = (async () => {
 				const index = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/class/index.json`);
-				const allData = await Promise.all(Object.values(index).map(it => DataUtil.loadJSON(`${Renderer.get().baseUrl}data/class/${it}`)));
 
-				const allDereferencedData = await Promise.all(allData.map(json => Promise.all((json.class || []).map(cls => DataUtil.class.pGetDereferencedClassData(cls)))));
-				DataUtil.class._loadedJson = {class: allDereferencedData.flat()};
+				const allData = (
+					await Object.values(index)
+						.pSerialAwaitMap(it => DataUtil.loadJSON(`${Renderer.get().baseUrl}data/class/${it}`))
+				)
+					.map(it => MiscUtil.copy(it));
+
+				const allDereferencedClassData = (await Promise.all(allData.map(json => Promise.all((json.class || []).map(cls => DataUtil.class.pGetDereferencedClassData(cls)))))).flat();
+
+				const allDereferencedSubclassData = (await Promise.all(allData.map(json => Promise.all((json.subclass || []).map(sc => DataUtil.class.pGetDereferencedSubclassData(sc)))))).flat();
+
+				DataUtil.class._loadedJson = {class: allDereferencedClassData, subclass: allDereferencedSubclassData};
 			})();
 			await DataUtil.class._pLoadingJson;
 
@@ -3106,7 +3379,8 @@ DataUtil = {
 				const allData = await Promise.all(Object.values(index).map(it => DataUtil.loadJSON(`${Renderer.get().baseUrl}data/class/${it}`)));
 
 				DataUtil.class._loadedRawJson = {
-					class: allData.map(it => it.class || []).flat(),
+					class: MiscUtil.copy(allData.map(it => it.class || []).flat()),
+					subclass: MiscUtil.copy(allData.map(it => it.subclass || []).flat()),
 					classFeature: allData.map(it => it.classFeature || []).flat(),
 					subclassFeature: allData.map(it => it.subclassFeature || []).flat(),
 				};
@@ -3138,6 +3412,22 @@ DataUtil = {
 			};
 		},
 
+		isValidClassFeatureUid (uid) {
+			const {name, className, level} = DataUtil.class.unpackUidClassFeature(uid);
+			return !(!name || !className || isNaN(level));
+		},
+
+		packUidClassFeature (f) {
+			// <name>|<className>|<classSource>|<level>|<source>
+			return [
+				f.name,
+				f.className,
+				f.classSource === SRC_PHB ? "" : f.classSource, // assume the class has PHB source
+				f.level,
+				f.source === f.classSource ? "" : f.source, // assume the class feature has the class source
+			].join("|").replace(/\|+$/, ""); // Trim trailing pipes
+		},
+
 		/**
 		 * @param uid
 		 * @param [opts]
@@ -3161,6 +3451,24 @@ DataUtil = {
 				source,
 				displayText,
 			};
+		},
+
+		isValidSubclassFeatureUid (uid) {
+			const {name, className, subclassShortName, level} = DataUtil.class.unpackUidSubclassFeature(uid);
+			return !(!name || !className || !subclassShortName || isNaN(level));
+		},
+
+		packUidSubclassFeature (f) {
+			// <name>|<className>|<classSource>|<subclassShortName>|<subclassSource>|<level>|<source>
+			return [
+				f.name,
+				f.className,
+				f.classSource === SRC_PHB ? "" : f.classSource, // assume the class has the PHB source
+				f.subclassShortName,
+				f.subclassSource === SRC_PHB ? "" : f.subclassSource, // assume the subclass has the PHB source
+				f.level,
+				f.source === f.subclassSource ? "" : f.source, // assume the feature has the same source as the subclass
+			].join("|").replace(/\|+$/, ""); // Trim trailing pipes
 		},
 
 		_mutEntryNestLevel (feature) {
@@ -3217,14 +3525,6 @@ DataUtil = {
 			}
 			cls.classFeatures = outClassFeatures;
 
-			if (cls.subclasses) {
-				const outSubclasses = [];
-				for (const sc of cls.subclasses) {
-					outSubclasses.push(await DataUtil.class.pGetDereferencedSubclassData(sc));
-				}
-				cls.subclasses = outSubclasses;
-			}
-
 			return cls;
 		},
 
@@ -3268,16 +3568,44 @@ DataUtil = {
 
 			return sc;
 		},
+
+		// region Subclass lookup
+		_CACHE_SUBCLASS_LOOKUP_PROMISE: null,
+		_CACHE_SUBCLASS_LOOKUP: null,
+		async pGetSubclassLookup () {
+			DataUtil.class._CACHE_SUBCLASS_LOOKUP_PROMISE = DataUtil.class._CACHE_SUBCLASS_LOOKUP_PROMISE || (async () => {
+				const subclassLookup = {};
+				Object.assign(subclassLookup, await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/generated/gendata-subclass-lookup.json`));
+				const homebrew = await BrewUtil.pAddBrewData();
+				DataUtil.class.mergeHomebrewSubclassLookup(subclassLookup, homebrew);
+				DataUtil.class._CACHE_SUBCLASS_LOOKUP = subclassLookup;
+			})();
+			await DataUtil.class._CACHE_SUBCLASS_LOOKUP_PROMISE;
+			return DataUtil.class._CACHE_SUBCLASS_LOOKUP;
+		},
+
+		mergeHomebrewSubclassLookup (subclassLookup, homebrew) {
+			(homebrew.subclass || [])
+				.forEach(sc => {
+					const clSrc = sc.classSource || SRC_PHB;
+					sc.shortName = sc.shortName || sc.name;
+					const target = MiscUtil.getOrSet(subclassLookup, clSrc, sc.className, {});
+					MiscUtil.set(target, sc.source, sc.shortName, {name: sc.name});
+				});
+		},
+		// endregion
+	},
+
+	subclass: {
+		_MERGE_REQUIRES_PRESERVE: {},
+		_mergeCache: {},
+		async pMergeCopy (subclassList, subclass, options) {
+			return DataUtil.generic._pMergeCopy(DataUtil.subclass, "subclass", subclassList, subclass, options);
+		},
 	},
 
 	deity: {
-		_MERGE_REQUIRES_PRESERVE: {
-			page: true,
-			otherSources: true,
-			srd: true,
-			hasFluff: true,
-			hasFluffImages: true,
-		},
+		_MERGE_REQUIRES_PRESERVE: {},
 		_mergeCache: {},
 		async pMergeCopy (deityList, deity, options) {
 			return DataUtil.generic._pMergeCopy(DataUtil.deity, UrlUtil.PG_DEITIES, deityList, deity, options);
@@ -3387,7 +3715,10 @@ DataUtil = {
 					"col-2 text-center",
 					"col-10",
 				],
-				rows: tableRaw.table.map(it => [`${it.min}${it.max && it.max !== it.min ? `-${it.max}` : ""}`, it.result]),
+				rows: tableRaw.table.map(it => [
+					`${it.min}${it.max && it.max !== it.min ? `-${it.max}` : ""}`,
+					it.result.replace(RollerUtil.DICE_REGEX, (...m) => `{@dice ${m[0]}}`),
+				]),
 			};
 		},
 	},
@@ -3493,6 +3824,11 @@ DataUtil = {
 		async pLoadPropIndex (urlRoot) {
 			urlRoot = DataUtil.brew._getCleanUrlRoot(urlRoot);
 			return DataUtil.loadJSON(`${urlRoot}_generated/index-props.json`);
+		},
+
+		async pLoadNameIndex (urlRoot) {
+			urlRoot = DataUtil.brew._getCleanUrlRoot(urlRoot);
+			return DataUtil.loadJSON(`${urlRoot}_generated/index-names.json`);
 		},
 
 		async pLoadSourceIndex (urlRoot) {
@@ -3875,6 +4211,8 @@ BrewUtil = {
 				BrewUtil.homebrewMeta = StorageUtil.syncGet(VeCt.STORAGE_HOMEBREW_META) || {sources: []};
 				BrewUtil.homebrewMeta.sources = BrewUtil.homebrewMeta.sources || [];
 
+				BrewUtil._mutMakeBrewCompatible(homebrew);
+
 				BrewUtil.homebrew = homebrew;
 
 				BrewUtil._resetSourceCache();
@@ -3883,6 +4221,28 @@ BrewUtil = {
 			} catch (e) {
 				BrewUtil.pPurgeBrew(e);
 			}
+		}
+	},
+
+	_mutMakeBrewCompatible (homebrew) {
+		let hasOldSubclasses = false;
+
+		if (homebrew.class) {
+			homebrew.class.forEach(cls => {
+				if (cls.subclasses) {
+					hasOldSubclasses = true;
+					cls.subclasses.forEach(sc => {
+						sc.className = sc.className || cls.name;
+						sc.classSource = sc.classSource || cls.source;
+						(homebrew.subclass = homebrew.subclass || []).push(sc);
+					});
+					delete cls.subclasses;
+				}
+			})
+		}
+
+		if (hasOldSubclasses) {
+			JqueryUtil.doToast({type: "warning", content: `Converted legacy homebrew subclasses\u2014you should re-load your class homebrews, as this backwards compatibility will be removed in future!`});
 		}
 	},
 
@@ -3927,23 +4287,15 @@ BrewUtil = {
 
 		await BrewUtil._pRenderBrewScreen_pRefreshBrewList($brewList);
 
-		const $iptAdd = $(`<input multiple type="file" accept=".json" style="display: none;">`)
-			.change(evt => {
-				const input = evt.target;
-
-				let readIndex = 0;
-				const reader = new FileReader();
-				reader.onload = async () => {
-					const json = JSON.parse(reader.result);
-
+		const $btnLoadFromFile = $(`<button class="btn btn-default btn-sm mr-2">Upload File</button>`)
+			.click(async () => {
+				const files = await DataUtil.pUserUpload({isMultiple: true});
+				if (!files) return;
+				for (const json of files) {
 					await DataUtil.pDoMetaMerge(CryptUtil.uid(), json);
 
 					await BrewUtil.pDoHandleBrewJson(json, page, BrewUtil._pRenderBrewScreen_pRefreshBrewList.bind(this, $brewList));
-
-					if (input.files[readIndex]) reader.readAsText(input.files[readIndex++]);
-					else $(evt.target).val(""); // reset the input
-				};
-				reader.readAsText(input.files[readIndex++]);
+				}
 			});
 
 		const $btnLoadFromUrl = $(`<button class="btn btn-default btn-sm mr-2">Load from URL</button>`)
@@ -3994,7 +4346,7 @@ BrewUtil = {
 					${$btnGet}
 					${$btnCustomUrl}
 				</div>
-				<label role="button" class="btn btn-default btn-sm mr-2">Upload File${$iptAdd}</label>
+				${$btnLoadFromFile}
 				${$btnLoadFromUrl}
 			</div>
 			<div class="flex-v-center">
@@ -4091,9 +4443,10 @@ BrewUtil = {
 		}
 
 		const urlRoot = await StorageUtil.pGet(`HOMEBREW_CUSTOM_REPO_URL`);
-		const [timestamps, propIndex] = await Promise.all([
+		const [timestamps, propIndex, nameIndex] = await Promise.all([
 			DataUtil.brew.pLoadTimestamps(urlRoot),
 			DataUtil.brew.pLoadPropIndex(urlRoot),
+			DataUtil.brew.pLoadNameIndex(urlRoot),
 		]);
 		const props = opts.isShowAll ? BrewUtil.getPageProps(UrlUtil.PG_MANAGE_BREW) : BrewUtil.getPageProps();
 
@@ -4132,12 +4485,14 @@ BrewUtil = {
 			$wrpList: $wrpRows,
 			fnSort,
 			isUseJquery: true,
+			isFuzzy: true,
 		});
 		SortUtil.initBtnSortHandlers($modalInner.find(".manbrew__filtertools"), list);
 
 		dataList.forEach((it, i) => {
 			it._brewAdded = (timestamps[it.path] || {}).a || 0;
 			it._brewModified = (timestamps[it.path] || {}).m || 0;
+			it._brewInternalSources = (nameIndex[it.name]) || [];
 			it._brewCat = BrewUtil._pRenderBrewScreen_getDisplayCat(BrewUtil.dirToProp(it._cat));
 
 			const timestampAdded = it._brewAdded ? MiscUtil.dateToStr(new Date(it._brewAdded * 1000), true) : "";
@@ -4194,12 +4549,14 @@ BrewUtil = {
 				{
 					author: it._brewAuthor,
 					category: it._brewCat,
-					added: timestampAdded,
-					modified: timestampAdded,
+					// Used for search
+					internalSources: it._brewInternalSources,
 				},
 				{
 					$btnAdd,
 					isSample: it._brewAuthor.toLowerCase().startsWith("sample -"),
+					added: timestampAdded,
+					modified: timestampAdded,
 				},
 			);
 			list.addItem(listItem);
@@ -4428,16 +4785,21 @@ BrewUtil = {
 		const $wrpList = $(`<div class="list-display-only brew-list brew-list--target manbrew__list flex-col w-100 mb-3"></div>`);
 		const $wrpListGroup = $(`<div class="list-display-only brew-list brew-list--groups no-shrink flex-col w-100" style="height: initial;"></div>`);
 
-		const list = new List({$iptSearch, $wrpList, isUseJquery: true});
+		const list = new List({
+			$iptSearch,
+			$wrpList,
+			isUseJquery: true,
+			isFuzzy: true,
+		});
 
 		const $lst = $$`
 			<div class="flex-col h-100">
 				${$iptSearch}
 				<div class="filtertools manbrew__filtertools btn-group input-group input-group--bottom flex no-shrink">
 					<button class="col-5 sort btn btn-default btn-xs ve-grow" data-sort="source">Source</button>
-					<button class="col-4 sort btn btn-default btn-xs" data-sort="authors">Authors</button>
+					<button class="col-5 sort btn btn-default btn-xs" data-sort="authors">Authors</button>
 					<button class="col-1 btn btn-default btn-xs" disabled>Origin</button>
-					<button class="col-2 ve-grow btn btn-default btn-xs" disabled>&nbsp;</button>
+					<button class="col-1 ve-grow btn btn-default btn-xs" disabled>&nbsp;</button>
 				</div>
 				<div class="flex w-100 h-100 overflow-y-auto relative">${$wrpList}</div>
 			</div>
@@ -4446,16 +4808,41 @@ BrewUtil = {
 		SortUtil.initBtnSortHandlers($lst.find(".manbrew__filtertools"), list);
 
 		const createButtons = (src, $row, isFooterGroup) => {
-			const $btnViewManage = $(`<button class="btn btn-sm btn-default">View/Manage</button>`)
+			const hasConverters = !isFooterGroup && !!src.convertedBy?.length;
+			const btnConvertedBy = isFooterGroup ? null : e_({
+				tag: "button",
+				clazz: `btn btn-xs btn-default ${!hasConverters ? "disabled" : ""}`,
+				title: hasConverters ? `Converted by: ${src.convertedBy.join(", ").qq()}` : "(No conversion credit given)",
+				children: [
+					e_({
+						tag: "span",
+						clazz: "glyphicon glyphicon-certificate",
+					}),
+				],
+				click: () => {
+					if (!hasConverters) return;
+					const {$modalInner} = UiUtil.getShowModal({
+						title: "Converted By:",
+						isMinHeight0: true,
+					});
+
+					if (src.convertedBy.length === 1) return $modalInner.append(`<div>${src.convertedBy.join("").qq()}</div>`);
+
+					$modalInner.append(`<ul>${src.convertedBy.map(it => `<li>${it.qq()}</li>`).join("")}</ul>`);
+				},
+			});
+
+			const $btnViewManage = $(`<button class="btn btn-xs btn-default" title="View/Manage"><span class="glyphicon glyphicon-folder-close"></span></button>`)
 				.on("click", () => {
 					showSourceManager(src.json, src._all);
 				});
 
-			const $btnDeleteAll = $(`<button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>`)
+			const $btnDeleteAll = $(`<button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></button>`)
 				.on("click", () => BrewUtil._pRenderBrewScreen_pDeleteSource($brewList, src.json, true, src._all));
 
 			$$`<div class="${isFooterGroup ? `flex-v-center flex-h-right` : `flex-vh-center ve-grow`} btn-group">
 				${$btnViewManage}
+				${btnConvertedBy}
 				${$btnDeleteAll}
 			</div>`.appendTo($row);
 		};
@@ -4470,7 +4857,7 @@ BrewUtil = {
 
 			const $row = $(`<div class="manbrew__row flex-v-center lst__row lst--border lst__row-inner no-shrink">
 				<span class="col-5 source manbrew__source">${isGroup ? "<i>" : ""}${src.full}${isGroup ? "</i>" : ""}</span>
-				<span class="col-4 authors">${validAuthors}</span>
+				<span class="col-5 authors">${validAuthors}</span>
 				<${src.url ? "a" : "span"} class="col-1 text-center" ${src.url ? `href="${src.url}" target="_blank" rel="noopener noreferrer"` : ""}>${src.url ? "View Source" : ""}</${src.url ? "a" : "span"}>
 				<span class="hidden">${src.abbreviation}</span>
 			</div>`);
@@ -4545,6 +4932,7 @@ BrewUtil = {
 			case UrlUtil.PG_LANGUAGES: return ["language", "languageScript"];
 			case UrlUtil.PG_CHAR_CREATION_OPTIONS: return ["charoption"];
 			case UrlUtil.PG_RECIPES: return ["recipe"];
+			case UrlUtil.PG_CLASS_SUBCLASS_FEATURES: return ["classFeature", "subclassFeature"];
 			default: throw new Error(`No homebrew properties defined for category ${page}`);
 		}
 	},
@@ -4925,6 +5313,7 @@ BrewUtil = {
 			case UrlUtil.PG_LANGUAGES:
 			case UrlUtil.PG_CHAR_CREATION_OPTIONS:
 			case UrlUtil.PG_RECIPES:
+			case UrlUtil.PG_CLASS_SUBCLASS_FEATURES:
 				await (BrewUtil._pHandleBrew || handleBrew)(MiscUtil.copy(toAdd));
 				break;
 			case UrlUtil.PG_MAKE_BREW:
@@ -5049,10 +5438,16 @@ BrewUtil = {
 	},
 
 	sourceJsonToStyle (source) {
+		const stylePart = BrewUtil.sourceJsonToStylePart(source);
+		if (!stylePart) return stylePart;
+		return `style="${stylePart}"`;
+	},
+
+	sourceJsonToStylePart (source) {
 		if (!source) return "";
 		source = source.toLowerCase();
 		const color = BrewUtil.sourceJsonToColor(source);
-		if (color) return `style="color: #${color}; border-color: #${color}; text-decoration-color: #${color};"`;
+		if (color) return `color: #${color}; border-color: #${color}; text-decoration-color: #${color};`
 		return "";
 	},
 
@@ -5650,7 +6045,7 @@ function BookModeView (opts) {
 
 	this._renderContent = async ($wrpContent, $dispName, $wrpControlsToPass) => {
 		this._$wrpRenderedContent = this._$wrpRenderedContent
-			? this._$wrpRenderedContent.empty()
+			? this._$wrpRenderedContent.empty().append($wrpContent)
 			: $$`<div class="bkmv__scroller h-100 overflow-y-auto ${isFlex ? "flex" : ""}">${this.isHideContentOnNoneShown ? null : $wrpContent}</div>`;
 		this._$wrpRenderedContent.appendTo(this._$wrpBook);
 
@@ -5725,7 +6120,7 @@ function BookModeView (opts) {
 			$selColumns.change();
 
 			$wrpControlsToPass = $$`<div class="w-100 flex">
-				<div class="flex-vh-center"><div class="mr-2 no-wrap help--subtle" title="Applied when printing the page.">Print columns:</div>${$selColumns}</div>
+				<div class="flex-vh-center"><div class="mr-2 no-wrap help-subtle" title="Applied when printing the page.">Print columns:</div>${$selColumns}</div>
 			</div>`.appendTo($wrpControls);
 		}
 		// endregion
@@ -5922,7 +6317,7 @@ EncounterUtil = {
 	getEncounterName (encounter) {
 		if (encounter.l && encounter.l.items && encounter.l.items.length) {
 			const largestCount = encounter.l.items.sort((a, b) => SortUtil.ascSort(Number(b.c), Number(a.c)))[0];
-			const name = decodeURIComponent(largestCount.h.split(HASH_LIST_SEP)[0]).toTitleCase();
+			const name = (UrlUtil.decodeHash(largestCount.h)[0] || "(Unnamed)").toTitleCase();
 			return `Encounter with ${name} ×${largestCount.c}`;
 		} else return "(Unnamed Encounter)"
 	},
@@ -5944,7 +6339,8 @@ ExtensionUtil = {
 		const page = $parent.attr("data-page");
 		const source = $parent.attr("data-source");
 		const hash = $parent.attr("data-hash");
-		const extensionData = $parent.attr("data-extension");
+		const rawExtensionData = $parent.attr("data-extension");
+		const extensionData = rawExtensionData ? JSON.parse(rawExtensionData) : null;
 
 		if (page && source && hash) {
 			let toSend = await Renderer.hover.pCacheAndGet(page, source, hash);
@@ -5952,7 +6348,8 @@ ExtensionUtil = {
 			if (extensionData) {
 				switch (page) {
 					case UrlUtil.PG_BESTIARY: {
-						toSend = await ScaleCreature.scale(toSend, Number(extensionData));
+						if (extensionData._scaledCr) toSend = await ScaleCreature.scale(toSend, extensionData._scaledCr);
+						else if (extensionData._scaledSummonLevel) toSend = await ScaleSummonCreature.scale(toSend, extensionData._scaledSummonLevel);
 					}
 				}
 			}

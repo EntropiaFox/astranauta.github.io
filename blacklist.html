@@ -120,8 +120,8 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="form-group col-3">
+	<div class="row flex-v-center">
+		<div class="form-group col-3 pr-2">
 			<label for="bl-source">Source</label>
 			<select class="loading form-control form-inline" id="bl-source" disabled>
 				<option class="loading-temp" value="loading">Loading...</option>
@@ -129,7 +129,7 @@
 			</select>
 		</div>
 
-		<div class="form-group col-3">
+		<div class="form-group col-3 px-2">
 			<label for="bl-category">Category</label>
 			<select class="loading form-control form-inline" id="bl-category" disabled>
 				<option class="loading-temp" value="loading">Loading...</option>
@@ -137,7 +137,7 @@
 			</select>
 		</div>
 
-		<div class="form-group col-3">
+		<div class="form-group col-3 px-2">
 			<label for="bl-name">Name</label>
 			<select class="loading form-control form-inline" id="bl-name" disabled>
 				<option class="loading-temp" value="loading">Loading...</option>
@@ -145,8 +145,8 @@
 			</select>
 		</div>
 
-		<div class="form-group col-3">
-			<div style="padding-top: 25px;">
+		<div class="form-group col-3 pl-2">
+			<div style="padding-top: 21px;">
 				<button class="loading btn btn-default" onclick="Blacklist.add()" disabled>Add Exclusion</button>
 			</div>
 		</div>
@@ -155,7 +155,7 @@
 	<div class="row">
 		<div class="form-group col-12">
 			<button class="btn btn-default" onclick="Blacklist.export()">Export List</button>
-			<button class="btn btn-default" onclick="Blacklist.import(event)" title="SHIFT for Add Only">Import List</button>
+			<button class="btn btn-default" onclick="Blacklist.pImport(event)" title="SHIFT for Add Only">Import List</button>
 			<button class="btn btn-danger btn-offset" onclick="window.confirm('Are you sure?') && Blacklist.reset()">Reset List</button>
 		</div>
 	</div>

@@ -7620,7 +7620,7 @@
 									]
 								},
 								{
-									"area": "209",
+									"area": "22e",
 									"points": [
 										[
 											273,
@@ -11914,7 +11914,7 @@
 											"items": [
 												"If the horn of the unicorn figurine is inserted into the hole in the moon symbol, the gate opens for 1 minute. None of the other figurines have protrusions that fit in the hole.",
 												"Characters must be 9th level or higher to pass through this gate (see \"{@area Jhesiyra Kestellharp|016|x}\"). The first creature to pass through the gate triggers an elder rune (see \"{@area Elder Runes|027|x}\").",
-												"A creature that passes through the gate appears in {@area area 27 on level 6|32f|x}, in the closest unoccupied space next to the similar gate located there."
+												"A creature that passes through the gate appears in {@area area 27 on level 6|371|x}, in the closest unoccupied space next to the similar gate located there."
 											]
 										}
 									]
@@ -23166,7 +23166,7 @@
 									"name": "Cephalossk the Mind Flayer",
 									"id": "4ab",
 									"entries": [
-										"Cephalossk is a solitary mind flayer arcanist (see the sidebar in the \"Mind Flayer\" entry in the {@book Monster Manual|MM}). It is a pariah among its own kind, has no allies at the academy, and isn't looking for friendship from anyone. It shadows adventurers and casts {@spell detect thoughts} spells on them to glean their true intentions.",
+										"Cephalossk is a solitary mind flayer arcanist (see the sidebar in the \"{@creature Mind Flayer}\" entry in the {@book Monster Manual|MM}). It is a pariah among its own kind, has no allies at the academy, and isn't looking for friendship from anyone. It shadows adventurers and casts {@spell detect thoughts} spells on them to glean their true intentions.",
 										"The mind flayer considers itself intellectually superior to everyone else, and it loathes Spite Harrowdale for being Halaster's favored pupil. Cephalossk tries to convince the characters to distract and kill Dumara (Spite's oni bodyguard) while it devours Spite's brain. In exchange for their help, Cephalossk promises to tell them \"three secrets that every Undermountain explorer should know.\" Once it has fed on Spite's brain, Cephalossk makes good on its promise and telepathically shares the following information with the characters:",
 										{
 											"type": "list",
@@ -25134,7 +25134,7 @@
 											"name": "Treasure",
 											"id": "4d6",
 											"entries": [
-												"Cephalossk keeps its spellbook in a desk drawer. The book is made of thin copper plates held together with mithral wire. Each page bears embossed stanzas of braille-like writing called Qualith, which the mind flayer reads with its tentacles. A non-illithid must use a {@spell comprehend languages} spell or similar magic to comprehend the writing. The book contains all the spells Cephalossk has prepared (see the sidebar in the \"Mind Flayer\" entry in the {@book Monster Manual|MM})."
+												"Cephalossk keeps its spellbook in a desk drawer. The book is made of thin copper plates held together with mithral wire. Each page bears embossed stanzas of braille-like writing called Qualith, which the mind flayer reads with its tentacles. A non-illithid must use a {@spell comprehend languages} spell or similar magic to comprehend the writing. The book contains all the spells Cephalossk has prepared (see the sidebar in the \"{@creature Mind Flayer}\" entry in the {@book Monster Manual|MM})."
 											]
 										}
 									]
@@ -25328,7 +25328,7 @@
 											"id": "4ec",
 											"entries": [
 												"The arcanaloth is an avid reader and has collected countless books from across the multiverse. Most of the books cover mundane subjects such as etiquette, oratory, and poetry. Twenty of the books are treatises on the Outer Planes and chronicles of historical events on various Material Plane worlds, including Toril, Oerth, Athas, and others; these tomes are worth 100 gp each to an interested buyer. A character who spends 1 hour searching can find one of these rare tomes.",
-												"The arcanaloth keeps its spellbook here. The book has leather covers with dreadful images branded into them. The script in the book is {@condition invisible} and can be read only by a creature who has {@sense truesight} or by means of the {@i see {@spell invisibility}} spell or similar magic. The book contains all the spells the arcanaloth has prepared, plus {@spell antimagic field}, {@spell cloudkill}, {@spell circle of death}, {@spell delayed blast fireball}, {@spell ice storm}, {@spell legend lore}, {@spell scrying}, and {@spell symbol}."
+												"The arcanaloth keeps its spellbook here. The book has leather covers with dreadful images branded into them. The script in the book is {@condition invisible} and can be read only by a creature who has {@sense truesight} or by means of the {@spell see invisibility} spell or similar magic. The book contains all the spells the arcanaloth has prepared, plus {@spell antimagic field}, {@spell cloudkill}, {@spell circle of death}, {@spell delayed blast fireball}, {@spell ice storm}, {@spell legend lore}, {@spell scrying}, and {@spell symbol}."
 											]
 										}
 									]
@@ -44403,7 +44403,7 @@
 					"width": 2550,
 					"height": 1638
 				},
-				"Seadeeps is designed for four 14th-level characters, and adventurers who defeat the monsters on this level should gain enough XP to advance to 15th level. Before running this level, consider reviewing the \"Gith\" and \"Mind Flayer\" entries in the {@book Monster Manual|MM}, as well as the \"{@area Ulitharid|bd0|x}\" entry in appendix A. They will help you roleplay the monsters on this level and bring their conflict in Seadeeps to life.",
+				"Seadeeps is designed for four 14th-level characters, and adventurers who defeat the monsters on this level should gain enough XP to advance to 15th level. Before running this level, consider reviewing the \"Gith\" and \"{@creature Mind Flayer}\" entries in the {@book Monster Manual|MM}, as well as the \"{@area Ulitharid|bd0|x}\" entry in appendix A. They will help you roleplay the monsters on this level and bring their conflict in Seadeeps to life.",
 				{
 					"type": "section",
 					"name": "What Dwells Here?",
@@ -49513,7 +49513,7 @@
 									"name": "Captain N'ghathrod",
 									"id": "9a3",
 									"entries": [
-										"The captain of the {@i Scavenger} is an illithid pirate named N'ghathrod. N'ghathrod is a mind flayer arcanist (see the sidebar in the \"Mind Flayer\" entry in the {@book Monster Manual|MM}) with 111 hit points. It uses a crystal orb as an arcane focus and dresses in pirate garb. A wooden peg replaces one of its feet, which it lost in battle years ago. Tucked in the pockets of its overcoat are four fist-sized gray gemstones\u2014the control gems for the gray slaadi that guard the ship's upper deck. N'ghathrod carries a rapier as an affectation but it not proficient with the weapon.",
+										"The captain of the {@i Scavenger} is an illithid pirate named N'ghathrod. N'ghathrod is a mind flayer arcanist (see the sidebar in the \"{@creature Mind Flayer}\" entry in the {@book Monster Manual|MM}) with 111 hit points. It uses a crystal orb as an arcane focus and dresses in pirate garb. A wooden peg replaces one of its feet, which it lost in battle years ago. Tucked in the pockets of its overcoat are four fist-sized gray gemstones\u2014the control gems for the gray slaadi that guard the ship's upper deck. N'ghathrod carries a rapier as an affectation but it not proficient with the weapon.",
 										"Before it turned to a life of space piracy, N'ghathrod lived in a mind flayer colony on the ringed planet of Glyth, which is farther from the sun than Toril. A few weeks after the {@i Scavenger} became trapped in Undermountain, N'ghathrod turned on its orog crew out of hunger, killing four of them and eating their brains. The remaining orog crew members fled to avoid a similar fate. The arrival of adventurers provides N'ghathrod with an unexpected but welcome food source. It tries to separate one party member from the others with a wall of force spell. It then uses its Mind Blast to stun its prey as a prelude to extracting its brain.",
 										"If N'ghathrod is reduced to 55 hit points or fewer, its survival instinct supersedes its hunger, prompting it to surrender telepathically. The mind flayer apologizes for its assault and proposes an end to hostilities. Given a chance, it recounts how the {@i Scavenger} was orbiting Toril when it was pulled through a magic gate to its current location. It also reveals that the ship's spelljamming helm vanished shortly thereafter (spirited away by a wish spell, though the mind flayer doesn't know it). If the mind flayer and the characters establish a truce, N'ghathrod offers to \"guard the ship\" while the characters set out to retrieve the stolen helm. If the characters succeed, N'ghathrod allows them to claim the vessel as their own, accepting a demotion until it finds a way to get rid of them.",
 										{

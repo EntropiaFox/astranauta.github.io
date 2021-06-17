@@ -1,4 +1,11 @@
 {
+	"_meta": {
+		"dependencies": {
+			"subclass": [
+				"generic"
+			]
+		}
+	},
 	"class": [
 		{
 			"name": "Druid",
@@ -80,11 +87,6 @@
 					}
 				]
 			},
-			"languageProficiencies": [
-				{
-					"druidic": true
-				}
-			],
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
@@ -484,452 +486,6 @@
 				"Archdruid|Druid||20"
 			],
 			"subclassTitle": "Druid Circle",
-			"subclasses": [
-				{
-					"name": "Circle of the Land",
-					"shortName": "Land",
-					"source": "PHB",
-					"page": 68,
-					"srd": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"hold person",
-									"spike growth"
-								],
-								"5": [
-									"sleet storm",
-									"slow"
-								],
-								"7": [
-									"freedom of movement",
-									"ice storm"
-								],
-								"9": [
-									"commune with nature",
-									"cone of cold"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"3": [
-									"mirror image",
-									"misty step"
-								],
-								"5": [
-									"water breathing",
-									"water walk"
-								],
-								"7": [
-									"control water",
-									"freedom of movement"
-								],
-								"9": [
-									"conjure elemental",
-									"scrying"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"3": [
-									"blur",
-									"silence"
-								],
-								"5": [
-									"create food and water",
-									"protection from energy"
-								],
-								"7": [
-									"blight",
-									"hallucinatory terrain"
-								],
-								"9": [
-									"insect plague",
-									"wall of stone"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"3": [
-									"barkskin",
-									"spider climb"
-								],
-								"5": [
-									"call lightning",
-									"plant growth"
-								],
-								"7": [
-									"divination",
-									"freedom of movement"
-								],
-								"9": [
-									"commune with nature",
-									"tree stride"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"3": [
-									"invisibility",
-									"pass without trace"
-								],
-								"5": [
-									"daylight",
-									"haste"
-								],
-								"7": [
-									"divination",
-									"freedom of movement"
-								],
-								"9": [
-									"dream",
-									"insect plague"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"3": [
-									"spider climb",
-									"spike growth"
-								],
-								"5": [
-									"lightning bolt",
-									"meld into stone"
-								],
-								"7": [
-									"stone shape",
-									"stoneskin"
-								],
-								"9": [
-									"passwall",
-									"wall of stone"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"3": [
-									"darkness",
-									"Melf's acid arrow"
-								],
-								"5": [
-									"water walk",
-									"stinking cloud"
-								],
-								"7": [
-									"freedom of movement",
-									"locate creature"
-								],
-								"9": [
-									"insect plague",
-									"scrying"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"3": [
-									"spider climb",
-									"web"
-								],
-								"5": [
-									"gaseous form",
-									"stinking cloud"
-								],
-								"7": [
-									"greater invisibility",
-									"stone shape"
-								],
-								"9": [
-									"cloudkill",
-									"insect plague"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Circle of the Land|Druid||Land||2",
-						"Land's Stride|Druid||Land||6",
-						"Nature's Ward|Druid||Land||10",
-						"Nature's Sanctuary|Druid||Land||14"
-					]
-				},
-				{
-					"name": "Circle of the Moon",
-					"shortName": "Moon",
-					"source": "PHB",
-					"page": 69,
-					"additionalSpells": [
-						{
-							"innate": {
-								"14": [
-									"alter self"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Circle of the Moon|Druid||Moon||2",
-						"Primal Strike|Druid||Moon||6",
-						"Elemental Wild Shape|Druid||Moon||10",
-						"Thousand Forms|Druid||Moon||14"
-					]
-				},
-				{
-					"name": "Circle of Dreams (UA)",
-					"shortName": "Dreams (UA)",
-					"source": "UADruid",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Circle of Dreams|Druid||Dreams (UA)|UADruid|2",
-						"Hearth of Moonlight and Shadow|Druid||Dreams (UA)|UADruid|6",
-						"Hidden Paths|Druid||Dreams (UA)|UADruid|10",
-						"Purifying Light|Druid||Dreams (UA)|UADruid|14"
-					]
-				},
-				{
-					"name": "Circle of the Shepherd (UA)",
-					"shortName": "Shepherd (UA)",
-					"source": "UADruid",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Circle of the Shepherd|Druid||Shepherd (UA)|UADruid|2",
-						"Mighty Summoner|Druid||Shepherd (UA)|UADruid|6",
-						"Guardian Spirit|Druid||Shepherd (UA)|UADruid|10",
-						"Faithful Summons|Druid||Shepherd (UA)|UADruid|14"
-					]
-				},
-				{
-					"name": "Circle of Twilight (UA)",
-					"shortName": "Twilight (UA)",
-					"source": "UADruid",
-					"page": 2,
-					"subclassFeatures": [
-						"Circle of Twilight|Druid||Twilight (UA)|UADruid|2",
-						"Speech Beyond the Grave|Druid||Twilight (UA)|UADruid|6",
-						"Watcher at the Threshold|Druid||Twilight (UA)|UADruid|10",
-						"Paths of the Dead|Druid||Twilight (UA)|UADruid|14"
-					]
-				},
-				{
-					"name": "Circle of the Shepherd v2 (UA)",
-					"shortName": "Shepherd v2 (UA)",
-					"source": "UARevisedClassOptions",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Circle of the Shepherd v2|Druid||Shepherd v2 (UA)|UARevisedClassOptions|2",
-						"Mighty Summoner|Druid||Shepherd v2 (UA)|UARevisedClassOptions|6",
-						"Guardian Spirit|Druid||Shepherd v2 (UA)|UARevisedClassOptions|10",
-						"Faithful Summons|Druid||Shepherd v2 (UA)|UARevisedClassOptions|14"
-					]
-				},
-				{
-					"name": "Circle of Dreams",
-					"shortName": "Dreams",
-					"source": "XGE",
-					"page": 22,
-					"subclassFeatures": [
-						"Circle of Dreams|Druid||Dreams|XGE|2",
-						"Hearth of Moonlight and Shadow|Druid||Dreams|XGE|6",
-						"Hidden Paths|Druid||Dreams|XGE|10",
-						"Walker in Dreams|Druid||Dreams|XGE|14"
-					]
-				},
-				{
-					"name": "Circle of the Shepherd",
-					"shortName": "Shepherd",
-					"source": "XGE",
-					"page": 23,
-					"subclassFeatures": [
-						"Circle of the Shepherd|Druid||Shepherd|XGE|2",
-						"Mighty Summoner|Druid||Shepherd|XGE|6",
-						"Guardian Spirit|Druid||Shepherd|XGE|10",
-						"Faithful Summons|Druid||Shepherd|XGE|14"
-					]
-				},
-				{
-					"name": "Circle of Spores (UA)",
-					"shortName": "Spores (UA)",
-					"source": "UAThreeSubclasses",
-					"page": 1,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"gentle repose",
-									"ray of enfeeblement"
-								],
-								"5": [
-									"animate dead",
-									"gaseous form"
-								],
-								"7": [
-									"blight",
-									"confusion"
-								],
-								"9": [
-									"cloudkill",
-									"contagion"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Circle of Spores (UA)|Druid||Spores (UA)|UAThreeSubclasses|2",
-						"Fungal Infestation|Druid||Spores (UA)|UAThreeSubclasses|6",
-						"Spreading Spores|Druid||Spores (UA)|UAThreeSubclasses|10",
-						"Fungal Body|Druid||Spores (UA)|UAThreeSubclasses|14"
-					]
-				},
-				{
-					"name": "Circle of Wildfire (UA)",
-					"shortName": "Wildfire (UA)",
-					"source": "UAClericDruidWizard",
-					"page": 2,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"locate animals or plants",
-									"scorching ray"
-								],
-								"5": [
-									"fireball",
-									"plant growth"
-								],
-								"7": [
-									"aura of life",
-									"fire shield"
-								],
-								"9": [
-									"flame strike",
-									"raise dead"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Circle of Wildfire|Druid||Wildfire (UA)|UAClericDruidWizard|2",
-						"Enhanced Bond|Druid||Wildfire (UA)|UAClericDruidWizard|6",
-						"Flames of Life|Druid||Wildfire (UA)|UAClericDruidWizard|10",
-						"Blazing Endurance|Druid||Wildfire (UA)|UAClericDruidWizard|14"
-					]
-				},
-				{
-					"name": "Circle of the Stars (UA)",
-					"shortName": "Stars (UA)",
-					"source": "UA2020SubclassesPt3",
-					"page": 3,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Circle of the Stars|Druid||Stars (UA)|UA2020SubclassesPt3|2",
-						"Cosmic Omen|Druid||Stars (UA)|UA2020SubclassesPt3|6",
-						"Full of Stars|Druid||Stars (UA)|UA2020SubclassesPt3|10",
-						"Star Flare|Druid||Stars (UA)|UA2020SubclassesPt3|14"
-					]
-				},
-				{
-					"name": "Circle of Spores",
-					"shortName": "Spores",
-					"source": "TCE",
-					"page": 36,
-					"otherSources": [
-						{
-							"source": "GGR",
-							"page": 26
-						}
-					],
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"blindness/deafness",
-									"gentle repose"
-								],
-								"5": [
-									"animate dead",
-									"gaseous form"
-								],
-								"7": [
-									"blight",
-									"confusion"
-								],
-								"9": [
-									"cloudkill",
-									"contagion"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Circle of Spores|Druid||Spores|TCE|2",
-						"Fungal Infestation|Druid||Spores|TCE|6",
-						"Spreading Spores|Druid||Spores|TCE|10",
-						"Fungal Body|Druid||Spores|TCE|14"
-					]
-				},
-				{
-					"name": "Circle of Stars",
-					"shortName": "Stars",
-					"source": "TCE",
-					"page": 38,
-					"subclassFeatures": [
-						"Circle of Stars|Druid||Stars|TCE|2",
-						"Cosmic Omen|Druid||Stars|TCE|6",
-						"Twinkling Constellations|Druid||Stars|TCE|10",
-						"Full of Stars|Druid||Stars|TCE|14"
-					]
-				},
-				{
-					"name": "Circle of Wildfire",
-					"shortName": "Wildfire",
-					"source": "TCE",
-					"page": 39,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"2": [
-									"burning hands",
-									"cure wounds"
-								],
-								"3": [
-									"flaming sphere",
-									"scorching ray"
-								],
-								"5": [
-									"plant growth",
-									"revivify"
-								],
-								"7": [
-									"aura of life",
-									"fire shield"
-								],
-								"9": [
-									"flame strike",
-									"mass cure wounds"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Circle of Wildfire|Druid||Wildfire|TCE|2",
-						"Enhanced Bond|Druid||Wildfire|TCE|6",
-						"Cauterizing Flames|Druid||Wildfire|TCE|10",
-						"Blazing Revival|Druid||Wildfire|TCE|14"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Druid",
@@ -2329,6 +1885,522 @@
 			]
 		}
 	],
+	"subclass": [
+		{
+			"name": "Circle of the Land",
+			"shortName": "Land",
+			"source": "PHB",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 68,
+			"srd": true,
+			"additionalSpells": [
+				{
+					"name": "Arctic",
+					"prepared": {
+						"3": [
+							"hold person",
+							"spike growth"
+						],
+						"5": [
+							"sleet storm",
+							"slow"
+						],
+						"7": [
+							"freedom of movement",
+							"ice storm"
+						],
+						"9": [
+							"commune with nature",
+							"cone of cold"
+						]
+					}
+				},
+				{
+					"name": "Coast",
+					"prepared": {
+						"3": [
+							"mirror image",
+							"misty step"
+						],
+						"5": [
+							"water breathing",
+							"water walk"
+						],
+						"7": [
+							"control water",
+							"freedom of movement"
+						],
+						"9": [
+							"conjure elemental",
+							"scrying"
+						]
+					}
+				},
+				{
+					"name": "Desert",
+					"prepared": {
+						"3": [
+							"blur",
+							"silence"
+						],
+						"5": [
+							"create food and water",
+							"protection from energy"
+						],
+						"7": [
+							"blight",
+							"hallucinatory terrain"
+						],
+						"9": [
+							"insect plague",
+							"wall of stone"
+						]
+					}
+				},
+				{
+					"name": "Forest",
+					"prepared": {
+						"3": [
+							"barkskin",
+							"spider climb"
+						],
+						"5": [
+							"call lightning",
+							"plant growth"
+						],
+						"7": [
+							"divination",
+							"freedom of movement"
+						],
+						"9": [
+							"commune with nature",
+							"tree stride"
+						]
+					}
+				},
+				{
+					"name": "Grassland",
+					"prepared": {
+						"3": [
+							"invisibility",
+							"pass without trace"
+						],
+						"5": [
+							"daylight",
+							"haste"
+						],
+						"7": [
+							"divination",
+							"freedom of movement"
+						],
+						"9": [
+							"dream",
+							"insect plague"
+						]
+					}
+				},
+				{
+					"name": "Mountain",
+					"prepared": {
+						"3": [
+							"spider climb",
+							"spike growth"
+						],
+						"5": [
+							"lightning bolt",
+							"meld into stone"
+						],
+						"7": [
+							"stone shape",
+							"stoneskin"
+						],
+						"9": [
+							"passwall",
+							"wall of stone"
+						]
+					}
+				},
+				{
+					"name": "Swamp",
+					"prepared": {
+						"3": [
+							"darkness",
+							"Melf's acid arrow"
+						],
+						"5": [
+							"water walk",
+							"stinking cloud"
+						],
+						"7": [
+							"freedom of movement",
+							"locate creature"
+						],
+						"9": [
+							"insect plague",
+							"scrying"
+						]
+					}
+				},
+				{
+					"name": "Underdark",
+					"prepared": {
+						"3": [
+							"spider climb",
+							"web"
+						],
+						"5": [
+							"gaseous form",
+							"stinking cloud"
+						],
+						"7": [
+							"greater invisibility",
+							"stone shape"
+						],
+						"9": [
+							"cloudkill",
+							"insect plague"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Circle of the Land|Druid||Land||2",
+				"Land's Stride|Druid||Land||6",
+				"Nature's Ward|Druid||Land||10",
+				"Nature's Sanctuary|Druid||Land||14"
+			]
+		},
+		{
+			"name": "Circle of the Moon",
+			"shortName": "Moon",
+			"source": "PHB",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 69,
+			"additionalSpells": [
+				{
+					"innate": {
+						"14": [
+							"alter self"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Circle of the Moon|Druid||Moon||2",
+				"Primal Strike|Druid||Moon||6",
+				"Elemental Wild Shape|Druid||Moon||10",
+				"Thousand Forms|Druid||Moon||14"
+			]
+		},
+		{
+			"name": "Circle of Dreams (UA)",
+			"shortName": "Dreams (UA)",
+			"source": "UADruid",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Circle of Dreams|Druid||Dreams (UA)|UADruid|2",
+				"Hearth of Moonlight and Shadow|Druid||Dreams (UA)|UADruid|6",
+				"Hidden Paths|Druid||Dreams (UA)|UADruid|10",
+				"Purifying Light|Druid||Dreams (UA)|UADruid|14"
+			]
+		},
+		{
+			"name": "Circle of the Shepherd (UA)",
+			"shortName": "Shepherd (UA)",
+			"source": "UADruid",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Circle of the Shepherd|Druid||Shepherd (UA)|UADruid|2",
+				"Mighty Summoner|Druid||Shepherd (UA)|UADruid|6",
+				"Guardian Spirit|Druid||Shepherd (UA)|UADruid|10",
+				"Faithful Summons|Druid||Shepherd (UA)|UADruid|14"
+			]
+		},
+		{
+			"name": "Circle of Twilight (UA)",
+			"shortName": "Twilight (UA)",
+			"source": "UADruid",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 2,
+			"subclassFeatures": [
+				"Circle of Twilight|Druid||Twilight (UA)|UADruid|2",
+				"Speech Beyond the Grave|Druid||Twilight (UA)|UADruid|6",
+				"Watcher at the Threshold|Druid||Twilight (UA)|UADruid|10",
+				"Paths of the Dead|Druid||Twilight (UA)|UADruid|14"
+			]
+		},
+		{
+			"name": "Circle of the Shepherd v2 (UA)",
+			"shortName": "Shepherd v2 (UA)",
+			"source": "UARevisedClassOptions",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Circle of the Shepherd v2|Druid||Shepherd v2 (UA)|UARevisedClassOptions|2",
+				"Mighty Summoner|Druid||Shepherd v2 (UA)|UARevisedClassOptions|6",
+				"Guardian Spirit|Druid||Shepherd v2 (UA)|UARevisedClassOptions|10",
+				"Faithful Summons|Druid||Shepherd v2 (UA)|UARevisedClassOptions|14"
+			]
+		},
+		{
+			"name": "Circle of Dreams",
+			"shortName": "Dreams",
+			"source": "XGE",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 22,
+			"subclassFeatures": [
+				"Circle of Dreams|Druid||Dreams|XGE|2",
+				"Hearth of Moonlight and Shadow|Druid||Dreams|XGE|6",
+				"Hidden Paths|Druid||Dreams|XGE|10",
+				"Walker in Dreams|Druid||Dreams|XGE|14"
+			]
+		},
+		{
+			"name": "Circle of the Shepherd",
+			"shortName": "Shepherd",
+			"source": "XGE",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 23,
+			"subclassFeatures": [
+				"Circle of the Shepherd|Druid||Shepherd|XGE|2",
+				"Mighty Summoner|Druid||Shepherd|XGE|6",
+				"Guardian Spirit|Druid||Shepherd|XGE|10",
+				"Faithful Summons|Druid||Shepherd|XGE|14"
+			]
+		},
+		{
+			"name": "Circle of Spores (UA)",
+			"shortName": "Spores (UA)",
+			"source": "UAThreeSubclasses",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"gentle repose",
+							"ray of enfeeblement"
+						],
+						"5": [
+							"animate dead",
+							"gaseous form"
+						],
+						"7": [
+							"blight",
+							"confusion"
+						],
+						"9": [
+							"cloudkill",
+							"contagion"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Circle of Spores (UA)|Druid||Spores (UA)|UAThreeSubclasses|2",
+				"Fungal Infestation|Druid||Spores (UA)|UAThreeSubclasses|6",
+				"Spreading Spores|Druid||Spores (UA)|UAThreeSubclasses|10",
+				"Fungal Body|Druid||Spores (UA)|UAThreeSubclasses|14"
+			]
+		},
+		{
+			"name": "Circle of Wildfire (UA)",
+			"shortName": "Wildfire (UA)",
+			"source": "UAClericDruidWizard",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 2,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"locate animals or plants",
+							"scorching ray"
+						],
+						"5": [
+							"fireball",
+							"plant growth"
+						],
+						"7": [
+							"aura of life",
+							"fire shield"
+						],
+						"9": [
+							"flame strike",
+							"raise dead"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Circle of Wildfire|Druid||Wildfire (UA)|UAClericDruidWizard|2",
+				"Enhanced Bond|Druid||Wildfire (UA)|UAClericDruidWizard|6",
+				"Flames of Life|Druid||Wildfire (UA)|UAClericDruidWizard|10",
+				"Blazing Endurance|Druid||Wildfire (UA)|UAClericDruidWizard|14"
+			]
+		},
+		{
+			"name": "Circle of the Stars (UA)",
+			"shortName": "Stars (UA)",
+			"source": "UA2020SubclassesPt3",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 3,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Circle of the Stars|Druid||Stars (UA)|UA2020SubclassesPt3|2",
+				"Cosmic Omen|Druid||Stars (UA)|UA2020SubclassesPt3|6",
+				"Full of Stars|Druid||Stars (UA)|UA2020SubclassesPt3|10",
+				"Star Flare|Druid||Stars (UA)|UA2020SubclassesPt3|14"
+			]
+		},
+		{
+			"name": "Circle of Spores",
+			"shortName": "Spores",
+			"source": "TCE",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 36,
+			"otherSources": [
+				{
+					"source": "GGR",
+					"page": 26
+				}
+			],
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"blindness/deafness",
+							"gentle repose"
+						],
+						"5": [
+							"animate dead",
+							"gaseous form"
+						],
+						"7": [
+							"blight",
+							"confusion"
+						],
+						"9": [
+							"cloudkill",
+							"contagion"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Circle of Spores|Druid||Spores|TCE|2",
+				"Fungal Infestation|Druid||Spores|TCE|6",
+				"Spreading Spores|Druid||Spores|TCE|10",
+				"Fungal Body|Druid||Spores|TCE|14"
+			]
+		},
+		{
+			"name": "Circle of Stars",
+			"shortName": "Stars",
+			"source": "TCE",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 38,
+			"subclassFeatures": [
+				"Circle of Stars|Druid||Stars|TCE|2",
+				"Cosmic Omen|Druid||Stars|TCE|6",
+				"Twinkling Constellations|Druid||Stars|TCE|10",
+				"Full of Stars|Druid||Stars|TCE|14"
+			]
+		},
+		{
+			"name": "Circle of Wildfire",
+			"shortName": "Wildfire",
+			"source": "TCE",
+			"className": "Druid",
+			"classSource": "PHB",
+			"page": 39,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"2": [
+							"burning hands",
+							"cure wounds"
+						],
+						"3": [
+							"flaming sphere",
+							"scorching ray"
+						],
+						"5": [
+							"plant growth",
+							"revivify"
+						],
+						"7": [
+							"aura of life",
+							"fire shield"
+						],
+						"9": [
+							"flame strike",
+							"mass cure wounds"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Circle of Wildfire|Druid||Wildfire|TCE|2",
+				"Enhanced Bond|Druid||Wildfire|TCE|6",
+				"Cauterizing Flames|Druid||Wildfire|TCE|10",
+				"Blazing Revival|Druid||Wildfire|TCE|14"
+			]
+		},
+		{
+			"name": "Mage of Prismari (UA)",
+			"shortName": "Prismari (UA)",
+			"source": "UA2021MagesOfStrixhaven",
+			"className": "Druid",
+			"classSource": "PHB",
+			"_copy": {
+				"name": "Mage of Prismari (UA)",
+				"shortName": "Prismari (UA)",
+				"source": "UA2021MagesOfStrixhaven",
+				"className": "Generic",
+				"classSource": "Generic",
+				"_preserve": {
+					"page": true
+				}
+			}
+		},
+		{
+			"name": "Mage of Witherbloom (UA)",
+			"shortName": "Witherbloom (UA)",
+			"source": "UA2021MagesOfStrixhaven",
+			"className": "Druid",
+			"classSource": "PHB",
+			"_copy": {
+				"name": "Mage of Witherbloom (UA)",
+				"shortName": "Witherbloom (UA)",
+				"source": "UA2021MagesOfStrixhaven",
+				"className": "Generic",
+				"classSource": "Generic",
+				"_preserve": {
+					"page": true
+				}
+			}
+		}
+	],
 	"classFeature": [
 		{
 			"name": "Cantrip Versatility",
@@ -2352,7 +2424,7 @@
 			"classSource": "PHB",
 			"level": 1,
 			"entries": [
-				"You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom ({@skill Perception}) check but can't decipher it without magic."
+				"You know {@language Druidic}, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom ({@skill Perception}) check but can't decipher it without magic."
 			]
 		},
 		{
@@ -2778,7 +2850,7 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"entries": [
-				"The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle's wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites.",
+				"The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in {@language Druidic}. The circle's wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites.",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "Bonus Cantrip|Druid||Land||2"
@@ -4427,7 +4499,7 @@
 			"header": 1,
 			"entries": [
 				"At 2nd level, you gain the ability to converse with beasts and many fey.",
-				"You learn to speak, read, and write Sylvan. In addition, beasts can understand your speech, and you gain the ability to decipher their noises and motions. Most beasts lack the intelligence to convey or understand sophisticated concepts, but a friendly beast could relay what it has seen or heard in the recent past. This ability doesn't grant you any special friendship with beasts, though you can combine this ability with gifts to curry favor with them as you would with any nonplayer character."
+				"You learn to speak, read, and write {@language Sylvan}. In addition, beasts can understand your speech, and you gain the ability to decipher their noises and motions. Most beasts lack the intelligence to convey or understand sophisticated concepts, but a friendly beast could relay what it has seen or heard in the recent past. This ability doesn't grant you any special friendship with beasts, though you can combine this ability with gifts to curry favor with them as you would with any nonplayer character."
 			]
 		},
 		{
@@ -4790,7 +4862,7 @@
 			"header": 1,
 			"entries": [
 				"At 2nd level, you gain the ability to converse with beasts and many fey.",
-				"You learn to speak, read, and write Sylvan. In addition, beasts can understand your speech, and you gain the ability to decipher their noises and motions. Most beasts lack the intelligence to convey or understand sophisticated concepts, but a friendly beast could relay what it has seen or heard in the recent past. This ability doesn't grant you friendship with beasts, though you can combine this ability with gifts to curry favor with them as you would with any nonplayer character."
+				"You learn to speak, read, and write {@language Sylvan}. In addition, beasts can understand your speech, and you gain the ability to decipher their noises and motions. Most beasts lack the intelligence to convey or understand sophisticated concepts, but a friendly beast could relay what it has seen or heard in the recent past. This ability doesn't grant you friendship with beasts, though you can combine this ability with gifts to curry favor with them as you would with any nonplayer character."
 			]
 		},
 		{

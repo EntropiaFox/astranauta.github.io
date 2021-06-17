@@ -208,7 +208,7 @@ const ListUtil = {
 		if (options.getSublistRow !== undefined) ListUtil._getSublistRow = options.getSublistRow; delete options.getSublistRow;
 		if (options.onUpdate !== undefined) ListUtil._sublistChangeFn = options.onUpdate; delete options.onUpdate;
 		if (options.primaryLists !== undefined) ListUtil._primaryLists = options.primaryLists; delete options.primaryLists;
-		if (options.customHashHandler !== undefined) ListUtil._pCustomHashHandler = options.customHashHandler; delete options.customHashHandler;
+		if (options.pCustomHashHandler !== undefined) ListUtil._pCustomHashHandler = options.pCustomHashHandler; delete options.pCustomHashHandler;
 		if (options.customHashUnpacker !== undefined) ListUtil._customHashUnpackFn = options.customHashUnpacker; delete options.customHashUnpacker;
 
 		ListUtil.$sublistContainer = $("#sublistcontainer");
@@ -226,7 +226,7 @@ const ListUtil = {
 		if (options.getSublistRow !== undefined) ListUtil._getSublistRow = options.getSublistRow;
 		if (options.onUpdate !== undefined) ListUtil._sublistChangeFn = options.onUpdate;
 		if (options.primaryLists !== undefined) ListUtil._primaryLists = options.primaryLists;
-		if (options.customHashHandler !== undefined) ListUtil._pCustomHashHandler = options.customHashHandler;
+		if (options.pCustomHashHandler !== undefined) ListUtil._pCustomHashHandler = options.pCustomHashHandler;
 		if (options.customHashUnpacker !== undefined) ListUtil._customHashUnpackFn = options.customHashUnpacker;
 	},
 
@@ -291,9 +291,9 @@ const ListUtil = {
 			.title("Pin (Toggle)");
 	},
 
-	genericAddButtonHandler (evt, options = {}) {
-		if (evt.shiftKey) ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, addCount: options.shiftCount || 20});
-		else ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true});
+	genericAddButtonHandler (evt, options = {}, metadata = null) {
+		if (evt.shiftKey) return ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, addCount: options.shiftCount || 20, data: metadata});
+		return ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, data: metadata});
 	},
 	bindAddButton: (handlerGenerator, options = {}) => {
 		ListUtil.getOrTabRightButton(`btn-sublist-add`, `plus`)
@@ -302,9 +302,9 @@ const ListUtil = {
 			.on("click", handlerGenerator ? handlerGenerator() : ListUtil.genericAddButtonHandler);
 	},
 
-	genericSubtractButtonHandler (evt, options = {}) {
-		if (evt.shiftKey) ListUtil.pDoSublistSubtract(Hist.lastLoadedId, options.shiftCount || 20);
-		else ListUtil.pDoSublistSubtract(Hist.lastLoadedId);
+	genericSubtractButtonHandler (evt, options = {}, metadata = null) {
+		if (evt.shiftKey) return ListUtil.pDoSublistSubtract(Hist.lastLoadedId, {subtractCount: options.shiftCount || 20, data: metadata});
+		return ListUtil.pDoSublistSubtract(Hist.lastLoadedId, {data: metadata});
 	},
 	bindSubtractButton: (handlerGenerator, options = {}) => {
 		ListUtil.getOrTabRightButton(`btn-sublist-subtract`, `minus`)
@@ -338,7 +338,8 @@ const ListUtil = {
 						await MiscUtil.pCopyTextToClipboard(parts.join(HASH_PART_SEP));
 						JqueryUtil.showCopiedEffect($btnOptions);
 					} else {
-						DataUtil.userDownload(ListUtil._getDownloadName(), JSON.stringify(ListUtil.getExportableSublist(), null, "\t"));
+						const fileType = ListUtil._getDownloadName();
+						DataUtil.userDownload(fileType, ListUtil.getExportableSublist(), {fileType});
 					}
 				},
 			);
@@ -348,26 +349,14 @@ const ListUtil = {
 		if (opts.upload) {
 			const action = new ContextUtil.Action(
 				"Upload Pinned List (SHIFT for Add Only)",
-				evt => {
-					function pHandleIptChange (event, additive) {
-						const input = event.target;
+				async evt => {
+					const files = await DataUtil.pUserUpload({expectedFileType: ListUtil._getDownloadName()});
+					if (!files?.length) return;
 
-						const reader = new FileReader();
-						reader.onload = async () => {
-							const text = reader.result;
-							const json = JSON.parse(text);
-							$iptAdd.remove();
-							if (typeof opts.upload === "object" && opts.upload.pFnPreLoad) await opts.upload.pFnPreLoad(json);
-							await ListUtil.pDoJsonLoad(json, additive);
-						};
-						reader.readAsText(input.files[0]);
-					}
+					const json = files[0];
 
-					const additive = evt.shiftKey;
-					const $iptAdd = $(`<input type="file" accept=".json" style="position: fixed; top: -100px; left: -100px; display: none;">`)
-						.on("change", (evt) => pHandleIptChange(evt, additive))
-						.appendTo($(`body`));
-					$iptAdd.click();
+					if (typeof opts.upload === "object" && opts.upload.pFnPreLoad) await opts.upload.pFnPreLoad(json);
+					await ListUtil.pDoJsonLoad(json, evt.shiftKey);
 				},
 			);
 			contextOptions.push(action);
@@ -468,7 +457,7 @@ const ListUtil = {
 		}
 	},
 
-	async pDoSublistSubtract (index, subtractCount, data) {
+	async pDoSublistSubtract (index, {subtractCount = 1, data = null} = {}) {
 		const count = ListUtil._getPinnedCount(index, data);
 		subtractCount = subtractCount || 1;
 		if (count > subtractCount) {
@@ -773,11 +762,12 @@ const ListUtil = {
 			let toSend = await Renderer.hover.pCacheAndGetHash(page, it.h);
 
 			switch (page) {
-				case UrlUtil.PG_BESTIARY: {
-					const scaleTo = it.customHashId ? Parser.numberToCr(Number(it.customHashId.split("_").last())) : null;
-					if (scaleTo != null) {
-						toSend = await ScaleCreature.scale(toSend, scaleTo);
-					}
+				case `${UrlUtil.PG_BESTIARY}`: {
+					if (!it.customHashId) break;
+
+					const {_scaledCr, _scaledSummonLevel} = Renderer.monster.getUnpackedCustomHashId(it.customHashId);
+					if (_scaledCr != null) toSend = await ScaleCreature.scale(toSend, _scaledCr);
+					else if (_scaledSummonLevel != null) toSend = await ScaleSummonCreature.scale(toSend, _scaledSummonLevel);
 				}
 			}
 

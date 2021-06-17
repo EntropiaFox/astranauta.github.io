@@ -7,6 +7,41 @@
 				"activation.type": "action",
 				"activation.cost": 1
 			}
+		},
+		{
+			"name": "Agonizing Blast",
+			"source": "PHB",
+			"effects": [
+				{
+					"name": "Bonus Damage",
+					"changes": [
+						{
+							"key": "data.bonuses.rsak.damage",
+							"mode": "ADD",
+							"value": "(@srd5e.name.eldritchblast * (@abilities.cha.mod - 0) + 0)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Devil's Sight",
+			"source": "PHB",
+			"actorDataMod": {
+				"attributes.senses.darkvision": [
+					{
+						"mode": "setMax",
+						"value": 120
+					}
+				],
+				"attributes.senses.special": [
+					{
+						"mode": "appendStr",
+						"joiner": ", ",
+						"str": "Devil's Sight"
+					}
+				]
+			}
 		}
 	]
 }

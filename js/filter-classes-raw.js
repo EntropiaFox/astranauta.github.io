@@ -107,92 +107,103 @@ class PageFilterClassesRaw extends PageFilterClasses {
 		});
 		data.class.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
 
-		// Load linked features
-		const walker = MiscUtil.getWalker({
-			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
-			isDepthFirst: true,
-			isNoModification: true,
+		// Expand class/subclass feature references to "object" form
+		data.class.forEach(cls => {
+			cls.classFeatures = (cls.classFeatures || []).map(cf => typeof cf === "string" ? {classFeature: cf} : cf);
+
+			(cls.subclasses || []).forEach(sc => {
+				sc.subclassFeatures = (sc.subclassFeatures || []).map(cf => typeof cf === "string" ? {subclassFeature: cf} : cf);
+			});
 		});
 
+		// Load linked features
 		// Load the data once before diving into nested promises, to avoid needless context switching
 		await this._pPreloadSideData();
 
 		await Promise.all(data.class.map(async cls => {
-			cls.classFeatures = (cls.classFeatures || []).map(cf => typeof cf === "string" ? {classFeature: cf} : cf);
-
-			await Promise.all((cls.classFeatures || []).map(async cf => {
-				const unpacked = DataUtil.class.unpackUidClassFeature(cf.classFeature);
-
-				cf.hash = UrlUtil.URL_TO_HASH_BUILDER["classFeature"](unpacked);
-
-				const {name, level, source} = unpacked;
-				cf.name = name;
-				cf.level = level;
-				cf.source = source;
-
-				const entityRoot = await Renderer.hover.pCacheAndGet("raw_classFeature", cf.source, cf.hash, {isCopy: true});
-				const loadedRoot = {
-					type: "classFeature",
-					entity: entityRoot,
-					page: "classFeature",
-					source: cf.source,
-					hash: cf.hash,
-					className: cls.name,
-				};
-
-				const isIgnored = await this._pGetIgnoredAndApplySideData(entityRoot, "classFeature");
-				if (isIgnored) {
-					cf.isIgnored = true;
-					return;
-				}
-
-				const subLoadeds = await this._pLoadSubEntries(walker, entityRoot, cls.name);
-
-				cf.loadeds = [loadedRoot, ...subLoadeds];
-			}));
+			await Promise.all((cls.classFeatures || []).map(cf => this.pInitClassFeatureLoadeds({classFeature: cf, className: cls.name})));
 
 			if (cls.classFeatures) cls.classFeatures = cls.classFeatures.filter(it => !it.isIgnored);
 
 			await Promise.all((cls.subclasses || []).map(async sc => {
-				sc.subclassFeatures = (sc.subclassFeatures || []).map(cf => typeof cf === "string" ? {subclassFeature: cf} : cf);
-
-				await Promise.all((sc.subclassFeatures || []).map(async scf => {
-					const unpacked = DataUtil.class.unpackUidSubclassFeature(scf.subclassFeature);
-
-					scf.hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](unpacked);
-
-					const {name, level, source} = unpacked;
-					scf.name = name;
-					scf.level = level;
-					scf.source = source;
-
-					const entityRoot = await Renderer.hover.pCacheAndGet("raw_subclassFeature", scf.source, scf.hash, {isCopy: true});
-					const loadedRoot = {
-						type: "subclassFeature",
-						entity: entityRoot,
-						page: "subclassFeature",
-						source: scf.source,
-						hash: scf.hash,
-						className: cls.name,
-						subclassName: sc.name,
-					};
-
-					const isIgnored = await this._pGetIgnoredAndApplySideData(entityRoot, "subclassFeature");
-					if (isIgnored) {
-						scf.isIgnored = true;
-						return;
-					}
-
-					const subLoadeds = await this._pLoadSubEntries(walker, entityRoot, cls.name, sc.name);
-
-					scf.loadeds = [loadedRoot, ...subLoadeds];
-				}));
+				await Promise.all((sc.subclassFeatures || []).map(scf => this.pInitSubclassFeatureLoadeds({subclassFeature: scf, className: cls.name, subclassName: sc.name})));
 
 				if (sc.subclassFeatures) sc.subclassFeatures = sc.subclassFeatures.filter(it => !it.isIgnored);
 			}));
 		}));
 
 		return data.class;
+	}
+
+	static async pInitClassFeatureLoadeds ({classFeature, className}) {
+		if (typeof classFeature !== "object") throw new Error(`Expected an object of the form {classFeature: "<UID>"}`);
+
+		const unpacked = DataUtil.class.unpackUidClassFeature(classFeature.classFeature);
+
+		classFeature.hash = UrlUtil.URL_TO_HASH_BUILDER["classFeature"](unpacked);
+
+		const {name, level, source} = unpacked;
+		classFeature.name = name;
+		classFeature.level = level;
+		classFeature.source = source;
+
+		const entityRoot = await Renderer.hover.pCacheAndGet("raw_classFeature", classFeature.source, classFeature.hash, {isCopy: true});
+		const loadedRoot = {
+			type: "classFeature",
+			entity: entityRoot,
+			page: "classFeature",
+			source: classFeature.source,
+			hash: classFeature.hash,
+			className,
+		};
+
+		const isIgnored = await this._pGetIgnoredAndApplySideData(entityRoot, "classFeature");
+		if (isIgnored) {
+			classFeature.isIgnored = true;
+			return;
+		}
+
+		const subLoadeds = await this._pLoadSubEntries(this._getPostLoadWalker(), entityRoot, className);
+
+		classFeature.loadeds = [loadedRoot, ...subLoadeds];
+	}
+
+	static async pInitSubclassFeatureLoadeds ({subclassFeature, className, subclassName}) {
+		if (typeof subclassFeature !== "object") throw new Error(`Expected an object of the form {subclassFeature: "<UID>"}`);
+
+		const unpacked = DataUtil.class.unpackUidSubclassFeature(subclassFeature.subclassFeature);
+
+		subclassFeature.hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](unpacked);
+
+		const {name, level, source} = unpacked;
+		subclassFeature.name = name;
+		subclassFeature.level = level;
+		subclassFeature.source = source;
+
+		const entityRoot = await Renderer.hover.pCacheAndGet("raw_subclassFeature", subclassFeature.source, subclassFeature.hash, {isCopy: true});
+		const loadedRoot = {
+			type: "subclassFeature",
+			entity: entityRoot,
+			page: "subclassFeature",
+			source: subclassFeature.source,
+			hash: subclassFeature.hash,
+			className,
+			subclassName,
+		};
+
+		const isIgnored = await this._pGetIgnoredAndApplySideData(entityRoot, "subclassFeature");
+		if (isIgnored) {
+			subclassFeature.isIgnored = true;
+			return;
+		}
+
+		if (entityRoot.isGainAtNextFeatureLevel) {
+			subclassFeature.isGainAtNextFeatureLevel = true;
+		}
+
+		const subLoadeds = await this._pLoadSubEntries(this._getPostLoadWalker(), entityRoot, className, subclassName);
+
+		subclassFeature.loadeds = [loadedRoot, ...subLoadeds];
 	}
 
 	/**
@@ -210,16 +221,17 @@ class PageFilterClassesRaw extends PageFilterClasses {
 	 */
 	static async _pGetIgnoredAndApplySideData (entity, type) {
 		switch (type) {
-			case "classFeature": {
-				const sideData = await this._pGetSideData(entity, "classFeature");
-				if (sideData && sideData.isIgnored) return true;
-				if (sideData && sideData.entries) entity.entries = MiscUtil.copy(sideData.entries);
-				break;
-			}
-			case "subclassFeature": {
-				const sideData = await this._pGetSideData(entity, "subclassFeature");
-				if (sideData && sideData.isIgnored) return true;
-				if (sideData && sideData.entries) entity.entries = MiscUtil.copy(sideData.entries);
+			case "classFeature":
+			case "subclassFeature":
+			case "optionalfeature": {
+				const sideData = await this._pGetSideData(entity, type);
+
+				if (!sideData) return false;
+				if (sideData.isIgnored) return true;
+
+				if (sideData.entries) entity.entries = MiscUtil.copy(sideData.entries);
+				if (sideData.entryData) entity.entryData = MiscUtil.copy(sideData.entryData);
+
 				break;
 			}
 			default: throw new Error(`Unhandled type "${type}"`);
@@ -373,6 +385,9 @@ class PageFilterClassesRaw extends PageFilterClasses {
 							continue;
 						}
 
+						const isIgnored = await this._pGetIgnoredAndApplySideData(entity, "optionalfeature");
+						if (isIgnored) continue;
+
 						this.populateEntityTempData({
 							entity,
 							// Cache this so we can determine if this optional feature is from a "classFeature" or a "subclassFeature"
@@ -432,8 +447,18 @@ class PageFilterClassesRaw extends PageFilterClasses {
 	static _handleReferenceError (msg) {
 		JqueryUtil.doToast({type: "danger", content: msg});
 	}
+
+	static _getPostLoadWalker () {
+		PageFilterClassesRaw._WALKER = PageFilterClassesRaw._WALKER || MiscUtil.getWalker({
+			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+			isDepthFirst: true,
+			isNoModification: true,
+		});
+		return PageFilterClassesRaw._WALKER;
+	}
 	// endregion
 }
+PageFilterClassesRaw._WALKER = null;
 
 class ModalFilterClasses extends ModalFilter {
 	/**

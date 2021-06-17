@@ -5659,28 +5659,32 @@
 									"name": "Personality",
 									"entries": [
 										"\"I'd rather talk to a book than most people.\""
-									]
+									],
+									"id": "22e"
 								},
 								{
 									"type": "entries",
 									"name": "Ideal",
 									"entries": [
 										"\"We all have a little magic in us. The trick is finding it and bringing it forth.\""
-									]
+									],
+									"id": "22f"
 								},
 								{
 									"type": "entries",
 									"name": "Bond",
 									"entries": [
 										"\"I want to join a prestigious wizards' academy one day. I just hope they accept unicorns!\""
-									]
+									],
+									"id": "230"
 								},
 								{
 									"type": "entries",
 									"name": "Flaw",
 									"entries": [
 										"\"I can't keep a secret to save my life\u2014or anyone else's.\""
-									]
+									],
+									"id": "231"
 								},
 								{
 									"type": "image",
@@ -5691,7 +5695,8 @@
 									"width": 850,
 									"height": 1000
 								}
-							]
+							],
+							"id": "22d"
 						},
 						{
 							"type": "inset",
@@ -5705,28 +5710,32 @@
 									"name": "Personality",
 									"entries": [
 										"\"I love a good insult, even one directed at me.\""
-									]
+									],
+									"id": "233"
 								},
 								{
 									"type": "entries",
 									"name": "Ideal",
 									"entries": [
 										"\"I like seeing the smiles on people's faces when I perform. That plus their adoration is all that matters.\""
-									]
+									],
+									"id": "234"
 								},
 								{
 									"type": "entries",
 									"name": "Bond",
 									"entries": [
 										"\"My fiddle was gifted to me by a good friend. I cherish it above all other things.\""
-									]
+									],
+									"id": "235"
 								},
 								{
 									"type": "entries",
 									"name": "Flaw",
 									"entries": [
 										"\"I'll do anything to win fame and renown.\""
-									]
+									],
+									"id": "236"
 								},
 								{
 									"type": "image",
@@ -5737,7 +5746,8 @@
 									"width": 850,
 									"height": 1000
 								}
-							]
+							],
+							"id": "232"
 						},
 						{
 							"type": "inset",
@@ -5751,28 +5761,32 @@
 									"name": "Personality",
 									"entries": [
 										"\"I choose my words very carefully. Sarcasm, I'm told, is my sharpest weapon.\""
-									]
+									],
+									"id": "238"
 								},
 								{
 									"type": "entries",
 									"name": "Ideal",
 									"entries": [
 										"\"All people deserve to be treated with dignity, regardless of their station. Of course, orcs aren't people.\""
-									]
+									],
+									"id": "239"
 								},
 								{
 									"type": "entries",
 									"name": "Bond",
 									"entries": [
 										"\"Orcs are a blight on the land. For the sake of the natural and civilized worlds, I kill them on sight.\""
-									]
+									],
+									"id": "23a"
 								},
 								{
 									"type": "entries",
 									"name": "Flaw",
 									"entries": [
 										"\"I can't admit when I'm wrong.\""
-									]
+									],
+									"id": "23b"
 								},
 								{
 									"type": "image",
@@ -5783,7 +5797,8 @@
 									"width": 850,
 									"height": 1000
 								}
-							]
+							],
+							"id": "237"
 						},
 						{
 							"type": "inset",
@@ -5797,28 +5812,32 @@
 									"name": "Personality",
 									"entries": [
 										"\"I can't resist a sure bet or a friendly wager.\""
-									]
+									],
+									"id": "23d"
 								},
 								{
 									"type": "entries",
 									"name": "Ideal",
 									"entries": [
 										"\"The more complicated the scheme, the better.\""
-									]
+									],
+									"id": "23e"
 								},
 								{
 									"type": "entries",
 									"name": "Bond",
 									"entries": [
 										"\"I love birds and will do what I can to look after them.\""
-									]
+									],
+									"id": "23f"
 								},
 								{
 									"type": "entries",
 									"name": "Flaw",
 									"entries": [
 										"\"Deep water terrifies me. I would rather be swallowed by a dragon than get in a boat or go for a swim.\""
-									]
+									],
+									"id": "240"
 								},
 								{
 									"type": "image",
@@ -5829,7 +5848,8 @@
 									"width": 850,
 									"height": 1000
 								}
-							]
+							],
+							"id": "23c"
 						},
 						{
 							"type": "inset",
@@ -5843,28 +5863,32 @@
 									"name": "Personality",
 									"entries": [
 										"\"My friends know they can rely on me, no matter what.\""
-									]
+									],
+									"id": "242"
 								},
 								{
 									"type": "entries",
 									"name": "Ideal",
 									"entries": [
 										"\"I like coming up with new ways to do things. What problem can't be solved with a little ingenuity?\""
-									]
+									],
+									"id": "243"
 								},
 								{
 									"type": "entries",
 									"name": "Bond",
 									"entries": [
 										"\"A full flask of wine is worth ten pockets full of gold.\""
-									]
+									],
+									"id": "244"
 								},
 								{
 									"type": "entries",
 									"name": "Flaw",
 									"entries": [
 										"\"All this drinking is bad for my memory. Seriously, I can't remember my last name.\""
-									]
+									],
+									"id": "245"
 								},
 								{
 									"type": "image",
@@ -5875,7 +5899,8 @@
 									"width": 850,
 									"height": 1000
 								}
-							]
+							],
+							"id": "241"
 						},
 						{
 							"type": "inset",
@@ -5889,28 +5914,32 @@
 									"name": "Personality",
 									"entries": [
 										"\"Nice set of teeth you got there. Be a shame if something bad happened to 'em.\""
-									]
+									],
+									"id": "247"
 								},
 								{
 									"type": "entries",
 									"name": "Ideal",
 									"entries": [
 										"\"No challenge is too big to overcome. As Papa Bartho always says, the bigger they are, the harder they fall.\""
-									]
+									],
+									"id": "248"
 								},
 								{
 									"type": "entries",
 									"name": "Bond",
 									"entries": [
 										"\"Nothing's more important than friendship. That's why I'll never leave a friend behind.\""
-									]
+									],
+									"id": "249"
 								},
 								{
 									"type": "entries",
 									"name": "Flaw",
 									"entries": [
 										"\"I can't resist punching tall folk in the groin. I call it the Halfling Hello.\""
-									]
+									],
+									"id": "24a"
 								},
 								{
 									"type": "image",
@@ -5921,7 +5950,8 @@
 									"width": 850,
 									"height": 1000
 								}
-							]
+							],
+							"id": "246"
 						},
 						{
 							"type": "inset",
@@ -5935,28 +5965,32 @@
 									"name": "Personality",
 									"entries": [
 										"\"Nothing can shake my optimistic attitude.\""
-									]
+									],
+									"id": "24c"
 								},
 								{
 									"type": "entries",
 									"name": "Ideal",
 									"entries": [
 										"\"We should all seek the betterment of ourselves. There's always room for improvement.\""
-									]
+									],
+									"id": "24d"
 								},
 								{
 									"type": "entries",
 									"name": "Bond",
 									"entries": [
 										"\"I fight for those who cannot fight for themselves\""
-									]
+									],
+									"id": "24e"
 								},
 								{
 									"type": "entries",
 									"name": "Flaw",
 									"entries": [
 										"\"\"Tell me I can't do something, and I must prove you wrong.\""
-									]
+									],
+									"id": "24f"
 								},
 								{
 									"type": "image",
@@ -5967,7 +6001,8 @@
 									"width": 850,
 									"height": 1000
 								}
-							]
+							],
+							"id": "24b"
 						},
 						{
 							"type": "inset",
@@ -5981,28 +6016,32 @@
 									"name": "Personality",
 									"entries": [
 										"\"I've cheated death once. I can do it again.\""
-									]
+									],
+									"id": "251"
 								},
 								{
 									"type": "entries",
 									"name": "Ideal",
 									"entries": [
 										"\"Great beauty can hide great ugliness. The reverse is also true.\""
-									]
+									],
+									"id": "252"
 								},
 								{
 									"type": "entries",
 									"name": "Bond",
 									"entries": [
 										"\"I've been searching my whole life for the answer to a simple question: Am I a god?\""
-									]
+									],
+									"id": "253"
 								},
 								{
 									"type": "entries",
 									"name": "Flaw",
 									"entries": [
 										"\"I don't like mysteries. Unraveling them keeps me up at night.\""
-									]
+									],
+									"id": "254"
 								},
 								{
 									"type": "image",
@@ -6013,7 +6052,8 @@
 									"width": 850,
 									"height": 1000
 								}
-							]
+							],
+							"id": "250"
 						},
 						{
 							"type": "inset",
@@ -6027,28 +6067,32 @@
 									"name": "Personality",
 									"entries": [
 										"\"Yes, I eat like a pig and have bad manners, but those are my only flaws, I swear. I'm darn near perfect otherwise.\""
-									]
+									],
+									"id": "256"
 								},
 								{
 									"type": "entries",
 									"name": "Ideal",
 									"entries": [
 										"\"The low are lifted up, and the high and mighty are brought down. Change is the nature of things.\""
-									]
+									],
+									"id": "257"
 								},
 								{
 									"type": "entries",
 									"name": "Bond",
 									"entries": [
 										"\"I like gold. I like its color, its texture, its majestic gleam.\""
-									]
+									],
+									"id": "258"
 								},
 								{
 									"type": "entries",
 									"name": "Flaw",
 									"entries": [
 										"\"It's not stealing if I need it more than someone else.\""
-									]
+									],
+									"id": "259"
 								},
 								{
 									"type": "image",
@@ -6059,16 +6103,19 @@
 									"width": 850,
 									"height": 1000
 								}
-							]
+							],
+							"id": "255"
 						}
-					]
+					],
+					"id": "22c"
 				},
 				{
 					"type": "section",
 					"name": "Sidekick Stat Blocks",
 					"entries": [
 						"See the {@variantrule Sidekicks|ESK} rules entry."
-					]
+					],
+					"id": "25a"
 				}
 			]
 		},

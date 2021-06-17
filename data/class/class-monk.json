@@ -471,215 +471,6 @@
 				"Perfect Self|Monk||20"
 			],
 			"subclassTitle": "Monastic Tradition",
-			"subclasses": [
-				{
-					"name": "Way of Shadow",
-					"shortName": "Shadow",
-					"source": "PHB",
-					"page": 80,
-					"subclassFeatures": [
-						"Way of Shadow|Monk||Shadow||3",
-						"Shadow Step|Monk||Shadow||6",
-						"Cloak of Shadows|Monk||Shadow||11",
-						"Opportunist|Monk||Shadow||17"
-					]
-				},
-				{
-					"name": "Way of the Four Elements",
-					"shortName": "Four Elements",
-					"source": "PHB",
-					"page": 80,
-					"spellcastingAbility": "wis",
-					"subclassFeatures": [
-						"Way of the Four Elements|Monk||Four Elements||3",
-						"Extra Elemental Discipline|Monk||Four Elements||6",
-						"Extra Elemental Discipline|Monk||Four Elements||11",
-						"Extra Elemental Discipline|Monk||Four Elements||17"
-					]
-				},
-				{
-					"name": "Way of the Open Hand",
-					"shortName": "Open Hand",
-					"source": "PHB",
-					"page": 79,
-					"srd": true,
-					"subclassFeatures": [
-						"Way of the Open Hand|Monk||Open Hand||3",
-						"Wholeness of Body|Monk||Open Hand||6",
-						"Tranquility|Monk||Open Hand||11",
-						"Quivering Palm|Monk||Open Hand||17"
-					]
-				},
-				{
-					"name": "Way of the Long Death",
-					"shortName": "Long Death",
-					"source": "SCAG",
-					"page": 130,
-					"subclassFeatures": [
-						"Way of the Long Death|Monk||Long Death|SCAG|3",
-						"Hour of Reaping|Monk||Long Death|SCAG|6",
-						"Mastery of Death|Monk||Long Death|SCAG|11",
-						"Touch of the Long Death|Monk||Long Death|SCAG|17"
-					]
-				},
-				{
-					"name": "Way of the Kensei (UA)",
-					"shortName": "Kensei (UA)",
-					"source": "UAMonk",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Way of the Kensei|Monk||Kensei (UA)|UAMonk|3",
-						"One with the Blade|Monk||Kensei (UA)|UAMonk|6",
-						"Sharpen the Blade|Monk||Kensei (UA)|UAMonk|11",
-						"Unerring Accuracy|Monk||Kensei (UA)|UAMonk|17"
-					]
-				},
-				{
-					"name": "Way of Tranquility (UA)",
-					"shortName": "Tranquility (UA)",
-					"source": "UAMonk",
-					"page": 1,
-					"subclassFeatures": [
-						"Way of Tranquility|Monk||Tranquility (UA)|UAMonk|3",
-						"Emissary of Peace|Monk||Tranquility (UA)|UAMonk|6",
-						"Douse the Flames of War|Monk||Tranquility (UA)|UAMonk|11",
-						"Anger of a Gentle Soul|Monk||Tranquility (UA)|UAMonk|17"
-					]
-				},
-				{
-					"name": "Way of the Drunken Master (UA)",
-					"shortName": "Drunken Master (UA)",
-					"source": "UAATrioOfSubclasses",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Way of the Drunken Master|Monk||Drunken Master (UA)|UAATrioOfSubclasses|3",
-						"Tipsy Sway|Monk||Drunken Master (UA)|UAATrioOfSubclasses|6",
-						"Drunkard's Luck|Monk||Drunken Master (UA)|UAATrioOfSubclasses|11",
-						"Intoxicated Frenzy|Monk||Drunken Master (UA)|UAATrioOfSubclasses|17"
-					]
-				},
-				{
-					"name": "Way of the Kensei v2 (UA)",
-					"shortName": "Kensei v2 (UA)",
-					"source": "UARevisedSubclasses",
-					"page": 4,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Way of the Kensei v2|Monk||Kensei v2 (UA)|UARevisedSubclasses|3",
-						"One with the Blade|Monk||Kensei v2 (UA)|UARevisedSubclasses|6",
-						"Sharpen the Blade|Monk||Kensei v2 (UA)|UARevisedSubclasses|11",
-						"Unerring Accuracy|Monk||Kensei v2 (UA)|UARevisedSubclasses|17"
-					]
-				},
-				{
-					"name": "Way of the Drunken Master",
-					"shortName": "Drunken Master",
-					"source": "XGE",
-					"page": 33,
-					"subclassFeatures": [
-						"Way of the Drunken Master|Monk||Drunken Master|XGE|3",
-						"Tipsy Sway|Monk||Drunken Master|XGE|6",
-						"Drunkard's Luck|Monk||Drunken Master|XGE|11",
-						"Intoxicated Frenzy|Monk||Drunken Master|XGE|17"
-					]
-				},
-				{
-					"name": "Way of the Kensei",
-					"shortName": "Kensei",
-					"source": "XGE",
-					"page": 34,
-					"subclassFeatures": [
-						"Way of the Kensei|Monk||Kensei|XGE|3",
-						"One with the Blade|Monk||Kensei|XGE|6",
-						"Sharpen the Blade|Monk||Kensei|XGE|11",
-						"Unerring Accuracy|Monk||Kensei|XGE|17"
-					]
-				},
-				{
-					"name": "Way of the Sun Soul",
-					"shortName": "Sun Soul",
-					"source": "XGE",
-					"page": 35,
-					"otherSources": [
-						{
-							"source": "SCAG",
-							"page": 131
-						}
-					],
-					"subclassFeatures": [
-						"Way of the Sun Soul|Monk||Sun Soul|XGE|3",
-						"Searing Arc Strike|Monk||Sun Soul|XGE|6",
-						"Searing Sunburst|Monk||Sun Soul|XGE|11",
-						"Sun Shield|Monk||Sun Soul|XGE|17"
-					]
-				},
-				{
-					"name": "Way of the Astral Self (UA)",
-					"shortName": "Astral Self (UA)",
-					"source": "UABarbarianAndMonk",
-					"page": 2,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Way of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|3",
-						"Visage of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|6",
-						"Awakening of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|11",
-						"Improved Arms of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|11",
-						"Complete Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|17",
-						"Improved Arms of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|17"
-					]
-				},
-				{
-					"name": "Way of Mercy (UA)",
-					"shortName": "Mercy (UA)",
-					"source": "UA2020SubclassesPt1",
-					"page": 2,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Way of Mercy|Monk||Mercy (UA)|UA2020SubclassesPt1|3",
-						"Noxious Aura|Monk||Mercy (UA)|UA2020SubclassesPt1|6",
-						"Healing Technique|Monk||Mercy (UA)|UA2020SubclassesPt1|11",
-						"Hand of Mercy|Monk||Mercy (UA)|UA2020SubclassesPt1|17"
-					]
-				},
-				{
-					"name": "Way of the Ascendant Dragon (UA)",
-					"shortName": "Ascendant Dragon (UA)",
-					"source": "UA2020SubclassesPt5",
-					"page": 1,
-					"subclassFeatures": [
-						"Way of the Ascendant Dragon|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|3",
-						"Wings Unfurled|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|6",
-						"Aspect of the Wyrm|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|11",
-						"Ascendant Aspect|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|17"
-					]
-				},
-				{
-					"name": "Way of Mercy",
-					"shortName": "Mercy",
-					"source": "TCE",
-					"page": 49,
-					"subclassFeatures": [
-						"Way of Mercy|Monk||Mercy|TCE|3",
-						"Physician's Touch|Monk||Mercy|TCE|6",
-						"Flurry of Healing and Harm|Monk||Mercy|TCE|11",
-						"Hand of Ultimate Mercy|Monk||Mercy|TCE|17"
-					]
-				},
-				{
-					"name": "Way of the Astral Self",
-					"shortName": "Astral Self",
-					"source": "TCE",
-					"page": 50,
-					"subclassFeatures": [
-						"Way of the Astral Self|Monk||Astral Self|TCE|3",
-						"Visage of the Astral Self|Monk||Astral Self|TCE|6",
-						"Body of the Astral Self|Monk||Astral Self|TCE|11",
-						"Awakened Astral Self|Monk||Astral Self|TCE|17"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Monk",
@@ -970,6 +761,256 @@
 					"source": "XGE",
 					"page": 32
 				}
+			]
+		}
+	],
+	"subclass": [
+		{
+			"name": "Way of Shadow",
+			"shortName": "Shadow",
+			"source": "PHB",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 80,
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": [
+							"minor illusion"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Way of Shadow|Monk||Shadow||3",
+				"Shadow Step|Monk||Shadow||6",
+				"Cloak of Shadows|Monk||Shadow||11",
+				"Opportunist|Monk||Shadow||17"
+			]
+		},
+		{
+			"name": "Way of the Four Elements",
+			"shortName": "Four Elements",
+			"source": "PHB",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 80,
+			"spellcastingAbility": "wis",
+			"subclassFeatures": [
+				"Way of the Four Elements|Monk||Four Elements||3",
+				"Extra Elemental Discipline|Monk||Four Elements||6",
+				"Extra Elemental Discipline|Monk||Four Elements||11",
+				"Extra Elemental Discipline|Monk||Four Elements||17"
+			]
+		},
+		{
+			"name": "Way of the Open Hand",
+			"shortName": "Open Hand",
+			"source": "PHB",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 79,
+			"srd": true,
+			"subclassFeatures": [
+				"Way of the Open Hand|Monk||Open Hand||3",
+				"Wholeness of Body|Monk||Open Hand||6",
+				"Tranquility|Monk||Open Hand||11",
+				"Quivering Palm|Monk||Open Hand||17"
+			]
+		},
+		{
+			"name": "Way of the Long Death",
+			"shortName": "Long Death",
+			"source": "SCAG",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 130,
+			"subclassFeatures": [
+				"Way of the Long Death|Monk||Long Death|SCAG|3",
+				"Hour of Reaping|Monk||Long Death|SCAG|6",
+				"Mastery of Death|Monk||Long Death|SCAG|11",
+				"Touch of the Long Death|Monk||Long Death|SCAG|17"
+			]
+		},
+		{
+			"name": "Way of the Kensei (UA)",
+			"shortName": "Kensei (UA)",
+			"source": "UAMonk",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Way of the Kensei|Monk||Kensei (UA)|UAMonk|3",
+				"One with the Blade|Monk||Kensei (UA)|UAMonk|6",
+				"Sharpen the Blade|Monk||Kensei (UA)|UAMonk|11",
+				"Unerring Accuracy|Monk||Kensei (UA)|UAMonk|17"
+			]
+		},
+		{
+			"name": "Way of Tranquility (UA)",
+			"shortName": "Tranquility (UA)",
+			"source": "UAMonk",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 1,
+			"subclassFeatures": [
+				"Way of Tranquility|Monk||Tranquility (UA)|UAMonk|3",
+				"Emissary of Peace|Monk||Tranquility (UA)|UAMonk|6",
+				"Douse the Flames of War|Monk||Tranquility (UA)|UAMonk|11",
+				"Anger of a Gentle Soul|Monk||Tranquility (UA)|UAMonk|17"
+			]
+		},
+		{
+			"name": "Way of the Drunken Master (UA)",
+			"shortName": "Drunken Master (UA)",
+			"source": "UAATrioOfSubclasses",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Way of the Drunken Master|Monk||Drunken Master (UA)|UAATrioOfSubclasses|3",
+				"Tipsy Sway|Monk||Drunken Master (UA)|UAATrioOfSubclasses|6",
+				"Drunkard's Luck|Monk||Drunken Master (UA)|UAATrioOfSubclasses|11",
+				"Intoxicated Frenzy|Monk||Drunken Master (UA)|UAATrioOfSubclasses|17"
+			]
+		},
+		{
+			"name": "Way of the Kensei v2 (UA)",
+			"shortName": "Kensei v2 (UA)",
+			"source": "UARevisedSubclasses",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 4,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Way of the Kensei v2|Monk||Kensei v2 (UA)|UARevisedSubclasses|3",
+				"One with the Blade|Monk||Kensei v2 (UA)|UARevisedSubclasses|6",
+				"Sharpen the Blade|Monk||Kensei v2 (UA)|UARevisedSubclasses|11",
+				"Unerring Accuracy|Monk||Kensei v2 (UA)|UARevisedSubclasses|17"
+			]
+		},
+		{
+			"name": "Way of the Drunken Master",
+			"shortName": "Drunken Master",
+			"source": "XGE",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 33,
+			"subclassFeatures": [
+				"Way of the Drunken Master|Monk||Drunken Master|XGE|3",
+				"Tipsy Sway|Monk||Drunken Master|XGE|6",
+				"Drunkard's Luck|Monk||Drunken Master|XGE|11",
+				"Intoxicated Frenzy|Monk||Drunken Master|XGE|17"
+			]
+		},
+		{
+			"name": "Way of the Kensei",
+			"shortName": "Kensei",
+			"source": "XGE",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 34,
+			"subclassFeatures": [
+				"Way of the Kensei|Monk||Kensei|XGE|3",
+				"One with the Blade|Monk||Kensei|XGE|6",
+				"Sharpen the Blade|Monk||Kensei|XGE|11",
+				"Unerring Accuracy|Monk||Kensei|XGE|17"
+			]
+		},
+		{
+			"name": "Way of the Sun Soul",
+			"shortName": "Sun Soul",
+			"source": "XGE",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 35,
+			"otherSources": [
+				{
+					"source": "SCAG",
+					"page": 131
+				}
+			],
+			"subclassFeatures": [
+				"Way of the Sun Soul|Monk||Sun Soul|XGE|3",
+				"Searing Arc Strike|Monk||Sun Soul|XGE|6",
+				"Searing Sunburst|Monk||Sun Soul|XGE|11",
+				"Sun Shield|Monk||Sun Soul|XGE|17"
+			]
+		},
+		{
+			"name": "Way of the Astral Self (UA)",
+			"shortName": "Astral Self (UA)",
+			"source": "UABarbarianAndMonk",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 2,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Way of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|3",
+				"Visage of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|6",
+				"Awakening of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|11",
+				"Improved Arms of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|11",
+				"Complete Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|17",
+				"Improved Arms of the Astral Self|Monk||Astral Self (UA)|UABarbarianAndMonk|17"
+			]
+		},
+		{
+			"name": "Way of Mercy (UA)",
+			"shortName": "Mercy (UA)",
+			"source": "UA2020SubclassesPt1",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 2,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Way of Mercy|Monk||Mercy (UA)|UA2020SubclassesPt1|3",
+				"Noxious Aura|Monk||Mercy (UA)|UA2020SubclassesPt1|6",
+				"Healing Technique|Monk||Mercy (UA)|UA2020SubclassesPt1|11",
+				"Hand of Mercy|Monk||Mercy (UA)|UA2020SubclassesPt1|17"
+			]
+		},
+		{
+			"name": "Way of the Ascendant Dragon (UA)",
+			"shortName": "Ascendant Dragon (UA)",
+			"source": "UA2020SubclassesPt5",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 1,
+			"subclassFeatures": [
+				"Way of the Ascendant Dragon|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|3",
+				"Wings Unfurled|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|6",
+				"Aspect of the Wyrm|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|11",
+				"Ascendant Aspect|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|17"
+			]
+		},
+		{
+			"name": "Way of Mercy",
+			"shortName": "Mercy",
+			"source": "TCE",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 49,
+			"subclassFeatures": [
+				"Way of Mercy|Monk||Mercy|TCE|3",
+				"Physician's Touch|Monk||Mercy|TCE|6",
+				"Flurry of Healing and Harm|Monk||Mercy|TCE|11",
+				"Hand of Ultimate Mercy|Monk||Mercy|TCE|17"
+			]
+		},
+		{
+			"name": "Way of the Astral Self",
+			"shortName": "Astral Self",
+			"source": "TCE",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 50,
+			"subclassFeatures": [
+				"Way of the Astral Self|Monk||Astral Self|TCE|3",
+				"Visage of the Astral Self|Monk||Astral Self|TCE|6",
+				"Body of the Astral Self|Monk||Astral Self|TCE|11",
+				"Awakened Astral Self|Monk||Astral Self|TCE|17"
 			]
 		}
 	],
@@ -2519,7 +2560,7 @@
 						],
 						[
 							"5",
-							"You found a scroll written in Draconic that contained inspiring new techniques."
+							"You found a scroll written in {@language Draconic} that contained inspiring new techniques."
 						],
 						[
 							"6",

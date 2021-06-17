@@ -426,415 +426,6 @@
 				"Foe Slayer|Ranger||20"
 			],
 			"subclassTitle": "Ranger Archetype",
-			"subclasses": [
-				{
-					"name": "Beast Master",
-					"shortName": "Beast Master",
-					"source": "PHB",
-					"page": 93,
-					"subclassFeatures": [
-						"Beast Master|Ranger||Beast Master||3",
-						"Exceptional Training|Ranger||Beast Master||7",
-						"Bestial Fury|Ranger||Beast Master||11",
-						"Share Spells|Ranger||Beast Master||15"
-					]
-				},
-				{
-					"name": "Hunter",
-					"shortName": "Hunter",
-					"source": "PHB",
-					"page": 93,
-					"srd": true,
-					"subclassFeatures": [
-						"Hunter|Ranger||Hunter||3",
-						"Defensive Tactics|Ranger||Hunter||7",
-						"Multiattack|Ranger||Hunter||11",
-						"Superior Hunter's Defense|Ranger||Hunter||15"
-					]
-				},
-				{
-					"name": "Deep Stalker (UA)",
-					"shortName": "Deep Stalker (UA)",
-					"source": "UALightDarkUnderdark",
-					"page": 1,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"disguise self"
-								],
-								"5": [
-									"rope trick"
-								],
-								"9": [
-									"glyph of warding"
-								],
-								"13": [
-									"greater invisibility"
-								],
-								"17": [
-									"seeming"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Deep Stalker|Ranger||Deep Stalker (UA)|UALightDarkUnderdark|3",
-						"Iron Mind|Ranger||Deep Stalker (UA)|UALightDarkUnderdark|7",
-						"Stalker's Flurry|Ranger||Deep Stalker (UA)|UALightDarkUnderdark|11",
-						"Stalker's Dodge|Ranger||Deep Stalker (UA)|UALightDarkUnderdark|15"
-					]
-				},
-				{
-					"name": "Horizon Walker (UA)",
-					"shortName": "Horizon Walker (UA)",
-					"source": "UARangerAndRogue",
-					"page": 1,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"protection from evil and good"
-								],
-								"5": [
-									"alter self"
-								],
-								"9": [
-									"protection from energy"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"teleportation circle"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Horizon Walker|Ranger||Horizon Walker (UA)|UARangerAndRogue|3",
-						"Ethereal Step|Ranger||Horizon Walker (UA)|UARangerAndRogue|7",
-						"Distant Strike|Ranger||Horizon Walker (UA)|UARangerAndRogue|11",
-						"Spectral Defense|Ranger||Horizon Walker (UA)|UARangerAndRogue|15"
-					]
-				},
-				{
-					"name": "Primeval Guardian (UA)",
-					"shortName": "Primeval Guardian (UA)",
-					"source": "UARangerAndRogue",
-					"page": 2,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"entangle"
-								],
-								"5": [
-									"enhance ability"
-								],
-								"9": [
-									"conjure animals"
-								],
-								"13": [
-									"giant insect"
-								],
-								"17": [
-									"insect plague"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Primeval Guardian|Ranger||Primeval Guardian (UA)|UARangerAndRogue|3",
-						"Ancient Fortitude|Ranger||Primeval Guardian (UA)|UARangerAndRogue|7",
-						"Rooted Defense|Ranger||Primeval Guardian (UA)|UARangerAndRogue|11",
-						"Guardian Aura|Ranger||Primeval Guardian (UA)|UARangerAndRogue|15"
-					]
-				},
-				{
-					"name": "Monster Slayer (UA)",
-					"shortName": "Monster Slayer (UA)",
-					"source": "UAATrioOfSubclasses",
-					"page": 3,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"protection from evil and good"
-								],
-								"5": [
-									"zone of truth"
-								],
-								"9": [
-									"magic circle"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"planar binding"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Monster Slayer|Ranger||Monster Slayer (UA)|UAATrioOfSubclasses|3",
-						"Supernatural Defense|Ranger||Monster Slayer (UA)|UAATrioOfSubclasses|7",
-						"Relentless Slayer|Ranger||Monster Slayer (UA)|UAATrioOfSubclasses|11",
-						"Slayer's Counter|Ranger||Monster Slayer (UA)|UAATrioOfSubclasses|15"
-					]
-				},
-				{
-					"name": "Gloom Stalker",
-					"shortName": "Gloom Stalker",
-					"source": "XGE",
-					"page": 41,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"disguise self"
-								],
-								"5": [
-									"rope trick"
-								],
-								"9": [
-									"fear"
-								],
-								"13": [
-									"greater invisibility"
-								],
-								"17": [
-									"seeming"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Gloom Stalker|Ranger||Gloom Stalker|XGE|3",
-						"Iron Mind|Ranger||Gloom Stalker|XGE|7",
-						"Stalker's Flurry|Ranger||Gloom Stalker|XGE|11",
-						"Shadowy Dodge|Ranger||Gloom Stalker|XGE|15"
-					]
-				},
-				{
-					"name": "Horizon Walker",
-					"shortName": "Horizon Walker",
-					"source": "XGE",
-					"page": 42,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"protection from evil and good"
-								],
-								"5": [
-									"misty step"
-								],
-								"9": [
-									"haste"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"teleportation circle"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Horizon Walker|Ranger||Horizon Walker|XGE|3",
-						"Ethereal Step|Ranger||Horizon Walker|XGE|7",
-						"Distant Strike|Ranger||Horizon Walker|XGE|11",
-						"Spectral Defense|Ranger||Horizon Walker|XGE|15"
-					]
-				},
-				{
-					"name": "Monster Slayer",
-					"shortName": "Monster Slayer",
-					"source": "XGE",
-					"page": 43,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"protection from evil and good"
-								],
-								"5": [
-									"zone of truth"
-								],
-								"9": [
-									"magic circle"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"hold monster"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Monster Slayer|Ranger||Monster Slayer|XGE|3",
-						"Supernatural Defense|Ranger||Monster Slayer|XGE|7",
-						"Magic-User's Nemesis|Ranger||Monster Slayer|XGE|11",
-						"Slayer's Counter|Ranger||Monster Slayer|XGE|15"
-					]
-				},
-				{
-					"name": "Swarmkeeper (UA)",
-					"shortName": "Swarmkeeper (UA)",
-					"source": "UAFighterRangerRogue",
-					"page": 3,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"faerie fire"
-								],
-								"5": [
-									"web"
-								],
-								"9": [
-									"gaseous form"
-								],
-								"13": [
-									"giant insect"
-								],
-								"17": [
-									"insect plague"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Swarmkeeper|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|3",
-						"Writhing Tide|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|7",
-						"Scuttling Eyes|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|11",
-						"Gathered Swarm Improvement|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|11",
-						"Storm of Minions|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|15"
-					]
-				},
-				{
-					"name": "Fey Wanderer (UA)",
-					"shortName": "Fey Wanderer (UA)",
-					"source": "UA2020SubclassesPt3",
-					"page": 5,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"charm person"
-								],
-								"5": [
-									"misty step"
-								],
-								"9": [
-									"dispel magic"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"mislead"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Fey Wanderer|Ranger||Fey Wanderer (UA)|UA2020SubclassesPt3|3",
-						"Blessings of the Courts|Ranger||Fey Wanderer (UA)|UA2020SubclassesPt3|7",
-						"Beguiling Twist|Ranger||Fey Wanderer (UA)|UA2020SubclassesPt3|11",
-						"Misty Presence|Ranger||Fey Wanderer (UA)|UA2020SubclassesPt3|15"
-					]
-				},
-				{
-					"name": "Drakewarden (UA)",
-					"shortName": "Drakewarden (UA)",
-					"source": "UA2020SubclassesPt5",
-					"page": 2,
-					"subclassFeatures": [
-						"Drakewarden|Ranger||Drakewarden (UA)|UA2020SubclassesPt5|3",
-						"Bond of Fang and Scale|Ranger||Drakewarden (UA)|UA2020SubclassesPt5|7",
-						"Drake's Breath|Ranger||Drakewarden (UA)|UA2020SubclassesPt5|11",
-						"Perfected Bond|Ranger||Drakewarden (UA)|UA2020SubclassesPt5|15"
-					]
-				},
-				{
-					"name": "Fey Wanderer",
-					"shortName": "Fey Wanderer",
-					"source": "TCE",
-					"page": 58,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"charm person"
-								],
-								"5": [
-									"misty step"
-								],
-								"9": [
-									"dispel magic"
-								],
-								"13": [
-									"dimension door"
-								],
-								"17": [
-									"mislead"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Fey Wanderer|Ranger||Fey Wanderer|TCE|3",
-						"Beguiling Twist|Ranger||Fey Wanderer|TCE|7",
-						"Fey Reinforcements|Ranger||Fey Wanderer|TCE|11",
-						"Misty Wanderer|Ranger||Fey Wanderer|TCE|15"
-					]
-				},
-				{
-					"name": "Swarmkeeper",
-					"shortName": "Swarmkeeper",
-					"source": "TCE",
-					"page": 59,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"mage hand",
-									"faerie fire"
-								],
-								"5": [
-									"web"
-								],
-								"9": [
-									"gaseous form"
-								],
-								"13": [
-									"arcane eye"
-								],
-								"17": [
-									"insect plague"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Swarmkeeper|Ranger||Swarmkeeper|TCE|3",
-						"Writhing Tide|Ranger||Swarmkeeper|TCE|7",
-						"Mighty Swarm|Ranger||Swarmkeeper|TCE|11",
-						"Swarming Dispersal|Ranger||Swarmkeeper|TCE|15"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Ranger",
@@ -1346,225 +937,6 @@
 				"Foe Slayer|Ranger (Spell-less)|UAModifyingClasses|20"
 			],
 			"subclassTitle": "Ranger Archetype",
-			"subclasses": [
-				{
-					"name": "Beast Master",
-					"shortName": "Beast Master",
-					"source": "PHB",
-					"page": 93,
-					"subclassFeatures": [
-						"Beast Master|Ranger (Spell-less)|UAModifyingClasses|Beast Master||3",
-						"Exceptional Training|Ranger (Spell-less)|UAModifyingClasses|Beast Master||7",
-						"Bestial Fury|Ranger (Spell-less)|UAModifyingClasses|Beast Master||11",
-						"Beastly Coordination|Ranger (Spell-less)|UAModifyingClasses|Beast Master||15"
-					]
-				},
-				{
-					"name": "Hunter",
-					"shortName": "Hunter",
-					"source": "PHB",
-					"page": 93,
-					"subclassFeatures": [
-						"Hunter|Ranger (Spell-less)|UAModifyingClasses|Hunter||3",
-						"Defensive Tactics|Ranger (Spell-less)|UAModifyingClasses|Hunter||7",
-						"Multiattack|Ranger (Spell-less)|UAModifyingClasses|Hunter||11",
-						"Superior Hunter's Defense|Ranger (Spell-less)|UAModifyingClasses|Hunter||15"
-					]
-				},
-				{
-					"name": "Deep Stalker (UA)",
-					"shortName": "Deep Stalker (UA)",
-					"source": "UALightDarkUnderdark",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Deep Stalker|Ranger (Spell-less)|UAModifyingClasses|Deep Stalker (UA)|UALightDarkUnderdark|3",
-						"Iron Mind|Ranger (Spell-less)|UAModifyingClasses|Deep Stalker (UA)|UALightDarkUnderdark|7",
-						"Stalker's Flurry|Ranger (Spell-less)|UAModifyingClasses|Deep Stalker (UA)|UALightDarkUnderdark|11",
-						"Stalker's Dodge|Ranger (Spell-less)|UAModifyingClasses|Deep Stalker (UA)|UALightDarkUnderdark|15"
-					]
-				},
-				{
-					"name": "Horizon Walker (UA)",
-					"shortName": "Horizon Walker (UA)",
-					"source": "UARangerAndRogue",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Horizon Walker|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker (UA)|UARangerAndRogue|3",
-						"Ethereal Step|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker (UA)|UARangerAndRogue|7",
-						"Distant Strike|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker (UA)|UARangerAndRogue|11",
-						"Spectral Defense|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker (UA)|UARangerAndRogue|15"
-					]
-				},
-				{
-					"name": "Primeval Guardian (UA)",
-					"shortName": "Primeval Guardian (UA)",
-					"source": "UARangerAndRogue",
-					"page": 2,
-					"subclassFeatures": [
-						"Primeval Guardian|Ranger (Spell-less)|UAModifyingClasses|Primeval Guardian (UA)|UARangerAndRogue|3",
-						"Ancient Fortitude|Ranger (Spell-less)|UAModifyingClasses|Primeval Guardian (UA)|UARangerAndRogue|7",
-						"Rooted Defense|Ranger (Spell-less)|UAModifyingClasses|Primeval Guardian (UA)|UARangerAndRogue|11",
-						"Guardian Aura|Ranger (Spell-less)|UAModifyingClasses|Primeval Guardian (UA)|UARangerAndRogue|15"
-					]
-				},
-				{
-					"name": "Monster Slayer (UA)",
-					"shortName": "Monster Slayer (UA)",
-					"source": "UAATrioOfSubclasses",
-					"page": 3,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Monster Slayer|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer (UA)|UAATrioOfSubclasses|3",
-						"Supernatural Defense|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer (UA)|UAATrioOfSubclasses|7",
-						"Relentless Slayer|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer (UA)|UAATrioOfSubclasses|11",
-						"Slayer's Counter|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer (UA)|UAATrioOfSubclasses|15"
-					]
-				},
-				{
-					"name": "Gloom Stalker",
-					"shortName": "Gloom Stalker",
-					"source": "XGE",
-					"page": 41,
-					"subclassFeatures": [
-						"Gloom Stalker|Ranger (Spell-less)|UAModifyingClasses|Gloom Stalker|XGE|3",
-						"Iron Mind|Ranger (Spell-less)|UAModifyingClasses|Gloom Stalker|XGE|7",
-						"Stalker's Flurry|Ranger (Spell-less)|UAModifyingClasses|Gloom Stalker|XGE|11",
-						"Shadowy Dodge|Ranger (Spell-less)|UAModifyingClasses|Gloom Stalker|XGE|15"
-					]
-				},
-				{
-					"name": "Horizon Walker",
-					"shortName": "Horizon Walker",
-					"source": "XGE",
-					"page": 42,
-					"subclassFeatures": [
-						"Horizon Walker|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker|XGE|3",
-						"Ethereal Step|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker|XGE|7",
-						"Distant Strike|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker|XGE|11",
-						"Spectral Defense|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker|XGE|15"
-					]
-				},
-				{
-					"name": "Monster Slayer",
-					"shortName": "Monster Slayer",
-					"source": "XGE",
-					"page": 43,
-					"subclassFeatures": [
-						"Monster Slayer|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer|XGE|3",
-						"Supernatural Defense|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer|XGE|7",
-						"Magic-User's Nemesis|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer|XGE|11",
-						"Slayer's Counter|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer|XGE|15"
-					]
-				},
-				{
-					"name": "Swarmkeeper (UA)",
-					"shortName": "Swarmkeeper (UA)",
-					"source": "UAFighterRangerRogue",
-					"page": 3,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Swarmkeeper|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|3",
-						"Writhing Tide|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|7",
-						"Scuttling Eyes|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|11",
-						"Gathered Swarm Improvement|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|11",
-						"Storm of Minions|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|15"
-					]
-				},
-				{
-					"name": "Fey Wanderer (UA)",
-					"shortName": "Fey Wanderer (UA)",
-					"source": "UA2020SubclassesPt3",
-					"page": 5,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Fey Wanderer|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer (UA)|UA2020SubclassesPt3|3",
-						"Blessings of the Courts|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer (UA)|UA2020SubclassesPt3|7",
-						"Beguiling Twist|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer (UA)|UA2020SubclassesPt3|11",
-						"Misty Presence|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer (UA)|UA2020SubclassesPt3|15"
-					]
-				},
-				{
-					"name": "Drakewarden (UA)",
-					"shortName": "Drakewarden (UA)",
-					"source": "UA2020SubclassesPt5",
-					"page": 2,
-					"subclassFeatures": [
-						"Drakewarden|Ranger (Spell-less)|UAModifyingClasses|Drakewarden (UA)|UA2020SubclassesPt5|3",
-						"Bond of Fang and Scale|Ranger (Spell-less)|UAModifyingClasses|Drakewarden (UA)|UA2020SubclassesPt5|7",
-						"Drake's Breath|Ranger (Spell-less)|UAModifyingClasses|Drakewarden (UA)|UA2020SubclassesPt5|11",
-						"Perfected Bond|Ranger (Spell-less)|UAModifyingClasses|Drakewarden (UA)|UA2020SubclassesPt5|15"
-					]
-				},
-				{
-					"name": "Fey Wanderer",
-					"shortName": "Fey Wanderer",
-					"source": "TCE",
-					"page": 58,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"charm person"
-								],
-								"5": [
-									"misty step"
-								],
-								"9": [
-									"dispel magic"
-								],
-								"13": [
-									"dimension door"
-								],
-								"17": [
-									"mislead"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Fey Wanderer|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer|TCE|3",
-						"Beguiling Twist|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer|TCE|7",
-						"Fey Reinforcements|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer|TCE|11",
-						"Misty Wanderer|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer|TCE|15"
-					]
-				},
-				{
-					"name": "Swarmkeeper",
-					"shortName": "Swarmkeeper",
-					"source": "TCE",
-					"page": 59,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"mage hand",
-									"faerie fire"
-								],
-								"5": [
-									"web"
-								],
-								"9": [
-									"gaseous form"
-								],
-								"13": [
-									"arcane eye"
-								],
-								"17": [
-									"insect plague"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Swarmkeeper|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper|TCE|3",
-						"Writhing Tide|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper|TCE|7",
-						"Mighty Swarm|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper|TCE|11",
-						"Swarming Dispersal|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper|TCE|15"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Ranger",
@@ -1966,36 +1338,7 @@
 				"Ability Score Improvement|Ranger||4",
 				"Extra Attack|Ranger||5"
 			],
-			"subclassTitle": "Ranger Path",
-			"subclasses": [
-				{
-					"name": "Guardian",
-					"shortName": "Guardian",
-					"source": "UARanger",
-					"page": 3,
-					"subclassFeatures": [
-						"Guardian|Ranger (Ambuscade)|UARanger|Guardian|UARanger|3"
-					]
-				},
-				{
-					"name": "Seeker",
-					"shortName": "Seeker",
-					"source": "UARanger",
-					"page": 4,
-					"subclassFeatures": [
-						"Seeker|Ranger (Ambuscade)|UARanger|Seeker|UARanger|3"
-					]
-				},
-				{
-					"name": "Stalker",
-					"shortName": "Stalker",
-					"source": "UARanger",
-					"page": 4,
-					"subclassFeatures": [
-						"Stalker|Ranger (Ambuscade)|UARanger|Stalker|UARanger|3"
-					]
-				}
-			]
+			"subclassTitle": "Ranger Path"
 		},
 		{
 			"name": "Ranger (Revised)",
@@ -2376,427 +1719,6 @@
 				"Foe Slayer|Ranger (Revised)|UATheRangerRevised|20"
 			],
 			"subclassTitle": "Ranger Conclave",
-			"subclasses": [
-				{
-					"name": "Beast Conclave",
-					"shortName": "Beast Conclave",
-					"source": "UATheRangerRevised",
-					"page": 5,
-					"subclassFeatures": [
-						"Beast Conclave (UA)|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|3",
-						"Coordinated Attack|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|5",
-						"Beast's Defense|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|7",
-						"Storm of Claw and Fangs|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|11",
-						"Superior Beast's Defense|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|15"
-					]
-				},
-				{
-					"name": "Deep Stalker Conclave",
-					"shortName": "Deep Stalker Conclave",
-					"source": "UATheRangerRevised",
-					"page": 7,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"disguise self"
-								],
-								"5": [
-									"rope trick"
-								],
-								"9": [
-									"glyph of warding"
-								],
-								"13": [
-									"greater invisibility"
-								],
-								"17": [
-									"seeming"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Deep Stalker Conclave (UA)|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|5",
-						"Iron Mind|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|7",
-						"Stalker's Flurry|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|11",
-						"Stalker's Dodge|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|15"
-					]
-				},
-				{
-					"name": "Hunter Conclave",
-					"shortName": "Hunter Conclave",
-					"source": "UATheRangerRevised",
-					"page": 7,
-					"subclassFeatures": [
-						"Hunter Conclave (UA)|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|5",
-						"Defensive Tactics|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|7",
-						"Multiattack|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|11",
-						"Superior Hunter's Defense|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|15"
-					]
-				},
-				{
-					"name": "Horizon Walker (UA)",
-					"shortName": "Horizon Walker (UA)",
-					"source": "UARangerAndRogue",
-					"page": 1,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"protection from evil and good"
-								],
-								"5": [
-									"alter self"
-								],
-								"9": [
-									"protection from energy"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"teleportation circle"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Horizon Walker|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|5",
-						"Ethereal Step|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|7",
-						"Distant Strike|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|11",
-						"Spectral Defense|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|15"
-					]
-				},
-				{
-					"name": "Primeval Guardian (UA)",
-					"shortName": "Primeval Guardian (UA)",
-					"source": "UARangerAndRogue",
-					"page": 2,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"entangle"
-								],
-								"5": [
-									"enhance ability"
-								],
-								"9": [
-									"conjure animals"
-								],
-								"13": [
-									"giant insect"
-								],
-								"17": [
-									"insect plague"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Primeval Guardian|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|5",
-						"Ancient Fortitude|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|7",
-						"Rooted Defense|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|11",
-						"Guardian Aura|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|15"
-					]
-				},
-				{
-					"name": "Monster Slayer (UA)",
-					"shortName": "Monster Slayer (UA)",
-					"source": "UAATrioOfSubclasses",
-					"page": 3,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"protection from evil and good"
-								],
-								"5": [
-									"zone of truth"
-								],
-								"9": [
-									"magic circle"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"planar binding"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Monster Slayer|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|5",
-						"Supernatural Defense|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|7",
-						"Relentless Slayer|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|11",
-						"Slayer's Counter|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|15"
-					]
-				},
-				{
-					"name": "Gloom Stalker",
-					"shortName": "Gloom Stalker",
-					"source": "XGE",
-					"page": 41,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"disguise self"
-								],
-								"5": [
-									"rope trick"
-								],
-								"9": [
-									"fear"
-								],
-								"13": [
-									"greater invisibility"
-								],
-								"17": [
-									"seeming"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Gloom Stalker|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|5",
-						"Iron Mind|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|7",
-						"Stalker's Flurry|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|11",
-						"Shadowy Dodge|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|15"
-					]
-				},
-				{
-					"name": "Horizon Walker",
-					"shortName": "Horizon Walker",
-					"source": "XGE",
-					"page": 42,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"protection from evil and good"
-								],
-								"5": [
-									"misty step"
-								],
-								"9": [
-									"haste"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"teleportation circle"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Horizon Walker|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|5",
-						"Ethereal Step|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|7",
-						"Distant Strike|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|11",
-						"Spectral Defense|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|15"
-					]
-				},
-				{
-					"name": "Monster Slayer",
-					"shortName": "Monster Slayer",
-					"source": "XGE",
-					"page": 43,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"protection from evil and good"
-								],
-								"5": [
-									"zone of truth"
-								],
-								"9": [
-									"magic circle"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"hold monster"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Monster Slayer|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|5",
-						"Supernatural Defense|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|7",
-						"Magic-User's Nemesis|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|11",
-						"Slayer's Counter|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|15"
-					]
-				},
-				{
-					"name": "Swarmkeeper (UA)",
-					"shortName": "Swarmkeeper (UA)",
-					"source": "UAFighterRangerRogue",
-					"page": 3,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"faerie fire"
-								],
-								"5": [
-									"web"
-								],
-								"9": [
-									"gaseous form"
-								],
-								"13": [
-									"giant insect"
-								],
-								"17": [
-									"insect plague"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Swarmkeeper|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|5",
-						"Writhing Tide|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|7",
-						"Scuttling Eyes|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|11",
-						"Gathered Swarm Improvement|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|11",
-						"Storm of Minions|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|15"
-					]
-				},
-				{
-					"name": "Fey Wanderer (UA)",
-					"shortName": "Fey Wanderer (UA)",
-					"source": "UA2020SubclassesPt3",
-					"page": 5,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"charm person"
-								],
-								"5": [
-									"misty step"
-								],
-								"9": [
-									"dispel magic"
-								],
-								"13": [
-									"banishment"
-								],
-								"17": [
-									"mislead"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Fey Wanderer|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|5",
-						"Blessings of the Courts|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|7",
-						"Beguiling Twist|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|11",
-						"Misty Presence|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|15"
-					]
-				},
-				{
-					"name": "Drakewarden (UA)",
-					"shortName": "Drakewarden (UA)",
-					"source": "UA2020SubclassesPt5",
-					"page": 2,
-					"subclassFeatures": [
-						"Drakewarden|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|5",
-						"Bond of Fang and Scale|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|7",
-						"Drake's Breath|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|11",
-						"Perfected Bond|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|15"
-					]
-				},
-				{
-					"name": "Fey Wanderer",
-					"shortName": "Fey Wanderer",
-					"source": "TCE",
-					"page": 58,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"charm person"
-								],
-								"5": [
-									"misty step"
-								],
-								"9": [
-									"dispel magic"
-								],
-								"13": [
-									"dimension door"
-								],
-								"17": [
-									"mislead"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Fey Wanderer|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|5",
-						"Beguiling Twist|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|7",
-						"Fey Reinforcements|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|11",
-						"Misty Wanderer|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|15"
-					]
-				},
-				{
-					"name": "Swarmkeeper",
-					"shortName": "Swarmkeeper",
-					"source": "TCE",
-					"page": 59,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"mage hand",
-									"faerie fire"
-								],
-								"5": [
-									"web"
-								],
-								"9": [
-									"gaseous form"
-								],
-								"13": [
-									"arcane eye"
-								],
-								"17": [
-									"insect plague"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Swarmkeeper|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|3",
-						"Extra Attack|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|5",
-						"Writhing Tide|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|7",
-						"Mighty Swarm|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|11",
-						"Swarming Dispersal|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|15"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Ranger",
@@ -3086,6 +2008,1168 @@
 					"page": 40,
 					"source": "XGE"
 				}
+			]
+		}
+	],
+	"subclass": [
+		{
+			"name": "Beast Master",
+			"shortName": "Beast Master",
+			"source": "PHB",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 93,
+			"subclassFeatures": [
+				"Beast Master|Ranger||Beast Master||3",
+				"Exceptional Training|Ranger||Beast Master||7",
+				"Bestial Fury|Ranger||Beast Master||11",
+				"Share Spells|Ranger||Beast Master||15"
+			]
+		},
+		{
+			"name": "Beast Master",
+			"shortName": "Beast Master",
+			"source": "PHB",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 93,
+			"subclassFeatures": [
+				"Beast Master|Ranger (Spell-less)|UAModifyingClasses|Beast Master||3",
+				"Exceptional Training|Ranger (Spell-less)|UAModifyingClasses|Beast Master||7",
+				"Bestial Fury|Ranger (Spell-less)|UAModifyingClasses|Beast Master||11",
+				"Beastly Coordination|Ranger (Spell-less)|UAModifyingClasses|Beast Master||15"
+			]
+		},
+		{
+			"name": "Hunter",
+			"shortName": "Hunter",
+			"source": "PHB",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 93,
+			"srd": true,
+			"subclassFeatures": [
+				"Hunter|Ranger||Hunter||3",
+				"Defensive Tactics|Ranger||Hunter||7",
+				"Multiattack|Ranger||Hunter||11",
+				"Superior Hunter's Defense|Ranger||Hunter||15"
+			]
+		},
+		{
+			"name": "Hunter",
+			"shortName": "Hunter",
+			"source": "PHB",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 93,
+			"subclassFeatures": [
+				"Hunter|Ranger (Spell-less)|UAModifyingClasses|Hunter||3",
+				"Defensive Tactics|Ranger (Spell-less)|UAModifyingClasses|Hunter||7",
+				"Multiattack|Ranger (Spell-less)|UAModifyingClasses|Hunter||11",
+				"Superior Hunter's Defense|Ranger (Spell-less)|UAModifyingClasses|Hunter||15"
+			]
+		},
+		{
+			"name": "Guardian",
+			"shortName": "Guardian",
+			"source": "UARanger",
+			"className": "Ranger (Ambuscade)",
+			"classSource": "UARanger",
+			"page": 3,
+			"subclassFeatures": [
+				"Guardian|Ranger (Ambuscade)|UARanger|Guardian|UARanger|3"
+			]
+		},
+		{
+			"name": "Seeker",
+			"shortName": "Seeker",
+			"source": "UARanger",
+			"className": "Ranger (Ambuscade)",
+			"classSource": "UARanger",
+			"page": 4,
+			"subclassFeatures": [
+				"Seeker|Ranger (Ambuscade)|UARanger|Seeker|UARanger|3"
+			]
+		},
+		{
+			"name": "Stalker",
+			"shortName": "Stalker",
+			"source": "UARanger",
+			"className": "Ranger (Ambuscade)",
+			"classSource": "UARanger",
+			"page": 4,
+			"subclassFeatures": [
+				"Stalker|Ranger (Ambuscade)|UARanger|Stalker|UARanger|3"
+			]
+		},
+		{
+			"name": "Deep Stalker (UA)",
+			"shortName": "Deep Stalker (UA)",
+			"source": "UALightDarkUnderdark",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"disguise self"
+						],
+						"5": [
+							"rope trick"
+						],
+						"9": [
+							"glyph of warding"
+						],
+						"13": [
+							"greater invisibility"
+						],
+						"17": [
+							"seeming"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Deep Stalker|Ranger||Deep Stalker (UA)|UALightDarkUnderdark|3",
+				"Iron Mind|Ranger||Deep Stalker (UA)|UALightDarkUnderdark|7",
+				"Stalker's Flurry|Ranger||Deep Stalker (UA)|UALightDarkUnderdark|11",
+				"Stalker's Dodge|Ranger||Deep Stalker (UA)|UALightDarkUnderdark|15"
+			]
+		},
+		{
+			"name": "Deep Stalker (UA)",
+			"shortName": "Deep Stalker (UA)",
+			"source": "UALightDarkUnderdark",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Deep Stalker|Ranger (Spell-less)|UAModifyingClasses|Deep Stalker (UA)|UALightDarkUnderdark|3",
+				"Iron Mind|Ranger (Spell-less)|UAModifyingClasses|Deep Stalker (UA)|UALightDarkUnderdark|7",
+				"Stalker's Flurry|Ranger (Spell-less)|UAModifyingClasses|Deep Stalker (UA)|UALightDarkUnderdark|11",
+				"Stalker's Dodge|Ranger (Spell-less)|UAModifyingClasses|Deep Stalker (UA)|UALightDarkUnderdark|15"
+			]
+		},
+		{
+			"name": "Beast Conclave",
+			"shortName": "Beast Conclave",
+			"source": "UATheRangerRevised",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 5,
+			"subclassFeatures": [
+				"Beast Conclave (UA)|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|3",
+				"Coordinated Attack|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|5",
+				"Beast's Defense|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|7",
+				"Storm of Claw and Fangs|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|11",
+				"Superior Beast's Defense|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|15"
+			]
+		},
+		{
+			"name": "Deep Stalker Conclave",
+			"shortName": "Deep Stalker Conclave",
+			"source": "UATheRangerRevised",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 7,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"disguise self"
+						],
+						"5": [
+							"rope trick"
+						],
+						"9": [
+							"glyph of warding"
+						],
+						"13": [
+							"greater invisibility"
+						],
+						"17": [
+							"seeming"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Deep Stalker Conclave (UA)|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|5",
+				"Iron Mind|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|7",
+				"Stalker's Flurry|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|11",
+				"Stalker's Dodge|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|15"
+			]
+		},
+		{
+			"name": "Hunter Conclave",
+			"shortName": "Hunter Conclave",
+			"source": "UATheRangerRevised",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 7,
+			"subclassFeatures": [
+				"Hunter Conclave (UA)|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|5",
+				"Defensive Tactics|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|7",
+				"Multiattack|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|11",
+				"Superior Hunter's Defense|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|15"
+			]
+		},
+		{
+			"name": "Horizon Walker (UA)",
+			"shortName": "Horizon Walker (UA)",
+			"source": "UARangerAndRogue",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"protection from evil and good"
+						],
+						"5": [
+							"alter self"
+						],
+						"9": [
+							"protection from energy"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"teleportation circle"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Horizon Walker|Ranger||Horizon Walker (UA)|UARangerAndRogue|3",
+				"Ethereal Step|Ranger||Horizon Walker (UA)|UARangerAndRogue|7",
+				"Distant Strike|Ranger||Horizon Walker (UA)|UARangerAndRogue|11",
+				"Spectral Defense|Ranger||Horizon Walker (UA)|UARangerAndRogue|15"
+			]
+		},
+		{
+			"name": "Horizon Walker (UA)",
+			"shortName": "Horizon Walker (UA)",
+			"source": "UARangerAndRogue",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Horizon Walker|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker (UA)|UARangerAndRogue|3",
+				"Ethereal Step|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker (UA)|UARangerAndRogue|7",
+				"Distant Strike|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker (UA)|UARangerAndRogue|11",
+				"Spectral Defense|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker (UA)|UARangerAndRogue|15"
+			]
+		},
+		{
+			"name": "Horizon Walker (UA)",
+			"shortName": "Horizon Walker (UA)",
+			"source": "UARangerAndRogue",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 1,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"protection from evil and good"
+						],
+						"5": [
+							"alter self"
+						],
+						"9": [
+							"protection from energy"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"teleportation circle"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Horizon Walker|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|5",
+				"Ethereal Step|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|7",
+				"Distant Strike|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|11",
+				"Spectral Defense|Ranger (Revised)|UATheRangerRevised|Horizon Walker (UA)|UARangerAndRogue|15"
+			]
+		},
+		{
+			"name": "Primeval Guardian (UA)",
+			"shortName": "Primeval Guardian (UA)",
+			"source": "UARangerAndRogue",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 2,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"entangle"
+						],
+						"5": [
+							"enhance ability"
+						],
+						"9": [
+							"conjure animals"
+						],
+						"13": [
+							"giant insect"
+						],
+						"17": [
+							"insect plague"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Primeval Guardian|Ranger||Primeval Guardian (UA)|UARangerAndRogue|3",
+				"Ancient Fortitude|Ranger||Primeval Guardian (UA)|UARangerAndRogue|7",
+				"Rooted Defense|Ranger||Primeval Guardian (UA)|UARangerAndRogue|11",
+				"Guardian Aura|Ranger||Primeval Guardian (UA)|UARangerAndRogue|15"
+			]
+		},
+		{
+			"name": "Primeval Guardian (UA)",
+			"shortName": "Primeval Guardian (UA)",
+			"source": "UARangerAndRogue",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 2,
+			"subclassFeatures": [
+				"Primeval Guardian|Ranger (Spell-less)|UAModifyingClasses|Primeval Guardian (UA)|UARangerAndRogue|3",
+				"Ancient Fortitude|Ranger (Spell-less)|UAModifyingClasses|Primeval Guardian (UA)|UARangerAndRogue|7",
+				"Rooted Defense|Ranger (Spell-less)|UAModifyingClasses|Primeval Guardian (UA)|UARangerAndRogue|11",
+				"Guardian Aura|Ranger (Spell-less)|UAModifyingClasses|Primeval Guardian (UA)|UARangerAndRogue|15"
+			]
+		},
+		{
+			"name": "Primeval Guardian (UA)",
+			"shortName": "Primeval Guardian (UA)",
+			"source": "UARangerAndRogue",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 2,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"entangle"
+						],
+						"5": [
+							"enhance ability"
+						],
+						"9": [
+							"conjure animals"
+						],
+						"13": [
+							"giant insect"
+						],
+						"17": [
+							"insect plague"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Primeval Guardian|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|5",
+				"Ancient Fortitude|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|7",
+				"Rooted Defense|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|11",
+				"Guardian Aura|Ranger (Revised)|UATheRangerRevised|Primeval Guardian (UA)|UARangerAndRogue|15"
+			]
+		},
+		{
+			"name": "Monster Slayer (UA)",
+			"shortName": "Monster Slayer (UA)",
+			"source": "UAATrioOfSubclasses",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 3,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"protection from evil and good"
+						],
+						"5": [
+							"zone of truth"
+						],
+						"9": [
+							"magic circle"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"planar binding"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Monster Slayer|Ranger||Monster Slayer (UA)|UAATrioOfSubclasses|3",
+				"Supernatural Defense|Ranger||Monster Slayer (UA)|UAATrioOfSubclasses|7",
+				"Relentless Slayer|Ranger||Monster Slayer (UA)|UAATrioOfSubclasses|11",
+				"Slayer's Counter|Ranger||Monster Slayer (UA)|UAATrioOfSubclasses|15"
+			]
+		},
+		{
+			"name": "Monster Slayer (UA)",
+			"shortName": "Monster Slayer (UA)",
+			"source": "UAATrioOfSubclasses",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 3,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Monster Slayer|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer (UA)|UAATrioOfSubclasses|3",
+				"Supernatural Defense|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer (UA)|UAATrioOfSubclasses|7",
+				"Relentless Slayer|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer (UA)|UAATrioOfSubclasses|11",
+				"Slayer's Counter|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer (UA)|UAATrioOfSubclasses|15"
+			]
+		},
+		{
+			"name": "Monster Slayer (UA)",
+			"shortName": "Monster Slayer (UA)",
+			"source": "UAATrioOfSubclasses",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 3,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"protection from evil and good"
+						],
+						"5": [
+							"zone of truth"
+						],
+						"9": [
+							"magic circle"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"planar binding"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Monster Slayer|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|5",
+				"Supernatural Defense|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|7",
+				"Relentless Slayer|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|11",
+				"Slayer's Counter|Ranger (Revised)|UATheRangerRevised|Monster Slayer (UA)|UAATrioOfSubclasses|15"
+			]
+		},
+		{
+			"name": "Gloom Stalker",
+			"shortName": "Gloom Stalker",
+			"source": "XGE",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 41,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"disguise self"
+						],
+						"5": [
+							"rope trick"
+						],
+						"9": [
+							"fear"
+						],
+						"13": [
+							"greater invisibility"
+						],
+						"17": [
+							"seeming"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Gloom Stalker|Ranger||Gloom Stalker|XGE|3",
+				"Iron Mind|Ranger||Gloom Stalker|XGE|7",
+				"Stalker's Flurry|Ranger||Gloom Stalker|XGE|11",
+				"Shadowy Dodge|Ranger||Gloom Stalker|XGE|15"
+			]
+		},
+		{
+			"name": "Gloom Stalker",
+			"shortName": "Gloom Stalker",
+			"source": "XGE",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 41,
+			"subclassFeatures": [
+				"Gloom Stalker|Ranger (Spell-less)|UAModifyingClasses|Gloom Stalker|XGE|3",
+				"Iron Mind|Ranger (Spell-less)|UAModifyingClasses|Gloom Stalker|XGE|7",
+				"Stalker's Flurry|Ranger (Spell-less)|UAModifyingClasses|Gloom Stalker|XGE|11",
+				"Shadowy Dodge|Ranger (Spell-less)|UAModifyingClasses|Gloom Stalker|XGE|15"
+			]
+		},
+		{
+			"name": "Gloom Stalker",
+			"shortName": "Gloom Stalker",
+			"source": "XGE",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 41,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"disguise self"
+						],
+						"5": [
+							"rope trick"
+						],
+						"9": [
+							"fear"
+						],
+						"13": [
+							"greater invisibility"
+						],
+						"17": [
+							"seeming"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Gloom Stalker|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|5",
+				"Iron Mind|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|7",
+				"Stalker's Flurry|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|11",
+				"Shadowy Dodge|Ranger (Revised)|UATheRangerRevised|Gloom Stalker|XGE|15"
+			]
+		},
+		{
+			"name": "Horizon Walker",
+			"shortName": "Horizon Walker",
+			"source": "XGE",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 42,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"protection from evil and good"
+						],
+						"5": [
+							"misty step"
+						],
+						"9": [
+							"haste"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"teleportation circle"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Horizon Walker|Ranger||Horizon Walker|XGE|3",
+				"Ethereal Step|Ranger||Horizon Walker|XGE|7",
+				"Distant Strike|Ranger||Horizon Walker|XGE|11",
+				"Spectral Defense|Ranger||Horizon Walker|XGE|15"
+			]
+		},
+		{
+			"name": "Horizon Walker",
+			"shortName": "Horizon Walker",
+			"source": "XGE",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 42,
+			"subclassFeatures": [
+				"Horizon Walker|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker|XGE|3",
+				"Ethereal Step|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker|XGE|7",
+				"Distant Strike|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker|XGE|11",
+				"Spectral Defense|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker|XGE|15"
+			]
+		},
+		{
+			"name": "Horizon Walker",
+			"shortName": "Horizon Walker",
+			"source": "XGE",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 42,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"protection from evil and good"
+						],
+						"5": [
+							"misty step"
+						],
+						"9": [
+							"haste"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"teleportation circle"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Horizon Walker|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|5",
+				"Ethereal Step|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|7",
+				"Distant Strike|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|11",
+				"Spectral Defense|Ranger (Revised)|UATheRangerRevised|Horizon Walker|XGE|15"
+			]
+		},
+		{
+			"name": "Monster Slayer",
+			"shortName": "Monster Slayer",
+			"source": "XGE",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 43,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"protection from evil and good"
+						],
+						"5": [
+							"zone of truth"
+						],
+						"9": [
+							"magic circle"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"hold monster"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Monster Slayer|Ranger||Monster Slayer|XGE|3",
+				"Supernatural Defense|Ranger||Monster Slayer|XGE|7",
+				"Magic-User's Nemesis|Ranger||Monster Slayer|XGE|11",
+				"Slayer's Counter|Ranger||Monster Slayer|XGE|15"
+			]
+		},
+		{
+			"name": "Monster Slayer",
+			"shortName": "Monster Slayer",
+			"source": "XGE",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 43,
+			"subclassFeatures": [
+				"Monster Slayer|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer|XGE|3",
+				"Supernatural Defense|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer|XGE|7",
+				"Magic-User's Nemesis|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer|XGE|11",
+				"Slayer's Counter|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer|XGE|15"
+			]
+		},
+		{
+			"name": "Monster Slayer",
+			"shortName": "Monster Slayer",
+			"source": "XGE",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 43,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"protection from evil and good"
+						],
+						"5": [
+							"zone of truth"
+						],
+						"9": [
+							"magic circle"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"hold monster"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Monster Slayer|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|5",
+				"Supernatural Defense|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|7",
+				"Magic-User's Nemesis|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|11",
+				"Slayer's Counter|Ranger (Revised)|UATheRangerRevised|Monster Slayer|XGE|15"
+			]
+		},
+		{
+			"name": "Swarmkeeper (UA)",
+			"shortName": "Swarmkeeper (UA)",
+			"source": "UAFighterRangerRogue",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 3,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"faerie fire"
+						],
+						"5": [
+							"web"
+						],
+						"9": [
+							"gaseous form"
+						],
+						"13": [
+							"giant insect"
+						],
+						"17": [
+							"insect plague"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Swarmkeeper|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|3",
+				"Writhing Tide|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|7",
+				"Scuttling Eyes|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|11",
+				"Gathered Swarm Improvement|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|11",
+				"Storm of Minions|Ranger||Swarmkeeper (UA)|UAFighterRangerRogue|15"
+			]
+		},
+		{
+			"name": "Swarmkeeper (UA)",
+			"shortName": "Swarmkeeper (UA)",
+			"source": "UAFighterRangerRogue",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 3,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Swarmkeeper|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|3",
+				"Writhing Tide|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|7",
+				"Scuttling Eyes|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|11",
+				"Gathered Swarm Improvement|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|11",
+				"Storm of Minions|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper (UA)|UAFighterRangerRogue|15"
+			]
+		},
+		{
+			"name": "Swarmkeeper (UA)",
+			"shortName": "Swarmkeeper (UA)",
+			"source": "UAFighterRangerRogue",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 3,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"faerie fire"
+						],
+						"5": [
+							"web"
+						],
+						"9": [
+							"gaseous form"
+						],
+						"13": [
+							"giant insect"
+						],
+						"17": [
+							"insect plague"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Swarmkeeper|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|5",
+				"Writhing Tide|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|7",
+				"Scuttling Eyes|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|11",
+				"Gathered Swarm Improvement|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|11",
+				"Storm of Minions|Ranger (Revised)|UATheRangerRevised|Swarmkeeper (UA)|UAFighterRangerRogue|15"
+			]
+		},
+		{
+			"name": "Fey Wanderer (UA)",
+			"shortName": "Fey Wanderer (UA)",
+			"source": "UA2020SubclassesPt3",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 5,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"charm person"
+						],
+						"5": [
+							"misty step"
+						],
+						"9": [
+							"dispel magic"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"mislead"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Fey Wanderer|Ranger||Fey Wanderer (UA)|UA2020SubclassesPt3|3",
+				"Blessings of the Courts|Ranger||Fey Wanderer (UA)|UA2020SubclassesPt3|7",
+				"Beguiling Twist|Ranger||Fey Wanderer (UA)|UA2020SubclassesPt3|11",
+				"Misty Presence|Ranger||Fey Wanderer (UA)|UA2020SubclassesPt3|15"
+			]
+		},
+		{
+			"name": "Fey Wanderer (UA)",
+			"shortName": "Fey Wanderer (UA)",
+			"source": "UA2020SubclassesPt3",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 5,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Fey Wanderer|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer (UA)|UA2020SubclassesPt3|3",
+				"Blessings of the Courts|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer (UA)|UA2020SubclassesPt3|7",
+				"Beguiling Twist|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer (UA)|UA2020SubclassesPt3|11",
+				"Misty Presence|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer (UA)|UA2020SubclassesPt3|15"
+			]
+		},
+		{
+			"name": "Fey Wanderer (UA)",
+			"shortName": "Fey Wanderer (UA)",
+			"source": "UA2020SubclassesPt3",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 5,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"charm person"
+						],
+						"5": [
+							"misty step"
+						],
+						"9": [
+							"dispel magic"
+						],
+						"13": [
+							"banishment"
+						],
+						"17": [
+							"mislead"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Fey Wanderer|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|5",
+				"Blessings of the Courts|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|7",
+				"Beguiling Twist|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|11",
+				"Misty Presence|Ranger (Revised)|UATheRangerRevised|Fey Wanderer (UA)|UA2020SubclassesPt3|15"
+			]
+		},
+		{
+			"name": "Drakewarden (UA)",
+			"shortName": "Drakewarden (UA)",
+			"source": "UA2020SubclassesPt5",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 2,
+			"subclassFeatures": [
+				"Drakewarden|Ranger||Drakewarden (UA)|UA2020SubclassesPt5|3",
+				"Bond of Fang and Scale|Ranger||Drakewarden (UA)|UA2020SubclassesPt5|7",
+				"Drake's Breath|Ranger||Drakewarden (UA)|UA2020SubclassesPt5|11",
+				"Perfected Bond|Ranger||Drakewarden (UA)|UA2020SubclassesPt5|15"
+			]
+		},
+		{
+			"name": "Drakewarden (UA)",
+			"shortName": "Drakewarden (UA)",
+			"source": "UA2020SubclassesPt5",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 2,
+			"subclassFeatures": [
+				"Drakewarden|Ranger (Spell-less)|UAModifyingClasses|Drakewarden (UA)|UA2020SubclassesPt5|3",
+				"Bond of Fang and Scale|Ranger (Spell-less)|UAModifyingClasses|Drakewarden (UA)|UA2020SubclassesPt5|7",
+				"Drake's Breath|Ranger (Spell-less)|UAModifyingClasses|Drakewarden (UA)|UA2020SubclassesPt5|11",
+				"Perfected Bond|Ranger (Spell-less)|UAModifyingClasses|Drakewarden (UA)|UA2020SubclassesPt5|15"
+			]
+		},
+		{
+			"name": "Drakewarden (UA)",
+			"shortName": "Drakewarden (UA)",
+			"source": "UA2020SubclassesPt5",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 2,
+			"subclassFeatures": [
+				"Drakewarden|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|5",
+				"Bond of Fang and Scale|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|7",
+				"Drake's Breath|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|11",
+				"Perfected Bond|Ranger (Revised)|UATheRangerRevised|Drakewarden (UA)|UA2020SubclassesPt5|15"
+			]
+		},
+		{
+			"name": "Fey Wanderer",
+			"shortName": "Fey Wanderer",
+			"source": "TCE",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 58,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"charm person"
+						],
+						"5": [
+							"misty step"
+						],
+						"9": [
+							"dispel magic"
+						],
+						"13": [
+							"dimension door"
+						],
+						"17": [
+							"mislead"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Fey Wanderer|Ranger||Fey Wanderer|TCE|3",
+				"Beguiling Twist|Ranger||Fey Wanderer|TCE|7",
+				"Fey Reinforcements|Ranger||Fey Wanderer|TCE|11",
+				"Misty Wanderer|Ranger||Fey Wanderer|TCE|15"
+			]
+		},
+		{
+			"name": "Fey Wanderer",
+			"shortName": "Fey Wanderer",
+			"source": "TCE",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 58,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"charm person"
+						],
+						"5": [
+							"misty step"
+						],
+						"9": [
+							"dispel magic"
+						],
+						"13": [
+							"dimension door"
+						],
+						"17": [
+							"mislead"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Fey Wanderer|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer|TCE|3",
+				"Beguiling Twist|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer|TCE|7",
+				"Fey Reinforcements|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer|TCE|11",
+				"Misty Wanderer|Ranger (Spell-less)|UAModifyingClasses|Fey Wanderer|TCE|15"
+			]
+		},
+		{
+			"name": "Fey Wanderer",
+			"shortName": "Fey Wanderer",
+			"source": "TCE",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 58,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"charm person"
+						],
+						"5": [
+							"misty step"
+						],
+						"9": [
+							"dispel magic"
+						],
+						"13": [
+							"dimension door"
+						],
+						"17": [
+							"mislead"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Fey Wanderer|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|5",
+				"Beguiling Twist|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|7",
+				"Fey Reinforcements|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|11",
+				"Misty Wanderer|Ranger (Revised)|UATheRangerRevised|Fey Wanderer|TCE|15"
+			]
+		},
+		{
+			"name": "Swarmkeeper",
+			"shortName": "Swarmkeeper",
+			"source": "TCE",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"page": 59,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"mage hand",
+							"faerie fire"
+						],
+						"5": [
+							"web"
+						],
+						"9": [
+							"gaseous form"
+						],
+						"13": [
+							"arcane eye"
+						],
+						"17": [
+							"insect plague"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Swarmkeeper|Ranger||Swarmkeeper|TCE|3",
+				"Writhing Tide|Ranger||Swarmkeeper|TCE|7",
+				"Mighty Swarm|Ranger||Swarmkeeper|TCE|11",
+				"Swarming Dispersal|Ranger||Swarmkeeper|TCE|15"
+			]
+		},
+		{
+			"name": "Swarmkeeper",
+			"shortName": "Swarmkeeper",
+			"source": "TCE",
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"page": 59,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"mage hand",
+							"faerie fire"
+						],
+						"5": [
+							"web"
+						],
+						"9": [
+							"gaseous form"
+						],
+						"13": [
+							"arcane eye"
+						],
+						"17": [
+							"insect plague"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Swarmkeeper|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper|TCE|3",
+				"Writhing Tide|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper|TCE|7",
+				"Mighty Swarm|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper|TCE|11",
+				"Swarming Dispersal|Ranger (Spell-less)|UAModifyingClasses|Swarmkeeper|TCE|15"
+			]
+		},
+		{
+			"name": "Swarmkeeper",
+			"shortName": "Swarmkeeper",
+			"source": "TCE",
+			"className": "Ranger (Revised)",
+			"classSource": "UATheRangerRevised",
+			"page": 59,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"mage hand",
+							"faerie fire"
+						],
+						"5": [
+							"web"
+						],
+						"9": [
+							"gaseous form"
+						],
+						"13": [
+							"arcane eye"
+						],
+						"17": [
+							"insect plague"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Swarmkeeper|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|3",
+				"Extra Attack|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|5",
+				"Writhing Tide|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|7",
+				"Mighty Swarm|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|11",
+				"Swarming Dispersal|Ranger (Revised)|UATheRangerRevised|Swarmkeeper|TCE|15"
 			]
 		}
 	],
@@ -6358,7 +6442,7 @@
 						],
 						[
 							"5",
-							"An ancient Draconic inscription on a standing stone empowered you when you read it aloud."
+							"An ancient {@language Draconic} inscription on a standing stone empowered you when you read it aloud."
 						],
 						[
 							"6",
@@ -8636,7 +8720,7 @@
 						],
 						[
 							"5",
-							"An ancient Draconic inscription on a standing stone empowered you when you read it aloud."
+							"An ancient {@language Draconic} inscription on a standing stone empowered you when you read it aloud."
 						],
 						[
 							"6",

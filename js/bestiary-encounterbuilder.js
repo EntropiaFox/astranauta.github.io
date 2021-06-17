@@ -5,8 +5,10 @@
  *   everything back down at the end.
  */
 class EncounterBuilder extends ProxyBase {
-	constructor () {
+	constructor (bestiaryPage) {
 		super();
+
+		this._bestiaryPage = bestiaryPage;
 
 		this.stateInit = false;
 		this._cache = null;
@@ -75,16 +77,16 @@ class EncounterBuilder extends ProxyBase {
 			await MiscUtil.pCopyTextToClipboard(parts.join(HASH_PART_SEP));
 			JqueryUtil.showCopiedEffect($btnSvUrl);
 		});
-		$(`.ecgen__sv_file`).click(() => DataUtil.userDownload(`encounter`, this.getSaveableState()));
+		$(`.ecgen__sv_file`).click(() => DataUtil.userDownload(`encounter`, this.getSaveableState(), {fileType: "encounter"}));
 		$(`.ecgen__ld_file`).click(async () => {
-			const json = await DataUtil.pUserUpload();
-			if (json.items && json.sources) { // if it's a bestiary sublist
-				json.l = {
-					items: json.items,
-					sources: json.sources,
+			const jsons = await DataUtil.pUserUpload({expectedFileType: "encounter"});
+			if (jsons?.length && jsons[0].items && jsons[0].sources) { // if it's a bestiary sublist
+				jsons.l = {
+					items: jsons.items,
+					sources: jsons.sources,
 				}
 			}
-			this.pDoLoadState(json);
+			this.pDoLoadState(jsons[0]);
 		});
 		$(`.ecgen__reset`).title(`SHIFT-click to reset players`).click(evt => confirm("Are you sure?") && encounterBuilder.pReset({isNotResetPlayers: !evt.shiftKey, isNotAddInitialPlayers: !evt.shiftKey}));
 
@@ -231,7 +233,7 @@ class EncounterBuilder extends ProxyBase {
 			}
 
 			if (savedState.l && !playersOnly) {
-				await pPreloadSublistSources(savedState.l);
+				await this._bestiaryPage.pPreloadSublistSources(savedState.l);
 				await ListUtil.pDoJsonLoad(savedState.l, false);
 			}
 
@@ -613,7 +615,7 @@ class EncounterBuilder extends ProxyBase {
 	}
 
 	async _pLoadSublist (toLoad) {
-		await pPreloadSublistSources(toLoad);
+		await this._bestiaryPage.pPreloadSublistSources(toLoad);
 		await ListUtil.pDoJsonLoad(toLoad, false);
 		this.updateDifficulty();
 	}
@@ -637,7 +639,7 @@ class EncounterBuilder extends ProxyBase {
 		return Hist.getSubHash(EncounterBuilder.HASH_KEY) === "true";
 	}
 
-	show () {
+	showBuilder () {
 		this._cachedTitle = this._cachedTitle || document.title;
 		document.title = "Encounter Builder - 5etools";
 		$(`body`).addClass("ecgen_active");
@@ -646,7 +648,7 @@ class EncounterBuilder extends ProxyBase {
 		ListUtil.doSublistDeselectAll();
 	}
 
-	hide () {
+	hideBuilder () {
 		if (this._cachedTitle) {
 			document.title = this._cachedTitle;
 			this._cachedTitle = null;
@@ -657,7 +659,7 @@ class EncounterBuilder extends ProxyBase {
 	handleClick (evt, ix, add, customHashId) {
 		const data = customHashId ? {customHashId} : undefined;
 		if (add) ListUtil.pDoSublistAdd(ix, {doFinalize: true, addCount: evt.shiftKey ? 5 : 1, data});
-		else ListUtil.pDoSublistSubtract(ix, evt.shiftKey ? 5 : 1, data);
+		else ListUtil.pDoSublistSubtract(ix, {subtractCount: evt.shiftKey ? 5 : 1, data});
 	}
 
 	async pHandleShuffleClick (ix) {
@@ -711,8 +713,8 @@ class EncounterBuilder extends ProxyBase {
 
 	handleSubhash () {
 		// loading state from the URL is instead handled as part of EncounterUtil.pGetInitialState
-		if (Hist.getSubHash(EncounterBuilder.HASH_KEY) === "true") this.show();
-		else this.hide();
+		if (Hist.getSubHash(EncounterBuilder.HASH_KEY) === "true") this.showBuilder();
+		else this.hideBuilder();
 	}
 
 	removeAdvancedPlayerRow (ele) {
@@ -765,15 +767,15 @@ class EncounterBuilder extends ProxyBase {
 	updateDifficulty () {
 		const {partyMeta, encounter} = this.calculateXp();
 
-		const $elEasy = $(`.ecgen__easy`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_EASY}">Easy:</span> ${partyMeta.easy.toLocaleString()} XP`);
-		const $elmed = $(`.ecgen__medium`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_MEDIUM}">Medium:</span> ${partyMeta.medium.toLocaleString()} XP`);
-		const $elHard = $(`.ecgen__hard`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_HARD}">Hard:</span> ${partyMeta.hard.toLocaleString()} XP`);
-		const $elDeadly = $(`.ecgen__deadly`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_DEADLY}">Deadly:</span> ${partyMeta.deadly.toLocaleString()} XP`);
+		const $elEasy = $(`.ecgen__easy`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_EASY}">Easy:</span> ${partyMeta.easy.toLocaleString()} XP`);
+		const $elmed = $(`.ecgen__medium`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_MEDIUM}">Medium:</span> ${partyMeta.medium.toLocaleString()} XP`);
+		const $elHard = $(`.ecgen__hard`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_HARD}">Hard:</span> ${partyMeta.hard.toLocaleString()} XP`);
+		const $elDeadly = $(`.ecgen__deadly`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_DEADLY}">Deadly:</span> ${partyMeta.deadly.toLocaleString()} XP`);
 		const $elAbsurd = $(`.ecgen__absurd`).removeClass("bold").html(`<span class="help" title="${EncounterBuilder._TITLE_ABSURD}">Absurd:</span> ${partyMeta.absurd.toLocaleString()} XP`);
 
 		$(`.ecgen__ttk`).html(`<span class="help" title="${EncounterBuilder._TITLE_TTK}">TTK:</span> ${this._getApproxTurnsToKill().toFixed(2)}`);
 
-		$(`.ecgen__daily_budget`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_BUDGET_DAILY}">Daily Budget:</span> ${partyMeta.dailyBudget.toLocaleString()} XP`);
+		$(`.ecgen__daily_budget`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_BUDGET_DAILY}">Daily Budget:</span> ${partyMeta.dailyBudget.toLocaleString()} XP`);
 
 		let difficulty = "Trivial";
 		if (encounter.adjustedXp >= partyMeta.absurd) {
@@ -910,15 +912,17 @@ class EncounterBuilder extends ProxyBase {
 		return {partyMeta: partyMeta, encounter: encounter};
 	}
 
-	static async doStatblockMouseOver (evt, ele, ixMon, scaledTo) {
+	static async doStatblockMouseOver (evt, ele, ixMon, metadata) {
 		const mon = bestiaryPage._dataList[ixMon];
 
 		const hash = UrlUtil.autoEncodeHash(mon);
-		const preloadId = scaledTo != null ? `${VeCt.HASH_SCALED}:${scaledTo}` : null;
-		return Renderer.hover.pHandleLinkMouseOver(evt, ele, UrlUtil.PG_BESTIARY, mon.source, hash, preloadId);
+		return Renderer.hover.pHandleLinkMouseOver(evt, ele, {page: UrlUtil.PG_BESTIARY, source: mon.source, hash, preloadId: metadata?.customHashId});
 	}
 
 	static getTokenHoverMeta (mon) {
+		const hasToken = mon.tokenUrl || mon.hasToken;
+		if (!hasToken) return null;
+
 		return Renderer.hover.getMakePredefinedHover(
 			{
 				type: "image",
@@ -984,6 +988,10 @@ class EncounterBuilder extends ProxyBase {
 		else handleNoImages();
 	}
 
+	static _getFauxMon (name, source, scaledTo) {
+		return {name, source, _isScaledCr: scaledTo != null, _scaledCr: scaledTo};
+	}
+
 	async pDoCrChange ($iptCr, ixMon, scaledTo) {
 		await this._lock.pLock();
 
@@ -1004,14 +1012,14 @@ class EncounterBuilder extends ProxyBase {
 				const state = ListUtil.getExportableSublist();
 				const toFindHash = UrlUtil.autoEncodeHash(mon);
 
-				const toFindUid = !(scaledTo == null || baseCrNum === scaledTo) ? getCustomHashId(mon.name, mon.source, scaledTo) : null;
+				const toFindUid = !(scaledTo == null || baseCrNum === scaledTo) ? Renderer.monster.getCustomHashId(EncounterBuilder._getFauxMon(mon.name, mon.source, scaledTo)) : null;
 				const ixCurrItem = state.items.findIndex(it => {
 					if (scaledTo == null || scaledTo === baseCrNum) return !it.customHashId && it.h === toFindHash;
 					else return it.customHashId === toFindUid;
 				});
 				if (!~ixCurrItem) throw new Error(`Could not find previously sublisted item!`);
 
-				const toFindNxtUid = baseCrNum !== targetCrNum ? getCustomHashId(mon.name, mon.source, targetCrNum) : null;
+				const toFindNxtUid = baseCrNum !== targetCrNum ? Renderer.monster.getCustomHashId(EncounterBuilder._getFauxMon(mon.name, mon.source, targetCrNum)) : null;
 				const nextItem = state.items.find(it => {
 					if (targetCrNum === baseCrNum) return !it.customHashId && it.h === toFindHash;
 					else return it.customHashId === toFindNxtUid;
@@ -1025,7 +1033,7 @@ class EncounterBuilder extends ProxyBase {
 				} else {
 					// if we're returning to the original CR, wipe the existing UID. Otherwise, adjust it
 					if (targetCrNum === baseCrNum) delete state.items[ixCurrItem].customHashId;
-					else state.items[ixCurrItem].customHashId = getCustomHashId(mon.name, mon.source, targetCrNum);
+					else state.items[ixCurrItem].customHashId = Renderer.monster.getCustomHashId(EncounterBuilder._getFauxMon(mon.name, mon.source, targetCrNum));
 				}
 
 				await this._pLoadSublist(state);
@@ -1129,10 +1137,40 @@ class EncounterBuilder extends ProxyBase {
 	}
 
 	static getButtons (monId) {
-		return `<span class="ecgen__visible col-1 no-wrap pl-0" onclick="event.preventDefault(); event.stopPropagation()">
-			<button title="Add (SHIFT for 5)" class="btn btn-success btn-xs ecgen__btn_list" onclick="encounterBuilder.handleClick(event, ${monId}, 1)"><span class="glyphicon glyphicon-plus"></span></button>
-			<button title="Subtract (SHIFT for 5)" class="btn btn-danger btn-xs ecgen__btn_list" onclick="encounterBuilder.handleClick(event, ${monId}, 0)"><span class="glyphicon glyphicon-minus"></span></button>
-		</span>`;
+		return e_({
+			tag: "span",
+			clazz: `ecgen__visible col-1 no-wrap pl-0`,
+			click: evt => {
+				evt.preventDefault();
+				evt.stopPropagation();
+			},
+			children: [
+				e_({
+					tag: "button",
+					title: `Add (SHIFT for 5)`,
+					clazz: `btn btn-success btn-xs ecgen__btn_list`,
+					click: evt => encounterBuilder.handleClick(evt, monId, 1),
+					children: [
+						e_({
+							tag: "span",
+							clazz: `glyphicon glyphicon-plus`,
+						}),
+					],
+				}),
+				e_({
+					tag: "button",
+					title: `Subtract (SHIFT for 5)`,
+					clazz: `btn btn-danger btn-xs ecgen__btn_list`,
+					click: evt => encounterBuilder.handleClick(evt, monId, 0),
+					children: [
+						e_({
+							tag: "span",
+							clazz: `glyphicon glyphicon-minus`,
+						}),
+					],
+				}),
+			],
+		});
 	}
 
 	static $getSublistButtons (monId, customHashId) {

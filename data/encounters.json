@@ -17,12 +17,12 @@
 						{
 							"min": 2,
 							"max": 5,
-							"result": "1d6+3 {@creature kobold||kobolds}"
+							"result": "1d6 + 3 {@creature kobold||kobolds}"
 						},
 						{
 							"min": 6,
 							"max": 8,
-							"result": "1d4+3 trappers ({@creature commoner||commoners})"
+							"result": "1d4 + 3 trappers ({@creature commoner||commoners})"
 						},
 						{
 							"min": 9,
@@ -77,7 +77,7 @@
 						{
 							"min": 51,
 							"max": 53,
-							"result": "1d6+1 {@creature orc||orcs}"
+							"result": "1d6 + 1 {@creature orc||orcs}"
 						},
 						{
 							"min": 54,
@@ -224,7 +224,7 @@
 						{
 							"min": 8,
 							"max": 10,
-							"result": "1d3+1 {@creature brown bear||brown bears}"
+							"result": "1d3 + 1 {@creature brown bear||brown bears}"
 						},
 						{
 							"min": 11,
@@ -254,7 +254,7 @@
 						{
 							"min": 36,
 							"max": 40,
-							"result": "2d6+1 {@creature zombie||zombies} aboard a galleon trapped in the ice. Searching the ship yields 2d20 days of rations."
+							"result": "2d6 + 1 {@creature zombie||zombies} aboard a galleon trapped in the ice. Searching the ship yields 2d20 days of rations."
 						},
 						{
 							"min": 41,
@@ -264,12 +264,12 @@
 						{
 							"min": 46,
 							"max": 50,
-							"result": "2d6+3 {@creature orc||orcs}"
+							"result": "2d6 + 3 {@creature orc||orcs}"
 						},
 						{
 							"min": 51,
 							"max": 53,
-							"result": "1d6+2 {@creature ogre||ogres}"
+							"result": "1d6 + 2 {@creature ogre||ogres}"
 						},
 						{
 							"min": 54,
@@ -284,7 +284,7 @@
 						{
 							"min": 58,
 							"max": 60,
-							"result": "1 {@creature bandit captain} with 1 {@creature druid}, 1d3 {@creature berserker||berserkers}, and 2d10+5 {@creature bandit||bandits}"
+							"result": "1 {@creature bandit captain} with 1 {@creature druid}, 1d3 {@creature berserker||berserkers}, and 2d10 + 5 {@creature bandit||bandits}"
 						},
 						{
 							"min": 61,
@@ -299,7 +299,7 @@
 						{
 							"min": 69,
 							"max": 72,
-							"result": "1 {@creature orc Eye of Gruumsh} with 1d6 {@creature orog||orogs} and 2d8+6 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 1d6 {@creature orog||orogs} and 2d8 + 6 {@creature orc||orcs}"
 						},
 						{
 							"min": 73,
@@ -329,7 +329,7 @@
 						{
 							"min": 87,
 							"max": 88,
-							"result": "1d6+2 {@creature yeti||yetis}"
+							"result": "1d6 + 2 {@creature yeti||yetis}"
 						},
 						{
 							"min": 89,
@@ -385,7 +385,7 @@
 						{
 							"min": 5,
 							"max": 10,
-							"result": "1d4+1 {@creature werebear||werebears}"
+							"result": "1d4 + 1 {@creature werebear||werebears}"
 						},
 						{
 							"min": 11,
@@ -405,7 +405,7 @@
 						{
 							"min": 36,
 							"max": 40,
-							"result": "A herd of 3d20+60 caribou ({@creature deer}) moving through the snow"
+							"result": "A herd of 3d20 + 60 caribou ({@creature deer}) moving through the snow"
 						},
 						{
 							"min": 41,
@@ -415,7 +415,7 @@
 						{
 							"min": 51,
 							"max": 60,
-							"result": "1d8+1 {@creature troll||trolls}"
+							"result": "1d8 + 1 {@creature troll||trolls}"
 						},
 						{
 							"min": 61,
@@ -440,7 +440,7 @@
 						{
 							"min": 91,
 							"max": 96,
-							"result": "1d8+1 {@creature frost giant||frost giants}"
+							"result": "1d8 + 1 {@creature frost giant||frost giants}"
 						},
 						{
 							"min": 97,
@@ -602,7 +602,7 @@
 						{
 							"min": 19,
 							"max": 20,
-							"result": "1d6+2 {@creature sahuagin}"
+							"result": "1d6 + 2 {@creature sahuagin}"
 						},
 						{
 							"min": 21,
@@ -612,7 +612,7 @@
 						{
 							"min": 26,
 							"max": 27,
-							"result": "1d4 {@creature winged kobold||winged kobolds} with 1d6+1 {@creature kobold||kobolds}"
+							"result": "1d4 {@creature winged kobold||winged kobolds} with 1d6 + 1 {@creature kobold||kobolds}"
 						},
 						{
 							"min": 28,
@@ -627,12 +627,12 @@
 						{
 							"min": 32,
 							"max": 33,
-							"result": "2d4+5 {@creature blood hawk||blood hawks}"
+							"result": "2d4 + 5 {@creature blood hawk||blood hawks}"
 						},
 						{
 							"min": 34,
 							"max": 35,
-							"result": "1d8+1 {@creature pteranodon||pteranodons}"
+							"result": "1d8 + 1 {@creature pteranodon||pteranodons}"
 						},
 						{
 							"min": 36,
@@ -642,12 +642,12 @@
 						{
 							"min": 41,
 							"max": 42,
-							"result": "1d6+2 {@creature giant lizard||giant lizards}"
+							"result": "1d6 + 2 {@creature giant lizard||giant lizards}"
 						},
 						{
 							"min": 43,
 							"max": 44,
-							"result": "1d6+4 {@creature giant crab||giant crabs}"
+							"result": "1d6 + 4 {@creature giant crab||giant crabs}"
 						},
 						{
 							"min": 45,
@@ -657,7 +657,7 @@
 						{
 							"min": 47,
 							"max": 48,
-							"result": "2d6+3 {@creature bandit||bandits}"
+							"result": "2d6 + 3 {@creature bandit||bandits}"
 						},
 						{
 							"min": 49,
@@ -667,7 +667,7 @@
 						{
 							"min": 54,
 							"max": 55,
-							"result": "1d6+2 {@creature scout||scouts}"
+							"result": "1d6 + 2 {@creature scout||scouts}"
 						},
 						{
 							"min": 56,
@@ -747,7 +747,7 @@
 						{
 							"min": 91,
 							"max": 92,
-							"result": "1d4+3 {@creature griffon||griffons}"
+							"result": "1d4 + 3 {@creature griffon||griffons}"
 						},
 						{
 							"min": 93,
@@ -799,7 +799,7 @@
 						{
 							"min": 6,
 							"max": 7,
-							"result": "1d6+2 {@creature sahuagin}"
+							"result": "1d6 + 2 {@creature sahuagin}"
 						},
 						{
 							"min": 8,
@@ -809,7 +809,7 @@
 						{
 							"min": 9,
 							"max": 10,
-							"result": "1d4+1 {@creature giant toad||giant toads}"
+							"result": "1d4 + 1 {@creature giant toad||giant toads}"
 						},
 						{
 							"min": 11,
@@ -834,7 +834,7 @@
 						{
 							"min": 30,
 							"max": 32,
-							"result": "2d4+1 {@creature giant toad||giant toads}"
+							"result": "2d4 + 1 {@creature giant toad||giant toads}"
 						},
 						{
 							"min": 33,
@@ -854,7 +854,7 @@
 						{
 							"min": 44,
 							"max": 46,
-							"result": "1d8+1 {@creature harpy||harpies}"
+							"result": "1d8 + 1 {@creature harpy||harpies}"
 						},
 						{
 							"min": 47,
@@ -884,7 +884,7 @@
 						{
 							"min": 66,
 							"max": 70,
-							"result": "1d4+3 {@creature merrow}"
+							"result": "1d4 + 3 {@creature merrow}"
 						},
 						{
 							"min": 71,
@@ -976,12 +976,12 @@
 						{
 							"min": 5,
 							"max": 8,
-							"result": "1d6+2 {@creature manticore||manticores}"
+							"result": "1d6 + 2 {@creature manticore||manticores}"
 						},
 						{
 							"min": 9,
 							"max": 10,
-							"result": "1d8+2 {@creature veteran||veterans}"
+							"result": "1d8 + 2 {@creature veteran||veterans}"
 						},
 						{
 							"min": 11,
@@ -1133,7 +1133,7 @@
 						{
 							"min": 76,
 							"max": 80,
-							"result": "1d6+2 waterspouts that dance on the water before stopping abruptly"
+							"result": "1d6 + 2 waterspouts that dance on the water before stopping abruptly"
 						},
 						{
 							"min": 81,
@@ -1153,7 +1153,7 @@
 						{
 							"min": 0,
 							"max": 0,
-							"result": "1d3+1 {@creature storm giant||storm giants}"
+							"result": "1d3 + 1 {@creature storm giant||storm giants}"
 						}
 					]
 				}
@@ -1227,7 +1227,7 @@
 						{
 							"min": 14,
 							"max": 15,
-							"result": "1d6+2 {@creature giant wolf spider||giant wolf spiders}"
+							"result": "1d6 + 2 {@creature giant wolf spider||giant wolf spiders}"
 						},
 						{
 							"min": 16,
@@ -1297,7 +1297,7 @@
 						{
 							"min": 51,
 							"max": 52,
-							"result": "1d3+1 {@creature giant toad||giant toads}"
+							"result": "1d3 + 1 {@creature giant toad||giant toads}"
 						},
 						{
 							"min": 53,
@@ -1352,7 +1352,7 @@
 						{
 							"min": 72,
 							"max": 72,
-							"result": "1d6+2 {@creature gnoll||gnolls}"
+							"result": "1d6 + 2 {@creature gnoll||gnolls}"
 						},
 						{
 							"min": 73,
@@ -1392,7 +1392,7 @@
 						{
 							"min": 87,
 							"max": 87,
-							"result": "1 {@creature yuan-ti malison (type 1)||yuan-ti malison} with 1d4+1 {@creature yuan-ti pureblood||yuan-ti purebloods}"
+							"result": "1 {@creature yuan-ti malison (type 1)||yuan-ti malison} with 1d4 + 1 {@creature yuan-ti pureblood||yuan-ti purebloods}"
 						},
 						{
 							"min": 88,
@@ -1478,7 +1478,7 @@
 						{
 							"min": 4,
 							"max": 4,
-							"result": "1d4+3 {@creature dust mephit||dust mephits}"
+							"result": "1d4 + 3 {@creature dust mephit||dust mephits}"
 						},
 						{
 							"min": 5,
@@ -1513,7 +1513,7 @@
 						{
 							"min": 18,
 							"max": 20,
-							"result": "1d8+1 {@creature giant vulture||giant vultures}"
+							"result": "1d8 + 1 {@creature giant vulture||giant vultures}"
 						},
 						{
 							"min": 21,
@@ -1533,12 +1533,12 @@
 						{
 							"min": 36,
 							"max": 40,
-							"result": "1d6+1 empty tents"
+							"result": "1d6 + 1 empty tents"
 						},
 						{
 							"min": 41,
 							"max": 43,
-							"result": "1d6+2 {@creature thri-kreen}"
+							"result": "1d6 + 2 {@creature thri-kreen}"
 						},
 						{
 							"min": 44,
@@ -1548,7 +1548,7 @@
 						{
 							"min": 47,
 							"max": 50,
-							"result": "1d6+3 {@creature death dog||death dogs}"
+							"result": "1d6 + 3 {@creature death dog||death dogs}"
 						},
 						{
 							"min": 51,
@@ -1568,7 +1568,7 @@
 						{
 							"min": 56,
 							"max": 56,
-							"result": "1d6+2 {@creature ogre||ogres}"
+							"result": "1d6 + 2 {@creature ogre||ogres}"
 						},
 						{
 							"min": 57,
@@ -1588,7 +1588,7 @@
 						{
 							"min": 66,
 							"max": 66,
-							"result": "1d4+1 {@creature wight||wights}"
+							"result": "1d4 + 1 {@creature wight||wights}"
 						},
 						{
 							"min": 67,
@@ -1628,12 +1628,12 @@
 						{
 							"min": 84,
 							"max": 85,
-							"result": "1d8+1 {@creature phase spider||phase spiders}"
+							"result": "1d8 + 1 {@creature phase spider||phase spiders}"
 						},
 						{
 							"min": 86,
 							"max": 87,
-							"result": "1d6+2 {@creature weretiger||weretigers}"
+							"result": "1d6 + 2 {@creature weretiger||weretigers}"
 						},
 						{
 							"min": 88,
@@ -1715,7 +1715,7 @@
 						{
 							"min": 11,
 							"max": 12,
-							"result": "1d8+1 {@creature lamia||lamias}"
+							"result": "1d8 + 1 {@creature lamia||lamias}"
 						},
 						{
 							"min": 13,
@@ -1725,7 +1725,7 @@
 						{
 							"min": 15,
 							"max": 17,
-							"result": "1d6+2 {@creature giant scorpion||giant scorpions}"
+							"result": "1d6 + 2 {@creature giant scorpion||giant scorpions}"
 						},
 						{
 							"min": 18,
@@ -1740,7 +1740,7 @@
 						{
 							"min": 26,
 							"max": 27,
-							"result": "1d6+1 {@creature couatl||couatls}"
+							"result": "1d6 + 1 {@creature couatl||couatls}"
 						},
 						{
 							"min": 28,
@@ -1750,7 +1750,7 @@
 						{
 							"min": 31,
 							"max": 32,
-							"result": "1 {@creature hobgoblin captain} with 3d10+10 {@creature hobgoblin||hobgoblins}"
+							"result": "1 {@creature hobgoblin captain} with 3d10 + 10 {@creature hobgoblin||hobgoblins}"
 						},
 						{
 							"min": 33,
@@ -1770,7 +1770,7 @@
 						{
 							"min": 43,
 							"max": 45,
-							"result": "1d6+2 {@creature weretiger||weretigers}"
+							"result": "1d6 + 2 {@creature weretiger||weretigers}"
 						},
 						{
 							"min": 46,
@@ -1780,7 +1780,7 @@
 						{
 							"min": 49,
 							"max": 50,
-							"result": "1d6+1 {@creature yuan-ti malison (type 1)||yuan-ti malisons}"
+							"result": "1d6 + 1 {@creature yuan-ti malison (type 1)||yuan-ti malisons}"
 						},
 						{
 							"min": 51,
@@ -1810,7 +1810,7 @@
 						{
 							"min": 76,
 							"max": 78,
-							"result": "1d6+2 {@creature cyclops||cyclopes}"
+							"result": "1d6 + 2 {@creature cyclops||cyclopes}"
 						},
 						{
 							"min": 79,
@@ -1892,12 +1892,12 @@
 						{
 							"min": 6,
 							"max": 10,
-							"result": "1d2 {@creature yuan-ti abomination||yuan-ti abominations} with 2d10+5 {@creature yuan-ti malison (type 1)||yuan-ti malisons} and 4d6+6 {@creature yuan-ti pureblood||yuan-ti purebloods}"
+							"result": "1d2 {@creature yuan-ti abomination||yuan-ti abominations} with 2d10 + 5 {@creature yuan-ti malison (type 1)||yuan-ti malisons} and 4d6 + 6 {@creature yuan-ti pureblood||yuan-ti purebloods}"
 						},
 						{
 							"min": 11,
 							"max": 14,
-							"result": "1d6+2 {@creature medusa||medusas}"
+							"result": "1d6 + 2 {@creature medusa||medusas}"
 						},
 						{
 							"min": 15,
@@ -2022,7 +2022,7 @@
 						{
 							"min": 6,
 							"max": 6,
-							"result": "1d6+3 {@creature hyena||hyenas}"
+							"result": "1d6 + 3 {@creature hyena||hyenas}"
 						},
 						{
 							"min": 7,
@@ -2047,12 +2047,12 @@
 						{
 							"min": 11,
 							"max": 11,
-							"result": "1d6+2 {@creature boar||boars}"
+							"result": "1d6 + 2 {@creature boar||boars}"
 						},
 						{
 							"min": 12,
 							"max": 12,
-							"result": "1d4+1 {@creature giant lizard||giant lizards}"
+							"result": "1d4 + 1 {@creature giant lizard||giant lizards}"
 						},
 						{
 							"min": 13,
@@ -2067,7 +2067,7 @@
 						{
 							"min": 15,
 							"max": 15,
-							"result": "1d6+2 {@creature giant bat||giant bats} or 3d6 {@creature flying snake||flying snakes}"
+							"result": "1d6 + 2 {@creature giant bat||giant bats} or 3d6 {@creature flying snake||flying snakes}"
 						},
 						{
 							"min": 16,
@@ -2077,7 +2077,7 @@
 						{
 							"min": 17,
 							"max": 17,
-							"result": "1d8+1 {@creature winged kobold||winged kobolds}"
+							"result": "1d8 + 1 {@creature winged kobold||winged kobolds}"
 						},
 						{
 							"min": 18,
@@ -2087,12 +2087,12 @@
 						{
 							"min": 19,
 							"max": 19,
-							"result": "1d10+5 {@creature giant rat||giant rats} or 2d6+3 {@creature giant weasel||giant weasels}"
+							"result": "1d10 + 5 {@creature giant rat||giant rats} or 2d6 + 3 {@creature giant weasel||giant weasels}"
 						},
 						{
 							"min": 20,
 							"max": 20,
-							"result": "1d4+1 {@creature needle blight||needle blights} with 1d6+3 {@creature twig blight||twig blights}"
+							"result": "1d4 + 1 {@creature needle blight||needle blights} with 1d6 + 3 {@creature twig blight||twig blights}"
 						},
 						{
 							"min": 21,
@@ -2102,7 +2102,7 @@
 						{
 							"min": 26,
 							"max": 26,
-							"result": "1d8+1 {@creature giant frog||giant frogs}"
+							"result": "1d8 + 1 {@creature giant frog||giant frogs}"
 						},
 						{
 							"min": 27,
@@ -2147,7 +2147,7 @@
 						{
 							"min": 35,
 							"max": 35,
-							"result": "1d4+2 {@creature giant badger||giant badgers}"
+							"result": "1d4 + 2 {@creature giant badger||giant badgers}"
 						},
 						{
 							"min": 36,
@@ -2162,12 +2162,12 @@
 						{
 							"min": 42,
 							"max": 42,
-							"result": "1d8+1 {@creature sprite||sprites}"
+							"result": "1d8 + 1 {@creature sprite||sprites}"
 						},
 						{
 							"min": 43,
 							"max": 43,
-							"result": "1d6+2 {@creature elk}"
+							"result": "1d6 + 2 {@creature elk}"
 						},
 						{
 							"min": 44,
@@ -2177,7 +2177,7 @@
 						{
 							"min": 45,
 							"max": 45,
-							"result": "1d4+4 {@creature wolf||wolves}"
+							"result": "1d4 + 4 {@creature wolf||wolves}"
 						},
 						{
 							"min": 46,
@@ -2192,7 +2192,7 @@
 						{
 							"min": 48,
 							"max": 48,
-							"result": "1d6+2 {@creature pixie||pixies}"
+							"result": "1d6 + 2 {@creature pixie||pixies}"
 						},
 						{
 							"min": 49,
@@ -2202,7 +2202,7 @@
 						{
 							"min": 50,
 							"max": 50,
-							"result": "1d4+3 {@creature goblin||goblins}"
+							"result": "1d4 + 3 {@creature goblin||goblins}"
 						},
 						{
 							"min": 51,
@@ -2227,12 +2227,12 @@
 						{
 							"min": 55,
 							"max": 55,
-							"result": "1 {@creature ettercap} or 1d8+1 {@creature orc||orcs}"
+							"result": "1 {@creature ettercap} or 1d8 + 1 {@creature orc||orcs}"
 						},
 						{
 							"min": 56,
 							"max": 56,
-							"result": "1 {@creature goblin boss} with 2d6+1 {@creature goblin||goblins}"
+							"result": "1 {@creature goblin boss} with 2d6 + 1 {@creature goblin||goblins}"
 						},
 						{
 							"min": 57,
@@ -2272,7 +2272,7 @@
 						{
 							"min": 68,
 							"max": 68,
-							"result": "1 {@creature werewolf} or 1d8+1 {@creature worg||worgs}"
+							"result": "1 {@creature werewolf} or 1d8 + 1 {@creature worg||worgs}"
 						},
 						{
 							"min": 69,
@@ -2322,7 +2322,7 @@
 						{
 							"min": 82,
 							"max": 82,
-							"result": "1d6+2 {@creature giant spider||giant spiders}"
+							"result": "1d6 + 2 {@creature giant spider||giant spiders}"
 						},
 						{
 							"min": 83,
@@ -2332,7 +2332,7 @@
 						{
 							"min": 84,
 							"max": 84,
-							"result": "1 {@creature orc Eye of Gruumsh} with 2d4+2 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 2d4 + 2 {@creature orc||orcs}"
 						},
 						{
 							"min": 85,
@@ -2347,7 +2347,7 @@
 						{
 							"min": 87,
 							"max": 87,
-							"result": "1 {@creature bandit captain} with 2d6+3 {@creature bandit||bandits}"
+							"result": "1 {@creature bandit captain} with 2d6 + 3 {@creature bandit||bandits}"
 						},
 						{
 							"min": 88,
@@ -2372,7 +2372,7 @@
 						{
 							"min": 92,
 							"max": 92,
-							"result": "1 {@creature lizardfolk shaman} with 1d3 {@creature swarm of poisonous snakes||swarms of poisonous snakes} and 1d10+2 {@creature lizardfolk}"
+							"result": "1 {@creature lizardfolk shaman} with 1d3 {@creature swarm of poisonous snakes||swarms of poisonous snakes} and 1d10 + 2 {@creature lizardfolk}"
 						},
 						{
 							"min": 93,
@@ -2392,7 +2392,7 @@
 						{
 							"min": 96,
 							"max": 96,
-							"result": "1 {@creature yuan-ti malison (type 1)||yuan-ti malison} with 1d6+1 {@creature yuan-ti pureblood||yuan-ti purebloods}"
+							"result": "1 {@creature yuan-ti malison (type 1)||yuan-ti malison} with 1d6 + 1 {@creature yuan-ti pureblood||yuan-ti purebloods}"
 						},
 						{
 							"min": 97,
@@ -2449,7 +2449,7 @@
 						{
 							"min": 6,
 							"max": 6,
-							"result": "1 {@creature orc Eye of Gruumsh} with 1d3 {@creature orog||orogs} and 1d8+2 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 1d3 {@creature orog||orogs} and 1d8 + 2 {@creature orc||orcs}"
 						},
 						{
 							"min": 7,
@@ -2469,7 +2469,7 @@
 						{
 							"min": 10,
 							"max": 10,
-							"result": "1 {@creature brown bear} or 1d6+2 {@creature black bear||black bears}"
+							"result": "1 {@creature brown bear} or 1d6 + 2 {@creature black bear||black bears}"
 						},
 						{
 							"min": 11,
@@ -2479,7 +2479,7 @@
 						{
 							"min": 14,
 							"max": 15,
-							"result": "1d8+1 {@creature giant spider||giant spiders}"
+							"result": "1d8 + 1 {@creature giant spider||giant spiders}"
 						},
 						{
 							"min": 16,
@@ -2514,12 +2514,12 @@
 						{
 							"min": 27,
 							"max": 28,
-							"result": "1d4 {@creature ogre||ogres} or 1d6+2 {@creature half-ogre (ogrillon)||half-ogres}"
+							"result": "1d4 {@creature ogre||ogres} or 1d6 + 2 {@creature half-ogre (ogrillon)||half-ogres}"
 						},
 						{
 							"min": 29,
 							"max": 30,
-							"result": "1 {@creature gnoll pack lord} with 1d4+1 {@creature giant hyena||giant hyenas}"
+							"result": "1 {@creature gnoll pack lord} with 1d4 + 1 {@creature giant hyena||giant hyenas}"
 						},
 						{
 							"min": 31,
@@ -2534,7 +2534,7 @@
 						{
 							"min": 34,
 							"max": 34,
-							"result": "1d8+1 {@creature yuan-ti pureblood||yuan-ti purebloods}"
+							"result": "1d8 + 1 {@creature yuan-ti pureblood||yuan-ti purebloods}"
 						},
 						{
 							"min": 35,
@@ -2549,7 +2549,7 @@
 						{
 							"min": 41,
 							"max": 42,
-							"result": "1d6+2 {@creature dryad||dryads}"
+							"result": "1d6 + 2 {@creature dryad||dryads}"
 						},
 						{
 							"min": 43,
@@ -2559,12 +2559,12 @@
 						{
 							"min": 44,
 							"max": 44,
-							"result": "1d8+1 {@creature harpy||harpies}"
+							"result": "1d8 + 1 {@creature harpy||harpies}"
 						},
 						{
 							"min": 45,
 							"max": 46,
-							"result": "1 {@creature bandit captain} with 1 {@creature druid} and 1d6+5 {@creature bandit||bandits}"
+							"result": "1 {@creature bandit captain} with 1 {@creature druid} and 1d6 + 5 {@creature bandit||bandits}"
 						},
 						{
 							"min": 47,
@@ -2594,7 +2594,7 @@
 						{
 							"min": 57,
 							"max": 58,
-							"result": "1d8+1 {@creature berserker||berserkers}"
+							"result": "1d8 + 1 {@creature berserker||berserkers}"
 						},
 						{
 							"min": 59,
@@ -2619,7 +2619,7 @@
 						{
 							"min": 70,
 							"max": 71,
-							"result": "1d8+1 {@creature ettercap||ettercaps}"
+							"result": "1d8 + 1 {@creature ettercap||ettercaps}"
 						},
 						{
 							"min": 72,
@@ -2664,7 +2664,7 @@
 						{
 							"min": 86,
 							"max": 86,
-							"result": "1d8+1 {@creature phase spider||phase spiders}"
+							"result": "1d8 + 1 {@creature phase spider||phase spiders}"
 						},
 						{
 							"min": 87,
@@ -2689,7 +2689,7 @@
 						{
 							"min": 91,
 							"max": 91,
-							"result": "1d6+2 {@creature weretiger||weretigers}"
+							"result": "1d6 + 2 {@creature weretiger||weretigers}"
 						},
 						{
 							"min": 92,
@@ -2704,7 +2704,7 @@
 						{
 							"min": 94,
 							"max": 94,
-							"result": "1d6+2 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu}"
+							"result": "1d6 + 2 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu}"
 						},
 						{
 							"min": 95,
@@ -2719,7 +2719,7 @@
 						{
 							"min": 97,
 							"max": 97,
-							"result": "1 {@creature grick alpha} with 1d6+1 {@creature grick||gricks}"
+							"result": "1 {@creature grick alpha} with 1d6 + 1 {@creature grick||gricks}"
 						},
 						{
 							"min": 98,
@@ -2761,7 +2761,7 @@
 						{
 							"min": 8,
 							"max": 10,
-							"result": "1d3 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu} with 2d6+3 {@creature gnoll||gnolls}"
+							"result": "1d3 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu} with 2d6 + 3 {@creature gnoll||gnolls}"
 						},
 						{
 							"min": 11,
@@ -2771,7 +2771,7 @@
 						{
 							"min": 16,
 							"max": 20,
-							"result": "1d6+2 {@creature veteran||veterans}"
+							"result": "1d6 + 2 {@creature veteran||veterans}"
 						},
 						{
 							"min": 21,
@@ -2781,12 +2781,12 @@
 						{
 							"min": 26,
 							"max": 30,
-							"result": "1d4+1 {@creature green hag||green hags} with 1d3 {@creature owlbear||owlbears}"
+							"result": "1d4 + 1 {@creature green hag||green hags} with 1d3 {@creature owlbear||owlbears}"
 						},
 						{
 							"min": 31,
 							"max": 35,
-							"result": "1d6+2 {@creature werewolf||werewolves}"
+							"result": "1d6 + 2 {@creature werewolf||werewolves}"
 						},
 						{
 							"min": 36,
@@ -2796,7 +2796,7 @@
 						{
 							"min": 41,
 							"max": 45,
-							"result": "1d6+2 {@creature phase spider||phase spiders}"
+							"result": "1d6 + 2 {@creature phase spider||phase spiders}"
 						},
 						{
 							"min": 46,
@@ -2826,7 +2826,7 @@
 						{
 							"min": 59,
 							"max": 60,
-							"result": "1d6+2 {@creature wereboar||wereboars}"
+							"result": "1d6 + 2 {@creature wereboar||wereboars}"
 						},
 						{
 							"min": 61,
@@ -2856,7 +2856,7 @@
 						{
 							"min": 74,
 							"max": 75,
-							"result": "1d6+2 {@creature weretiger||weretigers}"
+							"result": "1d6 + 2 {@creature weretiger||weretigers}"
 						},
 						{
 							"min": 76,
@@ -2891,7 +2891,7 @@
 						{
 							"min": 91,
 							"max": 93,
-							"result": "1d8+1 {@creature giant ape||giant apes}"
+							"result": "1d8 + 1 {@creature giant ape||giant apes}"
 						},
 						{
 							"min": 94,
@@ -2938,7 +2938,7 @@
 						{
 							"min": 17,
 							"max": 19,
-							"result": "1d8+1 {@creature unicorn||unicorns}"
+							"result": "1d8 + 1 {@creature unicorn||unicorns}"
 						},
 						{
 							"min": 20,
@@ -2958,7 +2958,7 @@
 						{
 							"min": 29,
 							"max": 31,
-							"result": "1d6+2 {@creature shambling mound||shambling mounds}"
+							"result": "1d6 + 2 {@creature shambling mound||shambling mounds}"
 						},
 						{
 							"min": 32,
@@ -2973,12 +2973,12 @@
 						{
 							"min": 38,
 							"max": 40,
-							"result": "4d6+10 elves living in a small community in the treetop"
+							"result": "4d6 + 10 elves living in a small community in the treetop"
 						},
 						{
 							"min": 41,
 							"max": 43,
-							"result": "1d6+2 {@creature gorgon||gorgons}"
+							"result": "1d6 + 2 {@creature gorgon||gorgons}"
 						},
 						{
 							"min": 44,
@@ -3028,7 +3028,7 @@
 						{
 							"min": 97,
 							"max": 99,
-							"result": "2d4+1 {@creature treant||treants}"
+							"result": "2d4 + 1 {@creature treant||treants}"
 						},
 						{
 							"min": 0,
@@ -3052,7 +3052,7 @@
 						{
 							"min": 1,
 							"max": 1,
-							"result": "1 {@creature hobgoblin captain} with 1d4+1 {@creature hobgoblin||hobgoblins}"
+							"result": "1 {@creature hobgoblin captain} with 1d4 + 1 {@creature hobgoblin||hobgoblins}"
 						},
 						{
 							"min": 2,
@@ -3127,7 +3127,7 @@
 						{
 							"min": 29,
 							"max": 32,
-							"result": "1d6+2 {@creature giant wasp||giant wasps} or 1d4+3 {@creature swarm of insects||swarms of insects}"
+							"result": "1d6 + 2 {@creature giant wasp||giant wasps} or 1d4 + 3 {@creature swarm of insects||swarms of insects}"
 						},
 						{
 							"min": 33,
@@ -3152,7 +3152,7 @@
 						{
 							"min": 47,
 							"max": 48,
-							"result": "1d6+2 elves or 1d6+2 {@creature riding horse||riding horses}"
+							"result": "1d6 + 2 {@creature elk} or 1d6 + 2 {@creature riding horse||riding horses}"
 						},
 						{
 							"min": 49,
@@ -3172,7 +3172,7 @@
 						{
 							"min": 55,
 							"max": 58,
-							"result": "1d6+3 {@creature goblin||goblins} riding wolves"
+							"result": "1d6 + 3 {@creature goblin||goblins} riding wolves"
 						},
 						{
 							"min": 59,
@@ -3182,7 +3182,7 @@
 						{
 							"min": 63,
 							"max": 65,
-							"result": "1d8+4 {@creature pteranodon||pteranodons}"
+							"result": "1d8 + 4 {@creature pteranodon||pteranodons}"
 						},
 						{
 							"min": 66,
@@ -3192,7 +3192,7 @@
 						{
 							"min": 70,
 							"max": 74,
-							"result": "2d4+2 {@creature axe beak||axe beaks}"
+							"result": "2d4 + 2 {@creature axe beak||axe beaks}"
 						},
 						{
 							"min": 75,
@@ -3217,7 +3217,7 @@
 						{
 							"min": 83,
 							"max": 84,
-							"result": "1 {@creature goblin boss} with 1d6+2 {@creature goblin||goblins} and 1d4+3 {@creature wolf||wolves}, or 1d3 {@creature thri-kreen}"
+							"result": "1 {@creature goblin boss} with 1d6 + 2 {@creature goblin||goblins} and 1d4 + 3 {@creature wolf||wolves}, or 1d3 {@creature thri-kreen}"
 						},
 						{
 							"min": 85,
@@ -3237,7 +3237,7 @@
 						{
 							"min": 94,
 							"max": 94,
-							"result": "1d3 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu}, or 1 {@creature orc Eye of Gruumsh} with 2d4+1 {@creature orc||orcs}"
+							"result": "1d3 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu}, or 1 {@creature orc Eye of Gruumsh} with 2d4 + 1 {@creature orc||orcs}"
 						},
 						{
 							"min": 95,
@@ -3289,7 +3289,7 @@
 						{
 							"min": 7,
 							"max": 9,
-							"result": "1d4+1 {@creature veteran||veterans} on {@creature riding horse||riding horses}"
+							"result": "1d4 + 1 {@creature veteran||veterans} on {@creature riding horse||riding horses}"
 						},
 						{
 							"min": 10,
@@ -3309,12 +3309,12 @@
 						{
 							"min": 16,
 							"max": 17,
-							"result": "1d8+1 {@creature centaur||centaurs}"
+							"result": "1d8 + 1 {@creature centaur||centaurs}"
 						},
 						{
 							"min": 18,
 							"max": 19,
-							"result": "1d6+2 {@creature griffon||griffons}"
+							"result": "1d6 + 2 {@creature griffon||griffons}"
 						},
 						{
 							"min": 20,
@@ -3329,12 +3329,12 @@
 						{
 							"min": 25,
 							"max": 28,
-							"result": "1d8+1 {@creature bugbear||bugbears}"
+							"result": "1d8 + 1 {@creature bugbear||bugbears}"
 						},
 						{
 							"min": 29,
 							"max": 32,
-							"result": "1 {@creature gnoll pack lord} with 1d4+1 {@creature giant hyena||giant hyenas}"
+							"result": "1 {@creature gnoll pack lord} with 1d4 + 1 {@creature giant hyena||giant hyenas}"
 						},
 						{
 							"min": 33,
@@ -3389,7 +3389,7 @@
 						{
 							"min": 63,
 							"max": 66,
-							"result": "1 {@creature orc Eye of Gruumsh} with 1d8+1 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 1d8 + 1 {@creature orc||orcs}"
 						},
 						{
 							"min": 67,
@@ -3399,7 +3399,7 @@
 						{
 							"min": 71,
 							"max": 74,
-							"result": "1d4+1 {@creature rhinoceros||rhinoceroses}"
+							"result": "1d4 + 1 {@creature rhinoceros||rhinoceroses}"
 						},
 						{
 							"min": 75,
@@ -3414,7 +3414,7 @@
 						{
 							"min": 79,
 							"max": 80,
-							"result": "1d6+2 {@creature giant boar||giant boars}"
+							"result": "1d6 + 2 {@creature giant boar||giant boars}"
 						},
 						{
 							"min": 81,
@@ -3449,7 +3449,7 @@
 						{
 							"min": 95,
 							"max": 96,
-							"result": "1d6+2 {@creature wereboar||wereboars}"
+							"result": "1d6 + 2 {@creature wereboar||wereboars}"
 						},
 						{
 							"min": 97,
@@ -3516,7 +3516,7 @@
 						{
 							"min": 47,
 							"max": 56,
-							"result": "1d8+1 {@creature cyclops||cyclopes}"
+							"result": "1d8 + 1 {@creature cyclops||cyclopes}"
 						},
 						{
 							"min": 57,
@@ -3536,7 +3536,7 @@
 						{
 							"min": 70,
 							"max": 79,
-							"result": "1d4+3 {@creature gorgon||gorgons}"
+							"result": "1d4 + 3 {@creature gorgon||gorgons}"
 						},
 						{
 							"min": 80,
@@ -3618,7 +3618,7 @@
 						{
 							"min": 76,
 							"max": 80,
-							"result": "A friendly adventuring party of 1d6 + 1 characters of varying races, classes, and levels (average level 1d6+2). They share information about their recent travels."
+							"result": "A friendly adventuring party of 1d6 + 1 characters of varying races, classes, and levels (average level 1d6 + 2). They share information about their recent travels."
 						},
 						{
 							"min": 81,
@@ -3628,7 +3628,7 @@
 						{
 							"min": 91,
 							"max": 96,
-							"result": "1d6+2 {@creature tyrannosaurus rex||tyrannosaurus rexes}"
+							"result": "1d6 + 2 {@creature tyrannosaurus rex||tyrannosaurus rexes}"
 						},
 						{
 							"min": 97,
@@ -3702,12 +3702,12 @@
 						{
 							"min": 15,
 							"max": 15,
-							"result": "1d6+4 {@creature blood hawk||blood hawks}"
+							"result": "1d6 + 4 {@creature blood hawk||blood hawks}"
 						},
 						{
 							"min": 16,
 							"max": 16,
-							"result": "1d4+3 {@creature giant weasel||giant weasels}"
+							"result": "1d4 + 3 {@creature giant weasel||giant weasels}"
 						},
 						{
 							"min": 17,
@@ -3717,7 +3717,7 @@
 						{
 							"min": 19,
 							"max": 20,
-							"result": "1d6+5 {@creature hyena||hyenas}"
+							"result": "1d6 + 5 {@creature hyena||hyenas}"
 						},
 						{
 							"min": 21,
@@ -3787,7 +3787,7 @@
 						{
 							"min": 43,
 							"max": 43,
-							"result": "1d6+2 {@creature giant wolf spider||giant wolf spiders}"
+							"result": "1d6 + 2 {@creature giant wolf spider||giant wolf spiders}"
 						},
 						{
 							"min": 44,
@@ -3802,7 +3802,7 @@
 						{
 							"min": 47,
 							"max": 47,
-							"result": "1d8+1 {@creature axe beak||axe beaks}"
+							"result": "1d8 + 1 {@creature axe beak||axe beaks}"
 						},
 						{
 							"min": 48,
@@ -3832,7 +3832,7 @@
 						{
 							"min": 55,
 							"max": 55,
-							"result": "1d3+1 {@creature harpy||harpies}"
+							"result": "1d3 + 1 {@creature harpy||harpies}"
 						},
 						{
 							"min": 56,
@@ -3892,7 +3892,7 @@
 						{
 							"min": 73,
 							"max": 74,
-							"result": "1d6+2 {@creature hobgoblin||hobgoblins}"
+							"result": "1d6 + 2 {@creature hobgoblin||hobgoblins}"
 						},
 						{
 							"min": 75,
@@ -3927,7 +3927,7 @@
 						{
 							"min": 83,
 							"max": 83,
-							"result": "1 {@creature orc Eye of Gruumsh} with 1d8+2 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 1d8 + 2 {@creature orc||orcs}"
 						},
 						{
 							"min": 84,
@@ -3983,7 +3983,7 @@
 						{
 							"min": 2,
 							"max": 2,
-							"result": "1d6+2 {@creature giant goat||giant goats}"
+							"result": "1d6 + 2 {@creature giant goat||giant goats}"
 						},
 						{
 							"min": 3,
@@ -3993,7 +3993,7 @@
 						{
 							"min": 4,
 							"max": 4,
-							"result": "1d8+1 {@creature gnoll||gnolls} or 1d8+1 {@creature hobgoblin||hobgoblins}"
+							"result": "1d8 + 1 {@creature gnoll||gnolls} or 1d8 + 1 {@creature hobgoblin||hobgoblins}"
 						},
 						{
 							"min": 5,
@@ -4003,7 +4003,7 @@
 						{
 							"min": 6,
 							"max": 6,
-							"result": "1d6+2 {@creature worg||worgs}"
+							"result": "1d6 + 2 {@creature worg||worgs}"
 						},
 						{
 							"min": 7,
@@ -4038,7 +4038,7 @@
 						{
 							"min": 14,
 							"max": 15,
-							"result": "1d8+1 {@creature giant eagle||giant eagles}"
+							"result": "1d8 + 1 {@creature giant eagle||giant eagles}"
 						},
 						{
 							"min": 16,
@@ -4068,22 +4068,22 @@
 						{
 							"min": 28,
 							"max": 29,
-							"result": "1d4+1 {@creature griffon||griffons}"
+							"result": "1d4 + 1 {@creature griffon||griffons}"
 						},
 						{
 							"min": 30,
 							"max": 31,
-							"result": "1d6+2 {@creature harpy||harpies}"
+							"result": "1d6 + 2 {@creature harpy||harpies}"
 						},
 						{
 							"min": 32,
 							"max": 33,
-							"result": "1 {@creature orc Eye of Gruumsh} with 2d6+3 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 2d6 + 3 {@creature orc||orcs}"
 						},
 						{
 							"min": 34,
 							"max": 35,
-							"result": "1d4+3 {@creature giant boar||giant boars}"
+							"result": "1d4 + 3 {@creature giant boar||giant boars}"
 						},
 						{
 							"min": 36,
@@ -4103,7 +4103,7 @@
 						{
 							"min": 45,
 							"max": 46,
-							"result": "1d6+2 {@creature ogre||ogres}"
+							"result": "1d6 + 2 {@creature ogre||ogres}"
 						},
 						{
 							"min": 47,
@@ -4128,7 +4128,7 @@
 						{
 							"min": 59,
 							"max": 62,
-							"result": "1d6+2 {@creature veteran||veterans} with 2d6 {@creature berserker||berserkers}"
+							"result": "1d6 + 2 {@creature veteran||veterans} with 2d6 {@creature berserker||berserkers}"
 						},
 						{
 							"min": 63,
@@ -4153,7 +4153,7 @@
 						{
 							"min": 78,
 							"max": 80,
-							"result": "2d6+10 {@creature goat||goats} with 1 herder ({@creature tribal warrior})"
+							"result": "2d6 + 10 {@creature goat||goats} with 1 herder ({@creature tribal warrior})"
 						},
 						{
 							"min": 81,
@@ -4178,7 +4178,7 @@
 						{
 							"min": 89,
 							"max": 90,
-							"result": "1d8+1 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu}"
+							"result": "1d8 + 1 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu}"
 						},
 						{
 							"min": 91,
@@ -4230,12 +4230,12 @@
 						{
 							"min": 8,
 							"max": 10,
-							"result": "2d6+3 {@creature werewolf||werewolves}"
+							"result": "2d6 + 3 {@creature werewolf||werewolves}"
 						},
 						{
 							"min": 11,
 							"max": 14,
-							"result": "1d6+2 {@creature ettin||ettins}"
+							"result": "1d6 + 2 {@creature ettin||ettins}"
 						},
 						{
 							"min": 15,
@@ -4260,7 +4260,7 @@
 						{
 							"min": 29,
 							"max": 32,
-							"result": "1d8+1 {@creature wereboar||wereboars}"
+							"result": "1d8 + 1 {@creature wereboar||wereboars}"
 						},
 						{
 							"min": 33,
@@ -4285,7 +4285,7 @@
 						{
 							"min": 47,
 							"max": 50,
-							"result": "1d6+2 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu}"
+							"result": "1d6 + 2 {@creature gnoll fang of Yeenoghu||gnoll fangs of Yeenoghu}"
 						},
 						{
 							"min": 51,
@@ -4300,7 +4300,7 @@
 						{
 							"min": 59,
 							"max": 62,
-							"result": "1d3+1 {@creature galeb duhr}"
+							"result": "1d3 + 1 {@creature galeb duhr}"
 						},
 						{
 							"min": 63,
@@ -4392,12 +4392,12 @@
 						{
 							"min": 26,
 							"max": 30,
-							"result": "1d6+1 {@creature gorgon||gorgons}"
+							"result": "1d6 + 1 {@creature gorgon||gorgons}"
 						},
 						{
 							"min": 31,
 							"max": 35,
-							"result": "2d4+1 {@creature troll||trolls}"
+							"result": "2d4 + 1 {@creature troll||trolls}"
 						},
 						{
 							"min": 36,
@@ -4412,7 +4412,7 @@
 						{
 							"min": 46,
 							"max": 50,
-							"result": "1d6+2 {@creature werebear||werebears}"
+							"result": "1d6 + 2 {@creature werebear||werebears}"
 						},
 						{
 							"min": 51,
@@ -4422,7 +4422,7 @@
 						{
 							"min": 56,
 							"max": 60,
-							"result": "1d4+2 {@creature wyvern||wyverns}"
+							"result": "1d4 + 2 {@creature wyvern||wyverns}"
 						},
 						{
 							"min": 61,
@@ -4437,7 +4437,7 @@
 						{
 							"min": 71,
 							"max": 75,
-							"result": "1d6+3 {@creature cyclops||cyclopes}"
+							"result": "1d6 + 3 {@creature cyclops||cyclopes}"
 						},
 						{
 							"min": 76,
@@ -4501,17 +4501,17 @@
 						{
 							"min": 9,
 							"max": 11,
-							"result": "1d10+5 {@creature tribal warrior||tribal warriors}"
+							"result": "1d10 + 5 {@creature tribal warrior||tribal warriors}"
 						},
 						{
 							"min": 12,
 							"max": 14,
-							"result": "1d6+3 {@creature pteranodon||pteranodons}"
+							"result": "1d6 + 3 {@creature pteranodon||pteranodons}"
 						},
 						{
 							"min": 15,
 							"max": 17,
-							"result": "1d8+1 {@creature winged kobold||winged kobolds}"
+							"result": "1d8 + 1 {@creature winged kobold||winged kobolds}"
 						},
 						{
 							"min": 18,
@@ -4551,7 +4551,7 @@
 						{
 							"min": 39,
 							"max": 41,
-							"result": "2d8+1 {@creature blood hawk||blood hawks}"
+							"result": "2d8 + 1 {@creature blood hawk||blood hawks}"
 						},
 						{
 							"min": 42,
@@ -4606,7 +4606,7 @@
 						{
 							"min": 63,
 							"max": 64,
-							"result": "1d6+2 {@creature scout||scouts}"
+							"result": "1d6 + 2 {@creature scout||scouts}"
 						},
 						{
 							"min": 65,
@@ -4723,7 +4723,7 @@
 						{
 							"min": 1,
 							"max": 2,
-							"result": "2d8+1 {@creature aarakocra}"
+							"result": "2d8 + 1 {@creature aarakocra}"
 						},
 						{
 							"min": 3,
@@ -4733,17 +4733,17 @@
 						{
 							"min": 5,
 							"max": 6,
-							"result": "1d8+1 {@creature giant goat||giant goats}"
+							"result": "1d8 + 1 {@creature giant goat||giant goats}"
 						},
 						{
 							"min": 7,
 							"max": 8,
-							"result": "1d4+3 dwarf trailblazers ({@creature scout||scouts})"
+							"result": "1d4 + 3 dwarf trailblazers ({@creature scout||scouts})"
 						},
 						{
 							"min": 9,
 							"max": 10,
-							"result": "1d6+2 {@creature orc||orcs}"
+							"result": "1d6 + 2 {@creature orc||orcs}"
 						},
 						{
 							"min": 11,
@@ -4753,7 +4753,7 @@
 						{
 							"min": 16,
 							"max": 20,
-							"result": "1d8+1 {@creature hippogriff||hippogriffs}"
+							"result": "1d8 + 1 {@creature hippogriff||hippogriffs}"
 						},
 						{
 							"min": 21,
@@ -4808,7 +4808,7 @@
 						{
 							"min": 59,
 							"max": 60,
-							"result": "1d8+1 {@creature veteran||veterans}"
+							"result": "1d8 + 1 {@creature veteran||veterans}"
 						},
 						{
 							"min": 61,
@@ -4828,7 +4828,7 @@
 						{
 							"min": 74,
 							"max": 75,
-							"result": "1 {@creature orc Eye of Gruumsh} with 1d6 {@creature orog||orogs} and 3d6+10 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 1d6 {@creature orog||orogs} and 3d6 + 10 {@creature orc||orcs}"
 						},
 						{
 							"min": 76,
@@ -4858,7 +4858,7 @@
 						{
 							"min": 91,
 							"max": 92,
-							"result": "1d3+1 {@creature cyclops||cyclopes}"
+							"result": "1d3 + 1 {@creature cyclops||cyclopes}"
 						},
 						{
 							"min": 93,
@@ -4900,7 +4900,7 @@
 						{
 							"min": 1,
 							"max": 2,
-							"result": "1d8+1 {@creature basilisk||basilisks}"
+							"result": "1d8 + 1 {@creature basilisk||basilisks}"
 						},
 						{
 							"min": 3,
@@ -4940,7 +4940,7 @@
 						{
 							"min": 26,
 							"max": 30,
-							"result": "1d8+1 {@creature manticore||manticores}"
+							"result": "1d8 + 1 {@creature manticore||manticores}"
 						},
 						{
 							"min": 31,
@@ -4960,7 +4960,7 @@
 						{
 							"min": 46,
 							"max": 50,
-							"result": "1d6+2 {@creature bulette||bulettes}"
+							"result": "1d6 + 2 {@creature bulette||bulettes}"
 						},
 						{
 							"min": 51,
@@ -4980,7 +4980,7 @@
 						{
 							"min": 66,
 							"max": 70,
-							"result": "1d8+1 {@creature ettin||ettins}"
+							"result": "1d8 + 1 {@creature ettin||ettins}"
 						},
 						{
 							"min": 71,
@@ -5037,7 +5037,7 @@
 						{
 							"min": 6,
 							"max": 10,
-							"result": "1d8+1 {@creature chimera||chimeras}"
+							"result": "1d8 + 1 {@creature chimera||chimeras}"
 						},
 						{
 							"min": 11,
@@ -5047,7 +5047,7 @@
 						{
 							"min": 16,
 							"max": 20,
-							"result": "1d8+1 {@creature wyvern||wyverns}"
+							"result": "1d8 + 1 {@creature wyvern||wyverns}"
 						},
 						{
 							"min": 21,
@@ -5077,7 +5077,7 @@
 						{
 							"min": 46,
 							"max": 50,
-							"result": "1d6+3 {@creature troll||trolls}"
+							"result": "1d6 + 3 {@creature troll||trolls}"
 						},
 						{
 							"min": 51,
@@ -5166,12 +5166,12 @@
 						{
 							"min": 13,
 							"max": 13,
-							"result": "1d10+5 {@creature tribal warrior||tribal warriors}"
+							"result": "1d10 + 5 {@creature tribal warrior||tribal warriors}"
 						},
 						{
 							"min": 14,
 							"max": 15,
-							"result": "1d8+1 {@creature giant lizard||giant lizards}"
+							"result": "1d8 + 1 {@creature giant lizard||giant lizards}"
 						},
 						{
 							"min": 16,
@@ -5191,12 +5191,12 @@
 						{
 							"min": 21,
 							"max": 22,
-							"result": "1d4+1 mud huts partially sunken in murky water"
+							"result": "1d4 + 1 mud huts partially sunken in murky water"
 						},
 						{
 							"min": 23,
 							"max": 25,
-							"result": "2d8+1 {@creature kobold||kobolds}"
+							"result": "2d8 + 1 {@creature kobold||kobolds}"
 						},
 						{
 							"min": 26,
@@ -5206,7 +5206,7 @@
 						{
 							"min": 27,
 							"max": 29,
-							"result": "1d6+2 {@creature giant poisonous snake||giant poisonous snakes}"
+							"result": "1d6 + 2 {@creature giant poisonous snake||giant poisonous snakes}"
 						},
 						{
 							"min": 30,
@@ -5231,7 +5231,7 @@
 						{
 							"min": 39,
 							"max": 41,
-							"result": "1d6+2 {@creature constrictor snake||constrictor snakes}"
+							"result": "1d6 + 2 {@creature constrictor snake||constrictor snakes}"
 						},
 						{
 							"min": 42,
@@ -5241,7 +5241,7 @@
 						{
 							"min": 45,
 							"max": 45,
-							"result": "1d8+1 {@creature swarm of rats||swarms of rats} or 1d6+2 {@creature swarm of ravens||swarms of ravens}"
+							"result": "1d8 + 1 {@creature swarm of rats||swarms of rats} or 1d6 + 2 {@creature swarm of ravens||swarms of ravens}"
 						},
 						{
 							"min": 46,
@@ -5251,12 +5251,12 @@
 						{
 							"min": 49,
 							"max": 52,
-							"result": "2d6+3 {@creature bullywug||bullywugs}"
+							"result": "2d6 + 3 {@creature bullywug||bullywugs}"
 						},
 						{
 							"min": 53,
 							"max": 54,
-							"result": "1d8+1 {@creature orc||orcs}"
+							"result": "1d8 + 1 {@creature orc||orcs}"
 						},
 						{
 							"min": 55,
@@ -5321,7 +5321,7 @@
 						{
 							"min": 78,
 							"max": 80,
-							"result": "1d4+2 {@creature ogre||ogres}"
+							"result": "1d4 + 2 {@creature ogre||ogres}"
 						},
 						{
 							"min": 81,
@@ -5356,7 +5356,7 @@
 						{
 							"min": 94,
 							"max": 95,
-							"result": "1 {@creature orc Eye of Gruumsh} with 1d3 {@creature orog||orogs} and 2d6+3 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 1d3 {@creature orog||orogs} and 2d6 + 3 {@creature orc||orcs}"
 						},
 						{
 							"min": 96,
@@ -5403,7 +5403,7 @@
 						{
 							"min": 6,
 							"max": 7,
-							"result": "1d10+1 {@creature bullywug||bullywugs} with 1d8+1 {@creature giant frog||giant frogs}"
+							"result": "1d10 + 1 {@creature bullywug||bullywugs} with 1d8 + 1 {@creature giant frog||giant frogs}"
 						},
 						{
 							"min": 8,
@@ -5413,7 +5413,7 @@
 						{
 							"min": 10,
 							"max": 10,
-							"result": "1d8+1 {@creature swarm of insects||swarms of insects}"
+							"result": "1d8 + 1 {@creature swarm of insects||swarms of insects}"
 						},
 						{
 							"min": 11,
@@ -5443,7 +5443,7 @@
 						{
 							"min": 25,
 							"max": 27,
-							"result": "1d6+2 {@creature giant toad||giant toads}"
+							"result": "1d6 + 2 {@creature giant toad||giant toads}"
 						},
 						{
 							"min": 28,
@@ -5453,12 +5453,12 @@
 						{
 							"min": 31,
 							"max": 33,
-							"result": "1d8+1 {@creature yuan-ti pureblood||yuan-ti purebloods}"
+							"result": "1d8 + 1 {@creature yuan-ti pureblood||yuan-ti purebloods}"
 						},
 						{
 							"min": 34,
 							"max": 36,
-							"result": "1d4+1 {@creature swarm of poisonous snakes||swarms of poisonous snakes}"
+							"result": "1d4 + 1 {@creature swarm of poisonous snakes||swarms of poisonous snakes}"
 						},
 						{
 							"min": 37,
@@ -5473,7 +5473,7 @@
 						{
 							"min": 42,
 							"max": 44,
-							"result": "1d4+1 {@creature will-o'-wisp||will-o'-wisps}"
+							"result": "1d4 + 1 {@creature will-o'-wisp||will-o'-wisps}"
 						},
 						{
 							"min": 45,
@@ -5483,17 +5483,17 @@
 						{
 							"min": 48,
 							"max": 50,
-							"result": "1d4+1 {@creature giant constrictor snake||giant constrictor snakes}"
+							"result": "1d4 + 1 {@creature giant constrictor snake||giant constrictor snakes}"
 						},
 						{
 							"min": 51,
 							"max": 54,
-							"result": "1 {@creature lizardfolk shaman} with 1d3 {@creature swarm of poisonous snakes||swarms of poisonous snakes} and 1d8+2 {@creature lizardfolk}"
+							"result": "1 {@creature lizardfolk shaman} with 1d3 {@creature swarm of poisonous snakes||swarms of poisonous snakes} and 1d8 + 2 {@creature lizardfolk}"
 						},
 						{
 							"min": 55,
 							"max": 58,
-							"result": "1d8+1 {@creature ogre||ogres}"
+							"result": "1d8 + 1 {@creature ogre||ogres}"
 						},
 						{
 							"min": 59,
@@ -5518,7 +5518,7 @@
 						{
 							"min": 74,
 							"max": 77,
-							"result": "1 {@creature orc Eye of Gruumsh} with 1d3 {@creature ogre||ogres} and 2d10+5 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 1d3 {@creature ogre||ogres} and 2d10 + 5 {@creature orc||orcs}"
 						},
 						{
 							"min": 78,
@@ -5533,7 +5533,7 @@
 						{
 							"min": 83,
 							"max": 84,
-							"result": "1d4 {@creature green hag||green hags} with 1d6+1 {@creature ogre||ogres}"
+							"result": "1d4 {@creature green hag||green hags} with 1d6 + 1 {@creature ogre||ogres}"
 						},
 						{
 							"min": 85,
@@ -5543,17 +5543,17 @@
 						{
 							"min": 87,
 							"max": 88,
-							"result": "1d4+1 {@creature wight||wights}"
+							"result": "1d4 + 1 {@creature wight||wights}"
 						},
 						{
 							"min": 89,
 							"max": 90,
-							"result": "1d6+1 yuan-ti malisons: {@creature yuan-ti malison (type 1)||type 1}, {@creature yuan-ti malison (type 2)||type 2}, {@creature yuan-ti malison (type 3)||type 3}"
+							"result": "1d6 + 1 yuan-ti malisons: {@creature yuan-ti malison (type 1)||type 1}, {@creature yuan-ti malison (type 2)||type 2}, {@creature yuan-ti malison (type 3)||type 3}"
 						},
 						{
 							"min": 91,
 							"max": 93,
-							"result": "1d4+1 {@creature troll||trolls}"
+							"result": "1d4 + 1 {@creature troll||trolls}"
 						},
 						{
 							"min": 94,
@@ -5563,7 +5563,7 @@
 						{
 							"min": 97,
 							"max": 99,
-							"result": "1d8+1 {@creature water elemental||water elementals}"
+							"result": "1d8 + 1 {@creature water elemental||water elementals}"
 						},
 						{
 							"min": 0,
@@ -5590,7 +5590,7 @@
 						{
 							"min": 16,
 							"max": 20,
-							"result": "1d6+1 {@creature green hag||green hags}"
+							"result": "1d6 + 1 {@creature green hag||green hags}"
 						},
 						{
 							"min": 21,
@@ -5605,7 +5605,7 @@
 						{
 							"min": 31,
 							"max": 35,
-							"result": "1d8+1 yuan-ti malisons: {@creature yuan-ti malison (type 1)||type 1}, {@creature yuan-ti malison (type 2)||type 2}, {@creature yuan-ti malison (type 3)||type 3}"
+							"result": "1d8 + 1 yuan-ti malisons: {@creature yuan-ti malison (type 1)||type 1}, {@creature yuan-ti malison (type 2)||type 2}, {@creature yuan-ti malison (type 3)||type 3}"
 						},
 						{
 							"min": 36,
@@ -5640,7 +5640,7 @@
 						{
 							"min": 66,
 							"max": 70,
-							"result": "1d8+2 {@creature troll||trolls}"
+							"result": "1d8 + 2 {@creature troll||trolls}"
 						},
 						{
 							"min": 71,
@@ -5684,7 +5684,7 @@
 						{
 							"min": 2,
 							"max": 2,
-							"result": "1d3+1 {@creature giant poisonous snake||giant poisonous snakes}"
+							"result": "1d3 + 1 {@creature giant poisonous snake||giant poisonous snakes}"
 						},
 						{
 							"min": 3,
@@ -5699,7 +5699,7 @@
 						{
 							"min": 5,
 							"max": 5,
-							"result": "1d8+1 {@creature flumph||flumphs}"
+							"result": "1d8 + 1 {@creature flumph||flumphs}"
 						},
 						{
 							"min": 6,
@@ -5719,7 +5719,7 @@
 						{
 							"min": 9,
 							"max": 9,
-							"result": "1d8+1 {@creature stirge||stirges}"
+							"result": "1d8 + 1 {@creature stirge||stirges}"
 						},
 						{
 							"min": 10,
@@ -5769,7 +5769,7 @@
 						{
 							"min": 26,
 							"max": 28,
-							"result": "1d8+1 {@creature drow}"
+							"result": "1d8 + 1 {@creature drow}"
 						},
 						{
 							"min": 29,
@@ -5794,7 +5794,7 @@
 						{
 							"min": 36,
 							"max": 37,
-							"result": "1d8+1 {@creature giant bat||giant bats}"
+							"result": "1d8 + 1 {@creature giant bat||giant bats}"
 						},
 						{
 							"min": 38,
@@ -5809,7 +5809,7 @@
 						{
 							"min": 42,
 							"max": 43,
-							"result": "1d4+3 {@creature swarm of bats||swarms of bats}"
+							"result": "1d4 + 3 {@creature swarm of bats||swarms of bats}"
 						},
 						{
 							"min": 44,
@@ -5844,7 +5844,7 @@
 						{
 							"min": 50,
 							"max": 50,
-							"result": "1d10+5 {@creature winged kobold||winged kobolds}"
+							"result": "1d10 + 5 {@creature winged kobold||winged kobolds}"
 						},
 						{
 							"min": 51,
@@ -5854,7 +5854,7 @@
 						{
 							"min": 52,
 							"max": 52,
-							"result": "2d8+1 {@creature troglodyte||troglodytes}"
+							"result": "2d8 + 1 {@creature troglodyte||troglodytes}"
 						},
 						{
 							"min": 53,
@@ -5914,7 +5914,7 @@
 						{
 							"min": 64,
 							"max": 64,
-							"result": "1d6+3 {@creature hobgoblin||hobgoblins}"
+							"result": "1d6 + 3 {@creature hobgoblin||hobgoblins}"
 						},
 						{
 							"min": 65,
@@ -5924,7 +5924,7 @@
 						{
 							"min": 66,
 							"max": 66,
-							"result": "1d8+1 {@creature orc||orcs}"
+							"result": "1d8 + 1 {@creature orc||orcs}"
 						},
 						{
 							"min": 67,
@@ -5964,7 +5964,7 @@
 						{
 							"min": 75,
 							"max": 75,
-							"result": "1d8+1 {@creature quaggoth spore servant||quaggoth spore servants}"
+							"result": "1d8 + 1 {@creature quaggoth spore servant||quaggoth spore servants}"
 						},
 						{
 							"min": 76,
@@ -6024,7 +6024,7 @@
 						{
 							"min": 88,
 							"max": 88,
-							"result": "1 {@creature kuo-toa monitor} with 1d8+1 {@creature kuo-toa whip||kuo-toa whips}"
+							"result": "1 {@creature kuo-toa monitor} with 1d8 + 1 {@creature kuo-toa whip||kuo-toa whips}"
 						},
 						{
 							"min": 89,
@@ -6116,7 +6116,7 @@
 						{
 							"min": 7,
 							"max": 7,
-							"result": "1d6+2 {@creature magma mephit||magma mephits}"
+							"result": "1d6 + 2 {@creature magma mephit||magma mephits}"
 						},
 						{
 							"min": 8,
@@ -6131,7 +6131,7 @@
 						{
 							"min": 10,
 							"max": 10,
-							"result": "2d8+1 {@creature drow}"
+							"result": "2d8 + 1 {@creature drow}"
 						},
 						{
 							"min": 11,
@@ -6181,7 +6181,7 @@
 						{
 							"min": 27,
 							"max": 27,
-							"result": "1d12+4 {@creature shadow||shadows}"
+							"result": "1d12 + 4 {@creature shadow||shadows}"
 						},
 						{
 							"min": 28,
@@ -6221,7 +6221,7 @@
 						{
 							"min": 42,
 							"max": 43,
-							"result": "2d8+1 {@creature gas spore||gas spores}"
+							"result": "2d8 + 1 {@creature gas spore||gas spores}"
 						},
 						{
 							"min": 44,
@@ -6261,7 +6261,7 @@
 						{
 							"min": 54,
 							"max": 54,
-							"result": "1d6+2 dwarf hunters ({@creature veteran||veterans}) searching for trolls"
+							"result": "1d6 + 2 dwarf hunters ({@creature veteran||veterans}) searching for trolls"
 						},
 						{
 							"min": 55,
@@ -6276,7 +6276,7 @@
 						{
 							"min": 57,
 							"max": 57,
-							"result": "1 {@creature kuo-toa monitor} with 1d4 {@creature kuo-toa whip||kuo-toa whips} and 1d8+1 {@creature kuo-toa}"
+							"result": "1 {@creature kuo-toa monitor} with 1d4 {@creature kuo-toa whip||kuo-toa whips} and 1d8 + 1 {@creature kuo-toa}"
 						},
 						{
 							"min": 58,
@@ -6321,7 +6321,7 @@
 						{
 							"min": 67,
 							"max": 67,
-							"result": "1 {@creature orc Eye of Gruumsh} with 1d4 {@creature orog||orogs} and 2d10+3 {@creature orc||orcs}"
+							"result": "1 {@creature orc Eye of Gruumsh} with 1d4 {@creature orog||orogs} and 2d10 + 3 {@creature orc||orcs}"
 						},
 						{
 							"min": 68,
@@ -6346,7 +6346,7 @@
 						{
 							"min": 73,
 							"max": 73,
-							"result": "1d6+1 {@creature intellect devourer||intellect devourers}"
+							"result": "1d6 + 1 {@creature intellect devourer||intellect devourers}"
 						},
 						{
 							"min": 74,
@@ -6371,7 +6371,7 @@
 						{
 							"min": 79,
 							"max": 79,
-							"result": "1d8+1 {@creature phase spider||phase spiders}"
+							"result": "1d8 + 1 {@creature phase spider||phase spiders}"
 						},
 						{
 							"min": 80,
@@ -6391,7 +6391,7 @@
 						{
 							"min": 83,
 							"max": 83,
-							"result": "1d4+1 {@creature chuul||chuuls}"
+							"result": "1d4 + 1 {@creature chuul||chuuls}"
 						},
 						{
 							"min": 84,
@@ -6493,12 +6493,12 @@
 						{
 							"min": 3,
 							"max": 4,
-							"result": "1d6+1 {@creature gelatinous cube||gelatinous cubes}"
+							"result": "1d6 + 1 {@creature gelatinous cube||gelatinous cubes}"
 						},
 						{
 							"min": 5,
 							"max": 6,
-							"result": "1d8+2 {@creature gibbering mouther||gibbering mouthers}"
+							"result": "1d8 + 2 {@creature gibbering mouther||gibbering mouthers}"
 						},
 						{
 							"min": 7,
@@ -6518,7 +6518,7 @@
 						{
 							"min": 13,
 							"max": 14,
-							"result": "1d4 {@creature quaggoth thonot||quaggoth thonots} with 1d10+2 quaggoths"
+							"result": "1d4 {@creature quaggoth thonot||quaggoth thonots} with 1d10 + 2 quaggoths"
 						},
 						{
 							"min": 15,
@@ -6538,7 +6538,7 @@
 						{
 							"min": 21,
 							"max": 25,
-							"result": "A 100-foot-long ravine, 4d10 feet wide and 5d20+200 feet deep"
+							"result": "A 100-foot-long ravine, 4d10 feet wide and 5d20 + 200 feet deep"
 						},
 						{
 							"min": 26,
@@ -6573,7 +6573,7 @@
 						{
 							"min": 41,
 							"max": 42,
-							"result": "1d8+1 {@creature kuo-toa monitor||kuo-toa monitors}"
+							"result": "1d8 + 1 {@creature kuo-toa monitor||kuo-toa monitors}"
 						},
 						{
 							"min": 43,
@@ -6593,17 +6593,17 @@
 						{
 							"min": 49,
 							"max": 50,
-							"result": "2d8+1 {@creature ogre||ogres}"
+							"result": "2d8 + 1 {@creature ogre||ogres}"
 						},
 						{
 							"min": 51,
 							"max": 52,
-							"result": "1d6+2 {@creature chuul||chuuls}"
+							"result": "1d6 + 2 {@creature chuul||chuuls}"
 						},
 						{
 							"min": 53,
 							"max": 54,
-							"result": "1d8+1 {@creature ettin||ettins}"
+							"result": "1d8 + 1 {@creature ettin||ettins}"
 						},
 						{
 							"min": 55,
@@ -6643,7 +6643,7 @@
 						{
 							"min": 62,
 							"max": 62,
-							"result": "1d8+1 {@creature bone naga (guardian)||bone nagas}"
+							"result": "1d8 + 1 {@creature bone naga (guardian)||bone nagas}"
 						},
 						{
 							"min": 63,
@@ -6673,7 +6673,7 @@
 						{
 							"min": 70,
 							"max": 70,
-							"result": "1d6+1 {@creature beholder zombie||beholder zombies}"
+							"result": "1d6 + 1 {@creature beholder zombie||beholder zombies}"
 						},
 						{
 							"min": 71,
@@ -6683,7 +6683,7 @@
 						{
 							"min": 72,
 							"max": 72,
-							"result": "1d8+1 {@creature umber hulk||umber hulks}"
+							"result": "1d8 + 1 {@creature umber hulk||umber hulks}"
 						},
 						{
 							"min": 73,
@@ -6698,7 +6698,7 @@
 						{
 							"min": 75,
 							"max": 75,
-							"result": "1d6+2 {@creature xorn}"
+							"result": "1d6 + 2 {@creature xorn}"
 						},
 						{
 							"min": 76,
@@ -6718,12 +6718,12 @@
 						{
 							"min": 83,
 							"max": 83,
-							"result": "1d8+1 {@creature cyclops||cyclopes}"
+							"result": "1d8 + 1 {@creature cyclops||cyclopes}"
 						},
 						{
 							"min": 84,
 							"max": 84,
-							"result": "1d6+2 {@creature troll||trolls}"
+							"result": "1d6 + 2 {@creature troll||trolls}"
 						},
 						{
 							"min": 85,
@@ -6763,7 +6763,7 @@
 						{
 							"min": 92,
 							"max": 92,
-							"result": "1 {@creature mind flayer arcanist} with 1d6+1 {@creature mind flayer||mind flayers}"
+							"result": "1 {@creature mind flayer arcanist} with 1d6 + 1 {@creature mind flayer||mind flayers}"
 						},
 						{
 							"min": 93,
@@ -6773,7 +6773,7 @@
 						{
 							"min": 94,
 							"max": 94,
-							"result": "1d8+1 {@creature drider||driders}"
+							"result": "1d8 + 1 {@creature drider||driders}"
 						},
 						{
 							"min": 95,
@@ -6845,7 +6845,7 @@
 						{
 							"min": 11,
 							"max": 12,
-							"result": "1d6+2 {@creature roper||ropers}"
+							"result": "1d6 + 2 {@creature roper||ropers}"
 						},
 						{
 							"min": 13,
@@ -6860,7 +6860,7 @@
 						{
 							"min": 17,
 							"max": 18,
-							"result": "1d8+1 {@creature chimera||chimeras}"
+							"result": "1d8 + 1 {@creature chimera||chimeras}"
 						},
 						{
 							"min": 19,
@@ -6875,7 +6875,7 @@
 						{
 							"min": 22,
 							"max": 23,
-							"result": "1d8+1 {@creature earth elemental||earth elementals}"
+							"result": "1d8 + 1 {@creature earth elemental||earth elementals}"
 						},
 						{
 							"min": 24,
@@ -6905,7 +6905,7 @@
 						{
 							"min": 35,
 							"max": 36,
-							"result": "1d6+2 {@creature otyugh||otyughs}"
+							"result": "1d6 + 2 {@creature otyugh||otyughs}"
 						},
 						{
 							"min": 37,
@@ -6935,7 +6935,7 @@
 						{
 							"min": 48,
 							"max": 49,
-							"result": "1d8+1 {@creature salamander||salamanders}"
+							"result": "1d8 + 1 {@creature salamander||salamanders}"
 						},
 						{
 							"min": 50,
@@ -6960,12 +6960,12 @@
 						{
 							"min": 60,
 							"max": 62,
-							"result": "1d8+1 {@creature drider||driders}"
+							"result": "1d8 + 1 {@creature drider||driders}"
 						},
 						{
 							"min": 63,
 							"max": 65,
-							"result": "1d20+20 {@creature spider||spiders} crawling on the walls of a web-filled cave"
+							"result": "1d20 + 20 {@creature spider||spiders} crawling on the walls of a web-filled cave"
 						},
 						{
 							"min": 66,
@@ -7293,7 +7293,7 @@
 						{
 							"min": 36,
 							"max": 40,
-							"result": "A ghost ship passing overhead, containing 2d6+10 {@creature ghost||ghosts}"
+							"result": "A ghost ship passing overhead, containing 2d6 + 10 {@creature ghost||ghosts}"
 						},
 						{
 							"min": 41,
@@ -7397,12 +7397,12 @@
 						{
 							"min": 12,
 							"max": 13,
-							"result": "1d8+1 {@creature acolyte||acolytes}"
+							"result": "1d8 + 1 {@creature acolyte||acolytes}"
 						},
 						{
 							"min": 14,
 							"max": 14,
-							"result": "1d6+6 {@creature flying snake||flying snakes}"
+							"result": "1d6 + 6 {@creature flying snake||flying snakes}"
 						},
 						{
 							"min": 15,
@@ -7417,12 +7417,12 @@
 						{
 							"min": 17,
 							"max": 17,
-							"result": "1d8+1 {@creature skeleton||skeletons}"
+							"result": "1d8 + 1 {@creature skeleton||skeletons}"
 						},
 						{
 							"min": 18,
 							"max": 19,
-							"result": "1d6+2 {@creature swarm of rats||swarms of rats}"
+							"result": "1d6 + 2 {@creature swarm of rats||swarms of rats}"
 						},
 						{
 							"min": 20,
@@ -7462,12 +7462,12 @@
 						{
 							"min": 33,
 							"max": 33,
-							"result": "1d3+2 {@creature giant poisonous snake||giant poisonous snakes}"
+							"result": "1d3 + 2 {@creature giant poisonous snake||giant poisonous snakes}"
 						},
 						{
 							"min": 34,
 							"max": 34,
-							"result": "1d4+2 {@creature swarm of bats||swarms of bats}"
+							"result": "1d4 + 2 {@creature swarm of bats||swarms of bats}"
 						},
 						{
 							"min": 35,
@@ -7497,7 +7497,7 @@
 						{
 							"min": 46,
 							"max": 47,
-							"result": "1d3+2 {@creature noble||nobles} on {@creature riding horse||riding horses} with an escort of 1d10 {@creature guard||guards}"
+							"result": "1d3 + 2 {@creature noble||nobles} on {@creature riding horse||riding horses} with an escort of 1d10 {@creature guard||guards}"
 						},
 						{
 							"min": 48,
@@ -7507,12 +7507,12 @@
 						{
 							"min": 49,
 							"max": 49,
-							"result": "1d6+2 {@creature smoke mephit||smoke mephits}"
+							"result": "1d6 + 2 {@creature smoke mephit||smoke mephits}"
 						},
 						{
 							"min": 50,
 							"max": 50,
-							"result": "1d8+1 {@creature swarm of ravens||swarms of ravens}"
+							"result": "1d8 + 1 {@creature swarm of ravens||swarms of ravens}"
 						},
 						{
 							"min": 51,
@@ -7617,7 +7617,7 @@
 						{
 							"min": 87,
 							"max": 87,
-							"result": "1d4+1 {@creature cult fanatic||cult fanatics}"
+							"result": "1d4 + 1 {@creature cult fanatic||cult fanatics}"
 						},
 						{
 							"min": 88,
@@ -7677,7 +7677,7 @@
 						{
 							"min": 99,
 							"max": 99,
-							"result": "1d3+1 {@creature phase spider||phase spiders}"
+							"result": "1d3 + 1 {@creature phase spider||phase spiders}"
 						},
 						{
 							"min": 0,
@@ -7754,7 +7754,7 @@
 						{
 							"min": 32,
 							"max": 34,
-							"result": "1d6+2 {@creature swarm of insects||swarms of insects}"
+							"result": "1d6 + 2 {@creature swarm of insects||swarms of insects}"
 						},
 						{
 							"min": 35,
@@ -7794,12 +7794,12 @@
 						{
 							"min": 54,
 							"max": 55,
-							"result": "1d4+1 {@creature water weird||water weirds}"
+							"result": "1d4 + 1 {@creature water weird||water weirds}"
 						},
 						{
 							"min": 56,
 							"max": 57,
-							"result": "1d8+1 {@creature mimic||mimics}"
+							"result": "1d8 + 1 {@creature mimic||mimics}"
 						},
 						{
 							"min": 58,
@@ -7854,7 +7854,7 @@
 						{
 							"min": 82,
 							"max": 82,
-							"result": "1d4+1 {@creature couatl||couatls}"
+							"result": "1d4 + 1 {@creature couatl||couatls}"
 						},
 						{
 							"min": 83,
@@ -7869,7 +7869,7 @@
 						{
 							"min": 85,
 							"max": 85,
-							"result": "1d6+2 {@creature phase spider||phase spiders}"
+							"result": "1d6 + 2 {@creature phase spider||phase spiders}"
 						},
 						{
 							"min": 86,
@@ -7996,7 +7996,7 @@
 						{
 							"min": 26,
 							"max": 28,
-							"result": "1d8+1 {@creature ghost||ghosts}"
+							"result": "1d8 + 1 {@creature ghost||ghosts}"
 						},
 						{
 							"min": 29,
@@ -8006,12 +8006,12 @@
 						{
 							"min": 32,
 							"max": 34,
-							"result": "1d6+2 {@creature water weird||water weirds}"
+							"result": "1d6 + 2 {@creature water weird||water weirds}"
 						},
 						{
 							"min": 35,
 							"max": 37,
-							"result": "1d4+4 {@creature will-o'-wisp||will-o'-wisps}"
+							"result": "1d4 + 4 {@creature will-o'-wisp||will-o'-wisps}"
 						},
 						{
 							"min": 38,
@@ -8031,7 +8031,7 @@
 						{
 							"min": 47,
 							"max": 51,
-							"result": "1d8+1 {@creature veteran||veterans}"
+							"result": "1d8 + 1 {@creature veteran||veterans}"
 						},
 						{
 							"min": 52,
@@ -8066,7 +8066,7 @@
 						{
 							"min": 73,
 							"max": 75,
-							"result": "1d8+1 {@creature gladiator||gladiators}"
+							"result": "1d8 + 1 {@creature gladiator||gladiators}"
 						},
 						{
 							"min": 76,
@@ -8153,7 +8153,7 @@
 						{
 							"min": 11,
 							"max": 14,
-							"result": "1d6+2 {@creature gladiator||gladiators}"
+							"result": "1d6 + 2 {@creature gladiator||gladiators}"
 						},
 						{
 							"min": 15,
@@ -8233,7 +8233,7 @@
 						{
 							"min": 86,
 							"max": 90,
-							"result": "1d4+1 {@creature gray slaad||gray slaadi}"
+							"result": "1d4 + 1 {@creature gray slaad||gray slaadi}"
 						},
 						{
 							"min": 91,

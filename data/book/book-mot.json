@@ -429,14 +429,16 @@
 							"page": 14,
 							"entries": [
 								"The world of Theros is alive with myths. From stories about the deeds of gods that explain the workings of the world to inspirational (or cautionary) tales of heroes, remarkable tales spread in countless ways, be they diversions, lessons, or songs. Just as in Theros, throughout this book you'll find numerous tales of great deeds, magical origins, grim tragedies, and more. In each case, such myths appear in sidebars like \"Myth of the First Kings of Meletis.\" These cues note the legendary places these stories occupy in the minds of Theros's people and their place as tales that endlessly play out among the constellations of Nyx."
-							]
+							],
+							"id": "016"
 						},
 						{
 							"type": "insetReadaloud",
 							"entries": [
 								"Myth of the First Kings of Meletis",
 								"In ages past, the peoples of what would one day become Meletis were ruled by the archon tyrant Agnomakhos. Unchecked for generations, the vicious overlord carved out a mighty empire. Willing to endure the immortal's cruelty no longer, the heroes Kynaios and Tiro\u2014united by their love of freedom and one another\u2014rose to challenge him. The people rallied to their cause, and through strength of arms, magic, and devotion, they defeated Agnomakhos. The polis of Meletis rose from the ruins of the archon's empire, established as a beacon of freedom and enlightenment, and its people chose Kynaios and Tiro to be its first kings."
-							]
+							],
+							"id": "017"
 						}
 					]
 				},
@@ -9772,7 +9774,7 @@
 												],
 												[
 													"4",
-													"A unit of defeated and desperate{@b hoplites} (see {@book chapter 6|MOT|6|Hoplites}) raid the temple, steal magical weapons, and prepare to avenge their fallen companions."
+													"A unit of defeated and desperate {@b hoplites} (see {@book chapter 6|MOT|6|Hoplites}) raid the temple, steal magical weapons, and prepare to avenge their fallen companions."
 												],
 												[
 													"5",

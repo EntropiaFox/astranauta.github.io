@@ -1,11 +1,13 @@
-const fs = require("fs");
-require("../js/utils.js");
-require("../js/render.js");
-require("../js/render-dice.js");
-const ut = require("./util.js");
-const {TaggerUtils, SkillTag, ActionTag, SenseTag, TagCondition, DiceConvert} = require("../js/converterutils");
+let fs, ut;
 
-const ARGS = {};
+if (typeof module !== "undefined") {
+	fs = require("fs");
+	require("../js/utils.js");
+	require("../js/render.js");
+	require("../js/render-dice.js");
+	ut = require("./util.js");
+	Object.assign(global, require("../js/converterutils"));
+}
 
 /**
  * Args:
@@ -19,26 +21,20 @@ class ArgParser {
 			.slice(2)
 			.forEach(arg => {
 				let [k, v] = arg.split("=").map(it => it.trim()).filter(Boolean);
-				if (v == null) ARGS[k] = true;
+				if (v == null) ArgParser.ARGS[k] = true;
 				else {
 					v = v
 						.replace(/^"(.*)"$/, "$1")
 						.replace(/^'(.*)'$/, "$1")
 					;
 
-					if (!isNaN(v)) ARGS[k] = Number(v);
-					else ARGS[k] = v;
+					if (!isNaN(v)) ArgParser.ARGS[k] = Number(v);
+					else ArgParser.ARGS[k] = v;
 				}
 			});
 	}
 }
-
-const BLACKLIST_FILE_PREFIXES = [
-	...ut.FILE_PREFIX_BLACKLIST,
-
-	// specific files
-	"demo.json",
-];
+ArgParser.ARGS = {};
 
 const LAST_KEY_WHITELIST = new Set([
 	"entries",
@@ -51,8 +47,11 @@ const LAST_KEY_WHITELIST = new Set([
 ]);
 
 class TagJsons {
-	static async pInit () {
+	static setUp () {
 		ut.patchLoadJson();
+	}
+
+	static async pInit () {
 		SpellTag.init();
 		await ItemTag.pInit();
 	}
@@ -61,7 +60,14 @@ class TagJsons {
 		ut.unpatchLoadJson();
 	}
 
-	static run (args = ARGS) {
+	static run (args = ArgParser.ARGS) {
+		TagJsons._BLACKLIST_FILE_PREFIXES = [
+			...ut.FILE_PREFIX_BLACKLIST,
+
+			// specific files
+			"demo.json",
+		];
+
 		let files;
 		if (args.file) {
 			files = [args.file];
@@ -79,28 +85,7 @@ class TagJsons {
 
 			if (json instanceof Array) return;
 
-			Object.keys(json)
-				.forEach(k => {
-					json[k] = TagJsons.WALKER.walk(
-						json[k],
-						{
-							object: (obj, lastKey) => {
-								if (lastKey != null && !LAST_KEY_WHITELIST.has(lastKey)) return obj
-
-								obj = TagCondition.tryRunBasic(obj);
-								obj = SkillTag.tryRun(obj);
-								obj = ActionTag.tryRun(obj);
-								obj = SenseTag.tryRun(obj);
-								obj = SpellTag.tryRun(obj);
-								obj = ItemTag.tryRun(obj);
-								obj = TableTag.tryRun(obj);
-								obj = DiceConvert.getTaggedEntry(obj);
-
-								return obj;
-							},
-						},
-					);
-				});
+			this.mutTagObject(json);
 
 			const outPath = args.inplace ? file : file.replace("./data/", "./trash/");
 			if (!args.inplace) {
@@ -110,7 +95,35 @@ class TagJsons {
 			fs.writeFileSync(outPath, CleanUtil.getCleanJson(json));
 		});
 	}
+
+	static mutTagObject (json) {
+		Object.keys(json)
+			.forEach(k => {
+				json[k] = TagJsons.WALKER.walk(
+					json[k],
+					{
+						object: (obj, lastKey) => {
+							if (lastKey != null && !LAST_KEY_WHITELIST.has(lastKey)) return obj
+
+							obj = TagCondition.tryRunBasic(obj);
+							obj = SkillTag.tryRun(obj);
+							obj = ActionTag.tryRun(obj);
+							obj = SenseTag.tryRun(obj);
+							obj = SpellTag.tryRun(obj);
+							obj = ItemTag.tryRun(obj);
+							obj = TableTag.tryRun(obj);
+							obj = DiceConvert.getTaggedEntry(obj);
+
+							return obj;
+						},
+					},
+				);
+			});
+	}
 }
+
+TagJsons._BLACKLIST_FILE_PREFIXES = null;
+
 TagJsons.WALKER = MiscUtil.getWalker({
 	keyBlacklist: new Set([
 		...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
@@ -262,13 +275,16 @@ class TableTag {
 
 async function main () {
 	ArgParser.parse();
+	TagJsons.setUp();
 	await TagJsons.pInit();
 	TagJsons.run();
 	TagJsons.teardown();
 }
 
-if (require.main === module) {
-	main().then(() => console.log("Run complete.")).catch(e => { throw e; });
-} else {
-	module.exports = TagJsons;
+if (typeof module !== "undefined") {
+	if (require.main === module) {
+		main().then(() => console.log("Run complete.")).catch(e => { throw e; });
+	} else {
+		module.exports = TagJsons;
+	}
 }

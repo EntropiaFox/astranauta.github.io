@@ -14211,7 +14211,7 @@
 											"name": "Manshoon's Spellbook",
 											"id": "433",
 											"entries": [
-												"This spellbook weighs 20 pounds and is covered in beholder hide. It contains all the spells Manshoon has prepared (see {@adventure appendix B|WDH|12}) plus the following spells: {@spell alarm}, {@spell alter self}, {@spell animate dead}, {@spell antimagic field}, {@spell arcane lock}, {@spell blight}, {@spell dispel magic}, {@spell dominate monster}, {@spell dream}, {@spell etherealness}, {@spell Evard's black tentacles}, {@spell feather fall}, {@spell fireball}, {@spell fly}, {@spell gaseous form}, {@spell geas}, {@spell gentle repose}, {@spell glyph of warding}, {@spell hold monster}, {@spell major image}, {@spell mass suggestion}, {@spell phantom steed}, protection from evil and good, {@spell scrying}, {@spell symbol}, {@spell telekinesis}, {@spell teleport}, {@spell teleportation circle}, {@spell Tenser's floating disk}, {@spell tongues}, {@spell true seeing}, {@spell vampiric touch}, {@spell wall of fire}, and {@spell wish}. Stealing or destroying this spellbook disrupts Manshoon's operation (see \"Disrupting Manshoon's Operation\"), since he must devote time and resources to retrieving or replacing it.",
+												"This spellbook weighs 20 pounds and is covered in beholder hide. It contains all the spells Manshoon has prepared (see {@adventure appendix B|WDH|12}) plus the following spells: {@spell alarm}, {@spell alter self}, {@spell animate dead}, {@spell antimagic field}, {@spell arcane lock}, {@spell blight}, {@spell dispel magic}, {@spell dominate monster}, {@spell dream}, {@spell etherealness}, {@spell Evard's black tentacles}, {@spell feather fall}, {@spell fireball}, {@spell fly}, {@spell gaseous form}, {@spell geas}, {@spell gentle repose}, {@spell glyph of warding}, {@spell hold monster}, {@spell major image}, {@spell mass suggestion}, {@spell phantom steed}, {@spell protection from evil and good}, {@spell scrying}, {@spell symbol}, {@spell telekinesis}, {@spell teleport}, {@spell teleportation circle}, {@spell Tenser's floating disk}, {@spell tongues}, {@spell true seeing}, {@spell vampiric touch}, {@spell wall of fire}, and {@spell wish}. Stealing or destroying this spellbook disrupts Manshoon's operation (see \"Disrupting Manshoon's Operation\"), since he must devote time and resources to retrieving or replacing it.",
 												"If Laeral Silverhand has the opportunity to trade for Manshoon's spellbook, she offers the characters a {@item sailing ship} and a set of {@item bracers of archery} for it. Vajra Safahr offers the characters membership in Force Grey, a {@item cape of the mountebank}, and a {@item wand of lightning bolts} for the book."
 											]
 										},
@@ -16579,6 +16579,40 @@
 					"height": 587
 				}
 			]
+		},
+		{
+			"type": "section",
+			"name": "Poster Map",
+			"entries": [
+				{
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"imageType": "map",
+							"href": {
+								"type": "internal",
+								"path": "adventure/WDH/poster-map-dm.jpg"
+							},
+							"title": "Poster Map\u2014DM",
+							"width": 6429,
+							"height": 9000
+						},
+						{
+							"type": "image",
+							"imageType": "map",
+							"href": {
+								"type": "internal",
+								"path": "adventure/WDH/poster-map-player.jpg"
+							},
+							"title": "Poster Map\u2014DM",
+							"width": 6429,
+							"height": 9000
+						}
+					]
+				}
+			],
+			"id": "4e7"
 		}
 	]
 }

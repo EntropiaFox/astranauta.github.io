@@ -230,57 +230,24 @@ class IndexableDirectorySubclass extends IndexableDirectory {
 			dir: "class",
 			primary: "name",
 			source: "source",
-			listProp: "class",
+			listProp: "subclass",
 			brewProp: "subclass",
 			baseUrl: "classes.html",
 			isHover: true,
 			isOnlyDeep: true,
-			pFnPreProcBrew: IndexableDirectorySubclass._pPreProcessSubclassBrew,
 		});
 	}
 
-	pGetDeepIndex (indexer, primary, it) {
-		if (!it.subclasses) return [];
-		return it.subclasses.map(sc => ({
-			b: sc.name,
-			n: `${sc.name} (${primary.parentName})`,
-			s: indexer.getMetaId("s", sc.source),
-			u: `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](it)}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({subclass: sc})}`,
-			p: sc.page,
-		}));
-	}
-
-	static async _pPreProcessSubclassBrew (brew) {
-		const classData = await DataUtil.class.loadJSON();
-
-		const subclasses = MiscUtil.copy(brew.subclass || []);
-		const sourceToClass = {};
-		subclasses.filter(sc => sc.className).forEach(sc => {
-			sc.classSource = sc.classSource || SRC_PHB;
-			((sourceToClass[sc.classSource] = sourceToClass[sc.classSource] || {})[sc.className] = sourceToClass[sc.classSource][sc.className] || []).push(sc);
-		});
-
-		const out = [];
-		Object.entries(sourceToClass).forEach(([source, classToScList]) => {
-			Object.entries(classToScList).forEach(([className, scList]) => {
-				let cls = classData.class.find(it => it.name.toLowerCase() === className.toLowerCase() && (it.source || SRC_PHB).toLowerCase() === source.toLowerCase());
-				if (!cls && brew.class && brew.class.length) cls = brew.class.find(it => it.name.toLowerCase() === className.toLowerCase() && (it.source || SRC_PHB).toLowerCase() === source.toLowerCase());
-
-				if (cls) {
-					const cpy = MiscUtil.copy(cls);
-					cpy.subclasses = scList;
-					out.push(cpy);
-				} else {
-					// Create a fake class, which will at least allow the subclass to be indexed (although not its features)
-					out.push({
-						name: className,
-						source,
-						subclasses: scList,
-					});
-				}
-			});
-		});
-		return {[this.listProp]: out};
+	pGetDeepIndex (indexer, primary, sc) {
+		return [
+			{
+				b: sc.name,
+				n: `${sc.name} (${sc.className})`,
+				s: indexer.getMetaId("s", sc.source),
+				u: `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: sc.className, source: sc.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({subclass: sc})}`,
+				p: sc.page,
+			},
+		];
 	}
 }
 

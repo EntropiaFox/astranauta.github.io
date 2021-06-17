@@ -113,12 +113,12 @@ class LanguagesPage extends ListPage {
 			new Renderer.utils.TabButton({
 				label: "Info",
 				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(it),
+				isVisible: Renderer.utils.hasFluffText(it, "languageFluff"),
 			}),
 			new Renderer.utils.TabButton({
 				label: "Images",
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(it),
+				isVisible: Renderer.utils.hasFluffImages(it, "languageFluff"),
 			}),
 			new Renderer.utils.TabButton({
 				label: "Fonts",

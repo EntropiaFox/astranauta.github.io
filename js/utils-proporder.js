@@ -115,6 +115,8 @@ PropOrder._MONSTER = [
 	"srd",
 	"otherSources",
 
+	"summonedBySpell",
+
 	"_isCopy",
 	new PropOrder._ObjectKey("_copy", {
 		order: [
@@ -389,6 +391,8 @@ PropOrder._CLASS = [
 	"spellsKnownProgressionFixedAllowLowerLevel",
 	"spellsKnownProgressionFixedByLevel",
 
+	"additionalSpells",
+
 	"optionalfeatureProgression",
 
 	"startingProficiencies",
@@ -402,23 +406,35 @@ PropOrder._CLASS = [
 	"classFeatures",
 
 	"subclassTitle",
-	new PropOrder._ArrayKey("subclasses", {
-		fnSort: (a, b) => SortUtil.ascSortDateString(Parser.sourceJsonToDate(b.source), Parser.sourceJsonToDate(a.source)) || SortUtil.ascSortLower(a.name, b.name),
-		fnGetOrder: () => PropOrder._CLASS__SUBCLASS,
-	}),
 
 	"fluff",
 ];
-PropOrder._CLASS__SUBCLASS = [
+PropOrder._SUBCLASS = [
 	"name",
 	"shortName",
-
 	"source",
+	"className",
+	"classSource",
+
 	"page",
 	"srd",
 	"isReprinted",
 
 	"otherSources",
+
+	new PropOrder._ObjectKey("_copy", {
+		order: [
+			"name",
+			"shortName",
+			"source",
+			"className",
+			"classSource",
+			new PropOrder._ObjectKey("_mod", {
+				fnGetOrder: () => PropOrder._SUBCLASS__COPY_MOD,
+			}),
+			"_preserve",
+		],
+	}),
 
 	"spellcastingAbility",
 	"casterProgression",
@@ -430,6 +446,11 @@ PropOrder._CLASS__SUBCLASS = [
 
 	"subclassTableGroups",
 	"subclassFeatures",
+];
+PropOrder._SUBCLASS__COPY_MOD = [
+	"*",
+	"_",
+	...PropOrder._SUBCLASS,
 ];
 PropOrder._CLASS_FEATURE = [
 	"name",
@@ -466,6 +487,8 @@ PropOrder._SUBCLASS_FEATURE = [
 	"level",
 
 	"isClassFeatureVariant",
+
+	"isGainAtNextFeatureLevel",
 
 	"header",
 	"type",
@@ -668,6 +691,7 @@ PropOrder._VEHICLE = [
 	"weapon",
 	"other",
 
+	"entries",
 	"trait",
 	"actionThresholds",
 	"action",
@@ -744,6 +768,9 @@ PropOrder._ITEM = [
 	"reqAttune",
 	"reqAttuneAlt",
 
+	"reqAttuneTags",
+	"reqAttuneAltTags",
+
 	"wondrous",
 	"ammunition",
 	"tattoo",
@@ -772,6 +799,7 @@ PropOrder._ITEM = [
 
 	"ac",
 	"strength",
+	"dexterityMax",
 
 	"crew",
 	"crewMin",
@@ -795,6 +823,7 @@ PropOrder._ITEM = [
 	"bonusWeaponAttack",
 	"bonusWeaponDamage",
 	"bonusSpellAttack",
+	"bonusSpellDamage",
 	"bonusSpellSaveDc",
 	"bonusAc",
 	"bonusSavingThrow",
@@ -918,6 +947,14 @@ PropOrder._OPTIONALFEATURE = [
 
 	"prerequisite",
 
+	"skillProficiencies",
+	"languageProficiencies",
+	"toolProficiencies",
+	"weaponProficiencies",
+	"armorProficiencies",
+
+	"additionalSpells",
+
 	"entries",
 ];
 PropOrder._PSIONIC = [
@@ -976,6 +1013,7 @@ PropOrder._RACE = [
 			new PropOrder._ObjectKey("_mod", {
 				fnGetOrder: () => PropOrder._RACE__COPY_MOD,
 			}),
+			"_preserve",
 		],
 	}),
 
@@ -1129,6 +1167,7 @@ PropOrder._PROP_TO_LIST = {
 	"trait": PropOrder._TRAIT,
 	"legendaryGroup": PropOrder._LEGENDARY_GROUP,
 	"class": PropOrder._CLASS,
+	"subclass": PropOrder._SUBCLASS,
 	"classFeature": PropOrder._CLASS_FEATURE,
 	"subclassFeature": PropOrder._SUBCLASS_FEATURE,
 	"language": PropOrder._LANGUAGE,

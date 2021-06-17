@@ -115,12 +115,19 @@ class SpellParser extends BaseParser {
 				continue;
 			}
 
+			// class spell lists (alt)
+			if (!curLine.indexOf_handleColon("Classes")) {
+				// avoid absorbing main body text
+				this._setCleanClasses(spell, curLine, options);
+				continue;
+			}
+
 			const ptrI = {_: i};
 			spell.entries = EntryConvert.coalesceLines(
 				ptrI,
 				toConvert,
 				{
-					fnStop: (curLine) => /^At Higher Levels/gi.test(curLine),
+					fnStop: (curLine) => /^(?:At Higher Levels|Classes)/gi.test(curLine),
 				},
 			);
 			i = ptrI._;
@@ -128,8 +135,19 @@ class SpellParser extends BaseParser {
 			spell.entriesHigherLevel = EntryConvert.coalesceLines(
 				ptrI,
 				toConvert,
+				{
+					fnStop: (curLine) => /^Classes/gi.test(curLine),
+				},
 			);
 			i = ptrI._;
+
+			// class spell lists
+			if (i < toConvert.length) {
+				curLine = toConvert[i].trim();
+				if (!curLine.indexOf_handleColon("Classes")) {
+					this._setCleanClasses(spell, curLine, options);
+				}
+			}
 		}
 
 		if (!spell.entriesHigherLevel || !spell.entriesHigherLevel.length) delete spell.entriesHigherLevel;
@@ -342,7 +360,6 @@ class SpellParser extends BaseParser {
 			.map(it => it.trim())
 			.filter(Boolean)
 			.forEach(pt => {
-				pt = pt.trim();
 				const lowerPt = pt.toLowerCase();
 				switch (lowerPt) {
 					case "v": stats.components.v = true; break;
@@ -413,6 +430,43 @@ class SpellParser extends BaseParser {
 		// TODO handle splitting "or"'d durations up as required
 
 		options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Duration part "${dur}" requires manual conversion`);
+	}
+
+	static _setCleanClasses (stats, line, options) {
+		const classLine = line.split_handleColon("Classes", 1)[1].trim();
+		const classes = classLine.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX);
+
+		stats.classes = {fromClassList: []};
+
+		classes
+			.map(it => it.trim())
+			.filter(Boolean)
+			.forEach(pt => {
+				const lowerPt = pt.toLowerCase();
+				switch (lowerPt) {
+					case "artificer":
+					case "artificers": stats.classes.fromClassList.push({"name": "Artificer", "source": "TCE"}); break;
+					case "bard":
+					case "bards": stats.classes.fromClassList.push({"name": "Bard", "source": "PHB"}); break;
+					case "cleric":
+					case "clerics": stats.classes.fromClassList.push({"name": "Cleric", "source": "PHB"}); break;
+					case "druid":
+					case "druids": stats.classes.fromClassList.push({"name": "Druid", "source": "PHB"}); break;
+					case "paladin":
+					case "paladins": stats.classes.fromClassList.push({"name": "Paladin", "source": "PHB"}); break;
+					case "ranger":
+					case "rangers": stats.classes.fromClassList.push({"name": "Ranger", "source": "PHB"}); break;
+					case "sorcerer":
+					case "sorcerers": stats.classes.fromClassList.push({"name": "Sorcerer", "source": "PHB"}); break;
+					case "warlock":
+					case "warlocks": stats.classes.fromClassList.push({"name": "Warlock", "source": "PHB"}); break;
+					case "wizard":
+					case "wizards": stats.classes.fromClassList.push({"name": "Wizard", "source": "PHB"}); break;
+					default: options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Class "${lowerPt}" requires manual conversion`); break;
+				}
+			});
+
+		if (!stats.classes.fromClassList.length) delete stats.classes;
 	}
 
 	static _getFinalState (spell, options) {

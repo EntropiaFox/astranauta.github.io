@@ -5560,7 +5560,7 @@
 					"name": "Swarm of Insects",
 					"id": "159",
 					"entries": [
-						"The characters encounter a swarm of centipedes. Use the Swarm of Centipedes variant described by the Monster Manual."
+						"The characters encounter a {@creature swarm of centipedes}. Use the Swarm of Centipedes variant described by the Monster Manual."
 					]
 				},
 				{

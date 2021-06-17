@@ -1654,8 +1654,8 @@
 								"Thought to be the results of wizardly experimentation on house cats, tressym are intelligent and have been known to form strong friendships with humanoids, particularly rangers and wizards. Tressym get along well with others of their kind, but they rarely lair or hunt together. They peacefully ignore bats, faerie dragons, and the like, but they hate stirges and evil flying monsters such as manticores. They also enjoy teasing dogs.",
 								"Tressym feed on small rodents, birds, and insects, stalking and pouncing on prey much as normal cats do, but with the added advantage of flight. Tressym don't, however, attack nestlings or despoil eggs.",
 								"Tressym mate with others of their kind, but they don't mate for life. A tressym can also mate with a normal cat, though only one out of every ten of their offspring will be a tressym; the others will be normal cats.",
-								"Tressym have good memories, particularly when it comes to danger. For example, a tressym that sees a human use awand of lightningbolts remembers the danger of \"sticks of wood held by humans\" for the rest of its life. A lucky, healthy tressym can live to be 20 years old.",
-								"With the DM's permission, a person who casts the findfamiliar spellcan choose to conjure a tressym instead of a normal cat."
+								"Tressym have good memories, particularly when it comes to danger. For example, a tressym that sees a human use a {@item wand of lightning bolts} remembers the danger of \"sticks of wood held by humans\" for the rest of its life. A lucky, healthy tressym can live to be 20 years old.",
+								"With the DM's permission, a person who casts the {@spell find familiar} spell can choose to conjure a tressym instead of a normal cat."
 							]
 						}
 					]

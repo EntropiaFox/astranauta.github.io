@@ -5869,7 +5869,7 @@
 								"A character can jam the crane's winch with a crowbar or similar tool, preventing it from lowering or raising Baazit's cage. Once the cage stops moving, a character can try to use {@item thieves' tools|phb} to unlock the cage door, doing so with a successful DC 20 Dexterity check. A {@spell knock} spell or similar magic also unlocks the cage door.",
 								{
 									"type": "entries",
-									"name": "Creating a Homunuculus",
+									"name": "Creating a Homunculus",
 									"id": "210",
 									"entries": [
 										"Characters can follow Baazit's instructions to scoop out a handful of the slime and spend an hour molding it into a tiny humanoid shape. At the end of this time, the slime animates as a loyal, lawful evil {@creature homunculus} made of dripping green jelly. Each character can only have one of these servants active at a time. If a character makes a second homunculus, the first one melts into a sticky puddle of inanimate goo."

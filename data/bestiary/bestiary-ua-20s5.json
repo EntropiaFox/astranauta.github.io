@@ -24,7 +24,8 @@
 			"wis": 14,
 			"cha": 8,
 			"save": {
-				"special": "Dex {@d20 +2} plus PB, Wis {@d20 +2} plus PB"
+				"dex": "+2 + PB",
+				"wis": "+2 + PB"
 			},
 			"senses": [
 				"darkvision 60 ft."
@@ -50,7 +51,7 @@
 				{
 					"name": "Bite",
 					"entries": [
-						"{@atk mw} {@hit 3} plus PB to hit, reach 5 ft., one target. {@h}{@damage 1d6} piercing damage plus PB damage of a type determined by the drake's Draconic Essence."
+						"{@atk mw} {@hit 3 + PB} to hit, reach 5 ft., one target. {@h}{@damage 1d6} piercing damage plus {@damage PB} damage of a type determined by the drake's Draconic Essence."
 					]
 				}
 			],

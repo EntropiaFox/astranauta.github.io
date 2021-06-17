@@ -1,86 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "races.json",
-	"version": "1.6.0",
+	"version": "1.7.0",
 	"type": "object",
 
 	"definitions": {
-		"resist": {
-			"type": "array",
-			"items": {
-				"oneOf": [
-					{
-						"$ref": "util.json#/definitions/dataDamageType"
-					},
-					{
-						"type": "object",
-						"properties": {
-							"choose": {
-								"type": "object",
-								"properties": {
-									"from": {
-										"$ref": "#/definitions/resist"
-									}
-								},
-								"additionalProperties": false,
-								"required": ["from"]
-							}
-						}
-					}
-				]
-			}
-		},
-		"immune": {
-			"type": "array",
-			"items": {
-				"oneOf": [
-					{
-						"$ref": "util.json#/definitions/dataDamageType"
-					},
-					{
-						"type": "object",
-						"properties": {
-							"choose": {
-								"type": "object",
-								"properties": {
-									"from": {
-										"$ref": "#/definitions/immune"
-									}
-								},
-								"additionalProperties": false,
-								"required": ["from"]
-							}
-						}
-					}
-				]
-			}
-		},
-		"conditionImmune": {
-			"type": "array",
-			"items": {
-				"oneOf": [
-					{
-						"$ref": "util.json#/definitions/dataCondition"
-					},
-					{
-						"type": "object",
-						"properties": {
-							"choose": {
-								"type": "object",
-								"properties": {
-									"from": {
-										"$ref": "#/definitions/conditionImmune"
-									}
-								},
-								"additionalProperties": false,
-								"required": ["from"]
-							}
-						}
-					}
-				]
-			}
-		},
-
 		"subraceData": {
 			"type": "object",
 			"properties": {
@@ -175,7 +99,7 @@
 				"resist": {
 					"oneOf": [
 						{
-							"$ref": "#/definitions/resist"
+							"$ref": "util.json#/definitions/damageResistArrayPlayer"
 						},
 						{
 							"type": "null"
@@ -185,7 +109,17 @@
 				"immune": {
 					"oneOf": [
 						{
-							"$ref": "#/definitions/immune"
+							"$ref": "util.json#/definitions/damageImmunityArrayPlayer"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"vulnerable": {
+					"oneOf": [
+						{
+							"$ref": "util.json#/definitions/damageVulnerabilityArrayPlayer"
 						},
 						{
 							"type": "null"
@@ -195,7 +129,7 @@
 				"conditionImmune": {
 					"oneOf": [
 						{
-							"$ref": "#/definitions/conditionImmune"
+							"$ref": "util.json#/definitions/conditionImmunityArrayPlayer"
 						},
 						{
 							"type": "null"
@@ -345,17 +279,20 @@
 					"$ref": "util.json#/definitions/additionalSpellsArray"
 				},
 				"resist": {
-					"$ref": "#/definitions/resist"
+					"$ref": "util.json#/definitions/damageResistArrayPlayer"
 				},
 				"immune": {
-					"$ref": "#/definitions/immune"
+					"$ref": "util.json#/definitions/damageImmunityArrayPlayer"
+				},
+				"vulnerable": {
+					"$ref": "util.json#/definitions/damageVulnerabilityArrayPlayer"
 				},
 				"conditionImmune": {
-					"$ref": "#/definitions/conditionImmune"
+					"$ref": "util.json#/definitions/conditionImmunityArrayPlayer"
 				},
 				"lineage": {
 					"type": "string",
-					"enum": ["UA1", "UA2"]
+					"enum": ["UA1", "VRGR"]
 				},
 				"creatureTypes": {
 					"type": "array",

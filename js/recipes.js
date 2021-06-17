@@ -13,7 +13,7 @@ class RecipesPage extends ListPage {
 
 			sublistClass: "subrecipes",
 			sublistOptions: {
-				customHashHandler: RecipesPage._sublist_customHashHandler.bind(RecipesPage),
+				pCustomHashHandler: RecipesPage._sublist_customHashHandler.bind(RecipesPage),
 				customHashUnpacker: RecipesPage._sublist_customHashUnpacker.bind(RecipesPage),
 			},
 
@@ -145,12 +145,12 @@ class RecipesPage extends ListPage {
 			new Renderer.utils.TabButton({
 				label: "Info",
 				fnPopulate: this._renderFluff.bind(this, it),
-				isVisible: Renderer.utils.hasFluffText(it),
+				isVisible: Renderer.utils.hasFluffText(it, "recipeFluff"),
 			}),
 			new Renderer.utils.TabButton({
 				label: "Images",
 				fnPopulate: this._renderFluff.bind(this, it, true),
-				isVisible: Renderer.utils.hasFluffImages(it),
+				isVisible: Renderer.utils.hasFluffImages(it, "recipeFluff"),
 			}),
 		];
 
@@ -196,7 +196,7 @@ class RecipesPage extends ListPage {
 		sub = this._filterBox.setFromSubHashes(sub);
 		await ListUtil.pSetFromSubHashes(sub);
 
-		const scaledHash = sub.find(it => it.startsWith(VeCt.HASH_SCALED));
+		const scaledHash = sub.find(it => it.startsWith(RecipesPage._HASH_START_SCALED));
 		if (scaledHash) {
 			const scaleTo = Number(UrlUtil.unpackSubHash(scaledHash)[VeCt.HASH_SCALED][0]);
 			const r = this._dataList[Hist.lastLoadedId];
@@ -212,6 +212,7 @@ class RecipesPage extends ListPage {
 		return ptrOut._;
 	}
 }
+RecipesPage._HASH_START_SCALED = `${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}`;
 
 const recipesPage = new RecipesPage();
 window.addEventListener("load", () => recipesPage.pOnLoad());

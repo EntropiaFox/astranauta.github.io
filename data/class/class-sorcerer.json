@@ -1,4 +1,11 @@
 {
+	"_meta": {
+		"dependencies": {
+			"subclass": [
+				"generic"
+			]
+		}
+	},
 	"class": [
 		{
 			"name": "Sorcerer",
@@ -569,443 +576,6 @@
 				"Sorcerous Restoration|Sorcerer||20"
 			],
 			"subclassTitle": "Sorcerous Origin",
-			"subclasses": [
-				{
-					"name": "Draconic Bloodline",
-					"shortName": "Draconic",
-					"source": "PHB",
-					"page": 102,
-					"srd": true,
-					"subclassFeatures": [
-						"Draconic Bloodline|Sorcerer||Draconic||1",
-						"Elemental Affinity|Sorcerer||Draconic||6",
-						"Dragon Wings|Sorcerer||Draconic||14",
-						"Draconic Presence|Sorcerer||Draconic||18"
-					]
-				},
-				{
-					"name": "Wild Magic",
-					"shortName": "Wild",
-					"source": "PHB",
-					"page": 103,
-					"subclassFeatures": [
-						"Wild Magic|Sorcerer||Wild||1",
-						"Bend Luck|Sorcerer||Wild||6",
-						"Controlled Chaos|Sorcerer||Wild||14",
-						"Spell Bombardment|Sorcerer||Wild||18"
-					]
-				},
-				{
-					"name": "Favored Soul (UA)",
-					"shortName": "Favored Soul (UA)",
-					"source": "UAModifyingClasses",
-					"page": 8,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Favored Soul|Sorcerer||Favored Soul (UA)|UAModifyingClasses|1",
-						"Extra Attack|Sorcerer||Favored Soul (UA)|UAModifyingClasses|6",
-						"Divine Wings|Sorcerer||Favored Soul (UA)|UAModifyingClasses|14",
-						"Power of the Chosen|Sorcerer||Favored Soul (UA)|UAModifyingClasses|18"
-					]
-				},
-				{
-					"name": "Storm Sorcery (UA)",
-					"shortName": "Storm (UA)",
-					"source": "UAWaterborneAdventures",
-					"page": 4,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"1": [
-									"fog cloud",
-									"thunderwave"
-								],
-								"3": [
-									"gust of wind",
-									"levitate"
-								],
-								"5": [
-									"call lightning",
-									"sleet storm"
-								],
-								"7": [
-									"conjure minor elementals",
-									"ice storm"
-								],
-								"9": [
-									"conjure elemental"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Storm Sorcery|Sorcerer||Storm (UA)|UAWaterborneAdventures|1",
-						"Heart of the Storm|Sorcerer||Storm (UA)|UAWaterborneAdventures|6",
-						"Storm Guide|Sorcerer||Storm (UA)|UAWaterborneAdventures|6",
-						"Storm's Fury|Sorcerer||Storm (UA)|UAWaterborneAdventures|14",
-						"Wind Soul|Sorcerer||Storm (UA)|UAWaterborneAdventures|18"
-					]
-				},
-				{
-					"name": "Shadow (UA)",
-					"shortName": "Shadow (UA)",
-					"source": "UALightDarkUnderdark",
-					"page": 2,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Shadow|Sorcerer||Shadow (UA)|UALightDarkUnderdark|1",
-						"Hound of Ill Omen|Sorcerer||Shadow (UA)|UALightDarkUnderdark|6",
-						"Shadow Walk|Sorcerer||Shadow (UA)|UALightDarkUnderdark|14",
-						"Shadow Form|Sorcerer||Shadow (UA)|UALightDarkUnderdark|18"
-					]
-				},
-				{
-					"name": "Favored Soul v2 (UA)",
-					"shortName": "Favored Soul v2 (UA)",
-					"source": "UASorcerer",
-					"page": 1,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Favored Soul v2|Sorcerer||Favored Soul v2 (UA)|UASorcerer|1",
-						"Blessed Countenance|Sorcerer||Favored Soul v2 (UA)|UASorcerer|6",
-						"Divine Purity|Sorcerer||Favored Soul v2 (UA)|UASorcerer|14",
-						"Unearthly Recovery|Sorcerer||Favored Soul v2 (UA)|UASorcerer|18"
-					]
-				},
-				{
-					"name": "Phoenix Sorcery (UA)",
-					"shortName": "Phoenix (UA)",
-					"source": "UASorcerer",
-					"page": 1,
-					"subclassFeatures": [
-						"Phoenix Sorcery (UA)|Sorcerer||Phoenix (UA)|UASorcerer|1",
-						"Phoenix Spark|Sorcerer||Phoenix (UA)|UASorcerer|6",
-						"Nourishing Fire|Sorcerer||Phoenix (UA)|UASorcerer|14",
-						"Form of the Phoenix|Sorcerer||Phoenix (UA)|UASorcerer|18"
-					]
-				},
-				{
-					"name": "Sea Sorcery (UA)",
-					"shortName": "Sea (UA)",
-					"source": "UASorcerer",
-					"page": 2,
-					"subclassFeatures": [
-						"Sea Sorcery (UA)|Sorcerer||Sea (UA)|UASorcerer|1",
-						"Watery Defense|Sorcerer||Sea (UA)|UASorcerer|6",
-						"Shifting Form|Sorcerer||Sea (UA)|UASorcerer|14",
-						"Water Soul|Sorcerer||Sea (UA)|UASorcerer|18"
-					]
-				},
-				{
-					"name": "Stone Sorcery (UA)",
-					"shortName": "Stone (UA)",
-					"source": "UASorcerer",
-					"page": 3,
-					"subclassFeatures": [
-						"Stone Sorcery (UA)|Sorcerer||Stone (UA)|UASorcerer|1",
-						"Stone Aegis|Sorcerer||Stone (UA)|UASorcerer|6",
-						"Stone's Edge|Sorcerer||Stone (UA)|UASorcerer|14",
-						"Earth Master's Aegis|Sorcerer||Stone (UA)|UASorcerer|18"
-					]
-				},
-				{
-					"name": "Pyromancer (PSK)",
-					"shortName": "Pyromancer (PSK)",
-					"source": "PSK",
-					"page": 9,
-					"subclassFeatures": [
-						"Pyromancer (PSK)|Sorcerer||Pyromancer (PSK)|PSK|1",
-						"Fire in the Veins|Sorcerer||Pyromancer (PSK)|PSK|6",
-						"Pyromancer's Fury|Sorcerer||Pyromancer (PSK)|PSK|14",
-						"Fiery Soul|Sorcerer||Pyromancer (PSK)|PSK|18"
-					]
-				},
-				{
-					"name": "Favored Soul v3 (UA)",
-					"shortName": "Favored Soul v3 (UA)",
-					"source": "UARevisedSubclasses",
-					"page": 5,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Favored Soul v3|Sorcerer||Favored Soul v3 (UA)|UARevisedSubclasses|1",
-						"Empowered Healing|Sorcerer||Favored Soul v3 (UA)|UARevisedSubclasses|6",
-						"Angelic Form|Sorcerer||Favored Soul v3 (UA)|UARevisedSubclasses|14",
-						"Unearthly Recovery|Sorcerer||Favored Soul v3 (UA)|UARevisedSubclasses|18"
-					]
-				},
-				{
-					"name": "Divine Soul",
-					"shortName": "Divine Soul",
-					"source": "XGE",
-					"page": 50,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"1": [
-									"cure wounds"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"1": [
-									"inflict wounds"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"1": [
-									"bless"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"1": [
-									"bane"
-								]
-							}
-						},
-						{
-							"prepared": {
-								"1": [
-									"protection from evil and good"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Divine Soul|Sorcerer||Divine Soul|XGE|1",
-						"Empowered Healing|Sorcerer||Divine Soul|XGE|6",
-						"Otherworldly Wings|Sorcerer||Divine Soul|XGE|14",
-						"Unearthly Recovery|Sorcerer||Divine Soul|XGE|18"
-					]
-				},
-				{
-					"name": "Shadow Magic",
-					"shortName": "Shadow",
-					"source": "XGE",
-					"page": 50,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"3": [
-									"darkness"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Shadow Magic|Sorcerer||Shadow|XGE|1",
-						"Hound of Ill Omen|Sorcerer||Shadow|XGE|6",
-						"Shadow Walk|Sorcerer||Shadow|XGE|14",
-						"Umbral Form|Sorcerer||Shadow|XGE|18"
-					]
-				},
-				{
-					"name": "Storm Sorcery",
-					"shortName": "Storm",
-					"source": "XGE",
-					"page": 51,
-					"otherSources": [
-						{
-							"source": "SCAG",
-							"page": 137
-						}
-					],
-					"subclassFeatures": [
-						"Storm Sorcery|Sorcerer||Storm|XGE|1",
-						"Heart of the Storm|Sorcerer||Storm|XGE|6",
-						"Storm Guide|Sorcerer||Storm|XGE|6",
-						"Storm's Fury|Sorcerer||Storm|XGE|14",
-						"Wind Soul|Sorcerer||Storm|XGE|18"
-					]
-				},
-				{
-					"name": "Giant Soul (UA)",
-					"shortName": "Giant Soul (UA)",
-					"source": "UAGiantSoulSorcerer",
-					"page": 1,
-					"subclassFeatures": [
-						"Giant Soul (UA)|Sorcerer||Giant Soul (UA)|UAGiantSoulSorcerer|1",
-						"Soul of Lost Ostoria|Sorcerer||Giant Soul (UA)|UAGiantSoulSorcerer|6",
-						"Rage of Fallen Ostoria|Sorcerer||Giant Soul (UA)|UAGiantSoulSorcerer|14",
-						"Blessing of the All Father|Sorcerer||Giant Soul (UA)|UAGiantSoulSorcerer|18"
-					]
-				},
-				{
-					"name": "Aberrant Mind (UA)",
-					"shortName": "Aberrant Mind (UA)",
-					"source": "UASorcererAndWarlock",
-					"page": 1,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"1": [
-									"arms of Hadar",
-									"dissonant whispers"
-								],
-								"3": [
-									"calm emotions",
-									"detect thoughts"
-								],
-								"5": [
-									"hunger of Hadar",
-									"sending"
-								],
-								"7": [
-									"compulsion",
-									"Evard's black tentacles"
-								],
-								"9": [
-									"modify memory",
-									"Rary's telepathic bond"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Aberrant Mind|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|1",
-						"Psionic Sorcery|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|6",
-						"Psychic Defenses|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|6",
-						"Revelation in Flesh|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|14",
-						"Warp Reality|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|18"
-					]
-				},
-				{
-					"name": "Clockwork Soul (UA)",
-					"shortName": "Clockwork Soul (UA)",
-					"source": "UA2020SubclassesPt2",
-					"page": 4,
-					"isReprinted": true,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"1": [
-									"alarm",
-									"protection from evil and good"
-								],
-								"3": [
-									"find traps",
-									"heat metal"
-								],
-								"5": [
-									"counterspell",
-									"glyph of warding"
-								],
-								"7": [
-									"arcane eye",
-									"Otiluke's resilient sphere"
-								],
-								"9": [
-									"animate objects",
-									"wall of force"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Clockwork Soul|Sorcerer||Clockwork Soul (UA)|UA2020SubclassesPt2|1",
-						"Bulwark of Law|Sorcerer||Clockwork Soul (UA)|UA2020SubclassesPt2|6",
-						"Trance of Order|Sorcerer||Clockwork Soul (UA)|UA2020SubclassesPt2|14",
-						"Clockwork Cavalcade|Sorcerer||Clockwork Soul (UA)|UA2020SubclassesPt2|18"
-					]
-				},
-				{
-					"name": "Psionic Soul (UA)",
-					"shortName": "Psionic Soul (UA)",
-					"source": "UA2020PsionicOptionsRevisited",
-					"page": 5,
-					"isReprinted": true,
-					"subclassFeatures": [
-						"Psionic Soul|Sorcerer||Psionic Soul (UA)|UA2020PsionicOptionsRevisited|1",
-						"Psychic Strike|Sorcerer||Psionic Soul (UA)|UA2020PsionicOptionsRevisited|6",
-						"Mind Over Body|Sorcerer||Psionic Soul (UA)|UA2020PsionicOptionsRevisited|14",
-						"Psychic Aura|Sorcerer||Psionic Soul (UA)|UA2020PsionicOptionsRevisited|18"
-					]
-				},
-				{
-					"name": "Aberrant Mind",
-					"shortName": "Aberrant Mind",
-					"source": "TCE",
-					"page": 66,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"1": [
-									"arms of Hadar",
-									"dissonant whispers",
-									"mind sliver|tce"
-								],
-								"3": [
-									"calm emotions",
-									"detect thoughts"
-								],
-								"5": [
-									"hunger of Hadar",
-									"sending"
-								],
-								"7": [
-									"Evard's black tentacles",
-									"summon aberration|TCE"
-								],
-								"9": [
-									"Rary's telepathic bond",
-									"telekinesis"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Aberrant Mind|Sorcerer||Aberrant Mind|TCE|1",
-						"Psionic Sorcery|Sorcerer||Aberrant Mind|TCE|6",
-						"Psychic Defenses|Sorcerer||Aberrant Mind|TCE|6",
-						"Revelation in Flesh|Sorcerer||Aberrant Mind|TCE|14",
-						"Warping Implosion|Sorcerer||Aberrant Mind|TCE|18"
-					]
-				},
-				{
-					"name": "Clockwork Soul",
-					"shortName": "Clockwork Soul",
-					"source": "TCE",
-					"page": 68,
-					"additionalSpells": [
-						{
-							"prepared": {
-								"1": [
-									"alarm",
-									"protection from evil and good"
-								],
-								"3": [
-									"aid",
-									"lesser restoration"
-								],
-								"5": [
-									"dispel magic",
-									"protection from energy"
-								],
-								"7": [
-									"freedom of movement",
-									"summon construct|TCE"
-								],
-								"9": [
-									"greater restoration",
-									"wall of force"
-								]
-							}
-						}
-					],
-					"subclassFeatures": [
-						"Clockwork Soul|Sorcerer||Clockwork Soul|TCE|1",
-						"Bastion of Law|Sorcerer||Clockwork Soul|TCE|6",
-						"Trance of Order|Sorcerer||Clockwork Soul|TCE|14",
-						"Clockwork Cavalcade|Sorcerer||Clockwork Soul|TCE|18"
-					]
-				}
-			],
 			"fluff": [
 				{
 					"name": "Sorcerer",
@@ -1374,6 +944,522 @@
 					"source": "XGE"
 				}
 			]
+		}
+	],
+	"subclass": [
+		{
+			"name": "Draconic Bloodline",
+			"shortName": "Draconic",
+			"source": "PHB",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 102,
+			"srd": true,
+			"subclassFeatures": [
+				"Draconic Bloodline|Sorcerer||Draconic||1",
+				"Elemental Affinity|Sorcerer||Draconic||6",
+				"Dragon Wings|Sorcerer||Draconic||14",
+				"Draconic Presence|Sorcerer||Draconic||18"
+			]
+		},
+		{
+			"name": "Wild Magic",
+			"shortName": "Wild",
+			"source": "PHB",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 103,
+			"subclassFeatures": [
+				"Wild Magic|Sorcerer||Wild||1",
+				"Bend Luck|Sorcerer||Wild||6",
+				"Controlled Chaos|Sorcerer||Wild||14",
+				"Spell Bombardment|Sorcerer||Wild||18"
+			]
+		},
+		{
+			"name": "Favored Soul (UA)",
+			"shortName": "Favored Soul (UA)",
+			"source": "UAModifyingClasses",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 8,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Favored Soul|Sorcerer||Favored Soul (UA)|UAModifyingClasses|1",
+				"Extra Attack|Sorcerer||Favored Soul (UA)|UAModifyingClasses|6",
+				"Divine Wings|Sorcerer||Favored Soul (UA)|UAModifyingClasses|14",
+				"Power of the Chosen|Sorcerer||Favored Soul (UA)|UAModifyingClasses|18"
+			]
+		},
+		{
+			"name": "Storm Sorcery (UA)",
+			"shortName": "Storm (UA)",
+			"source": "UAWaterborneAdventures",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 4,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"1": [
+							"fog cloud",
+							"thunderwave"
+						],
+						"3": [
+							"gust of wind",
+							"levitate"
+						],
+						"5": [
+							"call lightning",
+							"sleet storm"
+						],
+						"7": [
+							"conjure minor elementals",
+							"ice storm"
+						],
+						"9": [
+							"conjure elemental"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Storm Sorcery|Sorcerer||Storm (UA)|UAWaterborneAdventures|1",
+				"Heart of the Storm|Sorcerer||Storm (UA)|UAWaterborneAdventures|6",
+				"Storm Guide|Sorcerer||Storm (UA)|UAWaterborneAdventures|6",
+				"Storm's Fury|Sorcerer||Storm (UA)|UAWaterborneAdventures|14",
+				"Wind Soul|Sorcerer||Storm (UA)|UAWaterborneAdventures|18"
+			]
+		},
+		{
+			"name": "Shadow (UA)",
+			"shortName": "Shadow (UA)",
+			"source": "UALightDarkUnderdark",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 2,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Shadow|Sorcerer||Shadow (UA)|UALightDarkUnderdark|1",
+				"Hound of Ill Omen|Sorcerer||Shadow (UA)|UALightDarkUnderdark|6",
+				"Shadow Walk|Sorcerer||Shadow (UA)|UALightDarkUnderdark|14",
+				"Shadow Form|Sorcerer||Shadow (UA)|UALightDarkUnderdark|18"
+			]
+		},
+		{
+			"name": "Favored Soul v2 (UA)",
+			"shortName": "Favored Soul v2 (UA)",
+			"source": "UASorcerer",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Favored Soul v2|Sorcerer||Favored Soul v2 (UA)|UASorcerer|1",
+				"Blessed Countenance|Sorcerer||Favored Soul v2 (UA)|UASorcerer|6",
+				"Divine Purity|Sorcerer||Favored Soul v2 (UA)|UASorcerer|14",
+				"Unearthly Recovery|Sorcerer||Favored Soul v2 (UA)|UASorcerer|18"
+			]
+		},
+		{
+			"name": "Phoenix Sorcery (UA)",
+			"shortName": "Phoenix (UA)",
+			"source": "UASorcerer",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 1,
+			"subclassFeatures": [
+				"Phoenix Sorcery (UA)|Sorcerer||Phoenix (UA)|UASorcerer|1",
+				"Phoenix Spark|Sorcerer||Phoenix (UA)|UASorcerer|6",
+				"Nourishing Fire|Sorcerer||Phoenix (UA)|UASorcerer|14",
+				"Form of the Phoenix|Sorcerer||Phoenix (UA)|UASorcerer|18"
+			]
+		},
+		{
+			"name": "Sea Sorcery (UA)",
+			"shortName": "Sea (UA)",
+			"source": "UASorcerer",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 2,
+			"subclassFeatures": [
+				"Sea Sorcery (UA)|Sorcerer||Sea (UA)|UASorcerer|1",
+				"Watery Defense|Sorcerer||Sea (UA)|UASorcerer|6",
+				"Shifting Form|Sorcerer||Sea (UA)|UASorcerer|14",
+				"Water Soul|Sorcerer||Sea (UA)|UASorcerer|18"
+			]
+		},
+		{
+			"name": "Stone Sorcery (UA)",
+			"shortName": "Stone (UA)",
+			"source": "UASorcerer",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 3,
+			"subclassFeatures": [
+				"Stone Sorcery (UA)|Sorcerer||Stone (UA)|UASorcerer|1",
+				"Stone Aegis|Sorcerer||Stone (UA)|UASorcerer|6",
+				"Stone's Edge|Sorcerer||Stone (UA)|UASorcerer|14",
+				"Earth Master's Aegis|Sorcerer||Stone (UA)|UASorcerer|18"
+			]
+		},
+		{
+			"name": "Pyromancer (PSK)",
+			"shortName": "Pyromancer (PSK)",
+			"source": "PSK",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 9,
+			"subclassFeatures": [
+				"Pyromancer (PSK)|Sorcerer||Pyromancer (PSK)|PSK|1",
+				"Fire in the Veins|Sorcerer||Pyromancer (PSK)|PSK|6",
+				"Pyromancer's Fury|Sorcerer||Pyromancer (PSK)|PSK|14",
+				"Fiery Soul|Sorcerer||Pyromancer (PSK)|PSK|18"
+			]
+		},
+		{
+			"name": "Favored Soul v3 (UA)",
+			"shortName": "Favored Soul v3 (UA)",
+			"source": "UARevisedSubclasses",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 5,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Favored Soul v3|Sorcerer||Favored Soul v3 (UA)|UARevisedSubclasses|1",
+				"Empowered Healing|Sorcerer||Favored Soul v3 (UA)|UARevisedSubclasses|6",
+				"Angelic Form|Sorcerer||Favored Soul v3 (UA)|UARevisedSubclasses|14",
+				"Unearthly Recovery|Sorcerer||Favored Soul v3 (UA)|UARevisedSubclasses|18"
+			]
+		},
+		{
+			"name": "Divine Soul",
+			"shortName": "Divine Soul",
+			"source": "XGE",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 50,
+			"additionalSpells": [
+				{
+					"name": "Good",
+					"prepared": {
+						"1": [
+							"cure wounds"
+						]
+					}
+				},
+				{
+					"name": "Evil",
+					"prepared": {
+						"1": [
+							"inflict wounds"
+						]
+					}
+				},
+				{
+					"name": "Law",
+					"prepared": {
+						"1": [
+							"bless"
+						]
+					}
+				},
+				{
+					"name": "Chaos",
+					"prepared": {
+						"1": [
+							"bane"
+						]
+					}
+				},
+				{
+					"name": "Neutrality",
+					"prepared": {
+						"1": [
+							"protection from evil and good"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Divine Soul|Sorcerer||Divine Soul|XGE|1",
+				"Empowered Healing|Sorcerer||Divine Soul|XGE|6",
+				"Otherworldly Wings|Sorcerer||Divine Soul|XGE|14",
+				"Unearthly Recovery|Sorcerer||Divine Soul|XGE|18"
+			]
+		},
+		{
+			"name": "Shadow Magic",
+			"shortName": "Shadow",
+			"source": "XGE",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 50,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"3": [
+							"darkness"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Shadow Magic|Sorcerer||Shadow|XGE|1",
+				"Hound of Ill Omen|Sorcerer||Shadow|XGE|6",
+				"Shadow Walk|Sorcerer||Shadow|XGE|14",
+				"Umbral Form|Sorcerer||Shadow|XGE|18"
+			]
+		},
+		{
+			"name": "Storm Sorcery",
+			"shortName": "Storm",
+			"source": "XGE",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 51,
+			"otherSources": [
+				{
+					"source": "SCAG",
+					"page": 137
+				}
+			],
+			"subclassFeatures": [
+				"Storm Sorcery|Sorcerer||Storm|XGE|1",
+				"Heart of the Storm|Sorcerer||Storm|XGE|6",
+				"Storm Guide|Sorcerer||Storm|XGE|6",
+				"Storm's Fury|Sorcerer||Storm|XGE|14",
+				"Wind Soul|Sorcerer||Storm|XGE|18"
+			]
+		},
+		{
+			"name": "Giant Soul (UA)",
+			"shortName": "Giant Soul (UA)",
+			"source": "UAGiantSoulSorcerer",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 1,
+			"subclassFeatures": [
+				"Giant Soul (UA)|Sorcerer||Giant Soul (UA)|UAGiantSoulSorcerer|1",
+				"Soul of Lost Ostoria|Sorcerer||Giant Soul (UA)|UAGiantSoulSorcerer|6",
+				"Rage of Fallen Ostoria|Sorcerer||Giant Soul (UA)|UAGiantSoulSorcerer|14",
+				"Blessing of the All Father|Sorcerer||Giant Soul (UA)|UAGiantSoulSorcerer|18"
+			]
+		},
+		{
+			"name": "Aberrant Mind (UA)",
+			"shortName": "Aberrant Mind (UA)",
+			"source": "UASorcererAndWarlock",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 1,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"1": [
+							"arms of Hadar",
+							"dissonant whispers"
+						],
+						"3": [
+							"calm emotions",
+							"detect thoughts"
+						],
+						"5": [
+							"hunger of Hadar",
+							"sending"
+						],
+						"7": [
+							"compulsion",
+							"Evard's black tentacles"
+						],
+						"9": [
+							"modify memory",
+							"Rary's telepathic bond"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Aberrant Mind|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|1",
+				"Psionic Sorcery|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|6",
+				"Psychic Defenses|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|6",
+				"Revelation in Flesh|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|14",
+				"Warp Reality|Sorcerer||Aberrant Mind (UA)|UASorcererAndWarlock|18"
+			]
+		},
+		{
+			"name": "Clockwork Soul (UA)",
+			"shortName": "Clockwork Soul (UA)",
+			"source": "UA2020SubclassesPt2",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 4,
+			"isReprinted": true,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"1": [
+							"alarm",
+							"protection from evil and good"
+						],
+						"3": [
+							"find traps",
+							"heat metal"
+						],
+						"5": [
+							"counterspell",
+							"glyph of warding"
+						],
+						"7": [
+							"arcane eye",
+							"Otiluke's resilient sphere"
+						],
+						"9": [
+							"animate objects",
+							"wall of force"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Clockwork Soul|Sorcerer||Clockwork Soul (UA)|UA2020SubclassesPt2|1",
+				"Bulwark of Law|Sorcerer||Clockwork Soul (UA)|UA2020SubclassesPt2|6",
+				"Trance of Order|Sorcerer||Clockwork Soul (UA)|UA2020SubclassesPt2|14",
+				"Clockwork Cavalcade|Sorcerer||Clockwork Soul (UA)|UA2020SubclassesPt2|18"
+			]
+		},
+		{
+			"name": "Psionic Soul (UA)",
+			"shortName": "Psionic Soul (UA)",
+			"source": "UA2020PsionicOptionsRevisited",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 5,
+			"isReprinted": true,
+			"subclassFeatures": [
+				"Psionic Soul|Sorcerer||Psionic Soul (UA)|UA2020PsionicOptionsRevisited|1",
+				"Psychic Strike|Sorcerer||Psionic Soul (UA)|UA2020PsionicOptionsRevisited|6",
+				"Mind Over Body|Sorcerer||Psionic Soul (UA)|UA2020PsionicOptionsRevisited|14",
+				"Psychic Aura|Sorcerer||Psionic Soul (UA)|UA2020PsionicOptionsRevisited|18"
+			]
+		},
+		{
+			"name": "Aberrant Mind",
+			"shortName": "Aberrant Mind",
+			"source": "TCE",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 66,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"1": [
+							"arms of Hadar",
+							"dissonant whispers",
+							"mind sliver|tce"
+						],
+						"3": [
+							"calm emotions",
+							"detect thoughts"
+						],
+						"5": [
+							"hunger of Hadar",
+							"sending"
+						],
+						"7": [
+							"Evard's black tentacles",
+							"summon aberration|TCE"
+						],
+						"9": [
+							"Rary's telepathic bond",
+							"telekinesis"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Aberrant Mind|Sorcerer||Aberrant Mind|TCE|1",
+				"Psionic Sorcery|Sorcerer||Aberrant Mind|TCE|6",
+				"Psychic Defenses|Sorcerer||Aberrant Mind|TCE|6",
+				"Revelation in Flesh|Sorcerer||Aberrant Mind|TCE|14",
+				"Warping Implosion|Sorcerer||Aberrant Mind|TCE|18"
+			]
+		},
+		{
+			"name": "Clockwork Soul",
+			"shortName": "Clockwork Soul",
+			"source": "TCE",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 68,
+			"additionalSpells": [
+				{
+					"prepared": {
+						"1": [
+							"alarm",
+							"protection from evil and good"
+						],
+						"3": [
+							"aid",
+							"lesser restoration"
+						],
+						"5": [
+							"dispel magic",
+							"protection from energy"
+						],
+						"7": [
+							"freedom of movement",
+							"summon construct|TCE"
+						],
+						"9": [
+							"greater restoration",
+							"wall of force"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Clockwork Soul|Sorcerer||Clockwork Soul|TCE|1",
+				"Bastion of Law|Sorcerer||Clockwork Soul|TCE|6",
+				"Trance of Order|Sorcerer||Clockwork Soul|TCE|14",
+				"Clockwork Cavalcade|Sorcerer||Clockwork Soul|TCE|18"
+			]
+		},
+		{
+			"name": "Mage of Prismari (UA)",
+			"shortName": "Prismari (UA)",
+			"source": "UA2021MagesOfStrixhaven",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"_copy": {
+				"name": "Mage of Prismari (UA)",
+				"shortName": "Prismari (UA)",
+				"source": "UA2021MagesOfStrixhaven",
+				"className": "Generic",
+				"classSource": "Generic",
+				"_preserve": {
+					"page": true
+				}
+			}
+		},
+		{
+			"name": "Mage of Quandrix (UA)",
+			"shortName": "Quandrix (UA)",
+			"source": "UA2021MagesOfStrixhaven",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"_copy": {
+				"name": "Mage of Quandrix (UA)",
+				"shortName": "Quandrix (UA)",
+				"source": "UA2021MagesOfStrixhaven",
+				"className": "Generic",
+				"classSource": "Generic",
+				"_preserve": {
+					"page": true
+				}
+			}
 		}
 	],
 	"classFeature": [
@@ -4531,7 +4617,7 @@
 			"level": 1,
 			"header": 1,
 			"entries": [
-				"The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. In addition, you gain the following spells at the listed sorcerer level. These spells do not count against the number of sorcerer spells you know.",
+				"The arcane magic you command is infused with elemental air. You can speak, read, and write {@language Primordial}. In addition, you gain the following spells at the listed sorcerer level. These spells do not count against the number of sorcerer spells you know.",
 				{
 					"type": "table",
 					"caption": "Storm Sorcerer Bonus Spells",
@@ -4964,7 +5050,7 @@
 			"level": 1,
 			"header": 1,
 			"entries": [
-				"The arcane magic you command is infused with elemental air. You can speak, read, and write Primordial. Knowing this language allows you to understand and be understood by those who speak its dialects: Aquan, Auran, Ignan, and Terran."
+				"The arcane magic you command is infused with elemental air. You can speak, read, and write {@language Primordial}. Knowing this language allows you to understand and be understood by those who speak its dialects: {@language Aquan}, {@language Auran}, {@language Ignan}, and {@language Terran}."
 			]
 		},
 		{

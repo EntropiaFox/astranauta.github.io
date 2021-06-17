@@ -1,4 +1,4 @@
-@import 'vars';
+@import "vars";
 
 @keyframes kf-fade-in {
 	from {
@@ -127,7 +127,7 @@
 		padding: 1px 0;
 		font-size: 12px;
 		display: none;
-		font-family: 'Andada', serif;
+		font-family: "Andada", serif;
 		font-variant: small-caps;
 		text-transform: uppercase;
 		font-weight: bold;

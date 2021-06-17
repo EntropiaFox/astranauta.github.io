@@ -3,6 +3,7 @@
 		{
 			"name": "\"Orc\" Bacon",
 			"source": "HF",
+			"page": 156,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"snack"
@@ -50,6 +51,7 @@
 		{
 			"name": "Amphail Braised Beef",
 			"source": "HF",
+			"page": 14,
 			"type": "Human",
 			"dishTypes": [
 				"entree"
@@ -138,6 +140,7 @@
 		{
 			"name": "Arkhan the Cruel's Flame-Roasted Halfling Chili",
 			"source": "HF",
+			"page": 155,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"entree"
@@ -262,6 +265,7 @@
 		{
 			"name": "Bangers and Smash",
 			"source": "HF",
+			"page": 89,
 			"type": "Dwarven",
 			"dishTypes": [
 				"side"
@@ -324,6 +328,7 @@
 		{
 			"name": "Barovian Butterscotch Pudding",
 			"source": "HF",
+			"page": 171,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"dessert"
@@ -420,6 +425,7 @@
 		{
 			"name": "Black Pudding",
 			"source": "HF",
+			"page": 109,
 			"type": "Dwarven",
 			"dishTypes": [
 				"dessert"
@@ -515,6 +521,7 @@
 		{
 			"name": "Braised Lamb",
 			"source": "HF",
+			"page": 164,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"entree"
@@ -613,6 +620,7 @@
 		{
 			"name": "Bytopian Shepherd's Bread",
 			"source": "HF",
+			"page": 176,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"entree"
@@ -716,6 +724,7 @@
 		{
 			"name": "Castle Amber Onion Soup",
 			"source": "HF",
+			"page": 39,
 			"type": "Human",
 			"dishTypes": [
 				"entree",
@@ -811,6 +820,7 @@
 		{
 			"name": "Cherrybread",
 			"source": "HF",
+			"page": 68,
 			"type": "Elven",
 			"dishTypes": [
 				"bread"
@@ -906,6 +916,7 @@
 		{
 			"name": "Chicken-Something Dumplings",
 			"source": "HF",
+			"page": 123,
 			"type": "Halfling",
 			"dishTypes": [
 				"entree"
@@ -1074,6 +1085,7 @@
 		{
 			"name": "Chultan Zombie",
 			"source": "HF",
+			"page": 199,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"cocktail"
@@ -1149,6 +1161,7 @@
 		{
 			"name": "Cocoa Broth",
 			"source": "HF",
+			"page": 188,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"drink"
@@ -1211,6 +1224,7 @@
 		{
 			"name": "Community Cheeses",
 			"source": "HF",
+			"page": 119,
 			"type": "Halfling",
 			"dishTypes": [
 				"entree"
@@ -1304,6 +1318,7 @@
 		{
 			"name": "Corned Beef and Cabbage",
 			"source": "HF",
+			"page": 100,
 			"type": "Dwarven",
 			"dishTypes": [
 				"entree"
@@ -1400,6 +1415,7 @@
 		{
 			"name": "Dark Molasses Nutbread",
 			"source": "HF",
+			"page": 23,
 			"type": "Human",
 			"dishTypes": [
 				"bread"
@@ -1482,6 +1498,7 @@
 		{
 			"name": "Deep Gnome Trillimac Pods",
 			"source": "HF",
+			"page": 167,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"entree"
@@ -1581,6 +1598,7 @@
 		{
 			"name": "Delayed Blast Fireball",
 			"source": "HF",
+			"page": 192,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"cocktail"
@@ -1634,6 +1652,7 @@
 		{
 			"name": "Delzoun \"Tide-Me-Overs\"",
 			"source": "HF",
+			"page": 90,
 			"type": "Dwarven",
 			"dishTypes": [
 				"snack",
@@ -1748,6 +1767,7 @@
 		{
 			"name": "Dragon Salmon",
 			"source": "HF",
+			"page": 75,
 			"type": "Elven",
 			"dishTypes": [
 				"entree"
@@ -1820,6 +1840,7 @@
 		{
 			"name": "Drow Mushroom Steaks",
 			"source": "HF",
+			"page": 67,
 			"type": "Elven",
 			"dishTypes": [
 				"entree"
@@ -1874,6 +1895,7 @@
 		{
 			"name": "Dwarven Flatbread",
 			"source": "HF",
+			"page": 103,
 			"type": "Dwarven",
 			"dishTypes": [
 				"bread"
@@ -1943,6 +1965,7 @@
 		{
 			"name": "Dwarven Mulled Wine",
 			"source": "HF",
+			"page": 186,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"drink",
@@ -2011,6 +2034,7 @@
 		{
 			"name": "Elven Bread",
 			"source": "HF",
+			"page": 60,
 			"type": "Elven",
 			"dishTypes": [
 				"bread"
@@ -2125,6 +2149,7 @@
 		{
 			"name": "Elven Marruth",
 			"source": "HF",
+			"page": 64,
 			"type": "Elven",
 			"dishTypes": [
 				"snack",
@@ -2210,6 +2235,7 @@
 		{
 			"name": "Evermead",
 			"source": "HF",
+			"page": 185,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"drink"
@@ -2267,6 +2293,7 @@
 		{
 			"name": "Everything Soup",
 			"source": "HF",
+			"page": 132,
 			"type": "Halfling",
 			"dishTypes": [
 				"soup"
@@ -2370,6 +2397,7 @@
 		{
 			"name": "Feywild Eggs",
 			"source": "HF",
+			"page": 58,
 			"type": "Elven",
 			"dishTypes": [
 				"entree"
@@ -2437,6 +2465,7 @@
 		{
 			"name": "Fire-Spiced Abyssal Chicken Kebabs",
 			"source": "HF",
+			"page": 159,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"entree"
@@ -2541,6 +2570,7 @@
 		{
 			"name": "Fried Fingers",
 			"source": "HF",
+			"page": 174,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"appetizer"
@@ -2684,6 +2714,7 @@
 		{
 			"name": "Gingerbread Man",
 			"source": "HF",
+			"page": 43,
 			"type": "Human",
 			"dishTypes": [
 				"dessert"
@@ -2834,6 +2865,7 @@
 		{
 			"name": "Goodberry Blend",
 			"source": "HF",
+			"page": 191,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"drink"
@@ -2886,6 +2918,7 @@
 		{
 			"name": "Greenspear Bundles in Bacon",
 			"source": "HF",
+			"page": 71,
 			"type": "Elven",
 			"dishTypes": [
 				"side"
@@ -2935,6 +2968,7 @@
 		{
 			"name": "Gully Dwarf Homestyle Porridge",
 			"source": "HF",
+			"page": 101,
 			"type": "Dwarven",
 			"dishTypes": [
 				"entree"
@@ -3008,6 +3042,7 @@
 		{
 			"name": "Gurdats",
 			"source": "HF",
+			"page": 19,
 			"type": "Human",
 			"dishTypes": [
 				"side"
@@ -3104,6 +3139,7 @@
 		{
 			"name": "Halfling Oatmeal Sweet Nibbles",
 			"source": "HF",
+			"page": 128,
 			"type": "Halfling",
 			"dishTypes": [
 				"dessert"
@@ -3183,6 +3219,7 @@
 		{
 			"name": "Hand Pies",
 			"source": "HF",
+			"page": 21,
 			"type": "Human",
 			"dishTypes": [
 				"entree"
@@ -3272,6 +3309,7 @@
 		{
 			"name": "Hardbuckler Stew",
 			"source": "HF",
+			"page": 160,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"entree",
@@ -3368,6 +3406,7 @@
 		{
 			"name": "Heartlands Rose Apple and Blackberry Pie",
 			"source": "HF",
+			"page": 139,
 			"type": "Halfling",
 			"dishTypes": [
 				"dessert"
@@ -3450,6 +3489,7 @@
 		{
 			"name": "High Harvest Puree",
 			"source": "HF",
+			"page": 59,
 			"type": "Elven",
 			"dishTypes": [
 				"entree"
@@ -3495,6 +3535,7 @@
 		{
 			"name": "Hogs in Bedrolls",
 			"source": "HF",
+			"page": 125,
 			"type": "Halfling",
 			"dishTypes": [
 				"snack"
@@ -3541,6 +3582,7 @@
 		{
 			"name": "Hommlet Golden Brown Roasted Turkey with Sausage Stuffing and Drippings",
 			"source": "HF",
+			"page": 16,
 			"type": "Human",
 			"dishTypes": [
 				"entree"
@@ -3755,6 +3797,7 @@
 		{
 			"name": "Honey-Drizzled Cream Puffs",
 			"source": "HF",
+			"page": 141,
 			"type": "Halfling",
 			"dishTypes": [
 				"pastry",
@@ -3875,6 +3918,7 @@
 		{
 			"name": "Honeyed Ham with Pineapple Gravy",
 			"source": "HF",
+			"page": 135,
 			"type": "Halfling",
 			"dishTypes": [
 				"entree"
@@ -3964,6 +4008,7 @@
 		{
 			"name": "Hot Spiced Cider",
 			"source": "HF",
+			"page": 189,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"drink"
@@ -4033,6 +4078,7 @@
 		{
 			"name": "Iron Rations",
 			"source": "HF",
+			"page": 8,
 			"type": "Human",
 			"dishTypes": [
 				"entree"
@@ -4092,6 +4138,7 @@
 		{
 			"name": "Kara-Tur Noodles",
 			"source": "HF",
+			"page": 32,
 			"type": "Human",
 			"dishTypes": [
 				"entree"
@@ -4220,6 +4267,7 @@
 		{
 			"name": "Lluirwood Salad",
 			"source": "HF",
+			"page": 131,
 			"type": "Halfling",
 			"dishTypes": [
 				"salad"
@@ -4298,6 +4346,7 @@
 		{
 			"name": "Meal's End",
 			"source": "HF",
+			"page": 79,
 			"type": "Elven",
 			"dishTypes": [
 				"dessert"
@@ -4355,6 +4404,7 @@
 		{
 			"name": "Melted Cheeses with Chunky Tomato Broth",
 			"source": "HF",
+			"page": 127,
 			"type": "Halfling",
 			"dishTypes": [
 				"entree",
@@ -4471,6 +4521,7 @@
 		{
 			"name": "Miner's Pie",
 			"source": "HF",
+			"page": 95,
 			"type": "Dwarven",
 			"dishTypes": [
 				"entree"
@@ -4635,6 +4686,7 @@
 		{
 			"name": "Moonshae Seafood Rice",
 			"source": "HF",
+			"page": 72,
 			"type": "Elven",
 			"dishTypes": [
 				"entree"
@@ -4722,6 +4774,7 @@
 		{
 			"name": "Mushroom Tea",
 			"source": "HF",
+			"page": 184,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"drink"
@@ -4786,6 +4839,7 @@
 		{
 			"name": "Orange Mountain Duck",
 			"source": "HF",
+			"page": 104,
 			"type": "Dwarven",
 			"dishTypes": [
 				"entree"
@@ -4871,6 +4925,7 @@
 		{
 			"name": "Otik's Skillet-Fried Spiced Potatoes",
 			"source": "HF",
+			"page": 29,
 			"type": "Human",
 			"dishTypes": [
 				"side"
@@ -4938,6 +4993,7 @@
 		{
 			"name": "Pan-Fried Knucklehead Trout",
 			"source": "HF",
+			"page": 13,
 			"type": "Human",
 			"dishTypes": [
 				"entree"
@@ -5008,6 +5064,7 @@
 		{
 			"name": "Par-Salian's Tea",
 			"source": "HF",
+			"page": 183,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"drink"
@@ -5060,6 +5117,7 @@
 		{
 			"name": "Plate-of-Gold",
 			"source": "HF",
+			"page": 106,
 			"type": "Dwarven",
 			"dishTypes": [
 				"side",
@@ -5174,6 +5232,7 @@
 		{
 			"name": "Potato Leek Soup",
 			"source": "HF",
+			"page": 97,
 			"type": "Dwarven",
 			"dishTypes": [
 				"soup"
@@ -5237,6 +5296,7 @@
 		{
 			"name": "Potion of Restoration",
 			"source": "HF",
+			"page": 196,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"cocktail"
@@ -5302,6 +5362,7 @@
 		{
 			"name": "Qualinesti Vegetable Stew",
 			"source": "HF",
+			"page": 76,
 			"type": "Elven",
 			"dishTypes": [
 				"soup"
@@ -5390,6 +5451,7 @@
 		{
 			"name": "Quith-pa",
 			"source": "HF",
+			"page": 57,
 			"type": "Elven",
 			"dishTypes": [
 				"dessert",
@@ -5446,6 +5508,7 @@
 		{
 			"name": "Reghed Venison Pot Roast",
 			"source": "HF",
+			"page": 37,
 			"type": "Human",
 			"dishTypes": [
 				"entree"
@@ -5568,6 +5631,7 @@
 		{
 			"name": "Rollrum",
 			"source": "HF",
+			"page": 194,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"cocktail"
@@ -5617,8 +5681,9 @@
 			"hasFluff": true
 		},
 		{
-			"name": "Sembian Honey\u2013Glazed Rothé Ribs",
+			"name": "Sembian Honey-Glazed Rothé Ribs",
 			"source": "HF",
+			"page": 34,
 			"type": "Human",
 			"dishTypes": [
 				"entree"
@@ -5718,6 +5783,7 @@
 		{
 			"name": "Smoked Sausages and Kraut with Dwarven Mustard",
 			"source": "HF",
+			"page": 99,
 			"type": "Dwarven",
 			"dishTypes": [
 				"entree"
@@ -5805,6 +5871,7 @@
 		{
 			"name": "Stuffed Egg-Battered Toast",
 			"source": "HF",
+			"page": 120,
 			"type": "Halfling",
 			"dishTypes": [
 				"entree"
@@ -5887,6 +5954,7 @@
 		{
 			"name": "Surrogate Steaks",
 			"source": "HF",
+			"page": 170,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"entree"
@@ -5996,6 +6064,7 @@
 		{
 			"name": "Sword Coast Seafood Bouillabaisse",
 			"source": "HF",
+			"page": 11,
 			"type": "Human",
 			"dishTypes": [
 				"entree",
@@ -6133,6 +6202,7 @@
 		{
 			"name": "Tavern \"Steak\"",
 			"source": "HF",
+			"page": 40,
 			"type": "Human",
 			"dishTypes": [
 				"entree"
@@ -6295,6 +6365,7 @@
 		{
 			"name": "The Mindflayer",
 			"source": "HF",
+			"page": 193,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"cocktail"
@@ -6352,6 +6423,7 @@
 		{
 			"name": "Traveler's Stew",
 			"source": "HF",
+			"page": 7,
 			"type": "Human",
 			"dishTypes": [
 				"entree",
@@ -6439,6 +6511,7 @@
 		{
 			"name": "Trolltide Candied Apples",
 			"source": "HF",
+			"page": 24,
 			"type": "Human",
 			"dishTypes": [
 				"dessert"
@@ -6492,6 +6565,7 @@
 		{
 			"name": "Twice-Baked Cockatrice Wings",
 			"source": "HF",
+			"page": 1163,
 			"type": "Uncommon Cuisine",
 			"dishTypes": [
 				"entree",
@@ -6544,6 +6618,7 @@
 		{
 			"name": "Underdark Lotus with Fire Lichen Spread",
 			"source": "HF",
+			"page": 93,
 			"type": "Dwarven",
 			"dishTypes": [
 				"entree"
@@ -6617,6 +6692,7 @@
 		{
 			"name": "Vedbread",
 			"source": "HF",
+			"page": 27,
 			"type": "Human",
 			"dishTypes": [
 				"bread"
@@ -6741,6 +6817,7 @@
 		{
 			"name": "Wood Elf Forest Salad",
 			"source": "HF",
+			"page": 63,
 			"type": "Elven",
 			"dishTypes": [
 				"salad"
@@ -6818,6 +6895,7 @@
 		{
 			"name": "Yawning Portal Buttermilk Biscuits",
 			"source": "HF",
+			"page": 31,
 			"type": "Human",
 			"dishTypes": [
 				"bread"
@@ -6888,6 +6966,7 @@
 		{
 			"name": "Zzar",
 			"source": "HF",
+			"page": 197,
 			"type": "Elixir/Ale",
 			"dishTypes": [
 				"cocktail"

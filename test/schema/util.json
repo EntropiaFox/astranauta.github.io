@@ -4,7 +4,7 @@
 
 	"title": "Util",
 	"description": "Utility definitions to be used in other schemas.",
-	"version": "1.2.3",
+	"version": "1.4.3",
 
 	"definitions" : {
 		"metaBlock": {
@@ -69,6 +69,35 @@
 			}
 		},
 
+		"languageNameLower": {
+			"type": "string",
+			"enum": [
+				"abyssal",
+				"aquan",
+				"auran",
+				"celestial",
+				"common",
+				"deep speech",
+				"draconic",
+				"druidic",
+				"dwarvish",
+				"elvish",
+				"giant",
+				"gnomish",
+				"goblin",
+				"halfling",
+				"ignan",
+				"infernal",
+				"orc",
+				"other",
+				"primordial",
+				"sylvan",
+				"terran",
+				"thieves' cant",
+				"undercommon"
+			]
+		},
+
 		"languageProficiencies": {
 			"type": "array",
 			"items": {
@@ -80,21 +109,7 @@
 							"from": {
 								"type": "array",
 								"items": {
-									"enum": [
-										"abyssal",
-										"celestial",
-										"deep speech",
-										"draconic",
-										"infernal",
-										"primordial",
-										"sylvan",
-										"undercommon",
-										"dwarvish",
-										"elvish",
-										"giant",
-										"goblin",
-										"other"
-									]
+									"$ref": "#/definitions/languageNameLower"
 								}
 							},
 							"count": {
@@ -154,7 +169,25 @@
 				"type": "object",
 				"properties": {
 					"artisan's tools": {"type": "boolean"},
+
+					"alchemist's supplies": {"type": "boolean"},
+					"brewer's supplies":{"type": "boolean"},
+					"calligrapher's supplies": {"type": "boolean"},
+					"carpenter's tools":{"type": "boolean"},
 					"cartographer's tools": {"type": "boolean"},
+					"cobbler's tools":{"type": "boolean"},
+					"cook's utensils": {"type": "boolean"},
+					"glassblower's tools":{"type": "boolean"},
+					"jeweler's tools": {"type": "boolean"},
+					"leatherworker's tools":{"type": "boolean"},
+					"mason's tools": {"type": "boolean"},
+					"painter's supplies":{"type": "boolean"},
+					"potter's tools": {"type": "boolean"},
+					"smith's tools":{"type": "boolean"},
+					"tinker's tools": {"type": "boolean"},
+					"weaver's tools":{"type": "boolean"},
+					"woodcarver's tools": {"type": "boolean"},
+
 					"disguise kit": {"type": "boolean"},
 					"forgery kit": {"type": "boolean"},
 					"gaming set": {"type": "boolean"},
@@ -164,7 +197,10 @@
 					"thieves' tools": {"type": "boolean"},
 					"vehicles (land)": {"type": "boolean"},
 					"vehicles (water)": {"type": "boolean"},
+					"poisoner's kit": {"type": "boolean"},
+
 					"any": {"type": "integer"},
+
 					"choose": {
 						"type": "object",
 						"properties": {
@@ -173,7 +209,25 @@
 								"items": {
 									"enum": [
 										"artisan's tools",
+
+										"alchemist's supplies",
+										"brewer's supplies",
+										"calligrapher's supplies",
+										"carpenter's tools",
 										"cartographer's tools",
+										"cobbler's tools",
+										"cook's utensils",
+										"glassblower's tools",
+										"jeweler's tools",
+										"leatherworker's tools",
+										"mason's tools",
+										"painter's supplies",
+										"potter's tools",
+										"smith's tools",
+										"tinker's tools",
+										"weaver's tools",
+										"woodcarver's tools",
+
 										"disguise kit",
 										"forgery kit",
 										"gaming set",
@@ -182,8 +236,7 @@
 										"navigator's tools",
 										"thieves' tools",
 										"vehicles (land)",
-										"vehicles (water)",
-										"alchemist's supplies"
+										"vehicles (water)"
 									]
 								}
 							},
@@ -194,6 +247,30 @@
 					}
 				}
 			}
+		},
+
+		"skillNameLower": {
+			"type": "string",
+			"enum": [
+				"athletics",
+				"acrobatics",
+				"sleight of hand",
+				"stealth",
+				"arcana",
+				"history",
+				"investigation",
+				"nature",
+				"religion",
+				"animal handling",
+				"insight",
+				"medicine",
+				"perception",
+				"survival",
+				"deception",
+				"intimidation",
+				"performance",
+				"persuasion"
+			]
 		},
 
 		"skillProficiencies": {
@@ -230,26 +307,7 @@
 								"items": {
 									"oneOf": [
 										{
-											"enum": [
-												"athletics",
-												"acrobatics",
-												"sleight of hand",
-												"stealth",
-												"arcana",
-												"history",
-												"investigation",
-												"nature",
-												"religion",
-												"animal handling",
-												"insight",
-												"medicine",
-												"perception",
-												"survival",
-												"deception",
-												"intimidation",
-												"performance",
-												"persuasion"
-											]
+											"$ref": "#/definitions/skillNameLower"
 										},
 										{
 											"type": "object",
@@ -357,6 +415,108 @@
 					"shield|phb": {"type": "boolean"}
 				},
 				"additionalProperties": false
+			}
+		},
+
+		"savingThrowProficiencies": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"str":  {"type": "boolean"},
+					"dex":  {"type": "boolean"},
+					"con":  {"type": "boolean"},
+					"int":  {"type": "boolean"},
+					"wis":  {"type": "boolean"},
+					"cha":  {"type": "boolean"},
+
+					"choose": {
+						"type": "object",
+						"properties": {
+							"from": {
+								"type": "array",
+								"items": {
+									"enum": [
+										"str",
+										"dex",
+										"con",
+										"int",
+										"wis",
+										"cha"
+									]
+								}
+							},
+							"count": {"type": "integer"}
+						},
+						"required": ["from"],
+						"additionalProperties": false
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+
+		"expertise": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"anyProficientSkill": {"type": "number"},
+
+					"athletics": {"type": "boolean"},
+					"acrobatics":{"type": "boolean"},
+					"sleight of hand": {"type": "boolean"},
+					"stealth":{"type": "boolean"},
+					"arcana": {"type": "boolean"},
+					"history":{"type": "boolean"},
+					"investigation": {"type": "boolean"},
+					"nature":{"type": "boolean"},
+					"religion": {"type": "boolean"},
+					"animal handling":{"type": "boolean"},
+					"insight": {"type": "boolean"},
+					"medicine":{"type": "boolean"},
+					"perception": {"type": "boolean"},
+					"survival":{"type": "boolean"},
+					"deception": {"type": "boolean"},
+					"intimidation":{"type": "boolean"},
+					"performance": {"type": "boolean"},
+					"persuasion":{"type": "boolean"},
+
+
+
+					"anyProficientTool": {"type": "number"},
+
+					"artisan's tools": {"type": "boolean"},
+
+					"alchemist's supplies": {"type": "boolean"},
+					"brewer's supplies":{"type": "boolean"},
+					"calligrapher's supplies": {"type": "boolean"},
+					"carpenter's tools":{"type": "boolean"},
+					"cartographer's tools": {"type": "boolean"},
+					"cobbler's tools":{"type": "boolean"},
+					"cook's utensils": {"type": "boolean"},
+					"glassblower's tools":{"type": "boolean"},
+					"jeweler's tools": {"type": "boolean"},
+					"leatherworker's tools":{"type": "boolean"},
+					"mason's tools": {"type": "boolean"},
+					"painter's supplies":{"type": "boolean"},
+					"potter's tools": {"type": "boolean"},
+					"smith's tools":{"type": "boolean"},
+					"tinker's tools": {"type": "boolean"},
+					"weaver's tools":{"type": "boolean"},
+					"woodcarver's tools": {"type": "boolean"},
+
+					"disguise kit": {"type": "boolean"},
+					"forgery kit": {"type": "boolean"},
+					"gaming set": {"type": "boolean"},
+					"herbalism kit": {"type": "boolean"},
+					"musical instrument": {"type": "boolean"},
+					"navigator's tools": {"type": "boolean"},
+					"thieves' tools": {"type": "boolean"},
+					"vehicles (land)": {"type": "boolean"},
+					"vehicles (water)": {"type": "boolean"},
+					"poisoner's kit": {"type": "boolean"}
+				}
 			}
 		},
 
@@ -679,6 +839,37 @@
 			]
 		},
 
+		"alignment": {
+			"type": "string",
+			"enum": [
+				"L",
+				"N",
+				"NX",
+				"NY",
+				"C",
+				"G",
+				"E",
+				"U",
+				"A"
+			]
+		},
+
+		"size": {
+			"type": "string",
+			"enum": [
+				"F",
+				"D",
+				"T",
+				"S",
+				"M",
+				"L",
+				"H",
+				"G",
+				"C",
+				"V"
+			]
+		},
+
 		"dataCondition": {
 			"type": "string",
 			"enum": [
@@ -774,6 +965,31 @@
 				}
 			]
 		},
+		"damageImmunityArrayPlayer": {
+			"type": "array",
+			"items": {
+				"oneOf": [
+					{
+						"$ref": "#/definitions/dataDamageType"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"choose": {
+								"type": "object",
+								"properties": {
+									"from": {
+										"$ref": "#/definitions/damageImmunityArrayPlayer"
+									}
+								},
+								"additionalProperties": false,
+								"required": ["from"]
+							}
+						}
+					}
+				]
+			}
+		},
 
 		"damageResistArray": {
 			"oneOf": [
@@ -820,6 +1036,31 @@
 					"type": "null"
 				}
 			]
+		},
+		"damageResistArrayPlayer": {
+			"type": "array",
+			"items": {
+				"oneOf": [
+					{
+						"$ref": "#/definitions/dataDamageType"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"choose": {
+								"type": "object",
+								"properties": {
+									"from": {
+										"$ref": "#/definitions/damageResistArrayPlayer"
+									}
+								},
+								"additionalProperties": false,
+								"required": ["from"]
+							}
+						}
+					}
+				]
+			}
 		},
 
 		"damageVulnerabilityArray":  {
@@ -868,6 +1109,31 @@
 				}
 			]
 		},
+		"damageVulnerabilityArrayPlayer": {
+			"type": "array",
+			"items": {
+				"oneOf": [
+					{
+						"$ref": "#/definitions/dataDamageType"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"choose": {
+								"type": "object",
+								"properties": {
+									"from": {
+										"$ref": "#/definitions/damageVulnerabilityArrayPlayer"
+									}
+								},
+								"additionalProperties": false,
+								"required": ["from"]
+							}
+						}
+					}
+				]
+			}
+		},
 
 		"conditionImmunityArray": {
 			"oneOf": [
@@ -911,6 +1177,31 @@
 					"type": "null"
 				}
 			]
+		},
+		"conditionImmunityArrayPlayer": {
+			"type": "array",
+			"items": {
+				"oneOf": [
+					{
+						"$ref": "#/definitions/dataCondition"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"choose": {
+								"type": "object",
+								"properties": {
+									"from": {
+										"$ref": "#/definitions/conditionImmunityArrayPlayer"
+									}
+								},
+								"additionalProperties": false,
+								"required": ["from"]
+							}
+						}
+					}
+				]
+			}
 		},
 
 		"genericFluffArrayItemData": {
@@ -1202,6 +1493,10 @@
 
 						"pantheon": {"description": "Used in deity data", "type": "string"},
 
+						"shortName": {"description": "Used in subclass data", "type": "string"},
+						"className": {"description": "Used in subclass data", "type": "string"},
+						"classSource": {"description": "Used in subclass data", "type": "string"},
+
 						"_mod": {
 							"type": "object",
 							"patternProperties": {
@@ -1303,6 +1598,19 @@
 						}
 					]
 				}
+			},
+			"properties": {
+				"_": {
+					"description": "Spells gained when gaining a particular feature, regardless of level or caster level",
+					"oneOf": [
+						{
+							"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"
+						},
+						{
+							"$ref": "#/definitions/_additionalSpellLevelObject"
+						}
+					]
+				}
 			}
 		},
 
@@ -1324,6 +1632,10 @@
 				"ritual": {
 					"description": "Ritual-only spells",
 					"$ref": "#/definitions/_additionalSpellArrayOfStringOrChoiceObject"
+				},
+				"resource": {
+					"description": "Spells which cost a specific resource to use (such as Ki), but otherwise have no restrictions",
+					"$ref": "#/definitions/_additionalSpellRechargeObject"
 				},
 				"_": {
 					"description": "Spells which do not fall into the above categories (i.e. have no specific recharge, and are simply known)",
@@ -1375,8 +1687,7 @@
 						"additionalProperties": false
 					}
 				]
-			},
-			"uniqueItems": true
+			}
 		},
 
 		"additionalSpellsArray": {
@@ -1385,6 +1696,10 @@
 			"items": {
 				"type": "object",
 				"properties": {
+					"name": {
+						"description": "Optional display name for the group",
+						"type": "string"
+					},
 					"ability": {
 						"description": "Optionally specify the ability score used for e.g. racial spellcasting",
 						"oneOf": [
@@ -1409,13 +1724,20 @@
 							}
 						]
 					},
+					"resourceName": {
+						"description": "Optional resource name for resource-cast spells in this group",
+						"type": "string"
+					},
 					"innate": {
+						"description": "Spells which can be innately cast, without expending normal spell resources",
 						"$ref": "#/definitions/_additionalSpellObject"
 					},
 					"prepared": {
+						"description": "Spells which are always prepared",
 						"$ref": "#/definitions/_additionalSpellObject"
 					},
 					"expanded": {
+						"description": "Expansions to a class' default spell list, from which spells can be chosen (e.g. Warlock Patron spells)",
 						"$ref": "#/definitions/_additionalSpellObject"
 					}
 				},
@@ -1524,6 +1846,38 @@
 							]
 						}
 					}
+				}
+			}
+		},
+
+		"reqAttuneTags": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"background":{"type": "string"},
+					"race": {"type": "string"},
+					"creatureType":{"$ref": "util.json#/definitions/creatureType"},
+					"size": {"type": "string"},
+					"class":{"type": "string"},
+
+					"languageProficiency": {"$ref": "#/definitions/languageNameLower"},
+					"skillProficiency": {"$ref": "#/definitions/skillNameLower"},
+
+					"alignment": {
+						"type": "array",
+						"items": {"$ref": "util.json#/definitions/alignment"}
+					},
+
+					"str": {"type": "integer"},
+					"dex": {"type": "integer"},
+					"con": {"type": "integer"},
+					"int": {"type": "integer"},
+					"wis": {"type": "integer"},
+					"cha": {"type": "integer"},
+
+					"spellcasting":{"type": "boolean"},
+					"psionics": {"type": "boolean"}
 				}
 			}
 		}

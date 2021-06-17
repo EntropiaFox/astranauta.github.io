@@ -483,6 +483,147 @@ class ConditionImmunityTag {
 }
 ConditionImmunityTag._WALKER = null;
 
+class ReqAttuneTagTag {
+	static _checkAndTag (obj, opts, isAlt) {
+		const prop = isAlt ? "reqAttuneAlt" : "reqAttune";
+
+		if (typeof obj[prop] === "boolean" || obj[prop] === "optional") return;
+
+		let req = obj[prop].replace(/^by/i, "");
+
+		const tags = [];
+
+		// "by a creature with the Mark of Finding"
+		req = req.replace(/(?:a creature with the )?\bMark of ([A-Z][^ ]+)/g, (...m) => {
+			const races = ReqAttuneTagTag._EBERRON_MARK_RACES[`Mark of ${m[1]}`];
+			if (!races) return "";
+			races.forEach(race => tags.push({race: race.toLowerCase()}));
+			return "";
+		});
+
+		// "by a member of the Azorius guild"
+		req = req.replace(/(?:a member of the )?\b(Azorius|Boros|Dimir|Golgari|Gruul|Izzet|Orzhov|Rakdos|Selesnya|Simic)\b guild/g, (...m) => {
+			tags.push({background: ReqAttuneTagTag._RAVNICA_GUILD_BACKGROUNDS[m[1]].toLowerCase()});
+			return "";
+		});
+
+		// "by a creature with an intelligence score of 3 or higher"
+		req = req.replace(/(?:a creature with (?:an|a) )?\b(strength|dexterity|constitution|intelligence|wisdom|charisma)\b score of (\d+)(?: or higher)?/g, (...m) => {
+			const abil = m[1].slice(0, 3).toLowerCase();
+			tags.push({[abil]: Number(m[2])});
+		});
+
+		// "by a creature that can speak Infernal"
+		req = req.replace(/(?:a creature that can )?speak \b(Abyssal|Aquan|Auran|Celestial|Common|Deep Speech|Draconic|Druidic|Dwarvish|Elvish|Giant|Gnomish|Goblin|Halfling|Ignan|Infernal|Orc|Primordial|Sylvan|Terran|Thieves' cant|Undercommon)\b/g, (...m) => {
+			tags.push({languageProficiency: m[1].toLowerCase()});
+			return "";
+		});
+
+		// "by a creature that has proficiency in the Arcana skill"
+		req = req.replace(/(?:a creature that has )?(?:proficiency|proficient).*?\b(Acrobatics|Animal Handling|Arcana|Athletics|Deception|History|Insight|Intimidation|Investigation|Medicine|Nature|Perception|Performance|Persuasion|Religion|Sleight of Hand|Stealth|Survival)\b skill/g, (...m) => {
+			tags.push({skillProficiency: m[1].toLowerCase()});
+			return "";
+		});
+
+		// "by a dwarf"
+		req = req.replace(/(?:(?:a|an) )?\b(Dragonborn|Dwarf|Elf|Gnome|Half-Elf|Half-Orc|Halfling|Human|Tiefling|Warforged)\b/gi, (...m) => {
+			const source = m[1].toLowerCase() === "warforged" ? SRC_ERLW : "";
+			tags.push({race: `${m[1]}${source ? `|${source}` : ""}`.toLowerCase()});
+			return "";
+		});
+
+		// "by a humanoid", "by a small humanoid"
+		req = req.replace(/a (?:\b(tiny|small|medium|large|huge|gargantuan)\b )?\b(aberration|beast|celestial|construct|dragon|elemental|fey|fiend|giant|humanoid|monstrosity|ooze|plant|undead)\b/gi, (...m) => {
+			const size = m[1] ? m[1][0].toUpperCase() : null;
+			const out = {creatureType: m[2].toLowerCase()};
+			if (size) out.size = size;
+			tags.push(out);
+			return "";
+		});
+
+		// "by a spellcaster"
+		req = req.replace(/(?:a )?\bspellcaster\b/gi, (...m) => {
+			tags.push({spellcasting: true});
+			return "";
+		});
+
+		// "by a creature that has psionic ability"
+		req = req.replace(/(?:a creature that has )?\bpsionic ability/gi, (...m) => {
+			tags.push({psionics: true});
+			return "";
+		});
+
+		// "by a bard, cleric, druid, sorcerer, warlock, or wizard"
+		req = req.replace(/(?:(?:a|an) )?\b(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard)\b/gi, (...m) => {
+			const source = m[1].toLowerCase() === "artificer" ? SRC_TCE : null;
+			tags.push({class: `${m[1]}${source ? `|${source}` : ""}`.toLowerCase()});
+			return "";
+		});
+
+		// region Alignment
+		// "by a creature of evil alignment"
+		// "by a dwarf, fighter, or paladin of good alignment"
+		// "by an elf or half-elf of neutral good alignment"
+		// "by an evil cleric or paladin"
+		const alignmentParts = req.split(/,| or /gi)
+			.map(it => it.trim())
+			.filter(it => it && it !== "," && it !== "or");
+
+		alignmentParts.forEach(part => {
+			Object.values(AlignmentUtil.ALIGNMENTS)
+				.forEach(it => {
+					if (it.regexWeak.test(part)) {
+						// We assume the alignment modifies all previous entries
+						if (tags.length) tags.forEach(by => by.alignment = [...it.output]);
+						else tags.push({alignment: [...it.output]});
+					}
+				});
+		});
+		// endregion
+
+		const propOut = isAlt ? "reqAttuneAltTags" : "reqAttuneTags";
+		if (tags.length) obj[propOut] = tags;
+		else delete obj[propOut];
+	}
+
+	static tryRun (it, opts) {
+		if (it.reqAttune) this._checkAndTag(it, opts);
+		if (it.inherits?.reqAttune) this._checkAndTag(it.inherits, opts);
+
+		if (it.reqAttuneAlt) this._checkAndTag(it, opts, true);
+		if (it.inherits?.reqAttuneAlt) this._checkAndTag(it.inherits, opts, true);
+	}
+}
+ReqAttuneTagTag._RAVNICA_GUILD_BACKGROUNDS = {
+	"Azorius": "Azorius Functionary|GGR",
+	"Boros": "Boros Legionnaire|GGR",
+	"Dimir": "Dimir Operative|GGR",
+	"Golgari": "Golgari Agent|GGR",
+	"Gruul": "Gruul Anarch|GGR",
+	"Izzet": "Izzet Engineer|GGR",
+	"Orzhov": "Orzhov Representative|GGR",
+	"Rakdos": "Rakdos Cultist|GGR",
+	"Selesnya": "Selesnya Initiate|GGR",
+	"Simic": "Simic Scientist|GGR",
+};
+ReqAttuneTagTag._EBERRON_MARK_RACES = {
+	"Mark of Warding": ["Dwarf (Mark of Warding)|ERLW"],
+	"Mark of Shadow": ["Elf (Mark of Shadow)|ERLW"],
+	"Mark of Scribing": ["Gnome (Mark of Scribing)|ERLW"],
+	"Mark of Detection": ["Half-Elf (Variant; Mark of Detection)|ERLW"],
+	"Mark of Storm": ["Half-Elf (Variant; Mark of Storm)|ERLW"],
+	"Mark of Finding": [
+		"Half-Orc (Mark of Finding)|ERLW",
+		"Human (Mark of Finding)|ERLW",
+	],
+	"Mark of Healing": ["Halfling (Mark of Healing)|ERLW"],
+	"Mark of Hospitality": ["Halfling (Mark of Hospitality)|ERLW"],
+	"Mark of Handling": ["Human (Mark of Handling)|ERLW"],
+	"Mark of Making": ["Human (Mark of Making)|ERLW"],
+	"Mark of Passage": ["Human (Mark of Passage)|ERLW"],
+	"Mark of Sentinel": ["Human (Mark of Sentinel)|ERLW"],
+};
+
 if (typeof module !== "undefined") {
 	module.exports = {
 		ConverterUtilsItem,
@@ -497,5 +638,6 @@ if (typeof module !== "undefined") {
 		DamageImmunityTag,
 		DamageVulnerabilityTag,
 		ConditionImmunityTag,
+		ReqAttuneTagTag,
 	};
 }

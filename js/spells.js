@@ -21,6 +21,8 @@ class SpellsPage extends ListPage {
 		this._seenHashes = new Set();
 
 		this._spellBookView = null;
+
+		this._lastFilterValues = null;
 	}
 
 	getListItem (spell, spI) {
@@ -32,24 +34,46 @@ class SpellsPage extends ListPage {
 
 		this._pageFilter.mutateAndAddToFilters(spell, isExcluded);
 
-		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
-
 		const source = Parser.sourceJsonToAbv(spell.source);
 		const time = PageFilterSpells.getTblTimeStr(spell.time[0]);
 		const school = Parser.spSchoolAndSubschoolsAbvsShort(spell.school, spell.subschools);
 		const concentration = spell._isConc ? "×" : "";
 		const range = Parser.spRangeToFull(spell.range);
 
-		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="bold col-2-9 pl-0">${spell.name}</span>
-			<span class="col-1-5 text-center">${PageFilterSpells.getTblLevelStr(spell)}</span>
-			<span class="col-1-7 text-center">${time}</span>
-			<span class="col-1-2 sp__school-${spell.school} text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</span>
-			<span class="col-0-6 text-center" title="Concentration">${concentration}</span>
-			<span class="col-2-4 text-right">${range}</span>
-			<span class="col-1-7 text-center ${Parser.sourceJsonToColor(spell.source)} pr-0" title="${Parser.sourceJsonToFull(spell.source)}" ${BrewUtil.sourceJsonToStyle(spell.source)}>${source}</span>
-		</a>`;
+		const eleLi = e_({
+			tag: "div",
+			clazz: `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
+			click: (evt) => this._list.doSelect(listItem, evt),
+			contextmenu: (evt) => ListUtil.openContextMenu(evt, this._list, listItem),
+			children: [
+				e_({
+					tag: "a",
+					href: `#${hash}`,
+					clazz: "lst--border lst__row-inner",
+					children: [
+						e_({tag: "span", clazz: `bold col-2-9 pl-0`, text: spell.name}),
+						e_({tag: "span", clazz: `col-1-5 text-center`, text: PageFilterSpells.getTblLevelStr(spell)}),
+						e_({tag: "span", clazz: `col-1-7 text-center`, text: time}),
+						e_({
+							tag: "span",
+							clazz: `col-1-2 sp__school-${spell.school} text-center`,
+							title: Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools),
+							style: Parser.spSchoolAbvToStylePart(spell.school),
+							text: school,
+						}),
+						e_({tag: "span", clazz: `col-0-6 text-center`, title: "Concentration", text: concentration}),
+						e_({tag: "span", clazz: `col-2-4 text-right`, text: range}),
+						e_({
+							tag: "span",
+							clazz: `col-1-7 text-center ${Parser.sourceJsonToColor(spell.source)} pr-0`,
+							style: BrewUtil.sourceJsonToStylePart(spell.source),
+							title: `${Parser.sourceJsonToFull(spell.source)}${Renderer.utils.getSourceSubText(spell)}`,
+							text: source,
+						}),
+					],
+				}),
+			],
+		});
 
 		const listItem = new ListItem(
 			spI,
@@ -72,9 +96,6 @@ class SpellsPage extends ListPage {
 			},
 		);
 
-		eleLi.addEventListener("click", (evt) => this._list.doSelect(listItem, evt));
-		eleLi.addEventListener("contextmenu", (evt) => ListUtil.openContextMenu(evt, this._list, listItem));
-
 		return listItem;
 	}
 
@@ -84,7 +105,7 @@ class SpellsPage extends ListPage {
 			const s = this._dataList[li.ix];
 			return this._pageFilter.toDisplay(f, s);
 		});
-		MultiSource.onFilterChangeMulti(this._dataList);
+		this._multiSource.onFilterChangeMulti(this._dataList, f);
 	}
 
 	getSublistItem (spell, pinId) {
@@ -152,12 +173,12 @@ class SpellsPage extends ListPage {
 			new Renderer.utils.TabButton({
 				label: "Info",
 				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(spell),
+				isVisible: Renderer.utils.hasFluffText(spell, "spellFluff"),
 			}),
 			new Renderer.utils.TabButton({
 				label: "Images",
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(spell),
+				isVisible: Renderer.utils.hasFluffImages(spell, "spellFluff"),
 			}),
 		];
 
@@ -171,7 +192,7 @@ class SpellsPage extends ListPage {
 
 	async pDoLoadSubHash (sub) {
 		sub = this._pageFilter.filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub, pPreloadSublistSources);
+		await ListUtil.pSetFromSubHashes(sub, this.pPreloadSublistSources.bind(this));
 
 		await this._spellBookView.pHandleSub(sub);
 	}
@@ -179,6 +200,7 @@ class SpellsPage extends ListPage {
 	async pOnLoad () {
 		window.loadHash = this.doLoadHash.bind(this);
 		window.loadSubHash = this.pDoLoadSubHash.bind(this);
+		window.pHandleUnknownHash = this.pHandleUnknownHash.bind(this);
 
 		await this._pageFilter.pInitFilterBox({
 			$iptSearch: $(`#lst__search`),
@@ -187,7 +209,7 @@ class SpellsPage extends ListPage {
 		});
 
 		const [subclassLookup] = await Promise.all([
-			RenderSpells.pGetSubclassLookup(),
+			DataUtil.class.pGetSubclassLookup(),
 			ExcludeUtil.pInitialise(),
 		]);
 		Object.assign(SUBCLASS_LOOKUP, subclassLookup);
@@ -279,7 +301,7 @@ class SpellsPage extends ListPage {
 	}
 
 	_handleBrew (homebrew) {
-		RenderSpells.mergeHomebrewSubclassLookup(SUBCLASS_LOOKUP, homebrew);
+		DataUtil.class.mergeHomebrewSubclassLookup(SUBCLASS_LOOKUP, homebrew);
 		this._addSpells(homebrew.spell);
 		return Promise.resolve();
 	}
@@ -480,7 +502,7 @@ class SpellsPage extends ListPage {
 		ListUtil.bindOtherButtons({
 			download: true,
 			upload: {
-				pFnPreLoad: pPreloadSublistSources,
+				pFnPreLoad: this.pPreloadSublistSources.bind(this),
 			},
 			sendToBrew: {
 				mode: "spellBuilder",
@@ -499,34 +521,34 @@ class SpellsPage extends ListPage {
 		this.constructor._INDEXABLE_PROPS.forEach(it => this._getSearchCache_handleEntryProp(entity, it, ptrOut));
 		return ptrOut._;
 	}
+
+	async pPreloadSublistSources (json) {
+		const loaded = Object.keys(spellsPage._multiSource.loadedSources)
+			.filter(it => spellsPage._multiSource.loadedSources[it].loaded);
+		const lowerSources = json.sources.map(it => it.toLowerCase());
+		const toLoad = Object.keys(spellsPage._multiSource.loadedSources)
+			.filter(it => !loaded.includes(it))
+			.filter(it => lowerSources.includes(it.toLowerCase()));
+		const loadTotal = toLoad.length;
+		if (loadTotal) {
+			await Promise.all(toLoad.map(src => spellsPage._multiSource.pLoadSource(src, "yes")));
+		}
+	}
+
+	async pHandleUnknownHash (link, sub) {
+		const src = Object.keys(spellsPage._multiSource.loadedSources)
+			.find(src => src.toLowerCase() === (UrlUtil.decodeHash(link)[1] || "").toLowerCase());
+		if (src) {
+			await spellsPage._multiSource.pLoadSource(src, "yes");
+			Hist.hashChange();
+		}
+	}
 }
 SpellsPage._BOOK_VIEW_MODE_K = "bookViewMode";
 SpellsPage._INDEXABLE_PROPS = [
 	"entries",
 	"entriesHigherLevel",
 ];
-
-async function pPreloadSublistSources (json) {
-	const loaded = Object.keys(spellsPage._multiSource.loadedSources)
-		.filter(it => spellsPage._multiSource.loadedSources[it].loaded);
-	const lowerSources = json.sources.map(it => it.toLowerCase());
-	const toLoad = Object.keys(spellsPage._multiSource.loadedSources)
-		.filter(it => !loaded.includes(it))
-		.filter(it => lowerSources.includes(it.toLowerCase()));
-	const loadTotal = toLoad.length;
-	if (loadTotal) {
-		await Promise.all(toLoad.map(src => spellsPage._multiSource.pLoadSource(src, "yes")));
-	}
-}
-
-async function pHandleUnknownHash (link, sub) {
-	const src = Object.keys(spellsPage._multiSource.loadedSources)
-		.find(src => src.toLowerCase() === decodeURIComponent(link.split(HASH_LIST_SEP)[1]).toLowerCase());
-	if (src) {
-		await spellsPage._multiSource.pLoadSource(src, "yes");
-		Hist.hashChange();
-	}
-}
 
 const spellsPage = new SpellsPage();
 window.addEventListener("load", () => spellsPage.pOnLoad());

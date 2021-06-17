@@ -202,14 +202,16 @@
 											"name": "How long do a shifter's temporary hit points last?",
 											"entries": [
 												"Unless a feature says otherwise, temporary hit points last until you finish a long rest (PH, 198)."
-											]
+											],
+											"id": "139"
 										},
 										{
 											"type": "entries",
 											"name": "Does all magical darkness block darkvision?",
 											"entries": [
 												"Magical darkness blocks {@sense darkvision} only if the rules text for a particular instance of darkness says it does. For example, the darkness spell specifies that it produces a magical darkness that obstructs {@sense darkvision}. That obstruction is a feature of the spell, not of magical darkness in general."
-											]
+											],
+											"id": "13a"
 										}
 									]
 								}
@@ -243,23 +245,27 @@
 											"name": "What is the timing of Flash of Genius?",
 											"entries": [
 												"You use Flash of Genius immediately after the triggering {@dice d20} is rolled and before any of the effects of the roll are applied. Unless a rule tells you otherwise, a reaction occurs immediately after its trigger."
-											]
+											],
+											"id": "13c"
 										},
 										{
 											"type": "entries",
 											"name": "Which action is used to activate a Spell-Storing Item?",
 											"entries": [
 												"Activating a Spell-Storing Item uses the Use an Object action."
-											]
+											],
+											"id": "13d"
 										},
 										{
 											"type": "entries",
 											"name": "Can an artificer dismiss one of their infusions on an object early?",
 											"entries": [
 												"No. An infusion lasts until one of the circumstances described in the \"Infusing an Item\" section of the Infuse Item feature."
-											]
+											],
+											"id": "13e"
 										}
-									]
+									],
+									"id": "13b"
 								},
 								{
 									"type": "entries",
@@ -326,7 +332,8 @@
 											"name": "Does using College of Valor's Combat Inspiration add to the damage of an attack count as a damage die for purposes of critical hits?",
 											"entries": [
 												"Yes."
-											]
+											],
+											"id": "13f"
 										}
 									]
 								},
@@ -348,7 +355,8 @@
 											"name": "If a Grave Domain cleric casts a spell that restores hit points to multiple creatures and one of those creatures has 0 hit points, does the spell restore the maximum number of hit points to all targets of the spell?",
 											"entries": [
 												"No. Only a creature with 0 hit points benefits from the hit-point-restoration portion of the Circle of Mortality feature."
-											]
+											],
+											"id": "140"
 										}
 									]
 								},
@@ -484,7 +492,8 @@
 											"name": "Can the Disarming {@action Attack} maneuver disarm a creature of a shield it has donned?",
 											"entries": [
 												"No. Disarming {@action Attack} forces a creature to drop an object it is holding. Donned shields aren't merely held."
-											]
+											],
+											"id": "141"
 										}
 									]
 								},
@@ -612,7 +621,8 @@
 												"No. Divine Smite requires a melee attack using a weapon. The rules don't consider unarmed strikes to be weapons.",
 												"Divine Smite does work with a melee weapon attack, and an unarmed strike can be used to make such an attack. But the text of Divine Smite also refers to the \"weapon's damage,\" and an unarmed strike isn't a weapon.",
 												"If a DM decides to override this rule, no imbalance is created. Tying Divine Smite to weapons was a thematic choice on our part\u2014paladins being traditionally associated with weapons. It was not a game balance choice."
-											]
+											],
+											"id": "142"
 										}
 									]
 								},
@@ -642,7 +652,8 @@
 											"name": "Does a Monster Slayer ranger's Supernatural Defense feature apply if a creature damages the ranger, thus causing the ranger to make a Constitution saving throw to maintain concentration on a spell? ",
 											"entries": [
 												"Yes."
-											]
+											],
+											"id": "143"
 										}
 									]
 								},
@@ -714,14 +725,16 @@
 											"name": "Does the Thief's Use Magic Device feature allow them to use spell scrolls?",
 											"entries": [
 												"Yes. The intent is that a Thief can use spell scrolls with Use Magic Device."
-											]
+											],
+											"id": "144"
 										},
 										{
 											"type": "entries",
 											"name": "Can a Thief use Fast Hands to use or apply poisons?",
 											"entries": [
 												"Yes. Administering poison uses the {@action Use an Object} action."
-											]
+											],
+											"id": "145"
 										}
 									]
 								},
@@ -912,21 +925,24 @@
 											"name": "Can Minor Conjuration create a copy of a book, complete with all its text, if the wizard hasn't seen all the text?",
 											"entries": [
 												"No. In the case of a multipart object, the intent is that you must have seen all parts of the object to duplicate those parts. In the case of a book, if you have seen only the cover, then the duplicate created will be a copy of the cover, and the pages will be blank."
-											]
+											],
+											"id": "146"
 										},
 										{
 											"type": "entries",
 											"name": "Can a School of Divination wizard on the Ethereal Plane use Portent on a creature that the wizard can see on the Material Plane?",
 											"entries": [
 												"Yes. Portent requires you to be able to see the creature, but it has no range restriction."
-											]
+											],
+											"id": "147"
 										},
 										{
 											"type": "entries",
 											"name": "For a wizard to cast a ritual spell contained in their spellbook, do they need to read from the book or use it as part of the ritual?",
 											"entries": [
 												"No. As written, the rule doesn't require you to read from the book. The narrative intent, however, is that the wizard is reading from their book, but the only mechanical requirement is that the wizard has the spell in their spellbook."
-											]
+											],
+											"id": "148"
 										}
 									]
 								}
@@ -1430,14 +1446,16 @@
 											"name": "The {@condition frightened} condition says \"while the source of its fear is within line of sight.\" Does that mean you have disadvantage on attack rolls and ability checks even if the source is {@condition invisible} but you have a clear line to its space?",
 											"entries": [
 												"No. If you can't see something, it's not within your line of sight. Speaking of \"line of sight,\" the game uses the English meaning of the term, which has no special meaning in the rules."
-											]
+											],
+											"id": "149"
 										},
 										{
 											"type": "entries",
 											"name": "Does casting a spell while taking a short rest interrupt the rest?",
 											"entries": [
 												"Yes. Spellcasting is more strenuous than the activities listed on page 186 of the Player's Handbook: \"eating, drinking, reading, and tending to wounds.\""
-											]
+											],
+											"id": "14a"
 										}
 									]
 								}
@@ -1790,14 +1808,16 @@
 											"name": "Are natural weapons considered weapons?",
 											"entries": [
 												"Things designated as weapons by the rules, including natural weapons, are indeed weapons. In contrast, unarmed strikes are not weapons. They are something you do with an unarmed part of your body."
-											]
+											],
+											"id": "14b"
 										},
 										{
 											"type": "entries",
 											"name": "Can I make an attack with one weapon, then draw a second weapon with my other hand and qualify to use two-weapon fighting?",
 											"entries": [
 												"To use the two-weapon fighting bonus action (PH, 195), you must have both weapons in hand when you make the first attack. If you're instead fighting with two or more weapons as part of the Extra {@action Attack} feature, the rule for the two-weapon fighting bonus action doesn't apply. The rule for that bonus action applies only to itself, not to any other use of two or more weapons in the game."
-											]
+											],
+											"id": "14c"
 										}
 									]
 								}
@@ -1858,7 +1878,8 @@
 											"name": "If I'm concentrating on a spell and I cast another spell that requires concentration, when does my concentration on the first spell end?",
 											"entries": [
 												"If you're concentrating on a spell, your concentration on it ends immediately when you start casting another spell that requires concentration."
-											]
+											],
+											"id": "14d"
 										}
 									]
 								},
@@ -2072,14 +2093,16 @@
 											"name": "Can I cast animate dead on the humanoid-shaped corpse of an undead creature such as a zombie or a ghast?",
 											"entries": [
 												"When {@spell animate dead} targets a corpse, the body must have belonged to a creature of the humanoid creature type. If the spell targets a pile of bones, there is no creature type restriction; the bones become a skeleton."
-											]
+											],
+											"id": "14e"
 										},
 										{
 											"type": "entries",
 											"name": "Does casting animate objects during a time stop spell end the time stop?",
 											"entries": [
 												"No. Commanding the newly created creatures with your bonus action does end time stop, however."
-											]
+											],
+											"id": "14f"
 										},
 										{
 											"type": "entries",
@@ -2127,7 +2150,8 @@
 											"name": "Can a creature under the effect of compelled duel teleport more than 30 feet away from the caster?",
 											"entries": [
 												"No. You can't move farther than 30 feet away from the caster of compelled duel by any means, including teleportation."
-											]
+											],
+											"id": "150"
 										},
 										{
 											"type": "entries",
@@ -2142,7 +2166,8 @@
 											"name": "Can conjure animals summon a swarm?",
 											"entries": [
 												"No. Conjure animals summons individual creatures, and swarms are groups of creatures."
-											]
+											],
+											"id": "151"
 										},
 										{
 											"type": "entries",
@@ -2168,14 +2193,16 @@
 											"name": "Does counterspell target the caster or the spell you're trying to counter?",
 											"entries": [
 												"Counterspell targets the other spellcaster."
-											]
+											],
+											"id": "152"
 										},
 										{
 											"type": "entries",
 											"name": "If a wizard with Inured to Undeath spends Hit Dice to raise the hit point maximum of a homunculus created by the create homunculus spell, does it still decrease the wizard's hit point maximum?",
 											"entries": [
 												"Spending the Hit Dice affects the homunculus as described in the spell, but the wizard's hit point maximum isn't decreased."
-											]
+											],
+											"id": "153"
 										},
 										{
 											"type": "entries",
@@ -2267,7 +2294,8 @@
 											"name": "When you dismiss the familiar you conjure with the find familiar spell to its pocket dimension, can it take any objects it's wearing or carrying with it?",
 											"entries": [
 												"No, the intent of find familiar is that any objects are left behind when the familiar vanishes. This intent will be reflected in future printings of the Player's Handbook."
-											]
+											],
+											"id": "154"
 										},
 										{
 											"type": "entries",
@@ -2301,7 +2329,8 @@
 											"name": "When a creature successfully saves against guardian of faith and takes 10 radiant damage, how much damage does that count against the total amount of damage the spell can deal?",
 											"entries": [
 												"Is it 20 because that's how much it dealt or 10 because that's how much the target took? It dealt 10 damage to the creature, so 10 is subtracted from the total."
-											]
+											],
+											"id": "155"
 										},
 										{
 											"type": "entries",
@@ -2414,7 +2443,8 @@
 											"entries": [
 												"No, the caster's worn and carried equipment are intended to go with them.",
 												"Some teleportation effects do specify that you teleport with your gear; such specification is an example of a rule being needlessly fastidious, since no teleportation effect in the game assumes that you teleport without your clothes, just as the general movement rules don't assume that you drop everything when you walk."
-											]
+											],
+											"id": "156"
 										},
 										{
 											"type": "entries",
@@ -2448,7 +2478,8 @@
 											"name": "What happens to objects brought inside and left inside Mordenkainen's magnificent mansion when the spell ends?",
 											"entries": [
 												"The intent is that the objects are ejected from the mansion when the spell ends and appear in unoccupied spaces closest to where the door was. This intent will be reflected in future printings of the Player's Handbook."
-											]
+											],
+											"id": "157"
 										},
 										{
 											"type": "entries",
@@ -2479,21 +2510,24 @@
 											"name": "If a creature under the effects of polymorph takes enough fire damage to revert to its true form and that form has fire resistance, does the true form take the full remaining damage or only half due to resistance?",
 											"entries": [
 												"When the creature reverts to its true form, any leftover damage is subject to that form's damage resistances, if any."
-											]
+											],
+											"id": "158"
 										},
 										{
 											"type": "entries",
 											"name": "Can a creature under the effects of polymorph have other spell effects on them, or are those game statistics also replaced by the those of the beast form?",
 											"entries": [
 												"Polymorph replaces only the target's character sheet or stat block with the stat block of the chosen form. Other effects, such as other spells, still exist."
-											]
+											],
+											"id": "159"
 										},
 										{
 											"type": "entries",
 											"name": "What happens if I'm polymorphed or Wild Shaped into a creature with fewer than 100 hit points and then I'm targeted by power word kill?",
 											"entries": [
 												"You die."
-											]
+											],
+											"id": "15a"
 										},
 										{
 											"type": "entries",
@@ -2516,7 +2550,8 @@
 											"name": "Can I hand a shadow blade to another PC?",
 											"entries": [
 												"It only says the blade dissipates as I throw or drop it. No. The intent is the blade vanishes when you let go of it (that's one of the meanings of the word \"drop\")."
-											]
+											],
+											"id": "15b"
 										},
 										{
 											"type": "entries",
@@ -2531,7 +2566,8 @@
 											"name": "If a spellcaster is affected by slow and takes two turns to finish casting a spell, what happens if their target has moved out of range or out of sight?",
 											"entries": [
 												"You choose the targets of a spell when you complete casting a spell, not when you start."
-											]
+											],
+											"id": "15c"
 										},
 										{
 											"type": "entries",
@@ -2570,14 +2606,16 @@
 											"name": "If you are affecting a target with telekinesis and an ally put you inside Otiluke's resilient sphere, can you continue affecting the target or other targets with the existing telekinesis spell?",
 											"entries": [
 												"You can maintain your telekinetic grip on a target you were already affecting, but you can't affect a new target. The sphere provides total cover that stops you from targeting anything outside it."
-											]
+											],
+											"id": "15d"
 										},
 										{
 											"type": "entries",
 											"name": "If two creatures are under the effect of tether essence and they are both damaged by an area effect such as a dragon's breath, do they each take the damage twice?",
 											"entries": [
 												"Yes."
-											]
+											],
+											"id": "15e"
 										},
 										{
 											"type": "entries",
@@ -2762,7 +2800,8 @@
 											"name": "Since game features of the same name don't stack, does that mean a target can't be affected by a shadow's Strength Drain more than once between rests?",
 											"entries": [
 												"The intended function of Strength Drain is that it stacks with itself, as signaled by the fact that you die if your Strength is reduced to 0 by it."
-											]
+											],
+											"id": "15f"
 										},
 										{
 											"type": "entries",
@@ -2793,21 +2832,24 @@
 											"name": "Does a gauth's Devour Magic eye ray end a creature's attunement to an attuned magic item the ray affects?",
 											"entries": [
 												"No."
-											]
+											],
+											"id": "160"
 										},
 										{
 											"type": "entries",
 											"name": "Can a creature that burrows grapple a target and drag them into the ground by burrowing?",
 											"entries": [
 												"No. A burrowing creature can drag another creature with them only if they have the ability to leave a tunnel. For example, a purple worm has the Tunneler trait, so it can drag a {@condition grappled} creature into a tunnel it creates when burrowing. Conversely, an earth elemental can't drag a creature into the ground with it."
-											]
+											],
+											"id": "161"
 										},
 										{
 											"type": "entries",
 											"name": "Can a hydra use Reactive Heads to make multiple opportunity attacks against one creature at the same time when it provokes?",
 											"entries": [
 												"Yes. For that reason, we recommend taking the {@action Disengage} action when you're going to move away from a hydra."
-											]
+											],
+											"id": "162"
 										}
 									]
 								}
@@ -2910,35 +2952,40 @@
 											"name": "Does the ring of the ram use spell attacks or weapon attacks?",
 											"entries": [
 												"The text doesn't specify. The attack of the ring of the ram is a ranged spell attack. Future printings of the Dungeon Master's Guide will reflect that intent."
-											]
+											],
+											"id": "163"
 										},
 										{
 											"type": "entries",
 											"name": "When using a rope of entanglement, do I keep holding one end in my hand, or does the entire rope wrap around the target?",
 											"entries": [
 												"You are still holding the rope while the other end entangles the target."
-											]
+											],
+											"id": "164"
 										},
 										{
 											"type": "entries",
 											"name": "Can a sphere of annihilation enter a Leomund's tiny hut?",
 											"entries": [
 												"Yes. The sphere destroys the dome."
-											]
+											],
+											"id": "165"
 										},
 										{
 											"type": "entries",
 											"name": "Can you gain the magical bonus of a +2 shield if you are holding the shield without taking an action to don it?",
 											"entries": [
 												"Yes, but only the magical +2, which says you gain it when holding the shield. You gain the shield's base AC bonus only if you use your action to don the shield as normal (see \"Getting Into and Out of Armor\" in chapter 5 of the Player's Handbook)."
-											]
+											],
+											"id": "166"
 										},
 										{
 											"type": "entries",
 											"name": "If a character hits a monk with a dwarven thrower and the monk uses Deflect Missiles, does the hammer return to the attacker first, or can the monk catch it?",
 											"entries": [
 												"The monk can catch it."
-											]
+											],
+											"id": "167"
 										}
 									]
 								}

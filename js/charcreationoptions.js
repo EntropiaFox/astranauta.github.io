@@ -27,8 +27,8 @@ class CharCreationOptionsPage extends ListPage {
 		const source = Parser.sourceJsonToAbv(it.source);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-2 text-center pl-0" title="${it._dOptionType}">${it.optionType}</span>
-			<span class="bold col-8">${it.name}</span>
+			<span class="col-5 text-center pl-0">${it._dOptionType}</span>
+			<span class="bold col-5">${it.name}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)}" title="${Parser.sourceJsonToFull(it.source)} pr-0" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
@@ -64,8 +64,8 @@ class CharCreationOptionsPage extends ListPage {
 
 		const $ele = $$`<div class="lst__row lst__row--sublist flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
-				<span class="col-2 text-center pl-0" title="${it._dOptionType}">${it.optionType}</span>
-				<span class="bold col-10 pr-0">${it.name}</span>
+				<span class="col-5 text-center pl-0">${it._dOptionType}</span>
+				<span class="bold col-7 pr-0">${it.name}</span>
 			</a>
 		</div>`
 			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
@@ -110,12 +110,12 @@ class CharCreationOptionsPage extends ListPage {
 			new Renderer.utils.TabButton({
 				label: "Info",
 				fnPopulate: buildFluffTab.bind,
-				isVisible: Renderer.utils.hasFluffText(it),
+				isVisible: Renderer.utils.hasFluffText(it, "charoptionFluff"),
 			}),
 			new Renderer.utils.TabButton({
 				label: "Images",
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(it),
+				isVisible: Renderer.utils.hasFluffImages(it, "charoptionFluff"),
 			}),
 		];
 

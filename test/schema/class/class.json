@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"version": "2.4.0",
+	"version": "2.6.2",
 	"$id": "class.json",
 
 	"type": "object",
@@ -105,6 +105,10 @@
 					}
 				},
 				"isClassFeatureVariant": {"type": "boolean"},
+				"isGainAtNextFeatureLevel": {
+					"description": "If this feature should only be (optionally) gained at the next \"gainSubclassFeature\" level, rather than at the level listed on the feature.",
+					"type": "boolean"
+				},
 				"otherSources": {
 					"$ref": "util.json#/definitions/otherSources"
 				}
@@ -186,12 +190,57 @@
 		},
 
 		"subclass": {
+			"anyOf": [
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/subclassData"
+						},
+						{
+							"required": [
+								"name",
+								"shortName",
+								"source",
+								"className",
+								"classSource",
+								"subclassFeatures"
+							]
+						}
+					]
+				},
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/subclassData"
+						},
+						{
+							"$ref": "util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		},
+
+		"subclassData": {
 			"type": "object",
 			"properties": {
 				"name": {
 					"type": "string"
 				},
 				"shortName": {
+					"type": "string"
+				},
+				"source": {
+					"type": "string"
+				},
+				"className": {
+					"description": "The name of the class this subclass belongs to. Homebrew use only",
+					"type": "string"
+				},
+				"classSource": {
+					"description": "The source of the class this subclass belongs to (defaults to PHB). Homebrew use only",
 					"type": "string"
 				},
 				"isReprinted": {
@@ -251,9 +300,6 @@
 					"type": "array",
 					"items": { "$ref": "#/definitions/classTableGroup"}
 				},
-				"source": {
-					"type": "string"
-				},
 				"otherSources": {
 					"$ref": "util.json#/definitions/otherSources"
 				},
@@ -267,22 +313,8 @@
 					"description": "Homebrew use only",
 					"type": "array",
 					"items": {"$ref": "#/definitions/spellRef"}
-				},
-				"className": {
-					"description": "The name of the class this subclass belongs to. Homebrew use only",
-					"type": "string"
-				},
-				"classSource": {
-					"description": "The source of the class this subclass belongs to (defaults to PHB). Homebrew use only",
-					"type": "string"
 				}
 			},
-			"required": [
-				"name",
-				"shortName",
-				"subclassFeatures",
-				"source"
-			],
 			"additionalProperties": false
 		},
 
@@ -345,6 +377,37 @@
 		},
 
 		"class": {
+			"anyOf": [
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/classData"
+						},
+						{
+							"required": [
+								"name",
+								"source",
+								"classFeatures"
+							]
+						}
+					]
+				},
+				{
+					"type": "object",
+					"$$merge": [
+						{
+							"$ref": "#/definitions/classData"
+						},
+						{
+							"$ref": "util.json#/definitions/copyBlock"
+						}
+					]
+				}
+			]
+		},
+
+		"classData": {
 			"description" : "A character class",
 
 			"type": "object",
@@ -536,10 +599,6 @@
 				"subclassTitle": {
 					"type": "string"
 				},
-				"subclasses": {
-					"type": "array",
-					"items": {"$ref": "#/definitions/subclass"}
-				},
 				"page": {
 					"type": "integer"
 				},
@@ -569,20 +628,13 @@
 						"additionalProperties": false
 					}
 				},
+				"additionalSpells": { "$ref": "util.json#/definitions/additionalSpellsArray" },
 				"classSpells": {
 					"description": "Homebrew use only",
 					"type": "array",
 					"items": {"$ref": "#/definitions/spellRef"}
-				},
-				"languageProficiencies": {
-					"$ref": "util.json#/definitions/languageProficiencies"
 				}
 			},
-			"required": [
-				"name",
-				"source",
-				"classFeatures"
-			],
 			"additionalProperties": false
 		},
 
@@ -590,6 +642,7 @@
 			"description": "A reference to a spell, linked by name and source. Assumes PHB as the source, if none is provided.",
 			"oneOf": [
 				{
+					"description": "A spell with a non-PHB source",
 					"type": "object",
 					"properties": {
 						"name": {
@@ -601,7 +654,24 @@
 					},
 					"required": [
 						"name", "source"
-					]
+					],
+					"additionalProperties": false
+				},
+				{
+					"description": "Another class/subclass/subsubclass's spell list",
+					"type": "object",
+					"properties": {
+						"className": {"type": "string"},
+						"classSource": {"type": "string"},
+						"subclassName": {"type": "string"},
+						"subclassSource": {"type": "string"},
+						"subSubclassName": {"type": "string"},
+						"subSubclassSource": {"type": "string"}
+					},
+					"required": [
+						"className", "classSource"
+					],
+					"additionalProperties": false
 				},
 				{
 					"type": "string"
@@ -611,9 +681,18 @@
 	},
 
 	"properties": {
+		"_meta": {
+			"$ref": "util.json#/definitions/metaBlock"
+		},
+
 		"class": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/class"}
+		},
+
+		"subclass": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/subclass"}
 		},
 
 		"classFeature": {
@@ -626,6 +705,5 @@
 			"items": {"$ref": "#/definitions/subclassFeature"}
 		}
 	},
-	"required": ["class", "classFeature"],
 	"additionalProperties": false
 }

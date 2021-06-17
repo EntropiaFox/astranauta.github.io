@@ -32,7 +32,7 @@ class NavBar {
 		};
 		document.getElementById("navigation").prepend(btnShowHide);
 
-		addLi(navBar, "5etools.html", "Home", {isRoot: true});
+		addLi(navBar, "index.html", "Home", {isRoot: true});
 
 		const ulRules = addDropdown(navBar, "Rules");
 		addLi(ulRules, "quickreference.html", "Quick Reference");
@@ -57,6 +57,7 @@ class NavBar {
 		addLi(ulBooks, "book.html", "Explorer's Guide to Wildemount", {aHash: "EGW", date: "2020"});
 		addLi(ulBooks, "book.html", "Mythic Odysseys of Theros", {aHash: "MOT", date: null});
 		addLi(ulBooks, "book.html", "Tasha's Cauldron of Everything", {aHash: "TCE", date: null});
+		addLi(ulBooks, "book.html", "Van Richten's Guide to Ravenloft", {aHash: "VRGR", date: "2021"});
 		addDivider(ulBooks);
 		addLi(ulBooks, "book.html", "Dungeon Master's Screen: Wilderness Kit", {aHash: "ScreenWildernessKit", date: "2020"});
 		addDivider(ulBooks);
@@ -121,6 +122,7 @@ class NavBar {
 		addLi(ulAdventures, "adventure.html", "Theros: No Silent Secret", {isSide: true, aHash: "MOT-NSS", date: null});
 		addLi(ulAdventures, "adventure.html", "Icewind Dale: Rime of the Frostmaiden", {isSide: true, aHash: "IDRotF", date: null});
 		addLi(ulAdventures, "adventure.html", "Candlekeep Mysteries", {isSide: true, aHash: "CM", date: "2021"});
+		addLi(ulAdventures, "adventure.html", "Ravenloft: The House of Lament", {isSide: true, aHash: "HoL", date: null});
 		addLi(ulDms, "cultsboons.html", "Cults & Supernatural Boons");
 		addLi(ulDms, "objects.html", "Objects");
 		addLi(ulDms, "trapshazards.html", "Traps & Hazards");
@@ -205,7 +207,7 @@ class NavBar {
 					const sync = StorageUtil.syncGetDump();
 					const async = await StorageUtil.pGetDump();
 					const dump = {sync, async};
-					DataUtil.userDownload("5etools", dump);
+					DataUtil.userDownload("5etools", dump, {fileType: "5etools"});
 				},
 				title: "Save any locally-stored data (loaded homebrew, active blacklists, DM Screen configuration,...) to a file.",
 			},
@@ -216,11 +218,18 @@ class NavBar {
 				html: "Load State from File",
 				click: async (evt) => {
 					evt.preventDefault();
-					const dump = await DataUtil.pUserUpload();
+					const jsons = await DataUtil.pUserUpload({expectedFileType: "5etools"});
+					if (!jsons?.length) return;
+					const dump = jsons[0];
 
-					StorageUtil.syncSetFromDump(dump.sync);
-					await StorageUtil.pSetFromDump(dump.async);
-					location.reload();
+					try {
+						StorageUtil.syncSetFromDump(dump.sync);
+						await StorageUtil.pSetFromDump(dump.async);
+						location.reload();
+					} catch (e) {
+						JqueryUtil.doToast({type: "danger", content: `Failed to load state! ${VeCt.STR_SEE_CONSOLE}`});
+						throw e;
+					}
 				},
 				title: "Load previously-saved data (loaded homebrew, active blacklists, DM Screen configuration,...) from a file.",
 			},
@@ -463,7 +472,7 @@ class NavBar {
 		let currentPage = window.location.pathname;
 		currentPage = currentPage.substr(currentPage.lastIndexOf("/") + 1);
 
-		if (!currentPage) currentPage = "5etools.html";
+		if (!currentPage) currentPage = "index.html";
 		return currentPage.trim();
 	}
 

@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "items.json",
-	"version": "1.10.2",
+	"version": "1.10.5",
 	"type": "object",
 	"definitions": {
 		"itemData": {
@@ -145,6 +145,10 @@
 				"strength": {
 					"type": ["string", "null"]
 				},
+				"dexterityMax": {
+					"description": "Maximum dexterity modifier for medium armor.",
+					"type": ["integer", "null"]
+				},
 				"sword": {
 					"type": "boolean"
 				},
@@ -160,7 +164,7 @@
 				},
 				"value": {
 					"description": "In copper pieces.",
-					"type": "number"
+					"type": ["number", "null"]
 				},
 				"currencyConversion": {
 					"description": "ID of a value conversion table. Homebrew only.",
@@ -329,6 +333,9 @@
 				"bonusSpellAttack": {
 					"type": "string"
 				},
+				"bonusSpellDamage": {
+					"type": "string"
+				},
 				"bonusSpellSaveDc": {
 					"type": "string"
 				},
@@ -420,6 +427,12 @@
 				},
 				"grantsProficiency": {
 					"type": "boolean"
+				},
+				"reqAttuneTags": {
+					"$ref": "util.json#/definitions/reqAttuneTags"
+				},
+				"reqAttuneAltTags": {
+					"$ref": "util.json#/definitions/reqAttuneTags"
 				},
 				"hasFluff": {"type": "boolean"},
 				"hasFluffImages": {"type": "boolean"},

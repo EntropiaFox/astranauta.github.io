@@ -741,10 +741,10 @@ class ListUiUtil {
 		});
 	}
 
-	static handleClickBtnShowHideListPreview (evt, page, entity, btnShowHidePreview, elePreviewWrp) {
+	static handleClickBtnShowHideListPreview (evt, page, entity, btnShowHidePreview, elePreviewWrp, nxtText = null) {
 		evt.stopPropagation();
 
-		const nxtText = btnShowHidePreview.innerHTML.trim() === this.HTML_GLYPHICON_EXPAND ? this.HTML_GLYPHICON_CONTRACT : this.HTML_GLYPHICON_EXPAND;
+		nxtText = nxtText ?? btnShowHidePreview.innerHTML.trim() === this.HTML_GLYPHICON_EXPAND ? this.HTML_GLYPHICON_CONTRACT : this.HTML_GLYPHICON_EXPAND;
 
 		elePreviewWrp.classList.toggle("ve-hidden", nxtText === this.HTML_GLYPHICON_EXPAND);
 		btnShowHidePreview.innerHTML = nxtText;
@@ -772,6 +772,29 @@ class ListUiUtil {
 			}).appendTo(item.ele);
 		} else elePreviewWrp = item.ele.lastElementChild;
 		return elePreviewWrp;
+	}
+
+	static bindPreviewAllButton ($btnAll, list) {
+		$btnAll
+			.click(async () => {
+				const nxtHtml = $btnAll.html() === ListUiUtil.HTML_GLYPHICON_EXPAND
+					? ListUiUtil.HTML_GLYPHICON_CONTRACT
+					: ListUiUtil.HTML_GLYPHICON_EXPAND;
+
+				if (nxtHtml === ListUiUtil.HTML_GLYPHICON_CONTRACT && list.visibleItems.length > 500) {
+					const isSure = await InputUiUtil.pGetUserBoolean({
+						title: "Are You Sure?",
+						htmlDescription: `You are about to expand ${list.visibleItems.length} rows. This may seriously degrade performance.<br>Are you sure you want to continue?`,
+					})
+					if (!isSure) return;
+				}
+
+				$btnAll.html(nxtHtml);
+
+				list.visibleItems.forEach(listItem => {
+					if (listItem.data.btnShowHidePreview.innerHTML !== nxtHtml) listItem.data.btnShowHidePreview.click();
+				});
+			});
 	}
 }
 ListUiUtil.HTML_GLYPHICON_EXPAND = `[+]`;
@@ -843,165 +866,39 @@ ProfUiUtil.PROF_TO_FULL = {
 
 class TabUiUtilBase {
 	static decorate (obj) {
-		/* No-op */
-	}
-}
+		obj.__tabState = {};
 
-class TabUiUtil extends TabUiUtilBase {
-	static decorate (obj) {
-		super.decorate(obj);
-
-		obj.__tabMetas = {};
-
-		obj._resetTabs = function (tabGroup) {
-			tabGroup = tabGroup || "_default";
-			(obj.__tabMetas[tabGroup] || [])
-				.filter(Boolean)
-				.forEach(tab => tab.fnCleanup());
-			obj.__tabMetas[tabGroup] = [];
-		};
-
-		obj._setActiveTab = function (tab, tabGroup) {
-			tabGroup = tabGroup || "_default";
-			const activeProp = `activeTab__${tabGroup}`;
-
-			const tabMeta = obj.__tabMetas[tabGroup];
-
-			const ix = tabMeta.indexOf(tab);
-			if (~ix) {
-				const _proxyProp = `_${tab.proxyProp}`;
-				obj[_proxyProp][activeProp] = ix;
-			}
-		};
-
-		obj._hasPrevTab = function (proxyProp, tabGroup) { return obj.__hasTab(proxyProp, tabGroup, -1); };
-		obj._hasNextTab = function (proxyProp, tabGroup) { return obj.__hasTab(proxyProp, tabGroup, 1); };
-
-		obj.__hasTab = function (proxyProp, tabGroup, offset) {
-			tabGroup = tabGroup || "_default";
-			const activeProp = `activeTab__${tabGroup}`;
-			const _proxyProp = `_${proxyProp}`;
-			const ixActive = obj[_proxyProp][activeProp];
-			return !!(obj.__tabMetas[tabGroup] && obj.__tabMetas[tabGroup][ixActive + offset]);
-		};
-
-		obj._doSwitchToPrevTab = function (proxyProp, tabGroup) { return obj.__doSwitchToTab(proxyProp, tabGroup, -1); };
-		obj._doSwitchToNextTab = function (proxyProp, tabGroup) { return obj.__doSwitchToTab(proxyProp, tabGroup, 1); };
-
-		obj.__doSwitchToTab = function (proxyProp, tabGroup, offset) {
-			if (!obj.__hasTab(proxyProp, tabGroup, offset)) return;
-			tabGroup = tabGroup || "_default";
-			const activeProp = `activeTab__${tabGroup}`;
-			const _proxyProp = `_${proxyProp}`;
-			obj[_proxyProp][activeProp] = obj[_proxyProp][activeProp] + offset;
-		};
-
-		/**
-		 * @param proxyProp
-		 * @param hk
-		 * @param [opts]
-		 * @param [opts.tabGroup]
-		 */
-		obj._addHookActiveTab = function (proxyProp, hk, opts) {
-			opts = opts || {};
-
-			const tabGroup = opts.tabGroup || "_default";
-			const activeProp = `activeTab__${tabGroup}`;
-
-			this._addHook(proxyProp, activeProp, hk);
-		};
-
-		/**
-		 * @param ix The tabs ordinal index.
-		 * @param name The name to display on the tab.
-		 * @param proxyProp E.g. "state", "meta", ...
-		 * @param [opts] Options object.
-		 * @param [opts.tabGroup] User-defined string identifying which group of tabs this belongs to.
-		 * @param [opts.hasBorder] True if the tab should compensate for having a top border; i.e. pad itself.
-		 * @param [opts.hasBackground] True if the tab should have a flat-color background.
-		 * @param [opts.cbTabChange] Callback function to call on tab change.
-		 */
-		obj._getTab = function (ix, name, proxyProp, opts) {
-			const tabGroup = opts.tabGroup || "_default";
-
-			const activeProp = `activeTab__${tabGroup}`;
-
-			const _proxyProp = `_${proxyProp}`;
-			const __proxyProp = `__${proxyProp}`;
-			obj[__proxyProp][activeProp] = obj[__proxyProp][activeProp] || 0;
-
-			const $btnTab = $(`<button class="btn btn-default ui-tab__btn-tab-head">${name}</button>`)
-				.click(() => obj[_proxyProp][activeProp] = ix);
-
-			const $wrpTab = $(`<div class="ui-tab__wrp-tab-body ve-hidden ${opts.hasBorder ? "ui-tab__wrp-tab-body--border" : ""} ${opts.hasBackground ? "ui-tab__wrp-tab-body--background" : ""}"></div>`);
-
-			const hkActiveTab = (prop, ixActive, prevIxActive) => {
-				$btnTab.toggleClass("ui-tab__btn-tab-head--active", ixActive === ix);
-				$wrpTab.toggleVe(ixActive === ix);
-
-				if (opts.cbTabChange) {
-					// If we were the tab switched away from, run the on-change callback (ensuring it only gets called once)
-					if (prevIxActive === ix && ixActive !== ix) opts.cbTabChange();
-				}
+		obj.__getTabProps = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP}) {
+			return {
+				_propProxy: `_${propProxy}`,
+				__propProxy: `__${propProxy}`,
+				propActive: `ixActiveTab__${tabGroup}`,
 			};
-			obj._addHook(proxyProp, activeProp, hkActiveTab);
-			hkActiveTab(activeProp, obj[_proxyProp][activeProp]);
-
-			const tab = {
-				ix,
-				$btnTab,
-				$wrpTab,
-				proxyProp,
-				fnCleanup: () => {
-					obj._removeHook(proxyProp, activeProp, hkActiveTab);
-				},
-			};
-
-			(obj.__tabMetas[tabGroup] = obj.__tabMetas[tabGroup] || [])[ix] = tab;
-
-			return tab;
 		};
-	}
-}
 
-class TabUiUtilSide extends TabUiUtilBase {
-	static decorate (obj) {
-		super.decorate();
-
-		/** Render a collection of tabs. An alternative to `_getTab`. */
-		obj._renderTabs = function ($parent, proxyProp, tabMetas) {
+		/** Render a collection of tabs. */
+		obj._renderTabs = function (tabMetas, {$parent, propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP, cbTabChange} = {}) {
 			if (!tabMetas.length) throw new Error(`One or more tab meta must be specified!`);
+			obj._resetTabs({tabGroup});
+
 			const isSingleTab = tabMetas.length === 1;
 
-			const _proxyProp = `_${proxyProp}`;
-			const __proxyProp = `__${proxyProp}`;
-			this[__proxyProp].ixActiveTab = this[__proxyProp].ixActiveTab || 0;
+			const {propActive, _propProxy, __propProxy} = obj.__getTabProps({propProxy, tabGroup});
 
-			const $dispTabTitle = $(`<div class="ui-tab-side__disp-active-tab-name ${isSingleTab ? `ui-tab-side__disp-active-tab-name--single` : ""} bold"></div>`);
+			this[__propProxy][propActive] = this[__propProxy][propActive] || 0;
 
-			const renderTabMeta_buttons = (it) => {
-				const $btns = it.buttons.map((meta, j) => {
-					const $btn = $(`<button class="btn btn-primary btn-sm" ${meta.title ? `title="${meta.title.qq()}"` : ""}>${meta.html}</button>`)
-						.click(evt => meta.pFnClick(evt, $btn));
-
-					if (j === it.buttons.length - 1) $btn.addClass(`br-0 btr-0 bbr-0`);
-
-					return $btn;
-				});
-
-				const $btnTab = $$`<div class="btn-group flex-v-center flex-h-right mb-2">${$btns}</div>`;
-
-				return {
-					...it,
-					$btnTab,
-				};
-			};
+			const $dispTabTitle = obj.__$getDispTabTitle({isSingleTab});
 
 			const renderTabMetas_standard = (it, i) => {
-				const $btnTab = isSingleTab ? null : $(`<button class="btn btn-default btn-sm ui-tab-side__btn-tab mb-2 br-0 btr-0 bbr-0 text-left flex-v-center" title="${it.name.qq()}"><div class="${it.icon} ui-tab-side__icon-tab mr-2 mobile-ish__mr-0 text-center"></div><div class="mobile-ish__hidden">${it.name.qq()}</div></button>`)
-					.click(() => this[_proxyProp].ixActiveTab = i);
+				const $btnTab = obj.__$getBtnTab({
+					isSingleTab,
+					tabMeta: it,
+					_propProxy,
+					propActive,
+					ixTab: i,
+				});
 
-				const $wrpTab = $(`<div class="flex-col w-100 min-h-100 h-100 ui-tab-side__wrp-tab px-3 py-2 overflow-y-auto"></div>`);
+				const $wrpTab = obj.__$getWrpTab({tabMeta: it, ixTab: i});
 
 				return {
 					...it,
@@ -1012,75 +909,181 @@ class TabUiUtilSide extends TabUiUtilBase {
 			};
 
 			const tabMetasOut = tabMetas.map((it, i) => {
-				switch (it.type) {
-					case "buttons": return renderTabMeta_buttons(it, i);
-					default: return renderTabMetas_standard(it, i);
-				}
-			});
+				if (it.type) return obj.__renderTypedTabMeta({tabMeta: it, ixTab: i});
+				return renderTabMetas_standard(it, i);
+			}).filter(Boolean);
 
-			$$`<div class="flex-col w-100 h-100">
-				${$dispTabTitle}
-				<div class="flex w-100 h-100 min-h-0">
-					<div class="flex-col h-100 pt-2">${tabMetasOut.map(it => it.$btnTab)}</div>
-					<div class="flex-col w-100 h-100 min-w-0">${tabMetasOut.map(it => it.$wrpTab).filter(Boolean)}</div>
-				</div>
-			</div>`.appendTo($parent);
+			if ($parent) {
+				$$`<div class="flex-col w-100 h-100">
+					${$dispTabTitle}
+					<div class="flex w-100 h-100 min-h-0">
+						<div class="flex-col h-100 pt-2">${tabMetasOut.map(it => it.$btnTab)}</div>
+						<div class="flex-col w-100 h-100 min-w-0">${tabMetasOut.map(it => it.$wrpTab).filter(Boolean)}</div>
+					</div>
+				</div>`.appendTo($parent);
+			}
 
 			const hkActiveTab = () => {
 				tabMetasOut.forEach(it => {
 					if (it.type) return; // For specially typed tabs (e.g. buttons), do nothing
 
-					const isActive = it.ix === this[_proxyProp].ixActiveTab;
-					if (isActive) $dispTabTitle.text(isSingleTab ? "" : it.name);
+					const isActive = it.ix === this[_propProxy][propActive];
+					if (isActive && $dispTabTitle) $dispTabTitle.text(isSingleTab ? "" : it.name);
 					if (it.$btnTab) it.$btnTab.toggleClass("active", isActive);
 					it.$wrpTab.toggleVe(isActive);
 				});
+
+				if (cbTabChange) cbTabChange();
 			};
-			this._addHook(proxyProp, "ixActiveTab", hkActiveTab);
+			this._addHook(propProxy, propActive, hkActiveTab);
 			hkActiveTab();
+
+			obj.__tabState[tabGroup] = {
+				fnReset: () => {
+					this._removeHook(propProxy, propActive, hkActiveTab);
+				},
+				tabMetasOut,
+			};
 
 			return tabMetasOut;
 		};
 
-		/**
-		 * Render a single tab.
-		 * @param ix The tabs ordinal index.
-		 * @param name The name to display on the tab.
-		 * @param opts Options object.
-		 * @param opts.tabGroup User-defined string identifying which group of tabs this belongs to.
-		 * @param opts.stateObj The state object in which this tab should track/set its active status. Usually a proxy.
-		 * @param [opts.hasBorder] True if the tab should compensate for having a top border; i.e. pad itself.
-		 * @param [opts.hasBackground] True if the tab should have a flat-color background.
-		 * @param [opts.cbTabChange] Callback function to call on tab change.
-		 */
-		obj._getTab = function (ix, name, opts) {
-			opts.tabGroup = opts.tabGroup || "_default";
+		obj._resetTabs = function ({tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
+			if (!obj.__tabState[tabGroup]) return;
+			obj.__tabState[tabGroup].fnReset();
+			delete obj.__tabState[tabGroup];
+		};
 
-			const activeProp = `activeTab__${opts.tabGroup}`;
+		obj._hasPrevTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
+			return obj.__hasTab({propProxy, tabGroup, offset: -1});
+		};
+		obj._hasNextTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
+			return obj.__hasTab({propProxy, tabGroup, offset: 1});
+		};
 
-			if (!obj.__tabMetas[opts.tabGroup]) obj.__tabMetas[opts.tabGroup] = [];
-			const tabMeta = obj.__tabMetas[opts.tabGroup];
-			opts.stateObj[activeProp] = opts.stateObj[activeProp] || 0;
+		obj.__hasTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP, offset}) {
+			const {propActive, _propProxy} = obj.__getTabProps({propProxy, tabGroup});
+			const ixActive = obj[_propProxy][propActive];
+			return !!(obj.__tabState[tabGroup]?.tabMetasOut && obj.__tabState[tabGroup]?.tabMetasOut[ixActive + offset]);
+		};
 
-			const isActive = opts.stateObj[activeProp] === ix;
+		obj._doSwitchToPrevTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
+			return obj.__doSwitchToTab({propProxy, tabGroup, offset: -1});
+		};
+		obj._doSwitchToNextTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
+			return obj.__doSwitchToTab({propProxy, tabGroup, offset: 1});
+		};
 
-			const $btnTab = $(`<button class="btn btn-default ui-tab__btn-tab-head ${isActive ? "ui-tab__btn-tab-head--active" : ""}">${name}</button>`)
-				.click(() => {
-					const prevTab = tabMeta[opts.stateObj[activeProp]];
-					prevTab.$btnTab.removeClass("ui-tab__btn-tab-head--active");
-					prevTab.$wrpTab.toggleClass("ve-hidden", true);
+		obj.__doSwitchToTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP, offset}) {
+			if (!obj.__hasTab({propProxy, tabGroup, offset})) return;
+			const {propActive, _propProxy} = obj.__getTabProps({propProxy, tabGroup});
+			obj[_propProxy][propActive] = obj[_propProxy][propActive] + offset;
+		};
 
-					opts.stateObj[activeProp] = ix;
-					$btnTab.addClass("ui-tab__btn-tab-head--active");
-					$wrpTab.toggleClass("ve-hidden", false);
-					if (opts.cbTabChange) opts.cbTabChange();
-				});
+		obj._addHookActiveTab = function (hook, {propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
+			const {propActive} = obj.__getTabProps({propProxy, tabGroup});
+			this._addHook(propProxy, propActive, hook);
+		};
 
-			const $wrpTab = $(`<div class="ui-tab__wrp-tab-body ${isActive ? "" : "ve-hidden"} ${opts.hasBorder ? "ui-tab__wrp-tab-body--border" : ""} ${opts.hasBackground ? "ui-tab__wrp-tab-body--background" : ""}"></div>`);
+		obj._getIxActiveTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP} = {}) {
+			const {propActive, _propProxy} = obj.__getTabProps({propProxy, tabGroup});
+			return obj[_propProxy][propActive];
+		};
 
-			const out = {ix, $btnTab, $wrpTab};
-			tabMeta[ix] = out;
-			return out;
+		obj._setIxActiveTab = function ({propProxy = TabUiUtilBase._DEFAULT_PROP_PROXY, tabGroup = TabUiUtilBase._DEFAULT_TAB_GROUP, ixActiveTab} = {}) {
+			const {propActive, _propProxy} = obj.__getTabProps({propProxy, tabGroup});
+			obj[_propProxy][propActive] = ixActiveTab;
+		};
+
+		obj.__$getBtnTab = function () { throw new Error("Unimplemented!"); };
+		obj.__$getWrpTab = function () { throw new Error("Unimplemented!"); };
+		obj.__renderTypedTabMeta = function () { throw new Error("Unimplemented!"); };
+		obj.__$getDispTabTitle = function () { throw new Error("Unimplemented!"); };
+	}
+}
+TabUiUtilBase._DEFAULT_TAB_GROUP = "_default";
+TabUiUtilBase._DEFAULT_PROP_PROXY = "meta";
+
+TabUiUtilBase.TabMeta = class {
+	constructor ({name, icon = null, type = null, buttons = null} = {}) {
+		this.name = name;
+		this.icon = icon;
+		this.type = type;
+		this.buttons = buttons;
+	}
+}
+
+class TabUiUtil extends TabUiUtilBase {
+	static decorate (obj) {
+		super.decorate(obj);
+
+		obj.__$getBtnTab = function ({tabMeta, _propProxy, propActive, ixTab}) {
+			return $(`<button class="btn btn-default ui-tab__btn-tab-head">${tabMeta.name.qq()}</button>`)
+				.click(() => obj[_propProxy][propActive] = ixTab);
+		};
+
+		obj.__$getWrpTab = function ({tabMeta}) {
+			return $(`<div class="ui-tab__wrp-tab-body ve-hidden ${tabMeta.hasBorder ? "ui-tab__wrp-tab-body--border" : ""} ${tabMeta.hasBackground ? "ui-tab__wrp-tab-body--background" : ""}"></div>`)
+		};
+
+		obj.__renderTypedTabMeta = function ({tabMeta, ixTab}) {
+			switch (tabMeta.type) {
+				default: throw new Error(`Unhandled tab type "${tabMeta.type}"`);
+			}
+		};
+
+		obj.__$getDispTabTitle = function () { return null; };
+	}
+}
+TabUiUtil.TabMeta = class extends TabUiUtilBase.TabMeta {
+	constructor (opts) {
+		super(opts);
+		this.hasBorder = opts.hasBorder;
+		this.hasBackground = opts.hasBackground;
+	}
+}
+
+class TabUiUtilSide extends TabUiUtilBase {
+	static decorate (obj) {
+		super.decorate(obj);
+
+		obj.__$getBtnTab = function ({isSingleTab, tabMeta, _propProxy, propActive, ixTab}) {
+			return isSingleTab ? null : $(`<button class="btn btn-default btn-sm ui-tab-side__btn-tab mb-2 br-0 btr-0 bbr-0 text-left flex-v-center" title="${tabMeta.name.qq()}"><div class="${tabMeta.icon} ui-tab-side__icon-tab mr-2 mobile-ish__mr-0 text-center"></div><div class="mobile-ish__hidden">${tabMeta.name.qq()}</div></button>`)
+				.click(() => this[_propProxy][propActive] = ixTab);
+		};
+
+		obj.__$getWrpTab = function () {
+			return $(`<div class="flex-col w-100 min-h-100 h-100 ui-tab-side__wrp-tab px-3 py-2 overflow-y-auto"></div>`);
+		};
+
+		obj.__renderTypedTabMeta = function ({tabMeta, ixTab}) {
+			switch (tabMeta.type) {
+				case "buttons": return obj.__renderTypedTabMeta_buttons({tabMeta, ixTab});
+				default: throw new Error(`Unhandled tab type "${tabMeta.type}"`);
+			}
+		};
+
+		obj.__renderTypedTabMeta_buttons = function ({tabMeta, ixTab}) {
+			const $btns = tabMeta.buttons.map((meta, j) => {
+				const $btn = $(`<button class="btn btn-primary btn-sm" ${meta.title ? `title="${meta.title.qq()}"` : ""}>${meta.html}</button>`)
+					.click(evt => meta.pFnClick(evt, $btn));
+
+				if (j === tabMeta.buttons.length - 1) $btn.addClass(`br-0 btr-0 bbr-0`);
+
+				return $btn;
+			});
+
+			const $btnTab = $$`<div class="btn-group flex-v-center flex-h-right mb-2">${$btns}</div>`;
+
+			return {
+				...tabMeta,
+				ix: ixTab,
+				$btnTab,
+			};
+		};
+
+		obj.__$getDispTabTitle = function ({isSingleTab}) {
+			return $(`<div class="ui-tab-side__disp-active-tab-name ${isSingleTab ? `ui-tab-side__disp-active-tab-name--single` : ""} bold"></div>`);
 		};
 	}
 }
@@ -2677,8 +2680,8 @@ class SourceUiUtil {
 
 		const $btnUseExisting = $(`<button class="btn btn-default">Use an Existing Source</button>`)
 			.click(() => {
-				$stageInitial.hide();
-				$stageExisting.show();
+				$stageInitial.hideVe();
+				$stageExisting.showVe();
 
 				// cleanup
 				[$iptName, $iptAbv, $iptJson].forEach($ipt => $ipt.removeClass("form-control--error"));
@@ -2731,19 +2734,19 @@ class SourceUiUtil {
 
 					// cleanup
 					$selExisting[0].selectedIndex = 0;
-					$stageExisting.hide();
-					$stageInitial.show();
+					$stageExisting.hideVe();
+					$stageInitial.showVe();
 				} else $selExisting.addClass("form-control--error");
 			});
 
 		const $btnBackExisting = $(`<button class="btn btn-default btn-sm mr-2">Back</button>`)
 			.click(() => {
 				$selExisting[0].selectedIndex = 0;
-				$stageExisting.hide();
-				$stageInitial.show();
+				$stageExisting.hideVe();
+				$stageInitial.showVe();
 			});
 
-		const $stageExisting = $$`<div class="h-100 w-100 flex-vh-center" style="display: none;"><div>
+		const $stageExisting = $$`<div class="h-100 w-100 flex-vh-center ve-hidden"><div>
 			<h3 class="text-center">Select a Homebrew Source</h3>
 			<div class="mb-2"><div class="col-12 flex-vh-center">${$selExisting}</div></div>
 			<div class="col-12 flex-vh-center">${$btnBackExisting}${$btnConfirmExisting}</div>
@@ -3625,6 +3628,56 @@ class ComponentUiUtil {
 	 * @param component An instance of a class which extends BaseComponent.
 	 * @param prop Component to hook on.
 	 * @param [opts] Options Object.
+	 * @param [opts.ele] Element to use.
+	 * @param [opts.html] HTML to convert to element to use.
+	 * @param [opts.text] Button text, if element is not specified.
+	 * @param [opts.fnHookPost] Function to run after primary hook.
+	 * @param [opts.stateName] State name.
+	 * @param [opts.stateProp] State prop.
+	 * @param [opts.isInverted] If the toggle display should be inverted.
+	 * @param [opts.activeClass] CSS class to use when setting the button as "active."
+	 * @param [opts.title]
+	 * @param [opts.activeTitle] Title to use when setting the button as "active."
+	 * @param [opts.inactiveTitle] Title to use when setting the button as "active."
+	 * @return *
+	 */
+	static getBtnBool (component, prop, opts) {
+		opts = opts || {};
+
+		let ele = opts.ele;
+		if (opts.html) ele = e_({outer: opts.html});
+
+		const activeClass = opts.activeClass || "active";
+		const stateName = opts.stateName || "state";
+		const stateProp = opts.stateProp || "_state";
+
+		const btn = (ele ? e_({ele}) : e_({
+			ele: ele,
+			tag: "button",
+			clazz: "btn btn-xs btn-default",
+			text: opts.text || "Toggle",
+		}))
+			.onClick(() => component[stateProp][prop] = !component[stateProp][prop])
+			.onContextmenu(evt => {
+				evt.preventDefault();
+				component[stateProp][prop] = !component[stateProp][prop];
+			});
+
+		const hk = () => {
+			btn.toggleClass(activeClass, opts.isInverted ? !component[stateProp][prop] : !!component[stateProp][prop]);
+			if (opts.activeTitle || opts.inactiveTitle) btn.title(component[stateProp][prop] ? (opts.activeTitle || opts.title || "") : (opts.inactiveTitle || opts.title || ""));
+			if (opts.fnHookPost) opts.fnHookPost(component[stateProp][prop]);
+		};
+		component._addHook(stateName, prop, hk);
+		hk();
+
+		return btn
+	}
+
+	/**
+	 * @param component An instance of a class which extends BaseComponent.
+	 * @param prop Component to hook on.
+	 * @param [opts] Options Object.
 	 * @param [opts.$ele] Element to use.
 	 * @param [opts.html] HTML to convert to element to use.
 	 * @param [opts.text] Button text, if element is not specified.
@@ -3633,33 +3686,18 @@ class ComponentUiUtil {
 	 * @param [opts.stateProp] State prop.
 	 * @param [opts.isInverted] If the toggle display should be inverted.
 	 * @param [opts.activeClass] CSS class to use when setting the button as "active."
+	 * @param [opts.title]
 	 * @param [opts.activeTitle] Title to use when setting the button as "active."
 	 * @param [opts.inactiveTitle] Title to use when setting the button as "active."
 	 * @return {JQuery}
 	 */
 	static $getBtnBool (component, prop, opts) {
-		opts = opts || {};
-
-		if (opts.html) opts.$ele = $(opts.html);
-
-		const activeClass = opts.activeClass || "active";
-		const stateName = opts.stateName || "state";
-		const stateProp = opts.stateProp || "_state";
-
-		const $btn = (opts.$ele || $(`<button class="btn btn-xs btn-default">${opts.text || "Toggle"}</button>`))
-			.click(() => component[stateProp][prop] = !component[stateProp][prop])
-			.contextmenu(evt => {
-				evt.preventDefault();
-				component[stateProp][prop] = !component[stateProp][prop];
-			});
-		const hook = () => {
-			$btn.toggleClass(activeClass, opts.isInverted ? !component[stateProp][prop] : !!component[stateProp][prop]);
-			if (opts.activeTitle || opts.inactiveTitle) $btn.title(component[stateProp][prop] ? (opts.activeTitle || "") : (opts.inactiveTitle || ""));
-			if (opts.fnHookPost) opts.fnHookPost(component[stateProp][prop]);
-		};
-		component._addHook(stateName, prop, hook);
-		hook();
-		return $btn
+		const nxtOpts = {...opts};
+		if (nxtOpts.$ele) {
+			nxtOpts.ele = nxtOpts.$ele[0];
+			delete nxtOpts.$ele;
+		}
+		return $(this.getBtnBool(component, prop, nxtOpts));
 	}
 
 	/**
@@ -3705,7 +3743,7 @@ class ComponentUiUtil {
 		opts = opts || {};
 
 		const $iptDisplay = (opts.$ele || $(opts.html || `<input class="form-control input-xs form-control--minimal">`))
-			.addClass("ui-sel2__ipt-display pr-1")
+			.addClass("ui-sel2__ipt-display")
 			.attr("tabindex", "-1")
 			.click(() => {
 				if (opts.isDisabled) return;
@@ -3743,6 +3781,7 @@ class ComponentUiUtil {
 						const visibleMetaOptions = metaOptions.filter(it => it.isVisible && !it.isForceHidden);
 						if (!visibleMetaOptions.length) return;
 						comp._state[prop] = visibleMetaOptions[0].value;
+						$iptSearch.blur();
 						break;
 					}
 
@@ -3763,6 +3802,7 @@ class ComponentUiUtil {
 			${$iptDisplay}
 			${$iptSearch}
 			${$wrpChoices}
+			<div class="ui-sel2__disp-arrow absolute no-events bold"><span class="glyphicon glyphicon-menu-down"></span></div>
 		</div>`;
 
 		const procValues = opts.isAllowNull ? [null, ...opts.values] : opts.values;
@@ -3808,7 +3848,7 @@ class ComponentUiUtil {
 
 						case "Enter": {
 							comp._state[prop] = v;
-							$iptSearch.focus();
+							$ele.blur();
 							break;
 						}
 					}
@@ -3897,13 +3937,22 @@ class ComponentUiUtil {
 			}
 		});
 
-		const setValues = (nxtValues) => {
+		const setValues = (nxtValues, {isResetOnMissing = false} = {}) => {
 			if (CollectionUtil.deepEquals(values, nxtValues)) return;
 			values = nxtValues;
 			$sel.empty();
 			// Use native API for performance
 			if (opts.isAllowNull) { const opt = document.createElement("option"); opt.value = "-1"; opt.text = opts.displayNullAs || "\u2014"; $sel.append(opt); }
 			values.forEach((it, i) => { const opt = document.createElement("option"); opt.value = `${i}`; opt.text = opts.fnDisplay ? opts.fnDisplay(it) : it; $sel.append(opt); });
+
+			if (isResetOnMissing) {
+				// If the new value list doesn't contain our current value, reset our current value
+				if (component._state[prop] != null && !nxtValues.includes(component._state[prop])) {
+					if (opts.isAllowNull) return component._state[prop] = null;
+					else return component._state[prop] = nxtValues[0];
+				}
+			}
+
 			hook();
 		};
 
@@ -3921,7 +3970,7 @@ class ComponentUiUtil {
 
 		return {
 			$sel,
-			hook: () => component._removeHookBase(prop, hook),
+			unhook: () => component._removeHookBase(prop, hook),
 			setValues,
 		};
 	}
@@ -3961,9 +4010,10 @@ class ComponentUiUtil {
 		opts = opts || {};
 
 		const initialValuesArray = (opts.values || []).concat(opts.isFreeText ? MiscUtil.copy((component._state[prop] || [])) : []);
+		const initialValsCompWith = opts.isCaseInsensitive ? component._state[prop].map(it => it.toLowerCase()) : component._state[prop];
 		const initialVals = initialValuesArray
 			.map(v => opts.isCaseInsensitive ? v.toLowerCase() : v)
-			.mergeMap(v => ({[v]: component._state[prop] && component._state[prop].includes(v)}));
+			.mergeMap(v => ({[v]: component._state[prop] && initialValsCompWith.includes(v)}));
 
 		let $btnAdd;
 		if (opts.isFreeText) {
@@ -4060,6 +4110,7 @@ class ComponentUiUtil {
 	 * @param opts Options.
 	 * @param [opts.values] Array of values. Mutually incompatible with "valueGroups".
 	 * @param [opts.valueGroups] Array of value groups (of the form `{name: "Group Name", values: [...]}`). Mutually incompatible with "values".
+	 * @param [opts.valueGroupSplitControlsLookup] A lookup of `<value group name> -> header controls` to embed in the UI.
 	 * @param [opts.count] Number of choices the user can make (cannot be used with min/max).
 	 * @param [opts.min] Minimum number of choices the user can make (cannot be used with count).
 	 * @param [opts.max] Maximum number of choices the user can make (cannot be used with count).
@@ -4089,9 +4140,15 @@ class ComponentUiUtil {
 
 		let ixValue = 0;
 		valueGroups.forEach((group, i) => {
-			if (i !== 0) $eles.push($(`<hr class="w-100 hr-1 hr--dotted">`));
+			if (i !== 0) $eles.push($(`<hr class="w-100 hr-2 hr--dotted">`));
 
-			if (group.name) $eles.push($(`<div class="flex-v-center py-1"><span class="mr-2">‒</span><span>${group.name}</span></div>`));
+			if (group.name) {
+				const $wrpName = $$`<div class="split-v-center py-1">
+					<div class="flex-v-center"><span class="mr-2">‒</span><span>${group.name}</span></div>
+					${opts.valueGroupSplitControlsLookup?.[group.name]}
+				</div>`
+				$eles.push($wrpName);
+			}
 
 			if (group.text) $eles.push($(`<div class="flex-v-center py-1"><div class="ml-1 mr-3"></div><i>${group.text}</i></div>`));
 

@@ -19,6 +19,7 @@ const PANEL_TYP_RULES = 4;
 const PANEL_TYP_INITIATIVE_TRACKER = 5;
 const PANEL_TYP_UNIT_CONVERTER = 6;
 const PANEL_TYP_CREATURE_SCALED_CR = 7;
+const PANEL_TYP_CREATURE_SCALED_SUMMON = 71;
 const PANEL_TYP_TIME_TRACKER = 8;
 const PANEL_TYP_MONEY_CONVERTER = 9;
 const PANEL_TYP_TUBE = 10;
@@ -183,7 +184,12 @@ class Board {
 		this.doAdjust$creenCss();
 		this.doShowLoading();
 
-		await Promise.all([TIME_TRACKER_MOON_SPRITE_LOADER, this.pLoadIndex()]);
+		await Promise.all([
+			TIME_TRACKER_MOON_SPRITE_LOADER,
+			this.pLoadIndex(),
+			adventureLoader.pInit(),
+			bookLoader.pInit(),
+		]);
 		if (this.hasSavedStateUrl()) {
 			await this.pDoLoadUrlState();
 		} else if (await this.pHasSavedState()) {
@@ -605,13 +611,14 @@ class SideMenu {
 		const $wrpSaveLoadFile = $(`<div class="sidemenu__row flex-vh-center-around"/>`).appendTo($wrpSaveLoad);
 		const $btnSaveFile = $(`<button class="btn btn-primary">Save to File</button>`).appendTo($wrpSaveLoadFile);
 		$btnSaveFile.on("click", () => {
-			DataUtil.userDownload(`dm-screen`, this.board.getSaveableState());
+			DataUtil.userDownload(`dm-screen`, this.board.getSaveableState(), {fileType: "dm-screen"});
 		});
 		const $btnLoadFile = $(`<button class="btn btn-primary">Load from File</button>`).appendTo($wrpSaveLoadFile);
 		$btnLoadFile.on("click", async () => {
-			const json = await DataUtil.pUserUpload();
+			const jsons = await DataUtil.pUserUpload({expectedFileType: "dm-screen"});
+			if (!jsons?.length) return;
 			this.board.doReset();
-			await this.board.pDoLoadStateFrom(json);
+			await this.board.pDoLoadStateFrom(jsons[0]);
 		});
 		const $wrpSaveLoadUrl = $(`<div class="sidemenu__row flex-vh-center-around"/>`).appendTo($wrpSaveLoad);
 		const $btnSaveLink = $(`<button class="btn btn-primary">Save to URL</button>`).appendTo($wrpSaveLoadUrl);
@@ -800,6 +807,15 @@ class Panel {
 					handleTabRenamed(p);
 					return p;
 				}
+				case PANEL_TYP_CREATURE_SCALED_SUMMON: {
+					const page = saved.c.p;
+					const source = saved.c.s;
+					const hash = saved.c.u;
+					const summonLevel = saved.c.sl;
+					await p.doPopulate_StatsScaledSummonLevel(page, source, hash, summonLevel, skipSetTab, saved.r);
+					handleTabRenamed(p);
+					return p;
+				}
 				case PANEL_TYP_RULES: {
 					const book = saved.c.b;
 					const chapter = saved.c.c;
@@ -980,6 +996,7 @@ class Panel {
 			$contentStats.append(fn(it));
 
 			this._stats_bindCrScaleClickHandler(it, meta, $contentInner, $contentStats);
+			this._stats_bindSummonScaleClickHandler(it, meta, $contentInner, $contentStats);
 
 			this.set$Tab(
 				ix,
@@ -1002,37 +1019,44 @@ class Panel {
 			const $this = $(this);
 			const lastCr = self.contentMeta.cr != null ? Parser.numberToCr(self.contentMeta.cr) : mon.cr ? (mon.cr.cr || mon.cr) : null;
 
-			Renderer.monster.getCrScaleTarget(win, $this, lastCr, (targetCr) => {
-				const originalCr = Parser.crToNumber(mon.cr) === targetCr;
+			Renderer.monster.getCrScaleTarget({
+				win,
+				$btnScale: $this,
+				initialCr: lastCr,
+				isCompact: true,
+				cbRender: (targetCr) => {
+					const originalCr = Parser.crToNumber(mon.cr) === targetCr;
 
-				const doRender = (toRender) => {
-					$contentStats.empty().append(Renderer.monster.getCompactRenderedString(toRender, null, {showScaler: true, isScaled: !originalCr}));
+					const doRender = (toRender) => {
+						$contentStats.empty().append(Renderer.monster.getCompactRenderedString(toRender, null, {isShowScalers: true, isScaledCr: !originalCr}));
 
-					const nxtMeta = {
-						...meta,
-						cr: targetCr,
+						const nxtMeta = {
+							...meta,
+							cr: targetCr,
+						};
+						if (originalCr) delete nxtMeta.cr;
+
+						self.set$Tab(
+							self.tabIndex,
+							originalCr ? PANEL_TYP_STATS : PANEL_TYP_CREATURE_SCALED_CR,
+							nxtMeta,
+							$contentInner,
+							toRender._displayName || toRender.name,
+							true,
+						);
 					};
-					if (originalCr) delete nxtMeta.cr;
 
-					self.set$Tab(
-						self.tabIndex,
-						originalCr ? PANEL_TYP_STATS : PANEL_TYP_CREATURE_SCALED_CR,
-						nxtMeta,
-						$contentInner,
-						toRender._displayName || toRender.name,
-						true,
-					);
-				};
-
-				if (originalCr) {
-					doRender(mon)
-				} else {
-					ScaleCreature.scale(mon, targetCr).then(toRender => doRender(toRender))
-				}
-			}, true);
+					if (originalCr) {
+						doRender(mon)
+					} else {
+						ScaleCreature.scale(mon, targetCr).then(toRender => doRender(toRender))
+					}
+				},
+			});
 		});
+
 		$contentStats.off("click", ".mon__btn-reset-cr").on("click", ".mon__btn-reset-cr", function () {
-			$contentStats.empty().append(Renderer.monster.getCompactRenderedString(mon, null, {showScaler: true, isScaled: false}));
+			$contentStats.empty().append(Renderer.monster.getCompactRenderedString(mon, null, {isShowScalers: true, isScaledCr: false}));
 			self.set$Tab(
 				self.tabIndex,
 				PANEL_TYP_STATS,
@@ -1042,6 +1066,59 @@ class Panel {
 				true,
 			);
 		});
+	}
+
+	_stats_bindSummonScaleClickHandler (mon, meta, $contentInner, $contentStats) {
+		const self = this;
+
+		$contentStats
+			.off("change", `[name="mon__sel-summon-spell-level"]`)
+			.on("change", `[name="mon__sel-summon-spell-level"]`, async function () {
+				const $selSummonSpellLevel = $(this);
+
+				const spellLevel = Number($selSummonSpellLevel.val());
+				if (~spellLevel) {
+					const nxtMeta = {
+						...meta,
+						sl: spellLevel,
+					};
+
+					ScaleSummonCreature.scale(mon, spellLevel)
+						.then(toRender => {
+							$contentStats.empty().append(Renderer.monster.getCompactRenderedString(toRender, null, {isShowScalers: true, isScaledSummon: true}));
+
+							self._stats_doUpdateSummonScaleDropdown(toRender, $contentStats);
+
+							self.set$Tab(
+								self.tabIndex,
+								PANEL_TYP_CREATURE_SCALED_SUMMON,
+								nxtMeta,
+								$contentInner,
+								mon._displayName || mon.name,
+								true,
+							);
+						});
+				} else {
+					$contentStats.empty().append(Renderer.monster.getCompactRenderedString(mon, null, {isShowScalers: true, isScaledCr: false, isScaledSummon: false}));
+
+					self._stats_doUpdateSummonScaleDropdown(mon, $contentStats);
+
+					self.set$Tab(
+						self.tabIndex,
+						PANEL_TYP_STATS,
+						meta,
+						$contentInner,
+						mon.name,
+						true,
+					);
+				}
+			});
+	}
+
+	_stats_doUpdateSummonScaleDropdown (scaledMon, $contentStats) {
+		$contentStats
+			.find(`[name="mon__sel-summon-spell-level"]`)
+			.val(scaledMon._summonedBySpell_level != null ? `${scaledMon._summonedBySpell_level}` : "-1")
 	}
 
 	doPopulate_StatsScaledCr (page, source, hash, targetCr, skipSetTab, title) { // FIXME skipSetTab is never used
@@ -1058,7 +1135,7 @@ class Panel {
 			ScaleCreature.scale(it, targetCr).then(initialRender => {
 				const $contentInner = $(`<div class="panel-content-wrapper-inner"/>`);
 				const $contentStats = $(`<table class="stats"/>`).appendTo($contentInner);
-				$contentStats.append(Renderer.monster.getCompactRenderedString(initialRender, null, {showScaler: true, isScaled: true}));
+				$contentStats.append(Renderer.monster.getCompactRenderedString(initialRender, null, {isShowScalers: true, isScaledCr: true}));
 
 				this._stats_bindCrScaleClickHandler(it, meta, $contentInner, $contentStats);
 
@@ -1068,6 +1145,39 @@ class Panel {
 					meta,
 					$contentInner,
 					title || initialRender._displayName || initialRender.name,
+					true,
+					!!title,
+				);
+			});
+		});
+	}
+
+	doPopulate_StatsScaledSummonLevel (page, source, hash, summonLevel, skipSetTab, title) { // FIXME skipSetTab is never used
+		const meta = {p: page, s: source, u: hash, sl: summonLevel};
+		const ix = this.set$TabLoading(
+			PANEL_TYP_CREATURE_SCALED_SUMMON,
+			meta,
+		);
+		return Renderer.hover.pCacheAndGet(
+			page,
+			source,
+			hash,
+		).then(it => {
+			ScaleSummonCreature.scale(it, summonLevel).then(scaledMon => {
+				const $contentInner = $(`<div class="panel-content-wrapper-inner"/>`);
+				const $contentStats = $(`<table class="stats"/>`).appendTo($contentInner);
+				$contentStats.append(Renderer.monster.getCompactRenderedString(scaledMon, null, {isShowScalers: true, isScaledSummon: true}));
+
+				this._stats_doUpdateSummonScaleDropdown(scaledMon, $contentStats);
+
+				this._stats_bindSummonScaleClickHandler(it, meta, $contentInner, $contentStats);
+
+				this.set$Tab(
+					ix,
+					PANEL_TYP_CREATURE_SCALED_SUMMON,
+					meta,
+					$contentInner,
+					title || scaledMon._displayName || scaledMon.name,
 					true,
 					!!title,
 				);
@@ -1273,7 +1383,7 @@ class Panel {
 		const meta = {u: url};
 		const $wrpPanel = $(`<div class="panel-content-wrapper-inner"/>`);
 		const $wrpImage = $(`<div class="panel-content-wrapper-img"/>`).appendTo($wrpPanel);
-		const $img = $(`<img src="${url}" alt="${title}">`).appendTo($wrpImage);
+		const $img = $(`<img src="${url}" alt="${title}" loading="lazy">`).appendTo($wrpImage);
 		const $iptReset = $(`<button class="panel-zoom-reset btn btn-xs btn-default"><span class="glyphicon glyphicon-refresh"/></button>`).appendTo($wrpPanel);
 		const $iptRange = $(`<input type="range" class="panel-zoom-slider">`).appendTo($wrpPanel);
 		this.set$ContentTab(
@@ -1533,7 +1643,7 @@ class Panel {
 
 	doRenderTitle () {
 		const displayText = this.title !== TITLE_LOADING
-		&& (this.type === PANEL_TYP_STATS || this.type === PANEL_TYP_CREATURE_SCALED_CR || this.type === PANEL_TYP_RULES || this.type === PANEL_TYP_ADVENTURES || this.type === PANEL_TYP_BOOKS) ? this.title : "";
+		&& (this.type === PANEL_TYP_STATS || this.type === PANEL_TYP_CREATURE_SCALED_CR || this.type === PANEL_TYP_CREATURE_SCALED_SUMMON || this.type === PANEL_TYP_RULES || this.type === PANEL_TYP_ADVENTURES || this.type === PANEL_TYP_BOOKS) ? this.title : "";
 
 		this.$pnlTitle.text(displayText);
 		if (!displayText) this.$pnlTitle.addClass("hidden");
@@ -1947,6 +2057,17 @@ class Panel {
 							s: contentMeta.s,
 							u: contentMeta.u,
 							cr: contentMeta.cr,
+						},
+					};
+				case PANEL_TYP_CREATURE_SCALED_SUMMON:
+					return {
+						t: type,
+						r: toSaveTitle,
+						c: {
+							p: contentMeta.p,
+							s: contentMeta.s,
+							u: contentMeta.u,
+							sl: contentMeta.sl,
 						},
 					};
 				case PANEL_TYP_RULES:
@@ -3034,12 +3155,27 @@ class AdventureOrBookLoader {
 		this._type = type;
 		this._cache = {};
 		this._pLoadings = {};
+		this._availableOfficial = new Set();
+	}
+
+	async pInit () {
+		const indexPath = this._getIndexPath();
+		const indexJson = await DataUtil.loadJSON(indexPath);
+		indexJson[this._type].forEach(meta => this._availableOfficial.add(meta.id.toLowerCase()));
+	}
+
+	_getIndexPath () {
+		switch (this._type) {
+			case "adventure": return `${Renderer.get().baseUrl}data/adventures.json`;
+			case "book": return `${Renderer.get().baseUrl}data/books.json`;
+			default: throw new Error(`Unknown loader type "${this._type}"`)
+		}
 	}
 
 	_getJsonPath (bookOrAdventure) {
 		switch (this._type) {
-			case "adventure": return `data/adventure/adventure-${bookOrAdventure.toLowerCase()}.json`;
-			case "book": return `data/book/book-${bookOrAdventure.toLowerCase()}.json`;
+			case "adventure": return `${Renderer.get().baseUrl}data/adventure/adventure-${bookOrAdventure.toLowerCase()}.json`;
+			case "book": return `${Renderer.get().baseUrl}data/book/book-${bookOrAdventure.toLowerCase()}.json`;
 			default: throw new Error(`Unknown loader type "${this._type}"`)
 		}
 	}
@@ -3061,18 +3197,32 @@ class AdventureOrBookLoader {
 		if (!this._pLoadings[bookOrAdventure]) {
 			this._pLoadings[bookOrAdventure] = (async () => {
 				this._cache[bookOrAdventure] = {};
-				const fromBrew = this._getBrewData(bookOrAdventure);
-				const data = fromBrew || await DataUtil.loadJSON(this._getJsonPath(bookOrAdventure));
-				data.data.forEach((chap, i) => this._cache[bookOrAdventure][i] = chap);
+				let data;
+				if (this._availableOfficial.has(bookOrAdventure.toLowerCase())) {
+					data = await DataUtil.loadJSON(this._getJsonPath(bookOrAdventure));
+				} else {
+					data = this._getBrewData(bookOrAdventure);
+				}
+				if (data) data.data.forEach((chap, i) => this._cache[bookOrAdventure][i] = chap);
 			})();
 		}
 		await this._pLoadings[bookOrAdventure];
 	}
 
-	getFromCache (adventure, chapter) {
-		return this._cache[adventure][chapter];
+	getFromCache (adventure, chapter, {isAllowMissing = false} = {}) {
+		const out = this._cache?.[adventure]?.[chapter];
+		if (out) return out;
+		if (isAllowMissing) return null;
+		return MiscUtil.copy(AdventureOrBookLoader._NOT_FOUND);
 	}
 }
+AdventureOrBookLoader._NOT_FOUND = {
+	type: "section",
+	name: "(Missing Content)",
+	entries: [
+		"The content you attempted to load could not be found. Is it homebrew, and not currently loaded?",
+	],
+};
 
 class AdventureLoader extends AdventureOrBookLoader { constructor () { super("adventure"); } }
 class BookLoader extends AdventureOrBookLoader { constructor () { super("book"); } }
@@ -3319,30 +3469,33 @@ class AdventureOrBookView {
 
 	_handleButtonClick (direction) {
 		this._contentMeta.c += direction;
-		const renderedData = this._render();
-		if (!renderedData) this._contentMeta.c -= direction;
+		const hasRenderedData = this._render({isSkipMissingData: true});
+		if (!hasRenderedData) this._contentMeta.c -= direction;
 		else {
 			this._$wrpContentOuter.scrollTop(0);
-			this._panel.setTabTitle(this._tabIx, renderedData.name);
 			this._panel.board.doSaveStateDebounced();
 		}
 	}
 
-	_getData (chapter) {
-		return this._loader.getFromCache(this._contentMeta[this._prop], chapter);
+	_getData (chapter, {isAllowMissing = false} = {}) {
+		return this._loader.getFromCache(this._contentMeta[this._prop], chapter, {isAllowMissing});
 	}
 
-	_render () {
+	_render ({isSkipMissingData = false} = {}) {
+		const hasData = !!this._getData(this._contentMeta.c, {isAllowMissing: true});
+		if (!hasData && isSkipMissingData) return false;
+
 		const data = this._getData(this._contentMeta.c);
-		if (!data) return null;
+
+		this._panel.setTabTitle(this._tabIx, data.name);
 		this._$wrpContent.empty().append(Renderer.get().setFirstSection(true).render(data));
 
-		const dataPrev = this._getData(this._contentMeta.c - 1);
-		const dataNext = this._getData(this._contentMeta.c + 1);
+		const dataPrev = this._getData(this._contentMeta.c - 1, {isAllowMissing: true});
+		const dataNext = this._getData(this._contentMeta.c + 1, {isAllowMissing: true});
 		this._$titlePrev.text(dataPrev ? dataPrev.name : "").title(dataPrev ? dataPrev.name : "");
 		this._$titleNext.text(dataNext ? dataNext.name : "").title(dataNext ? dataNext.name : "");
 
-		return data;
+		return hasData;
 	}
 }
 
