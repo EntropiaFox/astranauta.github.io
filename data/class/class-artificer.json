@@ -187,7 +187,7 @@
 						"{@filter 3rd|spells|level=3|class=Artificer (UAA)}",
 						"{@filter 4th|spells|level=4|class=Artificer (UAA)}"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							0,
 							0,
@@ -398,7 +398,9 @@
 			"optionalfeatureProgression": [
 				{
 					"name": "Infusions",
-					"featureType": "AI",
+					"featureType": [
+						"AI"
+					],
 					"progression": [
 						0,
 						3,
@@ -635,7 +637,7 @@
 						"{@filter 4th|spells|level=4|class=Artificer Revisited (UAAR)}",
 						"{@filter 5th|spells|level=5|class=Artificer Revisited (UAAR)}"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							2,
 							0,
@@ -948,7 +950,9 @@
 			"optionalfeatureProgression": [
 				{
 					"name": "Infusions",
-					"featureType": "AI",
+					"featureType": [
+						"AI"
+					],
 					"progression": [
 						0,
 						4,
@@ -1067,7 +1071,7 @@
 			"classTableGroups": [
 				{
 					"colLabels": [
-						"{@filter Infusions Known|optionalfeatures|feature type=ai|source=ERLW}",
+						"{@filter Infusions Known|optionalfeatures|feature type=ai|source=TCE}",
 						"Infused Items",
 						"{@filter Cantrips Known|spells|level=0|class=artificer}"
 					],
@@ -1183,7 +1187,7 @@
 						"{@filter 4th|spells|level=4|class=Artificer}",
 						"{@filter 5th|spells|level=5|class=Artificer}"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							2,
 							0,
@@ -1996,7 +2000,7 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"When you gain this feature, pick four artificer infusions to learn, choosing from the \"{@filter Artificer Infusions|optionalfeatures|feature type=ai|source=ERLW}\" section at the end of the class's description. You learn additional infusions of your choice when you reach certain levels in this class, as shown in the Infusions Known column of the Artificer table.",
+				"When you gain this feature, pick four artificer infusions to learn, choosing from the \"{@filter Artificer Infusions|optionalfeatures|feature type=ai|source=TCE}\" section at the end of the class's description. You learn additional infusions of your choice when you reach certain levels in this class, as shown in the Infusions Known column of the Artificer table.",
 				"Whenever you gain a level in this class, you can replace one of the artificer infusions you learned with a new one."
 			]
 		},
@@ -3425,6 +3429,76 @@
 			]
 		},
 		{
+			"name": "Dampening Field",
+			"source": "TCE",
+			"page": 15,
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"type": "item",
+			"entries": [
+				"You have advantage on Dexterity ({@skill Stealth}) checks. If the armor normally imposes disadvantage on such checks, the advantage and disadvantage cancel each other, as normal."
+			]
+		},
+		{
+			"name": "Defensive Field",
+			"source": "TCE",
+			"page": 15,
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"type": "item",
+			"entries": [
+				"As a bonus action, you can gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+			]
+		},
+		{
+			"name": "Lightning Launcher",
+			"source": "TCE",
+			"page": 15,
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"type": "item",
+			"entries": [
+				"A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals {@damage 1d6} lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra {@damage 1d6} lightning damage to that target."
+			]
+		},
+		{
+			"name": "Powered Steps",
+			"source": "TCE",
+			"page": 15,
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"type": "item",
+			"entries": [
+				"Your walking speed increases by 5 feet."
+			]
+		},
+		{
+			"name": "Thunder Gauntlets",
+			"source": "TCE",
+			"page": 15,
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"type": "item",
+			"entries": [
+				"Each of the armor's gauntlets counts as a simple melee weapon while you aren't holding anything in it, and it deals {@damage 1d8} thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else."
+			]
+		},
+		{
 			"name": "Arcane Armor",
 			"source": "TCE",
 			"page": 15,
@@ -3477,14 +3551,12 @@
 									"style": "list-hang-notitle",
 									"items": [
 										{
-											"type": "item",
-											"name": "Thunder Gauntlets.",
-											"entry": "Each of the armor's gauntlets counts as a simple melee weapon while you aren't holding anything in it, and it deals {@damage 1d8} thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else."
+											"type": "refSubclassFeature",
+											"subclassFeature": "Thunder Gauntlets|Artificer|TCE|Armorer|TCE|3"
 										},
 										{
-											"type": "item",
-											"name": "Defensive Field.",
-											"entry": "As a bonus action, you can gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+											"type": "refSubclassFeature",
+											"subclassFeature": "Defensive Field|Artificer|TCE|Armorer|TCE|3"
 										}
 									]
 								}
@@ -3500,19 +3572,16 @@
 									"style": "list-hang-notitle",
 									"items": [
 										{
-											"type": "item",
-											"name": "Lightning Launcher.",
-											"entry": "A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals {@damage 1d6} lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra {@damage 1d6} lightning damage to that target."
+											"type": "refSubclassFeature",
+											"subclassFeature": "Lightning Launcher|Artificer|TCE|Armorer|TCE|3"
 										},
 										{
-											"type": "item",
-											"name": "Powered Steps.",
-											"entry": "Your walking speed increases by 5 feet."
+											"type": "refSubclassFeature",
+											"subclassFeature": "Powered Steps|Artificer|TCE|Armorer|TCE|3"
 										},
 										{
-											"type": "item",
-											"name": "Dampening Field.",
-											"entry": "You have advantage on Dexterity ({@skill Stealth}) checks. If the armor normally imposes disadvantage on such checks, the advantage and disadvantage cancel each other, as normal."
+											"type": "refSubclassFeature",
+											"subclassFeature": "Dampening Field|Artificer|TCE|Armorer|TCE|3"
 										}
 									]
 								}
@@ -3633,7 +3702,7 @@
 					"type": "entries",
 					"name": "Guardian",
 					"entries": [
-						"When a Huge or smaller creature you can see ends its turn within 30 feet of you, you can use your reaction to magically force the creature to make a Strength saving throw against your spell save DC, pulling the creature up to 30 feet toward you to an unoccupied space. If you pull the target to a space within 5 feet of you, you can make a melee weapon attack against it as part of this reaction.",
+						"When a Huge or smaller creature you can see ends its turn within 30 feet of you, you can use your reaction to magically force it to make a Strength saving throw against your spell save DC. On a failed save, you pull the creature up to 25 feet directly to an unoccupied space. If you pull the target to a space within 5 feet of you, you can make a melee weapon attack against it as part of this reaction.",
 						"You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest."
 					]
 				},
@@ -4167,12 +4236,12 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Thunder Gauntlets.",
+									"name": "Thunder Gauntlets",
 									"entry": "Your armored fists each count as a simple melee weapon, and each deals {@damage 1d8} thunder damage on a hit. A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else."
 								},
 								{
 									"type": "item",
-									"name": "Defensive Field.",
+									"name": "Defensive Field",
 									"entry": "You gain a bonus action that you can use on each of your turns to gain temporary hit points equal to your level in this class, replacing any temporary hit points you already have. You lose these temporary hit points if you doff the armor."
 								}
 							]
@@ -4190,17 +4259,17 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Lightning Launcher.",
+									"name": "Lightning Launcher",
 									"entry": "A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 90 feet and a long range of 300 feet, and it deals {@damage 1d6} lightning damage on a hit. Once on each of your turns when you hit a creature with it, you can deal an extra {@damage 1d6} lightning damage to that target."
 								},
 								{
 									"type": "item",
-									"name": "Powered Steps.",
+									"name": "Powered Steps",
 									"entry": "Your walking speed increases by 5 feet."
 								},
 								{
 									"type": "item",
-									"name": "Second Skin.",
+									"name": "Second Skin",
 									"entry": "The armor's weight is negligible, and it becomes formfitting and wearable under clothing. If the armor normally imposes disadvantage on Dexterity ({@skill Stealth}) checks, the power armor doesn't."
 								}
 							]

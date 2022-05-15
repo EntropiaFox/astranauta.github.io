@@ -46,7 +46,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -126,7 +129,7 @@
 	</div>
 </header>
 <nav class="container page__nav" id="navigation">
-	<ul class="nav page__nav-inner" id="navbar"></ul>
+	<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
 </nav>
 
 <div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
@@ -161,7 +164,7 @@
 							CR calculation begins by determining what you want the final CR of the monster to be.
 						</span>
 					</label>
-					<span class="flex-v-center">
+					<span class="ve-flex-v-center">
 						<input type="text" id="expectedcr" value="0" size="2" class="form-control form-control--minimal input-xs">
 					</span>
 				</div>
@@ -253,7 +256,7 @@
 							A creature's size determines the size of its individual hit dice.
 						</span>
 					</label>
-					<span class="flex-v-center">
+					<span class="ve-flex-v-center">
 						<select id="size" class="form-control input-xs">
 							<option value="Tiny">Tiny</option>
 							<option value="Small">Small</option>
@@ -272,7 +275,7 @@
 							Unlike player characters, the number of hit dice an NPC gets is completely arbitrary. Adjust this amount to taste.
 						</span>
 					</label>
-					<div class="flex-v-center">
+					<div class="ve-flex-v-center">
 						<input type="number" id="hd" value="1" min="1" max="999" class="form-control form-control--minimal input-xs">
 						<span id="hdval">d8</span>
 					</div>
@@ -309,7 +312,7 @@
 							A monster's HP is multiplied based on the resistances and immunities has to common damage types (non-magical bludgeoning, piercing, and slashing chief among them).
 						</span>
 					</label>
-					<span class="flex-v-center">
+					<span class="ve-flex-v-center">
 						<select id="resistances" class="form-control input-xs">
 							<option value="0" selected>None</option>
 							<option value="res">Resistances</option>
@@ -335,7 +338,7 @@
 							Increase a creature's effective AC by 2 if it has 3 or 4 saving throw proficiencies, or by 4 if it has 5 or 6.
 						</span>
 					</label>
-					<span class="flex-v-center">
+					<span class="ve-flex-v-center">
 						<select id="saveprofs" class="form-control input-xs">
 							<option value="0" selected>0-2</option>
 							<option value="2">3-4</option>
@@ -374,6 +377,8 @@
 <script type="text/javascript" src="lib/localforage.js"></script>
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>
 <script type="text/javascript" src="js/scalecreature.js"></script>

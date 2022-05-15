@@ -26,7 +26,7 @@ class AbilityScoreFilter extends FilterBase {
 			this._itemsLookup[itemAnyDecrease.uid] = itemAnyDecrease;
 			if (this.__state[itemAnyIncrease.uid] == null) this.__state[itemAnyIncrease.uid] = 0;
 			if (this.__state[itemAnyDecrease.uid] == null) this.__state[itemAnyDecrease.uid] = 0;
-		})
+		});
 
 		for (let i = this._minMod; i <= this._maxMod; ++i) {
 			if (i === 0) continue;
@@ -35,7 +35,7 @@ class AbilityScoreFilter extends FilterBase {
 				this._items.push(item);
 				this._itemsLookup[item.uid] = item;
 				if (this.__state[item.uid] == null) this.__state[item.uid] = 0;
-			})
+			});
 		}
 		// endregion
 	}
@@ -53,7 +53,7 @@ class AbilityScoreFilter extends FilterBase {
 
 		const wrpControls = this._getHeaderControls(opts);
 
-		this.__wrpPills = e_({tag: "div", clazz: `fltr__wrp-pills overflow-x-auto flex-col w-100`});
+		this.__wrpPills = e_({tag: "div", clazz: `fltr__wrp-pills overflow-x-auto ve-flex-col w-100`});
 		const hook = () => this.__wrpPills.toggleVe(!this._meta.isHidden);
 		this._addHook("meta", "isHidden", hook);
 		hook();
@@ -66,7 +66,7 @@ class AbilityScoreFilter extends FilterBase {
 		this.__$wrpFilter = $$`<div>
 			${opts.isFirst ? "" : `<div class="fltr__dropdown-divider ${opts.isMulti ? "fltr__dropdown-divider--indented" : ""} mb-1"></div>`}
 			<div class="split fltr__h mb-1">
-				<div class="ml-2 fltr__h-text flex-h-center">${opts.isMulti ? `<span class="mr-2">\u2012</span>` : ""}${this._getRenderedHeader()}${btnMobToggleControls}</div>
+				<div class="ml-2 fltr__h-text ve-flex-h-center">${opts.isMulti ? `<span class="mr-2">\u2012</span>` : ""}${this._getRenderedHeader()}${btnMobToggleControls}</div>
 				${wrpControls}
 			</div>
 			${this.__wrpPills}
@@ -87,11 +87,11 @@ class AbilityScoreFilter extends FilterBase {
 
 		const wrpStateBtnsOuter = e_({
 			tag: "div",
-			clazz: "flex-v-center fltr__h-wrp-state-btns-outer",
+			clazz: "ve-flex-v-center fltr__h-wrp-state-btns-outer",
 			children: [
 				e_({
 					tag: "div",
-					clazz: "btn-group flex-v-center w-100",
+					clazz: "btn-group ve-flex-v-center w-100",
 					children: [
 						btnClear,
 					],
@@ -99,7 +99,7 @@ class AbilityScoreFilter extends FilterBase {
 			],
 		});
 
-		const wrpSummary = e_({tag: "div", clazz: "flex-vh-center ve-hidden"});
+		const wrpSummary = e_({tag: "div", clazz: "ve-flex-vh-center ve-hidden"});
 
 		const btnShowHide = e_({
 			tag: "button",
@@ -128,7 +128,7 @@ class AbilityScoreFilter extends FilterBase {
 
 		return e_({
 			tag: "div",
-			clazz: `flex-v-center fltr__h-wrp-btns-outer`,
+			clazz: `ve-flex-v-center fltr__h-wrp-btns-outer`,
 			children: [
 				wrpSummary,
 				wrpStateBtnsOuter,
@@ -149,7 +149,7 @@ class AbilityScoreFilter extends FilterBase {
 				this.__wrpPillsRows[it.ability] = {
 					row: e_({
 						tag: "div",
-						clazz: "flex-v-center w-100 my-1",
+						clazz: "ve-flex-v-center w-100 my-1",
 						children: [
 							e_({
 								tag: "div",
@@ -633,7 +633,7 @@ AbilityScoreFilter.FilterItem = class {
 		if (this._isAnyDecrease) return `\u2012Any`;
 		return UiUtil.intToBonus(this._modifier);
 	}
-}
+};
 
 class PageFilterRaces extends PageFilter {
 	// region static
@@ -642,8 +642,11 @@ class PageFilterRaces extends PageFilter {
 
 		const outSet = new Set();
 		lProfs.forEach(lProfGroup => {
-			Object.keys(lProfGroup).filter(k => k !== "choose").forEach(k => outSet.add(k.toTitleCase()));
-			if (lProfGroup.choose) outSet.add("Choose");
+			Object.keys(lProfGroup)
+				.forEach(k => {
+					if (k !== "choose" && k !== "any" && k !== "anyStandard") outSet.add(k.toTitleCase());
+					else outSet.add("Choose");
+				});
 		});
 
 		return [...outSet];
@@ -655,9 +658,9 @@ class PageFilterRaces extends PageFilter {
 				asi: asi,
 				amount: amount,
 				_toIdString: () => {
-					return `${asi}${amount}`
+					return `${asi}${amount}`;
 				},
-			}
+			};
 		}
 
 		const out = new CollectionUtil.ObjectSet();
@@ -773,13 +776,13 @@ class PageFilterRaces extends PageFilter {
 				"Improved Resting",
 				"Monstrous Race",
 				"Natural Armor",
+				"Natural Weapon",
 				"NPC Race",
 				"Powerful Build",
 				"Skill Proficiency",
 				"Spellcasting",
 				"Sunlight Sensitivity",
 				"Tool Proficiency",
-				"Unarmed Strike",
 				"Uncommon Race",
 				"Weapon Proficiency",
 			],
@@ -816,56 +819,81 @@ class PageFilterRaces extends PageFilter {
 			displayFn: StrUtil.toTitleCase,
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Base Race", "Key Race", "Modified Copy", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
+		this._ageFilter = new RangeFilter({
+			header: "Adult Age",
+			isRequireFullRangeMatch: true,
+			isSparse: true,
+			displayFn: it => `${it} y.o.`,
+			displayFnTooltip: it => `${it} year${it === 1 ? "" : "s"} old`,
+		});
+		this._miscFilter = new Filter({
+			header: "Miscellaneous",
+			items: ["Base Race", "Key Race", "Lineage", "Modified Copy", "Reprinted", "SRD", "Basic Rules", "Has Images", "Has Info"],
+			isMiscFilter: true,
+		});
 	}
 
-	static mutateForFilters (race) {
-		race._fSpeed = race.speed ? race.speed.walk ? [race.speed.climb ? "Climb" : null, race.speed.fly ? "Fly" : null, race.speed.swim ? "Swim" : null, PageFilterRaces.getSpeedRating(race.speed.walk)].filter(it => it) : [PageFilterRaces.getSpeedRating(race.speed)] : [];
-		race._fTraits = [
-			race.darkvision === 120 ? "Superior Darkvision" : race.darkvision ? "Darkvision" : null,
-			race.resist ? "Damage Resistance" : null,
-			race.immune ? "Damage Immunity" : null,
-			race.conditionImmune ? "Condition Immunity" : null,
-			race.skillProficiencies ? "Skill Proficiency" : null,
-			race.feats ? "Feat" : null,
-			race.additionalSpells ? "Spellcasting" : null,
-			race.armorProficiencies ? "Armor Proficiency" : null,
-			race.weaponProficiencies ? "Weapon Proficiency" : null,
+	static mutateForFilters (r) {
+		r._fSize = r.size ? [...r.size] : [];
+		if (r._fSize.length > 1) r._fSize.push("V");
+		r._fSpeed = r.speed ? r.speed.walk ? [r.speed.climb ? "Climb" : null, r.speed.fly ? "Fly" : null, r.speed.swim ? "Swim" : null, PageFilterRaces.getSpeedRating(r.speed.walk)].filter(it => it) : [PageFilterRaces.getSpeedRating(r.speed)] : [];
+		r._fTraits = [
+			r.darkvision === 120 ? "Superior Darkvision" : r.darkvision ? "Darkvision" : null,
+			r.blindsight ? "Blindsight" : null,
+			r.resist ? "Damage Resistance" : null,
+			r.immune ? "Damage Immunity" : null,
+			r.conditionImmune ? "Condition Immunity" : null,
+			r.skillProficiencies ? "Skill Proficiency" : null,
+			r.toolProficiencies ? "Tool Proficiency" : null,
+			r.feats ? "Feat" : null,
+			r.additionalSpells ? "Spellcasting" : null,
+			r.armorProficiencies ? "Armor Proficiency" : null,
+			r.weaponProficiencies ? "Weapon Proficiency" : null,
 		].filter(it => it);
-		race._fTraits.push(...(race.traitTags || []));
-		race._fSources = SourceFilter.getCompleteFilterSources(race);
-		race._fLangs = PageFilterRaces.getLanguageProficiencyTags(race.languageProficiencies);
-		race._fCreatureTypes = race.creatureTypes ? race.creatureTypes.map(it => it.choose || it).flat() : ["humanoid"];
-		race._fMisc = race.srd ? ["SRD"] : [];
-		if (race._isBaseRace) race._fMisc.push("Base Race");
-		if (race._isBaseRace || !race._isSubRace) race._fMisc.push("Key Race");
-		if (race._isCopy) race._fMisc.push("Modified Copy");
-		if (race.hasFluff) race._fMisc.push("Has Info");
-		if (race.hasFluffImages) race._fMisc.push("Has Images");
+		r._fTraits.push(...(r.traitTags || []));
+		r._fSources = SourceFilter.getCompleteFilterSources(r);
+		r._fLangs = PageFilterRaces.getLanguageProficiencyTags(r.languageProficiencies);
+		r._fCreatureTypes = r.creatureTypes ? r.creatureTypes.map(it => it.choose || it).flat() : ["humanoid"];
+		r._fMisc = [];
+		if (r._isBaseRace) r._fMisc.push("Base Race");
+		if (r._isBaseRace || !r._isSubRace) r._fMisc.push("Key Race");
+		if (r._isCopy) r._fMisc.push("Modified Copy");
+		if (r.srd) r._fMisc.push("SRD");
+		if (r.basicRules) r._fMisc.push("Basic Rules");
+		if (r.hasFluff) r._fMisc.push("Has Info");
+		if (r.hasFluffImages) r._fMisc.push("Has Images");
+		if (r.lineage) r._fMisc.push("Lineage");
+		if (this._isReprinted({reprintedAs: r.reprintedAs, tag: "race", prop: "race", page: UrlUtil.PG_RACES})) r._fMisc.push("Reprinted");
 
-		if (race.ability) {
-			const abils = PageFilterRaces.getAbilityObjs(race.ability);
-			race._fAbility = abils.map(a => PageFilterRaces.mapAbilityObjToFull(a));
+		if (r.ability) {
+			const abils = PageFilterRaces.getAbilityObjs(r.ability);
+			r._fAbility = abils.map(a => PageFilterRaces.mapAbilityObjToFull(a));
 			const increases = {};
 			abils.filter(it => it.amount > 0).forEach(it => increases[it.asi] = true);
-			Object.keys(increases).forEach(it => race._fAbility.push(`Any ${Parser.attAbvToFull(it)} Increase`));
-			if (race.ability.some(it => it.choose)) race._fAbility.push("Player Choice");
-		} else race._fAbility = [];
+			Object.keys(increases).forEach(it => r._fAbility.push(`Any ${Parser.attAbvToFull(it)} Increase`));
+			if (r.ability.some(it => it.choose)) r._fAbility.push("Player Choice");
+		} else r._fAbility = [];
 
-		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "None"};
-		race._slAbility = ability.asTextShort;
+		const ability = r.ability ? Renderer.getAbilityData(r.ability, {isOnlyShort: true, isCurrentLineage: r.lineage === "VRGR"}) : {asTextShort: "None"};
+		r._slAbility = ability.asTextShort;
+
+		if (r.age?.mature != null && r.age?.max != null) r._fAge = [r.age.mature, r.age.max];
+		else if (r.age?.mature != null) r._fAge = r.age.mature;
+		else if (r.age?.max != null) r._fAge = r.age.max;
 	}
 
-	addToFilters (race, isExcluded) {
+	addToFilters (r, isExcluded) {
 		if (isExcluded) return;
 
-		this._sourceFilter.addItem(race._fSources);
-		this._sizeFilter.addItem(race.size);
-		this._asiFilter.addItem(race.ability);
-		this._baseRaceFilter.addItem(race._baseName);
-		this._creatureTypeFilter.addItem(race._fCreatureTypes);
-		this._traitFilter.addItem(race._fTraits);
-		this._asiFilterLegacy.addItem(race._fAbility);
+		this._sourceFilter.addItem(r._fSources);
+		this._sizeFilter.addItem(r._fSize);
+		this._asiFilter.addItem(r.ability);
+		this._baseRaceFilter.addItem(r._baseName);
+		this._creatureTypeFilter.addItem(r._fCreatureTypes);
+		this._traitFilter.addItem(r._fTraits);
+		this._asiFilterLegacy.addItem(r._fAbility);
+		this._ageFilter.addItem(r._fAge);
+		this._languageFilter.addItem(r._fLangs);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -879,6 +907,7 @@ class PageFilterRaces extends PageFilter {
 			this._baseRaceFilter,
 			this._creatureTypeFilter,
 			this._miscFilter,
+			this._ageFilter,
 
 			this._asiFilterLegacy,
 		];
@@ -889,16 +918,17 @@ class PageFilterRaces extends PageFilter {
 			values,
 			r._fSources,
 			r.ability,
-			r.size,
+			r._fSize,
 			r._fSpeed,
 			r._fTraits,
 			r._fLangs,
 			r._baseName,
 			r._fCreatureTypes,
 			r._fMisc,
+			r._fAge,
 
 			r._fAbility,
-		)
+		);
 	}
 
 	static getListAliases (race) {
@@ -908,7 +938,7 @@ class PageFilterRaces extends PageFilter {
 				return [`"${it}"`, invertedName ? `"${invertedName}"` : false].filter(Boolean);
 			})
 			.flat()
-			.join(",")
+			.join(",");
 	}
 
 	static getInvertedName (name) {
@@ -960,24 +990,24 @@ class ModalFilterRaces extends ModalFilter {
 
 	_getListItem (pageFilter, race, rI) {
 		const eleRow = document.createElement("div");
-		eleRow.className = "px-0 w-100 flex-col no-shrink";
+		eleRow.className = "px-0 w-100 ve-flex-col no-shrink";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RACES](race);
 		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "None"};
 		const size = (race.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/");
 		const source = Parser.sourceJsonToAbv(race.source);
 
-		eleRow.innerHTML = `<div class="w-100 flex-vh-center lst--border no-select lst__wrp-cells">
-			<div class="col-0-5 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
+		eleRow.innerHTML = `<div class="w-100 ve-flex-vh-center lst--border no-select lst__wrp-cells">
+			<div class="col-0-5 pl-0 ve-flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 
-			<div class="col-0-5 px-1 flex-vh-center">
-				<div class="ui-list__btn-inline px-2" title="Toggle Preview">[+]</div>
+			<div class="col-0-5 px-1 ve-flex-vh-center">
+				<div class="ui-list__btn-inline px-2" title="Toggle Preview (SHIFT to Toggle Info Preview)">[+]</div>
 			</div>
 
 			<div class="col-4 ${this._getNameStyle()}">${race.name}</div>
 			<div class="col-4">${ability.asTextShort}</div>
 			<div class="col-2 text-center">${size}</div>
-			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(race.source)}" title="${Parser.sourceJsonToFull(race.source)}" ${BrewUtil.sourceJsonToStyle(race.source)}>${source}</div>
+			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(race.source)}" title="${Parser.sourceJsonToFull(race.source)}" ${BrewUtil2.sourceJsonToStyle(race.source)}>${source}</div>
 		</div>`;
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;

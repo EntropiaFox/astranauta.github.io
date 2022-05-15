@@ -17,13 +17,15 @@
 			"name": "Expert",
 			"source": "SLW",
 			"level": 7,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"ac": [
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -95,7 +97,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -107,12 +108,15 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Skull Flier",
 			"source": "SLW",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -163,7 +167,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -177,19 +180,22 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Spellcaster (Healer)",
 			"source": "SLW",
 			"level": 7,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"ac": [
 				{
 					"ac": 13,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -282,31 +288,36 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"R"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Spellcaster (Mage)",
 			"source": "SLW",
 			"level": 7,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"ac": [
 				{
 					"ac": 13,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -399,12 +410,14 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
 			"damageTags": [
 				"B"
+			],
+			"damageTagsSpell": [
+				"F"
 			],
 			"spellcastingTags": [
 				"CC",
@@ -412,12 +425,15 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Statue of Talos",
 			"source": "SLW",
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "elemental",
 			"alignment": [
 				"C",
@@ -506,7 +522,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance"
 			],
@@ -525,13 +540,16 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Tooth-N-Claw",
 			"isNpc": true,
 			"source": "SLW",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fiend",
 			"alignment": [
 				"L",
@@ -600,13 +618,15 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Pack Tactics"
 			],
 			"senseTags": [
 				"D"
+			],
+			"actionTags": [
+				"Breath Weapon"
 			],
 			"languageTags": [
 				"CS",
@@ -619,13 +639,16 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Warrior",
 			"source": "SLW",
 			"level": 7,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"ac": [
 				{
@@ -726,7 +749,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"altArt": [
 				{
 					"name": "Warrior (Defender)",
@@ -744,7 +766,8 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

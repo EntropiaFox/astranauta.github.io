@@ -11,7 +11,9 @@
 			"name": "Chupacabra",
 			"source": "PSX",
 			"page": 9,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -88,7 +90,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sunlight Sensitivity"
 			],
@@ -104,13 +105,16 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elder Dinosaur",
 			"source": "PSX",
 			"page": 33,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -230,7 +234,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -250,13 +253,16 @@
 				"blinded",
 				"frightened",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elder Dinosaur (Etali, Primal Storm)",
 			"source": "PSX",
 			"page": 33,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -394,7 +400,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -424,13 +429,16 @@
 				"frightened",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elder Dinosaur (Ghalta, Primal Hunger)",
 			"source": "PSX",
 			"page": 33,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -568,7 +576,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -597,13 +604,16 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elder Dinosaur (Nezahal, Primal Tide)",
 			"source": "PSX",
 			"page": 33,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -742,7 +752,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath",
 				"Legendary Resistances",
@@ -771,13 +780,16 @@
 				"frightened",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elder Dinosaur (Tetzimoc, Primal Death)",
 			"source": "PSX",
 			"page": 33,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -939,7 +951,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -969,13 +980,16 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elder Dinosaur (Zacama, Primal Calamity)",
 			"source": "PSX",
 			"page": 33,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -1113,7 +1127,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -1142,13 +1155,16 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elder Dinosaur (Zetalpa, Primal Dawn)",
 			"source": "PSX",
 			"page": 33,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -1296,7 +1312,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -1325,13 +1340,16 @@
 				"frightened",
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Frilled Deathspitter",
 			"source": "PSX",
 			"page": 30,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -1388,7 +1406,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1403,14 +1420,17 @@
 			],
 			"conditionInflict": [
 				"blinded"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Gishath, Sun's Avatar",
 			"isNamedCreature": true,
 			"source": "PSX",
 			"page": 32,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -1502,7 +1522,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -1525,7 +1544,8 @@
 				"grappled",
 				"prone",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Harpy",
@@ -1567,7 +1587,9 @@
 			"name": "Sunbird",
 			"source": "PSX",
 			"page": 32,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -1666,7 +1688,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Death Burst",
 				"Flyby",
@@ -1695,7 +1716,8 @@
 			"conditionInflict": [
 				"grappled",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

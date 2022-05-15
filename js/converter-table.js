@@ -23,7 +23,7 @@ class TableParser extends BaseParser {
 		options = this._getValidOptions(options);
 
 		if (!inText || !inText.trim()) return options.cbWarning("No input!");
-		inText = this._getCleanInput(inText);
+		inText = this._getCleanInput(inText, options);
 
 		const handleTable = ($table, caption) => {
 			const tbl = {
@@ -116,7 +116,7 @@ class TableParser extends BaseParser {
 	 */
 	static doParseMarkdown (inText, options) {
 		if (!inText || !inText.trim()) return options.cbWarning("No input!");
-		inText = this._getCleanInput(inText);
+		inText = this._getCleanInput(inText, options);
 
 		const lines = inText.replace(/\r\n/g, "\n").replace(/\r/g, "\n").split(/\n/g);
 		const stack = [];

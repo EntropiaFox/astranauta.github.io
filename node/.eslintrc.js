@@ -6,7 +6,7 @@ module.exports = {
 		"jquery": true,
 	},
 	"parserOptions": {
-		"ecmaVersion": 2020,
+		"ecmaVersion": "latest",
 		"sourceType": "module",
 	},
 	"rules": {
@@ -150,6 +150,7 @@ module.exports = {
 		"padded-blocks": ["error", {"blocks": "never", "switches": "never", "classes": "never"}],
 		"prefer-promise-reject-errors": "error",
 		"rest-spread-spacing": ["error", "never"],
+		"semi": ["warn", "always"],
 		"semi-spacing": ["error", {"before": false, "after": true}],
 		"space-before-blocks": ["error", "always"],
 		"space-before-function-paren": ["error", "always"],

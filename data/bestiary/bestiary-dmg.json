@@ -10,7 +10,9 @@
 					"source": "TCE"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"N",
@@ -60,7 +62,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The avatar can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"The avatar can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				},
 				{
@@ -78,7 +80,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Turn Immunity"
@@ -95,13 +96,16 @@
 				"O",
 				"S"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Giant Fly",
 			"source": "DMG",
 			"page": 169,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -127,10 +131,10 @@
 				"darkvision 60 ft."
 			],
 			"passive": 10,
-			"hasToken": true,
 			"senseTags": [
 				"D"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Larva",
@@ -141,7 +145,9 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fiend",
 			"alignment": [
 				"N",
@@ -176,7 +182,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"CS",
 				"LF"
@@ -186,7 +191,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

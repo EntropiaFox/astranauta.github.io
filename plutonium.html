@@ -46,7 +46,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -76,7 +79,7 @@
 </header>
 
 <nav class="container page__nav" id="navigation">
-	<ul class="nav page__nav-inner" id="navbar"></ul>
+	<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
 </nav>
 
 <div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
@@ -85,7 +88,7 @@
 	<div class="row">
 		<div class="col-12">
 			<p>An overview of the features available in Plutonium can be found below. To those familiar with our now-deprecated Roll20 script &quot;betteR20,&quot; we aim to expand on the feature set it provided, while improving user experience.</p>
-			<p><b>Please note that the GIFs on this page are updated much less frequently than the module itself.</b> For a (more) complete list of Plutonium's features, see <a href="https://wiki.5e.tools/index.php/Feature:_FoundryTool" rel="noopener noreferrer">the wiki</a>.</p>
+			<p><b>Please note that the GIFs on this page are updated much less frequently than the module itself.</b> For a (more) complete list of Plutonium's features, see <a href="https://wiki.tercept.net/en/Plutonium" rel="noopener noreferrer">the wiki</a>.</p>
 
 			<hr>
 
@@ -116,7 +119,7 @@
 
 			<hr>
 
-			<h3>Rivet Browser Extension</h3>
+			<h3 id="rivet-browser-extension">Rivet Browser Extension</h3>
 			<p>With Rivet installed, and provided you have 5etools and Foundry open in the same browser, you can send content and rolls from 5etools straight to your Foundry game with the click of a button.</p>
 			<h4>Send to Foundry</h4>
 			<a href="img/plutonium/rivet.gif" target="_blank"><img class="big-help-gif" src="img/plutonium/rivet.gif" loading="lazy"></a>
@@ -126,7 +129,9 @@
 			<h3>Art Browser</h3>
 			<p>The <a href="https://dmsguild201.github.io/Roll20_resources/">Art Browser</a> is integrated into the module, allowing tiles, tokens, and scenes to be drag-dropped from the vast collection available. Note that art can be drag-dropped from the Art Browser site itself with the same functionality.</p>
 			<h4>Scene Creation</h4>
-			<a href="img/plutonium/artbrowser.gif" target="_blank"><img class="big-help-gif" src="img/plutonium/artbrowser.gif" loading="lazy"></a>
+			<video class="big-help-gif" controls>
+				<source src="img/plutonium/artbrowser.webm" type="video/webm">
+			</video>
 
 			<hr>
 
@@ -170,6 +175,8 @@
 <script type="text/javascript" src="lib/localforage.js"></script>
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>
 <script type="text/javascript" src="js/scalecreature.js"></script>

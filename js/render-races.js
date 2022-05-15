@@ -6,10 +6,11 @@ class RenderRaces {
 
 		return $$`
 		${Renderer.utils.getBorderTr()}
-		${Renderer.utils.getExcludedTr(race, "race")}
+		${Renderer.utils.getExcludedTr({entity: race, dataProp: "race"})}
 		${Renderer.utils.getNameTr(race, {controlRhs: race.soundClip ? RenderRaces._getPronunciationButton(race) : "", page: UrlUtil.PG_RACES})}
 		<tr><td colspan="6"><b>Ability Scores:</b> ${(race.ability ? Renderer.getAbilityData(race.ability) : {asText: "None"}).asText}</td></tr>
-		<tr><td colspan="6"><b>Size:</b> ${(race.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/")}</td></tr>
+		${(race.creatureTypes || []).filter(it => `${it}`.toLowerCase() !== "humanoid").length ? `<tr><td colspan="6"><b>Creature Type:</b> ${Parser.raceCreatureTypesToFull(race.creatureTypes)}</td></tr>` : ""}
+		<tr><td colspan="6"><b>Size:</b> ${Renderer.utils.getRenderedSize(race.size || [SZ_VARIES])}</td></tr>
 		<tr><td colspan="6"><b>Speed:</b> ${Parser.getSpeedString(race)}</td></tr>
 		<tr><td class="divider" colspan="6"><div></div></td></tr>
 		${race._isBaseRace ? `<tr class="text"><td colspan="6">${renderer.render({type: "entries", entries: race._baseRaceEntries}, 1)}</td></tr>` : `<tr class="text"><td colspan="6">${renderer.render({type: "entries", entries: race.entries}, 1)}</td></tr>`}
@@ -20,14 +21,14 @@ class RenderRaces {
 
 		${$ptHeightWeight ? $$`<tr class="text"><td colspan="6"><hr class="rd__hr">${$ptHeightWeight}</td></tr>` : ""}
 
-		${Renderer.utils.getPageTr(race)}
+		${Renderer.utils.getPageTr(race, {tag: "race", fnUnpackUid: (uid) => DataUtil.generic.unpackUid(uid, "race")})}
 		${Renderer.utils.getBorderTr()}`;
 	}
 
 	static _getPronunciationButton (race) {
-		return `<button class="btn btn-xs btn-default btn-name-pronounce ml-2">
+		return `<button class="btn btn-xs btn-default btn-name-pronounce ml-2 mb-2 ve-self-flex-end">
 			<span class="glyphicon glyphicon-volume-up name-pronounce-icon"></span>
-			<audio class="name-pronounce">
+			<audio class="name-pronounce" preload="none">
 			   <source src="${Renderer.utils.getMediaUrl(race, "soundClip", "audio")}" type="audio/mpeg">
 			</audio>
 		</button>`;
@@ -38,8 +39,8 @@ class RenderRaces {
 		if (race._isBaseRace) return null;
 
 		const getRenderedHeight = (height) => {
-			const heightFeet = Math.floor(height / 12);
-			const heightInches = height % 12;
+			const heightFeet = Number(Math.floor(height / 12).toFixed(3));
+			const heightInches = Number((height % 12).toFixed(3));
 			return `${heightFeet ? `${heightFeet}'` : ""}${heightInches ? `${heightInches}"` : ""}`;
 		};
 
@@ -56,8 +57,8 @@ class RenderRaces {
 						`${race.heightAndWeight.baseWeight} lb.`,
 						`+<span data-race-heightmod="true"></span>`,
 						`× <span data-race-weightmod="true"></span> lb.`,
-						`<div class="flex-vh-center">
-							<div class="ve-hidden race__disp-result-height-weight flex-v-baseline">
+						`<div class="ve-flex-vh-center">
+							<div class="ve-hidden race__disp-result-height-weight ve-flex-v-baseline">
 								<div class="mr-1">=</div>
 								<div class="race__disp-result-height"></div>
 								<div class="mr-2">; </div>
@@ -148,14 +149,14 @@ class RenderRaces {
 			const renderedHeight = getRenderedHeight(race.heightAndWeight.baseHeight + resultHeight);
 			const totalWeight = race.heightAndWeight.baseWeight + (resultWeightMod * resultHeight);
 			$dispHeight.text(renderedHeight);
-			$dispWeight.text(totalWeight);
+			$dispWeight.text(Number(totalWeight.toFixed(3)));
 		};
 
 		const pDoFullRoll = async isPreLocked => {
 			try {
 				if (!isPreLocked) await lock.pLock();
 
-				$btnRoll.parent().removeClass(`flex-vh-center`).addClass(`split-v-center`);
+				$btnRoll.parent().removeClass(`ve-flex-vh-center`).addClass(`split-v-center`);
 				await pRollHeight();
 				await pRollWeight();
 				$dispResult.removeClass(`ve-hidden`);

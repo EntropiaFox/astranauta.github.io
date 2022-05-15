@@ -676,7 +676,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} eggs",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 3
 				},
 				{
@@ -882,7 +882,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} eggs",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 3
 				},
 				{
@@ -1552,7 +1552,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} egg",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 1
 				},
 				{
@@ -1678,7 +1678,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} egg",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 1
 				},
 				{
@@ -2069,7 +2069,7 @@
 						},
 						{
 							"type": "ingredient",
-							"entry": "{=amount1/v} eggs, beaten, plus {=amount2/v} egg for egg wash",
+							"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}, beaten, plus {=amount2/v} {@unit {=amount2}|egg|eggs} for egg wash",
 							"amount1": 2,
 							"amount2": 1
 						},
@@ -2216,7 +2216,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} egg",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 1
 				}
 			],
@@ -2414,7 +2414,7 @@
 			"ingredients": [
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} eggs",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 9
 				},
 				{
@@ -2670,7 +2670,7 @@
 						},
 						{
 							"type": "ingredient",
-							"entry": "{=amount1/v} eggs",
+							"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 							"amount1": 2
 						},
 						{
@@ -3184,7 +3184,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} egg, beaten",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}, beaten",
 					"amount1": 1
 				},
 				{
@@ -3289,7 +3289,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} egg",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 1
 				},
 				"Ketchup, grainy mustard, or steak sauce to serve (optional)"
@@ -3469,7 +3469,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} egg",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 1
 				},
 				"Lightly sweetened whipped cream for serving (optional)"
@@ -3563,7 +3563,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} egg",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 1
 				},
 				"Ketchup, mustard, barbecue sauce, or steak sauce for dipping (optional)"
@@ -3656,7 +3656,7 @@
 						},
 						{
 							"type": "ingredient",
-							"entry": "{=amount1/v} eggs",
+							"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 							"amount1": 2
 						},
 						{
@@ -3817,7 +3817,7 @@
 					"entries": [
 						{
 							"type": "ingredient",
-							"entry": "{=amount1/v} egg, separated, plus {=amount2/v} whole eggs",
+							"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}, separated, plus {=amount2/v} whole {@unit {=amount2}|egg|eggs}",
 							"amount1": 1,
 							"amount2": 2
 						},
@@ -4645,7 +4645,7 @@
 						},
 						{
 							"type": "ingredient",
-							"entry": "{=amount1/v} eggs, beaten",
+							"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}, beaten",
 							"amount1": 2
 						},
 						{
@@ -5911,7 +5911,7 @@
 				},
 				{
 					"type": "ingredient",
-					"entry": "{=amount1/v} eggs",
+					"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 					"amount1": 2
 				},
 				{
@@ -6779,7 +6779,7 @@
 						},
 						{
 							"type": "ingredient",
-							"entry": "{=amount1/v} egg",
+							"entry": "{=amount1/v} {@unit {=amount1}|egg|eggs}",
 							"amount1": 1
 						},
 						"Truffle oil for brushing (optional)"

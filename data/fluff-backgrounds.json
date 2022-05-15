@@ -1,4 +1,9 @@
 {
+	"_meta": {
+		"internalCopies": [
+			"backgroundFluff"
+		]
+	},
 	"backgroundFluff": [
 		{
 			"name": "Acolyte",
@@ -28,7 +33,7 @@
 						{
 							"type": "entries",
 							"entries": [
-								"You have always been fascinated by other cultures, from the most ancient and primeval lost lands to the most modern civilizations. By studying other cultures' customs, philosophies, laws, rituals, religious beliefs, languages, and art, you have learned how tribes, empires, and all forms of society in between craft their own destinies and doom. This knowledge came to you not only through books and scrolls, but also through firsthand observation- by visiting far-flung settlements and exploring local histories and customs."
+								"You have always been fascinated by other cultures, from the most ancient and primeval lost lands to the most modern civilizations. By studying other cultures' customs, philosophies, laws, rituals, religious beliefs, languages, and art, you have learned how tribes, empires, and all forms of society in between craft their own destinies and doom. This knowledge came to you not only through books and scrolls, but also through firsthand observation\u2014by visiting far-flung settlements and exploring local histories and customs."
 							]
 						}
 					]
@@ -608,6 +613,15 @@
 						}
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "backgrounds/PSA/Dissenter.webp"
+					}
+				}
 			]
 		},
 		{
@@ -849,6 +863,23 @@
 			]
 		},
 		{
+			"name": "Feylost",
+			"source": "WBtW",
+			"entries": [
+				"You grew up in the Feywild after disappearing from your home plane as a child. Perhaps you were spirited away by kindly Fey who thought you were destined for great things. Perhaps you stumbled through a fey crossing by chance during a twilight stroll in the woods. Perhaps you were kidnapped by evil Fey but escaped from their clutches. Whatever the manner of your disappearance, you gradually fell under the Feywild's spell and learned a little about the nature of the mercurial tricksters that dwell there.",
+				"When you finally returned to your home plane, you did not come back unchanged. You are haunted by the fact that the Feywild\u2014a mirror world hidden behind a mere twist of perception\u2014is only a hair's breadth away. Although your memories of the Feywild grow fainter with each passing day, your heart swells with a mixture of fear and joy at the prospect of one day venturing back to the Plane of Faerie\u2014your home away from home."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "backgrounds/WBtW/Feylost.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Fisher",
 			"source": "GoS",
 			"entries": [
@@ -1057,7 +1088,7 @@
 		},
 		{
 			"name": "Haunted One",
-			"source": "CoS",
+			"source": "VRGR",
 			"entries": [
 				{
 					"type": "entries",
@@ -1076,7 +1107,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "backgrounds/CoS/Haunted One.png"
+						"path": "backgrounds/VRGR/Haunted One.png"
 					}
 				}
 			]
@@ -1183,6 +1214,22 @@
 						}
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "backgrounds/PSA/Initiate.webp"
+					}
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "backgrounds/PSA/Initiate2.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1263,6 +1310,20 @@
 			]
 		},
 		{
+			"name": "Knight of Solamnia",
+			"source": "UA2022HeroesOfKrynn",
+			"entries": [
+				"You have trained to be a valorous warrior known as a Knight of Solamnia. Strict rules guide your every action, and you work to uphold them as you strive to defend the weak and oppose all forms of evil. Your honor is as important to you as your life."
+			]
+		},
+		{
+			"name": "Knight of Solamnia",
+			"source": "UA2022HeroesOfKrynnRevisited",
+			"entries": [
+				"You have trained to be a valorous warrior known as a Knight of Solamnia. Strict rules guide your every action, and you work to uphold them as you strive to defend the weak and oppose evil. Your honor is as important to you as your life."
+			]
+		},
+		{
 			"name": "Knight of the Order",
 			"source": "SCAG",
 			"entries": [
@@ -1310,6 +1371,13 @@
 			]
 		},
 		{
+			"name": "Lorehold Student",
+			"source": "SCC",
+			"entries": [
+				"You have spent your youth preparing to be a student of Lorehold College, reading every book on the college's recommended reading list for prospective students. Your academic passions are in the broad field of history. You might dream of using magic to contact great historical figures or your own ancestors or of recreating the mighty magic of a distant age."
+			]
+		},
+		{
 			"name": "Luxonborn (Acolyte)",
 			"source": "EGW",
 			"entries": [
@@ -1324,6 +1392,22 @@
 						}
 					]
 				}
+			]
+		},
+		{
+			"name": "Mage of High Sorcery",
+			"source": "UA2022HeroesOfKrynn",
+			"entries": [
+				"Your talent for magic came to the attention of the Mages of High Sorcery, an organization of spellcasters that study magic and prevent its misuse. You've trained among the Mages, but whether or not you'll face the dangerous tests required to become a true member of the group remains to be determined. Your passion for studying magic has likely already predisposed you toward one of the organization's three orders: the benevolent Order of the White Robes, the balance-pursuing Order of the Red Robes, or the ruthless Order of the Black Robes.",
+				"In the world of Krynn, many refer to the Mages of High Sorcery as the Wizards of High Sorcery. The organization accepts more than wizards, though, with bards, sorcerers, warlocks, and other spellcasters included among their ranks."
+			]
+		},
+		{
+			"name": "Mage of High Sorcery",
+			"source": "UA2022HeroesOfKrynnRevisited",
+			"entries": [
+				"Your talent for magic came to the attention of the Mages of High Sorcery, an organization of spellcasters that study magic and prevent its misuse. You've trained among the Mages, but whether or not you'll face the dangerous tests required to become a true member of the group remains to be determined. Your passion for studying magic has likely already predisposed you toward one of the organization's three orders: the benevolent Order of the White Robes, the balance-pursuing Order of the Red Robes, or the ruthless Order of the Black Robes.",
+				"In the world of Krynn, many refer to the Mages of High Sorcery as the Wizards of High Sorcery. The organization accepts more than wizards, though, with sorcerers, warlocks, and other spellcasters included among their ranks."
 			]
 		},
 		{
@@ -1545,6 +1629,40 @@
 			]
 		},
 		{
+			"name": "Prismari Student",
+			"source": "SCC",
+			"entries": [
+				"You are an artist, and you have been preparing to hone your craft according to the traditions of Prismari College. Whatever your medium\u2014sculpture, dance, paint, music, drama, architecture, or any other field\u2014you have grand visions of bringing your art to life in a fusion of magic and creativity."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "backgrounds/SCC/Prismari Student.webp"
+					},
+					"title": "An advanced Prismari student artfully harnesses fire"
+				}
+			]
+		},
+		{
+			"name": "Quandrix Student",
+			"source": "SCC",
+			"entries": [
+				"In preparation to become a student of Quandrix College, you have spent years working through the college's math problems for prospective students. Your interests concentrate on the mathematical principles and patterns found in the natural world. You might lean more toward mathematics or physics, or you delve into more abstract studies of metaphysics, arcana, or logic."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "backgrounds/SCC/Quandrix Student.webp"
+					},
+					"title": "A Quandrix student magically gazes into the intricate patterns of nature"
+				}
+			]
+		},
+		{
 			"name": "Rakdos Cultist",
 			"source": "GGR",
 			"entries": [
@@ -1700,6 +1818,13 @@
 						}
 					]
 				}
+			]
+		},
+		{
+			"name": "Silverquill Student",
+			"source": "SCC",
+			"entries": [
+				"You have spent years practicing your writing and oration in the hope of becoming a student of Silverquill College. Your studies focus on language, literature, and the power of words, both magical and otherwise. The metaphorical power of words to illuminate or conceal is joined with the literal ability of magic to do the same in your academic pursuits."
 			]
 		},
 		{
@@ -1959,6 +2084,14 @@
 			]
 		},
 		{
+			"name": "Variant Noble (Retainers)",
+			"source": "PHB",
+			"_copy": {
+				"name": "Noble",
+				"source": "PHB"
+			}
+		},
+		{
 			"name": "Variant Sailor (Pirate)",
 			"source": "PHB",
 			"entries": [
@@ -1991,6 +2124,15 @@
 							]
 						}
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "backgrounds/PSA/Vizier.webp"
+					}
 				}
 			]
 		},
@@ -2082,6 +2224,30 @@
 						}
 					]
 				}
+			]
+		},
+		{
+			"name": "Witchlight Hand",
+			"source": "WBtW",
+			"entries": [
+				"You crept into the Witchlight Carnival as a child or youth and never looked back, earning a place among those who work behind the scenes to keep the carnival in business. As a hand, you work hard and party hard. The carnival has borne you to many fantastic worlds, circling back around to your home world once every eight years, but you know almost nothing about these worlds because you spend all your time in the carnival. You know the other hands well, but the carnival's owners\u2014Mister Witch and Mister Light\u2014remain mysterious to you even after all these years.",
+				"Maybe you joined the carnival to escape a dismal life at home, or maybe you were enchanted by the idea of visiting new places or the dream of becoming one of the carnival's star attractions. Now that you're older, carnival life has lost some of its appeal. The daily routine has grown tedious, the cyclical nature of the carnival's journey monotonous. The carnival no longer fills your heart with a sense of wonder. Perhaps greater adventures await you beyond the carnival's gates."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "backgrounds/WBtW/Witchlight Hand.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Witherbloom Student",
+			"source": "SCC",
+			"entries": [
+				"You filled your childhood with rudimentary alchemical experiments, all in the hope of becoming a student of Witherbloom College. The life sciences are the focus of your reading, which include biology and necromancy. Brewing strange concoctions with medicinal properties, exploring the anatomies of monsters, and cataloging swamp flora are the kinds of studies you might pursue at Witherbloom College."
 			]
 		}
 	]

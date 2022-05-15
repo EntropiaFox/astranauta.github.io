@@ -14,7 +14,6 @@ class PageFilterDeities extends PageFilter {
 
 	constructor () {
 		super();
-		this._sourceFilter = new SourceFilter();
 		this._pantheonFilter = new Filter({header: "Pantheon", items: []});
 		this._categoryFilter = new Filter({header: "Category", items: [VeCt.STR_NONE]});
 		this._alignmentFilter = new Filter({
@@ -29,10 +28,10 @@ class PageFilterDeities extends PageFilter {
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			items: ["Grants Piety Features", "Has Info", PageFilterDeities._STR_REPRINTED, "SRD"],
+			items: ["Grants Piety Features", "Has Info", "Reprinted", "SRD", "Basic Rules"],
 			displayFn: StrUtil.uppercaseFirst,
-			deselFn: (it) => { return it === PageFilterDeities._STR_REPRINTED },
-			isSrdFilter: true,
+			deselFn: (it) => it === "Reprinted",
+			isMiscFilter: true,
 		});
 	}
 
@@ -42,8 +41,10 @@ class PageFilterDeities extends PageFilter {
 		if (!g.domains) g.domains = [VeCt.STR_NONE];
 		g.domains.sort(SortUtil.ascSort);
 
-		g._fMisc = g.reprinted ? [PageFilterDeities._STR_REPRINTED] : [];
+		g._fMisc = [];
+		if (g.reprinted) g._fMisc.push("Reprinted");
 		if (g.srd) g._fMisc.push("SRD");
+		if (g.basicRules) g._fMisc.push("Basic Rules");
 		if (g.entries || g.symbolImg) g._fMisc.push("Has Info");
 		if (g.piety) g._fMisc.push("Grants Piety Features");
 	}
@@ -77,7 +78,6 @@ class PageFilterDeities extends PageFilter {
 			g.category,
 			g.domains,
 			g._fMisc,
-		)
+		);
 	}
 }
-PageFilterDeities._STR_REPRINTED = "reprinted";

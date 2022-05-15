@@ -188,7 +188,7 @@ class RendererCard {
 				meta.depth = cacheDepth;
 			}
 		}
-		if (entry.variantSource) textStack[0] += `${RenderCard.utils.getPageText(entry.variantSource)}\n`;
+		if (entry.source) textStack[0] += `${RenderCard.utils.getPageText({source: entry.source, page: entry.page})}\n`;
 		textStack[0] += "\n";
 	}
 
@@ -274,11 +274,11 @@ class RendererCard {
 	_renderBonusSpeed (entry, textStack, meta, options) {
 		// (Use base implementation)
 	}
+	*/
 
 	_renderDice (entry, textStack, meta, options) {
-		// (Use base implementation)
+		textStack[0] += Renderer.getEntryDiceDisplayText(entry);
 	}
-	*/
 
 	_renderLink (entry, textStack, meta, options) {
 		this._recursiveRender(entry.text, textStack, meta);
@@ -330,37 +330,37 @@ class RendererCard {
 
 	// region data
 	_renderDataCreature (entry, textStack, meta, options) {
-		textStack[0] += `text | (Inline creature rendering within cards is not supported.)\n`
+		textStack[0] += `text | (Inline creature rendering within cards is not supported.)\n`;
 	}
 
 	_renderDataSpell (entry, textStack, meta, options) {
-		textStack[0] += `text | (Inline spell rendering within cards is not supported.)\n`
+		textStack[0] += `text | (Inline spell rendering within cards is not supported.)\n`;
 	}
 
 	_renderDataTrapHazard (entry, textStack, meta, options) {
-		textStack[0] += `text | (Inline trap/hazard rendering within cards is not supported.)\n`
+		textStack[0] += `text | (Inline trap/hazard rendering within cards is not supported.)\n`;
 	}
 
 	_renderDataObject (entry, textStack, meta, options) {
-		textStack[0] += `text | (Inline object rendering within cards is not supported.)\n`
+		textStack[0] += `text | (Inline object rendering within cards is not supported.)\n`;
 	}
 
 	_renderDataItem (entry, textStack, meta, options) {
-		textStack[0] += `text | (Inline item rendering within cards is not supported.)\n`
+		textStack[0] += `text | (Inline item rendering within cards is not supported.)\n`;
 	}
 
 	_renderDataLegendaryGroup (entry, textStack, meta, options) {
-		textStack[0] += `text | (Inline legendary group rendering within cards is not supported.)\n`
+		textStack[0] += `text | (Inline legendary group rendering within cards is not supported.)\n`;
 	}
 	// endregion
 
 	// region images
 	_renderImage (entry, textStack, meta, options) {
-		textStack[0] += `text | (Image rendering within cards is not supported.)\n`
+		textStack[0] += `text | (Image rendering within cards is not supported.)\n`;
 	}
 
 	_renderGallery (entry, textStack, meta, options) {
-		textStack[0] += `text | (Image gallery rendering within cards is not supported.)\n`
+		textStack[0] += `text | (Image gallery rendering within cards is not supported.)\n`;
 	}
 	// endregion
 
@@ -388,13 +388,13 @@ class RendererCard {
 
 	// region homebrew
 	_renderHomebrew (entry, textStack, meta, options) {
-		textStack[0] += `text | (Homebrew rendering within cards is not supported.)\n`
+		textStack[0] += `text | (Homebrew rendering within cards is not supported.)\n`;
 	}
 	// endregion
 
 	// region misc
 	_renderCode (entry, textStack, meta, options) {
-		textStack[0] += `text | (Code rendering within cards is not supported.)`
+		textStack[0] += `text | (Code rendering within cards is not supported.)`;
 	}
 
 	_renderHr (entry, textStack, meta, options) {
@@ -411,7 +411,7 @@ class RendererCard {
 			if (!s) continue;
 			if (s.startsWith("{@")) {
 				const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
-				this._renderString_renderTag(textStack, meta, options, tag, text);
+				if (!this._renderString_renderTag_card(textStack, meta, options, tag, text)) this._renderString_renderTag(textStack, meta, options, tag, text);
 			} else {
 				if (textStack[0].last() === "\n" || !textStack[0].last()) textStack[0] += `text | `;
 				textStack[0] += s;
@@ -419,9 +419,20 @@ class RendererCard {
 		}
 	}
 
+	_renderString_renderTag_card (textStack, meta, options, tag, text) {
+		switch (tag) {
+			case "@dc": {
+				const [dcText, displayText] = Renderer.splitTagByPipe(text);
+				textStack[0] += `DC ${displayText || dcText}`;
+				return true;
+			}
+			default: return false;
+		}
+	}
+
 	_renderPrimitive (entry, textStack, meta, options) {
 		if (textStack[0].last() === "\n" || !textStack[0].last()) textStack[0] += `text | `;
-		textStack[0] += `${entry}`
+		textStack[0] += `${entry}`;
 	}
 	// endregion
 }
@@ -442,6 +453,6 @@ RendererCard.utils = class {
 		return `${introText} ${it[prop].map(as => {
 			if (as.entry) return Renderer.get().render(as.entry);
 			else return `<i>${Parser.sourceJsonToAbv(as.source)}</i>>${Renderer.utils.isDisplayPage(as.page) ? `, page ${as.page}` : ""}`;
-		}).join("; ")}`
+		}).join("; ")}`;
 	}
 };

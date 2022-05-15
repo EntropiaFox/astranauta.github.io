@@ -5,6 +5,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"hd": {
 				"number": 1,
 				"faces": 8
@@ -713,6 +714,13 @@
 			"cantripProgression": [
 				0,
 				0,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
 				3,
 				3,
 				3,
@@ -720,17 +728,10 @@
 				3,
 				3,
 				3,
-				4,
-				4,
-				4,
-				4,
-				4,
-				4,
-				4,
-				4,
-				4,
-				4,
-				4
+				3,
+				3,
+				3,
+				3
 			],
 			"spellsKnownProgression": [
 				0,
@@ -756,9 +757,9 @@
 			],
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"3": [
-							"mage hand"
+							"mage hand#c"
 						]
 					}
 				}
@@ -872,7 +873,7 @@
 						"{@filter 3rd|spells|level=3|subclass=Rogue: Arcane Trickster}",
 						"{@filter 4th|spells|level=4|subclass=Rogue: Arcane Trickster}"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							0,
 							0,
@@ -1025,6 +1026,7 @@
 			"classSource": "PHB",
 			"page": 97,
 			"srd": true,
+			"basicRules": true,
 			"subclassFeatures": [
 				"Thief|Rogue||Thief||3",
 				"Supreme Sneak|Rogue||Thief||9",
@@ -1225,6 +1227,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 1,
@@ -1238,6 +1241,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 1,
@@ -1252,6 +1256,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 1,
@@ -1265,6 +1270,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 2,
@@ -1290,6 +1296,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 3,
@@ -1315,6 +1322,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 4,
@@ -1342,6 +1350,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 5,
@@ -1354,6 +1363,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 6,
@@ -1366,6 +1376,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 7,
@@ -1378,6 +1389,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 8,
@@ -1405,6 +1417,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 9,
@@ -1417,6 +1430,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 10,
@@ -1444,6 +1458,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 11,
@@ -1456,6 +1471,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 12,
@@ -1483,6 +1499,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 13,
@@ -1495,6 +1512,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 14,
@@ -1507,6 +1525,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 15,
@@ -1519,6 +1538,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 16,
@@ -1546,6 +1566,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 17,
@@ -1558,6 +1579,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 18,
@@ -1570,6 +1592,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 19,
@@ -1597,6 +1620,7 @@
 			"source": "PHB",
 			"page": 94,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"level": 20,
@@ -1786,7 +1810,7 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"entries": [
-				"You focus your training on the grim art of death. Those who adhere to this archetype are diverse - hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency.",
+				"You focus your training on the grim art of death. Those who adhere to this archetype are diverse\u2014hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency.",
 				"Your archetype grants you features at 3rd level and then again at 9th, 13th, and 17th level.",
 				{
 					"type": "refSubclassFeature",
@@ -1875,6 +1899,7 @@
 			"source": "PHB",
 			"page": 97,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"subclassShortName": "Thief",
@@ -1897,6 +1922,7 @@
 			"source": "PHB",
 			"page": 97,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"subclassShortName": "Thief",
@@ -1912,6 +1938,7 @@
 			"source": "PHB",
 			"page": 97,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"subclassShortName": "Thief",
@@ -1928,6 +1955,7 @@
 			"source": "PHB",
 			"page": 97,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"subclassShortName": "Thief",
@@ -1943,6 +1971,7 @@
 			"source": "PHB",
 			"page": 97,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"subclassShortName": "Thief",
@@ -1958,6 +1987,7 @@
 			"source": "PHB",
 			"page": 97,
 			"srd": true,
+			"basicRules": true,
 			"className": "Rogue",
 			"classSource": "PHB",
 			"subclassShortName": "Thief",
@@ -2058,7 +2088,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 13th-level Phantom feature}",
-				"You can phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take {@damage 1d10} force damage if you end your turn inside a creature or an object.",
+				"You can phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were {@quickref difficult terrain||3}, but you take {@damage 1d10} force damage if you end your turn inside a creature or an object.",
 				"You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk."
 			]
 		},
@@ -2261,12 +2291,12 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Psi-Bolstered Knack.",
+									"name": "Psi-Bolstered Knack",
 									"entry": "When your non-psionic training fails you, you can tap into your psionic power to help: if you fail an ability check using a skill or tool with which you have proficiency, you can roll your Psionic Talent die and add the number rolled to the check, potentially turning failure into success."
 								},
 								{
 									"type": "item",
-									"name": "Psychic Whispers.",
+									"name": "Psychic Whispers",
 									"entry": "You can use your psychic abilities to establish telepathic communication between yourself and others\u2014perfect for quiet infiltration. As an action, you give yourself and at least one other creature the ability to speak telepathically with each other. When you do so, roll your Psionic Talent die, and choose creatures you can see, up to a number of creatures equal to the number rolled. For 1 hour, the chosen creatures can speak telepathically with you, and you can speak telepathically with them. To send or receive a message (no action required), you and the other creature must be within 1 mile of each other. A creature can't use this telepathy if it can't speak any languages, and a creature can end the telepathic connection at any time (no action required). You and the creature don't need to speak a common language to understand each other."
 								}
 							]
@@ -2326,12 +2356,12 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Homing Strikes.",
+							"name": "Homing Strikes",
 							"entry": "If you make an attack roll with your Psychic Blades and miss the target, you can roll your Psionic Talent die and add the number rolled to the attack roll. If this causes the attack to hit, your Psionic Talent die decreases by one die size, regardless of the number rolled."
 						},
 						{
 							"type": "item",
-							"name": "Psychic Teleportation.",
+							"name": "Psychic Teleportation",
 							"entry": "If your Psionic Talent die is available, you can hurl your Psychic Blades to magically transport yourself to another location. As a bonus action, you manifest one of your Psychic Blades and throw it at an unoccupied space you can see, up to a number of feet away equal to 5 times the highest number on your Psionic Talent die. You then teleport to that space, the blade vanishes, and your Psionic Talent die decreases by one die size."
 						}
 					]
@@ -2453,7 +2483,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 13th-level Phantom feature}",
-				"You can now phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take {@damage 1d10} force damage if you end your turn inside a creature or an object.",
+				"You can now phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were {@quickref difficult terrain||3}, but you take {@damage 1d10} force damage if you end your turn inside a creature or an object.",
 				"You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk."
 			]
 		},
@@ -3077,7 +3107,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"When you choose this archetype at 3rd level, you gain proficiency with the {@item disguise Kit|phb}, the {@item forgery kit|phb}, and one {@item gaming set|PHB} of your choice. You also learn two languages of your choice.",
+				"When you choose this archetype at 3rd level, you gain proficiency with the {@item disguise kit|phb}, the {@item forgery kit|phb}, and one {@item gaming set|PHB} of your choice. You also learn two languages of your choice.",
 				"Additionally, you can unerringly mimic the speech patterns and accent of a creature that you hear speak for at least 1 minute, enabling you to pass yourself off as a native speaker of a particular land, provided that you know the language."
 			]
 		},
@@ -3288,7 +3318,7 @@
 			"header": 1,
 			"entries": [
 				"Starting at 3rd level, your confidence propels you into battle. You can give yourself a bonus to your initiative rolls equal to your Charisma modifier.",
-				"You also gain an additional way to use your Sneak Attack; you don't need advantage on the attack roll to use your Sneak Attack against a creature if you are within 5 feet of it, no other creatures are within 5 feet of you, and you don't have disadvantage on the attack roll. All the other rules for Sneak Attack still apply to you."
+				"You also gain an additional way to use your Sneak {@action Attack}; you don't need advantage on your attack roll to use Sneak {@action Attack} against a creature if you are within 5 feet of it, no other creatures are within 5 feet of you, and you don't have disadvantage on the attack roll. All the other rules for Sneak {@action Attack} still apply to you."
 			]
 		},
 		{
@@ -3344,6 +3374,9 @@
 			"subclassShortName": "Soulknife",
 			"subclassSource": "TCE",
 			"level": 3,
+			"consumes": {
+				"name": "Psionic Energy Dice"
+			},
 			"entries": [
 				"When your nonpsionic training fails you, your psionic power can help: if you fail an ability check using a skill or tool with which you have proficiency, you can roll one Psionic Energy die and add the number rolled to the check, potentially turning failure into success. You expend the die only if the roll succeeds."
 			]

@@ -4,15 +4,16 @@ class PageFilterLanguages extends PageFilter {
 	constructor () {
 		super();
 
-		this._sourceFilter = new SourceFilter();
 		this._typeFilter = new Filter({header: "Type", items: ["standard", "exotic", "secret"], itemSortFn: null, displayFn: StrUtil.uppercaseFirst});
 		this._scriptFilter = new Filter({header: "Script", displayFn: StrUtil.uppercaseFirst});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Has Fonts", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Has Fonts", "SRD", "Basic Rules", "Has Images", "Has Info"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (it) {
-		it._fMisc = it.fonts ? ["Has Fonts"] : [];
+		it._fMisc = [];
+		if (it.fonts || it._fonts) it._fMisc.push("Has Fonts");
 		if (it.srd) it._fMisc.push("SRD");
+		if (it.basicRules) it._fMisc.push("Basic Rules");
 		if (it.hasFluff) it._fMisc.push("Has Info");
 		if (it.hasFluffImages) it._fMisc.push("Has Images");
 	}
@@ -40,6 +41,6 @@ class PageFilterLanguages extends PageFilter {
 			it.type,
 			it.script,
 			it._fMisc,
-		)
+		);
 	}
 }

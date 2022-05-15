@@ -171,7 +171,7 @@ class UtilGenTables {
 			}
 
 			this._mutDataAddPage(tbl);
-			tbl.source = doc[opts.headProp].id;
+			tbl.source = doc[opts.headProp].source || doc[opts.headProp].id;
 			this._mutCleanData(tbl);
 		});
 
@@ -184,7 +184,7 @@ class UtilGenTables {
 			}
 
 			this._mutDataAddPage(tg);
-			tg.source = doc[opts.headProp].id;
+			tg.source = doc[opts.headProp].source || doc[opts.headProp].id;
 			this._mutCleanData(tg);
 		});
 
@@ -221,6 +221,7 @@ class UtilGenTables {
 		stacks.table.forEach(it => {
 			it.name = it.caption;
 			it.source = it._tmpMeta.subclassSource || it._tmpMeta.classSource;
+			it.srd = !!cls.srd;
 
 			this._mutDataAddPage(it);
 			this._mutCleanData(it);
@@ -263,6 +264,7 @@ class UtilGenTables {
 		stacks.table.forEach(it => {
 			it.name = it.caption;
 			it.source = it._tmpMeta.subclassSource || it._tmpMeta.classSource;
+			it.srd = !!sc.srd;
 
 			this._mutDataAddPage(it);
 			this._mutCleanData(it);
@@ -296,8 +298,8 @@ class UtilGenTables {
 
 					// Used to deduplicate headers
 					name: entity.name,
-				})
-			})
+				});
+			});
 		});
 
 		stacks.table.forEach(it => {

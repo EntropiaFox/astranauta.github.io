@@ -5,7 +5,9 @@
 			"source": "UA2020SpellsAndMagicTattoos",
 			"page": 3,
 			"summonedBySpell": "Summon Aberrant Spirit|UA2020SpellsAndMagicTattoos",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"N",
@@ -109,7 +111,9 @@
 			"source": "UA2020SpellsAndMagicTattoos",
 			"page": 4,
 			"summonedBySpell": "Summon Bestial Spirit|UA2020SpellsAndMagicTattoos",
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -207,7 +211,9 @@
 			"source": "UA2020SpellsAndMagicTattoos",
 			"page": 4,
 			"summonedBySpell": "Summon Celestial Spirit|UA2020SpellsAndMagicTattoos",
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "celestial",
 			"alignment": [
 				"N",
@@ -294,7 +300,9 @@
 			"source": "UA2020SpellsAndMagicTattoos",
 			"page": 5,
 			"summonedBySpell": "Summon Elemental Spirit|UA2020SpellsAndMagicTattoos",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -422,7 +430,9 @@
 			"source": "UA2020SpellsAndMagicTattoos",
 			"page": 5,
 			"summonedBySpell": "Summon Fey Spirit|UA2020SpellsAndMagicTattoos",
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -522,7 +532,9 @@
 			"source": "UA2020SpellsAndMagicTattoos",
 			"page": 6,
 			"summonedBySpell": "Summon Fiendish Spirit|UA2020SpellsAndMagicTattoos",
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "fiend",
 			"alignment": [
 				{
@@ -666,7 +678,9 @@
 			"source": "UA2020SpellsAndMagicTattoos",
 			"page": 7,
 			"summonedBySpell": "Summon Shadow Spirit|UA2020SpellsAndMagicTattoos",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -767,7 +781,9 @@
 			"source": "UA2020SpellsAndMagicTattoos",
 			"page": 8,
 			"summonedBySpell": "Summon Undead Spirit|UA2020SpellsAndMagicTattoos",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"N",
@@ -817,7 +833,7 @@
 				{
 					"name": "Incorporeal Movement (Ghostly Only)",
 					"entries": [
-						"The undead can become incorporeal while moving and pass through other creatures and objects as if they were difficult terrain. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes {@damage 1d10} force damage for every 5 feet traveled."
+						"The undead can become incorporeal while moving and pass through other creatures and objects as if they were {@quickref difficult terrain||3}. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes {@damage 1d10} force damage for every 5 feet traveled."
 					]
 				},
 				{

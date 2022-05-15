@@ -5,7 +5,7 @@ const tablePage = new TablePage({
 	dataProp: "name",
 	listClass: "names",
 	tableCol1: "Name",
-	fnGetTableName: (meta, table) => `${meta.name} - ${table.option}`,
+	fnGetTableName: (meta, table) => `${meta.name} \u2013 ${table.option}`,
 	fnGetTableHash: (meta, table) => UrlUtil.encodeForHash([meta.name, meta.source, table.option]),
 });
 

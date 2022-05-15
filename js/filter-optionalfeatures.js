@@ -3,7 +3,7 @@
 class PageFilterOptionalFeatures extends PageFilter {
 	// region static
 	static _filterFeatureTypeSort (a, b) {
-		return SortUtil.ascSort(Parser.optFeatureTypeToFull(a.item), Parser.optFeatureTypeToFull(b.item))
+		return SortUtil.ascSort(Parser.optFeatureTypeToFull(a.item), Parser.optFeatureTypeToFull(b.item));
 	}
 
 	static sortOptionalFeatures (itemA, itemB, options) {
@@ -59,10 +59,12 @@ class PageFilterOptionalFeatures extends PageFilter {
 				this._featureFilter,
 			],
 		});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Grants Additional Spells"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (it) {
+		it._fSources = SourceFilter.getCompleteFilterSources(it);
+
 		// (Convert legacy string format to array)
 		it.featureType = it.featureType && it.featureType instanceof Array ? it.featureType : it.featureType ? [it.featureType] : ["OTH"];
 		if (it.prerequisite) {
@@ -101,12 +103,13 @@ class PageFilterOptionalFeatures extends PageFilter {
 		it.featureType.sort((a, b) => SortUtil.ascSortLower(Parser.optFeatureTypeToFull(a), Parser.optFeatureTypeToFull(b)));
 
 		it._fMisc = it.srd ? ["SRD"] : [];
+		if (it.additionalSpells) it._fMisc.push("Grants Additional Spells");
 	}
 
 	addToFilters (it, isExcluded) {
 		if (isExcluded) return;
 
-		this._sourceFilter.addItem(it.source);
+		this._sourceFilter.addItem(it._fSources);
 		this._typeFilter.addItem(it.featureType);
 		this._pactFilter.addItem(it._fPrereqPact);
 		this._patronFilter.addItem(it._fPrereqPatron);
@@ -131,7 +134,7 @@ class PageFilterOptionalFeatures extends PageFilter {
 	toDisplay (values, it) {
 		return this._filterBox.toDisplay(
 			values,
-			it.source,
+			it._fSources,
 			it.featureType,
 			[
 				it._fPrereqPact,
@@ -141,6 +144,89 @@ class PageFilterOptionalFeatures extends PageFilter {
 				it._fprereqFeature,
 			],
 			it._fMisc,
-		)
+		);
+	}
+}
+
+class ModalFilterOptionalFeatures extends ModalFilter {
+	/**
+	 * @param opts
+	 * @param opts.namespace
+	 * @param [opts.isRadio]
+	 * @param [opts.allData]
+	 */
+	constructor (opts) {
+		opts = opts || {};
+		super({
+			...opts,
+			modalTitle: `Optional Feature${opts.isRadio ? "" : "s"}`,
+			pageFilter: new PageFilterOptionalFeatures(),
+		});
+	}
+
+	_$getColumnHeaders () {
+		const btnMeta = [
+			{sort: "name", text: "Name", width: "3"},
+			{sort: "type", text: "Type", width: "2"},
+			{sort: "prerequisite", text: "Prerequisite", width: "4"},
+			{sort: "level", text: "Level", width: "1"},
+			{sort: "source", text: "Source", width: "1"},
+		];
+		return ModalFilter._$getFilterColumnHeaders(btnMeta);
+	}
+
+	async _pLoadAllData () {
+		const brew = await BrewUtil2.pGetBrewProcessed();
+		const fromData = (await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/optionalfeatures.json`)).optionalfeature;
+		const fromBrew = brew.optionalfeature || [];
+		return [...fromData, ...fromBrew];
+	}
+
+	_getListItem (pageFilter, optfeat, ftI) {
+		const eleRow = document.createElement("div");
+		eleRow.className = "px-0 w-100 ve-flex-col no-shrink";
+
+		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES](optfeat);
+		const source = Parser.sourceJsonToAbv(optfeat.source);
+		const prerequisite = Renderer.utils.getPrerequisiteHtml(optfeat.prerequisite, {isListMode: true, blacklistKeys: new Set(["level"])});
+		const level = Renderer.optionalfeature.getListPrerequisiteLevelText(optfeat.prerequisite);
+
+		eleRow.innerHTML = `<div class="w-100 ve-flex-vh-center lst--border no-select lst__wrp-cells">
+			<div class="col-0-5 pl-0 ve-flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
+
+			<div class="col-0-5 px-1 ve-flex-vh-center">
+				<div class="ui-list__btn-inline px-2" title="Toggle Preview (SHIFT to Toggle Info Preview)">[+]</div>
+			</div>
+
+			<div class="col-3 ${this._getNameStyle()}">${optfeat.name}</div>
+			<span class="col-2 text-center" title="${optfeat._dFeatureType}">${optfeat._lFeatureType}</span>
+			<span class="col-4 text-center">${prerequisite}</span>
+			<span class="col-1 text-center">${level}</span>
+			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(optfeat.source)}" title="${Parser.sourceJsonToFull(optfeat.source)}" ${BrewUtil2.sourceJsonToStyle(optfeat.source)}>${source}</div>
+		</div>`;
+
+		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
+
+		const listItem = new ListItem(
+			ftI,
+			eleRow,
+			optfeat.name,
+			{
+				hash,
+				source,
+				sourceJson: optfeat.source,
+				prerequisite,
+				level,
+				type: optfeat._lFeatureType,
+			},
+			{
+				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
+				btnShowHidePreview,
+			},
+		);
+
+		ListUiUtil.bindPreviewButton(UrlUtil.PG_FEATS, this._allData, listItem, btnShowHidePreview);
+
+		return listItem;
 	}
 }

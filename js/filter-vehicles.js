@@ -4,7 +4,6 @@ class PageFilterVehicles extends PageFilter {
 	constructor () {
 		super();
 
-		this._sourceFilter = new SourceFilter();
 		this._vehicleTypeFilter = new Filter({
 			header: "Vehicle Type",
 			items: [],
@@ -23,7 +22,7 @@ class PageFilterVehicles extends PageFilter {
 		this._hpFilter = new RangeFilter({header: "Hit Points"});
 		this._hpFilter = new RangeFilter({header: "Hit Points"});
 		this._creatureCapacityFilter = new RangeFilter({header: "Creature Capacity"});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Has Images", "Has Info", "Has Token"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Has Images", "Has Info", "Has Token"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (it) {
@@ -69,7 +68,7 @@ class PageFilterVehicles extends PageFilter {
 
 		this._sourceFilter.addItem(it.source);
 		this._vehicleTypeFilter.addItem(it.vehicleType);
-		this._upgradeTypeFilter.addItem(it.upgradeType)
+		this._upgradeTypeFilter.addItem(it.upgradeType);
 		this._speedFilter.addItem(it._fSpeed);
 		this._terrainFilter.addItem(it.terrain);
 		this._acFilter.addItem(it._fAc);
@@ -103,6 +102,6 @@ class PageFilterVehicles extends PageFilter {
 			it._fHp,
 			it._fCreatureCapacity,
 			it._fMisc,
-		)
+		);
 	}
 }

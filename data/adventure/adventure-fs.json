@@ -3,6 +3,7 @@
 		{
 			"type": "section",
 			"name": "Frozen Sick",
+			"page": 235,
 			"id": "854",
 			"entries": [
 				"Something is killing people in Palebank Village, and if the characters don't stop it, they might be next. \"Frozen Sick\" is an adventure that takes characters from 1st to 3rd level and introduces them to the continent's Biting North region\u2014the bleak arctic realms of the Greying Wildlands and Eiselcross.",
@@ -10,6 +11,7 @@
 				{
 					"type": "section",
 					"name": "Story Overview",
+					"page": 235,
 					"id": "855",
 					"entries": [
 						"Urgon Wenth, a dwarf explorer, recently returned home to Palebank Village after exploring the icy wastes of Eiselcross for a year. The dwarf brought home several items plundered from ruins on Foren, the largest of Eiselcross's islands. Among these treasures were two beautiful blue glass vials, which Urgon sold to an elf collector named Verla Pelc. The vials were then stolen, given to a fence out of Shadycreek Run, and sold again to an unsuspecting merchant.",
@@ -17,6 +19,7 @@
 						{
 							"type": "entries",
 							"name": "Adventure Summary",
+							"page": 235,
 							"id": "856",
 							"entries": [
 								"While the characters are in Palebank Village, community leader Elro Aldataur asks for their help figuring out who or what has killed Urgon Wenth. An explorer recently returned from Eiselcross, Urgon was afflicted by a strange malady that turned him into an ice statue, and which has since shown up in another of the village's residents. The characters investigate the mystery while contending with the forces of the Uttolots, one of the criminal families that control Shadycreek Run. More infected locals are discovered, including one more already dead, before the characters clear Uttolot thugs out of a local cavern complex called Croaker Cave. In the end, the vials of frigid woe are reclaimed, but merchant Irven Liel and his family are infected and will be the next to die without a cure. Moreover, the characters might well be infected with the disease themselves.",
@@ -26,6 +29,7 @@
 						{
 							"type": "entries",
 							"name": "Setup and Starting Points",
+							"page": 235,
 							"id": "857",
 							"entries": [
 								"Work with the players to establish why their characters are in Palebank Village. You can provide information regarding the village and its surrounding lands, all of which are described in {@book chapter 3|EGW|4|Palebank Village}.",
@@ -37,6 +41,7 @@
 				{
 					"type": "section",
 					"name": "Mystery in Palebank Village",
+					"page": 235,
 					"id": "858",
 					"entries": [
 						"The adventure begins in Palebank Village, with the characters drawn immediately into the drama of death in an isolated settlement. Once the players are ready to begin, read or paraphrase the following to set the scene:",
@@ -68,6 +73,7 @@
 						{
 							"type": "entries",
 							"name": "Elro's Request",
+							"page": 236,
 							"id": "85b",
 							"entries": [
 								"If the characters are willing, Elro wants them to find out what caused Urgon and Tulgi's affliction. He's worried that it could spread, but Tulgi refuses to talk to him, and the Glassblades in the village are better known for their combat skills than their ability to glean the truth in a complicated situation. Moreover, Tulgi is extremely distrustful of the authorities.",
@@ -77,6 +83,7 @@
 						{
 							"type": "entries",
 							"name": "Urgon's Cabin",
+							"page": 236,
 							"id": "85c",
 							"entries": [
 								"Urgon Wenth lived in a one-story, one-room log cabin at the edge of town. A good-natured Glassblade rookie named Mila Teno (a lawful good, female wood elf {@creature scout}) stands guard outside the front door. If the characters explain why they've come, she allows them to enter the house and look around. When the characters enter the cabin, read:",
@@ -91,6 +98,7 @@
 								{
 									"type": "entries",
 									"name": "Adventuring Equipment",
+									"page": 236,
 									"id": "85e",
 									"entries": [
 										"Urgon's adventuring equipment consists of a silvered maul; a suit of splint armor sized for a dwarf; bulky, fur-lined clothing sized for a dwarf; a grappling hook; and a hooded lantern."
@@ -99,6 +107,7 @@
 								{
 									"type": "entries",
 									"name": "Mounted Head",
+									"page": 236,
 									"id": "85f",
 									"entries": [
 										"A character who succeeds on a DC 15 Intelligence ({@skill Nature}) check recognizes that the head mounted above the mantle belonged to a yeti, a monstrosity found in Eiselcross."
@@ -107,6 +116,7 @@
 								{
 									"type": "entries",
 									"name": "Strange Receipt",
+									"page": 236,
 									"id": "860",
 									"entries": [
 										"A character who searches through the books on the shelf and succeeds on a DC 10 Intelligence ({@skill Investigation}) check finds a folded receipt used as a bookmark. The receipt is dated two months previous, and indicates that Urgon sold several Aeorian items found in Eiselcross to local antique shop Pelc's Curiosities for 1,000 gp. The items are listed as a dagger, a scroll case, a jade statuette, a quiver of twenty arrows, a silver ring set with a jasper, and two blue glass vials.",
@@ -116,6 +126,7 @@
 								{
 									"type": "entries",
 									"name": "Development",
+									"page": 236,
 									"id": "861",
 									"entries": [
 										"After searching the cabin, the characters can continue their investigation by going to Tulgi's cabin or by stopping at Pelc's Curiosities (assuming they found the receipt)."
@@ -126,6 +137,7 @@
 						{
 							"type": "entries",
 							"name": "Tulgi's Cabin",
+							"page": 236,
 							"id": "862",
 							"entries": [
 								"When the characters approach Tulgi's cabin, read:",
@@ -159,6 +171,7 @@
 								{
 									"type": "entries",
 									"name": "Fire Hazards",
+									"page": 237,
 									"id": "865",
 									"entries": [
 										"Any creature that comes into contact with the brazier or the fireplace for the first time on its turn, or that starts its turn there, takes 2 ({@dice 1d4}) fire damage."
@@ -167,6 +180,7 @@
 								{
 									"type": "entries",
 									"name": "What Tulgi Knows",
+									"page": 237,
 									"id": "866",
 									"entries": [
 										"Tulgi is gruff and to the point, and tries to compensate for her illness with bluster. If the characters entered the cabin with her permission or if she surrenders to them, she tells them only that she has the same affliction that killed Urgon, and that she's looking for a cure.",
@@ -186,6 +200,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 237,
 									"id": "867",
 									"entries": [
 										"If Tulgi doesn't offer her dagger to the characters, any character with a passive Wisdom ({@skill Perception}) score of 11 or higher notices the ornate blade in a gilded sheath tucked under her shirt. If the characters claim the {@item +1 dagger}, a successful DC 15 Intelligence ({@skill Arcana} or {@skill History}) check reveals that the dagger is a relic of the fallen flying city of Aeor."
@@ -194,6 +209,7 @@
 								{
 									"type": "entries",
 									"name": "Development",
+									"page": 237,
 									"id": "868",
 									"entries": [
 										"The characters have no trouble finding either Croaker Cave or Pelc's Curiosities if either of those locations is their next destination. If things went bad with Tulgi and she died before revealing any information, the characters might find notes or instructions from Hulil revealing some of the information above."
@@ -204,6 +220,7 @@
 						{
 							"type": "entries",
 							"name": "Pelc's Curiosities",
+							"page": 237,
 							"id": "869",
 							"entries": [
 								"Pelc's Curiosities is an antique shop run by an introverted elf named Verla Pelc. Verla keeps to herself, opening her shop only when the mood strikes her. She trades any and all objects that interest her, shipping them across Wildemount. Characters who are residents of Palebank Village or have been there for a while know of Pelc's Curiosities\u2014and also know that the shop was robbed and vandalized two months ago. If the characters are recent arrivals to the village, anyone they ask about the shop mentions the robbery.",
@@ -220,6 +237,7 @@
 								{
 									"type": "entries",
 									"name": "Front Shop Area",
+									"page": 238,
 									"id": "86b",
 									"entries": [
 										"The antique shop occupies the large front room of the cabin. When the characters can see into this area, read:",
@@ -230,7 +248,7 @@
 												"Five cloaked elves appear to have ransacked the shop and are searching through the broken debris on the floor. The furniture, shelves, and front counter have been smashed, and the shop's wares now litter the floor."
 											]
 										},
-										"This area is difficult terrain thanks to the debris covering it. The five elves are {@creature Bandit||bandits} with {@sense darkvision} out to a range of 60 feet, advantage on saving throws against being {@condition charmed}, and immunity to magic that would put them to sleep.",
+										"This area is {@quickref difficult terrain||3} thanks to the debris covering it. The five elves are {@creature Bandit||bandits} with {@sense darkvision} out to a range of 60 feet, advantage on saving throws against being {@condition charmed}, and immunity to magic that would put them to sleep.",
 										"The bandits attack as soon as they notice the characters, fighting until only one remains. That survivor then surrenders. If a captive bandit is questioned, a character who succeeds on a DC 10 Charisma ({@skill Intimidation}) check can learn the following information:",
 										{
 											"type": "list",
@@ -246,6 +264,7 @@
 								{
 									"type": "entries",
 									"name": "Verla's Quarters",
+									"page": 238,
 									"id": "86d",
 									"entries": [
 										"Verla's quarters are at the back of the cabin. When the characters gain access to this area, read:",
@@ -262,6 +281,7 @@
 								{
 									"type": "entries",
 									"name": "Development",
+									"page": 238,
 									"id": "86f",
 									"entries": [
 										"Questioning any of the bandits can turn up solid leads that can take the characters to Croaker Cave, or back to Tulgi's cabin if there are other questions the dwarf has yet to answer. If they were unable to question the bandits, you can have one of the bandits carrying orders from Hulil that point toward the Croaker Cave hideout."
@@ -274,6 +294,7 @@
 				{
 					"type": "section",
 					"name": "Croaker Cave",
+					"page": 238,
 					"id": "870",
 					"entries": [
 						"Characters local to Palebank Village or who have spent some time there know Croaker Cave. If all the characters are new arrivals to the village, any of the villagers can tell them about the cave and how to get there.",
@@ -290,7 +311,8 @@
 									},
 									"title": "Map 5.9: Croaker Cave",
 									"width": 2550,
-									"height": 1650
+									"height": 1650,
+									"imageType": "map"
 								},
 								{
 									"type": "image",
@@ -300,13 +322,15 @@
 									},
 									"title": "Map 5.9: Croaker Cave (Player Version)",
 									"width": 2550,
-									"height": 1650
+									"height": 1650,
+									"imageType": "mapPlayer"
 								}
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Giant Ice Frogs",
+							"page": 238,
 							"id": "871",
 							"entries": [
 								"With the exception of {@creature Old Croaker|EGW} (see {@adventure area C5|FS|0|C5. Old Croaker's Pool}), giant ice frogs are {@creature Giant Frog||giant frogs} with immunity to cold damage.",
@@ -317,6 +341,7 @@
 						{
 							"type": "entries",
 							"name": "Uttolot Bandits",
+							"page": 238,
 							"id": "872",
 							"entries": [
 								"The bandits sent out with Hulil by the Uttolot family are all dwarves and elves. Up to ten bandits normally occupy Croaker Cave, but only three are currently present (in {@adventure area C2|FS|0|C2. Training Pool}). They use the {@creature bandit} stat block and have {@sense darkvision} out to a range of 60 feet. In addition, the dwarves have resistance to poison damage and have advantage on saving throws against poison; the elves have advantage on saving throws against being {@condition charmed} and immunity to magic that would put them to sleep",
@@ -333,12 +358,14 @@
 						{
 							"type": "entries",
 							"name": "Croaker Cave Features",
+							"page": 239,
 							"id": "873",
 							"entries": [
 								"The caverns and tunnels of the Croaker Cave complex are shown on map 5.9. Unless otherwise noted in an area's description, the following features are common throughout all areas of Croaker Cave.",
 								{
 									"type": "entries",
 									"name": "Ceilings",
+									"page": 239,
 									"id": "874",
 									"entries": [
 										"Cavern ceilings are 10 feet high, with only 8 feet of clearance beneath stalactites."
@@ -347,6 +374,7 @@
 								{
 									"type": "entries",
 									"name": "Walls",
+									"page": 239,
 									"id": "875",
 									"entries": [
 										"Climbing the rough walls of a cavern requires a successful DC 12 Strength ({@skill Athletics}) check."
@@ -355,6 +383,7 @@
 								{
 									"type": "entries",
 									"name": "Light",
+									"page": 239,
 									"id": "876",
 									"entries": [
 										"The caverns contain no light sources, except in{@adventure area C6|FS|0|C6. Hulil's Cavern}, as the inhabitants of Croaker Cave rely on {@sense darkvision} to see."
@@ -363,6 +392,7 @@
 								{
 									"type": "entries",
 									"name": "Frigid Pools",
+									"page": 239,
 									"id": "877",
 									"entries": [
 										"Pools of murky, frigid water within the caverns are created by melting snow on the rocky ground above dripping down through the ceiling. Each pool is 10 feet deep. A creature completely submerged in a pool must succeed on a DC 10 Constitution saving throw or gain one level of {@condition exhaustion}. Creatures with resistance or immunity to cold damage automatically succeed on this saving throw. For each minute the creature spends submerged in a pool, it must repeat this saving throw, gaining another level of {@condition exhaustion} on a failure."
@@ -373,6 +403,7 @@
 						{
 							"type": "entries",
 							"name": "C1. Entrance Pool",
+							"page": 239,
 							"id": "878",
 							"entries": [
 								"This area of the cave is close enough to the entrance that it is dimly lit by day and on clear moonlit nights. When the characters can see into this area, read:",
@@ -390,6 +421,7 @@
 						{
 							"type": "entries",
 							"name": "C2. Training Pool",
+							"page": 239,
 							"id": "87a",
 							"entries": [
 								{
@@ -411,6 +443,7 @@
 								{
 									"type": "entries",
 									"name": "Bucket",
+									"page": 240,
 									"id": "87d",
 									"entries": [
 										"The bucket holds six dead bats used as training treats. A character who offers a dead bat to a frog has advantage on their next Wisdom ({@skill Animal Handling}) check made to control that frog's behavior."
@@ -421,6 +454,7 @@
 						{
 							"type": "entries",
 							"name": "C3. Bat Cavern",
+							"page": 240,
 							"id": "87e",
 							"entries": [
 								{
@@ -434,6 +468,7 @@
 								{
 									"type": "entries",
 									"name": "Treacherous Floor",
+									"page": 240,
 									"id": "880",
 									"entries": [
 										"The floor of this area is covered in slippery bat guano. Whenever a creature standing on the floor takes damage, it must succeed on a DC 10 Dexterity ({@skill Acrobatics}) check or fall {@condition prone}."
@@ -444,6 +479,7 @@
 						{
 							"type": "entries",
 							"name": "C4. Bandit Camp",
+							"page": 240,
 							"id": "881",
 							"entries": [
 								{
@@ -457,6 +493,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 240,
 									"id": "883",
 									"entries": [
 										"Searching all the bedrolls reveals that one contains an unopened bottle of Bald Dwarf Whisky (worth 25 gp), an alcohol made by elves in Uthodurn."
@@ -467,6 +504,7 @@
 						{
 							"type": "entries",
 							"name": "C5. Old Croaker's Pool",
+							"page": 240,
 							"id": "884",
 							"entries": [
 								{
@@ -483,6 +521,7 @@
 						{
 							"type": "entries",
 							"name": "C6. Hulil's Cavern",
+							"page": 240,
 							"id": "886",
 							"entries": [
 								"When the characters can see into this area, read:",
@@ -498,6 +537,7 @@
 								{
 									"type": "entries",
 									"name": "Campfire",
+									"page": 240,
 									"id": "888",
 									"entries": [
 										"Any creature that enters the area of the fire for the first time on its turn, or that starts its turn there, takes 3 ({@dice 1d6}) fire damage."
@@ -506,6 +546,7 @@
 								{
 									"type": "entries",
 									"name": "What Hulil Knows",
+									"page": 240,
 									"id": "889",
 									"entries": [
 										"If the characters convince {@creature Hulil Lutan|EGW|Hulil} that they are her allies, or if they capture her or Raegrin and succeed on a DC 14 Charisma ({@skill Intimidation}) check, they can learn the following information:",
@@ -523,6 +564,7 @@
 								{
 									"type": "entries",
 									"name": "Stone Chest",
+									"page": 241,
 									"id": "88a",
 									"entries": [
 										"The stone chest's outer lid is carved with the face of a dragon. A character who examines the chest and succeeds on a DC 12 Wisdom ({@skill Perception}) check finds pin-sized openings in the dragon's mouth that contain a blue powder. The powder can be removed with a successful DC 15 Dexterity check using thieves' tools. A character who fails this check must succeed on a DC 11 Constitution saving throw or contract frigid woe (see the \"{@book Eiselcross|EGW|4}\" section of chapter 3).",
@@ -532,6 +574,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 241,
 									"id": "88b",
 									"entries": [
 										"The chest contains the rest of the treasure found by Urgon Wenth\u2014a gilded scroll case covered in a cosmological map of the multiverse (worth 15 gp), a jade statuette of a storm giant (25 gp), a quiver containing six {@item +1 Arrow||+1 arrows}, and a silver ring set with a jasper stone (50 gp). It also holds Hulil's wealth\u2014415 cp, 234 sp, 43 ep, and 112 gp\u2014and a receipt indicating that Hulil sold a blue glass vial to Irven Liel for 100 gp."
@@ -542,6 +585,7 @@
 						{
 							"type": "entries",
 							"name": "Development",
+							"page": 241,
 							"id": "88c",
 							"entries": [
 								"When the characters are done exploring Croaker Cave, they should know the blue glass vials found by Urgon Wenth are the source of the strange malady that is turning people into ice statues, and that Irven Liel has one of those vials. If the characters don't have a chance to question {@creature Hulil Lutan|EGW|Hulil} or {@creature Raegrin Mau|EGW|Raegrin}, you can have the chest also contain a journal or notes that provide the information they need and point them toward the Jolly Dwarf inn."
@@ -552,6 +596,7 @@
 				{
 					"type": "section",
 					"name": "Jolly Dwarf",
+					"page": 241,
 					"id": "88d",
 					"entries": [
 						"The Jolly Dwarf is a cozy, two-story inn run by a retired adventurer named Arl Bortock. When the characters enter the inn, read:",
@@ -568,6 +613,7 @@
 						{
 							"type": "entries",
 							"name": "Development",
+							"page": 241,
 							"id": "88f",
 							"entries": [
 								"Once the characters have the cracked vial, they can report back to Elro Aldataur. He pays them 100 gp as promised but asks the characters to stay in town. He is quite certain he'll have need of their services again soon.",
@@ -576,6 +622,7 @@
 								{
 									"type": "inset",
 									"name": "Vials of Frigid Woe",
+									"page": 241,
 									"id": "890",
 									"entries": [
 										"As an action, a creature can throw a vial of frigid woe up to 20 feet, shattering it on impact and releasing its contents as a cloud of spores. Each creature within 5 feet of the vial when it shatters must succeed on a DC 11 Constitution saving throw or contract frigid woe (see the \"{@book Eiselcross|EGW|4}\" section of chapter 3).",
@@ -587,6 +634,7 @@
 						{
 							"type": "entries",
 							"name": "Character Advancement",
+							"page": 241,
 							"id": "891",
 							"entries": [
 								"The characters advance to 2nd level before traveling to Eiselcross."
@@ -597,6 +645,7 @@
 				{
 					"type": "section",
 					"name": "Traveling to Eiselcross",
+					"page": 242,
 					"id": "892",
 					"entries": [
 						"When the characters are ready to leave for Eiselcross, Elro Aldataur provides them with the following information:",
@@ -608,7 +657,7 @@
 								"Once the characters have found the cure, they should use whatever they need for themselves, then give the rest to an elf in Syrinlya who goes by the name \"the Buyer.\" They can tell the Buyer to teleport the cure to Elro in Palebank Village."
 							]
 						},
-						"The islands of Eiselcross are covered in ice and snow, and are always well below freezing. Characters who don't already have cold weather gear will want to purchase it, or they will be subject to extreme cold (see {@book chapter 5|DMG|5|Weather} of the {@book Dungeon Master's Guide|DMG}).",
+						"The islands of Eiselcross are covered in ice and snow, and are always well below freezing. Characters who don't already have cold weather gear will want to purchase it, or they will be subject to {@hazard extreme cold} (see {@book chapter 5|DMG|5|Weather} of the {@book Dungeon Master's Guide|DMG}).",
 						{
 							"type": "image",
 							"href": {
@@ -622,6 +671,7 @@
 						{
 							"type": "entries",
 							"name": "NPCs Infected with Frozen Woe",
+							"page": 242,
 							"id": "893",
 							"entries": [
 								"The characters are in a race against time to cure Irven and his family (and possibly Hulil and Tulgi Lutan, if the characters are feeling merciful toward those two hardened criminals). Irven and his family have at least sixty days before any of them might die, Hulil has at least thirty days, and Tulgi has at least twenty days. You can make saving throws for these NPCs against the disease every ten days, or you can just decide their final fates."
@@ -630,6 +680,7 @@
 						{
 							"type": "entries",
 							"name": "Voyage of the Remorhaz",
+							"page": 242,
 							"id": "894",
 							"entries": [
 								"It takes the {@i Remorhaz} nine days to get to Syrinlya. This trip could be uneventful, or you could populate the ship with interesting NPCs and have the characters encounter ocean monsters, Revelry pirates, or severe weather.",
@@ -651,6 +702,7 @@
 				{
 					"type": "section",
 					"name": "Syrinlya",
+					"page": 243,
 					"id": "896",
 					"entries": [
 						"As Morgo leads the characters through Syrinlya, read:",
@@ -665,6 +717,7 @@
 						{
 							"type": "entries",
 							"name": "Bertron's Yurt",
+							"page": 243,
 							"id": "898",
 							"entries": [
 								"The characters are welcome to this yurt during their time in Syrinlya. When they first enter, read:",
@@ -679,6 +732,7 @@
 								{
 									"type": "inset",
 									"name": "Can You Help Us?",
+									"page": 243,
 									"id": "89a",
 									"entries": [
 										"If the characters feel as though they need help traveling the wilds of Foren, they can try to convince other explorers in Syrinlya to travel with them to recover the cure. Although most of Syrinlya's explorers are willing to help others in need, those explorers already have an important mission. An expedition led by Professor Gulrim Shalebrow (see \"{@book The Diarchy of Uthodurn|EGW|3|Diarchy of Uthodurn}\" in chapter 2) went to search for the origin of the strange magic in the region of Mutalos months ago and has not returned. The explorers at the camp are preparing a search and rescue mission to bring back Gulrim's party. If the characters survive their quest into Salsvault, this story could serve as a hook for another adventure."
@@ -689,6 +743,7 @@
 						{
 							"type": "entries",
 							"name": "The Buyer",
+							"page": 243,
 							"id": "89b",
 							"entries": [
 								"Morgo Delwur or any other resident of Syrinlya can point out the Buyer's hut to the characters. It is Syrinlya's largest yurt. When the characters enter, read:",
@@ -705,6 +760,7 @@
 								{
 									"type": "entries",
 									"name": "Stone Chest",
+									"page": 243,
 									"id": "89d",
 									"entries": [
 										"A {@spell detect magic} spell reveals that the chest radiates an aura of conjuration magic. When an item is placed in the chest, the Buyer can teleport it to secret locations in Uthodurn or its outpost of Palebank Village, with those locations known only to the authorities of those settlements."
@@ -715,6 +771,7 @@
 						{
 							"type": "entries",
 							"name": "Orvo Mustave",
+							"page": 243,
 							"id": "89e",
 							"entries": [
 								"Morgo Delwur or any other resident of Syrinlya can point out Orvo Mustave's tent to the characters. When the characters approach the tent, read:",
@@ -729,6 +786,7 @@
 								{
 									"type": "entries",
 									"name": "Orvo's Story",
+									"page": 243,
 									"id": "8a0",
 									"entries": [
 										"Orvo is grief-stricken to hear about the demise of his friend Urgon Wenth. If the characters ask Orvo about the blue vials that brought disease to Palebank Village, Orvo shares the following information:",
@@ -751,18 +809,21 @@
 				{
 					"type": "section",
 					"name": "Into the Wilds",
+					"page": 244,
 					"id": "8a1",
 					"entries": [
 						"After speaking with Orvo, the characters can make whatever preparations they need before heading into the wilds of Eiselcross. If they wish to obtain more supplies before setting out, there are no shops in Syrinlya, but many of the explorers at the camp are willing to trade goods and equipment.",
 						{
 							"type": "entries",
 							"name": "Overland Travel",
+							"page": 244,
 							"id": "8a2",
 							"entries": [
 								"The characters must travel two hundred miles over ice and snow to reach Salsvault, the ruin where Urgon Wenth found the vials of frigid woe. It's up to the characters whether they want to move at a fast, medium, or slow pace (see \"{@book Movement|PHB|8|Movement}\" in chapter 8 of the {@book Player's Handbook|PHB}). If any character has a walking speed of less than 25 feet because of a frigid woe infection, use the Reduced Travel Speeds table to determine how far the party can travel in a day.",
 								{
 									"type": "entries",
 									"name": "Reduced Travel Speeds",
+									"page": 244,
 									"id": "8a3",
 									"entries": [
 										{
@@ -794,7 +855,7 @@
 												]
 											]
 										},
-										"As the characters travel, use the \"{@book Encounters in Eiselcross|EGW|4|Encounters in Eiselcross}\" section in chapter 3 to generate random encounters. After traveling forty miles, the characters enter Thin Sheets. This region is known for its large patches of thin ice over deep, frigid water (see the rules for frigid water and thin ice in {@book chapter 5|DMG|5|Wilderness Hazards} of the {@book Dungeon Master's Guide|DMG})."
+										"As the characters travel, use the \"{@book Encounters in Eiselcross|EGW|4|Encounters in Eiselcross}\" section in chapter 3 to generate random encounters. After traveling forty miles, the characters enter Thin Sheets. This region is known for its large patches of thin ice over deep, {@hazard frigid water} (see the rules for frigid water and thin ice in {@book chapter 5|DMG|5|Wilderness Hazards} of the {@book Dungeon Master's Guide|DMG})."
 									]
 								}
 							]
@@ -802,6 +863,7 @@
 						{
 							"type": "entries",
 							"name": "Finding Salsvault",
+							"page": 244,
 							"id": "8a4",
 							"entries": [
 								"When the characters have traveled two hundred miles, one character who acts as a scout for the group should make a DC 15 Wisdom ({@skill Survival}) check each day. On a failure, the character finds no signs of Salsvault. On a success, the character finds the trail of an ice mephit, which leads to Salsvault after a journey of {@dice 1d4} hours. If the check succeeds by 5 or more, the character finds Salsvault directly."
@@ -812,12 +874,14 @@
 				{
 					"type": "section",
 					"name": "Salsvault",
+					"page": 244,
 					"id": "8a5",
 					"entries": [
 						"Salsvault was once a laboratory in the city of Aeor, where mages who specialized in necromancy and transmutation magic crafted constructs and diseases to be weaponized against their enemies. Many of the laboratory's creations remain active, still guarding the diseases and treasures within.",
 						{
 							"type": "entries",
 							"name": "Approaching Salsvault",
+							"page": 244,
 							"id": "8a6",
 							"entries": [
 								"As the characters approach Salsvault, read:",
@@ -832,6 +896,7 @@
 								{
 									"type": "entries",
 									"name": "Sealed Entrance",
+									"page": 244,
 									"id": "8a8",
 									"entries": [
 										"The entrance to Salsvault is frozen shut. The characters can force the door open with a successful DC 15 Strength check or by dealing 10 bludgeoning or fire damage to the ice that seals the door. Unsealing the door with bludgeoning damage draws the attention of three suits of animated armor in area{@adventure S3|FS|0|S3. Animated Armor Laboratory}, which gather in {@adventure area S1|FS|0|S1. Entrance Chamber} and attack the characters as soon as they enter.",
@@ -846,7 +911,8 @@
 													},
 													"title": "Map 5.10: Salsvault",
 													"width": 2550,
-													"height": 1650
+													"height": 1650,
+													"imageType": "map"
 												},
 												{
 													"type": "image",
@@ -856,7 +922,8 @@
 													},
 													"title": "Map 5.10: Salsvault (Player Version)",
 													"width": 2550,
-													"height": 1650
+													"height": 1650,
+													"imageType": "mapPlayer"
 												}
 											]
 										}
@@ -867,12 +934,14 @@
 						{
 							"type": "entries",
 							"name": "Salsvault Features",
+							"page": 244,
 							"id": "8a9",
 							"entries": [
 								"The locations in Salsvault are detailed on map 5.10. Unless otherwise noted in an area's description, the following features are common throughout all areas of Salsvault.",
 								{
 									"type": "entries",
 									"name": "Ceilings",
+									"page": 244,
 									"id": "8aa",
 									"entries": [
 										"The ceilings in Salsvault's rooms are 10 feet high, with 8-foot-high doorways connecting them."
@@ -881,6 +950,7 @@
 								{
 									"type": "entries",
 									"name": "Chests",
+									"page": 244,
 									"id": "8ab",
 									"entries": [
 										"Stone chests two feet on each side are built into the floors in several areas. A {@spell detect magic} spell reveals a faint aura of abjuration magic radiating from each chest. A chest has AC 17; 27 hit points; resistance to bludgeoning, piercing, and slashing damage; and immunity to poison and psychic damage.",
@@ -890,6 +960,7 @@
 								{
 									"type": "entries",
 									"name": "Doors and Walls",
+									"page": 244,
 									"id": "8ac",
 									"entries": [
 										"Salsvault's heavy doors are made of black stone, and its walls are made of blue stone. A {@spell detect magic} spell reveals a faint aura of abjuration magic radiating from the doors and walls. Each door and each 10-foot section of wall has AC 17; 27 hit points; resistance to bludgeoning, piercing, and slashing damage; and immunity to poison and psychic damage.",
@@ -899,6 +970,7 @@
 								{
 									"type": "entries",
 									"name": "Aeorian Robes",
+									"page": 245,
 									"id": "8ad",
 									"entries": [
 										"The undead in the complex wear archaic-looking robes. With a successful DC 12 Intelligence ({@skill History}) check, a character recognizes the robes as being of Aeorian style. The characters can also find intact robes of the same style in the complex. Constructs and zombies in the complex don't attack a character wearing intact robes, unless the character attacks first."
@@ -907,6 +979,7 @@
 								{
 									"type": "entries",
 									"name": "Eastern Slope",
+									"page": 245,
 									"id": "8ae",
 									"entries": [
 										"Salsvault is tilted in the ice, with its east side lower than its west side. Every area within the complex features a gentle slope downward to the east."
@@ -915,6 +988,7 @@
 								{
 									"type": "entries",
 									"name": "Light",
+									"page": 245,
 									"id": "8af",
 									"entries": [
 										"Unless otherwise noted, wall sconces with {@spell continual flame} spells cast on them brightly light the interior of Salsvault."
@@ -923,6 +997,7 @@
 								{
 									"type": "entries",
 									"name": "Temperature",
+									"page": 245,
 									"id": "8b0",
 									"entries": [
 										"Though Salsvault's interior is guarded from wind and snow, the temperatures within the structure are still well below freezing."
@@ -931,6 +1006,7 @@
 								{
 									"type": "entries",
 									"name": "Water",
+									"page": 245,
 									"id": "8b1",
 									"entries": [
 										"Some areas of Salsvault are partially filled with seawater flowing in from beneath the ice of Thin Sheets. A creature that starts its turn in the frigid water must succeed on a DC 10 Constitution saving throw or gain one level of {@condition exhaustion}. Creatures that lair within the water in the complex are immune to this effect."
@@ -941,12 +1017,14 @@
 						{
 							"type": "entries",
 							"name": "Denizens of Salsvault",
+							"page": 245,
 							"id": "8b2",
 							"entries": [
 								"Many of the creatures the characters can encounter in Salsvault have similar characteristics and tactics.",
 								{
 									"type": "entries",
 									"name": "Beasts",
+									"page": 245,
 									"id": "8b3",
 									"entries": [
 										"Several sea creatures haunt the submerged areas of the complex. These beasts attack characters who enter the water, fighting until reduced to half their hit points or fewer before fleeing."
@@ -955,6 +1033,7 @@
 								{
 									"type": "entries",
 									"name": "Constructs",
+									"page": 245,
 									"id": "8b4",
 									"entries": [
 										"When Salsvault crashed into Foren, a number of its construct guardians survived. Those constructs continue to guard the complex, fighting intruders until they flee Salsvault. The constructs won't leave the complex willingly and won't pursue characters who do so. The constructs don't attack the undead of Salsvault, understanding on some level that those undead are the remains of the people who created them."
@@ -963,6 +1042,7 @@
 								{
 									"type": "entries",
 									"name": "Undead",
+									"page": 245,
 									"id": "8b5",
 									"entries": [
 										"The humanoids working in Salsvault died when it crashed into Foren. Just before impact, {@creature Ferol Sal|EGW}, the necromancer in charge of Salsvault, released an experimental disease that caused any humanoids who died in the complex to return as undead. Most of those affected returned as zombies that attack intruders on sight and fight to the death. Ferol returned as a wight and has continued to work obsessively in his personal lab ({@adventure area S17|FS|0|S17. Ferol's Laboratory}) ever since. Because of the cold here, all the undead are relatively well preserved."
@@ -973,6 +1053,7 @@
 						{
 							"type": "entries",
 							"name": "S1. Entrance Chamber",
+							"page": 246,
 							"id": "8b6",
 							"entries": [
 								{
@@ -987,6 +1068,7 @@
 								{
 									"type": "entries",
 									"name": "Locked Door",
+									"page": 246,
 									"id": "8b8",
 									"entries": [
 										"The door that leads to {@adventure area S4|FS|0|S4. Frigid Woe Laboratory} is locked (see \"{@adventure Salsvault Features|FS|0|Salsvault Features},\" at the beginning of this section)."
@@ -995,6 +1077,7 @@
 								{
 									"type": "entries",
 									"name": "Open Door",
+									"page": 246,
 									"id": "8b9",
 									"entries": [
 										"The door that leads to area S2 is slightly ajar. A character who examines the door and succeeds on a DC 10 Intelligence ({@skill Investigation}) check notes that it was recently forced open (by Urgon and Orvo when they explored Salsvault)."
@@ -1005,6 +1088,7 @@
 						{
 							"type": "entries",
 							"name": "S2. Ransacked Frigid Woe Laboratory",
+							"page": 246,
 							"id": "8ba",
 							"entries": [
 								{
@@ -1021,6 +1105,7 @@
 						{
 							"type": "entries",
 							"name": "S3. Animated Armor Laboratory",
+							"page": 246,
 							"id": "8bc",
 							"entries": [
 								{
@@ -1041,6 +1126,7 @@
 								{
 									"type": "entries",
 									"name": "Rescue Mission",
+									"page": 246,
 									"id": "8bf",
 									"entries": [
 										"One of the blacksmiths who worked in this chamber was crushed by a stone table that broke into rubble when Salsvault crashed into Foren. Since then, the blacksmith has been a {@creature zombie} {@condition restrained} beneath the rubble and unable to break free. Any character who examines the feet notices them twitching with a successful DC 12 Wisdom ({@skill Perception}) check.",
@@ -1050,6 +1136,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 246,
 									"id": "8c0",
 									"entries": [
 										"The zombie wears an apron containing a set of damaged mithral smith's tools (worth 50 gp)."
@@ -1060,6 +1147,7 @@
 						{
 							"type": "entries",
 							"name": "S4. Frigid Woe Laboratory",
+							"page": 246,
 							"id": "8c1",
 							"entries": [
 								{
@@ -1073,6 +1161,7 @@
 								{
 									"type": "entries",
 									"name": "Chests",
+									"page": 246,
 									"id": "8c3",
 									"entries": [
 										"These stone chests are locked (see \"{@adventure Salsvault Features|FS|0|Salsvault Features}\" at the beginning of this section) and magically trapped. When a creature makes a failed attempt to pick the chest's lock, or attacks or attempts to force the chest open, the chest shoots a beam of cold energy at the creature. The beam is +4 to hit and deals 4 ({@dice 1d8}) cold damage on a hit.",
@@ -1083,6 +1172,7 @@
 								{
 									"type": "entries",
 									"name": "Iron Lever",
+									"page": 246,
 									"id": "8c4",
 									"entries": [
 										"A character who examines the lever notices spots of faded red paint on it with a successful DC 13 Wisdom ({@skill Perception}) check. As an action, a creature can pull the lever down, causing flames to shoot down from the ceiling in {@adventure area S5|FS|0|S5. Disease Storage}. Even with the door closed, a hiss can be heard in this area when the flames are active. A creature can use an action to push the lever back up, which shuts off the flames. See area S5 for more information on this hazard."
@@ -1091,6 +1181,7 @@
 								{
 									"type": "entries",
 									"name": "Locked Doors",
+									"page": 246,
 									"id": "8c5",
 									"entries": [
 										"The doors from this area to {@adventure areas S1|FS|0|S1. Entrance Chamber} and S5 are locked. The door to area S5 is also trapped."
@@ -1099,6 +1190,7 @@
 								{
 									"type": "entries",
 									"name": "Trapped Door",
+									"page": 247,
 									"id": "8c6",
 									"entries": [
 										"A {@spell detect magic} spell reveals an aura of conjuration magic radiating from the locked door to area S5. When a creature makes a failed attempt to pick the door's lock, or attacks or attempts to force the door open, that creature is teleported into the middle of {@adventure area S15|FS|0|S15. Animated Weapon Storage}.",
@@ -1110,6 +1202,7 @@
 						{
 							"type": "entries",
 							"name": "S5. Disease Storage",
+							"page": 247,
 							"id": "8c7",
 							"entries": [
 								"If the iron lever in area S4 has been raised, read the following when the door to this room is opened:",
@@ -1133,6 +1226,7 @@
 								{
 									"type": "entries",
 									"name": "Chests",
+									"page": 247,
 									"id": "8ca",
 									"entries": [
 										"Each chest is locked (see \"{@adventure Salsvault Features|FS|0|Salsvault Features}\" at the beginning of this section), packed with fine sand, and contains three vials of frigid woe (see the \"{@adventure Vials of Frigid Woe|FS|0|Vials of Frigid Woe}\" sidebar earlier in this adventure)."
@@ -1143,6 +1237,7 @@
 						{
 							"type": "entries",
 							"name": "S6. North Hall",
+							"page": 247,
 							"id": "8cb",
 							"entries": [
 								"Three human {@creature Zombie||zombies} in tattered Aeorian robes roam this hall aimlessly and attack intruders on sight."
@@ -1153,11 +1248,13 @@
 				{
 					"type": "section",
 					"name": "Salsvault (areas S7-S12)",
+					"page": 247,
 					"id": "8cc",
 					"entries": [
 						{
 							"type": "entries",
 							"name": "S7. Unoccupied Dorm",
+							"page": 247,
 							"id": "8cd",
 							"entries": [
 								{
@@ -1173,6 +1270,7 @@
 						{
 							"type": "entries",
 							"name": "S8. Ruined Dorm",
+							"page": 247,
 							"id": "8cf",
 							"entries": [
 								"Salsvault's crash into Foren destroyed the magic torches in this room, leaving it shrouded in darkness. When the characters can see into this area, read:",
@@ -1183,13 +1281,14 @@
 										"Debris from broken stone furniture covers the floor. The walls here are cracked, as if they once supported built-in shelves that have been reduced to rubble."
 									]
 								},
-								"The floor of this chamber is covered in rubble, making it difficult terrain. A {@creature rug of smothering} is hidden beneath the rubble. A character with a passive Wisdom ({@skill Perception}) score of 12 or higher notices the rug, but gets no hint that it is animated.",
+								"The floor of this chamber is covered in rubble, making it {@quickref difficult terrain||3}. A {@creature rug of smothering} is hidden beneath the rubble. A character with a passive Wisdom ({@skill Perception}) score of 12 or higher notices the rug, but gets no hint that it is animated.",
 								"A search of the rubble and a successful DC 14 Wisdom ({@skill Perception}) check turns up an intact Aeorian robe (see \"{@adventure Salsvault Features|FS|0|Salsvault Features}\" at the beginning of this section)."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "S9. Zombie Dorm",
+							"page": 247,
 							"id": "8d1",
 							"entries": [
 								"When the characters can see into this area, read:",
@@ -1206,6 +1305,7 @@
 						{
 							"type": "entries",
 							"name": "S10. Ferol Sal's Chamber",
+							"page": 247,
 							"id": "8d3",
 							"entries": [
 								"The door to Ferol Sal's personal quarters is locked. When the characters can see this area, read:",
@@ -1220,6 +1320,7 @@
 								{
 									"type": "entries",
 									"name": "Chest",
+									"page": 247,
 									"id": "8d5",
 									"entries": [
 										"The chest contains Ferol's treasure (see below), along with a {@creature swarm of undead snakes|EGW} that attacks any creature that opens the chest. The swarm uses the stat block for a {@creature swarm of poisonous snakes}, with these changes:",
@@ -1235,6 +1336,7 @@
 								{
 									"type": "entries",
 									"name": "Desk",
+									"page": 247,
 									"id": "8d6",
 									"entries": [
 										"Any search of the desk turns up a bottle of dried ink, several used quills, five sheets of blank parchment, and a piece of paper with a faded message written on it in archaic Draconic. A character who understands Draconic can spend a few minutes to piece together the meaning of the note, or it can be deciphered with a {@spell comprehend languages} spell or similar magic. The note reads:",
@@ -1252,6 +1354,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 248,
 									"id": "8d8",
 									"entries": [
 										"The chest contains 1,006 sp, 45 ep, and 201 gp in Aeorian coinage."
@@ -1262,6 +1365,7 @@
 						{
 							"type": "entries",
 							"name": "S11. Kitchen",
+							"page": 248,
 							"id": "8d9",
 							"entries": [
 								"Salsvault's crash into Foren destroyed the magic torches in this room, leaving it shrouded in darkness. When the characters can see into this area, read:",
@@ -1286,6 +1390,7 @@
 						{
 							"type": "entries",
 							"name": "S12. Dining Hall",
+							"page": 248,
 							"id": "8db",
 							"entries": [
 								{
@@ -1303,11 +1408,13 @@
 				{
 					"type": "section",
 					"name": "Salsvault (areas S13-S18)",
+					"page": 248,
 					"id": "8dd",
 					"entries": [
 						{
 							"type": "entries",
 							"name": "S13. Drowned Library",
+							"page": 248,
 							"id": "8de",
 							"entries": [
 								{
@@ -1321,6 +1428,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 248,
 									"id": "8e0",
 									"entries": [
 										"A character with a passive Wisdom ({@skill Perception}) score of 12 or higher, or one who succeeds on a DC 12 Wisdom ({@skill Perception}) check, notices a watertight scroll case floating in the water. The case holds two {@item Spell Scroll||spell scrolls} of {@spell detect magic}."
@@ -1331,6 +1439,7 @@
 						{
 							"type": "entries",
 							"name": "S14. South Hall",
+							"page": 248,
 							"id": "8e1",
 							"entries": [
 								"Three well-preserved human {@creature Zombie||zombies} in tattered robes roam this hall aimlessly, attacking any intruders that catch their attention."
@@ -1339,6 +1448,7 @@
 						{
 							"type": "entries",
 							"name": "S15. Animated Weapon Storage",
+							"page": 248,
 							"id": "8e2",
 							"entries": [
 								"The door to this room is locked. When the characters can see into this area, read:",
@@ -1350,12 +1460,13 @@
 									]
 								},
 								"The mages of Salsvault stored animated weapons in this room, most of which were destroyed in the crash. Five {@creature Flying Sword||flying swords} lay among the debris, attacking any characters who enter.",
-								"The broken weapons on the floor make this area difficult terrain. Any creature that falls {@condition prone} in this room takes 2 ({@dice 1d4}) piercing damage."
+								"The broken weapons on the floor make this area {@quickref difficult terrain||3}. Any creature that falls {@condition prone} in this room takes 2 ({@dice 1d4}) piercing damage."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "S16. Golem Laboratory",
+							"page": 248,
 							"id": "8e4",
 							"entries": [
 								"As the characters approach this room, read:",
@@ -1385,6 +1496,7 @@
 								{
 									"type": "entries",
 									"name": "Debris",
+									"page": 249,
 									"id": "8e7",
 									"entries": [
 										"The golem has long since smashed all the objects in this chamber not destroyed by Salsvault's crash. Any search of the debris turns up only bits of bone, clay, iron, stone, and paper."
@@ -1395,6 +1507,7 @@
 						{
 							"type": "entries",
 							"name": "S17. Ferol's Laboratory",
+							"page": 249,
 							"id": "8e8",
 							"entries": [
 								{
@@ -1408,6 +1521,7 @@
 								{
 									"type": "entries",
 									"name": "Roleplaying Ferol",
+									"page": 249,
 									"id": "8ea",
 									"entries": [
 										"Ferol knows nothing of Exandria's history since Aeor's crash, and his memory of the distant past is almost as hazy. His transformation into a wight and the centuries of solitude since have driven him quite mad. He cares only about taking revenge on the gods\u2014who he incorrectly assumes are still active in Exandria. As a resident of Aeor, Ferol doesn't speak Common, though he can communicate in the archaic Draconic of Aeor, as well as an archaic form of Elven. Characters who speak Draconic or Elven can communicate with him, albeit slowly.",
@@ -1419,6 +1533,7 @@
 								{
 									"type": "entries",
 									"name": "Ferol's Keys",
+									"page": 249,
 									"id": "8eb",
 									"entries": [
 										"Ferol carries two keys: one that works all the doors in Salsvault and another that works all the chests built into the floor within the complex (see \"{@adventure Salsvault Features|FS|0|Salsvault Features}\")."
@@ -1427,6 +1542,7 @@
 								{
 									"type": "entries",
 									"name": "Shelves",
+									"page": 249,
 									"id": "8ec",
 									"entries": [
 										"The shelves hold spell components, reagents, and laboratory supplies that are far past their prime. However, a character who spends a few minutes searching the shelves can collect enough workable tools and reagents to put together a set of alchemist's supplies."
@@ -1435,6 +1551,7 @@
 								{
 									"type": "entries",
 									"name": "Tables",
+									"page": 249,
 									"id": "8ed",
 									"entries": [
 										"Each table holds a working set of alchemist's supplies that Ferol uses to experiment with frigid woe. If a creature is forcibly moved into a table, the delicate equipment on that table breaks and the creature must succeed on a DC 11 Constitution saving throw or contract frigid woe."
@@ -1445,6 +1562,7 @@
 						{
 							"type": "entries",
 							"name": "S18. Drowned Curative Laboratory",
+							"page": 249,
 							"id": "8ee",
 							"entries": [
 								{
@@ -1454,10 +1572,11 @@
 										"A cold wind howls through the collapsed east wall of this huge chamber, whose far side is completely submerged under frigid seawater. A dense bed of kelp grows up from the submerged floor, obscuring any sight of what lies below. Broken glass and the remains of shattered tables cover the floor in the dry section of the room."
 									]
 								},
-								"Aeorian mages worked in this chamber to ensure that they could cure the diseases they created. Four {@creature Giant Crab||giant crabs} now lair here, hiding beneath the kelp in the 5-foot-deep water and attacking any creatures that intrude. A character with a passive Wisdom ({@skill Perception}) score of 14 or higher notices the crabs, which attack with surprise if not spotted. See \"{@adventure Salsvault Features|FS|0|Salsvault Features},\" at the beginning of this section, for what happens if characters enter the frigid water. Additionally, the kelp makes the water difficult terrain for creatures other than the giant crabs.",
+								"Aeorian mages worked in this chamber to ensure that they could cure the diseases they created. Four {@creature Giant Crab||giant crabs} now lair here, hiding beneath the kelp in the 5-foot-deep water and attacking any creatures that intrude. A character with a passive Wisdom ({@skill Perception}) score of 14 or higher notices the crabs, which attack with surprise if not spotted. See \"{@adventure Salsvault Features|FS|0|Salsvault Features},\" at the beginning of this section, for what happens if characters enter the frigid water. Additionally, the kelp makes the water {@quickref difficult terrain||3} for creatures other than the giant crabs.",
 								{
 									"type": "entries",
 									"name": "Chest",
+									"page": 249,
 									"id": "8f0",
 									"entries": [
 										"A character with a passive Wisdom ({@skill Perception}) score of 11 or higher notices a stone chest built into the floor and submerged in the water against the back wall. The chest is locked (see \"Salsvault Features\" at the beginning of this section)."
@@ -1466,14 +1585,16 @@
 								{
 									"type": "entries",
 									"name": "Kelp",
+									"page": 249,
 									"id": "8f1",
 									"entries": [
-										"The kelp counts as difficult terrain."
+										"The kelp counts as {@quickref difficult terrain||3}."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 249,
 									"id": "8f2",
 									"entries": [
 										"The chest is packed with fine sand and contains twenty doses of frigid woe antidote (see \"{@book Eiselcross|EGW|4|Eiselcross}\" in chapter 3) and an {@item ersatz eye|XGE} (see {@book chapter 6|EGW|7|Ersatz Eye})."
@@ -1486,6 +1607,7 @@
 				{
 					"type": "section",
 					"name": "Concluding the Adventure",
+					"page": 249,
 					"id": "8f3",
 					"entries": [
 						"You can roll for random encounters on the way back to Syrinlya (see \"{@book Encounters in Eiselcross|EGW|4|Encounters in Eiselcross}\" in chapter 3), or you can allow the characters an uneventful trip as reward for a job well done. When the characters arrive in Syrinlya, they can arrange for the Buyer to teleport the antidote for frigid woe to Palebank Village. After doing so, the elf pays out the 200 gp reward on behalf of Elro Aldataur.",
@@ -1493,6 +1615,7 @@
 						{
 							"type": "entries",
 							"name": "Character Advancement",
+							"page": 249,
 							"id": "8f4",
 							"entries": [
 								"At the end of this adventure, the characters reach 3rd level. This might mark the beginning of a campaign in the Biting North. In particular, the Buyer suggests that the characters could easily find their fortunes exploring Eiselcross. Alternatively, their success in this mission might inspire the characters to seek out new realms and new adventures elsewhere in Wildemount."

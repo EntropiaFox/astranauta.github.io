@@ -12,6 +12,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"hd": {
 				"number": 1,
 				"faces": 6
@@ -219,7 +220,7 @@
 						"{@filter 8th|spells|level=8|class=Wizard}",
 						"{@filter 9th|spells|level=9|class=Wizard}"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							2,
 							0,
@@ -834,6 +835,7 @@
 			"classSource": "PHB",
 			"page": 117,
 			"srd": true,
+			"basicRules": true,
 			"subclassFeatures": [
 				"School of Evocation|Wizard||Evocation||2",
 				"Potent Cantrip|Wizard||Evocation||6",
@@ -850,9 +852,9 @@
 			"page": 118,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"1": [
-							"minor illusion"
+							"minor illusion#c"
 						]
 					}
 				}
@@ -1172,6 +1174,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 1,
@@ -1199,6 +1202,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 1,
@@ -1222,7 +1226,7 @@
 					"type": "entries",
 					"name": "Preparing and Casting Spells",
 					"entries": [
-						"The Wizard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.",
+						"The Wizard table shows how many spell slots you have to cast your wizard spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.",
 						"You prepare the list of wizard spells that are available for you to cast. To do so, choose a number of wizard spells from your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.",
 						"For example, if you're a 3rd-level wizard, you have four 1st-level and two 2nd-level spell slots. With an Intelligence of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination, chosen from your spellbook. If you prepare the 1st-level spell {@spell magic missile}, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.",
 						"You can change your list of prepared spells when you finish a long rest. Preparing a new list of wizard spells requires time spent studying your spellbook and memorizing the incantations and gestures you must make to cast the spell: at least 1 minute per spell level for each spell on your list."
@@ -1333,6 +1337,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 2,
@@ -1358,6 +1363,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 4,
@@ -1385,6 +1391,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 6,
@@ -1397,6 +1404,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 8,
@@ -1424,6 +1432,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 10,
@@ -1436,6 +1445,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 12,
@@ -1463,6 +1473,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 14,
@@ -1475,6 +1486,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 16,
@@ -1502,6 +1514,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 18,
@@ -1515,6 +1528,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 19,
@@ -1542,6 +1556,7 @@
 			"source": "PHB",
 			"page": 112,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"level": 20,
@@ -2148,6 +2163,7 @@
 			"source": "PHB",
 			"page": 117,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"subclassShortName": "Evocation",
@@ -2170,6 +2186,7 @@
 			"source": "PHB",
 			"page": 117,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"subclassShortName": "Evocation",
@@ -2185,6 +2202,7 @@
 			"source": "PHB",
 			"page": 117,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"subclassShortName": "Evocation",
@@ -2200,6 +2218,7 @@
 			"source": "PHB",
 			"page": 117,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"subclassShortName": "Evocation",
@@ -2215,6 +2234,7 @@
 			"source": "PHB",
 			"page": 117,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"subclassShortName": "Evocation",
@@ -2230,6 +2250,7 @@
 			"source": "PHB",
 			"page": 117,
 			"srd": true,
+			"basicRules": true,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"subclassShortName": "Evocation",
@@ -2589,7 +2610,8 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"entries": [
-				"Bladesingers are elves who bravely defend their people and lands. They are elf wizards who master a school of sword fighting grounded in a tradition of arcane magic. In combat, a bladesinger uses a series of intricate, elegant maneuvers that fend off harm and allow the bladesinger to channel magic into devastating attacks and a cunning defense.",
+				"Bladesingers master a tradition of wizardry that incorporates swordplay and dance. Originally created by elves, this tradition has been adopted by non-elf practitioners, who honor and expand on the elven ways.",
+				"In combat, a bladesinger uses a series of intricate, elegant maneuvers that fend off harm and allow the bladesinger to channel magic into devastating attacks and a cunning defense. Many who have observed a bladesinger at work remember the display as one of the more beautiful experiences in their life, a glorious dance accompanied by a singing blade.",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "Training in War and Song (Bladesinging)|Wizard||Bladesinging|TCE|2"
@@ -2834,7 +2856,7 @@
 		{
 			"name": "Manifest Mind",
 			"source": "TCE",
-			"page": 77,
+			"page": 78,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"subclassShortName": "Scribes",
@@ -2871,7 +2893,7 @@
 		{
 			"name": "One with the Word",
 			"source": "TCE",
-			"page": 77,
+			"page": 78,
 			"className": "Wizard",
 			"classSource": "PHB",
 			"subclassShortName": "Scribes",
@@ -3771,7 +3793,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 14th-level Psionics feature}",
-				"While using your Thought Form, you have a flying speed equal to your walking speed and can hover, and you can move through other creatures and objects as if they were difficult terrain.",
+				"While using your Thought Form, you have a flying speed equal to your walking speed and can hover, and you can move through other creatures and objects as if they were {@quickref difficult terrain||3}.",
 				"You take {@damage 1d10} force damage if you end your turn inside an object. If you return to your normal form while inside an object, you are shunted to the nearest unoccupied space, and you take {@damage 1d10} force damage for every 5 feet traveled."
 			]
 		},

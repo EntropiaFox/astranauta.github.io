@@ -6,7 +6,9 @@
 	$rgb-source-MM: green;
 	$rgb-source-SCAG: #76af76;
 	$rgb-source-VGM: grey;
+	$rgb-source-OGA: #933d0f;
 	$rgb-source-XGE: #ba7c00;
+	$rgb-source-XMtS: #830051;
 	$rgb-source-HotDQ: #ad8eba;
 	$rgb-source-RoT: #ff2900;
 	$rgb-source-CoS: purple;
@@ -16,12 +18,14 @@
 	$rgb-source-LMoP: #8da851;
 	$rgb-source-TftYP: #c94029;
 	$rgb-source-Homebrew: $rgb-class-brew;
+	$rgb-source-Homebrew--local: #281ce5;
 	$rgb-source-ToA: #666f30;
 	$rgb-source-MTF: #1f6e7b;
 	$rgb-source-WDH: #d4af37;
 	$rgb-source-GGR: #bfa76c;
 	$rgb-source-WDMM: #a2201f;
 	$rgb-source-LLK: #6e7a71;
+	$rgb-source-AZfyT: #4667a7;
 	$rgb-source-GoS: #3d695a;
 	$rgb-source-AI: #5baf04;
 	$rgb-source-ESK: #6b909a;
@@ -40,6 +44,16 @@
 	$rgb-source-HF: #ac9544;
 	$rgb-source-CM: #e6585e;
 	$rgb-source-VRGR: #bd000f;
+	$rgb-source-RtG: #8a536a;
+	$rgb-source-AitFR: #6e5ab9;
+	$rgb-source-WBtW: #7151b6;
+	$rgb-source-DoD: #fe4935;
+	$rgb-source-MaBJoV: #7a2854;
+	$rgb-source-FTD: #b82a15;
+	$rgb-source-NRH: #bd335b;
+	$rgb-source-SCC: #be9c56;
+	$rgb-source-MPMM: #5c758d;
+	$rgb-source-CRCotN: #ac4a70;
 
 	&PHB {
 		color: $rgb-source-PHB !important;
@@ -71,11 +85,23 @@
 		text-decoration-color: $rgb-source-VGM !important;
 	}
 
+	&OGA {
+		color: $rgb-source-OGA !important;
+		border-color: $rgb-source-OGA !important;
+		text-decoration-color: $rgb-source-OGA !important;
+	}
+
 	&XGE,
 	&TTP { // Tortles are counted as an XGE race for AL
 		color: $rgb-source-XGE !important;
 		border-color: $rgb-source-XGE !important;
 		text-decoration-color: $rgb-source-XGE !important;
+	}
+
+	&XMtS {
+		color: $rgb-source-XMtS !important;
+		border-color: $rgb-source-XMtS !important;
+		text-decoration-color: $rgb-source-XMtS !important;
 	}
 
 	&HotDQ {
@@ -131,6 +157,12 @@
 		color: $rgb-source-Homebrew !important;
 		border-color: $rgb-source-Homebrew !important;
 		text-decoration-color: $rgb-source-Homebrew !important;
+
+		&--local {
+			color: $rgb-source-Homebrew--local !important;
+			border-color: $rgb-source-Homebrew--local !important;
+			text-decoration-color: $rgb-source-Homebrew--local !important;
+		}
 	}
 
 	&Spicy {
@@ -174,6 +206,12 @@
 		color: $rgb-source-LLK !important;
 		border-color: $rgb-source-LLK !important;
 		text-decoration-color: $rgb-source-LLK !important;
+	}
+
+	&AZfyT {
+		color: $rgb-source-AZfyT !important;
+		border-color: $rgb-source-AZfyT !important;
+		text-decoration-color: $rgb-source-AZfyT !important;
 	}
 
 	&GoS {
@@ -295,6 +333,97 @@
 		color: $rgb-source-VRGR !important;
 		border-color: $rgb-source-VRGR !important;
 		text-decoration-color: $rgb-source-VRGR !important;
+	}
+
+	&RtG {
+		color: $rgb-source-RtG !important;
+		border-color: $rgb-source-RtG !important;
+		text-decoration-color: $rgb-source-RtG !important;
+	}
+
+	&AitFR {
+		color: $rgb-source-AitFR !important;
+		border-color: $rgb-source-AitFR !important;
+		text-decoration-color: $rgb-source-AitFR !important;
+
+		&-ISF,
+		&-THP,
+		&-AVT,
+		&-DN,
+		&-FCD {
+			color: $rgb-source-AitFR !important;
+			border-color: $rgb-source-AitFR !important;
+			text-decoration-color: $rgb-source-AitFR !important;
+		}
+	}
+
+	&WBtW {
+		color: $rgb-source-WBtW !important;
+		border-color: $rgb-source-WBtW !important;
+		text-decoration-color: $rgb-source-WBtW !important;
+	}
+
+	&DoD {
+		color: $rgb-source-DoD !important;
+		border-color: $rgb-source-DoD !important;
+		text-decoration-color: $rgb-source-DoD !important;
+	}
+
+	&MaBJoV {
+		color: $rgb-source-MaBJoV !important;
+		border-color: $rgb-source-MaBJoV !important;
+		text-decoration-color: $rgb-source-MaBJoV !important;
+	}
+
+	&FTD {
+		color: $rgb-source-FTD !important;
+		border-color: $rgb-source-FTD !important;
+		text-decoration-color: $rgb-source-FTD !important;
+	}
+
+	&NRH {
+		color: $rgb-source-NRH !important;
+		border-color: $rgb-source-NRH !important;
+		text-decoration-color: $rgb-source-NRH !important;
+
+		&-TCMC,
+		&-AVitW,
+		&-ASS,
+		&-CoI,
+		&-TLT,
+		&-AWoL,
+		&-AT {
+			color: $rgb-source-NRH !important;
+			border-color: $rgb-source-NRH !important;
+			text-decoration-color: $rgb-source-NRH !important;
+		}
+	}
+
+	&SCC {
+		color: $rgb-source-SCC !important;
+		border-color: $rgb-source-SCC !important;
+		text-decoration-color: $rgb-source-SCC !important;
+
+		&-CK,
+		&-HfMT,
+		&-TMM,
+		&-ARiR {
+			color: $rgb-source-SCC !important;
+			border-color: $rgb-source-SCC !important;
+			text-decoration-color: $rgb-source-SCC !important;
+		}
+	}
+
+	&MPMM {
+		color: $rgb-source-MPMM !important;
+		border-color: $rgb-source-MPMM !important;
+		text-decoration-color: $rgb-source-MPMM !important;
+	}
+
+	&CRCotN {
+		color: $rgb-source-CRCotN !important;
+		border-color: $rgb-source-CRCotN !important;
+		text-decoration-color: $rgb-source-CRCotN !important;
 	}
 }
 

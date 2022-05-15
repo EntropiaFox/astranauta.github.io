@@ -18,7 +18,9 @@
 			"source": "TCE",
 			"page": 109,
 			"summonedBySpell": "Summon Aberration|TCE",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"U"
@@ -127,13 +129,21 @@
 					"name": "Dracolich",
 					"source": "MM"
 				}
-			}
+			},
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"damageTagsLegendary": []
 		},
 		{
 			"name": "Beast of the Land",
 			"source": "TCE",
 			"page": 61,
-			"size": "M",
+			"summonedByClass": "Ranger|PHB",
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -186,7 +196,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Charge"
 			],
@@ -201,13 +210,17 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Beast of the Sea",
 			"source": "TCE",
 			"page": 61,
-			"size": "M",
+			"summonedByClass": "Ranger|PHB",
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -260,7 +273,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -276,13 +288,17 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Beast of the Sky",
 			"source": "TCE",
 			"page": 61,
-			"size": "S",
+			"summonedByClass": "Ranger|PHB",
+			"size": [
+				"S"
+			],
 			"type": "beast",
 			"alignment": [
 				"N"
@@ -335,7 +351,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Flyby"
 			],
@@ -347,14 +362,17 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Bestial Spirit",
 			"source": "TCE",
 			"page": 109,
 			"summonedBySpell": "Summon Beast|TCE",
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -452,7 +470,9 @@
 			"source": "TCE",
 			"page": 110,
 			"summonedBySpell": "Summon Celestial|TCE",
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "celestial",
 			"alignment": [
 				"U"
@@ -516,7 +536,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -532,14 +551,17 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Construct Spirit",
 			"source": "TCE",
 			"page": 111,
 			"summonedBySpell": "Summon Construct|TCE",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -550,7 +572,7 @@
 				}
 			],
 			"hp": {
-				"special": "40 + 15 for each spell level above 3rd"
+				"special": "40 + 15 for each spell level above 4th"
 			},
 			"speed": {
 				"walk": 30
@@ -634,7 +656,10 @@
 			"name": "Dancing Item",
 			"source": "TCE",
 			"page": 29,
-			"size": "L",
+			"summonedByClass": "Bard|PHB",
+			"size": [
+				"L"
+			],
 			"sizeNote": "or smaller",
 			"type": "construct",
 			"alignment": [
@@ -704,7 +729,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Immutable Form"
 			],
@@ -716,14 +740,17 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elemental Spirit",
 			"source": "TCE",
 			"page": 111,
 			"summonedBySpell": "Summon Elemental|TCE",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "elemental",
 			"alignment": [
 				"U"
@@ -855,7 +882,9 @@
 			"source": "TCE",
 			"page": 112,
 			"summonedBySpell": "Summon Fey|TCE",
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "fey",
 			"alignment": [
 				"U"
@@ -913,17 +942,17 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Fuming.",
+									"name": "Fuming",
 									"entry": "The fey has advantage on the next attack roll it makes before the end of this turn."
 								},
 								{
 									"type": "item",
-									"name": "Mirthful.",
-									"entry": "The fey can force one creature it can see within 10 feet of it to make a Wisdom saving throw against your spell save DC. Unless the save succeeds, the target is charmed by you and the fey for 1 minute or until the target takes any damage."
+									"name": "Mirthful",
+									"entry": "The fey can force one creature it can see within 10 feet of it to make a Wisdom saving throw against your spell save DC. Unless the save succeeds, the target is {@condition charmed} by you and the fey for 1 minute or until the target takes any damage."
 								},
 								{
 									"type": "item",
-									"name": "Tricksy.",
+									"name": "Tricksy",
 									"entry": "The fey can fill a 5-foot cube within 5 feet of it with magical darkness, which lasts until the end of its next turn."
 								}
 							]
@@ -957,7 +986,9 @@
 			"source": "TCE",
 			"page": 112,
 			"summonedBySpell": "Summon Fiend|TCE",
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "fiend",
 			"alignment": [
 				"U"
@@ -1086,7 +1117,10 @@
 					"page": 62
 				}
 			],
-			"size": "T",
+			"summonedByClass": "Artificer|TCE",
+			"size": [
+				"T"
+			],
 			"type": "construct",
 			"ac": [
 				{
@@ -1156,7 +1190,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1166,13 +1199,16 @@
 			"miscTags": [
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Juvenile Mimic",
 			"source": "TCE",
 			"page": 167,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -1246,7 +1282,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance",
 				"Spider Climb"
@@ -1265,13 +1300,16 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Mighty Servant of Leuk-o",
 			"source": "TCE",
 			"page": 131,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -1327,6 +1365,7 @@
 				"blinded",
 				"charmed",
 				"deafened",
+				"exhaustion",
 				"frightened",
 				"grappled",
 				"incapacitated",
@@ -1385,7 +1424,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance",
 				"Regeneration"
@@ -1407,6 +1445,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1450,7 +1489,9 @@
 			"source": "TCE",
 			"page": 114,
 			"summonedBySpell": "Summon Shadowspawn|TCE",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -1527,7 +1568,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -1545,7 +1585,8 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Steel Defender",
@@ -1557,7 +1598,10 @@
 					"page": 61
 				}
 			],
-			"size": "M",
+			"summonedByClass": "Artificer|TCE",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"ac": [
 				{
@@ -1634,7 +1678,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1644,6 +1687,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1651,7 +1695,9 @@
 			"source": "TCE",
 			"page": 114,
 			"summonedBySpell": "Summon Undead|TCE",
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"U"
@@ -1699,7 +1745,7 @@
 				{
 					"name": "Incorporeal Passage (Ghostly Only)",
 					"entries": [
-						"The spirit can move through other creatures and objects as if they were difficult terrain. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes {@damage 1d10} force damage for every 5 feet traveled."
+						"The spirit can move through other creatures and objects as if they were {@quickref difficult terrain||3}. If it ends its turn inside an object, it is shunted to the nearest unoccupied space and takes {@damage 1d10} force damage for every 5 feet traveled."
 					]
 				},
 				{
@@ -1765,7 +1811,10 @@
 			"name": "Wildfire Spirit",
 			"source": "TCE",
 			"page": 40,
-			"size": "S",
+			"summonedByClass": "Druid|PHB",
+			"size": [
+				"S"
+			],
 			"type": "elemental",
 			"alignment": [
 				"U"
@@ -1827,7 +1876,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1837,7 +1885,8 @@
 			"miscTags": [
 				"AOE",
 				"RW"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

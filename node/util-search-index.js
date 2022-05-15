@@ -32,6 +32,8 @@ class UtilSearchIndex {
 	}
 
 	static async _pGetIndex (opts, doLogging = true, noFilter = false) {
+		ut.patchLoadJson();
+
 		const indexer = new od.Omnidexer();
 
 		// region Index entities from directories, e.g. creatures and spells
@@ -86,11 +88,15 @@ class UtilSearchIndex {
 		}
 		// endregion
 
-		return indexer.getIndex();
+		const out = indexer.getIndex();
+		ut.unpatchLoadJson();
+		return out;
 	}
 
 	// this should be generalised if further specific indexes are required
 	static async pGetIndexAdditionalItem (baseIndex = 0, doLogging = true) {
+		ut.patchLoadJson();
+
 		const indexer = new od.Omnidexer(baseIndex);
 
 		await Promise.all(od.Omnidexer.TO_INDEX.filter(it => it.category === Parser.CAT_ID_ITEM).map(async ti => {
@@ -106,7 +112,9 @@ class UtilSearchIndex {
 			}
 		}));
 
-		return indexer.getIndex();
+		const out = indexer.getIndex();
+		ut.unpatchLoadJson();
+		return out;
 	}
 }
 UtilSearchIndex.CORE_SOURCES = new Set([SRC_PHB, SRC_MM, SRC_DMG, SRC_VGM, SRC_MTF, SRC_XGE, SRC_SCAG]);

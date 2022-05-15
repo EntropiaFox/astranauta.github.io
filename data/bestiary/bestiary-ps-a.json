@@ -16,7 +16,10 @@
 				"source": "MM"
 			},
 			"int": 8,
-			"hasToken": true
+			"damageTagsLegendary": [],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ammit",
@@ -33,7 +36,9 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Amonkhet Dragon Wyrmling",
@@ -44,7 +49,9 @@
 				"source": "MM"
 			},
 			"int": 5,
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Amonkhet Hydra",
@@ -66,11 +73,37 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"damageTags": [
 				"I",
 				"P"
-			]
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Amonkhet Mummy",
+			"source": "PSA",
+			"page": 34,
+			"_copy": {
+				"name": "Mummy",
+				"source": "MM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Amonkhet Mummy Lord",
+			"source": "PSA",
+			"page": 34,
+			"_copy": {
+				"name": "Mummy Lord",
+				"source": "MM"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Amonkhet Sphinx",
@@ -80,7 +113,10 @@
 				"name": "Androsphinx",
 				"source": "MM"
 			},
-			"hasToken": true
+			"damageTagsLegendary": [],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ancient Amonkhet Dragon",
@@ -91,7 +127,10 @@
 				"source": "MM"
 			},
 			"int": 10,
-			"hasToken": true
+			"damageTagsLegendary": [],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Angel of Amonkhet",
@@ -118,7 +157,9 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Anointed",
@@ -135,7 +176,9 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Archfiend of Ifnir",
@@ -153,7 +196,9 @@
 					"variant": "remove"
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cerodon",
@@ -179,16 +224,20 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Siege Monster"
-			]
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Criosphinx",
 			"source": "PSA",
 			"page": 32,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N"
@@ -296,7 +345,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Weapons"
 			],
@@ -316,7 +364,10 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Eternal",
@@ -333,7 +384,9 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant River Serpent",
@@ -355,12 +408,19 @@
 				}
 			},
 			"immune": null,
+			"actionTags": [
+				"Multiattack",
+				"Swallow"
+			],
 			"damageTags": [
 				"A",
 				"B",
 				"P",
 				"S"
-			]
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hippopotamus",
@@ -400,10 +460,10 @@
 				"walk": 40,
 				"swim": 30
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Large Drake",
@@ -419,13 +479,17 @@
 						"with": "drake"
 					}
 				}
-			}
+			},
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Manticore, Heart-Piercer",
 			"source": "PSA",
 			"page": 36,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -486,7 +550,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -501,41 +564,10 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
-		},
-		{
-			"name": "Mindful Marauder",
-			"source": "PSA",
-			"page": 34,
-			"_copy": {
-				"name": "Mummy Lord",
-				"source": "MM",
-				"_mod": {
-					"*": {
-						"mode": "replaceTxt",
-						"replace": "mummy lord",
-						"with": "marauder"
-					}
-				}
-			},
-			"hasToken": true
-		},
-		{
-			"name": "Mindless Marauder",
-			"source": "PSA",
-			"page": 34,
-			"_copy": {
-				"name": "Mummy",
-				"source": "MM",
-				"_mod": {
-					"*": {
-						"mode": "replaceTxt",
-						"replace": "mummy",
-						"with": "marauder"
-					}
-				}
-			},
-			"hasToken": true
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "River Serpent",
@@ -552,7 +584,9 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sandwurm",
@@ -569,13 +603,17 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Serpopard",
 			"source": "PSA",
 			"page": 37,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -624,7 +662,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Pounce"
@@ -638,7 +675,10 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Small Drake",
@@ -655,7 +695,9 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Soulstinger Demon",
@@ -679,7 +721,9 @@
 					"demon"
 				]
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Amonkhet Dragon",
@@ -690,7 +734,9 @@
 				"source": "MM"
 			},
 			"int": 6,
-			"hasToken": true
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

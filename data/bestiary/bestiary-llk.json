@@ -16,7 +16,9 @@
 					"source": "IMR"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"A"
@@ -135,13 +137,16 @@
 				"paralyzed",
 				"prone",
 				"unconscious"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Clockwork Kraken",
 			"source": "LLK",
 			"page": 38,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -252,7 +257,9 @@
 			"isNpc": true,
 			"source": "LLK",
 			"page": 41,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid"
 			},
@@ -368,6 +375,9 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"Y"
+			],
 			"spellcastingTags": [
 				"CB"
 			],
@@ -379,6 +389,7 @@
 			],
 			"conditionInflictSpell": [
 				"charmed",
+				"incapacitated",
 				"prone"
 			]
 		},
@@ -428,7 +439,9 @@
 			"isNpc": true,
 			"source": "LLK",
 			"page": 41,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid"
 			},
@@ -549,6 +562,11 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CL"
 			],
@@ -568,7 +586,9 @@
 			"name": "Ooze-Folk",
 			"source": "LLK",
 			"page": 46,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "ooze",
 			"alignment": [
 				"U"

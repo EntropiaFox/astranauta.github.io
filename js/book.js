@@ -8,45 +8,28 @@ window.addEventListener("load", () => {
 	DataUtil.loadJSON(JSON_URL).then(onJsonLoad);
 });
 
-let books = [];
-let bkI = 0;
-function onJsonLoad (data) {
+async function onJsonLoad (data) {
 	BookUtil.baseDataUrl = "data/book/book-";
 	BookUtil.allPageUrl = "books.html";
-	BookUtil.homebrewIndex = "book";
-	BookUtil.homebrewData = "bookData";
+	BookUtil.propHomebrewData = "bookData";
 	BookUtil.initLinkGrabbers();
 	BookUtil.initScrollTopFloat();
 
 	BookUtil.contentType = "book";
 
-	addBooks(data);
+	BookUtil.bookIndex = data?.book || [];
 
 	$(`.book-head-message`).text(`Select a book from the list on the left`);
 	$(`.book-loading-message`).text(`Select a book to begin`);
 
+	const brew = await BrewUtil2.pGetBrewProcessed();
+	BookUtil.bookIndexBrew = brew?.book || [];
+
 	window.onhashchange = BookUtil.booksHashChange.bind(BookUtil);
-	BrewUtil.pAddBrewData()
-		.then(handleBrew)
-		.then(() => BrewUtil.pAddLocalBrewData())
-		.then(() => {
-			if (window.location.hash.length) {
-				BookUtil.booksHashChange();
-			} else {
-				$(`.contents-item`).show();
-			}
-			window.dispatchEvent(new Event("toolsLoaded"));
-		});
-}
-
-function handleBrew (homebrew) {
-	addBooks(homebrew);
-	return Promise.resolve();
-}
-
-function addBooks (data) {
-	if (!data.book || !data.book.length) return;
-
-	books.push(...data.book);
-	BookUtil.bookIndex = books;
+	if (window.location.hash.length) {
+		BookUtil.booksHashChange();
+	} else {
+		$(`.contents-item`).show();
+	}
+	window.dispatchEvent(new Event("toolsLoaded"));
 }

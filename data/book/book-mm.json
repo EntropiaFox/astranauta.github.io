@@ -1342,6 +1342,313 @@
 						}
 					],
 					"id": "046"
+				},
+				{
+					"type": "entries",
+					"name": "Shadow Dragon Template",
+					"page": 84,
+					"entries": [
+						"Only a true dragon can transform into a shadow dragon, and only if it is born in the Shadowfell or remains there for several years. A dracolich can't be turned into a shadow dragon, since it loses its draconic nature when it becomes undead.",
+						"When a dragon becomes a shadow dragon, it retains its statistics except as described below. The shadow dragon might retain or lose any or all of its lair actions or inherit new ones, as the DM sees fit.",
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Damage Resistances",
+									"page": 85,
+									"entries": [
+										"The dragon has resistance to necrotic damage."
+									],
+									"id": "04c"
+								},
+								{
+									"type": "entries",
+									"name": "Skill Proficiency: Stealth",
+									"page": 85,
+									"entries": [
+										"The dragon's proficiency bonus is doubled for its Dexterity ({@skill Stealth}) checks."
+									],
+									"id": "04d"
+								},
+								{
+									"type": "entries",
+									"name": "Living Shadow",
+									"page": 85,
+									"entries": [
+										"While in dim light or darkness, the dragon has resistance to damage that isn't force, psychic, or radiant."
+									],
+									"id": "04e"
+								},
+								{
+									"type": "entries",
+									"name": "Shadow Stealth",
+									"page": 85,
+									"entries": [
+										"While in dim light or darkness, the dragon can take the {@action Hide} action as a bonus action."
+									],
+									"id": "04f"
+								},
+								{
+									"type": "entries",
+									"name": "Sunlight Sensitivity",
+									"page": 85,
+									"entries": [
+										"While in sunlight, the dragon has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+									],
+									"id": "050"
+								},
+								{
+									"type": "entries",
+									"name": "New Action: Bite",
+									"page": 85,
+									"entries": [
+										"If the dragon deals acid, cold, fire, lightning, or poison damage with its bite, change that damage type to necrotic."
+									],
+									"id": "051"
+								},
+								{
+									"type": "entries",
+									"name": "New Action: Shadow Breath",
+									"page": 85,
+									"entries": [
+										"Any damage-dealing breath weapon possessed by the dragon deals necrotic damage instead of its original damage type. A humanoid reduced to 0 hit points by this damage dies, and an undead shadow rises from its corpse and acts immediately after the dragon in the initiative count. The shadow is under the dragon's control."
+									],
+									"id": "052"
+								}
+							],
+							"id": "04b"
+						}
+					],
+					"id": "04a"
+				},
+				{
+					"type": "entries",
+					"name": "Half-Dragon Template",
+					"page": 180,
+					"entries": [
+						"A beast, humanoid, giant, or monstrosity can become a half-dragon. When a creature becomes a half-dragon, it retains all its statistics except as noted below.",
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Challenge",
+									"page": 180,
+									"entries": [
+										"To avoid recalculating the creature's challenge rating, apply the template only to a creature that meets the optional prerequisite in the Breath Weapon table below. Otherwise, use the guidelines in the Dungeon Master's Guide to recalculate the rating after you apply the template."
+									],
+									"id": "055"
+								},
+								{
+									"type": "entries",
+									"name": "Senses",
+									"page": 180,
+									"entries": [
+										"The half-dragon gains {@sense blindsight} with a radius of 10 feet and {@sense darkvision} with a radius of 60 feet."
+									],
+									"id": "056"
+								},
+								{
+									"type": "entries",
+									"name": "Resistances",
+									"page": 180,
+									"entries": [
+										"The half-dragon gains resistance to a type of damage based on its color.",
+										{
+											"type": "table",
+											"colLabels": [
+												"Color",
+												"Damage Resistance"
+											],
+											"colStyles": [
+												"col-6 text-center",
+												"col-6 text-center"
+											],
+											"rows": [
+												[
+													"Black or copper",
+													"Acid"
+												],
+												[
+													"Blue or bronze",
+													"Lightning"
+												],
+												[
+													"Brass, gold, or red",
+													"Fire"
+												],
+												[
+													"Green",
+													"Poison"
+												],
+												[
+													"Silver or white",
+													"Cold"
+												]
+											]
+										}
+									],
+									"id": "057"
+								},
+								{
+									"type": "entries",
+									"name": "Languages",
+									"page": 180,
+									"entries": [
+										"The half-dragon speaks Draconic in addition to any other languages it knows."
+									],
+									"id": "058"
+								},
+								{
+									"type": "entries",
+									"name": "New Action: Breath Weapon",
+									"page": 180,
+									"entries": [
+										"The half-dragon has the breath weapon of its dragon half. The half-dragon's size determines how this action functions.",
+										{
+											"type": "table",
+											"colLabels": [
+												"Size",
+												"Breath Weapon",
+												"Optional Prerequisite"
+											],
+											"colStyles": [
+												"col-4",
+												"col-4",
+												"col-4"
+											],
+											"rows": [
+												[
+													"Large or smaller",
+													"As a wyrmling",
+													"Challenge 2 or higher"
+												],
+												[
+													"Huge",
+													"As a young dragon",
+													"Challenge 7 or higher"
+												],
+												[
+													"Gargantuan",
+													"As an adult dragon",
+													"Challenge 8 or higher"
+												]
+											]
+										}
+									],
+									"id": "059"
+								}
+							],
+							"id": "054"
+						}
+					],
+					"id": "053"
+				},
+				{
+					"type": "entries",
+					"name": "Spore Servant Template",
+					"page": 230,
+					"entries": [
+						"A spore servant is any Large or smaller creature brought back to life by the animating spores of a myconid sovereign. A creature that was never flesh and blood to begin with (such as a construct, elemental, ooze, plant, or undead) can't be turned into a spore servant. The following characteristics change or are added to a creature that becomes a spore servant.",
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Retained Characteristics",
+									"page": 230,
+									"entries": [
+										"The servant retains its Armor Class, hit points, Hit Dice, Strength, Dexterity, Constitution, vulnerabilities, resistances, and immunities."
+									],
+									"id": "05c"
+								},
+								{
+									"type": "entries",
+									"name": "Lost Characteristics",
+									"page": 230,
+									"entries": [
+										"The servant loses its original saving throw and skill bonuses, special senses, and special traits. It loses any action that isn't Multiattack or a melee weapon attack that deals bludgeoning, piercing, or slashing damage. If it has an action or a melee weapon attack that deals some other type of damage, it loses the ability to deal damage of that type, unless the damage comes from a piece of equipment, such as a magic item."
+									],
+									"id": "05d"
+								},
+								{
+									"type": "entries",
+									"name": "Type",
+									"page": 230,
+									"entries": [
+										"The servant's type is plant, and it loses any tags."
+									],
+									"id": "05e"
+								},
+								{
+									"type": "entries",
+									"name": "Alignment",
+									"page": 230,
+									"entries": [
+										"The servant is unaligned."
+									],
+									"id": "05f"
+								},
+								{
+									"type": "entries",
+									"name": "Speed",
+									"page": 230,
+									"entries": [
+										"Reduce all the servant's speeds by 10 feet, to a minimum of 5 feet."
+									],
+									"id": "060"
+								},
+								{
+									"type": "entries",
+									"name": "Ability Scores",
+									"page": 230,
+									"entries": [
+										"The servant's ability scores change as follows: Int 2 (\u22124), Wis 6 (\u22122), Cha 1 (\u22125)."
+									],
+									"id": "061"
+								},
+								{
+									"type": "entries",
+									"name": "Senses",
+									"page": 230,
+									"entries": [
+										"The servant has {@sense blindsight} with a radius of 30 feet, and it is blind beyond this radius."
+									],
+									"id": "062"
+								},
+								{
+									"type": "entries",
+									"name": "Condition Immunities",
+									"page": 230,
+									"entries": [
+										"The servant can't be {@condition blinded}, {@condition charmed}, {@condition frightened}, or {@condition paralyzed}."
+									],
+									"id": "063"
+								},
+								{
+									"type": "entries",
+									"name": "Languages",
+									"page": 230,
+									"entries": [
+										"The servant loses all known languages, but it responds to orders given to it by myconids using rapport spores. The servant gives highest priority to orders received from the most powerful myconid."
+									],
+									"id": "064"
+								},
+								{
+									"type": "entries",
+									"name": "Attacks",
+									"page": 230,
+									"entries": [
+										"If the servant has no other means of dealing damage, it can use its fists or limbs to make unarmed strikes. On a hit, an unarmed strike deals bludgeoning damage equal to {@dice 1d4} + the servant's Strength modifier, or, if the servant is Large, {@dice 2d4} + its Strength modifier."
+									],
+									"id": "065"
+								}
+							],
+							"id": "05b"
+						}
+					],
+					"id": "05a"
 				}
 			],
 			"id": "000"

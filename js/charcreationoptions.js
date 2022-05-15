@@ -21,15 +21,15 @@ class CharCreationOptionsPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const hash = UrlUtil.autoEncodeHash(it);
 		const source = Parser.sourceJsonToAbv(it.source);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-5 text-center pl-0">${it._dOptionType}</span>
+			<span class="col-5 text-center pl-0">${it._fOptionType}</span>
 			<span class="bold col-5">${it.name}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)}" title="${Parser.sourceJsonToFull(it.source)} pr-0" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)}" title="${Parser.sourceJsonToFull(it.source)} pr-0" ${BrewUtil2.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -39,10 +39,9 @@ class CharCreationOptionsPage extends ListPage {
 			{
 				hash,
 				source,
-				type: it._dOptionType,
+				type: it._fOptionType,
 			},
 			{
-				uniqueId: it.uniqueId || itI,
 				isExcluded,
 			},
 		);
@@ -59,12 +58,12 @@ class CharCreationOptionsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (it, pinId) {
+	pGetSublistItem (it, ix) {
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		const $ele = $$`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $$`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
-				<span class="col-5 text-center pl-0">${it._dOptionType}</span>
+				<span class="col-5 text-center pl-0">${it._fOptionType}</span>
 				<span class="bold col-7 pr-0">${it.name}</span>
 			</a>
 		</div>`
@@ -72,34 +71,34 @@ class CharCreationOptionsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			it.name,
 			{
 				hash,
 				source: Parser.sourceJsonToAbv(it.source),
-				type: it._dOptionType,
+				type: it._fOptionType,
 			},
 		);
 		return listItem;
 	}
 
 	doLoadHash (id) {
-		const $content = $("#pagecontent").empty();
+		this._$pgContent.empty();
 		const it = this._dataList[id];
 
-		function buildStatsTab () {
-			$content.append(RenderCharCreationOptions.$getRenderedCharCreationOption(it));
-		}
+		const buildStatsTab = () => {
+			this._$pgContent.append(RenderCharCreationOptions.$getRenderedCharCreationOption(it));
+		};
 
-		function buildFluffTab (isImageTab) {
+		const buildFluffTab = (isImageTab) => {
 			return Renderer.utils.pBuildFluffTab({
 				isImageTab,
-				$content,
+				$content: this._$pgContent,
 				entity: it,
 				pFnGetFluff: Renderer.charoption.pGetFluff,
 			});
-		}
+		};
 
 		const tabMetas = [
 			new Renderer.utils.TabButton({
@@ -125,11 +124,6 @@ class CharCreationOptionsPage extends ListPage {
 		});
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 }
 

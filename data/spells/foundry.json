@@ -1043,14 +1043,11 @@
 				"target.type": "creature",
 				"damage.parts": [
 					[
-						"(floor((@details.level + 1) / 6))d8[on hit]",
-						"thunder"
-					],
-					[
-						"(floor((@details.level + 1) / 6) + 1)d8[on willing movement]",
+						"(floor(((@details.level + @details.spellLevel) + 1) / 6))d8[on hit]",
 						"thunder"
 					]
 				],
+				"damage.versatile": "(floor(((@details.level + @details.spellLevel) + 1) / 6) + 1)d8[on willing movement]",
 				"scaling.mode": "none",
 				"scaling.formula": ""
 			}
@@ -1065,11 +1062,11 @@
 				"target.type": "creature",
 				"damage.parts": [
 					[
-						"(floor((@details.level + 1) / 6))d8[on hit]",
+						"(floor(((@details.level + @details.spellLevel) + 1) / 6))d8[on hit]",
 						"fire"
 					],
 					[
-						"@mod + (floor((@details.level + 1) / 6))d8[splash]",
+						"@mod + (floor(((@details.level + @details.spellLevel) + 1) / 6))d8[splash]",
 						"fire"
 					]
 				],
@@ -1149,11 +1146,11 @@
 				"target.type": "creature",
 				"damage.parts": [
 					[
-						"(floor((@details.level + 1) / 6) + 1)d8[if uninjured]",
+						"(floor(((@details.level + @details.spellLevel) + 1) / 6) + 1)d8[if uninjured]",
 						"necrotic"
 					]
 				],
-				"damage.versatile": "(floor((@details.level + 1) / 6) + 1)d12[if injured]",
+				"damage.versatile": "(floor(((@details.level + @details.spellLevel) + 1) / 6) + 1)d12[if injured]",
 				"scaling.mode": "none",
 				"scaling.formula": ""
 			}
@@ -1210,6 +1207,40 @@
 				],
 				"scaling.mode": "none",
 				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Witch Bolt",
+			"source": "PHB",
+			"data": {
+				"damage.parts": [
+					[
+						"1d12",
+						"lightning"
+					]
+				]
+			}
+		},
+		{
+			"name": "Wither and Bloom",
+			"source": "SCC",
+			"data": {
+				"target.value": 10,
+				"target.units": "ft",
+				"target.type": "radius"
+			}
+		},
+		{
+			"name": "Chaos Bolt",
+			"source": "XGE",
+			"data": {
+				"damage.parts": [
+					[
+						"2d8 + 1d6",
+						""
+					]
+				],
+				"formula": ""
 			}
 		}
 	]

@@ -4,7 +4,9 @@
 			"name": "Ancient Companion",
 			"source": "UA2021MagesOfStrixhaven",
 			"page": 3,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"A"

@@ -16,10 +16,12 @@
 	},
 	"monster": [
 		{
-			"name": "Aarakocra Simulacra",
+			"name": "Aarakocra Simulacrum",
 			"source": "SKT",
 			"page": 188,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -90,7 +92,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AU",
 				"OTH"
@@ -103,7 +104,8 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Alastrah",
@@ -130,17 +132,19 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"GI"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Augrek Brighthelm",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 247,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -219,7 +223,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -236,6 +239,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -307,7 +311,6 @@
 				"Common",
 				"Dwarvish"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -320,14 +323,17 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Beldora",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 249,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -404,7 +410,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
@@ -420,6 +425,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -439,7 +445,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 140,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -502,7 +510,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -519,6 +526,7 @@
 				"RCH",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -566,12 +574,12 @@
 				"formula": "8d10 + 16"
 			},
 			"cr": "4",
-			"hasToken": true,
 			"damageTags": [
 				"F",
 				"P",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Cinderhild",
@@ -604,13 +612,13 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"P"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Claugiyliamatar",
@@ -633,76 +641,46 @@
 				"name": "Ancient Green Dragon",
 				"source": "MM"
 			},
-			"cr": "23",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
+					"name": "Spellcasting",
 					"headerEntries": [
-						"Claugiyliamatar's innate spellcasting ability is Charisma (spell save {@dc 19}). Claugiyliamatar can innately cast the following spells, requiring no material components:"
+						"Claugiyliamatar casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 19}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell druidcraft}",
+						"{@spell speak with animals}"
 					],
 					"daily": {
+						"2e": [
+							"{@spell animal messenger}",
+							"{@spell cure wounds}",
+							"{@spell dispel magic}",
+							"{@spell entangle}",
+							"{@spell invisibility}"
+						],
 						"1e": [
-							"{@spell invisibility}",
-							"{@spell legend lore}",
+							"{@spell blight}",
+							"{@spell legend lore} (cast as 1 action)",
+							"{@spell locate creature}",
+							"{@spell pass without trace}",
 							"{@spell protection from energy}",
 							"{@spell true seeing}"
 						]
 					},
-					"ability": "cha"
-				},
-				{
-					"name": "Spellcasting",
-					"headerEntries": [
-						"Claugiyliamatar is an 8th-level spellcaster. Her spellcasting ability is Wisdom (spell save {@dc 18}, {@hit 10} to hit with spell attacks). She has the following druid spells prepared:"
-					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell druidcraft}",
-								"{@spell mending}",
-								"{@spell produce flame}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell cure wounds}",
-								"{@spell detect magic}",
-								"{@spell entangle}",
-								"{@spell speak with animals}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell animal messenger}",
-								"{@spell pass without trace}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell dispel magic}",
-								"{@spell plant growth}"
-							]
-						},
-						"4": {
-							"slots": 2,
-							"spells": [
-								"{@spell blight}",
-								"{@spell locate creature}",
-								"{@spell stoneskin}"
-							]
-						}
-					},
-					"ability": "wis"
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
-			"hasToken": true,
+			"damageTagsLegendary": [],
+			"damageTagsSpell": [
+				"N"
+			],
 			"spellcastingTags": [
-				"CD",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Clockwork Mule",
@@ -855,24 +833,31 @@
 				"Giant"
 			],
 			"cr": "10",
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DR",
 				"DU",
 				"GI"
 			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"T"
+			],
 			"spellcastingTags": [
 				"CD",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Countess Sansuri",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 192,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"N",
@@ -943,71 +928,34 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Sansuri is a 13th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 15}; {@hit 7} to hit with spell attacks). She has the following wizard spells prepared:"
+						"Sansuri casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 15}; {@hit 7} to hit with spell attacks):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell mage hand}",
-								"{@spell mending}",
-								"{@spell message}",
-								"{@spell prestidigitation}",
-								"{@spell ray of frost}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell identify}",
-								"{@spell magic missile}",
-								"{@spell shield}",
-								"{@spell unseen servant}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell arcane lock}",
-								"{@spell gust of wind}",
-								"{@spell invisibility}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell haste}",
-								"{@spell hypnotic pattern}",
-								"{@spell lightning bolt}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell ice storm}",
-								"{@spell stoneskin}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell Bigby's hand}",
-								"{@spell wall of force}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell globe of invulnerability}"
-							]
-						},
-						"7": {
-							"slots": 1,
-							"spells": [
-								"{@spell Mordenkainen's sword}"
-							]
-						}
+					"will": [
+						"{@spell mage hand}",
+						"{@spell message}",
+						"{@spell prestidigitation}",
+						"{@spell ray of frost}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell arcane lock}",
+							"{@spell gust of wind}",
+							"{@spell invisibility}",
+							"{@spell magic missile}",
+							"{@spell unseen servant}"
+						],
+						"1e": [
+							"{@spell globe of invulnerability}",
+							"{@spell haste}",
+							"{@spell hypnotic pattern}",
+							"{@spell ice storm}",
+							"{@spell lightning bolt}",
+							"{@spell Mordenkainen's sword}",
+							"{@spell wall of force}"
+						]
 					},
-					"ability": "wis"
+					"ability": "int",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -1050,7 +998,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -1066,8 +1013,13 @@
 				"B",
 				"P"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"L",
+				"O"
+			],
 			"spellcastingTags": [
-				"CW",
 				"I"
 			],
 			"miscTags": [
@@ -1084,6 +1036,7 @@
 				"incapacitated",
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1096,7 +1049,9 @@
 					"source": "IDRotF"
 				}
 			],
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -1161,7 +1116,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pounce"
 			],
@@ -1178,6 +1132,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1214,6 +1169,7 @@
 				"name": "Adult White Dragon",
 				"source": "MM"
 			},
+			"damageTagsLegendary": [],
 			"hasToken": true
 		},
 		{
@@ -1221,7 +1177,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 253,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1304,7 +1262,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1320,6 +1277,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1328,7 +1286,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 253,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1397,7 +1357,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -1412,6 +1371,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1457,14 +1417,17 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D",
 				"T"
 			],
+			"damageTagsSpell": [
+				"B"
+			],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Duchess Brimskarda",
@@ -1510,19 +1473,21 @@
 				"Giant",
 				"Goblin"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"GI",
 				"GO"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Duke Zalto",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 184,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"L",
@@ -1611,7 +1576,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Siege Monster"
 			],
@@ -1634,6 +1598,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1642,7 +1607,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 248,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1711,7 +1678,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Parry"
 			],
@@ -1729,6 +1695,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1762,14 +1729,16 @@
 								"name": "Possession {@recharge}",
 								"entries": [
 									"One humanoid or giant that the ghost can see within 5 feet of it must succeed on a DC 13 Charisma saving throw or be possessed by the ghost; the ghost then disappears, and the target is {@condition incapacitated} and loses control of its body. The ghost now controls the body but doesn't deprive the target of awareness. The ghost can't be targeted by any attack, spell, or other effect, except ones that turn undead, and it retains its alignment, Intelligence, Wisdom, Charisma, and immunity to being {@condition charmed} and {@condition frightened}. It otherwise uses the possessed target's statistics, but doesn't gain access to the target's knowledge, class features, or proficiencies.",
-									"The possession lasts until the body drops to 0 hit points, the ghost ends it as a bonus action, or the ghost is turned or forced out by an effect like the dispel evil and good spell. When the possession ends, the ghost reappears in an unoccupied space within 5 feet of the body. The target is immune to this ghost's Possession for 24 hours after succeeding on the saving throw or after the possession ends. If a creature possessed by the ghost is forcibly removed from the Eye of Annam, the ghost is expelled from its host and re-forms in the middle of this room."
+									"The possession lasts until the body drops to 0 hit points, the ghost ends it as a bonus action, or the ghost is turned or forced out by an effect like the {@spell dispel evil and good} spell. When the possession ends, the ghost reappears in an unoccupied space within 5 feet of the body. The target is immune to this ghost's Possession for 24 hours after succeeding on the saving throw or after the possession ends. If a creature possessed by the ghost is forcibly removed from the Eye of Annam, the ghost is expelled from its host and re-forms in the middle of this room."
 								]
 							}
 						}
 					]
 				}
 			},
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"alignment": [
 				"N",
 				"G"
@@ -1782,7 +1751,6 @@
 				"Common",
 				"Giant"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Rejuvenation"
@@ -1790,7 +1758,8 @@
 			"languageTags": [
 				"C",
 				"GI"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Elister",
@@ -1849,14 +1818,18 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
 			"languageTags": [
 				"G",
 				"X"
-			]
+			],
+			"damageTagsSpell": [
+				"O",
+				"R"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Felbarren Dwarf",
@@ -1874,7 +1847,6 @@
 				"L",
 				"G"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1882,7 +1854,8 @@
 				"C",
 				"D",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Felgolos",
@@ -1902,6 +1875,7 @@
 					}
 				}
 			},
+			"damageTagsLegendary": [],
 			"hasToken": true
 		},
 		{
@@ -1909,7 +1883,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 255,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1998,7 +1974,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2015,6 +1990,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2078,18 +2054,20 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"OTH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Harshnag",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 120,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -2168,7 +2146,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -2192,6 +2169,7 @@
 			"conditionInflict": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2213,7 +2191,9 @@
 				"name": "Stone Golem",
 				"source": "MM"
 			},
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"hp": {
 				"average": 195,
 				"formula": "17d12 + 85"
@@ -2224,7 +2204,9 @@
 			"name": "Hulking Crab",
 			"source": "SKT",
 			"page": 240,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -2287,7 +2269,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -2307,6 +2288,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2340,11 +2322,11 @@
 				"Bothii",
 				"Common"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"OTH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Ice Spider",
@@ -2369,12 +2351,12 @@
 			"resist": [
 				"cold"
 			],
-			"hasToken": true,
 			"damageTags": [
 				"C",
 				"I",
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Ice Spider Queen",
@@ -2413,12 +2395,12 @@
 				"cold"
 			],
 			"cr": "2",
-			"hasToken": true,
 			"damageTags": [
 				"C",
 				"I",
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Imperator Uthor",
@@ -2463,7 +2445,6 @@
 				"average": 272,
 				"formula": "20d12 + 100"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
@@ -2474,7 +2455,8 @@
 				"RCH",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Isendraug",
@@ -2486,6 +2468,7 @@
 				"name": "Adult White Dragon",
 				"source": "MM"
 			},
+			"damageTagsLegendary": [],
 			"hasToken": true
 		},
 		{
@@ -2494,7 +2477,9 @@
 			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 241,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "dragon",
 			"alignment": [
 				"L",
@@ -2550,20 +2535,24 @@
 			"cr": "23",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
+					"name": "Spellcasting",
 					"headerEntries": [
-						"Iymrith's innate spellcasting ability is Charisma (spell save {@dc 20}). Iymrith's stone shape can create a living gargoyle instead of altering the stone as described in the spell description. She can innately cast the following spells, requiring no material components:"
+						"Iymrith casts one of the following spells, requiring no spell components and using Charisma as the spellcasting ability (spell save {@dc 20}):"
 					],
 					"daily": {
-						"1": [
-							"{@spell counterspell}",
+						"1e": [
 							"{@spell detect magic}",
+							"{@spell dispel magic}",
 							"{@spell ice storm}",
 							"{@spell stone shape}",
 							"{@spell teleport}"
 						]
 					},
-					"ability": "cha"
+					"footerEntries": [
+						"When she casts her {@spell stone shape} spell, Iymrith can shape the targeted stone into a living {@creature gargoyle} instead of altering the stone as described in the spell's description. This transformation is permanent and can't be reversed or dispelled."
+					],
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -2643,8 +2632,7 @@
 				"name": "Blue Dragon",
 				"source": "MM"
 			},
-			"dragonCastingColor": "U",
-			"hasToken": true,
+			"dragonCastingColor": "blue",
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -2653,8 +2641,10 @@
 				"SD"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Frightful Presence",
-				"Multiattack"
+				"Multiattack",
+				"Shapechanger"
 			],
 			"languageTags": [
 				"C",
@@ -2668,6 +2658,14 @@
 				"P",
 				"S"
 			],
+			"damageTagsLegendary": [
+				"B",
+				"L"
+			],
+			"damageTagsSpell": [
+				"B",
+				"C"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -2676,11 +2674,16 @@
 				"MW",
 				"RCH"
 			],
+			"conditionInflict": [
+				"frightened",
+				"prone"
+			],
 			"conditionInflictLegendary": [
 				"blinded",
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2688,7 +2691,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 165,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"N",
@@ -2738,32 +2743,19 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Jarl Storvald is a 9th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 16}, {@hit 8} to hit with spell attacks). He knows the following ranger spells:"
+						"Storvald casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability:"
 					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell hunter's mark}",
-								"{@spell jump}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell locate animals or plants}",
-								"{@spell locate object}"
-							]
-						},
-						"3": {
-							"slots": 2,
-							"spells": [
-								"{@spell water breathing}",
-								"{@spell water walk}"
-							]
-						}
+					"daily": {
+						"1e": [
+							"{@spell jump}",
+							"{@spell locate animals or plants}",
+							"{@spell locate object}",
+							"{@spell water breathing}",
+							"{@spell water walk}"
+						]
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"displayAs": "action"
 				}
 			],
 			"action": [
@@ -2792,7 +2784,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2814,6 +2805,10 @@
 				"RW",
 				"THW"
 			],
+			"conditionInflict": [
+				"restrained"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2870,7 +2865,6 @@
 					]
 				}
 			},
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2884,7 +2878,8 @@
 				"RNG",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Kaaltar",
@@ -2911,10 +2906,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"GI"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Kella Darkhope",
@@ -2980,18 +2975,20 @@
 				"Dwarvish",
 				"Elvish"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"E"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "King Hekaton",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 222,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -3105,7 +3102,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -3130,6 +3126,10 @@
 				"RCH",
 				"RW"
 			],
+			"conditionInflict": [
+				"deafened"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3138,7 +3138,9 @@
 			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 95,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "dragon",
 			"alignment": [
 				"C",
@@ -3192,92 +3194,39 @@
 			"cr": "25",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"Klauth's spellcasting ability is Charisma (spell save {@dc 22}). He can innately cast the following spells, requiring no material components:"
-					],
-					"daily": {
-						"1": [
-							"{@spell banishment}",
-							"{@spell etherealness}",
-							"{@spell find the path}",
-							"{@spell locate object}",
-							"{@spell prismatic spray}",
-							"{@spell suggestion}"
-						]
-					},
-					"ability": "cha"
-				},
-				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Klauth is a 14th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 20} {@hit 12} to hit with spell attacks). He has the following wizard spells prepared:"
+						"Klauth casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 22}):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell mage hand}",
-								"{@spell mending}",
-								"{@spell minor illusion}",
-								"{@spell prestidigitation}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell comprehend languages}",
-								"{@spell detect magic}",
-								"{@spell expeditious retreat}",
-								"{@spell identify}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell darkness}",
-								"{@spell detect thoughts}",
-								"{@spell Melf's acid arrow}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell clairvoyance}",
-								"{@spell haste}",
-								"{@spell nondetection}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell greater invisibility}",
-								"{@spell ice storm}",
-								"{@spell stoneskin}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell Bigby's hand}",
-								"{@spell cloudkill}",
-								"{@spell scrying}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell disintegrate}",
-								"{@spell mass suggestion}"
-							]
-						},
-						"7": {
-							"slots": 1,
-							"spells": [
-								"{@spell mirage arcane}"
-							]
-						}
+					"will": [
+						"{@spell comprehend languages}",
+						"{@spell detect magic}",
+						"{@spell mage hand}",
+						"{@spell minor illusion}",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell darkness}",
+							"{@spell detect thoughts}",
+							"{@spell ice storm}"
+						],
+						"1e": [
+							"{@spell banishment}",
+							"{@spell cloudkill}",
+							"{@spell disintegrate}",
+							"{@spell etherealness}",
+							"{@spell find the path} (cast as 1 action)",
+							"{@spell greater invisibility}",
+							"{@spell haste}",
+							"{@spell locate object}",
+							"{@spell mass suggestion}",
+							"{@spell mirage arcane} (cast as 1 action)",
+							"{@spell prismatic spray}"
+						]
 					},
-					"ability": "int"
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -3362,7 +3311,6 @@
 				"name": "Red Dragon",
 				"source": "MM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -3371,6 +3319,7 @@
 				"SD"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Frightful Presence",
 				"Multiattack"
 			],
@@ -3384,8 +3333,19 @@
 				"P",
 				"S"
 			],
+			"damageTagsLegendary": [
+				"F"
+			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"I",
+				"L",
+				"O"
+			],
 			"spellcastingTags": [
-				"CW",
 				"I"
 			],
 			"miscTags": [
@@ -3410,6 +3370,7 @@
 				"petrified",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3460,7 +3421,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -3472,14 +3432,17 @@
 			"damageTags": [
 				"B",
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Lifferlas",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 250,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "plant",
 			"alignment": [
 				"U"
@@ -3547,7 +3510,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance"
 			],
@@ -3564,6 +3526,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3573,7 +3536,9 @@
 			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 241,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "elemental",
 			"alignment": [
 				"C",
@@ -3635,14 +3600,12 @@
 			"cr": "23",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
+					"name": "Spellcasting",
 					"headerEntries": [
-						"Maegera's spell casting ability is Charisma. Maegera's can innately cast the following spell (spell save {@dc 19}), requiring no material components:"
+						"Maegera casts {@spell fireball} (spell save {@dc 19}), requiring no material components and using Charisma as the spellcasting ability."
 					],
-					"will": [
-						"{@spell fireball}"
-					],
-					"ability": "cha"
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -3711,7 +3674,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Illumination",
 				"Magic Resistance"
@@ -3729,6 +3691,9 @@
 				"B",
 				"F"
 			],
+			"damageTagsSpell": [
+				"F"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -3737,6 +3702,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3744,7 +3710,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 248,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3818,7 +3786,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3834,6 +3801,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3842,7 +3810,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 251,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3911,7 +3881,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -3924,6 +3893,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3959,12 +3929,12 @@
 				"perception": "+9",
 				"performance": "+9"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Morak Ur'gray",
@@ -3983,7 +3953,6 @@
 				"L",
 				"G"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -3991,7 +3960,8 @@
 				"C",
 				"D",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Narbeck Horn",
@@ -4027,7 +3997,6 @@
 			"alignment": [
 				"N"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4035,14 +4004,17 @@
 				"C",
 				"D",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Narth Tezrin",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 254,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4114,7 +4086,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D"
@@ -4127,6 +4098,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4135,7 +4107,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 252,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4185,41 +4159,22 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Naxene is a 6th level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 13}; {@hit 5} to hit with spell attacks). She has the following wizard spells prepared:"
+						"Naxene casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 13}; {@hit 5} to hit with spell attacks):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell fire bolt}",
-								"{@spell light}",
-								"{@spell mage hand}",
-								"{@spell prestidigitation}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell mage armor}",
-								"{@spell magic missile}",
-								"{@spell shield}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell misty step}",
-								"{@spell suggestion}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell fly}",
-								"{@spell lightning bolt}"
-							]
-						}
+					"will": [
+						"{@spell fire bolt} ({@damage 1d10} fire damage)",
+						"{@spell light}",
+						"{@spell mage hand}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell mage armor}",
+							"{@spell magic missile}",
+							"{@spell suggestion}"
+						]
 					},
-					"ability": "int"
+					"ability": "int",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -4241,7 +4196,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
@@ -4251,12 +4205,17 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"F",
+				"O"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4298,12 +4257,33 @@
 				"insight": "+9",
 				"perception": "+9"
 			},
-			"hasToken": true,
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The giant casts one of the following spells, requiring no material spell components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell levitate}",
+						"{@spell light}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell water breathing}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Noori",
@@ -4340,11 +4320,11 @@
 				"Bothii",
 				"Common"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"OTH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Nym",
@@ -4378,12 +4358,12 @@
 				"perception": "+9",
 				"performance": "+9"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Ogre Goblin Hucker",
@@ -4411,7 +4391,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 252,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4488,7 +4470,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"H"
@@ -4501,6 +4482,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4542,12 +4524,33 @@
 				"deception": "+14",
 				"perception": "+9"
 			},
-			"hasToken": true,
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The giant casts one of the following spells, requiring no material spell components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell levitate}",
+						"{@spell light}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell water breathing}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Orok",
@@ -4585,21 +4588,23 @@
 				"Bothii",
 				"Common"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics"
 			],
 			"languageTags": [
 				"C",
 				"OTH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Othovir",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 255,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4648,27 +4653,21 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Othovir is a 2nd-level spellcaster. His spellcasting ability is Charisma (spell save {@dc 13}; {@hit 5} to hit with spell attacks). He has the following sorcerer spells prepared:"
+						"Othovir casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 13}; {@hit 5} to hit with spell attacks):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell blade ward}",
-								"{@spell fire bolt}",
-								"{@spell mending}",
-								"{@spell prestidigitation}"
-							]
-						},
-						"1": {
-							"slots": 3,
-							"spells": [
-								"{@spell mage armor}",
-								"{@spell thunderwave}",
-								"{@spell witch bolt}"
-							]
-						}
+					"will": [
+						"{@spell fire bolt} ({@damage 1d10} fire damage)",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell mage armor}",
+							"{@spell thunderwave}",
+							"{@spell witch bolt}"
+						]
 					},
-					"ability": "cha"
+					"ability": "cha",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -4698,7 +4697,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Parry"
 			],
@@ -4709,12 +4707,18 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"T"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4736,9 +4740,9 @@
 			"cr": "0",
 			"trait": null,
 			"action": null,
-			"hasToken": true,
 			"traitTags": [],
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Pow Ming",
@@ -4837,19 +4841,21 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
 				"DR",
 				"E"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Purple Wormling",
 			"source": "SKT",
 			"page": 242,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -4902,7 +4908,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B",
 				"T"
@@ -4923,6 +4928,7 @@
 				"blinded",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4950,7 +4956,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4958,7 +4963,8 @@
 				"O",
 				"TC",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Sea Elf",
@@ -5002,7 +5008,6 @@
 				"Common",
 				"Elvish"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Fey Ancestry"
@@ -5013,7 +5018,8 @@
 			"languageTags": [
 				"C",
 				"E"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Serissa",
@@ -5066,11 +5072,11 @@
 				"average": 200,
 				"formula": "20d12 + 100"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"L"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shaldoor",
@@ -5110,19 +5116,42 @@
 				"athletics": "+14",
 				"perception": "+9"
 			},
-			"hasToken": true,
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The giant casts one of the following spells, requiring no material spell components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell levitate}",
+						"{@spell light}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell water breathing}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shalvus Martholio",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 250,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5200,7 +5229,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -5217,6 +5245,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5274,7 +5303,6 @@
 				"Common",
 				"Terran"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"T"
@@ -5284,7 +5312,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Sheep",
@@ -5306,7 +5335,9 @@
 					}
 				}
 			},
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"hp": {
 				"average": 3,
 				"formula": "1d6"
@@ -5315,9 +5346,9 @@
 				"walk": 30
 			},
 			"action": null,
-			"hasToken": true,
 			"traitTags": [],
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Shield Dwarf Guard",
@@ -5343,7 +5374,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -5357,7 +5387,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shield Dwarf Noble",
@@ -5377,13 +5408,12 @@
 			],
 			"action": [
 				{
-					"name": "Rapier",
+					"name": "Warhammer",
 					"entries": [
 						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) bludgeoning damage, or 6 ({@damage 1d10 + 1}) bludgeoning damage if used with two hands."
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -5397,14 +5427,17 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Sir Baric Nylef",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 249,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5480,7 +5513,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -5493,6 +5525,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5501,7 +5534,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 247,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5579,7 +5614,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Parry"
 			],
@@ -5595,6 +5629,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5604,7 +5639,9 @@
 			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 224,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -5676,82 +5713,36 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Slarkrethel is a 20th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 22}, {@hit 14} to hit with spell attacks). Slarkrethel has the following wizard spells prepared:"
+						"Slarkrethel casts one of the following spells, requiring no spell components and using Intelligence as the spellcasting ability (spell save {@dc 22}):"
 					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell comprehend languages}",
-								"{@spell detect magic}",
-								"{@spell identify}",
-								"{@spell sleep}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell blindness/deafness}",
-								"{@spell detect thoughts}",
-								"{@spell suggestion}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell fly}",
-								"{@spell nondetection}",
-								"{@spell sending}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell arcane eye}",
-								"{@spell ice storm}",
-								"{@spell locate creature}"
-							]
-						},
-						"5": {
-							"slots": 3,
-							"spells": [
-								"{@spell cloudkill}",
-								"{@spell scrying}",
-								"{@spell telekinesis}"
-							]
-						},
-						"6": {
-							"slots": 2,
-							"spells": [
-								"{@spell chain lightning}",
-								"{@spell flesh to stone}",
-								"{@spell mass suggestion}"
-							]
-						},
-						"7": {
-							"slots": 2,
-							"spells": [
-								"{@spell delayed blast fireball}",
-								"{@spell sequester}",
-								"{@spell teleport}"
-							]
-						},
-						"8": {
-							"slots": 1,
-							"spells": [
-								"{@spell control weather}",
-								"{@spell feeblemind}"
-							]
-						},
-						"9": {
-							"slots": 1,
-							"spells": [
-								"{@spell foresight}",
-								"{@spell power word kill}"
-							]
-						}
+					"will": [
+						"{@spell detect magic}",
+						"{@spell detect thoughts}",
+						"{@spell sending}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell fly}",
+							"{@spell ice storm}"
+						],
+						"1e": [
+							"{@spell arcane eye}",
+							"{@spell chain lightning}",
+							"{@spell feeblemind}",
+							"{@spell foresight}",
+							"{@spell locate creature}",
+							"{@spell mass suggestion}",
+							"{@spell nondetection}",
+							"{@spell power word kill}",
+							"{@spell scrying} (cast as 1 action)",
+							"{@spell sequester}",
+							"{@spell telekinesis}",
+							"{@spell teleport}"
+						]
 					},
-					"ability": "int"
+					"ability": "int",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -5770,7 +5761,7 @@
 				{
 					"name": "Freedom of Movement",
 					"entries": [
-						"Slarkrethel ignores difficult terrain, and magical effects can't reduce its speed or cause it to be {@condition restrained}. It can spend 5 feet of movement to escape from nonmagical restraints or being {@condition grappled}."
+						"Slarkrethel ignores {@quickref difficult terrain||3}, and magical effects can't reduce its speed or cause it to be {@condition restrained}. It can spend 5 feet of movement to escape from nonmagical restraints or being {@condition grappled}."
 					]
 				},
 				{
@@ -5836,7 +5827,6 @@
 				"name": "Kraken",
 				"source": "MM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Legendary Resistances",
@@ -5865,8 +5855,14 @@
 				"L",
 				"P"
 			],
-			"spellcastingTags": [
-				"CW"
+			"damageTagsLegendary": [
+				"L"
+			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"L",
+				"Y"
 			],
 			"miscTags": [
 				"AOE",
@@ -5888,6 +5884,7 @@
 				"restrained",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5906,7 +5903,9 @@
 					}
 				}
 			},
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"hp": {
 				"average": 195,
 				"formula": "17d12 + 85"
@@ -5914,10 +5913,10 @@
 			"languages": null,
 			"cr": "0",
 			"action": null,
-			"hasToken": true,
 			"actionTags": [],
 			"languageTags": [],
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Tartha",
@@ -5992,7 +5991,6 @@
 				"Common",
 				"Terran"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"T"
@@ -6002,14 +6000,17 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Thane Kayalithica",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 153,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"N",
@@ -6053,6 +6054,25 @@
 				"Giant"
 			],
 			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"headerEntries": [
+						"The giant's innate spellcasting ability is Wisdom. It can innately cast the following spells, requiring no material components:"
+					],
+					"daily": {
+						"3e": [
+							"{@spell meld into stone}",
+							"{@spell stone shape}"
+						],
+						"1e": [
+							"{@spell stoneskin}",
+							"{@spell time stop}"
+						]
+					},
+					"ability": "wis"
+				}
+			],
 			"trait": [
 				{
 					"name": "Stone Camouflage",
@@ -6063,9 +6083,7 @@
 				{
 					"name": "Olach Morrah",
 					"entries": [
-						"The giant meditates for 1 hour, during which time it can do nothing else. At the end of the hour, provided the giant's meditation has been uninterrupted, it becomes {@condition petrified} for 8 hours. At the end of this time, the giant is no longer {@condition petrified} and gains tremorsense out to a range of 30 feet, as well as a measure of innate spellcasting ability based on Wisdom. For the next 24 hours, it can innately cast the following spells, requiring no material components:",
-						"3/day: meld into stone, stone shape",
-						"1/day: stoneskin, time stop"
+						"The giant meditates for 1 hour, during which time it can do nothing else. At the end of the hour, provided the giant's meditation has been uninterrupted, it becomes {@condition petrified} for 8 hours. At the end of this time, the giant is no longer {@condition petrified} and gains tremorsense out to a range of 30 feet, as well as a measure of innate spellcasting ability for the next 24 hours."
 					]
 				}
 			],
@@ -6109,7 +6127,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -6122,6 +6139,9 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"B"
+			],
 			"miscTags": [
 				"AOE",
 				"MW",
@@ -6131,6 +6151,10 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"conditionInflictSpell": [
+				"prone"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6184,7 +6208,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -6197,7 +6220,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Tholtz Daggerdark",
@@ -6231,7 +6255,9 @@
 			"name": "Thunderbeast Skeleton",
 			"source": "SKT",
 			"page": 99,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "undead",
 			"alignment": [
 				"U"
@@ -6286,7 +6312,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -6300,17 +6325,24 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Tressym",
 			"source": "SKT",
 			"page": 242,
-			"size": "T",
-			"type": "beast",
+			"otherSources": [
+				{
+					"source": "IMR"
+				}
+			],
+			"size": [
+				"T"
+			],
+			"type": "monstrosity",
 			"alignment": [
-				"C",
-				"N"
+				"A"
 			],
 			"ac": [
 				12
@@ -6370,7 +6402,7 @@
 				{
 					"name": "Familiar",
 					"entries": [
-						"With the DM's permission, a person who casts the find familiar spell can choose to conjure a tressym in stead of a normal cat."
+						"With the DM's permission, a person who casts the {@spell find familiar} spell can choose to conjure a tressym in stead of a normal cat."
 					]
 				}
 			],
@@ -6383,7 +6415,6 @@
 				}
 			],
 			"familiar": true,
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -6400,6 +6431,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6446,68 +6478,47 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Turlang is a 9th-level spellcaster. His spellcasting ability is Wisdom (spell save {@dc 15}, {@hit 7} to hit with spell attacks). Turlang has the following druid spells prepared:"
+						"Turlang casts one of the following spells, requiring no material spell components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell druidcraft}",
-								"{@spell guidance}",
-								"{@spell resistance}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell detect magic}",
-								"{@spell entangle}",
-								"{@spell goodberry}",
-								"{@spell speak with animals}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell animal messenger}",
-								"{@spell gust of wind}",
-								"{@spell pass without trace}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell plant growth}",
-								"{@spell speak with plants}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell conjure woodland beings}",
-								"{@spell hallucinatory terrain}"
-							]
-						},
-						"5": {
-							"slots": 1,
-							"spells": [
-								"{@spell commune with nature}"
-							]
-						}
+					"will": [
+						"{@spell druidcraft}",
+						"{@spell guidance}",
+						"{@spell resistance}",
+						"{@spell speak with plants}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell animal messenger}",
+							"{@spell detect magic}",
+							"{@spell entangle}",
+							"{@spell goodberry}",
+							"{@spell gust of wind}",
+							"{@spell pass without trace}",
+							"{@spell speak with animals}"
+						],
+						"1e": [
+							"{@spell commune with nature} (cast as 1 action)",
+							"{@spell conjure woodland beings}",
+							"{@spell hallucinatory terrain} (cast as 1 action)"
+						]
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"displayAs": "action"
 				}
 			],
-			"hasToken": true,
 			"spellcastingTags": [
-				"CD"
-			]
+				"I"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Urgala Meltimer",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 254,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6588,7 +6599,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -6604,6 +6614,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6655,7 +6666,6 @@
 				"Common",
 				"Elvish"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"E",
@@ -6668,13 +6678,16 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Uthgardt Shaman",
 			"source": "SKT",
 			"page": 243,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6682,8 +6695,7 @@
 				]
 			},
 			"alignment": [
-				"N",
-				"E"
+				"A"
 			],
 			"ac": [
 				{
@@ -6720,29 +6732,28 @@
 			"cr": "2",
 			"spellcasting": [
 				{
-					"name": "Innate Spellcasting",
+					"name": "Spellcasting (Requires a Sacred Bundle)",
 					"headerEntries": [
-						"The shaman can innately cast the following spells. Its spellcasting ability is Wisdom (spell save {@dc 12}, {@hit 4} to hit with spell attacks)."
+						"The shaman casts one of the following spells, using Wisdom as the spellcasting ability (spell save {@dc 12}; {@hit 4} to hit with spell attacks):"
 					],
 					"will": [
 						"{@spell dancing lights}",
-						"{@spell message}",
 						"{@spell mage hand}",
+						"{@spell message}",
 						"{@spell thaumaturgy}"
 					],
 					"daily": {
-						"1": [
-							"{@spell augury}",
+						"1e": [
+							"{@spell augury} (cast as 1 action)",
 							"{@spell bestow curse}",
 							"{@spell cordon of arrows}",
 							"{@spell detect magic}",
-							"{@spell hex}",
-							"{@spell prayer of healing}",
 							"{@spell speak with dead}",
 							"{@spell spirit guardians}"
 						]
 					},
-					"ability": "wis"
+					"ability": "wis",
+					"displayAs": "action"
 				}
 			],
 			"action": [
@@ -6759,13 +6770,17 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"OTH"
 			],
 			"damageTags": [
 				"P"
+			],
+			"damageTagsSpell": [
+				"N",
+				"P",
+				"R"
 			],
 			"spellcastingTags": [
 				"I"
@@ -6776,8 +6791,178 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Uthgardt Shaman (Black Lion)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell chill touch}",
+									"{@spell feign death}",
+									"{@spell revivify}"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Black Raven)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell animal messenger} (raven only)",
+									"{@spell polymorph} (self only; into a raven only)"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Blue Bear)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell enhance ability} (bear's endurance only)",
+									"{@spell heroism}"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Elk)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell find steed} (cast as 1 action; elk only)",
+									"{@spell haste}"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Gray Wolf)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell beast sense} (wolf or dire wolf only)",
+									"{@spell moonbeam}",
+									"{@spell speak with animals} (wolf or dire wolf only)"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Great Worm)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell crusader's mantle}",
+									"{@spell hypnotic pattern}"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Griffon)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell beast sense} (birds only)",
+									"{@spell fly}"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Red Tiger)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell enhance ability} (cat's grace only)",
+									"{@spell jump}"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Sky Pony)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell gust of wind}",
+									"{@spell witch bolt}"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Thunderbeast)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell enhance ability} (bull's strength only)",
+									"{@spell pass without trace}"
+								]
+							}
+						}
+					}
+				},
+				{
+					"name": "Uthgardt Shaman (Tree Ghost)",
+					"source": "SKT",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell barkskin}",
+									"{@spell speak with plants}"
+								]
+							}
+						}
+					}
+				}
+			]
 		},
 		{
 			"name": "Vaal",
@@ -6836,15 +7021,36 @@
 				"perception": "+9",
 				"survival": "+9"
 			},
-			"hasToken": true,
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The giant casts one of the following spells, requiring no material spell components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell levitate}",
+						"{@spell light}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell control weather} (cast as 1 action)",
+							"{@spell water breathing}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
 			"damageTags": [
 				"B",
 				"L",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
-			"name": "Wiri Feagol",
+			"name": "Wiri Fleagol",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 176,
@@ -6860,7 +7066,6 @@
 				"C",
 				"G"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -6868,7 +7073,8 @@
 				"C",
 				"G",
 				"X"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Wood Elf",
@@ -6897,7 +7103,6 @@
 				"Common",
 				"Elvish"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Keen Senses"
@@ -6908,7 +7113,8 @@
 			"languageTags": [
 				"C",
 				"E"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Xolkin Alassandar",
@@ -6960,7 +7166,9 @@
 			"name": "Yakfolk Priest",
 			"source": "SKT",
 			"page": 245,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -7073,11 +7281,10 @@
 				{
 					"name": "Summon Earth Elemental (1/Day)",
 					"entries": [
-						"The yakfolk summons an earth elemental. The elemental appears in an unoccupied space within 60 feet of its summoner and acts as an ally of the summoner. It remains for 10 minutes, until it dies, or until its summoner dismisses it as an action."
+						"The yakfolk summons an {@creature earth elemental}. The elemental appears in an unoccupied space within 60 feet of its summoner and acts as an ally of the summoner. It remains for 10 minutes, until it dies, or until its summoner dismisses it as an action."
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7087,6 +7294,11 @@
 			],
 			"damageTags": [
 				"B"
+			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"R"
 			],
 			"spellcastingTags": [
 				"CC"
@@ -7102,13 +7314,16 @@
 				"paralyzed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Yakfolk Warrior",
 			"source": "SKT",
 			"page": 244,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -7174,7 +7389,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7194,6 +7408,7 @@
 			"conditionInflict": [
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7217,41 +7432,6 @@
 				"Common",
 				"Giant"
 			],
-			"spellcasting": [
-				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"The giant's innate spellcasting ability is Charisma. It can innately cast the following spells, requiring no material components:"
-					],
-					"will": [
-						"{@spell detect magic}",
-						"{@spell fog cloud}",
-						"{@spell light}"
-					],
-					"daily": {
-						"3e": [
-							"{@spell feather fall}",
-							"{@spell fly}",
-							"{@spell misty step}",
-							"{@spell telekinesis}"
-						],
-						"1e": [
-							"{@spell control weather}",
-							"{@spell gaseous form}"
-						]
-					},
-					"ability": "cha"
-				}
-			],
-			"trait": [
-				{
-					"name": "Keen Smell",
-					"entries": [
-						"The giant has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
-					]
-				}
-			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -7261,14 +7441,17 @@
 			],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zaltember",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 180,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"L",
@@ -7318,7 +7501,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"GI"
@@ -7331,14 +7513,17 @@
 				"MW",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zephyros",
 			"isNpc": true,
 			"source": "SKT",
 			"page": 33,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"N",
@@ -7408,66 +7593,32 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Zephyros is a 12th-level spellcaster. his spellcasting ability is Intelligence (spell save {@dc 17}; {@hit 11} to hit with spell attacks). He has the following wizard spells prepared:"
+						"Zephyros casts one of the following spells, requiring no material components and using Intelligence as the spellcasting ability (spell save {@dc 17}, {@hit 11} to hit with spell attacks):"
 					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell mending}",
-								"{@spell message}",
-								"{@spell prestidigitation}",
-								"{@spell ray of frost}",
-								"{@spell shocking grasp}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell charm person}",
-								"{@spell comprehend languages}",
-								"{@spell magic missile}",
-								"{@spell shield}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell crown of madness}",
-								"{@spell gust of wind}",
-								"{@spell levitate}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell nondetection}",
-								"{@spell protection from energy}",
-								"{@spell tongues}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell conjure minor elementals}",
-								"{@spell greater invisibility}",
-								"{@spell Otiluke's resilient sphere}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell cone of cold}",
-								"{@spell contact other plane}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell mass suggestion}"
-							]
-						}
+					"will": [
+						"{@spell message}",
+						"{@spell prestidigitation}",
+						"{@spell ray of frost}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell gust of wind}",
+							"{@spell levitate}",
+							"{@spell magic missile}"
+						],
+						"1e": [
+							"{@spell cone of cold}",
+							"{@spell contact other plane} (cast as 1 action)",
+							"{@spell greater invisibility}",
+							"{@spell mass suggestion}",
+							"{@spell nondetection}",
+							"{@spell Otiluke's resilient sphere}",
+							"{@spell protection from energy}",
+							"{@spell tongues}"
+						]
 					},
-					"ability": "int"
+					"ability": "int",
+					"displayAs": "action"
 				}
 			],
 			"trait": [
@@ -7510,7 +7661,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -7523,6 +7673,11 @@
 			],
 			"damageTags": [
 				"B"
+			],
+			"damageTagsSpell": [
+				"C",
+				"O",
+				"Y"
 			],
 			"spellcastingTags": [
 				"CW",
@@ -7542,6 +7697,7 @@
 				"invisible",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7550,7 +7706,9 @@
 			"isNpc": true,
 			"source": "SKT",
 			"page": 251,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -7629,7 +7787,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7646,6 +7803,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

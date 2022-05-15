@@ -5,6 +5,7 @@
 			"source": "DMG",
 			"page": 141,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -13,7 +14,7 @@
 			],
 			"entries": [
 				"Activating some magic items requires a user to do something in particular, such as holding the item and uttering a command word, reading the item if it is a scroll, or drinking it if it is a potion. The description of each item category or individual item details how an item is activated. Certain items use one or more of the following rules related to their activation.",
-				"If an item requires an action to activate, that action isn't a function of the {@action Use an Object} action, so a feature such as the rogue's  {@subclassFeature Fast Hands|Rogue||Thief||3} can't be used to activate the item.",
+				"If an item requires an action to activate, that action isn't a function of the {@action Use an Object} action, so a feature such as the rogue's {@subclassFeature Fast Hands|Rogue||Thief||3} can't be used to activate the item.",
 				{
 					"type": "entries",
 					"name": "Command Word",
@@ -51,6 +52,7 @@
 			"source": "PHB",
 			"page": 192,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -76,6 +78,7 @@
 			"source": "PHB",
 			"page": 192,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				"Varies"
 			],
@@ -95,9 +98,9 @@
 				}
 			],
 			"entries": [
-				"If one creature wants to jump onto another creature, it can do so by grappling. A small or Medium creature has little chance of making a successful grapple against a Huge or Gargantuan creature, however, unless magic has granted the grappler supernatural might.",
+				"If one creature wants to jump onto another creature, it can do so by {@action grapple||grappling}. A small or Medium creature has little chance of making a successful grapple against a Huge or Gargantuan creature, however, unless magic has granted the grappler supernatural might.",
 				"As an alternative, a suitably large opponent can be treated as terrain for the purpose of jumping onto its back or clinging to a limb. After making any ability checks necessary to get into position and onto the larger creature, the smaller creature uses its action to make a Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check contested by the target's Dexterity ({@skill Acrobatics}) check. If it wins the contest, the smaller creature successfully moves into the target creature's space, the smaller creature moves with the target and has advantage on attack rolls against it.",
-				"The smaller creature can move around within the larger creature's space, treating the space as difficult terrain. The larger creature's ability to attack the smaller creature depends on the smaller creature's location, and is left to your discretion. The larger creature can dislodge the smaller creature as an action\u2014knocking it off, scraping it against a wall, or grabbing and throwing it\u2014by making a Strength ({@skill Athletics}) check contested by the smaller creature's Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check. The smaller creature chooses which ability to use."
+				"The smaller creature can move around within the larger creature's space, treating the space as {@quickref difficult terrain||3}. The larger creature's ability to attack the smaller creature depends on the smaller creature's location, and is left to your discretion. The larger creature can dislodge the smaller creature as an action\u2014knocking it off, scraping it against a wall, or grabbing and throwing it\u2014by making a Strength ({@skill Athletics}) check contested by the smaller creature's Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check. The smaller creature chooses which ability to use."
 			]
 		},
 		{
@@ -105,6 +108,7 @@
 			"source": "PHB",
 			"page": 192,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -140,6 +144,7 @@
 			"source": "PHB",
 			"page": 192,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -155,6 +160,7 @@
 			"source": "PHB",
 			"page": 192,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -170,6 +176,7 @@
 			"source": "PHB",
 			"page": 146,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -185,6 +192,7 @@
 			"source": "PHB",
 			"page": 203,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				"Free"
 			],
@@ -197,6 +205,7 @@
 			"source": "PHB",
 			"page": 195,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -215,6 +224,7 @@
 			"source": "PHB",
 			"page": 195,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -257,6 +267,7 @@
 			"source": "PHB",
 			"page": 192,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -273,6 +284,7 @@
 			"source": "PHB",
 			"page": 192,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -308,6 +320,7 @@
 			"name": "Improvising an Action",
 			"source": "PHB",
 			"page": 193,
+			"basicRules": true,
 			"time": [
 				"Varies"
 			],
@@ -334,6 +347,7 @@
 			"source": "PHB",
 			"page": 195,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -351,6 +365,7 @@
 			"source": "PHB",
 			"page": 190,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				"Varies"
 			],
@@ -422,6 +437,7 @@
 			"source": "PHB",
 			"page": 193,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -440,6 +456,8 @@
 			"name": "Search",
 			"source": "PHB",
 			"page": 193,
+			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -455,6 +473,7 @@
 			"source": "PHB",
 			"page": 195,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -512,6 +531,7 @@
 			"source": "PHB",
 			"page": 195,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -531,6 +551,7 @@
 			"source": "PHB",
 			"page": 193,
 			"srd": true,
+			"basicRules": true,
 			"time": [
 				{
 					"number": 1,
@@ -539,6 +560,21 @@
 			],
 			"entries": [
 				"You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn."
+			]
+		},
+		{
+			"name": "Waking Someone",
+			"source": "XGE",
+			"page": 77,
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"entries": [
+				"A creature that is naturally sleeping, as opposed to being in a magically or chemically induced sleep, wakes up if it takes any damage or if someone else uses an action to shake or slap the creature awake. A sudden loud noise\u2014such as yelling, thunder, or a ringing bell\u2014also awakens someone that is sleeping naturally.",
+				"Whispers don't disturb sleep, unless a sleeper's passive Wisdom ({@skill Perception}) score is 20 or higher and the whispers are within 10 feet of the sleeper. Speech at a normal volume awakens a sleeper if the environment is otherwise silent (no wind, birdsong, crickets, street sounds, or the like) and the sleeper has a passive Wisdom ({@skill Perception}) score of 15 or higher."
 			]
 		}
 	]

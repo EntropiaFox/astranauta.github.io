@@ -1,9 +1,5 @@
 "use strict";
 
-function filterTypeSort (a, b) {
-	return SortUtil.ascSortLower(Parser.trapHazTypeToFull(a.item), Parser.trapHazTypeToFull(b.item));
-}
-
 class TrapsHazardsPage extends ListPage {
 	constructor () {
 		const pageFilter = new PageFilterTrapsHazards();
@@ -24,7 +20,7 @@ class TrapsHazardsPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
@@ -33,7 +29,7 @@ class TrapsHazardsPage extends ListPage {
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-3 pl-0 text-center">${trapType}</span>
 			<span class="bold col-7">${it.name}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil2.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -46,7 +42,6 @@ class TrapsHazardsPage extends ListPage {
 				trapType,
 			},
 			{
-				uniqueId: it.uniqueId ? it.uniqueId : thI,
 				isExcluded,
 			},
 		);
@@ -63,11 +58,11 @@ class TrapsHazardsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (it, pinId) {
+	pGetSublistItem (it, ix) {
 		const hash = UrlUtil.autoEncodeHash(it);
 		const trapType = Parser.trapHazTypeToFull(it.trapHazType);
 
-		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="col-4 text-center pl-0">${trapType}</span>
 				<span class="bold col-8 pr-0">${it.name}</span>
@@ -77,7 +72,7 @@ class TrapsHazardsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			it.name,
 			{
@@ -92,16 +87,10 @@ class TrapsHazardsPage extends ListPage {
 		Renderer.get().setFirstSection(true);
 		const it = this._dataList[id];
 
-		$(`#pagecontent`).empty().append(RenderTrapsHazards.$getRenderedTrapHazard(it));
+		this._$pgContent.empty().append(RenderTrapsHazards.$getRenderedTrapHazard(it));
 
 		ListUtil.updateSelected();
 	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
-	}
-
 	_getSearchCache (entity) {
 		if (!entity.effect && !entity.trigger && !entity.countermeasures && !entity.entries) return "";
 		const ptrOut = {_: ""};

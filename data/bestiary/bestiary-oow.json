@@ -32,6 +32,7 @@
 		{
 			"name": "Dagdra Deepforge",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 145,
 			"_copy": {
@@ -67,11 +68,11 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"D",
 				"X"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -79,6 +80,7 @@
 			"name": "Devil Dog",
 			"shortName": true,
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 85,
 			"_copy": {
@@ -105,6 +107,10 @@
 				"C",
 				"I",
 				"X"
+			],
+			"damageTagsSpell": [
+				"F",
+				"R"
 			],
 			"spellcastingTags": [
 				"CC",
@@ -142,7 +148,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B"
 			],
@@ -150,11 +155,13 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Gildha Duhn",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 110,
 			"_copy": {
@@ -182,6 +189,7 @@
 		{
 			"name": "Grunka",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 115,
 			"_copy": {
@@ -221,6 +229,7 @@
 		{
 			"name": "Jelayne",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 84,
 			"_copy": {
@@ -260,6 +269,7 @@
 		{
 			"name": "Onyx",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 186,
 			"_copy": {
@@ -285,7 +295,9 @@
 					}
 				}
 			},
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"speed": {
 				"walk": 400,
 				"climb": 200
@@ -503,6 +515,7 @@
 			"name": "Two Dry Cloaks",
 			"shortName": true,
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "OoW",
 			"page": 162,
 			"_copy": {
@@ -521,11 +534,11 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"damageTags": [
 				"P",
 				"S"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -543,7 +556,8 @@
 			],
 			"conditionImmune": [
 				"poisoned"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

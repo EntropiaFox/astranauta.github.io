@@ -33,7 +33,7 @@
 						"2nd",
 						"3rd"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							2,
 							0,
@@ -105,7 +105,7 @@
 			"classSource": "UAPrestigeClassesRunMagic",
 			"level": 1,
 			"entries": [
-				"Runes can make use of your own magical power to augment some of their effects. You gain a number of spell slots as specified on the Rune Scribe table, but this prestige class does not grant spells known. Instead, as a rune scribe, you can expend your spell slots to empower runes, as described in the \" {@variantrule Rune Magic|UAPrestigeClassesRunMagic}\" section. For the purpose of multiclassing, to determine your total spell slots, add your levels in rune scribe to your levels in classes that grant you the Spellcasting feature. For example, if you are a rune scribe 4/wizard 6, you would have the spell slots of a 10th-level character, in addition to having the cantrips and spellbook of a 6th-level wizard."
+				"Runes can make use of your own magical power to augment some of their effects. You gain a number of spell slots as specified on the Rune Scribe table, but this prestige class does not grant spells known. Instead, as a rune scribe, you can expend your spell slots to empower runes, as described in the \"{@variantrule Rune Magic|UAPrestigeClassesRunMagic}\" section. For the purpose of multiclassing, to determine your total spell slots, add your levels in rune scribe to your levels in classes that grant you the Spellcasting feature. For example, if you are a rune scribe 4/wizard 6, you would have the spell slots of a 10th-level character, in addition to having the cantrips and spellbook of a 6th-level wizard."
 			]
 		},
 		{

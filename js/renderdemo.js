@@ -6,7 +6,7 @@ const STORAGE_LOCATION = "demoInput";
 window.addEventListener("load", async () => {
 	const rendererType = await StorageUtil.pGetForPage("renderer");
 	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
-	BrewUtil.pAddBrewData(); // don't await, as this is only used for tags
+	BrewUtil2.pGetBrewProcessed(); // don't await, as this is only used for tags
 	const data = await DataUtil.loadJSON(JSON_URL);
 	return initDemo(data, rendererType);
 });
@@ -65,7 +65,7 @@ async function initDemo (data, rendererType) {
 		} catch (e) {
 			$msg.html(`Invalid JSON! We recommend using <a href="https://jsonlint.com/" target="_blank" rel="noopener noreferrer">JSONLint</a>.`);
 			setTimeout(() => {
-				throw e
+				throw e;
 			});
 		}
 
@@ -76,7 +76,7 @@ async function initDemo (data, rendererType) {
 			<tr><th class="border" colspan="6"></th></tr>
 			<tr class="text"><td colspan="6">${renderStack.join("")}</td></tr>
 			<tr><th class="border" colspan="6"></th></tr>
-		`)
+		`);
 	}
 
 	function demoReset () {

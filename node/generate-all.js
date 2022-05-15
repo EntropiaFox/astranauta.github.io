@@ -4,6 +4,8 @@ async function main () {
 	require("./generate-quick-reference");
 	await require("./generate-tables-data");
 	require("./generate-subclass-lookup");
+	require("./generate-nav-adventure-book-index");
+	require("./generate-all-maps");
 	// require("./generate-wotc-homebrew"); // unused
 }
 

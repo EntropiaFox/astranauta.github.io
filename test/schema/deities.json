@@ -1,9 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "deities.json",
-	"version": "1.1.4",
+	"version": "1.2.3",
 	"type": "object",
-
 	"definitions": {
 		"deityData": {
 			"type": "object",
@@ -17,8 +16,7 @@
 				"alignment": {
 					"type": "array",
 					"items": {
-						"type": "string",
-						"enum": ["C", "N", "G", "L", "E"]
+						"$ref": "util.json#/definitions/alignment"
 					}
 				},
 				"title": {
@@ -47,7 +45,8 @@
 						"Gnome",
 						"Duergar",
 						"Exandria",
-						"Theros"
+						"Theros",
+						"Unknown"
 					]
 				},
 				"category": {
@@ -58,20 +57,30 @@
 					"items": {
 						"type": "string",
 						"enum": [
-							"Arcana", "Death", "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War", "Forge", "Grave", "Order", "Peace", "Twilight"
+							"Arcana",
+							"Death",
+							"Knowledge",
+							"Life",
+							"Light",
+							"Nature",
+							"Tempest",
+							"Trickery",
+							"War",
+							"Forge",
+							"Grave",
+							"Order",
+							"Peace",
+							"Twilight",
+							"Unknown"
 						]
 					}
 				},
 				"province": {
-					"description": "The nouveau form of 'title,' first seen in MTF",
+					"description": "The nouveau form of \"title\", first seen in MTF",
 					"type": "string"
 				},
 				"symbol": {
 					"type": "string"
-				},
-				"customProperties": {
-					"description": "For homebrew use only; a key-value dict of the form: `\"Typical Worshipers\": \"Half-elf Bards\"`",
-					"type": "object"
 				},
 				"source": {
 					"type": "string"
@@ -83,7 +92,7 @@
 					}
 				},
 				"page": {
-					"type": "integer"
+					"$ref": "util.json#/definitions/page"
 				},
 				"additionalSources": {
 					"$ref": "util.json#/definitions/additionalSources"
@@ -100,46 +109,326 @@
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
 				},
-				"customExtensionOf": {
-					"type": "string"
+				"basicRules": {
+					"$ref": "util.json#/definitions/basicRules"
 				},
-				"piety": {"type": "boolean"}
+				"customExtensionOf": {
+					"type": "string",
+					"description": "A UID of an existing deity that this deity extends. e.g. \"Bahgtru|Orc|SCAG\""
+				},
+				"piety": {
+					"type": "boolean"
+				}
 			},
 			"additionalProperties": false
 		},
-
 		"deity": {
 			"anyOf": [
 				{
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/deityData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
-							"required": [
-								"name",
-								"pantheon",
-								"source"
+						"reprintAlias": {
+							"type": "string"
+						},
+						"alignment": {
+							"type": "array",
+							"items": {
+								"$ref": "util.json#/definitions/alignment"
+							}
+						},
+						"title": {
+							"type": "string"
+						},
+						"pantheon": {
+							"type": "string",
+							"enum": [
+								"Celtic",
+								"Dawn War",
+								"Dragonlance",
+								"Drow",
+								"Dwarven",
+								"Eberron",
+								"Egyptian",
+								"Elven",
+								"Faerûnian",
+								"Forgotten Realms",
+								"Gnomish",
+								"Greek",
+								"Greyhawk",
+								"Halfling",
+								"Nonhuman",
+								"Norse",
+								"Orc",
+								"Gnome",
+								"Duergar",
+								"Exandria",
+								"Theros",
+								"Unknown"
 							]
+						},
+						"category": {
+							"type": "string"
+						},
+						"domains": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"enum": [
+									"Arcana",
+									"Death",
+									"Knowledge",
+									"Life",
+									"Light",
+									"Nature",
+									"Tempest",
+									"Trickery",
+									"War",
+									"Forge",
+									"Grave",
+									"Order",
+									"Peace",
+									"Twilight",
+									"Unknown"
+								]
+							}
+						},
+						"province": {
+							"description": "The nouveau form of \"title\", first seen in MTF",
+							"type": "string"
+						},
+						"symbol": {
+							"type": "string"
+						},
+						"source": {
+							"type": "string"
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"page": {
+							"$ref": "util.json#/definitions/page"
+						},
+						"additionalSources": {
+							"$ref": "util.json#/definitions/additionalSources"
+						},
+						"altNames": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"symbolImg": {
+							"$ref": "entry.json#/definitions/entryImage"
+						},
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
+						},
+						"customExtensionOf": {
+							"type": "string",
+							"description": "A UID of an existing deity that this deity extends. e.g. \"Bahgtru|Orc|SCAG\""
+						},
+						"piety": {
+							"type": "boolean"
 						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"name",
+						"pantheon",
+						"source"
 					]
 				},
 				{
 					"type": "object",
-					"$$merge": [
-						{
-							"$ref": "#/definitions/deityData"
+					"properties": {
+						"name": {
+							"type": "string"
 						},
-						{
-							"$ref": "util.json#/definitions/copyBlock"
+						"reprintAlias": {
+							"type": "string"
+						},
+						"alignment": {
+							"type": "array",
+							"items": {
+								"$ref": "util.json#/definitions/alignment"
+							}
+						},
+						"title": {
+							"type": "string"
+						},
+						"pantheon": {
+							"type": "string",
+							"enum": [
+								"Celtic",
+								"Dawn War",
+								"Dragonlance",
+								"Drow",
+								"Dwarven",
+								"Eberron",
+								"Egyptian",
+								"Elven",
+								"Faerûnian",
+								"Forgotten Realms",
+								"Gnomish",
+								"Greek",
+								"Greyhawk",
+								"Halfling",
+								"Nonhuman",
+								"Norse",
+								"Orc",
+								"Gnome",
+								"Duergar",
+								"Exandria",
+								"Theros",
+								"Unknown"
+							]
+						},
+						"category": {
+							"type": "string"
+						},
+						"domains": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"enum": [
+									"Arcana",
+									"Death",
+									"Knowledge",
+									"Life",
+									"Light",
+									"Nature",
+									"Tempest",
+									"Trickery",
+									"War",
+									"Forge",
+									"Grave",
+									"Order",
+									"Peace",
+									"Twilight",
+									"Unknown"
+								]
+							}
+						},
+						"province": {
+							"description": "The nouveau form of \"title\", first seen in MTF",
+							"type": "string"
+						},
+						"symbol": {
+							"type": "string"
+						},
+						"source": {
+							"type": "string"
+						},
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						},
+						"page": {
+							"$ref": "util.json#/definitions/page"
+						},
+						"additionalSources": {
+							"$ref": "util.json#/definitions/additionalSources"
+						},
+						"altNames": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"symbolImg": {
+							"$ref": "entry.json#/definitions/entryImage"
+						},
+						"srd": {
+							"$ref": "util.json#/definitions/srd"
+						},
+						"basicRules": {
+							"$ref": "util.json#/definitions/basicRules"
+						},
+						"customExtensionOf": {
+							"type": "string",
+							"description": "A UID of an existing deity that this deity extends. e.g. \"Bahgtru|Orc|SCAG\""
+						},
+						"piety": {
+							"type": "boolean"
+						},
+						"_copy": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"pantheon": {
+									"description": "Used in deity data",
+									"type": "string"
+								},
+								"shortName": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"className": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"classSource": {
+									"description": "Used in subclass data",
+									"type": "string"
+								},
+								"_mod": {
+									"$ref": "util.json#/definitions/_modObject"
+								},
+								"_trait": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"source": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"name",
+										"source"
+									]
+								},
+								"_preserve": {
+									"type": "object",
+									"patternProperties": {
+										".*": {
+											"type": "boolean"
+										}
+									}
+								}
+							},
+							"required": [
+								"name",
+								"source"
+							],
+							"additionalProperties": false
 						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"_copy"
 					]
 				}
 			]
 		}
 	},
-
 	"properties": {
 		"deity": {
 			"type": "array",

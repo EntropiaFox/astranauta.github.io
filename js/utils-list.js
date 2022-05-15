@@ -18,10 +18,10 @@ const ListUtil = {
 		if (listOpts.isBindFindHotkey && !ListUtil._isFindHotkeyBound) {
 			helpText.push(`Hotkey: f.`);
 
-			$(document.body).on("keypress", (e) => {
-				if (!EventUtil.noModifierKeys(e) || EventUtil.isInInput(e)) return;
-				if (e.key === "f") {
-					e.preventDefault();
+			$(document.body).on("keypress", (evt) => {
+				if (!EventUtil.noModifierKeys(evt) || EventUtil.isInInput(evt)) return;
+				if (EventUtil.getKeyIgnoreCapsLock(evt) === "f") {
+					evt.preventDefault();
 					$iptSearch.select().focus();
 				}
 			});
@@ -44,12 +44,17 @@ const ListUtil = {
 
 		// region Magnifying glass/clear button
 		const $btnSearchClear = $(`#lst__search-glass`)
-			.click(() => $iptSearch.val("").change().keydown().keyup());
+			.click(() => $iptSearch.val("").change().keydown().keyup().focus());
 		const _handleSearchChange = () => {
 			setTimeout(() => {
-				if ($iptSearch.val().length) $btnSearchClear.removeClass("no-events").addClass("clickable").title("Clear").html(`<span class="glyphicon glyphicon-remove"/>`);
-				else $btnSearchClear.addClass("no-events").removeClass("clickable").title(null).html(`<span class="glyphicon glyphicon-search"/>`);
-			})
+				const hasText = !!$iptSearch.val().length;
+
+				$btnSearchClear
+					.toggleClass("no-events", !hasText)
+					.toggleClass("clickable", hasText)
+					.title(hasText ? "Clear" : null)
+					.html(`<span class="glyphicon ${hasText ? `glyphicon-remove` : `glyphicon-search`}"></span>`);
+			});
 		};
 		const handleSearchChange = MiscUtil.throttle(_handleSearchChange, 50);
 		$iptSearch.on("keydown", handleSearchChange);
@@ -85,72 +90,61 @@ const ListUtil = {
 	},
 
 	_initList_bindWindowHandlers () {
-		$(window).on("keypress", (e) => {
-			if (!EventUtil.noModifierKeys(e)) return;
+		window.addEventListener("keypress", (evt) => {
+			if (!EventUtil.noModifierKeys(evt)) return;
 
 			// K up; J down
-			if (e.key === "k" || e.key === "j") {
+			const key = EventUtil.getKeyIgnoreCapsLock(evt);
+			if (key === "k" || key === "j") {
 				// don't switch if the user is typing somewhere else
-				if (EventUtil.isInInput(e)) return;
-				const it = Hist.getSelectedListElementWithLocation();
-
-				if (it) {
-					if (e.key === "k") {
-						const prevLink = $(it.item.ele).prev().find("a").attr("href");
-						if (prevLink !== undefined) {
-							window.location.hash = prevLink;
-							ListUtil._initList_scrollToItem();
-						} else {
-							const lists = ListUtil.getPrimaryLists();
-							let x = it.x;
-							while (--x >= 0) {
-								const l = lists[x];
-								if (l.visibleItems.length) {
-									const goTo = $(l.visibleItems[l.visibleItems.length - 1].ele).find("a").attr("href");
-									if (goTo) {
-										window.location.hash = goTo;
-										ListUtil._initList_scrollToItem();
-									}
-									return;
-								}
-							}
-						}
-						const fromPrevSibling = $(it.item.ele).closest(`ul`).parent().prev(`li`).find(`ul li`).last().find("a").attr("href");
-						if (fromPrevSibling) {
-							window.location.hash = fromPrevSibling;
-						}
-					} else if (e.key === "j") {
-						const nextLink = $(it.item.ele).next().find("a").attr("href");
-						if (nextLink !== undefined) {
-							window.location.hash = nextLink;
-							ListUtil._initList_scrollToItem();
-						} else {
-							const lists = ListUtil.getPrimaryLists();
-							let x = it.x;
-							while (++x < lists.length) {
-								const l = lists[x];
-								if (l.visibleItems.length) {
-									const goTo = $(l.visibleItems[0].ele).find("a").attr("href");
-									if (goTo) {
-										window.location.hash = goTo;
-										ListUtil._initList_scrollToItem();
-									}
-									return;
-								}
-							}
-						}
-						const fromNxtSibling = $(it.item.ele).closest(`ul`).parent().next(`li`).find(`ul li`).first().find("a").attr("href");
-						if (fromNxtSibling) {
-							window.location.hash = fromNxtSibling;
-						}
-					}
-				}
-			} else if (ListUtil._isPreviewable && e.key === "m") {
-				if (EventUtil.isInInput(e)) return;
+				if (EventUtil.isInInput(evt)) return;
+				ListUtil._initList_handleListUpDownPress(key === "k" ? -1 : 1);
+			} else if (ListUtil._isPreviewable && key === "m") {
+				if (EventUtil.isInInput(evt)) return;
 				const it = Hist.getSelectedListElementWithLocation();
 				$(it.item.ele.firstElementChild.firstElementChild).click();
 			}
 		});
+	},
+
+	_initList_handleListUpDownPress (dir) {
+		const it = Hist.getSelectedListElementWithLocation();
+		if (!it) return;
+
+		const lists = ListUtil.getPrimaryLists();
+
+		const ixVisible = it.list.visibleItems.indexOf(it.item);
+		if (!~ixVisible) {
+			// If the currently-selected item is not visible, jump to the top/bottom of the list
+			const listsWithVisibleItems = lists.filter(list => list.visibleItems.length);
+			const tgtItem = dir === 1
+				? listsWithVisibleItems[0].visibleItems[0]
+				: listsWithVisibleItems.last().visibleItems.last();
+			if (tgtItem) {
+				window.location.hash = tgtItem.values.hash;
+				ListUtil._initList_scrollToItem();
+			}
+			return;
+		}
+
+		const tgtItemSameList = it.list.visibleItems[ixVisible + dir];
+		if (tgtItemSameList) {
+			window.location.hash = tgtItemSameList.values.hash;
+			ListUtil._initList_scrollToItem();
+			return;
+		}
+
+		let tgtItemOtherList = null;
+		for (let i = it.x + dir; i >= 0 && i < lists.length; i += dir) {
+			if (!lists[i]?.visibleItems?.length) continue;
+
+			tgtItemOtherList = dir === 1 ? lists[i].visibleItems[0] : lists[i].visibleItems.last();
+		}
+
+		if (tgtItemOtherList) {
+			window.location.hash = tgtItemOtherList.values.hash;
+			ListUtil._initList_scrollToItem();
+		}
 	},
 
 	updateSelected () {
@@ -170,11 +164,11 @@ const ListUtil = {
 			} else {
 				ListUtil._primaryLists.forEach(l => l.deselectAll());
 				list.doSelect(listItem);
-				selection = [listItem]
+				selection = [listItem];
 			}
 		} else {
 			list.doSelect(listItem);
-			selection = [listItem]
+			selection = [listItem];
 		}
 
 		const menu = ListUtil.contextMenuPinnableList || ListUtil.contextMenuAddableList;
@@ -200,16 +194,18 @@ const ListUtil = {
 	sublist: null,
 	_sublistChangeFn: null,
 	_pCustomHashHandler: null,
+	_fnSerializePinnedItemData: null,
+	_fnDeserializePinnedItemData: null,
 	_allItems: null,
 	_primaryLists: [],
-	_pinned: {},
 	initSublist (options) {
 		if (options.itemList !== undefined) ListUtil._allItems = options.itemList; delete options.itemList;
-		if (options.getSublistRow !== undefined) ListUtil._getSublistRow = options.getSublistRow; delete options.getSublistRow;
+		if (options.pGetSublistRow !== undefined) ListUtil._pGetSublistRow = options.pGetSublistRow; delete options.pGetSublistRow;
 		if (options.onUpdate !== undefined) ListUtil._sublistChangeFn = options.onUpdate; delete options.onUpdate;
 		if (options.primaryLists !== undefined) ListUtil._primaryLists = options.primaryLists; delete options.primaryLists;
 		if (options.pCustomHashHandler !== undefined) ListUtil._pCustomHashHandler = options.pCustomHashHandler; delete options.pCustomHashHandler;
-		if (options.customHashUnpacker !== undefined) ListUtil._customHashUnpackFn = options.customHashUnpacker; delete options.customHashUnpacker;
+		if (options.fnSerializePinnedItemData !== undefined) ListUtil._fnSerializePinnedItemData = options.fnSerializePinnedItemData; delete options.fnSerializePinnedItemData;
+		if (options.fnDeserializePinnedItemData !== undefined) ListUtil._fnDeserializePinnedItemData = options.fnDeserializePinnedItemData; delete options.fnDeserializePinnedItemData;
 
 		ListUtil.$sublistContainer = $("#sublistcontainer");
 		const $wrpSublist = $(`.${options.listClass}`);
@@ -223,48 +219,50 @@ const ListUtil = {
 
 	setOptions (options) {
 		if (options.itemList !== undefined) ListUtil._allItems = options.itemList;
-		if (options.getSublistRow !== undefined) ListUtil._getSublistRow = options.getSublistRow;
+		if (options.pGetSublistRow !== undefined) ListUtil._pGetSublistRow = options.pGetSublistRow;
 		if (options.onUpdate !== undefined) ListUtil._sublistChangeFn = options.onUpdate;
 		if (options.primaryLists !== undefined) ListUtil._primaryLists = options.primaryLists;
 		if (options.pCustomHashHandler !== undefined) ListUtil._pCustomHashHandler = options.pCustomHashHandler;
-		if (options.customHashUnpacker !== undefined) ListUtil._customHashUnpackFn = options.customHashUnpacker;
 	},
 
 	getPrimaryLists () { return this._primaryLists; },
 
-	__mouseMoveId: 1,
-	async _pBindSublistResizeHandlers ($ele) {
+	async _pBindSublistResizeHandlers ($wrpList) {
 		const STORAGE_KEY = "SUBLIST_RESIZE";
-		const BORDER_SIZE = 3;
-		const MOUSE_MOVE_ID = ListUtil.__mouseMoveId++;
-		const $doc = $(document);
+
+		const $handle = $(`<div class="sublist__ele-resize mobile__hidden">...</div>`).appendTo($wrpList);
 
 		let mousePos;
 		function resize (evt) {
-			const dx = evt.clientY - mousePos;
-			mousePos = evt.clientY;
-			$ele.css("height", parseInt($ele.css("height")) + dx);
+			evt.preventDefault();
+			evt.stopPropagation();
+			const dx = EventUtil.getClientY(evt) - mousePos;
+			mousePos = EventUtil.getClientY(evt);
+			$wrpList.css("height", parseInt($wrpList.css("height")) + dx);
 		}
 
-		$ele.on("mousedown", (evt) => {
-			if (evt.which === 1 && evt.target === $ele[0]) {
+		$handle
+			.on("mousedown", (evt) => {
+				if (evt.which !== 1) return;
+
 				evt.preventDefault();
-				if (evt.offsetY > $ele.height() - BORDER_SIZE) {
-					mousePos = evt.clientY;
-					$doc.on(`mousemove.sublist_resize-${MOUSE_MOVE_ID}`, resize);
-				}
-			}
+				mousePos = evt.clientY;
+				document.removeEventListener("mousemove", resize);
+				document.addEventListener("mousemove", resize);
+			});
+
+		document.addEventListener("mouseup", evt => {
+			if (evt.which !== 1) return;
+
+			document.removeEventListener("mousemove", resize);
+			StorageUtil.pSetForPage(STORAGE_KEY, $wrpList.css("height"));
 		});
 
-		$doc.on("mouseup", (evt) => {
-			if (evt.which === 1) {
-				$(document).off(`mousemove.sublist_resize-${MOUSE_MOVE_ID}`);
-				StorageUtil.pSetForPage(STORAGE_KEY, $ele.css("height"));
-			}
-		});
+		// Avoid setting the height on mobile, as we force the sublist to a static size
+		if (JqueryUtil.isMobile()) return;
 
 		const storedHeight = await StorageUtil.pGetForPage(STORAGE_KEY);
-		if (storedHeight) $ele.css("height", storedHeight);
+		if (storedHeight) $wrpList.css("height", storedHeight);
 	},
 
 	getOrTabRightButton: (id, icon) => {
@@ -277,40 +275,51 @@ const ListUtil = {
 
 	/**
 	 * @param [opts]
-	 * @param [opts.fnGetData]
+	 * @param [opts.fnGetCustomHashId]
 	 */
-	bindPinButton: (opts) => {
-		opts = opts || {};
+	bindPinButton: ({fnGetCustomHashId} = {}) => {
 		ListUtil.getOrTabRightButton(`btn-pin`, `pushpin`)
 			.off("click")
-			.on("click", () => {
-				const data = opts.fnGetData ? opts.fnGetData() : undefined;
-				if (!ListUtil.isSublisted(Hist.lastLoadedId, data)) ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, data});
-				else ListUtil.pDoSublistRemove(Hist.lastLoadedId, {doFinalize: true, data});
+			.on("click", async () => {
+				const customHashId = fnGetCustomHashId ? fnGetCustomHashId() : null;
+
+				if (!ListUtil.isSublisted({index: Hist.lastLoadedId, customHashId})) {
+					await ListUtil.pDoSublistAdd({index: Hist.lastLoadedId, doFinalize: true, customHashId});
+					return;
+				}
+
+				await ListUtil.pDoSublistRemove({index: Hist.lastLoadedId, doFinalize: true, customHashId});
 			})
 			.title("Pin (Toggle)");
 	},
 
-	genericAddButtonHandler (evt, options = {}, metadata = null) {
-		if (evt.shiftKey) return ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, addCount: options.shiftCount || 20, data: metadata});
-		return ListUtil.pDoSublistAdd(Hist.lastLoadedId, {doFinalize: true, data: metadata});
-	},
-	bindAddButton: (handlerGenerator, options = {}) => {
+	bindAddButton: ({fnGetCustomHashId, shiftCount = 20} = {}) => {
 		ListUtil.getOrTabRightButton(`btn-sublist-add`, `plus`)
 			.off("click")
-			.title(`Add (SHIFT for ${options.shiftCount || 20})`)
-			.on("click", handlerGenerator ? handlerGenerator() : ListUtil.genericAddButtonHandler);
+			.title(`Add (SHIFT for ${shiftCount})`)
+			.on("click", evt => {
+				const addCount = evt.shiftKey ? shiftCount : 1;
+				return ListUtil.pDoSublistAdd({
+					index: Hist.lastLoadedId,
+					doFinalize: true,
+					addCount,
+					customHashId: fnGetCustomHashId ? fnGetCustomHashId() : null,
+				});
+			});
 	},
 
-	genericSubtractButtonHandler (evt, options = {}, metadata = null) {
-		if (evt.shiftKey) return ListUtil.pDoSublistSubtract(Hist.lastLoadedId, {subtractCount: options.shiftCount || 20, data: metadata});
-		return ListUtil.pDoSublistSubtract(Hist.lastLoadedId, {data: metadata});
-	},
-	bindSubtractButton: (handlerGenerator, options = {}) => {
+	bindSubtractButton: ({fnGetCustomHashId, shiftCount = 20} = {}) => {
 		ListUtil.getOrTabRightButton(`btn-sublist-subtract`, `minus`)
 			.off("click")
-			.title(`Subtract (SHIFT for ${options.shiftCount || 20})`)
-			.on("click", handlerGenerator ? handlerGenerator() : ListUtil.genericSubtractButtonHandler);
+			.title(`Subtract (SHIFT for ${shiftCount})`)
+			.on("click", evt => {
+				const subtractCount = evt.shiftKey ? shiftCount : 1;
+				return ListUtil.pDoSublistSubtract({
+					index: Hist.lastLoadedId,
+					subtractCount,
+					customHashId: fnGetCustomHashId ? fnGetCustomHashId() : null,
+				});
+			});
 	},
 
 	/**
@@ -350,10 +359,13 @@ const ListUtil = {
 			const action = new ContextUtil.Action(
 				"Upload Pinned List (SHIFT for Add Only)",
 				async evt => {
-					const files = await DataUtil.pUserUpload({expectedFileType: ListUtil._getDownloadName()});
-					if (!files?.length) return;
+					const {jsons, errors} = await DataUtil.pUserUpload({expectedFileType: ListUtil._getDownloadName()});
 
-					const json = files[0];
+					DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
+					if (!jsons?.length) return;
+
+					const json = jsons[0];
 
 					if (typeof opts.upload === "object" && opts.upload.pFnPreLoad) await opts.upload.pFnPreLoad(json);
 					await ListUtil.pDoJsonLoad(json, evt.shiftKey);
@@ -401,7 +413,7 @@ const ListUtil = {
 			await ListUtil._pLoadSavedSublist(json.items, false);
 			await ListUtil._pFinaliseSublist();
 
-			const [link, ...sub] = Hist.getHashParts();
+			const [link] = Hist.getHashParts();
 			const outSub = [];
 			Object.keys(unpacked)
 				.filter(k => k !== ListUtil.SUB_HASH_PREFIX)
@@ -413,29 +425,11 @@ const ListUtil = {
 		}
 	},
 
-	_getPinnedCount (index, data) {
-		const base = ListUtil._pinned[index];
-		if (!base) return null;
-		if (data && data.customHashId) return base[data.customHashId];
-		return base._;
+	getSublistListItem ({index, customHashId}) {
+		return ListUtil.sublist.items.find(it => customHashId != null ? it.data.customHashId === customHashId : (it.ix === index && it.data.customHashId == null));
 	},
 
-	_setPinnedCount (index, count, data) {
-		const base = ListUtil._pinned[index];
-		const key = data && data.customHashId ? data.customHashId : "_";
-		if (base) base[key] = count;
-		else (ListUtil._pinned[index] = {})[key] = count;
-	},
-
-	_deletePinnedCount (index, data) {
-		const base = ListUtil._pinned[index];
-		if (base) {
-			if (data && data.customHashId) delete base[data.customHashId];
-			else delete base._;
-		}
-	},
-
-	async pDoSublistAdd (index, {doFinalize = false, addCount = 1, data = null} = {}) {
+	async pDoSublistAdd ({index, doFinalize = false, addCount = 1, customHashId = null, initialData = null} = {}) {
 		if (index == null) {
 			return JqueryUtil.doToast({
 				content: "Please first view something from the list.",
@@ -443,71 +437,73 @@ const ListUtil = {
 			});
 		}
 
-		const count = ListUtil._getPinnedCount(index, data) || 0;
-		addCount = addCount || 1;
-		ListUtil._setPinnedCount(index, count + addCount, data);
-
-		if (count !== 0) {
-			ListUtil._setViewCount(index, count + addCount, data);
+		const existingSublistItem = this.getSublistListItem({index, customHashId});
+		if (existingSublistItem != null) {
+			existingSublistItem.data.count += addCount;
+			ListUtil._updateSublistItemDisplays(existingSublistItem);
 			if (doFinalize) await ListUtil._pFinaliseSublist();
-		} else {
-			const listItem = await ListUtil._getSublistRow(ListUtil._allItems[index], index, addCount, data);
-			ListUtil.sublist.addItem(listItem);
-			if (doFinalize) await ListUtil._pFinaliseSublist();
+			return;
 		}
+
+		const sublistItem = await ListUtil._pGetSublistRow(ListUtil._allItems[index], index, {count: addCount, customHashId, initialData});
+		ListUtil.sublist.addItem(sublistItem);
+		if (doFinalize) await ListUtil._pFinaliseSublist();
 	},
 
-	async pDoSublistSubtract (index, {subtractCount = 1, data = null} = {}) {
-		const count = ListUtil._getPinnedCount(index, data);
-		subtractCount = subtractCount || 1;
-		if (count > subtractCount) {
-			ListUtil._setPinnedCount(index, count - subtractCount, data);
-			ListUtil._setViewCount(index, count - subtractCount, data);
-			ListUtil.sublist.update();
-			await ListUtil._pSaveSublist();
-			ListUtil._handleCallUpdateFn();
-		} else if (count) await ListUtil.pDoSublistRemove(index, {doFinalize: true, data});
+	async pDoSublistSubtract ({index, subtractCount = 1, customHashId = null} = {}) {
+		const sublistItem = this.getSublistListItem({index, customHashId});
+		if (!sublistItem) return;
+
+		sublistItem.data.count -= subtractCount;
+		if (sublistItem.data.count <= 0) {
+			await ListUtil.pDoSublistRemove({index, doFinalize: true, customHashId});
+			return;
+		}
+
+		ListUtil._updateSublistItemDisplays(sublistItem);
+		await ListUtil._pFinaliseSublist();
 	},
 
-	getSublisted () {
-		const cpy = MiscUtil.copy(ListUtil._pinned);
-		const out = {};
-		Object.keys(cpy).filter(k => Object.keys(cpy[k]).length).forEach(k => out[k] = cpy[k]);
-		return out;
+	async pSetDataEntry ({sublistItem, key, value}) {
+		sublistItem.data[key] = value;
+		ListUtil._updateSublistItemDisplays(sublistItem);
+		await ListUtil._pFinaliseSublist();
 	},
 
 	getSublistedIds () {
-		return Object.keys(ListUtil._pinned).filter(k => Object.keys(ListUtil._pinned[k]).length).map(it => Number(it));
+		return ListUtil.sublist.items.map(({ix}) => ix);
 	},
 
-	_setViewCount: (index, newCount, data) => {
-		let foundItem;
-		if (data && data.customHashId != null) {
-			foundItem = ListUtil.sublist.items.find(it => it.data.customHashId === data.customHashId);
-		} else {
-			foundItem = ListUtil.sublist.items.find(it => it.data.customHashId == null && it.ix === index);
-		}
+	_updateSublistItemDisplays (sublistItem) {
+		(sublistItem.data.$elesCount || [])
+			.forEach($ele => {
+				if ($ele.is("input")) $ele.val(sublistItem.data.count);
+				else $ele.text(sublistItem.data.count);
+			});
 
-		foundItem.values.count = newCount;
-		foundItem.data.$elesCount.forEach($ele => {
-			if ($ele.is("input")) $ele.val(newCount);
-			else $ele.text(newCount);
-		})
+		(sublistItem.data.fnsUpdate || [])
+			.forEach(fn => fn());
 	},
 
 	async _pFinaliseSublist (noSave) {
 		ListUtil.sublist.update();
 		ListUtil._updateSublistVisibility();
 		if (!noSave) await ListUtil._pSaveSublist();
-		ListUtil._handleCallUpdateFn();
+		if (ListUtil._sublistChangeFn) ListUtil._sublistChangeFn();
 	},
 
-	getExportableSublist: () => {
+	getExportableSublist () {
 		const sources = new Set();
 		const toSave = ListUtil.sublist.items
 			.map(it => {
 				sources.add(ListUtil._allItems[it.ix].source);
-				return {h: it.values.hash.split(HASH_PART_SEP)[0], c: it.values.count || undefined, customHashId: it.data.customHashId};
+
+				return {
+					h: it.values.hash.split(HASH_PART_SEP)[0],
+					c: it.data.count || undefined,
+					customHashId: it.data.customHashId || undefined,
+					...(ListUtil._fnSerializePinnedItemData ? ListUtil._fnSerializePinnedItemData(it.data) : {}),
+				};
 			});
 		return {items: toSave, sources: Array.from(sources)};
 	},
@@ -516,34 +512,25 @@ const ListUtil = {
 		await StorageUtil.pSetForPage("sublist", ListUtil.getExportableSublist());
 	},
 
-	_updateSublistVisibility: () => {
+	_updateSublistVisibility () {
 		if (ListUtil.sublist.items.length) ListUtil.$sublistContainer.addClass("sublist--visible");
 		else ListUtil.$sublistContainer.removeClass("sublist--visible");
 	},
 
-	async pDoSublistRemove (index, opts = {doFinalize: true, data: null}) {
-		ListUtil._deletePinnedCount(index, opts.data);
-		if (opts.data && opts.data.customHashId) ListUtil.sublist.removeItemByData("customHashId", opts.data.customHashId);
-		else ListUtil.sublist.removeItem(index);
-
-		if (opts.doFinalize) await ListUtil._pFinaliseSublist();
+	async pDoSublistRemove ({index, customHashId = null, doFinalize = true} = {}) {
+		const sublistItem = this.getSublistListItem({index, customHashId});
+		if (!sublistItem) return;
+		ListUtil.sublist.removeItem(sublistItem);
+		if (doFinalize) await ListUtil._pFinaliseSublist();
 	},
 
 	async pDoSublistRemoveAll (noSave) {
-		ListUtil._pinned = {};
 		ListUtil.sublist.removeAllItems();
-		ListUtil.sublist.update();
-		ListUtil._updateSublistVisibility();
-		if (!noSave) await ListUtil._pSaveSublist();
-		ListUtil._handleCallUpdateFn();
+		await this._pFinaliseSublist(noSave);
 	},
 
-	isSublisted: (index, data) => {
-		return ListUtil._getPinnedCount(index, data);
-	},
-
-	_handleCallUpdateFn: () => {
-		if (ListUtil._sublistChangeFn) ListUtil._sublistChangeFn();
+	isSublisted ({index, customHashId}) {
+		return !!this.getSublistListItem({index, customHashId});
 	},
 
 	_hasLoadedState: false,
@@ -556,7 +543,7 @@ const ListUtil = {
 				await ListUtil._pLoadSavedSublist(store.items);
 			}
 		} catch (e) {
-			setTimeout(() => { throw e });
+			setTimeout(() => { throw e; });
 			await StorageUtil.pRemoveForPage("sublist");
 		}
 	},
@@ -564,20 +551,27 @@ const ListUtil = {
 	async _pLoadSavedSublist (items, additive) {
 		if (!additive) await ListUtil.pDoSublistRemoveAll(true);
 
-		const toLoad = items.map(it => {
-			const item = Hist.getActiveListItem(it.h);
-			if (item != null) {
-				const out = {index: item.ix, addCount: Number(it.c)};
-				if (ListUtil._customHashUnpackFn && it.customHashId) out.data = ListUtil._customHashUnpackFn(it.customHashId);
-				return out;
-			}
-			return null;
-		}).filter(it => it);
+		const toAddOpts = items
+			.map(it => {
+				const item = Hist.getActiveListItem(it.h);
+				if (item == null) return null;
+				const initialData = ListUtil._fnDeserializePinnedItemData ? ListUtil._fnDeserializePinnedItemData(it) : null;
+				return {
+					index: item.ix,
+					addCount: Number(it.c),
+					customHashId: it.customHashId,
+					initialData,
+				};
+			})
+			.filter(Boolean);
 
 		// Do this in series to ensure sublist items are added before having their counts updated
 		//  This only becomes a problem when there are duplicate items in the list, but as we're not finalizing, the
 		//  performance implications are negligible.
-		for (const it of toLoad) await ListUtil.pDoSublistAdd(it.index, {doFinalize: false, addCount: it.addCount, data: it.data});
+		for (const it of toAddOpts) {
+			await ListUtil.pDoSublistAdd({...it, doFinalize: false});
+		}
+
 		await ListUtil._pFinaliseSublist(true);
 	},
 
@@ -586,7 +580,7 @@ const ListUtil = {
 		try {
 			store = await StorageUtil.pGetForPage("sublist");
 		} catch (e) {
-			setTimeout(() => { throw e });
+			setTimeout(() => { throw e; });
 		}
 		if (store && store.sources) return store.sources;
 	},
@@ -610,7 +604,7 @@ const ListUtil = {
 					for (const list of ListUtil._primaryLists) {
 						for (const li of list.getSelected()) {
 							li.isSelected = false;
-							if (!ListUtil.isSublisted(li.ix)) await ListUtil.pDoSublistAdd(li.ix);
+							if (!ListUtil.isSublisted({index: li.ix})) await ListUtil.pDoSublistAdd({index: li.ix});
 						}
 					}
 
@@ -632,7 +626,7 @@ const ListUtil = {
 				async (evt, userData) => {
 					const {selection} = userData;
 					for (const item of selection) {
-						await ListUtil.pDoSublistRemove(item.ix, {isFinalize: false});
+						await ListUtil.pDoSublistRemove({index: item.ix, isFinalize: false, customHashId: item.data.customHashId});
 					}
 					await ListUtil._pFinaliseSublist();
 				},
@@ -660,7 +654,7 @@ const ListUtil = {
 			null,
 			new ContextUtil.Action(
 				"Download JSON Data",
-				() => ListUtil._handleJsonDownload(),
+				() => ListUtil._pHandleJsonDownload(),
 			),
 		].filter(it => it !== undefined);
 		ListUtil.contextMenuPinnableListSub = ContextUtil.getMenu(subActions);
@@ -683,7 +677,7 @@ const ListUtil = {
 					for (const list of ListUtil._primaryLists) {
 						for (const li of list.getSelected()) {
 							li.isSelected = false;
-							await ListUtil.pDoSublistAdd(li.ix);
+							await ListUtil.pDoSublistAdd({index: li.ix});
 						}
 					}
 
@@ -698,17 +692,15 @@ const ListUtil = {
 				"Popout",
 				(evt, userData) => {
 					const {ele, selection} = userData;
-					ListUtil._handleGenericContextMenuClick_pDoMassPopout(evt, ele, selection)
+					ListUtil._handleGenericContextMenuClick_pDoMassPopout(evt, ele, selection);
 				},
 			),
 			new ContextUtil.Action(
 				"Remove",
-				(evt, userData) => {
+				async (evt, userData) => {
 					const {selection} = userData;
-					selection.forEach(item => {
-						if (item.data.customHashId) ListUtil.pDoSublistRemove(item.ix, {data: {customHashId: item.data.customHashId}});
-						else ListUtil.pDoSublistRemove(item.ix);
-					});
+					await Promise.all(selection.map(item => ListUtil.pDoSublistRemove({index: item.ix, customHashId: item.data.customHashId, doFinalize: false})));
+					await ListUtil._pFinaliseSublist();
 				},
 			),
 			new ContextUtil.Action(
@@ -734,7 +726,7 @@ const ListUtil = {
 			null,
 			new ContextUtil.Action(
 				"Download JSON Data",
-				() => ListUtil._handleJsonDownload(),
+				() => ListUtil._pHandleJsonDownload(),
 			),
 		].filter(it => it !== undefined);
 		ListUtil.contextMenuAddableListSub = ContextUtil.getMenu(subActions);
@@ -745,10 +737,10 @@ const ListUtil = {
 			const list = ListUtil.getExportableSublist();
 			const len = list.items.length;
 			await StorageUtil.pSet(VeCt.STORAGE_DMSCREEN_TEMP_SUBLIST, {page: UrlUtil.getCurrentPage(), list});
-			JqueryUtil.doToast(`${len} pin${len === 1 ? "" : "s"} will be loaded into the DM Screen on your next visit.`)
+			JqueryUtil.doToast(`${len} pin${len === 1 ? "" : "s"} will be loaded into the DM Screen on your next visit.`);
 		} catch (e) {
 			JqueryUtil.doToast(`Failed! ${VeCt.STR_SEE_CONSOLE}`);
-			setTimeout(() => { throw e; })
+			setTimeout(() => { throw e; });
 		}
 	},
 
@@ -763,23 +755,22 @@ const ListUtil = {
 
 			switch (page) {
 				case `${UrlUtil.PG_BESTIARY}`: {
-					if (!it.customHashId) break;
+					if (!it?.customHashId) break;
 
-					const {_scaledCr, _scaledSummonLevel} = Renderer.monster.getUnpackedCustomHashId(it.customHashId);
+					const {_scaledCr, _scaledSpellSummonLevel, _scaledClassSummonLevel} = Renderer.monster.getUnpackedCustomHashId(it.data.customHashId);
 					if (_scaledCr != null) toSend = await ScaleCreature.scale(toSend, _scaledCr);
-					else if (_scaledSummonLevel != null) toSend = await ScaleSummonCreature.scale(toSend, _scaledSummonLevel);
+					else if (_scaledSpellSummonLevel != null) toSend = await ScaleSpellSummonedCreature.scale(toSend, _scaledSpellSummonLevel);
+					else if (_scaledClassSummonLevel != null) toSend = await ScaleClassSummonedCreature.scale(toSend, _scaledClassSummonLevel);
 				}
 			}
 
 			await ExtensionUtil._doSend("entity", {page, entity: toSend});
 		}
 
-		JqueryUtil.doToast(`Attepmted to send ${len} item${len === 1 ? "" : "s"} to Foundry.`);
+		JqueryUtil.doToast(`Attempted to send ${len} item${len === 1 ? "" : "s"} to Foundry.`);
 	},
 
 	async _handleGenericContextMenuClick_pDoMassPopout (evt, ele, selection) {
-		const page = UrlUtil.getCurrentPage();
-
 		const elePos = ele.getBoundingClientRect();
 
 		// do this in serial to have a "window cascade" effect
@@ -802,6 +793,7 @@ const ListUtil = {
 					isPermanent: true,
 					pageUrl: `${page}#${hash}`,
 					isBookContent: page === UrlUtil.PG_RECIPES,
+					sourceData: toRender,
 				},
 			);
 		}
@@ -856,35 +848,25 @@ const ListUtil = {
 		return `${UrlUtil.getCurrentPage().replace(".html", "")}-sublist`;
 	},
 
-	genericPinKeyMapper (pMapUid = ListUtil._pCustomHashHandler) {
-		return Object.entries(ListUtil.getSublisted()).map(([id, it]) => {
-			return Object.keys(it).map(k => {
-				const it = ListUtil._allItems[id];
-				return k === "_" ? Promise.resolve(MiscUtil.copy(it)) : pMapUid(it, k);
-			}).reduce((a, b) => a.concat(b), []);
-		}).reduce((a, b) => a.concat(b), []);
+	async pGetPinnedEntities () {
+		return Promise.all(
+			ListUtil.sublist.items
+				.map(({ix, data}) => {
+					const entity = ListUtil._allItems[ix];
+					if (ListUtil._pCustomHashHandler && data.customHashId) return ListUtil._pCustomHashHandler(entity, data.customHashId);
+					return MiscUtil.copy(entity);
+				}),
+		);
 	},
 
-	_handleJsonDownload () {
-		if (ListUtil._pCustomHashHandler) {
-			const promises = ListUtil.genericPinKeyMapper();
-
-			Promise.all(promises).then(data => {
-				data.forEach(cpy => DataUtil.cleanJson(cpy));
-				DataUtil.userDownload(`${ListUtil._getDownloadName()}-data`, data);
-			});
-		} else {
-			const out = ListUtil.getSublistedIds().map(id => {
-				const cpy = JSON.parse(JSON.stringify(ListUtil._allItems[id]));
-				DataUtil.cleanJson(cpy);
-				return cpy;
-			});
-			DataUtil.userDownload(`${ListUtil._getDownloadName()}-data`, out);
-		}
+	async _pHandleJsonDownload () {
+		const entities = await ListUtil.pGetPinnedEntities();
+		entities.forEach(cpy => DataUtil.cleanJson(cpy));
+		DataUtil.userDownload(`${ListUtil._getDownloadName()}-data`, entities);
 	},
 
 	bindShowTableButton (id, title, dataList, colTransforms, filter, sorter) {
-		$(`#${id}`).click("click", () => ListUtil.showTable(title, dataList, colTransforms, filter, sorter));
+		$(`#${id}`).click("click", () => UtilsTableview.show({title, dataList, colTransforms, filter, sorter}));
 	},
 
 	basicFilterGenerator () {
@@ -900,65 +882,6 @@ const ListUtil = {
 
 	getVisibleIds () {
 		return ListUtil._primaryLists.map(l => l.visibleItems.map(it => it.ix)).flat();
-	},
-
-	// FIXME move this out
-	showTable (title, dataList, colTransforms, filter, sorter) {
-		const {$modal} = UiUtil.getShowModal({
-			isWidth100: true,
-			isHeight100: true,
-			isUncappedWidth: true,
-			isUncappedHeight: true,
-			isEmpty: true,
-		});
-
-		const $pnlControl = $(`<div class="split my-3"/>`).appendTo($modal);
-		const $pnlCols = $(`<div class="flex" style="align-items: center;"/>`).appendTo($pnlControl);
-		Object.values(colTransforms).forEach((c, i) => {
-			const $wrpCb = $(`<label class="flex-${c.flex || 1} px-2 mr-2 no-wrap flex-inline-v-center"><span class="mr-2">${c.name}</span></label>`).appendTo($pnlCols);
-			const $cbToggle = $(`<input type="checkbox" data-name="${c.name}" checked>`)
-				.click(() => {
-					const toToggle = $modal.find(`.col_${i}`);
-					if ($cbToggle.prop("checked")) {
-						toToggle.show();
-					} else {
-						toToggle.hide();
-					}
-				})
-				.appendTo($wrpCb);
-		});
-		const $pnlBtns = $(`<div/>`).appendTo($pnlControl);
-		function getAsCsv () {
-			const headers = $pnlCols.find(`input:checked`).map((i, e) => $(e).data("name")).get();
-			const rows = $modal.find(`.data-row`).map((i, e) => $(e)).get().map($e => {
-				return $e.children().filter(`td:visible`).map((j, d) => $(d).text().trim()).get();
-			});
-			return DataUtil.getCsv(headers, rows);
-		}
-		const $btnCsv = $(`<button class="btn btn-primary mr-3">Download CSV</button>`).click(() => {
-			DataUtil.userDownloadText(`${title}.csv`, getAsCsv());
-		}).appendTo($pnlBtns);
-		const $btnCopy = $(`<button class="btn btn-primary">Copy CSV to Clipboard</button>`).click(async () => {
-			await MiscUtil.pCopyTextToClipboard(getAsCsv());
-			JqueryUtil.showCopiedEffect($btnCopy);
-		}).appendTo($pnlBtns);
-		$modal.append(`<hr class="hr-1">`);
-
-		if (typeof filter === "object" && filter.generator) filter = filter.generator();
-
-		let stack = `<div class="overflow-y-auto w-100 h-100 flex-col"><table class="table-striped stats stats--book stats--book-large" style="width: 100%;"><thead><tr>${Object.values(colTransforms).map((c, i) => `<th class="col_${i} px-2" colspan="${c.flex || 1}">${c.name}</th>`).join("")}</tr></thead><tbody>`;
-		const listCopy = JSON.parse(JSON.stringify(dataList)).filter((it, i) => filter ? filter(i) : it);
-		if (sorter) listCopy.sort(sorter);
-		listCopy.forEach(it => {
-			stack += `<tr class="data-row">`;
-			stack += Object.keys(colTransforms).map((k, i) => {
-				const c = colTransforms[k];
-				return `<td class="col_${i} px-2" colspan="${c.flex || 1}">${c.transform === true ? it[k] : c.transform(k[0] === "_" ? it : it[k])}</td>`;
-			}).join("");
-			stack += `</tr>`;
-		});
-		stack += `</tbody></table></div>`;
-		$modal.append(stack);
 	},
 
 	addListShowHide () {

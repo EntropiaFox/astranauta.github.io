@@ -871,7 +871,7 @@
 										{
 											"type": "item",
 											"name": "Feats:",
-											"entry": "{@feat Sharpshooter}"
+											"entry": "{@feat Piercer|TCE}, {@feat Sharpshooter}"
 										}
 									]
 								},
@@ -961,7 +961,7 @@
 										{
 											"type": "item",
 											"name": "Feats:",
-											"entry": "{@feat Defensive Duelist}, {@feat Dual Wielder}, {@feat Observant}, {@feat Savage Attacker}, {@feat Weapon Master}"
+											"entry": "{@feat Defensive Duelist}, {@feat Dual Wielder}, {@feat Martial Adept}, {@feat Observant}, {@feat Savage Attacker}"
 										}
 									]
 								},
@@ -991,7 +991,7 @@
 										{
 											"type": "item",
 											"name": "Feats:",
-											"entry": "{@feat Athlete}, {@feat Charger}, {@feat Dual Wielder}, {@feat Durable}, {@feat Grappler}, {@feat Savage Attacker}, {@feat Tough}, {@feat Weapon Master}"
+											"entry": "{@feat Athlete}, {@feat Charger}, {@feat Dual Wielder}, {@feat Durable}, {@feat Grappler}, {@feat Martial Adept}, {@feat Savage Attacker}, {@feat Tough}"
 										}
 									]
 								},
@@ -1021,7 +1021,7 @@
 										{
 											"type": "item",
 											"name": "Feats:",
-											"entry": "{@feat Athlete}, {@feat Grappler}, {@feat Polearm Master}, {@feat Sentinel}, {@feat Shield Master}"
+											"entry": "{@feat Athlete}, {@feat Grappler}, {@feat Piercer|TCE}, {@feat Polearm Master}, {@feat Sentinel}, {@feat Shield Master}"
 										}
 									]
 								},
@@ -6195,7 +6195,7 @@
 												],
 												[
 													"36\u201345",
-													"The region is choked with wispy webbing, which acts as difficult terrain."
+													"The region is choked with wispy webbing, which acts as {@quickref difficult terrain||3}."
 												],
 												[
 													"46\u201350",
@@ -6298,7 +6298,7 @@
 												],
 												[
 													"19\u201324",
-													"Creatures in the region don't cast reflections. Wisdom ({@skill Insight}) checks made against those creatures have disadvantage, and the creatures have disadvantage on Charisma ({@skill Persuasion}) checks made against anyone who notices their lack of reflection. When they leave the region, creatures regain their reflections, and the effect ends."
+													"Creatures in the region don't cast reflections. Wisdom ({@skill Insight}) checks made against those creatures have disadvantage, and the creatures have disadvantage on Charisma ({@skill Persuasion}) checks made against anyone who notices their lack of {@creature reflection|TCE}. When they leave the region, creatures regain their reflections, and the effect ends."
 												],
 												[
 													"25\u201334",
@@ -6314,7 +6314,7 @@
 												],
 												[
 													"47\u201352",
-													"Mirrors and other highly reflective surfaces allow magical transport while in the region. Any creature that touches its reflection in an object that it isn't wearing or carrying can immediately cast the {@spell misty step} spell, requiring no components."
+													"Mirrors and other highly reflective surfaces allow magical transport while in the region. Any creature that touches its {@creature reflection|TCE} in an object that it isn't wearing or carrying can immediately cast the {@spell misty step} spell, requiring no components."
 												],
 												[
 													"53\u201358",
@@ -6338,7 +6338,7 @@
 												],
 												[
 													"83\u201388",
-													"The next time one character in the party sees their reflection in the region, that reflection of comes to life and engages its counterpart in conversation. It offers to answer one question posed to it as if the creature cast the {@spell divination} spell. After answering the question, the reflection returns to normal."
+													"The next time one character in the party sees their {@creature reflection|TCE} in the region, that {@creature reflection|TCE} of comes to life and engages its counterpart in conversation. It offers to answer one question posed to it as if the creature cast the {@spell divination} spell. After answering the question, the {@creature reflection|TCE} returns to normal."
 												],
 												[
 													"89\u201394",
@@ -6823,7 +6823,7 @@
 												],
 												[
 													"2",
-													"The creature gains the enlarge or reduce effect (50 percent chance of either) of the {@spell enlarge/reduce} spell for 1 hour."
+													"The creature gains the enlarge or reduce effect ({@chance 50|50 percent} chance of either) of the {@spell enlarge/reduce} spell for 1 hour."
 												],
 												[
 													"3",
@@ -7223,27 +7223,27 @@
 											"items": [
 												{
 													"type": "item",
-													"name": "Difficulty.",
+													"name": "Difficulty",
 													"entry": "Each puzzle is classified as easy, medium, or hard. The harder the puzzle, the more likely the players will need hints to solve it."
 												},
 												{
 													"type": "item",
-													"name": "Puzzle Features.",
+													"name": "Puzzle Features",
 													"entry": "This section presents an overview of the puzzle's features and how they can be interacted with."
 												},
 												{
 													"type": "item",
-													"name": "Solution.",
+													"name": "Solution",
 													"entry": "This section explains how the puzzle is solved."
 												},
 												{
 													"type": "item",
-													"name": "Hint Checks.",
+													"name": "Hint Checks",
 													"entry": "This section suggests hints that characters might use their skills to reveal. Provide one or more of the hints if the characters get stuck. If a character has proficiency in a hint's associated skill, give them that hint if they ask you for help."
 												},
 												{
 													"type": "item",
-													"name": "Customizing the Puzzle.",
+													"name": "Customizing the Puzzle",
 													"entry": "This section explores how to integrate the puzzle into your adventures, alter its difficulty, or make other adjustments."
 												}
 											]
@@ -7511,48 +7511,48 @@
 													"items": [
 														{
 															"type": "item",
-															"name": "Magic.",
+															"name": "Magic",
 															"entry": "The trap triggers normally, as described in this puzzle's \"{@area Traps|3ac|x}\" section."
 														},
 														{
 															"type": "item",
-															"name": "Abjuration.",
+															"name": "Abjuration",
 															"entry": "The trap casts {@spell dispel magic} on each creature in the room, using a 9th-level spell slot."
 														},
 														{
 															"type": "item",
-															"name": "Conjuration.",
+															"name": "Conjuration",
 															"entry": "The trap teleports the creature that triggered it back to the entrance of the room. That creature must also make a DC 15 Constitution saving throw, taking 11 ({@dice 2d10}) force damage on a failed save, or half as much damage on a successful one."
 														},
 														{
 															"type": "item",
-															"name": "Divination.",
+															"name": "Divination",
 															"entry": "The creature that triggered the trap must succeed on a DC 15 Intelligence saving throw or be unable to perceive any of the letters on the tiles by sight or touch. Any magic that ends a curse ends this effect on the character. A player whose character is affected by this trap should not be allowed to reference the accompanying player handout until the effect on that character ends."
 														},
 														{
 															"type": "item",
-															"name": "Enchantment.",
+															"name": "Enchantment",
 															"entry": "The trap casts {@spell suggestion} (save DC 15) on the creature that triggered it. On a failed save, a gentle voice only the creature can hear tells it to move 5 feet in a random direction. This movement might cause it to trigger another trap."
 														},
 														{
 															"type": "item",
-															"name": "Evocation.",
+															"name": "Evocation",
 															"entry": "Magical fire erupts from the trapped tile. The creature that triggered this trap must succeed on a DC 15 Dexterity saving throw, taking 11 ({@dice 2d10}) fire damage on a failed save, or half as much damage on a successful one."
 														},
 														{
 															"type": "item",
-															"name": "Illusion.",
+															"name": "Illusion",
 															"entry": "A suit of {@creature animated armor} appears in an unoccupied space within 5 feet of the creature that set off this trap. The armor attacks only the creature that summoned it and can't leave the room. It doesn't set off any of the room's traps and disappears if it takes any damage. Otherwise, it lasts for 1 minute."
 														},
 														{
 															"type": "item",
-															"name": "Necromancy.",
+															"name": "Necromancy",
 															"entry": "Any creature that triggers this trap hears a banshee's wail in its mind. Unless the creature is a construct or undead, it must succeed on a DC 13 Constitution saving throw. On a failure, the creature drops to 0 hit points. On a success, it takes 10 ({@dice 3d6}) psychic damage."
 														},
 														{
 															"type": "item",
-															"name": "Transmutation.",
-															"entry": "The trap casts {@spell polymorph} (save DC 15) on the creature that triggered it. On a failed save, the creature turns into a monster]giant frog[/monster]."
+															"name": "Transmutation",
+															"entry": "The trap casts {@spell polymorph} (save DC 15) on the creature that triggered it. On a failed save, the creature turns into a {@creature giant frog}."
 														}
 													]
 												}
@@ -7757,47 +7757,47 @@
 													"items": [
 														{
 															"type": "item",
-															"name": "Quartz.",
+															"name": "Quartz",
 															"entry": "Antonio"
 														},
 														{
 															"type": "item",
-															"name": "Garnet.",
+															"name": "Garnet",
 															"entry": "Ella, Ethan, Ember, Edwina, Ernest"
 														},
 														{
 															"type": "item",
-															"name": "Citrine.",
+															"name": "Citrine",
 															"entry": "Hobert, Holden, Hilda, Haddon, Hugo, Hera, Hessy, Hemma"
 														},
 														{
 															"type": "item",
-															"name": "Amber.",
+															"name": "Amber",
 															"entry": "Ivy, Iris, Ian, Idris, Iggy, Imelda, Ice, Innis, Isabella"
 														},
 														{
 															"type": "item",
-															"name": "Ruby.",
+															"name": "Ruby",
 															"entry": "Lou, Leela, Lowan, Lannis, Lake, Luke, Leila, Leean, Luna, Luvia, Lee, Leira"
 														},
 														{
 															"type": "item",
-															"name": "Sapphire.",
+															"name": "Sapphire",
 															"entry": "Mona, Maethius, Merry, Moon, Medea, Martha, Marni, Moen, Mava, Moloth, Mo, Mia, Miranda"
 														},
 														{
 															"type": "item",
-															"name": "Amethyst.",
+															"name": "Amethyst",
 															"entry": "Nox, Neville, Norman, Ned, Nadia, Nian, Nero, Nick, Narice, Nava, Nia, Nicol, Nestor, Nera"
 														},
 														{
 															"type": "item",
-															"name": "Onyx.",
+															"name": "Onyx",
 															"entry": "Paul, Pam, Pluck, Petra, Pax, Pia, Paden, Po, Pacey, Pima, Peck, Pablo, Piers, Pom, Peleg, Peet"
 														},
 														{
 															"type": "item",
-															"name": "Jade.",
+															"name": "Jade",
 															"entry": "Ren, Ryannis, Rue, Romag, Redd, Remy, Ria, River, Rhonda, Resta, Rhys, Ron, Ricker, Rey, Ro, Rowan, Regan, Rhiannon"
 														}
 													]
@@ -8505,22 +8505,22 @@
 													"items": [
 														{
 															"type": "item",
-															"name": "Second Visitor.",
+															"name": "Second Visitor",
 															"entry": "The guard opens the window and says, \"Twelve.\" The visitor responds with \"Six\" and is allowed inside."
 														},
 														{
 															"type": "item",
-															"name": "Third Visitor.",
+															"name": "Third Visitor",
 															"entry": "The guard opens the window and says, \"Ten.\" The visitor responds with \"Five\" and is turned away."
 														},
 														{
 															"type": "item",
-															"name": "Fourth Visitor.",
+															"name": "Fourth Visitor",
 															"entry": "The guard opens the window and says, \"Seven.\" The visitor responds with \"Five\" and is allowed inside."
 														},
 														{
 															"type": "item",
-															"name": "Fifth Visitor.",
+															"name": "Fifth Visitor",
 															"entry": "The guard opens the window and says, \"Zero.\" The visitor responds with \"One\" and is turned away."
 														}
 													]
@@ -8928,32 +8928,32 @@
 													"items": [
 														{
 															"type": "item",
-															"name": "Verse 1.",
+															"name": "Verse 1",
 															"entry": "\"Not his keeper, nor he mine; loved and hated at the same time.\" (This refers to Dolora's brother, whose name was Sam.)"
 														},
 														{
 															"type": "item",
-															"name": "Verse 2.",
+															"name": "Verse 2",
 															"entry": "\"My first vision: her hazel eyes. My first sound: her lullabies.\" (This refers to Dolora's mother, whose name was Delia.)"
 														},
 														{
 															"type": "item",
-															"name": "Verse 3.",
+															"name": "Verse 3",
 															"entry": "\"Her lives she lost, all three by three, and through the dark this hunter sees.\" (This refers to Dolora's cat, whose name was Fifi.)"
 														},
 														{
 															"type": "item",
-															"name": "Verse 4.",
+															"name": "Verse 4",
 															"entry": "\"Lines in his face of life lived long; stories were his paternal song.\" (This refers to Dolora's grandfather, whose name was Tobias.)"
 														},
 														{
 															"type": "item",
-															"name": "Verse 5.",
+															"name": "Verse 5",
 															"entry": "\"Mentor and guide, her lessons learned. Knowledge measured by letters I earned.\" (This refers to Dolora's teacher, whose name was Johana.)"
 														},
 														{
 															"type": "item",
-															"name": "Verse 6.",
+															"name": "Verse 6",
 															"entry": "\"Loved to eat hay, just as her friends did; lived in one room with a shoat and a kid.\" (This refers to Dolora's horse, whose name was Alexia.)"
 														}
 													]

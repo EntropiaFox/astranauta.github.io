@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "cultsboons.json",
-	"version": "1.0.0",
+	"version": "1.0.6",
 	"type": "object",
 	"properties": {
 		"cult": {
@@ -17,10 +17,22 @@
 						"type": "string"
 					},
 					"page": {
-						"type": "integer"
+						"$ref": "util.json#/definitions/page"
+					},
+					"otherSources": {
+						"$ref": "util.json#/definitions/otherSources"
+					},
+					"reprintedAs": {
+						"$ref": "util.json#/definitions/reprintedAs"
 					},
 					"type": {
-						"type": "string"
+						"type": "string",
+						"enum": [
+							"Demonic",
+							"Diabolical",
+							"Elder Evil",
+							"Elemental"
+						]
 					},
 					"goal": {
 						"type": "object",
@@ -86,10 +98,19 @@
 						"type": "string"
 					},
 					"page": {
-						"type": "integer"
+						"$ref": "util.json#/definitions/page"
+					},
+					"otherSources": {
+						"$ref": "util.json#/definitions/otherSources"
+					},
+					"reprintedAs": {
+						"$ref": "util.json#/definitions/reprintedAs"
 					},
 					"type": {
-						"type": "string"
+						"type": "string",
+						"enum": [
+							"Demonic"
+						]
 					},
 					"ability": {
 						"type": "object",

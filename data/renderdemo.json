@@ -21,9 +21,9 @@
 				{
 					"type": "list",
 					"items": [
-						"Style tags; {@bold some text to be bolded} (alternative {@b shorthand}), {@italic some text to be italicised} (alternative {@i shorthand}), {@underline some text to be underlined} (alternative {@u shorthand}), {@strike some text to strike-through}, (alternative {@s shorthand}), {@color color|e40707} tags",
+						"Style tags; {@bold some text to be bolded} (alternative {@b shorthand}), {@italic some text to be italicised} (alternative {@i shorthand}), {@underline some text to be underlined} (alternative {@u shorthand}), {@strike some text to strike-through}, (alternative {@s shorthand}), {@color color|e40707} tags, {@code print(&quot;hello world&quot;)} tags",
 						"Additionally, {@note note tags}, used for adding errata or Twitter \"designer footnotes.\"",
-						"Dice roller tags; {@dice 1d2-2+2d3+5} for regular dice rolls ({@dice 1d6;2d6} for multiple options; {@dice 1d6 + #$prompt_number:min=1,title=Enter a Number!,default=123$#} for input prompts), with extended {@dice 1d20+2|display text} and {@dice 1d20+2|display text|rolled by name}, and a special 'hit' version which assumes a d20 is to be rolled {@hit +7} (and rolls advantage on shift-click, disadvantage on alt-click). There's also {@damage 1d12+3} which will roll critical hits on shift-click and half damage (rounding down) on alt-click, and {@d20 -4} which will also roll advantage/disadvantage, although @hit tags are preferred where appropriate. Spells can have scaling-dice tags, (damage of 2d6 or 3d6 at level 1, add an extra {@scaledice 2d6;3d6|2-9|1d6} for each level beyond 2nd), for when a spell effect scales at higher levels.",
+						"Dice roller tags; {@dice 1d2-2+2d3+5} for regular dice rolls ({@dice 1d6;2d6} for multiple options; {@dice 1d6 + #$prompt_number:min=1,title=Enter a Number!,default=123$#} for input prompts), with extended {@dice 1d20+2|display text} and {@dice 1d20+2|display text|rolled by name}, and a special 'hit' version which assumes a d20 is to be rolled {@hit +7} (and rolls advantage on shift-click, disadvantage on alt-click). There's also {@damage 1d12+3} which will roll critical hits on shift-click and half damage (rounding down) on alt-click, and {@d20 -4} which will also roll advantage/disadvantage, although @hit tags are preferred where appropriate. Spells can have scaling-dice tags, (damage of 2d6 or 3d6 at level 1, add an extra {@scaledice 2d6;3d6|2-9|1d6} for each level beyond 2nd), for when a spell effect scales at higher levels. {@ability str 20}, {@savingThrow str 5}, and {@skillCheck animal_handling 5} are used as internal shorthand, but may be useful elsewhere.",
 						"Chance tags; similar to dice roller tags, but output success/failure. Similar syntax as dice tags: {@chance 50}, {@chance 50|display text}, and {@chance 50|display text|rolled by name}.",
 						"Recharge tags; output success/failure for ability recharge. {@recharge} in an ability title for '(Recharge 6)', {@recharge 4} for '(Recharge 4-6)'.",
 						"Skill and sense tags; {@skill Athletics}/{@skill Perception} (case sensitive) and {@sense Truesight}/{@sense darkvision} (case insensitive) which provide tooltips on hover.",
@@ -34,7 +34,7 @@
 							"type": "list",
 							"items": [
 								"Spells: {@spell acid splash} assumes PHB by default, {@spell tiny servant|xge} can have sources added with a pipe, {@spell tiny servant|xge|and optional link text added with another pipe}.",
-								"Items: {@item alchemy jug} assumed DMG by default, {@item longsword|phb} can have sources added with a pipe, {@item longsword|phb|and optional link text added with another pipe}.",
+								"Items: {@item alchemy jug} assumes DMG by default, {@item longsword|phb} can have sources added with a pipe, {@item longsword|phb|and optional link text added with another pipe}.",
 								"Creatures: {@creature goblin} assumes MM by default, {@creature cow|vgm} can have sources added with a pipe, {@creature cow|vgm|and optional link text added with another pipe}.",
 								"Backgrounds: {@background Charlatan} assumes PHB by default, {@background Anthropologist|toa} can have sources added with a pipe, {@background Anthropologist|ToA|and optional link text added with another pipe}.",
 								"Races: {@race Human} assumes PHB by default, {@race Aarakocra|eepc} can have sources added with a pipe, {@race Aarakocra|eepc|and optional link text added with another pipe}.",
@@ -67,7 +67,7 @@
 							"type": "inset",
 							"name": "Filter Tag",
 							"entries": [
-								"Another tag that appears occasionally in the data is the @filter tag. This tag can be tricky to use, and generally relies on knowledge of the internals of each page. As such, use with caution, and if you're not sure about something, don't be afraid to drop by our {@link Discord|https://discord.gg/nGvRCDs} and ask questions.",
+								"Another tag that appears occasionally in the data is the @filter tag. This tag can be tricky to use, and generally relies on knowledge of the internals of each page. As such, use with caution, and if you're not sure about something, don't be afraid to drop by our {@link Discord|https://discord.gg/5etools} and ask questions.",
 								"The syntax for the @filter tag is as follows:",
 								"(open curly brace)@filter display text|page_without_file_extension|filter_name_1=filter_1_value_1;filter_1_value_2;...filter_1_value_n|...|filter_name_m=filter_m_value_1;filter_m_value_2;...(close curly brace)",
 								"The purpose of this tag is to open the given page, pre-filtered with the specified filtering options. There's one major caveat that makes this tricky to use for aspiring JSONtranauts\u2014the filter values use the {@i internal} version, as you'd find in the data. So, for example, ..|school=D|.. would filter spells to Divination school spells, as 'D' is the Divination identifier in the data. Trying to do e.g. ..|school=Divination|.. will not work.",
@@ -78,7 +78,7 @@
 								"{@filter Beast with challenge rating 1 or lower|bestiary|challenge rating=[&0;&1]|type=beast}",
 								"{@filter Creatures with a Strength score of 18 or more|bestiary|strength=[18;]}",
 								"{@filter Divination and Evocation spells|spells|school=D;V}",
-								"{@filter All uncommon magic items|items|source=null|type=null|rarity=uncommon|miscellaneous=Magic}",
+								"{@filter All uncommon magic items|items|source=|type=|rarity=uncommon|miscellaneous=Magic}",
 								"{@filter Simple melee weapons|items|source=phb|category=basic|type=simple weapon;melee weapon=sand}",
 								"Meta-options can be set; inline for individual filters, and using 'fbmt' for filtering meta-options {@filter filter meta example|spells|level=1;2=sor~sand~b1|fbmt=sor|fbmh=source}",
 								"Search can be set; {@filter view dinosaurs|bestiary|search=dinosaur}",
@@ -87,7 +87,7 @@
 									"type": "entries",
 									"name": "Note",
 									"entries": [
-										"Setting a filter to null, i.e. ..|school=null|.. is equivalent to 'clear the filter,' resetting it to all-white.",
+										"Setting a filter to \"no value\", i.e. ..|school=|.. is equivalent to 'clear the filter,' resetting it to all-white.",
 										"The pages that support this functionality are those with the 'magnet' button; the link this button exports will give clues as to what one could do with the filter tag."
 									]
 								}
@@ -110,7 +110,8 @@
 									"type": "list",
 									"items": [
 										"Adventure tags: link to an adventure {@adventure display text|CoS}; a chapter in an adventure {@adventure display text|CoS|2}; a heading in a chapter in an adventure {@adventure display text|CoS|2|Treasure}; or the Nth heading of a given name in a chapter in an adventure {@adventure display text|CoS|2|Treasure|1}",
-										"Book tags: link to a book {@book display text|PHB}; a chapter in a book {@book display text|PHB|2}; a heading in a chapter in a book {@book display text|PHB|2|Age}; or the Nth heading of a given name in a chapter in a book {@book display text|PHB|2|Age|0} (although this is generally unnecessary as, unlike adventures, books don't repeat their headings very often."
+										"Book tags: link to a book {@book display text|PHB}; a chapter in a book {@book display text|PHB|2}; a heading in a chapter in a book {@book display text|PHB|2|Age}; or the Nth heading of a given name in a chapter in a book {@book display text|PHB|2|Age|0} (although this is generally unnecessary as, unlike adventures, books don't repeat their headings very often.",
+										"Quick Reference tags; {@code &lt;name&gt;|&lt;source&gt;|&lt;chapterIndex&gt;|&lt;headerIndex&gt;|&lt;displayText&gt;}: {@quickref Multiclassing}, {@quickref Multiclassing|PHB}, {@quickref Adventuring Gear|PHB|1}, {@quickref Adventuring Gear|PHB|1|0}, {@quickref Adventuring Gear|PHB|1|0|Display Text}."
 									]
 								}
 							]
@@ -124,7 +125,7 @@
 									"type": "list",
 									"items": [
 										"Internal links: {@5etools This Is Your Life|lifegen.html}",
-										"External links: {@link https://discord.gg/nGvRCDs} or {@link Discord|https://discord.gg/nGvRCDs}"
+										"External links: {@link https://discord.gg/5etools} or {@link Discord|https://discord.gg/5etools}"
 									]
 								},
 								"Page specific/other tags:",
@@ -241,12 +242,6 @@
 						"col-6 text-center",
 						"col-4-5 text-right ",
 						"col-1-5"
-					],
-					"intro": [
-						"Optional intro entries."
-					],
-					"outro": [
-						"Optional outro entries."
 					],
 					"rows": [
 						[
@@ -395,7 +390,7 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "An extension of the hanging list.",
+							"name": "An extension of the hanging list",
 							"entry": "Which has bold inline titles -- note that this only allows {@i one} entry per item (it's 'entry' and not 'entries')"
 						},
 						"Can be mixed with regular strings"
@@ -412,12 +407,12 @@
 						},
 						{
 							"type": "itemSub",
-							"name": "A sub-item used in some places.",
+							"name": "A sub-item used in some places",
 							"entry": "For example, XGE's complex traps"
 						},
 						{
 							"type": "item",
-							"name": "Multiple entry version.",
+							"name": "Multiple entry version",
 							"entries": [
 								"This was, again, required specifically for XGE's complex traps, which can have multiple lines of text; due to their large and complex nature, one would have to presume.",
 								"Speaking of lines, this one is very long (much like the one above, which was specifically packed with superfluous information to pad it out to a decent word count) to hopefully demonstrate the effects of having to wrap a paragraph into the column, which should indent the first line of the paragraph only. Of course, if you're viewing this on an obscenely wide monitor, this will have little or no effect, so if you're in the future where 10k monitors are standard, then congratulations. Otherwise, like the rest of us plebs, you should see the desired layout.",
@@ -505,7 +500,7 @@
 					"type": "link",
 					"href": {
 						"type": "external",
-						"url": "https://raw.githubusercontent.com/TheGiddyLimit/TheGiddyLimit.github.io/master/test/schema/entry.json"
+						"url": "https://raw.githubusercontent.com/5etools-mirror-1/5etools-mirror-1/master/test/schema/entry.json"
 					},
 					"text": "The full 'entry' schema."
 				},
@@ -569,7 +564,9 @@
 					"type": "dataCreature",
 					"dataCreature": {
 						"name": "Unicorn",
-						"size": "L",
+						"size": [
+							"L"
+						],
 						"type": "celestial",
 						"source": "MM",
 						"alignment": [
@@ -816,47 +813,6 @@
 						],
 						"page": 241
 					}
-				},
-				"There exist a few homebrew features (generally) for use in custom copies of the site:",
-				{
-					"type": "homebrew",
-					"entries": [
-						{
-							"name": "Homebrew",
-							"type": "entries",
-							"entries": [
-								"If you make additions to existing text, you may want to use the \"homebrew\" entry type, to clearly mark homebrew sections."
-							]
-						}
-					]
-				},
-				{
-					"type": "homebrew",
-					"entries": [
-						{
-							"name": "Homebrew which changed something",
-							"type": "entries",
-							"entries": [
-								"It also supports changes, which show the replaced entries on hover."
-							]
-						}
-					],
-					"oldEntries": [
-						"This was the original content."
-					]
-				},
-				{
-					"type": "homebrew",
-					"oldEntries": [
-						"You can also mark removed content."
-					]
-				},
-				{
-					"type": "homebrew",
-					"movedTo": "a completely different place",
-					"oldEntries": [
-						"And you can also mark moved content."
-					]
 				}
 			]
 		}

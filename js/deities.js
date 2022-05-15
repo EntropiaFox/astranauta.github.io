@@ -20,7 +20,7 @@ class DeitiesPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(g, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(g.source);
 		const hash = UrlUtil.autoEncodeHash(g);
@@ -32,7 +32,7 @@ class DeitiesPage extends ListPage {
 			<span class="col-2 text-center">${g.pantheon}</span>
 			<span class="col-2 text-center">${alignment}</span>
 			<span class="col-3 ${g.domains[0] === VeCt.STR_NONE ? `list-entry-none` : ""}">${domains}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(g.source)} pr-0" title="${Parser.sourceJsonToFull(g.source)}" ${BrewUtil.sourceJsonToStyle(g.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(g.source)} pr-0" title="${Parser.sourceJsonToFull(g.source)}" ${BrewUtil2.sourceJsonToStyle(g.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -48,7 +48,6 @@ class DeitiesPage extends ListPage {
 				domains,
 			},
 			{
-				uniqueId: g.uniqueId ? g.uniqueId : dtI,
 				isExcluded,
 			},
 		);
@@ -65,13 +64,13 @@ class DeitiesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (g, pinId) {
+	pGetSublistItem (g, ix) {
 		const hash = UrlUtil.autoEncodeHash(g);
 
 		const alignment = g.alignment ? g.alignment.join("") : "\u2014";
 		const domains = g.domains.join(", ");
 
-		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-4 pl-0">${g.name}</span>
 				<span class="col-2">${g.pantheon}</span>
@@ -83,7 +82,7 @@ class DeitiesPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			g.name,
 			{
@@ -99,14 +98,9 @@ class DeitiesPage extends ListPage {
 	doLoadHash (id) {
 		const deity = this._dataList[id];
 
-		$(`#pagecontent`).empty().append(RenderDeities.$getRenderedDeity(deity));
+		this._$pgContent.empty().append(RenderDeities.$getRenderedDeity(deity));
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 }
 

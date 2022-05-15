@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "psionics.json",
-	"version": "1.1.0",
+	"version": "1.1.5",
 	"type": "object",
 	"properties": {
 		"psionic": {
@@ -17,16 +17,28 @@
 						"type": "string"
 					},
 					"page": {
-						"type": "integer"
+						"$ref": "util.json#/definitions/page"
 					},
 					"type": {
-						"type": "string"
+						"description": "D: Discipline\nT: Talent",
+						"type": "string",
+						"enum": [
+							"D",
+							"T"
+						]
 					},
 					"focus": {
 						"type": "string"
 					},
 					"order": {
-						"type": "string"
+						"type": "string",
+						"enum": [
+							"Avatar",
+							"Awakened",
+							"Immortal",
+							"Nomad",
+							"Wu Jen"
+						]
 					},
 					"modes": {
 						"type": "array",
@@ -57,7 +69,12 @@
 											"type": "integer"
 										},
 										"unit": {
-											"type": "string"
+											"type": "string",
+											"enum": [
+												"hr",
+												"min",
+												"rnd"
+											]
 										}
 									},
 									"required": [

@@ -16,6 +16,17 @@
 			"spellcastingAbility": "cha",
 			"casterProgression": "1/2",
 			"preparedSpells": "<$level$> / 2 + <$cha_mod$>",
+			"optionalfeatureProgression": [
+				{
+					"name": "Fighting Style",
+					"featureType": [
+						"FS:P"
+					],
+					"progression": {
+						"2": 1
+					}
+				}
+			],
 			"startingProficiencies": {
 				"armor": [
 					"light",
@@ -123,7 +134,7 @@
 						"{@filter 4th|spells|level=4|class=Paladin}",
 						"{@filter 5th|spells|level=5|class=Paladin}"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							0,
 							0,
@@ -277,7 +288,8 @@
 				"Divine Health|Paladin||3",
 				{
 					"classFeature": "Sacred Oath|Paladin||3",
-					"gainSubclassFeature": true
+					"gainSubclassFeature": true,
+					"gainSubclassFeatureHasContent": true
 				},
 				"Ability Score Improvement|Paladin||4",
 				"Proficiency Versatility|Paladin||4|UAClassFeatureVariants",
@@ -1476,6 +1488,20 @@
 			]
 		},
 		{
+			"name": "Channel Divinity",
+			"source": "PHB",
+			"page": 82,
+			"srd": true,
+			"className": "Paladin",
+			"classSource": "PHB",
+			"level": 3,
+			"entries": [
+				"Your oath allows you to channel divine energy to fuel magical effects. Each Channel Divinity option provided by your oath explains how to use it.",
+				"When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.",
+				"Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC."
+			]
+		},
+		{
 			"name": "Channel Divinity: Harness Divine Power",
 			"source": "TCE",
 			"page": 52,
@@ -1483,6 +1509,9 @@
 			"classSource": "PHB",
 			"level": 3,
 			"isClassFeatureVariant": true,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 3rd-level paladin {@variantrule optional class features|tce|optional feature}}",
 				"You can expend a use of your Channel Divinity to fuel your spells. As a bonus action, you touch your holy symbol, utter a prayer, and regain one expended spell slot, the level of which can be no higher than half your proficiency bonus (rounded up). The number of times you can use this feature is based on the level you've reached in this class: 3rd level, once; 7th level, twice; and 15th level, thrice. You regain all expended uses when you finish a long rest."
@@ -1496,6 +1525,9 @@
 			"classSource": "PHB",
 			"level": 3,
 			"isClassFeatureVariant": true,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 3rd-level paladin feature (enhances Channel Divinity)}",
 				"You can expend a use of your Channel Divinity to fuel your spells. As a bonus action, you touch your holy symbol, utter a prayer, and regain one expended 1st-level spell slot."
@@ -1533,13 +1565,8 @@
 					]
 				},
 				{
-					"name": "Channel Divinity",
-					"type": "entries",
-					"entries": [
-						"Your oath allows you to channel divine energy to fuel magical effects. Each Channel Divinity option provided by your oath explains how to use it.",
-						"When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.",
-						"Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your paladin spell save DC."
-					]
+					"type": "refClassFeature",
+					"classFeature": "Channel Divinity|Paladin||3"
 				},
 				{
 					"type": "refClassFeature",
@@ -2007,6 +2034,9 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be {@condition restrained}. While {@condition restrained} by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish."
 			]
@@ -2021,6 +2051,9 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.",
 				"A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the {@action Dash} action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the {@action Dodge} action.",
@@ -2232,6 +2265,9 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.",
 				"You can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall {@condition unconscious}, this effect ends."
@@ -2248,6 +2284,9 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.",
 				"A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the {@action Dash} action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the {@action Dodge} action."
@@ -2436,7 +2475,7 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"entries": [
-				"The Oath of Vengeance is a solemn commitment to punish those who have committed a grievous sin. When evil forces slaughter helpless villagers, when an entire people turns against the will of the gods, when a thieves' guild grows too violent and powerful, when a dragon rampages through the countryside - at times like these, paladins arise and swear an Oath of Vengeance to set right that which has gone wrong. To these paladins\u2014sometimes called avengers or dark knights\u2014their own purity is not as important as delivering justice.",
+				"The Oath of Vengeance is a solemn commitment to punish those who have committed a grievous sin. When evil forces slaughter helpless villagers, when an entire people turns against the will of the gods, when a thieves' guild grows too violent and powerful, when a dragon rampages through the countryside\u2014at times like these, paladins arise and swear an Oath of Vengeance to set right that which has gone wrong. To these paladins\u2014sometimes called avengers or dark knights\u2014their own purity is not as important as delivering justice.",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "Tenets of Vengeance|Paladin||Vengeance||3"
@@ -2465,6 +2504,9 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being {@condition frightened}. Fiends and undead have disadvantage on this saving throw.",
 				"On a failed save, the creature is {@condition frightened} for 1 minute or until it takes any damage. While {@condition frightened}, the creature's speed is 0, and it can't benefit from any bonus to its speed.",
@@ -2481,6 +2523,9 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls {@condition unconscious}."
 			]
@@ -2684,6 +2729,9 @@
 			"subclassSource": "SCAG",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"As a bonus action, you issue a challenge that compels other creatures to do battle with you. Each creature of your choice that you can see within 30 feet of you must make a Wisdom saving throw. On a failed save, a creature can't willingly move more than 30 feet away from you. This effect ends on the creature if you are {@condition incapacitated} or die or if the creature is more than 30 feet away from you."
 			]
@@ -2698,6 +2746,9 @@
 			"subclassSource": "SCAG",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"As a bonus action, you can bolster injured creatures with your Channel Divinity. Each creature of your choice that can hear you within 30 feet of you regains hit points equal to {@dice 1d6} + your Charisma modifier (minimum of 1) if it has no more than half of its hit points."
 			]
@@ -2910,16 +2961,19 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 3rd-level Oath of Glory feature}",
 				"You gain the following two Channel Divinity options. See the Sacred Oath class feature for how Channel Divinity works.",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Peerless Athlete|Paladin||Glory|TCE|3"
+					"subclassFeature": "Channel Divinity: Peerless Athlete|Paladin||Glory|TCE|3"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Inspiring Smite|Paladin||Glory|TCE|3"
+					"subclassFeature": "Channel Divinity: Inspiring Smite|Paladin||Glory|TCE|3"
 				}
 			]
 		},
@@ -3027,7 +3081,7 @@
 			]
 		},
 		{
-			"name": "Inspiring Smite",
+			"name": "Channel Divinity: Inspiring Smite",
 			"source": "TCE",
 			"page": 53,
 			"otherSources": [
@@ -3047,7 +3101,7 @@
 			]
 		},
 		{
-			"name": "Peerless Athlete",
+			"name": "Channel Divinity: Peerless Athlete",
 			"source": "TCE",
 			"page": 53,
 			"otherSources": [
@@ -3149,6 +3203,9 @@
 			"subclassShortName": "Watchers",
 			"subclassSource": "TCE",
 			"level": 3,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"The Oath of the Watchers binds paladins to protect mortal realms from the predations of extraplanar creatures, many of which can lay waste to mortal soldiers. Thus, the Watchers hone their minds, spirits, and bodies to be the ultimate weapons against such threats.",
 				"Paladins who follow the Watchers' oath are ever vigilant in spotting the influence of extraplanar forces, often establishing a network of spies and informants to gather information on suspected cults. To a Watcher, keeping a healthy suspicion and awareness about one's surroundings is as natural as wearing armor in battle.",
@@ -3176,6 +3233,9 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 3rd-level Oath of the Watchers feature}",
 				"You gain the following Channel Divinity options. See the Sacred Oath class feature for how Channel Divinity works.",
@@ -3211,7 +3271,7 @@
 				"You gain oath spells at the paladin levels listed in the Oath of the Watchers table. See the Sacred Oath class feature for how oath spells work.",
 				{
 					"type": "table",
-					"caption": "Oath of the Watchers Spells  Spells",
+					"caption": "Oath of the Watchers Spells",
 					"colLabels": [
 						"Paladin Level",
 						"Spells"
@@ -3344,6 +3404,9 @@
 			"subclassShortName": "Watchers (UA)",
 			"subclassSource": "UA2020SubclassesPt1",
 			"level": 3,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Paladins who vow the Oath of the Watchers seek to protect the mortal realm from the predations of extraplanar creatures, many of which can lay waste to mortal soldiers. Thus, the Watchers hone their minds, spirits, and bodies to be the ultimate weapons against such threats.",
 				"Paladins who follow the Watchers' oath are ever vigilant in spotting the influence of extraplanar forces, often establishing a network of spies and informants to gather information on suspected cults. To a Watcher, keeping a healthy suspicion and awareness about one's surroundings is as natural as wearing armor in battle.",
@@ -3371,6 +3434,9 @@
 			"subclassSource": "UA2020SubclassesPt1",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 3rd-level Oath of the Watchers feature}",
 				"You gain the following Channel Divinity options. See the Sacred Oath class feature for how Channel Divinity works.",
@@ -3406,7 +3472,7 @@
 				"You gain oath spells at the paladin levels listed in the Oath of the Watchers table. See the Sacred Oath class feature for how oath spells work.",
 				{
 					"type": "table",
-					"caption": "Oath of the Watchers Spells  Spells",
+					"caption": "Oath of the Watchers Spells",
 					"colLabels": [
 						"Paladin Level",
 						"Spells"
@@ -3538,6 +3604,9 @@
 			"subclassShortName": "Redemption (UA)",
 			"subclassSource": "UAATrioOfSubclasses",
 			"level": 3,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"The Oath of Redemption sets a paladin on a difficult path, one that requires a holy warrior to use violence only as a last resort. Paladins who dedicate themselves to this oath believe that any person can be redeemed and that the path of benevolence and justice is one that anyone can walk. These paladins face evil creatures in the hope of turning them to the light, and the paladins slay them only when such a deed will clearly save other lives. Paladins who follow this path are known as redeemers.",
 				"While redeemers are idealists, they are no fools. Redeemers know that undead, demons, devils, and other supernatural threats can be inherently evil. Against such foes, the paladins bring the full wrath of their weapons and spells to bear. Yet the redeemers still pray that, one day, even creatures of wickedness will invite their own redemption.",
@@ -3591,6 +3660,9 @@
 			"subclassSource": "UAATrioOfSubclasses",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to the next Charisma ({@skill Persuasion}) check you make within the next minute."
 			]
@@ -3605,6 +3677,9 @@
 			"subclassSource": "UAATrioOfSubclasses",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to rebuke those who use violence. As a reaction when an enemy within 10 feet of you deals damage with a melee attack against one creature other than you, you force that attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage."
 			]
@@ -3818,6 +3893,9 @@
 			"subclassSource": "UABardAndPaladin",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 3rd-level Oath of Heroism feature}",
 				"You gain the following two Channel Divinity options.",
@@ -4029,6 +4107,9 @@
 			"subclassSource": "UAPaladin",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to break a foe's will. When you hit a creature with a melee weapon attack as part of the {@action Attack} action, you can also use your Channel Divinity to force the target to make a Wisdom saving throw. On a failed save, the target becomes {@condition frightened} of you for 1 minute. The {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
 			]
@@ -4043,6 +4124,9 @@
 			"subclassSource": "UAPaladin",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
 			]
@@ -4236,6 +4320,9 @@
 			"subclassSource": "UAPaladin",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"As an action, you create a visual illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space of your choice that you can see within 30 feet of you. The illusion looks exactly like you; it is silent; it is your size, is insubstantial, doesn't occupy its space; and it is unaffected by attacks and damage. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but the illusion must remain within 120 feet of you.",
 				"For the duration, you can cast spells as though you were in the illusion's space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how uncanny the illusion is."
@@ -4251,6 +4338,9 @@
 			"subclassSource": "UAPaladin",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to make a weapon deadlier. As a bonus action, you touch one weapon or piece of ammunition and conjure a special poison on it. The poison lasts for 1 minute. The next time you hit a target with an attack using that weapon or ammunition, the target takes poison damage immediately after the attack. The poison damage equals {@dice 2d10} + your paladin level, or 20 + your paladin level if you had advantage on the attack roll."
 			]
@@ -4433,6 +4523,9 @@
 			"subclassSource": "UARevisedClassOptions",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to exude a terrifying presence. As an action, you force each creature of your choice that you can see within 30 feet of you to make a Wisdom saving throw. On a failed save, a creature becomes {@condition frightened} of you for 1 minute. The {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
 			]
@@ -4447,6 +4540,9 @@
 			"subclassSource": "UARevisedClassOptions",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
 			]
@@ -4641,6 +4737,9 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to exude a terrifying presence. As an action, you force each creature of your choice that you can see within 30 feet of you to make a Wisdom saving throw. On a failed save, a creature becomes {@condition frightened} of you for 1 minute. The {@condition frightened} creature can repeat this saving throw at the end of each of its turns, ending the effect on itself on a success."
 			]
@@ -4655,6 +4754,9 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
 			]
@@ -4840,6 +4942,9 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to Charisma ({@skill Persuasion}) checks for the next 10 minutes."
 			]
@@ -4854,6 +4959,9 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"header": 1,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"You can use your Channel Divinity to rebuke those who use violence. Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage."
 			]

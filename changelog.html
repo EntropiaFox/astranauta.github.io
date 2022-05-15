@@ -46,7 +46,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -71,11 +74,11 @@
 	</div>
 </header>
 
-<nav class="container page__nav" id="navigation"><ul class="nav page__nav-inner" id="navbar"></ul></nav>
+<nav class="container page__nav" id="navigation"><ul class="nav nav-pills page__nav-inner" id="navbar"></ul></nav>
 
 <div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
 
-<main class="container night__shadow-big mt-3" id="pagecontent"><div class="flex-vh-center dnd-font mt-3"><i>Loading...</i></div></main>
+<main class="container night__shadow-big mt-3" id="pagecontent"><div class="ve-flex-vh-center dnd-font mt-3"><i>Loading...</i></div></main>
 <!--5ETOOLS_SCRIPT_ANCHOR-->
 <!--5ETOOLS_AD_ADHESION-->
 <script type="text/javascript" src="js/parser.js"></script>
@@ -85,6 +88,8 @@
 <script type="text/javascript" src="lib/localforage.js"></script>
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>
 <script type="text/javascript" src="js/scalecreature.js"></script>
@@ -95,7 +100,7 @@
 <script>
 	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
 
-	DataUtil.loadJSON(`${Renderer.get().baseUrl}/data/changelog.json`)
+	DataUtil.loadJSON(`${Renderer.get().baseUrl}data/changelog.json`)
 		.then(changelog => {
 			const $wrp = $(`#pagecontent`).empty();
 			UtilsChangelog.renderChangelog(changelog, $wrp);

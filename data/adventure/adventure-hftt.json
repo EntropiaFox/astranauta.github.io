@@ -3,6 +3,7 @@
 		{
 			"type": "section",
 			"name": "Hunt for the Thessalhydra",
+			"page": 1,
 			"id": "000",
 			"entries": [
 				"{@i A D&D Campaign by Mike Wheeler}",
@@ -18,6 +19,7 @@
 				{
 					"type": "section",
 					"name": "Notes to Myself (as Dungeon Master)",
+					"page": 3,
 					"id": "001",
 					"entries": [
 						"We should be able to finish this story in one night (maybe a long weekend if Dustin really gets caught up in the roleplaying), but don't rush it. As long as everyone's having fun, let it take as long as necessary. It's all about the fun.",
@@ -30,6 +32,7 @@
 				{
 					"type": "section",
 					"name": "The Whole Story",
+					"page": 4,
 					"id": "002",
 					"entries": [
 						"The characters have been summoned by Sir Tristan, the ruler of a small domain in a lonely stretch of mountains. A terrible monster called a thessalhydra has been attacking his realm. It is a strange and dreadful creature with eight heads surrounding a large circular mouth rimmed with jagged teeth. Its maw drips with acid, and its tail ends in a pair of sharp pincers. Tristan asks the characters to get rid of this menace.",
@@ -41,6 +44,7 @@
 				{
 					"type": "section",
 					"name": "Audience with Sir Tristan",
+					"page": 5,
 					"id": "003",
 					"entries": [
 						"Start the adventure in Sir Tristan's throne room. The characters have met Tristan before. He sponsored them on an earlier adventure and proved himself to be a kind ruler to his people and a good friend to the characters. They can trust him.",
@@ -50,6 +54,7 @@
 						{
 							"type": "entries",
 							"name": "Gifts from Sir Tristan",
+							"page": 6,
 							"id": "004",
 							"entries": [
 								"Sir Tristan offers them huge rewards to go on this dangerous mission. Begin by offering 100 gold pieces each and let them negotiate if they want more. If the group gets too greedy, Sir Tristan reminds them that they're old friends.",
@@ -63,6 +68,7 @@
 				{
 					"type": "section",
 					"name": "Rumors on the Road",
+					"page": 7,
 					"id": "005",
 					"entries": [
 						"As the characters search for the thessalhydra, they meet other people along the way. Give them a few short roleplaying encounters. Some NPCs have useful info, and others are just distractions. But make sure the scenes are fun, or the group might ignore them (especially Lucas\u2014he'll want to be all business).",
@@ -81,6 +87,7 @@
 				{
 					"type": "section",
 					"name": "Troglodyte Caverns",
+					"page": 8,
 					"id": "006",
 					"entries": [
 						"Have one character (group's choice) make a DC 12 ability check\u2014Intelligence ({@skill Nature}) if they're searching for the troglodyte caves, Wisdom ({@skill Survival}) if they're searching for the thessalhydra's tracks, or another skill that matches their actions.",
@@ -106,6 +113,7 @@
 										{
 											"type": "entries",
 											"name": "Area 1: Cave Entrance",
+											"page": 9,
 											"id": "009",
 											"entries": [
 												"A successful DC 15 Intelligence ({@skill Investigation}) or Wisdom ({@skill Survival}) check reveals that the cave's mouth has recently been visited by about 25 troglodytes, the thessalhydra, and an owlbear."
@@ -114,6 +122,7 @@
 										{
 											"type": "entries",
 											"name": "Area 2: Empty Cave",
+											"page": 9,
 											"id": "00a",
 											"entries": [
 												"Nothing of interest here. The floor becomes too rocky to follow footprints anymore."
@@ -122,6 +131,7 @@
 										{
 											"type": "entries",
 											"name": "Area 3: Trapped Hall",
+											"page": 9,
 											"id": "00b",
 											"entries": [
 												"The cave is empty, but the hall to area 4 is trapped, which requires a successful DC 10 ability check to detect, using Intelligence ({@skill Investigation}), or disarm, using Dexterity. If triggered, the roof collapses. Anyone in the hall must make a DC 10 Dexterity save. Those who fail take {@dice 2d6 + 2} bludgeoning damage. Those who succeed take half as much damage. The hall becomes impassable."
@@ -130,6 +140,7 @@
 										{
 											"type": "entries",
 											"name": "Area 4: Treasure Room",
+											"page": 9,
 											"id": "00c",
 											"entries": [
 												"This is where the troglodytes keep their few valuable items. There are 200 gp in coins and gems, plus artwork and other valuables worth 200 gp more. The secret door that connects to area 6 needs a successful DC 15 ability check to detect, using Intelligence ({@skill Investigation}), or open, using Dexterity."
@@ -138,6 +149,7 @@
 										{
 											"type": "entries",
 											"name": "Area 5: Common Chamber",
+											"page": 9,
 											"id": "00d",
 											"entries": [
 												"This is where most of the troglodytes sleep. Ten {@creature Troglodyte||troglodytes} are here, but they are terrified and try to run away into area 6 as soon as they see the characters."
@@ -146,6 +158,7 @@
 										{
 											"type": "entries",
 											"name": "Area 6: Noble Chamber",
+											"page": 10,
 											"id": "00e",
 											"entries": [
 												"This is where the five {@creature troglodyte} leaders sleep. The head trog is a fair and noble ruler (like a trog version of Sir Tristan). He'd rather talk than fight (unlike most trogs, he speaks Common). But if the group angers him, all the trogs attack and fight to the death. If the group politely asks about the thessalhydra, he'll say that it comes in from the woods, passes through the caves, and enters the Cursed Labyrinth. It never travels the opposite way."
@@ -154,6 +167,7 @@
 										{
 											"type": "entries",
 											"name": "Area 7: False Treasure Room",
+											"page": 10,
 											"id": "00f",
 											"entries": [
 												"This room is like area 4, but everything is broken and worthless. One vase is trapped, requiring a successful DC 10 Intelligence ({@skill Investigation}) check to detect and a successful DC 10 Dexterity check to disarm. If triggered, the hall to area 5 collapses. Anyone in the hall must make a DC 10 Dexterity save. Those who fail take {@dice 2d6 + 2} bludgeoning damage. Those who succeed take half as much damage. The hall becomes impassable."
@@ -162,6 +176,7 @@
 										{
 											"type": "entries",
 											"name": "Area 8: Guard Post",
+											"page": 10,
 											"id": "010",
 											"entries": [
 												"Eight {@creature troglodyte} guards are stationed here. If the characters enter or make too much noise in an adjoining room (for example, have a fight or argument), the guards attack."
@@ -170,6 +185,7 @@
 										{
 											"type": "entries",
 											"name": "Area 9: Owlbear",
+											"page": 10,
 											"id": "011",
 											"entries": [
 												"One {@creature owlbear} is here and sleeping. Characters may attempt Dexterity ({@skill Stealth}) checks against its passive Perception (13). Failure means it wakes up and attacks."
@@ -178,6 +194,7 @@
 										{
 											"type": "entries",
 											"name": "Area 10: Water Pool",
+											"page": 10,
 											"id": "012",
 											"entries": [
 												"A natural spring feeds a 10-foot-deep pool of clear, fresh water. In the pool lives a {@creature giant frog}, which leaps out and attacks the first character to touch the water."
@@ -186,6 +203,7 @@
 										{
 											"type": "entries",
 											"name": "Area 11: Shrine",
+											"page": 10,
 											"id": "013",
 											"entries": [
 												"This is where the troglodytes come to worship their dark god, Laogzed. There's an altar and a statue of an ugly, frog-like creature. On the altar are pieces of rotten meat and 50 gp worth of coins and small gems."
@@ -198,6 +216,7 @@
 						{
 							"type": "entries",
 							"name": "The Cursed Labyrinth",
+							"page": 11,
 							"id": "014",
 							"entries": [
 								"It seems like a normal maze with twisting, turning hallways that intersect, but there is no solution to this maze. Its path is completely random, and if you turn around to retrace your steps, you find that the path has changed behind you.",
@@ -208,6 +227,7 @@
 										{
 											"type": "entries",
 											"name": "Random Path",
+											"page": 11,
 											"id": "016",
 											"entries": [
 												"Use the first few hallways as shown on the map (above), but when the characters move off the map, use the table below to figure out what they find next. If the characters turn around, the maze remains the same until they go around a corner or open a door. From that point on, the labyrinth makes a new random path.",
@@ -252,11 +272,11 @@
 														],
 														[
 															"19",
-															"but also add a door"
+															"Reroll, but also add a door"
 														],
 														[
 															"20",
-															"but also add a secret door"
+															"Reroll, but also add a secret door"
 														]
 													]
 												}
@@ -269,6 +289,7 @@
 						{
 							"type": "entries",
 							"name": "Special Encounters",
+							"page": 12,
 							"id": "017",
 							"entries": [
 								"While going through the Cursed Labyrinth, the characters will have some interesting encounters. Roll on the following table (if you get the same result twice, reroll or choose an encounter).",
@@ -316,6 +337,7 @@
 										{
 											"type": "entries",
 											"name": "Damaged Walls",
+											"page": 12,
 											"id": "019",
 											"entries": [
 												"The next hallway the characters enter shows signs of damage, like a powerful beast has rampaged through here. The group can easily tell that this damage was done by the thessalhydra."
@@ -324,6 +346,7 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 12,
 											"id": "01a",
 											"entries": [
 												"They find the remains of an ancient adventurer who died trying to escape the labyrinth. The body has treasure worth {@dice 3d20} gold pieces."
@@ -332,6 +355,7 @@
 										{
 											"type": "entries",
 											"name": "Pit Trap",
+											"page": 12,
 											"id": "01b",
 											"entries": [
 												"The hallway has a pit trap somewhere along its length. Characters must make a successful DC 12 Intelligence ({@skill Investigation}) check to detect the trap, and a successful DC 12 Dexterity check to safely move past it. Those who fail the Dexterity check fall in and take {@dice 1d6} bludgeoning damage. Climbing out of the pit is easy to do."
@@ -340,6 +364,7 @@
 										{
 											"type": "entries",
 											"name": "Troglodytes",
+											"page": 12,
 											"id": "01c",
 											"entries": [
 												"Four {@creature Troglodyte||troglodytes}, members of the tribe from the caverns who ran into the labyrinth to escape the thessalhydra, have been trapped here for two weeks. They're mad with hunger and immediately attack."
@@ -348,6 +373,7 @@
 										{
 											"type": "entries",
 											"name": "Skeletons",
+											"page": 12,
 											"id": "01d",
 											"entries": [
 												"Eight {@creature Skeleton||skeletons}, the undead remains of adventurers, come shambling down the hallway to attack the characters."
@@ -356,6 +382,7 @@
 										{
 											"type": "entries",
 											"name": "The Lost Knight",
+											"page": 12,
 											"id": "01e",
 											"entries": [
 												"See details below."
@@ -368,6 +395,7 @@
 						{
 							"type": "entries",
 							"name": "The Lost Knight",
+							"page": 13,
 							"id": "01f",
 							"entries": [
 								"The characters encounter the Lost Knight\u2014a mysterious figure dressed in a full suit of armor who is trapped in the Cursed Labyrinth.",
@@ -398,6 +426,7 @@
 										{
 											"type": "entries",
 											"name": "Second Riddle",
+											"page": 13,
 											"id": "022",
 											"entries": [
 												"The characters see the Lost Knight standing in a doorway at the far side of a large room.",
@@ -415,6 +444,7 @@
 										{
 											"type": "entries",
 											"name": "Shelf 1 Statues",
+											"page": 14,
 											"id": "024",
 											"entries": [
 												"A man with a crown and a bag of coins."
@@ -423,6 +453,7 @@
 										{
 											"type": "entries",
 											"name": "Shelf 2 Statues",
+											"page": 14,
 											"id": "025",
 											"entries": [
 												"A woman with a crown and a jar of honey."
@@ -431,6 +462,7 @@
 										{
 											"type": "entries",
 											"name": "Shelf 3 Statue",
+											"page": 14,
 											"id": "026",
 											"entries": [
 												"A common woman wearing an apron and an empty space for a second statue.",
@@ -442,6 +474,7 @@
 										{
 											"type": "entries",
 											"name": "Clues",
+											"page": 14,
 											"id": "027",
 											"entries": [
 												"",
@@ -453,6 +486,7 @@
 										{
 											"type": "entries",
 											"name": "The Knight's Prize",
+											"page": 14,
 											"id": "028",
 											"entries": [
 												"After the group solves both of the Lost Knight's riddles, he congratulates them on being so clever.",
@@ -468,6 +502,7 @@
 				{
 					"type": "section",
 					"name": "The Upside Down",
+					"page": 15,
 					"id": "029",
 					"entries": [
 						"The Upside Down is a kind of alternate dimension\u2014an echo of the Material Plane (where we all live). That means in some ways it's very similar to our world, but in others it's completely different.",
@@ -486,6 +521,7 @@
 						{
 							"type": "entries",
 							"name": "Winter's Dark Bite in the Upside Down",
+							"page": 16,
 							"id": "02a",
 							"entries": [
 								"The sword that the characters might have received from Sir Tristan, {@item Winter's Dark Bite|HftT}, is made of metal mined from the Upside Down, so it gets even stronger when it's used here. While in the Upside Down, Winter's Dark Bite acts like a +4 greatsword.",
@@ -505,6 +541,7 @@
 				{
 					"type": "section",
 					"name": "Upside Down Encounters",
+					"page": 17,
 					"id": "02b",
 					"entries": [
 						"This part of the adventure is mostly supposed to be scary, not dangerous. When the characters first arrive in the Upside Down, make it in the middle of the woods (an area that doesn't touch our world). Describe how lonely, dark, and desolate it is, with a cold wind blowing all the time.",
@@ -514,6 +551,7 @@
 						{
 							"type": "entries",
 							"name": "The Proud Princess",
+							"page": 18,
 							"id": "02c",
 							"entries": [
 								"With a blast of lightning and thunder, the Proud Princess appears on a hill near the characters. She is strong and proud, a warrior princess, who looks at the characters and instantly knows that they pose no danger to her. (No stats for her. She's not someone they should fight. If they insist on trying, they can hit her only with a critical hit, and even then she shrugs off whatever damage they do. Her attacks always hit them and deal {@dice 2d6 + 6} slashing damage.)",
@@ -536,6 +574,7 @@
 						{
 							"type": "entries",
 							"name": "Demogorgon",
+							"page": 20,
 							"id": "02d",
 							"entries": [
 								{
@@ -554,6 +593,7 @@
 						{
 							"type": "entries",
 							"name": "Using Demogorgon Blood",
+							"page": 20,
 							"id": "02e",
 							"entries": [
 								"After the characters have gotten enough demogorgon blood, they can take it to the cavern with the flowers. If they pour the blood on one of the flowers, it bursts open violently (anyone standing next to the flower must succeed on a DC 12 Dexterity save or be knocked {@condition prone}), creating a cross-planar gate. Stepping through leads to area 1 of the lair of the thessalhydra."
@@ -564,6 +604,7 @@
 				{
 					"type": "section",
 					"name": "Lair of the Thessalhydra",
+					"page": 21,
 					"id": "02f",
 					"entries": [
 						{
@@ -596,6 +637,7 @@
 										{
 											"type": "entries",
 											"name": "Area 1",
+											"page": 22,
 											"id": "032",
 											"entries": [
 												"Entrance to the cave. Some of the cross-planar flowers grow along the rocks here."
@@ -604,6 +646,7 @@
 										{
 											"type": "entries",
 											"name": "Area 2",
+											"page": 22,
 											"id": "033",
 											"entries": [
 												"This cave is thick with webs from floor to ceiling. Three giant spiders live here. If the characters don't bother them, they won't bother the characters."
@@ -612,6 +655,7 @@
 										{
 											"type": "entries",
 											"name": "Area 3",
+											"page": 22,
 											"id": "034",
 											"entries": [
 												"There's a 20-foot-wide pit. It takes a successful DC 12 Strength ({@skill Athletics}) check to jump across. Failing a jump without a safety rope tied to you means you fall away into darkness and take {@dice 3d10} bludgeoning damage. The pit is 30 feet deep.",
@@ -621,6 +665,7 @@
 										{
 											"type": "entries",
 											"name": "Area 4",
+											"page": 22,
 											"id": "035",
 											"entries": [
 												"A tribe of ten {@creature Troglodyte||troglodytes} live here. When the thessalhydra moved in, the trogs began to worship it as a god. Now they protect it while it sleeps. If the characters have already killed the thessalhydra, the trogs begin to worship them as their new gods."
@@ -629,6 +674,7 @@
 										{
 											"type": "entries",
 											"name": "Area 5",
+											"page": 23,
 											"id": "036",
 											"entries": [
 												"At the back of this cave is an area that appears wet, like a mud patch or a shallow puddle, and occasionally ripples or bubbles. It's actually an {@creature ochre jelly}. If the characters don't bother it, it won't bother them."
@@ -637,6 +683,7 @@
 										{
 											"type": "entries",
 											"name": "Area 6",
+											"page": 23,
 											"id": "037",
 											"entries": [
 												"This is where the troglodytes go to leave offerings in worship of the thessalhydra. The walls are covered with small niches, each of which contains an offering. (See \"Conclusion\" below.)"
@@ -645,6 +692,7 @@
 										{
 											"type": "entries",
 											"name": "Area 7",
+											"page": 23,
 											"id": "038",
 											"entries": [
 												"This cavern is where the {@creature thessalhydra|HftT} lurks. It is here and sleeping. If the characters can sneak up on it, they can take the creature by surprise (see chapter 2 of the rulebook for how surprise works).",
@@ -668,12 +716,14 @@
 				{
 					"type": "section",
 					"name": "Conclusion",
+					"page": 24,
 					"id": "039",
 					"entries": [
 						"If the characters kill the thessalhydra, they have successfully completed this adventure. When they chop off the creature's heads and bring them back to Sir Tristan, he will welcome them as conquering heroes, shower them with treasure, and grant each one a boon (as long as it is within his power to do so). Additionally, in area 6 of the thessalhydra's lair they will find coins, gems, and artwork worth 1,000 gold pieces, plus one magic item of your (the Dungeon Master's) choice.",
 						{
 							"type": "entries",
 							"name": "Further Adventures",
+							"page": 49,
 							"id": "03a",
 							"entries": [
 								"Perhaps the best reward of all is that the characters each gain a level. Use the information in the {@book Player's Handbook|PHB} to make them 4th level. They will then be ready to seek more adventure and rewards in future games of Dungeons & Dragons!"

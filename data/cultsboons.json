@@ -35,16 +35,22 @@
 			]
 		},
 		{
-			"name": "Cult of Atropus the World Born Dead",
+			"name": "Cult of Atropus, the World Born Dead",
 			"source": "MTF",
 			"page": 237,
+			"otherSources": [
+				{
+					"source": "MPMM",
+					"page": 226
+				}
+			],
 			"type": "Elder Evil",
 			"entries": [
 				{
-					"type": "entries",
 					"name": "Gaze of Corruption (Recharge 6)",
+					"type": "entries",
 					"entries": [
-						"The cultist targets one creature it can see within 30 feet of it. The target must succeed on a DC 15 Constitution saving throw or take 16 ({@dice 3d10}) necrotic damage and be {@condition poisoned} for 1 minute. The {@condition poisoned} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"The cultist targets one creature it can see within 30 feet of it. The target must succeed on a {@dc 15} Constitution saving throw or take 16 ({@damage 3d10}) necrotic damage and be {@condition poisoned} for 1 minute. The {@condition poisoned} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
 				}
 			]
@@ -97,6 +103,41 @@
 					"name": "Path of Baalzebul",
 					"entries": [
 						"As a bonus action on its turn, this creature can choose one ally it can see within 30 feet of it. Until the start of this creature's next turn, it gains advantage on all ability checks and attack rolls, while the chosen ally suffers disadvantage on all ability checks, attack rolls, and saving throws."
+					]
+				}
+			]
+		},
+		{
+			"name": "Cult of Baphomet",
+			"source": "MPMM",
+			"page": 58,
+			"type": "Demonic",
+			"entries": [
+				"Baphomet grants his cultists special abilities. All his devotees gain the Labyrinthine Recall trait below. He grants his rank-and-file followers the Unerring Tracker trait, and cult leaders gain the Incite the Hunters trait.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Labyrinthine Recall",
+							"entries": [
+								"This creature can perfectly recall any path it has traveled."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Unerring Tracker",
+							"entries": [
+								"As a bonus action, this creature magically creates a psychic link with one creature it can see. For the next hour, as a bonus action this creature learns the current distance and direction to the target if it is on the same plane of existence. The link ends if this creature is {@condition incapacitated} or if it uses this ability on a different target."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Incite the Hunters (Recharges after a Short or Long Rest)",
+							"entries": [
+								"As an action, this creature allows each ally within 30 feet of it that has the Unerring Tracker trait to make one weapon attack as a reaction against the target of that ally's Unerring Tracker."
+							]
+						}
 					]
 				}
 			]
@@ -160,7 +201,7 @@
 			]
 		},
 		{
-			"name": "Cult of Borem of the Lake of Boiling Mud",
+			"name": "Cult of Borem, of the Lake of Boiling Mud",
 			"source": "MTF",
 			"page": 237,
 			"type": "Elder Evil",
@@ -170,6 +211,27 @@
 					"name": "Borem's Embrace (1/Day)",
 					"entries": [
 						"The cultist touches one creature within 5 feet of it. The target must succeed on a DC 15 Dexterity saving throw or be coated in sticky, steaming mud. While it is coated in this way, the target's speed is halved, it can't use reactions, and it takes 10 ({@dice 3d6}) fire damage at the start of each of its turns. The effect lasts for 1 minute, until the cultist is {@condition incapacitated} or dies, or until the target is immersed in water."
+					]
+				}
+			]
+		},
+		{
+			"name": "Cult of Demogorgon",
+			"source": "MPMM",
+			"page": 90,
+			"type": "Demonic",
+			"entries": [
+				"Demogorgon's followers are typically lone killers driven by the whispering voice of their master. His most blessed followers gain the Two Minds of Chaos trait.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Two Minds of Chaos",
+							"entries": [
+								"This creature has advantage on all Intelligence, Wisdom, and Charisma saving throws."
+							]
+						}
 					]
 				}
 			]
@@ -304,6 +366,51 @@
 					"name": "Loyalty beyond Death (Recharges after a Short or Long Rest)",
 					"entries": [
 						"As a reaction when an ally this creature can see is reduced to 0 hit points, that ally is instead reduced to 1 hit point and gains temporary hit points equal to this creature's Charisma score + half its number of Hit Dice."
+					]
+				}
+			]
+		},
+		{
+			"name": "Cult of Fraz-Urb'luu",
+			"source": "MPMM",
+			"page": 129,
+			"type": "Demonic",
+			"entries": [
+				"Fraz-Urb'luu grants his cultists the Liar's Eye trait.",
+				{
+					"type": "entries",
+					"name": "Liar's Eye",
+					"entries": [
+						"This creature has advantage on Wisdom ({@skill Insight} or {@skill Perception}) checks.",
+						"As a bonus action, the creature detects the location of all illusions and hidden creatures within 15 feet of it."
+					]
+				}
+			]
+		},
+		{
+			"name": "Cult of Geryon",
+			"source": "MPMM",
+			"page": 136,
+			"type": "Diabolical",
+			"entries": [
+				"Geryon grants his cultists special abilities. Members of his cult can gain the Crushing Blow trait. Cult leaders can also gain the Indomitable Strength trait.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"name": "Crushing Blow (Recharges after a Short or Long Rest)",
+							"type": "entries",
+							"entries": [
+								"As a bonus action, the creature gains a bonus to the damage roll of its next melee weapon attack roll that hits within the next minute. The bonus equals its Strength modifier (minimum of +1)."
+							]
+						},
+						{
+							"name": "Indomitable Strength {@recharge 5}",
+							"type": "entries",
+							"entries": [
+								"As a reaction when this creature takes damage, it can roll a {@dice d10} and subtract the number rolled from the damage."
+							]
+						}
 					]
 				}
 			]
@@ -445,16 +552,79 @@
 			]
 		},
 		{
-			"name": "Cult of Haask the Voice of Hargut",
+			"name": "Cult of Graz'zt",
+			"source": "MPMM",
+			"page": 148,
+			"type": "Demonic",
+			"entries": [
+				"Graz'zt grants his cultists special abilities. His cultists can gain the Joy from Pain trait, while his cult leaders can gain the Master of Pleasures trait.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"name": "Joy from Pain",
+							"type": "entries",
+							"entries": [
+								"Whenever this creature suffers a critical hit, it can make one melee weapon attack as a reaction."
+							]
+						},
+						{
+							"name": "Master of Pleasures",
+							"type": "entries",
+							"entries": [
+								"As a reaction when this creature takes damage, it can magically grant 5 temporary hit points to itself and up to three allies within 30 feet of it."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cult of Haask, the Voice of Hargut",
 			"source": "MTF",
 			"page": 237,
+			"otherSources": [
+				{
+					"source": "MPMM",
+					"page": 226
+				}
+			],
 			"type": "Elder Evil",
 			"entries": [
 				{
-					"type": "entries",
 					"name": "Haask's Presence (1/Day)",
+					"type": "entries",
 					"entries": [
-						"The cultist transforms into a Tiny, leech-like being and teleports onto the shoulder of a humanoid that it can see within 30 feet of it. The targeted humanoid must succeed on a DC 15 Charisma saving throw or be {@condition charmed} by the cultist. While the target is {@condition charmed}, the cultist has control of it on the target's next turn. At the end of that turn, the cultist teleports to an unoccupied space it can see within 30 feet of it and returns to its normal form. The cultist can't be targeted directly by any attack or other effect while it's in the slug-like form, but it is subject to areas of effect as normal."
+						"The cultist transforms into a Tiny, slug-like being and teleports onto the shoulder of a Humanoid that it can see within 30 feet of it. The targeted Humanoid must succeed on a {@dc 15} Charisma saving throw or be {@condition charmed} by the cultist. While the target is {@condition charmed}, the cultist has control of it on the target's next turn. At the end of that turn, the cultist teleports to an unoccupied space it can see within 30 feet of it and returns to its normal form. The cultist can't be targeted directly by any attack or other effect while it's in the slug-like form, but it is subject to areas of effect as normal."
+					]
+				}
+			]
+		},
+		{
+			"name": "Cult of Juiblex",
+			"source": "MPMM",
+			"page": 160,
+			"type": "Demonic",
+			"entries": [
+				"The Faceless Lord grants its cultists special abilities. Lesser followers can gain the Liquid Movement trait. The most dedicated devotees of ooze can also gain the Slimy Organs trait.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Liquid Movement",
+							"entries": [
+								"As an action, this creature can move up to 20 feet through spaces no more than an inch in diameter. It must end this movement in a space that can accommodate its full size. Otherwise, it takes 5 force damage and returns to the space where it began this movement."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Slimy Organs",
+							"entries": [
+								"This creature has resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks.",
+								"Whenever this creature suffers a critical hit or is reduced to 0 hit points, it sprays acid; each creature within 5 feet of it takes acid damage equal to its number of Hit Dice."
+							]
+						}
 					]
 				}
 			]
@@ -650,16 +820,50 @@
 			]
 		},
 		{
-			"name": "Cult of Tharizdun the Chained God",
+			"name": "Cult of Orcus",
+			"source": "MPMM",
+			"page": 204,
+			"type": "Demonic",
+			"entries": [
+				"Orcus grants his rank-and-file cultists the Undying Soul trait, and his cult leaders can gain the Aura of Death trait.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Undying Soul (Recharges after a Short or Long Rest)",
+							"entries": [
+								"If this creature is reduced to 0 hit points, it immediately makes a DC 10 Constitution saving throw. If it succeeds, it is instead reduced to 1 hit point."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Aura of Death",
+							"entries": [
+								"This creature emanates a deathly aura that extends 30 feet in every direction from its space while it isn't incapacitated. The aura is blocked by total cover. While in the aura, the creature and any friendly Undead are immune to the {@condition frightened} condition and have resistance to radiant damage. Enemies have disadvantage on death saving throws while in the aura."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cult of Tharizdun, the Chained God",
 			"source": "MTF",
 			"page": 237,
+			"otherSources": [
+				{
+					"source": "MPMM",
+					"page": 226
+				}
+			],
 			"type": "Elder Evil",
 			"entries": [
 				{
+					"name": "Tharizdun's Spark {@recharge 6}",
 					"type": "entries",
-					"name": "Tharizdun's Spark (Recharge 6)",
 					"entries": [
-						"As a bonus action, the cultist touches a simple or martial weapon or a natural weapon, if it has one. The next creature hit by the touched weapon must succeed on a DC 15 Wisdom saving throw or experience short-term madness for 10 minutes. Consult the Short-Term Madness table (see \"{@book Madness Effects|dmg|8|Madness Effects}\" in chapter 8 of the Dungeon Master's Guide) to determine the form of the madness. The affected creature can repeat the saving throw at the end of each minute, ending the effect on itself on a success."
+						"As a bonus action, the cultist touches a simple or martial weapon or a natural weapon, if it has one. The next creature hit by the touched weapon must succeed on a {@dc 15} Wisdom saving throw or have disadvantage on all ability checks. The affected creature can repeat the saving throw at the end of each minute, ending the effect on itself on a success."
 					]
 				}
 			]
@@ -685,7 +889,7 @@
 											"type": "entries",
 											"name": "The Sign of the Black Earth",
 											"entries": [
-												" The symbol of the earth cult signifies purpose and stability. Cultists sometimes identify themselves with a hand gesture: they make a triangle by touching the thumbs and forefingers of both hands together."
+												"The symbol of the earth cult signifies purpose and stability. Cultists sometimes identify themselves with a hand gesture: they make a triangle by touching the thumbs and forefingers of both hands together."
 											]
 										}
 									]
@@ -711,7 +915,7 @@
 											"type": "entries",
 											"name": "Traits",
 											"entries": [
-												" Unlike many of his followers, Marlos is genteel and well-spoken. He delights in witty banter and pointed repartee, although he is quick to make a cutting remark or jest at someone elses expense. Marlos takes pleasure in mocking others, especially if he can do so in a clever or elegant way. Marloss previous life had been a constant search for pleasure, but the only thing that now stirs his loveless soul is refined cruelty. He can be driven to fits of blind, unreasoning jealousy if he is outshone by another urbane and attractive individual."
+												"Unlike many of his followers, Marlos is genteel and well-spoken. He delights in witty banter and pointed repartee, although he is quick to make a cutting remark or jest at someone elses expense. Marlos takes pleasure in mocking others, especially if he can do so in a clever or elegant way. Marloss previous life had been a constant search for pleasure, but the only thing that now stirs his loveless soul is refined cruelty. He can be driven to fits of blind, unreasoning jealousy if he is outshone by another urbane and attractive individual."
 											]
 										}
 									]
@@ -750,7 +954,7 @@
 											"type": "entries",
 											"name": "The Sign of the Crushing Wave",
 											"entries": [
-												" Water cultists use a simple hand sign to identify one another when a token of recognition is required: crossing the forefingers and overlapping the thumbs to create an X-shape linked by a line across the bottom. It stands for waters eternal surge and retreat, a cycle of unending change."
+												"Water cultists use a simple hand sign to identify one another when a token of recognition is required: crossing the forefingers and overlapping the thumbs to create an X-shape linked by a line across the bottom. It stands for waters eternal surge and retreat, a cycle of unending change."
 											]
 										}
 									]
@@ -776,7 +980,7 @@
 											"type": "entries",
 											"name": "Traits",
 											"entries": [
-												" Gar is covered in barnacles, and he wears an artificial arm in the shape of a crabs claw over the stump of his left arm. He never uses two words when one will do, and he believes that anyone addressing him with courtesy is either insincere or subtly mocking him. The water prophets primary motivation is retribution; the world has been cruel to him, and he intends to make everyone else suffer as he has. He longs to be near the ocean again and is distressed by the fact that the driving force behind his visions keeps him so far from the sea."
+												"Gar is covered in barnacles, and he wears an artificial arm in the shape of a crabs claw over the stump of his left arm. He never uses two words when one will do, and he believes that anyone addressing him with courtesy is either insincere or subtly mocking him. The water prophets primary motivation is retribution; the world has been cruel to him, and he intends to make everyone else suffer as he has. He longs to be near the ocean again and is distressed by the fact that the driving force behind his visions keeps him so far from the sea."
 											]
 										}
 									]
@@ -815,7 +1019,7 @@
 											"type": "entries",
 											"name": "The Sign of the Eternal Flame",
 											"entries": [
-												" The symbol of the fire cult is reminiscent of a bowl-like brazier with a burning flame. Fire cultists sometimes identify themselves with a symbolic hand sign: holding one hand in a fist, thumb up, and laying the other hand over the fist as if to cover the bowl but allow the flame to show. Members of the cult can also be identified by their burn scars."
+												"The symbol of the fire cult is reminiscent of a bowl-like brazier with a burning flame. Fire cultists sometimes identify themselves with a symbolic hand sign: holding one hand in a fist, thumb up, and laying the other hand over the fist as if to cover the bowl but allow the flame to show. Members of the cult can also be identified by their burn scars."
 											]
 										}
 									]
@@ -840,7 +1044,7 @@
 											"type": "entries",
 											"name": "Traits",
 											"entries": [
-												" Vanifer is an extraordinary manipulator. She collects allies and followers with her wiles, using them as she needs and discarding them the moment they lose their usefulness. Its a testament to her natural talent that many of her victims are pathetically eager to bask in the glow of her attention again if she discovers she needs something else from them. While Vanifer puts on the airs of a rich noble, she despises those raised with great wealth, and her sensibilities favor the coarse. Vanifer is ambitious above all else, and as undisputed master of the fire cult, she intends to make the Eternal Flame the strongest and most feared cult of all."
+												"Vanifer is an extraordinary manipulator. She collects allies and followers with her wiles, using them as she needs and discarding them the moment they lose their usefulness. Its a testament to her natural talent that many of her victims are pathetically eager to bask in the glow of her attention again if she discovers she needs something else from them. While Vanifer puts on the airs of a rich noble, she despises those raised with great wealth, and her sensibilities favor the coarse. Vanifer is ambitious above all else, and as undisputed master of the fire cult, she intends to make the Eternal Flame the strongest and most feared cult of all."
 											]
 										}
 									]
@@ -879,7 +1083,7 @@
 											"type": "entries",
 											"name": "The Sign of the Howling Hatred",
 											"entries": [
-												" The symbol of elemental air is an inverted triangle with three branching lines above it. Some believe it stands for the funnel cloud of a tornado, while others see it as the superiority of winged creatures over the ground. Some maintain it is an ancient rune that stands for the elemental lord Yan-C-Bin. Whatever their interpretations, the air cultists use the symbol as a secret password of sorts. By touching the thumbs and little fingers together and closing the rest of the fingers into a fist, an air cultist forms an inverted triangle that is a mark of membership in the cult."
+												"The symbol of elemental air is an inverted triangle with three branching lines above it. Some believe it stands for the funnel cloud of a tornado, while others see it as the superiority of winged creatures over the ground. Some maintain it is an ancient rune that stands for the elemental lord Yan-C-Bin. Whatever their interpretations, the air cultists use the symbol as a secret password of sorts. By touching the thumbs and little fingers together and closing the rest of the fingers into a fist, an air cultist forms an inverted triangle that is a mark of membership in the cult."
 											]
 										}
 									]
@@ -905,7 +1109,7 @@
 											"type": "entries",
 											"name": "Traits",
 											"entries": [
-												" No one can deny Aerisis grace, but she also possesses a violent temper that reveals itself whenever she is denied what she wants. Aerisi is prone to flights of fancy and impulsive decadence. She doesn't see herself as evil because she lacks the capacity to empathize with anyone else. Those who worship and please her are good, and those who defy her are wicked and must be punished. Her wish to lash the world with storms and destruction is, at its root, a temper tantrum against the elven society that dared to impose its strictures on her."
+												"No one can deny Aerisis grace, but she also possesses a violent temper that reveals itself whenever she is denied what she wants. Aerisi is prone to flights of fancy and impulsive decadence. She doesn't see herself as evil because she lacks the capacity to empathize with anyone else. Those who worship and please her are good, and those who defy her are wicked and must be punished. Her wish to lash the world with storms and destruction is, at its root, a temper tantrum against the elven society that dared to impose its strictures on her."
 											]
 										}
 									]
@@ -924,16 +1128,85 @@
 			]
 		},
 		{
-			"name": "Cult of Tyranthraxus the Flamed One",
+			"name": "Cult of Tyranthraxus, the Flamed One",
 			"source": "MTF",
 			"page": 237,
+			"otherSources": [
+				{
+					"source": "MPMM",
+					"page": 226
+				}
+			],
 			"type": "Elder Evil",
 			"entries": [
 				{
-					"type": "entries",
 					"name": "Radiant Flames (1/Day)",
+					"type": "entries",
 					"entries": [
-						"Multihued flame surrounds the cultist for 1 minute, until the cultist is incapacitated or dies, or until the cultist extinguishes the flame (no action required). While inflamed, the cultist has telepathy with a range of 30 feet, and it can teleport as a bonus action up to 30 feet to an unoccupied space it can see. In addition, every creature that starts its turn within 5 feet of the cultist must make a DC 15 Dexterity saving throw, taking 16 ({@dice 3d10}) radiant damage on a failed save, or half as much damage on a successful one."
+						"Multihued flame surrounds the cultist for 1 minute, until the cultist is {@condition incapacitated} or dies, or until the cultist extinguishes the flame (no action required). While inflamed, the cultist has telepathy with a range of 30 feet, and it can teleport as a bonus action up to 30 feet to an unoccupied space it can see. In addition, every creature that starts its turn within 5 feet of the cultist must make a {@dc 15} Dexterity saving throw, taking 16 ({@damage 3d10}) radiant damage on a failed save, or half as much damage on a successful one."
+					]
+				}
+			]
+		},
+		{
+			"name": "Cult of Yeenoghu",
+			"source": "MPMM",
+			"page": 270,
+			"type": "Demonic",
+			"entries": [
+				"Yeenoghu grants special abilities to his cultists. His most devoted followers gain the Gnashing Jaws action and the Rampage bonus action, while cult leaders gain the Aura of Bloodthirst trait.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Gnashing Jaws",
+							"entries": [
+								"{@atk mw} bonus to hit equal to this creature's proficiency bonus plus its Strength modifier, reach 5 ft., one target. {@h}{@dice 1d4} + this creature's Strength modifier piercing damage."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Rampage",
+							"entries": [
+								"When this creature reduces a creature to 0 hit points with a melee attack on its turn, it can take a bonus action to move up to half its speed and make one Gnashing Jaws attack."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Aura of Bloodthirst",
+							"entries": [
+								"If this creature isn't incapacitated, any creature that has Rampage can make its Gnashing Jaws attack as a bonus action while within 10 feet of this creature."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cult of Zariel",
+			"source": "MPMM",
+			"page": 280,
+			"type": "Diabolical",
+			"entries": [
+				"Zariel grants special abilities to her most loyal cultists. They can gain the Ferocious Surge trait, and her cult's leaders can also gain the Infernal Tactics trait.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Ferocious Surge (Recharges after a Short or Long Rest)",
+							"entries": [
+								"When this creature hits with an attack roll that isn't a critical hit, it can turn the hit into a critical hit."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Infernal Tactics",
+							"entries": [
+								"Immediately after rolling initiative, this creature can choose  and up to three allies it can see if it isn't {@condition incapacitated}. It can swap the initiative results of the chosen creatures among them."
+							]
+						}
 					]
 				}
 			]
@@ -942,6 +1215,12 @@
 			"name": "Cult of Zariel",
 			"source": "MTF",
 			"page": 21,
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Zariel|MPMM"
+				}
+			],
 			"type": "Diabolical",
 			"goal": {
 				"entry": "Conquest, glory in battle, fame and fortune derived from military victory"
@@ -1005,6 +1284,27 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Cult of Zuggtmoy",
+			"source": "MPMM",
+			"page": 281,
+			"type": "Demonic",
+			"entries": [
+				"Zuggtmoy's cultists are primarily mindless victims of her children's strange spores. The spores burrow into a victim's brain, turning it into a fanatic servitor. Each victim gains the Spore Kissed trait.",
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Spore Kissed",
+							"entries": [
+								"This creature is immune to the {@condition charmed} and {@condition frightened} conditions. In addition, if it is reduced to 0 hit points, each creature within 10 feet of it takes poison damage equal to its number of Hit Dice."
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"boon": [
@@ -1028,6 +1328,12 @@
 			"name": "Demonic Boon of Baphomet",
 			"source": "MTF",
 			"page": 30,
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Baphomet|MPMM"
+				}
+			],
 			"type": "Demonic",
 			"ability": {
 				"entry": "Up to a +4 bonus to Strength, Wisdom, or both"
@@ -1100,6 +1406,12 @@
 			"name": "Demonic Boon of Demogorgon",
 			"source": "MTF",
 			"page": 30,
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Demogorgon|MPMM"
+				}
+			],
 			"type": "Demonic",
 			"ability": {
 				"entry": "Up to a +4 bonus to Strength, Charisma, or both"
@@ -1144,6 +1456,12 @@
 			"name": "Demonic Boon of Fraz-Urb'luu",
 			"source": "MTF",
 			"page": 30,
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Fraz-Urb'luu|MPMM"
+				}
+			],
 			"type": "Demonic",
 			"ability": {
 				"entry": "Up to a +4 bonus to Wisdom, Charisma, or both"
@@ -1206,6 +1524,12 @@
 			"name": "Demonic Boon of Graz'zt",
 			"source": "MTF",
 			"page": 30,
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Graz'zt|MPMM"
+				}
+			],
 			"type": "Demonic",
 			"ability": {
 				"entry": "Up to a +4 bonus to Constitution, Charisma, or both"
@@ -1264,6 +1588,12 @@
 			"name": "Demonic Boon of Juiblex",
 			"source": "MTF",
 			"page": 30,
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Juiblex|MPMM"
+				}
+			],
 			"type": "Demonic",
 			"ability": {
 				"entry": "Up to a +8 bonus to Constitution, with an equal penalty to Intelligence, Wisdom, and Charisma"
@@ -1353,6 +1683,12 @@
 			"name": "Demonic Boon of Orcus",
 			"source": "MTF",
 			"page": 31,
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Orcus|MPMM"
+				}
+			],
 			"type": "Demonic",
 			"ability": {
 				"entry": "Up to a +4 bonus to Intelligence, Wisdom, or both"
@@ -1411,6 +1747,12 @@
 			"name": "Demonic Boon of Yeenoghu",
 			"source": "MTF",
 			"page": 31,
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Yeenoghu|MPMM"
+				}
+			],
 			"type": "Demonic",
 			"ability": {
 				"entry": "Up to a +4 bonus to Strength and Dexterity, with an equal penalty to Intelligence and Charisma"
@@ -1483,6 +1825,12 @@
 			"name": "Demonic Boon of Zuggtmoy",
 			"source": "MTF",
 			"page": 31,
+			"reprintedAs": [
+				{
+					"tag": "boon",
+					"uid": "Cult of Zuggtmoy|MPMM"
+				}
+			],
 			"type": "Demonic",
 			"ability": {
 				"entry": "Up to a +4 bonus to Constitution, with an equal penalty to Intelligence, Wisdom, and Charisma"

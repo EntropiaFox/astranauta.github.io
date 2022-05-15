@@ -120,6 +120,7 @@ $rgb-subclass--stale: #7699b7;
 $rgb-subclass-ua: #1d965d;
 $rgb-subclass-ua--stale: #5f967c;
 $rgb-class-brew: #8c3b96;
+$rgb-class-variant-brew: #ba75a1;
 
 $rgb-class-variant--night: #e6ab94;
 $rgb-class-ua--night: #a2ce42;
@@ -128,6 +129,7 @@ $rgb-subclass--night-stale: $rgb-subclass--stale;
 $rgb-subclass-ua--night: #179e50;
 $rgb-subclass-ua--night-stale: #509e8a;
 $rgb-class-brew--night: #aa40b4;
+$rgb-class-variant-brew--night: #da9db5;
 
 $rgb-roll-min: #ff3100;
 $rgb-roll-max: #00b400;
@@ -185,6 +187,10 @@ $w-ipt-number-4-digit: 80px;
 $w-scroll-body: 15px;
 // endregion
 
+// region Fonts
+$font-line-height: 1.42857143;
+// endregion
+
 @mixin shadow-1 () {
 	box-shadow: 0 6px 12px $rgb-shadow-grey;
 }
@@ -206,11 +212,11 @@ $w-scroll-body: 15px;
 }
 
 @mixin row-glow-active {
-	box-shadow: inset 0 0 0 200px rgba(0, 107, 196, 0.3);
+	box-shadow: inset 0 0 0 1000px rgba(0, 107, 196, 0.3);
 }
 
 @mixin row-glow-active--alt {
-	box-shadow: inset 0 0 0 200px rgba(148, 148, 148, 0.2);
+	box-shadow: inset 0 0 0 1000px rgba(148, 148, 148, 0.2);
 }
 
 @mixin overflow-dots {
@@ -237,6 +243,11 @@ $width-screen-xs: 480px;
 $width-screen-sm: 768px;
 $width-screen-md: 991px;
 $width-screen-lg: 1200px;
+
+$width-screen-xs--min: 481px;
+$width-screen-sm--min: 769px;
+$width-screen-md--min: 992px;
+$width-screen-lg--min: 1201px;
 
 // region linked titles
 %linked-titles-base {

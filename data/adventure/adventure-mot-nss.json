@@ -400,7 +400,7 @@
 					"page": 189,
 					"id": "334",
 					"entries": [
-						"On the third day of following Khea's directions, the party reaches the Khystonos. Its riverbed is nearly dry, the river reduced to a muddy trickle. After following the lethargic flow for the better part of a day, the adventurers reach a bend where several prominent rocks jut from the mud{@b }. These stones mark the entrance to the Court of Orestes.",
+						"On the third day of following Khea's directions, the party reaches the Khystonos. Its riverbed is nearly dry, the river reduced to a muddy trickle. After following the lethargic flow for the better part of a day, the adventurers reach a bend where several prominent rocks jut from the mud{@b}. These stones mark the entrance to the Court of Orestes.",
 						{
 							"type": "entries",
 							"name": "Court of Orestes Features",
@@ -408,7 +408,7 @@
 							"id": "335",
 							"entries": [
 								"Beyond the entrance along the Khystonos River, the Court of Orestes is a crumbling, centuries-old tomb. Inside, its walls are made of thick stone blocks, and the ceiling is about 10 feet high. Unless otherwise noted, the crypt's doors have no hinges; each is a rectangular slab that requires a successful DC 12 Strength ({@skill Athletics}) check to shimmy out of place.",
-								"When the Khystonos is at its full height, the Court of Orestes is underwater. Since the river's damming, though, much of the water has emptied through various cracks in the stonework. Some of the tomb is still partially flooded, though, holding roughly 2 feet of river water. Flooded areas are marked on map 4.16 and count as difficult terrain."
+								"When the Khystonos is at its full height, the Court of Orestes is underwater. Since the river's damming, though, much of the water has emptied through various cracks in the stonework. Some of the tomb is still partially flooded, though, holding roughly 2 feet of river water. Flooded areas are marked on map 4.16 and count as {@quickref difficult terrain||3}."
 							]
 						},
 						{
@@ -429,7 +429,9 @@
 											},
 											"title": "Map 4.16: Cour of Orestes",
 											"width": 3825,
-											"height": 2250
+											"height": 2250,
+											"imageType": "map",
+											"id": "000"
 										},
 										{
 											"type": "image",
@@ -439,7 +441,11 @@
 											},
 											"title": "Player Version",
 											"width": 3825,
-											"height": 2250
+											"height": 2250,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "000"
+											}
 										}
 									]
 								},
@@ -457,7 +463,7 @@
 												"A shallow stream fills only a fraction of the riverbed. At a bend, an unnatural arrangement of mud-caked stones juts from the exposed riverbank. It appears to be a crude stone lintel and posts supporting a rectangular slab roughly four feet wide and six feet high."
 											]
 										},
-										"The water here is roughly 30 feet wide and 2 feet deep. Though the river can be easily forded, the shallow waters count as difficult terrain.",
+										"The water here is roughly 30 feet wide and 2 feet deep. Though the river can be easily forded, the shallow waters count as {@quickref difficult terrain||3}.",
 										"Amid the muck and gravel on the northern bank hides a deadly predator, an {@creature amphisbaena|GoS} (see {@book chapter 6|MOT|6|Amphisbaena}). The serpent has concealed itself as it watches for prey, the mud covering its body granting it advantage on Dexterity ({@skill Stealth}) checks made to hide. The amphisbaena targets the first creature to approach the stone slab.",
 										"Once the serpent is dealt with, anyone who examines the rock formation quickly realizes it's a door. Opening or otherwise investigating the door knocks free the dirt encrusting it, revealing an ancient etching of a phoenix wearing a mask rising from a pile of bones."
 									]
@@ -494,15 +500,12 @@
 										},
 										"This room once served as a place to view the remains of those who died in Phenax's service and offer final prayers. The bodies this room once held have rotted away in their burial niches, and the urns hold only gray muck. Any character who sifts through the goo must succeed on a DC 11 Constitution saving throw for each niche or urn they search or contract sewer plague (see {@disease Sewer Plague||chapter 8} of the {@book Dungeon Master's Guide|DMG}).",
 										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "Treasure",
-													"entry": "Amid the rotted remains on each of the six stacked burial niches lie small bits of jewelry, gold teeth, or ancient coins, with each haul worth {@dice 2d4} gp."
-												}
-											]
+											"type": "entries",
+											"name": "Treasure",
+											"entries": [
+												"Amid the rotted remains on each of the six stacked burial niches lie small bits of jewelry, gold teeth, or ancient coins, with each haul worth {@dice 2d4} gp."
+											],
+											"id": "000"
 										}
 									]
 								},
@@ -519,7 +522,7 @@
 												"The stairs descend into a burial chamber partially flooded with muddy water. Ancient stone walls divide these catacombs, many lined with grave niches holding roughly humanoid shapes wrapped in tattered linen. More than one of these grim parcels floats freely in the stagnant water."
 											]
 										},
-										"These catacombs serve as the burial place of lesser Phenax worshipers who earned the honor of being interred near Orestes. Two feet of water fill the room, making the entire area difficult terrain.",
+										"These catacombs serve as the burial place of lesser Phenax worshipers who earned the honor of being interred near Orestes. Two feet of water fill the room, making the entire area {@quickref difficult terrain||3}.",
 										{
 											"type": "image",
 											"href": {
@@ -615,7 +618,7 @@
 												"Much of the ceiling in the southwestern part of this chamber has collapsed into the rot-tinged water partially filling this room. In alcoves flanking the door to the north stand twin life-sized statues of a figure wearing a burial mask. Both reach out, as if to accept or offer a gift."
 											]
 										},
-										"Much of this shrine has been destroyed, its altar and most of its trappings ruined by earth and time. The two statues depict the god Phenax; the depictions are slightly disturbing but harmless. The 2-foot-deep standing water here makes the entire room difficult terrain.",
+										"Much of this shrine has been destroyed, its altar and most of its trappings ruined by earth and time. The two statues depict the god Phenax; the depictions are slightly disturbing but harmless. The 2-foot-deep standing water here makes the entire room {@quickref difficult terrain||3}.",
 										"Obscured by water and debris, a mosaic covers the floor between the statues. Only a great effort would reveal the ancient artwork. Any Phenax worshiper who enters the room, however, sees the mosaic clearly, its tiles depicting coins falling from a crumbling skull.",
 										{
 											"type": "entries",
@@ -643,7 +646,7 @@
 											]
 										},
 										"This chamber serves as the resting place of the oracle-thief Orestes. According to legend, Orestes could divine how long someone would live by reading a pool of the person's blood. Those who, in his vision, bled black were destined to one day follow the Path of Phenax, coming back from death as Returned. After Orestes's death, his tomb was consecrated as a holy site by Phenax's followers, in part due to Orestes's sarcophagus taking on the oracle's powers of prophecy.",
-										"The room's domed ceiling rises 20 feet. The area around Orestes's sarcophagus is difficult terrain, not because of the shallow, murky water there, but because of the hundreds of stray bones that lie beneath the water\u2014the remains of animals sacrificed to Phenax.",
+										"The room's domed ceiling rises 20 feet. The area around Orestes's sarcophagus is {@quickref difficult terrain||3}, not because of the shallow, murky water there, but because of the hundreds of stray bones that lie beneath the water\u2014the remains of animals sacrificed to Phenax.",
 										"More than the dead dwell in Orestes's tomb, though.",
 										{
 											"type": "entries",
@@ -661,21 +664,19 @@
 											"page": 192,
 											"id": "34c",
 											"entries": [
-												"Varyas's {@creature flitterstep eidolon|MOT} (see {@book chapter 6|MOT|6|Eidolons}) dwells in this room. It doesn't know why, but it was attracted to the tomb after returning from death. It doesn't know how much time has passed since then, but eventually it encountered the menacing lampad Antiophes, who threatened to deliver the eidolon to Athreos. To escape the lampad, the eidolon hid inside Orestes's sarcophagus, where it has lurked ever since.",
-												{
-													"type": "list",
-													"style": "list-hang-notitle",
-													"items": [
-														{
-															"type": "item",
-															"name": "Sarcophagus",
-															"entry": "The sarcophagus holds the skeleton of Orestes, a few grave goods, and Varyas's cowering eidolon. Additionally, it possesses two magical properties."
-														}
-													]
-												},
+												"Varyas's {@creature flitterstep eidolon|MOT} (see {@book chapter 6|MOT|6|Eidolons}) dwells in this room. It doesn't know why, but it was attracted to the tomb after returning from death. It doesn't know how much time has passed since then, but eventually it encountered the menacing lampad Antiophes, who threatened to deliver the eidolon to Athreos. To escape the lampad, the eidolon hid inside Orestes's sarcophagus, where it has lurked ever since."
+											]
+										},
+										{
+											"type": "entries",
+											"name": "Sarcophagus",
+											"page": 192,
+											"entries": [
+												"The sarcophagus holds the skeleton of Orestes, a few grave goods, and Varyas's cowering eidolon. Additionally, it possesses two magical properties.",
 												"First, the sarcophagus is blessed by Phenax with a ward against defilement. The lid is supernaturally heavy, requiring a successful DC 20 Strength ({@skill Athletics}) check to dislodge. Any creature who worships Phenax, though, or who wears a funerary mask, finds the lid to be far lighter, gaining a +10 bonus on this check.",
 												"Additionally, reliefs on the sarcophagus depict Phenax worshipers and Returned, as well as a prominent image of blood dripping onto scales bearing a Returned mask. Images of pale drops hover over a skeleton, while black drops loom over a Returned. Any character who succeeds at a DC 15 Intelligence ({@skill Religion}) check learns that the sarcophagus itself bears a measure of Orestes's oracular gifts. If blood is spilled on the lid, it turns black if the blood's owner is destined to become a Returned. Most of the time, spilled blood doesn't change color. If a character drips their blood upon the sarcophagus lid, though, you can decide if their blood turns black or not\u2014choosing if you want the character's story to go in that direction (and you think the character's player will accept it), or rolling a {@dice d10} and having it turn black on a 1. The ramifications of this revelation are up to you."
-											]
+											],
+											"id": "001"
 										},
 										{
 											"type": "entries",

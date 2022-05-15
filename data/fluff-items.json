@@ -1,4 +1,9 @@
 {
+	"_meta": {
+		"internalCopies": [
+			"itemFluff"
+		]
+	},
 	"itemFluff": [
 		{
 			"name": "Akmon, Hammer of Purphoros",
@@ -703,6 +708,19 @@
 			]
 		},
 		{
+			"name": "Cloak of Many Fashions",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/XGE/Cloak of Many Fashions.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Cloak of Protection",
 			"source": "DMG",
 			"images": [
@@ -870,6 +888,30 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Danoth's Visor (Awakened)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Danoth's Visor",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Danoth's Visor (Dormant)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Danoth's Visor",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Danoth's Visor (Exalted)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Danoth's Visor",
+				"source": "EGW"
+			}
 		},
 		{
 			"name": "Dawnbringer",
@@ -1110,6 +1152,19 @@
 			]
 		},
 		{
+			"name": "Dread Helm",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/XGE/Dread Helm.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Driftglobe",
 			"source": "DMG",
 			"images": [
@@ -1196,6 +1251,19 @@
 					"href": {
 						"type": "internal",
 						"path": "items/DMG/Dwarven Thrower.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Earring of Message",
+			"source": "CRCotN",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/CRCotN/Earring of Message.webp"
 					}
 				}
 			]
@@ -1352,6 +1420,19 @@
 					"href": {
 						"type": "internal",
 						"path": "items/TCE/Feywild Shard.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Feywild Trinket",
+			"source": "WBtW",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/WBtW/Feywild Trinket.png"
 					}
 				}
 			]
@@ -1591,6 +1672,30 @@
 			]
 		},
 		{
+			"name": "Grimoire Infinitus (Awakened)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Grimoire Infinitus",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Grimoire Infinitus (Dormant)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Grimoire Infinitus",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Grimoire Infinitus (Exalted)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Grimoire Infinitus",
+				"source": "EGW"
+			}
+		},
+		{
 			"name": "Grovelthrash",
 			"source": "EGW",
 			"images": [
@@ -1602,6 +1707,30 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Grovelthrash (Awakened)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Grovelthrash",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Grovelthrash (Dormant)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Grovelthrash",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Grovelthrash (Exalted)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Grovelthrash",
+				"source": "EGW"
+			}
 		},
 		{
 			"name": "Gruul Guild Signet",
@@ -1864,6 +1993,26 @@
 			]
 		},
 		{
+			"name": "Iggwilv's Cauldron",
+			"source": "WBtW",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/WBtW/Iggwilvs Cauldron.png"
+					}
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/WBtW/Iggwilvs Cauldron (Iron).png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Illusionist's Bracers",
 			"source": "GGR",
 			"images": [
@@ -1901,6 +2050,30 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Infiltrator's Key (Awakened)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Infiltrator's Key",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Infiltrator's Key (Dormant)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Infiltrator's Key",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Infiltrator's Key (Exalted)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Infiltrator's Key",
+				"source": "EGW"
+			}
 		},
 		{
 			"name": "Instrument of the Bards, Anstruth Harp",
@@ -2072,6 +2245,19 @@
 			]
 		},
 		{
+			"name": "Jewel of Three Prayers",
+			"source": "CRCotN",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/CRCotN/Jewel of Three Prayers.webp"
+					}
+				}
+			]
+		},
+		{
 			"name": "Keoghtom's Ointment",
 			"source": "DMG",
 			"images": [
@@ -2122,6 +2308,30 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Lash of Shadows (Awakened)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Lash of Shadows",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Lash of Shadows (Dormant)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Lash of Shadows",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Lash of Shadows (Exalted)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Lash of Shadows",
+				"source": "EGW"
+			}
 		},
 		{
 			"name": "Living Loot Satchel",
@@ -2239,6 +2449,30 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Mace of the Black Crown (Awakened)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Mace of the Black Crown",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Mace of the Black Crown (Dormant)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Mace of the Black Crown",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Mace of the Black Crown (Exalted)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Mace of the Black Crown",
+				"source": "EGW"
+			}
 		},
 		{
 			"name": "Mantle of Spell Resistance",
@@ -2392,6 +2626,19 @@
 					"href": {
 						"type": "internal",
 						"path": "items/BGDIA/Matalotok.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Medal of the Maze",
+			"source": "CRCotN",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/CRCotN/Medal of the Maze.jpg"
 					}
 				}
 			]
@@ -2592,6 +2839,19 @@
 			]
 		},
 		{
+			"name": "Orb of Direction",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/XGE/Orb of Direction.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Orb of Dragonkind",
 			"source": "DMG",
 			"images": [
@@ -2613,6 +2873,19 @@
 					"href": {
 						"type": "internal",
 						"path": "items/CM/Orcus Figurine.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Ornithopter of Flying",
+			"source": "WBtW",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/WBtW/Ornithopter of Flying.jpg"
 					}
 				}
 			]
@@ -2722,6 +2995,19 @@
 			]
 		},
 		{
+			"name": "Pipe of Smoke Monsters",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/XGE/Pipe of Smoke Monsters.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Pipes of Haunting",
 			"source": "DMG",
 			"images": [
@@ -2769,6 +3055,32 @@
 					"href": {
 						"type": "internal",
 						"path": "items/PHB/Platinum (pp).jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Pole of Collapsing",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/XGE/Pole of Collapsing.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Potion of Water Breathing",
+			"source": "DMG",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/DMG/Potion of Water Breathing.webp"
 					}
 				}
 			]
@@ -3021,6 +3333,19 @@
 			]
 		},
 		{
+			"name": "Ring of Red Fury",
+			"source": "CRCotN",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/CRCotN/Ring of Red Fury.webp"
+					}
+				}
+			]
+		},
+		{
 			"name": "Ring of Regeneration",
 			"source": "DMG",
 			"images": [
@@ -3120,6 +3445,19 @@
 					"href": {
 						"type": "internal",
 						"path": "items/DMG/Ring of Three Wishes.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Ring of Warmth",
+			"source": "DMG",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/DMG/Ring of Warmth.png"
 					}
 				}
 			]
@@ -3281,6 +3619,32 @@
 			]
 		},
 		{
+			"name": "Ruidium Shield",
+			"source": "CRCotN",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/CRCotN/Ruidium Shield.webp"
+					}
+				}
+			]
+		},
+		{
+			"name": "Ruidium Weapon",
+			"source": "CRCotN",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/CRCotN/Ruidium Weapon.webp"
+					}
+				}
+			]
+		},
+		{
 			"name": "Ruin's Wake",
 			"source": "EGW",
 			"images": [
@@ -3292,6 +3656,30 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Ruin's Wake (Awakened)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Ruin's Wake",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Ruin's Wake (Dormant)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Ruin's Wake",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Ruin's Wake (Exalted)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Ruin's Wake",
+				"source": "EGW"
+			}
 		},
 		{
 			"name": "Saint Markovia's Thighbone",
@@ -3484,6 +3872,19 @@
 					"href": {
 						"type": "internal",
 						"path": "items/DMG/Slippers of Spider Climbing.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Snicker-Snack",
+			"source": "WBtW",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/WBtW/Snicker-Snack.jpg"
 					}
 				}
 			]
@@ -3697,6 +4098,19 @@
 			]
 		},
 		{
+			"name": "Steel",
+			"source": "WBtW",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/WBtW/Steel.jpg"
+					}
+				}
+			]
+		},
+		{
 			"name": "Stone of Controlling Earth Elementals",
 			"source": "DMG",
 			"images": [
@@ -3874,6 +4288,19 @@
 					"href": {
 						"type": "internal",
 						"path": "items/DMG/Talisman of Ultimate Evil.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Talking Doll",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/XGE/Talking Doll.png"
 					}
 				}
 			]
@@ -4400,6 +4827,19 @@
 			]
 		},
 		{
+			"name": "Witchlight Vane",
+			"source": "WBtW",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "items/WBtW/Witchlight Vane.jpg"
+					}
+				}
+			]
+		},
+		{
 			"name": "Wreath of the Prism",
 			"source": "EGW",
 			"images": [
@@ -4411,6 +4851,30 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Wreath of the Prism (Awakened)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Wreath of the Prism",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Wreath of the Prism (Dormant)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Wreath of the Prism",
+				"source": "EGW"
+			}
+		},
+		{
+			"name": "Wreath of the Prism (Exalted)",
+			"source": "EGW",
+			"_copy": {
+				"name": "Wreath of the Prism",
+				"source": "EGW"
+			}
 		},
 		{
 			"name": "Wyrmskull Throne",

@@ -102,7 +102,7 @@ Shared UI components
 			border-radius: 3px;
 
 			&:hover {
-				background: whitesmoke;
+				background: $rgb-bg--alt;
 			}
 		}
 
@@ -354,7 +354,7 @@ Shared UI components
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-family: "Andada", serif;
+		font-family: "Times New Roman", serif;
 		font-variant: small-caps;
 		font-weight: 500;
 	}
@@ -390,6 +390,9 @@ Shared UI components
 
 		&--background {
 			background: $rgb-bg;
+			border: 1px solid $rgb-border-grey--trans;
+			border-top: 0;
+			border-bottom-color: $rgb-border-grey--trans-muted;
 		}
 	}
 
@@ -610,8 +613,11 @@ Shared UI components
 	}
 
 	&__row {
-		cursor: pointer;
 		min-width: 160px;
+	}
+
+	&__btn {
+		cursor: pointer;
 
 		&:hover {
 			background: $rgb-bg--alt;

@@ -5164,11 +5164,6 @@
 										"For elements that don't attack, allow each successful check to reduce that element's effectiveness by one-third. A lock's DC is decreased, or a gate opens wide enough to allow a Small character to squeeze through it. A mechanism pumping poison gas into the room becomes defective, causing the gas's damage to increase more slowly or not at all.",
 										"It takes time to disable a complex trap. Three characters can't make checks in rapid succession to disarm a complex trap in a matter of seconds. Each would get in another character's way and disrupt the effort. Once a character succeeds on a check, another character can't attempt the same check against the same trap element until the end of the successful character's next turn.",
 										"Not all of the characters' options need to be focused on stopping a trap from operating. Think of what characters can do to mitigate or avoid a trap's effects. Making the trap vulnerable to this sort of effort is a way to engage characters who might be ill-suited to confront the trap directly. A successful Intelligence ({@skill Religion}) check might provide insight into the imagery displayed by a trap in a temple or shrine, giving other characters a clue about how and where to direct their efforts. A character could stand in front of a dart trap while holding a shield that the darts can target harmlessly, while other characters trigger that element as they work to disable it.",
-										"If a character wants to try something you haven't allowed for, pick an ability, assess the chance of success, and ask for a roll.",
-										"Shutting down one part of a complex trap usually requires multiple successes. As a default, it takes three successful checks or actions to disable an element. The first successful check might reduce the element's saving throw DC or attack bonus. The second successful check might halve the element's damage, and the final successful check shuts it down.",
-										"For elements that don't attack, allow each successful check to reduce that element's effectiveness by one-third. A lock's DC is decreased, or a gate opens wide enough to allow a Small character to squeeze through it. A mechanism pumping poison gas into the room becomes defective, causing the gas's damage to increase more slowly or not at all.",
-										"It takes time to disable a complex trap. Three characters can't make checks in rapid succession to disarm a complex trap in a matter of seconds. Each would get in another character's way and disrupt the effort. Once a character succeeds on a check, another character can't attempt the same check against the same trap element until the end of the successful character's next turn.",
-										"Not all of the characters' options need to be focused on stopping a trap from operating. Think of what characters can do to mitigate or avoid a trap's effects. Making the trap vulnerable to this sort of effort is a way to engage characters who might be ill-suited to confront the trap directly. A successful Intelligence ({@skill Religion}) check might provide insight into the imagery displayed by a trap in a temple or shrine, giving other characters a clue about how and where to direct their efforts. A character could stand in front of a dart trap while holding a shield that the darts can target harmlessly, while other characters trigger that element as they work to disable it.",
 										{
 											"type": "inset",
 											"name": "Complex Traps and Legendary Monsters",
@@ -5583,7 +5578,7 @@
 											"page": 126,
 											"entries": [
 												"Carousing covers a workweek of fine food, strong drink, and socializing. A character can attempt to carouse among lower-, middle-, or upper-class folk. A character can carouse with the lower class for 10 gp to cover expenses, or 50 gp for the middle class. Carousing with the upper class requires 250 gp for the workweek and access to the local nobility.",
-												"A character with the noble background can mingle with the upper class, but other characters can do so only if you judge that the character has made sufficient contacts. Alternatively, a character might use a {@item disguise Kit|phb} and the {@skill Deception} skill to pass as a noble visiting from a distant city."
+												"A character with the noble background can mingle with the upper class, but other characters can do so only if you judge that the character has made sufficient contacts. Alternatively, a character might use a {@item disguise kit|phb} and the {@skill Deception} skill to pass as a noble visiting from a distant city."
 											],
 											"id": "09b"
 										},
@@ -5645,7 +5640,7 @@
 											"name": "Complications",
 											"page": 128,
 											"entries": [
-												"Characters who carouse risk bar brawls, accumulating a cloud of nasty rumors, and building a bad reputation around town. As a rule of thumb, a character has a 10 percent chance of triggering a complication for each workweek of carousing.",
+												"Characters who carouse risk bar brawls, accumulating a cloud of nasty rumors, and building a bad reputation around town. As a rule of thumb, a character has a {@chance 10|10 percent} chance of triggering a complication for each workweek of carousing.",
 												{
 													"type": "table",
 													"caption": "Lower-Class Carousing Complications",
@@ -5949,7 +5944,7 @@
 											"name": "Complications",
 											"page": 129,
 											"entries": [
-												"Most of the complications involved in creating something, especially a magic item, are linked to the difficulty in finding rare ingredients or components needed to complete the work. The complications a character might face as byproducts of the creation process are most interesting when the characters are working on a magic item: there's a 10 percent chance for every five workweeks spent on crafting an item that a complication occurs. The Crafting Complications table provides examples of what might happen.",
+												"Most of the complications involved in creating something, especially a magic item, are linked to the difficulty in finding rare ingredients or components needed to complete the work. The complications a character might face as byproducts of the creation process are most interesting when the characters are working on a magic item: there's a {@chance 10|10 percent} chance for every five workweeks spent on crafting an item that a complication occurs. The Crafting Complications table provides examples of what might happen.",
 												{
 													"type": "table",
 													"caption": "Crafting Complications",
@@ -6226,7 +6221,7 @@
 											"name": "Complications",
 											"page": 130,
 											"entries": [
-												"Gambling tends to attract unsavory individuals. The potential complications involved come from run-ins with the law and associations with various criminals tied to the activity. Every workweek spent gambling brings a 10 percent chance of a complication, examples of which are on the Gambling Complications table.",
+												"Gambling tends to attract unsavory individuals. The potential complications involved come from run-ins with the law and associations with various criminals tied to the activity. Every workweek spent gambling brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Gambling Complications table.",
 												{
 													"type": "table",
 													"caption": "Gambling Complications",
@@ -6334,7 +6329,7 @@
 											"name": "Complications",
 											"page": 131,
 											"entries": [
-												"Characters involved in pit fighting must deal with their opponents, the people who bet on matches, and the matches' promoters. Every workweek spent pit fighting brings a 10 percent chance of a complication, examples of which are on the Pit Fighting Complications table.",
+												"Characters involved in pit fighting must deal with their opponents, the people who bet on matches, and the matches' promoters. Every workweek spent pit fighting brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Pit Fighting Complications table.",
 												{
 													"type": "table",
 													"caption": "Pit Fighting Complications",
@@ -6475,7 +6470,7 @@
 											"name": "Complications",
 											"page": 132,
 											"entries": [
-												"Temples can be labyrinths of political and social scheming. Even the best-intentioned sect can fall prone to rivalries. A character who serves a temple risks becoming embroiled in such struggles. Every workweek spent in religious service brings a 10 percent chance of a complication, examples of which are on the Religious Service Complications table.",
+												"Temples can be labyrinths of political and social scheming. Even the best-intentioned sect can fall prone to rivalries. A character who serves a temple risks becoming embroiled in such struggles. Every workweek spent in religious service brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Religious Service Complications table.",
 												{
 													"type": "table",
 													"caption": "Religious Service Complications",
@@ -6585,7 +6580,7 @@
 											"page": 132,
 											"entries": [
 												"The greatest risk in research is uncovering false information. Not all lore is accurate or truthful, and a rival with a scholarly bent might try to lead the character astray, especially if the object of the research is known to the rival. The rival might plant false information, bribe sages to give bad advice, or steal key tomes needed to find the truth.",
-												"In addition, a character might run into other complications during research. Every workweek spent in research brings a 10 percent chance of a complication, examples of which are on the Research Complications table.",
+												"In addition, a character might run into other complications during research. Every workweek spent in research brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Research Complications table.",
 												{
 													"type": "table",
 													"caption": "Research Complications",
@@ -6720,7 +6715,7 @@
 											"name": "Complications",
 											"page": 133,
 											"entries": [
-												"Crafting a spell scroll is a solitary task, unlikely to attract much attention. The complications that arise are more likely to involve the preparation needed for the activity. Every workweek spent scribing brings a 10 percent chance of a complication, examples of which are on the Scribe a Scroll Complications table.",
+												"Crafting a spell scroll is a solitary task, unlikely to attract much attention. The complications that arise are more likely to involve the preparation needed for the activity. Every workweek spent scribing brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Scribe a Scroll Complications table.",
 												{
 													"type": "table",
 													"caption": "Scribe a Scroll Complications",
@@ -6866,7 +6861,7 @@
 											"name": "Complications",
 											"page": 133,
 											"entries": [
-												"The main risk in selling a magic item lies in attracting thieves and anyone else who wants the item but doesn't want to pay for it. Other folk might try to undermine a deal in order to bolster their own business or seek to discredit the character as a legitimate seller. Every workweek spent trying to sell an item brings a 10 percent chance of a complication, examples of which are on the Magic Item Sale Complications table.",
+												"The main risk in selling a magic item lies in attracting thieves and anyone else who wants the item but doesn't want to pay for it. Other folk might try to undermine a deal in order to bolster their own business or seek to discredit the character as a legitimate seller. Every workweek spent trying to sell an item brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Magic Item Sale Complications table.",
 												{
 													"type": "table",
 													"caption": "Magic Item Sale Complications",
@@ -6934,7 +6929,7 @@
 											"name": "Complications",
 											"page": 134,
 											"entries": [
-												"Complications that arise while training typically involve the teacher. Every ten workweeks spent in training brings a 10 percent chance of a complication, examples of which are on the Training Complications table.",
+												"Complications that arise while training typically involve the teacher. Every ten workweeks spent in training brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Training Complications table.",
 												{
 													"type": "table",
 													"caption": "Training Complications",
@@ -7044,7 +7039,7 @@
 											"name": "Complications",
 											"page": 134,
 											"entries": [
-												"Ordinary work is rarely filled with significant complications. Still, the Work Complications table can add some difficulties to a worker's life. Each workweek of activity brings a 10 percent chance that a character encounters a complication.",
+												"Ordinary work is rarely filled with significant complications. Still, the Work Complications table can add some difficulties to a worker's life. Each workweek of activity brings a {@chance 10|10 percent} chance that a character encounters a complication.",
 												{
 													"type": "table",
 													"caption": "Work Complications",
@@ -7387,7 +7382,7 @@
 							"name": "Magic Item Tables",
 							"page": 140,
 							"entries": [
-								"The items in the {@5etools Items|items.html} page are classified as minor or major according to the tables originally found in this section.",
+								"{@note The items in the {@5etools Items|items.html} page are classified as major or minor according to tables originally found in this section.}",
 								{
 									"type": "inset",
 									"name": "Recharging without a Dawn",

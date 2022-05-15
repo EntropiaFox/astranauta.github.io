@@ -1,48 +1,37 @@
 "use strict";
 
-class Adventures {
-	static sortAdventures (dataList, a, b, o) {
-		a = dataList[a.ix];
-		b = dataList[b.ix];
-
-		if (o.sortBy === "name") return byName();
-		if (o.sortBy === "storyline") return orFallback(SortUtil.ascSort, "storyline");
-		if (o.sortBy === "level") return orFallback(SortUtil.ascSort, "_startLevel");
-		if (o.sortBy === "published") return SortUtil.ascSortDate(a._pubDate, b._pubDate) || SortUtil.ascSort(b.publishedOrder || 0, a.publishedOrder || 0) || byName();
-
-		function byName () {
-			return SortUtil.ascSort(a.name, b.name);
-		}
-
-		function orFallback (func, prop) {
-			const initial = func(a[prop] || "", b[prop] || "");
-			return initial || byName();
-		}
+class AdventuresList extends AdventuresBooksList {
+	static _getLevelsStr (adv) {
+		if (adv.level.custom) return adv.level.custom;
+		return `${adv.level.start}\u2013${adv.level.end}`;
 	}
 
-	static getLevelsStr (adv) {
-		if (adv.level.custom) return adv.level.custom;
-		return `Level ${adv.level.start}\u2013${adv.level.end}`
+	constructor () {
+		super({
+			contentsUrl: "data/adventures.json",
+			fnSort: AdventuresBooksList._sortAdventuresBooks.bind(AdventuresBooksList),
+			sortByInitial: "group",
+			sortDirInitial: "asc",
+			dataProp: "adventure",
+			enhanceRowDataFn: (adv) => {
+				adv._startLevel = adv.level.start || 20;
+				adv._pubDate = new Date(adv.published);
+			},
+			rootPage: "adventure.html",
+			rowBuilderFn: (adv) => {
+				return `
+					<span class="col-1-3 text-center mobile__text-clip-ellipsis">${AdventuresBooksList._getGroupStr(adv)}</span>
+					<span class="col-5-5 bold mobile__text-clip-ellipsis">${adv.name}</span>
+					<span class="col-2-5 mobile__text-clip-ellipsis">${adv.storyline || "\u2014"}</span>
+					<span class="col-1 text-center mobile__text-clip-ellipsis">${AdventuresList._getLevelsStr(adv)}</span>
+					<span class="col-1-7 text-center mobile__text-clip-ellipsis code">${AdventuresBooksList._getDateStr(adv)}</span>
+				`;
+			},
+		});
 	}
 }
-const adventuresList = new BooksList({
-	contentsUrl: "data/adventures.json",
-	fnSort: Adventures.sortAdventures,
-	sortByInitial: "published",
-	sortDirInitial: "desc",
-	dataProp: "adventure",
-	enhanceRowDataFn: (adv) => {
-		adv._startLevel = adv.level.start || 20;
-		adv._pubDate = new Date(adv.published);
-	},
-	rootPage: "adventure.html",
-	rowBuilderFn: (adv) => {
-		return `<span class="col-6-2 bold">${adv.name}</span>
-		<span class="col-2-5">${adv.storyline || "\u2014"}</span>
-		<span class="col-1-3">${Adventures.getLevelsStr(adv)}</span>
-		<span class="col-2">${BooksList.getDateStr(adv)}</span>`;
-	},
-});
+
+const adventuresList = new AdventuresList();
 
 window.addEventListener("load", () => adventuresList.pOnPageLoad());
 

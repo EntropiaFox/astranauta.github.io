@@ -33,7 +33,7 @@ class CounterRoot extends CounterComponent {
 
 		const pod = this.getPod();
 
-		this._$wrpRows = $$`<div class="flex-col w-100 h-100 overflow-y-auto relative"/>`;
+		this._$wrpRows = $$`<div class="ve-flex-col w-100 h-100 overflow-y-auto relative"/>`;
 		this._childComps.forEach(it => it.render(this._$wrpRows, pod));
 
 		const $btnAdd = $(`<button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"/> Add Counter</button>`)
@@ -44,10 +44,10 @@ class CounterRoot extends CounterComponent {
 				this._board.doSaveStateDebounced();
 			});
 
-		$$`<div class="w-100 h-100 flex-col px-2 pb-3">
+		$$`<div class="w-100 h-100 ve-flex-col px-2 pb-3">
 			<div class="no-shrink pt-4"/>
 			${this._$wrpRows}
-			<div class="no-shrink flex-h-right">${$btnAdd}</div>
+			<div class="no-shrink ve-flex-h-right">${$btnAdd}</div>
 		</div>`.appendTo($parent);
 	}
 
@@ -137,14 +137,14 @@ class CounterRow extends CounterComponent {
 				removeRow(this);
 			});
 
-		this._$row = $$`<div class="flex-v-center w-100 my-1">
+		this._$row = $$`<div class="ve-flex-v-center w-100 my-1">
 			${$iptName}
-			<div class="relative flex-vh-center">
+			<div class="relative ve-flex-vh-center">
 				${$iptCur}
 				<div class="dm-cnt__slash text-muted text-center">/</div>
 				${$iptMax}
 			</div>
-			<div class="flex btn-group mr-2">
+			<div class="ve-flex btn-group mr-2">
 				${$btnDown}
 				${$btnUp}
 			</div>

@@ -37,6 +37,24 @@
 			]
 		},
 		{
+			"name": "Blessing of the Frostmaiden",
+			"source": "IDRotF",
+			"page": 213,
+			"type": "Blessing",
+			"entries": [
+				"Your eyes become as cold as ice. You gain immunity to cold damage. In addition, you can cast the {@spell cone of cold} spell (save {@dc 15}) once. You regain the ability to cast this spell when you finish a long rest."
+			]
+		},
+		{
+			"name": "Blessing of the Morninglord",
+			"source": "IDRotF",
+			"page": 119,
+			"type": "Blessing",
+			"entries": [
+				"You gain 10 temporary hit points each day at dawn."
+			]
+		},
+		{
 			"name": "Blessing of Understanding",
 			"source": "DMG",
 			"page": 228,
@@ -476,7 +494,7 @@
 				{
 					"type": "list",
 					"items": [
-						"You and your allies within 15 feet of you ignore difficult terrain caused by snow or ice.",
+						"You and your allies within 15 feet of you ignore {@quickref difficult terrain||3} caused by snow or ice.",
 						"You can see through areas heavily obscured by snow to a distance of 60 feet.",
 						"You are immune to the effects of extreme cold, as described in the {@book Dungeon Master's Guide|DMG} (though you gain no protection from cold damage)."
 					]
@@ -749,6 +767,273 @@
 			"type": "Charm",
 			"entries": [
 				"When you activate this charm, you can cast the {@spell blink} or {@spell sleep} (3rd-level version) spell. Alternatively, when you take damage, you can use your reaction to turn {@condition invisible} and teleport up to 30 feet to an unoccupied space you can see. You remain {@condition invisible} until the start of your next turn or until you attack or cast a spell. The charm vanishes after you activate it."
+			]
+		},
+		{
+			"name": "Draconic Familiar",
+			"source": "FTD",
+			"page": 28,
+			"type": "Draconic Gift",
+			"rarity": "uncommon",
+			"entries": [
+				"You gain the aid of a draconic familiar, which might be a splinter of the consciousness of a dragon that invested you with power.",
+				"You can cast the {@spell find familiar} spell as a ritual without using any material components. When you cast the spell in this way, your familiar always takes the form of a {@creature pseudodragon}.",
+				"Additionally, when you take the {@action Attack} action on your turn, you can forgo one of your own attacks to allow your pseudodragon familiar to make one attack of its own with its reaction."
+			]
+		},
+		{
+			"name": "Draconic Rebirth",
+			"source": "FTD",
+			"page": 28,
+			"type": "Draconic Gift",
+			"rarity": "uncommon",
+			"entries": [
+				"You become a dragonborn. You replace the racial traits of your original race with the traits of a chromatic, gem, or metallic dragonborn (detailed in this {@book book|FTD|1|Draconic Races}). The kind of dragonborn you become matches the family of the dragon that is the source of this gift. You can keep any skill proficiencies you gained from your previous race, or you gain proficiency in two skills of your choice."
+			]
+		},
+		{
+			"name": "Draconic Senses",
+			"source": "FTD",
+			"page": 28,
+			"type": "Draconic Gift",
+			"rarity": "rare",
+			"entries": [
+				"You gain keen senses like a dragon's.",
+				{
+					"type": "entries",
+					"name": "Blindsight",
+					"entries": [
+						"You have {@sense blindsight} to a range of 10 feet. Within that range, you can effectively see anything that isn't behind {@book total cover|PHB|9|Cover}, even if you're {@condition blinded} or in darkness. Moreover, you can see {@condition invisible} creatures within that range, unless the creatures successfully hide from you."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Keen Senses",
+					"entries": [
+						"You have advantage on Wisdom ({@skill Perception}) checks."
+					]
+				}
+			]
+		},
+		{
+			"name": "Echo of Dragonsight",
+			"source": "FTD",
+			"page": 28,
+			"type": "Draconic Gift",
+			"rarity": "very rare",
+			"entries": [
+				"You have begun to extend your awareness beyond the single world of the Material Plane that is your home.",
+				"You can cast {@spell contact other plane} as a ritual. The entity you contact is a dragon on another world in the Material Plane, so its knowledge of your world might be limited. Also, this dragon is an echo of the dragon who is the source of the gift, which might affect its attitude and behavior toward you."
+			]
+		},
+		{
+			"name": "Fragment of Abhorrence",
+			"source": "CRCotN",
+			"page": 214,
+			"type": "Fragment of Suffering",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Benefit",
+					"entries": [
+						"Once on each of your turns when you hit a creature with a weapon attack roll, you can force the target to move up to 10 feet away from you in a direction of your choice. A creature that can't be {@condition frightened} is immune to this effect."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Drawback",
+					"entries": [
+						"If you start your turn {@condition frightened}, you take {@damage 2d6} psychic damage."
+					]
+				}
+			]
+		},
+		{
+			"name": "Fragment of Attachment",
+			"source": "CRCotN",
+			"page": 214,
+			"type": "Fragment of Suffering",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Benefit",
+					"entries": [
+						"You can't be {@condition frightened} while within 10 feet of an ally. If you're already {@condition frightened} and move within 10 feet of an ally, the {@condition frightened} condition ends on you."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Drawback",
+					"entries": [
+						"You have disadvantage on Wisdom and Charisma saving throws while you aren't within 10 feet of an ally."
+					]
+				}
+			]
+		},
+		{
+			"name": "Fragment of Deception",
+			"source": "CRCotN",
+			"page": 214,
+			"type": "Fragment of Suffering",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Benefit",
+					"entries": [
+						"When you take damage, you can use your reaction to turn {@condition invisible} and teleport up to 60 feet to an unoccupied space you can see. You remain {@condition invisible} until the start of your next turn or until you make a damage roll or cast a spell."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Drawback",
+					"entries": [
+						"You have disadvantage on Wisdom checks."
+					]
+				}
+			]
+		},
+		{
+			"name": "Fragment of Despondence",
+			"source": "CRCotN",
+			"page": 214,
+			"type": "Fragment of Suffering",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Benefit",
+					"entries": [
+						"You are immune to the {@condition charmed} condition."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Drawback",
+					"entries": [
+						"You can't take the {@action Help} action."
+					]
+				}
+			]
+		},
+		{
+			"name": "Fragment of Intransigence",
+			"source": "CRCotN",
+			"page": 214,
+			"type": "Fragment of Suffering",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Benefit",
+					"entries": [
+						"Another creature can't force you to move anywhere you don't want to go."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Drawback",
+					"entries": [
+						"You can't take the {@action Disengage} or {@action Dodge} action."
+					]
+				}
+			]
+		},
+		{
+			"name": "Fragment of Loathing",
+			"source": "CRCotN",
+			"page": 214,
+			"type": "Fragment of Suffering",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Benefit",
+					"entries": [
+						"When a creature damages you with a weapon attack or a spell, you can focus your hatred on that creature. Until the end of your next turn, you have advantage on attack rolls you make against the creature. You can focus your hatred on only one creature at a time."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Drawback",
+					"entries": [
+						"You have disadvantage on Charisma checks."
+					]
+				}
+			]
+		},
+		{
+			"name": "Fragment of Melancholy",
+			"source": "CRCotN",
+			"page": 214,
+			"type": "Fragment of Suffering",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Benefit",
+					"entries": [
+						"When you fail a Wisdom or Charisma saving throw, you can reroll it with advantage, potentially turning a failure into a success. After you use this benefit, you must finish a long rest before you can use it again."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Drawback",
+					"entries": [
+						"If you use this fragment's benefit and it doesn't turn a failed saving throw into a success, you are {@condition incapacitated} until the end of your next turn, overcome with despair."
+					]
+				}
+			]
+		},
+		{
+			"name": "Fragment of Pity",
+			"source": "CRCotN",
+			"page": 214,
+			"type": "Fragment of Suffering",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Benefit",
+					"entries": [
+						"Each time you spend a Hit Die to regain hit points, you regain additional hit points equal to your proficiency bonus."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Drawback",
+					"entries": [
+						"You have disadvantage on death saving throws."
+					]
+				}
+			]
+		},
+		{
+			"name": "Fragment of Rancor",
+			"source": "CRCotN",
+			"page": 214,
+			"type": "Fragment of Suffering",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Benefit",
+					"entries": [
+						"When you hit a creature with an attack, you can choose to deal either an extra {@damage 2d6} psychic damage to the creature or {@damage 4d6} psychic damage to each other creature within 5 feet of it. After you use this benefit, you must finish a short or long rest before you can use it again."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Drawback",
+					"entries": [
+						"Whenever you are not {@condition unconscious} and fail a saving throw, you take {@damage 2d6} psychic damage."
+					]
+				}
+			]
+		},
+		{
+			"name": "Frightful Presence",
+			"source": "FTD",
+			"page": 28,
+			"type": "Draconic Gift",
+			"rarity": "very rare",
+			"entries": [
+				"Echoes of a dragon's might linger around you, and you can call on them to inspire fear in those who stand against you.",
+				"As a bonus action, you can manifest your frightful presence. Each creature of your choice that is within 120 feet of you and aware of you must make a Wisdom saving throw against a DC equal to 8 + your proficiency bonus + your Charisma modifier. A creature that fails becomes {@condition frightened} of you for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+				"Once you use this ability a number of times equal to your proficiency bonus, you can't use it again until you finish a long rest."
 			]
 		},
 		{
@@ -1084,12 +1369,33 @@
 			]
 		},
 		{
+			"name": "Psionic Reach",
+			"source": "FTD",
+			"page": 28,
+			"type": "Draconic Gift",
+			"rarity": "very rare",
+			"entries": [
+				"The psionic energy of a gem dragon empowers your mind. You gain resistance to psychic damage.",
+				"In addition, you learn the {@spell telekinesis} spell. You can cast this spell without expending a spell slot. Once you cast this spell in this way, you can't do so again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level. The spellcasting ability is Intelligence, Wisdom, or Charisma when you cast the spell with this gift (choose when you gain the gift)."
+			]
+		},
+		{
 			"name": "Rakdos Charm",
 			"source": "GGR",
 			"page": 174,
 			"type": "Charm",
 			"entries": [
 				"When you activate this charm, you can cast the {@spell crown of madness}, {@spell hellish rebuke}, or {@spell shatter} spell. The charm vanishes after you activate it."
+			]
+		},
+		{
+			"name": "Scaled Toughness",
+			"source": "FTD",
+			"page": 28,
+			"type": "Draconic Gift",
+			"rarity": "legendary",
+			"entries": [
+				"Your skin toughens, making you resistant to certain types of physical harm. You gain resistance to piercing and slashing damage."
 			]
 		},
 		{
@@ -1194,6 +1500,37 @@
 			"entries": [
 				"Ever changing, mirthful, and beautiful, the primal elves could assume whatever sex they liked. When they bowed to Lolth's influence and chose to fix their physical forms, elves lost the ability to transform in this way. Yet occasionally elves are born who are so androgynous that they are proclaimed to be among the blessed of Corellon\u2014living symbols of the god's love and of the primal elves' original fluid state of being. Many of Corellon's chief priests bear this blessing.",
 				"The rarest of these blessed elves can change their sex whenever they finish a long rest-a miracle celebrated by elves of all sorts except drow. (The DM decides whether an elf can manifest this miracle.) Dark elves find this ability to be terrifying and characterize it as a curse, for it could destabilize their entire society. If Corellon's blessing manifests in a drow, that elf usually flees to the surface world to seek shelter among those dedicated to Corellon."
+			]
+		},
+		{
+			"name": "Tongue of the Dragon",
+			"source": "FTD",
+			"page": 28,
+			"type": "Draconic Gift",
+			"rarity": "uncommon",
+			"entries": [
+				"You gain some of the majestic presence of a dragon.",
+				{
+					"type": "entries",
+					"name": "Dragon's Speech",
+					"entries": [
+						"You can speak, read, and write Draconic."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Dragon's Voice",
+					"entries": [
+						"As a bonus action, you can make your voice audible up to 300 feet away for 1 minute."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Dragon's Wiles",
+					"entries": [
+						"You have advantage on Charisma ({@skill Persuasion}) checks."
+					]
+				}
 			]
 		},
 		{

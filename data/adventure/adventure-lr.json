@@ -3,6 +3,7 @@
 		{
 			"type": "section",
 			"name": "Introduction",
+			"page": 2,
 			"id": "000",
 			"entries": [
 				"The Sea of Fallen Stars connects the eastern and western sides of Faerûn. Many nations that border shorelines along its vast expanse also maintain major navies and trade fleets. A plethora of creatures and humanoid races typically found in the ocean depths live there, including sahuagin, sea elves, merfolk, and locathah.",
@@ -10,6 +11,7 @@
 				{
 					"type": "section",
 					"name": "Running the Adventure",
+					"page": 2,
 					"id": "001",
 					"entries": [
 						"To run this adventure, you need the D&D fifth edition core rulebooks: the {@book Player's Handbook|PHB}, {@book Dungeon Master's Guide|DMG}, and {@book Monster Manual|MM}. The {@book Sword Coast Adventurer's Guide|SCAG} is helpful but not necessary. The {@book Monster Manual|MM} contains stat blocks for most of the creatures found in this adventure. All the necessary stat blocks are included there or in appendix A. When a creature's name appears in {@b bold} type, that's a visual cue for you to look up the creature's stat block in the {@book Monster Manual|MM}, unless the adventure's text instead refers you to the monster appendix in this adventure.",
@@ -26,6 +28,7 @@
 				{
 					"type": "section",
 					"name": "Adjusting Encounters",
+					"page": 2,
 					"id": "003",
 					"entries": [
 						"This adventure contains advice for adjusting encounters based on the number of characters in the party. You are empowered to modify the number of enemies in an encounter and their hit point totals as you see fit. If you need to adjust the difficulty of an encounter during combat, you can alter hit point totals without the player characters ever knowing and have enemies retreat or reinforcements arrive as needed."
@@ -34,25 +37,27 @@
 				{
 					"type": "section",
 					"name": "The Adventure Begins",
+					"page": 2,
 					"id": "004",
 					"entries": [
 						"The adventure begins as the characters, a stalwart band of locathah, seek answers to the disturbance of wind and wave so close to their homes.",
-						"What they discover is a new risen node of elemental evil, pulsing with a power harvested by Gar Shatterkeel, an interloping surface-dweller who has become a prophet of Umberlee, the Queen of the Depths herself.",
+						"What they discover is a new risen node of elemental evil, pulsing with a power harvested by {@creature Gar Shatterkeel|LR}, an interloping surface-dweller who has become a prophet of Umberlee, the Queen of the Depths herself.",
 						"It's up to these normally quiet fish-folk to seal a rift Gar opened to draw power directly from the Elemental Plane of Water and put an end to his machinations.",
 						{
 							"type": "entries",
 							"name": "Adventure Background",
+							"page": 2,
 							"id": "005",
 							"entries": [
 								"A few years ago, four elemental prophets led their respective cults in a quasi-unified effort to rain unprecedented destruction down upon the Sword Coast.",
-								"Gar Shatterkeel was one of these prophets. Dour and morose, Gar became the prophet of Olhydra, the elemental Princess of Evil Water, and the leader of the Crushing Wave cult. He was embittered by a life of suffering at the hands of others: pirates killed his family when he was young, he was forced into servitude aboard a merchant ship, and then another band of pirates left him to die on the open sea, where he lost his arm to a shark. Gar saw the elemental power of water as the only thing of value in his life and gathered others who felt similarly.",
+								"{@creature Gar Shatterkeel|LR} was one of these prophets. Dour and morose, Gar became the prophet of Olhydra, the elemental Princess of Evil Water, and the leader of the Crushing Wave cult. He was embittered by a life of suffering at the hands of others: pirates killed his family when he was young, he was forced into servitude aboard a merchant ship, and then another band of pirates left him to die on the open sea, where he lost his arm to a shark. Gar saw the elemental power of water as the only thing of value in his life and gathered others who felt similarly.",
 								"Gar wielded the elemental weapon Drown, a magical trident of great power, and his missing arm was replaced by an artificial limb in the shape of a crab's claw. As the leader of Olhydra's cult, he could channel her innate magic, which inspired awe and fear in the other Crushing Wave cultists.",
 								"Fortunately for the denizens of the Sword Coast, heroes discovered the collective plots of the elemental prophets and put an end to their machinations, defeating each of them in turn, and sending each prophet back to the evil elemental being they revered and served.",
 								"On the Elemental Plane of Water, Gar raged in protest. Drown had been broken, and the Crushing Wave cult sundered. He faced Olhydra's displeasure, expecting to be destroyed by her wrath, and was astonished to awaken several years later, floating off the coast of Turmish in the Sea of Fallen Stars. He gripped a trident in one hand, though it was not Drown.",
 								"Gar discovered that the ancient weapon had been gifted to him by the sea goddess Umberlee who, in conjunction with Olhydra, managed to reinstate the prophet with power even more formidable than he previously enjoyed. The seas and the storms that raged above now heeded his commands, and\u2014free of the original compact made with the other prophets\u2014Gar could seek success unburdened by any past commitments.",
 								"Gazing upon the trident, Gar looked for signs of the power that he felt surging within and was shocked when the trident spoke to him, \"I am WAVE, and we are ONE!\"",
-								"With Wave in his possession, Gar Shatterkeel discovered and unlocked a node of elemental power deep beneath the waves, directly under the shipping lanes of those who transport themselves and other valuables across the Sea of Fallen Stars. There he opened a rift, drew on its power, and created a place where ships would be destroyed and dragged beneath the waves.",
-								"As ship after ship has been destroyed by wind and wave, they have come to rest in close proximity to where Gar has encouraged the preternatural growth of the coral and other such sea life to create his new lair. From his aquatic home, Gar Shatterkeel foments his plans to seek out and destroy all who dare to cross these waters without paying the proper tribute to Umberlee and Olhydra.",
+								"With Wave in his possession, {@creature Gar Shatterkeel|LR} discovered and unlocked a node of elemental power deep beneath the waves, directly under the shipping lanes of those who transport themselves and other valuables across the Sea of Fallen Stars. There he opened a rift, drew on its power, and created a place where ships would be destroyed and dragged beneath the waves.",
+								"As ship after ship has been destroyed by wind and wave, they have come to rest in close proximity to where Gar has encouraged the preternatural growth of the coral and other such sea life to create his new lair. From his aquatic home, {@creature Gar Shatterkeel|LR} foments his plans to seek out and destroy all who dare to cross these waters without paying the proper tribute to Umberlee and Olhydra.",
 								{
 									"type": "image",
 									"href": {
@@ -67,9 +72,10 @@
 								{
 									"type": "inset",
 									"name": "Olyhydra Vs. Umberlee",
+									"page": 3,
 									"id": "006",
 									"entries": [
-										"While it's clear that Olhydra is an evil entity, and Umberlee, while destructive, isn't always seen in an evil light, for the purpose of this adventure the character of the sea god Umberlee is biased toward her more evil aspect by the nature of her \"Chosen,\" Gar Shatterkeel.",
+										"While it's clear that Olhydra is an evil entity, and Umberlee, while destructive, isn't always seen in an evil light, for the purpose of this adventure the character of the sea god Umberlee is biased toward her more evil aspect by the nature of her \"Chosen,\" {@creature Gar Shatterkeel|LR}.",
 										"Gar is most definitely evil, and his plans target other creatures and NPCs as victims in this scenario, despite the fact that they're also evil. Because of this, the NPCs who come to understand the threat that Gar poses to them and their interests see the characters as an opportunity to strike back at their diabolical host, and will cooperate to the best of their ability."
 									]
 								}
@@ -82,6 +88,7 @@
 		{
 			"type": "section",
 			"name": "The Darkening",
+			"page": 3,
 			"id": "007",
 			"entries": [
 				{
@@ -118,20 +125,23 @@
 				{
 					"type": "inset",
 					"name": "Exterior Features",
+					"page": 4,
 					"id": "00a",
 					"entries": [
-						"The presence of Gar Shatterkeel and the rift he opened (Umberlee's Maw) have created an area in the ocean that acts like a beacon for strong, irregular currents and bad weather. Underwater, the effect manifests as a general darkness in an oddly specific area, surrounding the coral mountain that encases the many sunken ships that recently met an untimely demise.",
+						"The presence of {@creature Gar Shatterkeel|LR} and the rift he opened (Umberlee's Maw) have created an area in the ocean that acts like a beacon for strong, irregular currents and bad weather. Underwater, the effect manifests as a general darkness in an oddly specific area, surrounding the coral mountain that encases the many sunken ships that recently met an untimely demise.",
 						{
 							"type": "entries",
 							"name": "Current",
+							"page": 4,
 							"id": "00b",
 							"entries": [
-								"The current here is strong and constantly shifting. This effectively makes the area around the exterior of the coral mountain difficult terrain, even if you have a swim speed."
+								"The current here is strong and constantly shifting. This effectively makes the area around the exterior of the coral mountain {@quickref difficult terrain||3}, even if you have a swim speed."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Light",
+							"page": 4,
 							"id": "00c",
 							"entries": [
 								"There is almost no light here; the area is lightly obscured. Without some kind of light source or darkvision, all Wisdom ({@skill Perception}) checks that rely on sight are made at disadvantage, and the encounter distance is reduced to 10 feet (see \"{@book Unusual Environments|DMG|5|Unusual Environments}\" in chapter 5 of the {@book Dungeon Master's Guide|DMG}). Assuming the players have locathah characters, they'll need to use some kind of magic to see inside the area."
@@ -142,13 +152,15 @@
 				{
 					"type": "section",
 					"name": "Umberlee's Maw",
+					"page": 5,
 					"id": "00d",
 					"entries": [
-						"The coral mountain, comprised of recently sunken ships covered by a crunchy coral shell, is referred to as Umberlee's Maw by Gar Shatterkeel. Normally this would include his followers as well, but at the moment they consist of a pair of sea lions that are drawn to the divine power he possesses and the undead remains of those who lost their lives when their ships sunk.",
+						"The coral mountain, comprised of recently sunken ships covered by a crunchy coral shell, is referred to as Umberlee's Maw by {@creature Gar Shatterkeel|LR}. Normally this would include his followers as well, but at the moment they consist of a pair of sea lions that are drawn to the divine power he possesses and the undead remains of those who lost their lives when their ships sunk.",
 						"The only way to enter Umberlee's Maw is through {@area area 1|00f|x}. The coral mountain is otherwise sealed against intrusion.",
 						{
 							"type": "inset",
 							"name": "Underwater Combat",
+							"page": 4,
 							"id": "00e",
 							"entries": [
 								{
@@ -172,7 +184,9 @@
 									},
 									"title": "Map 1: Umberlee's Maw",
 									"width": 1301,
-									"height": 1734
+									"height": 1734,
+									"imageType": "map",
+									"id": "05d"
 								},
 								{
 									"type": "image",
@@ -182,13 +196,18 @@
 									},
 									"title": "(Player Version)",
 									"width": 1301,
-									"height": 1734
+									"height": 1734,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "05d"
+									}
 								}
 							]
 						},
 						{
 							"type": "entries",
 							"name": "1. Caravel Emergent",
+							"page": 5,
 							"id": "00f",
 							"entries": [
 								"This ship was the last one to sink before Gar caused the coral to grow up around the entire mass. As such, the forecastle protrudes from the coral, creating a passage in and out of Umberlee's Maw.",
@@ -209,6 +228,7 @@
 						{
 							"type": "entries",
 							"name": "2. What Is Dead May Never Die",
+							"page": 5,
 							"id": "011",
 							"entries": [
 								"As the characters descend into the lower decks of this ship, read or paraphrase the following boxed text:",
@@ -235,12 +255,14 @@
 								{
 									"type": "inset",
 									"name": "Interior Features",
+									"page": 7,
 									"id": "013",
 									"entries": [
 										"This area has the following features.",
 										{
 											"type": "entries",
 											"name": "Current",
+											"page": 7,
 											"id": "014",
 											"entries": [
 												"The water here is still, though it slowly filters through the coral that encompasses this area."
@@ -249,6 +271,7 @@
 										{
 											"type": "entries",
 											"name": "Light",
+											"page": 7,
 											"id": "015",
 											"entries": [
 												"There is no light here; the area that is heavily obscured. Characters without some kind of magical light or darkvision are considered blind. The encounter distance is reduced to 10 feet in these instances (see \"{@book Unusual Environments|DMG|5|Unusual Environments}\" in chapter 5 of the {@book Dungeon Master's Guide|DMG}). For characters with a magical light source or darkvision, the water is considered to be clear."
@@ -257,6 +280,7 @@
 										{
 											"type": "entries",
 											"name": "Sea Floor",
+											"page": 7,
 											"id": "016",
 											"entries": [
 												"The sea floor here is compacted sand with some small stone outcroppings, though none big enough to stand on."
@@ -265,6 +289,7 @@
 										{
 											"type": "entries",
 											"name": "Ceiling Height",
+											"page": 7,
 											"id": "017",
 											"entries": [
 												"The ceiling of the coral mountain is approximately 50 feet above the sandy ocean floor.",
@@ -278,6 +303,7 @@
 						{
 							"type": "entries",
 							"name": "3. The Boneyard",
+							"page": 7,
 							"id": "018",
 							"entries": [
 								"As the characters emerge into this area, read or paraphrase the following boxed text:",
@@ -292,13 +318,15 @@
 								{
 									"type": "entries",
 									"name": "Development",
+									"page": 7,
 									"id": "01a",
 									"entries": [
-										"When he arrived, Gar Shatterkeel arranged the corpses into orderly lines, so that he might prepare them for transition into one of the living dead. He completed a ritual using a small amount of blood he had obtained from a kraken, animating a handful of these creatures.",
+										"When he arrived, {@creature Gar Shatterkeel|LR} arranged the corpses into orderly lines, so that he might prepare them for transition into one of the living dead. He completed a ritual using a small amount of blood he had obtained from a kraken, animating a handful of these creatures.",
 										"Since then, he's managed to dupe a pair of kraken priests into bringing a young kraken into the coral mountain, where they might \"nurture it into maturity in relative seclusion.\" Gar's intent, of course, is to use the blood from the young creature in a much larger ritual, to animate what will certainly be a terrifying army of undead to assault the coastline of the Sea of Fallen Stars.",
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 7,
 											"id": "01b",
 											"entries": [
 												"If all of the corpses are thoroughly searched, they have a combined stash of 250 gp and 500 sp. Additionally, there are {@dice 1d10} pearls (worth 25 gp each) that adorn various earrings, necklaces, and the odd bellybutton piercing."
@@ -311,6 +339,7 @@
 						{
 							"type": "entries",
 							"name": "4. Tortle in Torpor",
+							"page": 7,
 							"id": "01c",
 							"entries": [
 								"As the characters approach this ship, read or paraphrase the following boxed text:",
@@ -337,23 +366,25 @@
 										"The source of the green light quickly becomes apparent. About ten feet from the aft of the lower deck, a large turtle, its head and limbs pulled in, floats in the middle of the rear cabin. The green light emanates directly from the creature's shell."
 									]
 								},
-								"This is {@creature Amble|LR}, a tortle druid who sought passage on this ship, and was on board when it sank. Amble was traveling to Turmish on the Sea of Fallen Stars, as they had heard of the war with Thay. Detesting undead and necromancy, Amble wants to help fight the Thayans in any way they can.",
-								"Due to their extremely strong connection with the Feywild, Amble was able to enter a protected state of suspended animation as the ship sunk, protecting them from drowning.",
-								"The undead will not willingly approach this ship, repelled by the power emanating from Amble, and Gar has yet to explore this passage inside the coral mountain.",
-								"At the moment, Amble is waiting for someone to wake them up. Any good-aligned character who touches the tortle will wake them. When this occurs, Amble is momentarily confused, and then gathering their wits, casts {@spell water breathing} on themself.",
-								"Assuming the characters don't act with hostility, Amble is very interested in hearing what the characters are doing. Amble can be a powerful ally for the party, though the tortle's vow to never harm humanoids is not negotiable. Amble doesn't necessarily expect others to follow this rule, but will encourage them to do so nonetheless.",
+								"This is {@creature Amble|LR}, a tortle druid who sought passage on this ship, and was on board when it sank. {@creature Amble|LR} was traveling to Turmish on the Sea of Fallen Stars, as they had heard of the war with Thay. Detesting undead and necromancy, {@creature Amble|LR} wants to help fight the Thayans in any way they can.",
+								"Due to their extremely strong connection with the Feywild, {@creature Amble|LR} was able to enter a protected state of suspended animation as the ship sunk, protecting them from drowning.",
+								"The undead will not willingly approach this ship, repelled by the power emanating from {@creature Amble|LR}, and Gar has yet to explore this passage inside the coral mountain.",
+								"At the moment, {@creature Amble|LR} is waiting for someone to wake them up. Any good-aligned character who touches the tortle will wake them. When this occurs, {@creature Amble|LR} is momentarily confused, and then gathering their wits, casts {@spell water breathing} on themself.",
+								"Assuming the characters don't act with hostility, {@creature Amble|LR} is very interested in hearing what the characters are doing. {@creature Amble|LR} can be a powerful ally for the party, though the tortle's vow to never harm humanoids is not negotiable. {@creature Amble|LR} doesn't necessarily expect others to follow this rule, but will encourage them to do so nonetheless.",
 								{
 									"type": "inset",
 									"name": "Roleplaying Amble",
+									"page": 8,
 									"id": "020",
 									"entries": [
-										"Amble speaks with a slow, deep resonance, and their head slowly gyrates when they get excited or want to make a point. The tortle has a gentle demeanor and loves to experience unfamiliar cultures that are peaceful. As a druid, Amble reveres both Selune and Eldath, and has a marked fondness for the Seldarine as well. It is important to note that as a tortle, Amble doesn't self-identify as either male or female. They are a member of the Circle of Dreams and has laid several clutches of eggs while traveling the Feywild.",
+										"{@creature Amble|LR} speaks with a slow, deep resonance, and their head slowly gyrates when they get excited or want to make a point. The tortle has a gentle demeanor and loves to experience unfamiliar cultures that are peaceful. As a druid, {@creature Amble|LR} reveres both Selune and Eldath, and has a marked fondness for the Seldarine as well. It is important to note that as a tortle, {@creature Amble|LR} doesn't self-identify as either male or female. They are a member of the Circle of Dreams and has laid several clutches of eggs while traveling the Feywild.",
 										{
 											"type": "entries",
 											"name": "Amble's Rule",
+											"page": 8,
 											"id": "021",
 											"entries": [
-												"The tortle will never attack a beast or humanoid with the intent to damage them. If such a creature is hostile, Amble will use magic to restrain them, and has a plethora of spells with which to accomplish this. Amble has no such restrictions with regard to hostile creatures of other types (undead, fiends, constructs, monstrosities, aberrations, etc.), and will fight to destroy them."
+												"The tortle will never attack a beast or humanoid with the intent to damage them. If such a creature is hostile, {@creature Amble|LR} will use magic to restrain them, and has a plethora of spells with which to accomplish this. {@creature Amble|LR} has no such restrictions with regard to hostile creatures of other types (undead, fiends, constructs, monstrosities, aberrations, etc.), and will fight to destroy them."
 											]
 										}
 									]
@@ -363,6 +394,7 @@
 						{
 							"type": "entries",
 							"name": "5. Ravenous Rabble",
+							"page": 8,
 							"id": "022",
 							"entries": [
 								"When the characters can see this area, read or paraphrase the following boxed text:",
@@ -383,6 +415,7 @@
 						{
 							"type": "entries",
 							"name": "6. Awaiting the Master's Orders",
+							"page": 8,
 							"id": "024",
 							"entries": [
 								"If any of the characters peer through the hole in the hull of this ship, read or paraphrase the following boxed text:",
@@ -393,7 +426,7 @@
 										"The inside of this cabin is fitted with hammock-style bunks affixed to the interior hull of the ship. Each hammock is a web of ropes and knot-work, lined with canvas. Nearby, there are several footlockers that have been broken open, their contents strewn about the floor of the cabin."
 									]
 								},
-								"This area is occupied by three {@creature Drowned Ascetic|GoS|drowned ascetics}. As they don't have anything to do until they receive orders from the drowned master, or directly from Gar Shatterkeel, they all lay inert in a bunk, covered with a pile of blankets\u2014a force of habit from before they were undead.",
+								"This area is occupied by three {@creature Drowned Ascetic|GoS|drowned ascetics}. As they don't have anything to do until they receive orders from the drowned master, or directly from {@creature Gar Shatterkeel|LR}, they all lay inert in a bunk, covered with a pile of blankets\u2014a force of habit from before they were undead.",
 								"It may not immediately be obvious that these creatures are in the cabin. Any character with a passive Wisdom ({@skill Perception}) of 15 or higher, or a character who succeeds on a DC 15 Wisdom ({@skill Perception}) check prior to entering will notice them. Otherwise, the characters may not recognize the threat until they've disturbed the creatures by making noise or by pulling back the blankets under which they lay.",
 								"Characters who are aware of the undead, or that want to remain undetected in general, must succeed on a DC 13 Dexterity ({@skill Stealth}) check upon entering the cabin, to avoid \"waking\" the drowned ascetics. If the creatures are alerted, they attack immediately. Otherwise, the characters can proceed through this area without conflict, assuming they don't search the bunks or move the blankets.",
 								"The creatures were sailors when they were alive, so they are dressed in the uniforms commonly worn by sailors in the Turmish navy. Since they died suddenly from drowning, their clothing is only slightly worn from exposure to the briny depths.",
@@ -403,6 +436,7 @@
 						{
 							"type": "entries",
 							"name": "7. The Master",
+							"page": 8,
 							"id": "026",
 							"entries": [
 								"Unless the characters punch a hole in the hull of this ship (possible, but unlikely), the only way into this area is through the door in area 6. When the characters can see this area, read or paraphrase the following boxed text:",
@@ -413,11 +447,12 @@
 										"The interior of this ship's hold has been converted into a war room. Water-resistant nautical maps, crafted with the treated hide of some aquatic creature, and detailing sections of the coastline in the Sea of Fallen Stars, have been pinned on one wall. Two creatures float upright, peering intently at the maps. While both are roughly humanoid, one of these creatures is completely encrusted in barnacles. The other creature's legs have split into shadowy tentacles, and it emanates a menacing inky aura."
 									]
 								},
-								"The creatures, respectively, are one {@creature drowned assassin|GoS} and one {@creature drowned master|GoS}. Communicating with one another wordlessly through the link created by the drowned master, they are planning their departure from Umberlee's Maw, once enough drowned have been created to pose a serious threat to settlements along the coastline. Until then, they await the command of their master, Gar Shatterkeel. The drowned master holds a short, slender metal wand in one hand and uses it to make marks on the maps on the wall.",
+								"The creatures, respectively, are one {@creature drowned assassin|GoS} and one {@creature drowned master|GoS}. Communicating with one another wordlessly through the link created by the drowned master, they are planning their departure from Umberlee's Maw, once enough drowned have been created to pose a serious threat to settlements along the coastline. Until then, they await the command of their master, {@creature Gar Shatterkeel|LR}. The drowned master holds a short, slender metal wand in one hand and uses it to make marks on the maps on the wall.",
 								"Entering this area immediately draws the attention of both creatures, who attack immediately. If the characters managed to pass through area 6 without alerting the drowned ascetics therein, any conflict in this area will \"wake\" them. They join combat after two rounds have passed.",
 								{
 									"type": "entries",
 									"name": "Development",
+									"page": 9,
 									"id": "028",
 									"entries": [
 										"Any character who takes a minute or more to study the maps on the wall, and who makes a successful DC 13 Intelligence ({@skill Investigation}) check, determines that they show detailed plans for a massive assault on key locations along the Turmish coastline. A character who exceeds the DC by 5 or more can tell from the strange markings and notes along the edges of the maps that someone intends to use the blood of a kraken to animate the legion of corpses inside the coral mountain."
@@ -428,6 +463,7 @@
 						{
 							"type": "entries",
 							"name": "8. Kraken Kibble",
+							"page": 9,
 							"id": "029",
 							"entries": [
 								"This half of the broken vessel is more accessible, so the characters can easily peer into this section as they approach. As the characters get close enough to see into this area, read or paraphrase the following boxed text:",
@@ -447,6 +483,7 @@
 										{
 											"type": "entries",
 											"name": "Trap",
+											"page": 9,
 											"id": "02c",
 											"entries": [
 												"There are two ballistae traps hidden behind the fish in the back of this chamber. Thin tripwires have been strung up throughout the area, with the intent of protecting the stores from the nearby undead creatures that are sometimes attracted to any freshly caught fish. When entering the area, any character with a passive Wisdom ({@skill Perception}) of at least 15, or a character that makes a successful DC 15 Intelligence ({@skill Investigation}) check, notices the tripwires, and can avoid them. Failure means the trap is sprung.",
@@ -454,12 +491,14 @@
 												{
 													"type": "inset",
 													"name": "Ballistae Trap",
+													"page": 9,
 													"id": "02d",
 													"entries": [
 														"{@i Simple trap (level 5\u201310, dangerous threat})",
 														{
 															"type": "entries",
 															"name": "Trigger",
+															"page": 9,
 															"id": "02e",
 															"entries": [
 																"A creature that walks or swims through the tripwires triggers the trap."
@@ -468,6 +507,7 @@
 														{
 															"type": "entries",
 															"name": "Effect",
+															"page": 9,
 															"id": "02f",
 															"entries": [
 																"The trap makes two attacks, one against the triggering creature, and one against another creature within ten feet of the triggering creature."
@@ -476,6 +516,7 @@
 														{
 															"type": "entries",
 															"name": "Ballistae Trap",
+															"page": 9,
 															"id": "030",
 															"entries": [
 																"Ranged Weapon Attack: +8 to hit, range 120/480 ft., one or two targets. Hit: 16 ({@dice 3d10}) piercing damage plus 9 ({@dice 2d8}) poison damage, and the target must succeed on a DC 12 Constitution saving throw or contract {@disease bluerot|GoS} (see the \"{@condition Bluerot|GoS}\" sidebar). This attack can't gain advantage or disadvantage."
@@ -492,10 +533,11 @@
 						{
 							"type": "entries",
 							"name": "9. Quarters of the Kraken Priests",
+							"page": 9,
 							"id": "031",
 							"entries": [
 								"{@creature Fhenimore|LR} and {@creature Whymsee|LR} are two {@creature Kraken Priest|VGM|kraken priests} working really hard to raise a {@creature young kraken|LR}.",
-								"Previously Thayan slaves, these two tough-as-nails women fled Thay after discovering they were both intended for execution and summary transformation into undead warriors in the dreaded Thayan army. On their way out of Thay, they were forced to take refuge on a broken-down skiff that drifted far out into the Sea of Fallen Stars. Both Fhenimore and Whymsee preferred death to becoming the immortal undead servitors of their wicked masters.",
+								"Previously Thayan slaves, these two tough-as-nails women fled Thay after discovering they were both intended for execution and summary transformation into undead warriors in the dreaded Thayan army. On their way out of Thay, they were forced to take refuge on a broken-down skiff that drifted far out into the Sea of Fallen Stars. Both {@creature Fhenimore|LR} and {@creature Whymsee|LR} preferred death to becoming the immortal undead servitors of their wicked masters.",
 								{
 									"type": "image",
 									"href": {
@@ -506,9 +548,9 @@
 									"height": 1000
 								},
 								"In their last weary moments, an aged kraken rose to the surface nearby, and spoke to them telepathically. The creature was actually on its final swim: a group of powerful adventurers sought it out for its treasure, and though they failed to slay the kraken, it was so badly wounded in the fight that the rest of the sea life around it began to strike at it, taking advantage of its greatly weakened state.",
-								"Just before passing away, though, it transformed Fhenimore and Whymsee into kraken priests so they could protect its only offspring. Thankful for another chance at some kind of life, the two have embarked on this mission with great enthusiasm and have spent the last ten years looking for a place where they might protect the young titan from the world, so that it might grow in power.",
-								"Fhenimore is a tall, lanky human woman with a toowide mouth filled with rows and rows of sharp teeth, like a shark. To accommodate her life underwater, Fhenimore's hands and feet are both webbed and, like a shark, she has an angular dorsal fin that protrudes from the middle of her back.",
-								"Whymsee is a shorter woman with broad shoulders. Her legs have been replaced with tentacles, and her upper torso is covered in some kind of tough, conical shell. When startled, she can tuck in her head and pull her tentacles up into the shell protectively, like a strange hermit crab.",
+								"Just before passing away, though, it transformed {@creature Fhenimore|LR} and {@creature Whymsee|LR} into kraken priests so they could protect its only offspring. Thankful for another chance at some kind of life, the two have embarked on this mission with great enthusiasm and have spent the last ten years looking for a place where they might protect the young titan from the world, so that it might grow in power.",
+								"{@creature Fhenimore|LR} is a tall, lanky human woman with a toowide mouth filled with rows and rows of sharp teeth, like a shark. To accommodate her life underwater, {@creature Fhenimore|LR}'s hands and feet are both webbed and, like a shark, she has an angular dorsal fin that protrudes from the middle of her back.",
+								"{@creature Whymsee|LR} is a shorter woman with broad shoulders. Her legs have been replaced with tentacles, and her upper torso is covered in some kind of tough, conical shell. When startled, she can tuck in her head and pull her tentacles up into the shell protectively, like a strange hermit crab.",
 								"When the characters peer into these chambers, read or paraphrase the following boxed text:",
 								{
 									"type": "insetReadaloud",
@@ -519,12 +561,13 @@
 									]
 								},
 								"Caught up in the netting of the \"shelves,\" there are all manner of odds and ends that might have been salvaged from the nearby sunken ships. Feel free to roll on the {@book trinket table|PHB|5|Trinkets} in the {@book Player's Handbook|PHB} to populate these chamber with two to three dozen oddities, or make them up to suit your own campaign.",
-								"Unless the characters found a way to silently dispatch the sahuagin hatchling swarms, Fhenimore and Whymsee are aware of the party's presence and have prepared to surprise them. While the characters are in combat, they retreat from this chamber into area 10 and take refuge behind a coral outcropping."
+								"Unless the characters found a way to silently dispatch the sahuagin hatchling swarms, {@creature Fhenimore|LR} and {@creature Whymsee|LR} are aware of the party's presence and have prepared to surprise them. While the characters are in combat, they retreat from this chamber into area 10 and take refuge behind a coral outcropping."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "10. The Kraken",
+							"page": 10,
 							"id": "033",
 							"entries": [
 								"As the characters approach this area, read or paraphrase the following boxed text:",
@@ -535,14 +578,15 @@
 										"The coral in this area is equally as beautiful as what you've seen elsewhere. The space opens up, rising about a hundred feet up to the coral ceiling above. Bits and pieces of coral lay scattered about the floor of this chamber, apparently broken off from the surrounding walls and ceiling."
 									]
 								},
-								"Assuming {@creature Fhenimore|LR} and {@creature Whymsee|LR} were alerted to the characters' presence, they're in this chamber when the party approaches. When the characters move into the space between {@area areas 8|029|x} and {@area 9|031|x}, Fhenimore speaks aloud to them, asking them to halt and turn around. She is strangely audible underwater.",
-								"Unless convinced otherwise, Fhenimore and Whymsee do their absolute best to keep from showing themselves, and remain protective of the area. If the characters want to proceed into area 10 without angering the kraken priests, they must succeed on DC 15 Charisma ({@skill Persuasion}) check and promise not to harm Fhenimore and Whymsee, or any other creature in their care.",
+								"Assuming {@creature Fhenimore|LR} and {@creature Whymsee|LR} were alerted to the characters' presence, they're in this chamber when the party approaches. When the characters move into the space between {@area areas 8|029|x} and {@area 9|031|x}, {@creature Fhenimore|LR} speaks aloud to them, asking them to halt and turn around. She is strangely audible underwater.",
+								"Unless convinced otherwise, {@creature Fhenimore|LR} and {@creature Whymsee|LR} do their absolute best to keep from showing themselves, and remain protective of the area. If the characters want to proceed into area 10 without angering the kraken priests, they must succeed on DC 15 Charisma ({@skill Persuasion}) check and promise not to harm {@creature Fhenimore|LR} and {@creature Whymsee|LR}, or any other creature in their care.",
 								{
 									"type": "inset",
 									"name": "Roleplaying Fhenimore & Whymsee",
+									"page": 10,
 									"id": "035",
 									"entries": [
-										"If the characters stop and talk, Fhenimore and Whymsee will be evasive at first, only telling the characters who they've just recently made their home here. When they noticed the mountain of coral, it seemed like a great opportunity. If pressed, they'll warn the characters about the more powerful undead further into the mountain, and let them know that the master of the mountain also resides that way. They'll tell the characters his name is Gar Shatterkeel, and that he's a very powerful ocean dweller with a magical trident. That's pretty much all they know. That, and he was oddly welcoming, but they didn't want to question their luck."
+										"If the characters stop and talk, {@creature Fhenimore|LR} and {@creature Whymsee|LR} will be evasive at first, only telling the characters who they've just recently made their home here. When they noticed the mountain of coral, it seemed like a great opportunity. If pressed, they'll warn the characters about the more powerful undead further into the mountain, and let them know that the master of the mountain also resides that way. They'll tell the characters his name is {@creature Gar Shatterkeel|LR}, and that he's a very powerful ocean dweller with a magical trident. That's pretty much all they know. That, and he was oddly welcoming, but they didn't want to question their luck."
 									]
 								},
 								{
@@ -564,6 +608,7 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 10,
 											"id": "037",
 											"entries": [
 												"The remnants of the parent kraken's possessions are piled up near the back corner of this chamber. The treasure fills and spills out of a pair of large chests that lay open so the young kraken could take stock at its whim.",
@@ -578,6 +623,7 @@
 						{
 							"type": "entries",
 							"name": "11. Olhydra's Canal",
+							"page": 11,
 							"id": "038",
 							"entries": [
 								"When the characters look into the wreckage of this small ship, read or paraphrase the following boxed text:",
@@ -596,12 +642,14 @@
 										{
 											"type": "entries",
 											"name": "Trap",
+											"page": 11,
 											"id": "03b",
 											"entries": [
 												"When a character crosses the threshold of the bulkhead between the back and the front of the ship, the trap is triggered. When that occurs, refer to the \"Olhydra's Gambit\" sidebar. {@spell Dispel magic}, successfully cast against a 6th level spell, suppresses this trap for 1 minute.",
 												{
 													"type": "inset",
 													"name": "Olhydra's Gambit",
+													"page": 11,
 													"id": "03c",
 													"entries": [
 														"Tendrils of water surge from the hull of the ship, attempting to seize intruders. Any creature inside the ship must succeed on a DC 15 Strength saving throw or become {@condition grappled} and pulled to the closest wall inside the vessel, where they are {@condition restrained}.",
@@ -625,6 +673,7 @@
 						{
 							"type": "entries",
 							"name": "12. Shrine to Olhydra",
+							"page": 11,
 							"id": "03d",
 							"entries": [
 								{
@@ -648,7 +697,7 @@
 								},
 								"This is {@creature Shoalar Quanderil|LR}, who was reincarnated by Gar to serve him in his new mission.",
 								"Once jovial and quick to laugh, Shoalar has grown quiet, bitter, and apprehensive. He doesn't understand how Gar can serve both Olhydra and Umberlee, and has developed an extreme mistrust of his morose benefactor. Because of this, it wouldn't take a great deal of effort to talk Shoalar down.",
-								"Any character who succeeds on a DC 13 Charisma ({@skill Intimidation}) check can get Shoalar to not immediately attack the party. Likewise, a successful DC 15 Charisma ({@skill Persuasion}) check will prompt the water genasi will tell the characters that he recently returned to life at the behest of his lord, Gar Shatterkeel. Shoalar can impart the following information to the characters:",
+								"Any character who succeeds on a DC 13 Charisma ({@skill Intimidation}) check can get Shoalar to not immediately attack the party. Likewise, a successful DC 15 Charisma ({@skill Persuasion}) check will prompt the water genasi will tell the characters that he recently returned to life at the behest of his lord, {@creature Gar Shatterkeel|LR}. Shoalar can impart the following information to the characters:",
 								{
 									"type": "list",
 									"items": [
@@ -670,6 +719,7 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 12,
 											"id": "040",
 											"entries": [
 												"Shoalar possesses a {@item bowl of commanding water elementals}. If the characters defeat him, they'll find it on his person. If they befriend him, he'll offer it to them as assistance in the fight to come."
@@ -682,9 +732,10 @@
 						{
 							"type": "entries",
 							"name": "13. Umberlee's Chosen",
+							"page": 12,
 							"id": "041",
 							"entries": [
-								" Accompanied by two {@creature Sea Lion|TftYP|sea lions} that he keeps as pets, Gar Shatterkeel resides in this underwater cave while he contemplates his next move and communes with Umberlee.",
+								" Accompanied by two {@creature Sea Lion|TftYP|sea lions} that he keeps as pets, {@creature Gar Shatterkeel|LR} resides in this underwater cave while he contemplates his next move and communes with Umberlee.",
 								"When the characters enter the chamber, read or paraphrase the following boxed text:",
 								{
 									"type": "insetReadaloud",
@@ -728,6 +779,7 @@
 								{
 									"type": "inset",
 									"name": "The Final Countdown",
+									"page": 12,
 									"id": "044",
 									"entries": [
 										"At this point it is extremely important that you keep track of how many rounds it takes the characters to complete this combat, and exit the chamber. While they're in combat here, Gar has proceeded to the final encounter that begins with his assault on the kraken priests. See below for more details."
@@ -746,20 +798,23 @@
 				{
 					"type": "section",
 					"name": "The Final Countdown",
+					"page": 13,
 					"id": "045",
 					"entries": [
-						"Now is the time for the characters, and any allies they've managed to acquire, to face off against Gar Shatterkeel and his drowned minions. Time is of the essence and events progress while the characters are attempting to free themselves from area 13, so it's best to keep track of the number of rounds it takes for the characters to break through the coral and find their way back to area 5 to confront Gar. It might take them a few rounds to find out where he is, as he gave no indication as to where he was going when he disappeared.",
+						"Now is the time for the characters, and any allies they've managed to acquire, to face off against {@creature Gar Shatterkeel|LR} and his drowned minions. Time is of the essence and events progress while the characters are attempting to free themselves from area 13, so it's best to keep track of the number of rounds it takes for the characters to break through the coral and find their way back to area 5 to confront Gar. It might take them a few rounds to find out where he is, as he gave no indication as to where he was going when he disappeared.",
 						{
 							"type": "entries",
 							"name": "Amble",
+							"page": 13,
 							"id": "046",
 							"entries": [
-								"If {@creature Amble|LR} has joined the characters, the tortle remains a steadfast ally in the fight to come. Amble will focus any attacks on the drowned, leaving Gar to the characters. If things get tough, Amble can also act as a backup healer for the party. Note that dealing damage to Gar does not break Amble's rule, as the tortle believes that Gar is some kind of aberrant being. Because of this, Amble will not intercede when the characters attack Gar."
+								"If {@creature Amble|LR} has joined the characters, the tortle remains a steadfast ally in the fight to come. {@creature Amble|LR} will focus any attacks on the drowned, leaving Gar to the characters. If things get tough, {@creature Amble|LR} can also act as a backup healer for the party. Note that dealing damage to Gar does not break {@creature Amble|LR}'s rule, as the tortle believes that Gar is some kind of aberrant being. Because of this, {@creature Amble|LR} will not intercede when the characters attack Gar."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Fhenimore and Whymsee",
+							"page": 13,
 							"id": "047",
 							"entries": [
 								"While they've been voted \"most likely to die before the characters even show up,\" the manner of their demise may depend on whether the characters managed to befriend them. Below are a number of possibilities.",
@@ -770,19 +825,22 @@
 										{
 											"type": "entries",
 											"name": "Not Allies",
+											"page": 13,
 											"id": "049",
 											"entries": [
 												"Perhaps the characters killed {@creature Fhenimore|LR} and {@creature Whymsee|LR} without being consumed by the {@creature young kraken|LR}, or the characters failed to negotiate with them and were driven from the area, or the characters simply never visited this area of the coral mountain.",
-												"This scenario also works even if the characters did befriend the kraken priests, but never learned of Gar's plan to use the kraken's blood\u2014or if they did learn his plan, but never told Fhenimore and Whymsee about it.",
-												"Regardless of the reason, the kraken priests are not alarmed or on guard when Gar Shatterkeel arrives. In this instance, Gar's plans unfold as shown in the \"Killing Fhenimore and Whymsee\" sidebar.",
+												"This scenario also works even if the characters did befriend the kraken priests, but never learned of Gar's plan to use the kraken's blood\u2014or if they did learn his plan, but never told {@creature Fhenimore|LR} and {@creature Whymsee|LR} about it.",
+												"Regardless of the reason, the kraken priests are not alarmed or on guard when {@creature Gar Shatterkeel|LR} arrives. In this instance, Gar's plans unfold as shown in the \"Killing {@creature Fhenimore|LR} and {@creature Whymsee|LR}\" sidebar.",
 												{
 													"type": "inset",
 													"name": "Killing Fhenimore and Whymsee",
+													"page": 13,
 													"id": "04a",
 													"entries": [
 														{
 															"type": "entries",
 															"name": "Round 1",
+															"page": 13,
 															"id": "04b",
 															"entries": [
 																"Not suspecting treachery, the kraken priests aren't prepared when Gar casts {@spell charm person} as a 2nd level spell, charming them both."
@@ -791,6 +849,7 @@
 														{
 															"type": "entries",
 															"name": "Round 2",
+															"page": 13,
 															"id": "04c",
 															"entries": [
 																"Gar and the two priests swim to {@area area 6|024|x}, outside the range of the young kraken's telepathy."
@@ -799,6 +858,7 @@
 														{
 															"type": "entries",
 															"name": "Round 3 (and 4)",
+															"page": 13,
 															"id": "04d",
 															"entries": [
 																"If the drowned ascetics are still in {@area area 6|024|x}, they attack the kraken priests. If the characters destroyed the drowned ascetics in this area, Gar will require an additional round to slay both in melee combat using his claw and {@item Wave}."
@@ -807,6 +867,7 @@
 														{
 															"type": "entries",
 															"name": "Round 4",
+															"page": 13,
 															"id": "04e",
 															"entries": [
 																"Gar swims back."
@@ -815,6 +876,7 @@
 														{
 															"type": "entries",
 															"name": "Round 5",
+															"page": 13,
 															"id": "04f",
 															"entries": [
 																"Upon returning to the young kraken, Gar casts {@spell charm monster|XGE} on the creature. It fails its saving throw and believes Gar to be a friend."
@@ -823,6 +885,7 @@
 														{
 															"type": "entries",
 															"name": "Round 6",
+															"page": 13,
 															"id": "050",
 															"entries": [
 																"Gar surprises the {@creature Young Kraken|LR|kraken}, hitting it twice with {@item Wave} before the creature can react, and achieving a critical hit both times. The kraken is slain, and Gar begins the process of drawing blood from the creature, storing it in massive five-gallon bladders he brought along for this purpose."
@@ -835,25 +898,29 @@
 										{
 											"type": "entries",
 											"name": "Allies",
+											"page": 13,
 											"id": "051",
 											"entries": [
-												"In this scenario, the characters have befriended the kraken priests, learned of Gar's plans from either the map in {@area area 7|026|x} or from {@creature Shoalar Quanderil|LR}, and have convinced the kraken priests that Gar means to kill their charge. Fhenimore and Whymsee are on alert when Gar arrives, and things play out very differently. In this instance, Gar's plans unfold as shown in the \"Fighting Fhenimore and Whymsee\" sidebar.",
+												"In this scenario, the characters have befriended the kraken priests, learned of Gar's plans from either the map in {@area area 7|026|x} or from {@creature Shoalar Quanderil|LR}, and have convinced the kraken priests that Gar means to kill their charge. {@creature Fhenimore|LR} and {@creature Whymsee|LR} are on alert when Gar arrives, and things play out very differently. In this instance, Gar's plans unfold as shown in the \"Fighting {@creature Fhenimore|LR} and {@creature Whymsee|LR}\" sidebar.",
 												{
 													"type": "inset",
 													"name": "Fighting Fhenimore and Whymsee",
+													"page": 13,
 													"id": "052",
 													"entries": [
 														{
 															"type": "entries",
 															"name": "Round 1",
+															"page": 13,
 															"id": "053",
 															"entries": [
-																"Gar activates the {@item cube of force} function on {@item Wave}, so that living creatures may not harm approach him. Fhenimore and Whymsee will both cast lightning bolt on Gar, who will succeed at on only one saving throw only, but then use his Legendary Resistance feature to save on the other. Gar takes 28 hit points lightning damage."
+																"Gar activates the {@item cube of force} function on {@item Wave}, so that living creatures may not harm approach him. {@creature Fhenimore|LR} and {@creature Whymsee|LR} will both cast lightning bolt on Gar, who will succeed at on only one saving throw only, but then use his Legendary Resistance feature to save on the other. Gar takes 28 hit points lightning damage."
 															]
 														},
 														{
 															"type": "entries",
 															"name": "Round 2",
+															"page": 13,
 															"id": "054",
 															"entries": [
 																"Gar casts {@spell conjure animals} as a 7th level spell, summoning six {@creature Swarm of Quippers||swarms of quippers} and directing them to slay and consume the kraken priests."
@@ -862,6 +929,7 @@
 														{
 															"type": "entries",
 															"name": "Rounds 3 and 4",
+															"page": 13,
 															"id": "055",
 															"entries": [
 																"The kraken priests are consumed by the swarms while Gar uses Umberlee's Wake on the young kraken (who fails its saving throw) before charging to attack with Wave as a legendary action. Gar will hit with a critical hit, reducing the creature to 91 hit points. Gar then takes 17 bludgeoning damage from the kraken (reducing him to 99 hit points) and is {@condition grappled}."
@@ -870,6 +938,7 @@
 														{
 															"type": "entries",
 															"name": "Round 5",
+															"page": 13,
 															"id": "056",
 															"entries": [
 																"Gar casts {@spell freedom of movement}, escaping the grapple, and then uses a legendary action to attack the creature. He will score a critical hit, slaying the kraken."
@@ -878,6 +947,7 @@
 														{
 															"type": "entries",
 															"name": "Round 6",
+															"page": 13,
 															"id": "057",
 															"entries": [
 																"Gar casts {@spell heal} on himself, bringing him back to his hit point maximum, and begins the process of drawing blood from the kraken, storing it in massive five-gallon bladders he brought along for this purpose."
@@ -890,6 +960,7 @@
 										{
 											"type": "entries",
 											"name": "Shoalar Quadril-Ally",
+											"page": 13,
 											"id": "058",
 											"entries": [
 												"If the characters met Shoalar and allied with the devotee of Olhydra, Shoalar accompanies them from his lair to {@area area 13|041|x}, bringing the two {@creature Water Elemental Myrmidon|MTF|water elemental myrmidons} with him. This makes the fight in that area easier and may allow the characters to interrupt Gar in the actions described above.",
@@ -903,6 +974,7 @@
 						{
 							"type": "entries",
 							"name": "Fighting Gar Shatterkeel",
+							"page": 14,
 							"id": "059",
 							"entries": [
 								{
@@ -920,6 +992,7 @@
 								{
 									"type": "inset",
 									"name": "Lair Actions",
+									"page": 14,
 									"id": "05a",
 									"entries": [
 										"On initiative count 20 (losing initiative ties), {@creature Gar Shatterkeel|LR} takes a lair action to cause one of the following effects; Gar can't use the same effect two rounds in a row.",
@@ -927,7 +1000,7 @@
 											"type": "list",
 											"items": [
 												"Gar may teleport anywhere within the coral mountain, bringing up to five willing creatures with him.",
-												"The coral in a 60-foot radius grows rapidly around creatures inside the coral mountain. Each creature must succeed on a DC 18 Strength saving throw or become {@condition restrained}. Restrained creatures can take an action on their turn to make a DC 18 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check to free themselves. This effect lasts for 1 minute unless dispelled (it counts as a 6th level spell), and doesn't require Gar to maintain concentration. Gar Shatterkeel and any creatures he designates are immune to this effect.",
+												"The coral in a 60-foot radius grows rapidly around creatures inside the coral mountain. Each creature must succeed on a DC 18 Strength saving throw or become {@condition restrained}. Restrained creatures can take an action on their turn to make a DC 18 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check to free themselves. This effect lasts for 1 minute unless dispelled (it counts as a 6th level spell), and doesn't require Gar to maintain concentration. {@creature Gar Shatterkeel|LR} and any creatures he designates are immune to this effect.",
 												"Up to five corpses that Gar can see within 60 feet rise up as {@creature Drowned Blade|GoS|drowned blades} and attack anyone Gar directs them to on his turn."
 											]
 										}
@@ -936,11 +1009,12 @@
 								{
 									"type": "entries",
 									"name": "Development",
+									"page": 14,
 									"id": "05b",
 									"entries": [
 										"Win or lose, this is a tough encounter, one that the characters may very well be forced to flee from. If the characters do run from Gar, he completes the ritual to animate an army of the drowned, fortifies his position at the coral mountain further, and begins a campaign of terror across the coastal settlements of the Sea of Fallen Stars.",
 										"Gar is aware of Thay's power with regards to the undead, so he isn't so foolish as to challenge them with this army. Though, he might be open to an alliance with the Red Wizards that could benefit them both.",
-										"It is possible, however, to defeat Gar Shatterkeel. As noted in his stat block, when Gar drops to 0 hit points his body collapses into a pool of inky water that rapidly disperses. Except for Wave and his claw, anything he was wearing or carrying is left behind.",
+										"It is possible, however, to defeat {@creature Gar Shatterkeel|LR}. As noted in his stat block, when Gar drops to 0 hit points his body collapses into a pool of inky water that rapidly disperses. Except for Wave and his claw, anything he was wearing or carrying is left behind.",
 										"If this happens, the characters are victorious! They could, with no small amount of cleanup, to turn the coral mountain into a beautifully misshapen but habitable home for many locathah who have been displaced by recent attacks and other conflicts.",
 										"Accomplishing this would not only cement the characters' status as heroes, but elevate them to a position of prestige as potential future leaders of the locathah tribes. The details of their acclaim are up to you, though it is entirely possible\u2014likely even\u2014that Gar will someday return to take his revenge."
 									]
@@ -954,6 +1028,7 @@
 		{
 			"type": "section",
 			"name": "Appendix A: Creature statistics",
+			"page": 15,
 			"id": "05c",
 			"entries": [
 				"This appendix details creatures that are encountered in this adventure.",
@@ -983,6 +1058,7 @@
 		{
 			"type": "section",
 			"name": "Appendix B: Locathah Characters",
+			"page": 24,
 			"id": "076",
 			"entries": [
 				"See the {@race Locathah|LR} entry for information on locathah characters."

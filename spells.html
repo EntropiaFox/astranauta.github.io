@@ -46,7 +46,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -78,7 +81,7 @@
 	</header>
 
 	<nav class="container page__nav" id="navigation">
-		<ul class="nav page__nav-inner" id="navbar"></ul>
+		<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
 	</nav>
 
 	<div class="view-col-group--cancer h-100 mh-0"><div class="container view-col-wrapper view-col-wrapper--cancer">
@@ -86,19 +89,19 @@
 				<div class="lst__form-top" id="filter-search-group">
 					<div class="w-100 relative">
 						<input type="search" id="lst__search" autocomplete="off" autocapitalize="off" spellcheck="false" class="search form-control lst__search lst__search--no-border-h">
-						<div id="lst__search-glass" class="lst__wrp-search-glass no-events flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
-						<div class="lst__wrp-search-visible no-events flex-vh-center"></div>
+						<div id="lst__search-glass" class="lst__wrp-search-glass no-events ve-flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
+						<div class="lst__wrp-search-visible no-events ve-flex-vh-center"></div>
 					</div>
 					<button class="btn btn-default" id="reset">Reset</button>
 				</div>
-				<div id="filtertools" class="input-group input-group--bottom flex no-shrink">
-					<button class="col-2-9 sort btn btn-default btn-xs" data-sort="name">Name <span class="caret_wrp"></span></button>
-					<button class="col-1-5 sort btn btn-default btn-xs" data-sort="level">Level <span class="caret_wrp"></span></button>
-					<button class="col-1-7 sort btn btn-default btn-xs" data-sort="time">Time <span class="caret_wrp"></span></button>
-					<button class="col-1-2 sort btn btn-default btn-xs" data-sort="school">School <span class="caret_wrp"></span></button>
-					<button class="col-0-6 sort btn btn-default btn-xs" data-sort="concentration" title="Concentration">C. <span class="caret_wrp"></span></button>
-					<button class="col-2-4 sort btn btn-default btn-xs" data-sort="range">Range <span class="caret_wrp"></span></button>
-					<button class="sort btn btn-default btn-xs ve-grow" data-sort="source">Source <span class="caret_wrp"></span></button>
+				<div id="filtertools" class="input-group input-group--bottom ve-flex no-shrink">
+					<button class="col-2-9 sort btn btn-default btn-xs" data-sort="name">Name</button>
+					<button class="col-1-5 sort btn btn-default btn-xs" data-sort="level">Level</button>
+					<button class="col-1-7 sort btn btn-default btn-xs" data-sort="time">Time</button>
+					<button class="col-1-2 sort btn btn-default btn-xs" data-sort="school">School</button>
+					<button class="col-0-6 sort btn btn-default btn-xs" data-sort="concentration" title="Concentration">C.</button>
+					<button class="col-2-4 sort btn btn-default btn-xs" data-sort="range">Range</button>
+					<button class="sort btn btn-default btn-xs ve-grow" data-sort="source">Source</button>
 				</div>
 
 				<div class="list list--stats spells">
@@ -109,12 +112,12 @@
 			<div id="contentwrapper" class="view-col" style="flex: 5">
 				<div id="sublistcontainer" class="sublist sublist--resizable">
 					<div id="sublistsort" class="btn-group sublist__wrp-cols">
-						<button class="col-3-2 sort btn btn-default btn-xs" data-sort="name">Name <span class="caret_wrp"></span></button>
-						<button class="col-1-5 sort btn btn-default btn-xs" data-sort="level">Level <span class="caret_wrp"></span></button>
-						<button class="col-1-8 sort btn btn-default btn-xs" data-sort="time">Time <span class="caret_wrp"></span></button>
-						<button class="col-1-6 sort btn btn-default btn-xs" data-sort="school">School <span class="caret_wrp"></span></button>
-						<button class="col-0-7 sort btn btn-default btn-xs" data-sort="concentration" title="Concentration">C. <span class="caret_wrp"></span></button>
-						<button class="col-3-2 sort btn btn-default btn-xs" data-sort="range">Range <span class="caret_wrp"></span></button>
+						<button class="col-3-2 sort btn btn-default btn-xs" data-sort="name">Name</button>
+						<button class="col-1-5 sort btn btn-default btn-xs" data-sort="level">Level</button>
+						<button class="col-1-8 sort btn btn-default btn-xs" data-sort="time">Time</button>
+						<button class="col-1-6 sort btn btn-default btn-xs" data-sort="school">School</button>
+						<button class="col-0-7 sort btn btn-default btn-xs" data-sort="concentration" title="Concentration">C.</button>
+						<button class="col-3-2 sort btn btn-default btn-xs" data-sort="range">Range</button>
 					</div>
 					<div class="list subspells">
 						<!-- populate with JS -->
@@ -148,10 +151,12 @@
 <script type="text/javascript" src="js/utils.js"></script>
 <script type="text/javascript" src="js/utils-list.js"></script>
 <script type="text/javascript" src="js/utils-ui.js"></script>
+<script type="text/javascript" src="js/utils-tableview.js"></script>
 <script type="text/javascript" src="lib/localforage.js"></script>
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
 <script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>
 <script type="text/javascript" src="js/render-markdown.js"></script>

@@ -23,6 +23,7 @@
 		{
 			"name": "Al'chaia",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 218,
 			"_copy": {
@@ -43,7 +44,9 @@
 			"name": "Animated Ballista",
 			"source": "WDMM",
 			"page": 39,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -89,7 +92,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -99,6 +101,7 @@
 			"miscTags": [
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -122,7 +125,9 @@
 			"name": "Animated Staff",
 			"source": "WDMM",
 			"page": 262,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"N",
@@ -189,7 +194,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -205,7 +209,8 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Animated Statue of Lolth",
@@ -231,7 +236,9 @@
 					}
 				}
 			},
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"hp": {
 				"average": 230,
 				"formula": "20d12 + 100"
@@ -255,7 +262,9 @@
 			"name": "Animated Stove",
 			"source": "WDMM",
 			"page": 186,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -295,7 +304,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -307,6 +315,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -453,6 +462,19 @@
 					"ability": "int"
 				}
 			],
+			"damageTagsLegendary": [],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"N",
+				"O",
+				"P",
+				"S",
+				"T",
+				"Y"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -494,10 +516,11 @@
 					"ability": "cha"
 				}
 			],
-			"hasToken": true,
+			"damageTagsLegendary": [],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Awakened Brown Bear",
@@ -582,7 +605,7 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Berlain is an 18th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 17}, {@hit 9} to hit with spell attacks). Berlain can cast disguise self and invisibility at will and has the following wizard spells prepared:"
+						"Berlain is an 18th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 17}, {@hit 9} to hit with spell attacks). Berlain can cast {@spell disguise self} and invisibility at will and has the following wizard spells prepared:"
 					],
 					"spells": {
 						"0": {
@@ -666,13 +689,13 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DS",
 				"OTH",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -683,7 +706,9 @@
 				"name": "Xorn",
 				"source": "MM"
 			},
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"hp": {
 				"formula": "9d10 + 54",
 				"average": 103
@@ -710,17 +735,19 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Bore Worm",
 			"source": "WDMM",
 			"page": 171,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -816,7 +843,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Regeneration"
 			],
@@ -836,6 +862,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -902,7 +929,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack",
 				"Tentacles"
@@ -919,6 +945,7 @@
 				"paralyzed",
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -979,7 +1006,7 @@
 				{
 					"name": "Spellcasting",
 					"headerEntries": [
-						"Cassiok is an 18th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 19}, {@hit 11} to hit with spell attacks). Cassiok can cast disguise self and invisibility at will and has the following wizard spells prepared:"
+						"Cassiok is an 18th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 19}, {@hit 11} to hit with spell attacks). Cassiok can cast {@spell disguise self} and invisibility at will and has the following wizard spells prepared:"
 					],
 					"spells": {
 						"0": {
@@ -1063,14 +1090,21 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DS",
 				"I",
 				"U"
 			],
+			"damageTagsSpell": [
+				"C",
+				"F",
+				"L",
+				"O",
+				"Y"
+			],
 			"miscTags": [],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1098,7 +1132,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1107,6 +1140,7 @@
 				"D",
 				"X"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1181,7 +1215,6 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Illumination",
 				"Immutable Form",
@@ -1192,6 +1225,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1226,13 +1260,13 @@
 				"average": 40,
 				"formula": "4d8 + 4"
 			},
-			"hasToken": true,
 			"miscTags": [
 				"MW",
 				"RCH",
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1350,7 +1384,6 @@
 				"Goblin",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Magic Resistance",
@@ -1370,7 +1403,8 @@
 			"spellcastingTags": [
 				"CW",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Emberosa",
@@ -1399,11 +1433,11 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"damageTags": [
 				"F",
 				"S"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1526,7 +1560,6 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
@@ -1534,7 +1567,9 @@
 				"E",
 				"S",
 				"U"
-			]
+			],
+			"damageTagsLegendary": [],
+			"hasToken": true
 		},
 		{
 			"name": "Fazrian",
@@ -1565,11 +1600,11 @@
 				"name": "Fazrian",
 				"source": "WDMM"
 			},
-			"hasToken": true,
 			"miscTags": [
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1643,13 +1678,13 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"damageTags": [
 				"P"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Giant Flying Spider",
@@ -1673,24 +1708,62 @@
 			"_copy": {
 				"name": "Cloud Giant",
 				"source": "MM",
-				"_trait": {
-					"name": "Drow",
-					"source": "PHB"
-				},
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
 						"replace": "giant",
 						"with": "drow",
 						"flags": "i"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Fey Ancestry",
+								"entries": [
+									"The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+								]
+							},
+							{
+								"name": "Sunlight Sensitivity",
+								"entries": [
+									"While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+								]
+							}
+						]
 					}
 				}
 			},
+			"type": "giant",
 			"alignment": [
 				"N",
 				"E"
 			],
-			"hasToken": true,
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"languages": [
+				"Elvish",
+				"Undercommon"
+			],
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"headerEntries": [
+						"The drow's innate spellcasting ability is Charisma (spell save DC 15). The drow can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell dancing lights}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell darkness}",
+							"{@spell faerie fire}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
 			"traitTags": [
 				"Fey Ancestry",
 				"Keen Senses",
@@ -1703,7 +1776,8 @@
 				"C",
 				"E",
 				"GI"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Glyster",
@@ -1727,6 +1801,7 @@
 				"L",
 				"G"
 			],
+			"damageTagsLegendary": [],
 			"hasToken": true
 		},
 		{
@@ -1823,11 +1898,11 @@
 					"ability": "wis"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"D",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1873,11 +1948,11 @@
 			"languages": [
 				"understands Undercommon but can't speak"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"CS",
 				"U"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Halaster Blackcloak",
@@ -1885,7 +1960,9 @@
 			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 310,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2061,7 +2138,7 @@
 					"name": "Special Equipment",
 					"entries": [
 						"Halaster wears a robe of eyes that lets him see in all directions, gives him darkvision out to a range of 120 feet, grants advantage on Wisdom (Perception) checks that rely on sight, and allows him to see {@condition invisible} creatures and objects, as well as into the Ethereal Plane, out to a range of 120 feet.",
-						"Halaster wields a blast scepter (a very rare magic item that requires attunement). It can be used as an arcane focus. Whoever is attuned to the blast scepter gains resistance to fire and lightning damage and can, as an action, use it to cast thunderwave as a 4th-level spell (save {@dc 16}) without expending a spell slot.",
+						"Halaster wields a blast scepter (a very rare magic item that requires attunement). It can be used as an arcane focus. Whoever is attuned to the blast scepter gains resistance to fire and lightning damage and can, as an action, use it to cast {@spell thunderwave} as a 4th-level spell (save {@dc 16}) without expending a spell slot.",
 						"Halaster also wears a horned ring (a very rare magic item that requires attunement), which allows an attuned wearer to ignore Undermountain's magical restrictions (see \"Alterations to Magic\")."
 					]
 				},
@@ -2088,7 +2165,7 @@
 				{
 					"name": "Blast Scepter",
 					"entries": [
-						"Halaster uses his blast scepter to cast thunderwave as a 4th-level spell. Each creature in a 15-foot cube originating from him must make a {@dc 16} Constitution saving throw. On a failed save, a creature takes {@dice 5d8} thunder damage and is pushed 10 feet away. On a successful save, the creature takes half as much damage and isn't pushed"
+						"Halaster uses his blast scepter to cast {@spell thunderwave} as a 4th-level spell. Each creature in a 15-foot cube originating from him must make a {@dc 16} Constitution saving throw. On a failed save, a creature takes {@dice 5d8} thunder damage and is pushed 10 feet away. On a successful save, the creature takes half as much damage and isn't pushed"
 					]
 				}
 			],
@@ -2110,7 +2187,6 @@
 				"name": "Halaster Blackcloak",
 				"source": "WDMM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Rejuvenation"
@@ -2131,6 +2207,15 @@
 			"damageTags": [
 				"T"
 			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"L",
+				"N",
+				"O",
+				"S",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -2145,6 +2230,7 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2187,17 +2273,19 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Halaster Puppet",
 			"isNpc": true,
 			"source": "WDMM",
 			"page": 31,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"N"
@@ -2233,24 +2321,26 @@
 				{
 					"name": "Antimagic Susceptibility",
 					"entries": [
-						"The puppet is destroyed if a successful dispel magic spell ({@dc 15}) is cast on it"
+						"The puppet is destroyed if a successful {@spell dispel magic} spell ({@dc 15}) is cast on it"
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Antimagic Susceptibility"
 			],
 			"languageTags": [
 				"C"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Haungharassk",
 			"isNpc": true,
 			"source": "WDMM",
 			"page": 258,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -2294,10 +2384,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Spider Climb"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2330,7 +2420,6 @@
 				"Infernal",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2343,7 +2432,8 @@
 			"spellcastingTags": [
 				"CW",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Huge Gray Ooze",
@@ -2353,7 +2443,9 @@
 				"name": "Gray Ooze",
 				"source": "MM"
 			},
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"hp": {
 				"average": 152,
 				"formula": "16d12 + 48"
@@ -2386,13 +2478,16 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
 			"damageTags": [
 				"A"
-			]
+			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Intelligent Black Pudding",
@@ -2429,22 +2524,27 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"CS",
 				"E",
 				"U"
 			],
+			"damageTagsSpell": [
+				"A"
+			],
 			"spellcastingTags": [
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Iron Spider",
 			"isNpc": true,
 			"source": "WDMM",
 			"page": 165,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -2481,10 +2581,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Junior Drow Priestess of Lolth",
@@ -2509,7 +2609,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Sunlight Sensitivity"
@@ -2524,7 +2623,8 @@
 			"spellcastingTags": [
 				"CC",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Kavil",
@@ -2658,10 +2758,17 @@
 				"name": "Keresta Delvingstone",
 				"source": "WDMM"
 			},
-			"hasToken": true,
+			"damageTagsSpell": [
+				"I",
+				"N",
+				"O",
+				"R",
+				"T"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2706,12 +2813,12 @@
 				"average": 20,
 				"formula": "2d8 + 4"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"P",
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Large Mimic",
@@ -2721,7 +2828,9 @@
 				"name": "Mimic",
 				"source": "MM"
 			},
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"hp": {
 				"average": 67,
 				"formula": "9d10 + 18"
@@ -2732,7 +2841,9 @@
 			"name": "Lava Child",
 			"source": "WDMM",
 			"page": 313,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2812,7 +2923,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2830,6 +2940,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2837,7 +2948,9 @@
 			"name": "Living Unseen Servant",
 			"source": "WDMM",
 			"page": 313,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -2896,7 +3009,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -2910,6 +3022,10 @@
 			"miscTags": [
 				"MW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2932,7 +3048,9 @@
 					}
 				}
 			},
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"hp": {
 				"average": 264,
 				"formula": "23d12 + 115"
@@ -2950,7 +3068,6 @@
 				"and Undercommon but can't speak"
 			],
 			"cr": "12",
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -2962,6 +3079,7 @@
 				"I",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2985,7 +3103,9 @@
 					}
 				}
 			},
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"hp": {
 				"average": 55,
 				"formula": "10d10"
@@ -2998,7 +3118,6 @@
 				"Gnomish but can't speak"
 			],
 			"cr": "2",
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -3008,7 +3127,8 @@
 			],
 			"damageTags": [
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Marta Moonshadow",
@@ -3061,7 +3181,6 @@
 				"Elvish",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -3072,6 +3191,7 @@
 				"E",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3117,13 +3237,13 @@
 				"Draconic",
 				"Dwarvish"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
 				"DR",
 				"DS"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Metal Wasp",
@@ -3156,10 +3276,10 @@
 				"petrified",
 				"poisoned"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Mobar",
@@ -3199,7 +3319,9 @@
 			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 314,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -3369,7 +3491,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -3391,6 +3512,15 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"L",
+				"N",
+				"O",
+				"P",
+				"S"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -3398,6 +3528,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3429,25 +3560,25 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "1. Paralyzing Ray.",
+											"name": "1. Paralyzing Ray",
 											"style": "italic",
 											"entry": "The targeted creature must succeed on a {@dc 14} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 										},
 										{
 											"type": "item",
-											"name": "2. Fear Ray.",
+											"name": "2. Fear Ray",
 											"style": "italic",
 											"entry": "The targeted creature must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 										},
 										{
 											"type": "item",
-											"name": "3. Enervation Ray.",
+											"name": "3. Enervation Ray",
 											"style": "italic",
 											"entry": "The targeted creature must make a {@dc 14} Constitution saving throw, taking 36 ({@damage 8d8}) necrotic damage on a failed save, or half as much damage on a successful one."
 										},
 										{
 											"type": "item",
-											"name": "4. Telekinetic Ray.",
+											"name": "4. Telekinetic Ray",
 											"style": "italic",
 											"entry": "If the target is a creature, it must succeed on a DC 14 Strength saving throw, or the zombie moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the zombie's next turn or until the zombie is incapacitated. If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The zombie can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or container."
 										}
@@ -3458,14 +3589,14 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"damageTags": [
 				"N",
 				"P"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Nester",
@@ -3519,7 +3650,6 @@
 				"Giant",
 				"Terran"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -3531,6 +3661,14 @@
 				"GI",
 				"T"
 			],
+			"damageTagsSpell": [
+				"C",
+				"F",
+				"L",
+				"N",
+				"O"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3560,10 +3698,10 @@
 				}
 			},
 			"cr": "1/8",
-			"hasToken": true,
 			"damageTags": [
 				"S"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Otto",
@@ -3586,17 +3724,19 @@
 					}
 				}
 			},
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"hp": {
 				"average": 104,
 				"formula": "16d10 + 16"
 			},
 			"str": 18,
 			"cr": "3",
-			"hasToken": true,
 			"damageTags": [
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Play-by-Play Generator",
@@ -3644,7 +3784,6 @@
 			"languages": [
 				"Common"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -3654,7 +3793,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Poison Weird",
@@ -3692,11 +3832,14 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"I"
-			]
+			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Portia Dzuth",
@@ -3733,10 +3876,10 @@
 			"languages": [
 				"Common"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Preeta Kreepa",
@@ -3785,12 +3928,12 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Fear Ray.",
+									"name": "Fear Ray",
 									"entry": "The target must succeed on a {@dc 15} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 								},
 								{
 									"type": "item",
-									"name": "Paralyzing Ray.",
+									"name": "Paralyzing Ray",
 									"entry": "The target must succeed on a {@dc 15} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 								}
 							]
@@ -3798,7 +3941,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -3812,6 +3954,7 @@
 				"frightened",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3833,8 +3976,8 @@
 				"U"
 			],
 			"languages": null,
-			"hasToken": true,
-			"languageTags": []
+			"languageTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Rowboat Mimic",
@@ -3844,7 +3987,9 @@
 				"name": "Mimic",
 				"source": "MM"
 			},
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"hp": {
 				"average": 67,
 				"formula": "9d10 + 18"
@@ -3879,7 +4024,9 @@
 			"name": "Scaladar",
 			"source": "WDMM",
 			"page": 315,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -3967,7 +4114,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption"
 			],
@@ -3989,6 +4135,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3996,7 +4143,9 @@
 			"name": "Shadow Assassin",
 			"source": "WDMM",
 			"page": 316,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -4101,7 +4250,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amorphous"
 			],
@@ -4122,6 +4270,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4143,19 +4292,21 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance",
 				"Shapechanger",
 				"Spider Climb"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shockerstomper",
 			"isNpc": true,
 			"source": "WDMM",
 			"page": 174,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -4245,7 +4396,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Immutable Form"
 			],
@@ -4262,7 +4412,8 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Shunn Shurreth",
@@ -4322,11 +4473,11 @@
 				"Common",
 				"Halfling"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"H"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Space Hamster",
@@ -4345,9 +4496,9 @@
 				}
 			},
 			"action": null,
-			"hasToken": true,
 			"damageTags": [],
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Stalagma Steelshadow",
@@ -4372,12 +4523,12 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Acid Breath.",
+											"name": "Acid Breath",
 											"entry": "The dragon exhales acid in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 58 ({@damage 13d8}) acid damage on a failed save, or half as much damage on a successful one."
 										},
 										{
 											"type": "item",
-											"name": "Paralyzing Breath.",
+											"name": "Paralyzing Breath",
 											"entry": "The dragon exhales paralyzing gas in a 60-foot cone. Each creature in that area must succeed on a DC 20 Constitution saving throw or be {@condition paralyzed} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 										}
 									]
@@ -4396,7 +4547,6 @@
 				"Dwarvish",
 				"Terran"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"D",
 				"DR",
@@ -4407,7 +4557,9 @@
 				"B",
 				"P",
 				"S"
-			]
+			],
+			"damageTagsLegendary": [],
+			"hasToken": true
 		},
 		{
 			"name": "Statue of Vergadain",
@@ -4464,7 +4616,6 @@
 				"Infernal",
 				"and Undercommon but can't speak"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -4476,6 +4627,7 @@
 				"I",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4495,7 +4647,9 @@
 					}
 				}
 			},
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -4508,7 +4662,6 @@
 				"Common",
 				"Giant"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4516,6 +4669,7 @@
 				"C",
 				"GI"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4565,7 +4719,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4578,6 +4731,7 @@
 				"B",
 				"P"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4605,7 +4759,6 @@
 				"C",
 				"E"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Sneak Attack"
@@ -4615,6 +4768,7 @@
 				"TC",
 				"X"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4694,10 +4848,15 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"L"
 			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"O"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4805,10 +4964,20 @@
 					"ability": "int"
 				}
 			],
-			"hasToken": true,
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"L",
+				"N",
+				"O",
+				"P",
+				"S",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -4821,7 +4990,7 @@
 				"name": "Adult Bronze Dragon",
 				"source": "MM",
 				"_trait": {
-					"name": "Shadow Dragon",
+					"name": "Legendary Shadow Dragon",
 					"source": "MM"
 				}
 			},
@@ -4829,7 +4998,6 @@
 				"N",
 				"E"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Legendary Resistances",
@@ -4840,7 +5008,9 @@
 				"N",
 				"P",
 				"S"
-			]
+			],
+			"damageTagsLegendary": [],
+			"hasToken": true
 		},
 		{
 			"name": "Undead Bulette",
@@ -4943,7 +5113,6 @@
 				"Troglodyte",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -4955,6 +5124,7 @@
 				"T",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5004,7 +5174,6 @@
 				"Deep Speech",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -5013,18 +5182,23 @@
 				"C",
 				"DS",
 				"U"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Werebat",
-			"group": "Lycanthropes",
+			"group": [
+				"Lycanthropes"
+			],
 			"source": "WDMM",
 			"page": 317,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
-					"goblin",
+					"goblinoid",
 					"shapechanger"
 				]
 			},
@@ -5132,7 +5306,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Shapechanger",
@@ -5157,6 +5330,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5191,10 +5365,10 @@
 				"petrified",
 				"poisoned"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5227,7 +5401,6 @@
 				"Druidic",
 				"Elvish"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -5239,6 +5412,7 @@
 				"DU",
 				"E"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5293,12 +5467,12 @@
 				"Common",
 				"Deep Speech"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
 				"DS"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zorak Lightdrinker",
@@ -5306,7 +5480,9 @@
 			"isNamedCreature": true,
 			"source": "WDMM",
 			"page": 204,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "undead",
 				"tags": [
@@ -5489,12 +5665,12 @@
 				"name": "Vampire",
 				"source": "MM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Regeneration",
 				"Shapechanger",
-				"Spider Climb"
+				"Spider Climb",
+				"Sunlight Sensitivity"
 			],
 			"senseTags": [
 				"SD"
@@ -5517,7 +5693,8 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zox Clammersham",
@@ -5559,7 +5736,6 @@
 				"Ignan",
 				"Terran"
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -5570,7 +5746,8 @@
 				"G",
 				"IG",
 				"T"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zress Orlezziir",

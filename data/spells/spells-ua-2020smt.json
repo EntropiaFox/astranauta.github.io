@@ -118,6 +118,16 @@
 					]
 				}
 			],
+			"damageImmune": [
+				"fire",
+				"poison",
+				"radiant",
+				"necrotic"
+			],
+			"conditionImmune": [
+				"poisoned",
+				"charmed"
+			],
 			"miscTags": [
 				"MAC"
 			],
@@ -154,7 +164,7 @@
 			"time": [
 				{
 					"number": 1,
-					"unit": "bonus action"
+					"unit": "bonus"
 				}
 			],
 			"range": {
@@ -191,8 +201,12 @@
 					]
 				}
 			],
+			"damageInflict": [
+				"radiant",
+				"necrotic",
+				"cold"
+			],
 			"miscTags": [
-				"HL",
 				"SGT"
 			],
 			"classes": {

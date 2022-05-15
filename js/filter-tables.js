@@ -8,14 +8,14 @@ class PageFilterTables extends PageFilter {
 	// endregion
 
 	constructor () {
-		super();
+		super({sourceFilterOpts: {selFn: PageFilterTables._sourceSelFn}});
 
-		this._sourceFilter = new SourceFilter({
-			selFn: PageFilterTables._sourceSelFn,
-		});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isMiscFilter: true});
 	}
 
-	static mutateForFilters (it) { /* no-op */ }
+	static mutateForFilters (it) {
+		it._fMisc = it.srd ? ["SRD"] : [];
+	}
 
 	addToFilters (it, isExcluded) {
 		if (isExcluded) return;
@@ -26,6 +26,7 @@ class PageFilterTables extends PageFilter {
 	async _pPopulateBoxOptions (opts) {
 		opts.filters = [
 			this._sourceFilter,
+			this._miscFilter,
 		];
 	}
 
@@ -33,6 +34,7 @@ class PageFilterTables extends PageFilter {
 		return this._filterBox.toDisplay(
 			values,
 			it.source,
-		)
+			it._fMisc,
+		);
 	}
 }

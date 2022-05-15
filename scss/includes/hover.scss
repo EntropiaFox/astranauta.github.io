@@ -111,11 +111,11 @@
 		justify-content: space-between;
 	}
 
-	.glyphicon {
+	.hwin__top-border-icon {
 		display: none;
 	}
 
-	&[data-perm=true] .glyphicon {
+	&[data-perm=true] .hwin__top-border-icon {
 		display: block;
 	}
 
@@ -127,7 +127,7 @@
 		padding: 1px 0;
 		font-size: 12px;
 		display: none;
-		font-family: "Andada", serif;
+		font-family: "Times New Roman", serif;
 		font-variant: small-caps;
 		text-transform: uppercase;
 		font-weight: bold;

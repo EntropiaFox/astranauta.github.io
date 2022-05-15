@@ -3,6 +3,7 @@ Renderer.dice = {
 		name: "Avandra", // goddess of luck
 	},
 	POS_INFINITE: 100000000000000000000, // larger than this, and we start to see "e" numbers appear
+	_SYMBOL_PARSE_FAILED: Symbol("parseFailed"),
 
 	_$wrpRoll: null,
 	_$minRoll: null,
@@ -81,16 +82,14 @@ Renderer.dice = {
 
 	// region Roll box UI
 	_showBox () {
-		if (Renderer.dice._$wrpRoll.css("display") !== "flex") {
-			Renderer.dice._$minRoll.hide();
-			Renderer.dice._$wrpRoll.css("display", "flex");
-			Renderer.dice._$iptRoll.prop("placeholder", `${Renderer.dice._getRandomPlaceholder()} or "/help"`);
-		}
+		Renderer.dice._$minRoll.hideVe();
+		Renderer.dice._$wrpRoll.showVe();
+		Renderer.dice._$iptRoll.prop("placeholder", `${Renderer.dice._getRandomPlaceholder()} or "/help"`);
 	},
 
 	_hideBox () {
-		Renderer.dice._$minRoll.show();
-		Renderer.dice._$wrpRoll.css("display", "");
+		Renderer.dice._$minRoll.showVe();
+		Renderer.dice._$wrpRoll.hideVe();
 	},
 
 	_getRandomPlaceholder () {
@@ -105,34 +104,48 @@ Renderer.dice = {
 
 	/** Initialise the roll box UI. */
 	async _pInit () {
-		const $wrpRoll = $(`<div class="rollbox"></div>`);
-		const $minRoll = $(`<div class="rollbox-min"><span class="glyphicon glyphicon-chevron-up"></span></div>`).on("click", () => {
+		const $wrpRoll = $(`<div class="rollbox ve-flex-col min-h-0"></div>`).hideVe();
+		const $minRoll = $(`<button class="rollbox-min"><span class="glyphicon glyphicon-chevron-up"></span></button>`).on("click", () => {
 			Renderer.dice._showBox();
 			Renderer.dice._$iptRoll.focus();
 		});
-		const $head = $(`<div class="head-roll"><span class="hdr-roll">Dice Roller</span><span class="delete-icon glyphicon glyphicon-remove"></span></div>`)
+		const $head = $(`<div class="head-roll"><span class="hdr-roll">Dice Roller</span><span class="p-2 glyphicon glyphicon-remove"></span></div>`)
 			.on("click", () => {
 				if (!Renderer.dice._panel) Renderer.dice._hideBox();
 			});
 		const $outRoll = $(`<div class="out-roll">`);
 		const $iptRoll = $(`<input class="ipt-roll form-control" autocomplete="off" spellcheck="false">`)
-			.on("keypress", async e => {
-				if (e.which === 13) { // return
-					await Renderer.dice.pRoll2($iptRoll.val(), {
+			.on("keypress", async evt => {
+				evt.stopPropagation();
+				if (evt.key !== "Enter") return;
+
+				const strDice = $iptRoll.val();
+				const result = await Renderer.dice.pRoll2(
+					strDice,
+					{
 						isUser: true,
 						name: "Anon",
-					});
-					$iptRoll.val("");
+					},
+				);
+				$iptRoll.val("");
+
+				if (result === Renderer.dice._SYMBOL_PARSE_FAILED) {
+					Renderer.dice._showInvalid();
+					$iptRoll.addClass("form-control--error");
 				}
-				e.stopPropagation();
-			}).on("keydown", (e) => {
+			}).on("keydown", (evt) => {
+				$iptRoll.removeClass("form-control--error");
+
 				// arrow keys only work on keydown
-				if (e.which === 38) { // up arrow
-					e.preventDefault();
+				if (evt.key === "ArrowUp") {
+					evt.preventDefault();
 					Renderer.dice._prevHistory();
-				} else if (e.which === 40) { // down arrow
-					e.preventDefault();
-					Renderer.dice._nextHistory()
+					return;
+				}
+
+				if (evt.key === "ArrowDown") {
+					evt.preventDefault();
+					Renderer.dice._nextHistory();
 				}
 			});
 		$wrpRoll.append($head).append($outRoll).append($iptRoll);
@@ -164,7 +177,7 @@ Renderer.dice = {
 		if (!Renderer.dice._hist.length) {
 			Renderer.dice._histIndex = null;
 		} else {
-			Renderer.dice._histIndex = Math.min(Renderer.dice._hist.length, Math.max(Renderer.dice._histIndex, 0))
+			Renderer.dice._histIndex = Math.min(Renderer.dice._hist.length, Math.max(Renderer.dice._histIndex, 0));
 		}
 	},
 
@@ -205,7 +218,7 @@ Renderer.dice = {
 						shiftKey = shiftKey || evt.shiftKey;
 						ctrlKey = ctrlKey || (evt.ctrlKey || evt.metaKey);
 						cpyRollData.toRoll = it;
-						return cpyRollData
+						return cpyRollData;
 					},
 				)),
 			]);
@@ -277,7 +290,7 @@ Renderer.dice = {
 									return rollDataCpy;
 								}
 							},
-						)
+						);
 					}),
 			]);
 
@@ -306,26 +319,29 @@ Renderer.dice = {
 	async pRollerClick (evtMock, ele, packed, name) {
 		const $ele = $(ele);
 		const entry = JSON.parse(packed);
-		const additionalRollData = $ele.data("roll-additional");
+		const additionalData = {...ele.dataset};
 
 		// Aka "getTableName", probably
 		function attemptToGetNameOfRoll () {
-			// try use table caption
+			// Try to use the entry's built-in name
+			if (entry.name) return entry.name;
+
+			// try to use table caption
 			let titleMaybe = $(ele).closest(`table:not(.stats)`).children(`caption`).text();
 			if (titleMaybe) return titleMaybe.trim();
 
-			// try use list item title
+			// try to use list item title
 			titleMaybe = $(ele).parent().children(`.rd__list-item-name`).text();
-			if (titleMaybe) return titleMaybe.trim();
+			if (titleMaybe) return titleMaybe.trim().replace(/[.,:]$/, "");
 
 			// use the section title, where applicable
 			titleMaybe = $(ele).closest(`div`).children(`.rd__h`).first().find(`.entry-title-inner`).text();
 			if (titleMaybe) {
-				titleMaybe = titleMaybe.trim().replace(/[.,:]\s*$/, "");
+				titleMaybe = titleMaybe.trim().replace(/[.,:]$/, "");
 				return titleMaybe;
 			}
 
-			// try use stats table name row
+			// try to use stats table name row
 			titleMaybe = $(ele).closest(`table.stats`).children(`tbody`).first().children(`tr`).first().find(`.rnd-name .stats-name`).text();
 			if (titleMaybe) return titleMaybe.trim();
 
@@ -422,20 +438,15 @@ Renderer.dice = {
 		};
 
 		const modRollMeta = Renderer.dice.getEventModifiedRollMeta(evtMock, entry);
-		let $parent = $ele.parent();
-		while ($parent.length) {
-			if ($parent.is("th") || $parent.is("p") || $parent.is("table")) break;
-			$parent = $parent.parent();
-		}
+		const $parent = $ele.closest("th, p, table");
 
-		if ($parent.is("th")) {
-			const isRoller = $parent.attr("data-rd-isroller") === "true";
-			if (isRoller && $parent.attr("data-rd-namegeneratorrolls")) {
+		if ($parent.is("th") && $parent.attr("data-rd-isroller") === "true") {
+			if ($parent.attr("data-rd-namegeneratorrolls")) {
 				pRollGeneratorTable();
 			} else {
-				Renderer.dice.pRollEntry(modRollMeta.entry, rolledBy, {fnGetMessage: fnGetMessageTable, rollCount: modRollMeta.rollCount, additionalData: additionalRollData});
+				Renderer.dice.pRollEntry(modRollMeta.entry, rolledBy, {fnGetMessage: fnGetMessageTable, rollCount: modRollMeta.rollCount, additionalData});
 			}
-		} else Renderer.dice.pRollEntry(modRollMeta.entry, rolledBy, {rollCount: modRollMeta.rollCount, additionalData: additionalRollData});
+		} else Renderer.dice.pRollEntry(modRollMeta.entry, rolledBy, {rollCount: modRollMeta.rollCount, additionalData});
 	},
 
 	getEventModifiedRollMeta (evt, entry) {
@@ -500,6 +511,7 @@ Renderer.dice = {
 				rolledBy.label = head;
 			}
 			const wrpTree = Renderer.dice.lang.getTree3(str);
+			if (!wrpTree) return Renderer.dice._SYMBOL_PARSE_FAILED;
 			return Renderer.dice._pHandleRoll2(wrpTree, rolledBy, opts);
 		}
 	},
@@ -524,6 +536,8 @@ Renderer.dice = {
 		const wrpTree = Renderer.dice.lang.getTree3(entry.toRoll);
 		wrpTree.tree.successThresh = entry.successThresh;
 		wrpTree.tree.successMax = entry.successMax;
+		wrpTree.tree.chanceSuccessText = entry.chanceSuccessText;
+		wrpTree.tree.chanceFailureText = entry.chanceFailureText;
 
 		// arbitrarily return the result of the highest roll if we roll multiple times
 		const results = [];
@@ -545,7 +559,7 @@ Renderer.dice = {
 	 * @param [opts.additionalData]
 	 */
 	async _pHandleRoll2 (wrpTree, rolledBy, opts) {
-		opts = opts || {};
+		opts = {...opts};
 
 		if (wrpTree.meta && wrpTree.meta.hasPb) {
 			const userPb = await InputUiUtil.pGetUserNumber({
@@ -561,7 +575,9 @@ Renderer.dice = {
 		}
 
 		if (wrpTree.meta && wrpTree.meta.hasSummonSpellLevel) {
-			const predefinedSpellLevel = opts.additionalData ? opts.additionalData.map(it => it.summonedBySpell_level).filter(it => it != null)[0] : null;
+			const predefinedSpellLevel = opts.additionalData?.summonedBySpellLevel != null && !isNaN(opts.additionalData?.summonedBySpellLevel)
+				? Number(opts.additionalData.summonedBySpellLevel)
+				: null;
 
 			const userSummonSpellLevel = await InputUiUtil.pGetUserNumber({
 				min: predefinedSpellLevel ?? 0,
@@ -571,6 +587,21 @@ Renderer.dice = {
 			});
 			if (userSummonSpellLevel == null) return null;
 			opts.summonSpellLevel = userSummonSpellLevel;
+		}
+
+		if (wrpTree.meta && wrpTree.meta.hasSummonClassLevel) {
+			const predefinedClassLevel = opts.additionalData?.summonedByClassLevel != null && !isNaN(opts.additionalData?.summonedByClassLevel)
+				? Number(opts.additionalData.summonedByClassLevel)
+				: null;
+
+			const userSummonClassLevel = await InputUiUtil.pGetUserNumber({
+				min: predefinedClassLevel ?? 0,
+				int: true,
+				title: "Enter Class Level",
+				default: predefinedClassLevel ?? 1,
+			});
+			if (userSummonClassLevel == null) return null;
+			opts.summonClassLevel = userSummonClassLevel;
 		}
 
 		if (Renderer.dice._isManualMode) return Renderer.dice._pHandleRoll2_manual(wrpTree.tree, rolledBy, opts);
@@ -584,6 +615,7 @@ Renderer.dice = {
 	 * @param [opts.fnGetMessage]
 	 * @param [opts.pb] User-entered proficiency bonus, to be propagated to the meta.
 	 * @param [opts.summonSpellLevel] User-entered summon spell level, to be propagated to the meta.
+	 * @param [opts.summonClassLevel] User-entered summon class level, to be propagated to the meta.
 	 */
 	_pHandleRoll2_automatic (tree, rolledBy, opts) {
 		opts = opts || {};
@@ -596,6 +628,7 @@ Renderer.dice = {
 			const meta = {};
 			if (opts.pb) meta.pb = opts.pb;
 			if (opts.summonSpellLevel) meta.summonSpellLevel = opts.summonSpellLevel;
+			if (opts.summonClassLevel) meta.summonClassLevel = opts.summonClassLevel;
 
 			const result = tree.evl(meta);
 			const fullHtml = (meta.html || []).join("");
@@ -605,7 +638,7 @@ Renderer.dice = {
 			const lbl = rolledBy.label && (!rolledBy.name || rolledBy.label.trim().toLowerCase() !== rolledBy.name.trim().toLowerCase()) ? rolledBy.label : null;
 
 			const totalPart = tree.successThresh
-				? `<span class="roll">${result > (tree.successMax || 100) - tree.successThresh ? "Success!" : "Failure"}</span>`
+				? `<span class="roll">${result > (tree.successMax || 100) - tree.successThresh ? (tree.chanceSuccessText || "Success!") : (tree.chanceFailureText || "Failure")}</span>`
 				: `<span class="roll ${allMax ? "roll-max" : allMin ? "roll-min" : ""}">${result}</span>`;
 
 			const title = `${rolledBy.name ? `${rolledBy.name} \u2014 ` : ""}${lbl ? `${lbl}: ` : ""}${tree}`;
@@ -640,7 +673,7 @@ Renderer.dice = {
 		if (!tree) return JqueryUtil.doToast({type: "danger", content: `Invalid roll input!`});
 
 		const title = (rolledBy.label || "").toTitleCase() || "Roll Dice";
-		const $dispDice = $(`<div class="p-2 bold flex-vh-center rll__prompt-header">${tree.toString()}</div>`);
+		const $dispDice = $(`<div class="p-2 bold ve-flex-vh-center rll__prompt-header">${tree.toString()}</div>`);
 		if (opts.isResultUsed) {
 			return InputUiUtil.pGetUserNumber({
 				title,
@@ -664,13 +697,14 @@ Renderer.dice = {
 		Renderer.dice._scrollBottom();
 	},
 
+	_showInvalid () {
+		Renderer.dice._showMessage("Invalid input! Try &quot;/help&quot;", Renderer.dice.SYSTEM_USER);
+	},
+
 	_validCommands: new Set(["/c", "/cls", "/clear"]),
 	_handleCommand (com, rolledBy) {
 		Renderer.dice._showMessage(`<span class="out-roll-item-code">${com}</span>`, rolledBy); // parrot the user's command back to them
 		const PREF_MACRO = "/macro";
-		function showInvalid () {
-			Renderer.dice._showMessage("Invalid input! Try &quot;/help&quot;", Renderer.dice.SYSTEM_USER);
-		}
 
 		function checkLength (arr, desired) {
 			return arr.length === desired;
@@ -714,6 +748,10 @@ Renderer.dice = {
 					<li>Rounding; <span class="out-roll-item-code">floor(1.5)</span>, <span class="out-roll-item-code">ceil(1.5)</span>, <span class="out-roll-item-code">round(1.5)</span></li>
 
 					<li>Average; <span class="out-roll-item-code">avg(8d6)</span></li>
+					<li>Maximize dice; <span class="out-roll-item-code">dmax(8d6)</span></li>
+					<li>Minimize dice; <span class="out-roll-item-code">dmin(8d6)</span></li>
+
+					<li>Other functions; <span class="out-roll-item-code">sign(1d6-3)</span>, <span class="out-roll-item-code">abs(1d6-3)</span>, ...etc.</li>
 				</ul>
 				Up and down arrow keys cycle input history.<br>
 				Anything before a colon is treated as a label (<span class="out-roll-item-code">Fireball: 8d6</span>)<br>
@@ -727,29 +765,29 @@ Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved mac
 		} else if (com.startsWith(PREF_MACRO)) {
 			const [_, mode, ...others] = com.split(/\s+/);
 
-			if (!["list", "add", "remove", "clear"].includes(mode)) showInvalid();
+			if (!["list", "add", "remove", "clear"].includes(mode)) Renderer.dice._showInvalid();
 			else {
 				switch (mode) {
 					case "list":
 						if (checkLength(others, 0)) {
 							Object.keys(Renderer.dice.storage).forEach(name => {
 								Renderer.dice._showMessage(`<span class="out-roll-item-code">#${name}</span> \u2014 ${Renderer.dice.storage[name]}`, Renderer.dice.SYSTEM_USER);
-							})
+							});
 						} else {
-							showInvalid();
+							Renderer.dice._showInvalid();
 						}
 						break;
 					case "add": {
 						if (checkLength(others, 2)) {
 							const [name, macro] = others;
-							if (name.includes(" ") || name.includes("#")) showInvalid();
+							if (name.includes(" ") || name.includes("#")) Renderer.dice._showInvalid();
 							else {
 								Renderer.dice.storage[name] = macro;
 								pSave()
 									.then(() => Renderer.dice._showMessage(`Saved macro <span class="out-roll-item-code">#${name}</span>`, Renderer.dice.SYSTEM_USER));
 							}
 						} else {
-							showInvalid();
+							Renderer.dice._showInvalid();
 						}
 						break;
 					}
@@ -763,7 +801,7 @@ Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved mac
 								Renderer.dice._showMessage(`Macro <span class="out-roll-item-code">#${others[0]}</span> not found`, Renderer.dice.SYSTEM_USER);
 							}
 						} else {
-							showInvalid();
+							Renderer.dice._showInvalid();
 						}
 						break;
 				}
@@ -778,7 +816,7 @@ Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved mac
 					Renderer.dice._$lastRolledBy = null;
 					break;
 			}
-		} else showInvalid();
+		} else Renderer.dice._showInvalid();
 	},
 
 	_pHandleSavedRoll (id, rolledBy, opts) {
@@ -812,6 +850,12 @@ Use <span class="out-roll-item-code">${PREF_MACRO} list</span> to list saved mac
 			Renderer.dice._$lastRolledBy = $(`<div class="out-roll-wrp"></div>`).data("name", name);
 			Renderer.dice._$outRoll.prepend(Renderer.dice._$lastRolledBy);
 		}
+	},
+};
+
+Renderer.dice.util = {
+	getReducedMeta (meta) {
+		return {pb: meta.pb};
 	},
 };
 
@@ -858,7 +902,7 @@ Renderer.dice.lang = {
 
 	// region Lexer
 	_M_NUMBER_CHAR: /[0-9.]/,
-	_M_SYMBOL_CHAR: /[-+/*^=><florceidhkxunavgsmpb,]/,
+	_M_SYMBOL_CHAR: /[-+/*^=><florceidhkxunavgsmpbtqw,]/,
 
 	_M_NUMBER: /^[\d.,]+$/,
 	_lex3 (str) {
@@ -870,6 +914,7 @@ Renderer.dice.lang = {
 			token: "",
 			hasPb: false,
 			hasSummonSpellLevel: false,
+			hasSummonClassLevel: false,
 		};
 
 		str = str
@@ -881,6 +926,7 @@ Renderer.dice.lang = {
 			.replace(/\s+times\s+/g, " * ")
 			// endregion
 			.replace(/\s+/g, "")
+			.replace(/[\u2012\u2013\u2014]/g, "-") // convert dashes
 			.replace(/[×]/g, "*") // convert mult signs
 			.replace(/\*\*/g, "^") // convert ** to ^
 			.replace(/÷/g, "/") // convert div signs
@@ -892,7 +938,7 @@ Renderer.dice.lang = {
 
 		this._lex3_lex(self, str);
 
-		return {lexed: self.tokenStack, lexedMeta: {hasPb: self.hasPb, hasSummonSpellLevel: self.hasSummonSpellLevel}};
+		return {lexed: self.tokenStack, lexedMeta: {hasPb: self.hasPb, hasSummonSpellLevel: self.hasSummonSpellLevel, hasSummonClassLevel: self.hasSummonClassLevel}};
 	},
 
 	_lex3_lex (self, l) {
@@ -969,10 +1015,24 @@ Renderer.dice.lang = {
 			case "^": self.tokenStack.push(Renderer.dice.tk.POW); break;
 			case "pb": self.tokenStack.push(Renderer.dice.tk.PB); self.hasPb = true; break;
 			case "summonspelllevel": self.tokenStack.push(Renderer.dice.tk.SUMMON_SPELL_LEVEL); self.hasSummonSpellLevel = true; break;
+			case "summonclasslevel": self.tokenStack.push(Renderer.dice.tk.SUMMON_CLASS_LEVEL); self.hasSummonClassLevel = true; break;
 			case "floor": self.tokenStack.push(Renderer.dice.tk.FLOOR); break;
 			case "ceil": self.tokenStack.push(Renderer.dice.tk.CEIL); break;
 			case "round": self.tokenStack.push(Renderer.dice.tk.ROUND); break;
 			case "avg": self.tokenStack.push(Renderer.dice.tk.AVERAGE); break;
+			case "dmax": self.tokenStack.push(Renderer.dice.tk.DMAX); break;
+			case "dmin": self.tokenStack.push(Renderer.dice.tk.DMIN); break;
+			case "sign": self.tokenStack.push(Renderer.dice.tk.SIGN); break;
+			case "abs": self.tokenStack.push(Renderer.dice.tk.ABS); break;
+			case "cbrt": self.tokenStack.push(Renderer.dice.tk.CBRT); break;
+			case "sqrt": self.tokenStack.push(Renderer.dice.tk.SQRT); break;
+			case "exp": self.tokenStack.push(Renderer.dice.tk.EXP); break;
+			case "log": self.tokenStack.push(Renderer.dice.tk.LOG); break;
+			case "random": self.tokenStack.push(Renderer.dice.tk.RANDOM); break;
+			case "trunc": self.tokenStack.push(Renderer.dice.tk.TRUNC); break;
+			case "pow": self.tokenStack.push(Renderer.dice.tk.POW); break;
+			case "max": self.tokenStack.push(Renderer.dice.tk.MAX); break;
+			case "min": self.tokenStack.push(Renderer.dice.tk.MIN); break;
 			case "d": self.tokenStack.push(Renderer.dice.tk.DICE); break;
 			case "dh": self.tokenStack.push(Renderer.dice.tk.DROP_HIGHEST); break;
 			case "kh": self.tokenStack.push(Renderer.dice.tk.KEEP_HIGHEST); break;
@@ -1017,6 +1077,9 @@ Renderer.dice.lang = {
 			syms: lexed,
 			sym: null,
 			lastAccepted: null,
+			// Workaround for comma-separated numbers--if we're e.g. inside a dice pool, treat the commas as dice pool
+			//   separators. Otherwise, merge together adjacent numbers, to convert e.g. "1,000,000" to "1000000".
+			isIgnoreCommas: true,
 		};
 
 		this._parse3_nextSym(self);
@@ -1053,20 +1116,10 @@ Renderer.dice.lang = {
 		else throw new Error(`Unexpected end of input: Expected <code>${symbol}</code>`);
 	},
 
-	_parse3_factor (self) {
+	_parse3_factor (self, {isSilent = false} = {}) {
 		if (this._parse3_accept(self, Renderer.dice.tk.TYP_NUMBER)) {
-			// Workaround for comma-separated numbers--if we're inside a dice pool, treat the commas as dice pool separators.
-			//   Otherwise, merge together adjacent numbers.
-			let braceCount = 0;
-			self.syms.find(it => {
-				if (it.type === Renderer.dice.tk.BRACE_OPEN.type) braceCount++;
-				else if (it.type === Renderer.dice.tk.BRACE_CLOSE.type) braceCount--;
-				return it === self.sym;
-			});
-
-			if (braceCount) {
-				return new Renderer.dice.parsed.Factor(self.lastAccepted);
-			} else {
+			// Workaround for comma-separated numbers
+			if (self.isIgnoreCommas) {
 				// Combine comma-separated parts
 				const syms = [self.lastAccepted];
 				while (this._parse3_accept(self, Renderer.dice.tk.COMMA)) {
@@ -1076,15 +1129,31 @@ Renderer.dice.lang = {
 				const sym = Renderer.dice.tk.NUMBER(syms.map(it => it.value).join(""));
 				return new Renderer.dice.parsed.Factor(sym);
 			}
+
+			return new Renderer.dice.parsed.Factor(self.lastAccepted);
 		} else if (this._parse3_accept(self, Renderer.dice.tk.PB)) {
 			return new Renderer.dice.parsed.Factor(Renderer.dice.tk.PB);
 		} else if (this._parse3_accept(self, Renderer.dice.tk.SUMMON_SPELL_LEVEL)) {
 			return new Renderer.dice.parsed.Factor(Renderer.dice.tk.SUMMON_SPELL_LEVEL);
+		} else if (this._parse3_accept(self, Renderer.dice.tk.SUMMON_CLASS_LEVEL)) {
+			return new Renderer.dice.parsed.Factor(Renderer.dice.tk.SUMMON_CLASS_LEVEL);
 		} else if (
+			// Single-arg functions
 			this._parse3_match(self, Renderer.dice.tk.FLOOR)
 			|| this._parse3_match(self, Renderer.dice.tk.CEIL)
 			|| this._parse3_match(self, Renderer.dice.tk.ROUND)
-			|| this._parse3_match(self, Renderer.dice.tk.AVERAGE)) {
+			|| this._parse3_match(self, Renderer.dice.tk.AVERAGE)
+			|| this._parse3_match(self, Renderer.dice.tk.DMAX)
+			|| this._parse3_match(self, Renderer.dice.tk.DMIN)
+			|| this._parse3_match(self, Renderer.dice.tk.SIGN)
+			|| this._parse3_match(self, Renderer.dice.tk.ABS)
+			|| this._parse3_match(self, Renderer.dice.tk.CBRT)
+			|| this._parse3_match(self, Renderer.dice.tk.SQRT)
+			|| this._parse3_match(self, Renderer.dice.tk.EXP)
+			|| this._parse3_match(self, Renderer.dice.tk.LOG)
+			|| this._parse3_match(self, Renderer.dice.tk.RANDOM)
+			|| this._parse3_match(self, Renderer.dice.tk.TRUNC)
+		) {
 			const children = [];
 
 			children.push(this._parse3_nextSym(self));
@@ -1093,11 +1162,49 @@ Renderer.dice.lang = {
 			this._parse3_expect(self, Renderer.dice.tk.PAREN_CLOSE);
 
 			return new Renderer.dice.parsed.Function(children);
+		} else if (
+			// 2-arg functions
+			this._parse3_match(self, Renderer.dice.tk.POW)
+		) {
+			self.isIgnoreCommas = false;
+
+			const children = [];
+
+			children.push(this._parse3_nextSym(self));
+			this._parse3_expect(self, Renderer.dice.tk.PAREN_OPEN);
+			children.push(this._parse3_expression(self));
+			this._parse3_expect(self, Renderer.dice.tk.COMMA);
+			children.push(this._parse3_expression(self));
+			this._parse3_expect(self, Renderer.dice.tk.PAREN_CLOSE);
+
+			self.isIgnoreCommas = true;
+
+			return new Renderer.dice.parsed.Function(children);
+		} else if (
+			// N-arg functions
+			this._parse3_match(self, Renderer.dice.tk.MAX)
+			|| this._parse3_match(self, Renderer.dice.tk.MIN)
+		) {
+			self.isIgnoreCommas = false;
+
+			const children = [];
+
+			children.push(this._parse3_nextSym(self));
+			this._parse3_expect(self, Renderer.dice.tk.PAREN_OPEN);
+			children.push(this._parse3_expression(self));
+			while (this._parse3_accept(self, Renderer.dice.tk.COMMA)) children.push(this._parse3_expression(self));
+			this._parse3_expect(self, Renderer.dice.tk.PAREN_CLOSE);
+
+			self.isIgnoreCommas = true;
+
+			return new Renderer.dice.parsed.Function(children);
 		} else if (this._parse3_accept(self, Renderer.dice.tk.PAREN_OPEN)) {
 			const exp = this._parse3_expression(self);
 			this._parse3_expect(self, Renderer.dice.tk.PAREN_CLOSE);
-			return new Renderer.dice.parsed.Factor(exp, {hasParens: true})
+			return new Renderer.dice.parsed.Factor(exp, {hasParens: true});
 		} else if (this._parse3_accept(self, Renderer.dice.tk.BRACE_OPEN)) {
+			self.isIgnoreCommas = false;
+
 			const children = [];
 
 			children.push(this._parse3_expression(self));
@@ -1105,11 +1212,15 @@ Renderer.dice.lang = {
 
 			this._parse3_expect(self, Renderer.dice.tk.BRACE_CLOSE);
 
+			self.isIgnoreCommas = true;
+
 			const modPart = [];
 			this._parse3__dice_modifiers(self, modPart);
 
-			return new Renderer.dice.parsed.Pool(children, modPart[0])
+			return new Renderer.dice.parsed.Pool(children, modPart[0]);
 		} else {
+			if (isSilent) return null;
+
 			if (self.sym) throw new Error(`Unexpected input: <code>${self.sym}</code>`);
 			else throw new Error(`Unexpected end of input`);
 		}
@@ -1118,7 +1229,7 @@ Renderer.dice.lang = {
 	_parse3_dice (self) {
 		const children = [];
 
-		// if we've omitting the X in XdY, add it here
+		// if we've omitted the X in XdY, add it here
 		if (this._parse3_match(self, Renderer.dice.tk.DICE)) children.push(new Renderer.dice.parsed.Factor(Renderer.dice.tk.NUMBER(1)));
 		else children.push(this._parse3_factor(self));
 
@@ -1161,13 +1272,25 @@ Renderer.dice.lang = {
 			|| this._parse3_match(self, Renderer.dice.tk.MARGIN_SUCCESS_LTEQ)
 		) {
 			const nxtSym = this._parse3_nextSym(self);
-			const nxtFactor = this._parse3_factor(self);
+			const nxtFactor = this._parse3__dice_modifiers_nxtFactor(self, nxtSym);
 
 			if (nxtSym.isSuccessMode) modsMeta.isSuccessMode = true;
 			modsMeta.mods.push({modSym: nxtSym, numSym: nxtFactor});
 		}
 
 		if (modsMeta.mods.length) children.push(modsMeta);
+	},
+
+	_parse3__dice_modifiers_nxtFactor (self, nxtSym) {
+		if (nxtSym.diceModifierImplicit == null) return this._parse3_factor(self, {isSilent: true});
+
+		const fallback = new Renderer.dice.parsed.Factor(Renderer.dice.tk.NUMBER(nxtSym.diceModifierImplicit));
+		if (self.sym == null) return fallback;
+
+		const out = this._parse3_factor(self, {isSilent: true});
+		if (out) return out;
+
+		return fallback;
 	},
 
 	_parse3_exponent (self) {
@@ -1221,6 +1344,7 @@ Renderer.dice.tk = {
 		 * @param asString
 		 * @param [opts] Options object.
 		 * @param [opts.isDiceModifier] If the token is a dice modifier, e.g. "dl"
+		 * @param [opts.diceModifierImplicit] If the dice modifier has an implicit value (e.g. "kh" is shorthand for "kh1")
 		 * @param [opts.isSuccessMode] If the token is a "success"-based dice modifier, e.g. "cs="
 		 */
 		constructor (type, value, asString, opts) {
@@ -1229,6 +1353,7 @@ Renderer.dice.tk = {
 			this.value = value;
 			this._asString = asString;
 			if (opts.isDiceModifier) this.isDiceModifier = true;
+			if (opts.diceModifierImplicit) this.diceModifierImplicit = true;
 			if (opts.isSuccessMode) this.isSuccessMode = true;
 		}
 
@@ -1239,7 +1364,7 @@ Renderer.dice.tk = {
 			return this.toDebugString();
 		}
 
-		toDebugString () { return `${this.type}${this.value ? ` :: ${this.value}` : ""}` }
+		toDebugString () { return `${this.type}${this.value ? ` :: ${this.value}` : ""}`; }
 	},
 
 	_new (type, asString, opts) { return new Renderer.dice.tk.Token(type, null, asString, opts); },
@@ -1262,15 +1387,29 @@ Renderer.dice.tk.DIV = Renderer.dice.tk._new("DIV", "/");
 Renderer.dice.tk.POW = Renderer.dice.tk._new("POW", "^");
 Renderer.dice.tk.PB = Renderer.dice.tk._new("PB", "pb");
 Renderer.dice.tk.SUMMON_SPELL_LEVEL = Renderer.dice.tk._new("SUMMON_SPELL_LEVEL", "summonspelllevel");
+Renderer.dice.tk.SUMMON_CLASS_LEVEL = Renderer.dice.tk._new("SUMMON_CLASS_LEVEL", "summonclasslevel");
 Renderer.dice.tk.FLOOR = Renderer.dice.tk._new("FLOOR", "floor");
 Renderer.dice.tk.CEIL = Renderer.dice.tk._new("CEIL", "ceil");
 Renderer.dice.tk.ROUND = Renderer.dice.tk._new("ROUND", "round");
 Renderer.dice.tk.AVERAGE = Renderer.dice.tk._new("AVERAGE", "avg");
+Renderer.dice.tk.DMAX = Renderer.dice.tk._new("DMAX", "avg");
+Renderer.dice.tk.DMIN = Renderer.dice.tk._new("DMIN", "avg");
+Renderer.dice.tk.SIGN = Renderer.dice.tk._new("SIGN", "sign");
+Renderer.dice.tk.ABS = Renderer.dice.tk._new("ABS", "abs");
+Renderer.dice.tk.CBRT = Renderer.dice.tk._new("CBRT", "cbrt");
+Renderer.dice.tk.SQRT = Renderer.dice.tk._new("SQRT", "sqrt");
+Renderer.dice.tk.EXP = Renderer.dice.tk._new("EXP", "exp");
+Renderer.dice.tk.LOG = Renderer.dice.tk._new("LOG", "log");
+Renderer.dice.tk.RANDOM = Renderer.dice.tk._new("RANDOM", "random");
+Renderer.dice.tk.TRUNC = Renderer.dice.tk._new("TRUNC", "trunc");
+Renderer.dice.tk.POW = Renderer.dice.tk._new("POW", "pow");
+Renderer.dice.tk.MAX = Renderer.dice.tk._new("MAX", "max");
+Renderer.dice.tk.MIN = Renderer.dice.tk._new("MIN", "min");
 Renderer.dice.tk.DICE = Renderer.dice.tk._new("DICE", "d");
-Renderer.dice.tk.DROP_HIGHEST = Renderer.dice.tk._new("DH", "dh", {isDiceModifier: true});
-Renderer.dice.tk.KEEP_HIGHEST = Renderer.dice.tk._new("KH", "kh", {isDiceModifier: true});
-Renderer.dice.tk.DROP_LOWEST = Renderer.dice.tk._new("DL", "dl", {isDiceModifier: true});
-Renderer.dice.tk.KEEP_LOWEST = Renderer.dice.tk._new("KL", "kl", {isDiceModifier: true});
+Renderer.dice.tk.DROP_HIGHEST = Renderer.dice.tk._new("DH", "dh", {isDiceModifier: true, diceModifierImplicit: 1});
+Renderer.dice.tk.KEEP_HIGHEST = Renderer.dice.tk._new("KH", "kh", {isDiceModifier: true, diceModifierImplicit: 1});
+Renderer.dice.tk.DROP_LOWEST = Renderer.dice.tk._new("DL", "dl", {isDiceModifier: true, diceModifierImplicit: 1});
+Renderer.dice.tk.KEEP_LOWEST = Renderer.dice.tk._new("KL", "kl", {isDiceModifier: true, diceModifierImplicit: 1});
 Renderer.dice.tk.REROLL_EXACT = Renderer.dice.tk._new("REROLL", "r", {isDiceModifier: true});
 Renderer.dice.tk.REROLL_GT = Renderer.dice.tk._new("REROLL_GT", "r>", {isDiceModifier: true});
 Renderer.dice.tk.REROLL_GTEQ = Renderer.dice.tk._new("REROLL_GTEQ", "r>=", {isDiceModifier: true});
@@ -1304,11 +1443,13 @@ Renderer.dice.AbstractSymbol = class {
 	_min () { throw new Error("Unimplemented!"); } // minimum value of all _rolls_, not the minimum possible result
 	_max () { throw new Error("Unimplemented!"); } // maximum value of all _rolls_, not the maximum possible result
 	toString () { throw new Error("Unimplemented!"); }
-	addToMeta (meta, html, text) {
+	addToMeta (meta, {text, html = null, md = null} = {}) {
 		if (!meta) return;
-		text = text || html;
+		html = html || text;
+		md = md || text;
 		(meta.html = meta.html || []).push(html);
 		(meta.text = meta.text || []).push(text);
+		(meta.md = meta.md || []).push(md);
 	}
 };
 
@@ -1458,7 +1599,7 @@ Renderer.dice.parsed = {
 				case Renderer.dice.tk.MARGIN_SUCCESS_LTEQ.type: {
 					const total = vals.map(it => it.val).reduce((valA, valB) => valA + valB, 0);
 
-					const subDisplayDice = displayVals.map(r => `[${Renderer.dice.parsed._rollToNumPart(r, opts.faces)}]`).join("+");
+					const subDisplayDice = displayVals.map(r => `[${Renderer.dice.parsed._rollToNumPart_html(r, opts.faces)}]`).join("+");
 
 					let delta;
 					let subDisplay;
@@ -1501,7 +1642,7 @@ Renderer.dice.parsed = {
 		return displayVals;
 	},
 
-	_rollToNumPart (r, faces) {
+	_rollToNumPart_html (r, faces) {
 		if (faces == null) return r.val;
 		return r.val === faces ? `<span class="rll__max--muted">${r.val}</span>` : r.val === 1 ? `<span class="rll__min--muted">${r.val}</span>` : r.val;
 	},
@@ -1518,28 +1659,43 @@ Renderer.dice.parsed = {
 		_max (meta) { return this._invoke("max", meta); }
 
 		_invoke (fnName, meta) {
-			const [symFunc, symExp] = this._nodes;
+			const [symFunc] = this._nodes;
 			switch (symFunc.type) {
-				case Renderer.dice.tk.FLOOR.type: {
-					this.addToMeta(meta, "floor(");
-					const out = Math.floor(symExp[fnName](meta));
-					this.addToMeta(meta, ")");
-					return out;
-				}
-				case Renderer.dice.tk.CEIL.type: {
-					this.addToMeta(meta, "ceil(");
-					const out = Math.ceil(symExp[fnName](meta));
-					this.addToMeta(meta, ")");
-					return out;
-				}
-				case Renderer.dice.tk.ROUND.type: {
-					this.addToMeta(meta, "round(");
-					const out = Math.round(symExp[fnName](meta));
-					this.addToMeta(meta, ")");
+				case Renderer.dice.tk.FLOOR.type:
+				case Renderer.dice.tk.CEIL.type:
+				case Renderer.dice.tk.ROUND.type:
+				case Renderer.dice.tk.SIGN.type:
+				case Renderer.dice.tk.CBRT.type:
+				case Renderer.dice.tk.SQRT.type:
+				case Renderer.dice.tk.EXP.type:
+				case Renderer.dice.tk.LOG.type:
+				case Renderer.dice.tk.RANDOM.type:
+				case Renderer.dice.tk.TRUNC.type:
+				case Renderer.dice.tk.POW.type:
+				case Renderer.dice.tk.MAX.type:
+				case Renderer.dice.tk.MIN.type: {
+					const [, ...symExps] = this._nodes;
+					this.addToMeta(meta, {text: `${symFunc.toString()}(`});
+					const args = [];
+					symExps.forEach((symExp, i) => {
+						if (i !== 0) this.addToMeta(meta, {text: `, `});
+						args.push(symExp[fnName](meta));
+					});
+					const out = Math[symFunc.toString()](...args);
+					this.addToMeta(meta, {text: ")"});
 					return out;
 				}
 				case Renderer.dice.tk.AVERAGE.type: {
+					const [, symExp] = this._nodes;
 					return symExp.avg(meta);
+				}
+				case Renderer.dice.tk.DMAX.type: {
+					const [, symExp] = this._nodes;
+					return symExp.max(meta);
+				}
+				case Renderer.dice.tk.DMIN.type: {
+					const [, symExp] = this._nodes;
+					return symExp.min(meta);
 				}
 				default: throw new Error(`Unimplemented!`);
 			}
@@ -1549,10 +1705,24 @@ Renderer.dice.parsed = {
 			let out;
 			const [symFunc, symExp] = this._nodes;
 			switch (symFunc.type) {
-				case Renderer.dice.tk.FLOOR.type: out = "floor"; break;
-				case Renderer.dice.tk.CEIL.type: out = "ceil"; break;
-				case Renderer.dice.tk.ROUND.type: out = "round"; break;
-				case Renderer.dice.tk.AVERAGE.type: out = "avg"; break;
+				case Renderer.dice.tk.FLOOR.type:
+				case Renderer.dice.tk.CEIL.type:
+				case Renderer.dice.tk.ROUND.type:
+				case Renderer.dice.tk.AVERAGE.type:
+				case Renderer.dice.tk.DMAX.type:
+				case Renderer.dice.tk.DMIN.type:
+				case Renderer.dice.tk.SIGN.type:
+				case Renderer.dice.tk.ABS.type:
+				case Renderer.dice.tk.CBRT.type:
+				case Renderer.dice.tk.SQRT.type:
+				case Renderer.dice.tk.EXP.type:
+				case Renderer.dice.tk.LOG.type:
+				case Renderer.dice.tk.RANDOM.type:
+				case Renderer.dice.tk.TRUNC.type:
+				case Renderer.dice.tk.POW.type:
+				case Renderer.dice.tk.MAX.type:
+				case Renderer.dice.tk.MIN.type:
+					out = symFunc.toString(); break;
 				default: throw new Error(`Unimplemented!`);
 			}
 			out += `(${symExp.toString()})`;
@@ -1603,8 +1773,9 @@ Renderer.dice.parsed = {
 				}).join("+");
 
 				const asText = displayVals.map(v => `(${v.meta.text.join("")})`).join("+");
+				const asMd = displayVals.map(v => `(${v.meta.md.join("")})`).join("+");
 
-				this.addToMeta(meta, asHtml, asText);
+				this.addToMeta(meta, {html: asHtml, text: asText, md: asMd});
 
 				if (isSuccessMode) {
 					return vals.filter(it => !it.isDropped && it.isSuccess).length;
@@ -1612,7 +1783,12 @@ Renderer.dice.parsed = {
 					return vals.filter(it => !it.isDropped).map(it => it.val).sum();
 				}
 			} else {
-				this.addToMeta(meta, `${vals.map(it => `(${it.meta.html.join("")})`).join("+")}`, `${vals.map(it => `(${it.meta.text.join("")})`).join("+")}`);
+				this.addToMeta(
+					meta,
+					["html", "text", "md"].mergeMap(prop => ({
+						[prop]: `${vals.map(it => `(${it.meta[prop].join("")})`).join("+")}`,
+					})),
+				);
 				return vals.map(it => it.val).sum();
 			}
 		}
@@ -1638,22 +1814,26 @@ Renderer.dice.parsed = {
 		_invoke (fnName, meta) {
 			switch (this._node.type) {
 				case Renderer.dice.tk.TYP_NUMBER: {
-					this.addToMeta(meta, this.toString());
+					this.addToMeta(meta, {text: this.toString()});
 					return Number(this._node.value);
 				}
 				case Renderer.dice.tk.TYP_SYMBOL: {
-					if (this._hasParens) this.addToMeta(meta, "(");
+					if (this._hasParens) this.addToMeta(meta, {text: "("});
 					const out = this._node[fnName](meta);
-					if (this._hasParens) this.addToMeta(meta, ")");
+					if (this._hasParens) this.addToMeta(meta, {text: ")"});
 					return out;
 				}
 				case Renderer.dice.tk.PB.type: {
-					this.addToMeta(meta, this.toString(meta));
+					this.addToMeta(meta, {text: this.toString(meta)});
 					return meta.pb == null ? 0 : meta.pb;
 				}
 				case Renderer.dice.tk.SUMMON_SPELL_LEVEL.type: {
-					this.addToMeta(meta, this.toString(meta));
+					this.addToMeta(meta, {text: this.toString(meta)});
 					return meta.summonSpellLevel == null ? 0 : meta.summonSpellLevel;
+				}
+				case Renderer.dice.tk.SUMMON_CLASS_LEVEL.type: {
+					this.addToMeta(meta, {text: this.toString(meta)});
+					return meta.summonClassLevel == null ? 0 : meta.summonClassLevel;
 				}
 				default: throw new Error(`Unimplemented!`);
 			}
@@ -1666,6 +1846,7 @@ Renderer.dice.parsed = {
 				case Renderer.dice.tk.TYP_SYMBOL: out = this._node.toString(); break;
 				case Renderer.dice.tk.PB.type: out = this.meta ? (this.meta.pb || 0) : "PB"; break;
 				case Renderer.dice.tk.SUMMON_SPELL_LEVEL.type: out = this.meta ? (this.meta.summonSpellLevel || 0) : "the spell's level"; break;
+				case Renderer.dice.tk.SUMMON_CLASS_LEVEL.type: out = this.meta ? (this.meta.summonClassLevel || 0) : "your class level"; break;
 				default: throw new Error(`Unimplemented!`);
 			}
 			return this._hasParens ? `(${out})` : out;
@@ -1695,14 +1876,14 @@ Renderer.dice.parsed = {
 		_invoke (fnName, meta) {
 			if (this._nodes.length === 1) return this._nodes[0][fnName](meta); // if it's just a factor
 
-			// N.B. we don't pass "meta" to symbol evaluation inside the dice expression--we therefore won't see
+			// N.B. we don't pass the full "meta" to symbol evaluation inside the dice expression--we therefore won't see
 			//   the metadata from the nested rolls, but that's OK.
 
 			const view = this._nodes.slice();
 			// Shift the first symbol and use that as our initial number of dice
 			//   e.g. the "2" in 2d3d5
 			const numSym = view.shift();
-			let tmp = numSym[fnName]();
+			let tmp = numSym[fnName](Renderer.dice.util.getReducedMeta(meta));
 
 			while (view.length) {
 				if (Math.round(tmp) !== tmp) throw new Error(`Number of dice to roll (${tmp}) was not an integer!`);
@@ -1750,7 +1931,7 @@ Renderer.dice.parsed = {
 				const asHtml = displayRolls.map(r => {
 					if (r.htmlDisplay) return r.htmlDisplay;
 
-					const numPart = Renderer.dice.parsed._rollToNumPart(r, faces);
+					const numPart = Renderer.dice.parsed._rollToNumPart_html(r, faces);
 
 					if (r.isDropped) return `<span class="rll__dropped">[${numPart}]</span>`;
 					else if (r.isExploded) return `<span class="rll__exploded">[</span>${numPart}<span class="rll__exploded">]</span>`;
@@ -1760,10 +1941,20 @@ Renderer.dice.parsed = {
 
 				const asText = displayRolls.map(r => `[${r.val}]`).join("+");
 
+				const asMd = displayRolls.map(r => {
+					if (r.isDropped) return `~~[${r.val}]~~`;
+					else if (r.isExploded) return `_[${r.val}]_`;
+					else if (r.isSuccess) return `**[${r.val}]**`;
+					else return `[${r.val}]`;
+				}).join("+");
+
 				this.addToMeta(
 					meta,
-					asHtml,
-					asText,
+					{
+						html: asHtml,
+						text: asText,
+						md: asMd,
+					},
 				);
 			}
 
@@ -1814,7 +2005,7 @@ Renderer.dice.parsed = {
 			const view = this._nodes.slice();
 			let val = view.pop()[fnName](meta);
 			while (view.length) {
-				this.addToMeta(meta, "^");
+				this.addToMeta(meta, {text: "^"});
 				val = view.pop()[fnName](meta) ** val;
 			}
 			return val;
@@ -1844,11 +2035,11 @@ Renderer.dice.parsed = {
 
 			for (let i = 1; i < this._nodes.length; i += 2) {
 				if (this._nodes[i].eq(Renderer.dice.tk.MULT)) {
-					this.addToMeta(meta, " × ");
+					this.addToMeta(meta, {text: " × "});
 					out *= this._nodes[i + 1][fnName](meta);
 				} else if (this._nodes[i].eq(Renderer.dice.tk.DIV)) {
-					this.addToMeta(meta, " ÷ ");
-					out /= this._nodes[i + 1][fnName](meta)
+					this.addToMeta(meta, {text: " ÷ "});
+					out /= this._nodes[i + 1][fnName](meta);
 				} else throw new Error(`Unimplemented!`);
 			}
 
@@ -1883,7 +2074,7 @@ Renderer.dice.parsed = {
 			let isNeg = false;
 			if (view[0].eq(Renderer.dice.tk.ADD) || view[0].eq(Renderer.dice.tk.SUB)) {
 				isNeg = view.shift().eq(Renderer.dice.tk.SUB);
-				if (isNeg) this.addToMeta(meta, "-");
+				if (isNeg) this.addToMeta(meta, {text: "-"});
 			}
 
 			let out = view[0][fnName](meta);
@@ -1891,10 +2082,10 @@ Renderer.dice.parsed = {
 
 			for (let i = 1; i < view.length; i += 2) {
 				if (view[i].eq(Renderer.dice.tk.ADD)) {
-					this.addToMeta(meta, " + ");
+					this.addToMeta(meta, {text: " + "});
 					out += view[i + 1][fnName](meta);
 				} else if (view[i].eq(Renderer.dice.tk.SUB)) {
-					this.addToMeta(meta, " - ");
+					this.addToMeta(meta, {text: " - "});
 					out -= view[i + 1][fnName](meta);
 				} else throw new Error(`Unimplemented!`);
 			}

@@ -1,5 +1,245 @@
 {
-	"class": [],
+	"class": [
+		{
+			"name": "Sorcerer",
+			"source": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "sorcery-points",
+						"type": "number",
+						"scale": {
+							"2": {
+								"value": 2
+							},
+							"3": {
+								"value": 3
+							},
+							"4": {
+								"value": 4
+							},
+							"5": {
+								"value": 5
+							},
+							"6": {
+								"value": 6
+							},
+							"7": {
+								"value": 7
+							},
+							"8": {
+								"value": 8
+							},
+							"9": {
+								"value": 9
+							},
+							"10": {
+								"value": 10
+							},
+							"11": {
+								"value": 11
+							},
+							"12": {
+								"value": 12
+							},
+							"13": {
+								"value": 13
+							},
+							"14": {
+								"value": 14
+							},
+							"15": {
+								"value": 15
+							},
+							"16": {
+								"value": 16
+							},
+							"17": {
+								"value": 17
+							},
+							"18": {
+								"value": 18
+							},
+							"19": {
+								"value": 19
+							},
+							"20": {
+								"value": 20
+							}
+						}
+					},
+					"title": "Sorcery Points"
+				}
+			]
+		}
+	],
+	"subclass": [
+		{
+			"name": "College of Whispers",
+			"source": "XGE",
+			"className": "Bard",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "psychic-blades",
+						"type": "dice",
+						"scale": {
+							"3": {
+								"n": 2,
+								"die": 6
+							},
+							"5": {
+								"n": 3,
+								"die": 6
+							},
+							"10": {
+								"n": 5,
+								"die": 6
+							},
+							"15": {
+								"n": 8,
+								"die": 6
+							}
+						}
+					},
+					"title": "Psychic Blades"
+				}
+			]
+		},
+		{
+			"name": "Death Domain",
+			"source": "DMG",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "divine-strike",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "Divine Strike"
+				}
+			]
+		},
+		{
+			"name": "Forge Domain",
+			"source": "XGE",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "divine-strike",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "Divine Strike"
+				}
+			]
+		},
+		{
+			"name": "Nature Domain",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "divine-strike",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "Divine Strike"
+				}
+			]
+		},
+		{
+			"name": "Order Domain",
+			"source": "TCE",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "divine-strike",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "Divine Strike"
+				}
+			]
+		},
+		{
+			"name": "Trickery Domain",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"advancement": [
+				{
+					"type": "ScaleValue",
+					"configuration": {
+						"identifier": "divine-strike",
+						"type": "dice",
+						"scale": {
+							"8": {
+								"n": 1,
+								"die": 8
+							},
+							"14": {
+								"n": 2,
+								"die": 8
+							}
+						}
+					},
+					"title": "Divine Strike"
+				}
+			]
+		}
+	],
 	"classFeature": [
 		{
 			"name": "Unarmored Movement",
@@ -14,7 +254,27 @@
 						{
 							"key": "data.attributes.movement.walk",
 							"mode": "ADD",
-							"value": "(ceil((@classes.monk.levels - 1) / 4) * 5) + 5"
+							"value": "sign(@attributes.movement.walk) * @scale.monk.unarmored-movement"
+						},
+						{
+							"key": "data.attributes.movement.burrow",
+							"mode": "ADD",
+							"value": "sign(@attributes.movement.burrow) * @scale.monk.unarmored-movement"
+						},
+						{
+							"key": "data.attributes.movement.climb",
+							"mode": "ADD",
+							"value": "sign(@attributes.movement.climb) * @scale.monk.unarmored-movement"
+						},
+						{
+							"key": "data.attributes.movement.fly",
+							"mode": "ADD",
+							"value": "sign(@attributes.movement.fly) * @scale.monk.unarmored-movement"
+						},
+						{
+							"key": "data.attributes.movement.swim",
+							"mode": "ADD",
+							"value": "sign(@attributes.movement.swim) * @scale.monk.unarmored-movement"
 						}
 					]
 				}
@@ -27,66 +287,8 @@
 			"classSource": "PHB",
 			"level": 3,
 			"entries": [
-				"At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level.",
-				"You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.",
-				{
-					"type": "options",
-					"count": 2,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Careful Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Distant Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Empowered Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Extended Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Heightened Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Quickened Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Subtle Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Twinned Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Elemental Spell|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Spell|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Unerring Spell|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Spell|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Transmuted Spell|TCE"
-						}
-					]
-				}
+				"At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two Metamagic options of your choice. You gain another one at 10th and 17th level.",
+				"You can use only one Metamagic option on a spell when you cast it, unless otherwise noted."
 			]
 		},
 		{
@@ -111,66 +313,7 @@
 			"className": "Sorcerer",
 			"classSource": "PHB",
 			"level": 10,
-			"entries": [
-				{
-					"type": "options",
-					"count": 1,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Careful Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Distant Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Empowered Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Extended Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Heightened Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Quickened Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Subtle Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Twinned Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Elemental Spell|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Spell|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Unerring Spell|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Spell|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Transmuted Spell|TCE"
-						}
-					]
-				}
-			]
+			"isIgnored": true
 		},
 		{
 			"name": "Metamagic",
@@ -178,66 +321,7 @@
 			"className": "Sorcerer",
 			"classSource": "PHB",
 			"level": 17,
-			"entries": [
-				{
-					"type": "options",
-					"count": 1,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Careful Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Distant Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Empowered Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Extended Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Heightened Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Quickened Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Subtle Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Twinned Spell"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Elemental Spell|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Spell|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Unerring Spell|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Spell|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Transmuted Spell|TCE"
-						}
-					]
-				}
-			]
+			"isIgnored": true
 		},
 		{
 			"name": "Infusions Known",
@@ -290,7 +374,7 @@
 							"equipped": true,
 							"damage.parts": [
 								[
-									"1d(2 + ceil((@classes.monk.levels + 2) / 6) * 2) + @mod",
+									"1d@(scale.monk.die) + @mod",
 									"bludgeoning"
 								]
 							],
@@ -350,6 +434,34 @@
 					{
 						"anyProficientSkill": 1,
 						"thieves' tools": true
+					}
+				]
+			}
+		},
+		{
+			"name": "Expertise",
+			"source": "PHB",
+			"className": "Bard",
+			"classSource": "PHB",
+			"level": 3,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 2
+					}
+				]
+			}
+		},
+		{
+			"name": "Expertise",
+			"source": "PHB",
+			"className": "Bard",
+			"classSource": "PHB",
+			"level": 10,
+			"entryData": {
+				"expertise": [
+					{
+						"anyProficientSkill": 2
 					}
 				]
 			}
@@ -542,9 +654,198 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Brutal Critical (1 die)",
+			"source": "PHB",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"level": 9,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.meleeCriticalDamageDice",
+							"mode": "UPGRADE",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Brutal Critical (2 dice)",
+			"source": "PHB",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"level": 13,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.meleeCriticalDamageDice",
+							"mode": "UPGRADE",
+							"value": 2
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Brutal Critical (3 dice)",
+			"source": "PHB",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"level": 17,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "flags.dnd5e.meleeCriticalDamageDice",
+							"mode": "UPGRADE",
+							"value": 3
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Primal Champion",
+			"source": "PHB",
+			"className": "Barbarian",
+			"classSource": "PHB",
+			"level": 20,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "data.abilities.str.value",
+							"mode": "ADD",
+							"value": 4
+						},
+						{
+							"key": "data.abilities.con.value",
+							"mode": "ADD",
+							"value": 4
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Channel Divinity",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"level": 6,
+			"isIgnored": true
+		},
+		{
+			"name": "Channel Divinity",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"level": 18,
+			"isIgnored": true
+		},
+		{
+			"name": "Font of Magic",
+			"source": "PHB",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"level": 2,
+			"data": {
+				"activation.type": null,
+				"uses.per": null,
+				"uses.value": null,
+				"uses.max": null
+			}
+		},
+		{
+			"name": "Sorcery Points",
+			"source": "PHB",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"level": 2,
+			"data": {
+				"uses.per": "lr",
+				"uses.max": "@scale.sorcerer.sorcery-points"
+			},
+			"img": "icons/magic/control/silhouette-hold-change-blue.webp"
+		},
+		{
+			"name": "Fighting Style",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"level": 1,
+			"isIgnored": true
+		},
+		{
+			"name": "Fighting Style",
+			"source": "PHB",
+			"className": "Paladin",
+			"classSource": "PHB",
+			"level": 2,
+			"isIgnored": true
+		},
+		{
+			"name": "Fighting Style",
+			"source": "PHB",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"level": 2,
+			"isIgnored": true
+		},
+		{
+			"name": "Pact Boon",
+			"source": "PHB",
+			"className": "Warlock",
+			"classSource": "PHB",
+			"level": 3,
+			"isIgnored": true
+		},
+		{
+			"name": "Blindsense",
+			"source": "PHB",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"level": 14,
+			"entryData": {
+				"senses": [
+					{
+						"blindsight": 10
+					}
+				]
+			}
 		}
 	],
 	"subclassFeature": [
+		{
+			"name": "Arcane Firearm",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Artillerist",
+			"subclassSource": "TCE",
+			"level": 5,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "data.bonuses.msak.damage",
+							"mode": "ADD",
+							"value": "1d8"
+						},
+						{
+							"key": "data.bonuses.rsak.damage",
+							"mode": "ADD",
+							"value": "1d8"
+						}
+					]
+				}
+			]
+		},
 		{
 			"name": "Remarkable Athlete",
 			"source": "PHB",
@@ -564,6 +865,16 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Additional Fighting Style",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Champion",
+			"subclassSource": "PHB",
+			"level": 10,
+			"isIgnored": true
 		},
 		{
 			"name": "Improved Critical",
@@ -599,6 +910,67 @@
 			}
 		},
 		{
+			"name": "Combat Superiority",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Battle Master",
+			"subclassSource": "PHB",
+			"level": 3,
+			"entryData": {
+				"resources": [
+					{
+						"name": "Superiority Dice",
+						"type": "dicePool",
+						"recharge": "restShort",
+						"count": "floor((<$level$> + 1) / 8) + 4",
+						"number": 1,
+						"faces": "8 + (sign(ceil((<$level$> - 2) / 8) - 1) * 2)"
+					}
+				]
+			}
+		},
+		{
+			"name": "Additional Superiority Die",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Battle Master",
+			"subclassSource": "PHB",
+			"level": 7,
+			"isIgnored": true
+		},
+		{
+			"name": "Additional Superiority Die",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Battle Master",
+			"subclassSource": "PHB",
+			"level": 15,
+			"isIgnored": true
+		},
+		{
+			"name": "Improved Combat Superiority (d10)",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Battle Master",
+			"subclassSource": "PHB",
+			"level": 10,
+			"isIgnored": true
+		},
+		{
+			"name": "Improved Combat Superiority (d12)",
+			"source": "PHB",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Battle Master",
+			"subclassSource": "PHB",
+			"level": 18,
+			"isIgnored": true
+		},
+		{
 			"name": "Maneuvers",
 			"source": "PHB",
 			"className": "Fighter",
@@ -606,135 +978,7 @@
 			"subclassShortName": "Battle Master",
 			"subclassSource": "PHB",
 			"level": 3,
-			"entries": [
-				"The maneuvers are presented in alphabetical order.",
-				{
-					"type": "options",
-					"count": 3,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Commander's Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Disarming Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Distracting Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Evasive Footwork"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Feinting Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Goading Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Lunging Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Maneuvering Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Menacing Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Parry"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Precision Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Pushing Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Rally"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Riposte"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Sweeping Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Trip Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ambush|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bait and Switch|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Brace|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Restraining Strike|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Silver Tongue|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Snipe|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Studious Eye|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ambush|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bait and Switch|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Brace|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Commanding Presence|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Grappling Strike|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Quick Toss|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Tactical Assessment|TCE"
-						}
-					]
-				}
-			]
+			"isIgnored": true
 		},
 		{
 			"name": "Additional Maneuvers",
@@ -744,134 +988,7 @@
 			"subclassShortName": "Battle Master",
 			"subclassSource": "PHB",
 			"level": 7,
-			"entries": [
-				{
-					"type": "options",
-					"count": 2,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Commander's Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Disarming Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Distracting Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Evasive Footwork"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Feinting Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Goading Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Lunging Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Maneuvering Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Menacing Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Parry"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Precision Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Pushing Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Rally"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Riposte"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Sweeping Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Trip Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ambush|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bait and Switch|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Brace|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Restraining Strike|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Silver Tongue|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Snipe|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Studious Eye|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ambush|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bait and Switch|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Brace|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Commanding Presence|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Grappling Strike|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Quick Toss|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Tactical Assessment|TCE"
-						}
-					]
-				}
-			]
+			"isIgnored": true
 		},
 		{
 			"name": "Additional Maneuvers",
@@ -881,134 +998,7 @@
 			"subclassShortName": "Battle Master",
 			"subclassSource": "PHB",
 			"level": 10,
-			"entries": [
-				{
-					"type": "options",
-					"count": 2,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Commander's Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Disarming Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Distracting Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Evasive Footwork"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Feinting Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Goading Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Lunging Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Maneuvering Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Menacing Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Parry"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Precision Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Pushing Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Rally"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Riposte"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Sweeping Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Trip Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ambush|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bait and Switch|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Brace|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Restraining Strike|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Silver Tongue|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Snipe|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Studious Eye|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ambush|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bait and Switch|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Brace|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Commanding Presence|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Grappling Strike|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Quick Toss|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Tactical Assessment|TCE"
-						}
-					]
-				}
-			]
+			"isIgnored": true
 		},
 		{
 			"name": "Additional Maneuvers",
@@ -1018,134 +1008,7 @@
 			"subclassShortName": "Battle Master",
 			"subclassSource": "PHB",
 			"level": 15,
-			"entries": [
-				{
-					"type": "options",
-					"count": 2,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Commander's Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Disarming Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Distracting Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Evasive Footwork"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Feinting Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Goading Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Lunging Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Maneuvering Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Menacing Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Parry"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Precision Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Pushing Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Rally"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Riposte"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Sweeping Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Trip Attack"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ambush|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bait and Switch|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Brace|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Restraining Strike|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Silver Tongue|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Snipe|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Studious Eye|UAClassFeatureVariants"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ambush|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bait and Switch|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Brace|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Commanding Presence|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Grappling Strike|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Quick Toss|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Tactical Assessment|TCE"
-						}
-					]
-				}
-			]
+			"isIgnored": true
 		},
 		{
 			"name": "Maneuver Options",
@@ -1252,7 +1115,7 @@
 				"activation.condition": "When you hit a creature with a weapon attack",
 				"damage.parts": [
 					[
-						"2d6 + ((@classes.bard.levels)>=5)d6 + (((@classes.bard.levels)>=10)*2)d6 + (((@classes.bard.levels)>=15)*3)d6",
+						"@scale.college-of-whispers.psychic-blades",
 						"psychic"
 					]
 				]
@@ -1346,7 +1209,7 @@
 			"data": {
 				"damage.parts": [
 					[
-						"(((@classes.cleric.levels)>=14) + 1)d8",
+						"@scale.death-domain.divine-strike",
 						"necrotic"
 					]
 				]
@@ -1363,7 +1226,7 @@
 			"data": {
 				"damage.parts": [
 					[
-						"(((@classes.cleric.levels)>=14) + 1)d8",
+						"@scale.forge-domain.divine-strike",
 						"fire"
 					]
 				]
@@ -1535,15 +1398,15 @@
 			"data": {
 				"damage.parts": [
 					[
-						"(((@classes.cleric.levels)>=14) + 1)d8",
+						"@scale.nature-domain.divine-strike",
 						"cold"
 					],
 					[
-						"(((@classes.cleric.levels)>=14) + 1)d8",
+						"@scale.nature-domain.divine-strike",
 						"fire"
 					],
 					[
-						"(((@classes.cleric.levels)>=14) + 1)d8",
+						"@scale.nature-domain.divine-strike",
 						"lightning"
 					]
 				]
@@ -1574,7 +1437,7 @@
 			"data": {
 				"damage.parts": [
 					[
-						"(((@classes.cleric.levels)>=14) + 1)d8",
+						"@scale.order-domain.divine-strike",
 						"psychic"
 					]
 				]
@@ -1606,7 +1469,7 @@
 			"data": {
 				"damage.parts": [
 					[
-						"(((@classes.cleric.levels)>=14) + 1)d8",
+						"@scale.order-domain.divine-strike",
 						"poison"
 					]
 				]
@@ -1972,7 +1835,7 @@
 			}
 		},
 		{
-			"name": "Inspiring Smite",
+			"name": "Channel Divinity: Inspiring Smite",
 			"source": "TCE",
 			"className": "Paladin",
 			"classSource": "PHB",
@@ -2323,7 +2186,7 @@
 			"subclassSource": "XGE",
 			"level": 6,
 			"entryData": {
-				"immune": [
+				"resist": [
 					"radiant"
 				]
 			}
@@ -2964,202 +2827,6 @@
 			}
 		},
 		{
-			"name": "Additional Arcane Shot Option",
-			"source": "XGE",
-			"className": "Fighter",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Archer",
-			"subclassSource": "XGE",
-			"level": 7,
-			"entries": [
-				{
-					"type": "options",
-					"count": 2,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Banishing Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Beguiling Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bursting Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Enfeebling Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Grasping Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Piercing Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Shadow Arrow|XGE"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Additional Arcane Shot Option",
-			"source": "XGE",
-			"className": "Fighter",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Archer",
-			"subclassSource": "XGE",
-			"level": 10,
-			"entries": [
-				{
-					"type": "options",
-					"count": 2,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Banishing Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Beguiling Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bursting Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Enfeebling Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Grasping Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Piercing Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Shadow Arrow|XGE"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Additional Arcane Shot Option",
-			"source": "XGE",
-			"className": "Fighter",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Archer",
-			"subclassSource": "XGE",
-			"level": 15,
-			"entries": [
-				{
-					"type": "options",
-					"count": 2,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Banishing Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Beguiling Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bursting Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Enfeebling Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Grasping Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Piercing Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Shadow Arrow|XGE"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Additional Arcane Shot Option",
-			"source": "XGE",
-			"className": "Fighter",
-			"classSource": "PHB",
-			"subclassShortName": "Arcane Archer",
-			"subclassSource": "XGE",
-			"level": 18,
-			"entries": [
-				{
-					"type": "options",
-					"count": 2,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Banishing Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Beguiling Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Bursting Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Enfeebling Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Grasping Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Piercing Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Seeking Arrow|XGE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Shadow Arrow|XGE"
-						}
-					]
-				}
-			]
-		},
-		{
 			"name": "Rune Carver",
 			"source": "TCE",
 			"className": "Fighter",
@@ -3201,29 +2868,7 @@
 						]
 					]
 				},
-				"The following runes are available to you when you learn a rune. If a rune has a level requirement, you must be at least that level in this class to learn the rune. If a rune requires a saving throw, your Rune Magic save DC equals 8 + your proficiency bonus + your Constitution modifier.",
-				{
-					"type": "options",
-					"count": 2,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Cloud Rune|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Fire Rune|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Frost Rune|TCE"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Stone Rune|TCE"
-						}
-					]
-				}
+				"If a rune has a level requirement, you must be at least that level in this class to learn the rune. If a rune requires a saving throw, your Rune Magic save DC equals 8 + your proficiency bonus + your Constitution modifier."
 			]
 		},
 		{
@@ -3357,87 +3002,7 @@
 			"subclassShortName": "Four Elements",
 			"subclassSource": "PHB",
 			"level": 6,
-			"entries": [
-				{
-					"type": "options",
-					"count": 1,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Breath of Winter",
-							"name": "Breath of Winter (17th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Clench of the North Wind",
-							"name": "Clench of the North Wind (6th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Eternal Mountain Defense",
-							"name": "Eternal Mountain Defense (17th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Fangs of the Fire Snake"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Fist of Four Thunders"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Unbroken Air"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Flames of the Phoenix",
-							"name": "Flames of the Phoenix (11th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Gong of the Summit",
-							"name": "Gong of the Summit (6th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Mist Stance",
-							"name": "Mist Stance (11th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ride the Wind",
-							"name": "Ride the Wind (11th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "River of Hungry Flame",
-							"name": "River of Hungry Flame (17th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Rush of the Gale Spirits"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Shape the Flowing River"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Sweeping Cinder Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Water Whip"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Wave of Rolling Earth",
-							"name": "Wave of Rolling Earth (17th Level Required)"
-						}
-					]
-				}
-			]
+			"isIgnored": true
 		},
 		{
 			"name": "Extra Elemental Discipline",
@@ -3447,87 +3012,7 @@
 			"subclassShortName": "Four Elements",
 			"subclassSource": "PHB",
 			"level": 11,
-			"entries": [
-				{
-					"type": "options",
-					"count": 1,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Breath of Winter",
-							"name": "Breath of Winter (17th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Clench of the North Wind",
-							"name": "Clench of the North Wind (6th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Eternal Mountain Defense",
-							"name": "Eternal Mountain Defense (17th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Fangs of the Fire Snake"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Fist of Four Thunders"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Unbroken Air"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Flames of the Phoenix",
-							"name": "Flames of the Phoenix (11th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Gong of the Summit",
-							"name": "Gong of the Summit (6th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Mist Stance",
-							"name": "Mist Stance (11th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ride the Wind",
-							"name": "Ride the Wind (11th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "River of Hungry Flame",
-							"name": "River of Hungry Flame (17th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Rush of the Gale Spirits"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Shape the Flowing River"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Sweeping Cinder Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Water Whip"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Wave of Rolling Earth",
-							"name": "Wave of Rolling Earth (17th Level Required)"
-						}
-					]
-				}
-			]
+			"isIgnored": true
 		},
 		{
 			"name": "Extra Elemental Discipline",
@@ -3537,87 +3022,7 @@
 			"subclassShortName": "Four Elements",
 			"subclassSource": "PHB",
 			"level": 17,
-			"entries": [
-				{
-					"type": "options",
-					"count": 1,
-					"entries": [
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Breath of Winter",
-							"name": "Breath of Winter (17th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Clench of the North Wind",
-							"name": "Clench of the North Wind (6th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Eternal Mountain Defense",
-							"name": "Eternal Mountain Defense (17th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Fangs of the Fire Snake"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Fist of Four Thunders"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Unbroken Air"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Flames of the Phoenix",
-							"name": "Flames of the Phoenix (11th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Gong of the Summit",
-							"name": "Gong of the Summit (6th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Mist Stance",
-							"name": "Mist Stance (11th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Ride the Wind",
-							"name": "Ride the Wind (11th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "River of Hungry Flame",
-							"name": "River of Hungry Flame (17th Level Required)"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Rush of the Gale Spirits"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Shape the Flowing River"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Sweeping Cinder Strike"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Water Whip"
-						},
-						{
-							"type": "refOptionalfeature",
-							"optionalfeature": "Wave of Rolling Earth",
-							"name": "Wave of Rolling Earth (17th Level Required)"
-						}
-					]
-				}
-			]
+			"isIgnored": true
 		},
 		{
 			"name": "Blessings of Knowledge",
@@ -3636,7 +3041,8 @@
 								"history",
 								"nature",
 								"religion"
-							]
+							],
+							"count": 2
 						}
 					}
 				],
@@ -3888,12 +3294,8 @@
 			"entryData": {
 				"skillProficiencies": [
 					{
-						"choose": {
-							"from": [
-								"insight",
-								"medicine"
-							]
-						}
+						"insight": true,
+						"medicine": true
 					}
 				],
 				"toolProficiencies": [
@@ -3955,16 +3357,6 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"entryData": {
-				"skillProficiencies": [
-					{
-						"choose": {
-							"from": [
-								"nature",
-								"survival"
-							]
-						}
-					}
-				],
 				"expertise": [
 					{
 						"nature": true,
@@ -3995,7 +3387,7 @@
 				"weaponProficiencies": [
 					{
 						"choose": {
-							"from": "type=melee weapon|property=!two-handed"
+							"fromFilter": "type=melee weapon|property=!two-handed|rarity=none"
 						}
 					}
 				]
@@ -4068,7 +3460,7 @@
 						"alchemist's supplies": true
 					},
 					{
-						"artisan's tools": true
+						"anyArtisansTool": true
 					}
 				]
 			}
@@ -4092,7 +3484,7 @@
 						"smith's tools": true
 					},
 					{
-						"artisan's tools": true
+						"anyArtisansTool": true
 					}
 				]
 			}
@@ -4111,7 +3503,7 @@
 						"woodcarver's tools": true
 					},
 					{
-						"artisan's tools": true
+						"anyArtisansTool": true
 					}
 				]
 			}
@@ -4146,7 +3538,7 @@
 						"smith's tools": true
 					},
 					{
-						"artisan's tools": true
+						"anyArtisansTool": true
 					}
 				]
 			}
@@ -4162,28 +3554,7 @@
 			"entryData": {
 				"skillProficiencies": [
 					{
-						"choose": {
-							"from": [
-								"athletics",
-								"acrobatics",
-								"sleight of hand",
-								"stealth",
-								"arcana",
-								"history",
-								"investigation",
-								"nature",
-								"religion",
-								"animal handling",
-								"insight",
-								"medicine",
-								"perception",
-								"survival",
-								"deception",
-								"intimidation",
-								"performance",
-								"persuasion"
-							]
-						}
+						"any": 3
 					}
 				]
 			}
@@ -4358,7 +3729,7 @@
 			"entryData": {
 				"toolProficiencies": [
 					{
-						"artisan's tools": true
+						"anyArtisansTool": true
 					}
 				]
 			}
@@ -4541,9 +3912,9 @@
 					"name": "Natural Armor",
 					"changes": [
 						{
-							"key": "data.attributes.ac.value",
-							"mode": "UPGRADE",
-							"value": "13 + @abilities.dex.mod"
+							"key": "data.attributes.ac.calc",
+							"mode": "OVERRIDE",
+							"value": "draconic"
 						}
 					]
 				},
@@ -4553,7 +3924,7 @@
 						{
 							"key": "data.attributes.hp.max",
 							"mode": "ADD",
-							"value": "@details.level"
+							"value": "@classes.sorcerer.levels"
 						}
 					]
 				}
@@ -4575,6 +3946,400 @@
 							"key": "data.attributes.movement.fly",
 							"mode": "UPGRADE",
 							"value": "@attributes.movement.walk"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Immortal Durability",
+			"source": "UATheMysticClass",
+			"className": "Mystic",
+			"classSource": "UATheMysticClass",
+			"subclassShortName": "Immortal",
+			"subclassSource": "UATheMysticClass",
+			"level": 1,
+			"effects": [
+				{
+					"name": "HP Increase",
+					"changes": [
+						{
+							"key": "data.attributes.hp.max",
+							"mode": "ADD",
+							"value": "@classes.mystic.levels"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Eldritch Cannon",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Artillerist",
+			"subclassSource": "TCE",
+			"level": 3,
+			"data": {
+				"damage.parts": [
+					[
+						"2d8",
+						"fire"
+					],
+					[
+						"2d8",
+						"force"
+					]
+				],
+				"formula": "1d8 + @abilities.int.mod"
+			}
+		},
+		{
+			"name": "Temporal Awareness",
+			"source": "EGW",
+			"className": "Wizard",
+			"classSource": "PHB",
+			"subclassShortName": "Chronurgy",
+			"subclassSource": "EGW",
+			"level": 2,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "data.attributes.init.value",
+							"mode": "ADD",
+							"value": "@abilities.int.mod"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Arcane Ward",
+			"source": "PHB",
+			"className": "Wizard",
+			"classSource": "PHB",
+			"subclassShortName": "Abjuration",
+			"subclassSource": "PHB",
+			"level": 2,
+			"data": {
+				"activation.type": "special",
+				"activation.cost": null,
+				"uses.per": null,
+				"uses.max": "2 * @classes.wizard.levels + floor((@abilities.int.value - 10) / 2)"
+			}
+		},
+		{
+			"name": "Draconic Disciple",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 3,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"any": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "Draconic Gift",
+			"source": "FTD",
+			"className": "Ranger",
+			"classSource": "PHB",
+			"subclassShortName": "Drakewarden",
+			"subclassSource": "FTD",
+			"level": 3,
+			"entryData": {
+				"languageProficiencies": [
+					{
+						"any": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "Blessing of the All Father",
+			"source": "UAGiantSoulSorcerer",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Giant Soul (UA)",
+			"subclassSource": "UAGiantSoulSorcerer",
+			"level": 18,
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "data.abilities.con.value",
+							"mode": "ADD",
+							"value": 2
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Psionic Power",
+			"source": "TCE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Psi Warrior",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"resources": [
+					{
+						"name": "Psionic Energy Dice",
+						"type": "dicePool",
+						"recharge": "restLong",
+						"count": "2 * PB",
+						"number": 1,
+						"faces": "6 + ((ceil((<$level$> + 2) / 6) - 1) * 2)"
+					}
+				]
+			}
+		},
+		{
+			"name": "Psionic Power",
+			"source": "TCE",
+			"className": "Rogue",
+			"classSource": "PHB",
+			"subclassShortName": "Soulknife",
+			"subclassSource": "TCE",
+			"level": 3,
+			"entryData": {
+				"resources": [
+					{
+						"name": "Psionic Energy Dice",
+						"type": "dicePool",
+						"recharge": "restLong",
+						"count": "2 * PB",
+						"number": 1,
+						"faces": "6 + ((ceil((<$level$> + 2) / 6) - 1) * 2)"
+					}
+				]
+			}
+		},
+		{
+			"name": "Arcane Shot",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Arcane Archer",
+			"subclassSource": "XGE",
+			"level": 3,
+			"data": {
+				"uses.per": "sr",
+				"uses.value": 2,
+				"uses.max": 2
+			}
+		},
+		{
+			"name": "Arcane Shot Options",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Arcane Archer",
+			"subclassSource": "XGE",
+			"level": 3,
+			"entries": [
+				"Arcane shots are all magical effects, and each one is associated with one of the schools of magic.",
+				"If an option requires a saving throw, your Arcane Shot save DC is calculated as follows:",
+				{
+					"type": "abilityDc",
+					"name": "Arcane Shot",
+					"attributes": [
+						"int"
+					]
+				}
+			]
+		},
+		{
+			"name": "Additional Arcane Shot Option",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Arcane Archer",
+			"subclassSource": "XGE",
+			"level": 7,
+			"isIgnored": true
+		},
+		{
+			"name": "Additional Arcane Shot Option",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Arcane Archer",
+			"subclassSource": "XGE",
+			"level": 10,
+			"isIgnored": true
+		},
+		{
+			"name": "Additional Arcane Shot Option",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Arcane Archer",
+			"subclassSource": "XGE",
+			"level": 15,
+			"isIgnored": true
+		},
+		{
+			"name": "Additional Arcane Shot Option",
+			"source": "XGE",
+			"className": "Fighter",
+			"classSource": "PHB",
+			"subclassShortName": "Arcane Archer",
+			"subclassSource": "XGE",
+			"level": 18,
+			"isIgnored": true
+		},
+		{
+			"name": "Elemental Disciplines",
+			"source": "PHB",
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Four Elements",
+			"subclassSource": "PHB",
+			"level": 3,
+			"isIgnored": true
+		},
+		{
+			"name": "Armor Model",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"data": {
+				"uses.value": null,
+				"uses.max": null,
+				"uses.per": null
+			}
+		},
+		{
+			"name": "Thunder Gauntlets",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"subEntities": {
+				"item": [
+					{
+						"name": "Thunder Gauntlets",
+						"source": "TCE",
+						"page": 15,
+						"srd": true,
+						"type": "M",
+						"rarity": "none",
+						"weaponCategory": "simple",
+						"dmg1": "1d8",
+						"dmgType": "T",
+						"entries": [
+							"This weapon is part of the Guardian armor model. When you attack with that weapon, you can add your Intelligence modifier, instead of Strength or Dexterity, to the attack and damage rolls.",
+							"A creature hit by the gauntlet has disadvantage on attack rolls against targets other than you until the start of your next turn, as the armor magically emits a distracting pulse when the creature attacks someone else."
+						],
+						"foundryData": {
+							"ability": "int"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Lightning Launcher",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"subEntities": {
+				"item": [
+					{
+						"name": "Lightning Launcher",
+						"source": "TCE",
+						"page": 15,
+						"srd": true,
+						"type": "R",
+						"rarity": "none",
+						"weaponCategory": "simple",
+						"dmg1": "1d6",
+						"dmgType": "L",
+						"range": "90/300",
+						"entries": [
+							"This weapon is part of the Infiltrator armor model. When you attack with that weapon, you can add your Intelligence modifier, instead of Strength or Dexterity, to the attack and damage rolls.",
+							"Once on each of your turns when you hit a creature with the launcher, you can deal an extra {@damage 1d6} lightning damage to that target."
+						],
+						"foundryData": {
+							"ability": "int"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "Powered Steps",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"effects": [
+				{
+					"name": "Powered Steps",
+					"changes": [
+						{
+							"key": "data.attributes.movement.walk",
+							"mode": "ADD",
+							"value": 5
+						}
+					],
+					"disabled": true
+				}
+			]
+		},
+		{
+			"name": "Defensive Field",
+			"source": "TCE",
+			"className": "Artificer",
+			"classSource": "TCE",
+			"subclassShortName": "Armorer",
+			"subclassSource": "TCE",
+			"level": 3,
+			"data": {
+				"actionType": "heal",
+				"damage.parts": [
+					[
+						"@classes.artificer.levels",
+						"temphp"
+					]
+				]
+			}
+		},
+		{
+			"name": "Disciple of Life",
+			"source": "PHB",
+			"className": "Cleric",
+			"classSource": "PHB",
+			"subclassShortName": "Life",
+			"subclassSource": "PHB",
+			"level": 1,
+			"effects": [
+				{
+					"name": "Bonus Healing",
+					"changes": [
+						{
+							"key": "data.bonuses.heal.damage",
+							"mode": "ADD",
+							"value": "@item.level + 2"
 						}
 					]
 				}

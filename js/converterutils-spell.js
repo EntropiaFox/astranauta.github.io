@@ -5,7 +5,7 @@ class DamageTagger {
 		str = str.toLowerCase().trim();
 		if (str === "all" || str === "one" || str === "a") arr.push(...Parser.DMG_TYPES);
 		else if (Parser.DMG_TYPES.includes(str)) arr.push(str);
-		else options.cbWarning(`Unknown damage type "${str}"`)
+		else options.cbWarning(`Unknown damage type "${str}"`);
 	}
 }
 
@@ -95,6 +95,19 @@ class MiscTagsTagger {
 					if (/target's AC can't be less than/.exec(str)) tags.add("MAC");
 
 					if (/(?:^|\W)(?:pull(?:|ed|s)|push(?:|ed|s)) [^.!?:]*\d+\s+(?:ft|feet|foot|mile|square)/ig.test(str)) tags.add("FMV");
+
+					if (/rolls? (?:a )?{@dice [^}]+} and consults? the table/.test(str)) tags.add("RO");
+
+					if ((/\bbright light\b/i.test(str) || /\bdim light\b/i.test(str)) && /\b\d+[- ]foot[- ]radius\b/i.test(str)) {
+						if (/\bsunlight\b/.test(str)) tags.add("LGTS");
+						else tags.add("LGT");
+					}
+				},
+				object: (obj) => {
+					if (obj.type !== "table") return;
+
+					const rollMode = Renderer.getAutoConvertedTableRollMode(obj);
+					if (rollMode !== RollerUtil.ROLL_COL_NONE) tags.add("RO");
 				},
 			},
 		);
@@ -120,7 +133,7 @@ class ScalingLevelDiceTagger {
 
 			const mDamageType = ConverterConst.RE_DAMAGE_TYPE.exec(strEntries);
 			if (mDamageType) {
-				label = `${mDamageType[2]} damage`
+				label = `${mDamageType[1]} damage`;
 			}
 
 			ConverterConst.RE_DAMAGE_TYPE.lastIndex = 0;
@@ -146,7 +159,7 @@ class ScalingLevelDiceTagger {
 						11: rolls[3],
 						17: rolls[4],
 					},
-			}
+			};
 		} else if (sp.entries.length === 2 && sp.entries.filter(it => typeof it === "string").length === 2) {
 			const rollsFirstLine = [];
 			const rollsSecondLine = [];
@@ -179,6 +192,162 @@ class ScalingLevelDiceTagger {
 	}
 }
 
+class AffectedCreatureTypeTagger {
+	static tryRun (sp, options) {
+		const setAffected = new Set();
+		const setNotAffected = new Set();
+
+		const walker = MiscUtil.getWalker({isNoModification: true});
+
+		walker.walk(
+			sp.entries,
+			{
+				string: (str) => {
+					str = Renderer.stripTags(str);
+
+					const sens = str.split(/[.!?]/g);
+					sens.forEach(sen => {
+						// region Not affected
+						sen
+							// Blight :: PHB
+							.replace(/This spell has no effect on (.+)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setNotAffected, type: n[1]}));
+							})
+							// Command :: PHB
+							.replace(/The spell has no effect if the target is (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setNotAffected, type: n[1]}));
+							})
+							// Raise Dead :: PHB
+							.replace(/The spell can't return an (.*?) creature/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setNotAffected, type: n[1]}));
+							})
+							// Shapechange :: PHB
+							.replace(/The creature can't be (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setNotAffected, type: n[1]}));
+							})
+							// Sleep :: PHB
+							.replace(/(.*?) aren't affected by this spell/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setNotAffected, type: n[1]}));
+							})
+							// Speak with Dead :: PHB
+							.replace(/The corpse\b.*?\bcan't be (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setNotAffected, type: n[1]}));
+							})
+
+							// Cause Fear :: XGE
+							.replace(/A (.*?) is immune to this effect/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setNotAffected, type: n[1]}));
+							})
+							// Healing Spirit :: XGE
+							.replace(/can't heal (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setNotAffected, type: n[1]}));
+							})
+						;
+						// endregion
+
+						// region Affected
+						sen
+							// Awaken :: PHB
+							.replace(/you touch a [^ ]+ or (?:smaller|larger) (.+)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Calm Emotions :: PHB
+							.replace(/Each (.+) in a \d+-foot/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Charm Person :: PHB
+							.replace(/One (.*?) of your choice/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Crown of Madness :: PHB
+							.replace(/You attempt to .* a (.+) you can see/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Detect Evil and Good :: PHB
+							.replace(/you know if there is an? (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Dispel Evil and Good :: PHB
+							.replace(/For the duration, (.*?) have disadvantage/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Hold Person :: PHB
+							.replace(/Choose (.+)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Locate Animals or Plants :: PHB
+							.replace(/name a specific kind of (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Magic Jar :: PHB
+							.replace(/You can attempt to possess any (.*?) that you can see/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Planar Binding :: PHB
+							.replace(/you attempt to bind a (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Protection from Evil and Good :: PHB
+							.replace(/types of creatures: (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Reincarnate :: PHB
+							.replace(/You touch a dead (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Simulacrum :: PHB
+							.replace(/You shape an illusory duplicate of one (.*)/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Speak with Animals :: PHB
+							.replace(/communicate with (.*?) for the duration/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+
+							// Fast Friends :: AI
+							.replace(/choose one (.*?) within range/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+
+							// Beast Bond :: XGE
+							.replace(/telepathic link with one (.*?) you touch/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Ceremony :: XGE
+							.replace(/You touch one (.*?) who/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+							// Soul Cage :: XGE
+							.replace(/\bsoul of (.*?) as it dies/g, (...m) => {
+								m[1].replace(AffectedCreatureTypeTagger._RE_TYPES, (...n) => this._doAddType({set: setAffected, type: n[1]}));
+							})
+						;
+						// endregion
+					});
+				},
+			},
+		);
+
+		if (!setAffected.size && !setNotAffected.size) return;
+
+		const setAffectedOut = new Set([
+			...(sp.affectsCreatureType || []),
+			...setAffected,
+		]);
+		if (!setAffectedOut.size) Parser.MON_TYPES.forEach(it => setAffectedOut.add(it));
+
+		sp.affectsCreatureType = [...CollectionUtil.setDiff(setAffectedOut, setNotAffected)].sort(SortUtil.ascSortLower);
+		if (!sp.affectsCreatureType.length) delete sp.affectsCreatureType;
+	}
+
+	static _doAddType ({set, type}) {
+		type = Parser._parse_bToA(Parser.MON_TYPE_TO_PLURAL, type, type);
+		set.add(type);
+		return "";
+	}
+}
+AffectedCreatureTypeTagger._RE_TYPES = new RegExp(`\\b(${[...Parser.MON_TYPES, ...Object.values(Parser.MON_TYPE_TO_PLURAL)].map(it => it.escapeRegexp()).join("|")})\\b`, "gi");
+
 if (typeof module !== "undefined") {
 	module.exports = {
 		DamageInflictTagger,
@@ -189,5 +358,6 @@ if (typeof module !== "undefined") {
 		SpellAttackTagger,
 		MiscTagsTagger,
 		ScalingLevelDiceTagger,
+		AffectedCreatureTypeTagger,
 	};
 }

@@ -14,12 +14,11 @@ class RecipesPage extends ListPage {
 			sublistClass: "subrecipes",
 			sublistOptions: {
 				pCustomHashHandler: RecipesPage._sublist_customHashHandler.bind(RecipesPage),
-				customHashUnpacker: RecipesPage._sublist_customHashUnpacker.bind(RecipesPage),
 			},
 
 			dataProps: ["recipe"],
 
-			fnGetPinListData: () => this._getCurrentPinListData(),
+			fnGetCustomHashId: () => this._getCurrentPinListCustomHashId(),
 
 			bindPopoutButtonOptions: {
 				fnGetToRender: () => this._lastRender,
@@ -27,42 +26,29 @@ class RecipesPage extends ListPage {
 		});
 
 		this._lastRender = null;
-
-		this._$pgContent = null;
 	}
 
-	async _pHandleBrew (homebrew) {
-		if (homebrew.recipe) {
-			homebrew = MiscUtil.copy(homebrew);
-			DataUtil.recipe.postProcessData(homebrew);
-		}
-		return super._pHandleBrew(homebrew);
+	static _sublist_customHashHandler (r, customHashId) {
+		return this._pGetModifiedRecipe(r, customHashId);
 	}
 
-	static _sublist_customHashHandler (r, uid) {
-		return Renderer.recipe.getScaledRecipe(r, Number(uid.split("_").last()));
+	static _pGetModifiedRecipe (rRaw, customHashId) {
+		if (!customHashId) return rRaw;
+		const {_scaleFactor} = Renderer.recipe.getUnpackedCustomHashId(customHashId);
+		if (_scaleFactor == null) return rRaw;
+		return Renderer.recipe.getScaledRecipe(rRaw, _scaleFactor);
 	}
 
-	static _sublist_customHashUnpacker (customHashId) {
-		return {scaled: Number(customHashId.split("_").last()), customHashId};
-	}
-
-	_getCurrentPinListData () {
-		if (this._lastRender?._scaleFactor) {
-			return {scaled: this._lastRender._scaleFactor, customHashId: this._getCustomHashId(this._lastRender)};
-		}
-	}
-
-	_getCustomHashId (it) {
-		if (!it._scaleFactor) return null;
-		return `${it.name}_${it.source}_${it._scaleFactor}`.toLowerCase();
+	_getCurrentPinListCustomHashId () {
+		if (!this._lastRender?._scaleFactor) return null;
+		return Renderer.recipe.getCustomHashId(this._lastRender);
 	}
 
 	getListItem (it, rpI, isExcluded) {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
@@ -70,7 +56,7 @@ class RecipesPage extends ListPage {
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-6 bold pl-0">${it.name}</span>
 			<span class="col-4 text-center">${it.type || "\u2014"}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil2.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -83,7 +69,6 @@ class RecipesPage extends ListPage {
 				type: it.type,
 			},
 			{
-				uniqueId: it.uniqueId ? it.uniqueId : rpI,
 				isExcluded,
 			},
 		);
@@ -100,13 +85,12 @@ class RecipesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (itRaw, pinId, addCount, data) {
-		data = data || {};
-		const it = data.scaled ? Renderer.recipe.getScaledRecipe(itRaw, data.scaled) : itRaw;
+	pGetSublistItem (itRaw, ix, {customHashId = null} = {}) {
+		const it = this.constructor._pGetModifiedRecipe(itRaw, customHashId);
 		const name = it._displayName || it.name;
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-9 pl-0">${name}</span>
 				<span class="col-3 text-center pr-0">${it.type || "\u2014"}</span>
@@ -116,7 +100,7 @@ class RecipesPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			name,
 			{
@@ -124,8 +108,7 @@ class RecipesPage extends ListPage {
 				type: it.type,
 			},
 			{
-				uniqueId: data.uniqueId || "",
-				customHashId: this._getCustomHashId(it),
+				customHashId,
 			},
 		);
 		return listItem;
@@ -133,7 +116,6 @@ class RecipesPage extends ListPage {
 
 	doLoadHash (id) {
 		const it = this._dataList[id];
-		this._$pgContent = this._$pgContent || $("#pagecontent");
 		this._$pgContent.empty();
 
 		const tabMetas = [
@@ -193,8 +175,7 @@ class RecipesPage extends ListPage {
 	}
 
 	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
+		sub = await super.pDoLoadSubHash(sub);
 
 		const scaledHash = sub.find(it => it.startsWith(RecipesPage._HASH_START_SCALED));
 		if (scaledHash) {

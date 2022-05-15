@@ -3,7 +3,6 @@
 	"$id": "bookref-quick.json",
 	"version": "1.1.0",
 	"type": "object",
-
 	"properties": {
 		"reference": {
 			"type": "object",
@@ -58,7 +57,7 @@
 				"bookref-quick": {
 					"type": "array",
 					"items": {
-						"$ref": "entry.json"
+						"$ref": "../entry.json"
 					}
 				}
 			},

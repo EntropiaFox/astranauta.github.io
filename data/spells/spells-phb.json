@@ -5,6 +5,7 @@
 			"source": "PHB",
 			"page": 211,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "C",
 			"time": [
@@ -95,6 +96,7 @@
 			"source": "PHB",
 			"page": 211,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -135,6 +137,9 @@
 						"When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd."
 					]
 				}
+			],
+			"miscTags": [
+				"HL"
 			],
 			"areaTags": [
 				"MT"
@@ -577,6 +582,9 @@
 			"savingThrow": [
 				"wisdom"
 			],
+			"affectsCreatureType": [
+				"beast"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -679,6 +687,9 @@
 						"If you cast this spell using a spell slot of 3rd level or higher, the duration of the spell increases by 48 hours for each slot level above 2nd."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"beast"
 			],
 			"miscTags": [
 				"SGT"
@@ -814,6 +825,9 @@
 						"When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"PRM",
@@ -1111,6 +1125,20 @@
 				"The barrier prevents an affected creature from passing or reaching through. An affected creature can cast spells or make attacks with ranged or reach weapons through the barrier.",
 				"If you move so that an affected creature is forced to pass through the barrier, the spell ends."
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"areaTags": [
 				"S"
 			],
@@ -1171,6 +1199,16 @@
 							"name": "Undead (UA)",
 							"source": "UA2020SubclassesPt4"
 						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
+						}
 					}
 				]
 			},
@@ -1188,6 +1226,7 @@
 			"source": "PHB",
 			"page": 213,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "A",
 			"time": [
@@ -1387,6 +1426,7 @@
 			"source": "PHB",
 			"page": 214,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "D",
 			"time": [
@@ -1615,6 +1655,7 @@
 			"source": "PHB",
 			"page": 215,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -1904,6 +1945,7 @@
 			"source": "PHB",
 			"page": 215,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "N",
 			"time": [
@@ -1973,6 +2015,7 @@
 			"source": "PHB",
 			"page": 215,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "D",
 			"time": [
@@ -2015,7 +2058,7 @@
 					]
 				},
 				"The spell doesn't take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion.",
-				"If you cast the spell two or more times before completing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a random reading. The DM makes this roll in secret."
+				"If you cast the spell two or more times before completing your next long rest, there is a cumulative {@chance 25|||Random reading!|Regular reading} chance for each casting after the first that you get a random reading. The DM makes this roll in secret."
 			],
 			"classes": {
 				"fromClassList": [
@@ -2567,6 +2610,10 @@
 			"conditionInflict": [
 				"charmed"
 			],
+			"affectsCreatureType": [
+				"beast",
+				"plant"
+			],
 			"miscTags": [
 				"PRM"
 			],
@@ -2743,6 +2790,16 @@
 						"subclass": {
 							"name": "Undead (UA)",
 							"source": "UA2020SubclassesPt4"
+						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
 						}
 					}
 				]
@@ -3158,6 +3215,7 @@
 			"source": "PHB",
 			"page": 217,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -3566,7 +3624,7 @@
 					"type": "entries",
 					"name": "Interposing Hand",
 					"entries": [
-						"The hand interposes itself between you and a creature you choose until you give the hand a different command. The hand moves to stay between you and the target, providing you with half cover against the target. The target can't move through the hand's space if its Strength score is less than or equal to the hand's Strength score. If its Strength score is higher than the hand's Strength score, the target can move toward you through the hand's space, but that space is difficult terrain for the target."
+						"The hand interposes itself between you and a creature you choose until you give the hand a different command. The hand moves to stay between you and the target, providing you with half cover against the target. The target can't move through the hand's space if its Strength score is less than or equal to the hand's Strength score. If its Strength score is higher than the hand's Strength score, the target can move toward you through the hand's space, but that space is {@quickref difficult terrain||3} for the target."
 					]
 				}
 			],
@@ -3652,6 +3710,7 @@
 			"source": "PHB",
 			"page": 218,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -3682,7 +3741,7 @@
 				}
 			],
 			"entries": [
-				"You create a vertical wall of whirling, razor-sharp blades made of magical energy. The wall appears within range and lasts for the duration. You can make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides three-quarters cover to creatures behind it, and its space is difficult terrain.",
+				"You create a vertical wall of whirling, razor-sharp blades made of magical energy. The wall appears within range and lasts for the duration. You can make a straight wall up to 100 feet long, 20 feet high, and 5 feet thick, or a ringed wall up to 60 feet in diameter, 20 feet high, and 5 feet thick. The wall provides three-quarters cover to creatures behind it, and its space is {@quickref difficult terrain||3}.",
 				"When a creature enters the wall's area for the first time on a turn or starts its turn there, the creature must make a Dexterity saving throw. On a failed save, the creature takes {@damage 6d10} slashing damage. On a successful save, the creature takes half as much damage."
 			],
 			"damageInflict": [
@@ -3768,6 +3827,7 @@
 			"source": "PHB",
 			"page": 219,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -3916,6 +3976,20 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"SGT"
@@ -4287,6 +4361,16 @@
 							"name": "Undead (UA)",
 							"source": "UA2020SubclassesPt4"
 						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
+						}
 					}
 				]
 			}
@@ -4410,6 +4494,7 @@
 			"source": "PHB",
 			"page": 219,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -4513,7 +4598,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Marid"
 						}
 					},
 					{
@@ -4575,6 +4661,9 @@
 			],
 			"damageInflict": [
 				"radiant"
+			],
+			"miscTags": [
+				"LGT"
 			],
 			"classes": {
 				"fromClassList": [
@@ -4663,6 +4752,7 @@
 			"source": "PHB",
 			"page": 220,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -4790,7 +4880,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Efreeti"
 						}
 					},
 					{
@@ -4927,7 +5018,8 @@
 				"SGT"
 			],
 			"areaTags": [
-				"S"
+				"S",
+				"Y"
 			],
 			"classes": {
 				"fromClassList": [
@@ -5029,6 +5121,9 @@
 			"savingThrow": [
 				"charisma"
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"areaTags": [
 				"S"
 			],
@@ -5116,6 +5211,7 @@
 			"source": "PHB",
 			"page": 221,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -5185,6 +5281,7 @@
 			"source": "PHB",
 			"page": 221,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -5230,6 +5327,9 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"SGT"
@@ -5448,6 +5548,18 @@
 					{
 						"name": "Wizard",
 						"source": "PHB"
+					}
+				],
+				"fromSubclass": [
+					{
+						"class": {
+							"name": "Druid",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Spores",
+							"source": "TCE"
+						}
 					}
 				]
 			},
@@ -5869,7 +5981,7 @@
 				"v": true,
 				"s": true,
 				"m": {
-					"text": "a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold a Medium creature, such as a huge urn, coffin, mud-filled cyst in the ground, or crystal container filled with salt water",
+					"text": "a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consumes, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold the creature being cloned, such as a huge urn, coffin, mud-filled cyst in the ground, or crystal container filled with salt water",
 					"cost": 100000,
 					"consume": true
 				}
@@ -5880,7 +5992,7 @@
 				}
 			],
 			"entries": [
-				"This spell grows an inert duplicate of a living, Medium creature as a safeguard against death. This clone forms inside a sealed vessel and grows to full size and maturity after 120 days; you can also choose to have the clone be a younger version of the same creature. It remains inert and endures indefinitely, as long as its vessel remains undisturbed.",
+				"This spell grows an inert duplicate of a living creature as a safeguard against death. This clone forms inside the vessel used in the spell's casting and grows to full size and maturity after 120 days; you can also choose to have the clone be a younger version of the same creature. It remains inert and endures indefinitely, as long as its vessel remains undisturbed.",
 				"At any time after the clone matures, if the original creature dies, its soul transfers to the clone, provided that the soul is free and willing to return. The clone is physically identical to the original and has the same personality, memories, and abilities, but none of the original's equipment. The original creature's physical remains, if they still exist, become inert and can't thereafter be restored to life, since the creature's soul is elsewhere."
 			],
 			"miscTags": [
@@ -6137,6 +6249,16 @@
 							"name": "Land",
 							"source": "PHB"
 						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
+						}
 					}
 				]
 			},
@@ -6231,6 +6353,7 @@
 			"source": "PHB",
 			"page": 223,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -6311,6 +6434,21 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"SGT"
@@ -6460,6 +6598,7 @@
 			"source": "PHB",
 			"page": 223,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "D",
 			"time": [
@@ -6494,7 +6633,7 @@
 			"entries": [
 				"You contact your deity or a divine proxy and ask up to three questions that can be answered with a yes or no. You must ask your questions before the spell ends. You receive a correct answer for each question.",
 				"Divine beings aren't necessarily omniscient, so you might receive \"unclear\" as an answer if a question pertains to information that lies beyond the deity's knowledge. In a case where a one-word answer could be misleading or contrary to the deity's interests, the DM might offer a short phrase as an answer instead.",
-				"If you cast the spell two or more times before finishing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get no answer. The DM makes this roll in secret."
+				"If you cast the spell two or more times before finishing your next long rest, there is a cumulative {@chance 25|||No answer!|Answer} chance for each casting after the first that you get no answer. The DM makes this roll in secret."
 			],
 			"classes": {
 				"fromClassList": [
@@ -6815,6 +6954,7 @@
 			"source": "PHB",
 			"page": 224,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -7026,6 +7166,7 @@
 			"source": "PHB",
 			"page": 224,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -7194,7 +7335,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Marid"
 						}
 					},
 					{
@@ -7204,7 +7346,8 @@
 						},
 						"subclass": {
 							"name": "Genie (UA)",
-							"source": "UA2020SubclassesRevisited"
+							"source": "UA2020SubclassesRevisited",
+							"subSubclass": "Marid"
 						}
 					},
 					{
@@ -7272,7 +7415,7 @@
 				"An affected target can't take reactions and must roll a {@dice d10} at the start of each of its turns to determine its behavior for that turn.",
 				{
 					"type": "table",
-					"caption": "Confusion Behaviour",
+					"caption": "Confusion Behavior",
 					"colLabels": [
 						"{@dice d10}",
 						"Behavior"
@@ -7336,6 +7479,9 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"miscTags": [
+				"RO"
 			],
 			"areaTags": [
 				"S"
@@ -8521,7 +8667,7 @@
 					"name": "Flood",
 					"entries": [
 						"You cause the water level of all standing water in the area to rise by as much as 20 feet. If the area includes a shore, the flooding water spills over onto dry land.",
-						"If you choose an area in a large body of water, you instead create a 20-foot tall wave that travels from one side of the area to the other and then crashes down. Any Huge or smaller vehicles in the wave's path are carried with it to the other side. Any Huge or smaller vehicles struck by the wave have a 25 percent chance of capsizing.",
+						"If you choose an area in a large body of water, you instead create a 20-foot tall wave that travels from one side of the area to the other and then crashes down. Any Huge or smaller vehicles in the wave's path are carried with it to the other side. Any Huge or smaller vehicles struck by the wave have a {@chance 25|||Capsizes!|No effect} chance of capsizing.",
 						"The water level remains elevated until the spell ends or you choose a different effect. If this effect produced a wave, the wave repeats on the start of your next turn while the flood effect lasts."
 					]
 				},
@@ -8649,7 +8795,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Marid"
 						}
 					},
 					{
@@ -8659,7 +8806,8 @@
 						},
 						"subclass": {
 							"name": "Genie (UA)",
-							"source": "UA2020SubclassesRevisited"
+							"source": "UA2020SubclassesRevisited",
+							"subSubclass": "Marid"
 						}
 					}
 				]
@@ -8905,6 +9053,7 @@
 			"source": "PHB",
 			"page": 228,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -9302,6 +9451,9 @@
 					]
 				}
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"miscTags": [
 				"PRM",
 				"SMN"
@@ -9532,6 +9684,9 @@
 			"savingThrow": [
 				"wisdom"
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -9668,6 +9823,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -9702,6 +9858,20 @@
 						"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by {@scaledice 1d8|1-9|1d8} for each slot level above 1st."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL"
@@ -9817,6 +9987,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -9850,6 +10021,9 @@
 			"entries": [
 				"You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius.",
 				"As a bonus action on your turn, you can move the lights up to 60 feet to a new spot within range. A light must be within 20 feet of another light created by this spell, and a light winks out if it exceeds the spell's range."
+			],
+			"miscTags": [
+				"LGT"
 			],
 			"classes": {
 				"fromClassList": [
@@ -9907,6 +10081,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -10220,6 +10395,9 @@
 				"If you chose a point on an object you are holding or one that isn't being worn or carried, the light shines from the object and moves with it. Completely covering the affected object with an opaque object, such as a bowl or a helm, blocks the light.",
 				"If any of this spell's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled."
 			],
+			"miscTags": [
+				"LGT"
+			],
 			"areaTags": [
 				"S"
 			],
@@ -10322,6 +10500,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -10462,6 +10641,16 @@
 							"name": "Undead (UA)",
 							"source": "UA2020SubclassesPt4"
 						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
+						}
 					}
 				],
 				"fromClassListVariant": [
@@ -10496,6 +10685,7 @@
 			"source": "PHB",
 			"page": 230,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -10767,6 +10957,14 @@
 				"For the duration, you know if there is an aberration, celestial, elemental, fey, fiend, or undead within 30 feet of you, as well as where the creature is located. Similarly, you know if there is a place or object within 30 feet of you that has been magically consecrated or desecrated.",
 				"The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt."
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -10815,6 +11013,7 @@
 			"source": "PHB",
 			"page": 231,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -10847,7 +11046,7 @@
 				"ritual": true
 			},
 			"entries": [
-				"For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.",
+				"For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its {@book school of magic|PHB|10|The Schools of Magic}, if any.",
 				"The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt."
 			],
 			"classes": {
@@ -11153,6 +11352,7 @@
 			"source": "PHB",
 			"page": 233,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -11285,6 +11485,7 @@
 			"source": "PHB",
 			"page": 233,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -11447,6 +11648,12 @@
 					"source": "ERLW",
 					"baseName": "Elf",
 					"baseSource": "PHB"
+				},
+				{
+					"name": "Hexblood",
+					"source": "VRGR",
+					"baseName": "Hexblood",
+					"baseSource": "PHB"
 				}
 			],
 			"backgrounds": [
@@ -11467,6 +11674,7 @@
 			"source": "PHB",
 			"page": 233,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "T",
 			"time": [
@@ -11590,6 +11798,13 @@
 			"savingThrow": [
 				"charisma"
 			],
+			"affectsCreatureType": [
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
+			],
 			"areaTags": [
 				"ST"
 			],
@@ -11611,6 +11826,7 @@
 			"source": "PHB",
 			"page": 234,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -11893,6 +12109,7 @@
 			"source": "PHB",
 			"page": 234,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "D",
 			"time": [
@@ -11927,7 +12144,7 @@
 			"entries": [
 				"Your magic and an offering put you in contact with a god or a god's servants. You ask a single question concerning a specific goal, event, or activity to occur within 7 days. The DM offers a truthful reply. The reply might be a short phrase, a cryptic rhyme, or an omen.",
 				"The spell doesn't take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion.",
-				"If you cast the spell two or more times before finishing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a random reading. The DM makes this roll in secret."
+				"If you cast the spell two or more times before finishing your next long rest, there is a cumulative {@chance 25|||Random reading!|Regular reading} chance for each casting after the first that you get a random reading. The DM makes this roll in secret."
 			],
 			"classes": {
 				"fromClassList": [
@@ -12213,6 +12430,9 @@
 			"savingThrow": [
 				"wisdom"
 			],
+			"affectsCreatureType": [
+				"beast"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -12335,6 +12555,7 @@
 			"source": "PHB",
 			"page": 235,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "E",
 			"time": [
@@ -12417,6 +12638,7 @@
 			"source": "PHB",
 			"page": 235,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "E",
 			"time": [
@@ -12466,6 +12688,9 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"SGT"
@@ -12680,6 +12905,7 @@
 			"source": "PHB",
 			"page": 236,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "I",
 			"time": [
@@ -12839,6 +13065,24 @@
 					}
 				]
 			},
+			"races": [
+				{
+					"name": "Halfling (Lotusden)",
+					"source": "EGW",
+					"baseName": "Halfling",
+					"baseSource": "PHB"
+				},
+				{
+					"name": "Fairy",
+					"source": "WBtW"
+				},
+				{
+					"name": "Halfling (Lotusden)",
+					"source": "EGW",
+					"baseName": "Halfling",
+					"baseSource": "PHB"
+				}
+			],
 			"backgrounds": [
 				{
 					"name": "Selesnya Initiate",
@@ -12855,6 +13099,7 @@
 			"source": "PHB",
 			"page": 236,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "V",
 			"time": [
@@ -12887,7 +13132,7 @@
 			],
 			"entries": [
 				"You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point and shakes creatures and structures in contact with the ground in that area.",
-				"The ground in the area becomes difficult terrain. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature's concentration is broken.",
+				"The ground in the area becomes {@quickref difficult terrain||3}. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature's concentration is broken.",
 				"When you cast this spell and at the end of each turn you spend concentrating on it, each creature on the ground in the area must make a Dexterity saving throw. On a failed save, the creature is knocked {@condition prone}.",
 				"This spell can have additional effects depending on the terrain in the area, as determined by the DM.",
 				{
@@ -13508,6 +13753,10 @@
 					"source": "MTF",
 					"baseName": "Dwarf",
 					"baseSource": "PHB"
+				},
+				{
+					"name": "Fairy",
+					"source": "WBtW"
 				}
 			],
 			"backgrounds": [
@@ -13635,7 +13884,7 @@
 				}
 			],
 			"entries": [
-				"Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain.",
+				"Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into {@quickref difficult terrain||3}.",
 				"A creature in the area when you cast the spell must succeed on a Strength saving throw or be {@condition restrained} by the entangling plants until the spell ends. A creature {@condition restrained} by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself.",
 				"When the spell ends, the conjured plants wilt away."
 			],
@@ -13704,6 +13953,14 @@
 					}
 				]
 			},
+			"races": [
+				{
+					"name": "Halfling (Lotusden)",
+					"source": "EGW",
+					"baseName": "Halfling",
+					"baseSource": "PHB"
+				}
+			],
 			"backgrounds": [
 				{
 					"name": "Golgari Agent",
@@ -13814,6 +14071,7 @@
 			"source": "PHB",
 			"page": 238,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "T",
 			"time": [
@@ -13937,7 +14195,7 @@
 				}
 			],
 			"entries": [
-				"Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration, these tentacles turn the ground in the area into difficult terrain.",
+				"Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration, these tentacles turn the ground in the area into {@quickref difficult terrain||3}.",
 				"When a creature enters the affected area for the first time on a turn or starts its turn there, the creature must succeed on a Dexterity saving throw or take {@damage 3d6} bludgeoning damage and be {@condition restrained} by the tentacles until the spell ends. A creature that starts its turn in the area and is already {@condition restrained} by the tentacles takes {@damage 3d6} bludgeoning damage.",
 				"A creature {@condition restrained} by the tentacles can use its action to make a Strength or Dexterity check (its choice) against your spell save DC. On a success, it frees itself."
 			],
@@ -14307,6 +14565,7 @@
 			"source": "PHB",
 			"page": 239,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -14341,6 +14600,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"LGT"
 			],
 			"areaTags": [
 				"C"
@@ -14481,6 +14743,10 @@
 					"source": "ERLW",
 					"baseName": "Human",
 					"baseSource": "PHB"
+				},
+				{
+					"name": "Fairy",
+					"source": "WBtW"
 				}
 			]
 		},
@@ -14614,6 +14880,16 @@
 						"subclass": {
 							"name": "Undead (UA)",
 							"source": "UA2020SubclassesPt4"
+						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
 						}
 					}
 				]
@@ -15060,9 +15336,8 @@
 				"You gain the service of a familiar, a spirit that takes an animal form you choose: {@creature bat}, {@creature cat}, {@creature crab}, {@creature frog} (toad), {@creature hawk}, {@creature lizard}, {@creature octopus}, {@creature owl}, {@creature poisonous snake}, fish ({@creature quipper}), {@creature rat}, {@creature raven}, {@creature sea horse}, {@creature spider}, or {@creature weasel}. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a celestial, fey, or fiend (your choice) instead of a beast.",
 				"{@note Additional {@filter animal form choices|bestiary|Miscellaneous=Familiar} may be available at the DM's discretion.}",
 				"Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. A familiar can't attack, but it can take other actions as normal.",
-				"When the familiar drops to 0 hit points, it disappears, leaving behind no physical form. It reappears after you cast this spell again.",
+				"When the familiar drops to 0 hit points, it disappears, leaving behind no physical form. It reappears after you cast this spell again. As an action, you can temporarily dismiss the familiar to a pocket dimension. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you. Whenever the familiar drops to 0 hit points or disappears into the pocket dimension, it leaves behind in its space anything it was wearing or carrying.",
 				"While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as an action, you can see through your familiar's eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses that the familiar has. During this time, you are {@condition deafened||deaf} and {@condition blinded||blind} with regard to your own senses.",
-				"As an action, you can temporarily dismiss your familiar. It disappears into a pocket dimension where it awaits your summons. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you.",
 				"You can't have more than one familiar at a time. If you cast this spell while you already have a familiar, you instead cause it to adopt a new form. Choose one of the forms from the above list. Your familiar transforms into the chosen creature.",
 				"Finally, when you cast a spell with a range of touch, your familiar can deliver the spell as if it had cast the spell. Your familiar must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an attack roll, you use your attack modifier for the roll."
 			],
@@ -15117,6 +15392,7 @@
 				"You can't have more than one steed bonded by this spell at a time. As an action, you can release the steed from its bond at any time, causing it to disappear."
 			],
 			"miscTags": [
+				"PRM",
 				"SMN"
 			],
 			"classes": {
@@ -15133,6 +15409,7 @@
 			"source": "PHB",
 			"page": 240,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "D",
 			"time": [
@@ -15261,6 +15538,7 @@
 			"source": "PHB",
 			"page": 241,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "N",
 			"time": [
@@ -15325,6 +15603,7 @@
 			"source": "PHB",
 			"page": 242,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -15476,6 +15755,9 @@
 				"cold",
 				"fire"
 			],
+			"miscTags": [
+				"LGT"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -15572,7 +15854,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Efreeti"
 						}
 					},
 					{
@@ -15625,6 +15908,7 @@
 			"source": "PHB",
 			"page": 242,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -15684,6 +15968,7 @@
 			"source": "PHB",
 			"page": 241,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -15821,7 +16106,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Efreeti"
 						}
 					},
 					{
@@ -15908,6 +16194,9 @@
 			"spellAttack": [
 				"M"
 			],
+			"miscTags": [
+				"LGT"
+			],
 			"areaTags": [
 				"ST"
 			],
@@ -15945,6 +16234,7 @@
 			"source": "PHB",
 			"page": 242,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -16118,7 +16408,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Efreeti"
 						}
 					},
 					{
@@ -16162,6 +16453,7 @@
 			"source": "PHB",
 			"page": 242,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "C",
 			"time": [
@@ -16211,6 +16503,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"LGT"
 			],
 			"areaTags": [
 				"S"
@@ -16414,6 +16709,7 @@
 			"source": "PHB",
 			"page": 243,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -16627,7 +16923,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Marid"
 						}
 					},
 					{
@@ -16679,7 +16976,8 @@
 				"s": true,
 				"m": {
 					"text": "a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp",
-					"cost": 100000
+					"cost": 100000,
+					"consume": "optional"
 				}
 			},
 			"duration": [
@@ -16703,6 +17001,13 @@
 			"damageInflict": [
 				"necrotic",
 				"radiant"
+			],
+			"affectsCreatureType": [
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
 			],
 			"miscTags": [
 				"PRM"
@@ -16789,6 +17094,7 @@
 			"source": "PHB",
 			"page": 244,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "D",
 			"time": [
@@ -16857,6 +17163,7 @@
 			"source": "PHB",
 			"page": 244,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -16886,8 +17193,12 @@
 				}
 			],
 			"entries": [
-				"You touch a willing creature. For the duration, the target's movement is unaffected by difficult terrain, and spells and other magical effects can neither reduce the target's speed nor cause the target to be {@condition paralyzed} or {@condition restrained}.",
+				"You touch a willing creature. For the duration, the target's movement is unaffected by {@quickref difficult terrain||3}, and spells and other magical effects can neither reduce the target's speed nor cause the target to be {@condition paralyzed} or {@condition restrained}.",
 				"The target can also spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature that has it {@condition grappled}. Finally, being underwater imposes no penalties on the target's movement or attacks."
+			],
+			"conditionImmune": [
+				"paralyzed",
+				"restrained"
 			],
 			"areaTags": [
 				"ST"
@@ -17390,6 +17701,7 @@
 			"source": "PHB",
 			"page": 244,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "C",
 			"time": [
@@ -17827,6 +18139,7 @@
 			"source": "PHB",
 			"page": 245,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "A",
 			"time": [
@@ -17845,7 +18158,10 @@
 			"components": {
 				"v": true,
 				"s": true,
-				"m": "a glass or crystal bead that shatters when the spell ends"
+				"m": {
+					"text": "a glass or crystal bead that shatters when the spell ends",
+					"consume": true
+				}
 			},
 			"duration": [
 				{
@@ -18214,7 +18530,7 @@
 				}
 			],
 			"entries": [
-				"Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration.",
+				"Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into {@quickref difficult terrain||3} for the duration.",
 				"When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall {@condition prone}. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall {@condition prone}."
 			],
 			"conditionInflict": [
@@ -18260,6 +18576,7 @@
 			"source": "PHB",
 			"page": 246,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "I",
 			"time": [
@@ -18462,7 +18779,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Djinni"
 						}
 					},
 					{
@@ -18472,7 +18790,18 @@
 						},
 						"subclass": {
 							"name": "Genie (UA)",
-							"source": "UA2020SubclassesRevisited"
+							"source": "UA2020SubclassesRevisited",
+							"subSubclass": "Djinni"
+						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
 						}
 					}
 				]
@@ -18491,6 +18820,7 @@
 			"source": "PHB",
 			"page": 246,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "A",
 			"time": [
@@ -18646,6 +18976,7 @@
 			"source": "PHB",
 			"page": 246,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "C",
 			"time": [
@@ -18840,7 +19171,7 @@
 					"type": "entries",
 					"name": "Corridors",
 					"entries": [
-						"Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you will believe it is going in the opposite direction from the one it chooses."
+						"Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a {@chance 50|||Disoriented!|No effect} chance that a creature other than you will believe it is going in the opposite direction from the one it chooses."
 					]
 				},
 				{
@@ -18901,6 +19232,7 @@
 			"source": "PHB",
 			"page": 248,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "D",
 			"time": [
@@ -18953,6 +19285,38 @@
 						"name": "Artificer",
 						"source": "TCE"
 					}
+				],
+				"fromSubclass": [
+					{
+						"class": {
+							"name": "Bard",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Spirits (UA)",
+							"source": "UA2020SubclassesPt4"
+						}
+					},
+					{
+						"class": {
+							"name": "Bard",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Spirits",
+							"source": "VRGR"
+						}
+					},
+					{
+						"class": {
+							"name": "Druid",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Stars",
+							"source": "TCE"
+						}
+					}
 				]
 			},
 			"backgrounds": [
@@ -18967,6 +19331,7 @@
 			"source": "PHB",
 			"page": 248,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -19063,6 +19428,16 @@
 							"name": "Heroism (UA)",
 							"source": "UABardAndPaladin"
 						}
+					},
+					{
+						"class": {
+							"name": "Druid",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Stars",
+							"source": "TCE"
+						}
 					}
 				]
 			},
@@ -19111,7 +19486,7 @@
 			"entries": [
 				"A line of strong wind 60 feet long and 10 feet wide blasts from you in a direction you choose for the spell's duration. Each creature that starts its turn in the line must succeed on a Strength saving throw or be pushed 15 feet away from you in a direction following the line.",
 				"Any creature in the line must spend 2 feet of movement for every 1 foot it moves when moving closer to you.",
-				"The gust disperses gas or vapor, and it extinguishes candles, torches, and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a 50 percent chance to extinguish them.",
+				"The gust disperses gas or vapor, and it extinguishes candles, torches, and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a {@chance 50|||Extinguished!|No effect} chance to extinguish them.",
 				"As a bonus action on each of your turns before the spell ends, you can change the direction in which the line blasts from you."
 			],
 			"savingThrow": [
@@ -19208,7 +19583,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Djinni"
 						}
 					},
 					{
@@ -19218,7 +19594,8 @@
 						},
 						"subclass": {
 							"name": "Genie (UA)",
-							"source": "UA2020SubclassesRevisited"
+							"source": "UA2020SubclassesRevisited",
+							"subSubclass": "Djinni"
 						}
 					},
 					{
@@ -19597,6 +19974,7 @@
 			"source": "PHB",
 			"page": 249,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "N",
 			"time": [
@@ -19830,6 +20208,7 @@
 			"source": "PHB",
 			"page": 250,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "V",
 			"time": [
@@ -19866,6 +20245,20 @@
 					]
 				}
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"miscTags": [
 				"HL",
 				"SGT"
@@ -19891,6 +20284,7 @@
 			"source": "PHB",
 			"page": 250,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -19925,6 +20319,20 @@
 						"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by {@scaledice 1d4|1-9|1d4} for each slot level above 1st."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL",
@@ -20147,6 +20555,9 @@
 			"savingThrow": [
 				"dexterity"
 			],
+			"miscTags": [
+				"SGT"
+			],
 			"areaTags": [
 				"ST"
 			],
@@ -20208,6 +20619,7 @@
 			"source": "PHB",
 			"page": 250,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "C",
 			"time": [
@@ -20243,6 +20655,9 @@
 			],
 			"damageImmune": [
 				"poison"
+			],
+			"conditionImmune": [
+				"frightened"
 			],
 			"areaTags": [
 				"MT"
@@ -20316,6 +20731,9 @@
 						"When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
 					]
 				}
+			],
+			"conditionImmune": [
+				"frightened"
 			],
 			"miscTags": [
 				"THP"
@@ -20506,6 +20924,12 @@
 					"source": "PSZ",
 					"baseName": "Elf (Zendikar)",
 					"baseSource": "PSZ"
+				},
+				{
+					"name": "Hexblood",
+					"source": "VRGR",
+					"baseName": "Hexblood",
+					"baseSource": "PHB"
 				}
 			],
 			"eldritchInvocations": [
@@ -20567,6 +20991,21 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"SGT"
@@ -20698,6 +21137,7 @@
 			"source": "PHB",
 			"page": 251,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -20745,6 +21185,9 @@
 			],
 			"savingThrow": [
 				"wisdom"
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"SGT"
@@ -20916,6 +21359,7 @@
 			"source": "PHB",
 			"page": 251,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "A",
 			"time": [
@@ -20956,6 +21400,9 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"miscTags": [
+				"LGT"
 			],
 			"areaTags": [
 				"S"
@@ -21005,7 +21452,7 @@
 			],
 			"entries": [
 				"You open a gateway to the dark between the stars, a region infested with unknown horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered on a point within range and lasting for the duration. This void is filled with a cacophony of soft whispers and slurping noises that can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within the area are {@condition blinded}.",
-				"The void creates a warp in the fabric of space, and the area is difficult terrain. Any creature that starts its turn in the area takes {@damage 2d6} cold damage. Any creature that ends its turn in the area must succeed on a Dexterity saving throw or take {@damage 2d6} acid damage as milky, otherworldly tentacles rub against it."
+				"The void creates a warp in the fabric of space, and the area is {@quickref difficult terrain||3}. Any creature that starts its turn in the area takes {@damage 2d6} cold damage. Any creature that ends its turn in the area must succeed on a Dexterity saving throw or take {@damage 2d6} acid damage as milky, otherworldly tentacles rub against it."
 			],
 			"damageInflict": [
 				"acid",
@@ -21276,6 +21723,7 @@
 			"source": "PHB",
 			"page": 252,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "V",
 			"time": [
@@ -21303,7 +21751,7 @@
 			],
 			"entries": [
 				"A hail of rock-hard ice pounds to the ground in a 20-foot-radius, 40-foot-high cylinder centered on a point within range. Each creature in the cylinder must make a Dexterity saving throw. A creature takes {@damage 2d8} bludgeoning damage and {@damage 4d6} cold damage on a failed save, or half as much damage on a successful one.",
-				"Hailstones turn the storm's area of effect into difficult terrain until the end of your next turn."
+				"Hailstones turn the storm's area of effect into {@quickref difficult terrain||3} until the end of your next turn."
 			],
 			"entriesHigherLevel": [
 				{
@@ -21429,6 +21877,7 @@
 			"source": "PHB",
 			"page": 252,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "D",
 			"time": [
@@ -21608,6 +22057,7 @@
 			"source": "PHB",
 			"page": 252,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "A",
 			"time": [
@@ -21795,6 +22245,7 @@
 			"source": "PHB",
 			"page": 253,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "N",
 			"time": [
@@ -21906,7 +22357,7 @@
 				}
 			],
 			"entries": [
-				"Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range. The sphere spreads around corners. The sphere remains for the duration, and its area is lightly obscured. The sphere's area is difficult terrain.",
+				"Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you choose within range. The sphere spreads around corners. The sphere remains for the duration, and its area is lightly obscured. The sphere's area is {@quickref difficult terrain||3}.",
 				"When the area appears, each creature in it must make a Constitution saving throw. A creature takes {@damage 4d10} piercing damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there."
 			],
 			"entriesHigherLevel": [
@@ -22123,6 +22574,7 @@
 			"source": "PHB",
 			"page": 254,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -22428,6 +22880,7 @@
 			"source": "PHB",
 			"page": 254,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -22651,7 +23104,7 @@
 			"entries": [
 				"You hide a chest, and all its contents, on the Ethereal Plane. You must touch the chest and the miniature replica that serves as a material component for the spell. The chest can contain up to 12 cubic feet of nonliving material (3 feet by 2 feet by 2 feet).",
 				"While the chest remains on the Ethereal Plane, you can use an action and touch the replica to recall the chest. It appears in an unoccupied space on the ground within 5 feet of you. You can send the chest back to the Ethereal Plane by using an action and touching both the chest and the replica.",
-				"After 60 days, there is a cumulative 5 percent chance per day that the spell's effect ends. This effect ends if you cast this spell again, if the smaller replica chest is destroyed, or if you choose to end the spell as an action. If the spell ends and the larger chest is on the Ethereal Plane, it is irretrievably lost."
+				"After 60 days, there is a cumulative {@chance 5|||Effect ends!|Effect continues} chance per day that the spell's effect ends. This effect ends if you cast this spell again, if the smaller replica chest is destroyed, or if you choose to end the spell as an action. If the spell ends and the larger chest is on the Ethereal Plane, it is irretrievably lost."
 			],
 			"miscTags": [
 				"PRM"
@@ -22796,6 +23249,7 @@
 			"source": "PHB",
 			"page": 255,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -22931,6 +23385,7 @@
 			"source": "PHB",
 			"page": 255,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -23049,6 +23504,7 @@
 			"source": "PHB",
 			"page": 255,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -23082,6 +23538,9 @@
 			],
 			"savingThrow": [
 				"dexterity"
+			],
+			"miscTags": [
+				"LGT"
 			],
 			"classes": {
 				"fromClassList": [
@@ -23243,6 +23702,7 @@
 			"source": "PHB",
 			"page": 255,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -23411,6 +23871,10 @@
 			"entries": [
 				"Describe or name a specific kind of beast or plant. Concentrating on the voice of nature in your surroundings, you learn the direction and distance to the closest creature or plant of that kind within 5 miles, if any are present."
 			],
+			"affectsCreatureType": [
+				"beast",
+				"plant"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -23459,6 +23923,7 @@
 			"source": "PHB",
 			"page": 256,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "D",
 			"time": [
@@ -23823,6 +24288,7 @@
 			"source": "PHB",
 			"page": 256,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -23892,6 +24358,7 @@
 			"source": "PHB",
 			"page": 256,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "C",
 			"time": [
@@ -24135,6 +24602,13 @@
 			"savingThrow": [
 				"charisma"
 			],
+			"affectsCreatureType": [
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -24258,7 +24732,7 @@
 				}
 			],
 			"entries": [
-				"Your body falls into a catatonic state as your soul leaves it and enters the container you used for the spell's material component. While your soul inhabits the container, you are aware of your surroundings as if you were in the container's space. You can't move or use reactions. The only action you can take is to project your soul up to 100 feet out of the container, either returning to your living body (and ending the spell) or attempting to possess a humanoids body.",
+				"Your body falls into a catatonic state as your soul leaves it and enters the container you used for the spell's material component. While your soul inhabits the container, you are aware of your surroundings as if you were in the container's space. You can't move or use reactions. The only action you can take is to project your soul up to 100 feet out of the container, either returning to your living body (and ending the spell) or attempting to possess a humanoid's body.",
 				"You can attempt to possess any humanoid within 100 feet of you that you can see (creatures warded by a {@spell protection from evil and good} or {@spell magic circle} spell can't be possessed). The target must make a Charisma saving throw. On a failure, your soul moves into the target's body, and the target's soul becomes trapped in the container. On a success, the target resists your efforts to possess it, and you can't attempt to possess it again for 24 hours.",
 				"Once you possess a creature's body, you control it. Your game statistics are replaced by the statistics of the creature, though you retain your alignment and your Intelligence, Wisdom, and Charisma scores. You retain the benefit of your own class features. If the target has any class levels, you can't use any of its class features.",
 				"Meanwhile, the possessed creature's soul can perceive from the container using its own senses, but it can't move or take actions at all.",
@@ -24268,6 +24742,9 @@
 			],
 			"savingThrow": [
 				"charisma"
+			],
+			"affectsCreatureType": [
+				"humanoid"
 			],
 			"miscTags": [
 				"SGT"
@@ -24293,6 +24770,7 @@
 			"source": "PHB",
 			"page": 257,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -24480,6 +24958,7 @@
 			"source": "PHB",
 			"page": 257,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -24657,6 +25136,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "I",
 			"time": [
@@ -24741,6 +25221,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -24776,6 +25257,20 @@
 						"When you cast this spell using a spell slot of 6th level or higher, the healing increases by {@scaledice 3d8|5-9|1d8} for each slot level above 5th."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL"
@@ -24858,6 +25353,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "V",
 			"time": [
@@ -24885,6 +25381,20 @@
 			"entries": [
 				"A flood of healing energy flows from you into injured creatures around you. You restore up to 700 hit points, divided as you choose among any number of creatures that you can see within range. Creatures healed by this spell are also cured of all diseases and any effect making them {@condition blinded} or {@condition deafened}. This spell has no effect on undead or constructs."
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"miscTags": [
 				"HL",
 				"SGT"
@@ -24906,6 +25416,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "V",
 			"time": [
@@ -24940,6 +25451,20 @@
 						"When you cast this spell using a spell slot of 4th level or higher, the healing increases by {@scaledice 1d4|3-9|1d4} for each slot level above 3rd."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL",
@@ -25014,6 +25539,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "E",
 			"time": [
@@ -25092,6 +25618,7 @@
 			"source": "PHB",
 			"page": 258,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "C",
 			"time": [
@@ -25245,7 +25772,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Dao"
 						}
 					},
 					{
@@ -25559,6 +26087,7 @@
 			"source": "PHB",
 			"page": 259,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "V",
 			"time": [
@@ -25651,6 +26180,9 @@
 			"damageImmune": [
 				"psychic"
 			],
+			"conditionImmune": [
+				"charmed"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -25669,6 +26201,7 @@
 			"source": "PHB",
 			"page": 260,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "I",
 			"time": [
@@ -25827,7 +26360,7 @@
 			"entries": [
 				"You make terrain in an area up to 1 mile square look, sound, smell, and even feel like some other sort of terrain. The terrain's general shape remains the same, however. Open fields or a road could be made to resemble a swamp, hill, crevasse, or some other difficult or impassable terrain. A pond can be made to seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn gully like a wide and smooth road.",
 				"Similarly, you can alter the appearance of structures, or add them where none are present. The spell doesn't disguise, conceal, or add creatures.",
-				"The illusion includes audible, visual, tactile, and olfactory elements, so it can turn clear ground into difficult terrain (or vice versa) or otherwise impede movement through the area. Any piece of the illusory terrain (such as a rock or stick) that is removed from the spell's area disappears immediately.",
+				"The illusion includes audible, visual, tactile, and olfactory elements, so it can turn clear ground into {@quickref difficult terrain||3} (or vice versa) or otherwise impede movement through the area. Any piece of the illusory terrain (such as a rock or stick) that is removed from the spell's area disappears immediately.",
 				"Creatures with {@sense truesight} can see through the illusion to the terrain's true form; however, all other elements of the illusion remain, so while the creature is aware of the illusion's presence, the creature can still physically interact with the illusion."
 			],
 			"classes": {
@@ -26141,6 +26674,7 @@
 			"source": "PHB",
 			"page": 260,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "C",
 			"time": [
@@ -26514,6 +27048,9 @@
 			"savingThrow": [
 				"constitution"
 			],
+			"miscTags": [
+				"LGT"
+			],
 			"areaTags": [
 				"Y"
 			],
@@ -26682,7 +27219,7 @@
 			"entries": [
 				"You conjure an extradimensional dwelling in range that lasts for the duration. You choose where its one entrance is located. The entrance shimmers faintly and is 5 feet wide and 10 feet tall. You and any creature you designate when you cast the spell can enter the extradimensional dwelling as long as the portal remains open. You can open or close the portal if you are within 30 feet of it. While closed, the portal is invisible.",
 				"Beyond the portal is a magnificent foyer with numerous chambers beyond. The atmosphere is clean, fresh, and warm.",
-				"You can create any floor plan you like, but the space can't exceed 50 cubes, each cube being 10 feet on each side. The place is furnished and decorated as you choose. It contains sufficient food to serve a nine course banquet for up to 100 people. A staff of 100 near-transparent servants attends all who enter. You decide the visual appearance of these servants and their attire. They are completely obedient to your orders. Each servant can perform any task a normal human servant could perform, but they can't attack or take any action that would directly harm another creature. Thus the servants can fetch things, clean, mend, fold clothes, light fires, serve food, pour wine, and so on. The servants can go anywhere in the mansion but can't leave it. Furnishings and other objects created by this spell dissipate into smoke if removed from the mansion. When the spell ends, any creatures inside the extradimensional space are expelled into the open spaces nearest to the entrance."
+				"You can create any floor plan you like, but the space can't exceed 50 cubes, each cube being 10 feet on each side. The place is furnished and decorated as you choose. It contains sufficient food to serve a nine course banquet for up to 100 people. A staff of 100 near-transparent servants attends all who enter. You decide the visual appearance of these servants and their attire. They are completely obedient to your orders. Each servant can perform any task a normal human servant could perform, but they can't attack or take any action that would directly harm another creature. Thus the servants can fetch things, clean, mend, fold clothes, light fires, serve food, pour wine, and so on. The servants can go anywhere in the mansion but can't leave it. Furnishings and other objects created by this spell dissipate into smoke if removed from the mansion. When the spell ends, any creatures or objects left inside the extradimensional space are expelled into the open spaces nearest to the entrance."
 			],
 			"classes": {
 				"fromClassList": [
@@ -26796,6 +27333,7 @@
 			"source": "PHB",
 			"page": 262,
 			"srd": "Arcane Sword",
+			"basicRules": true,
 			"level": 7,
 			"school": "V",
 			"time": [
@@ -27333,6 +27871,7 @@
 			"source": "PHB",
 			"page": 264,
 			"srd": "Irresistible Dance",
+			"basicRules": true,
 			"level": 6,
 			"school": "E",
 			"time": [
@@ -27514,6 +28053,7 @@
 			"source": "PHB",
 			"page": 264,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "T",
 			"time": [
@@ -27672,6 +28212,20 @@
 			"abilityCheck": [
 				"intelligence"
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"miscTags": [
 				"SGT"
 			],
@@ -27749,6 +28303,16 @@
 						"subclass": {
 							"name": "Genie",
 							"source": "TCE"
+						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
 						}
 					}
 				]
@@ -27958,6 +28522,16 @@
 							"name": "Undead (UA)",
 							"source": "UA2020SubclassesPt4"
 						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
+						}
 					}
 				]
 			},
@@ -28072,6 +28646,12 @@
 			],
 			"savingThrow": [
 				"charisma"
+			],
+			"affectsCreatureType": [
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend"
 			],
 			"miscTags": [
 				"SMN"
@@ -28380,6 +28960,7 @@
 			"source": "PHB",
 			"page": 266,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "C",
 			"time": [
@@ -28601,6 +29182,20 @@
 			"entries": [
 				"A wave of healing energy washes over the creature you touch. The target regains all its hit points. If the creature is {@condition charmed}, {@condition frightened}, {@condition paralyzed}, or {@condition stunned}, the condition ends. If the creature is {@condition prone}, it can use its reaction to stand up. This spell has no effect on undead or constructs."
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"miscTags": [
 				"HL"
 			],
@@ -28638,6 +29233,7 @@
 			"source": "PHB",
 			"page": 266,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "E",
 			"time": [
@@ -28696,6 +29292,7 @@
 			"source": "PHB",
 			"page": 267,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "E",
 			"time": [
@@ -28761,6 +29358,7 @@
 			"source": "PHB",
 			"page": 267,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -28795,6 +29393,20 @@
 						"When you cast this spell using a spell slot of 3rd level or higher, the healing increases by {@scaledice 2d8|2-9|1d8} for each slot level above 2nd."
 					]
 				}
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL",
@@ -28837,6 +29449,7 @@
 			"source": "PHB",
 			"page": 267,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -29136,7 +29749,7 @@
 					"type": "entries",
 					"name": "Green",
 					"entries": [
-						"The creature takes {@damage 10d6} poison damage on a failed save, or half as much damage on a successful one. A passwall spell, or another spell of equal or greater level that can open a portal on a solid surface, destroys this layer."
+						"The creature takes {@damage 10d6} poison damage on a failed save, or half as much damage on a successful one. A {@spell passwall} spell, or another spell of equal or greater level that can open a portal on a solid surface, destroys this layer."
 					]
 				},
 				{
@@ -29151,7 +29764,7 @@
 					"name": "Indigo",
 					"entries": [
 						"On a failed save, the creature is {@condition restrained}. It must then make a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the spell ends. If it fails its save three times, it permanently turns to stone and is subjected to the {@condition petrified} condition. The successes and failures don't need to be consecutive; keep track of both until the creature collects three of a kind.",
-						"While this layer is in place, spells can't be cast through the wall. The layer is destroyed by bright light shed by a daylight spell or a similar spell of equal or higher level."
+						"While this layer is in place, spells can't be cast through the wall. The layer is destroyed by bright light shed by a {@spell daylight} spell or a similar spell of equal or higher level."
 					]
 				},
 				{
@@ -29261,6 +29874,7 @@
 				"R"
 			],
 			"miscTags": [
+				"LGT",
 				"SCL"
 			],
 			"areaTags": [
@@ -29430,6 +30044,7 @@
 			"source": "PHB",
 			"page": 270,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -29699,6 +30314,14 @@
 			"entries": [
 				"Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.",
 				"The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be {@condition charmed}, {@condition frightened}, or possessed by them. If the target is already {@condition charmed}, {@condition frightened}, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect."
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"celestial",
+				"elemental",
+				"fey",
+				"fiend",
+				"undead"
 			],
 			"areaTags": [
 				"ST"
@@ -30060,6 +30683,7 @@
 			"source": "PHB",
 			"page": 270,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "N",
 			"time": [
@@ -30093,6 +30717,21 @@
 				"This spell also neutralizes any poisons and cures nonmagical diseases that affected the creature at the time it died. This spell doesn't, however, remove magical diseases, curses, or similar effects; if these aren't first removed prior to casting the spell, they take effect when the creature returns to life. The spell can't return an undead creature to life.",
 				"This spell closes all mortal wounds, but it doesn't restore missing body parts. If the creature is lacking body parts or organs integral for its survival\u2014its head, for instance\u2014the spell automatically fails.",
 				"Coming back from the dead is an ordeal. The target takes a \u22124 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears."
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"miscTags": [
 				"HL"
@@ -30420,6 +31059,7 @@
 			"source": "PHB",
 			"page": 271,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -30662,6 +31302,7 @@
 			"source": "PHB",
 			"page": 271,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "T",
 			"time": [
@@ -30912,8 +31553,12 @@
 				},
 				"The reincarnated creature recalls its former life and experiences. It retains the capabilities it had in its original form, except it exchanges its original race for the new one and changes its racial traits accordingly."
 			],
+			"affectsCreatureType": [
+				"humanoid"
+			],
 			"miscTags": [
-				"HL"
+				"HL",
+				"RO"
 			],
 			"classes": {
 				"fromClassList": [
@@ -30929,6 +31574,7 @@
 			"source": "PHB",
 			"page": 271,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "A",
 			"time": [
@@ -30984,6 +31630,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "A",
 			"time": [
@@ -31058,6 +31705,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "N",
 			"time": [
@@ -31092,6 +31740,9 @@
 				"This spell closes all mortal wounds and restores any missing body parts.",
 				"Coming back from the dead is an ordeal. The target takes a \u22124 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.",
 				"Casting this spell to restore life to a creature that has been dead for one year or longer taxes you greatly. Until you finish a long rest, you can't cast spells again, and you have disadvantage on all attack rolls, ability checks, and saving throws."
+			],
+			"affectsCreatureType": [
+				"undead"
 			],
 			"miscTags": [
 				"HL"
@@ -31177,6 +31828,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "N",
 			"time": [
@@ -31436,6 +32088,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -31528,6 +32181,7 @@
 			"source": "PHB",
 			"page": 272,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -31645,7 +32299,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Dao"
 						}
 					},
 					{
@@ -31655,7 +32310,8 @@
 						},
 						"subclass": {
 							"name": "Genie (UA)",
-							"source": "UA2020SubclassesRevisited"
+							"source": "UA2020SubclassesRevisited",
+							"subSubclass": "Dao"
 						}
 					},
 					{
@@ -31813,7 +32469,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Efreeti"
 						}
 					},
 					{
@@ -31943,9 +32600,6 @@
 			],
 			"savingThrow": [
 				"wisdom"
-			],
-			"miscTags": [
-				"SGT"
 			],
 			"classes": {
 				"fromClassList": [
@@ -32224,7 +32878,7 @@
 			"components": {
 				"v": true,
 				"s": true,
-				"m": "a pinch of Talc and a small sprinkling of powdered silver"
+				"m": "a pinch of talc and a small sprinkling of powdered silver"
 			},
 			"duration": [
 				{
@@ -32237,9 +32891,6 @@
 			],
 			"entries": [
 				"For the duration, you see {@condition invisible} creatures and objects as if they were visible, and you can see into the Ethereal Plane. Ethereal creatures and objects appear ghostly and translucent."
-			],
-			"miscTags": [
-				"SGT"
 			],
 			"classes": {
 				"fromClassList": [
@@ -32431,7 +33082,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Djinni"
 						}
 					},
 					{
@@ -32482,7 +33134,7 @@
 			],
 			"entries": [
 				"You send a short message of twenty-five words or less to a creature with which you are familiar. The creature hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately. The spell enables creatures with Intelligence scores of at least 1 to understand the meaning of your message.",
-				"You can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5 percent chance that the message doesn't arrive."
+				"You can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a {@chance 5|||Message lost!|Message arrives} chance that the message doesn't arrive."
 			],
 			"classes": {
 				"fromClassList": [
@@ -32678,6 +33330,20 @@
 				"When you transform, you choose whether your equipment falls to the ground, merges into the new form, or is worn by it. Worn equipment functions as normal. The DM determines whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change shape or size to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge into your new form. Equipment that merges has no effect in that state.",
 				"During this spell's duration, you can use your action to assume a different form following the same restrictions and rules for the original form, with one exception: if your new form has more hit points than your current one, your hit points remain at their current value."
 			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -32703,6 +33369,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -32864,6 +33531,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -32893,7 +33561,7 @@
 				}
 			],
 			"entries": [
-				"An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile."
+				"An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from {@spell magic missile}."
 			],
 			"miscTags": [
 				"MAC"
@@ -33018,6 +33686,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "A",
 			"time": [
@@ -33177,6 +33846,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "V",
 			"time": [
@@ -33270,6 +33940,7 @@
 			"source": "PHB",
 			"page": 275,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "I",
 			"time": [
@@ -33424,6 +34095,7 @@
 			"source": "PHB",
 			"page": 276,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "I",
 			"time": [
@@ -33535,6 +34207,10 @@
 				"If the simulacrum is damaged, you can repair it in an alchemical laboratory, using rare herbs and minerals worth 100 gp per hit point it regains. The simulacrum lasts until it drops to 0 hit points, at which point it reverts to snow and melts instantly.",
 				"If you cast this spell again, any currently active duplicates you created with this spell are instantly destroyed."
 			],
+			"affectsCreatureType": [
+				"beast",
+				"humanoid"
+			],
 			"areaTags": [
 				"ST"
 			],
@@ -33552,6 +34228,7 @@
 			"source": "PHB",
 			"page": 276,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "E",
 			"time": [
@@ -33597,6 +34274,22 @@
 			],
 			"conditionInflict": [
 				"unconscious"
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant",
+				"undead"
 			],
 			"areaTags": [
 				"S"
@@ -33731,7 +34424,7 @@
 			],
 			"entries": [
 				"Until the spell ends, freezing rain and sleet fall in a 20-foot-tall cylinder with a 40-foot radius centered on a point you choose within range. The area is heavily obscured, and exposed flames in the area are doused.",
-				"The ground in the area is covered with slick ice, making it difficult terrain. When a creature enters the spell's area for the first time on a turn or starts its turn there, it must make a Dexterity saving throw. On a failed save, it falls {@condition prone}.",
+				"The ground in the area is covered with slick ice, making it {@quickref difficult terrain||3}. When a creature enters the spell's area for the first time on a turn or starts its turn there, it must make a Dexterity saving throw. On a failed save, it falls {@condition prone}.",
 				"If a creature starts its turn in the spell's area and is concentrating on a spell, the creature must make a successful Constitution saving throw against your spell save DC or lose concentration."
 			],
 			"conditionInflict": [
@@ -33839,7 +34532,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Marid"
 						}
 					},
 					{
@@ -33849,7 +34543,8 @@
 						},
 						"subclass": {
 							"name": "Genie (UA)",
-							"source": "UA2020SubclassesRevisited"
+							"source": "UA2020SubclassesRevisited",
+							"subSubclass": "Marid"
 						}
 					}
 				]
@@ -34003,6 +34698,7 @@
 			"source": "PHB",
 			"page": 277,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "N",
 			"time": [
@@ -34028,6 +34724,20 @@
 			],
 			"entries": [
 				"You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs."
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"areaTags": [
 				"ST"
@@ -34129,6 +34839,9 @@
 			"entries": [
 				"You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within the past day. You might be able to persuade a beast to perform a small favor for you, at the DM's discretion."
 			],
+			"affectsCreatureType": [
+				"beast"
+			],
 			"classes": {
 				"fromClassList": [
 					{
@@ -34203,6 +34916,7 @@
 			"source": "PHB",
 			"page": 277,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "N",
 			"time": [
@@ -34235,6 +34949,21 @@
 			"entries": [
 				"You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days.",
 				"Until the spell ends, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, and the corpse is under no compulsion to offer a truthful answer if you are hostile to it or it recognizes you as an enemy. This spell doesn't return the creature's soul to its body, only its animating spirit. Thus, the corpse can't learn new information, doesn't comprehend anything that has happened since it died, and can't speculate about future events."
+			],
+			"affectsCreatureType": [
+				"aberration",
+				"beast",
+				"celestial",
+				"construct",
+				"dragon",
+				"elemental",
+				"fey",
+				"fiend",
+				"giant",
+				"humanoid",
+				"monstrosity",
+				"ooze",
+				"plant"
 			],
 			"classes": {
 				"fromClassList": [
@@ -34296,6 +35025,16 @@
 						"subclass": {
 							"name": "Undead (UA)",
 							"source": "UA2020SubclassesPt4"
+						}
+					},
+					{
+						"class": {
+							"name": "Warlock",
+							"source": "PHB"
+						},
+						"subclass": {
+							"name": "Undead",
+							"source": "VRGR"
 						}
 					}
 				],
@@ -34360,7 +35099,7 @@
 			],
 			"entries": [
 				"You imbue plants within 30 feet of you with limited sentience and animation, giving them the ability to communicate with you and follow your simple commands. You can question plants about events in the spell's area within the past day, gaining information about creatures that have passed, weather, and other circumstances.",
-				"You can also turn difficult terrain caused by plant growth (such as thickets and undergrowth) into ordinary terrain that lasts for the duration. Or you can turn ordinary terrain where plants are present into difficult terrain that lasts for the duration, causing vines and branches to hinder pursuers, for example.",
+				"You can also turn {@quickref difficult terrain||3} caused by plant growth (such as thickets and undergrowth) into ordinary terrain that lasts for the duration. Or you can turn ordinary terrain where plants are present into {@quickref difficult terrain||3} that lasts for the duration, causing vines and branches to hinder pursuers, for example.",
 				"Plants might be able to perform other tasks on your behalf, at the DM's discretion. The spell doesn't enable plants to uproot themselves and move about, but they can freely move branches, tendrils, and stalks.",
 				"If a plant creature is in the area, you can communicate with it as if you shared a common language, but you gain no magical ability to influence it.",
 				"This spell can cause the plants created by the {@spell entangle} spell to release a {@condition restrained} creature."
@@ -34407,6 +35146,7 @@
 			"source": "PHB",
 			"page": 277,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -34563,7 +35303,7 @@
 				}
 			],
 			"entries": [
-				"The ground in a 20-foot radius centered on a point within range twists and sprouts hard spikes and thorns. The area becomes difficult terrain for the duration. When a creature moves into or within the area, it takes {@damage 2d4} piercing damage for every 5 feet it travels.",
+				"The ground in a 20-foot radius centered on a point within range twists and sprouts hard spikes and thorns. The area becomes {@quickref difficult terrain||3} for the duration. When a creature moves into or within the area, it takes {@damage 2d4} piercing damage for every 5 feet it travels.",
 				"The transformation of the ground is camouflaged to look natural. Any creature that can't see the area at the time the spell is cast must make a Wisdom ({@skill Perception}) check against your spell save DC to recognize the terrain as hazardous before entering it."
 			],
 			"damageInflict": [
@@ -34658,7 +35398,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Dao"
 						}
 					},
 					{
@@ -34672,13 +35413,22 @@
 						}
 					}
 				]
-			}
+			},
+			"races": [
+				{
+					"name": "Halfling (Lotusden)",
+					"source": "EGW",
+					"baseName": "Halfling",
+					"baseSource": "PHB"
+				}
+			]
 		},
 		{
 			"name": "Spirit Guardians",
 			"source": "PHB",
 			"page": 278,
 			"srd": true,
+			"basicRules": true,
 			"level": 3,
 			"school": "C",
 			"time": [
@@ -34784,6 +35534,7 @@
 			"source": "PHB",
 			"page": 278,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "V",
 			"time": [
@@ -35224,7 +35975,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Dao"
 						}
 					},
 					{
@@ -35253,6 +36005,7 @@
 			"source": "PHB",
 			"page": 278,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "A",
 			"time": [
@@ -35500,7 +36253,7 @@
 					"type": "entries",
 					"name": "Round 5\u201310",
 					"entries": [
-						"Gusts and freezing rain assail the area under the cloud. The area becomes difficult terrain and is heavily obscured. Each creature there takes {@damage 1d6} cold damage. Ranged weapon attacks in the area are impossible. The wind and rain count as a severe distraction for the purposes of maintaining concentration on spells. Finally, gusts of strong wind (ranging from 20 to 50 miles per hour) automatically disperse fog, mists, and similar phenomena in the area, whether mundane or magical."
+						"Gusts and freezing rain assail the area under the cloud. The area becomes {@quickref difficult terrain||3} and is heavily obscured. Each creature there takes {@damage 1d6} cold damage. Ranged weapon attacks in the area are impossible. The wind and rain count as a severe distraction for the purposes of maintaining concentration on spells. Finally, gusts of strong wind (ranging from 20 to 50 miles per hour) automatically disperse fog, mists, and similar phenomena in the area, whether mundane or magical."
 					]
 				}
 			],
@@ -35538,6 +36291,7 @@
 			"source": "PHB",
 			"page": 279,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "E",
 			"time": [
@@ -35692,6 +36446,9 @@
 			"savingThrow": [
 				"constitution"
 			],
+			"miscTags": [
+				"LGTS"
+			],
 			"areaTags": [
 				"L"
 			],
@@ -35724,6 +36481,7 @@
 			"source": "PHB",
 			"page": 279,
 			"srd": true,
+			"basicRules": true,
 			"level": 8,
 			"school": "V",
 			"time": [
@@ -35953,6 +36711,9 @@
 			],
 			"abilityCheck": [
 				"intelligence"
+			],
+			"miscTags": [
+				"LGT"
 			],
 			"areaTags": [
 				"S"
@@ -36236,6 +36997,7 @@
 			"source": "PHB",
 			"page": 281,
 			"srd": true,
+			"basicRules": true,
 			"level": 7,
 			"school": "C",
 			"time": [
@@ -36370,8 +37132,12 @@
 				}
 			],
 			"miscTags": [
+				"RO",
 				"SGT",
 				"TP"
+			],
+			"areaTags": [
+				"MT"
 			],
 			"classes": {
 				"fromClassList": [
@@ -36604,6 +37370,7 @@
 			"source": "PHB",
 			"page": 282,
 			"srd": true,
+			"basicRules": true,
 			"level": 0,
 			"school": "T",
 			"time": [
@@ -36884,6 +37651,7 @@
 			"source": "PHB",
 			"page": 282,
 			"srd": true,
+			"basicRules": true,
 			"level": 1,
 			"school": "V",
 			"time": [
@@ -37052,7 +37820,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Djinni"
 						}
 					},
 					{
@@ -37062,7 +37831,8 @@
 						},
 						"subclass": {
 							"name": "Genie (UA)",
-							"source": "UA2020SubclassesRevisited"
+							"source": "UA2020SubclassesRevisited",
+							"subSubclass": "Djinni"
 						}
 					},
 					{
@@ -37104,6 +37874,7 @@
 			"source": "PHB",
 			"page": 283,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "T",
 			"time": [
@@ -37460,6 +38231,7 @@
 			"source": "PHB",
 			"page": 284,
 			"srd": true,
+			"basicRules": true,
 			"level": 9,
 			"school": "N",
 			"time": [
@@ -37517,6 +38289,7 @@
 			"source": "PHB",
 			"page": 284,
 			"srd": true,
+			"basicRules": true,
 			"level": 6,
 			"school": "D",
 			"time": [
@@ -37983,6 +38756,7 @@
 			"source": "PHB",
 			"page": 285,
 			"srd": true,
+			"basicRules": true,
 			"level": 4,
 			"school": "V",
 			"time": [
@@ -38374,6 +39148,7 @@
 			"source": "PHB",
 			"page": 287,
 			"srd": true,
+			"basicRules": true,
 			"level": 5,
 			"school": "V",
 			"time": [
@@ -38495,7 +39270,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Dao"
 						}
 					},
 					{
@@ -38505,7 +39281,8 @@
 						},
 						"subclass": {
 							"name": "Genie (UA)",
-							"source": "UA2020SubclassesRevisited"
+							"source": "UA2020SubclassesRevisited",
+							"subSubclass": "Dao"
 						}
 					},
 					{
@@ -38594,6 +39371,7 @@
 			"source": "PHB",
 			"page": 287,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "A",
 			"time": [
@@ -38984,6 +39762,7 @@
 			"source": "PHB",
 			"page": 287,
 			"srd": true,
+			"basicRules": true,
 			"level": 2,
 			"school": "C",
 			"time": [
@@ -39015,7 +39794,7 @@
 				}
 			],
 			"entries": [
-				"You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are difficult terrain and lightly obscure their area.",
+				"You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are {@quickref difficult terrain||3} and lightly obscure their area.",
 				"If the webs aren't anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the conjured web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.",
 				"Each creature that starts its turn in the webs or that enters them during its turn must make a Dexterity saving throw. On a failed save, the creature is {@condition restrained} as long as it remains in the webs or until it breaks free.",
 				"A creature {@condition restrained} by the webs can use its action to make a Strength check against your spell save DC. If it succeeds, it is no longer {@condition restrained}.",
@@ -39380,7 +40159,8 @@
 						},
 						"subclass": {
 							"name": "Genie",
-							"source": "TCE"
+							"source": "TCE",
+							"subSubclass": "Djinni"
 						}
 					},
 					{
@@ -39447,11 +40227,11 @@
 						"You allow up to twenty creatures that you can see to regain all hit points, and you end all effects on them described in the {@spell greater restoration} spell.",
 						"You grant up to ten creatures that you can see resistance to a damage type you choose.",
 						"You grant up to ten creatures you can see immunity to a single spell or other magical effect for 8 hours. For instance, you could make yourself and all your companions immune to a {@creature lich}'s life drain attack.",
-						"You undo a single recent event by forcing a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish spell could undo an opponent's successful save, a foe's critical hit, or a friend's failed save. You can force the reroll to be made with advantage or disadvantage, and you can choose whether to use the reroll or the original roll."
+						"You undo a single recent event by forcing a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a {@spell wish} spell could undo an opponent's successful save, a foe's critical hit, or a friend's failed save. You can force the reroll to be made with advantage or disadvantage, and you can choose whether to use the reroll or the original roll."
 					]
 				},
 				"You might be able to achieve something beyond the scope of the above examples. State your wish to the DM as precisely as possible. The DM has great latitude in ruling what occurs in such an instance; the greater the wish, the greater the likelihood that something goes wrong. This spell might simply fail, the effect you desire might only be partly achieved, or you might suffer some unforeseen consequence as a result of how you worded the wish. For example, wishing that a villain were dead might propel you forward in time to a period when that villain is no longer alive, effectively removing you from the game. Similarly, wishing for a legendary magic item or artifact might instantly transport you to the presence of the item's current owner.",
-				"The stress of casting this spell to produce any effect other than duplicating another spell weakens you. After enduring that stress, each time you cast a spell until you finish a long rest, you take {@damage 1d10} necrotic damage per level of that spell. This damage can't be reduced or prevented in any way. In addition, your Strength drops to 3, if it isn't 3 or lower already, for {@dice 2d4} days. For each of those days that you spend resting and doing nothing more than light activity, your remaining recovery time decreases by 2 days. Finally, there is a {@chance 33} chance that you are unable to cast wish ever again if you suffer this stress."
+				"The stress of casting this spell to produce any effect other than duplicating another spell weakens you. After enduring that stress, each time you cast a spell until you finish a long rest, you take {@damage 1d10} necrotic damage per level of that spell. This damage can't be reduced or prevented in any way. In addition, your Strength drops to 3, if it isn't 3 or lower already, for {@dice 2d4} days. For each of those days that you spend resting and doing nothing more than light activity, your remaining recovery time decreases by 2 days. Finally, there is a {@chance 33|||Unable to cast again!|Able to cast again} chance that you are unable to cast wish ever again if you suffer this stress."
 			],
 			"damageResist": [
 				"acid",

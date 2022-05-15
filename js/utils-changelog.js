@@ -1,6 +1,8 @@
 "use strict";
 
 class UtilsChangelog {
+	static _RELEASE_URL = "https://github.com/5etools-mirror-1/5etools-mirror-1.github.io/releases";
+
 	static renderChangelog (changelog, $wrp) {
 		let lastMajorVersion = 0;
 		let lastMinorVersion = 0;
@@ -31,12 +33,12 @@ class UtilsChangelog {
 
 						if (nxtDepth > depth) {
 							depth = nxtDepth;
-							htmlStack += `<ul><li>${cleanListLine(l)}</li>`;
+							htmlStack += `<ul><li>${cleanListLine(l).qq()}</li>`;
 						} else if (nxtDepth < depth) {
 							depth = nxtDepth;
-							htmlStack += `</ul><li>${cleanListLine(l)}</li>`;
+							htmlStack += `</ul><li>${cleanListLine(l).qq()}</li>`;
 						} else {
-							htmlStack += `<li>${cleanListLine(l)}</li>`;
+							htmlStack += `<li>${cleanListLine(l).qq()}</li>`;
 						}
 					} else {
 						while (ulStack.length) {
@@ -44,7 +46,7 @@ class UtilsChangelog {
 							htmlStack += "</ul>";
 						}
 						depth = -1;
-						htmlStack += `<div class="mb-1">${l}</div>`;
+						htmlStack += `<div class="mb-1">${l.qq()}</div>`;
 					}
 				});
 
@@ -61,9 +63,9 @@ class UtilsChangelog {
 			const isLast = i === changelog.length - 1;
 
 			const titlePart = it.title ? `, &quot;<span ${it.titleAlt ? `class="help" title="AKA &quot;${it.titleAlt.escapeQuotes()}&quot; Edition"` : ""}>${it.title.escapeQuotes()}</span>&quot; Edition` : "";
-			$wrp.prepend(`<div class="flex-col" id="v${it.ver}">
+			$wrp.prepend(`<div class="ve-flex-col" id="v${it.ver}">
 				<div class="split-v-center">
-					<h${hLevel} class="bold">v${isLast ? `<a href="https://get.5e.tools/">` : ""}${it.ver}${isLast ? `</a>` : ""}${titlePart}</h${hLevel}>
+					<h${hLevel} class="bold">v${isLast ? `<a href="${UtilsChangelog._RELEASE_URL}" rel="noopener noreferrer">` : ""}${it.ver}${isLast ? `</a>` : ""}${titlePart}</h${hLevel}>
 					<span class="text-muted">${it.date}</span>
 				</div>
 

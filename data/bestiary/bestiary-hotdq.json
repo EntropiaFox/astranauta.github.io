@@ -17,7 +17,9 @@
 			"name": "Ambush Drake",
 			"source": "HotDQ",
 			"page": 88,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "dragon",
 			"alignment": [
 				"U"
@@ -80,7 +82,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -97,6 +98,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -104,7 +106,9 @@
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 88,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -227,7 +231,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DR",
@@ -238,6 +241,13 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"C",
+				"F",
+				"L",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -246,6 +256,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -253,7 +264,9 @@
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 89,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "giant",
 				"tags": [
@@ -379,7 +392,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -394,6 +406,11 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"L",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW",
 				"I"
@@ -402,6 +419,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -409,7 +427,9 @@
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 89,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -493,7 +513,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -511,6 +530,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -523,7 +543,9 @@
 					"page": 89
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -602,7 +624,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -618,7 +639,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Dragonwing",
@@ -630,7 +652,9 @@
 					"page": 89
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -727,7 +751,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -743,14 +766,17 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Dralmorrer Borngray",
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 90,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -765,7 +791,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item studded leather armor|phb}",
+						"{@item studded leather armor|phb|studded leather}",
 						"{@item shield|phb}"
 					]
 				}
@@ -881,7 +907,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -903,6 +928,12 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -911,6 +942,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -918,7 +950,9 @@
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 90,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1022,7 +1056,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1034,6 +1067,11 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"R"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
@@ -1041,6 +1079,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1063,7 +1102,12 @@
 					"page": 90
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Guard Drake|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "dragon",
 			"alignment": [
 				"U"
@@ -1123,7 +1167,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/guard-drake.mp3"
@@ -1144,14 +1187,17 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Jamna Gleamsilver",
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 91,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1261,7 +1307,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1277,12 +1322,16 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"C"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1290,7 +1339,9 @@
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 91,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1384,12 +1435,12 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B",
 				"D"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -1407,6 +1458,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1458,7 +1510,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"P"
 			],
@@ -1466,7 +1517,8 @@
 				"MW",
 				"RCH",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Ontharr Frume",
@@ -1501,7 +1553,9 @@
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 91,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1516,7 +1570,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}",
+						"{@item studded leather armor|phb|studded leather}",
 						"{@item shield|phb}"
 					]
 				}
@@ -1638,7 +1692,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -1653,6 +1706,11 @@
 				"I",
 				"P"
 			],
+			"damageTagsSpell": [
+				"I",
+				"P",
+				"T"
+			],
 			"spellcastingTags": [
 				"CD"
 			],
@@ -1661,6 +1719,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1695,7 +1754,9 @@
 					"page": 91
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1834,7 +1895,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DR",
@@ -1845,12 +1905,23 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"O",
+				"T",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -1864,7 +1935,9 @@
 					"source": "RoT"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2006,7 +2079,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Legendary Resistances"
@@ -2014,6 +2086,9 @@
 			"senseTags": [
 				"B",
 				"SD"
+			],
+			"actionTags": [
+				"Breath Weapon"
 			],
 			"languageTags": [
 				"C",
@@ -2031,6 +2106,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -2057,7 +2133,9 @@
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 93,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2195,7 +2273,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -2212,6 +2289,11 @@
 				"C",
 				"P"
 			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"P"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
@@ -2225,6 +2307,7 @@
 				"deafened",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -2232,7 +2315,9 @@
 			"isNpc": true,
 			"source": "HotDQ",
 			"page": 63,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -2304,7 +2389,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Regeneration"
@@ -2325,6 +2409,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

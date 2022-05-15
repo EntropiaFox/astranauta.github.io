@@ -15,6 +15,7 @@
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/lootgen-bundle.css">
 
 	<!-- Favicons -->
 	<link rel="icon" type="image/svg+xml" href="favicon.svg?v=1.115">
@@ -46,174 +47,43 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
 	<script type="text/javascript" src="js/browsercheck.js"></script>
-
-	<style>
-		.loot__wrp-exact-level {
-			padding: 0;
-			border-left: 1px solid #ccc;
-		}
-
-		.night-mode .loot__wrp-exact-level {
-			border-color: #555;
-		}
-	</style>
 </head>
 
-<body id="lootgen">
-<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
+<body>
+<div class="cancer__wrp-sidebar-rhs cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
 
-<header class="hidden-xs hidden-sm page__header">
-	<div class="container">
-		<h1 class="page__title">Loot Generator</h1>
-		<p class="page__subtitle">Choose Challenge Rating, if it's a hoard or not, then Roll Loot!</p>
-	</div>
-</header>
+<div class="viewport-wrapper">
+	<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
 
-<nav class="container page__nav" id="navigation">
-	<ul class="nav page__nav-inner" id="navbar"></ul>
-</nav>
-
-<div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
-
-<main class="container">
-	<div class="row">
-		<div class="col-sm-5">
-			<div class="btn-group w-100 mb-2">
-				<span class="btn btn-default col-4" id="btn-lootgen">Find Treasure</span>
-				<span class="btn btn-default col-4" id="btn-loot-table">Loot Tables</span>
-				<span class="btn btn-default col-4" id="btn-random-magic-item">Party Loot</span>
-			</div>
-
-			<div id="container-lootgen" class="hidden">
-				<div id="controls">
-					<div class="input-group mb-2">
-						<span class="input-group-addon">Challenge Rating</span>
-						<select class="form-control clickable" id="cr">
-							<option value="0" selected>0&ndash;4</option>
-							<option value="5">5&ndash;10</option>
-							<option value="11">11&ndash;16</option>
-							<option value="17">17+</option>
-						</select>
-						<span class="input-group-addon" style="padding: 0;">
-							<label for="hoard" class="clickable" style="margin-bottom: 0; padding: 6px 12px; user-select: none;">
-								Hoard? <input type="checkbox" id="hoard" value="0" class="clickable" style="vertical-align: bottom;">
-							</label>
-						</span>
-					</div>
-
-					<button class="col-9 btn btn-default" id="genloot">Roll Loot!</button>
-					<button class="col-2-9 btn btn-default pull-right id-clear">Clear</button>
-					<p>
-						<small>Based on the tables and rules in the
-							<a href="book.html#DMG,7,treasure%20tables,0"><em>Dungeon Master's Guide</em>, pages 133-149.</a>
-						</small>
-					</p>
-				</div>
-			</div>
-
-			<div id="container-loot-table" class="hidden">
-				<div class="btn-group w-100 mb-2">
-					<span class="btn btn-default col-6" id="btn-dmg-loot-table">DMG Tables</span>
-					<span class="btn btn-default col-6" id="btn-xge-loot-table">XGE Rules</span>
-				</div>
-
-				<div id="container-dmg-loot-table">
-					<div class="input-group w-100 mb-2">
-						<span class="input-group-addon">Select Table </span>
-						<select class="form-control clickable" id="table-sel">
-							<option value="" selected>View individual tables...</option>
-						</select>
-						<span class="input-group-addon" style="padding: 0;">
-							<label class="clickable" style="margin-bottom: 0; padding: 6px 12px; user-select: none;">
-								Show Table <input checked type="checkbox" class="id-showLootTable clickable" style="vertical-align: bottom;">
-							</label>
-						</span>
-					</div>
-					<button class="col-9 btn btn-default" id="rollAgaintTable">Roll Loot!</button>
-					<button class="col-2-9 btn btn-default pull-right id-clear">Clear</button>
-					<small>Based on the tables and rules in the
-						<a href="book.html#DMG,7,random%20treasure"><em>Dungeon Master's Guide</em>, pages 133-149.</a>
-					</small>
-				</div>
-
-				<div id="container-xge-loot-table">
-					<div class="input-group mb-2">
-						<span class="input-group-addon">Select Category</span>
-						<select class="form-control clickable" id="random-from-loot-table">
-							<option value="" selected>View Loot Category...</option>
-						</select>
-						<span class="input-group-addon" style="padding: 0;">
-							<label class="clickable" style="margin-bottom: 0; padding: 6px 12px; user-select: none;">
-								Show Table <input checked type="checkbox" class="id-showLootTable clickable" style="vertical-align: bottom;">
-							</label>
-						</span>
-					</div>
-					<div class="split-v-center">
-						<button class="col-9 btn btn-default" id="get-random-item-from-table">Pick Random Item</button>
-						<button class="col-2-9 btn btn-default pull-right id-clear">Clear</button>
-					</div>
-					<p>
-						<small>Based on the rules in the
-							<a href="book.html#XGE,2,choosing%20items%20piecemeal"><em>Xanathar's Guide to Everything</em>, pages 135-136</a>.
-						</small>
-					</p>
-				</div>
-			</div>
-
-			<div id="container-random-magic-item" class="hidden">
-				<p>
-					Generates a set of magical items for a party, based on the tables and rules in <a href="book.html#XGE,2,awarding%20magic%20items"><em>Xanathar's Guide to Everything</em>, pages 135-136</a>.
-				</p>
-				<p><i>
-					If the "Exact Level" option is selected, the output will include a proportional number of items for any partially-completed tier.
-				</i></p>
-
-				<div class="mb-2">
-					<div class="mb-3">
-						<div class="input-group">
-							<span class="input-group-addon" style="width: 10%" id="selectCharLevel">Character Level</span>
-							<span class="input-group-addon loot__wrp-exact-level">
-								<label class="clickable" style="margin-bottom: 0; padding: 6px 12px; user-select: none;">
-									Exact Level? <input type="checkbox" checked id="closest-tier" class="clickable" style="vertical-align: bottom;">
-								</label>
-							</span>
-						</div>
-					</div>
-
-					<div class="slider w-100"></div>
-
-					<div id="random-magic-item-select-tier" class="input-group w-100">
-						<select class="form-control clickable" id="charLevel" style="border-top-right-radius: 3px; border-bottom-right-radius: 3px;">
-							<option value="4" selected>1-4</option>
-							<option value="10">5-10</option>
-							<option value="16">11-16</option>
-							<option value="20">17+</option>
-						</select>
-						<span class="input-group-addon" style="padding: 0; display: none;" id="wrp-char-cumulative">
-							<label class="clickable" style="margin-bottom: 0; padding: 6px 12px; user-select: none;">
-								Cumulative with Previous Tiers? <input type="checkbox" checked id="char-cumulative" class="clickable" style="vertical-align: bottom;">
-							</label>
-						</span>
-					</div>
-				</div>
-
-				<div class="split-v-center">
-					<button class="col-9 btn btn-default" id="get-group-of-items-for-character">Generate Items for a Party</button>
-					<button class="col-2-9 btn btn-default pull-right id-clear">Clear</button>
-				</div>
-			</div>
-			<div id="classtable"></div>
+	<header class="hidden-xs hidden-sm page__header">
+		<div class="container">
+			<h1 class="page__title">Loot Generator</h1>
+			<p class="page__subtitle">Configure the generator, then Roll Loot!</p>
 		</div>
-		<div class="col-sm-7">
-			<div id="lootoutput"></div>
+	</header>
+
+	<nav class="container page__nav" id="navigation">
+		<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
+	</nav>
+
+	<div class="view-col-group--cancer h-100 mh-0">
+		<div class="container view-col-wrapper view-col-wrapper--cancer">
+			<div class="view-col" id="lootgen-lhs" style="flex: 4;"></div>
+
+			<div class="cancer__wrp-mobile-1 cancer__anchor"><div class="cancer__disp-cancer"></div><!--5ETOOLS_AD_MOB_PLAYER_1--></div>
+
+			<div class="view-col" id="lootgen-rhs" style="flex: 6;"></div>
 		</div>
 	</div>
-</main>
+</div>
 <!--5ETOOLS_SCRIPT_ANCHOR-->
 <!--5ETOOLS_AD_ADHESION-->
 <script type="text/javascript" src="lib/jquery.js"></script>
@@ -226,10 +96,15 @@
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
 <script type="text/javascript" src="js/hist.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
+<script type="text/javascript" src="js/filter-items.js"></script>
+<script type="text/javascript" src="js/filter-spells.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>
 <script type="text/javascript" src="js/scalecreature.js"></script>
 <script type="text/javascript" src="js/lootgen.js"></script>
+<script type="text/javascript" src="js/lootgen-ui.js"></script>
 <script type="text/javascript" src="js/list2.js"></script>
 
 </body>

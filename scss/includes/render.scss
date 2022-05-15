@@ -8,7 +8,7 @@ $rgb-inset-border: #656565;
 
 @mixin rd__h--large() {
 	color: $rgb-name-red;
-	font-family: "Andada", serif;
+	font-family: "Times New Roman", serif;
 	font-variant: small-caps;
 	font-weight: 500;
 	display: flex;
@@ -88,7 +88,7 @@ $rgb-inset-border: #656565;
 
 		&title-link {
 			opacity: 0.3;
-			font-size: 14px;
+			font-size: 12px;
 			font-weight: normal;
 
 			&--inset {
@@ -162,12 +162,17 @@ $rgb-inset-border: #656565;
 		}
 
 		&image-title-inner {
-			border-bottom: 1px solid $rgb-border-grey;
-			display: inline;
+			display: inline-block;
+			text-decoration: underline;
+			margin: 2px 0; // Align with map viewer buttons, which are padded + bordered on all sides
 		}
 
 		&image-btn-viewer {
+			// Style the button text to match normal image title labels
 			font-style: initial;
+			white-space: normal;
+			font-size: inherit;
+			line-height: 1.7;
 		}
 
 		// Thicker scrollbars for viewer
@@ -237,12 +242,21 @@ $rgb-inset-border: #656565;
 			padding: 0 10px;
 		}
 
+		&list-italic {
+			font-style: italic;
+		}
+
 		&list-name {
 			margin: 0;
 			font-weight: bold;
 		}
 
 		// section headers
+		&h {
+			margin: 0;
+			line-height: inherit;
+		}
+
 		// statsBlockSectionHead
 		&h--0 {
 			@include rd__h--large();
@@ -265,7 +279,7 @@ $rgb-inset-border: #656565;
 		&h--2 {
 			@include rd__h--large();
 
-			font-size: 1.4em;
+			font-size: 1.35em;
 		}
 
 		// inset headers
@@ -277,6 +291,11 @@ $rgb-inset-border: #656565;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+
+			&-no-name {
+				justify-content: flex-end;
+				float: right;
+			}
 		}
 
 		&h--2-flow-block {
@@ -285,6 +304,14 @@ $rgb-inset-border: #656565;
 			font-weight: bolder;
 			font-size: 1.1em;
 			text-align: center;
+		}
+
+		&h--2-inset > h4,
+		&h--2-flow-block > h4 {
+			font-size: inherit;
+			font-weight: inherit;
+			line-height: $font-line-height;
+			margin: 0;
 		}
 
 		// inline headers
@@ -298,6 +325,17 @@ $rgb-inset-border: #656565;
 		// statsInlineHeadSubVariant
 		&h--4 {
 			font-style: italic;
+		}
+
+		&h-toggle {
+			font-family: Arial, sans-serif;
+			font-size: 12px;
+			opacity: 0.3;
+			font-weight: normal;
+		}
+
+		&ele-toggled-hidden {
+			display: none !important;
 		}
 
 		&b--3 > p,
@@ -354,7 +392,7 @@ $rgb-inset-border: #656565;
 		&data-embed {
 			&-header {
 				cursor: pointer;
-				font-family: "Andada", serif;
+				font-family: "Times New Roman", serif;
 				font-variant: small-caps;
 				text-transform: uppercase;
 				font-weight: bold;
@@ -390,6 +428,8 @@ $rgb-inset-border: #656565;
 		}
 
 		&table {
+			width: 100%;
+
 			> caption {
 				text-align: left;
 			}
@@ -492,6 +532,12 @@ $rgb-inset-border: #656565;
 		&highlight {
 			background-color: $rgb-bg-highlight;
 		}
+
+		&color {
+			a {
+				color: inherit !important;
+			}
+		}
 	}
 
 	&-item__ {
@@ -531,40 +577,49 @@ td > .rd__b:last-child {
 	margin-bottom: 0;
 }
 
-// region Source colors
-.subclass-feature {
-	.rd__h--0,
-	.rd__h--1,
-	.rd__h--2 {
-		color: $rgb-subclass;
-		border-bottom-color: $rgb-subclass;
-	}
-}
+/* ****************************************************************************************************************** */
+/* Entity-specific styling                                                                                            */
+/* ****************************************************************************************************************** */
 
-.spicy-sauce {
-	.rd__h--0,
-	.rd__h--1,
-	.rd__h--2 {
-		color: $rgb-subclass-ua;
-		border-bottom-color: $rgb-subclass-ua;
-	}
-}
+// region Recipes
+.rd-recipes {
+	&__ {
+		&wrp-recipe {
+			.rd__b--3 > p,
+			.rd__b--4 > p {
+				text-indent: 0;
+			}
+		}
 
-.spicy-sauce:not(.subclass-feature):not(.subclass-feature--sub) {
-	.rd__h--0,
-	.rd__h--1,
-	.rd__h--2 {
-		color: $rgb-class-ua;
-		border-bottom-color: $rgb-class-ua;
-	}
-}
+		&wrp-instructions {
+			.rd__h--3 {
+				font-style: initial;
+				font-variant: small-caps;
+			}
 
-.refreshing-brew {
-	.rd__h--0,
-	.rd__h--1,
-	.rd__h--2 {
-		color: $rgb-class-brew;
-		border-bottom-color: $rgb-class-brew;
+			.rd__b--3 > p,
+			.rd__b--4 > p {
+				margin-bottom: 10px;
+			}
+
+			.rd__b--3 > p:nth-of-type(2),
+			.rd__b--4 > p:nth-of-type(2) {
+				margin-top: 10px;
+			}
+		}
+
+		&wrp-ingredients {
+			.rd__h--2 {
+				font-size: 1em;
+				font-family: Roboto, Helvetica, sans-serif;
+				color: inherit;
+				font-weight: bold;
+			}
+
+			.rd__b p {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 // endregion

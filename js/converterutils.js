@@ -11,60 +11,9 @@
  * data, or common errors which should be corrected prior to running the parser).
  */
 
-String.prototype.split_handleColon = String.prototype.split_handleColon || function (str, maxSplits = Number.MAX_SAFE_INTEGER) {
-	if (str === "") return this.split("");
-
-	const colonStr = `${str.trim()}:`;
-	const isColon = this.toLowerCase().startsWith(colonStr.toLowerCase());
-
-	const re = isColon ? new RegExp(colonStr.escapeRegexp(), "ig") : new RegExp(str.escapeRegexp(), "ig");
-	const targetString = isColon ? colonStr : str;
-
-	let m = re.exec(this);
-	let splits = 0;
-	const out = [];
-	const indexes = [];
-
-	while (m && splits < maxSplits) {
-		indexes.push(m.index);
-
-		splits++;
-		m = re.exec(this);
-	}
-
-	if (indexes.length === 1) {
-		out.push(this.substring(0, indexes[0]));
-		out.push(this.substring(indexes[0] + targetString.length, this.length));
-	} else {
-		for (let i = 0; i < indexes.length - 1; ++i) {
-			const start = indexes[i];
-
-			if (i === 0) {
-				out.push(this.substring(0, start));
-			}
-
-			const end = indexes[i + 1];
-			out.push(this.substring(start + targetString.length, end));
-
-			if (i === indexes.length - 2) {
-				out.push(this.substring(end + targetString.length, this.length));
-			}
-		}
-	}
-
-	return out.map(it => it.trim());
-};
-
-String.prototype.indexOf_handleColon = String.prototype.indexOf_handleColon || function (str) {
-	const colonStr = `${str.trim()}:`;
-	const idxColon = this.toLowerCase().indexOf(colonStr.toLowerCase());
-	if (~idxColon) return idxColon;
-	return this.toLowerCase().indexOf(str.toLowerCase());
-};
-
 class ConverterConst {}
 ConverterConst.STR_RE_DAMAGE_TYPE = "(acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)";
-ConverterConst.RE_DAMAGE_TYPE = new RegExp(`(^|\\W)${ConverterConst.STR_RE_DAMAGE_TYPE}(\\W|$)`, "g");
+ConverterConst.RE_DAMAGE_TYPE = new RegExp(`\\b${ConverterConst.STR_RE_DAMAGE_TYPE}\\b`, "g");
 
 class BaseParser {
 	static _getValidOptions (options) {
@@ -80,13 +29,31 @@ class BaseParser {
 			: line;
 	}
 
-	static _getCleanInput (ipt) {
-		const iptClean = ipt
+	static _getCleanInput (ipt, options) {
+		let iptClean = ipt
+			.replace(/\n\r/g, "\n")
+			.replace(/\r\n/g, "\n")
+			.replace(/\r/g, "\n")
+			.replace(/­\s*\n\s*/g, "")
 			.replace(/[−–‒]/g, "-") // convert minus signs to hyphens
 		;
-		return CleanUtil.getCleanString(iptClean, false)
+
+		iptClean = CleanUtil.getCleanString(iptClean, {isFast: false})
 			// Ensure CR always has a space before the dash
 			.replace(/(Challenge)([-\u2012-\u2014])/, "$1 $2");
+
+		// Connect together words which are divided over two lines
+		iptClean = iptClean
+			.replace(/((?: | ")[A-Za-z][a-z]+)- *\n([a-z])/g, "$1$2");
+
+		// Apply `PAGE=...`
+		iptClean = iptClean
+			.replace(/(?:\n|^)PAGE=(?<page>\d+)(?:\n|$)/gi, (...m) => {
+				options.page = Number(m.last().page);
+				return "";
+			});
+
+		return iptClean;
 	}
 
 	static _hasEntryContent (trait) {
@@ -105,6 +72,8 @@ class BaseParser {
 	 * @param [opts.noAbilityName] Disable ability checking.
 	 * @param [opts.noHit] Disable "Hit:" checking.
 	 * @param [opts.noSpellcastingAbility] Disable spellcasting ability checking.
+	 * @param [opts.noSpellcastingWarlockSlotLevel] Disable spellcasting warlock slot checking.
+	 * @param [opts.noDc] Disable "DC" checking
 	 */
 	static _isContinuationLine (entryArray, curLine, opts) {
 		opts = opts || {};
@@ -120,12 +89,16 @@ class BaseParser {
 
 		const cleanLine = curLine.trim();
 
+		if (/^\d..-\d.. level\s+\(/.test(cleanLine) && !opts.noSpellcastingWarlockSlotLevel) return false;
+
+		if (/^•/.test(cleanLine)) return false;
+
 		// A lowercase word
 		if (/^[a-z]/.test(cleanLine) && !opts.noLowercase) return true;
 		// An ordinal (e.g. "3rd"), but not a spell level (e.g. "1st level")
 		if (/^\d[a-z][a-z]/.test(cleanLine) && !/^\d[a-z][a-z] level/gi.test(cleanLine)) return true;
-		// A number (e.g. damage; "5 (1d6 + 2)")
-		if (/^\d+\s+/.test(cleanLine) && !opts.noNumber) return true;
+		// A number (e.g. damage; "5 (1d6 + 2)"), optionally with slash-separated parts (e.g. "30/120 ft.")
+		if (/^\d+(\/\d+)*\s+/.test(cleanLine) && !opts.noNumber) return true;
 		// Opening brackets (e.g. damage; "(1d6 + 2)")
 		if (/^\(/.test(cleanLine) && !opts.noParenthesis) return true;
 		// An ability score name followed by "saving throw"
@@ -135,6 +108,7 @@ class BaseParser {
 		// "Hit:" e.g. inside creature attacks
 		if (/^Hit:/.test(cleanLine) && !opts.noHit) return true;
 		if (/^(Intelligence|Wisdom|Charisma)\s+\(/.test(cleanLine) && !opts.noSpellcastingAbility) return true;
+		if (/^DC\s+/.test(cleanLine) && !opts.noDc) return true;
 
 		return false;
 	}
@@ -148,6 +122,37 @@ class BaseParser {
 }
 
 class TaggerUtils {
+	static _ALL_LEGENDARY_GROUPS = null;
+	static _ALL_SPELLS = null;
+	static init ({legendaryGroups, spells}) {
+		this._ALL_LEGENDARY_GROUPS = legendaryGroups;
+		this._ALL_SPELLS = spells;
+	}
+
+	static findLegendaryGroup ({name, source}) {
+		name = name.toLowerCase();
+		source = source.toLowerCase();
+
+		const doFind = arr => arr.find(it => it.name.toLowerCase() === name && it.source.toLowerCase() === source);
+
+		const fromBrew = typeof BrewUtil2 !== "undefined" ? doFind(BrewUtil2.getBrewProcessedFromCache("legendaryGroup")) : null;
+		if (fromBrew) return fromBrew;
+
+		return doFind(this._ALL_LEGENDARY_GROUPS);
+	}
+
+	static findSpell ({name, source}) {
+		name = name.toLowerCase();
+		source = source.toLowerCase();
+
+		const doFind = arr => arr.find(s => (s.name.toLowerCase() === name || (typeof s.srd === "string" && s.srd.toLowerCase() === name)) && s.source.toLowerCase() === source);
+
+		const fromBrew = typeof BrewUtil2 !== "undefined" ? doFind(BrewUtil2.getBrewProcessedFromCache("spell")) : null;
+		if (fromBrew) return fromBrew;
+
+		return doFind(this._ALL_SPELLS);
+	}
+
 	/**
 	 *
 	 * @param targetTags e.g. `["@condition"]`
@@ -193,16 +198,36 @@ class TaggerUtils {
 			}
 		}
 	}
+
+	static getSpellsFromString (str, {cbMan} = {}) {
+		const strSpellcasting = str;
+		const knownSpells = {};
+		strSpellcasting.replace(/{@spell ([^}]+)}/g, (...m) => {
+			let [spellName, spellSource] = m[1].split("|").map(it => it.toLowerCase());
+			spellSource = spellSource || SRC_PHB.toLowerCase();
+
+			(knownSpells[spellSource] = knownSpells[spellSource] || new Set()).add(spellName);
+		});
+
+		const out = [];
+
+		Object.entries(knownSpells)
+			.forEach(([source, spellSet]) => {
+				spellSet.forEach(it => {
+					const spell = TaggerUtils.findSpell({name: it, source});
+					if (!spell) return cbMan ? cbMan(`${it} :: ${source}`) : null;
+
+					out.push(spell);
+				});
+			});
+
+		return out;
+	}
 }
 
 class TagCondition {
-	static init (legendaryGroups, spells) {
-		TagCondition._ALL_LEGENDARY_GROUPS = legendaryGroups;
-		TagCondition._ALL_SPELLS = spells;
-	}
-
-	static _getConvertedEntry (mon, entry, inflictedSet) {
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+	static _getConvertedEntry (mon, entry, {inflictedSet, inflictedWhitelist} = {}) {
+		const walker = MiscUtil.getWalker({keyBlacklist: TagCondition._KEY_BLACKLIST});
 		const nameStack = [];
 		const walkerHandlers = {
 			preObject: (obj) => nameStack.push(obj.name),
@@ -212,7 +237,7 @@ class TagCondition {
 					if (nameStack.includes("Antimagic Susceptibility")) return str;
 					if (nameStack.includes("Sneak Attack (1/Turn)")) return str;
 					const ptrStack = {_: ""};
-					return TagCondition._walkerStringHandler(ptrStack, 0, 0, str, inflictedSet)
+					return TagCondition._walkerStringHandler(ptrStack, 0, 0, str, {inflictedSet, inflictedWhitelist});
 				},
 			],
 		};
@@ -220,7 +245,7 @@ class TagCondition {
 		return walker.walk(entry, walkerHandlers);
 	}
 
-	static _walkerStringHandler (ptrStack, depth, conditionCount, str, inflictedSet) {
+	static _walkerStringHandler (ptrStack, depth, conditionCount, str, {inflictedSet, inflictedWhitelist} = {}) {
 		TaggerUtils.walkerStringHandler(
 			"@condition",
 			ptrStack,
@@ -239,39 +264,39 @@ class TagCondition {
 		if (depth !== 0) return;
 
 		// Collect inflicted conditions for tagging
-		if (inflictedSet) this._collectInflictedConditions(ptrStack._, inflictedSet)
+		if (inflictedSet) this._collectInflictedConditions(ptrStack._, {inflictedSet, inflictedWhitelist});
 
 		return ptrStack._;
 	}
 
-	static _handleProp (m, prop, inflictedSet) {
+	static _handleProp (m, prop, {inflictedSet, inflictedWhitelist} = {}) {
 		if (!m[prop]) return;
 
-		m[prop] = m[prop].map(entry => this._getConvertedEntry(m, entry, inflictedSet));
+		m[prop] = m[prop].map(entry => this._getConvertedEntry(m, entry, {inflictedSet, inflictedWhitelist}));
 	}
 
-	static tryTagConditions (m, isTagInflicted) {
+	static tryTagConditions (m, {isTagInflicted = false, isInflictedAddOnly = false, inflictedWhitelist = null} = {}) {
 		const inflictedSet = isTagInflicted ? new Set() : null;
 
-		this._handleProp(m, "action", inflictedSet);
-		this._handleProp(m, "reaction", inflictedSet);
-		this._handleProp(m, "bonus", inflictedSet);
-		this._handleProp(m, "trait", inflictedSet);
-		this._handleProp(m, "legendary", inflictedSet);
-		this._handleProp(m, "mythic", inflictedSet);
-		this._handleProp(m, "variant", inflictedSet);
-		this._handleProp(m, "entries", inflictedSet);
-		this._handleProp(m, "entriesHigherLevel", inflictedSet);
+		this._handleProp(m, "action", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "reaction", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "bonus", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "trait", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "legendary", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "mythic", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "variant", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "entries", {inflictedSet, inflictedWhitelist});
+		this._handleProp(m, "entriesHigherLevel", {inflictedSet, inflictedWhitelist});
 
-		if (!isTagInflicted) return;
-
-		if (inflictedSet.size) m.conditionInflict = [...inflictedSet];
-		else delete m.conditionInflict;
+		this._mutAddInflictedSet({m, inflictedSet, isInflictedAddOnly, prop: "conditionInflict"});
 	}
 
-	static _collectInflictedConditions (str, inflictedSet) {
+	static _collectInflictedConditions (str, {inflictedSet, inflictedWhitelist} = {}) {
+		if (!inflictedSet) return;
+
 		TagCondition._CONDITION_INFLICTED_MATCHERS.forEach(re => str.replace(re, (...m) => {
-			inflictedSet.add(m[1]);
+			const cond = m[1];
+			if (!inflictedWhitelist || inflictedWhitelist.has(cond)) inflictedSet.add(m[1]);
 
 			// ", {@condition ...}, ..."
 			if (m[2]) m[2].replace(/{@condition ([^}]+)}/g, (...n) => inflictedSet.add(n[1]));
@@ -281,50 +306,47 @@ class TagCondition {
 		}));
 	}
 
-	static tryTagConditionsSpells (m, cbMan) {
+	static tryTagConditionsSpells (m, {cbMan, isTagInflicted, isInflictedAddOnly, inflictedWhitelist} = {}) {
 		if (!m.spellcasting) return false;
 
-		const inflictedSet = new Set();
+		const inflictedSet = isTagInflicted ? new Set() : null;
 
-		// Collect known spells
-		const strSpellcasting = JSON.stringify(m.spellcasting);
-		const knownSpells = {};
-		strSpellcasting.replace(/{@spell ([^}]+)}/g, (...m) => {
-			let [spellName, spellSource] = m[1].split("|").map(it => it.toLowerCase());
-			spellSource = spellSource || SRC_PHB.toLowerCase();
-
-			(knownSpells[spellSource] = knownSpells[spellSource] || new Set()).add(spellName);
+		const spells = TaggerUtils.getSpellsFromString(JSON.stringify(m.spellcasting), {cbMan});
+		spells.forEach(spell => {
+			if (spell.conditionInflict) spell.conditionInflict.filter(c => !inflictedWhitelist || inflictedWhitelist.has(c)).forEach(c => inflictedSet.add(c));
 		});
 
-		Object.entries(knownSpells)
-			.forEach(([source, spellSet]) => {
-				spellSet.forEach(it => {
-					const spell = TagCondition._ALL_SPELLS.find(s => (s.name.toLowerCase() === it || (typeof s.srd === "string" && s.srd.toLowerCase() === it)) && s.source.toLowerCase() === source);
-					if (!spell) return cbMan ? cbMan(`${it} :: ${source}`) : null;
-					if (spell.conditionInflict) spell.conditionInflict.forEach(c => inflictedSet.add(c));
-				});
-			});
-
-		if (inflictedSet.size) m.conditionInflictSpell = [...inflictedSet];
-		else delete m.conditionInflict;
+		this._mutAddInflictedSet({m, inflictedSet, isInflictedAddOnly, prop: "conditionInflictSpell"});
 	}
 
-	static tryTagConditionsRegionalsLairs (m, cbMan) {
+	static tryTagConditionsRegionalsLairs (m, {cbMan, isTagInflicted, isInflictedAddOnly, inflictedWhitelist} = {}) {
 		if (!m.legendaryGroup) return;
 
-		const inflictedSet = new Set();
+		const inflictedSet = isTagInflicted ? new Set() : null;
 
-		const meta = TagCondition._ALL_LEGENDARY_GROUPS.find(it => it.name === m.legendaryGroup.name && it.source === m.legendaryGroup.source);
+		const meta = TaggerUtils.findLegendaryGroup({name: m.legendaryGroup.name, source: m.legendaryGroup.source});
 		if (!meta) return cbMan ? cbMan(m.legendaryGroup) : null;
-		this._collectInflictedConditions(JSON.stringify(meta), inflictedSet);
+		this._collectInflictedConditions(JSON.stringify(meta), {inflictedSet, inflictedWhitelist});
 
-		if (inflictedSet.size) m.conditionInflictLegendary = [...inflictedSet];
-		else delete m.conditionInflictLegendary;
+		this._mutAddInflictedSet({m, inflictedSet, isInflictedAddOnly, prop: "conditionInflictLegendary"});
+	}
+
+	static _mutAddInflictedSet ({m, inflictedSet, isInflictedAddOnly, prop}) {
+		if (!inflictedSet) return;
+
+		if (isInflictedAddOnly) {
+			(m[prop] || []).forEach(it => inflictedSet.add(it));
+			if (inflictedSet.size) m[prop] = [...inflictedSet].sort(SortUtil.ascSortLower);
+			return;
+		}
+
+		if (inflictedSet.size) m[prop] = [...inflictedSet].sort(SortUtil.ascSortLower);
+		else delete m[prop];
 	}
 
 	// region Run basic tagging
 	static tryRunBasic (it) {
-		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		const walker = MiscUtil.getWalker({keyBlacklist: TagCondition._KEY_BLACKLIST});
 		return walker.walk(
 			it,
 			{
@@ -337,18 +359,22 @@ class TagCondition {
 						0,
 						str,
 						{
-							fnTag: strMod => strMod.replace(TagCondition._CONDITION_MATCHER_WORD, (...m) => `${m[1]}{@condition ${m[2]}}${m[3]}`),
+							fnTag: strMod => strMod.replace(TagCondition._CONDITION_MATCHER_WORD, (...m) => `{@condition ${m[1]}}`),
 						},
 					);
-					return ptrStack._;
+					return ptrStack._
+						.replace(/{@condition (prone)} (to)\b/gi, "$1 $2")
+					;
 				},
 			},
 		);
 	}
 	// endregion
 }
-TagCondition._ALL_LEGENDARY_GROUPS = null;
-TagCondition._ALL_SPELLS = null;
+TagCondition._KEY_BLACKLIST = new Set([
+	...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+	"conditionImmune",
+]);
 TagCondition._CONDITIONS = [
 	"blinded",
 	"charmed",
@@ -366,20 +392,21 @@ TagCondition._CONDITIONS = [
 	"stunned",
 	"unconscious",
 ];
-TagCondition._CONDITION_MATCHERS = TagCondition._CONDITIONS.map(it => new RegExp(`(${it})`, "g"));
-TagCondition._CONDITION_MATCHER_WORD = new RegExp(`(^|[ "(\\u2013\\u2014])(${TagCondition._CONDITIONS.join("|")})([ "',.:;)\\u2013\\u2014]|$)`, "g");
+TagCondition._CONDITION_MATCHERS = TagCondition._CONDITIONS.map(it => new RegExp(`\\b(${it})\\b`, "g"));
+TagCondition._CONDITION_MATCHER_WORD = new RegExp(`\\b(${TagCondition._CONDITIONS.join("|")})\\b`, "g");
 // Each should have one group which matches the condition name.
 //   A comma/and part is appended to the end to handle chains of conditions.
 TagCondition.__TGT = `(?:target|wielder)`;
 TagCondition._CONDITION_INFLICTED_MATCHERS = [
-	`(?:creature|enemy|target) (?:is|becomes) (?:\\w+ )?{@condition ([^}]+)}`,
+	`(?:creature|enemy|target) is \\w+ {@condition ([^}]+)}`, // "is knocked prone"
+	`(?:creature|enemy|target) becomes (?:\\w+ )?{@condition ([^}]+)}`,
 	`saving throw (?:by \\d+ or more, it )?is (?:\\w+ )?{@condition ([^}]+)}`, // MM :: Sphinx :: First Roar
 	`(?:the save|fails) by \\d+ or more, [^.!?]+?{@condition ([^}]+)}`, // VGM :: Fire Giant Dreadnought :: Shield Charge
 	`(?:${TagCondition.__TGT}|creatures?|humanoid|undead|other creatures|enemy) [^.!?]+?(?:succeed|make|pass)[^.!?]+?saving throw[^.!?]+?or (?:fall|be(?:come)?|is) (?:\\w+ )?{@condition ([^}]+)}`,
 	`and then be (?:\\w+ )?{@condition ([^}]+)}`,
 	`(?:be|is) knocked (?:\\w+ )?{@condition (prone|unconscious)}`,
 	`a (?:\\w+ )?{@condition [^}]+} (?:creature|enemy) is (?:\\w+ )?{@condition ([^}]+)}`, // e.g. `a frightened creature is paralyzed`
-	`the[^.!?]+?${TagCondition.__TGT} is[^.!?]+?{@condition ([^}]+)}`,
+	`the[^.!?]+?${TagCondition.__TGT} is [^.!?]*?{@condition ([^}]+)}`,
 	`the[^.!?]+?${TagCondition.__TGT} is [^.!?]+?, it is {@condition ([^}]+)}(?: \\(escape [^\\)]+\\))?`,
 	`begins to [^.!?]+? and is {@condition ([^}]+)}`, // e.g. `begins to turn to stone and is restrained`
 	`saving throw[^.!?]+?or [^.!?]+? and remain {@condition ([^}]+)}`, // e.g. `or fall asleep and remain unconscious`
@@ -408,6 +435,8 @@ TagCondition._CONDITION_INFLICTED_MATCHERS = [
 	`the {@condition ([^}]+)} creature can repeat the saving throw`, // GGR :: Archon of the Triumvirate :: Pacifying Presence
 	`if the (?:${TagCondition.__TGT}|creature) is already {@condition [^}]+}, it becomes {@condition ([^}]+)}`,
 	`(?:creature|${TagCondition.__TGT}) (?:also becomes|is) {@condition ([^}]+)}`, // MTF :: Eidolon :: Divine Dread
+	`magically (?:become|turn)s? {@condition (invisible)}`, // MM :: Will-o'-Wisp :: Invisibility
+	`The (?:[^.]+) is {@condition (invisible)}`, // MM :: Invisible Stalker :: Invisibility
 ].map(it => new RegExp(`${it}((?:, {@condition [^}]+})*)(,? (?:and|or) {@condition [^}]+})?`, "gi"));
 
 class TagUtil {
@@ -433,8 +462,29 @@ class DiceConvert {
 
 	static _getConvertedEntry (entry, isTagHits = false) {
 		if (!DiceConvert._walker) {
-			DiceConvert._walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
-			DiceConvert._walkerHandlers = {string: DiceConvert._walkerStringHandler.bind(DiceConvert, isTagHits)};
+			DiceConvert._walker = MiscUtil.getWalker({
+				keyBlacklist: new Set([
+					...MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+					"dmg1",
+					"dmg2",
+				]),
+			});
+			DiceConvert._walkerHandlers = {
+				string: (str) => {
+					const ptrStack = {_: ""};
+					TaggerUtils.walkerStringHandler(
+						["@dice", "@hit", "@damage", "@scaledice", "@scaledamage", "@d20"],
+						ptrStack,
+						0,
+						0,
+						str,
+						{
+							fnTag: this._walkerStringHandler.bind(this, isTagHits),
+						},
+					);
+					return ptrStack._;
+				},
+			};
 		}
 		entry = MiscUtil.copy(entry);
 		return DiceConvert._walker.walk(entry, DiceConvert._walkerHandlers);
@@ -443,14 +493,13 @@ class DiceConvert {
 	static _walkerStringHandler (isTagHits, str) {
 		if (isTagHits) {
 			// replace e.g. "+X to hit"
-			str = str.replace(/([-+])?\d+(?= to hit)/g, function (match) {
-				const cleanMatch = match.startsWith("+") ? match.replace("+", "") : match;
-				return `{@hit ${cleanMatch}}`
+			str = str.replace(/(?<op>[-+])?(?<bonus>\d+)(?= to hit)\b/g, (...m) => {
+				return `{@hit ${m.last().op === "-" ? "-" : ""}${m.last().bonus}}`;
 			});
 		}
 
 		// re-tag + format dice
-		str = str.replace(/(\s*[-+]\s*)?(([1-9]\d*)?d([1-9]\d*)(\s*?[-+×x*÷/]\s*?(\d,\d|\d)+(\.\d+)?)?)+(?:\s*\+\s*\bPB\b)/gi, (...m) => {
+		str = str.replace(/\b(\s*[-+]\s*)?(([1-9]\d*)?d([1-9]\d*)(\s*?[-+×x*÷/]\s*?(\d,\d|\d)+(\.\d+)?)?)+(?:\s*\+\s*\bPB\b)?\b/gi, (...m) => {
 			const expanded = m[0].replace(/([^0-9d.,PB])/gi, " $1 ").replace(/\s+/g, " ");
 			return `{@dice ${expanded}}`;
 		});
@@ -510,7 +559,7 @@ class ArtifactPropertiesTag {
 					case "minor detrimental": return `{@table Artifact Properties; Minor Detrimental Properties|dmg|${m[0]}}`;
 				}
 			}),
-		})
+		});
 	}
 }
 
@@ -539,7 +588,7 @@ class SkillTag {
 	}
 
 	static _fnTag (strMod) {
-		return strMod.replace(/(^|[ "(\u2013\u2014])(Acrobatics|Animal Handling|Arcana|Athletics|Deception|History|Insight|Intimidation|Investigation|Medicine|Nature|Perception|Performance|Persuasion|Religion|Sleight of Hand|Stealth|Survival)([ "',.:;)\u2013\u2014]|$)/g, (...m) => `${m[1]}{@skill ${m[2]}}${m[3]}`);
+		return strMod.replace(/\b(Acrobatics|Animal Handling|Arcana|Athletics|Deception|History|Insight|Intimidation|Investigation|Medicine|Nature|Perception|Performance|Persuasion|Religion|Sleight of Hand|Stealth|Survival)\b/g, (...m) => `{@skill ${m[1]}}`);
 	}
 }
 
@@ -571,22 +620,26 @@ class ActionTag {
 		// Avoid tagging text within titles
 		if (strMod.toTitleCase() === strMod) return strMod;
 
-		const reAction = /(^|[ "(\u2013\u2014])(Attack|Dash|Disengage|Dodge|Help|Hide|Ready|Search|Use an Object|shove a creature)([ "',.:;)\u2013\u2014]|$)/g
+		const reAction = /\b(Attack|Dash|Disengage|Dodge|Help|Hide|Ready|Search|Use an Object|shove a creature)\b/g;
 		let mAction;
 
 		while ((mAction = reAction.exec(strMod))) {
 			const ixMatchEnd = mAction.index + mAction[0].length;
 
-			const ptTag = mAction[2] === "shove a creature" ? "shove" : mAction[2];
-			const ptTrailing = mAction[2] === "shove a creature" ? ` a creature${mAction[3]}` : mAction[3];
-			const replaceAs = `${mAction[1]}{@action ${ptTag}}${ptTrailing}`;
+			const ptTag = mAction[1] === "shove a creature" ? "shove" : mAction[1];
+			const ptTrailing = mAction[1] === "shove a creature" ? ` a creature` : "";
+			const replaceAs = `{@action ${ptTag}}${ptTrailing}`;
 
 			strMod = `${strMod.slice(0, mAction.index)}${replaceAs}${strMod.slice(ixMatchEnd, strMod.length)}`
 				.replace(/{@action Attack} (and|or) damage roll/g, "Attack $1 damage roll")
 			;
 
-			mAction.index += replaceAs.length - 1;
+			reAction.lastIndex += replaceAs.length - 1;
 		}
+
+		strMod = strMod
+			.replace(/(Extra|Sneak) {@action Attack}/g, (...m) => `${m[1]} Attack`)
+		;
 
 		return strMod;
 	}
@@ -666,7 +719,7 @@ class EntryConvert {
 					return out;
 				},
 			},
-		)
+		);
 	}
 
 	/**
@@ -688,8 +741,8 @@ class EntryConvert {
 			entries,
 		];
 
-		const popList = () => { while (stack.last().type === "list") stack.pop(); }
-		const popNestedEntries = () => { while (stack.length > 1) stack.pop(); }
+		const popList = () => { while (stack.last().type === "list") stack.pop(); };
+		const popNestedEntries = () => { while (stack.length > 1) stack.pop(); };
 
 		const addEntry = (entry, canCombine) => {
 			canCombine = canCombine && typeof entry === "string";
@@ -697,19 +750,19 @@ class EntryConvert {
 			const target = stack.last();
 			if (target instanceof Array) {
 				if (canCombine && typeof target.last() === "string") {
-					target.last(`${target.last().trimRight()} ${entry.trimLeft()}`)
+					target.last(`${target.last().trimRight()} ${entry.trimLeft()}`);
 				} else {
 					target.push(entry);
 				}
 			} else if (target.type === "list") {
 				if (canCombine && typeof target.items.last() === "string") {
-					target.items.last(`${target.items.last().trimRight()} ${entry.trimLeft()}`)
+					target.items.last(`${target.items.last().trimRight()} ${entry.trimLeft()}`);
 				} else {
 					target.items.push(entry);
 				}
 			} else if (target.type === "entries") {
 				if (canCombine && typeof target.entries.last() === "string") {
-					target.entries.last(`${target.entries.last().trimRight()} ${entry.trimLeft()}`)
+					target.entries.last(`${target.entries.last().trimRight()} ${entry.trimLeft()}`);
 				} else {
 					target.entries.push(entry);
 				}
@@ -787,13 +840,18 @@ class ConvertUtil {
 	 * (Inline titles)
 	 * Checks if a line of text starts with a name, e.g.
 	 * "Big Attack. Lorem ipsum..." vs "Lorem ipsum..."
+	 * @param line
+	 * @param exceptions A set of (lowercase) exceptions which should always be treated as "not a name" (e.g. "cantrips")
+	 * @param splitterPunc Regexp to use when splitting by punctuation.
+	 * @returns {boolean}
 	 */
-	static isNameLine (line) {
-		const spl = line.split(/[.!?]/);
+	static isNameLine (line, {exceptions = null, splitterPunc = null} = {}) {
+		const spl = this._getMergedSplitName({line, splitterPunc});
 		if (spl.map(it => it.trim()).filter(Boolean).length === 1) return false;
 
 		// ignore everything inside parentheses
 		const namePart = ConvertUtil.getWithoutParens(spl[0]);
+		if (!namePart) return false; // (If this is _everything_ cancel)
 
 		const reStopwords = new RegExp(`^(${StrUtil.TITLE_LOWER_WORDS.join("|")})$`, "i");
 		const tokens = namePart.split(/([ ,;:]+)/g);
@@ -803,10 +861,12 @@ class ConvertUtil {
 			return !isStopword;
 		});
 
-		const namePartNoStopwords = cleanTokens.join("");
+		const namePartNoStopwords = cleanTokens.join("").trim();
 
 		// if it's an ability score, it's not a name
-		if (Object.values(Parser.ATB_ABV_TO_FULL).includes(namePartNoStopwords.trim())) return false;
+		if (Object.values(Parser.ATB_ABV_TO_FULL).includes(namePartNoStopwords)) return false;
+
+		if (exceptions && exceptions.has(namePartNoStopwords.toLowerCase())) return false;
 
 		// if it's in title case after removing all stopwords, it's a name
 		return namePartNoStopwords.toTitleCase() === namePartNoStopwords;
@@ -818,16 +878,38 @@ class ConvertUtil {
 		return line.toTitleCase() === line;
 	}
 
-	static isListItemLine (line) { return line.trim().startsWith("•") }
+	static isListItemLine (line) { return line.trim().startsWith("•"); }
 
 	static splitNameLine (line, isKeepPunctuation) {
-		const spl = line.split(/([.!?:])/g);
+		const spl = this._getMergedSplitName({line});
 		const rawName = spl[0];
 		const entry = line.substring(rawName.length + 1, line.length).trim();
 		const name = this.getCleanTraitActionName(rawName);
 		const out = {name, entry};
 		if (isKeepPunctuation) out.name += spl[1].trim();
 		return out;
+	}
+
+	static _getMergedSplitName ({line, splitterPunc}) {
+		let spl = line.split(splitterPunc || /([.!?:])/g);
+
+		// Handle e.g. "1. Freezing Ray. ..."
+		if (/^\d+$/.test(spl[0]) && spl.length > 3) {
+			spl = [
+				`${spl[0]}${spl[1]}${spl[2]}`,
+				...spl.slice(3),
+			];
+		}
+
+		// Handle e.g. "Mr. Blue" or "If Mr. Blue"
+		for (let i = 0; i < spl.length - 2; ++i) {
+			const toCheck = `${spl[i]}${spl[i + 1]}`;
+			if (!toCheck.split(" ").some(it => ConvertUtil._CONTRACTIONS.has(it))) continue;
+			spl[i] = `${spl[i]}${spl[i + 1]}${spl[i + 2]}`;
+			spl.splice(i + 1, 2);
+		}
+
+		return spl;
 	}
 
 	static getCleanTraitActionName (name) {
@@ -864,7 +946,7 @@ class ConvertUtil {
 						cleanString = cleanString.substring(0, foundOpen);
 						skipSpace = true;
 					} else {
-						cleanString += ")"
+						cleanString += ")";
 					}
 					break;
 				}
@@ -883,10 +965,56 @@ class ConvertUtil {
 	}
 
 	static cleanDashes (str) { return str.replace(/[-\u2011-\u2015]/g, "-"); }
+
+	static isStatblockLineHeaderStart (start, line) {
+		const m = this._getStatblockLineHeaderRegExp(start).exec(line);
+		return m?.index === 0;
+	}
+
+	static getStatblockLineHeaderText (start, line) {
+		const m = this._getStatblockLineHeaderRegExp(start).exec(line);
+		if (!m) return line;
+		return line.slice(m.index + m[0].length).trim();
+	}
+
+	static _getStatblockLineHeaderRegExp (start) {
+		return new RegExp(`\\s*${start.escapeRegexp()}\\s*?(?::|\\.|\\b)\\s*`, "i");
+	}
 }
+ConvertUtil._CONTRACTIONS = new Set(["Mr.", "Mrs.", "Ms.", "Dr."]);
 
 class AlignmentUtil {
+	static tryGetConvertedAlignment (align, {cbMan = null} = {}) {
+		if (!(align || "").trim()) return {};
 
+		let alignmentPrefix;
+
+		// region Support WBtW and onwards formatting
+		align = align.trim().replace(/^typically\s+/, () => {
+			alignmentPrefix = "typically ";
+			return "";
+		});
+		// endregion
+
+		const orParts = (align || "").split(/ or /g).map(it => it.trim().replace(/[.,;]$/g, "").trim());
+		const out = [];
+
+		orParts.forEach(part => {
+			Object.values(AlignmentUtil.ALIGNMENTS).forEach(it => {
+				if (it.regex.test(part)) return out.push({alignment: it.output});
+
+				const mChange = it.regexChance.exec(part);
+				if (mChange) out.push({alignment: it.output, chance: Number(mChange[1])});
+			});
+		});
+
+		if (out.length === 1) return {alignmentPrefix, alignment: out[0].alignment};
+		if (out.length) return {alignmentPrefix, alignment: out};
+
+		if (cbMan) cbMan(align);
+
+		return {alignmentPrefix, alignment: align};
+	}
 }
 // These are arranged in order of preferred precedence
 AlignmentUtil.ALIGNMENTS_RAW = {
@@ -915,7 +1043,7 @@ AlignmentUtil.ALIGNMENTS_RAW = {
 	"chaotic": ["C"],
 	"evil": ["E"],
 
-	"(?:any )?neutral( alignment)?": ["NX", "NY", "N"],
+	"any neutral( alignment)?": ["NX", "NY", "N"],
 
 	"unaligned": ["U"],
 
@@ -928,7 +1056,7 @@ Object.entries(AlignmentUtil.ALIGNMENTS_RAW).forEach(([k, v]) => {
 		regex: RegExp(`^${k}$`, "i"),
 		regexChance: RegExp(`^${k}\\s*\\((\\d+)\\s*%\\)$`, "i"),
 		regexWeak: RegExp(k, "i"),
-	}
+	};
 });
 
 if (typeof module !== "undefined") {

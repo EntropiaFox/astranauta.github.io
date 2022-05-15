@@ -26,7 +26,7 @@
 									"type": "entries",
 									"name": "Adult Kruthik",
 									"entries": [
-										"It takes six months of steady eating for a young kruthik to reach adult size. The natural life span of an adult kruthik is roughly seven years.",
+										"It takes six months of steady eating for a {@creature young kruthik|MTF} to reach adult size. The natural life span of an adult kruthik is roughly seven years.",
 										"Adult kruthiks grow spiky protrusions on their legs and can fling these dagger-sized spikes at enemies beyond the reach of their claws."
 									]
 								},
@@ -395,7 +395,7 @@
 									"name": "Antimagic Eye",
 									"type": "entries",
 									"entries": [
-										"Astral sailors claim that insanity awaits anyone who gazes into the eye of an astral dreadnought. What one sees reflected in that starry void is the sudden, terrifying realization of one's own mortality. Spellcasters have cause to fear the eye more than others, since it emits a continuous antimagic field. The dreadnought can shut off the effect by simply closing its eye, though it seldom has reason to do so."
+										"Astral sailors claim that insanity awaits anyone who gazes into the eye of an astral dreadnought. What one sees reflected in that starry void is the sudden, terrifying realization of one's own mortality. Spellcasters have cause to fear the eye more than others, since it emits a continuous {@spell antimagic field}. The dreadnought can shut off the effect by simply closing its eye, though it seldom has reason to do so."
 									]
 								},
 								{
@@ -5474,161 +5474,115 @@
 			]
 		},
 		{
-			"name": "Star Spawn Grue",
+			"name": "Star Spawn",
 			"source": "MTF",
 			"entries": [
 				{
-					"type": "entries",
+					"type": "section",
+					"name": "Star Spawn",
 					"entries": [
 						{
+							"type": "quote",
+							"entries": [
+								"Stars don't spawn these creatures. Such beautiful lights shouldn't be blamed for such balefulness."
+							],
+							"by": "Mordenkainen"
+						},
+						"The Material Plane represents only one small part of the multiverse. Beyond the best-known planes of existence lie realms that are lethal to mortal life. Some are so hostile that even a moment's contact with such a place is enough to plunge a mortal mind into madness. Yet beings do exist that are native to these realms: beings that are eternally hungering, searching, warring, sometimes dreaming. These Elder Evils are far older than most of the mortal races and always horrific to humanoid minds.",
+						"However much they might desire to enter and dominate the Material Plane, the Elder Evils are unable or unwilling to leave their realms. Some are imprisoned in their dimensions by external forces, some are inextricably bound to their home realities, and others simply can't find any way out.",
+						{
+							"name": "Heralds of Doom",
 							"type": "entries",
 							"entries": [
+								"The creatures known as star spawn are the heralds, servants, foot soldiers, and lieutenants of the Elder Evils, capable of taking on forms that can journey to the Material Plane. They arrive most often in the wake of a comet\u2014or perhaps such a phenomenon merely signals that star spawn are in the vicinity and available for communication. When the signs are right, warlocks and cultists hasten to gather together, read aloud their blasphemous texts, and conduct the mind-searing rituals that guide the blazing star spawn into the world."
+							]
+						},
+						{
+							"type": "quote",
+							"entries": [
+								"The cultists who blaspheme reality by calling out to Elder Evils often speak of a Far Realm from which these entities hail. In truth, there is no one place or space from which they come. There is the multiverse of things that are, and there is the multiverse of things that shouldn't be."
+							],
+							"by": "Mordenkainen"
+						},
+						{
+							"name": "Elder Evil Blessings",
+							"type": "entries",
+							"entries": [
+								"Disciples of certain Elder Evils can bestow supernatural gifts on those who serve that cult, including star spawn. The following powers are unique to specific cults; typically a creature has only one.",
 								{
-									"type": "quote",
-									"entries": [
-										"Stars don't spawn these creatures. Such beautiful lights shouldn't be blamed for such balefulness."
-									],
-									"by": "Mordenkainen"
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn Grue",
-									"entries": [
-										"Fanged and lipless, the ever-grinning, madly staring grue lopes about on spindly legs and long arms. Bristles and spines project from odd patches of its pallid skin, and it's long fingers end in broken and dirty nails. Grues are the weakest of the star spawn. A host of writhing, scrambling grues typically accompanies more powerful star spawn. Their constant chittering and shrieking produces discordant psychic energy that disrupts thought patterns in other creatures. Intelligent creatures experience flashing colors, hallucinations, disorientation, and waves of hopelessness when they find themselves near a group of star spawn grues."
+									"type": "list",
+									"columns": 3,
+									"items": [
+										"{@cult Cult of Atropus, the World Born Dead|MTF}",
+										"{@cult Cult of Borem, of the Lake of Boiling Mud|MTF}",
+										"{@cult Cult of Haask, the Voice of Hargut|MTF}",
+										"{@cult Cult of Tharizdun, the Chained God|MTF}",
+										"{@cult Cult of Tyranthraxus, the Flamed One|MTF}"
 									]
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn",
-									"entries": [
-										"The Material Plane represents only one small part of the multiverse. Beyond the best-known planes of existence lie realms that are lethal to mortal life. Some are so hostile that even a moment's contact with such a place is enough to plunge a mortal mind into madness. Yet beings do exist that are native to these realms: beings that are eternally hungering, searching, warring, sometimes dreaming. These Elder Evils are far older than most of the mortal races and always horrific to humanoid minds.",
-										"However much they might desire to enter and dominate the Material Plane, the Elder Evils are unable or unwilling to leave their realms. Some are imprisoned in their dimensions by external forces, some are inextricably bound to their home realities, and others simply can't find any way out."
-									]
-								},
-								{
-									"name": "Heralds of Doom",
-									"type": "entries",
-									"entries": [
-										"The creatures known as star spawn are the heralds, servants, foot soldiers, and lieutenants of the Elder Evils, capable of taking on forms that can journey to the Material Plane. They arrive most often in the wake of a comet\u2014or perhaps such a phenomenon merely signals that star spawn are in the vicinity and available for communication. When the signs are right, warlocks and cultists hasten to gather together, read aloud their blasphemous texts, and conduct the mind-searing rituals that guide the blazing star spawn into the world."
-									]
-								},
-								{
-									"type": "quote",
-									"entries": [
-										"The cultists who blaspheme reality by calling out to Elder Evils often speak of a Far Realm from which these entities hail. In truth, there is no one place or space from which they come. There is the multiverse of things that are, and there is the multiverse of things that shouldn't be."
-									],
-									"by": "Mordenkainen"
 								}
 							]
 						}
 					]
 				}
 			]
+		},
+		{
+			"name": "Star Spawn Grue",
+			"source": "MTF",
+			"_copy": {
+				"name": "Star Spawn",
+				"source": "MTF",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
+							"type": "entries",
+							"entries": [
+								"Fanged and lipless, the ever-grinning, madly staring grue lopes about on spindly legs and long arms. Bristles and spines project from odd patches of its pallid skin, and it's long fingers end in broken and dirty nails. Grues are the weakest of the star spawn. A host of writhing, scrambling grues typically accompanies more powerful star spawn. Their constant chittering and shrieking produces discordant psychic energy that disrupts thought patterns in other creatures. Intelligent creatures experience flashing colors, hallucinations, disorientation, and waves of hopelessness when they find themselves near a group of star spawn grues."
+							]
+						}
+					}
+				}
+			}
 		},
 		{
 			"name": "Star Spawn Hulk",
 			"source": "MTF",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Star Spawn",
+				"source": "MTF",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								{
-									"type": "quote",
-									"entries": [
-										"Stars don't spawn these creatures. Such beautiful lights shouldn't be blamed for such balefulness."
-									],
-									"by": "Mordenkainen"
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn Hulk",
-									"entries": [
-										"The hulk is the largest of the known star spawn. Though ogre-like in stature, the hulk's glistening translucent skin reveals a muscled form devoid of an ogre's fat. Pale and seemingly lidless eyes glare balefully from a face distorted by too many teeth and too little nose.",
-										"Hulks are seldom encountered without a commanding seer nearby. A hulk appears to have little will of its own, other than to protect its master."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn",
-									"entries": [
-										"The Material Plane represents only one small part of the multiverse. Beyond the best-known planes of existence lie realms that are lethal to mortal life. Some are so hostile that even a moment's contact with such a place is enough to plunge a mortal mind into madness. Yet beings do exist that are native to these realms: beings that are eternally hungering, searching, warring, sometimes dreaming. These Elder Evils are far older than most of the mortal races and always horrific to humanoid minds.",
-										"However much they might desire to enter and dominate the Material Plane, the Elder Evils are unable or unwilling to leave their realms. Some are imprisoned in their dimensions by external forces, some are inextricably bound to their home realities, and others simply can't find any way out."
-									]
-								},
-								{
-									"name": "Heralds of Doom",
-									"type": "entries",
-									"entries": [
-										"The creatures known as star spawn are the heralds, servants, foot soldiers, and lieutenants of the Elder Evils, capable of taking on forms that can journey to the Material Plane. They arrive most often in the wake of a comet\u2014or perhaps such a phenomenon merely signals that star spawn are in the vicinity and available for communication. When the signs are right, warlocks and cultists hasten to gather together, read aloud their blasphemous texts, and conduct the mind-searing rituals that guide the blazing star spawn into the world."
-									]
-								},
-								{
-									"type": "quote",
-									"entries": [
-										"The cultists who blaspheme reality by calling out to Elder Evils often speak of a Far Realm from which these entities hail. In truth, there is no one place or space from which they come. There is the multiverse of things that are, and there is the multiverse of things that shouldn't be."
-									],
-									"by": "Mordenkainen"
-								}
+								"The hulk is the largest of the known star spawn. Though ogre-like in stature, the hulk's glistening translucent skin reveals a muscled form devoid of an ogre's fat. Pale and seemingly lidless eyes glare balefully from a face distorted by too many teeth and too little nose.",
+								"Hulks are seldom encountered without a commanding seer nearby. A hulk appears to have little will of its own, other than to protect its master."
 							]
 						}
-					]
+					}
 				}
-			]
+			}
 		},
 		{
 			"name": "Star Spawn Larva Mage",
 			"source": "MTF",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Star Spawn",
+				"source": "MTF",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								{
-									"type": "quote",
-									"entries": [
-										"Stars don't spawn these creatures. Such beautiful lights shouldn't be blamed for such balefulness."
-									],
-									"by": "Mordenkainen"
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn Larva Mage",
-									"entries": [
-										"A larva mage is a nightmarish combination of a mortal body and otherworldly substance. When a powerful cultist of a wormlike entity such as Kyuss or Kezef\u2014usually a warlock or other spellcaster\u2014contacts the comet-borne emissary of an Elder Evil, the emissary can merge with a mortal consciousness to create a larva mage. None of the original cultist's personality survives the transformation, so what emerges is wholly alien."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn",
-									"entries": [
-										"The Material Plane represents only one small part of the multiverse. Beyond the best-known planes of existence lie realms that are lethal to mortal life. Some are so hostile that even a moment's contact with such a place is enough to plunge a mortal mind into madness. Yet beings do exist that are native to these realms: beings that are eternally hungering, searching, warring, sometimes dreaming. These Elder Evils are far older than most of the mortal races and always horrific to humanoid minds.",
-										"However much they might desire to enter and dominate the Material Plane, the Elder Evils are unable or unwilling to leave their realms. Some are imprisoned in their dimensions by external forces, some are inextricably bound to their home realities, and others simply can't find any way out."
-									]
-								},
-								{
-									"name": "Heralds of Doom",
-									"type": "entries",
-									"entries": [
-										"The creatures known as star spawn are the heralds, servants, foot soldiers, and lieutenants of the Elder Evils, capable of taking on forms that can journey to the Material Plane. They arrive most often in the wake of a comet\u2014or perhaps such a phenomenon merely signals that star spawn are in the vicinity and available for communication. When the signs are right, warlocks and cultists hasten to gather together, read aloud their blasphemous texts, and conduct the mind-searing rituals that guide the blazing star spawn into the world."
-									]
-								},
-								{
-									"type": "quote",
-									"entries": [
-										"The cultists who blaspheme reality by calling out to Elder Evils often speak of a Far Realm from which these entities hail. In truth, there is no one place or space from which they come. There is the multiverse of things that are, and there is the multiverse of things that shouldn't be."
-									],
-									"by": "Mordenkainen"
-								}
+								"A larva mage is a nightmarish combination of a mortal body and otherworldly substance. When a powerful cultist of a wormlike entity such as Kyuss or Kezef\u2014usually a warlock or other spellcaster\u2014contacts the comet-borne emissary of an Elder Evil, the emissary can merge with a mortal consciousness to create a larva mage. None of the original cultist's personality survives the transformation, so what emerges is wholly alien."
 							]
 						}
-					]
+					}
 				}
-			],
+			},
 			"images": [
 				{
 					"type": "image",
@@ -5642,110 +5596,44 @@
 		{
 			"name": "Star Spawn Mangler",
 			"source": "MTF",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Star Spawn",
+				"source": "MTF",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								{
-									"type": "quote",
-									"entries": [
-										"Stars don't spawn these creatures. Such beautiful lights shouldn't be blamed for such balefulness."
-									],
-									"by": "Mordenkainen"
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn Mangler",
-									"entries": [
-										"A mangler is a low-slung, creeping horror with multiple gangly arms. A mangler most often has six arms, but one can have any number from four to eight.",
-										"Manglers creep along the ground or the walls, sticking to shadows, hiding in spots that seem too shallow or well-lit to conceal anything. They appear smaller than their true size, thanks to their hunched posture and emaciated frame. Cultists summon these creatures to serve as guards and assassins, two roles at which they excel."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn",
-									"entries": [
-										"The Material Plane represents only one small part of the multiverse. Beyond the best-known planes of existence lie realms that are lethal to mortal life. Some are so hostile that even a moment's contact with such a place is enough to plunge a mortal mind into madness. Yet beings do exist that are native to these realms: beings that are eternally hungering, searching, warring, sometimes dreaming. These Elder Evils are far older than most of the mortal races and always horrific to humanoid minds.",
-										"However much they might desire to enter and dominate the Material Plane, the Elder Evils are unable or unwilling to leave their realms. Some are imprisoned in their dimensions by external forces, some are inextricably bound to their home realities, and others simply can't find any way out."
-									]
-								},
-								{
-									"name": "Heralds of Doom",
-									"type": "entries",
-									"entries": [
-										"The creatures known as star spawn are the heralds, servants, foot soldiers, and lieutenants of the Elder Evils, capable of taking on forms that can journey to the Material Plane. They arrive most often in the wake of a comet\u2014or perhaps such a phenomenon merely signals that star spawn are in the vicinity and available for communication. When the signs are right, warlocks and cultists hasten to gather together, read aloud their blasphemous texts, and conduct the mind-searing rituals that guide the blazing star spawn into the world."
-									]
-								},
-								{
-									"type": "quote",
-									"entries": [
-										"The cultists who blaspheme reality by calling out to Elder Evils often speak of a Far Realm from which these entities hail. In truth, there is no one place or space from which they come. There is the multiverse of things that are, and there is the multiverse of things that shouldn't be."
-									],
-									"by": "Mordenkainen"
-								}
+								"A mangler is a low-slung, creeping horror with multiple gangly arms. A mangler most often has six arms, but one can have any number from four to eight.",
+								"Manglers creep along the ground or the walls, sticking to shadows, hiding in spots that seem too shallow or well-lit to conceal anything. They appear smaller than their true size, thanks to their hunched posture and emaciated frame. Cultists summon these creatures to serve as guards and assassins, two roles at which they excel."
 							]
 						}
-					]
+					}
 				}
-			]
+			}
 		},
 		{
 			"name": "Star Spawn Seer",
 			"source": "MTF",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
+			"_copy": {
+				"name": "Star Spawn",
+				"source": "MTF",
+				"_mod": {
+					"entries": {
+						"mode": "prependArr",
+						"items": {
 							"type": "entries",
 							"entries": [
-								{
-									"type": "quote",
-									"entries": [
-										"Stars don't spawn these creatures. Such beautiful lights shouldn't be blamed for such balefulness."
-									],
-									"by": "Mordenkainen"
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn Seer",
-									"entries": [
-										"A star spawn seer is most often encountered as the leader of a cult that worships one or more of the Elder Evils. Usually, the seer is the only cult member that grasps the full extent of the horror the cult is venerating.",
-										"An entity that appears as a star spawn seer in the Material Plane usually arrives as something different\u2014something disembodied. When a warlock or other spellcaster establishes communication with it, the seer-entity takes control of the mortal's form and spirit, transforming it into a star spawn seer. Whoever the seer once was largely vanishes beneath the corpulent bulk of tumorous skin than builds up in strange whorls all over the seer's body. Hands become bulky, flipper-like appendages capable of grasping their strange staffs\u2014formed of some blend of flesh, bone, and star stuff\u2014but clumsy and painful when used to manipulate other things.",
-										"A star spawn seer is almost always accompanied by one or more star spawn hulks. Although the hulk is a worthy combatant in its own right, it's also a vital part of a tactic often used by seers. When a seer deals psychic damage to a hulk, the hulk isn't hurt, while the effect ricochets off the hulk and expands to assault other creatures.",
-										"The seer's goal is to tap the energy sources and master the rites that will enable it to extend a bridge between the vulnerable sanity of the Material Plane and the squirming madness of an Elder Evil's prison."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Star Spawn",
-									"entries": [
-										"The Material Plane represents only one small part of the multiverse. Beyond the best-known planes of existence lie realms that are lethal to mortal life. Some are so hostile that even a moment's contact with such a place is enough to plunge a mortal mind into madness. Yet beings do exist that are native to these realms: beings that are eternally hungering, searching, warring, sometimes dreaming. These Elder Evils are far older than most of the mortal races and always horrific to humanoid minds.",
-										"However much they might desire to enter and dominate the Material Plane, the Elder Evils are unable or unwilling to leave their realms. Some are imprisoned in their dimensions by external forces, some are inextricably bound to their home realities, and others simply can't find any way out."
-									]
-								},
-								{
-									"name": "Heralds of Doom",
-									"type": "entries",
-									"entries": [
-										"The creatures known as star spawn are the heralds, servants, foot soldiers, and lieutenants of the Elder Evils, capable of taking on forms that can journey to the Material Plane. They arrive most often in the wake of a comet\u2014or perhaps such a phenomenon merely signals that star spawn are in the vicinity and available for communication. When the signs are right, warlocks and cultists hasten to gather together, read aloud their blasphemous texts, and conduct the mind-searing rituals that guide the blazing star spawn into the world."
-									]
-								},
-								{
-									"type": "quote",
-									"entries": [
-										"The cultists who blaspheme reality by calling out to Elder Evils often speak of a Far Realm from which these entities hail. In truth, there is no one place or space from which they come. There is the multiverse of things that are, and there is the multiverse of things that shouldn't be."
-									],
-									"by": "Mordenkainen"
-								}
+								"A star spawn seer is most often encountered as the leader of a cult that worships one or more of the Elder Evils. Usually, the seer is the only cult member that grasps the full extent of the horror the cult is venerating.",
+								"An entity that appears as a star spawn seer in the Material Plane usually arrives as something different\u2014something disembodied. When a warlock or other spellcaster establishes communication with it, the seer-entity takes control of the mortal's form and spirit, transforming it into a star spawn seer. Whoever the seer once was largely vanishes beneath the corpulent bulk of tumorous skin than builds up in strange whorls all over the seer's body. Hands become bulky, flipper-like appendages capable of grasping their strange staffs\u2014formed of some blend of flesh, bone, and star stuff\u2014but clumsy and painful when used to manipulate other things.",
+								"A star spawn seer is almost always accompanied by one or more star spawn hulks. Although the hulk is a worthy combatant in its own right, it's also a vital part of a tactic often used by seers. When a seer deals psychic damage to a hulk, the hulk isn't hurt, while the effect ricochets off the hulk and expands to assault other creatures.",
+								"The seer's goal is to tap the energy sources and master the rites that will enable it to extend a bridge between the vulnerable sanity of the Material Plane and the squirming madness of an Elder Evil's prison."
 							]
 						}
-					]
+					}
 				}
-			]
+			}
 		},
 		{
 			"name": "Steel Predator",
@@ -5997,7 +5885,7 @@
 									"type": "entries",
 									"name": "Sword Wraith",
 									"entries": [
-										"When a glory-obsessed warrior dies in battle without earning the honor it desperately sought, its valor\u2014hungry spirit might haunt the battlefield as a sword wraith."
+										"When a glory-obsessed warrior dies in battle without earning the honor it desperately sought, its valor-hungry spirit might haunt the battlefield as a sword wraith."
 									]
 								},
 								{

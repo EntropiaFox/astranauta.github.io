@@ -20,7 +20,7 @@ class LanguagesPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
@@ -29,7 +29,7 @@ class LanguagesPage extends ListPage {
 			<span class="col-6 bold pl-0">${it.name}</span>
 			<span class="col-2 text-center">${(it.type || "\u2014").uppercaseFirst()}</span>
 			<span class="col-2 text-center">${(it.script || "\u2014").toTitleCase()}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil2.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -44,7 +44,6 @@ class LanguagesPage extends ListPage {
 				script: it.script || "",
 			},
 			{
-				uniqueId: it.uniqueId ? it.uniqueId : anI,
 				isExcluded,
 			},
 		);
@@ -61,10 +60,10 @@ class LanguagesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (it, pinId) {
+	pGetSublistItem (it, ix) {
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-8 pl-0">${it.name}</span>
 				<span class="col-2 text-center">${(it.type || "\u2014").uppercaseFirst()}</span>
@@ -75,7 +74,7 @@ class LanguagesPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			it.name,
 			{
@@ -88,21 +87,21 @@ class LanguagesPage extends ListPage {
 	}
 
 	doLoadHash (id) {
-		const $content = $("#pagecontent").empty();
+		this._$pgContent.empty();
 		const it = this._dataList[id];
 
-		function buildStatsTab () {
-			$content.append(RenderLanguages.$getRenderedLanguage(it));
-		}
+		const buildStatsTab = () => {
+			this._$pgContent.append(RenderLanguages.$getRenderedLanguage(it));
+		};
 
-		function buildFluffTab (isImageTab) {
+		const buildFluffTab = (isImageTab) => {
 			return Renderer.utils.pBuildFluffTab({
 				isImageTab,
-				$content,
+				$content: this._$pgContent,
 				entity: it,
 				pFnGetFluff: Renderer.language.pGetFluff,
 			});
-		}
+		};
 
 		const tabMetas = [
 			new Renderer.utils.TabButton({
@@ -123,11 +122,11 @@ class LanguagesPage extends ListPage {
 			new Renderer.utils.TabButton({
 				label: "Fonts",
 				fnPopulate: () => {
-					$content.append(Renderer.utils.getBorderTr());
-					$content.append(Renderer.utils.getNameTr(it));
+					this._$pgContent.append(Renderer.utils.getBorderTr());
+					this._$pgContent.append(Renderer.utils.getNameTr(it));
 					const $td = $(`<td colspan="6" class="text"/>`);
-					$$`<tr class="text">${$td}</tr>`.appendTo($content);
-					$content.append(Renderer.utils.getBorderTr());
+					$$`<tr class="text">${$td}</tr>`.appendTo(this._$pgContent);
+					this._$pgContent.append(Renderer.utils.getBorderTr());
 
 					const allFonts = [...it.fonts || [], ...it._fonts || []];
 
@@ -190,9 +189,9 @@ class LanguagesPage extends ListPage {
 							if (val != null) updateText(val);
 						});
 
-					$$`<div class="flex-col w-100">
+					$$`<div class="ve-flex-col w-100">
 						${$styleFont}
-						${$selFont ? $$`<label class="flex-v-center mb-2"><div class="mr-2">Font:</div>${$selFont}</div>` : ""}
+						${$selFont ? $$`<label class="ve-flex-v-center mb-2"><div class="mr-2">Font:</div>${$selFont}</div>` : ""}
 						${$iptSample}
 						${$ptOutput}
 						<hr class="hr-4">
@@ -212,11 +211,6 @@ class LanguagesPage extends ListPage {
 		});
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 }
 

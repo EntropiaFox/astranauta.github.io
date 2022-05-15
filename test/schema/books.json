@@ -1,11 +1,12 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "books.json",
-	"version": "1.2.1",
+	"version": "1.2.5",
 	"type": "object",
 	"properties": {
 		"book": {
 			"type": "array",
+			"uniqueItems": true,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -13,21 +14,39 @@
 						"type": "string"
 					},
 					"id": {
-						"type": "string"
+						"type": "string",
+						"description": "An ID that will be used to refer to this book in tags."
 					},
 					"source": {
 						"type": "string"
+					},
+					"group": {
+						"description": "The group under which this book should be listed in the navbar.",
+						"type": "string",
+						"enum": [
+							"core",
+							"supplement",
+							"supplement-alt",
+							"setting",
+							"homebrew",
+							"screen",
+							"other"
+						]
 					},
 					"author": {
 						"type": "string"
 					},
 					"published": {
-						"type": "string"
+						"type": "string",
+						"format": "date",
+						"description": "The date of publication of the book, in the format YYYY-MM-DD (RFC3339)."
 					},
 					"coverUrl": {
+						"description": "A direct link to an image which should be 300 x 300px in size. Larger images will be centred and cropped.",
 						"type": "string"
 					},
 					"contents": {
+						"description": "The linked Table of Contents of the rulebook.",
 						"type": "array",
 						"items": {
 							"type": "object",
@@ -68,10 +87,19 @@
 									"properties": {
 										"type": {
 											"type": "string",
-											"enum": ["chapter", "appendix", "part", "episode", "level"]
+											"enum": [
+												"chapter",
+												"appendix",
+												"part",
+												"episode",
+												"level"
+											]
 										},
 										"identifier": {
-											"type": ["integer", "string"]
+											"type": [
+												"integer",
+												"string"
+											]
 										}
 									},
 									"additionalProperties": false,
@@ -93,19 +121,11 @@
 					"id",
 					"source",
 					"contents",
-					"published"
+					"published",
+					"group"
 				]
 			}
 		}
 	},
 	"additionalProperties": false
 }
-
-
-
-
-
-
-
-
-

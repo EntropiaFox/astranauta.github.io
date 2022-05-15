@@ -6,9 +6,9 @@
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
-				"Melee weapon attack: {@hit 8} to hit, triggering creature. Hit: 5 ({@dice 1d10}) piercing damage. This attack can't gain advantage or disadvantage. A creature hit by the trap has its speed reduced to 0. It can't move until it breaks free of the trap, which requires a successful DC 15 Strength check by the creature or another creature adjacent to the trap."
+				"{@atk mw} {@hit 8} to hit, triggering creature. Hit: 5 ({@dice 1d10}) piercing damage. This attack can't gain advantage or disadvantage. A creature hit by the trap has its speed reduced to 0. It can't move until it breaks free of the trap, which requires a successful DC 15 Strength check by the creature or another creature adjacent to the trap."
 			],
 			"trigger": [
 				"A creature that steps on the bear trap triggers it."
@@ -31,7 +31,7 @@
 				"The trip wire is 3 inches off the ground and stretches between two support beams. The DC to spot the trip wire is 10. A successful DC 15 Dexterity check using {@item thieves' tools|phb} disables the trip wire harmlessly. A character without {@item thieves' tools|phb} can attempt this check with disadvantage using any edged weapon or edged tool. On a failed check, the trap triggers.",
 				"Anyone who inspects the beams can easily determine that they are merely wedged in place. As an action, a character can knock over a beam, causing the trap to trigger.",
 				"The ceiling above the trip wire is in bad repair, and anyone who can see it can tell that it's in danger of collapse.",
-				"When the trap is triggered, the unstable ceiling collapses. Any creature in the area beneath the unstable section must succeed on a DC 15 Dexterity saving throw, taking 22 ({@dice 4d10}) bludgeoning damage on a failed save, or half as much damage on a successful one. Once the trap is triggered, the floor of the area is filled with rubble and becomes difficult terrain."
+				"When the trap is triggered, the unstable ceiling collapses. Any creature in the area beneath the unstable section must succeed on a DC 15 Dexterity saving throw, taking 22 ({@dice 4d10}) bludgeoning damage on a failed save, or half as much damage on a successful one. Once the trap is triggered, the floor of the area is filled with rubble and becomes {@quickref difficult terrain||3}."
 			]
 		},
 		{
@@ -40,9 +40,9 @@
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
-				"The trap makes two attacks against the triggering creature. Ranged Weapon Attack +8 to hit, two attacks; Hit: 5 ({@dice 1d10}) piercing damage on a hit. This attack can't gain advantage or disadvantage."
+				"The trap makes two attacks against the triggering creature. {@atk rw} {@hit 8} to hit, two attacks; Hit: 5 ({@dice 1d10}) piercing damage on a hit. This attack can't gain advantage or disadvantage."
 			],
 			"trigger": [
 				"A creature that walks through the trip wire triggers the trap."
@@ -52,6 +52,26 @@
 			],
 			"entries": [
 				"The crossbow trap is a favorite of kobolds and other creatures that rely on traps to defend their lairs. It consists of a trip wire strung across a hallway and connected to a pair of hidden heavy crossbows. The crossbows are aimed to fire down the hallway at anyone who disturbs the trip wire."
+			]
+		},
+		{
+			"name": "Death Fog Trap",
+			"source": "RtG",
+			"page": 19,
+			"trapHazType": "SMPL",
+			"tier": 2,
+			"threat": "dangerous",
+			"effect": [
+				"The doors slam shut and lock as a poisonous cloud (treat as a {@dc 15} {@spell cloudkill} spell) fills the room."
+			],
+			"trigger": [
+				"The burial niches are disturbed by thieves or desecrators."
+			],
+			"countermeasures": [
+				"A successful DC 15 Wisdom ({@skill Perception}) check notes arcane runes on the back of the doors and in the burial niches. A successful DC 15 Intelligence ({@skill Arcana}) check realizes that they are tied to a conjuration ward. The runes can be destroyed with dispel magic (DC 15 or cast at 5th level), which disperses the cloud."
+			],
+			"entries": [
+				"The bones of the dead are warded to eliminate any thieves."
 			]
 		},
 		{
@@ -74,7 +94,7 @@
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 1,
+			"threat": "moderate",
 			"effect": [
 				"An iron portcullis drops from the ceiling, blocking an exit or a passageway."
 			],
@@ -94,7 +114,7 @@
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 2,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
 				"A 15-foot cube of fire erupts, covering the pressure plate and the area around it. Each creature in the area must make a DC 15 Dexterity saving throw, taking 24 ({@dice 7d6}) fire damage on a failed save, or half as much damage on a successful one."
 			],
@@ -122,12 +142,133 @@
 			]
 		},
 		{
+			"name": "Malfunctioning Phase Transference Emitter",
+			"source": "AZfyT",
+			"page": 9,
+			"trapHazType": "CMPX",
+			"tier": 1,
+			"threat": "dangerous",
+			"trigger": [
+				"The trap has already been sprung once the power switch was thrown."
+			],
+			"initiative": 3,
+			"eActive": [
+				"The Phase Transference Emitter is overloading. Both the emitter's ray and the coil matrix are dangerous. The emitter's housing is extremely hot from the massive influx of electricity.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Phase Beam (Initiative 20)",
+							"entry": "The phase beam shoots at a random creature within the room. The beam has a {@hit +5} bonus to the attack roll. On a hit, the target and all its gear become both {@condition invisible} and incorporeal for one minute. The target's only method of movement is a fly speed of 10 feet. The target has resistance to nonmagical damage, and it has advantage on Strength, Dexterity, and Constitution saving throws. The target can pass through solid surfaces and liquids. The target can't fall and remains hovering in the air even when {@condition stunned} or otherwise {@condition incapacitated}. While affected by the phase beam, the target can't manipulate, physically attack, or interact with objects and creatures not affected by the phase beam. The target can still talk and cast spells."
+						},
+						{
+							"type": "item",
+							"name": "Coil Discharge (Initiative 10)",
+							"entry": "Arc bolts of electricity flash out of the matrix. Each creature within 30 feet of the power matrix must make a DC 11 Dexterity saving throw or take 10 ({@damage 3d6}) lightning damage."
+						}
+					]
+				}
+			],
+			"eDynamic": [
+				"As time passes, the device becomes more erratic and eventually explodes.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Phase Beam Fires More Often",
+							"entry": "Starting on its fourth turn, the phase beam attacks on initiative 10 as well as initiative 20."
+						},
+						{
+							"type": "item",
+							"name": "Room Heats Up",
+							"entry": "The heat from the emitter brings the room to unbearable temperatures. At the beginning of the trap's third turn, the room's temperature is noticeably hotter. At the beginning of the trap's sixth turn on initiative 20, all creatures must succeed on a DC 10 Constitution saving throw or gain one level of {@condition exhaustion}. Creatures wearing medium or heavy armor have disadvantage on the saving throw, and creatures with fire immunity or resistance do not need to make this saving throw. This saving throw is repeated at DC 13 at the beginning of the trap's ninth turn on initiative 20."
+						},
+						{
+							"type": "item",
+							"name": "Explosion",
+							"entry": "At the beginning of the trap's tenth turn, the entire system overloads and the power matrix explodes, dealing 35 ({@damage 10d6}) fire damage to everyone in the room, shorting out the power for the whole facility, and causing an Azorius response team to be sent out to find out what happened. The trap is destroyed, along with Delrim's prospects of ever graduating from Prism University."
+						}
+					]
+				}
+			],
+			"eConstant": [
+				"The emitter and power coil matrix are both dangerous to be near.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Coil Discharge",
+							"entry": "Any creature that ends its turn within 5 feet of the power matrix must make a DC 11 Dexterity saving throw or take 7 ({@damage 2d6}) lightning damage. Creatures wearing metal armor have disadvantage on the saving throw."
+						},
+						{
+							"type": "item",
+							"name": "Emitter Heat",
+							"entry": "The emitter is hot to the touch. Any creature touching the emitter takes 3 ({@damage 1d6}) fire damage."
+						}
+					]
+				}
+			],
+			"countermeasures": [
+				"There are ways to thwart the trap's active elements and prevent the explosion from occurring.",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Phase Beam",
+							"entry": "Characters can anticipate the beam's firing sequence, lock the swivel, or sever the power cables connecting the emitter to the power matrix."
+						},
+						{
+							"type": "itemSub",
+							"name": "Intelligence (Investigation), DC 15",
+							"entry": "As an action, a creature that can see the emitter can attempt an Intelligence ({@skill Investigation}) check. A successful check means that the creature now can anticipate the emitter's firing sequence. Phase beam attacks that target that creature have disadvantage."
+						},
+						{
+							"type": "itemSub",
+							"name": "Dexterity check using thieves' tools or Strength check, DC 15",
+							"entry": "Creatures can attempt to lock the swivel on the emitter to keep the beam pointed at only one spot, thus making the beam easily avoidable. A successful check means the phase beam attack is considered disabled. Creatures that attempt this must touch the emitter, taking the emitter heat damage."
+						},
+						{
+							"type": "itemSub",
+							"name": "Attack",
+							"entry": "As an action, a creature can sever one of the ten power cables connected to the emitter. Each power cable has AC 5 and 3 hit points. For every two power cables severed (round down), the phase beam attack bonus is reduced by 1. Once the tenth power cable is severed, the emitter ceases to function and the phase beam attack as well as the emitter heat constant element are disabled."
+						},
+						{
+							"type": "item",
+							"name": "Coil Discharge",
+							"entry": "The coils can be shut down by dispelling or disabling the magic that amplifies their energy or by shutting off the power source."
+						},
+						{
+							"type": "itemSub",
+							"name": "Intelligence (Arcana), DC 15",
+							"entry": "The magic augmenting the power matrix can be disabled with three successful checks. Alternatively, it can be disabled with one successful casting of {@spell dispel magic} (DC 13) targeting the coils. If the coils are disabled, it disables the coil discharge elements as well as the explosion dynamic element. The emitter is still active, receiving some power from the matrix. Creatures that attempt this are subject to the coil discharge constant element if they end their turn next to the power matrix."
+						},
+						{
+							"type": "itemSub",
+							"name": "Shut off the main power cable",
+							"entry": "On the wall near the power matrix is a mizzium-reinforced metal casing that holds the main power breaker for the matrix. It can be spotted with a successful DC 10 Wisdom ({@skill Perception}) check if someone is looking for something else notable in the lab. This is securely locked, requiring two successful DC 20 Dexterity checks with {@item thieves' tools|phb}, two successful DC 16 Intelligence ({@skill Arcana}) checks, or 20 points of damage with a magic weapon to break open. Once opened, a switch can be thrown to shut down the matrix, disabling all elements of the trap."
+						}
+					]
+				}
+			],
+			"entries": [
+				"The malfunctioning Phase Transference Emitter consists of two primary components. The power battery is a 10-foot circular matrix of conduction coils wired directly to a generator via a secure power cable. The coils have ten nodes that connect to a large eight-foot tall cylindrical steel emitter rigged on a swivel."
+			]
+		},
+		{
 			"name": "Net Trap",
 			"source": "XGE",
 			"page": 113,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
 				"A net covering a 10-foot-by-10-foot area centered on the trip wire falls to the floor as a bell rings. Any creature fully within this area must succeed on a DC 15 Dexterity saving throw or be {@condition restrained}. A creature can use its action to make a DC 10 Strength check to try to free itself or another creature in the net. Dealing 5 slashing damage to the net (AC 10, 20hp) also frees a creature without harming the creature."
 			],
@@ -147,7 +288,7 @@
 			"page": 118,
 			"trapHazType": "CMPX",
 			"tier": 1,
-			"threat": 2,
+			"threat": "dangerous",
 			"trigger": [
 				"This trap activates as soon as a non-undead creature enters the hallway, and it remains active while any non-undead creature is within the hall."
 			],
@@ -160,17 +301,17 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Whirling Blades (Initiative 20).",
+							"name": "Whirling Blades (Initiative 20)",
 							"entry": "The blades attack each creature in the first 80 feet of the hallway, with a +5 bonus to the attack roll and dealing 11 ({@dice 2d10}) slashing damage on a hit."
 						},
 						{
 							"type": "item",
-							"name": "Crushing Pillars (Initiative 10).",
+							"name": "Crushing Pillars (Initiative 10)",
 							"entry": "Each creature in the 50-foot-long area beyond the first 80 feet of the hallway must make a DC 15 Dexterity saving throw. On a failed save, a creature takes 11 ({@dice 2d10}) bludgeoning damage and is knocked {@condition prone}. On a successful save, the creature takes half as much damage and isn't knocked {@condition prone}."
 						},
 						{
 							"type": "item",
-							"name": "Rune of Fear (Initiative 10).",
+							"name": "Rune of Fear (Initiative 10)",
 							"entry": "Each creature in the 30-foot-long area beyond the Crushing Pillars must make a DC 15 Wisdom saving throw. On a failed saving throw, the creature becomes {@condition frightened} by the rune, and it must immediately use its reaction to move its speed in the direction of the pillars. The {@condition frightened} creature can't move closer to the far end of the hallway until it uses its action to make a DC 15 Wisdom saving throw, which ends the {@condition frightened} condition on itself on a success."
 						}
 					]
@@ -184,12 +325,12 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Blades Accelerate.",
+							"name": "Blades Accelerate",
 							"entry": "The blades move with increasing speed, slowing only when they hit a target. Each time the blades miss with an attack, their next attack becomes harder to avoid. After each miss, the blades' attack bonus increases by 2, and their damage increases by 3 ({@dice 1d6}). These benefits apply until the blades hit a target, after which the values return to normal."
 						},
 						{
 							"type": "item",
-							"name": "Rune's Defense.",
+							"name": "Rune's Defense",
 							"entry": "Tampering with the Rune of Fear increases the trap's power. Each successful check on an attempt to disable the rune increases the damage of the blades and the crushing pillars by 5 ({@dice 1d10}) and increases the rune's saving throw DC by 1."
 						}
 					]
@@ -203,12 +344,12 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Whirling Blades.",
+							"name": "Whirling Blades",
 							"entry": "Any creature that ends its turn in the blades' area is targeted by an attack: +5 attack bonus; 5 (1d10) slashing damage on a hit."
 						},
 						{
 							"type": "item",
-							"name": "Rune of Fear.",
+							"name": "Rune of Fear",
 							"entry": "Any creature that ends its turn within 30 feet of the far end of the corridor must make a saving throw against the Rune of Fear effect."
 						}
 					]
@@ -222,39 +363,39 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Whirling Blades.",
+							"name": "Whirling Blades",
 							"entry": "Characters can smash the blades, damage their components, or discern how to avoid them. The blades are disabled if their attack bonus is reduced to -8. Ways to reduce it are described below."
 						},
 						{
 							"type": "itemSub",
-							"name": "Intelligence (Investigation), DC 15.",
+							"name": "Intelligence (Investigation), DC 15",
 							"entry": "As an action, a creature that can see the blades can attempt an Intelligence ({@skill Investigation}) check. A successful check means that the character has learned how to anticipate the blades' movement, imposing disadvantage on the blades' attacks against the creature while it isn't {@condition incapacitated}."
 						},
 						{
 							"type": "itemSub",
-							"name": "Attack.",
+							"name": "Attack",
 							"entry": "A creature in the area can ready an attack to strike at one of the blades as it goes by. The blade gains advantage on its attack against the creature. The creature then attacks. Each blade has AC 15 and 15 hit points. Destroying a blade reduces the Whirling Blades attack bonus by 2."
 						},
 						{
 							"type": "itemSub",
-							"name": "Dexterity check using thieves' tools, DC 15.",
+							"name": "Dexterity check using thieves' tools, DC 15",
 							"entry": "Creatures can use {@item thieves' tools|phb} in the area attacked by the blades to foil their mechanism. A successful check reduces the Whirling Blades attack bonus by 2."
 						},
 						{
 							"type": "item",
-							"name": "Crushing Pillars.",
+							"name": "Crushing Pillars",
 							"entry": "The pillars are not susceptible to countermeasures."
 						},
 						{
 							"type": "item",
-							"name": "Rune of Fear.",
+							"name": "Rune of Fear",
 							"entry": "The rune can be disabled with three successful DC 15 Intelligence ({@skill Arcana}) checks. Each check requires an action. A creature must be at the end of the hallway to attempt the check, and only one creature can work on this task at once. Once a creature attempts a check for this purpose, no other character can do so until the end of that creature's next turn. Alternatively, the rune can be disabled with three successful castings of {@spell dispel magic} (DC 13) targeting the rune."
 						}
 					]
 				}
 			],
 			"entries": [
-				"Hidden within a buried pyramid that marks the location of the Lost City of Cynidicea is the tomb of King Alexander and Queen Zenobia. The entrance to their tomb is a long hallway riddled with traps, accessible only by cunningly hidden secret doors. The hallway is 20 feet wide and 160 feet long. It is mostly clear. After 80 feet, the floor is broken and cracked, becoming difficult terrain until the 130-foot mark."
+				"Hidden within a buried pyramid that marks the location of the Lost City of Cynidicea is the tomb of King Alexander and Queen Zenobia. The entrance to their tomb is a long hallway riddled with traps, accessible only by cunningly hidden secret doors. The hallway is 20 feet wide and 160 feet long. It is mostly clear. After 80 feet, the floor is broken and cracked, becoming {@quickref difficult terrain||3} until the 130-foot mark."
 			]
 		},
 		{
@@ -263,7 +404,7 @@
 			"page": 114,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 1,
+			"threat": "moderate",
 			"effect": [
 				"The triggering creature must make a DC 10 Dexterity saving throw. On a successful save, the creature catches itself on the pit's edge or instinctively steps back. On a failed save, the creature falls into the pit and takes 3 ({@dice 1d6}) bludgeoning damage from the fall."
 			],
@@ -350,7 +491,7 @@
 			"page": 114,
 			"trapHazType": "SMPL",
 			"tier": 1,
-			"threat": 3,
+			"threat": "deadly",
 			"effect": [
 				"The triggering creature must make a DC 20 Constitution saving throw. On a failed save, the creature takes 14 ({@dice 4d6}) poison damage and is {@condition poisoned} for 10 minutes. While {@condition poisoned} in this way, the creature is {@condition paralyzed}. On a successful save, the creature takes half as much damage and isn't {@condition poisoned}."
 			],
@@ -370,7 +511,7 @@
 			"page": 120,
 			"trapHazType": "CMPX",
 			"tier": 3,
-			"threat": 3,
+			"threat": "deadly",
 			"trigger": [
 				"This trap activates when a ruby is pried from one of the statues. Each statue's mouth slides open, revealing a 1-foot-wide pipe that runs down its throat."
 			],
@@ -383,17 +524,17 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Locked Doors (Initiative 20).",
+							"name": "Locked Doors (Initiative 20)",
 							"entry": "The four doors to this room slam shut and are locked in place by magic. This effect activates only once, the first time the trap is triggered."
 						},
 						{
 							"type": "item",
-							"name": "Poison Gas (Initiative 20).",
+							"name": "Poison Gas (Initiative 20)",
 							"entry": "Poison gas floods the room. Each creature inside must make a DC 20 Constitution saving throw, taking 33 ({@dice 6d10}) poison damage on a failed save, or half as much damage on a successful one."
 						},
 						{
 							"type": "item",
-							"name": "Tempest (Initiative 10).",
+							"name": "Tempest (Initiative 10)",
 							"entries": [
 								"Air and gas boils from the trap. Roll a d6, and consult the following table.",
 								{
@@ -447,7 +588,7 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Increased Potency.",
+							"name": "Increased Potency",
 							"entry": "The damage from the Poison Gas element increases by 11 ({@dice 2d10}) each round after it activates, to a maximum of 55 ({@dice 10d10})."
 						}
 					]
@@ -461,12 +602,12 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Open the Doors.",
+							"name": "Open the Doors",
 							"entry": "Opening the doors is the quickest way to circumvent the trap, but they are warded with magic. To open the doors, a character must first succeed on a DC 20 Wisdom ({@skill Perception}) check to find the locking mechanism. A successful DC 20 Intelligence ({@skill Arcana}) check is then required to disable the sphere of force that surrounds the lock ({@spell dispel magic} is ineffective against it). Success on a DC 20 Dexterity check using thieves' tools picks the lock. Finally, a successful DC 20 Strength ({@skill Athletics}) check is needed to push the door open. Each check requires an action."
 						},
 						{
 							"type": "item",
-							"name": "Disable the Statues.",
+							"name": "Disable the Statues",
 							"entry": "A statue can be disabled by blocking the flow of gas from its mouth. Heavily damaging a statue is a bad idea, for doing so leaves the gas vents open. Reducing a statue to 0 hit points (AC 17; 20 hp; resistance to fire, piercing, and slashing damage; immune to poison and psychic damage) or making a successful DC 20 Strength check to break it cracks the statue and increases the Poison Gas damage by 5 ({@dice 1d10}). A successful DC 20 Dexterity check using thieves' tools, or a successful DC 15 Strength check made to block up the statue with a cloak or similar object, decreases the poison damage by 5 ({@dice 1d10}). Once a character succeeds on the check, someone must remain next to the statue to keep it blocked up. When all four statues are blocked in this manner, the trap deactivates."
 						}
 					]
@@ -487,7 +628,7 @@
 				"With a successful DC 15 Wisdom ({@skill Perception}) check, a character can spot the trapdoor and pressure plate.",
 				"A search of the floor accompanied by a successful DC 15 Intelligence ({@skill Investigation}) check reveals variations in the mortar and stone that betray the pressure plate's presence. The same check made while inspecting the ceiling notes variations in the stonework that reveal the trapdoor. Wedging an iron spike or other object under the pressure plate prevents the trap from activating.",
 				"Activation of the sphere requires all creatures present to roll initiative. The sphere rolls initiative with a {@hit +8} bonus. On its turn, it moves 60 feet in a straight line.",
-				"The sphere can move through creatures' spaces, and creatures can move through its space, treating it as difficult terrain. Whenever the sphere enters a creature's space or a creature enters its space while it's rolling, that creature must succeed on a DC 15 Dexterity saving throw or take 55 ({@dice 10d10}) bludgeoning damage and be knocked {@condition prone}.",
+				"The sphere can move through creatures' spaces, and creatures can move through its space, treating it as {@quickref difficult terrain||3}. Whenever the sphere enters a creature's space or a creature enters its space while it's rolling, that creature must succeed on a DC 15 Dexterity saving throw or take 55 ({@dice 10d10}) bludgeoning damage and be knocked {@condition prone}.",
 				"The sphere stops when it hits a wall or similar barrier. It can't go around corners, but smart dungeon builders incorporate gentle, curving turns into nearby passages that allow the sphere to keep moving.",
 				"As an action, a creature within 5 feet of the sphere can attempt to slow it down with a DC 20 Strength check. On a successful check, the sphere's speed is reduced by 15 feet. If the sphere's speed drops to 0, it stops moving and is no longer a threat."
 			]
@@ -498,7 +639,7 @@
 			"page": 114,
 			"trapHazType": "SMPL",
 			"tier": 2,
-			"threat": 2,
+			"threat": "dangerous",
 			"effect": [
 				"Each Medium or larger creature in a 5-foot-wide, 20-foot-long area must make a DC 15 Dexterity saving throw, taking 14 ({@dice 4d6}) slashing damage on a failed save, or half as much damage on a successful one."
 			],
@@ -518,7 +659,7 @@
 			"page": 114,
 			"trapHazType": "SMPL",
 			"tier": 3,
-			"threat": 3,
+			"threat": "deadly",
 			"effect": [
 				"When activated, this trap casts a {@spell sleep} spell centered on the pressure plate, using a 9th-level spell slot."
 			],
@@ -550,7 +691,7 @@
 			"page": 119,
 			"trapHazType": "CMPX",
 			"tier": 2,
-			"threat": 3,
+			"threat": "deadly",
 			"trigger": [
 				"This trap activates as soon as the door leading to the jester's coffin is opened. A magic portal opens at the northern end of the hallway and disgorges an enormous steel sphere, which hurtles down the slope. When it reaches the bottom of the slope, a second portal briefly appears and teleports the sphere back to the top of the slope to begin the process again."
 			],
@@ -564,7 +705,7 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Sphere of Crushing Doom (Initiative 10).",
+							"name": "Sphere of Crushing Doom (Initiative 10)",
 							"entry": "The trap's active element is a sphere of steel that almost fills the 10-foot width of the hallway and rolls to the bottom of the slope on its turn. Each creature in the sphere's path must make a DC 20 Strength saving throw. On a failed save, a creature takes 22 ({@dice 4d10}) bludgeoning damage and is knocked {@condition prone}. On a successful save, a creature takes half as much damage and isn't knocked {@condition prone}. Objects that block the sphere, such as a conjured wall, take maximum damage from the impact."
 						}
 					]
@@ -578,7 +719,7 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Speed Kills.",
+							"name": "Speed Kills",
 							"entry": "After its turn, the sphere gains speed, represented by its damage increasing by 11 ({@dice 2d10}). While its damage is 55 ({@dice 10d10}) or greater, it acts on initiative count 20 and 10."
 						}
 					]
@@ -592,12 +733,12 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Stop the Sphere.",
+							"name": "Stop the Sphere",
 							"entry": "Stopping the sphere is the easiest way to disrupt the trap. A wall of force can do so easily, as can any object placed in its path that has enough hit points to absorb damage from the sphere without being destroyed."
 						},
 						{
 							"type": "item",
-							"name": "Disrupt the Portals.",
+							"name": "Disrupt the Portals",
 							"entries": [
 								"Either portal can be neutralized with three successful DC 20 Intelligence ({@skill Arcana}) checks, but the process of analyzing a portal to disrupt it takes time. Faint runes in the ceiling and floor at both ends of the hallway are involved in the functioning of the portals. A creature must first use an action to examine a set of runes, then use a subsequent action to attempt to vandalize the runes. Each successful check reduces the sphere's damage by 11 ({@dice 2d10}), as the disrupted sphere loses speed moving through the failing portal.",
 								"Alternatively, a set of runes can be disabled with three successful castings of {@spell dispel magic} (DC 19) targeting any of the runes in the set.",
@@ -1012,13 +1153,56 @@
 			]
 		},
 		{
+			"name": "Rot Grub",
+			"source": "VGM",
+			"page": 208,
+			"otherSources": [
+				{
+					"source": "MPMM",
+					"page": 237
+				}
+			],
+			"entries": [
+				"Rot grubs are finger-sized maggots that eat living and dead creatures, although they can survive on vegetation. They infest corpses and piles of decaying matter and attack anyone that disturbs them. After burrowing into a creature, rot grubs instinctively chew their way toward vital parts.",
+				"Rot grubs recoil from flames, and fire is the main weapon against rot grubs once they're inside a body. Magic that neutralizes poison can also stop them before they kill their host.",
+				{
+					"type": "entries",
+					"name": "Single Rot Grub",
+					"page": 237,
+					"entries": [
+						"Rot grubs pose a threat both singly and as a swarm. See the {@creature swarm of rot grubs|MPMM|stat block} for the mechanics of a swarm of rot grubs. A single rot grub has no stat block.",
+						"Any creature that comes into contact with a single rot grub must succeed on a {@dc 10} Constitution saving throw or be {@condition poisoned}, as the rot grub burrows into the creature. The {@condition poisoned} creature takes 3 ({@damage 1d6}) poison damage at the end of each of its turns. Whenever the {@condition poisoned} creature takes fire damage, the creature can repeat the saving throw, ending the effect on itself on a success. If the {@condition poisoned} creature ends its turn with 0 hit points, it dies, as the rot grub kills it."
+					]
+				}
+			]
+		},
+		{
 			"name": "Russet Mold",
 			"source": "VGM",
 			"page": 196,
+			"otherSources": [
+				{
+					"source": "MPMM",
+					"page": 252
+				}
+			],
 			"entries": [
-				"The fungus known as russet mold is reddish-brown in color and found only in places that are dark, warm, and wet. Russet mold that spreads out across a metal object can be mistaken for natural rust, and a successful DC 15 Intelligence ({@skill Nature}) or Wisdom ({@skill Survival}) check is required to identify it accurately by sight in such a case.",
-				"Any creature that comes within 5 feet of russet mold must make a DC 13 Constitution saving throw as the mold emits a puff of spores. On a failed save, the creature becomes {@condition poisoned}. While {@condition poisoned} in this way, the creature takes 7 ({@dice 2d6}) poison damage at the start of each of its turns, sprouting mold as it takes damage. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Any magic that neutralizes poison or cures disease kills the infestation. A creature reduced to 0 hit points by the mold's poison damage dies. If the dead creature is a beast, a giant, or a humanoid, one or more newborn {@creature Vegepygmy|vgm|vegepygmies} emerge from its body 24 hours later: one newborn from a Small corpse, two from a Medium corpse, four from a Large corpse, eight from a Huge corpse, or sixteen from a Gargantuan corpse.",
-				"Russet mold can be hard to kill, since weapons and most types of damage do it no harm. Effects that deal acid, necrotic, or radiant damage kill 1 square foot of russet mold per 1 damage dealt. A pound of salt, a gallon of alcohol, or a magical effect that cures disease kills russet mold in a square area that is 10 feet on a side. Sunlight kills any russet mold in the light's area."
+				"Few know for sure where russet mold came from. One historical account tells of adventurers in a mountain range discovering russet mold and {@filter vegepygmies|bestiary|search=vegepygmy} in a peculiar metal dungeon full of strange life. Another story says that explorers found russet mold in a crater left by a falling star, with {@creature Vegepygmy|MPMM|vegepygmies} infesting the forest nearby.",
+				"The mold is found only in places that are dark, warm, and wet. Russet mold that spreads out across a metal object can be mistaken for rust, and a successful {@dc 15} Intelligence ({@skill Nature}) or Wisdom ({@skill Survival}) check is required to identify it.",
+				{
+					"type": "entries",
+					"name": "Effects of the Mold",
+					"entries": [
+						"Any creature that comes within 5 feet of russet mold must make a {@dc 13} Constitution saving throw as the mold emits a puff of spores. On a failed save, the creature is {@condition poisoned}. While {@condition poisoned} in this way, the creature takes 7 ({@damage 2d6}) poison damage at the start of each of its turns. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Any magic that neutralizes poison or cures disease kills the infestation. A creature reduced to 0 hit points by the mold dies. If the dead creature is a Beast, a Giant, or a Humanoid, one or more vegepygmies emerge from its body 24 hours later: one from a Small corpse, two from a Medium corpse, four from a Large corpse, eight from a Huge corpse, or sixteen from a Gargantuan corpse."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Destroying the Mold",
+					"entries": [
+						"Russet mold can be hard to kill, since weapons and most types of damage do it no harm. Effects that deal acid, necrotic, or radiant damage kill 1 square foot of russet mold per 1 damage dealt. A pound of salt, a gallon of alcohol, or magic that cures disease kills russet mold in a square area that is 10 feet on a side. Sunlight kills any russet mold in the light's area."
+					]
+				}
 			]
 		},
 		{
@@ -1027,7 +1211,7 @@
 			"page": 110,
 			"trapHazType": "WLD",
 			"entries": [
-				"Slippery ice is difficult terrain. When a creature moves onto slippery ice for the first time on a turn, it must succeed on a DC 10 Dexterity ({@skill Acrobatics}) check or fall {@condition prone}."
+				"Slippery ice is {@quickref difficult terrain||3}. When a creature moves onto slippery ice for the first time on a turn, it must succeed on a DC 10 Dexterity ({@skill Acrobatics}) check or fall {@condition prone}."
 			]
 		},
 		{
@@ -1065,7 +1249,7 @@
 			"source": "DMG",
 			"page": 105,
 			"entries": [
-				"Giant spiders weave thick, sticky webs across passages and at the bottom of pits to snare prey. These web-filled areas are difficult terrain. Moreover, a creature entering a webbed area for the first time on a turn or starting its turn there must succeed on a DC 12 Dexterity saving throw or become {@condition restrained} by the webs. A {@condition restrained} creature can use its action to try to escape, doing so with a successful DC 12 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check.",
+				"Giant spiders weave thick, sticky webs across passages and at the bottom of pits to snare prey. These web-filled areas are {@quickref difficult terrain||3}. Moreover, a creature entering a webbed area for the first time on a turn or starting its turn there must succeed on a DC 12 Dexterity saving throw or become {@condition restrained} by the webs. A {@condition restrained} creature can use its action to try to escape, doing so with a successful DC 12 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check.",
 				"Each 10-foot cube of giant webs has AC 10, 15 hit points, vulnerability to fire, and immunity to bludgeoning, piercing, and psychic damage."
 			]
 		},

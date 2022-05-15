@@ -4,7 +4,9 @@
 			"name": "Gremlin",
 			"source": "PSK",
 			"page": 26,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -53,7 +55,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -62,13 +63,16 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Servo",
 			"source": "PSK",
 			"page": 32,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -111,19 +115,21 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"S"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Sky Leviathan",
 			"source": "PSK",
 			"page": 28,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -168,7 +174,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Swallow"
 			],
@@ -183,7 +188,8 @@
 			"conditionInflict": [
 				"blinded",
 				"restrained"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

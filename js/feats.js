@@ -22,21 +22,21 @@ class FeatsPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(feat, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(feat.source);
 		const hash = UrlUtil.autoEncodeHash(feat);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-0-3 px-0 flex-vh-center lst__btn-toggle-expand self-flex-stretch">[+]</span>
+			<span class="col-0-3 px-0 ve-flex-vh-center lst__btn-toggle-expand ve-self-flex-stretch">[+]</span>
 			<span class="bold col-3-5 px-1">${feat.name}</span>
 			<span class="col-3-5 ${feat._slAbility === VeCt.STR_NONE ? "list-entry-none " : ""}">${feat._slAbility}</span>
 			<span class="col-3 ${feat._slPrereq === VeCt.STR_NONE ? "list-entry-none " : ""}">${feat._slPrereq}</span>
-			<span class="source col-1-7 text-center ${Parser.sourceJsonToColor(feat.source)} pr-0" title="${Parser.sourceJsonToFull(feat.source)}" ${BrewUtil.sourceJsonToStyle(feat.source)}>${source}</span>
+			<span class="source col-1-7 text-center ${Parser.sourceJsonToColor(feat.source)} pr-0" title="${Parser.sourceJsonToFull(feat.source)}" ${BrewUtil2.sourceJsonToStyle(feat.source)}>${source}</span>
 		</a>
-		<div class="flex ve-hidden relative lst__wrp-preview">
+		<div class="ve-flex ve-hidden relative lst__wrp-preview">
 			<div class="vr-0 absolute lst__vr-preview"></div>
-			<div class="flex-col py-3 ml-4 lst__wrp-preview-inner"></div>
+			<div class="ve-flex-col py-3 ml-4 lst__wrp-preview-inner"></div>
 		</div>`;
 
 		const listItem = new ListItem(
@@ -50,7 +50,6 @@ class FeatsPage extends ListPage {
 				prerequisite: feat._slPrereq,
 			},
 			{
-				uniqueId: feat.uniqueId ? feat.uniqueId : ftI,
 				isExcluded,
 			},
 		);
@@ -67,10 +66,10 @@ class FeatsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (feat, pinId) {
+	pGetSublistItem (feat, ix) {
 		const hash = UrlUtil.autoEncodeHash(feat);
 
-		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-4 pl-0">${feat.name}</span>
 				<span class="col-4 ${feat._slAbility === VeCt.STR_NONE ? "list-entry-none" : ""}">${feat._slAbility}</span>
@@ -81,7 +80,7 @@ class FeatsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			feat.name,
 			{
@@ -96,14 +95,9 @@ class FeatsPage extends ListPage {
 	doLoadHash (id) {
 		const feat = this._dataList[id];
 
-		$("#pagecontent").empty().append(RenderFeats.$getRenderedFeat(feat));
+		this._$pgContent.empty().append(RenderFeats.$getRenderedFeat(feat));
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 }
 

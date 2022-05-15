@@ -19,6 +19,13 @@
 		align-self: center;
 	}
 
+	&disp-srd {
+		font-size: 8.5px;
+		vertical-align: super;
+		top: 2px;
+		margin-left: 3px;
+	}
+
 	&wrp-preview {
 		width: 500px;
 		border: 1px solid $rgb-border-grey;
@@ -45,8 +52,15 @@
 		}
 
 		&wrp-preview {
-			width: 500px;
 			border: 1px solid $rgb-border-grey--night;
+		}
+	}
+}
+
+.style-switch__wide {
+	.pg-search__ {
+		&wrp-preview {
+			width: 50vw;
 		}
 	}
 }

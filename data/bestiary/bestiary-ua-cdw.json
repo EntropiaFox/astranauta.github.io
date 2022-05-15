@@ -4,7 +4,9 @@
 			"name": "Wildfire Spirit",
 			"source": "UAClericDruidWizard",
 			"page": 3,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "elemental",
 			"alignment": [
 				"C",

@@ -123,7 +123,9 @@
 	}
 	// endregion
 
-	&variant-feature:not(.subclass-feature):not(.subclass-feature--sub) {
+	// region Header coloring
+	// `feature-<variant>-<ua|brew>-<subclass>-<reprint>`
+	&feature-variant-subclass {
 		.rd__h--0,
 		.rd__h--1,
 		.rd__h--2 {
@@ -131,6 +133,124 @@
 			border-bottom-color: $rgb-class-variant;
 		}
 	}
+
+	&feature-variant-ua-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-ua;
+			border-bottom-color: $rgb-class-ua;
+		}
+	}
+
+	&feature-variant-brew-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-variant-brew;
+			border-bottom-color: $rgb-class-variant-brew;
+		}
+	}
+
+	&feature-subclass-reprint {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-subclass--stale;
+			border-bottom-color: $rgb-subclass--stale;
+		}
+	}
+
+	&feature-ua-subclass-reprint {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-subclass-ua--stale;
+			border-bottom-color: $rgb-subclass-ua--stale;
+		}
+	}
+
+	&feature-brew-subclass-reprint {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-variant-brew;
+			border-bottom-color: $rgb-class-variant-brew;
+		}
+	}
+
+	&feature-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-subclass;
+			border-bottom-color: $rgb-subclass;
+		}
+	}
+
+	&feature-ua-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-subclass-ua;
+			border-bottom-color: $rgb-subclass-ua;
+		}
+	}
+
+	&feature-brew-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-brew;
+			border-bottom-color: $rgb-class-brew;
+		}
+	}
+
+	&feature-variant {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-variant;
+			border-bottom-color: $rgb-class-variant;
+		}
+	}
+
+	&feature-variant-ua {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-ua;
+			border-bottom-color: $rgb-class-ua;
+		}
+	}
+
+	&feature-variant-brew {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-variant-brew;
+			border-bottom-color: $rgb-class-variant-brew;
+		}
+	}
+
+	&feature-ua {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-ua;
+			border-bottom-color: $rgb-class-ua;
+		}
+	}
+
+	&feature-brew {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-brew;
+			border-bottom-color: $rgb-class-brew;
+		}
+	}
+	// endregion
 }
 
 .night-mode .cls__ {
@@ -242,7 +362,9 @@
 	}
 	// endregion
 
-	&variant-feature:not(.subclass-feature):not(.subclass-feature--sub) {
+	// region Header coloring
+	// `feature-<variant>-<ua|brew>-<subclass>-<reprint>`
+	&feature-variant-subclass {
 		.rd__h--0,
 		.rd__h--1,
 		.rd__h--2 {
@@ -250,6 +372,124 @@
 			border-bottom-color: $rgb-class-variant--night;
 		}
 	}
+
+	&feature-variant-ua-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-ua--night;
+			border-bottom-color: $rgb-class-ua--night;
+		}
+	}
+
+	&feature-variant-brew-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-variant-brew--night;
+			border-bottom-color: $rgb-class-variant-brew--night;
+		}
+	}
+
+	&feature-subclass-reprint {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-subclass--night-stale;
+			border-bottom-color: $rgb-subclass--night-stale;
+		}
+	}
+
+	&feature-ua-subclass-reprint {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-subclass-ua--night-stale;
+			border-bottom-color: $rgb-subclass-ua--night-stale;
+		}
+	}
+
+	&feature-brew-subclass-reprint {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-variant-brew--night;
+			border-bottom-color: $rgb-class-variant-brew--night;
+		}
+	}
+
+	&feature-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-subclass--night;
+			border-bottom-color: $rgb-subclass--night;
+		}
+	}
+
+	&feature-ua-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-subclass-ua--night;
+			border-bottom-color: $rgb-subclass-ua--night;
+		}
+	}
+
+	&feature-brew-subclass {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-brew--night;
+			border-bottom-color: $rgb-class-brew--night;
+		}
+	}
+
+	&feature-variant {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-variant--night;
+			border-bottom-color: $rgb-class-variant--night;
+		}
+	}
+
+	&feature-variant-ua {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-ua--night;
+			border-bottom-color: $rgb-class-ua--night;
+		}
+	}
+
+	&feature-variant-brew {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-variant-brew--night;
+			border-bottom-color: $rgb-class-variant-brew--night;
+		}
+	}
+
+	&feature-ua {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-ua--night;
+			border-bottom-color: $rgb-class-ua--night;
+		}
+	}
+
+	&feature-brew {
+		.rd__h--0,
+		.rd__h--1,
+		.rd__h--2 {
+			color: $rgb-class-brew--night;
+			border-bottom-color: $rgb-class-brew--night;
+		}
+	}
+	// endregion
 }
 // endregion
 
@@ -285,7 +525,7 @@
 .cls-side__ {
 	&name {
 		font-size: 1.8em;
-		font-family: "Andada", serif;
+		font-family: "Times New Roman", serif;
 		font-variant: small-caps;
 		font-weight: 500;
 	}
@@ -342,55 +582,10 @@
 
 // region main text
 .cls-main__ {
-	&sc-feature {
-		.rd__h--0,
-		.rd__h--1,
-		.rd__h--2 {
-			color: $rgb-subclass;
-			border-bottom-color: $rgb-subclass;
-		}
-
-		&--reprinted {
-			.rd__h--0,
-			.rd__h--1,
-			.rd__h--2 {
-				color: $rgb-subclass--stale;
-				border-bottom-color: $rgb-subclass--stale;
-			}
-		}
-
-		&--spicy {
-			.rd__h--0,
-			.rd__h--1,
-			.rd__h--2 {
-				color: $rgb-subclass-ua;
-				border-bottom-color: $rgb-subclass-ua;
-			}
-		}
-
-		&--stale {
-			.rd__h--0,
-			.rd__h--1,
-			.rd__h--2 {
-				color: $rgb-subclass-ua--stale;
-				border-bottom-color: $rgb-subclass-ua--stale;
-			}
-		}
-
-		&--brew {
-			.rd__h--0,
-			.rd__h--1,
-			.rd__h--2 {
-				color: $rgb-class-brew;
-				border-bottom-color: $rgb-class-brew;
-			}
-		}
-	}
-
 	&msg-no-content {
 		height: 40px;
 		color: $rgb-name-red;
-		font-family: "Andada", serif;
+		font-family: "Times New Roman", serif;
 		font-variant: small-caps;
 		font-weight: 500;
 		line-height: 2.3em;
@@ -408,51 +603,6 @@
 }
 
 .night-mode .cls-main__ {
-	&sc-feature {
-		.rd__h--0,
-		.rd__h--1,
-		.rd__h--2 {
-			color: $rgb-subclass--night;
-			border-bottom-color: $rgb-subclass--night;
-		}
-
-		&--reprinted {
-			.rd__h--0,
-			.rd__h--1,
-			.rd__h--2 {
-				color: $rgb-subclass--night-stale;
-				border-bottom-color: $rgb-subclass--night-stale;
-			}
-		}
-
-		&--spicy {
-			.rd__h--0,
-			.rd__h--1,
-			.rd__h--2 {
-				color: $rgb-subclass-ua--night;
-				border-bottom-color: $rgb-subclass-ua--night;
-			}
-		}
-
-		&--stale {
-			.rd__h--0,
-			.rd__h--1,
-			.rd__h--2 {
-				color: $rgb-subclass-ua--night-stale;
-				border-bottom-color: $rgb-subclass-ua--night-stale;
-			}
-		}
-
-		&--brew {
-			.rd__h--0,
-			.rd__h--1,
-			.rd__h--2 {
-				color: $rgb-class-brew--night;
-				border-bottom-color: $rgb-class-brew--night;
-			}
-		}
-	}
-
 	&msg-no-content {
 		color: $rgb-name-red--night;
 	}
@@ -538,7 +688,7 @@
 	max-height: calc(100vh - 30px);
 	padding-right: 9px;
 	padding-left: 9px;
-	font-family: "Andada", serif;
+	font-family: "Times New Roman", serif;
 	font-variant: small-caps;
 	font-weight: 500;
 
@@ -594,37 +744,62 @@
 				color: #e0e0e0;
 			}
 
-			&--sc-fresh {
-				color: $rgb-subclass;
+			// region Header coloring
+			// `feature-<variant>-<ua|brew>-<subclass>-<reprint>`
+			&--feature-variant-subclass {
+				color: $rgb-class-variant;
 			}
 
-			&--sc-reprinted {
-				color: $rgb-subclass--stale;
-			}
-
-			&--sc-spicy {
-				color: $rgb-subclass-ua;
-			}
-
-			&--sc-stale {
-				color: $rgb-subclass-ua--stale;
-			}
-
-			&--sc-brew {
-				color: $rgb-class-brew;
-			}
-
-			// region
-			// This takes precedence over others. Ideally, there should be a colour for "subclass variant feature," but
-			//   since those are so rare (e.g. Ranger's "Primal Companion"), this shall suffice. Additionally, this
-			//   matches the CSS rules of the renderer the closest. If we adjust this, we would have to then adjust
-			//   those.
-			&--spicy {
+			&--feature-variant-ua-subclass {
 				color: $rgb-class-ua;
 			}
 
-			&--variant-feature {
+			&--feature-variant-brew-subclass {
+				color: $rgb-class-variant-brew;
+			}
+
+			&--feature-subclass-reprint {
+				color: $rgb-subclass--stale;
+			}
+
+			&--feature-ua-subclass-reprint {
+				color: $rgb-subclass-ua--stale;
+			}
+
+			&--feature-brew-subclass-reprint {
+				color: $rgb-class-variant-brew;
+			}
+
+			&--feature-subclass {
+				color: $rgb-subclass;
+			}
+
+			&--feature-ua-subclass {
+				color: $rgb-subclass-ua;
+			}
+
+			&--feature-brew-subclass {
+				color: $rgb-class-brew;
+			}
+
+			&--feature-variant {
 				color: $rgb-class-variant;
+			}
+
+			&--feature-variant-ua {
+				color: $rgb-class-ua;
+			}
+
+			&--feature-variant-brew {
+				color: $rgb-class-variant-brew;
+			}
+
+			&--feature-ua {
+				color: $rgb-class-ua;
+			}
+
+			&--feature-brew {
+				color: $rgb-class-brew;
 			}
 			// endregion
 
@@ -666,33 +841,62 @@
 			color: white;
 		}
 
-		&--sc-fresh {
-			color: $rgb-subclass--night;
+		// region Header coloring
+		// `feature-<variant>-<ua|brew>-<subclass>-<reprint>`
+		&--feature-variant-subclass {
+			color: $rgb-class-variant--night;
 		}
 
-		&--sc-reprinted {
-			color: $rgb-subclass--night-stale;
-		}
-
-		&--sc-spicy {
-			color: $rgb-subclass-ua--night;
-		}
-
-		&--sc-stale {
-			color: $rgb-subclass-ua--night-stale;
-		}
-
-		&--sc-brew {
-			color: $rgb-class-brew--night;
-		}
-
-		// region (See day mode comments above)
-		&--spicy {
+		&--feature-variant-ua-subclass {
 			color: $rgb-class-ua--night;
 		}
 
-		&--variant-feature {
+		&--feature-variant-brew-subclass {
+			color: $rgb-class-variant-brew--night;
+		}
+
+		&--feature-subclass-reprint {
+			color: $rgb-subclass--night-stale;
+		}
+
+		&--feature-ua-subclass-reprint {
+			color: $rgb-subclass-ua--night-stale;
+		}
+
+		&--feature-brew-subclass-reprint {
+			color: $rgb-class-variant-brew--night;
+		}
+
+		&--feature-subclass {
+			color: $rgb-subclass--night;
+		}
+
+		&--feature-ua-subclass {
+			color: $rgb-subclass-ua--night;
+		}
+
+		&--feature-brew-subclass {
+			color: $rgb-class-brew--night;
+		}
+
+		&--feature-variant {
 			color: $rgb-class-variant--night;
+		}
+
+		&--feature-variant-ua {
+			color: $rgb-class-ua--night;
+		}
+
+		&--feature-variant-brew {
+			color: $rgb-class-variant-brew--night;
+		}
+
+		&--feature-ua {
+			color: $rgb-class-ua--night;
+		}
+
+		&--feature-brew {
+			color: $rgb-class-brew--night;
 		}
 		// endregion
 	}

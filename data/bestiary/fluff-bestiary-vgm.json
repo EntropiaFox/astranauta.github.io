@@ -444,7 +444,7 @@
 									"name": "Soul Feeding",
 									"entries": [
 										"A barghest can feed on the corpse of a humanoid that it killed that has been dead for less than 10 minutes, devouring both flesh and soul in doing so. This feeding takes at least 1 minute, and it destroys the victim's body. The victim's soul is trapped in the barghest for 24 hours, after which time it is digested. If the barghest dies before the soul is digested, the soul is released.",
-										"While a humanoid's soul is trapped in a barghest, any form of revival that could work has only a 50 percent chance of doing so, freeing the soul from the barghest if it is successful. Once a creature's soul is digested, however, no mortal magic can return that humanoid to life."
+										"While a humanoid's soul is trapped in a barghest, any form of revival that could work has only a {@chance 50|50 percent} chance of doing so, freeing the soul from the barghest if it is successful. Once a creature's soul is digested, however, no mortal magic can return that humanoid to life."
 									]
 								}
 							]
@@ -872,7 +872,7 @@
 									"entries": [
 										"The catoblepas is as loathsome as the vile swamplands in which it lives. Like such wastelands, this conglomeration of bloated buffalo, dinosaur, warthog, and hippopotamus parts has few redeeming qualities. Few travelers willingly traverse the territory of a catoblepas.",
 										{
-											"name": " Animalistic Nature",
+											"name": "Animalistic Nature",
 											"entries": [
 												" Despite their ungainly physiology, catoblepases resemble natural beasts. A catoblepas behaves much like an animal, too, ambling through its marshy home, munching choice vegetation, eating the occasional bit of carrion, and wallowing in mire. A catoblepas might be found with the one mate it chooses for life and, on occasion, a calf. Especially if it's guarding its young, a catoblepas attacks anyone that moves too close.",
 												"Sages say that gods of pestilence and rot created catoblepases as embodiments of their influence. Whatever the origin of the creature, stories link the catoblepas to misfortune, and many of these yarns have elements of truth. Some such tales claim that hags tend catoblepases like cattle, and that a swamp that contains a catoblepas might also be home to a hag that drinks the monster's milk. Although a particular catoblepas might not be linked to a hag, a coven of hags might keep one or more of these beasts as guardians or pets. Other legends say that those of impure heart can tame a catoblepas. Indeed, some tales have circulated of malevolent warlocks and dark knights who have discovered how to domesticate the beasts and use them as mounts."
@@ -880,14 +880,14 @@
 											"type": "entries"
 										},
 										{
-											"name": " Stench of Death",
+											"name": "Stench of Death",
 											"entries": [
 												" A catoblepas's stink, like that of death mixed with swamp gas and skunk musk, gives it away as being much more ghastly than its appearance suggests. When it is on the attack, a catoblepas reveals the extent of its horrific nature. The creature's serpentine neck has trouble lifting its head, but one glare from its bloodshot eyes can rot flesh. At the end of its tail is a club that can rattle body and soul if it strikes true, leaving a victim unable to act. If the target of its attacks dies, the catoblepas feasts on the fresh remains."
 											],
 											"type": "entries"
 										},
 										{
-											"name": " Blighted Territory",
+											"name": "Blighted Territory",
 											"entries": [
 												" A catoblepas's nature as a creature of disease and decay brings out similar characteristics in the creature's swampy habitat. Such a wetland becomes gloomy, tangled, and more fetid than it was before. Beneficial qualities of the environment, such as healing herbs and clean water, diminish when a catoblepas lives nearby. Swamp gases have a hint of the catoblepas's foulness to them. Animals in the area are more aggressive and liable to be diseased. Degenerate creatures are likely to take up residence near a catoblepas's territory, as are those seeking to avoid notice."
 											],
@@ -4576,7 +4576,7 @@
 								{
 									"type": "entries",
 									"entries": [
-										"Deep rothé are stunted Underdark variants of rothé."
+										"Deep rothé are stunted Underdark variants of {@creature rothé|vgm}."
 									]
 								}
 							]

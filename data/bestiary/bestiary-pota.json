@@ -23,7 +23,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 192,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -171,7 +173,6 @@
 				"name": "Aerisi Kalinoth",
 				"source": "PotA"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Legendary Resistances"
@@ -188,6 +189,13 @@
 				"L",
 				"P"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"I",
+				"L",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -199,6 +207,7 @@
 				"charmed",
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -221,7 +230,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 201,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -347,7 +358,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -358,6 +368,11 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"O"
+			],
 			"spellcastingTags": [
 				"CS",
 				"I"
@@ -367,13 +382,16 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Black Earth Guard",
 			"source": "PotA",
 			"page": 195,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -436,7 +454,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -449,6 +466,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -456,7 +474,9 @@
 			"name": "Black Earth Priest",
 			"source": "PotA",
 			"page": 195,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -562,7 +582,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -572,6 +591,11 @@
 			],
 			"damageTags": [
 				"S"
+			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"T"
 			],
 			"spellcastingTags": [
 				"CS"
@@ -583,6 +607,7 @@
 			"conditionInflictSpell": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -606,8 +631,8 @@
 				"formula": "1d8"
 			},
 			"action": null,
-			"hasToken": true,
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Bronzefume",
@@ -629,7 +654,9 @@
 			"name": "Burrowshark",
 			"source": "PotA",
 			"page": 196,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -702,7 +729,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -717,6 +743,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -749,7 +776,9 @@
 			"name": "Crushing Wave Priest",
 			"source": "PotA",
 			"page": 205,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -842,7 +871,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AQ",
 				"C"
@@ -850,12 +878,19 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"C",
+				"N",
+				"O",
+				"P"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -863,7 +898,9 @@
 			"name": "Crushing Wave Reaver",
 			"source": "PotA",
 			"page": 205,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -918,7 +955,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -931,6 +967,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -968,7 +1005,9 @@
 					"source": "SLW"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1046,7 +1085,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -1063,6 +1101,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1090,15 +1129,17 @@
 				]
 			},
 			"action": null,
-			"hasToken": true,
-			"miscTags": []
+			"miscTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Drannin Splithelm",
 			"isNpc": true,
 			"source": "PotA",
 			"page": 210,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1199,7 +1240,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Brute"
 			],
@@ -1219,6 +1259,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1226,7 +1267,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 202,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1334,13 +1377,19 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DU"
 			],
 			"damageTags": [
 				"P"
+			],
+			"damageTagsSpell": [
+				"F",
+				"I",
+				"N",
+				"P",
+				"T"
 			],
 			"spellcastingTags": [
 				"CD"
@@ -1350,6 +1399,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1374,7 +1424,9 @@
 			"immune": [
 				"fire"
 			],
-			"hasToken": true,
+			"actionTags": [
+				"Breath Weapon"
+			],
 			"damageTags": [
 				"F",
 				"P",
@@ -1383,13 +1435,16 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Eternal Flame Guardian",
 			"source": "PotA",
 			"page": 200,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1466,7 +1521,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1483,13 +1537,16 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Eternal Flame Priest",
 			"source": "PotA",
 			"page": 200,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1584,13 +1641,15 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"IG"
 			],
 			"damageTags": [
 				"P"
+			],
+			"damageTagsSpell": [
+				"F"
 			],
 			"spellcastingTags": [
 				"CS"
@@ -1600,6 +1659,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1612,7 +1672,9 @@
 					"source": "GoS"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1713,7 +1775,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Shapechanger"
 			],
@@ -1724,6 +1785,11 @@
 			"damageTags": [
 				"B",
 				"P"
+			],
+			"damageTagsSpell": [
+				"C",
+				"N",
+				"O"
 			],
 			"spellcastingTags": [
 				"CL",
@@ -1741,6 +1807,7 @@
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1748,7 +1815,9 @@
 			"name": "Feathergale Knight",
 			"source": "PotA",
 			"page": 189,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1836,7 +1905,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1848,6 +1916,9 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"C"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
@@ -1856,6 +1927,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1905,16 +1977,18 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Flamewrath",
 			"source": "PotA",
 			"page": 201,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2023,13 +2097,16 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"IG"
 			],
 			"damageTags": [
 				"P"
+			],
+			"damageTagsSpell": [
+				"C",
+				"F"
 			],
 			"spellcastingTags": [
 				"CS"
@@ -2039,6 +2116,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2047,7 +2125,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 208,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2179,7 +2259,7 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"Gar makes two melee attacks, one with his claw and one with Drown."
+						"Gar makes two melee attacks, one with his claw and one with {@item Drown|PotA}."
 					]
 				},
 				{
@@ -2199,7 +2279,6 @@
 				"name": "Gar Shatterkeel",
 				"source": "PotA"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Legendary Resistances"
@@ -2216,6 +2295,16 @@
 				"C",
 				"P"
 			],
+			"damageTagsLegendary": [
+				"L",
+				"N"
+			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"L",
+				"T"
+			],
 			"spellcastingTags": [
 				"CD"
 			],
@@ -2230,6 +2319,7 @@
 				"paralyzed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2238,7 +2328,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 210,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2342,7 +2434,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -2366,6 +2457,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2399,17 +2491,19 @@
 			"senses": [
 				"darkvision 60 ft."
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Hellenrae",
 			"isNpc": true,
 			"source": "PotA",
 			"page": 198,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2506,7 +2600,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -2526,13 +2619,16 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Howling Hatred Initiate",
 			"source": "PotA",
 			"page": 190,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2596,7 +2692,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -2611,13 +2706,16 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Howling Hatred Priest",
 			"source": "PotA",
 			"page": 190,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2632,7 +2730,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -2729,7 +2827,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -2744,6 +2841,10 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"B",
+				"L"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
@@ -2752,6 +2853,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2759,7 +2861,9 @@
 			"name": "Hurricane",
 			"source": "PotA",
 			"page": 191,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2864,7 +2968,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2875,12 +2978,16 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"T"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2889,7 +2996,9 @@
 			"isNamedCreature": true,
 			"source": "PotA",
 			"page": 214,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N",
@@ -3058,7 +3167,6 @@
 				"name": "Imix",
 				"source": "PotA"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Illumination",
 				"Legendary Resistances",
@@ -3078,6 +3186,13 @@
 				"B",
 				"F"
 			],
+			"damageTagsLegendary": [
+				"B",
+				"F"
+			],
+			"damageTagsSpell": [
+				"F"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -3086,9 +3201,13 @@
 				"MW",
 				"RCH"
 			],
+			"conditionInflict": [
+				"exhaustion"
+			],
 			"conditionInflictLegendary": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3171,6 +3290,10 @@
 					"ability": "int"
 				}
 			],
+			"damageTagsSpell": [
+				"F",
+				"O"
+			],
 			"hasToken": true
 		},
 		{
@@ -3195,7 +3318,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 199,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -3250,7 +3375,7 @@
 				{
 					"name": "Earth Passage",
 					"entries": [
-						"Marlos can move in difficult terrain composed of anything made from earth or stone as if it were normal terrain. He can move through solid earth and rock as if it were difficult terrain. If he ends his turn there, he is shunted into the nearest space he last occupied."
+						"Marlos can move in {@quickref difficult terrain||3} composed of anything made from earth or stone as if it were normal terrain. He can move through solid earth and rock as if it were {@quickref difficult terrain||3}. If he ends his turn there, he is shunted into the nearest space he last occupied."
 					]
 				},
 				{
@@ -3272,7 +3397,7 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"Marlos makes three melee attacks, one with his snake hair and two with Ironfang."
+						"Marlos makes three melee attacks, one with his snake hair and two with {@item Ironfang|PotA}."
 					]
 				},
 				{
@@ -3292,7 +3417,6 @@
 				"name": "Marlos Urnrayle",
 				"source": "PotA"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -3312,6 +3436,9 @@
 				"P",
 				"T"
 			],
+			"damageTagsLegendary": [
+				"B"
+			],
 			"miscTags": [
 				"MW"
 			],
@@ -3319,6 +3446,7 @@
 				"petrified",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3327,7 +3455,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 198,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3448,7 +3578,7 @@
 				{
 					"name": "Earth Walk",
 					"entries": [
-						"Moving through difficult terrain made of earth or stone costs Miraj no extra movement."
+						"Moving through {@quickref difficult terrain||3} made of earth or stone costs Miraj no extra movement."
 					]
 				}
 			],
@@ -3460,13 +3590,22 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"P"
 			],
 			"damageTags": [
 				"B"
+			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"I",
+				"L",
+				"O",
+				"T"
 			],
 			"spellcastingTags": [
 				"CS",
@@ -3475,6 +3614,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3515,10 +3655,10 @@
 			"vulnerable": [
 				"cold"
 			],
-			"hasToken": true,
 			"damageTags": [
 				"F"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Nurvureem, The Dark Lady",
@@ -3530,7 +3670,7 @@
 				"name": "Adult Black Dragon",
 				"source": "MM",
 				"_trait": {
-					"name": "Shadow Dragon",
+					"name": "Legendary Shadow Dragon",
 					"source": "MM"
 				},
 				"_mod": {
@@ -3542,7 +3682,6 @@
 					}
 				}
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Legendary Resistances",
@@ -3553,7 +3692,9 @@
 				"N",
 				"P",
 				"S"
-			]
+			],
+			"damageTagsLegendary": [],
+			"hasToken": true
 		},
 		{
 			"name": "Ogrémoch",
@@ -3561,7 +3702,9 @@
 			"isNamedCreature": true,
 			"source": "PotA",
 			"page": 216,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N",
@@ -3716,7 +3859,6 @@
 				"name": "Ogrémoch",
 				"source": "PotA"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -3734,6 +3876,9 @@
 				"T"
 			],
 			"damageTags": [
+				"B"
+			],
+			"damageTagsSpell": [
 				"B"
 			],
 			"spellcastingTags": [
@@ -3754,6 +3899,7 @@
 			"conditionInflictSpell": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3763,7 +3909,9 @@
 			"isNamedCreature": true,
 			"source": "PotA",
 			"page": 218,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N",
@@ -3926,7 +4074,6 @@
 				"name": "Olhydra",
 				"source": "PotA"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -3943,6 +4090,16 @@
 			"damageTags": [
 				"A",
 				"B"
+			],
+			"damageTagsLegendary": [
+				"C"
+			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"L",
+				"T"
 			],
 			"spellcastingTags": [
 				"I"
@@ -3963,6 +4120,7 @@
 			"conditionInflictSpell": [
 				"deafened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3970,7 +4128,9 @@
 			"name": "One-Eyed Shiver",
 			"source": "PotA",
 			"page": 207,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4071,17 +4231,20 @@
 				{
 					"name": "Eye of Frost",
 					"entries": [
-						"The one-eyed shiver casts ray of frost from its missing eye. If it hits, the target is also {@condition restrained}. A target {@condition restrained} in this way can end the condition by using an action, succeeding on a {@dc 13} Strength check."
+						"The one-eyed shiver casts {@spell ray of frost} from its missing eye. If it hits, the target is also {@condition restrained}. A target {@condition restrained} in this way can end the condition by using an action, succeeding on a {@dc 13} Strength check."
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
 			"damageTags": [
 				"C",
 				"P"
+			],
+			"damageTagsSpell": [
+				"N",
+				"T"
 			],
 			"spellcastingTags": [
 				"CS"
@@ -4095,6 +4258,7 @@
 			"conditionInflictSpell": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4103,7 +4267,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 212,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4213,7 +4379,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C"
@@ -4221,12 +4386,19 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"I",
+				"L",
+				"N",
+				"O"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4261,16 +4433,18 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Razerblast",
 			"source": "PotA",
 			"page": 201,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4343,7 +4517,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4360,6 +4533,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4467,6 +4641,7 @@
 					"ability": "int"
 				}
 			],
+			"damageTagsLegendary": [],
 			"hasToken": true
 		},
 		{
@@ -4498,19 +4673,21 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Sacred Stone Monk",
 			"source": "PotA",
 			"page": 196,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4586,7 +4763,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"T"
 			],
@@ -4603,6 +4779,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4610,7 +4787,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 208,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4730,7 +4909,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -4741,6 +4919,13 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"N",
+				"O"
+			],
 			"spellcastingTags": [
 				"CS",
 				"I"
@@ -4750,13 +4935,16 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Skyweaver",
 			"source": "PotA",
 			"page": 191,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4848,13 +5036,16 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AU",
 				"C"
 			],
 			"damageTags": [
 				"P"
+			],
+			"damageTagsSpell": [
+				"C",
+				"L"
 			],
 			"spellcastingTags": [
 				"CS"
@@ -4864,6 +5055,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4885,14 +5077,16 @@
 				"formula": "17d10 + 85"
 			},
 			"cr": "4",
-			"hasToken": true,
-			"actionTags": []
+			"actionTags": [],
+			"hasToken": true
 		},
 		{
 			"name": "Stonemelder",
 			"source": "PotA",
 			"page": 197,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5001,7 +5195,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Death Burst"
 			],
@@ -5015,12 +5208,18 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"T"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5028,7 +5227,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 192,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5141,7 +5342,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack",
 				"Parry"
@@ -5154,6 +5354,9 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"C"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
@@ -5161,6 +5364,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5191,7 +5395,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 203,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5206,7 +5412,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -5333,7 +5539,6 @@
 				"name": "Vanifer",
 				"source": "PotA"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -5352,6 +5557,18 @@
 				"F",
 				"P"
 			],
+			"damageTagsLegendary": [
+				"F"
+			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"N",
+				"T"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
@@ -5359,6 +5576,7 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5367,7 +5585,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 212,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5469,7 +5689,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -5480,6 +5699,11 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"P"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
@@ -5489,6 +5713,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5497,7 +5722,9 @@
 			"isNpc": true,
 			"source": "PotA",
 			"page": 192,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5512,7 +5739,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -5617,7 +5844,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -5635,6 +5861,11 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"O",
+				"T",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CB"
 			],
@@ -5645,6 +5876,7 @@
 				"deafened",
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5653,7 +5885,9 @@
 			"isNamedCreature": true,
 			"source": "PotA",
 			"page": 221,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N",
@@ -5824,7 +6058,6 @@
 				"name": "Yan-C-Bin",
 				"source": "PotA"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -5833,7 +6066,8 @@
 				"B"
 			],
 			"actionTags": [
-				"Multiattack"
+				"Multiattack",
+				"Shapechanger"
 			],
 			"languageTags": [
 				"AU"
@@ -5842,6 +6076,14 @@
 				"L",
 				"O",
 				"T"
+			],
+			"damageTagsLegendary": [
+				"B",
+				"L"
+			],
+			"damageTagsSpell": [
+				"I",
+				"L"
 			],
 			"spellcastingTags": [
 				"I"
@@ -5860,6 +6102,7 @@
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5890,11 +6133,11 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Young Purple Worm",

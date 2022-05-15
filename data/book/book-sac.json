@@ -377,7 +377,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "Can a bound and gagged druid simply use Wild Shape to get out? It's hard to capture someone who can turn into a mouse at will.",
+											"name": "Can a bound and gagged druid simply use Wild Shape to get out? It's hard to capture someone who can turn into a mouse at will",
 											"id": "027",
 											"entries": [
 												"Transforming into a different size can be an effective way of escaping, depending on the nature of the bonds or confinement. All things considered, someone trying to keep a druid captive might be wise to stash the prisoner in a room with an opening only large enough for air to enter."
@@ -785,7 +785,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "Can my sorcerer use Twinned Spell on a spell duplicated by the casting of a wish spell? And if so, how many sorcery points does it cost?",
+											"name": "Can my sorcerer use Twinned Spell on a spell duplicated by the casting of a {@spell wish} spell? And if so, how many sorcery points does it cost?",
 											"id": "055",
 											"entries": [
 												"Yes, you can. It costs the number of sorcery points appropriate for the level of the spell you're duplicating."
@@ -1403,7 +1403,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "Are extradimensional spaces, such as a demiplane or the space created by rope trick , considered to be on a different plane of existence?",
+											"name": "Are extradimensional spaces, such as a demiplane or the space created by rope trick, considered to be on a different plane of existence?",
 											"id": "0a1",
 											"entries": [
 												"An extradimensional space (aka an extraplanar space) is outside other planes. Therefore, if you're on the Material Plane and your foe is in an extradimensional space, the two of you aren't on the same plane of existence."
@@ -1546,7 +1546,7 @@
 											"id": "0af",
 											"entries": [
 												"The {@condition prone} condition doesn't override the rule that prevents you from moving through an enemy's space, unless that enemy is at least two sizes larger or two sizes smaller than you.",
-												"If you do move through the space of another creature\u2014whether a friend or an enemy\u2014the space is difficult terrain for you, and you can't willingly end your move there. See the {@book Player's Handbook|PHB}, ({@i PHB} \"{@book Movement and Position|PHB|9|Movement and Position}\"), for more on movement in combat."
+												"If you do move through the space of another creature\u2014whether a friend or an enemy\u2014the space is {@quickref difficult terrain||3} for you, and you can't willingly end your move there. See the {@book Player's Handbook|PHB}, ({@i PHB} \"{@book Movement and Position|PHB|9|Movement and Position}\"), for more on movement in combat."
 											]
 										},
 										{
@@ -1815,7 +1815,7 @@
 											"type": "entries",
 											"name": "Can I make an attack with one weapon, then draw a second weapon with my other hand and qualify to use two-weapon fighting?",
 											"entries": [
-												"To use the two-weapon fighting bonus action (PH, 195), you must have both weapons in hand when you make the first attack. If you're instead fighting with two or more weapons as part of the Extra {@action Attack} feature, the rule for the two-weapon fighting bonus action doesn't apply. The rule for that bonus action applies only to itself, not to any other use of two or more weapons in the game."
+												"To use the two-weapon fighting bonus action (PH, 195), you must have both weapons in hand when you make the first attack. If you're instead fighting with two or more weapons as part of the Extra Attack feature, the rule for the two-weapon fighting bonus action doesn't apply. The rule for that bonus action applies only to itself, not to any other use of two or more weapons in the game."
 											],
 											"id": "14c"
 										}
@@ -1906,7 +1906,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "When casting a spell that affects multiple targets, such as scorching ray or eldritch blast , do I fire one ray or beam, determine the result, and fire again? Or do I have to choose all the targets before making any attack rolls?",
+											"name": "When casting a spell that affects multiple targets, such as scorching ray or eldritch blast, do I fire one ray or beam, determine the result, and fire again? Or do I have to choose all the targets before making any attack rolls?",
 											"id": "0d5",
 											"entries": [
 												"Even though the duration of each of these spells is instantaneous, you choose the targets and resolve the attacks consecutively, not all at once. If you want, you can declare all your targets before making any attacks, but you would still roll separately for each attack (and damage, if appropriate)."
@@ -2171,7 +2171,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "When you cast a spell like conjure woodland beings , does the spellcaster or the DM choose the creatures that are conjured?",
+											"name": "When you cast a spell like conjure woodland beings, does the spellcaster or the DM choose the creatures that are conjured?",
 											"id": "0f0",
 											"entries": [
 												"A number of spells in the game let you summon creatures. {@spell Conjure animals}, {@spell conjure celestial}, {@spell conjure minor elementals}, and {@spell conjure woodland beings} are just a few examples.",
@@ -2334,7 +2334,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "For the spell hail of thorns , does it last for the initial attack or as long as you maintain concentration?",
+											"name": "For the spell hail of thorns, does it last for the initial attack or as long as you maintain concentration?",
 											"id": "0fe",
 											"entries": [
 												"{@spell Hail of thorns} lasts until you hit a creature with a ranged weapon attack or your {@book concentration|PHB|10|Concentration} ends, whichever comes first."
@@ -2415,7 +2415,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "I find it confusing that the mage armor spell is named that when it doesn't count as armor.",
+											"name": "I find it confusing that the mage armor spell is named that when it doesn't count as armor",
 											"id": "108",
 											"entries": [
 												"Some spells and class features have figurative, not literal, names. The text of the spell or class feature explains what it does. In this case, {@spell mage armor} surrounds the target with \"protective magical force\"; the spell doesn't provide armor."
@@ -2627,10 +2627,10 @@
 										},
 										{
 											"type": "entries",
-											"name": "Whenever you cast wish , do you always have a 33 percent chance of never casting it again?",
+											"name": "Whenever you cast wish, do you always have a 33 percent chance of never casting it again?",
 											"id": "117",
 											"entries": [
-												"If you cast {@spell wish} to duplicate a spell of level 0\u20138, there are no detrimental effects. However, if you do anything other than duplicate a spell of level 0\u20138, you suffer the stress described in the final paragraph of the spell. As soon as that stress affects you, there is a 33 percent chance that you are unable to cast {@spell wish} again."
+												"If you cast {@spell wish} to duplicate a spell of level 0\u20138, there are no detrimental effects. However, if you do anything other than duplicate a spell of level 0\u20138, you suffer the stress described in the final paragraph of the spell. As soon as that stress affects you, there is a {@chance 33|33 percent} chance that you are unable to cast {@spell wish} again."
 											]
 										}
 									]
@@ -2894,7 +2894,7 @@
 											"id": "132",
 											"entries": [
 												"They're both correct. The rule for scrolls ({@i DMG} \"{@book Scrolls|DMG|7|Scrolls}\") is for scrolls in general, including a {@item scroll of protection}, and it allows you to try to activate a spell if you're literate. The rule for a {@item spell scroll} is specific to that type of scroll and introduces an additional requirement: the spell on the scroll must be on your class's spell list for you to read the scroll.",
-												"A {@item spell scroll} can be named in a variety of ways: spell scroll , scroll of X (where X is the name of a spell), or spell scroll of X (where X , again, is the name of a spell). No matter how its name appears, a {@item spell scroll} follows the same rule.",
+												"A {@item spell scroll} can be named in a variety of ways: spell scroll, scroll of X (where X is the name of a spell), or spell scroll of X (where X, again, is the name of a spell). No matter how its name appears, a {@item spell scroll} follows the same rule.",
 												"For you to meet a {@item Spell Scroll||spell scroll's} requirement, the spell on the scroll needs to be on whatever spell list is used by your class. Here are two examples. If you're a cleric, the spell must be on the cleric spell list, and if you're a fighter with the Eldritch Knight archetype, the spell must be on the wizard spell list, because that is the spell list used by your class."
 											]
 										},
@@ -2941,7 +2941,7 @@
 										},
 										{
 											"type": "entries",
-											"name": "Would an elf get a saving throw versus a philter of love as it's a charm? The description implies there is no save.",
+											"name": "Would an elf get a saving throw versus a philter of love as it's a charm? The description implies there is no save",
 											"id": "138",
 											"entries": [
 												"There is no save against the {@item philter of love}. The love is just that strong."

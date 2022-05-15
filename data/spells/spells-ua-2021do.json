@@ -339,7 +339,7 @@
 						],
 						[
 							"4",
-							"Drops of molasses appear and hover in the cube, turning it into difficult terrain until the start of your next turn."
+							"Drops of molasses appear and hover in the cube, turning it into {@quickref difficult terrain||3} until the start of your next turn."
 						]
 					]
 				}
@@ -352,6 +352,9 @@
 			"savingThrow": [
 				"dexterity",
 				"wisdom"
+			],
+			"miscTags": [
+				"RO"
 			],
 			"classes": {
 				"fromClassList": [

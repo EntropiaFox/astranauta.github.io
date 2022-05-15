@@ -3,6 +3,7 @@
 		{
 			"type": "section",
 			"name": "Tide of Retribution",
+			"page": 206,
 			"id": "750",
 			"entries": [
 				"Trouble darkens the shores of the Vezdali Peninsula when an earthquake hits, sending part of the village of Palma Flora down into the sea. \"Tide of Retribution\" is an adventure that takes characters from 1st to 3rd level. It introduces them to the Menagerie Coast\u2014a tropical region filled with monstrous abominations, mysterious curses, and ancient temples. This setting is ideal for nautical and jungle-exploring adventures.",
@@ -10,6 +11,7 @@
 				{
 					"type": "section",
 					"name": "Story Overview",
+					"page": 206,
 					"id": "751",
 					"entries": [
 						"The village of Palma Flora is known for its vibrant green foliage, its competitive shark-hunting tournaments, and a sweet cocktail that shares the village's name. Lurking in the Sharkfeather Abyss, an ocean trench just west of the village, is a small clan of some dozen sahuagin that has grown weary of the shark hunters of Palma Flora. Year after year, the sea devils have attacked the shark hunters in an effort to spoil the tournaments, but their small numbers have seen them consistently defeated by the hunters and the village's hired mercenaries. However, things have recently changed.",
@@ -19,6 +21,7 @@
 				{
 					"type": "section",
 					"name": "Adventure Summary",
+					"page": 206,
 					"id": "752",
 					"entries": [
 						"In the first part of the adventure, the characters are enjoying a day of relaxation or invigorating shark hunting on the sunny shores of Palma Flora when a ground-quaking tremor rocks the coast. Before their eyes, the island-based portion of the village begins to sink into the depths. Sahuagin prowl the waters, eviscerating those who try to swim to safety. The characters must fight to survive and have a chance to save as many villagers as they can before Palma Flora is overrun.",
@@ -30,6 +33,7 @@
 				{
 					"type": "section",
 					"name": "Setup and Starting Points",
+					"page": 206,
 					"id": "753",
 					"entries": [
 						"Before beginning the adventure, work with your players as they talk about why their characters are in Palma Flora. You can provide players with some details regarding the village as it's described in {@book chapter 3|EGW|4|Palma Flora}. This can help the players get into character and help you establish why the party has come to this remote coastal village.",
@@ -39,6 +43,7 @@
 				{
 					"type": "section",
 					"name": "That Sinking Feeling",
+					"page": 206,
 					"id": "754",
 					"entries": [
 						"Once the players are ready to begin, read or paraphrase the following to set the scene:",
@@ -55,6 +60,7 @@
 						{
 							"type": "entries",
 							"name": "Earthquake and Sahuagin Attack",
+							"page": 206,
 							"id": "756",
 							"entries": [
 								{
@@ -81,12 +87,14 @@
 						{
 							"type": "entries",
 							"name": "P1. South Shore",
+							"page": 207,
 							"id": "758",
 							"entries": [
 								"Four {@creature sahuagin} emerge from the water to pursue two shark hunters (use the {@creature tribal warrior} stat block). If the characters don't interfere, the shark hunters are handily skewered and killed by the sahuagin.",
 								{
 									"type": "entries",
 									"name": "Shark Hunters",
+									"page": 207,
 									"id": "759",
 									"entries": [
 										"The two shark hunters are reckless human teenagers\u2014a female half-elf named Elanza and a male tiefling named Joao. Elanza fears that the entire village will sink into the sea, and she urges the characters to accompany her to the ships on the eastern shore and escape. Joao is obsessed with glory. If he survives this encounter, he heads for the north shore to keep fighting unless a character can convince him to flee to safety with a successful DC 10 Charisma ({@skill Persuasion}) check."
@@ -95,6 +103,7 @@
 								{
 									"type": "entries",
 									"name": "Developments",
+									"page": 207,
 									"id": "75a",
 									"entries": [
 										"After this encounter, an aftershock rocks the village. Any character who succeeds on a DC 10 Wisdom ({@skill Perception}) check confirms that Palma Flora is sinking. Every 10 minutes from this point forward, the size of the island shrinks by 5 feet on all sides as it is slowly submerged in the ocean."
@@ -103,12 +112,14 @@
 								{
 									"type": "entries",
 									"name": "Where to Next?",
+									"page": 207,
 									"id": "75b",
 									"entries": [
 										"From here, the characters can travel to the east, west, or north side of Palma Flora. Any character who looks toward the other parts of the village in an attempt to understand what's happening must make a DC 10 Wisdom ({@skill Perception}) check. On a failure, the character sees only fleeing people and hears only screams. On a success, tell that character the following information, based on where they're looking:",
 										{
 											"type": "entries",
 											"name": "East Shore",
+											"page": 207,
 											"id": "75c",
 											"entries": [
 												"The village docks are here, and several ships are already sailing away. One group of sailors is battling sahuagin as they try to board the last vessel still docked."
@@ -117,6 +128,7 @@
 										{
 											"type": "entries",
 											"name": "West Shore",
+											"page": 207,
 											"id": "75d",
 											"entries": [
 												"The village is sinking most quickly here, and several beachside houses are already half submerged. The villagers and the sahuagin are all headed toward the north shore."
@@ -125,6 +137,7 @@
 										{
 											"type": "entries",
 											"name": "North Shore",
+											"page": 207,
 											"id": "75e",
 											"entries": [
 												"Desperate villagers are trying to swim to the north part of the village on the mainland. A 50-foot-wide channel separates the two parts of the village after the earthquake splintered the bridge. If the characters don't intervene, the villagers become easy pickings for the sahuagin and sharks."
@@ -137,6 +150,7 @@
 						{
 							"type": "entries",
 							"name": "P2. West Shore",
+							"page": 208,
 							"id": "75f",
 							"entries": [
 								"If the characters travel to the west shore of the island, read:",
@@ -151,6 +165,7 @@
 								{
 									"type": "entries",
 									"name": "Looting",
+									"page": 208,
 									"id": "761",
 									"entries": [
 										"All the houses stand empty along this stretch of seashore. A character can try to scavenge valuables by spending 10 minutes searching a house and making a DC 13 Intelligence ({@skill Investigation}) check. On a success, the character finds an art object worth 25 gp. You can roll on the 25 gp Art Objects table in {@book chapter 7|DMG|7|Art Objects} of the {@book Dungeon Master's Guide|DMG} to determine what kind of valuable this is, or you can make one up.",
@@ -160,6 +175,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 208,
 									"id": "762",
 									"entries": [
 										"In addition to anything claimed by looting characters, the necklace carried by the sahuagin is covered in shark teeth and beaded with tiny shells, and is worth 25 gp."
@@ -170,6 +186,7 @@
 						{
 							"type": "entries",
 							"name": "P3. North Shore",
+							"page": 208,
 							"id": "763",
 							"entries": [
 								"If the characters travel to the north shore of the island, read:",
@@ -185,6 +202,7 @@
 								{
 									"type": "entries",
 									"name": "Sahuagin on Duty",
+									"page": 208,
 									"id": "765",
 									"entries": [
 										"The reef sharks aren't aggressive unless threatened, but a sahuagin raider is commanding them to attack. If the sahuagin is killed, the sharks swim away and leave the villagers alone. This sahuagin is lurking underwater in the middle of the channel. A creature that is underwater and succeeds on a DC 10 Wisdom ({@skill Perception}) check sees the sahuagin. To creatures above the frothy, blood-clouded water, the sahuagin is heavily obscured."
@@ -193,6 +211,7 @@
 								{
 									"type": "entries",
 									"name": "Saving the Villagers",
+									"page": 208,
 									"id": "766",
 									"entries": [
 										"Any villagers who are saved promise the characters that they'll remember their bravery. If the characters ever visit another settlement in the Menagerie Coast (such as Port Damali or Nicodranas) in future adventures, one of these NPCs might have settled there and can become a local resource for the characters."
@@ -201,6 +220,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 208,
 									"id": "767",
 									"entries": [
 										"One of the villagers aided by the characters shows their gratitude with the gift of a family-heirloom golden bracelet (worth 25 gp)."
@@ -211,6 +231,7 @@
 						{
 							"type": "entries",
 							"name": "P4. East Shore",
+							"page": 208,
 							"id": "768",
 							"entries": [
 								"If the adventurers travel to the east shore, read:",
@@ -226,6 +247,7 @@
 								{
 									"type": "entries",
 									"name": "Combat",
+									"page": 208,
 									"id": "76a",
 									"entries": [
 										"Four sailors (use the {@creature bandit} stat block) are fighting against two {@creature sahuagin} and four trained {@creature Giant Crab||giant crabs} in the shallow water in front of the docks. Once the characters arrive, two of the sailors shout their thanks and run up the gangplank to prepare the ship for immediate departure. The other two remain to help fight."
@@ -234,6 +256,7 @@
 								{
 									"type": "entries",
 									"name": "Departure",
+									"page": 208,
 									"id": "76b",
 									"entries": [
 										"With the two sailors on board, the ship is readied to depart in {@dice 1d6} rounds. Even if the characters aren't able to defeat the enemies here, they can flee to the deck of the ship and try to defend against the attackers until it's ready to leave. If the sahuagin and the crabs are defeated, the sailors are willing to wait for up to one hour if the characters have unfinished business in Palma Flora."
@@ -242,6 +265,7 @@
 								{
 									"type": "entries",
 									"name": "Ship",
+									"page": 208,
 									"id": "76c",
 									"entries": [
 										"The ship is a two-masted caravel with the name {@i Wavechaser} emblazoned on its hull. It can hold up to twenty people, including its crew of six.",
@@ -256,7 +280,8 @@
 													},
 													"title": "Map 5.1: Palma Flora (Player Version)",
 													"width": 2550,
-													"height": 1650
+													"height": 1650,
+													"imageType": "mapPlayer"
 												},
 												{
 													"type": "image",
@@ -266,7 +291,8 @@
 													},
 													"title": "Map 5.1: Palma Flora",
 													"width": 2550,
-													"height": 1650
+													"height": 1650,
+													"imageType": "map"
 												}
 											]
 										}
@@ -277,12 +303,14 @@
 						{
 							"type": "entries",
 							"name": "Other Flora Isle Locations",
+							"page": 209,
 							"id": "76d",
 							"entries": [
 								"The following areas, labeled P5 through P10 on map 5.1, are specific locations on Flora Isle. When the characters return to the ruins of Palma Flora in the last part of the adventure, all these areas are in ruins or have been swept away by the waves.",
 								{
 									"type": "entries",
 									"name": "P5. Bridge",
+									"page": 209,
 									"id": "76e",
 									"entries": [
 										"This bridge once connected Flora Isle to the rest of Palma Flora on the mainland. It is destroyed when the earthquake rocks the island."
@@ -290,7 +318,8 @@
 								},
 								{
 									"type": "entries",
-									"name": "P6. Cliffs.",
+									"name": "P6. Cliffs",
+									"page": 209,
 									"id": "76f",
 									"entries": [
 										"Unlike the gentle, sloping beaches along the rest of the island, the north end of Flora Isle is a sheer cliff 10 feet high."
@@ -299,6 +328,7 @@
 								{
 									"type": "entries",
 									"name": "P7. Farmer's Cottage",
+									"page": 209,
 									"id": "770",
 									"entries": [
 										"A farmer raises pigs and chickens in the pen adjacent to this house."
@@ -307,6 +337,7 @@
 								{
 									"type": "entries",
 									"name": "P8. Docks",
+									"page": 209,
 									"id": "771",
 									"entries": [
 										"Three ships are docked on the east side of the island. One is a caravel named {@i Wavechaser} (see {@adventure area P4|ToR|0|P4. East Shore}). The others are skiffs named {@i Tradewind} and {@i Blushing Elf}, respectively. Both skiffs flee the docks immediately after the earthquake."
@@ -315,6 +346,7 @@
 								{
 									"type": "entries",
 									"name": "P9. Tavern",
+									"page": 209,
 									"id": "772",
 									"entries": [
 										"The three-story Riptide Inn and Tavern is the tallest building on Flora Isle. Most visitors to the island stay here. The tavern's ground floor is open to the air and looks out at the waves."
@@ -323,6 +355,7 @@
 								{
 									"type": "entries",
 									"name": "P10. Public Square",
+									"page": 209,
 									"id": "773",
 									"entries": [
 										"In the center of Flora Isle stands a wishing pool looked over by a statue of Kord the Storm Lord, patron deity of Palma Flora's shark hunters. Most travelers throw a silver piece in for good luck. The pool presently contains 36 sp, but stealing these offerings is frowned on by the villagers. Several market stalls selling fresh fruit stand just north of the square."
@@ -335,6 +368,7 @@
 				{
 					"type": "section",
 					"name": "Seafarers",
+					"page": 209,
 					"id": "774",
 					"entries": [
 						"Having escaped the destruction of Flora Isle, the characters can take stock of their situation and make some new acquaintances. After the characters depart the docks on {@i Wavechaser}, read:",
@@ -349,6 +383,7 @@
 						{
 							"type": "entries",
 							"name": "Character Advancement",
+							"page": 210,
 							"id": "776",
 							"entries": [
 								"At some point during this part of the adventure, ideally at the end of your first session of play, each of the characters advances to 2nd level. Where you place the end of your first session is up to you, but two good points to conclude a game are when the characters first board {@i Wavechaser}, and when they speak with Captain {@creature Three Earrings|EGW} and decide their next destination (see below)."
@@ -357,6 +392,7 @@
 						{
 							"type": "entries",
 							"name": "Wavechaser",
+							"page": 210,
 							"id": "777",
 							"entries": [
 								{
@@ -367,7 +403,8 @@
 									},
 									"title": "Map 5.2: Wavechaser",
 									"width": 2550,
-									"height": 1650
+									"height": 1650,
+									"imageType": "map"
 								},
 								"Map 5.2 represents {@i Wavechaser} and can be used to represent other ships as well.",
 								"{@i Wavechaser} is a type of vessel known as a caravel, which is equipped for navigating coastal waters. The ship can carry twenty passengers comfortably. Though it's a sturdy vessel, it's not built for the open ocean. The Revelry-controlled island of Darktow is the farthest this ship could feasibly travel.",
@@ -377,6 +414,7 @@
 						{
 							"type": "entries",
 							"name": "Interacting with the Crew",
+							"page": 210,
 							"id": "778",
 							"entries": [
 								"The crew members of {@i Wavechaser} are all easy to spot as they attend to their duties around the ship. Read:",
@@ -396,6 +434,7 @@
 										{
 											"type": "entries",
 											"name": "Boerth (Male Human)",
+											"page": 210,
 											"id": "77b",
 											"entries": [
 												"This darkly handsome, chaotic neutral {@creature bandit} is heavyset and strong, and has a keen mind for games of chance. He hails from Port Damali. Boerth doesn't trust anyone\u2014especially his fellow Revelry sailors."
@@ -404,6 +443,7 @@
 										{
 											"type": "entries",
 											"name": "Dajarkal (Female Half-Orc)",
+											"page": 210,
 											"id": "77c",
 											"entries": [
 												"This lawful neutral {@creature druid} is soft-spoken and likes animals more than other people. She joined Wavechaser's crew a week ago in Nicodranas\u2014as a mercenary spy for the Clovis Concord tasked with identifying Revelry pirates. She secretly casts {@spell animal messenger} every evening to send reports on Wavechaser's whereabouts to her superiors."
@@ -412,6 +452,7 @@
 										{
 											"type": "entries",
 											"name": "Dillyu (Male Sea Elf)",
+											"page": 211,
 											"id": "77d",
 											"entries": [
 												"This green-complexioned, chaotic good {@creature bandit} joined the crew only a few days before. As a result, he has no idea yet that he's working on a pirate vessel. Dillyu spent most of his life in Port Zoon after losing his family to a sahuagin raid as a child, and he hates the sea devils with a passion."
@@ -420,6 +461,7 @@
 										{
 											"type": "entries",
 											"name": "Heidi Axebeard (Female Dwarf)",
+											"page": 211,
 											"id": "77e",
 											"entries": [
 												"This lawful evil {@creature acolyte} is the ship's pilot and first mate, and she has a knack for predicting the weather. She hails from Grimgolir in the Dwendalian Empire but has spent decades navigating the sea. Heidi has fought sahuagin on multiple occasions but has never seen them wield magic like whatever caused Flora Isle to sink beneath the sea."
@@ -428,6 +470,7 @@
 										{
 											"type": "entries",
 											"name": "Kijori (Male Human)",
+											"page": 211,
 											"id": "77f",
 											"entries": [
 												"This tan-skinned, chaotic neutral {@creature bandit} is the ship's navigator. Despite his muscled physique, he isn't very strong. A philanderer who hails from Port Damali, Kijori is a fool and isn't suspicious of anyone."
@@ -436,6 +479,7 @@
 										{
 											"type": "entries",
 											"name": "Three Earrings (Female Tabaxi)",
+											"page": 211,
 											"id": "780",
 											"entries": [
 												"This pale, spotted, neutral evil {@creature bandit captain} is a low-ranking member of the Revelry pirates. She brought her vessel to the village of Palma Flora because she was informed that a local sahuagin tribe had uncovered an unusual treasure. {@creature Three Earrings|EGW} rightly assumed that they were going to attack the village, and she intended to be there to plunder the ruins after the attack. She didn't anticipate Flora Isle sinking."
@@ -445,7 +489,8 @@
 								},
 								{
 									"type": "entries",
-									"name": "Captain's Invitation.",
+									"name": "Captain's Invitation",
+									"page": 211,
 									"id": "781",
 									"entries": [
 										"Once the characters are done chatting with the crew, have the NPC they're currently speaking to tell them that Captain Three Earrings would like to see the characters in her cabin."
@@ -456,6 +501,7 @@
 						{
 							"type": "entries",
 							"name": "Palma Flora Refugees",
+							"page": 211,
 							"id": "782",
 							"entries": [
 								"If the characters want to speak to any of the refugees, read or paraphrase the following:",
@@ -473,6 +519,7 @@
 						{
 							"type": "entries",
 							"name": "Three Earrings's Plan",
+							"page": 211,
 							"id": "784",
 							"entries": [
 								"When the characters meet with Captain Three Earrings in her quarters, read:",
@@ -489,6 +536,7 @@
 								{
 									"type": "inset",
 									"name": "Feline Agility",
+									"page": 211,
 									"id": "786",
 									"entries": [
 										"When Three Earrings moves on her turn in combat, she can double her speed until the end of the turn. Once she uses this trait, she can't use it again until she moves 0 feet on one of her turns."
@@ -500,6 +548,7 @@
 								{
 									"type": "entries",
 									"name": "What Three Earrings Knows",
+									"page": 212,
 									"id": "787",
 									"entries": [
 										"The tabaxi captain knows exactly what happened in Palma Flora, thanks to the Revelry spies that have been observing the village and the Sharkfeather Abyss for the past few months. She reveals any of the following information:",
@@ -522,6 +571,7 @@
 						{
 							"type": "entries",
 							"name": "Ports of Call",
+							"page": 212,
 							"id": "788",
 							"entries": [
 								"For characters set on returning to Flora Isle and facing down the sahuagin threat, three viable ports are close by, any of which would take in the refugees and let the characters seek supplies for their mission. {@book Chapter 3|EGW|4|Menagerie Coast} has more information about all the following locations:",
@@ -532,6 +582,7 @@
 										{
 											"type": "entries",
 											"name": "Bisaft Isle",
+											"page": 212,
 											"id": "78a",
 											"entries": [
 												"This tiny island has a small port. A shaman living in the hills beyond the port might be able to provide the characters with a charm of water breathing (see \"{@book Charms|DMG|7|Charms}\" in chapter 7 of the {@book Dungeon Master's Guide|DMG}). The charm allows the character to cast the {@spell water breathing} spell, after which its magic fades."
@@ -540,6 +591,7 @@
 										{
 											"type": "entries",
 											"name": "Brokenbank",
+											"page": 212,
 											"id": "78b",
 											"entries": [
 												"This village is the smallest settlement recognized by the Clovis Concord but is nonetheless filled with foreign ships. An apothecary here might be able to provide potions that would grant the ability to breathe underwater."
@@ -548,6 +600,7 @@
 										{
 											"type": "entries",
 											"name": "Port Damali",
+											"page": 212,
 											"id": "78c",
 											"entries": [
 												"This city is too large for the characters to fully explore in this adventure. {@creature Three Earrings|EGW} knows a smith with black-market connections, and who can help the characters obtain a number of experimental diving helmets that would allow them to breathe beneath the waves."
@@ -560,6 +613,7 @@
 						{
 							"type": "entries",
 							"name": "Next Moves",
+							"page": 212,
 							"id": "78d",
 							"entries": [
 								"As thanks for their bravery, the characters are offered the use of a cramped but comfortable spare cabin as sleeping quarters. Unless {@creature Three Earrings|EGW} visits one of the characters (see \"{@adventure Three Earrings's Plan|ToR|0|Three Earrings's Plan}\" earlier in this adventure), the night passes uneventfully. Read:",
@@ -578,6 +632,7 @@
 				{
 					"type": "section",
 					"name": "Hunger of the Deep",
+					"page": 212,
 					"id": "78f",
 					"entries": [
 						"Once the players are ready to begin this last section of the adventure, read or paraphrase the following to set the scene:",
@@ -593,6 +648,7 @@
 						{
 							"type": "entries",
 							"name": "Adapting Your Port of Call",
+							"page": 213,
 							"id": "791",
 							"entries": [
 								"An important part of being a Dungeon Master is knowing how to present the players with choices while also not forcing yourself to do more work than you have to. Allowing players the option of visiting three different ports is potentially a huge amount of work, even with the help of a book such as this one. To minimize the amount of preparation you have to do, a generic settlement with several shops and locations is presented here. Short descriptions then talk about how to make each possible settlement unique.",
@@ -602,12 +658,14 @@
 						{
 							"type": "entries",
 							"name": "Port General Features",
+							"page": 213,
 							"id": "792",
 							"entries": [
 								"All the ports that the characters can visit in this section have the following general features. The specific information on the three ports, below, tells you how these general features and their NPCs are modified for each port.",
 								{
 									"type": "entries",
 									"name": "Apothecary",
+									"page": 213,
 									"id": "793",
 									"entries": [
 										"The port has a dedicated herbalist (use the {@creature druid} stat block) selling remedies to passing travelers. The druid has four {@item Potion of Healing||potions of healing} in stock, which sell for 50 gp each, and one {@item potion of animal friendship} that sells for 125 gp."
@@ -616,6 +674,7 @@
 								{
 									"type": "entries",
 									"name": "General Goods Store",
+									"page": 213,
 									"id": "794",
 									"entries": [
 										"The port has a general goods store, which sells items in the \"{@book Adventuring Gear|PHB|5|Adventuring Gear}\" section in chapter 5 of the {@book Player's Handbook|PHB} worth 50 gp or less. The store's clerk (use the {@creature commoner} stat block) has four of each item in stock. Characters can also sell items to the general goods store for half their price in the {@book Player's Handbook|PHB}."
@@ -624,6 +683,7 @@
 								{
 									"type": "entries",
 									"name": "Scrollery",
+									"page": 213,
 									"id": "795",
 									"entries": [
 										"The port has a shop that sells magic scrolls. The scribe here (use the {@creature mage} stat block) has four spell scrolls for sale at a cost of 50 gp each: one {@item spell scroll} of {@spell magic missile}, one of {@spell shield}, one of {@spell guiding bolt}, and one of {@spell thunderwave}."
@@ -632,6 +692,7 @@
 								{
 									"type": "entries",
 									"name": "Smithy",
+									"page": 213,
 									"id": "796",
 									"entries": [
 										"The port has a smithy that sells any armor and weapons found in chapter 5 of the {@book Player's Handbook|PHB} worth 200 gp or less. The smithy has two of each item in stock."
@@ -642,12 +703,14 @@
 						{
 							"type": "entries",
 							"name": "Bisaft Isle",
+							"page": 213,
 							"id": "797",
 							"entries": [
 								"In addition to the general features noted above, the port of Bisaft Isle has the following features.",
 								{
 									"type": "entries",
 									"name": "Atmosphere",
+									"page": 213,
 									"id": "798",
 									"entries": [
 										"Bisaft Isle is warm and balmy, particularly in the early morning. The whole port smells of fresh rain. Its people are wary of {@creature Three Earrings|EGW}, but are kind to visitors and refugees."
@@ -656,6 +719,7 @@
 								{
 									"type": "entries",
 									"name": "Scrollery",
+									"page": 213,
 									"id": "799",
 									"entries": [
 										"The scrollery is a mile from the harbor and is run by an old female tortle shaman named Grimalda (use the {@creature mage} stat block). She owes Three Earrings a favor and grants one party member a {@i charm of water breathing }(see \"{@book Charms|DMG|7|Charms}\" in chapter 7 of the {@book Dungeon Master's Guide|DMG}). The charm allows the character to cast the {@spell water breathing} spell, after which its magic fades."
@@ -666,12 +730,14 @@
 						{
 							"type": "entries",
 							"name": "Brokenbank",
+							"page": 213,
 							"id": "79a",
 							"entries": [
 								"In addition to the general features noted above, Brokenbank has the following features.",
 								{
 									"type": "entries",
 									"name": "Atmosphere",
+									"page": 213,
 									"id": "79b",
 									"entries": [
 										"Brokenbank is a muddy, rain-slick village crammed full of travelers. It can feel claustrophobic, and it seems as though a leering Zhelezo guard stands on every street corner."
@@ -680,6 +746,7 @@
 								{
 									"type": "entries",
 									"name": "Apothecary",
+									"page": 213,
 									"id": "79c",
 									"entries": [
 										"Brokenbank's apothecary is a chubby, female sea elf {@creature druid} named Aldageam. {@creature Three Earrings|EGW} saved Aldageam's life when she was young, and although she doesn't fully trust the tabaxi (who she knows is a pirate), she is happy to help her friend. She has ten {@item Potion of Water Breathing||potions of water breathing} in stock and sells them to the characters at half price for 40 gp each."
@@ -688,6 +755,7 @@
 								{
 									"type": "entries",
 									"name": "Pawn Shop and General Store",
+									"page": 213,
 									"id": "79d",
 									"entries": [
 										"Brokenbank features a thriving pawn shop that doubles as its general store. Items sold here fetch 75 percent of their value rather than 50 percent."
@@ -698,12 +766,14 @@
 						{
 							"type": "entries",
 							"name": "Port Damali",
+							"page": 213,
 							"id": "79e",
 							"entries": [
 								"In addition to the general features noted above, Port Damali has the following features.",
 								{
 									"type": "entries",
 									"name": "Atmosphere",
+									"page": 213,
 									"id": "79f",
 									"entries": [
 										"Port Damali is a beautiful and lively city, but its docks are smelly, weather-beaten, and dangerous."
@@ -712,6 +782,7 @@
 								{
 									"type": "entries",
 									"name": "Smithy",
+									"page": 213,
 									"id": "7a0",
 									"entries": [
 										"The local smithy has received several experimental breathing helmets from inventors in Port Zoon. {@creature Three Earrings|EGW} gives a letter to the adventurers and asks that they deliver it to the smith without opening it. (The letter reads: \"The Revelry is requisitioning your supply of diving helmets. Ask no questions, and your next shipment will arrive unharried.\")",
@@ -724,6 +795,7 @@
 						{
 							"type": "entries",
 							"name": "Departing for Palma Flora",
+							"page": 213,
 							"id": "7a1",
 							"entries": [
 								"Once the characters have concluded their business in port, {@creature Three Earrings|EGW} looks sternly at them and asks, \"Are you prepared? You're about to risk life and limb for naught but treasure and a sense of vengeance. The only folk who would do such a thing are the greedy, the foolish, and those with nothing left to lose.\"",
@@ -731,6 +803,7 @@
 								{
 									"type": "entries",
 									"name": "Roleplaying Three Earrings",
+									"page": 213,
 									"id": "7a2",
 									"entries": [
 										"Against her own nature, {@creature Three Earrings|EGW} has taken a liking to these adventurers (unless they have done something to annoy her) and is having second thoughts about using them as disposable tools in her attempt to gain the {@item rod of retribution|EGW}.",
@@ -742,6 +815,7 @@
 						{
 							"type": "entries",
 							"name": "Encounter on the Open Sea",
+							"page": 214,
 							"id": "7a3",
 							"entries": [
 								"In the middle of the night, one day after {@i Wavechaser} leaves port, the ship's navigator, Kijori, shouts out a warning. Another ship has emerged from behind a tall rock formation and is moving to intercept!",
@@ -751,6 +825,7 @@
 								{
 									"type": "entries",
 									"name": "Combat Begins",
+									"page": 214,
 									"id": "7a4",
 									"entries": [
 										"It takes {@i Moonbeam} 10 minutes to intercept {@i Wavechaser}, giving the characters and the crew time to wake up and don their armor (see \"{@book Getting Into and Out of Armor|PHB|5|Getting Into and Out of Armor}\" in chapter 5 of the {@book Player's Handbook|PHB}). Combat begins when Voskiir and his boarding party of two {@creature Thug||thugs}, two {@creature Scout||scouts}, and four {@creature Bandit||bandits} swing aboard the vessel. He shouts out, \"In the name of the laws of the Clovis Concord, surrender your vessel peacefully, or we shall take her!\"",
@@ -759,7 +834,8 @@
 								},
 								{
 									"type": "entries",
-									"name": "Complex Combat.",
+									"name": "Complex Combat",
+									"page": 214,
 									"id": "7a5",
 									"entries": [
 										"Running a combat with several allied NPCs can be complicated. To simplify this situation, have the four bandits on Voskiir's crew engage Boerth, Dajarkal, Dillyu, and Kijori, while {@creature Three Earrings|EGW} fights from the shadows and Heidi stays at the helm to steer the vessel. This leaves the characters to take on Voskiir at the center of the fight. You can resolve these one-on-one duels using dice as normal if you wish, or you can declare that one side defeats the other depending on how the characters conclude their battle with Voskiir.",
@@ -769,6 +845,7 @@
 								{
 									"type": "entries",
 									"name": "Concluding Combat",
+									"page": 214,
 									"id": "7a6",
 									"entries": [
 										"Combat ends when Voskiir and his boarding party are defeated. {@i Moonbeam} sails away with all haste once the battle is lost, but {@i Wavechaser} doesn't follow. If the boarding party is killed, that's the end of that. If the adventurers capture Voskiir, however, they have the chance to interrogate him. (You can also have Dajarkal or one of Voskiir's crew know what he knows if the captain didn't survive.)",
@@ -783,6 +860,7 @@
 				{
 					"type": "section",
 					"name": "Ambush at Palma Flora",
+					"page": 214,
 					"id": "7a7",
 					"entries": [
 						{
@@ -796,7 +874,8 @@
 									},
 									"title": "Map 5.3: Ruined Palma Flora",
 									"width": 2550,
-									"height": 1650
+									"height": 1650,
+									"imageType": "map"
 								},
 								{
 									"type": "image",
@@ -806,7 +885,8 @@
 									},
 									"title": "Map 5.3: Ruined Palma Flora (Player Version)",
 									"width": 2550,
-									"height": 1650
+									"height": 1650,
+									"imageType": "mapPlayer"
 								}
 							]
 						},
@@ -835,6 +915,7 @@
 								{
 									"type": "entries",
 									"name": "Combat's End",
+									"page": 215,
 									"id": "7ab",
 									"entries": [
 										"The sahuagin leap overboard and flee into the sea when the first of the abominations is killed. As they flee, {@creature Three Earrings|EGW} emerges from below decks and shouts, \"Adventurers! Use the supplies we've acquired and follow them into the trench! We'll deal with the last of these monsters!\"",
@@ -842,6 +923,7 @@
 										{
 											"type": "inset",
 											"name": "Sharkbody Abominations",
+											"page": 215,
 											"id": "7ac",
 											"entries": [
 												"The sahuagin shaman Selachai tapped into Uk'otoa's magic to wreak vengeance on the shark hunters of Palma Flora. The unfortunate hunters who failed to escape were transformed into monstrosities with coarse grayish skin, the head of a shark, and a muscular, humanoid physique. These creatures possess all their previous intelligence and personality, but they respond to the control of their sahuagin masters' Shark Telepathy.",
@@ -865,6 +947,7 @@
 						{
 							"type": "entries",
 							"name": "Descent into Sharkfeather Abyss",
+							"page": 215,
 							"id": "7ad",
 							"entries": [
 								"An earthquake caused by the writhing of Uk'otoa deep beneath the sea has drawn Flora Isle into the trench the sahuagin call home. The now-ruined island is lodged within a tight corner of the trench one hundred feet below the surface of the sea. The locations in this section are keyed to map 5.3.",
@@ -874,12 +957,14 @@
 						{
 							"type": "entries",
 							"name": "Features of the Ruins",
+							"page": 216,
 							"id": "7ae",
 							"entries": [
 								"The sunken ruins of Flora Isle have the following general features.",
 								{
 									"type": "entries",
 									"name": "Light",
+									"page": 216,
 									"id": "7af",
 									"entries": [
 										"The trench is within the sunlight zone beneath the surface of the water and is brightly lit by day."
@@ -888,6 +973,7 @@
 								{
 									"type": "entries",
 									"name": "Water",
+									"page": 216,
 									"id": "7b0",
 									"entries": [
 										"The deep, turbulent water of the trench makes movement difficult for creatures not used to it. A creature without a swimming speed must spend 2 feet of movement for every 1 foot it moves. Additionally, it must succeed on a DC 10 Strength ({@skill Athletics}) check whenever it tries to move or have its speed reduced to 0 until the start of its next turn. The sahuagin can move normally in the trench."
@@ -898,6 +984,7 @@
 						{
 							"type": "entries",
 							"name": "Showdown with Selachai",
+							"page": 216,
 							"id": "7b1",
 							"entries": [
 								"Once the characters arrive at the ruins, read:",
@@ -915,12 +1002,14 @@
 								{
 									"type": "inset",
 									"name": "Roleplaying Selachai",
+									"page": 216,
 									"id": "7b3",
 									"entries": [
 										"Selachai is a young adult sahuagin who commands the respect of her clan. She came into a position of leadership by defeating the clan's previous priestess in ritual combat, using the powers granted to her by Uk'otoa. Everything she has in life, she has had to fight for, but this hasn't hardened her heart. Rather, she wishes to create a better life for her people.",
 										{
 											"type": "entries",
 											"name": "Ideal",
+											"page": 216,
 											"id": "7b4",
 											"entries": [
 												"\"Only power can change the land dwellers' minds. We have tried reason. We have tried threats. Now they will acquiesce to us by choice or serve us by force.\""
@@ -929,6 +1018,7 @@
 										{
 											"type": "entries",
 											"name": "Bond",
+											"page": 216,
 											"id": "7b5",
 											"entries": [
 												"\"The Sharkfeather tribe is all I have. I would do anything to protect it\u2014even at the cost of my own life.\""
@@ -937,6 +1027,7 @@
 										{
 											"type": "entries",
 											"name": "Flaw",
+											"page": 216,
 											"id": "7b6",
 											"entries": [
 												"\"Secretly, I want to believe the best of people, even of land-walkers. Nevertheless, if they betray me, I will ensure they die a painful and horrific death.\""
@@ -951,12 +1042,14 @@
 				{
 					"type": "section",
 					"name": "Concluding the Adventure",
+					"page": 216,
 					"id": "7b7",
 					"entries": [
 						"This adventure ends with a final scene, based on whether the characters were victorious in their battle with Selachai or were defeated.",
 						{
 							"type": "entries",
 							"name": "Defeat",
+							"page": 216,
 							"id": "7b8",
 							"entries": [
 								"If the characters were defeated by Selachai and her sahuagin, all is not lost. The warlock is no stranger to killing, but she recognizes an opportunity when it appears before her. She commands her minions to bind the characters, stabilize them, and carry their {@condition unconscious} forms to the surface.",
@@ -975,12 +1068,14 @@
 						{
 							"type": "entries",
 							"name": "Victory",
+							"page": 217,
 							"id": "7ba",
 							"entries": [
 								"If the characters prevailed in the battle against Selachai, the {@item rod of retribution|EGW} falls from her lifeless hand and settles in the sand as any remaining foes flee into the murky depths. When the characters return to the surface with the rod, Three Earrings and her crew throw down rope ladders and bring them aboard. The captain of {@i Wavechaser} is conflicted. She asks for the {@item rod of retribution|EGW} straight away no matter what. However, depending on the characters' actions, she might have formed a bond with them over their brief time together.",
 								{
 									"type": "entries",
-									"name": "Three Earrings's Resolve.",
+									"name": "Three Earrings's Resolve",
+									"page": 217,
 									"id": "7bb",
 									"entries": [
 										"If any of the characters convinced {@creature Three Earrings|EGW} not to think of them as pawns earlier in the adventure, she resolves to treat all the characters as friends now. She welcomes them back onto {@i Wavechaser} with a huge smile, then asks the adventurers to come with her to the pirate haven of Darktow. \"There's no use in being subtle about it,\" she says with a shrug. \"I need to fence this thing in order to get you your gold. No place to do that but in Darktow.\"",
@@ -991,6 +1086,7 @@
 								{
 									"type": "entries",
 									"name": "Three Earrings's Treachery",
+									"page": 217,
 									"id": "7bc",
 									"entries": [
 										"If {@creature Three Earrings|EGW} wasn't convinced to value the adventurers as her friends, she demands that they give her the rod. If they don't hand it over, she threatens to take it by force. If the characters continue to resist, Three Earrings and {@i Wavechaser}'s crew all fight them. If the characters are defeated, Three Earrings orders the crew to throw any survivors in the brig.",
@@ -1005,6 +1101,7 @@
 				{
 					"type": "section",
 					"name": "Character Advancement",
+					"page": 217,
 					"id": "7bd",
 					"entries": [
 						"At the end of this adventure, the characters reach 3rd level. With this experience under their belts, they can set off on any number of possible adventures across the Menagerie Coast\u2014or even leave this realm behind and travel to another part of Wildemount.",

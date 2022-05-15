@@ -66,6 +66,19 @@
 				15,
 				15
 			],
+			"optionalfeatureProgression": [
+				{
+					"name": "Metamagic",
+					"featureType": [
+						"MM"
+					],
+					"progression": {
+						"3": 2,
+						"10": 3,
+						"17": 4
+					}
+				}
+			],
 			"startingProficiencies": {
 				"weapons": [
 					"{@item dagger|phb|daggers}",
@@ -311,7 +324,7 @@
 						"{@filter 8th|spells|level=8|class=Sorcerer}",
 						"{@filter 9th|spells|level=9|class=Sorcerer}"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							2,
 							0,
@@ -1001,7 +1014,7 @@
 			"isReprinted": true,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"1": [
 							"fog cloud",
 							"thunderwave"
@@ -1143,7 +1156,7 @@
 			"additionalSpells": [
 				{
 					"name": "Good",
-					"prepared": {
+					"known": {
 						"1": [
 							"cure wounds"
 						]
@@ -1151,7 +1164,7 @@
 				},
 				{
 					"name": "Evil",
-					"prepared": {
+					"known": {
 						"1": [
 							"inflict wounds"
 						]
@@ -1159,7 +1172,7 @@
 				},
 				{
 					"name": "Law",
-					"prepared": {
+					"known": {
 						"1": [
 							"bless"
 						]
@@ -1167,7 +1180,7 @@
 				},
 				{
 					"name": "Chaos",
-					"prepared": {
+					"known": {
 						"1": [
 							"bane"
 						]
@@ -1175,7 +1188,7 @@
 				},
 				{
 					"name": "Neutrality",
-					"prepared": {
+					"known": {
 						"1": [
 							"protection from evil and good"
 						]
@@ -1198,7 +1211,7 @@
 			"page": 50,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"3": [
 							"darkness"
 						]
@@ -1257,7 +1270,7 @@
 			"isReprinted": true,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"1": [
 							"arms of Hadar",
 							"dissonant whispers"
@@ -1299,7 +1312,7 @@
 			"isReprinted": true,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"1": [
 							"alarm",
 							"protection from evil and good"
@@ -1354,11 +1367,11 @@
 			"page": 66,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"1": [
+							"mind sliver|tce#c",
 							"arms of Hadar",
-							"dissonant whispers",
-							"mind sliver|tce"
+							"dissonant whispers"
 						],
 						"3": [
 							"calm emotions",
@@ -1396,7 +1409,7 @@
 			"page": 68,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"1": [
 							"alarm",
 							"protection from evil and good"
@@ -1460,6 +1473,83 @@
 					"page": true
 				}
 			}
+		},
+		{
+			"name": "Lunar Magic (UA)",
+			"shortName": "Lunar Magic (UA)",
+			"source": "UA2022HeroesOfKrynn",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 2,
+			"additionalSpells": [
+				{
+					"name": "Full Moon",
+					"known": {
+						"1": [
+							"faerie fire"
+						],
+						"3": [
+							"moonbeam"
+						],
+						"5": [
+							"death ward"
+						],
+						"7": [
+							"freedom of movement"
+						],
+						"9": [
+							"mass cure wounds"
+						]
+					}
+				},
+				{
+					"name": "New Moon",
+					"known": {
+						"1": [
+							"dissonant whispers"
+						],
+						"3": [
+							"darkness"
+						],
+						"5": [
+							"bestow curse"
+						],
+						"7": [
+							"Evard's black tentacles"
+						],
+						"9": [
+							"mislead"
+						]
+					}
+				},
+				{
+					"name": "Crescent Moon",
+					"known": {
+						"1": [
+							"sanctuary"
+						],
+						"3": [
+							"blindness/deafness"
+						],
+						"5": [
+							"phantom steed"
+						],
+						"7": [
+							"hallucinatory terrain"
+						],
+						"9": [
+							"dream"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Lunar Magic|Sorcerer||Lunar Magic (UA)|UA2022HeroesOfKrynn|1",
+				"Lunar Boons|Sorcerer||Lunar Magic (UA)|UA2022HeroesOfKrynn|6",
+				"Waxing and Waning|Sorcerer||Lunar Magic (UA)|UA2022HeroesOfKrynn|6",
+				"Lunar Empowerment|Sorcerer||Lunar Magic (UA)|UA2022HeroesOfKrynn|14",
+				"Lunar Phenomenon|Sorcerer||Lunar Magic (UA)|UA2022HeroesOfKrynn|18"
+			]
 		}
 	],
 	"classFeature": [
@@ -1625,11 +1715,8 @@
 			"entries": [
 				"At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.",
 				{
-					"type": "entries",
-					"name": "Sorcery Points",
-					"entries": [
-						"You have 2 sorcery points, and you gain one additional point every time you level up, to a maximum of 20 at level 20. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest."
-					]
+					"type": "refClassFeature",
+					"classFeature": "Sorcery Points|Sorcerer||2"
 				},
 				{
 					"type": "refClassFeature",
@@ -1660,6 +1747,19 @@
 					"type": "refClassFeature",
 					"classFeature": "Sorcerous Fortitude|Sorcerer|UAClassFeatureVariants|2"
 				}
+			]
+		},
+		{
+			"name": "Sorcery Points",
+			"source": "PHB",
+			"page": 99,
+			"srd": true,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"You have 2 sorcery points, and you gain one additional point every time you level up, to a maximum of 20 at level 20. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest."
 			]
 		},
 		{
@@ -2041,6 +2141,9 @@
 			"classSource": "UAClassFeatureVariants",
 			"level": 2,
 			"isClassFeatureVariant": true,
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"As an action, you can spend any number of sorcery points to roll a {@dice d4} for each point expended. You gain a number of temporary hit points equal to the total rolled."
 			]
@@ -2272,7 +2375,7 @@
 						],
 						[
 							"05-06",
-							"A {@filter modron|bestiary|search=modron} chosen and controlled by the DM appears in an unoccupied space within 5 feet of you, then disappears 1 minute later."
+							"A {@filter modron|bestiary|source=mm|search=modron} chosen and controlled by the DM appears in an unoccupied space within 5 feet of you, then disappears 1 minute later."
 						],
 						[
 							"07-08",
@@ -2777,7 +2880,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 18th-level Aberrant Mind feature}",
-				"You can unleash your aberrant power as a space-warping anomaly. As an action, you can teleport to an unoccupied space you can see within 120 feet of you. Immediately after you disappear, each creature within 30 feet of the space you left must make a Strength saving throw. On a failed save, a creature takes {@damage 3d10} force damage and is pulled straight toward the space you left, ending in an unoccupied space as close to your former space as possible. On a successful save, the creature takes half as much damage and isn't pulled.",
+				"You can unleash your aberrant power as a space-warping anomaly. As an action, you can teleport to an unoccupied space you can see within 120 feet of you. Immediately after you disappear, each creature within 30 feet of the space you left must make a Strength saving throw against your spell save DC. On a failed save, a creature takes {@damage 3d10} force damage and is pulled straight toward the space you left, ending in an unoccupied space as close to your former space as possible. On a successful save, the creature takes half as much damage and isn't pulled.",
 				"Once you use this feature, you can't do so again until you finish a long rest, unless you spend 5 sorcery points to use it again."
 			]
 		},
@@ -2917,6 +3020,9 @@
 			"subclassSource": "TCE",
 			"level": 6,
 			"header": 2,
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"{@i 6th-level Clockwork Soul feature}",
 				"You can tap into the grand equation of existence to imbue a creature with a shimmering shield of order. As an action, you can expend 1 to 5 sorcery points to create a magical ward around yourself or another creature you can see within 30 feet of you. The ward lasts until you finish a long rest or until you use this feature again.",
@@ -3060,17 +3166,17 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Psionic Discovery.",
+									"name": "Psionic Discovery",
 									"entry": "You can unlock the ability to cast a mind-oriented sorcerer spell you don't already know. After meditating for 10 minutes (which can be done during a rest), roll your Psionic Talent die, and choose a sorcerer spell of a level for which you have spell slots and that is in the school of divination or enchantment. You know the chosen spell for a number of hours equal to the number you rolled."
 								},
 								{
 									"type": "item",
-									"name": "Psychic Sorcery.",
+									"name": "Psychic Sorcery",
 									"entry": "When you cast a spell, you can use your mind to form it, rather than relying on words, gestures, and materials. To do so, roll your Psionic Talent die. The spell then requires no verbal component, and if you rolled the level of the spell or higher, the spell doesn't require somatic or material components either."
 								},
 								{
 									"type": "item",
-									"name": "Telepathic Speech.",
+									"name": "Telepathic Speech",
 									"entry": "You can form a telepathic connection between your mind and the mind of another. As a bonus action, choose one creature you can see, and roll your Psionic Talent die. For a number of hours equal to the number you rolled, you and the chosen creature can speak telepathically with each other while the two of you are within a number of miles of each other equal to the number you rolled. To understand each other, you each must speak mentally in a language the other knows. The telepathic connection ends early if you use this ability to form a connection with a different creature."
 								}
 							]
@@ -3285,6 +3391,9 @@
 			"subclassSource": "UA2020SubclassesPt2",
 			"level": 6,
 			"header": 2,
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"{@i 6th-level Clockwork Soul feature}",
 				"You can imbue a creature with a shimmering shield of order. As an action, you can expend 1 to 5 sorcery points to create a magical ward around yourself or another creature you can see within 30 feet of you. The ward lasts until you finish a long rest or until you use this feature again.",
@@ -3329,6 +3438,252 @@
 					]
 				},
 				"Once you use this action, you can't use it again until you finish a long rest or until you expend 7 sorcery points to use it again."
+			]
+		},
+		{
+			"name": "Lunar Magic",
+			"source": "UA2022HeroesOfKrynn",
+			"page": 2,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Lunar Magic (UA)",
+			"subclassSource": "UA2022HeroesOfKrynn",
+			"level": 1,
+			"entries": [
+				"On many worlds, the moon is a revered celestial body with magical properties. On Krynn, the gods of magic are associated with the world's three moons. On the world of Toril, the god Selûne uses the light of the moon to battle darkness. On Eberron, scholars of the Draconic Prophecy decipher ancient secrets from the waxing and waning of that world's twelve moons.",
+				"You, or someone from your lineage, has been exposed to the concentrated magic of the moon (or moons) of your world, imbuing you with lunar magic. Perhaps your ancestor was involved in a druidic ritual involving an eclipse, or maybe a mystical fragment of a moon crashed near you. However you came to have your magic, your connection to the moon is obvious when you cast sorcerer spells. Consult the Manifestations of Lunar Magic table, then choose or randomly determine how your connection to the moon manifests while you cast your sorcerer spells.",
+				{
+					"type": "table",
+					"caption": "Manifestations of Lunar Magic",
+					"colLabels": [
+						"d4",
+						"Manifestation"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"1",
+							"You glow with faint light that matches the color of a moon from your world."
+						],
+						[
+							"2",
+							"Your pupils shift in shape, matching the current phase of a moon from your world."
+						],
+						[
+							"3",
+							"Spectral manifestations of the moon (or moons) of your world orbit you."
+						],
+						[
+							"4",
+							"Your shadow is limned in faint light, as if it were a lunar body during a solar eclipse."
+						]
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Moon Fire",
+					"entries": [
+						"{@i 1st-Level Lunar Magic Feature}",
+						"You can call down the radiant light of the moon on command. You learn the {@spell sacred flame} spell, which doesn't count against the number of sorcerer cantrips you know. When you cast the spell, you can target one creature as normal or target two creatures within range that are within 5 feet of each other."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Lunar Embodiment",
+					"entries": [
+						"{@i 1st-Level Lunar Magic Feature}",
+						"You learn additional spells when you reach certain levels in this class, as shown on the Lunar Spells table. Each of these spells counts as a sorcerer spell for you, but it doesn't count against the number of sorcerer spells you know.",
+						{
+							"type": "table",
+							"caption": "Lunar Spells",
+							"colLabels": [
+								"Sorcerer Level",
+								"Full Moon Spells",
+								"New Moon Spells",
+								"Crescent Moon Spells"
+							],
+							"colStyles": [
+								"col-1-1 text-center",
+								"col-3-3",
+								"col-3-3",
+								"col-3-3"
+							],
+							"rows": [
+								[
+									"1st",
+									"{@spell faerie fire}",
+									"{@spell dissonant whispers}",
+									"{@spell sanctuary}"
+								],
+								[
+									"3rd",
+									"{@spell moonbeam}",
+									"{@spell darkness}",
+									"{@spell blindness/deafness}"
+								],
+								[
+									"5th",
+									"{@spell death ward}",
+									"{@spell bestow curse}",
+									"{@spell phantom steed}"
+								],
+								[
+									"7th",
+									"{@spell freedom of movement}",
+									"{@spell Evard's black tentacles}",
+									"{@spell hallucinatory terrain}"
+								],
+								[
+									"9th",
+									"{@spell mass cure wounds}",
+									"{@spell mislead}",
+									"{@spell dream}"
+								]
+							]
+						},
+						"Whenever you finish a long rest, you can choose what lunar phase manifests its power through your magic: Full Moon, New Moon, or Crescent Moon. While in the chosen phase, spells of the associated phase in the Lunar Spells table can be cast once without expending a spell slot. Once you cast a spell in this way, you can't do so again until you finish a long rest."
+					]
+				}
+			]
+		},
+		{
+			"name": "Lunar Boons",
+			"source": "UA2022HeroesOfKrynn",
+			"page": 3,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Lunar Magic (UA)",
+			"subclassSource": "UA2022HeroesOfKrynn",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"{@i 6th-Level Lunar Magic Feature}",
+				"Lunar phases influence your metamagic. Each lunar phase is associated with spells of the following schools of magic:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Full Moon",
+							"entries": [
+								"Abjuration and conjuration spells"
+							]
+						},
+						{
+							"type": "item",
+							"name": "New Moon",
+							"entries": [
+								"Evocation and necromancy spells"
+							]
+						},
+						{
+							"type": "item",
+							"name": "Crescent Moon",
+							"entries": [
+								"Divination and transmutation spells"
+							]
+						}
+					]
+				},
+				"Whenever you use Metamagic on a spell from the Lunar Spells table or a spell of a school of magic associated with the lunar phase you are in, you can reduce the sorcery points spent by 1 (minimum 0). You can reduce the sorcery points spent for your Metamagic a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest"
+			]
+		},
+		{
+			"name": "Waxing and Waning",
+			"source": "UA2022HeroesOfKrynn",
+			"page": 3,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Lunar Magic (UA)",
+			"subclassSource": "UA2022HeroesOfKrynn",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"{@i 6th-Level Lunar Magic Feature}",
+				"You gain greater control over the phases of your lunar magic. As a bonus action, you can spend 1 sorcery point to change your lunar phase for a different one."
+			]
+		},
+		{
+			"name": "Lunar Empowerment",
+			"source": "UA2022HeroesOfKrynn",
+			"page": 3,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Lunar Magic (UA)",
+			"subclassSource": "UA2022HeroesOfKrynn",
+			"level": 14,
+			"header": 2,
+			"entries": [
+				"{@i 14th-Level Lunar Magic Feature}",
+				"The power of a lunar phase saturates your being. Whenever you choose a lunar phase to affect your magic, you also gain the following benefit associated with that phase:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Full Moon:",
+							"entry": "You shed bright light in a 10-foot radius and dim light for an additional 10 feet. In addition, you and creatures of your choice have advantage on saving throws while within the bright light you shed."
+						},
+						{
+							"type": "item",
+							"name": "New Moon:",
+							"entry": "You have advantage on Dexterity ({@skill Stealth}) checks. In addition, while you are in dim light or darkness, attack rolls have disadvantage against you."
+						},
+						{
+							"type": "item",
+							"name": "Crescent Moon:",
+							"entry": "You have resistance to necrotic and radiant damage"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Lunar Phenomenon",
+			"source": "UA2022HeroesOfKrynn",
+			"page": 3,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Lunar Magic (UA)",
+			"subclassSource": "UA2022HeroesOfKrynn",
+			"level": 18,
+			"header": 2,
+			"entries": [
+				"{@i 18th-Level Lunar Magic feature}",
+				"Your lunar phase magic bursts. As a bonus action, you can tap into a special power of the lunar phase you are currently in. Alternatively, as part of the bonus action you take to change your lunar phase using your Waxing and Waning feature, you can immediately use the power of the lunar phase you are entering:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Full Moon:",
+							"entries": [
+								"You radiate intense moonlight for a moment. Each creature of your choice within 30 feet of you must succeed on a Constitution saving throw against your spell save DC or be {@condition blinded} until the end of its next turn. In addition, one creature of your choice in that area regains {@dice 3d8} hit points."
+							]
+						},
+						{
+							"type": "item",
+							"name": "New Moon:",
+							"entries": [
+								"You momentarily emanate an oppressive gloom. Each creature of your choice within 30 feet of you must succeed on a Dexterity saving throw against your spell save DC or take {@damage 3d10} necrotic damage and have its speed reduced to 0 until the end of its next turn. In addition, you become {@condition invisible} until the end of your next turn, or until you make an attack or cast a spell."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Crescent Moon:",
+							"entries": [
+								"You slip through light and darkness. You can magically teleport to an unoccupied space you can see within 60 feet of yourself. In addition, you also gain resistance to all damage until the start of your next turn."
+							]
+						}
+					]
+				},
+				"Once you use a phase's bonus action, you can't do so again until you finish a long rest, unless you spend 5 sorcery points to use it again."
 			]
 		},
 		{
@@ -3626,7 +3981,7 @@
 					"type": "list",
 					"items": [
 						"The hound is size Medium.",
-						"It can move through other creatures and objects as if they were difficult terrain. The hound takes 5 force damage if it ends its turn inside an object.",
+						"It can move through other creatures and objects as if they were {@quickref difficult terrain||3}. The hound takes 5 force damage if it ends its turn inside an object.",
 						"At the start of its turn, the hound automatically knows its target's location. If the target was hidden, it is no longer hidden from the hound."
 					]
 				},
@@ -3658,7 +4013,7 @@
 			"level": 18,
 			"header": 2,
 			"entries": [
-				"At 18th level, you can spend 3 sorcery points to transform yourself into a shadow form as a bonus action. In this form, you have resistance to all damage except force damage, and you can move through other creatures and objects as if they were difficult terrain. You take 5 force damage if you end your turn inside an object. You remain in this form for 1 minute."
+				"At 18th level, you can spend 3 sorcery points to transform yourself into a shadow form as a bonus action. In this form, you have resistance to all damage except force damage, and you can move through other creatures and objects as if they were {@quickref difficult terrain||3}. You take 5 force damage if you end your turn inside an object. You remain in this form for 1 minute."
 			]
 		},
 		{
@@ -4580,7 +4935,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 18th-level Aberrant Mind feature}",
-				"At 18th level, you become the focal point of a reality-warping anomaly. As an action, you can magically radiate a transparent, 20-foot-radius aura for 1 minute. This might take the form of a sphere of rippling psychic energy, a fluctuating amoebic gel, an extrusion of ephemeral parasites, or some other manifestation. Other creatures treat the aura as difficult terrain, and when they start their turn in it, they take {@damage 2d10} psychic damage. When you activate this feature, you can choose any number of creatures you can see to be unaffected by the aura.",
+				"At 18th level, you become the focal point of a reality-warping anomaly. As an action, you can magically radiate a transparent, 20-foot-radius aura for 1 minute. This might take the form of a sphere of rippling psychic energy, a fluctuating amoebic gel, an extrusion of ephemeral parasites, or some other manifestation. Other creatures treat the aura as {@quickref difficult terrain||3}, and when they start their turn in it, they take {@damage 2d10} psychic damage. When you activate this feature, you can choose any number of creatures you can see to be unaffected by the aura.",
 				"As a bonus action, you can end the aura early. If you do so, you and any number of creatures you choose within the aura are teleported to a location you can see within 1 mile of you. Each creature must appear within 20 feet of you and in an unoccupied space. An unwilling creature that succeeds on a Charisma saving throw against your spell save DC is not teleported. Once you use this feature, you can't use it again until you finish a long rest."
 			]
 		},
@@ -4774,8 +5129,8 @@
 						"Spell"
 					],
 					"colStyles": [
-						"col-5",
-						"col-7"
+						"col-6",
+						"col-6"
 					],
 					"rows": [
 						[
@@ -4967,7 +5322,7 @@
 					"items": [
 						"The hound is size Medium, not Large, and it counts as a monstrosity, not a beast.",
 						"It appears with a number of temporary hit points equal to half your sorcerer level.",
-						"It can move through other creatures and objects as if they were difficult terrain. The hound takes 5 force damage if it ends its turn inside an object.",
+						"It can move through other creatures and objects as if they were {@quickref difficult terrain||3}. The hound takes 5 force damage if it ends its turn inside an object.",
 						"At the start of its turn, the hound automatically knows its target's location. If the target was hidden, it is no longer hidden from the hound."
 					]
 				},
@@ -4999,7 +5354,7 @@
 			"level": 18,
 			"header": 2,
 			"entries": [
-				"Starting at 18th level, you can spend 6 sorcery points as a bonus action to magically transform yourself into a shadowy form. In this form, you have resistance to all damage except force and radiant damage, and you can move through other creatures and objects as if they were difficult terrain. You take 5 force damage if you end your turn inside an object.",
+				"Starting at 18th level, you can spend 6 sorcery points as a bonus action to magically transform yourself into a shadowy form. In this form, you have resistance to all damage except force and radiant damage, and you can move through other creatures and objects as if they were {@quickref difficult terrain||3}. You take 5 force damage if you end your turn inside an object.",
 				"You remain in this form for 1 minute. It ends early if you are {@condition incapacitated}, if you die, or if you dismiss it as a bonus action."
 			]
 		},

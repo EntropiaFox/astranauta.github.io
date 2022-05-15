@@ -16,8 +16,10 @@ class Omnidexer {
 		 *   s: "PHB", // source
 		 *   u: "spell name_phb, // hash
 		 *   uh: "spell name_phb, // Optional; hash for href if the link should be different from the hover lookup hash.
-		 *   p: 110, // page
+		 *   p: 110, // page number
+		 *   [q: "bestiary.html", // page; synthetic property only used by search widget]
 		 *   h: 1 // if isHover enabled, otherwise undefined
+		 *   r: 1 // if SRD
 		 *   c: 10, // category ID
 		 *   id: 123 // index ID
 		 * }
@@ -81,6 +83,7 @@ class Omnidexer {
 				p: Omnidexer.getProperty(it, arbiter.page || "page"),
 			};
 			if (arbiter.isHover) toAdd.h = 1;
+			if (it.srd) toAdd.r = 1;
 			if (options.alt) {
 				if (options.alt.additionalProperties) Object.entries(options.alt.additionalProperties).forEach(([k, getV]) => toAdd[k] = getV(it));
 			}
@@ -103,6 +106,8 @@ class Omnidexer {
 				if (!arbiter.filter || !arbiter.filter(it)) index.push(toAdd);
 			});
 		};
+
+		if (arbiter.postLoad) json = arbiter.postLoad(json);
 
 		const dataArr = Omnidexer.getProperty(json, arbiter.listProp);
 		if (dataArr) {
@@ -342,6 +347,7 @@ class IndexableFile {
 	 * @param opts.isOnlyDeep
 	 * @param opts.additionalIndexes
 	 * @param opts.isSkipBrew
+	 * @param [opts.pFnPreProcBrew] An un-bound function
 	 */
 	constructor (opts) {
 		this.category = opts.category;
@@ -360,6 +366,7 @@ class IndexableFile {
 		this.isOnlyDeep = opts.isOnlyDeep;
 		this.additionalIndexes = opts.additionalIndexes;
 		this.isSkipBrew = opts.isSkipBrew;
+		this.pFnPreProcBrew = opts.pFnPreProcBrew;
 	}
 
 	/**
@@ -435,7 +442,7 @@ class IndexableFileMagicVariants extends IndexableFile {
 						else {
 							const baseItemJson = await DataUtil.loadJSON(`data/items-base.json`);
 							const rawBaseItems = {...baseItemJson, baseitem: [...baseItemJson.baseitem]};
-							const brew = await BrewUtil.pAddBrewData();
+							const brew = await BrewUtil2.pGetBrewProcessed();
 							if (brew.baseitem) rawBaseItems.baseitem.push(...brew.baseitem);
 							return Renderer.item.getAllIndexableItems(rawVariants, rawBaseItems);
 						}
@@ -725,6 +732,16 @@ class IndexableFileRaces extends IndexableFile {
 			baseUrl: "races.html",
 			isOnlyDeep: true,
 			isHover: true,
+			postLoad: data => {
+				return DataUtil.race.getPostProcessedSiteJson(data, {isAddBaseRaces: true});
+			},
+			pFnPreProcBrew: async brew => {
+				if (!brew.race?.length && !brew.subrace?.length) return brew;
+
+				const site = await DataUtil.race.loadRawJSON();
+
+				return DataUtil.race.getPostProcessedBrewJson(site, brew, {isAddBaseRaces: true});
+			},
 		});
 	}
 
@@ -831,7 +848,7 @@ class IndexableFileQuickReference extends IndexableFile {
 		this._walker = MiscUtil.getWalker();
 	}
 
-	static getChapterNameMetas (it) {
+	static getChapterNameMetas (it, {isRequireQuickrefFlag = true} = {}) {
 		const trackedNames = [];
 		const renderer = Renderer.get().setDepthTracker(trackedNames);
 		renderer.render(it);
@@ -846,35 +863,45 @@ class IndexableFileQuickReference extends IndexableFile {
 
 		return trackedNames
 			.filter(it => {
+				if (!isRequireQuickrefFlag) return true;
+
 				if (!it.data) return false;
 				return it.data.quickref != null || it.data.quickrefIndex;
 			});
 	}
 
 	pGetDeepIndex (indexer, primary, it) {
-		return it.entries
+		const out = it.entries
 			.map(it => {
 				return IndexableFileQuickReference.getChapterNameMetas(it).map(nameMeta => {
 					return [
 						IndexableFileQuickReference._getDeepDoc(indexer, primary, nameMeta),
 						...(nameMeta.alias || []).map(alias => IndexableFileQuickReference._getDeepDoc(indexer, primary, nameMeta, alias)),
-					]
+					];
 				}).flat();
 			})
 			.flat();
+
+		const seen = new Set();
+		return out.filter(it => {
+			if (!seen.has(it.u)) {
+				seen.add(it.u);
+				return true;
+			}
+			return false;
+		});
 	}
 
 	static _getDeepDoc (indexer, primary, nameMeta, alias) {
-		const hashParts = [
-			"bookref-quick",
-			primary.ix,
-			UrlUtil.encodeForHash(nameMeta.name.toLowerCase()),
-		];
-		if (nameMeta.ixBook) hashParts.push(nameMeta.ixBook);
+		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_QUICKREF]({
+			name: nameMeta.name,
+			ixChapter: primary.ix,
+			ixHeader: nameMeta.ixBook,
+		});
 
 		return {
 			n: alias || nameMeta.name,
-			u: hashParts.join(HASH_PART_SEP),
+			u: hash,
 			s: indexer.getMetaId("s", nameMeta.source),
 			p: nameMeta.page,
 		};
@@ -976,6 +1003,7 @@ class IndexableFileTablesGenerated extends IndexableFile {
 			listProp: "table",
 			baseUrl: "tables.html",
 			isHover: true,
+			isSkipBrew: true,
 		});
 	}
 }
@@ -1150,7 +1178,7 @@ class IndexableSpecialPages extends IndexableSpecial {
 				n: name,
 				c: Parser.CAT_ID_PAGE,
 				u: page,
-			}))
+			}));
 	}
 }
 

@@ -1816,7 +1816,7 @@
 									"rows": [
 										[
 											"1",
-											"Rise of a leader of an era"
+											"Rise of a leader or an era"
 										],
 										[
 											"2",
@@ -3231,27 +3231,27 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Time.",
+											"name": "Time",
 											"entry": "The portal functions only at particular times: during a full moon on the Material Plane, or every ten days, or when the stars are in a particular position. Once it opens, such a portal remains open for a limited time, such as for three days following the full moon, or for an hour, or for {@dice 1d4 + 1} rounds."
 										},
 										{
 											"type": "item",
-											"name": "Situation.",
+											"name": "Situation",
 											"entry": "The portal functions only if a particular condition is met. A situation-keyed portal opens on a clear night, or when it rains, or when a certain spell is cast in its vicinity."
 										},
 										{
 											"type": "item",
-											"name": "Random.",
+											"name": "Random",
 											"entry": "A random portal functions for a random period, then shuts down for a similarly random duration. Typically, such a portal allows {@dice 1d6 + 6} travelers to pass through, then shuts down for {@dice 1d6} days."
 										},
 										{
 											"type": "item",
-											"name": "Command Word.",
+											"name": "Command Word",
 											"entry": "The portal functions only if a particular command word is spoken. Sometimes the word must be spoken as a character passes through the portal (which is otherwise a mundane doorway, window, or similar opening). Other portals open when the command word is spoken and remain open for a short time."
 										},
 										{
 											"type": "item",
-											"name": "Key.",
+											"name": "Key",
 											"entry": "The portal functions if the traveler is holding a particular object; the item acts much like a key to a door. This key item can be a common object or a particular key created for that portal. The city of Sigil above the Outlands is known as the City of Doors because it features an overwhelming number of such item-keyed portals."
 										}
 									]
@@ -3747,7 +3747,7 @@
 									"page": 50,
 									"entries": [
 										"While time seems to pass normally in the Feywild, characters might spend a day there and realize, upon leaving the plane, that less or more time has elapsed everywhere else in the multiverse.",
-										"Whenever a creature or group of creatures leaves the Feywild after spending at least 1 day on that plane, you can choose a time change that works best for your campaign, if any, or roll on the Feywild Time Warp table. A wish spell can be used to remove the effect on up to ten creatures. Some powerful fey have the ability to grant such wishes and might do so if the beneficiaries agree to subject themselves to a {@spell geas} spell and complete a quest after the {@spell wish} spell is cast.",
+										"Whenever a creature or group of creatures leaves the Feywild after spending at least 1 day on that plane, you can choose a time change that works best for your campaign, if any, or roll on the Feywild Time Warp table. A {@spell wish} spell can be used to remove the effect on up to ten creatures. Some powerful fey have the ability to grant such wishes and might do so if the beneficiaries agree to subject themselves to a {@spell geas} spell and complete a quest after the {@spell wish} spell is cast.",
 										{
 											"type": "table",
 											"caption": "Feywild Time Warp",
@@ -4343,7 +4343,7 @@
 												],
 												[
 													"8-9",
-													"{@bold Mad Ambition.} The character gains the following flaw: \"I am destined to rule the Abyss, and my companions are tools to that end.\""
+													"{@bold Overwhelming Ambition.} The character gains the following flaw: \"I am destined to rule the Abyss, and my companions are tools to that end.\""
 												],
 												[
 													"10",
@@ -7644,7 +7644,7 @@
 												],
 												[
 													"4",
-													"Slurs words, lisps, or stutters"
+													"Speaks in an unusually formal manner"
 												],
 												[
 													"5",
@@ -8152,7 +8152,7 @@
 												],
 												[
 													"8",
-													"Specific phobia"
+													"Prone to sudden suspicion"
 												],
 												[
 													"9",
@@ -8646,88 +8646,609 @@
 							],
 							"colStyles": [
 								"col-2 text-center",
-								"col-10"
+								"col-2 text-center",
+								"col-8"
 							],
 							"rows": [
 								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 1
+										}
+									},
+									"Agricultural devastation ({@dice d4|d4|Agricultural devastation})",
+									""
+								],
+								[
+									"",
 									"1",
-									"Agricultural devastation"
+									"Blight"
+								],
+								[
+									"",
+									"2",
+									"Crop failure"
+								],
+								[
+									"",
+									"3",
+									"Drought"
+								],
+								[
+									"",
+									"4",
+									"Famine"
 								],
 								[
 									"2",
-									"Assault or beatings"
+									"Assault or beatings",
+									""
 								],
 								[
 									"3",
-									"Bounty hunting or assassination"
+									"Bounty hunting or assassination",
+									""
 								],
 								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 4
+										}
+									},
+									"Captivity or coercion ({@dice d10|d10|Captivity or coercion})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Bribery"
+								],
+								[
+									"",
+									"2",
+									"Enticement"
+								],
+								[
+									"",
+									"3",
+									"Eviction"
+								],
+								[
+									"",
 									"4",
-									"Captivity or coercion"
+									"Imprisonment"
 								],
 								[
+									"",
 									"5",
-									"Confidence scams"
+									"Kidnapping"
 								],
 								[
+									"",
 									"6",
-									"Defamation"
+									"Legal intimidation"
+								],
+								[
+									"",
+									"7",
+									"Press gangs"
+								],
+								[
+									"",
+									"8",
+									"Shackling"
+								],
+								[
+									"",
+									"9",
+									"Slavery"
+								],
+								[
+									"",
+									"10",
+									"Threats or harassment"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 5
+										}
+									},
+									"Confidence scams ({@dice d6|d6|Confidence scams})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Breach of contract"
+								],
+								[
+									"",
+									"2",
+									"Cheating"
+								],
+								[
+									"",
+									"3",
+									"Fast talking"
+								],
+								[
+									"",
+									"4",
+									"Fine print"
+								],
+								[
+									"",
+									"5",
+									"Fraud or swindling"
+								],
+								[
+									"",
+									"6",
+									"Quackery or tricks"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 6
+										}
+									},
+									"Defamation ({@dice d4|d4|Defamation})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Framing"
+								],
+								[
+									"",
+									"2",
+									"Gossiping or slander"
+								],
+								[
+									"",
+									"3",
+									"Humiliation"
+								],
+								[
+									"",
+									"4",
+									"Libel or insults"
 								],
 								[
 									"7",
-									"Dueling"
+									"Dueling",
+									""
 								],
 								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 8
+										}
+									},
+									"Execution ({@dice d8|d8|Execution})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Beheading"
+								],
+								[
+									"",
+									"2",
+									"Burning at the stake"
+								],
+								[
+									"",
+									"3",
+									"Burying alive"
+								],
+								[
+									"",
+									"4",
+									"Crucifixion"
+								],
+								[
+									"",
+									"5",
+									"Drawing and quartering"
+								],
+								[
+									"",
+									"6",
+									"Hanging"
+								],
+								[
+									"",
+									"7",
+									"Impalement"
+								],
+								[
+									"",
 									"8",
-									"Execution"
+									"Sacrifice (living)"
 								],
 								[
 									"9",
-									"Impersonation or disguise"
+									"Impersonation or disguise",
+									""
 								],
 								[
 									"10",
-									"Lying or perjury"
+									"Lying or perjury",
+									""
 								],
 								[
-									"11",
-									"Magical mayhem"
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 11
+										}
+									},
+									"Magical mayhem ({@dice d8|d8|Magical mayhem})",
+									""
 								],
 								[
-									"12",
-									"Murder"
+									"",
+									"1",
+									"Hauntings"
+								],
+								[
+									"",
+									"2",
+									"Illusions"
+								],
+								[
+									"",
+									"3",
+									"Infernal bargains"
+								],
+								[
+									"",
+									"4",
+									"Mind control"
+								],
+								[
+									"",
+									"5",
+									"Petrification"
+								],
+								[
+									"",
+									"6",
+									"Raising or animating the dead"
+								],
+								[
+									"",
+									"7",
+									"Summoning monsters"
+								],
+								[
+									"",
+									"8",
+									"Weather control"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 12
+										}
+									},
+									"Murder ({@dice d10|d10|Murder})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Assassination"
+								],
+								[
+									"",
+									"2",
+									"Cannibalism"
+								],
+								[
+									"",
+									"3",
+									"Dismemberment"
+								],
+								[
+									"",
+									"4",
+									"Drowning"
+								],
+								[
+									"",
+									"5",
+									"Electrocution"
+								],
+								[
+									"",
+									"6",
+									"Euthanasia (involuntary)"
+								],
+								[
+									"",
+									"7",
+									"Disease"
+								],
+								[
+									"",
+									"8",
+									"Poisoning"
+								],
+								[
+									"",
+									"9",
+									"Stabbing"
+								],
+								[
+									"",
+									"10",
+									"Strangulation or suffocation"
 								],
 								[
 									"13",
-									"Neglect"
+									"Neglect",
+									""
 								],
 								[
-									"14",
-									"Politics"
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 14
+										}
+									},
+									"Politics ({@dice d6|d6|Politics})",
+									""
 								],
 								[
-									"15",
-									"Religion"
+									"",
+									"1",
+									"Betrayal or treason"
+								],
+								[
+									"",
+									"2",
+									"Confiscating property"
+								],
+								[
+									"",
+									"3",
+									"Conspiracy"
+								],
+								[
+									"",
+									"4",
+									"Espionage or Spying"
+								],
+								[
+									"",
+									"5",
+									"Oppressive Laws"
+								],
+								[
+									"",
+									"6",
+									"Raising taxes"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 15
+										}
+									},
+									"Religion ({@dice d4|d4|Religion})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Curses"
+								],
+								[
+									"",
+									"2",
+									"Desecration"
+								],
+								[
+									"",
+									"3",
+									"False gods"
+								],
+								[
+									"",
+									"4",
+									"Heresy or cults"
 								],
 								[
 									"16",
-									"Stalking"
+									"Stalking",
+									""
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 15
+										}
+									},
+									"Theft or Property Crime ({@dice d10|d10|Theft or Property Crime})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Arson"
+								],
+								[
+									"",
+									"2",
+									"Blackmail or extortion"
+								],
+								[
+									"",
+									"3",
+									"Burglary"
+								],
+								[
+									"",
+									"4",
+									"Counterfeiting"
+								],
+								[
+									"",
+									"5",
+									"Highway robbery"
+								],
+								[
+									"",
+									"6",
+									"Looting"
+								],
+								[
+									"",
+									"7",
+									"Mugging"
+								],
+								[
+									"",
+									"8",
+									"Poaching"
+								],
+								[
+									"",
+									"9",
+									"Seizing property"
+								],
+								[
+									"",
+									"10",
+									"Smuggling"
 								],
 								[
 									"17",
-									"Theft or Property Crime"
+									"Theft or Property Crime",
+									""
 								],
 								[
-									"18",
-									"Torture"
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 18
+										}
+									},
+									"Torture ({@dice d6|d6|Torture})",
+									""
 								],
 								[
-									"19",
-									"Vice"
+									"",
+									"1",
+									"Acid"
 								],
 								[
-									"20",
-									"Warfare"
+									"",
+									"2",
+									"Blinding"
+								],
+								[
+									"",
+									"3",
+									"Branding"
+								],
+								[
+									"",
+									"4",
+									"Racking"
+								],
+								[
+									"",
+									"5",
+									"Thumbscrews"
+								],
+								[
+									"",
+									"6",
+									"Whipping"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 19
+										}
+									},
+									"Vice ({@dice d4|d4|Vice})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Adultery"
+								],
+								[
+									"",
+									"2",
+									"Drugs or alcohol"
+								],
+								[
+									"",
+									"3",
+									"Gambling"
+								],
+								[
+									"",
+									"4",
+									"Seduction"
+								],
+								[
+									{
+										"type": "cell",
+										"roll": {
+											"exact": 20
+										}
+									},
+									"Warfare ({@dice d6|d6|Warfare})",
+									""
+								],
+								[
+									"",
+									"1",
+									"Ambush"
+								],
+								[
+									"",
+									"2",
+									"Invasion"
+								],
+								[
+									"",
+									"3",
+									"Massacre"
+								],
+								[
+									"",
+									"4",
+									"Mercenaries"
+								],
+								[
+									"",
+									"5",
+									"Rebellion"
+								],
+								[
+									"",
+									"6",
+									"Terrorism"
 								]
 							]
 						},
@@ -10234,7 +10755,7 @@
 									"name": "Slippery Ice",
 									"page": 110,
 									"entries": [
-										"Slippery ice is difficult terrain. When a creature moves onto slippery ice for the first time on a turn, it must succeed on a DC 10 Dexterity ({@skill Acrobatics}) check or fall {@condition prone}."
+										"Slippery ice is {@quickref difficult terrain||3}. When a creature moves onto slippery ice for the first time on a turn, it must succeed on a DC 10 Dexterity ({@skill Acrobatics}) check or fall {@condition prone}."
 									],
 									"id": "1de"
 								},
@@ -10852,7 +11373,7 @@
 								],
 								[
 									"18",
-									"Hidden slavers' den"
+									"Hidden thieves' den"
 								],
 								[
 									"19",
@@ -10940,7 +11461,7 @@
 								],
 								[
 									"16-17",
-									"Caters to specific race or guild"
+									"Caters to specific guild"
 								],
 								[
 									"18",
@@ -10948,7 +11469,7 @@
 								],
 								[
 									"19-20",
-									"Brothel"
+									"Music venue"
 								]
 							]
 						},
@@ -12732,7 +13253,7 @@
 													"01-30",
 													"{@dice 4d6 × 100} (1,400)",
 													"\u2014",
-													"\u2014",
+													"{@dice 1d6 × 10} (35)",
 													"\u2014",
 													"\u2014"
 												],
@@ -14266,8 +14787,8 @@
 							"entries": [
 								"Some magic items are indistinguishable from their nonmagical counterparts, whereas other magic items display their magical nature conspicuously. Whatever a magic item's appearance, handling the item is enough to give a character a sense that something is extraordinary about it. Discovering a magic item's properties isn't automatic, however.",
 								"The {@spell identify} spell is the fastest way to reveal an item's properties. Alternatively, a character can focus on one magic item during a short rest, while being in physical contact with the item. At the end of the rest, the character learns the item's properties, as well as how to use them. Potions are an exception; a little taste is enough to tell the taster what the potion does.",
-								"Sometimes a magic item carries a clue to its properties. The command word to activate a ring might be etched in tiny letters inside it, or a feathered design might suggest that it's a {@i ring of feather falling}.",
-								"Wearing or experimenting with an item can also offer hints about its properties. For example, if a character puts on a {@i ring of jumping}, you could say, \"Your steps feel strangely springy.\" Perhaps the character then jumps up and down to see what happens. You then say the character jumps unexpectedly high.",
+								"Sometimes a magic item carries a clue to its properties. The command word to activate a ring might be etched in tiny letters inside it, or a feathered design might suggest that it's a {@item ring of feather falling}.",
+								"Wearing or experimenting with an item can also offer hints about its properties. For example, if a character puts on a {@item ring of jumping}, you could say, \"Your steps feel strangely springy.\" Perhaps the character then jumps up and down to see what happens. You then say the character jumps unexpectedly high.",
 								{
 									"type": "entries",
 									"name": "Variant: More Difficult Identification",
@@ -14543,7 +15064,7 @@
 														],
 														[
 															"6",
-															"The spell activates after {@dice 1d12} hours. If the caster was the intended target, the spell takes effect normally. If the caster was not the intended target, the spell goes off in the general direction of the intended target, up to the spell 's maximum range, if the target has moved away."
+															"The spell activates after {@dice 1d12} hours. If the caster was the intended target, the spell takes effect normally. If the caster was not the intended target, the spell goes off in the general direction of the intended target, up to the spell's maximum range, if the target has moved away."
 														]
 													]
 												}
@@ -14770,7 +15291,7 @@
 										],
 										[
 											"17",
-											"Fiend. The item is made of black iron or horn inscribed with runes, and any cloth or leather components are crafted from the hide of fiends. It is warm to the touch and features leering faces or vile runes engraved on its surface. Celestials find the item 's presence repulsive."
+											"Fiend. The item is made of black iron or horn inscribed with runes, and any cloth or leather components are crafted from the hide of fiends. It is warm to the touch and features leering faces or vile runes engraved on its surface. Celestials find the item's presence repulsive."
 										],
 										[
 											"18",
@@ -14816,7 +15337,7 @@
 										],
 										[
 											"5",
-											"Prophecy. The item features in a prophecy: its bearer is destined to play a key role in future events. Someone else who wants to play that role might try to steal the item, or someone who wants to prevent the prophecy from being fulfilled might try to kill the item 's bearer."
+											"Prophecy. The item features in a prophecy: its bearer is destined to play a key role in future events. Someone else who wants to play that role might try to steal the item, or someone who wants to prevent the prophecy from being fulfilled might try to kill the item's bearer."
 										],
 										[
 											"6",
@@ -14882,7 +15403,7 @@
 										],
 										[
 											"10",
-											"Language. The bearer can speak and understand a language of the DM's choice while the item is on the bearer 's person."
+											"Language. The bearer can speak and understand a language of the DM's choice while the item is on the bearer's person."
 										],
 										[
 											"11",
@@ -14948,7 +15469,7 @@
 										],
 										[
 											"3",
-											"Covetous. The item 's bearer becomes obsessed with material wealth."
+											"Covetous. The item's bearer becomes obsessed with material wealth."
 										],
 										[
 											"4",
@@ -17399,7 +17920,7 @@
 									"page": 228,
 									"entries": [
 										"A charm is a minor supernatural gift, which can be received in a large variety of ways. For example, a wizard who finds an eldritch secret in a dead archmage's spellbook might be infused with the magic of a charm, as might a character who solves a sphinx's riddle or drinks from a magic fountain. Legendary creatures, such as ancient gold dragons and unicorns, sometimes grace their allies with charms, and some explorers find themselves bearing the magic of a charm after discovering a long-lost location that is drenched in primeval magic.",
-										"Some charms can be used only once, and others can be used a specific number of times before vanishing. If a charm lets you cast a spell, you are able to do so without spending a spell slot or providing any components (verbal, somatic, or material). In any case, a charm can't be used in the area created by an antimagic field or a similar effect, and a charm's effects are susceptible to dispel magic and the like. But the charm itself can't be removed from a creature by anything short of divine intervention or the wish spell.",
+										"Some charms can be used only once, and others can be used a specific number of times before vanishing. If a charm lets you cast a spell, you are able to do so without spending a spell slot or providing any components (verbal, somatic, or material). In any case, a charm can't be used in the area created by an antimagic field or a similar effect, and a charm's effects are susceptible to dispel magic and the like. But the charm itself can't be removed from a creature by anything short of divine intervention or the {@spell wish} spell.",
 										"Example charms are provided below. The text of a charm addresses its user. A typical charm mimics the effects of a potion or a spell, so it is easy to create more charms of your own, if you like.",
 										{
 											"type": "list",
@@ -19448,11 +19969,11 @@
 									"rows": [
 										[
 											"1",
-											"A large obstacle such as a horse or cart blocks your way. Make a DC 15 Dexterity ({@skill Acrobatics}) check to get past the obstacle. On a failed check, the obstacle counts as 10 feet of difficult terrain."
+											"A large obstacle such as a horse or cart blocks your way. Make a DC 15 Dexterity ({@skill Acrobatics}) check to get past the obstacle. On a failed check, the obstacle counts as 10 feet of {@quickref difficult terrain||3}."
 										],
 										[
 											"2",
-											"A crowd blocks your way. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to make your way through the crowd unimpeded. On a failed check, the crowd counts as 10 feet of difficult terrain."
+											"A crowd blocks your way. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to make your way through the crowd unimpeded. On a failed check, the crowd counts as 10 feet of {@quickref difficult terrain||3}."
 										],
 										[
 											"3",
@@ -19460,7 +19981,7 @@
 										],
 										[
 											"4",
-											"A maze of barrels, crates, or similar obstacles stands in your way. Make a DC 10 Dexterity ({@skill Acrobatics}) or Intelligence check (your choice) to navigate the maze. On a failed check, the maze counts as 10 feet of difficult terrain."
+											"A maze of barrels, crates, or similar obstacles stands in your way. Make a DC 10 Dexterity ({@skill Acrobatics}) or Intelligence check (your choice) to navigate the maze. On a failed check, the maze counts as 10 feet of {@quickref difficult terrain||3}."
 										],
 										[
 											"5",
@@ -19468,15 +19989,15 @@
 										],
 										[
 											"6",
-											"You come upon a pack of dogs fighting over food. Make a DC 10 Dexterity ({@skill Acrobatics}) check to get through the pack unimpeded. On a failed check, you are bitten and take {@dice 1d4} piercing damage, and the dogs count as 5 feet of difficult terrain."
+											"You come upon a pack of dogs fighting over food. Make a DC 10 Dexterity ({@skill Acrobatics}) check to get through the pack unimpeded. On a failed check, you are bitten and take {@dice 1d4} piercing damage, and the dogs count as 5 feet of {@quickref difficult terrain||3}."
 										],
 										[
 											"7",
-											"You run into a brawl in progress. Make a DC 15 Strength ({@skill Athletics}), Dexterity ({@skill Acrobatics}), or Charisma ({@skill Intimidation}) check (your choice) to get past the brawlers unimpeded. On a failed check, you take {@dice 2d4} bludgeoning damage, and the brawlers count as 10 feet of difficult terrain."
+											"You run into a brawl in progress. Make a DC 15 Strength ({@skill Athletics}), Dexterity ({@skill Acrobatics}), or Charisma ({@skill Intimidation}) check (your choice) to get past the brawlers unimpeded. On a failed check, you take {@dice 2d4} bludgeoning damage, and the brawlers count as 10 feet of {@quickref difficult terrain||3}."
 										],
 										[
 											"8",
-											"A beggar blocks your way. Make a DC 10 Strength ({@skill Athletics}), Dexterity ({@skill Acrobatics}), or Charisma ({@skill Intimidation}) check (your choice) to slip past the beggar. You succeed automatically if you toss the beggar a coin. On a failed check, the beggar counts as 5 feet of difficult terrain."
+											"A beggar blocks your way. Make a DC 10 Strength ({@skill Athletics}), Dexterity ({@skill Acrobatics}), or Charisma ({@skill Intimidation}) check (your choice) to slip past the beggar. You succeed automatically if you toss the beggar a coin. On a failed check, the beggar counts as 5 feet of {@quickref difficult terrain||3}."
 										],
 										[
 											"9",
@@ -19506,19 +20027,19 @@
 									"rows": [
 										[
 											"1",
-											"Your path takes you through a rough patch of brush. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to get past the brush. On a failed check, the brush counts as 5 feet of difficult terrain."
+											"Your path takes you through a rough patch of brush. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to get past the brush. On a failed check, the brush counts as 5 feet of {@quickref difficult terrain||3}."
 										],
 										[
 											"2",
-											"Uneven ground threatens to slow your progress. Make a DC 10 Dexterity ({@skill Acrobatics}) check to navigate the area. On a failed check, the ground counts as 10 feet of difficult terrain."
+											"Uneven ground threatens to slow your progress. Make a DC 10 Dexterity ({@skill Acrobatics}) check to navigate the area. On a failed check, the ground counts as 10 feet of {@quickref difficult terrain||3}."
 										],
 										[
 											"3",
-											"You run through a swarm of insects (see the Monster Manual for game statistics, with the DM choosing whichever kind of insects makes the most sense). The swarm makes an opportunity attack against you (+3 to hit; {@dice 4d4} piercing damage on a hit)."
+											"You run through a {@creature swarm of insects} (see the Monster Manual for game statistics, with the DM choosing whichever kind of insects makes the most sense). The swarm makes an opportunity attack against you (+3 to hit; {@dice 4d4} piercing damage on a hit)."
 										],
 										[
 											"4",
-											"A stream, ravine, or rock bed blocks your path. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to cross the impediment. On a failed check, the impediment counts as 10 feet of difficult terrain."
+											"A stream, ravine, or rock bed blocks your path. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to cross the impediment. On a failed check, the impediment counts as 10 feet of {@quickref difficult terrain||3}."
 										],
 										[
 											"5",
@@ -19840,8 +20361,8 @@
 							"name": "Going Mad",
 							"page": 259,
 							"entries": [
-								"Various magical effects can inflict madness on an otherwise stable mind. Certain spells, such as contact other plane and symbol, can cause insanity, and you can use the madness rules here instead of the spell effects in the Player's Handbook. Diseases, poisons, and planar effects such as psychic wind or the howling winds of Pandemonium can all inflict madness. Some artifacts can also break the psyche of a character who uses or becomes attuned to them.",
-								"Resisting a madness-inducing effect usually requires a Wisdom or Charisma saving throw. If your game includes the Sanity score (see chapter 9, \"Dungeon Master's Workshop\"), a creature makes a Sanity saving throw instead."
+								"Various magical effects can inflict madness on an otherwise stable mind. Certain spells, such as {@spell contact other plane} and {@spell symbol}, can cause insanity, and you can use the madness rules here instead of the spell effects in the Player's Handbook. Diseases, poisons, and planar effects such as psychic wind or the howling winds of Pandemonium can all inflict madness. Some artifacts can also break the psyche of a character who uses or becomes attuned to them.",
+								"Resisting a madness-inducing effect usually requires a Wisdom or Charisma saving throw. If your game includes the {@variantrule New Ability Scores: Honor and Sanity||Sanity score} (see chapter 9, \"Dungeon Master's Workshop\"), a creature makes a Sanity saving throw instead."
 							],
 							"id": "301"
 						},
@@ -19857,6 +20378,7 @@
 								{
 									"type": "table",
 									"caption": "Short-Term Madness",
+									"srd": true,
 									"colLabels": [
 										"d100",
 										"Effects (lasts 1d10 minutes)"
@@ -19911,6 +20433,7 @@
 								{
 									"type": "table",
 									"caption": "Long-Term Madness",
+									"srd": true,
 									"colLabels": [
 										"d100",
 										"Effects (lasts 1d10 × 10 hours)"
@@ -19930,7 +20453,7 @@
 										],
 										[
 											"21-30",
-											"The character suffers extreme paranoia. The character has disadvantage on Wisdom and Charisma checks"
+											"The character suffers extreme paranoia. The character has disadvantage on Wisdom and Charisma checks."
 										],
 										[
 											"31-40",
@@ -19973,6 +20496,7 @@
 								{
 									"type": "table",
 									"caption": "Indefinite Madness",
+									"srd": true,
 									"colLabels": [
 										"d100",
 										"Flaw (lasts until cured)"
@@ -20357,7 +20881,7 @@
 									"entries": [
 										"If your campaign involves cultures where a rigid code of honor is part of daily life, consider using the Honor score as a means of measuring a character's devotion to that code. This ability fits well in a setting inspired by Asian cultures, such as Kara-Tur in the Forgotten Realms. The Honor ability is also useful in any campaign that revolves around orders of knights.",
 										"Honor measures not only a character's devotion to a code but also the character's understanding of it. The Honor score can also reflect how others perceive a character's honor. A character with a high Honor usually has a reputation that others know about, especially those who have high Honor scores themselves.",
-										"Unlike other abilities, Honor can't be raised with normal ability score increases. Instead, you can award increases to Honor\u2014or impose reductions\u2014based on a character's actions. At the end of an adventure, if you think a character 's actions in the adventure reflected well or poorly on his or her understanding of the code, you can increase or decrease the character's Honor by 1. As with other ability scores, a character's Honor can't exceed 20 or fall below 1.",
+										"Unlike other abilities, Honor can't be raised with normal ability score increases. Instead, you can award increases to Honor\u2014or impose reductions\u2014based on a character's actions. At the end of an adventure, if you think a character's actions in the adventure reflected well or poorly on his or her understanding of the code, you can increase or decrease the character's Honor by 1. As with other ability scores, a character's Honor can't exceed 20 or fall below 1.",
 										{
 											"type": "entries",
 											"name": "Honor Checks",
@@ -20402,7 +20926,7 @@
 									"name": "Sanity Score",
 									"page": 265,
 									"entries": [
-										"Consider using the Sanity score if your campaign revolves around entities of an utterly alien and unspeakable nature, such as Great Cthulhu, whose powers and minions can shatter a character's mind.",
+										"Consider using the {@variantrule New Ability Scores: Honor and Sanity||Sanity score} if your campaign revolves around entities of an utterly alien and unspeakable nature, such as Great Cthulhu, whose powers and minions can shatter a character's mind.",
 										"A character with a high Sanity is level-headed even in the face of insane circumstances, while a character with low Sanity is unsteady, breaking easily when confronted by eldritch horrors that are beyond normal reason.",
 										{
 											"type": "entries",
@@ -23325,9 +23849,8 @@
 									"items": [
 										"Why does my campaign need the race to be playable?",
 										"What does the race look like?",
-										"How would I describe the race's culture?",
 										"Where do the members of this race live?",
-										"Are there interesting conflicts built into the race's history and culture that make the race compelling from a storytelling standpoint?",
+										"Are there interesting conflicts built into the race's history that make the race compelling from a storytelling standpoint?",
 										"What is the race's relationship to the other playable races?",
 										"What classes and backgrounds are well suited to members of the race?",
 										"What are the race's signature traits?",
@@ -23344,16 +23867,6 @@
 										"A simple way to modify an existing race is to change its appearance. Changes to a race's appearance need not affect its game elements. For example, you could transform halflings into anthropomorphic mice without changing their racial traits at all."
 									],
 									"id": "386"
-								},
-								{
-									"type": "entries",
-									"name": "Cultural Alterations",
-									"page": 285,
-									"entries": [
-										"In your world, elves might be desert nomads instead of forest dwellers, halflings might live in cloud cities, and dwarves might be sailors instead of miners. When you change the culture of a race, you can also make minor alterations to the race's proficiencies and traits to reflect that culture.",
-										"For example, imagine that the dwarves of your world are seafarers and inventors of gunpowder. You could add the pistol and musket to the list of weapons that dwarves are proficient with, and give them proficiency with waterborne vehicles instead of artisan's tools. These two small changes tell a different story than the default assumptions about dwarves in the Player's Handbook, without changing the power level of the race."
-									],
-									"id": "387"
 								},
 								{
 									"type": "entries",
@@ -24139,7 +24652,7 @@
 								]
 							],
 							"footnotes": [
-								"¹ Use the Normal Chamber column on the Chamber Exists table.",
+								"¹ Use the Normal Chamber column on the Chamber Exits table.",
 								"² Use the Large Chamber column on the Chamber Exits table."
 							]
 						},

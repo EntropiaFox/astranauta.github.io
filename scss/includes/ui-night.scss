@@ -105,6 +105,8 @@ Shared UI components
 	&wrp-tab-body {
 		&--background {
 			background: $rgb-bg--night;
+			border-color: $rgb-border-grey--trans-night;
+			border-bottom-color: darken($rgb-border-grey--trans-night, 15%);
 		}
 	}
 
@@ -192,7 +194,7 @@ Shared UI components
 		background: $rgb-border-grey--night;
 	}
 
-	&__row {
+	&__btn {
 		&:hover {
 			background: $rgb-bg--alt-night;
 			color: white;

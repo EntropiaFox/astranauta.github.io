@@ -46,7 +46,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -199,6 +202,12 @@
 			font-weight: bold;
 		}
 
+		.mkbru__sub-name--25 {
+			min-width: calc(25% - 0.25rem);
+			text-align: right;
+			font-weight: bold;
+		}
+
 		.mkbru__wrp-btn-xxs {
 			padding-right: 3px;
 		}
@@ -307,10 +316,10 @@
 		</div>
 	</header>
 
-	<nav class="container page__nav" id="navigation"><ul class="nav page__nav-inner" id="navbar"></ul></nav>
+	<nav class="container page__nav" id="navigation"><ul class="nav nav-pills page__nav-inner" id="navbar"></ul></nav>
 
 	<div id="page_loading" class="container view-col-wrapper">
-		<div class="h-100 w-100 flex-vh-center"><span class="initial-message">Loading...</span></div>
+		<div class="h-100 w-100 ve-flex-vh-center"><span class="initial-message">Loading...</span></div>
 	</div>
 
 	<div id="page_source" class="container view-col-wrapper" style="display: none"></div>
@@ -334,6 +343,8 @@
 <script type="text/javascript" src="lib/localforage.js"></script>
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>
 <script type="text/javascript" src="js/render-markdown.js"></script>

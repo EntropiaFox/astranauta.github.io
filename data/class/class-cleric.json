@@ -5,6 +5,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"hd": {
 				"number": 1,
 				"faces": 8
@@ -212,7 +213,7 @@
 						"{@filter 8th|spells|level=8|class=Cleric}",
 						"{@filter 9th|spells|level=9|class=Cleric}"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							2,
 							0,
@@ -443,7 +444,10 @@
 					"classFeature": "Divine Domain|Cleric||1",
 					"gainSubclassFeature": true
 				},
-				"Channel Divinity (1/rest)|Cleric||2",
+				{
+					"classFeature": "Channel Divinity|Cleric||2",
+					"tableDisplayName": "Channel Divinity (1/rest)"
+				},
 				"Channel Divinity: Harness Divine Power|Cleric||2|UAClassFeatureVariants",
 				"Channel Divinity: Harness Divine Power|Cleric||2|TCE",
 				{
@@ -454,7 +458,10 @@
 				"Proficiency Versatility|Cleric||4|UAClassFeatureVariants",
 				"Cantrip Versatility|Cleric||4|TCE",
 				"Destroy Undead (CR 1/2)|Cleric||5",
-				"Channel Divinity (2/rest)|Cleric||6",
+				{
+					"classFeature": "Channel Divinity|Cleric||6",
+					"tableDisplayName": "Channel Divinity (2/rest)"
+				},
 				{
 					"classFeature": "Divine Domain feature|Cleric||6",
 					"gainSubclassFeature": true
@@ -478,7 +485,10 @@
 					"classFeature": "Divine Domain feature|Cleric||17",
 					"gainSubclassFeature": true
 				},
-				"Channel Divinity (3/rest)|Cleric||18",
+				{
+					"classFeature": "Channel Divinity|Cleric||18",
+					"tableDisplayName": "Channel Divinity (3/rest)"
+				},
 				"Ability Score Improvement|Cleric||19",
 				"Proficiency Versatility|Cleric||19|UAClassFeatureVariants",
 				"Divine Intervention Improvement|Cleric||20"
@@ -839,6 +849,7 @@
 			"classSource": "PHB",
 			"page": 60,
 			"srd": true,
+			"basicRules": true,
 			"additionalSpells": [
 				{
 					"prepared": {
@@ -906,9 +917,9 @@
 							"scrying"
 						]
 					},
-					"innate": {
+					"known": {
 						"1": [
-							"light"
+							"light#c"
 						]
 					}
 				}
@@ -932,7 +943,7 @@
 			"page": 61,
 			"additionalSpells": [
 				{
-					"innate": {
+					"known": {
 						"1": {
 							"_": [
 								{
@@ -1199,7 +1210,7 @@
 			"page": 125,
 			"additionalSpells": [
 				{
-					"innate": {
+					"known": {
 						"1": {
 							"_": [
 								{
@@ -1485,7 +1496,7 @@
 			"page": 26,
 			"additionalSpells": [
 				{
-					"innate": {
+					"known": {
 						"1": {
 							"_": [
 								{
@@ -1645,9 +1656,9 @@
 							"raise dead"
 						]
 					},
-					"innate": {
+					"known": {
 						"1": [
-							"spare the dying"
+							"spare the dying#c"
 						]
 					}
 				}
@@ -1991,6 +2002,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 1,
@@ -2011,6 +2023,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 1,
@@ -2071,10 +2084,11 @@
 			]
 		},
 		{
-			"name": "Channel Divinity (1/rest)",
+			"name": "Channel Divinity",
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 2,
@@ -2085,7 +2099,7 @@
 				"Beginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.",
 				{
 					"type": "refClassFeature",
-					"classFeature": "Turn Undead|Cleric||2"
+					"classFeature": "Channel Divinity: Turn Undead|Cleric||2"
 				}
 			]
 		},
@@ -2097,6 +2111,9 @@
 			"classSource": "PHB",
 			"level": 2,
 			"isClassFeatureVariant": true,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 2nd-level cleric {@variantrule optional class features|tce|optional feature}}",
 				"You can expend a use of your Channel Divinity to fuel your spells. As a bonus action, you touch your holy symbol, utter a prayer, and regain one expended spell slot, the level of which can be no higher than half your proficiency bonus (rounded up). The number of times you can use this feature is based on the level you've reached in this class: 2nd level, once; 6th level, twice; and 18th level, thrice. You regain all expended uses when you finish a long rest."
@@ -2110,9 +2127,30 @@
 			"classSource": "PHB",
 			"level": 2,
 			"isClassFeatureVariant": true,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 2nd-level cleric feature (enhances Channel Divinity)}",
 				"You can expend a use of your Channel Divinity to fuel your spells. As a bonus action, you touch your holy symbol, utter a prayer, and regain one expended 1st-level spell slot."
+			]
+		},
+		{
+			"name": "Channel Divinity: Turn Undead",
+			"source": "PHB",
+			"page": 56,
+			"srd": true,
+			"basicRules": true,
+			"className": "Cleric",
+			"classSource": "PHB",
+			"level": 2,
+			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
+			"entries": [
+				"As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.",
+				"A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the {@action Dash} action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the {@action Dodge} action."
 			]
 		},
 		{
@@ -2120,6 +2158,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 2,
@@ -2128,24 +2167,11 @@
 			]
 		},
 		{
-			"name": "Turn Undead",
-			"source": "PHB",
-			"page": 56,
-			"srd": true,
-			"className": "Cleric",
-			"classSource": "PHB",
-			"level": 2,
-			"header": 2,
-			"entries": [
-				"As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.",
-				"A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the {@action Dash} action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the {@action Dodge} action."
-			]
-		},
-		{
 			"name": "Ability Score Improvement",
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 4,
@@ -2186,6 +2212,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 5,
@@ -2194,10 +2221,11 @@
 			]
 		},
 		{
-			"name": "Channel Divinity (2/rest)",
+			"name": "Channel Divinity",
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 6,
@@ -2210,6 +2238,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 6,
@@ -2222,6 +2251,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 8,
@@ -2235,6 +2265,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 8,
@@ -2247,6 +2278,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 8,
@@ -2273,6 +2305,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 10,
@@ -2287,6 +2320,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 11,
@@ -2299,6 +2333,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 12,
@@ -2326,6 +2361,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 14,
@@ -2338,6 +2374,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 16,
@@ -2365,6 +2402,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 17,
@@ -2377,6 +2415,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 17,
@@ -2385,10 +2424,11 @@
 			]
 		},
 		{
-			"name": "Channel Divinity (3/rest)",
+			"name": "Channel Divinity",
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 18,
@@ -2401,6 +2441,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 19,
@@ -2428,6 +2469,7 @@
 			"source": "PHB",
 			"page": 56,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"level": 20,
@@ -2447,7 +2489,7 @@
 			"subclassSource": "DMG",
 			"level": 1,
 			"entries": [
-				"The Death domain is concerned with the forces that cause death, as well as the negative energy that gives rise to undead creatures. Deities such as Chemosh, Myrkul, and WeeJas are patrons of necromancers, death knights, liches, mummy lords, and vampires. Gods of the Death domain also embody murder (Anubis, Bhaal, and Pyremius), pain (Iuz or Loviatar), disease or poison (Incabulos, Talona, or Morgion), and the underworld (Hades and Hel).",
+				"The Death domain is concerned with the forces that cause death, as well as the negative energy that gives rise to undead creatures. Deities such as {@deity Chemosh|Dragonlance}, {@deity Myrkul}, and {@deity Wee Jas|Greyhawk} are patrons of necromancers, death knights, liches, mummy lords, and vampires. Gods of the Death domain also embody murder ({@deity Anubis|Egyptian}, {@deity Bhaal}, and Pyremius), pain ({@deity Iuz|Greyhawk} or {@deity Loviatar}), disease or poison ({@deity Incabulos|Greyhawk}, {@deity Talona}, or {@deity Morgion|Dragonlance}), and the underworld ({@deity Hades|Greek} and {@deity Hel|Norse}).",
 				"At each indicated cleric level, add the listed spells to your spells prepared. They do not count towards your limit.",
 				{
 					"type": "table",
@@ -2531,6 +2573,9 @@
 			"subclassSource": "DMG",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, the cleric can use Channel Divinity to destroy another creature's life force by touch.",
 				"When the cleric hits a creature with a melee attack, the cleric can use Channel Divinity to deal extra necrotic damage to the target. The damage equals 5 + twice his or her cleric level."
@@ -2620,7 +2665,7 @@
 			"subclassSource": "PHB",
 			"level": 1,
 			"entries": [
-				"The gods of knowledge\u2014including Oghma, Boccob, Gilean, Aureon, and Thoth\u2014value learning and understanding above all. Some teach that knowledge is to be gathered and shared in libraries and universities, or promote the practical knowledge of craft and invention. Some deities hoard knowledge and keep its secrets to themselves. And some promise their followers that they will gain tremendous power if they unlock the secrets of the multiverse. Followers of these gods study esoteric lore, collect old tomes, delve into the secret places of the earth, and learn all they can. Some gods of knowledge promote the practical knowledge of craft and invention, including smith deities like Gond, Reorx, Onatar, Moradin, Hephaestus, and Goibhniu.",
+				"The gods of knowledge\u2014including {@deity Oghma}, {@deity Boccob|Greyhawk}, {@deity Gilean|Dragonlance}, {@deity Aureon|Eberron}, and {@deity Thoth|Egyptian}\u2014value learning and understanding above all. Some teach that knowledge is to be gathered and shared in libraries and universities, or promote the practical knowledge of craft and invention. Some deities hoard knowledge and keep its secrets to themselves. And some promise their followers that they will gain tremendous power if they unlock the secrets of the multiverse. Followers of these gods study esoteric lore, collect old tomes, delve into the secret places of the earth, and learn all they can. Some gods of knowledge promote the practical knowledge of craft and invention, including smith deities like {@deity Gond}, {@deity Reorx|Dragonlance}, {@deity Onatar|Eberron}, {@deity Moradin|Nonhuman}, {@deity Hephaestus|Greek}, and {@deity Goibhniu|Celtic}.",
 				"At each indicated cleric level, you add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -2687,6 +2732,9 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool."
 			]
@@ -2701,6 +2749,9 @@
 			"subclassSource": "PHB",
 			"level": 6,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"At 6th level, you can use your Channel Divinity to read a creature's thoughts. You can then use your access to the creature's mind to command it.",
 				"As an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature succeeds on the saving throw, you can't use this feature on it again until you finish a long rest.",
@@ -2798,13 +2849,14 @@
 			"source": "PHB",
 			"page": 60,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"subclassShortName": "Life",
 			"subclassSource": "PHB",
 			"level": 1,
 			"entries": [
-				"The Life domain focuses on the vibrant positive energy\u2014one of the fundamental forces of the universe\u2014that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-evil deity can claim influence over this domain, particularly agricultural deities (such as Chauntea, Arawai, and Demeter), sun gods (such as Lathander, Pelor, and Re-Horakhty), gods of healing or endurance (such as Ilmater, Mishakal, Apollo, and Diancecht), and gods of home and community (such as Hestia, Hathor, and Boldrei).",
+				"The Life domain focuses on the vibrant positive energy\u2014one of the fundamental forces of the universe\u2014that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-evil deity can claim influence over this domain, particularly agricultural deities (such as {@deity Chauntea}, {@deity Arawai|Eberron}, and {@deity Demeter|Greek}), sun gods (such as {@deity Lathander}, {@deity Pelor|Greyhawk}, and {@deity Re-Horakhty|Egyptian}), gods of healing or endurance (such as {@deity Ilmater}, {@deity Mishakal|Dragonlance}, {@deity Apollo|Greek}, and {@deity Diancecht|Celtic}), and gods of home and community (such as {@deity Hestia|Greek}, {@deity Hathor|Egyptian}, and {@deity Boldrei|Eberron}).",
 				"At each indicated cleric level, you add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -2855,6 +2907,7 @@
 			"source": "PHB",
 			"page": 60,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"subclassShortName": "Life",
@@ -2870,6 +2923,7 @@
 			"source": "PHB",
 			"page": 60,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"subclassShortName": "Life",
@@ -2885,12 +2939,16 @@
 			"source": "PHB",
 			"page": 60,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"subclassShortName": "Life",
 			"subclassSource": "PHB",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.",
 				"As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
@@ -2901,6 +2959,7 @@
 			"source": "PHB",
 			"page": 60,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"subclassShortName": "Life",
@@ -2948,6 +3007,7 @@
 			"source": "PHB",
 			"page": 60,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"subclassShortName": "Life",
@@ -2963,6 +3023,7 @@
 			"source": "PHB",
 			"page": 60,
 			"srd": true,
+			"basicRules": true,
 			"className": "Cleric",
 			"classSource": "PHB",
 			"subclassShortName": "Life",
@@ -2983,7 +3044,7 @@
 			"subclassSource": "PHB",
 			"level": 1,
 			"entries": [
-				"Gods of light\u2014including Helm, Lathander, Pholtus, Branchala, the Silver Flame, Belenus, Apollo, and Re-Horakhty\u2014promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun. Some of these gods are portrayed as the sun itself or as a charioteer who guides the sun across the sky. Others are tireless sentinels whose eyes pierce every shadow and see through every deception. Some are deities of beauty and artistry, who teach that art is a vehicle for the soul's improvement. Clerics of a god of light are enlightened souls infused with radiance and the power of their gods' discerning vision, charged with chasing away lies and burning away darkness.",
+				"Gods of light\u2014including {@deity Helm}, {@deity Lathander}, {@deity Pholtus|Greyhawk}, {@deity Branchala|Dragonlance}, {@deity the Silver Flame|Eberron}, {@deity Belenus|Celtic}, {@deity Apollo|Greek}, and {@deity Re-Horakhty|Egyptian}\u2014promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun. Some of these gods are portrayed as the sun itself or as a charioteer who guides the sun across the sky. Others are tireless sentinels whose eyes pierce every shadow and see through every deception. Some are deities of beauty and artistry, who teach that art is a vehicle for the soul's improvement. Clerics of a god of light are enlightened souls infused with radiance and the power of their gods' discerning vision, charged with chasing away lies and burning away darkness.",
 				"At each indicated cleric level, you add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -3040,7 +3101,7 @@
 			"level": 1,
 			"header": 1,
 			"entries": [
-				"When you choose this domain at 1st level, you gain the {@spell light} cantrip if you don't already know it."
+				"When you choose this domain at 1st level, you gain the {@spell light} cantrip if you don't already know it. This cantrip doesn't count against the number of cleric cantrips you know."
 			]
 		},
 		{
@@ -3068,6 +3129,9 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.",
 				"As an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to {@dice 2d10} + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected."
@@ -3157,7 +3221,7 @@
 			"subclassSource": "PHB",
 			"level": 1,
 			"entries": [
-				"Gods of nature are as varied as the natural world itself, from inscrutable gods of the deep forests (such as Silvanus, Obad-Hai, Chislev, Balinor, and Pan) to friendly deities associated with particular springs and groves (such as Eldath). Druids revere nature as a whole and might serve one of these deities, practicing mysterious rites and reciting all-but-forgotten prayers in their own secret tongue. But many of these gods have clerics as well, champions who take a more active role in advancing the interests of a particular nature god. These clerics might hunt the evil monstrosities that despoil the woodlands, bless the harvest of the faithful, or wither the crops of those who anger their gods.",
+				"Gods of nature are as varied as the natural world itself, from inscrutable gods of the deep forests (such as {@deity Silvanus}, {@deity Obad-Hai|Greyhawk}, {@deity Chislev|Dragonlance}, {@deity Balinor|Eberron}, and {@deity Pan|Greek}) to friendly deities associated with particular springs and groves (such as {@deity Eldath}). Druids revere nature as a whole and might serve one of these deities, practicing mysterious rites and reciting all-but-forgotten prayers in their own secret tongue. But many of these gods have clerics as well, champions who take a more active role in advancing the interests of a particular nature god. These clerics might hunt the evil monstrosities that despoil the woodlands, bless the harvest of the faithful, or wither the crops of those who anger their gods.",
 				"At each indicated cleric level, you add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -3214,7 +3278,7 @@
 			"level": 1,
 			"header": 1,
 			"entries": [
-				"At 1st level, you learn one druid cantrip of your choice. You also gain proficiency in one of the following skills of your choice: {@skill Animal Handling}, {@skill Nature}, or {@skill Survival}."
+				"At 1st level, you learn one druid cantrip of your choice. This cantrip doesn't count against the number of cleric cantrips you know. You also gain proficiency in one of the following skills of your choice: {@skill Animal Handling}, {@skill Nature}, or {@skill Survival}."
 			]
 		},
 		{
@@ -3241,6 +3305,9 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to charm animals and plants.",
 				"As an action, you present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is {@condition charmed} by you for 1 minute or until it takes damage. While it is {@condition charmed} by you, it is friendly to you and other creatures you designate."
@@ -3330,7 +3397,7 @@
 			"subclassSource": "PHB",
 			"level": 1,
 			"entries": [
-				"Gods whose portfolios include the Tempest domain\u2014including Talos, Umberlee, Kord, Zeboim, the Devourer, Zeus, and Thor\u2014govern storms, sea, and sky. They include gods of lightning and thunder, gods of earthquakes, some fire gods, and certain gods of violence, physical strength, and courage. In some pantheons, a god of this domain rules over other deities and is known for swift justice delivered by thunderbolts. In the pantheons of seafaring people, gods of this domain are ocean deities and the patrons of sailors. Tempest gods send their clerics to inspire fear in the common folk, either to keep those folk on the path of righteousness or to encourage them to offer sacrifices of propitiation to ward off divine wrath.",
+				"Gods whose portfolios include the Tempest domain\u2014including {@deity Talos}, {@deity Umberlee}, {@deity Kord|Greyhawk}, {@deity Zeboim|Dragonlance}, {@deity the Devourer|Eberron}, {@deity Zeus|Greek}, and {@deity Thor|Norse}\u2014govern storms, sea, and sky. They include gods of lightning and thunder, gods of earthquakes, some fire gods, and certain gods of violence, physical strength, and courage. In some pantheons, a god of this domain rules over other deities and is known for swift justice delivered by thunderbolts. In the pantheons of seafaring people, gods of this domain are ocean deities and the patrons of sailors. Tempest gods send their clerics to inspire fear in the common folk, either to keep those folk on the path of righteousness or to encourage them to offer sacrifices of propitiation to ward off divine wrath.",
 				"At each indicated cleric level, you add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -3415,6 +3482,9 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to wield the power of the storm with unchecked ferocity.",
 				"When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling."
@@ -3504,7 +3574,7 @@
 			"subclassSource": "PHB",
 			"level": 1,
 			"entries": [
-				"Gods of trickery\u2014such as Tymora, Beshaba, Olidammara, the Traveler, Garl Glittergold, and Loki\u2014are mischief-makers and instigators who stand as a constant challenge to the accepted order among both gods and mortals. They're patrons of thieves, scoundrels, gamblers, rebels, and liberators. Their clerics are a disruptive force in the world, puncturing pride, mocking tyrants, stealing from the rich, freeing captives, and flouting hollow traditions. They prefer subterfuge, pranks, deception, and theft rather than direct confrontation.",
+				"Gods of trickery\u2014such as {@deity Tymora}, {@deity Beshaba}, {@deity Olidammara|Greyhawk}, {@deity the Traveler|Eberron}, {@deity Garl Glittergold|Nonhuman}, and {@deity Loki|Norse}\u2014are mischief-makers and instigators who stand as a constant challenge to the accepted order among both gods and mortals. They're patrons of thieves, scoundrels, gamblers, rebels, and liberators. Their clerics are a disruptive force in the world, puncturing pride, mocking tyrants, stealing from the rich, freeing captives, and flouting hollow traditions. They prefer subterfuge, pranks, deception, and theft rather than direct confrontation.",
 				"At each indicated cleric level, you add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -3570,6 +3640,9 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself.",
 				"As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.",
@@ -3586,6 +3659,9 @@
 			"subclassSource": "PHB",
 			"level": 6,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 6th level, you can use your Channel Divinity to vanish.",
 				"As an action, you become {@condition invisible} until the end of your next turn. You become visible if you attack or cast a spell."
@@ -3661,7 +3737,7 @@
 			"subclassSource": "PHB",
 			"level": 1,
 			"entries": [
-				"War has many manifestations. It can make heroes of ordinary people. It can be desperate and horrific, with acts of cruelty and cowardice eclipsing instances of excellence and courage. In either case, the gods of war watch over warriors and reward them for their great deeds. The clerics of such gods excel in battle, inspiring others to fight the good fight or offering acts of violence as prayers. Gods of war include champions of honor and chivalry (such as Torm, Heironeous, and Kiri-Jolith) as well as gods of destruction and pillage (such as Erythnul, the Fury, Gruumsh, and Ares) and gods of conquest and domination (such as Bane, Hextor, and Maglubiyet). Other war gods (such as Tempus, Nike, and Nuada) take a more neutral stance, promoting war in all its manifestations and supporting warriors in any circumstance.",
+				"War has many manifestations. It can make heroes of ordinary people. It can be desperate and horrific, with acts of cruelty and cowardice eclipsing instances of excellence and courage. In either case, the gods of war watch over warriors and reward them for their great deeds. The clerics of such gods excel in battle, inspiring others to fight the good fight or offering acts of violence as prayers. Gods of war include champions of honor and chivalry (such as {@deity Torm}, {@deity Heironeous|Greyhawk}, and {@deity Kiri-Jolith|Dragonlance}) as well as gods of destruction and pillage (such as {@deity Erythnul|Greyhawk}, {@deity the Fury|Eberron}, {@deity Gruumsh|Nonhuman}, and {@deity Ares|Greek}) and gods of conquest and domination (such as {@deity Bane}, {@deity Hextor|Greyhawk}, and {@deity Maglubiyet|Nonhuman}). Other war gods (such as {@deity Tempus}, {@deity Nike|Greek}, and {@deity Nuada|Celtic}) take a more neutral stance, promoting war in all its manifestations and supporting warriors in any circumstance.",
 				"At each indicated cleric level, add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -3745,6 +3821,9 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
 			]
@@ -3759,6 +3838,9 @@
 			"subclassSource": "PHB",
 			"level": 6,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"At 6th level, when a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
 			]
@@ -3820,7 +3902,7 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"At 17th level, you gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons."
+				"At 17th level, you gain resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks."
 			]
 		},
 		{
@@ -3901,6 +3983,9 @@
 			"subclassSource": "PSA",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to create an illusory duplicate of yourself.",
 				"As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.",
@@ -3917,6 +4002,9 @@
 			"subclassSource": "PSA",
 			"level": 6,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 6th level, you can use your Channel Divinity to vanish. As an action, you become {@condition invisible} until the end of your next turn. You become visible if you attack or cast a spell."
 			]
@@ -4147,6 +4235,9 @@
 			"subclassSource": "PSA",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.",
 				"As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
@@ -4321,6 +4412,9 @@
 			"subclassSource": "PSA",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"At 2nd level, you can use your Channel Divinity to enhance your physical might. When you make an attack roll, ability check, or saving throw using Strength, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the roll succeeds or fails."
 			]
@@ -4495,6 +4589,9 @@
 			"subclassSource": "PSA",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to channel your zeal into unchecked ferocity.",
 				"When you roll fire or thunder damage, you can use your Channel Divinity to deal maximum damage instead of rolling."
@@ -4587,7 +4684,7 @@
 			"level": 1,
 			"entries": [
 				"Magic is an energy that suffuses the multiverse and that fuels both destruction and creation. Gods of the Arcana domain know the secrets and potential of magic intimately. For some of these gods, magical knowledge is a great responsibility that comes with a special understanding of the nature of reality. Other gods of Arcana see magic as pure power, to be used as its wielder sees fit.",
-				"The gods of this domain are often associated with knowledge, as learning and arcane power tend to go hand-in-hand. In the Realms, deities of this domain include Azuth and Mystra, as well as Corellon Larethian of the elven pantheon. In other worlds, this domain includes Hecate, Math Mathonwy, and Isis; the triple moon gods of Solinari, Lunitari, and Nuitari of Krynn; and Boccob, Vecna, and WeeJas of Greyhawk.",
+				"The gods of this domain are often associated with knowledge, as learning and arcane power tend to go hand-in-hand. In the Realms, deities of this domain include {@deity Azuth|Faerûnian|SCAG} and {@deity Mystra|Faerûnian|SCAG}, as well as {@deity Corellon|Dawn War|DMG} Larethian of the elven pantheon. In other worlds, this domain includes {@deity Hecate|Greek}, {@deity Math Mathonwy|Celtic}, and {@deity Isis|Egyptian}; the triple moon gods of {@deity Solinari|Dragonlance}, {@deity Lunitari|Dragonlance}, and {@deity Nuitari|Dragonlance} of Krynn; and {@deity Boccob|Greyhawk}, {@deity Vecna|Greyhawk}, and {@deity Wee Jas|Greyhawk} of Greyhawk.",
 				"At each indicated cleric level, add the listed spells to your spells prepared. They do not count towards your limit.",
 				{
 					"type": "table",
@@ -4653,6 +4750,9 @@
 			"subclassSource": "SCAG",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to abjure otherworldly creatures.",
 				"As an action, you present your holy symbol, and one celestial, elemental, fey, or fiend of your choice that is within 30 feet of you must make a Wisdom saving throw, provided that the creature can see or hear you. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.",
@@ -4784,7 +4884,7 @@
 			"subclassSource": "TCE",
 			"level": 1,
 			"entries": [
-				"The Order Domain represents discipline, as well as devotion to a society or an institution and strict obedience to the laws governing it. On Ravnica, the domain is favored by clerics of the Azorius Senate, who use it to maintain and enforce the law, and of the Orzhov Syndicate, who exploit law and order for their personal gain. On other worlds, gods who grant access to this domain include Bane, Tyr, Majere, Erathis, Pholtus, Wee Jas, Aureon, Maglubiyet, Nuada, Athena, Anubis, Forseti, and Asmodeus.",
+				"The Order Domain represents discipline, as well as devotion to a society or an institution and strict obedience to the laws governing it. On Ravnica, the domain is favored by clerics of the Azorius Senate, who use it to maintain and enforce the law, and of the Orzhov Syndicate, who exploit law and order for their personal gain. On other worlds, gods who grant access to this domain include {@deity Bane}, {@deity Tyr}, {@deity Majere|Dragonlance}, {@deity Erathis|Dawn War|DMG}, {@deity Pholtus|Greyhawk}, {@deity Wee Jas|Greyhawk}, {@deity Aureon|Eberron}, {@deity Maglubiyet|Nonhuman}, {@deity Nuada|Celtic}, {@deity Athena|Greek}, {@deity Anubis|Egyptian}, {@deity Forseti|Norse}, and {@deity Asmodeus|Dawn War|DMG}.",
 				"The ideal of order is obedience to the law above all else, rather than to a specific individual or the passing influence of emotion or popular rule. Clerics of order are typically concerned with how things are done, rather than whether an action's results are just. Following the law and obeying its edicts is critical, especially when it benefits these clerics and their guilds or deities.",
 				"Law establishes hierarchies. Those selected by the law to lead must be obeyed. Those who obey must do so to the best of their ability. In this manner, law creates an intricate web of obligations that allows society to forge order and security in a chaotic multiverse.",
 				"At each indicated cleric level, you add the listed spells to your spells prepared.",
@@ -4889,6 +4989,9 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to exert an intimidating presence over others.",
 				"As an action, you present your holy symbol, and each creature of your choice that can see or hear you within 30 feet of you must succeed on a Wisdom saving throw or be {@condition charmed} by you until the end of your next turn or until the {@condition charmed} creature takes any damage. You can also cause any of the {@condition charmed} creatures to drop what they are holding when they fail the saving throw."
@@ -5013,23 +5116,23 @@
 					],
 					"rows": [
 						[
-							"Angharradh",
+							"{@deity Angharradh|Elven|SCAG}",
 							"Elven"
 						],
 						[
-							"Berronar Truesilver",
+							"{@deity Berronar Truesilver|Dwarven|SCAG}",
 							"Dwarven"
 						],
 						[
-							"Boldrei",
+							"{@deity Boldrei|Eberron}",
 							"Eberron"
 						],
 						[
-							"Cyrrollalee",
+							"{@deity Cyrrollalee|Halfling|SCAG}",
 							"Halfling"
 						],
 						[
-							"Eldath",
+							"{@deity Eldath}",
 							"Forgotten Realms"
 						],
 						[
@@ -5037,11 +5140,11 @@
 							"Ironhand Gnomish"
 						],
 						[
-							"Paladine",
+							"{@deity Paladine|Dragonlance}",
 							"Dragonlance"
 						],
 						[
-							"Rao",
+							"{@deity Rao|Greyhawk}",
 							"Greyhawk"
 						]
 					]
@@ -5139,6 +5242,9 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 2nd-level Peace Domain feature}",
 				"You can use your Channel Divinity to make your very presence a soothing balm. As an action, you can move up to your speed, without provoking opportunity attacks, and when you move within 5 feet of any other creature during this action, you can restore a number of hit points to that creature equal to {@dice 2d6} + your Wisdom modifier (minimum of 1 hit point). A creature can receive this healing only once whenever you take this action."
@@ -5230,35 +5336,35 @@
 					],
 					"rows": [
 						[
-							"Boldrei",
+							"{@deity Boldrei|Eberron}",
 							"Eberron"
 						],
 						[
-							"Celestian",
+							"{@deity Celestian|Greyhawk}",
 							"Greyhawk"
 						],
 						[
-							"Dol Arrah",
+							"{@deity Dol Arrah|Eberron}",
 							"Eberron"
 						],
 						[
-							"Helm",
+							"{@deity Helm}",
 							"Forgotten Realms"
 						],
 						[
-							"Ilmater",
+							"{@deity Ilmater}",
 							"Forgotten Realms"
 						],
 						[
-							"Mishakal",
+							"{@deity Mishakal|Dragonlance}",
 							"Dragonlance"
 						],
 						[
-							"Selûne",
+							"{@deity Selûne}",
 							"Forgotten Realms"
 						],
 						[
-							"Yondalla",
+							"{@deity Yondalla|Nonhuman}",
 							"Halfling"
 						]
 					]
@@ -5375,6 +5481,9 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 2nd-level Twilight Domain feature}",
 				"You can use your Channel Divinity to refresh your allies with soothing twilight.",
@@ -5478,39 +5587,39 @@
 							"Celtic"
 						],
 						[
-							"Aphrodite",
+							"{@deity Aphrodite|Greek}",
 							"Greek"
 						],
 						[
-							"Balder",
+							"{@deity Balder|Norse}",
 							"Norse"
 						],
 						[
-							"Berronar Truesilver",
+							"{@deity Berronar Truesilver|Dwarven|SCAG}",
 							"Dwarven"
 						],
 						[
-							"Boldrei",
+							"{@deity Boldrei|Eberron}",
 							"Eberron"
 						],
 						[
-							"Cyrrollalee",
+							"{@deity Cyrrollalee|Halfling|SCAG}",
 							"Halfling"
 						],
 						[
-							"Freya",
+							"{@deity Freya|Norse}",
 							"Norse"
 						],
 						[
-							"Hanali Celanil",
+							"{@deity Hanali Celanil|Elven|SCAG}",
 							"Elven"
 						],
 						[
-							"Hathor",
+							"{@deity Hathor|Egyptian}",
 							"Egyptian"
 						],
 						[
-							"Mishakal",
+							"{@deity Mishakal|Dragonlance}",
 							"Dragonlance"
 						],
 						[
@@ -5518,15 +5627,15 @@
 							"Greyhawk"
 						],
 						[
-							"Sharindlar",
+							"{@deity Sharindlar|Dwarven|SCAG}",
 							"Dwarven"
 						],
 						[
-							"Sheyanna Flaxenstrand",
+							"{@deity Sheyanna Flaxenstrand|Gnome|MTF}",
 							"Gnomish"
 						],
 						[
-							"Sune",
+							"{@deity Sune}",
 							"Forgotten Realms"
 						]
 					]
@@ -5598,6 +5707,9 @@
 			"subclassSource": "UA2020SubclassesPt2",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 2nd-level Love Domain feature}",
 				"You can use your Channel Divinity to overwhelm a creature with a flash of short-lived but intense admiration for you, driving them to rash action in your defense.",
@@ -5715,43 +5827,43 @@
 					],
 					"rows": [
 						[
-							"Angharradh",
+							"{@deity Angharradh|Elven|SCAG}",
 							"Elven"
 						],
 						[
-							"Athena",
+							"{@deity Athena|Greek}",
 							"Greek"
 						],
 						[
-							"Berronar Truesilver",
+							"{@deity Berronar Truesilver|Dwarven|SCAG}",
 							"Dwarven"
 						],
 						[
-							"Boldrei",
+							"{@deity Boldrei|Eberron}",
 							"Eberron"
 						],
 						[
-							"Cyrrollalee",
+							"{@deity Cyrrollalee|Halfling|SCAG}",
 							"Halfling"
 						],
 						[
-							"Eldath",
+							"{@deity Eldath}",
 							"Forgotten Realms"
 						],
 						[
-							"Gaerdal Ironhand",
+							"{@deity Gaerdal Ironhand|Gnomish|SCAG}",
 							"Gnomish"
 						],
 						[
-							"Heimdall",
+							"{@deity Heimdall|Norse}",
 							"Norse"
 						],
 						[
-							"Paladine",
+							"{@deity Paladine|Dragonlance}",
 							"Dragonlance"
 						],
 						[
-							"Rao",
+							"{@deity Rao|Greyhawk}",
 							"Greyhawk"
 						]
 					]
@@ -5822,6 +5934,9 @@
 			"subclassSource": "UA2020SubclassesPt2",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 2nd-level Unity Domain feature}",
 				"You can use your Channel Divinity to protect your allies through the strength of your shared bonds.",
@@ -5924,7 +6039,7 @@
 			"subclassSource": "UAClericDivineDomains",
 			"level": 1,
 			"entries": [
-				"The gods of the forge are patrons of artisans who work with metal, from a humble blacksmith who keeps a village in horseshoes and plow blades to the mighty elf artisan whose diamond-tipped arrows of mithral have felled demon lords. The gods of the forge teach that, with patience and hard work, even the most intractable metal can transform from a lump of ore to a beautifully wrought object. Clerics of these deities quest to search for objects lost to the forces of darkness, liberate mines overrun by orcs, and uncover rare and wondrous materials necessary to create potent magic items. Followers of these gods take great pride in their work, and they are willing to craft and use heavy armor and powerful weapons to protect them. Deities of this domain include Gond, Reorx, Onatar, Moradin, Hephaestus, and Goibhniu.",
+				"The gods of the forge are patrons of artisans who work with metal, from a humble blacksmith who keeps a village in horseshoes and plow blades to the mighty elf artisan whose diamond-tipped arrows of mithral have felled demon lords. The gods of the forge teach that, with patience and hard work, even the most intractable metal can transform from a lump of ore to a beautifully wrought object. Clerics of these deities quest to search for objects lost to the forces of darkness, liberate mines overrun by orcs, and uncover rare and wondrous materials necessary to create potent magic items. Followers of these gods take great pride in their work, and they are willing to craft and use heavy armor and powerful weapons to protect them. Deities of this domain include {@deity Gond}, {@deity Reorx|Dragonlance}, {@deity Onatar|Eberron}, {@deity Moradin|Nonhuman}, {@deity Hephaestus|Greek}, and {@deity Goibhniu|Celtic}.",
 				"At each indicated cleric level, add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -6009,6 +6124,9 @@
 			"subclassSource": "UAClericDivineDomains",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to create simple items.",
 				"Starting at the beginning of a short rest, you conduct a ritual to your deity that grants you the ability to craft a finished item that is at least part metal. The item is completed at the end of the rest.",
@@ -6107,7 +6225,7 @@
 			"subclassSource": "UAClericDivineDomains",
 			"level": 1,
 			"entries": [
-				"Gods of the grave watch over the line between life and death. To these deities, death and the afterlife are a foundational part of the multiverse's workings. To resist death, or to desecrate the dead's rest, is an abomination. Deities of the grave include Kelemvor, WeeJas, the ancestral spirits of the Undying Court, Hades, Anubis, and Osiris. These deities teach their followers to respect the dead and pay them due homage. Followers of these deities seek to put restless spirits to rest, destroy the undead wherever they find them, and ease the suffering of dying creatures. Their magic also allows them to stave off a creature's death, though they refuse to use such magic to extend a creature's lifespan beyond its mortal limits.",
+				"Gods of the grave watch over the line between life and death. To these deities, death and the afterlife are a foundational part of the multiverse's workings. To resist death, or to desecrate the dead's rest, is an abomination. Deities of the grave include {@deity Kelemvor}, {@deity Wee Jas|Greyhawk}, the ancestral spirits of {@deity the Undying Court|Eberron}, {@deity Hades|Greek}, {@deity Anubis|Egyptian}, and {@deity Osiris|Egyptian}. These deities teach their followers to respect the dead and pay them due homage. Followers of these deities seek to put restless spirits to rest, destroy the undead wherever they find them, and ease the suffering of dying creatures. Their magic also allows them to stave off a creature's death, though they refuse to use such magic to extend a creature's lifespan beyond its mortal limits.",
 				"At each indicated cleric level, add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -6210,6 +6328,9 @@
 			"subclassSource": "UAClericDivineDomains",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to mark another creature's life force for termination.",
 				"As an action, you touch a creature. The next time that creature takes damage from a spell or an attack from you or an ally, it is vulnerable to that spell or attack's damage. If the source of damage has multiple damage types, the creature is vulnerable to all of them. The vulnerability applies only to the first time that source inflicts damage, and then ends.",
@@ -6301,7 +6422,7 @@
 			"subclassSource": "UAClericDivineDomains",
 			"level": 1,
 			"entries": [
-				"The protection domain is the purview of deities who charge their followers to shield the weak from the strong. The gods' faithful dwell in villages and towns on the borderlands, where they help bolster defenses and seek out evils to defeat. These gods believe that a strong shield and a suit of armor is the best defense against evil, second only to a stout mace on hand to respond to any attacks in kind. Deities who grant this domain include Helm, Ilmater, Torm, Tyr, Heironeous, St. Cuthbert, Paladine, Dol Dorn, the Silver Flame, Bahamut, Yondalla, Athena, and Odin.",
+				"The protection domain is the purview of deities who charge their followers to shield the weak from the strong. The gods' faithful dwell in villages and towns on the borderlands, where they help bolster defenses and seek out evils to defeat. These gods believe that a strong shield and a suit of armor is the best defense against evil, second only to a stout mace on hand to respond to any attacks in kind. Deities who grant this domain include {@deity Helm}, {@deity Ilmater}, {@deity Torm}, {@deity Tyr}, {@deity Heironeous|Greyhawk}, {@deity St. Cuthbert|Greyhawk}, {@deity Paladine|Dragonlance}, {@deity Dol Dorn|Eberron}, {@deity the Silver Flame|Eberron}, {@deity Bahamut|Nonhuman}, {@deity Yondalla|Nonhuman}, {@deity Athena|Greek}, and {@deity Odin|Norse}.",
 				"At each indicated cleric level, add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -6385,6 +6506,9 @@
 			"subclassSource": "UAClericDivineDomains",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to cloak your allies in radiant armor.",
 				"As an action, you channel blessed energy into an ally that you can see within 30 feet of you. The first time that ally is hit by an attack within the next minute, the attacker takes radiant damage equal to {@dice 2d10} + your cleric level."
@@ -6475,7 +6599,7 @@
 			"subclassSource": "UAClericDruidWizard",
 			"level": 1,
 			"entries": [
-				"The Twilight Domain governs the transition and blending of light into darkness. It is a time of rest and comfort, but also the threshold between safety and the unknown. Deities of healing or respite (such as Boldrei, Hestia, Mishakal, or Pelor), bravery or protection (such as Dol Arrah, Hajama, Helm, or Ilmater), travel or transition (such as Fharlanghn, Hermes, the Raven Queen, or the Traveler), or the night and dreams (such as Celestian, Morpheus, Nut, or Selûne) might grant their clerics the Twilight Domain. Clerics who serve these deities tend to be brave, delving into the dark to hold its dangers at bay and to bring comfort to those lost far from the light.",
+				"The Twilight Domain governs the transition and blending of light into darkness. It is a time of rest and comfort, but also the threshold between safety and the unknown. Deities of healing or respite (such as {@deity Boldrei|Eberron}, {@deity Hestia|Greek}, {@deity Mishakal|Dragonlance}, or {@deity Pelor|Greyhawk}), bravery or protection (such as {@deity Dol Arrah|Eberron}, Hajama, {@deity Helm}, or {@deity Ilmater}), travel or transition (such as {@deity Fharlanghn|Greyhawk}, {@deity Hermes|Greek}, {@deity the Raven Queen|Exandria|EGW}, or {@deity the Traveler|Eberron}), or the night and dreams (such as {@deity Celestian|Greyhawk}, Morpheus, Nut, or {@deity Selûne}) might grant their clerics the Twilight Domain. Clerics who serve these deities tend to be brave, delving into the dark to hold its dangers at bay and to bring comfort to those lost far from the light.",
 				"At each indicated cleric level, you add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -6581,6 +6705,9 @@
 			"subclassSource": "UAClericDruidWizard",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"{@i 2nd-level Twilight Domain feature}",
 				"You can use your Channel Divinity to refresh your allies with soothing twilight.",
@@ -6791,6 +6918,9 @@
 			"subclassSource": "UAModernMagic",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to call on the city for aid. As an action, you present your holy symbol, and any city utility within 30 feet of you either works perfectly or shuts down entirely for 1 minute (your choice).",
 				"Additionally, each hostile creature within 30 feet of you must make a Charisma saving throw. On a failed save, the creature is knocked {@condition prone} or {@condition restrained} (your choice) by hazards such as entangling wires, high-pressure water erupting from fire hydrants, pavement collapsing to unseen potholes, and so on. A {@condition restrained} creature can escape by making a successful Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check against your spell save DC.",
@@ -6881,7 +7011,7 @@
 			"subclassSource": "UAOrderDomain",
 			"level": 1,
 			"entries": [
-				"The Order domain represents discipline, as well as service to a society or an institution, whether that service is rendered in obedience to or enforcement of the law\u2014civil, religious, or both. Gods on many worlds grant access to this domain, including Bane, Tyr, Majere, Erathis, Pholtus, Wee Jas, Aureon, Maglubiyet, Nuada, Athena, Anubis, Forseti, and Asmodeus.",
+				"The Order domain represents discipline, as well as service to a society or an institution, whether that service is rendered in obedience to or enforcement of the law\u2014civil, religious, or both. Gods on many worlds grant access to this domain, including {@deity Bane}, {@deity Tyr}, {@deity Majere|Dragonlance}, {@deity Erathis|Dawn War|DMG}, {@deity Pholtus|Greyhawk}, {@deity Wee Jas|Greyhawk}, {@deity Aureon|Eberron}, {@deity Maglubiyet|Nonhuman}, {@deity Nuada|Celtic}, {@deity Athena|Greek}, {@deity Anubis|Egyptian}, {@deity Forseti|Norse}, and {@deity Asmodeus|Dawn War|DMG}.",
 				"The ideal of order is obedience to the law above all else, rather than to a specific individual or the passing influence of emotion or popular rule. Clerics of order are typically concerned with how things are done, rather than whether an action's results are just. Following the law and obeying its edicts is critical, especially when it benefits these clerics and their deities.",
 				"More importantly, law establishes hierarchies. Those selected by the law to lead must be obeyed. Those who obey must do so to the best of their ability. In this manner, law creates an intricate web of obligations that allows society to forge order and security in a chaotic multiverse.",
 				"At each indicated cleric level, you add the listed spells to your spells prepared.",
@@ -6967,6 +7097,9 @@
 			"subclassSource": "UAOrderDomain",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to exert an intimidating presence over others.",
 				"As an action, you present your holy symbol, and each creature of your choice that can see or hear you within 30 feet of you must succeed on a Wisdom saving throw or be {@condition charmed} by you until the end of your next turn or until the {@condition charmed} creature takes any damage. You can also cause any of the {@condition charmed} creatures to fall {@condition prone} when they fail the saving throw."
@@ -7057,7 +7190,7 @@
 			"subclassSource": "XGE",
 			"level": 1,
 			"entries": [
-				"The gods of the forge are patrons of artisans who work with metal, from a humble blacksmith who keeps a village in horseshoes and plow blades to the mighty elf artisan whose diamond-tipped arrows of mithral have felled demon lords. The gods of the forge teach that, with patience and hard work, even the most intractable metal can be transformed from a lump of ore to a beautifully wrought object. Clerics of these deities search for objects lost to the forces of darkness, liberate mines overrun by orcs, and uncover rare and wondrous materials necessary to create potent magic items. Followers of these gods take great pride in their work, and they are willing to craft and use heavy armor and powerful weapons to protect them. Deities of this domain include Gond, Reorx, Onatar, Moradin, Hephaestus, and Goibhniu.",
+				"The gods of the forge are patrons of artisans who work with metal, from a humble blacksmith who keeps a village in horseshoes and plow blades to the mighty elf artisan whose diamond-tipped arrows of mithral have felled demon lords. The gods of the forge teach that, with patience and hard work, even the most intractable metal can be transformed from a lump of ore to a beautifully wrought object. Clerics of these deities search for objects lost to the forces of darkness, liberate mines overrun by orcs, and uncover rare and wondrous materials necessary to create potent magic items. Followers of these gods take great pride in their work, and they are willing to craft and use heavy armor and powerful weapons to protect them. Deities of this domain include {@deity Gond}, {@deity Reorx|Dragonlance}, {@deity Onatar|Eberron}, {@deity Moradin|Nonhuman}, {@deity Hephaestus|Greek}, and {@deity Goibhniu|Celtic}.",
 				"At each indicated cleric level, add the listed spells to your spells prepared.",
 				{
 					"type": "table",
@@ -7142,6 +7275,9 @@
 			"subclassSource": "XGE",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to create simple items.",
 				"You conduct an hour-long ritual that crafts a nonmagical item that must include some metal: a simple or martial weapon, a suit of armor, ten pieces of ammunition, a set of tools, or another metal object (see chapter 5, \"Equipment,\" in the Player's Handbook for examples of these items). The creation is completed at the end of the hour, coalescing in an unoccupied space of your choice on a surface within 5 feet of you.",
@@ -7246,7 +7382,7 @@
 			"subclassSource": "XGE",
 			"level": 1,
 			"entries": [
-				"Gods of the grave watch over the line between life and death. To these deities, death and the afterlife are a foundational part of the multiverse. To desecrate the peace of the dead is an abomination. Deities of the grave include Kelemvor, Wee Jas, the ancestral spirits of the Undying Court, Hades, Anubis, and Osiris. Followers of these deities seek to put wandering spirits to rest, destroy the undead, and ease the suffering of the dying. Their magic also allows them to stave off death for a time, particularly for a person who still has some great work to accomplish in the world. This is a delay of death, not a denial of it, for death will eventually get its due.",
+				"Gods of the grave watch over the line between life and death. To these deities, death and the afterlife are a foundational part of the multiverse. To desecrate the peace of the dead is an abomination. Deities of the grave include {@deity Kelemvor}, {@deity Wee Jas|Greyhawk}, the ancestral spirits of {@deity the Undying Court|Eberron}, {@deity Hades|Greek}, {@deity Anubis|Egyptian}, and {@deity Osiris|Egyptian}. Followers of these deities seek to put wandering spirits to rest, destroy the undead, and ease the suffering of the dying. Their magic also allows them to stave off death for a time, particularly for a person who still has some great work to accomplish in the world. This is a delay of death, not a denial of it, for death will eventually get its due.",
 				{
 					"type": "table",
 					"caption": "Grave Domain Spells",
@@ -7331,6 +7467,9 @@
 			"subclassSource": "XGE",
 			"level": 2,
 			"header": 2,
+			"consumes": {
+				"name": "Channel Divinity"
+			},
 			"entries": [
 				"Starting at 2nd level, you can use your Channel Divinity to mark another creature's life force for termination.",
 				"As an action, you choose one creature you can see within 30 feet of you, cursing it until the end of your next turn. The next time you or an ally of yours hits the cursed creature with an attack, the creature has vulnerability to all of that attack's damage, and then the curse ends."

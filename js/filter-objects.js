@@ -4,8 +4,7 @@ class PageFilterObjects extends PageFilter {
 	constructor () {
 		super();
 
-		this._sourceFilter = new SourceFilter();
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (obj) {
@@ -30,6 +29,6 @@ class PageFilterObjects extends PageFilter {
 			values,
 			obj.source,
 			obj._fMisc,
-		)
+		);
 	}
 }

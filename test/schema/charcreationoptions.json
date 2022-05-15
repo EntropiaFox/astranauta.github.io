@@ -1,16 +1,21 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "charcreationoptions.json",
-	"version": "1.0.2",
+	"version": "1.1.5",
 	"title": "Character Creation Options",
 	"type": "object",
-
 	"definitions": {
 		"optionType": {
 			"type": "string",
-			"enum":  ["SG", "OF", "DG", "RF:B"]
+			"description": "CS: Character Secret\nDG: Dark Gift\n OF: Optional Feature\n RF:B Replacement Feature: Background\n SG: Supernatural Gift",
+			"enum": [
+				"CS",
+				"DG",
+				"OF",
+				"RF:B",
+				"SG"
+			]
 		},
-
 		"charoption": {
 			"type": "object",
 			"properties": {
@@ -27,20 +32,14 @@
 					"type": "string"
 				},
 				"page": {
-					"type": "integer"
+					"$ref": "util.json#/definitions/page"
 				},
 				"optionType": {
-					"oneOf": [
-						{
-							"$ref": "#/definitions/optionType"
-						},
-						{
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/optionType"
-							}
-						}
-					]
+					"$comment": "Note that this field supports arbitrary strings for homebrew usage.",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/optionType"
+					}
 				},
 				"otherSources": {
 					"$ref": "util.json#/definitions/otherSources"
@@ -48,8 +47,15 @@
 				"srd": {
 					"$ref": "util.json#/definitions/srd"
 				},
-				"hasFluff": {"type": "boolean"},
-				"hasFluffImages": {"type": "boolean"}
+				"hasFluff": {
+					"type": "boolean"
+				},
+				"hasFluffImages": {
+					"type": "boolean"
+				},
+				"prerequisite": {
+					"$ref": "util.json#/definitions/prerequisite"
+				}
 			},
 			"required": [
 				"name",
@@ -60,11 +66,13 @@
 			"additionalProperties": false
 		}
 	},
-
 	"properties": {
 		"charoption": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/charoption"}
+			"uniqueItems": true,
+			"items": {
+				"$ref": "#/definitions/charoption"
+			}
 		}
 	},
 	"additionalProperties": false

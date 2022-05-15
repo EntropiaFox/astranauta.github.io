@@ -4,6 +4,11 @@
 			"monster": {
 				"MTF": "TTP"
 			}
+		},
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
 		}
 	},
 	"monster": [
@@ -11,7 +16,9 @@
 			"name": "Decapus",
 			"source": "TTP",
 			"page": 21,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -68,7 +75,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -88,6 +94,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -95,7 +102,9 @@
 			"name": "Geonid",
 			"source": "TTP",
 			"page": 22,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -153,7 +162,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D",
 				"T"
@@ -164,6 +172,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -171,7 +180,9 @@
 			"name": "Giant Slug",
 			"source": "TTP",
 			"page": 18,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -265,11 +276,10 @@
 				{
 					"name": "Animate Tentacle",
 					"entries": [
-						"When the slug takes damage in this cave (Shrine of Umberlee), it can use its reaction to animate one of the tentacles of the kraken statue and cause it to make a melee weapon attack ({@hit 3} to hit) against one creature within 20 feet of the statue that the slug can see. The tentacle deals 8 ({@damage 1d8 + 4}) bludgeoning damage on a hit."
+						"When the slug takes damage in this cave ({@adventure Shrine of Umberlee|ttp|3|24. Shrine of Umberlee}), it can use its reaction to animate one of the tentacles of the kraken statue and cause it to   make a melee weapon attack ({@hit 3} to hit) against one creature within 20 feet of the statue that the slug can see. The tentacle deals 8 ({@damage 1d8 + 4}) bludgeoning damage on a hit."
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Spider Climb"
@@ -291,19 +301,30 @@
 				"I",
 				"P"
 			],
+			"damageTagsSpell": [
+				"O",
+				"R"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"conditionInflict": [
+				"paralyzed",
+				"poisoned"
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Topi",
 			"source": "TTP",
 			"page": 22,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -369,7 +390,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Turn Resistance",
 				"Undead Fortitude"
@@ -391,6 +411,51 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Two-Headed Plesiosaurus",
+			"source": "TTP",
+			"page": 18,
+			"_copy": {
+				"name": "Plesiosaurus",
+				"source": "MM",
+				"_mod": {
+					"trait": [
+						{
+							"mode": "prependArr",
+							"items": {
+								"name": "Two Heads",
+								"entries": [
+									"The two-headed plesiosaurus has advantage on Wisdom ({@skill Perception}) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, and knocked {@condition unconscious}."
+								]
+							}
+						}
+					],
+					"action": [
+						{
+							"mode": "prependArr",
+							"items": {
+								"name": "Multiattack",
+								"entries": [
+									"The two-headed plesiosaurus makes two bite attacks."
+								]
+							}
+						}
+					]
+				}
+			},
+			"hp": {
+				"average": 100,
+				"formula": "8d10 + 24"
+			},
+			"cr": "4",
+			"actionTags": [
+				"Multiattack"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

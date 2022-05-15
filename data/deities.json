@@ -453,27 +453,27 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Scatterstrike.",
+							"name": "Scatterstrike",
 							"entry": "The halflings run in every direction as if in a panic, but then they regroup and circle back to attack with a concentrated effort."
 						},
 						{
 							"type": "item",
-							"name": "Turtle Shell.",
+							"name": "Turtle Shell",
 							"entry": "Halflings cluster together and cover each other with shields, washtubs, wheelbarrows, coffer lids, or anything else that can deflect a blow."
 						},
 						{
 							"type": "item",
-							"name": "Troll Knocker.",
+							"name": "Troll Knocker",
 							"entry": "A few halflings act as bait to lure a troll or other large creature into a clearing where the rest of the group can hurl stones at it from concealment to confuse the monster, persuading it to seek other prey."
 						},
 						{
 							"type": "item",
-							"name": "Swarming Stickwhackers.",
+							"name": "Swarming Stickwhackers",
 							"entry": "Halflings rush an intruder in waves, swatting the enemy with sticks on all sides."
 						},
 						{
 							"type": "item",
-							"name": "Fiddle and Crack.",
+							"name": "Fiddle and Crack",
 							"entry": "A halfling fiddler lures the monster into a trap, usually a net or a pit, followed by several burly halflings wielding large sticks and hitting the monster from a safe vantage."
 						}
 					]
@@ -632,6 +632,10 @@
 			"source": "MOT",
 			"page": 37,
 			"pantheon": "Theros",
+			"alignment": [
+				"L",
+				"E"
+			],
 			"title": "God of Passage",
 			"domains": [
 				"Death",
@@ -959,6 +963,7 @@
 			"name": "Auril",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -1085,6 +1090,7 @@
 			"name": "Azuth",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"additionalSources": [
 				{
 					"source": "SCAG",
@@ -1462,6 +1468,7 @@
 			"name": "Bane",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"L",
@@ -1660,6 +1667,7 @@
 			"name": "Beshaba",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -1712,6 +1720,7 @@
 			"name": "Bhaal",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -2042,6 +2051,7 @@
 			"name": "Chauntea",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -2372,6 +2382,7 @@
 			"name": "Cyric",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -2601,6 +2612,7 @@
 			"name": "Deneir",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -2958,6 +2970,7 @@
 			"name": "Eldath",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"additionalSources": [
 				{
 					"source": "TCE",
@@ -3039,6 +3052,10 @@
 			"source": "MOT",
 			"page": 40,
 			"pantheon": "Theros",
+			"alignment": [
+				"L",
+				"N"
+			],
 			"title": "God of the Polis",
 			"domains": [
 				"Knowledge",
@@ -3412,6 +3429,10 @@
 			"source": "MOT",
 			"page": 43,
 			"pantheon": "Theros",
+			"alignment": [
+				"N",
+				"E"
+			],
 			"title": "God of the Dead",
 			"domains": [
 				"Death",
@@ -3745,6 +3766,21 @@
 				"War"
 			],
 			"symbol": "Blood drop"
+		},
+		{
+			"name": "Ezra",
+			"source": "VRGR",
+			"page": 64,
+			"pantheon": "Unknown",
+			"title": "God of the mists",
+			"category": "Unknown",
+			"domains": [
+				"Unknown"
+			],
+			"symbol": "Sprig of belladonna atop a silver kite shield",
+			"entries": [
+				"The denizens of several domains worship an aloof god known as Ezra. Depicted as a vague, vaporous figure, the god is known for her dark, billowing hair and for her ability to manipulate the Mists. Her holy symbol is a sprig of belladonna atop a silver kite shield. Beyond that, her disparate sects of worshipers view her differently\u2014and contradictorily. For some, Ezra is a goodly guardian, while others perceive her as a soul-stealing embodiment of the Mists. Ultimately, though, her true nature is a mystery. Whether she's a manifestation of the Dark Powers, an aspect of the Plane of Shadow's mysterious Raven Queen, or something else entirely is for you to decide. Whatever the case, Ezra's followers, traditions, alignment, and the domains she grants her clerics vary widely. Collaborate with players who want to create characters devoted to Ezra to define the god's role in their domain of origin."
+			]
 		},
 		{
 			"name": "Fenmarel Mestarine",
@@ -4098,6 +4134,7 @@
 			"name": "Gond",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"additionalSources": [
 				{
 					"source": "XGE",
@@ -4617,6 +4654,10 @@
 			"source": "MOT",
 			"page": 46,
 			"pantheon": "Theros",
+			"alignment": [
+				"L",
+				"G"
+			],
 			"title": "God of the Sun",
 			"domains": [
 				"Light"
@@ -4918,6 +4959,7 @@
 			"name": "Helm",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"additionalSources": [
 				{
 					"source": "TCE",
@@ -5162,6 +5204,7 @@
 			"name": "Ilmater",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"additionalSources": [
 				{
 					"source": "TCE",
@@ -5370,6 +5413,10 @@
 			"source": "MOT",
 			"page": 49,
 			"pantheon": "Theros",
+			"alignment": [
+				"C",
+				"G"
+			],
 			"title": "God of Victory",
 			"domains": [
 				"War"
@@ -5779,6 +5826,10 @@
 			"source": "MOT",
 			"page": 52,
 			"pantheon": "Theros",
+			"alignment": [
+				"N",
+				"G"
+			],
 			"title": "God of Harvests",
 			"domains": [
 				"Life",
@@ -6077,6 +6128,7 @@
 			"name": "Kelemvor",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"additionalSources": [
 				{
 					"source": "XGE",
@@ -6165,6 +6217,10 @@
 			"source": "MOT",
 			"page": 55,
 			"pantheon": "Theros",
+			"alignment": [
+				"C",
+				"N"
+			],
 			"title": "God of Storms",
 			"domains": [
 				"Knowledge",
@@ -6534,6 +6590,9 @@
 			"source": "MOT",
 			"page": 58,
 			"pantheon": "Theros",
+			"alignment": [
+				"N"
+			],
 			"title": "God of Destiny",
 			"domains": [
 				"Knowledge",
@@ -6969,6 +7028,9 @@
 			"source": "MOT",
 			"page": 61,
 			"pantheon": "Theros",
+			"alignment": [
+				"N"
+			],
 			"title": "God of Horizons",
 			"domains": [
 				"Knowledge",
@@ -7381,6 +7443,7 @@
 			"name": "Lathander",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -7431,6 +7494,7 @@
 			"name": "Leira",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -7479,6 +7543,7 @@
 			"name": "Lliira",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -7685,6 +7750,7 @@
 			"name": "Loviatar",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"L",
@@ -7851,6 +7917,7 @@
 			"name": "Malar",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -7967,6 +8034,7 @@
 			"name": "Mask",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -8132,6 +8200,7 @@
 			"name": "Mielikki",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -8179,6 +8248,7 @@
 			"name": "Milil",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -8244,6 +8314,10 @@
 			"source": "MOT",
 			"page": 64,
 			"pantheon": "Theros",
+			"alignment": [
+				"C",
+				"E"
+			],
 			"title": "God of Slaughter",
 			"domains": [
 				"War"
@@ -8761,6 +8835,7 @@
 			"name": "Myrkul",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -8808,6 +8883,7 @@
 			"name": "Mystra",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"additionalSources": [
 				{
 					"source": "SCAG",
@@ -9075,6 +9151,10 @@
 			"source": "MOT",
 			"page": 67,
 			"pantheon": "Theros",
+			"alignment": [
+				"N",
+				"G"
+			],
 			"title": "God of the Hunt",
 			"domains": [
 				"Nature"
@@ -9437,6 +9517,7 @@
 			"source": "PHB",
 			"page": 294,
 			"srd": true,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N"
@@ -9743,6 +9824,10 @@
 			"source": "MOT",
 			"page": 70,
 			"pantheon": "Theros",
+			"alignment": [
+				"N",
+				"E"
+			],
 			"title": "God of Affliction",
 			"domains": [
 				"Death",
@@ -10047,6 +10132,10 @@
 			"source": "MOT",
 			"page": 73,
 			"pantheon": "Theros",
+			"alignment": [
+				"C",
+				"N"
+			],
 			"title": "God of Deception",
 			"domains": [
 				"Trickery"
@@ -10361,6 +10450,26 @@
 			"symbol": "Trident"
 		},
 		{
+			"name": "Procan",
+			"source": "GoS",
+			"page": 18,
+			"pantheon": "Unknown",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"title": "Sailor of Sea and Sky",
+			"domains": [
+				"Tempest"
+			],
+			"entries": [
+				"Procan is a chaotic neutral deity of the sea and weather. He offers his clerics access to the Tempest domain. He is embodied in the sudden storm that overtakes a ship, battering it with monstrous waves and howling winds that give way to peaceful waters and calm weather in the space of a moment.",
+				"Procan's domain is the sea, and whatever the oceans touch, he bears witness to. His mood shifts to darkness as he witnesses a brutal murder on the docks of a squalid port, then lifts in pride as he watches a brave mariner leap into the sea and save a drowning child. Every story of the oceans courses through his mind, and he in each moment curses and blesses mortals for their endless follies, heroism, and hatreds.",
+				"When the sea reaches its limit at the shore, so too does Procan's power. His clerics and priests rarely venture inland, and he cares little for what happens beyond his waters. At sea, he expects sacrifices in the form of fine food, potent alcohol, or valuable treasures thrown overboard at the start of a voyage. Due to this ritual, Procan holds all treasures lost at sea as part of his domain. He curses those who plunder shipwrecks without the blessings of his clerics, dogging their steps with wretched weather until his attention is drawn elsewhere.",
+				"Procan's clerics reflect their deity's chaotic nature. They seek omens of his moods in the weather and sky, and mirror their own demeanor to match their deity's."
+			]
+		},
+		{
 			"name": "Ptah",
 			"source": "PHB",
 			"page": 299,
@@ -10381,6 +10490,10 @@
 			"source": "MOT",
 			"page": 76,
 			"pantheon": "Theros",
+			"alignment": [
+				"C",
+				"N"
+			],
 			"title": "God of the Forge",
 			"domains": [
 				"Forge",
@@ -11007,6 +11120,7 @@
 			"name": "Savras",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"L",
@@ -11284,6 +11398,7 @@
 			"name": "Selûne",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"additionalSources": [
 				{
 					"source": "TCE",
@@ -11379,6 +11494,7 @@
 			"name": "Shar",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N",
@@ -11627,6 +11743,7 @@
 			"source": "PHB",
 			"page": 294,
 			"srd": true,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N"
@@ -11816,6 +11933,7 @@
 			"name": "Sune",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -11914,6 +12032,7 @@
 			"name": "Talona",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -11960,6 +12079,7 @@
 			"name": "Talos",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -12023,6 +12143,7 @@
 			"name": "Tempus",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N"
@@ -12210,6 +12331,9 @@
 			"source": "MOT",
 			"page": 79,
 			"pantheon": "Theros",
+			"alignment": [
+				"N"
+			],
 			"title": "God of the Sea",
 			"domains": [
 				"Knowledge",
@@ -13316,6 +13440,7 @@
 			"name": "Torm",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"L",
@@ -13471,6 +13596,7 @@
 			"name": "Tymora",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -13521,6 +13647,7 @@
 			"name": "Tyr",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"L",
@@ -13668,6 +13795,7 @@
 			"name": "Umberlee",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"C",
@@ -14057,6 +14185,7 @@
 			"name": "Waukeen",
 			"source": "PHB",
 			"page": 294,
+			"basicRules": true,
 			"pantheon": "Forgotten Realms",
 			"alignment": [
 				"N"

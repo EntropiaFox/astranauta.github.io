@@ -83,7 +83,9 @@
 			"optionalfeatureProgression": [
 				{
 					"name": "Eldritch Invocations",
-					"featureType": "EI",
+					"featureType": [
+						"EI"
+					],
 					"progression": [
 						0,
 						2,
@@ -106,6 +108,15 @@
 						8,
 						8
 					]
+				},
+				{
+					"name": "Pact Boon",
+					"featureType": [
+						"PB"
+					],
+					"progression": {
+						"3": 1
+					}
 				}
 			],
 			"startingProficiencies": {
@@ -664,23 +675,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"faerie fire",
 							"sleep"
 						],
-						"2": [
+						"s2": [
 							"calm emotions",
 							"phantasmal force"
 						],
-						"3": [
+						"s3": [
 							"blink",
 							"plant growth"
 						],
-						"4": [
+						"s4": [
 							"dominate beast",
 							"greater invisibility"
 						],
-						"5": [
+						"s5": [
 							"dominate person",
 							"seeming"
 						]
@@ -705,23 +716,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"burning hands",
 							"command"
 						],
-						"2": [
+						"s2": [
 							"blindness/deafness",
 							"scorching ray"
 						],
-						"3": [
+						"s3": [
 							"fireball",
 							"stinking cloud"
 						],
-						"4": [
+						"s4": [
 							"fire shield",
 							"wall of fire"
 						],
-						"5": [
+						"s5": [
 							"flame strike",
 							"hallow"
 						]
@@ -745,23 +756,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"dissonant whispers",
 							"Tasha's hideous laughter"
 						],
-						"2": [
+						"s2": [
 							"detect thoughts",
 							"phantasmal force"
 						],
-						"3": [
+						"s3": [
 							"clairvoyance",
 							"sending"
 						],
-						"4": [
+						"s4": [
 							"dominate beast",
 							"Evard's black tentacles"
 						],
-						"5": [
+						"s5": [
 							"dominate person",
 							"telekinesis"
 						]
@@ -785,23 +796,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"infallible relay (ua)|uamodernmagic",
 							"remote access (ua)|uamodernmagic"
 						],
-						"2": [
+						"s2": [
 							"arcane hacking (ua)|uamodernmagic",
 							"digital phantom (ua)|uamodernmagic"
 						],
-						"3": [
+						"s3": [
 							"haywire (ua)|uamodernmagic",
 							"invisibility to cameras (ua)|uamodernmagic"
 						],
-						"4": [
+						"s4": [
 							"conjure knowbot (ua)|uamodernmagic",
 							"system backdoor (ua)|uamodernmagic"
 						],
-						"5": [
+						"s5": [
 							"shutdown (ua)|uamodernmagic",
 							"synchronicity (ua)|uamodernmagic"
 						]
@@ -826,19 +837,19 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"burning hands"
 						],
-						"2": [
+						"s2": [
 							"flaming sphere"
 						],
-						"3": [
+						"s3": [
 							"daylight"
 						],
-						"4": [
+						"s4": [
 							"fire shield"
 						],
-						"5": [
+						"s5": [
 							"flame strike"
 						]
 					}
@@ -860,29 +871,29 @@
 			"page": 139,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"1": [
-							"spare the dying"
+							"spare the dying#c"
 						]
 					},
 					"expanded": {
-						"1": [
+						"s1": [
 							"false life",
 							"ray of sickness"
 						],
-						"2": [
+						"s2": [
 							"blindness/deafness",
 							"silence"
 						],
-						"3": [
+						"s3": [
 							"feign death",
 							"speak with dead"
 						],
-						"4": [
+						"s4": [
 							"aura of life",
 							"death ward"
 						],
-						"5": [
+						"s5": [
 							"contagion",
 							"legend lore"
 						]
@@ -906,23 +917,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"feather fall",
 							"jump"
 						],
-						"2": [
+						"s2": [
 							"levitate",
 							"locate object"
 						],
-						"3": [
+						"s3": [
 							"clairvoyance",
 							"sending"
 						],
-						"4": [
+						"s4": [
 							"arcane eye",
 							"locate creature"
 						],
-						"5": [
+						"s5": [
 							"legend lore",
 							"passwall"
 						]
@@ -947,23 +958,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"shield",
 							"wrathful smite"
 						],
-						"2": [
+						"s2": [
 							"branding smite",
 							"magic weapon"
 						],
-						"3": [
+						"s3": [
 							"blink",
 							"elemental weapon"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"staggering smite"
 						],
-						"5": [
+						"s5": [
 							"cone of cold",
 							"destructive wave"
 						]
@@ -987,23 +998,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"false life",
 							"sanctuary"
 						],
-						"2": [
+						"s2": [
 							"silence",
 							"spiritual weapon"
 						],
-						"3": [
+						"s3": [
 							"feign death",
 							"speak with dead"
 						],
-						"4": [
+						"s4": [
 							"ice storm",
 							"locate creature"
 						],
-						"5": [
+						"s5": [
 							"commune",
 							"cone of cold"
 						]
@@ -1028,23 +1039,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"burning hands",
 							"cure wounds"
 						],
-						"2": [
+						"s2": [
 							"flaming sphere",
 							"lesser restoration"
 						],
-						"3": [
+						"s3": [
 							"daylight",
 							"revivify"
 						],
-						"4": [
+						"s4": [
 							"guardian of faith",
 							"wall of fire"
 						],
-						"5": [
+						"s5": [
 							"flame strike",
 							"greater restoration"
 						]
@@ -1067,30 +1078,30 @@
 			"page": 54,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"1": [
-							"sacred flame",
-							"light"
+							"sacred flame#c",
+							"light#c"
 						]
 					},
 					"expanded": {
-						"1": [
+						"s1": [
 							"cure wounds",
 							"guiding bolt"
 						],
-						"2": [
+						"s2": [
 							"flaming sphere",
 							"lesser restoration"
 						],
-						"3": [
+						"s3": [
 							"daylight",
 							"revivify"
 						],
-						"4": [
+						"s4": [
 							"guardian of faith",
 							"wall of fire"
 						],
-						"5": [
+						"s5": [
 							"flame strike",
 							"greater restoration"
 						]
@@ -1114,23 +1125,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"shield",
 							"wrathful smite"
 						],
-						"2": [
+						"s2": [
 							"blur",
 							"branding smite"
 						],
-						"3": [
+						"s3": [
 							"blink",
 							"elemental weapon"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"staggering smite"
 						],
-						"5": [
+						"s5": [
 							"banishing smite",
 							"cone of cold"
 						]
@@ -1155,23 +1166,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"create or destroy water",
 							"thunderwave"
 						],
-						"2": [
+						"s2": [
 							"gust of wind",
 							"silence"
 						],
-						"3": [
+						"s3": [
 							"lightning bolt",
 							"sleet storm"
 						],
-						"4": [
+						"s4": [
 							"control water",
 							"Evard's black tentacles"
 						],
-						"5": [
+						"s5": [
 							"commune with nature",
 							"cone of cold"
 						]
@@ -1197,23 +1208,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"fog cloud",
 							"sleep"
 						],
-						"2": [
+						"s2": [
 							"enlarge/reduce",
 							"phantasmal force"
 						],
-						"3": [
+						"s3": [
 							"create food and water",
 							"protection from energy"
 						],
-						"4": [
+						"s4": [
 							"polymorph",
 							"phantasmal killer"
 						],
-						"5": [
+						"s5": [
 							"Bigby's hand",
 							"creation"
 						]
@@ -1239,109 +1250,109 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"9": [
+							"wish"
+						],
+						"s1": [
 							"detect evil and good",
 							"sanctuary"
 						],
-						"2": [
+						"s2": [
 							"phantasmal force",
 							"spike growth"
 						],
-						"3": [
+						"s3": [
 							"create food and water",
 							"meld into stone"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"stone shape"
 						],
-						"5": [
+						"s5": [
 							"creation",
 							"wall of stone"
-						],
-						"9": [
-							"wish"
 						]
 					}
 				},
 				{
 					"expanded": {
-						"1": [
+						"9": [
+							"wish"
+						],
+						"s1": [
 							"detect evil and good",
 							"thunderwave"
 						],
-						"2": [
+						"s2": [
 							"phantasmal force",
 							"gust of wind"
 						],
-						"3": [
+						"s3": [
 							"create food and water",
 							"wind wall"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"greater invisibility"
 						],
-						"5": [
+						"s5": [
 							"creation",
 							"seeming"
-						],
-						"9": [
-							"wish"
 						]
 					}
 				},
 				{
 					"expanded": {
-						"1": [
+						"9": [
+							"wish"
+						],
+						"s1": [
 							"detect evil and good",
 							"burning hands"
 						],
-						"2": [
+						"s2": [
 							"phantasmal force",
 							"scorching ray"
 						],
-						"3": [
+						"s3": [
 							"create food and water",
 							"fireball"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"fire shield"
 						],
-						"5": [
+						"s5": [
 							"creation",
 							"flame strike"
-						],
-						"9": [
-							"wish"
 						]
 					}
 				},
 				{
 					"expanded": {
-						"1": [
+						"9": [
+							"wish"
+						],
+						"s1": [
 							"detect evil and good",
 							"fog cloud"
 						],
-						"2": [
+						"s2": [
 							"phantasmal force",
 							"blur"
 						],
-						"3": [
+						"s3": [
 							"create food and water",
 							"sleet storm"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"control water"
 						],
-						"5": [
+						"s5": [
 							"creation",
 							"cone of cold"
-						],
-						"9": [
-							"wish"
 						]
 					}
 				}
@@ -1364,23 +1375,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"bane",
 							"false life"
 						],
-						"2": [
+						"s2": [
 							"blindness/deafness",
 							"phantasmal force"
 						],
-						"3": [
+						"s3": [
 							"speak with dead",
 							"phantom steed"
 						],
-						"4": [
+						"s4": [
 							"death ward",
 							"greater invisibility"
 						],
-						"5": [
+						"s5": [
 							"antilife shell",
 							"cloudkill"
 						]
@@ -1404,23 +1415,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"create or destroy water",
 							"thunderwave"
 						],
-						"2": [
+						"s2": [
 							"gust of wind",
 							"silence"
 						],
-						"3": [
+						"s3": [
 							"lightning bolt",
 							"sleet storm"
 						],
-						"4": [
+						"s4": [
 							"control water",
 							"summon elemental|tce"
 						],
-						"5": [
+						"s5": [
 							"Bigby's hand",
 							"cone of cold"
 						]
@@ -1446,112 +1457,112 @@
 				{
 					"name": "Dao",
 					"expanded": {
-						"1": [
+						"9": [
+							"wish"
+						],
+						"s1": [
 							"detect evil and good",
 							"sanctuary"
 						],
-						"2": [
+						"s2": [
 							"phantasmal force",
 							"spike growth"
 						],
-						"3": [
+						"s3": [
 							"create food and water",
 							"meld into stone"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"stone shape"
 						],
-						"5": [
+						"s5": [
 							"creation",
 							"wall of stone"
-						],
-						"9": [
-							"wish"
 						]
 					}
 				},
 				{
 					"name": "Djinni",
 					"expanded": {
-						"1": [
+						"9": [
+							"wish"
+						],
+						"s1": [
 							"detect evil and good",
 							"thunderwave"
 						],
-						"2": [
+						"s2": [
 							"phantasmal force",
 							"gust of wind"
 						],
-						"3": [
+						"s3": [
 							"create food and water",
 							"wind wall"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"greater invisibility"
 						],
-						"5": [
+						"s5": [
 							"creation",
 							"seeming"
-						],
-						"9": [
-							"wish"
 						]
 					}
 				},
 				{
 					"name": "Efreeti",
 					"expanded": {
-						"1": [
+						"9": [
+							"wish"
+						],
+						"s1": [
 							"detect evil and good",
 							"burning hands"
 						],
-						"2": [
+						"s2": [
 							"phantasmal force",
 							"scorching ray"
 						],
-						"3": [
+						"s3": [
 							"create food and water",
 							"fireball"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"fire shield"
 						],
-						"5": [
+						"s5": [
 							"creation",
 							"flame strike"
-						],
-						"9": [
-							"wish"
 						]
 					}
 				},
 				{
 					"name": "Marid",
 					"expanded": {
-						"1": [
+						"9": [
+							"wish"
+						],
+						"s1": [
 							"detect evil and good",
 							"fog cloud"
 						],
-						"2": [
+						"s2": [
 							"phantasmal force",
 							"blur"
 						],
-						"3": [
+						"s3": [
 							"create food and water",
 							"sleet storm"
 						],
-						"4": [
+						"s4": [
 							"phantasmal killer",
 							"control water"
 						],
-						"5": [
+						"s5": [
 							"creation",
 							"cone of cold"
-						],
-						"9": [
-							"wish"
 						]
 					}
 				}
@@ -1573,23 +1584,23 @@
 			"additionalSpells": [
 				{
 					"expanded": {
-						"1": [
+						"s1": [
 							"bane",
 							"false life"
 						],
-						"2": [
+						"s2": [
 							"blindness/deafness",
 							"phantasmal force"
 						],
-						"3": [
+						"s3": [
 							"phantom steed",
 							"speak with dead"
 						],
-						"4": [
+						"s4": [
 							"death ward",
 							"greater invisibility"
 						],
-						"5": [
+						"s5": [
 							"antilife shell",
 							"cloudkill"
 						]
@@ -3286,7 +3297,7 @@
 					"items": [
 						"Your spirit and body gain resistance to bludgeoning, piercing, and slashing damage.",
 						"When you cast a spell of the conjuration or necromancy school, the spell doesn't require verbal, somatic, or material components that lack a gold cost.",
-						"You have a flying speed equal to your walking speed and can hover. You can move through creatures and objects as if they were difficult terrain, but you take {@damage 1d10} force damage if you end your turn inside a creature or an object.",
+						"You have a flying speed equal to your walking speed and can hover. You can move through creatures and objects as if they were {@quickref difficult terrain||3}, but you take {@damage 1d10} force damage if you end your turn inside a creature or an object.",
 						"While you are using your Form of Dread, once during each of your turns when you deal necrotic damage to a creature, you regain hit points equal to half the amount of necrotic damage dealt."
 					]
 				},
@@ -3483,12 +3494,12 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Bottled Respite.",
+							"name": "Bottled Respite",
 							"entry": "As an action, you can magically vanish and enter your vessel, which remains in the space you left. The interior of the vessel is an extradimensional space in the shape of a 20-foot-radius cylinder, 20 feet high, and resembles your vessel. The interior is comfortably appointed with cushions and low tables and is a comfortable temperature. While inside, you can hear the area around your vessel as if you were in its space. You can remain inside the vessel up to a number of hours equal to twice your proficiency bonus. You exit the vessel early if you use a bonus action to leave, if you die, or if the vessel is destroyed. When you exit the vessel, you appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel's former space. Once you enter the vessel, you can't enter again until you finish a long rest."
 						},
 						{
 							"type": "item",
-							"name": "Genie's Wrath.",
+							"name": "Genie's Wrath",
 							"entry": "Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your proficiency bonus. The type of this damage is determined by your patron: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid)."
 						}
 					]
@@ -4688,7 +4699,7 @@
 					"items": [
 						"Your spirit and body gain resistance to bludgeoning, piercing, and slashing damage.",
 						"When you cast a spell of the conjuration or necromancy school, the spell doesn't require verbal or somatic components or material components that lack a gold cost.",
-						"You have a flying speed equal to your walking speed and can hover. You can move through creatures and objects as if they were difficult terrain, but you take {@dice 1d10} force damage if you end your turn inside a creature or an object.",
+						"You have a flying speed equal to your walking speed and can hover. You can move through creatures and objects as if they were {@quickref difficult terrain||3}, but you take {@dice 1d10} force damage if you end your turn inside a creature or an object.",
 						"While you are using your Form of Dread, once during each of your turns when you deal necrotic damage to a creature, you regain hit points equal to half the amount of necrotic damage dealt."
 					]
 				},

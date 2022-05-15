@@ -3,14 +3,14 @@
 class ItemsPage extends ListPage {
 	constructor () {
 		super({
-			dataSource: Renderer.item.pBuildList({isAddGroups: true, isBlacklistVariants: true}),
+			dataSource: Renderer.item.pBuildList({isAddGroups: true}),
 
 			pageFilter: new PageFilterItems(),
 
 			sublistClass: "subitems",
 
 			dataProps: ["item"],
-		})
+		});
 
 		this._sublistCurrencyConversion = null;
 		this._sublistCurrencyDisplayMode = null;
@@ -26,7 +26,7 @@ class ItemsPage extends ListPage {
 	getListItem (item, itI, isExcluded) {
 		const hash = UrlUtil.autoEncodeHash(item);
 
-		if (ExcludeUtil.isExcluded(hash, "item", item.source)) return null;
+		if (Renderer.item.isExcluded(item, {hash})) return null;
 		if (item.noDisplay) return null;
 		Renderer.item.enhanceItem(item);
 
@@ -38,7 +38,7 @@ class ItemsPage extends ListPage {
 		if (item._fIsMundane) {
 			const eleLi = e_({
 				tag: "div",
-				clazz: `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
+				clazz: `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
 				click: (evt) => this._mundaneList.doSelect(listItem, evt),
 				contextmenu: (evt) => ListUtil.openContextMenu(evt, this._mundaneList, listItem),
 				children: [
@@ -54,7 +54,7 @@ class ItemsPage extends ListPage {
 							e_({
 								tag: "span",
 								clazz: `col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0`,
-								style: BrewUtil.sourceJsonToStylePart(item.source),
+								style: BrewUtil2.sourceJsonToStylePart(item.source),
 								title: `${Parser.sourceJsonToFull(item.source)}${Renderer.utils.getSourceSubText(item)}`,
 								text: source,
 							}),
@@ -75,7 +75,6 @@ class ItemsPage extends ListPage {
 					weight: Parser.weightValueToNumber(item.weight),
 				},
 				{
-					uniqueId: item.uniqueId ? item.uniqueId : itI,
 					isExcluded,
 				},
 			);
@@ -84,7 +83,7 @@ class ItemsPage extends ListPage {
 		} else {
 			const eleLi = e_({
 				tag: "div",
-				clazz: `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
+				clazz: `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`,
 				click: (evt) => this._magicList.doSelect(listItem, evt),
 				contextmenu: (evt) => ListUtil.openContextMenu(evt, this._magicList, listItem),
 				children: [
@@ -101,7 +100,7 @@ class ItemsPage extends ListPage {
 							e_({
 								tag: "span",
 								clazz: `col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0`,
-								style: BrewUtil.sourceJsonToStylePart(item.source),
+								style: BrewUtil2.sourceJsonToStylePart(item.source),
 								title: `${Parser.sourceJsonToFull(item.source)}${Renderer.utils.getSourceSubText(item)}`,
 								text: source,
 							}),
@@ -122,7 +121,6 @@ class ItemsPage extends ListPage {
 					attunement: item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT,
 					weight: Parser.weightValueToNumber(item.weight),
 				},
-				{uniqueId: item.uniqueId ? item.uniqueId : itI},
 			);
 
 			return {magic: listItem};
@@ -131,21 +129,20 @@ class ItemsPage extends ListPage {
 
 	handleFilterChange () {
 		const f = this._pageFilter.filterBox.getValues();
-		function listFilter (li) {
+		const listFilter = li => {
 			const it = this._dataList[li.ix];
 			return this._pageFilter.toDisplay(f, it);
-		}
-		this._mundaneList.filter(listFilter.bind(this));
-		this._magicList.filter(listFilter.bind(this));
+		};
+		this._mundaneList.filter(listFilter);
+		this._magicList.filter(listFilter);
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (item, pinId, addCount) {
+	pGetSublistItem (item, ix, {count = 1} = {}) {
 		const hash = UrlUtil.autoEncodeHash(item);
-		const count = addCount || 1;
 
 		const $dispCount = $(`<span class="text-center col-2 pr-0">${count}</span>`);
-		const $ele = $$`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $$`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-6 pl-0">${item.name}</span>
 				<span class="text-center col-2">${item.weight ? `${item.weight} lb${item.weight > 1 ? "s" : ""}.` : "\u2014"}</span>
@@ -157,7 +154,7 @@ class ItemsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			item.name,
 			{
@@ -165,9 +162,9 @@ class ItemsPage extends ListPage {
 				source: Parser.sourceJsonToAbv(item.source),
 				weight: Parser.weightValueToNumber(item.weight),
 				cost: item.value || 0,
-				count,
 			},
 			{
+				count,
 				$elesCount: [$dispCount],
 			},
 		);
@@ -176,21 +173,21 @@ class ItemsPage extends ListPage {
 
 	doLoadHash (id) {
 		Renderer.get().setFirstSection(true);
-		const $content = $(`#pagecontent`).empty();
+		this._$pgContent.empty();
 		const item = this._dataList[id];
 
-		function buildStatsTab () {
-			$content.append(RenderItems.$getRenderedItem(item));
-		}
+		const buildStatsTab = () => {
+			this._$pgContent.append(RenderItems.$getRenderedItem(item));
+		};
 
-		function buildFluffTab (isImageTab) {
+		const buildFluffTab = (isImageTab) => {
 			return Renderer.utils.pBuildFluffTab({
 				isImageTab,
-				$content,
+				$content: this._$pgContent,
 				entity: item,
 				pFnGetFluff: Renderer.item.pGetFluff,
 			});
-		}
+		};
 
 		const tabMetas = [
 			new Renderer.utils.TabButton({
@@ -218,11 +215,6 @@ class ItemsPage extends ListPage {
 		ListUtil.updateSelected();
 	}
 
-	async pDoLoadSubHash (sub) {
-		sub = this._pageFilter.filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
-	}
-
 	onSublistChange () {
 		this._$totalwWeight = this._$totalWeight || $(`#totalweight`);
 		this._$totalValue = this._$totalValue || $(`#totalvalue`);
@@ -236,8 +228,8 @@ class ItemsPage extends ListPage {
 		ListUtil.sublist.items.forEach(it => {
 			const item = this._dataList[it.ix];
 			if (item.currencyConversion) availConversions.add(item.currencyConversion);
-			const count = it.values.count;
-			cntItems += it.values.count;
+			const count = it.data.count;
+			cntItems += it.data.count;
 			if (item.weight) weight += Number(item.weight) * count;
 			if (item.value) value += item.value * count;
 		});
@@ -270,7 +262,7 @@ class ItemsPage extends ListPage {
 				switch (this._sublistCurrencyDisplayMode) {
 					case modes[1]: return Parser.itemValueToFull({value});
 					case modes[2]: {
-						return value ? `${Parser.DEFAULT_CURRENCY_CONVERSION_TABLE.find(it => it.coin === "gp").mult * value} gp` : "";
+						return value ? `${Number((Parser.DEFAULT_CURRENCY_CONVERSION_TABLE.find(it => it.coin === "gp").mult * value).toFixed(2))} gp` : "";
 					}
 					default:
 					case modes[0]: {
@@ -303,18 +295,20 @@ class ItemsPage extends ListPage {
 	}
 
 	async pOnLoad () {
+		this._$pgContent = $(`#pagecontent`);
+
 		window.loadHash = this.doLoadHash.bind(this);
 		window.loadSubHash = this.pDoLoadSubHash.bind(this);
 
 		[this._sublistCurrencyConversion, this._sublistCurrencyDisplayMode] = await Promise.all([StorageUtil.pGetForPage("sublistCurrencyConversion"), StorageUtil.pGetForPage("sublistCurrencyDisplayMode")]);
 		await ExcludeUtil.pInitialise();
-		await this._pageFilter.pInitFilterBox({
+		this._filterBox = await this._pageFilter.pInitFilterBox({
 			$iptSearch: $(`#lst__search`),
 			$wrpFormTop: $(`#filter-search-group`),
 			$btnReset: $(`#reset`),
 		});
 
-		return this._pPopulateTablesAndFilters({item: await Renderer.item.pBuildList({isAddGroups: true, isBlacklistVariants: true})});
+		return this._pPopulateTablesAndFilters({item: await Renderer.item.pBuildList({isAddGroups: true})});
 	}
 
 	async _pPopulateTablesAndFilters (data) {
@@ -349,9 +343,9 @@ class ItemsPage extends ListPage {
 		const $outVisibleResults = $(`.lst__wrp-search-visible`);
 		const $wrpListMundane = $(`.itm__wrp-list--mundane`);
 		const $wrpListMagic = $(`.itm__wrp-list--magic`);
+		const $elesMundane = $(`.ele-mundane`);
+		const $elesMagic = $(`.ele-magic`);
 		this._mundaneList.on("updated", () => {
-			const $elesMundane = $(`.ele-mundane`);
-
 			// Force-show the mundane list if there are no items on display
 			if (this._magicList.visibleItems.length) $elesMundane.toggleVe(!!this._mundaneList.visibleItems.length);
 			else $elesMundane.showVe();
@@ -365,9 +359,6 @@ class ItemsPage extends ListPage {
 			$wrpListMundane.toggleClass(`itm__wrp-list--empty`, this._mundaneList.visibleItems.length === 0);
 		});
 		this._magicList.on("updated", () => {
-			const $elesMundane = $(`.ele-mundane`);
-			const $elesMagic = $(`.ele-magic`);
-
 			$elesMagic.toggleVe(!!this._magicList.visibleItems.length);
 			// Force-show the mundane list if there are no items on display
 			if (!this._magicList.visibleItems.length) $elesMundane.showVe();
@@ -394,20 +385,20 @@ class ItemsPage extends ListPage {
 		this._listSub = ListUtil.initSublist({
 			listClass: "subitems",
 			fnSort: PageFilterItems.sortItems,
-			getSublistRow: this.getSublistItem.bind(this),
+			pGetSublistRow: this.pGetSublistItem.bind(this),
 			onUpdate: this.onSublistChange.bind(this),
 		});
 		SortUtil.initBtnSortHandlers($("#sublistsort"), this._listSub);
 		ListUtil.initGenericAddable();
 
 		this._addItems(data);
-		BrewUtil.pAddBrewData()
+		BrewUtil2.pGetBrewProcessed()
 			.then(this._pHandleBrew.bind(this))
-			.then(() => BrewUtil.bind({lists: [this._mundaneList, this._magicList], pHandleBrew: this._pHandleBrew.bind(this)}))
-			.then(() => BrewUtil.pAddLocalBrewData())
 			.then(async () => {
-				BrewUtil.makeBrewButton("manage-brew");
-				BrewUtil.bind({lists: [this._mundaneList, this._magicList], filterBox: this._pageFilter.filterBox, sourceFilter: this._pageFilter.sourceFilter});
+				this._pageFilter.trimState();
+
+				ManageBrewUi.bindBtnOpen($(`#manage-brew`));
+
 				await ListUtil.pLoadState();
 				RollerUtil.addListRollButton();
 				ListUtil.addListShowHide();
@@ -417,9 +408,9 @@ class ItemsPage extends ListPage {
 					"Items",
 					this._dataList,
 					{
-						name: {name: "Name", transform: true},
-						source: {name: "Source", transform: (it) => `<span class="${Parser.sourceJsonToColor(it)}" title="${Parser.sourceJsonToFull(it)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${Parser.sourceJsonToAbv(it)}</span>`},
-						rarity: {name: "Rarity", transform: true},
+						name: UtilsTableview.COL_TRANSFORM_NAME,
+						source: UtilsTableview.COL_TRANSFORM_SOURCE,
+						rarity: {name: "Rarity"},
 						_type: {name: "Type", transform: it => [it._typeHtml || "", it._subTypeHtml || ""].filter(Boolean).join(", ")},
 						_attunement: {name: "Attunement", transform: it => it._attunement ? it._attunement.slice(1, it._attunement.length - 1) : ""},
 						_properties: {name: "Properties", transform: it => Renderer.item.getDamageAndPropertiesText(it).filter(Boolean).join(", ")},
@@ -436,7 +427,7 @@ class ItemsPage extends ListPage {
 				this._listSub.init();
 
 				Hist.init(true);
-				ExcludeUtil.checkShowAllExcluded(this._dataList, $(`#pagecontent`));
+				ListPage._checkShowAllExcluded(this._dataList, this._$pgContent);
 
 				window.dispatchEvent(new Event("toolsLoaded"));
 			});
@@ -472,7 +463,7 @@ class ItemsPage extends ListPage {
 
 		ListUtil.setOptions({
 			itemList: this._dataList,
-			getSublistRow: this.getSublistItem.bind(this),
+			pGetSublistRow: this.pGetSublistItem.bind(this),
 			primaryLists: [this._mundaneList, this._magicList],
 		});
 		ListUtil.bindAddButton();

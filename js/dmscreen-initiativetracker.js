@@ -24,7 +24,6 @@ class InitiativeTracker {
 			playerInitShowExactMonsterHp: _propDefaultFalse(state.piHm),
 			playerInitHideNewMonster: _propDefaultTrue(state.piV),
 			playerInitShowOrdinals: _propDefaultFalse(state.piO),
-			playerInitShortTokens: _propDefaultTrue(state.piS),
 			statsCols: state.c || [],
 		};
 
@@ -42,15 +41,35 @@ class InitiativeTracker {
 		board.$creen.on(`panelResize.${evtId}`, handleResize);
 		$wrpTracker.on("destroyed", () => board.$creen.off(`panelResize.${evtId}`));
 
-		let srvPeer = null;
-		const p2pMeta = {rows: [], serverInfo: null};
+		const p2pMetaV1 = {rows: [], serverInfo: null, serverPeer: null};
+		const p2pMetaV0 = {rows: [], serverInfo: null};
 		const _sendStateToClients = () => {
-			if (srvPeer) {
-				if (!srvPeer.hasConnections()) return;
+			// region V1
+			if (p2pMetaV1.serverPeer) {
+				if (!p2pMetaV1.serverPeer.hasConnections()) return;
 
 				const toSend = getPlayerFriendlyState();
-				srvPeer.sendMessage(toSend);
+				p2pMetaV1.serverPeer.sendMessage(toSend);
 			}
+			// endregion
+
+			// region V0
+			if (p2pMetaV0.serverInfo) {
+				p2pMetaV0.rows = p2pMetaV0.rows.filter(r => !r.isDeleted);
+				p2pMetaV0.serverInfo = p2pMetaV0.serverInfo.filter(r => {
+					if (r.isDeleted) {
+						r.server.close();
+						return false;
+					}
+					return true;
+				});
+
+				const toSend = getPlayerFriendlyState();
+				try {
+					p2pMetaV0.serverInfo.filter(info => info.server.isActive).forEach(info => info.server.sendMessage(toSend));
+				} catch (e) { setTimeout(() => { throw e; }); }
+			}
+			// endregion
 		};
 		const sendStateToClientsDebounced = MiscUtil.debounce(_sendStateToClients, 100); // long delay to avoid network spam
 
@@ -100,7 +119,10 @@ class InitiativeTracker {
 			new ContextUtil.Action(
 				"From Bestiary Encounter File",
 				async () => {
-					const jsons = await DataUtil.pUserUpload();
+					const {jsons, errors} = await DataUtil.pUserUpload();
+
+					DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
 					if (jsons?.length) await pConvertAndLoadBestiaryList(jsons[0]);
 				},
 			),
@@ -111,7 +133,7 @@ class InitiativeTracker {
 					makeImportSettingsModal();
 				},
 			),
-		])
+		]);
 
 		const $wrpTop = $(`<div class="dm-init-wrp-header-outer"/>`).appendTo($wrpTracker);
 		const $wrpHeader = $(`
@@ -134,18 +156,21 @@ class InitiativeTracker {
 
 		const $wrpControls = $(`<div class="dm-init-wrp-controls"/>`).appendTo($wrpTracker);
 
-		const $wrpAddNext = $(`<div class="flex"/>`).appendTo($wrpControls);
-		const $wrpAdd = $(`<div class="btn-group flex"/>`).appendTo($wrpAddNext);
+		const $wrpAddNext = $(`<div class="ve-flex"/>`).appendTo($wrpControls);
+		const $wrpAdd = $(`<div class="btn-group ve-flex"/>`).appendTo($wrpAddNext);
 		const $btnAdd = $(`<button class="btn btn-primary btn-xs dm-init-lockable" title="Add Player"><span class="glyphicon glyphicon-plus"/></button>`).appendTo($wrpAdd);
 		const $btnAddMonster = $(`<button class="btn btn-success btn-xs dm-init-lockable mr-2" title="Add Monster"><span class="glyphicon glyphicon-print"/></button>`).appendTo($wrpAdd);
-		$(`<button class="btn btn-default btn-xs mr-2" title="Next Turn"><span class="glyphicon glyphicon-step-forward"/></button>`).appendTo($wrpAddNext)
+		const $btnSetPrevActive = $(`<button class="btn btn-default btn-xs" title="Previous Turn"><span class="glyphicon glyphicon-step-backward"/></button>`)
+			.click(() => setPrevActive());
+		const $btnSetNextActive = $(`<button class="btn btn-default btn-xs mr-2" title="Next Turn"><span class="glyphicon glyphicon-step-forward"/></button>`)
 			.click(() => setNextActive());
+		$$`<div class="btn-group">${$btnSetPrevActive}${$btnSetNextActive}</div>`.appendTo($wrpAddNext);
 		const $iptRound = $(`<input class="form-control ipt-sm dm_init__rounds" type="number" min="1" title="Round">`)
 			.val(state.n || 1)
 			.change(() => doUpdateExternalStates())
 			.appendTo($wrpAddNext);
 
-		const $wrpSort = $(`<div class="btn-group flex"/>`).appendTo($wrpControls);
+		const $wrpSort = $(`<div class="btn-group ve-flex"/>`).appendTo($wrpControls);
 		$(`<button title="Sort Alphabetically" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-sort-by-alphabet"/></button>`).appendTo($wrpSort)
 			.click(() => {
 				if (cfg.sort === ALPHA) flipDir();
@@ -159,149 +184,60 @@ class InitiativeTracker {
 				doSort(NUM);
 			});
 
-		/**
-		 * @param [opts]
-		 * @param [opts.$btnStartServer]
-		 * @param [opts.$btnGetToken]
-		 * @param [opts.fnDispServerStoppedState]
-		 * @param [opts.fnDispServerRunningState]
-		 */
-		const startServer = async (opts) => {
-			opts = opts || {};
+		const $wrpUtils = $(`<div class="ve-flex"/>`).appendTo($wrpControls);
 
-			if (srvPeer) {
-				await srvPeer.pInit();
-				return true;
-			}
+		const menuPlayerWindow = ContextUtil.getMenu([
+			new ContextUtil.Action(
+				"Standard",
+				async () => {
+					this._handleClick_playerWindowV1({board, cfg, p2pMetaV1, doUpdateExternalStates});
+				},
+			),
+			new ContextUtil.Action(
+				"Manual (Legacy)",
+				async () => {
+					this._handleClick_playerWindowV0({board, cfg, p2pMetaV0, doUpdateExternalStates});
+				},
+			),
+		]);
 
-			try {
-				if (opts.$btnStartServer) opts.$btnStartServer.prop("disabled", true);
-				srvPeer = new PeerVeServer();
-				await srvPeer.pInit();
-				if (opts.$btnGetToken) opts.$btnGetToken.prop("disabled", false);
+		$(`<button class="btn btn-primary btn-xs mr-2" title="Player View"><span class="glyphicon glyphicon-user"/></button>`)
+			.click(evt => {
+				ContextUtil.pOpenMenu(evt, menuPlayerWindow);
+			})
+			.appendTo($wrpUtils);
 
-				srvPeer.on("connection", connection => {
-					const pConnected = new Promise(resolve => {
-						connection.on("open", () => {
-							resolve(true);
-							doUpdateExternalStates();
-						});
-					});
-					const pTimeout = MiscUtil.pDelay(5 * 1000, false);
-					Promise.race([pConnected, pTimeout])
-						.then(didConnect => {
-							if (!didConnect) {
-								JqueryUtil.doToast({content: `Connecting to "${connection.label.escapeQuotes()}" has taken more than 5 seconds! The connection may need to be re-attempted.`, type: "warning"})
-							}
-						});
-				});
-
-				$(window).on("beforeunload", evt => {
-					const message = `The connection will be closed`;
-					(evt || window.event).message = message;
-					return message;
-				});
-
-				if (opts.fnDispServerRunningState) opts.fnDispServerRunningState();
-
-				return true;
-			} catch (e) {
-				if (opts.fnDispServerStoppedState) opts.fnDispServerStoppedState();
-				if (opts.$btnStartServer) opts.$btnStartServer.prop("disabled", false);
-				srvPeer = null;
-				JqueryUtil.doToast({content: `Failed to start server! ${VeCt.STR_SEE_CONSOLE}`, type: "danger"});
-				setTimeout(() => { throw e; });
-			}
-
-			return false;
-		};
-
-		const $wrpUtils = $(`<div class="flex"/>`).appendTo($wrpControls);
-		$(`<button class="btn btn-primary btn-xs mr-2" title="Player Window"><span class="glyphicon glyphicon-user"/></button>`)
-			.appendTo($wrpUtils)
-			.click(() => {
-				const {$modalInner} = UiUtil.getShowModal({
-					title: "Configure Player View",
-					isUncappedHeight: true,
-					isHeight100: true,
-					cbClose: () => {
-						if (p2pMeta.rows.length) p2pMeta.rows.forEach(row => row.$row.detach());
-						if (srvPeer) srvPeer.offTemp("connection")
-					},
-				});
-
-				const $wrpHelp = UiUtil.$getAddModalRow($modalInner, "div");
-
-				const fnDispServerStoppedState = () => {
-					$btnStartServer.html(`<span class="glyphicon glyphicon-play"/> Start Server`).prop("disabled", false);
-					$btnGetToken.prop("disabled", true);
-				};
-
-				const fnDispServerRunningState = () => {
-					$btnStartServer.html(`<span class="glyphicon glyphicon-play"/> Server Running`).prop("disabled", true);
-					$btnGetToken.prop("disabled", false);
-				};
-
-				const $btnStartServer = $(`<button class="btn btn-default mr-2"></button>`)
-					.click(async () => {
-						const isRunning = await startServer({$btnStartServer, $btnGetToken, fnDispServerStoppedState, fnDispServerRunningState});
-						if (isRunning) {
-							srvPeer.onTemp("connection", showConnected);
-							showConnected();
-						}
-					});
-
-				const $btnGetToken = $(`<button class="btn btn-default" disabled><span class="glyphicon glyphicon-copy"/> Copy Token</button>`).appendTo($wrpHelp)
-					.click(() => {
-						MiscUtil.pCopyTextToClipboard(srvPeer.token);
-						JqueryUtil.showCopiedEffect($btnGetToken);
-					});
-
-				if (srvPeer) fnDispServerRunningState();
-				else fnDispServerStoppedState();
-
-				$$`<div class="row w-100">
-					<div class="col-12">
-						<p>
-						The Player View is part of a peer-to-peer system to allow players to connect to a DM's initiative tracker. Players should use the <a href="inittrackerplayerview.html">Initiative Tracker Player View</a> page to connect to the DM's instance. As a DM, the usage is as follows:
-						<ol>
-							<li>Start the server.</li>
-							<li>Copy your token and share it with your players.</li>
-							<li>Wait for them to connect!</li>
-						</ol>
-						</p>
-						<p>${$btnStartServer}${$btnGetToken}</p>
-						<p><i>Please note that this system is highly experimental. Your experience may vary.</i></p>
-					</div>
-				</div>`.appendTo($wrpHelp);
-
-				UiUtil.addModalSep($modalInner);
-
-				const $wrpConnected = UiUtil.$getAddModalRow($modalInner, "div").addClass("flx-col");
-
-				const showConnected = () => {
-					if (!srvPeer) return $wrpConnected.html(`<div class="w-100 flex-vh-center"><i>No clients connected.</i></div>`);
-
-					let stack = `<div class="w-100"><h5>Connected Clients:</h5><ul>`;
-					srvPeer.getActiveConnections()
-						.map(it => it.label || "(Unknown)")
-						.sort(SortUtil.ascSortLower)
-						.forEach(it => stack += `<li>${it.escapeQuotes()}</li>`);
-					stack += "</ul></div>";
-					$wrpConnected.html(stack);
-				};
-
-				if (srvPeer) srvPeer.onTemp("connection", showConnected);
-
-				showConnected();
-			});
-
-		$wrpTracker.data("pDoConnectLocal", async () => {
-			await startServer();
-			return srvPeer.token;
+		$wrpTracker.data("pDoConnectLocalV1", async () => {
+			await this._startServerV1({p2pMetaV1, doUpdateExternalStates});
+			return p2pMetaV1.serverPeer.token;
 		});
 
-		const $wrpLockSettings = $(`<div class="btn-group flex"/>`).appendTo($wrpUtils);
+		$wrpTracker.data("pDoConnectLocalV0", async (clientView) => {
+			// generate a stub/fake row meta
+			const rowMeta = {
+				id: CryptUtil.uid(),
+				$row: $(),
+				$iptName: $(`<input value="local">`),
+				$iptTokenServer: $(),
+				$btnGenServerToken: $(),
+				$iptTokenClient: $(),
+				$btnAcceptClientToken: $(),
+			};
+
+			p2pMetaV0.rows.push(rowMeta);
+
+			const serverTokens = await this._playerWindowV0_pGetServerTokens({cfg, p2pMetaV0, rowMetas: [rowMeta]});
+			const clientData = await PeerUtilV0.pInitialiseClient(
+				serverTokens[0],
+				msg => clientView.handleMessage(msg),
+				() => {}, // ignore local errors
+			);
+			clientView.clientData = clientData;
+			await PeerUtilV0.pConnectClientsToServers([rowMeta.serverInfo], clientData.textifiedSdp);
+			sendStateToClientsDebounced();
+		});
+
+		const $wrpLockSettings = $(`<div class="btn-group ve-flex"/>`).appendTo($wrpUtils);
 		const $btnLock = $(`<button class="btn btn-danger btn-xs" title="Lock Tracker"><span class="glyphicon glyphicon-lock"></span></button>`).appendTo($wrpLockSettings);
 		$btnLock.on("click", () => {
 			if (cfg.isLocked) {
@@ -335,7 +271,6 @@ class InitiativeTracker {
 				UiUtil.$getAddModalRowCb($modalInner, "Player View: Show exact monster HP", cfg, "playerInitShowExactMonsterHp");
 				UiUtil.$getAddModalRowCb($modalInner, "Player View: Auto-hide new monsters", cfg, "playerInitHideNewMonster");
 				UiUtil.$getAddModalRowCb($modalInner, "Player View: Show ordinals", cfg, "playerInitShowOrdinals", "For example, if you add two Goblins, one will be Goblin (1) and the other Goblin (2), rather than having identical names.");
-				UiUtil.$getAddModalRowCb($modalInner, "Player View: Shorten server tokens", cfg, "playerInitShortTokens", "Server tokens will be roughly half as many characters, but will contain non-standard characters.");
 				UiUtil.addModalSep($modalInner);
 
 				const $cbStats = UiUtil.$getAddModalRowCb($modalInner, "Additional Columns", cfg, "statsAddColumns");
@@ -490,7 +425,7 @@ class InitiativeTracker {
 			if (cfg.isLocked) return;
 			await pMakeRow({isVisible: true});
 			doSort(cfg.sort);
-			checkSetFirstActive();
+			checkSetFirstActive({isSkipUpdateRound: true});
 		});
 
 		$btnAddMonster.on("click", () => {
@@ -525,7 +460,7 @@ class InitiativeTracker {
 				return Number(val);
 			};
 
-			const $wrpCbRoll = $(`<label class="ui-search__ipt-search-sub-wrp flex-vh-center"> <span>Roll HP</span></label>`).appendTo($controls);
+			const $wrpCbRoll = $(`<label class="ui-search__ipt-search-sub-wrp ve-flex-vh-center"> <span>Roll HP</span></label>`).appendTo($controls);
 			const $cbRoll = $(`<input class="mr-1" type="checkbox">`).prop("checked", cfg.isRollHp).on("change", () => cfg.isRollHp = $cbRoll.prop("checked")).prependTo($wrpCbRoll);
 			const $results = $(`<div class="ui-search__wrp-results"/>`).appendTo($modalInner);
 
@@ -583,7 +518,7 @@ class InitiativeTracker {
 							}
 						}
 						doSort(cfg.sort);
-						checkSetFirstActive();
+						checkSetFirstActive({isSkipUpdateRound: true});
 						doUpdateExternalStates();
 						doClose();
 					};
@@ -654,6 +589,7 @@ class InitiativeTracker {
 					d: $iptDisplayName.val(),
 					scr: $row.find(`input.scaledCr`).val() || "",
 					ssp: $row.find(`input.scaledSummonSpellLevel`).val() || "",
+					scl: $row.find(`input.scaledSummonClassLevel`).val() || "",
 				} : $row.find(`input.name`).val();
 				const out = {
 					n,
@@ -682,7 +618,6 @@ class InitiativeTracker {
 				piHm: cfg.playerInitShowExactMonsterHp,
 				piV: cfg.playerInitHideNewMonster,
 				piO: cfg.playerInitShowOrdinals,
-				piS: cfg.playerInitShortTokens,
 				c: cfg.statsCols.filter(it => !it.isDeleted),
 				n: $iptRound.val(),
 			};
@@ -744,25 +679,31 @@ class InitiativeTracker {
 		$wrpTracker.data("getSummary", () => {
 			const nameList = $wrpEntries.find(`.dm-init-row`).map((i, e) => $(e).find(`input.name`).val()).get();
 			const nameListFilt = nameList.filter(it => it.trim());
-			return `${nameList.length} creature${nameList.length === 1 ? "" : "s"} ${nameListFilt.length ? `(${nameListFilt.slice(0, 3).join(", ")}${nameListFilt.length > 3 ? "..." : ""})` : ""}`
+			return `${nameList.length} creature${nameList.length === 1 ? "" : "s"} ${nameListFilt.length ? `(${nameListFilt.slice(0, 3).join(", ")}${nameListFilt.length > 3 ? "..." : ""})` : ""}`;
 		});
 
-		function setNextActive () {
+		function shiftActiveRow (direction) {
 			const $rows = $wrpEntries.find(`.dm-init-row`);
 
-			const $rowsActive = $rows.filter(`.dm-init-row-active`).each((i, e) => {
-				const $e = $(e);
+			const $rowsActive = $rows.filter(`.dm-init-row-active`);
 
-				// tick down any conditions
-				const $conds = $e.find(`.init__cond`);
-				if ($conds.length) $conds.each((i, e) => $(e).data("doTickDown")());
+			(~direction ? $rowsActive.get() : $rowsActive.get().reverse())
+				.forEach(e => {
+					const $e = $(e);
 
-				$e.removeClass(`dm-init-row-active`);
-			});
+					if (~direction) {
+						// tick down any conditions
+						const $conds = $e.find(`.init__cond`);
+						if ($conds.length) $conds.each((i, e) => $(e).data("doTickDown")());
+					}
 
-			let ix = $rows.index($rowsActive.get($rowsActive.length - 1)) + 1;
+					$e.removeClass(`dm-init-row-active`);
+				});
 
-			const nxt = $rows.get(ix++);
+			let ix = $rows.index($rowsActive.get(~direction ? $rowsActive.length - 1 : 0)) + direction;
+
+			const nxt = $rows.get(ix);
+			ix += direction;
 			if (nxt) {
 				const $nxt = $(nxt);
 				let $curr = $nxt;
@@ -771,7 +712,8 @@ class InitiativeTracker {
 					if ($curr.find(`input.name`).val() === $nxt.find(`input.name`).val()
 						&& $curr.find(`input.score`).val() === $nxt.find(`input.score`).val()) {
 						handleTurnStart($curr);
-						const curr = $rows.get(ix++);
+						const curr = $rows.get(ix);
+						ix += direction;
 						if (curr) $curr = $(curr);
 						else $curr = null;
 					} else break;
@@ -779,6 +721,9 @@ class InitiativeTracker {
 			} else checkSetFirstActive();
 			doUpdateExternalStates();
 		}
+
+		function setNextActive () { shiftActiveRow(1); }
+		function setPrevActive () { shiftActiveRow(-1); }
 
 		function handleTurnStart ($row) {
 			$row.addClass(`dm-init-row-active`);
@@ -829,14 +774,16 @@ class InitiativeTracker {
 				nameOrMeta.displayName = nameOrMeta.displayName || nameOrMeta.d;
 				nameOrMeta.scaledToCr = nameOrMeta.scaledToCr || (nameOrMeta.scr ? Number(nameOrMeta.scr) : null);
 				nameOrMeta.scaledToSummonSpellLevel = nameOrMeta.scaledToSummonSpellLevel || (nameOrMeta.ssp ? Number(nameOrMeta.ssp) : null);
+				nameOrMeta.scaledToSummonClassLevel = nameOrMeta.scaledToSummonClassLevel || (nameOrMeta.scl ? Number(nameOrMeta.scl) : null);
 			}
 			const displayName = nameOrMeta instanceof Object ? nameOrMeta.displayName : null;
 			const name = nameOrMeta instanceof Object ? nameOrMeta.name : nameOrMeta;
 
-			const $wrpRow = $(`<div class="dm-init-row ${isActive ? "dm-init-row-active" : ""}"/>`);
+			const $wrpRow = $(`<div class="dm-init-row ${isActive ? "dm-init-row-active" : ""} overflow-hidden"/>`);
 
 			const $wrpLhs = $(`<div class="dm-init-row-lhs"/>`).appendTo($wrpRow);
 			const $iptName = $(`<input class="form-control input-sm name dm-init-name dm-init-lockable dm-init-row-input ${isMon ? "hidden" : ""}" placeholder="Name">`)
+				.disableSpellcheck()
 				.val(name)
 				.appendTo($wrpLhs);
 			$iptName.on("change", () => {
@@ -859,9 +806,9 @@ class InitiativeTracker {
 				}
 
 				const getLink = () => {
-					if (typeof nameOrMeta === "string" || (nameOrMeta.scaledToCr == null && nameOrMeta.scaledToSummonSpellLevel == null)) return Renderer.get().render(`{@creature ${name}|${source}}`);
+					if (typeof nameOrMeta === "string" || (nameOrMeta.scaledToCr == null && nameOrMeta.scaledToSummonSpellLevel == null && nameOrMeta.scaledToSummonClassLevel == null)) return Renderer.get().render(`{@creature ${name}|${source}}`);
 					else {
-						const parts = [name, source, displayName, nameOrMeta.scaledToCr != null ? `${VeCt.HASH_SCALED}=${Parser.numberToCr(nameOrMeta.scaledToCr)}` : `${VeCt.HASH_SCALED_SUMMON}=${nameOrMeta.scaledToSummonSpellLevel}`];
+						const parts = [name, source, displayName, nameOrMeta.scaledToCr != null ? `${VeCt.HASH_SCALED}=${Parser.numberToCr(nameOrMeta.scaledToCr)}` : nameOrMeta.scaledToSummonSpellLevel != null ? `${VeCt.HASH_SCALED_SPELL_SUMMON}=${nameOrMeta.scaledToSummonSpellLevel}` : nameOrMeta.scaledToSummonClassLevel != null ? `${VeCt.HASH_SCALED_CLASS_SUMMON}=${nameOrMeta.scaledToSummonClassLevel}` : null];
 						return Renderer.get().render(`{@creature ${parts.join("|")}}`);
 					}
 				};
@@ -908,10 +855,11 @@ class InitiativeTracker {
 
 				$(`<input class="source hidden" value="${source}">`).appendTo($wrpLhs);
 
-				if (nameOrMeta instanceof Object && (nameOrMeta.scaledToCr != null || nameOrMeta.scaledToSummonSpellLevel != null)) {
+				if (nameOrMeta instanceof Object && (nameOrMeta.scaledToCr != null || nameOrMeta.scaledToSummonSpellLevel != null || nameOrMeta.scaledToSummonClassLevel != null)) {
 					$(`<input class="displayName hidden" value="${displayName}">`).appendTo($wrpLhs);
 					if (nameOrMeta.scaledToCr != null) $(`<input class="scaledCr hidden" value="${nameOrMeta.scaledToCr}">`).appendTo($wrpLhs);
 					if (nameOrMeta.scaledToSummonSpellLevel != null) $(`<input class="scaledSummonSpellLevel hidden" value="${nameOrMeta.scaledToSummonSpellLevel}">`).appendTo($wrpLhs);
+					if (nameOrMeta.scaledToSummonClassLevel != null) $(`<input class="scaledSummonClassLevel hidden" value="${nameOrMeta.scaledToSummonClassLevel}">`).appendTo($wrpLhs);
 				}
 			}
 
@@ -936,7 +884,7 @@ class InitiativeTracker {
 
 					const conds = InitiativeTrackerUtil.CONDITIONS;
 					for (let i = 0; i < conds.length; i += 3) {
-						const $row = $(`<div class="row mb-2"/>`).appendTo($wrpRows);
+						const $row = $(`<div class="ve-flex-v-center mb-2"/>`).appendTo($wrpRows);
 						const populateCol = (cond) => {
 							const $col = $(`<div class="col-4 text-center"/>`).appendTo($row);
 							if (cond) {
@@ -951,13 +899,13 @@ class InitiativeTracker {
 
 					$wrpRows.append(`<hr>`);
 
-					$(`<div class="row mb-2">
-						<div class="col-5">Name (optional)</div>
+					$(`<div class="ve-flex-v-center mb-2">
+						<div class="col-5 pr-2">Name (optional)</div>
 						<div class="col-2 text-center">Color</div>
-						<div class="col-5">Duration (optional)</div>
+						<div class="col-5 pl-2">Duration (optional)</div>
 					</div>`).appendTo($wrpRows);
-					const $controls = $(`<div class="row mb-2"/>`).appendTo($wrpRows);
-					const [$wrpName, $wrpColor, $wrpTurns] = [...new Array(3)].map((it, i) => $(`<div class="col-${i === 1 ? 2 : 5} text-center"/>`).appendTo($controls));
+					const $controls = $(`<div class="ve-flex-v-center mb-2"/>`).appendTo($wrpRows);
+					const [$wrpName, $wrpColor, $wrpTurns] = ["pr-2", "", "pl-2"].map(it => $(`<div class="col-${it ? 5 : 2} ${it} text-center"/>`).appendTo($controls));
 					const $iptName = $(`<input class="form-control">`)
 						.on("keydown", (e) => {
 							if (e.which === 13) $btnAdd.click();
@@ -969,7 +917,7 @@ class InitiativeTracker {
 							if (e.which === 13) $btnAdd.click();
 						})
 						.appendTo($wrpTurns);
-					const $wrpAdd = $(`<div class="row">`).appendTo($wrpRows);
+					const $wrpAdd = $(`<div class="ve-flex-v-center">`).appendTo($wrpRows);
 					const $wrpAddInner = $(`<div class="col-12 text-center">`).appendTo($wrpAdd);
 					const $btnAdd = $(`<button class="btn btn-primary">Set Condition</button>`)
 						.click(() => {
@@ -1157,9 +1105,9 @@ class InitiativeTracker {
 							.change(() => doUpdateExternalStates());
 
 						const populateFromBlock = () => {
-							$ipt.attr("populate-running", true);
 							const meta = InitiativeTracker.STAT_COLUMNS[c.p];
 							if (isMon && meta) {
+								$ipt.attr("populate-running", true);
 								const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY]({name: name, source: source});
 								const populateStats = async () => {
 									const mon = await Renderer.hover.pCacheAndGet(UrlUtil.PG_BESTIARY, source, hash);
@@ -1183,7 +1131,7 @@ class InitiativeTracker {
 				})();
 
 				const eleType = isCheckbox ? "label" : "div";
-				$$`<${eleType} class="dm_init__stat ${isCheckbox ? "flex-vh-center" : ""}" data-id="${c.id}">${$ipt}</${eleType}>`.appendTo($mid);
+				$$`<${eleType} class="dm_init__stat ${isCheckbox ? "ve-flex-vh-center" : ""}" data-id="${c.id}">${$ipt}</${eleType}>`.appendTo($mid);
 			});
 		};
 
@@ -1204,7 +1152,7 @@ class InitiativeTracker {
 			cfg.statsCols.forEach(c => c.po = null);
 		};
 
-		function checkSetFirstActive () {
+		function checkSetFirstActive ({isSkipUpdateRound = false} = {}) {
 			if ($wrpEntries.find(`.dm-init-row`).length && !$wrpEntries.find(`.dm-init-row-active`).length) {
 				const $rows = $wrpEntries.find(`.dm-init-row`);
 				const $first = $($rows.get(0));
@@ -1219,7 +1167,7 @@ class InitiativeTracker {
 					}
 				}
 
-				$iptRound.val(Number($iptRound.val() || 0) + 1);
+				if (!isSkipUpdateRound) $iptRound.val(Number($iptRound.val() || 0) + 1);
 
 				doUpdateExternalStates();
 			}
@@ -1296,7 +1244,7 @@ class InitiativeTracker {
 			}
 
 			doSort(cfg.sort);
-			checkSetFirstActive();
+			checkSetFirstActive({isSkipUpdateRound: true});
 			handleStatColsChange();
 			doUpdateExternalStates();
 			if (!firstLoad && !noReset) $(`.dm_init__rounds`).val(1);
@@ -1423,7 +1371,7 @@ class InitiativeTracker {
 					const count = Number(it.c);
 					const hash = it.h;
 
-					const {_scaledCr: scaledCr, _scaledSummonLevel: scaledSummonLevel} = Renderer.monster.getUnpackedCustomHashId(it.customHashId) || {};
+					const {_scaledCr: scaledCr, _scaledSpellSummonLevel: scaledSpellSummonLevel, _scaledClassSummonLevel: scaledClassSummonLevel} = Renderer.monster.getUnpackedCustomHashId(it.customHashId) || {};
 
 					const source = UrlUtil.decodeHash(hash)[1];
 					if (!source) return null;
@@ -1437,8 +1385,15 @@ class InitiativeTracker {
 											monster: scaled,
 										});
 									});
-								} else if (scaledSummonLevel != null) {
-									ScaleSummonCreature.scale(mon, scaledSummonLevel).then(scaled => {
+								} else if (scaledSpellSummonLevel != null) {
+									ScaleSpellSummonedCreature.scale(mon, scaledSpellSummonLevel).then(scaled => {
+										resolve({
+											count,
+											monster: scaled,
+										});
+									});
+								} else if (scaledClassSummonLevel != null) {
+									ScaleClassSummonedCreature.scale(mon, scaledClassSummonLevel).then(scaled => {
 										resolve({
 											count,
 											monster: scaled,
@@ -1451,7 +1406,7 @@ class InitiativeTracker {
 									});
 								}
 							});
-					})
+					});
 				}));
 				await Promise.all(toAdd.filter(Boolean).map(async it => {
 					const groupInit = cfg.importIsRollGroups && cfg.isRollInit ? await pRollInitiative(it.monster) : null;
@@ -1465,6 +1420,7 @@ class InitiativeTracker {
 								displayName: it.monster._displayName,
 								scaledToCr: it.monster._scaledCr,
 								scaledToSummonSpellLevel: it.monster._summonedBySpell_level,
+								scaledToSummonClassLevel: it.monster._summonedByClass_level,
 							},
 							i: cfg.isRollInit ? `${cfg.importIsRollGroups ? groupInit : await pRollInitiative(it.monster)}` : null,
 							a: 0,
@@ -1517,6 +1473,461 @@ class InitiativeTracker {
 	static isCheckboxColAuto (key) {
 		return key === "cbAutoLow" || key === "cbAutoHigh";
 	}
+
+	/**
+	 * @param opts
+	 * @param opts.p2pMetaV1
+	 * @param opts.doUpdateExternalStates
+	 * @param [opts.$btnStartServer]
+	 * @param [opts.$btnGetToken]
+	 * @param [opts.$btnGetLink]
+	 * @param [opts.fnDispServerStoppedState]
+	 * @param [opts.fnDispServerRunningState]
+	 */
+	static async _startServerV1 (opts) {
+		opts = opts || {};
+
+		if (opts.p2pMetaV1.serverPeer) {
+			await opts.p2pMetaV1.serverPeer.pInit();
+			return true;
+		}
+
+		try {
+			if (opts.$btnStartServer) opts.$btnStartServer.prop("disabled", true);
+			opts.p2pMetaV1.serverPeer = new PeerVeServer();
+			await opts.p2pMetaV1.serverPeer.pInit();
+			if (opts.$btnGetToken) opts.$btnGetToken.prop("disabled", false);
+			if (opts.$btnGetLink) opts.$btnGetLink.prop("disabled", false);
+
+			opts.p2pMetaV1.serverPeer.on("connection", connection => {
+				const pConnected = new Promise(resolve => {
+					connection.on("open", () => {
+						resolve(true);
+						opts.doUpdateExternalStates();
+					});
+				});
+				const pTimeout = MiscUtil.pDelay(5 * 1000, false);
+				Promise.race([pConnected, pTimeout])
+					.then(didConnect => {
+						if (!didConnect) {
+							JqueryUtil.doToast({content: `Connecting to "${connection.label.escapeQuotes()}" has taken more than 5 seconds! The connection may need to be re-attempted.`, type: "warning"});
+						}
+					});
+			});
+
+			$(window).on("beforeunload", evt => {
+				const message = `The connection will be closed`;
+				(evt || window.event).message = message;
+				return message;
+			});
+
+			if (opts.fnDispServerRunningState) opts.fnDispServerRunningState();
+
+			return true;
+		} catch (e) {
+			if (opts.fnDispServerStoppedState) opts.fnDispServerStoppedState();
+			if (opts.$btnStartServer) opts.$btnStartServer.prop("disabled", false);
+			opts.p2pMetaV1.serverPeer = null;
+			JqueryUtil.doToast({content: `Failed to start server! ${VeCt.STR_SEE_CONSOLE}`, type: "danger"});
+			setTimeout(() => { throw e; });
+		}
+
+		return false;
+	}
+
+	static _handleClick_playerWindowV1 ({board, cfg, p2pMetaV1, doUpdateExternalStates}) {
+		const {$modalInner} = UiUtil.getShowModal({
+			title: "Configure Player View",
+			isUncappedHeight: true,
+			isHeight100: true,
+			cbClose: () => {
+				if (p2pMetaV1.rows.length) p2pMetaV1.rows.forEach(row => row.$row.detach());
+				if (p2pMetaV1.serverPeer) p2pMetaV1.serverPeer.offTemp("connection");
+			},
+		});
+
+		const $wrpHelp = UiUtil.$getAddModalRow($modalInner, "div");
+
+		const fnDispServerStoppedState = () => {
+			$btnStartServer.html(`<span class="glyphicon glyphicon-play"/> Start Server`).prop("disabled", false);
+			$btnGetToken.prop("disabled", true);
+			$btnGetLink.prop("disabled", true);
+		};
+
+		const fnDispServerRunningState = () => {
+			$btnStartServer.html(`<span class="glyphicon glyphicon-play"/> Server Running`).prop("disabled", true);
+			$btnGetToken.prop("disabled", false);
+			$btnGetLink.prop("disabled", false);
+		};
+
+		const $btnStartServer = $(`<button class="btn btn-default mr-2"></button>`)
+			.click(async () => {
+				const isRunning = await this._startServerV1({p2pMetaV1, doUpdateExternalStates, $btnStartServer, $btnGetToken, $btnGetLink, fnDispServerStoppedState, fnDispServerRunningState});
+				if (isRunning) {
+					p2pMetaV1.serverPeer.onTemp("connection", showConnected);
+					showConnected();
+				}
+			});
+
+		const $btnGetToken = $(`<button class="btn btn-default mr-2" disabled><span class="glyphicon glyphicon-copy"/> Copy Token</button>`).appendTo($wrpHelp)
+			.click(() => {
+				MiscUtil.pCopyTextToClipboard(p2pMetaV1.serverPeer.token);
+				JqueryUtil.showCopiedEffect($btnGetToken);
+			});
+
+		const $btnGetLink = $(`<button class="btn btn-default" disabled><span class="glyphicon glyphicon-link"/> Copy Link</button>`).appendTo($wrpHelp)
+			.click(() => {
+				const cleanOrigin = window.location.origin.replace(/\/+$/, "");
+				const url = `${cleanOrigin}/inittrackerplayerview.html#v1:${p2pMetaV1.serverPeer.token}`;
+				MiscUtil.pCopyTextToClipboard(url);
+				JqueryUtil.showCopiedEffect($btnGetLink);
+			});
+
+		if (p2pMetaV1.serverPeer) fnDispServerRunningState();
+		else fnDispServerStoppedState();
+
+		$$`<div class="row w-100">
+					<div class="col-12">
+						<p>
+						The Player View is part of a peer-to-peer system to allow players to connect to a DM's initiative tracker. Players should use the <a href="inittrackerplayerview.html">Initiative Tracker Player View</a> page to connect to the DM's instance. As a DM, the usage is as follows:
+						<ol>
+							<li>Start the server.</li>
+							<li>Copy your link/token and share it with your players.</li>
+							<li>Wait for them to connect!</li>
+						</ol>
+						</p>
+						<p>${$btnStartServer}${$btnGetLink}${$btnGetToken}</p>
+						<p><i>Please note that this system is highly experimental. Your experience may vary.</i></p>
+					</div>
+				</div>`.appendTo($wrpHelp);
+
+		UiUtil.addModalSep($modalInner);
+
+		const $wrpConnected = UiUtil.$getAddModalRow($modalInner, "div").addClass("flx-col");
+
+		const showConnected = () => {
+			if (!p2pMetaV1.serverPeer) return $wrpConnected.html(`<div class="w-100 ve-flex-vh-center"><i>No clients connected.</i></div>`);
+
+			let stack = `<div class="w-100"><h5>Connected Clients:</h5><ul>`;
+			p2pMetaV1.serverPeer.getActiveConnections()
+				.map(it => it.label || "(Unknown)")
+				.sort(SortUtil.ascSortLower)
+				.forEach(it => stack += `<li>${it.escapeQuotes()}</li>`);
+			stack += "</ul></div>";
+			$wrpConnected.html(stack);
+		};
+
+		if (p2pMetaV1.serverPeer) p2pMetaV1.serverPeer.onTemp("connection", showConnected);
+
+		showConnected();
+	}
+
+	// nop on receiving a message; we want to send only
+	// TODO expand this, to allow e.g. players to set statuses or assign damage/healing (at DM approval?)
+	static _playerWindowV0_DM_MESSAGE_RECEIVER = function () {};
+
+	static _playerWindowV0_DM_ERROR_HANDLER = function (err) {
+		if (!this.isClosed) {
+			// TODO: this could be better at handling `err.error == "RTCError: User-Initiated Abort, reason=Close called"`
+			JqueryUtil.doToast({
+				content: `Server error:\n${err ? (err.message || err.error || err) : "(Unknown error)"}`,
+				type: "danger",
+			});
+		}
+	};
+
+	static async _playerWindowV0_pGetServerTokens ({cfg, p2pMetaV0, rowMetas}) {
+		const targetRows = rowMetas.filter(it => !it.isDeleted).filter(it => !it.isActive);
+		if (targetRows.every(it => it.isActive)) {
+			return JqueryUtil.doToast({
+				content: "No rows require Server Token generation!",
+				type: "warning",
+			});
+		}
+
+		let anyInvalidNames = false;
+		targetRows.forEach(r => {
+			r.$iptName.removeClass("error-background");
+			if (!r.$iptName.val().trim()) {
+				anyInvalidNames = true;
+				r.$iptName.addClass("error-background");
+			}
+		});
+		if (anyInvalidNames) return;
+
+		const names = targetRows.map(r => {
+			r.isActive = true;
+
+			r.$iptName.attr("disabled", true);
+			r.$btnGenServerToken.attr("disabled", true);
+
+			return r.$iptName.val();
+		});
+
+		if (p2pMetaV0.serverInfo) {
+			await p2pMetaV0.serverInfo;
+
+			const serverInfo = await PeerUtilV0.pInitialiseServersAddToExisting(
+				names,
+				p2pMetaV0.serverInfo,
+				this._playerWindowV0_DM_MESSAGE_RECEIVER,
+				this._playerWindowV0_DM_ERROR_HANDLER,
+			);
+
+			return targetRows.map((r, i) => {
+				r.name = serverInfo[i].name;
+				r.serverInfo = serverInfo[i];
+				r.$iptTokenServer.val(serverInfo[i].textifiedSdp).attr("disabled", false);
+
+				serverInfo[i].rowMeta = r;
+
+				r.$iptTokenClient.attr("disabled", false);
+				r.$btnAcceptClientToken.attr("disabled", false);
+
+				return serverInfo[i].textifiedSdp;
+			});
+		} else {
+			p2pMetaV0.serverInfo = (async () => {
+				p2pMetaV0.serverInfo = await PeerUtilV0.pInitialiseServers(names, this._playerWindowV0_DM_MESSAGE_RECEIVER, this._playerWindowV0_DM_ERROR_HANDLER);
+
+				targetRows.forEach((r, i) => {
+					r.name = p2pMetaV0.serverInfo[i].name;
+					r.serverInfo = p2pMetaV0.serverInfo[i];
+					r.$iptTokenServer.val(p2pMetaV0.serverInfo[i].textifiedSdp).attr("disabled", false);
+
+					p2pMetaV0.serverInfo[i].rowMeta = r;
+
+					r.$iptTokenClient.attr("disabled", false);
+					r.$btnAcceptClientToken.attr("disabled", false);
+				});
+			})();
+
+			await p2pMetaV0.serverInfo;
+			return targetRows.map(r => r.serverInfo.textifiedSdp);
+		}
+	}
+
+	static _handleClick_playerWindowV0 ({board, cfg, p2pMetaV0, doUpdateExternalStates}) {
+		const {$modalInner} = UiUtil.getShowModal({
+			title: "Configure Player View",
+			isUncappedHeight: true,
+			isHeight100: true,
+			cbClose: () => {
+				if (p2pMetaV0.rows.length) p2pMetaV0.rows.forEach(row => row.$row.detach());
+			},
+		});
+
+		const $wrpHelp = UiUtil.$getAddModalRow($modalInner, "div");
+		const $btnAltGenAll = $(`<button class="btn btn-primary btn-text-insert">Generate All</button>`).click(() => $btnGenServerTokens.click());
+		const $btnAltCopyAll = $(`<button class="btn btn-primary btn-text-insert">Copy Server Tokens</button>`).click(() => $btnCopyServers.click());
+		$$`<div class="ve-flex w-100">
+			<div class="col-12">
+				<p>
+				The Player View is part of a peer-to-peer (i.e., serverless) system to allow players to connect to a DM's initiative tracker. Players should use the <a href="inittrackerplayerview.html">Initiative Tracker Player View</a> page to connect to the DM's instance. As a DM, the usage is as follows:
+				<ol>
+						<li>Add the required number of players, and input (preferably unique) player names.</li>
+						<li>Click "${$btnAltGenAll}," which will generate a "server token" per player. You can click "${$btnAltCopyAll}" to copy them all as a single block of text, or click on the "Server Token" values to copy them individually. Distribute these tokens to your players (via a messaging service of your choice; we recommend <a href="https://discordapp.com/">Discord</a>). Each player should paste their token into the <a href="inittrackerplayerview.html">Initiative Tracker Player View</a>, following the instructions provided therein.</li>
+						<li>
+							Get a resulting "client token" from each player via a messaging service of your choice. Then, either:
+							<ol type="a">
+								<li>Click the "Accept Multiple Clients" button, and paste in text containing multiple client tokens. <b>This will try to find tokens in <i>any</i> text, ignoring everything else.</b> Pasting a chatroom log (containing, for example, usernames and timestamps mixed with tokens) is the expected usage.</li>
+								<li>Paste each token into the appropriate "Client Token" field and "Accept Client" on each. A token can be identified by the slugified player name in the first few characters.</li>
+							</ol>
+						</li>
+					</ol>
+				</p>
+				<p>Once a player's client has been "accepted," it will receive updates from the DM's tracker. <i>Please note that this system is highly experimental. Your experience may vary.</i></p>
+			</div>
+		</div>`.appendTo($wrpHelp);
+
+		UiUtil.addModalSep($modalInner);
+
+		const $wrpTop = UiUtil.$getAddModalRow($modalInner, "div");
+
+		const $btnAddClient = $(`<button class="btn btn-xs btn-primary" title="Add Client">Add Player</button>`).click(() => addClientRow());
+
+		const $btnCopyServers = $(`<button class="btn btn-xs btn-primary" title="Copy any available server tokens to the clipboard">Copy Server Tokens</button>`)
+			.click(async () => {
+				const targetRows = p2pMetaV0.rows.filter(it => !it.isDeleted && !it.$iptTokenClient.attr("disabled"));
+				if (!targetRows.length) {
+					JqueryUtil.doToast({
+						content: `No free server tokens to copy. Generate some!`,
+						type: "warning",
+					});
+				} else {
+					await MiscUtil.pCopyTextToClipboard(targetRows.map(it => it.$iptTokenServer.val()).join("\n\n"));
+					JqueryUtil.showCopiedEffect($btnGenServerTokens);
+				}
+			});
+
+		const $btnAcceptClients = $(`<button class="btn btn-xs btn-primary" title="Open a prompt into which text containing client tokens can be pasted">Accept Multiple Clients</button>`)
+			.click(() => {
+				const {$modalInner, doClose} = UiUtil.getShowModal({title: "Accept Multiple Clients"});
+
+				const $iptText = $(`<textarea class="form-control dm_init__pl_textarea block mb-2"/>`)
+					.keydown(() => $iptText.removeClass("error-background"));
+
+				const $btnAccept = $(`<button class="btn btn-xs btn-primary block text-center" title="Add Client">Accept Multiple Clients</button>`)
+					.click(async () => {
+						$iptText.removeClass("error-background");
+						const txt = $iptText.val();
+						if (!txt.trim() || !PeerUtilV0.containsAnyTokens(txt)) {
+							$iptText.addClass("error-background");
+						} else {
+							const connected = await PeerUtilV0.pConnectClientsToServers(p2pMetaV0.serverInfo, txt);
+							board.doBindAlertOnNavigation();
+							connected.forEach(serverInfo => {
+								serverInfo.rowMeta.$iptTokenClient.val(serverInfo._tempTokenToDisplay || "").attr("disabled", true);
+								serverInfo.rowMeta.$btnAcceptClientToken.attr("disabled", true);
+								delete serverInfo._tempTokenToDisplay;
+							});
+							doClose();
+							doUpdateExternalStates();
+						}
+					});
+
+				$$`<div>
+					<p>Paste text containing one or more client tokens, and click "Accept Multiple Clients"</p>
+					${$iptText}
+					<div class="ve-flex-vh-center">${$btnAccept}</div>
+				</div>`.appendTo($modalInner);
+			});
+
+		$$`
+			<div class="ve-flex w-100">
+				<div class="col-12">
+					<div class="ve-flex-inline-v-center mr-2">
+						<span class="mr-1">Add a player (client):</span>
+						${$btnAddClient}
+					</div>
+					<div class="ve-flex-inline-v-center mr-2">
+						<span class="mr-1">Copy all un-paired server tokens:</span>
+						${$btnCopyServers}
+					</div>
+					<div class="ve-flex-inline-v-center mr-2">
+						<span class="mr-1">Mass-accept clients:</span>
+						${$btnAcceptClients}
+					</div>
+				</div>
+			</div>
+		`.appendTo($wrpTop);
+
+		UiUtil.addModalSep($modalInner);
+
+		const $btnGenServerTokens = $(`<button class="btn btn-primary btn-xs">Generate All</button>`)
+			.click(() => this._playerWindowV0_pGetServerTokens({cfg, p2pMetaV0, rowMetas: p2pMetaV0.rows}));
+
+		UiUtil.$getAddModalRow($modalInner, "div")
+			.append($$`
+			<div class="ve-flex w-100">
+				<div class="col-2 bold">Player Name</div>
+				<div class="col-3-5 bold">Server Token</div>
+				<div class="col-1 text-center">${$btnGenServerTokens}</div>
+				<div class="col-3-5 bold">Client Token</div>
+			</div>
+		`);
+
+		const _get$rowTemplate = (
+			$iptName,
+			$iptTokenServer,
+			$btnGenServerToken,
+			$iptTokenClient,
+			$btnAcceptClientToken,
+			$btnDeleteClient,
+		) => $$`<div class="w-100 mb-2 ve-flex">
+			<div class="col-2 pr-1">${$iptName}</div>
+			<div class="col-3-5 px-1">${$iptTokenServer}</div>
+			<div class="col-1 px-1 ve-flex-vh-center">${$btnGenServerToken}</div>
+			<div class="col-3-5 px-1">${$iptTokenClient}</div>
+			<div class="col-1-5 px-1 ve-flex-vh-center">${$btnAcceptClientToken}</div>
+			<div class="col-0-5 pl-1 ve-flex-vh-center">${$btnDeleteClient}</div>
+		</div>`;
+
+		const clientRowMetas = [];
+		const addClientRow = () => {
+			const rowMeta = {id: CryptUtil.uid()};
+			clientRowMetas.push(rowMeta);
+
+			const $iptName = $(`<input class="form-control input-sm">`)
+				.keydown(evt => {
+					$iptName.removeClass("error-background");
+					if (evt.key === "Enter") $btnGenServerToken.click();
+				});
+
+			const $iptTokenServer = $(`<input class="form-control input-sm copyable code" readonly disabled>`)
+				.click(async () => {
+					await MiscUtil.pCopyTextToClipboard($iptTokenServer.val());
+					JqueryUtil.showCopiedEffect($iptTokenServer);
+				}).disableSpellcheck();
+
+			const $btnGenServerToken = $(`<button class="btn btn-xs btn-primary" title="Generate Server Token">Generate</button>`)
+				.click(() => this._playerWindowV0_pGetServerTokens({cfg, p2pMetaV0, rowMetas: [rowMeta]}));
+
+			const $iptTokenClient = $(`<input class="form-control input-sm code" disabled>`)
+				.keydown(evt => {
+					$iptTokenClient.removeClass("error-background");
+					if (evt.key === "Enter") $btnAcceptClientToken.click();
+				}).disableSpellcheck();
+
+			const $btnAcceptClientToken = $(`<button class="btn btn-xs btn-primary" title="Accept Client Token" disabled>Accept Client</button>`)
+				.click(async () => {
+					const token = $iptTokenClient.val();
+					if (PeerUtilV0.isValidToken(token)) {
+						try {
+							await PeerUtilV0.pConnectClientsToServers([rowMeta.serverInfo], token);
+							board.doBindAlertOnNavigation();
+							$iptTokenClient.prop("disabled", true);
+							$btnAcceptClientToken.prop("disabled", true);
+							doUpdateExternalStates();
+						} catch (e) {
+							JqueryUtil.doToast({
+								content: `Failed to accept client token! Are you sure it was valid? (See the log for more details.)`,
+								type: "danger",
+							});
+							setTimeout(() => { throw e; });
+						}
+					} else $iptTokenClient.addClass("error-background");
+				});
+
+			const $btnDeleteClient = $(`<button class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"/></button>`)
+				.click(() => {
+					rowMeta.$row.remove();
+					rowMeta.isDeleted = true;
+					if (rowMeta.serverInfo) {
+						rowMeta.serverInfo.server.close();
+						rowMeta.serverInfo.isDeleted = true;
+					}
+					const ix = clientRowMetas.indexOf(rowMeta);
+					if (~ix) clientRowMetas.splice(ix, 1);
+
+					if (!clientRowMetas.length) addClientRow();
+				});
+
+			rowMeta.$row = _get$rowTemplate(
+				$iptName,
+				$iptTokenServer,
+				$btnGenServerToken,
+				$iptTokenClient,
+				$btnAcceptClientToken,
+				$btnDeleteClient,
+			).appendTo($wrpRowsInner);
+
+			rowMeta.$iptName = $iptName;
+			rowMeta.$iptTokenServer = $iptTokenServer;
+			rowMeta.$btnGenServerToken = $btnGenServerToken;
+			rowMeta.$iptTokenClient = $iptTokenClient;
+			rowMeta.$btnAcceptClientToken = $btnAcceptClientToken;
+			p2pMetaV0.rows.push(rowMeta);
+
+			return rowMeta;
+		};
+
+		const $wrpRows = UiUtil.$getAddModalRow($modalInner, "div");
+		const $wrpRowsInner = $(`<div class="w-100"/>`).appendTo($wrpRows);
+
+		if (p2pMetaV0.rows.length) p2pMetaV0.rows.forEach(row => row.$row.appendTo($wrpRowsInner));
+		else addClientRow();
+	}
 }
 InitiativeTracker._GET_STAT_COLUMN_HR = () => ({isHr: true});
 InitiativeTracker.STAT_COLUMNS = {
@@ -1552,7 +1963,7 @@ InitiativeTracker.STAT_COLUMNS = {
 					const found = [0];
 					it.replace(/DC (\d+)/g, (...m) => found.push(Number(m[1])));
 					return Math.max(...found);
-				}).filter(Boolean)
+				}).filter(Boolean);
 			})),
 	},
 	legendaryActions: {

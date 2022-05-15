@@ -1,11 +1,12 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "adventures.json",
-	"version": "1.1.4",
+	"version": "1.10.4",
 	"type": "object",
 	"properties": {
 		"adventure": {
 			"type": "array",
+			"uniqueItems": true,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -13,37 +14,28 @@
 						"type": "string"
 					},
 					"id": {
-						"type": "string"
+						"type": "string",
+						"description": "An ID that will be used to refer to this adventure in tags."
 					},
 					"source": {
 						"type": "string"
 					},
-					"alAveragePlayerLevel": {
-						"description": "Adventurers League APL; for use in homebrew.",
-						"type": "integer"
+					"parentSource": {
+						"type": "string",
+						"description": "Used for books that contain multiple adventures, e.g. TftYP"
 					},
-					"alLength": {
-						"description": "Adventurers League length (in hours); for use in homebrew.",
-						"type": "object",
-						"oneOf": [
-							{
-								"properties": {
-									"min": {"type": "integer"},
-									"max": {"type": "integer"}
-								}
-							},
-							{
-								"properties": {
-									"exact": {"type": "integer"}
-								}
-							}
+					"group": {
+						"description": "The group under which this adventure should be listed in the navbar.",
+						"type": "string",
+						"enum": [
+							"supplement",
+							"supplement-alt",
+							"homebrew",
+							"other"
 						]
 					},
-					"alId": {
-						"description": "Adventurers League ID; for use in homebrew.",
-						"type": "string"
-					},
 					"contents": {
+						"description": "The linked Table of Contents of the adventure.",
 						"type": "array",
 						"items": {
 							"type": "object",
@@ -84,10 +76,19 @@
 									"properties": {
 										"type": {
 											"type": "string",
-											"enum": ["chapter", "appendix", "part", "episode", "level"]
+											"enum": [
+												"chapter",
+												"appendix",
+												"part",
+												"episode",
+												"level"
+											]
 										},
 										"identifier": {
-											"type": ["integer", "string"]
+											"type": [
+												"integer",
+												"string"
+											]
 										}
 									},
 									"additionalProperties": false,
@@ -104,6 +105,7 @@
 						}
 					},
 					"level": {
+						"description": "The character levels that the adventure ranges across.",
 						"oneOf": [
 							{
 								"type": "object",
@@ -137,13 +139,15 @@
 					},
 					"published": {
 						"type": "string",
-						"format": "date"
+						"format": "date",
+						"description": "The date of publication of the adventure, in the format YYYY-MM-DD (RFC3339)."
 					},
 					"publishedOrder": {
 						"description": "A sorting order for adventures within a single source.",
 						"type": "integer"
 					},
 					"coverUrl": {
+						"description": "A direct link to an image which should be 300 x 300px in size. Larger images will be centred and cropped.",
 						"type": "string"
 					},
 					"storyline": {
@@ -170,7 +174,13 @@
 							"Wildemount",
 							"Icewind Dale",
 							"Mythic Odysseys of Theros",
-							"Candlekeep Mysteries"
+							"Candlekeep Mysteries",
+							"Adventures in the Forgotten Realms",
+							"The Wild Beyond the Witchlight",
+							"Ixalan",
+							"NERDS Restoring Harmony",
+							"Strixhaven",
+							"Critical Role"
 						]
 					}
 				},
@@ -182,7 +192,8 @@
 					"contents",
 					"level",
 					"published",
-					"storyline"
+					"storyline",
+					"group"
 				]
 			}
 		}

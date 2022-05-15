@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "loot.json",
-	"version": "1.2.0",
+	"version": "1.4.1",
 	"definitions": {
 		"cr": {
 			"type": "integer",
@@ -35,38 +35,139 @@
 			"additionalProperties": false
 		},
 		"lootTypeAmount": {
-			"type": "object",
-			"properties": {
-				"type": {
-					"type": "integer"
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"type": {
+							"type": "integer"
+						},
+						"amount": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"type",
+						"amount"
+					],
+					"additionalProperties": false
 				},
-				"amount": {
-					"type": "string"
+				{
+					"type": "object",
+					"properties": {
+						"typeTable": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"min": {
+										"type": "integer"
+									},
+									"max": {
+										"type": "integer"
+									},
+									"type": {
+										"type": "integer"
+									}
+								},
+								"required": [
+									"min",
+									"max",
+									"type"
+								],
+								"additionalProperties": false
+							}
+						},
+						"amount": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"typeTable",
+						"amount"
+					],
+					"additionalProperties": false
 				}
-			},
-			"required": [
-				"type",
-				"amount"
-			],
-			"additionalProperties": false
+			]
 		},
 		"lootTypeAmountMagicItems": {
-			"type": "object",
-			"properties": {
-				"type": {
-					"type": "string"
-				},
-				"amount": {
-					"type": "string"
-				}
+			"type": "array",
+			"items": {
+				"oneOf": [
+					{
+						"type": "object",
+						"properties": {
+							"type": {
+								"type": "string"
+							},
+							"amount": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"type",
+							"amount"
+						],
+						"additionalProperties": false
+					},
+					{
+						"type": "object",
+						"properties": {
+							"typeTable": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"min": {
+											"type": "integer"
+										},
+										"max": {
+											"type": "integer"
+										},
+										"type": {
+											"type": "string"
+										},
+										"typeAltChoose": {
+											"type": "object",
+											"properties": {
+												"rarity": {
+													"type": "string"
+												},
+												"tier": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"rarity",
+												"tier"
+											],
+											"additionalProperties": false
+										}
+									},
+									"required": [
+										"min",
+										"max",
+										"type",
+										"typeAltChoose"
+									],
+									"additionalProperties": false
+								}
+							},
+							"amount": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"typeTable",
+							"amount"
+						],
+						"additionalProperties": false
+					}
+				]
 			},
-			"required": [
-				"type",
-				"amount"
-			],
-			"additionalProperties": false
+			"minItems": 1
 		},
-		"gems_or_art": {
+		"gemsOrArt": {
 			"type": "array",
 			"uniqueItems": true,
 			"items": {
@@ -79,7 +180,7 @@
 						"type": "string"
 					},
 					"page": {
-						"type": "integer"
+						"$ref": "util.json#/definitions/page"
 					},
 					"type": {
 						"type": "integer"
@@ -124,28 +225,53 @@
 						"$ref": "#/definitions/table"
 					},
 					"choose": {
-						"type": "object",
-						"properties": {
-							"fromGroup": {
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
+						"oneOf": [
+							{
+								"type": "object",
+								"properties": {
+									"fromGroup": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								},
+								"required": [
+									"fromGroup"
+								],
+								"additionalProperties": false
 							},
-							"fromGeneric": {
-								"type":  "array",
-								"items": {
-									"type":  "string"
-								}
+							{
+								"type": "object",
+								"properties": {
+									"fromGeneric": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								},
+								"required": [
+									"fromGeneric"
+								],
+								"additionalProperties": false
 							},
-							"fromItems": {
-								"type":  "array",
-								"items": {
-									"type":  "string"
-								}
+							{
+								"type": "object",
+								"properties": {
+									"fromItems": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								},
+								"required": [
+									"fromItems"
+								],
+								"additionalProperties": false
 							}
-						},
-						"additionalProperties": false
+						]
 					}
 				},
 				"additionalProperties": false
@@ -167,12 +293,12 @@
 						"type": "string"
 					},
 					"page": {
-						"type": "integer"
+						"$ref": "util.json#/definitions/page"
 					},
-					"mincr": {
+					"crMin": {
 						"$ref": "#/definitions/cr"
 					},
-					"maxcr": {
+					"crMax": {
 						"$ref": "#/definitions/cr"
 					},
 					"table": {
@@ -204,8 +330,8 @@
 					"name",
 					"source",
 					"page",
-					"mincr",
-					"maxcr",
+					"crMin",
+					"crMax",
 					"table"
 				],
 				"additionalProperties": false
@@ -224,12 +350,12 @@
 						"type": "string"
 					},
 					"page": {
-						"type": "integer"
+						"$ref": "util.json#/definitions/page"
 					},
-					"mincr": {
+					"crMin": {
 						"$ref": "#/definitions/cr"
 					},
-					"maxcr": {
+					"crMax": {
 						"$ref": "#/definitions/cr"
 					},
 					"coins": {
@@ -250,10 +376,10 @@
 								"gems": {
 									"$ref": "#/definitions/lootTypeAmount"
 								},
-								"artobjects": {
+								"artObjects": {
 									"$ref": "#/definitions/lootTypeAmount"
 								},
-								"magicitems": {
+								"magicItems": {
 									"$ref": "#/definitions/lootTypeAmountMagicItems"
 								}
 							},
@@ -269,21 +395,21 @@
 					"name",
 					"source",
 					"page",
-					"mincr",
-					"maxcr",
+					"crMin",
+					"crMax",
 					"coins",
 					"table"
 				],
 				"additionalProperties": false
 			}
 		},
-		"gemstones": {
-			"$ref": "#/definitions/gems_or_art"
+		"gems": {
+			"$ref": "#/definitions/gemsOrArt"
 		},
-		"artobjects": {
-			"$ref": "#/definitions/gems_or_art"
+		"artObjects": {
+			"$ref": "#/definitions/gemsOrArt"
 		},
-		"magicitems": {
+		"magicItems": {
 			"type": "array",
 			"uniqueItems": true,
 			"items": {
@@ -296,7 +422,7 @@
 						"type": "string"
 					},
 					"page": {
-						"type": "integer"
+						"$ref": "util.json#/definitions/page"
 					},
 					"type": {
 						"type": "string"
@@ -314,14 +440,71 @@
 				],
 				"additionalProperties": false
 			}
+		},
+		"dragonMundaneItems": {
+			"$ref": "#/definitions/table"
+		},
+		"dragon": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"$ref": "util.json#/definitions/page"
+					},
+					"coins": {
+						"$ref": "#/definitions/coin"
+					},
+					"gems": {
+						"$ref": "#/definitions/lootTypeAmount"
+					},
+					"artObjects": {
+						"$ref": "#/definitions/lootTypeAmount"
+					},
+					"magicItems": {
+						"$ref": "#/definitions/lootTypeAmountMagicItems"
+					},
+					"dragonMundaneItems": {
+						"type": "object",
+						"properties": {
+							"amount": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"amount"
+						],
+						"additionalProperties": false
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"page",
+					"coins",
+					"gems",
+					"artObjects",
+					"magicItems",
+					"dragonMundaneItems"
+				],
+				"additionalProperties": false
+			}
 		}
 	},
 	"required": [
 		"individual",
 		"hoard",
-		"gemstones",
-		"artobjects",
-		"magicitems"
+		"gems",
+		"artObjects",
+		"magicItems",
+		"dragonMundaneItems"
 	],
 	"additionalProperties": false
 }

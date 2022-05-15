@@ -3,7 +3,8 @@
 		"dependencies": {
 			"monster": [
 				"MM",
-				"ToA"
+				"ToA",
+				"MOT"
 			]
 		},
 		"otherSources": {
@@ -20,7 +21,9 @@
 			"name": "Animated Broom",
 			"source": "CM",
 			"page": 20,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "construct",
 			"ac": [
 				{
@@ -96,7 +99,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Flyby"
 			],
@@ -111,13 +113,16 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Animated Chained Library",
 			"source": "CM",
 			"page": 24,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"ac": [
 				{
@@ -182,7 +187,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -198,6 +202,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -207,7 +212,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 157,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -306,7 +313,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -325,6 +331,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -334,7 +341,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 168,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -472,7 +481,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -494,6 +502,7 @@
 				"deafened",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -501,7 +510,9 @@
 			"name": "Canopic Golem",
 			"source": "CM",
 			"page": 179,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"ac": [
 				{
@@ -589,7 +600,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -604,6 +614,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -623,7 +634,9 @@
 			"name": "Cloud Giant Ghost",
 			"source": "CM",
 			"page": 146,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "undead",
 			"ac": [
 				{
@@ -716,7 +729,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The ghost can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"The ghost can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				},
 				{
@@ -752,7 +765,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Regeneration"
@@ -775,13 +787,16 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Constructed Commoner",
 			"source": "CM",
 			"page": 149,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"ac": [
 				{
@@ -832,7 +847,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -842,6 +856,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -849,7 +864,9 @@
 			"name": "Corrupted Avatar of Lurue",
 			"source": "CM",
 			"page": 123,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"ac": [
 				{
@@ -921,7 +938,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -940,6 +956,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -947,7 +964,9 @@
 			"name": "Dragon Tortoise",
 			"source": "CM",
 			"page": 205,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "dragon",
 			"alignment": [
 				"N"
@@ -1026,6 +1045,7 @@
 				"SD"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -1045,6 +1065,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1053,7 +1074,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 104,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1120,7 +1143,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -1137,6 +1159,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1144,7 +1167,9 @@
 			"name": "Fungal Servant",
 			"source": "CM",
 			"page": 217,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -1296,7 +1321,7 @@
 				{
 					"name": "Rotting Fist",
 					"entries": [
-						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}14 ({@damage 3d6 + 4}) bludgeoning damage plus 21 ({@damage 6d6}) necrotic damage. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 ({@dice 3d6}) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to spores. The curse lasts until removed by the remove curse spell or other magic."
+						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}14 ({@damage 3d6 + 4}) bludgeoning damage plus 21 ({@damage 6d6}) necrotic damage. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 ({@dice 3d6}) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to spores. The curse lasts until removed by the {@spell remove curse} spell or other magic."
 					]
 				},
 				{
@@ -1338,7 +1363,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance",
 				"Rejuvenation"
@@ -1355,6 +1379,12 @@
 			"damageTags": [
 				"B",
 				"N"
+			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"P",
+				"R"
 			],
 			"spellcastingTags": [
 				"CC"
@@ -1376,13 +1406,16 @@
 				"poisoned",
 				"prone",
 				"stunned"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Gingwatzim",
 			"source": "CM",
 			"page": 27,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "aberration",
 				"tags": [
@@ -1446,7 +1479,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -1465,13 +1497,16 @@
 			"conditionInflict": [
 				"exhaustion"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Grippli Warrior",
 			"source": "CM",
 			"page": 99,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1546,7 +1581,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -1572,6 +1606,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1579,177 +1614,81 @@
 			"name": "Hag of the Fetid Gaze",
 			"source": "CM",
 			"page": 76,
-			"size": "M",
-			"type": "fey",
-			"alignment": [
-				"N",
-				"E"
-			],
-			"ac": [
-				{
-					"ac": 17,
-					"from": [
-						"natural armor"
-					]
-				}
-			],
-			"hp": {
-				"average": 82,
-				"formula": "11d8 + 33"
-			},
-			"speed": {
-				"walk": 30
-			},
-			"str": 18,
-			"dex": 12,
-			"con": 16,
-			"int": 13,
-			"wis": 14,
-			"cha": 14,
-			"skill": {
-				"arcana": "+3",
-				"deception": "+4",
-				"perception": "+4",
-				"stealth": "+4"
-			},
-			"senses": [
-				"darkvision 60 ft."
-			],
-			"passive": 14,
-			"languages": [
-				"Common",
-				"Draconic",
-				"Sylvan"
-			],
-			"cr": "5",
-			"spellcasting": [
-				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"The hag's innate spellcasting ability is Charisma (spell save {@dc 12}). She can innately cast the following spells, requiring no material components:"
-					],
-					"will": [
-						"{@spell dancing lights}",
-						"{@spell minor illusion}",
-						"{@spell vicious mockery}"
-					],
-					"ability": "cha"
-				},
-				{
-					"name": "Shared Spellcasting",
-					"headerEntries": [
-						"While all three members of the Fetid Gaze are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell charm person}",
-								"{@spell witch bolt}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell alter self}",
-								"{@spell suggestion}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell dispel magic}",
-								"{@spell glyph of warding}",
-								"{@spell slow}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell blight}",
-								"{@spell polymorph}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell dominate person}",
-								"{@spell seeming}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell Otto's irresistible dance}"
+			"_copy": {
+				"name": "Green Hag",
+				"source": "MM",
+				"_mod": {
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell charm person}",
+										"{@spell witch bolt}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell alter self}",
+										"{@spell suggestion}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell dispel magic}",
+										"{@spell glyph of warding}",
+										"{@spell slow}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell blight}",
+										"{@spell polymorph}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell dominate person}",
+										"{@spell seeming}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell Otto's irresistible dance}"
+									]
+								}
+							},
+							"footerEntries": [
+								"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12 + the hag's Intelligence modifier, and the spell attack bonus is 4 + the hag's Intelligence modifier."
 							]
 						}
-					},
-					"footerEntries": [
-						"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12 + the hag's Intelligence modifier, and the spell attack bonus is 4 + the hag's Intelligence modifier."
-					]
+					}
 				}
-			],
-			"trait": [
-				{
-					"name": "Amphibious",
-					"entries": [
-						"The hag can breathe air and water."
-					]
-				},
-				{
-					"name": "Mimicry",
-					"entries": [
-						"The hag can mimic animal sounds and humanoid voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 14} Wisdom (Insight) check."
-					]
-				}
-			],
-			"action": [
-				{
-					"name": "Claws",
-					"entries": [
-						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) slashing damage."
-					]
-				},
-				{
-					"name": "Illusory Appearance",
-					"entries": [
-						"The hag covers herself and anything she is wearing or carrying with a magical illusion that makes her look like another creature of her general size and humanoid shape. The illusion ends if the hag takes a bonus action to end it or if she dies.",
-						"The changes wrought by this effect fail to hold up to physical inspection. For example, the hag could appear to have smooth skin, but someone touching her would feel her rough flesh. Otherwise, a creature must take an action to visually inspect the illusion and succeed on a {@dc 20} Intelligence (Investigation) check to discern that the hag is disguised."
-					]
-				},
-				{
-					"name": "Invisible Passage",
-					"entries": [
-						"The hag magically turns {@condition invisible} until she attacks or casts a spell, or until her concentration ends (as if concentrating on a spell). While {@condition invisible}, she leaves no physical evidence of her passage, so she can be tracked only by magic. Any equipment she wears or carries is {@condition invisible} with her."
-					]
-				}
+			},
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"L",
+				"N",
+				"P",
+				"S",
+				"T",
+				"Y"
 			],
 			"hasToken": true,
-			"traitTags": [
-				"Amphibious"
-			],
-			"senseTags": [
-				"D"
-			],
-			"languageTags": [
-				"C",
-				"DR",
-				"S"
-			],
-			"damageTags": [
-				"S"
-			],
-			"spellcastingTags": [
-				"CW",
-				"I",
-				"S"
-			],
-			"miscTags": [
-				"MW"
-			],
-			"conditionInflictSpell": [
-				"charmed"
-			],
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1757,7 +1696,9 @@
 			"name": "Immortal Lotus Monk",
 			"source": "CM",
 			"page": 165,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"ac": [
 				{
@@ -1818,7 +1759,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1836,7 +1776,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Jade Tigress",
@@ -1844,7 +1785,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 166,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1948,7 +1891,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1969,6 +1911,7 @@
 				"exhaustion",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1978,7 +1921,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 64,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2075,7 +2020,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2087,6 +2031,10 @@
 				"B",
 				"S"
 			],
+			"damageTagsSpell": [
+				"F",
+				"T"
+			],
 			"spellcastingTags": [
 				"CD"
 			],
@@ -2096,13 +2044,16 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Kiddywidget",
 			"source": "CM",
 			"page": 136,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "construct",
 			"ac": [
 				{
@@ -2174,7 +2125,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2191,6 +2141,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2198,7 +2149,9 @@
 			"name": "Lichen Lich",
 			"source": "CM",
 			"page": 223,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"ac": [
 				{
@@ -2352,7 +2305,6 @@
 				"name": "Lichen Lich",
 				"source": "CM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Rejuvenation"
@@ -2373,6 +2325,9 @@
 				"I",
 				"N"
 			],
+			"damageTagsSpell": [
+				"F"
+			],
 			"miscTags": [
 				"AOE",
 				"MW",
@@ -2382,6 +2337,7 @@
 				"poisoned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2389,7 +2345,9 @@
 			"name": "Lightning Golem",
 			"source": "CM",
 			"page": 129,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"N"
@@ -2486,7 +2444,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption",
 				"Immutable Form",
@@ -2514,7 +2471,9 @@
 			"name": "Master Sage",
 			"source": "CM",
 			"page": 9,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2622,11 +2581,10 @@
 				{
 					"name": "Shield (1st-Level Spell; 3/Day)",
 					"entries": [
-						"When the sage is hit by an attack or targeted by a magic missile spell, it calls forth an invisible barrier of magical force that protects it. Until the start of its next turn, the sage has a +5 bonus to AC, including against the triggering attack, and it takes no damage from magic missile."
+						"When the sage is hit by an attack or targeted by a {@spell magic missile} spell, it calls forth an {@condition invisible} barrier of magical force that protects it. Until the start of its next turn, the sage has a +5 bonus to AC, including against the triggering attack, and it takes no damage from magic missile."
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"X"
@@ -2635,9 +2593,18 @@
 				"F",
 				"L"
 			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"Y"
+			],
 			"miscTags": [
 				"AOE"
 			],
+			"conditionInflictSpell": [
+				"incapacitated"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2647,7 +2614,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 16,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "undead",
 			"ac": [
 				10
@@ -2756,7 +2725,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"Miirym can move through other creatures and objects as if they were difficult terrain. She takes 5 ({@damage 1d10}) force damage if she ends her turn inside an object."
+						"Miirym can move through other creatures and objects as if they were {@quickref difficult terrain||3}. She takes 5 ({@damage 1d10}) force damage if she ends her turn inside an object."
 					]
 				},
 				{
@@ -2824,7 +2793,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Legendary Resistances",
@@ -2835,6 +2803,7 @@
 				"SD"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Frightful Presence"
 			],
 			"languageTags": [
@@ -2854,6 +2823,7 @@
 				"frightened",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2861,7 +2831,9 @@
 			"name": "Mimic Chair",
 			"source": "CM",
 			"page": 22,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -2946,7 +2918,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance",
 				"Shapechanger"
@@ -2964,7 +2935,20 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Naiad",
+			"source": "CM",
+			"page": 84,
+			"_copy": {
+				"name": "Naiad",
+				"source": "MOT"
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nintra Siotta",
@@ -2972,7 +2956,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 197,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -3099,7 +3085,6 @@
 				"name": "Nintra Siotta",
 				"source": "CM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -3119,6 +3104,10 @@
 				"P",
 				"S"
 			],
+			"damageTagsLegendary": [
+				"N",
+				"P"
+			],
 			"miscTags": [
 				"AOE",
 				"MW"
@@ -3126,6 +3115,7 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3133,7 +3123,9 @@
 			"name": "Parasite-infested Behir",
 			"source": "CM",
 			"page": 220,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "undead",
 			"alignment": [
 				"N",
@@ -3214,6 +3206,7 @@
 				"D"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack",
 				"Swallow"
 			],
@@ -3245,7 +3238,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 132,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3352,8 +3347,8 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -3363,6 +3358,11 @@
 			"damageTags": [
 				"F",
 				"P"
+			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"R"
 			],
 			"spellcastingTags": [
 				"CC"
@@ -3376,13 +3376,16 @@
 				"paralyzed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Sage",
 			"source": "CM",
 			"page": 9,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3470,11 +3473,10 @@
 				{
 					"name": "Shield (1st-Level Spell; 3/Day)",
 					"entries": [
-						"When the sage is hit by an attack or targeted by a magic missile spell, it calls forth an {@condition invisible} barrier of magical force that protects it. Until the start of its next turn, the sage has a +5 bonus to AC, including against the triggering attack, and it takes no damage from magic missile."
+						"When the sage is hit by an attack or targeted by a {@spell magic missile} spell, it calls forth an {@condition invisible} barrier of magical force that protects it. Until the start of its next turn, the sage has a +5 bonus to AC, including against the triggering attack, and it takes no damage from magic missile."
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"X"
@@ -3482,6 +3484,10 @@
 			"damageTags": [
 				"L"
 			],
+			"damageTagsSpell": [
+				"L"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3489,7 +3495,9 @@
 			"name": "Sapphire Sentinel",
 			"source": "CM",
 			"page": 201,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -3586,11 +3594,10 @@
 				{
 					"name": "Sapphire",
 					"entries": [
-						"The sapphire has 3 charges. As an action, the golem can expend 1 charge to cast dispel magic (as a 9th-level spell) from the sapphire using Constitution as its spellcasting ability. The sapphire ceases to glow if all its charges are expended, but it regains {@dice 1d3} expended charges daily at dawn and glows again once it has 1 or more charges."
+						"The sapphire has 3 charges. As an action, the golem can expend 1 charge to cast {@spell dispel magic} (as a 9th-level spell) from the sapphire using Constitution as its spellcasting ability. The sapphire ceases to glow if all its charges are expended, but it regains {@dice 1d3} expended charges daily at dawn and glows again once it has 1 or more charges."
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Immutable Form",
 				"Magic Resistance",
@@ -3612,6 +3619,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3621,7 +3629,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 69,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"ac": [
 				13
@@ -3695,7 +3705,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"Shemshime can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"Shemshime can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				}
 			],
@@ -3719,7 +3729,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement"
 			],
@@ -3733,13 +3742,16 @@
 				"O",
 				"Y"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Skitterwidget",
 			"source": "CM",
 			"page": 136,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"ac": [
 				{
@@ -3825,7 +3837,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption"
 			],
@@ -3846,6 +3857,7 @@
 				"grappled",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3855,7 +3867,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 164,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3954,7 +3968,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3972,6 +3985,7 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3979,7 +3993,9 @@
 			"name": "Storm Giant Skeleton",
 			"source": "CM",
 			"page": 208,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "undead",
 			"ac": [
 				{
@@ -4055,7 +4071,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4073,13 +4088,16 @@
 				"MW",
 				"RCH",
 				"RW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Swarm of Animated Books",
 			"source": "CM",
 			"page": 19,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "construct",
 				"swarmSize": "T"
@@ -4156,7 +4174,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -4166,6 +4183,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -4174,7 +4192,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 182,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -4326,7 +4346,7 @@
 				{
 					"name": "Rotting Fist",
 					"entries": [
-						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}14 ({@damage 3d6 + 4}) bludgeoning damage plus 21 ({@damage 6d6}) necrotic damage. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 ({@dice 3d6}) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the remove curse spell or other magic."
+						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}14 ({@damage 3d6 + 4}) bludgeoning damage plus 21 ({@damage 6d6}) necrotic damage. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or be cursed with mummy rot. The cursed target can't regain hit points, and its hit point maximum decreases by 10 ({@dice 3d6}) for every 24 hours that elapse. If the curse reduces the target's hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the {@spell remove curse} spell or other magic."
 					]
 				},
 				{
@@ -4372,7 +4392,6 @@
 				"name": "Valin Sarnaster",
 				"source": "CM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance",
 				"Rejuvenation"
@@ -4389,6 +4408,11 @@
 			"damageTags": [
 				"B",
 				"N"
+			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"R"
 			],
 			"spellcastingTags": [
 				"CC"
@@ -4411,6 +4435,7 @@
 				"prone",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4420,7 +4445,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 63,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4496,7 +4523,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -4517,175 +4543,29 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Wood Elf Wizard",
 			"source": "CM",
 			"page": 187,
-			"size": "M",
-			"type": {
-				"type": "humanoid",
-				"tags": [
-					"elf"
-				]
-			},
-			"alignment": [
-				"N",
-				"E"
-			],
-			"ac": [
-				12
-			],
-			"hp": {
-				"average": 45,
-				"formula": "10d8"
-			},
-			"speed": {
-				"walk": 30
-			},
-			"str": 9,
-			"dex": 14,
-			"con": 10,
-			"int": 17,
-			"wis": 13,
-			"cha": 12,
-			"skill": {
-				"arcana": "+6",
-				"deception": "+5",
-				"perception": "+4",
-				"stealth": "+5"
-			},
-			"senses": [
-				"darkvision 120 ft."
-			],
-			"passive": 14,
-			"languages": [
-				"Elvish",
-				"Undercommon"
-			],
-			"cr": "7",
-			"spellcasting": [
-				{
-					"name": "Innate Spellcasting",
-					"headerEntries": [
-						"The wood elf's innate spellcasting ability is Charisma (spell save {@dc 12}). It can innately cast the following spells, requiring no material components:"
-					],
-					"will": [
-						"{@spell dancing lights}"
-					],
-					"daily": {
-						"1e": [
-							"{@spell darkness}",
-							"{@spell faerie fire}",
-							"{@spell levitate} (self only)"
-						]
+			"_copy": {
+				"name": "Drow Mage",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "\\bdrow\\b",
+						"with": "wood elf"
 					},
-					"ability": "cha"
-				},
-				{
-					"name": "Spellcasting",
-					"headerEntries": [
-						"The wood elf is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). The wood elf has the following wizard spells prepared:"
-					],
-					"spells": {
-						"0": {
-							"spells": [
-								"{@spell mage hand}",
-								"{@spell minor illusion}",
-								"{@spell poison spray}",
-								"{@spell ray of frost}"
-							]
-						},
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell mage armor}",
-								"{@spell magic missile}",
-								"{@spell shield}",
-								"{@spell witch bolt}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell alter self}",
-								"{@spell misty step}",
-								"{@spell web}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell fly}",
-								"{@spell lightning bolt}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell Evard's black tentacles}",
-								"{@spell greater invisibility}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell cloudkill}"
-							]
-						}
-					},
-					"ability": "int"
+					"trait": {
+						"mode": "removeArr",
+						"names": "Sunlight Sensitivity"
+					}
 				}
-			],
-			"trait": [
-				{
-					"name": "Fey Ancestry",
-					"entries": [
-						"The wood elf has advantage on saving throws against being {@condition charmed}, and magic can't put the wood elf to sleep."
-					]
-				}
-			],
-			"action": [
-				{
-					"name": "Staff",
-					"entries": [
-						"{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d6 - 1}) bludgeoning damage, or 3 ({@damage 1d8 - 1}) bludgeoning damage if used with two hands, plus 3 ({@damage 1d6}) poison damage."
-					]
-				},
-				{
-					"name": "Summon Demon (1/Day)",
-					"entries": [
-						"The wood elf magically summons a quasit, or attempts to summon a shadow demon with a 50 percent chance of success. The summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action."
-					]
-				}
-			],
-			"hasToken": true,
-			"traitTags": [
-				"Fey Ancestry"
-			],
-			"senseTags": [
-				"SD"
-			],
-			"languageTags": [
-				"E",
-				"U"
-			],
-			"damageTags": [
-				"B",
-				"I"
-			],
-			"spellcastingTags": [
-				"CW",
-				"I"
-			],
-			"miscTags": [
-				"MW"
-			],
-			"conditionInflictSpell": [
-				"invisible",
-				"restrained"
-			]
+			},
+			"hasToken": true
 		},
 		{
 			"name": "Zikran",
@@ -4730,7 +4610,6 @@
 				"Sahuagin",
 				"Undercommon"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Magic Resistance"
@@ -4742,6 +4621,7 @@
 				"P",
 				"U"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4751,7 +4631,9 @@
 			"isNamedCreature": true,
 			"source": "CM",
 			"page": 209,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -4890,7 +4772,6 @@
 				"name": "Zikzokrishka",
 				"source": "CM"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -4900,6 +4781,7 @@
 				"SD"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Frightful Presence",
 				"Multiattack"
 			],
@@ -4913,6 +4795,10 @@
 				"P",
 				"S"
 			],
+			"damageTagsLegendary": [
+				"B",
+				"L"
+			],
 			"miscTags": [
 				"AOE",
 				"MW",
@@ -4922,6 +4808,7 @@
 				"frightened",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

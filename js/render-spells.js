@@ -1,5 +1,5 @@
 class RenderSpells {
-	static $getRenderedSpell (sp, subclassLookup) {
+	static $getRenderedSpell (sp, subclassLookup, {isSkipExcludesRender = false} = {}) {
 		const renderer = Renderer.get();
 
 		const renderStack = [];
@@ -7,7 +7,7 @@ class RenderSpells {
 
 		renderStack.push(`
 			${Renderer.utils.getBorderTr()}
-			${Renderer.utils.getExcludedTr(sp, "spell", UrlUtil.PG_SPELLS)}
+			${!isSkipExcludesRender ? Renderer.utils.getExcludedTr({entity: sp, dataProp: "spell", page: UrlUtil.PG_SPELLS}) : ""}
 			${Renderer.utils.getNameTr(sp, {page: UrlUtil.PG_SPELLS})}
 			<tr><td class="rd-spell__level-school-ritual" colspan="6"><span>${Parser.spLevelSchoolMetaToFull(sp.level, sp.school, sp.meta, sp.subschools)}</span></td></tr>
 			<tr><td colspan="6"><span class="bold">Casting Time: </span>${Parser.spTimeListToFull(sp.time)}</td></tr>
@@ -55,10 +55,27 @@ class RenderSpells {
 			}
 		}
 
+		const fromSubclassVariant = Renderer.spell.getCombinedClasses(sp, "fromSubclassVariant");
+		if (fromSubclassVariant.length) {
+			const [current, legacy] = Parser.spVariantSubclassesToCurrentAndLegacyFull(sp, subclassLookup);
+			if (current.length) {
+				stackFroms.push(`<div><span class="bold">Optional/Variant Subclasses: </span>${current}</div>`);
+			}
+			if (legacy.length) {
+				stackFroms.push(`<div class="text-muted"><span class="bold">Subclasses (legacy): </span>${legacy}</div>`);
+			}
+		}
+
 		const fromRaces = Renderer.spell.getCombinedRaces(sp);
 		if (fromRaces.length) {
 			fromRaces.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
 			stackFroms.push(`<div><span class="bold">Races: </span>${fromRaces.map(r => `${SourceUtil.isNonstandardSource(r.source) ? `<span class="text-muted">` : ``}${renderer.render(`{@race ${r.name}|${r.source}}`)}${SourceUtil.isNonstandardSource(r.source) ? `</span>` : ``}`).join(", ")}</div>`);
+		}
+
+		const fromRacesVariant = Renderer.spell.getCombinedRaces(sp, {prop: "racesVariant", propTmp: "_tmpRacesVariant"});
+		if (fromRacesVariant.length) {
+			fromRacesVariant.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
+			stackFroms.push(`<div><span class="bold">Optional/Variant Races: </span>${fromRacesVariant.map(r => `<span ${SourceUtil.isNonstandardSource(r.source) ? `class="text-muted"` : ``} title="From a class sSpell list defined in: ${Parser.sourceJsonToFull(r.classDefinedInSource)}">${renderer.render(`{@race ${r.name}|${r.source}}`)}</span>`).join(", ")}</div>`);
 		}
 
 		const fromBackgrounds = Renderer.spell.getCombinedBackgrounds(sp);
@@ -73,7 +90,7 @@ class RenderSpells {
 		}
 
 		if (stackFroms.length) {
-			renderStack.push(`<tr class="text"><td colspan="6">${stackFroms.join("")}</td></tr>`)
+			renderStack.push(`<tr class="text"><td colspan="6">${stackFroms.join("")}</td></tr>`);
 		}
 
 		if (sp._scrollNote) {

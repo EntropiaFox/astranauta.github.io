@@ -38,6 +38,9 @@
 			"ref": "{@race Bullywug|DMG}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -86,7 +89,9 @@
 			"ref": "{@race Gnome (Deep)|DMG|Deep Gnome}",
 			"apply": {
 				"_root": {
-					"size": "S",
+					"size": [
+						"S"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -209,6 +214,9 @@
 			"ref": "{@race Elf (Drow)||Drow}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -284,6 +292,9 @@
 			"ref": "{@race Dwarf (Duergar)|mtf|Duergar}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -333,6 +344,69 @@
 								"entries": [
 									"<$title_short_name$> magically turns {@condition invisible} until they attack, cast a spell, or use their Enlarge, or until their concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment <$short_name$> wears or carries is invisible with them."
 								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"name": "Eldrazi",
+			"source": "PSZ",
+			"page": 38,
+			"apply": {
+				"_mod": {
+					"immune": {
+						"mode": "appendIfNotExistsArr",
+						"items": "psychic"
+					},
+					"conditionImmune": {
+						"mode": "appendIfNotExistsArr",
+						"items": "charmed"
+					}
+				}
+			}
+		},
+		{
+			"name": "Firbolg",
+			"source": "VGM",
+			"page": 107,
+			"ref": "{@race Firbolg|VGM}",
+			"apply": {
+				"_root": {
+					"size": [
+						"M"
+					],
+					"type": {
+						"type": "humanoid",
+						"tags": [
+							"firbolg"
+						]
+					}
+				},
+				"_mod": {
+					"languages": {
+						"mode": "appendIfNotExistsArr",
+						"items": [
+							"Elvish",
+							"Giant"
+						]
+					},
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Innate Spellcasting",
+								"headerEntries": [
+									"<$title_short_name$>'s innate spellcasting ability is Wisdom (spell save DC <$spell_dc__wis$>). <$title_short_name$> can innately cast the following spells, requiring no material components:"
+								],
+								"rest": {
+									"1e": [
+										"{@spell detect magic}",
+										"{@spell disguise self} (can seem up to 3 feet shorter than normal)"
+									]
+								},
+								"ability": "wis"
 							}
 						]
 					}
@@ -470,12 +544,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Fire Breath.",
+												"name": "Fire Breath",
 												"entry": "The half-dragon exhales fire in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 45 ({@damage 13d6}) fire damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Sleep Breath.",
+												"name": "Sleep Breath",
 												"entry": "The half-dragon exhales sleep gas in a 60-foot cone. Each creature in that area must succeed on a DC 18 Constitution saving throw or fall {@condition unconscious} for 10 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
 											}
 										]
@@ -530,12 +604,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Acid Breath.",
+												"name": "Acid Breath",
 												"entry": "The half-dragon exhales acid in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 54 ({@damage 12d8}) acid damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Slowing Breath.",
+												"name": "Slowing Breath",
 												"entry": "The half-dragon exhales gas in a 60-foot cone. Each creature in that area must succeed on a DC 18 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save."
 											}
 										]
@@ -590,12 +664,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Fire Breath.",
+												"name": "Fire Breath",
 												"entry": "The half-dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 21 Dexterity saving throw, taking 66 ({@damage 12d10}) fire damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Weakening Breath.",
+												"name": "Weakening Breath",
 												"entry": "The half-dragon exhales gas in a 60-foot cone. Each creature in that area must succeed on a DC 21 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 											}
 										]
@@ -738,12 +812,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Cold Breath.",
+												"name": "Cold Breath",
 												"entry": "The half-dragon exhales an icy blast in a 60-foot cone. Each creature in that area must make a DC 20 Constitution saving throw, taking 58 ({@damage 13d8}) cold damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Paralyzing Breath.",
+												"name": "Paralyzing Breath",
 												"entry": "The half-dragon exhales paralyzing gas in a 60-foot cone. Each creature in that area must succeed on a DC 20 Constitution saving throw or be {@condition paralyzed} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 											}
 										]
@@ -806,7 +880,9 @@
 			"ref": "{@race Goblin|DMG}",
 			"apply": {
 				"_root": {
-					"size": "S",
+					"size": [
+						"S"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -843,12 +919,65 @@
 			}
 		},
 		{
+			"name": "Goliath",
+			"source": "VGM",
+			"page": 108,
+			"ref": "{@race Goliath|VGM}",
+			"apply": {
+				"_root": {
+					"size": [
+						"M"
+					],
+					"type": {
+						"type": "humanoid",
+						"tags": [
+							"goliath"
+						]
+					}
+				},
+				"_mod": {
+					"_": [
+						{
+							"mode": "addSkills",
+							"skills": {
+								"athletics": 1
+							}
+						}
+					],
+					"resist": {
+						"mode": "appendIfNotExistsArr",
+						"items": "cold"
+					},
+					"languages": {
+						"mode": "appendIfNotExistsArr",
+						"items": [
+							"Giant"
+						]
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Powerful Build",
+								"entries": [
+									"<$title_short_name$> counts as one size larger when determining their carrying capacity and the weight they can push, drag, or lift."
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
 			"name": "Half-Elf",
 			"source": "PHB",
 			"page": 38,
 			"ref": "{@race Half-Elf}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -891,6 +1020,9 @@
 			"ref": "{@race Half-Orc}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -945,6 +1077,9 @@
 			"ref": "{@race Elf (High)||High Elf}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -1117,12 +1252,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Fire Breath.",
+												"name": "Fire Breath",
 												"entry": "The half-dragon exhales fire in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 42 ({@damage 12d6}) fire damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Sleep Breath.",
+												"name": "Sleep Breath",
 												"entry": "The half-dragon exhales sleep gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw or fall {@condition unconscious} for 5 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
 											}
 										]
@@ -1177,12 +1312,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Acid Breath.",
+												"name": "Acid Breath",
 												"entry": "The half-dragon exhales acid in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 40 ({@damage 9d8}) acid damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Slowing Breath.",
+												"name": "Slowing Breath",
 												"entry": "The half-dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save."
 											}
 										]
@@ -1237,12 +1372,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Fire Breath.",
+												"name": "Fire Breath",
 												"entry": "The half-dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 55 ({@damage 10d10}) fire damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Weakening Breath.",
+												"name": "Weakening Breath",
 												"entry": "The half-dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 											}
 										]
@@ -1385,12 +1520,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Cold Breath.",
+												"name": "Cold Breath",
 												"entry": "The half-dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 ({@damage 12d8}) cold damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Paralyzing Breath.",
+												"name": "Paralyzing Breath",
 												"entry": "The half-dragon exhales paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Constitution saving throw or be {@condition paralyzed} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 											}
 										]
@@ -1447,13 +1582,53 @@
 			}
 		},
 		{
+			"name": "Kenku",
+			"source": "VGM",
+			"page": 109,
+			"ref": "{@race Kenku|VGM}",
+			"apply": {
+				"_root": {
+					"size": [
+						"M"
+					],
+					"type": {
+						"type": "humanoid",
+						"tags": [
+							"kenku"
+						]
+					}
+				},
+				"_mod": {
+					"languages": {
+						"mode": "appendIfNotExistsArr",
+						"items": [
+							"Auran"
+						]
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Mimicry",
+								"entries": [
+									"<$title_short_name$> can mimic any sounds it has heard, including voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 14} Wisdom ({@skill Insight}) check."
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
 			"name": "Kobold",
 			"source": "DMG",
 			"page": 282,
 			"ref": "{@race Kobold|DMG}",
 			"apply": {
 				"_root": {
-					"size": "S",
+					"size": [
+						"S"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -1626,12 +1801,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Fire Breath.",
+												"name": "Fire Breath",
 												"entry": "The half-dragon exhales fire in a 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 14 ({@damage 4d6}) fire damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Sleep Breath.",
+												"name": "Sleep Breath",
 												"entry": "The half-dragon exhales sleep gas in a 15-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw or fall {@condition unconscious} for 1 minute. This effect ends for a creature if the creature takes damage or someone uses an action to wake it."
 											}
 										]
@@ -1686,12 +1861,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Acid Breath.",
+												"name": "Acid Breath",
 												"entry": "The half-dragon exhales acid in a 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 18 ({@damage 4d8}) acid damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Slowing Breath.",
+												"name": "Slowing Breath",
 												"entry": "The half-dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save."
 											}
 										]
@@ -1746,12 +1921,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Fire Breath.",
+												"name": "Fire Breath",
 												"entry": "The half-dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 22 ({@damage 4d10}) fire damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Weakening Breath.",
+												"name": "Weakening Breath",
 												"entry": "The half-dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 											}
 										]
@@ -1894,12 +2069,12 @@
 										"items": [
 											{
 												"type": "item",
-												"name": "Cold Breath.",
+												"name": "Cold Breath",
 												"entry": "The half-dragon exhales an icy blast in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 18 ({@damage 4d8}) cold damage on a failed save, or half as much damage on a successful one."
 											},
 											{
 												"type": "item",
-												"name": "Paralyzing Breath.",
+												"name": "Paralyzing Breath",
 												"entry": "The half-dragon exhales paralyzing gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw or be {@condition paralyzed} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 											}
 										]
@@ -1956,12 +2131,77 @@
 			}
 		},
 		{
+			"name": "Legendary Shadow Dragon",
+			"source": "MM",
+			"page": 84,
+			"apply": {
+				"_root": {
+					"legendaryGroup": {
+						"name": "Shadow Dragon",
+						"source": "FTB"
+					}
+				},
+				"_mod": {
+					"_": [
+						{
+							"mode": "addSkills",
+							"skills": {
+								"stealth": 2
+							}
+						}
+					],
+					"resist": {
+						"mode": "appendIfNotExistsArr",
+						"items": "necrotic"
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Living Shadow",
+								"entries": [
+									"While in dim light or darkness, the dragon has resistance to damage that isn't force, psychic, or radiant."
+								]
+							},
+							{
+								"name": "Shadow Stealth",
+								"entries": [
+									"While in dim light or darkness, the dragon can take the {@action Hide} action as a bonus action."
+								]
+							},
+							{
+								"name": "Sunlight Sensitivity",
+								"entries": [
+									"While in sunlight, the dragon has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
+								]
+							}
+						]
+					},
+					"action": [
+						{
+							"mode": "replaceTxt",
+							"replace": "(acid|cold|fire|lightning|poison)",
+							"with": "necrotic"
+						},
+						{
+							"mode": "replaceTxt",
+							"replace": "(Acid|Cold|Fire|Lightning|Poison)",
+							"with": "Necrotic"
+						}
+					]
+				}
+			}
+		},
+		{
 			"name": "Lizardfolk",
 			"source": "DMG",
 			"page": 282,
 			"ref": "{@race Lizardfolk|DMG}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2000,6 +2240,9 @@
 			"ref": "{@race Merfolk|dmg}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2037,6 +2280,9 @@
 			"ref": "{@race Dwarf (Mountain)||Mountain Dwarf}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2082,6 +2328,9 @@
 			"ref": "{@race Orc|DMG}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2132,6 +2381,14 @@
 							"mode": "scalarMultXp",
 							"scalar": 0.5,
 							"floor": true
+						},
+						{
+							"mode": "addAllSaves",
+							"saves": 0
+						},
+						{
+							"mode": "addAllSkills",
+							"skills": 0
 						}
 					],
 					"hp": {
@@ -2220,7 +2477,9 @@
 			"ref": "{@race Gnome (Rock)||Rock Gnome}",
 			"apply": {
 				"_root": {
-					"size": "S",
+					"size": [
+						"S"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2252,62 +2511,6 @@
 							}
 						]
 					}
-				}
-			}
-		},
-		{
-			"name": "Shadow Dragon",
-			"source": "MM",
-			"page": 84,
-			"apply": {
-				"_mod": {
-					"_": [
-						{
-							"mode": "addSkills",
-							"skills": {
-								"stealth": 2
-							}
-						}
-					],
-					"resist": {
-						"mode": "appendIfNotExistsArr",
-						"items": "necrotic"
-					},
-					"trait": {
-						"mode": "appendArr",
-						"items": [
-							{
-								"name": "Living Shadow",
-								"entries": [
-									"While in dim light or darkness, the dragon has resistance to damage that isn't force, psychic, or radiant."
-								]
-							},
-							{
-								"name": "Shadow Stealth",
-								"entries": [
-									"While in dim light or darkness, the dragon can take the {@action Hide} action as a bonus action."
-								]
-							},
-							{
-								"name": "Sunlight Sensitivity",
-								"entries": [
-									"While in sunlight, the dragon has disadvantage on attack rolls, as well as on Wisdom ({@skill Perception}) checks that rely on sight."
-								]
-							}
-						]
-					},
-					"action": [
-						{
-							"mode": "replaceTxt",
-							"replace": "(acid|cold|fire|lightning|poison)",
-							"with": "necrotic"
-						},
-						{
-							"mode": "replaceTxt",
-							"replace": "(Acid|Cold|Fire|Lightning|Poison)",
-							"with": "Necrotic"
-						}
-					]
 				}
 			}
 		},
@@ -2351,7 +2554,6 @@
 					],
 					"languages": {
 						"mode": "appendIfNotExistsArr",
-						"replace": "understands all languages it spoke in life but can't speak",
 						"items": "understands all languages it spoke in life but can't speak"
 					}
 				}
@@ -2364,7 +2566,9 @@
 			"ref": "{@race Halfling (Stout)||Stout Halfling}",
 			"apply": {
 				"_root": {
-					"size": "S",
+					"size": [
+						"S"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2405,6 +2609,9 @@
 			"ref": "{@race Tabaxi|VGM}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2454,6 +2661,9 @@
 			"ref": "{@race Tiefling}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2502,12 +2712,55 @@
 			}
 		},
 		{
+			"name": "Vistana",
+			"source": "CoS",
+			"page": 28,
+			"apply": {
+				"_mod": {
+					"action": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Curse (Recharges After a Long Rest)",
+								"entries": [
+									"The Vistana targets one creature that it can see within 30 feet of it. The target must succeed on a {@dc <$spell_dc__cha$>} Wisdom saving throw or be cursed. The Vistana chooses the curse's effect from the options that follow; other Vistani curses are possible. All such effects deal psychic damage to the Vistani who uttered them when they end:",
+									{
+										"type": "list",
+										"items": [
+											"The target is unable to perform a certain kind of act involving fine motor control, such as tying knots, writing, playing an instrument, sewing, or casting spells that have somatic components. When this curse ends, the Vistana takes {@damage 1d6} psychic damage.",
+											"The target's appearance changes in a sinister yet purely cosmetic way. For example, the curse can place a scar on the target's face, turn the target's teeth into yellow fangs, or give the target bad breath. When this curse ends, the Vistana takes {@damage 1d6} psychic damage.",
+											"A nonmagical item in the target's possession (chosen by the DM) disappears and can't be found until the curse ends. The lost item can weigh no more than 1 pound. When this curse ends, the Vistana takes {@damage 1d6} psychic damage.",
+											"The target gains vulnerability to a damage type of the Vistana's choice. When this curse ends, the Vistana takes {@damage 3d6} psychic damage.",
+											"The target has disadvantage on ability checks and saving throws tied to one ability score of the Vistana's choice. When this curse ends, the Vistana takes {@damage 3d6} psychic damage.",
+											"The target's attunement to one magic item (chosen by the DM) ends, and the target can't attune to the chosen item until the curse ends. When this curse ends, the Vistana takes {@damage 5d6} psychic damage.",
+											"The target is {@condition blinded}, {@condition deafened}, or both. When this curse ends, the Vistana takes {@damage 5d6} psychic damage."
+										]
+									},
+									"The curse lasts until ended with a {@spell greater restoration} spell, a {@spell remove curse} spell, or similar magic. It doesn't end when the target dies. If a cursed target is returned to life, the curse remains in effect."
+								]
+							},
+							{
+								"name": "Evil Eye (Recharges after a Short or Long Rest)",
+								"entries": [
+									"As an action, a Vistana can target a creature within 10 feet that the Vistana can see. This magical ability, which the Vistani call the Evil Eye, duplicates the duration and effect of the {@spell animal friendship}, {@spell charm person}, or {@spell hold person} spell (Vistana's choice; spell {@dc <$spell_dc__cha$>}), but requires neither somatic nor material components. If the target succeeds on the save, the Vistana is {@condition blinded} until the end of the Vistana's next turn.",
+									"A Vistana who uses Evil Eye can't use it again before finishing a short or long rest. Once a target succeeds on a saving throw against a Vistana's Evil Eye, it is immune to the Evil Eye of all Vistani for 24 hours."
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
 			"name": "Water Genasi",
 			"source": "EEPC",
 			"page": 10,
 			"ref": "{@race Genasi (Water)|eepc|Water Genasi}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2545,6 +2798,9 @@
 			"ref": "{@race Elf (Wood)||Wood Elf}",
 			"apply": {
 				"_root": {
+					"size": [
+						"M"
+					],
 					"type": {
 						"type": "humanoid",
 						"tags": [
@@ -2586,6 +2842,84 @@
 								"name": "Mask of the Wild",
 								"entries": [
 									"<$title_short_name$> can attempt to {@action hide} even when they are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena."
+								]
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"name": "Yuan-ti Pureblood",
+			"source": "VGM",
+			"page": 120,
+			"ref": "{@race Yuan-ti Pureblood|VGM}",
+			"apply": {
+				"_root": {
+					"size": [
+						"M"
+					],
+					"type": {
+						"type": "humanoid",
+						"tags": [
+							"yuan-ti"
+						]
+					},
+					"speed": 35
+				},
+				"_mod": {
+					"_": [
+						{
+							"mode": "addSenses",
+							"senses": {
+								"type": "darkvision",
+								"range": 60
+							}
+						}
+					],
+					"immune": {
+						"mode": "appendIfNotExistsArr",
+						"items": "poison"
+					},
+					"conditionImmune": {
+						"mode": "appendIfNotExistsArr",
+						"items": "poisoned"
+					},
+					"languages": {
+						"mode": "appendIfNotExistsArr",
+						"items": [
+							"Abyssal",
+							"Draconic"
+						]
+					},
+					"spellcasting": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Innate Spellcasting",
+								"headerEntries": [
+									"<$title_short_name$>'s innate spellcasting ability is Charisma (spell save DC <$spell_dc__cha$>). <$title_short_name$> can innately cast the following spells, requiring no material components:"
+								],
+								"will": [
+									"{@spell animal friendship} (snakes only)",
+									"{@spell poison spray}"
+								],
+								"daily": {
+									"3e": [
+										"{@spell suggestion}"
+									]
+								},
+								"ability": "cha"
+							}
+						]
+					},
+					"trait": {
+						"mode": "appendArr",
+						"items": [
+							{
+								"name": "Magic Resistance",
+								"entries": [
+									"<$title_short_name$> has advantage on saving throws against spells and other magical effects."
 								]
 							}
 						]

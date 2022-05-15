@@ -16,7 +16,9 @@
 			"name": "Ash Zombie",
 			"source": "LMoP",
 			"page": 31,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"N",
@@ -77,7 +79,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Undead Fortitude"
 			],
@@ -94,6 +95,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -105,7 +107,9 @@
 					"source": "RMBRE"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -188,7 +192,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"altArt": [
 				{
 					"name": "Evil Mage",
@@ -204,17 +207,23 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"L",
+				"O"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Gundren Rockseeker",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "LMoP",
 			"page": 41,
 			"_copy": {
@@ -230,9 +239,12 @@
 		{
 			"name": "Mormesk the Wraith",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "LMoP",
 			"page": 59,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"N",
@@ -315,7 +327,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Sunlight Sensitivity"
@@ -333,14 +344,18 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Nezznar the Black Spider",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "LMoP",
 			"page": 59,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -466,7 +481,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Sunlight Sensitivity"
@@ -482,6 +496,11 @@
 				"B",
 				"I"
 			],
+			"damageTagsSpell": [
+				"C",
+				"L",
+				"O"
+			],
 			"spellcastingTags": [
 				"CW",
 				"I"
@@ -492,12 +511,14 @@
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Nundro Rockseeker",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "LMoP",
 			"page": 50,
 			"_copy": {
@@ -514,7 +535,9 @@
 			"name": "Redbrand Ruffian",
 			"source": "LMoP",
 			"page": 61,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -529,7 +552,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -568,7 +591,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -581,14 +603,18 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Sildar Hallwinter",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "LMoP",
 			"page": 61,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -660,7 +686,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack",
 				"Parry"
@@ -677,11 +702,13 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Venomfang",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "LMoP",
 			"page": 63,
 			"_copy": {
@@ -695,7 +722,8 @@
 						"flags": "i"
 					}
 				}
-			}
+			},
+			"hasToken": true
 		}
 	]
 }

@@ -21,6 +21,13 @@ class OptionalFeaturesPage extends ListPage {
 
 			dataProps: ["optionalfeature"],
 
+			bookViewOptions: {
+				$btnOpen: $(`#btn-book`),
+				$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple optional features, please first make a list</span>`),
+				pageTitle: "Optional Features Book View",
+				popTblGetNumShown: (opts) => this._bookView_popTblGetNumShown(opts),
+			},
+
 			isPreviewable: true,
 		});
 	}
@@ -29,24 +36,24 @@ class OptionalFeaturesPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(it, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
-		const prerequisite = Renderer.utils.getPrerequisiteText(it.prerequisite, true, new Set(["level"]));
+		const prerequisite = Renderer.utils.getPrerequisiteHtml(it.prerequisite, {isListMode: true, blacklistKeys: new Set(["level"])});
 		const level = Renderer.optionalfeature.getListPrerequisiteLevelText(it.prerequisite);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-0-3 px-0 flex-vh-center lst__btn-toggle-expand self-flex-stretch">[+]</span>
+			<span class="col-0-3 px-0 ve-flex-vh-center lst__btn-toggle-expand ve-self-flex-stretch">[+]</span>
 			<span class="bold col-3 px-1">${it.name}</span>
 			<span class="col-1-5 text-center" title="${it._dFeatureType}">${it._lFeatureType}</span>
 			<span class="col-4-7 text-center">${prerequisite}</span>
 			<span class="col-1 text-center">${level}</span>
-			<span class="col-1-5 ${Parser.sourceJsonToColor(it.source)} text-center pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-1-5 ${Parser.sourceJsonToColor(it.source)} text-center pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil2.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>
-		<div class="flex ve-hidden relative lst__wrp-preview">
+		<div class="ve-flex ve-hidden relative lst__wrp-preview">
 			<div class="vr-0 absolute lst__vr-preview"></div>
-			<div class="flex-col py-3 ml-4 lst__wrp-preview-inner"></div>
+			<div class="ve-flex-col py-3 ml-4 lst__wrp-preview-inner"></div>
 		</div>`;
 
 		const listItem = new ListItem(
@@ -61,7 +68,6 @@ class OptionalFeaturesPage extends ListPage {
 				type: it._lFeatureType,
 			},
 			{
-				uniqueId: it.uniqueId ? it.uniqueId : ivI,
 				isExcluded,
 			},
 		);
@@ -78,12 +84,12 @@ class OptionalFeaturesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (it, pinId) {
+	pGetSublistItem (it, ix) {
 		const hash = UrlUtil.autoEncodeHash(it);
-		const prerequisite = Renderer.utils.getPrerequisiteText(it.prerequisite, true, new Set(["level"]));
+		const prerequisite = Renderer.utils.getPrerequisiteHtml(it.prerequisite, {isListMode: true, blacklistKeys: new Set(["level"])});
 		const level = Renderer.optionalfeature.getListPrerequisiteLevelText(it.prerequisite);
 
-		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-4 pl-0">${it.name}</span>
 				<span class="col-2 text-center" title="${it._dFeatureType}">${it._lFeatureType}</span>
@@ -95,7 +101,7 @@ class OptionalFeaturesPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			it.name,
 			{
@@ -128,14 +134,14 @@ class OptionalFeaturesPage extends ListPage {
 				.appendTo($wrpOptFeatType);
 		});
 
-		$(`#pagecontent`).empty().append(RenderOptionalFeatures.$getRenderedOptionalFeature(it));
+		this._$pgContent.empty().append(RenderOptionalFeatures.$getRenderedOptionalFeature(it));
 
 		ListUtil.updateSelected();
 	}
 
 	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
+		sub = await super.pDoLoadSubHash(sub);
+		await this._bookView.pHandleSub(sub);
 	}
 }
 

@@ -1,10 +1,38 @@
 {
+	"_meta": {
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
+		},
+		"internalCopies": [
+			"monster"
+		]
+	},
 	"monster": [
+		{
+			"name": "Angel",
+			"source": "PSZ",
+			"page": 21,
+			"_copy": {
+				"name": "Deva",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "deva",
+						"with": "angel"
+					}
+				}
+			}
+		},
 		{
 			"name": "Archon Of Redemption",
 			"source": "PSZ",
 			"page": 22,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "celestial",
 			"alignment": [
 				"L",
@@ -130,7 +158,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -149,19 +176,123 @@
 				"R",
 				"S"
 			],
+			"damageTagsSpell": [
+				"N",
+				"R",
+				"T",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Baloth",
+			"source": "PSZ",
+			"page": 33,
+			"_copy": {
+				"name": "Triceratops",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "triceratops",
+						"with": "baloth"
+					}
+				}
+			}
+		},
+		{
+			"name": "Boulderfoot Giant",
+			"source": "PSZ",
+			"page": 30,
+			"_copy": {
+				"name": "Stone Giant",
+				"source": "MM"
+			}
+		},
+		{
+			"name": "Caustic Crawler",
+			"source": "PSZ",
+			"page": 27,
+			"_copy": {
+				"name": "Ankheg",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "ankheg",
+						"with": "crawler"
+					}
+				}
+			}
+		},
+		{
+			"name": "Drake (Large)",
+			"source": "PSZ",
+			"page": 24,
+			"_copy": {
+				"name": "Giant Eagle",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "eagle",
+						"with": "drake"
+					}
+				}
+			}
+		},
+		{
+			"name": "Drake (Small)",
+			"source": "PSZ",
+			"page": 24,
+			"_copy": {
+				"name": "Pteranodon",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "pteranodon",
+						"with": "drake"
+					}
+				}
+			}
+		},
+		{
+			"name": "Emrakul",
+			"isNamedCreature": true,
+			"source": "PSZ",
+			"page": 38,
+			"_copy": {
+				"name": "Tarrasque",
+				"source": "MM",
+				"_trait": {
+					"name": "Eldrazi",
+					"source": "PSZ"
+				},
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the tarrasque",
+						"with": "Emrakul",
+						"flags": "i"
+					}
+				}
+			}
 		},
 		{
 			"name": "Felidar",
 			"source": "PSZ",
 			"page": 23,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "celestial",
 			"alignment": [
 				"L",
@@ -293,7 +424,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance",
 				"Magic Weapons",
@@ -319,13 +449,201 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Gnarlid",
+			"source": "PSZ",
+			"page": 34,
+			"_copy": {
+				"name": "Brown Bear",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "\\bbear",
+						"with": "gnarlid"
+					}
+				}
+			}
+		},
+		{
+			"name": "Gomazoa",
+			"source": "PSZ",
+			"page": 26,
+			"_copy": {
+				"name": "Roper",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "roper",
+						"with": "gomazoa"
+					}
+				}
+			},
+			"speed": {
+				"fly": 10
+			}
+		},
+		{
+			"name": "Great Cat",
+			"source": "PSZ",
+			"page": 34,
+			"_copy": {
+				"name": "Saber-Toothed Tiger",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "tiger",
+						"with": "cat"
+					}
+				}
+			}
+		},
+		{
+			"name": "Griffin (Type 1)",
+			"source": "PSZ",
+			"page": 22,
+			"_copy": {
+				"name": "Griffon",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "griffon",
+						"with": "griffin"
+					}
+				}
+			}
+		},
+		{
+			"name": "Griffin (Type 2)",
+			"source": "PSZ",
+			"page": 22,
+			"_copy": {
+				"name": "Hippogriff",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "hippogriff",
+						"with": "griffin"
+					}
+				}
+			}
+		},
+		{
+			"name": "Heartstabber Mosquito",
+			"source": "PSZ",
+			"page": 27,
+			"_copy": {
+				"name": "Stirge",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "stirge",
+						"with": "mosquito"
+					}
+				}
+			}
+		},
+		{
+			"name": "Hellion",
+			"source": "PSZ",
+			"page": 32,
+			"_copy": {
+				"name": "Remorhaz",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "remorhaz",
+						"with": "hellion"
+					}
+				}
+			}
+		},
+		{
+			"name": "Hurda",
+			"source": "PSZ",
+			"page": 30,
+			"_copy": {
+				"name": "Hill Giant",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "giant",
+						"with": "hurda"
+					},
+					"action": {
+						"mode": "replaceArr",
+						"replace": "Greatclub",
+						"items": {
+							"name": "Smash",
+							"entries": [
+								"{@atk mw} {@hit 8} to hit, reach 10 ft., one target. {@h}18 ({@damage 3d8 + 5}) bludgeoning damage."
+							]
+						}
+					}
+				}
+			}
+		},
+		{
+			"name": "Iona",
+			"isNamedCreature": true,
+			"source": "PSZ",
+			"page": 21,
+			"_copy": {
+				"name": "Solar",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "\\bthe solar\\b",
+						"with": "Iona",
+						"flags": "i"
+					}
+				}
+			}
+		},
+		{
+			"name": "Kozilek",
+			"isNamedCreature": true,
+			"source": "PSZ",
+			"page": 38,
+			"_copy": {
+				"name": "Kraken",
+				"source": "MM",
+				"_trait": {
+					"name": "Eldrazi",
+					"source": "PSZ"
+				},
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the kraken",
+						"with": "Kozilek",
+						"flags": "i"
+					}
+				}
+			},
+			"damageTagsLegendary": []
 		},
 		{
 			"name": "Kraken",
 			"source": "PSZ",
 			"page": 25,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -421,7 +739,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/kraken.mp3"
@@ -450,7 +767,339 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			]
+			],
+			"conditionInflict": [
+				"grappled",
+				"restrained"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Linvala",
+			"isNamedCreature": true,
+			"source": "PSZ",
+			"page": 21,
+			"_copy": {
+				"name": "Planetar",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "\\bthe planetar",
+						"with": "Linvala",
+						"flags": "i"
+					}
+				}
+			}
+		},
+		{
+			"name": "Ogre Channeler",
+			"source": "PSZ",
+			"page": 31,
+			"_copy": {
+				"name": "Oni",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "\\boni",
+						"with": "ogre"
+					}
+				}
+			}
+		},
+		{
+			"name": "Oxen",
+			"source": "PSZ",
+			"page": 34,
+			"_copy": {
+				"name": "Giant Goat",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "goat",
+						"with": "oxen"
+					}
+				}
+			}
+		},
+		{
+			"name": "Pestilence Demon",
+			"source": "PSZ",
+			"page": 27,
+			"_copy": {
+				"name": "Vrock",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "vrock",
+						"with": "demon"
+					}
+				}
+			}
+		},
+		{
+			"name": "Shade",
+			"source": "PSZ",
+			"page": 28,
+			"_copy": {
+				"name": "Shadow",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "shade",
+						"with": "shadow"
+					}
+				}
+			}
+		},
+		{
+			"name": "Shatterskull Giant",
+			"source": "PSZ",
+			"page": 30,
+			"_copy": {
+				"name": "Boulderfoot Giant",
+				"source": "PSZ"
+			}
+		},
+		{
+			"name": "Shoal Serpent",
+			"source": "PSZ",
+			"page": 26,
+			"_copy": {
+				"name": "Plesiosaurus",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "plesiosaurus",
+						"with": "serpent"
+					}
+				}
+			}
+		},
+		{
+			"name": "Sphinx (Type 1)",
+			"source": "PSZ",
+			"page": 24,
+			"_copy": {
+				"name": "Androsphinx",
+				"source": "MM"
+			},
+			"damageTagsLegendary": []
+		},
+		{
+			"name": "Sphinx (Type 2)",
+			"source": "PSZ",
+			"page": 24,
+			"_copy": {
+				"name": "Gynosphinx",
+				"source": "MM"
+			},
+			"damageTagsLegendary": []
+		},
+		{
+			"name": "Spirit",
+			"source": "PSZ",
+			"page": 28,
+			"_copy": {
+				"name": "Ghost",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "ghost",
+						"with": "spirit"
+					}
+				}
+			}
+		},
+		{
+			"name": "Surrakar",
+			"source": "PSZ",
+			"page": 26,
+			"_copy": {
+				"name": "Lizardfolk",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "lizardfolk",
+						"with": "surrakar"
+					}
+				}
+			}
+		},
+		{
+			"name": "Terastodon",
+			"source": "PSZ",
+			"page": 34,
+			"_copy": {
+				"name": "Mammoth",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "mammoth",
+						"with": "terastodon"
+					}
+				}
+			}
+		},
+		{
+			"name": "Terra Stomper",
+			"source": "PSZ",
+			"page": 34,
+			"_copy": {
+				"name": "Tyrannosaurus Rex",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "tyrannosaurus",
+						"with": "terra stomper"
+					}
+				}
+			}
+		},
+		{
+			"name": "Timbermaw",
+			"source": "PSZ",
+			"page": 34,
+			"_copy": {
+				"name": "Grick",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "grick",
+						"with": "timbermaw"
+					}
+				}
+			}
+		},
+		{
+			"name": "Trench Giant",
+			"source": "PSZ",
+			"page": 30,
+			"_copy": {
+				"name": "Fomorian",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "fomorian",
+						"with": "giant"
+					}
+				}
+			}
+		},
+		{
+			"name": "Turntimber Giant",
+			"source": "PSZ",
+			"page": 30,
+			"_copy": {
+				"name": "Cloud Giant",
+				"source": "MM"
+			}
+		},
+		{
+			"name": "Ulamog",
+			"isNamedCreature": true,
+			"source": "PSZ",
+			"page": 38,
+			"_copy": {
+				"name": "Empyrean",
+				"source": "MM",
+				"_trait": {
+					"name": "Eldrazi",
+					"source": "PSZ"
+				},
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the empyrean",
+						"with": "Ulamog",
+						"flags": "i"
+					}
+				}
+			}
+		},
+		{
+			"name": "Vampire Null",
+			"source": "PSZ",
+			"page": 28,
+			"_copy": {
+				"name": "Zombie",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "zombie",
+						"with": "null"
+					}
+				}
+			}
+		},
+		{
+			"name": "Woodcrasher Baloth",
+			"source": "PSZ",
+			"page": 33,
+			"_copy": {
+				"name": "Baloth",
+				"source": "PSZ"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 50
+			}
+		},
+		{
+			"name": "Wraith",
+			"source": "PSZ",
+			"page": 28,
+			"_copy": {
+				"name": "Wraith",
+				"source": "MM"
+			}
+		},
+		{
+			"name": "Wurm",
+			"source": "PSZ",
+			"page": 32,
+			"_copy": {
+				"name": "Purple Worm",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "\\bworm",
+						"with": "wurm"
+					}
+				}
+			}
+		},
+		{
+			"name": "Zendikar Dragon",
+			"source": "PSZ",
+			"page": 29,
+			"_copy": {
+				"name": "Young Red Dragon",
+				"source": "MM"
+			},
+			"int": 8
+		},
+		{
+			"name": "Zendikar Golem",
+			"source": "PSZ",
+			"page": 36,
+			"_copy": {
+				"name": "Stone Golem",
+				"source": "MM"
+			}
 		}
 	]
 }

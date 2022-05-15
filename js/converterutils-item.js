@@ -109,7 +109,7 @@ class RechargeTypeTag {
 	}
 }
 
-class SpellTag {
+class AttachedSpellTag {
 	static _checkAndTag (obj, opts) {
 		const strEntries = JSON.stringify(obj.entries);
 
@@ -163,7 +163,7 @@ class SpellTag {
 						r.forEach(c => addTaggedSpells(c));
 					});
 
-					return obj
+					return obj;
 				},
 			],
 		};
@@ -284,16 +284,78 @@ class BonusTag {
 			delete obj.bonusWeaponDamage;
 		}
 
+		// TODO(Future) expand this?
+		strEntries.replace(/scores? a critical hit on a (?:(?:{@dice )?d20}? )?roll of 19 or 20/gi, () => {
+			obj.critThreshold = 19;
+		});
+
+		// TODO(Future) `.bonusWeaponCritDamage` (these are relatively uncommon)
+
+		// region Speed bonus
+		this._mutSpeedBonus({obj, strEntries});
+		// endregion
+
 		obj.entries = JSON.parse(strEntries);
 	}
 
+	static _mutSpeedBonus ({obj, strEntries}) {
+		strEntries.replace(BonusTag._RE_SPEED_MULTIPLE, (...m) => {
+			const {mode, factor} = m.last();
+			obj.modifySpeed = {multiplier: {[this._getSpeedKey(mode)]: Parser.textToNumber(factor)}};
+		});
+
+		[BonusTag._RE_SPEED_BECOMES, BonusTag._RE_SPEED_GAIN, BonusTag._RE_SPEED_GAIN__EXPEND_CHARGE, BonusTag._RE_SPEED_GIVE_YOU].forEach(re => {
+			strEntries.replace(re, (...m) => {
+				const {mode, value} = m.last();
+				obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {static: {[this._getSpeedKey(mode)]: Number(value)}});
+			});
+		});
+
+		strEntries.replace(BonusTag._RE_SPEED_EQUAL_WALKING, (...m) => {
+			const {mode} = m.last();
+			obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {equal: {[this._getSpeedKey(mode)]: "walk"}});
+		});
+
+		strEntries.replace(BonusTag._RE_SPEED_BONUS_ALL, (...m) => {
+			const {value} = m.last();
+			obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {bonus: {"*": Number(value)}});
+		});
+
+		strEntries.replace(BonusTag._RE_SPEED_BONUS_SPECIFIC, (...m) => {
+			const {mode, value} = m.last();
+			obj.modifySpeed = MiscUtil.merge(obj.modifySpeed || {}, {bonus: {[this._getSpeedKey(mode)]: Number(value)}});
+		});
+	}
+
+	static _getSpeedKey (speedText) {
+		speedText = speedText.toLowerCase().trim();
+		switch (speedText) {
+			case "walking":
+			case "burrowing":
+			case "climbing":
+			case "flying": return speedText.replace(/ing$/, "");
+			case "swimming": return "swim";
+			default: throw new Error(`Unhandled speed text "${speedText}"`);
+		}
+	}
+
 	static tryRun (it, opts) {
-		if (it.inherits && it.inherits.entries) this._runOn(it.inherits, "inherits", opts)
+		if (it.inherits && it.inherits.entries) this._runOn(it.inherits, "inherits", opts);
 		else if (it.entries) this._runOn(it, null, opts);
 	}
 }
 BonusTag._RE_BASIC_WEAPONS = new RegExp(`\\+\\s*(\\d)(\\s+(?:${ConverterUtilsItem.BASIC_WEAPONS.join("|")}|weapon))`);
 BonusTag._RE_BASIC_ARMORS = new RegExp(`\\+\\s*(\\d)(\\s+(?:${ConverterUtilsItem.BASIC_ARMORS.join("|")}|armor))`);
+BonusTag._PT_SPEEDS = `(?<mode>walking|flying|swimming|climbing|burrowing)`;
+BonusTag._PT_SPEED_VALUE = `(?<value>\\d+)`;
+BonusTag._RE_SPEED_MULTIPLE = new RegExp(`(?<factor>double|triple|quadruple) your ${BonusTag._PT_SPEEDS} speed`, "gi");
+BonusTag._RE_SPEED_BECOMES = new RegExp(`your ${BonusTag._PT_SPEEDS} speed becomes ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_GAIN = new RegExp(`you (?:gain|have) a ${BonusTag._PT_SPEEDS} speed of ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_GAIN__EXPEND_CHARGE = new RegExp(`expend (?:a|\\d+) charges? to gain a ${BonusTag._PT_SPEEDS} speed of ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_GIVE_YOU = new RegExp(`give you a ${BonusTag._PT_SPEEDS} speed of ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_EQUAL_WALKING = new RegExp(`you (?:gain|have) a ${BonusTag._PT_SPEEDS} speed equal to your walking speed`, "gi");
+BonusTag._RE_SPEED_BONUS_ALL = new RegExp(`you (?:gain|have) a bonus to speed of ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
+BonusTag._RE_SPEED_BONUS_SPECIFIC = new RegExp(`increas(?:ing|e) your ${BonusTag._PT_SPEEDS} by ${BonusTag._PT_SPEED_VALUE} feet`, "gi");
 
 class BasicTextClean {
 	static tryRun (it, opts) {
@@ -308,9 +370,9 @@ class BasicTextClean {
 					if (/^\s*This armor consists of a coat and leggings \(and perhaps a separate skirt\) of leather covered with overlapping pieces of metal, much like the scales of a fish\. The suit includes gauntlets\.\s*$/i.test(it)) return false;
 
 					return true;
-				})
+				});
 			},
-		})
+		});
 	}
 }
 
@@ -336,7 +398,7 @@ class ItemMiscTag {
 class ItemSpellcastingFocusTag {
 	static tryRun (it, opts) {
 		const focusClasses = new Set(it.focus || []);
-		ItemSpellcastingFocusTag._RE_CLASS_NAMES = ItemSpellcastingFocusTag._RE_CLASS_NAMES || new RegExp(`(${Parser.ITEM_SPELLCASTING_FOCUS_CLASSES.join("|")})`, "gi")
+		ItemSpellcastingFocusTag._RE_CLASS_NAMES = ItemSpellcastingFocusTag._RE_CLASS_NAMES || new RegExp(`(${Parser.ITEM_SPELLCASTING_FOCUS_CLASSES.join("|")})`, "gi");
 
 		let isMiscFocus = false;
 		if (it.entries || (it.inherits && it.inherits.entries)) {
@@ -357,7 +419,7 @@ class ItemSpellcastingFocusTag {
 								m[1].trim().replace(ItemSpellcastingFocusTag._RE_CLASS_NAMES, (...n) => {
 									focusClasses.add(n[1].toTitleCase());
 								});
-							})
+							});
 						return str;
 					},
 				},
@@ -427,7 +489,7 @@ class DamageResistanceImmunityVulnerabilityTag {
 					str.replace(reOuter, (full, ..._) => {
 						outer.push(full);
 						full = full.split(/ except /gi)[0];
-						full.replace(ConverterConst.RE_DAMAGE_TYPE, (full, prefix, dmgType) => {
+						full.replace(ConverterConst.RE_DAMAGE_TYPE, (full, dmgType) => {
 							all.add(dmgType);
 						});
 					});
@@ -460,7 +522,7 @@ class ConditionImmunityTag {
 				string: (str) => {
 					str.replace(/you (?:have|gain|are) (?:[^.!?]+ )?immun(?:e|ity) to disease/gi, (...m) => {
 						all.add("disease");
-					})
+					});
 
 					str.replace(/you (?:have|gain|are) (?:[^.!?]+ )?(?:immune) ([^.!?]+)/, (...m) => {
 						m[1].replace(/{@condition ([^}]+)}/gi, (...n) => {
@@ -554,7 +616,7 @@ class ReqAttuneTagTag {
 		});
 
 		// "by a bard, cleric, druid, sorcerer, warlock, or wizard"
-		req = req.replace(/(?:(?:a|an) )?\b(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard)\b/gi, (...m) => {
+		req = req.replace(/(?:(?:a|an) )?\b(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard|barbarian|fighter|monk|rogue)\b/gi, (...m) => {
 			const source = m[1].toLowerCase() === "artificer" ? SRC_TCE : null;
 			tags.push({class: `${m[1]}${source ? `|${source}` : ""}`.toLowerCase()});
 			return "";
@@ -629,7 +691,7 @@ if (typeof module !== "undefined") {
 		ConverterUtilsItem,
 		ChargeTag,
 		RechargeTypeTag,
-		SpellTag,
+		AttachedSpellTag,
 		BonusTag,
 		BasicTextClean,
 		ItemMiscTag,

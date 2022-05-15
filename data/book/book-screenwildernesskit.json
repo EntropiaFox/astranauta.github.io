@@ -17,32 +17,32 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1. Weather.",
-									"entry": "The DM determines the predominant weather conditions for the Cycle., you either choose the weather or roll for it on the Weather table on the DM screen."
+									"name": "1. Weather",
+									"entry": "The DM determines the predominant weather conditions for the Cycle., you either choose the weather or roll for it on the {@table Weather|DMG} {@note ({@table weather; precipitation|DMG|Precipitation}; {@table weather; wind|DMG|Wind})} table on the DM screen."
 								},
 								{
 									"type": "item",
-									"name": "2. Pace.",
-									"entry": "the players choose the groups travel pace for the cycle: slow, normal, or fast. See the Travel Pace table on the DM screen for details about each pace."
+									"name": "2. Pace",
+									"entry": "the players choose the groups travel pace for the cycle: slow, normal, or fast. See the {@table Travel Pace|PHB} table on the DM screen for details about each pace."
 								},
 								{
 									"type": "item",
-									"name": "3. Navigate.",
+									"name": "3. Navigate",
 									"entry": "The DM decides whether the adventurers are at risk of losing their way, following the guidelines in the \"Becoming Lost\" section below."
 								},
 								{
 									"type": "item",
-									"name": "4. Encounter.",
+									"name": "4. Encounter",
 									"entry": "Roll a {@dice d10}. On a 1, the characters encounter something this cycle. The DM either decides what happens or rolls on the Wilderness Encounter table."
 								},
 								{
 									"type": "item",
-									"name": "5. Supplies.",
+									"name": "5. Supplies",
 									"entry": "Expend food and water for each creature in the party that must eat or drink, consulting the \"Food and Water\" sections below."
 								},
 								{
 									"type": "item",
-									"name": "6. Progress.",
+									"name": "6. Progress",
 									"entry": "Track the party's progress in the miles for the cycle. You may use a hex map in this kit to keep track of the party's current location."
 								}
 							]
@@ -102,11 +102,11 @@
 								],
 								[
 									"7",
-									"The group discovers a monument. Roll on the Monuments table."
+									"The group discovers a monument. Roll on the {@table  Wilderness Journeys; Monuments|ScreenWildernessKit|Monuments} table."
 								],
 								[
 									"8",
-									"The group wanders into a strange place. Roll on the Weird Locales table."
+									"The group wanders into a strange place. Roll on the {@table Wilderness Journeys; Weird Locales|ScreenWildernessKit|Weird Locales} table."
 								]
 							]
 						}
@@ -387,27 +387,27 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1. Establish positions.",
+									"name": "1. Establish positions",
 									"entry": "Determine how far apart the quarry and the pursuer are from each other. The quarry and the pursuer might each be an individual or a group. Over the course of the chase, the DM keeps track of this distance. You may use a dry-erase hex map in this kit to track distance. If you do so, you determine how many feet each hex represents: 5 feet, 10 feet, or more."
 								},
 								{
 									"type": "item",
-									"name": "2. Roll initiative.",
+									"name": "2. Roll initiative",
 									"entry": "Everyone involved in the chase rolls initiative, determining the order of their turns in the chase."
 								},
 								{
 									"type": "item",
-									"name": "3. Roll for a complication.",
+									"name": "3. Roll for a complication",
 									"entry": "When your turn starts, roll a {@dice d20} and consult the Wilderness Chase Complications table to see if an unexpected event complicates your turn."
 								},
 								{
 									"type": "item",
-									"name": "4. Move And take an action.",
+									"name": "4. Move And take an action",
 									"entry": "You can take one action on your turn, and before or after that action, you can move upto a distance equal to your speed. See the \"Actions in Combat\" sheet for the actions you can take during a chase (see the \"Dashing\" section on the other side of this sheet if you take the {@action Dash} Action). If you have a bonus action available, you also take it during your turn, but no more than once one each of your turns."
 								},
 								{
 									"type": "item",
-									"name": "5. Begin the next round.",
+									"name": "5. Begin the next round",
 									"entry": "When Everyone Involved in the chase has had a turn, the round ends, and the DM determines whether the chase ends, as detailed in the \"Ending a Chase\" section on the other side of this sheet. If the chase doesn't end, repeat steps 3\u20145 until it does."
 								}
 							]
@@ -426,19 +426,19 @@
 							"rows": [
 								[
 									1,
-									"Your path takes you through a rough patch of brush. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to get past the brush. On failed check, the brush counts as 5feet of difficult terrain."
+									"Your path takes you through a rough patch of brush. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to get past the brush. On failed check, the brush counts as 5feet of {@quickref difficult terrain||3}."
 								],
 								[
 									2,
-									"Uneven ground threatens to slow your progress. Make a DC 10 Dexterity ({@skill Acrobatics}) check to navigate the area. On failed check, the ground counts as 10 feet of difficult terrain. {@dice d20}"
+									"Uneven ground threatens to slow your progress. Make a DC 10 Dexterity ({@skill Acrobatics}) check to navigate the area. On failed check, the ground counts as 10 feet of {@quickref difficult terrain||3}."
 								],
 								[
 									3,
-									"You run through a swarm of insects (see the Monster Manual For game statistics). The swarm makes an opportunity attack against you (+3 to hit; {@damage 4d4} piercing damage on a hit)."
+									"You run through a {@creature swarm of insects} (see the Monster Manual For game statistics). The swarm makes an opportunity attack against you (+3 to hit; {@damage 4d4} piercing damage on a hit)."
 								],
 								[
 									4,
-									"A stream, ravine, or rock bed blocks your path. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to cross the impediment. On a failed check, the impediment counts as 10 feet of difficult terrain."
+									"A stream, ravine, or rock bed blocks your path. Make a DC 10 Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check (your choice) to cross the impediment. On a failed check, the impediment counts as 10 feet of {@quickref difficult terrain||3}."
 								],
 								[
 									5,
@@ -474,7 +474,7 @@
 							"type": "entries",
 							"name": "Dashing",
 							"entries": [
-								"Over the course of a chase, you can take the {@action Dash} action a limited number of times before you risk {@condition exhaustion}. That number equals 3 + your Constitution modifier. Each additional {@action Dash} action you take after that number during the chase requires you to succeed on a DC 10 Constitution check at the end of your turn or gain | level of {@condition exhaustion}.",
+								"Over the course of a chase, you can take the {@action Dash} action a limited number of times before you risk {@condition exhaustion}. That number equals 3 + your Constitution modifier. Each additional {@action Dash} action you take after that number during the chase requires you to succeed on a DC 10 Constitution check at the end of your turn or gain 1 level of {@condition exhaustion}.",
 								"You drop out of the chase if your {@condition exhaustion} reaches level 5, since your speed becomes0. By finishing a short or long rest, you can remove all the levels of {@condition exhaustion} you gained by taking the {@action Dash} action additional times during the chase."
 							],
 							"id": "00a"

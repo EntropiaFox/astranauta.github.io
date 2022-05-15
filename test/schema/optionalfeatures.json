@@ -1,20 +1,17 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"$id": "optionalfeatures.json",
-	"version": "1.10.0",
+	"version": "1.11.5",
 	"title": "Optional Features",
 	"type": "object",
-
 	"definitions": {
-		"prerequisite": {
-			"$ref": "util.json#/definitions/prerequisite"
-		},
-
 		"featureType": {
 			"type": "array",
-			"items": {"$ref": "util.json#/definitions/dataOptionalfeatureType"}
+			"items": {
+				"$ref": "util.json#/definitions/dataOptionalfeatureType"
+			},
+			"uniqueItems": true
 		},
-
 		"optionalfeature": {
 			"type": "object",
 			"properties": {
@@ -22,7 +19,7 @@
 					"type": "string"
 				},
 				"prerequisite": {
-					"$ref": "#/definitions/prerequisite"
+					"$ref": "util.json#/definitions/prerequisite"
 				},
 				"entries": {
 					"type": "array",
@@ -40,14 +37,17 @@
 							"type": "string"
 						}
 					},
-					"required": ["name", "source"],
+					"required": [
+						"name",
+						"source"
+					],
 					"additionalProperties": false
 				},
 				"source": {
 					"type": "string"
 				},
 				"page": {
-					"type": "integer"
+					"$ref": "util.json#/definitions/page"
 				},
 				"featureType": {
 					"oneOf": [
@@ -88,6 +88,18 @@
 				},
 				"toolProficiencies": {
 					"$ref": "util.json#/definitions/toolProficiencies"
+				},
+				"skillToolLanguageProficiencies": {
+					"$ref": "util.json#/definitions/skillToolLanguageProficiencies"
+				},
+				"consumes": {
+					"$ref": "util.json#/definitions/consumesObject"
+				},
+				"senses": {
+					"$ref": "util.json#/definitions/sensesArray"
+				},
+				"optionalfeatureProgression": {
+					"$ref": "util.json#/definitions/optionalfeatureProgression"
 				}
 			},
 			"required": [
@@ -99,11 +111,12 @@
 			"additionalProperties": false
 		}
 	},
-
 	"properties": {
 		"optionalfeature": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/optionalfeature"}
+			"items": {
+				"$ref": "#/definitions/optionalfeature"
+			}
 		}
 	},
 	"additionalProperties": false

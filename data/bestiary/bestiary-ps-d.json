@@ -11,7 +11,9 @@
 			"name": "Homarid",
 			"source": "PSD",
 			"page": 15,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -73,7 +75,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -94,13 +95,16 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Kavu Predator",
 			"source": "PSD",
 			"page": 24,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -167,7 +171,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pounce"
 			],
@@ -189,13 +192,16 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Steel Leaf Kavu",
 			"source": "PSD",
 			"page": 24,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -254,7 +260,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -270,7 +275,8 @@
 			],
 			"conditionInflict": [
 				"prone"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Zombie Horse",
@@ -280,7 +286,10 @@
 				"name": "Zombie",
 				"source": "MM"
 			},
-			"size": "L"
+			"size": [
+				"L"
+			],
+			"hasToken": true
 		}
 	]
 }

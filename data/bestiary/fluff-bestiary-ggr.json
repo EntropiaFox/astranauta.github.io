@@ -456,7 +456,7 @@
 										{
 											"name": "Demonic \"Devils\"",
 											"entries": [
-												"The creatures called \"devils\" in Ravnica are minor demons akin to quasits. While the larger demons embody evil qualities such as blood lust and torment, these lesser demons reflect the whimsical and chaotic side of Rakdos and his cult. Their mischievous antics cause disorder and destruction out of proportion to the demons' small size."
+												"The creatures called \"devils\" in Ravnica are minor demons akin to {@creature quasit||quasits}. While the larger demons embody evil qualities such as blood lust and torment, these lesser demons reflect the whimsical and chaotic side of Rakdos and his cult. Their mischievous antics cause disorder and destruction out of proportion to the demons' small size."
 											],
 											"type": "entries"
 										},
@@ -464,7 +464,7 @@
 											"name": "Diabolic Demons",
 											"type": "entries",
 											"entries": [
-												"Many of the demons of Ravnica are monstrous, winged creatures of human-like form. They are best represented by the statistics of the nalfeshnee, the shadow demon, or the vrock in the Monster Manual. Demons associated with the Cult of Rakdos often have fiery attacks that make them similar to barbed devils or horned devils, except that they are demons. (They are chaotic evil, they speak Abyssal and not Infernal, and they lack Devil's Sight.)"
+												"Many of the demons of Ravnica are monstrous, winged creatures of human-like form. They are best represented by the statistics of the {@creature nalfeshnee}, the {@creature shadow demon}, or the {@creature vrock} in the Monster Manual. Demons associated with the Cult of Rakdos often have fiery attacks that make them similar to barbed devils or horned devils, except that they are demons. (They are chaotic evil, they speak Abyssal and not Infernal, and they lack Devil's Sight.)"
 											]
 										}
 									]
@@ -1367,7 +1367,7 @@
 												],
 												[
 													"3",
-													"Innate Spellcasting. The horror's innate spellcasting ability is Charisma (spell save DC 13 for flying horror, DC 16 for shadow horror, and DC 17 for skittering horror). It can innately cast the following spells, requiring no material components: 3/day: darkness 1/day each: fear (shadow horror and skittering horror only), phantasmal killer (skittering horror only)"
+													"Innate Spellcasting. The horror's innate spellcasting ability is Charisma (spell save DC 13 for flying horror, DC 16 for shadow horror, and DC 17 for skittering horror). It can innately cast the following spells, requiring no material components: 3/day: {@spell darkness} 1/day each: {@spell fear} (shadow horror and skittering horror only), {@spell phantasmal killer} (skittering horror only)"
 												],
 												[
 													"4",
@@ -2018,14 +2018,14 @@
 											"name": "Demonic \"Devils.\"",
 											"type": "entries",
 											"entries": [
-												"The creatures called \"devils\" in Ravnica are minor demons akin to quasits. While the larger demons embody evil qualities such as blood lust and torment, these lesser demons reflect the whimsical and chaotic side of Rakdos and his cult. Their mischievous antics cause disorder and destruction out of proportion to the demons' small size."
+												"The creatures called \"devils\" in Ravnica are minor demons akin to {@creature quasit||quasits}. While the larger demons embody evil qualities such as blood lust and torment, these lesser demons reflect the whimsical and chaotic side of Rakdos and his cult. Their mischievous antics cause disorder and destruction out of proportion to the demons' small size."
 											]
 										},
 										{
 											"name": "Diabolic Demons",
 											"type": "entries",
 											"entries": [
-												"Many of the demons of Ravnica are monstrous, winged creatures of human-like form. They are best represented by the statistics of the nalfeshnee, the shadow demon, or the vrock in the Monster Manual. Demons associated with the Cult of Rakdos often have fiery attacks that make them similar to barbed devils or horned devils, except that they are demons. (They are chaotic evil, they speak Abyssal and not Infernal, and they lack Devil's Sight.)"
+												"Many of the demons of Ravnica are monstrous, winged creatures of human-like form. They are best represented by the statistics of the {@creature nalfeshnee}, the {@creature shadow demon}, or the {@creature vrock} in the Monster Manual. Demons associated with the Cult of Rakdos often have fiery attacks that make them similar to barbed devils or horned devils, except that they are demons. (They are chaotic evil, they speak Abyssal and not Infernal, and they lack Devil's Sight.)"
 											]
 										}
 									]
@@ -2723,7 +2723,7 @@
 												],
 												[
 													"3",
-													"Innate Spellcasting. The horror's innate spellcasting ability is Charisma (spell save DC 13 for flying horror, DC 16 for shadow horror, and DC 17 for skittering horror). It can innately cast the following spells, requiring no material components: 3/day: darkness 1/day each: fear (shadow horror and skittering horror only), phantasmal killer (skittering horror only)"
+													"Innate Spellcasting. The horror's innate spellcasting ability is Charisma (spell save DC 13 for flying horror, DC 16 for shadow horror, and DC 17 for skittering horror). It can innately cast the following spells, requiring no material components: 3/day: {@spell darkness} 1/day each: {@spell fear} (shadow horror and skittering horror only), {@spell phantasmal killer} (skittering horror only)"
 												],
 												[
 													"4",
@@ -2804,7 +2804,7 @@
 										{
 											"name": "Demonic \"Devils\"",
 											"entries": [
-												"The creatures called \"devils\" in Ravnica are minor demons akin to quasits. While the larger demons embody evil qualities such as blood lust and torment, these lesser demons reflect the whimsical and chaotic side of Rakdos and his cult. Their mischievous antics cause disorder and destruction out of proportion to the demons' small size."
+												"The creatures called \"devils\" in Ravnica are minor demons akin to {@creature quasit||quasits}. While the larger demons embody evil qualities such as blood lust and torment, these lesser demons reflect the whimsical and chaotic side of Rakdos and his cult. Their mischievous antics cause disorder and destruction out of proportion to the demons' small size."
 											],
 											"type": "entries"
 										},
@@ -2812,7 +2812,7 @@
 											"name": "Diabolic Demons",
 											"type": "entries",
 											"entries": [
-												"Many of the demons of Ravnica are monstrous, winged creatures of human-like form. They are best represented by the statistics of the nalfeshnee, the shadow demon, or the vrock in the Monster Manual. Demons associated with the Cult of Rakdos often have fiery attacks that make them similar to barbed devils or horned devils, except that they are demons. (They are chaotic evil, they speak Abyssal and not Infernal, and they lack Devil's Sight.)"
+												"Many of the demons of Ravnica are monstrous, winged creatures of human-like form. They are best represented by the statistics of the {@creature nalfeshnee}, the {@creature shadow demon}, or the {@creature vrock} in the Monster Manual. Demons associated with the Cult of Rakdos often have fiery attacks that make them similar to barbed devils or horned devils, except that they are demons. (They are chaotic evil, they speak Abyssal and not Infernal, and they lack Devil's Sight.)"
 											]
 										}
 									]
@@ -2917,7 +2917,7 @@
 												],
 												[
 													"3",
-													"Innate Spellcasting. The horror's innate spellcasting ability is Charisma (spell save DC 13 for flying horror, DC 16 for shadow horror, and DC 17 for skittering horror). It can innately cast the following spells, requiring no material components: 3/day: darkness 1/day each: fear (shadow horror and skittering horror only), phantasmal killer (skittering horror only)"
+													"Innate Spellcasting. The horror's innate spellcasting ability is Charisma (spell save DC 13 for flying horror, DC 16 for shadow horror, and DC 17 for skittering horror). It can innately cast the following spells, requiring no material components: 3/day: {@spell darkness} 1/day each: {@spell fear} (shadow horror and skittering horror only), {@spell phantasmal killer} (skittering horror only)"
 												],
 												[
 													"4",

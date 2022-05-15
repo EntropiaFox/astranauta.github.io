@@ -112,7 +112,9 @@
 											},
 											"title": "Map 1: The Sword Coast",
 											"width": 2105,
-											"height": 2933
+											"height": 2933,
+											"imageType": "map",
+											"id": "0fc"
 										},
 										{
 											"type": "image",
@@ -122,7 +124,12 @@
 											},
 											"title": "(Player Version)",
 											"width": 2153,
-											"height": 3000
+											"height": 3000,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "0fc",
+												"autoScale": true
+											}
 										}
 									]
 								}
@@ -579,7 +586,9 @@
 									},
 									"title": "Map 2: Wayside Inn",
 									"width": 3600,
-									"height": 2280
+									"height": 2280,
+									"imageType": "map",
+									"id": "0fd"
 								},
 								{
 									"type": "image",
@@ -589,7 +598,11 @@
 									},
 									"title": "(Player Version)",
 									"width": 3600,
-									"height": 2280
+									"height": 2280,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0fd"
+									}
 								}
 							]
 						},
@@ -718,7 +731,9 @@
 									},
 									"title": "Map 3: Leilon Under Construction",
 									"width": 3600,
-									"height": 2280
+									"height": 2280,
+									"imageType": "map",
+									"id": "0fe"
 								},
 								{
 									"type": "image",
@@ -728,7 +743,11 @@
 									},
 									"title": "(Player Version)",
 									"width": 3600,
-									"height": 2280
+									"height": 2280,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0fe"
+									}
 								}
 							]
 						},
@@ -893,7 +912,7 @@
 											"name": "Tactics",
 											"id": "055",
 											"entries": [
-												"If the characters do not intervene, the monsters move out to the islands and kill the {@condition unconscious} fishers and soldiers lying there. The water between the shore and the islands is 3 feet deep, acting as difficult terrain for any creature without a swim speed."
+												"If the characters do not intervene, the monsters move out to the islands and kill the {@condition unconscious} fishers and soldiers lying there. The water between the shore and the islands is 3 feet deep, acting as {@quickref difficult terrain||3} for any creature without a swim speed."
 											]
 										}
 									]
@@ -1126,7 +1145,9 @@
 									},
 									"title": "Map 4: Backlot in Town",
 									"width": 2835,
-									"height": 3600
+									"height": 3600,
+									"imageType": "map",
+									"id": "0ff"
 								},
 								{
 									"type": "image",
@@ -1136,7 +1157,11 @@
 									},
 									"title": "(Player Version)",
 									"width": 2835,
-									"height": 3600
+									"height": 3600,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "0ff"
+									}
 								}
 							]
 						},
@@ -1353,7 +1378,9 @@
 											},
 											"title": "Map 5: Wayside Inn",
 											"width": 3600,
-											"height": 2280
+											"height": 2280,
+											"imageType": "map",
+											"id": "100"
 										},
 										{
 											"type": "image",
@@ -1363,7 +1390,11 @@
 											},
 											"title": "(Player Version)",
 											"width": 3600,
-											"height": 2280
+											"height": 2280,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "100"
+											}
 										}
 									]
 								}
@@ -1393,7 +1424,7 @@
 													"id": "086",
 													"entries": [
 														"Backes (Illuskan human {@creature gladiator}) leads the chanting in the common area as {@creature Cult Fanatic||cult fanatics} (one for every two characters rounded down, excluding sidekicks) walk back and forth between the common area and the courtyard, making sure the ritual is progressing according to plan. Spread out between the two areas are {@creature Cultist||cultists} (one per character) with tridents, guarding several bound victims who will be sacrificed at the conclusion of the ritual.",
-														"The ritual takes 10 minutes to complete after the characters arrive on the scene. If they do nothing but watch, describe how the chanting from inside gets louder, how the weather gets darker and even more dangerous, and how terrible faces appear in the clouds. If this doesn't urge them to act, the ritual will be completed, and the adventurers must deal with the consequences (see \"{@adventure Aftermath|SLW|5|Aftermath}\" below for details)."
+														"The ritual takes 10 minutes to complete after the characters arrive on the scene. If they do nothing but watch, describe how the chanting from inside gets louder, how the weather gets darker and even more dangerous, and how terrible faces appear in the clouds. If this doesn't urge them to act, the ritual will be completed, and the adventurers must deal with the consequences (see \"{@adventure Aftermath|SLW|5|Aftermath|1}\" below for details)."
 													]
 												}
 											]
@@ -1582,7 +1613,9 @@
 									},
 									"title": "Map 6: Ruined Tower (Leilon)",
 									"width": 3600,
-									"height": 2280
+									"height": 2280,
+									"imageType": "map",
+									"id": "101"
 								},
 								{
 									"type": "image",
@@ -1592,7 +1625,11 @@
 									},
 									"title": "(Player Version)",
 									"width": 3600,
-									"height": 2280
+									"height": 2280,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "101"
+									}
 								}
 							]
 						},
@@ -2006,7 +2043,9 @@
 											},
 											"title": "Map 7: Lizardfolk Camp",
 											"width": 3600,
-											"height": 2280
+											"height": 2280,
+											"imageType": "map",
+											"id": "102"
 										},
 										{
 											"type": "image",
@@ -2016,7 +2055,11 @@
 											},
 											"title": "(Player Version)",
 											"width": 3600,
-											"height": 2280
+											"height": 2280,
+											"imageType": "mapPlayer",
+											"mapParent": {
+												"id": "102"
+											}
 										}
 									]
 								},
@@ -2321,7 +2364,9 @@
 									},
 									"title": "Map 8: Caverns at Thunder Cliffs",
 									"width": 3600,
-									"height": 2280
+									"height": 2280,
+									"imageType": "map",
+									"id": "103"
 								},
 								{
 									"type": "image",
@@ -2331,7 +2376,11 @@
 									},
 									"title": "(Player Version)",
 									"width": 3600,
-									"height": 2280
+									"height": 2280,
+									"imageType": "mapPlayer",
+									"mapParent": {
+										"id": "103"
+									}
 								}
 							]
 						},
@@ -2519,7 +2568,7 @@
 							"id": "0ee",
 							"entries": [
 								"Gadrille the Reef-Reaver is a female half-elf {@creature evoker|VGM}. She spends most of her time out with her followers, preying on those too weak to withstand the ravaging power of Talos. When in the caves, however, she is in her chambers praying.",
-								"Talos has rewarded Gadrille for her devotion with a pet, whom she calls \"{@creature Tooth-N-Claw|SLW}.\" This beast uses {@creature hell hound} statistics but replace fire with cold in attacks and immunities. Tooth-N-Claw is ferociously protective of Gadrille. If there are more than four characters, excluding sidekicks, add a second pet called \"Frost-N-Fang.\"",
+								"Talos has rewarded Gadrille for her devotion with a pet, whom she calls \"{@creature Tooth-N-Claw|SLW}.\" This beast uses {@creature hell hound} statistics but replace fire with cold in attacks and immunities. {@creature Tooth-N-Claw|SLW} is ferociously protective of Gadrille. If there are more than four characters, excluding sidekicks, add a second pet called \"Frost-N-Fang.\"",
 								{
 									"type": "entries",
 									"name": "Swirling Pool Chamber",
@@ -2533,7 +2582,7 @@
 									"name": "Shrine Chamber",
 									"id": "0f0",
 									"entries": [
-										"This area is Gadrille's private shrine. In addition to the carved limestone likeness of Talos in one corner, the walls are carved with images of Talos's destructive power. Moving within the chamber is like moving through difficult terrain unless you are a worshipper of Talos. Taking an action to say a prayer to Talos and succeeding on a DC 15 Intelligence ({@skill Religion}) check, allows a creature to move normally in the room for 1 minute.",
+										"This area is Gadrille's private shrine. In addition to the carved limestone likeness of Talos in one corner, the walls are carved with images of Talos's destructive power. Moving within the chamber is like moving through {@quickref difficult terrain||3} unless you are a worshipper of Talos. Taking an action to say a prayer to Talos and succeeding on a DC 15 Intelligence ({@skill Religion}) check, allows a creature to move normally in the room for 1 minute.",
 										{
 											"type": "entries",
 											"name": "Treasury",

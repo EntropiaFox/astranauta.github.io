@@ -17,7 +17,7 @@
 				},
 				{
 					"type": "section",
-					"name": "Imagination is a strange & wonderful thing.",
+					"name": "Imagination is a strange & wonderful thing",
 					"page": 4,
 					"id": "001",
 					"entries": [
@@ -170,7 +170,8 @@
 							},
 							"title": "Continent of Wildemount",
 							"width": 9300,
-							"height": 6600
+							"height": 6600,
+							"imageType": "map"
 						}
 					]
 				},
@@ -368,7 +369,7 @@
 								[
 									"Sydenstar",
 									"32",
-									"Highsummer (7th), Morn of Largesse (14th)"
+									"Highsummer (15th), Morn of Largesse (14th)"
 								],
 								[
 									"Fessuran",
@@ -2698,7 +2699,8 @@
 							},
 							"title": "Map 3.1: Menagerie Coast",
 							"width": 2550,
-							"height": 1650
+							"height": 1650,
+							"imageType": "map"
 						},
 						{
 							"type": "section",
@@ -4103,7 +4105,8 @@
 															},
 															"title": "Map 3.2: Port Damali",
 															"width": 2550,
-															"height": 3300
+															"height": 3300,
+															"imageType": "map"
 														}
 													]
 												}
@@ -4540,7 +4543,8 @@
 							},
 							"title": "Map 3.3: Marrow Valley",
 							"width": 2550,
-							"height": 1650
+							"height": 1650,
+							"imageType": "map"
 						},
 						{
 							"type": "section",
@@ -6415,7 +6419,8 @@
 							},
 							"title": "Map 3.4: Zemni Fields",
 							"width": 2550,
-							"height": 1650
+							"height": 1650,
+							"imageType": "map"
 						},
 						{
 							"type": "section",
@@ -7394,7 +7399,8 @@
 															},
 															"title": "Map 3.5: Rexxentrum",
 															"width": 2550,
-															"height": 3300
+															"height": 3300,
+															"imageType": "map"
 														}
 													]
 												}
@@ -7973,7 +7979,8 @@
 							},
 							"title": "Map 3.6: Greying Wildlands",
 							"width": 2550,
-							"height": 1650
+							"height": 1650,
+							"imageType": "map"
 						},
 						{
 							"type": "section",
@@ -8829,7 +8836,8 @@
 							},
 							"title": "Map 3.7: Eiselcross",
 							"width": 2550,
-							"height": 1560
+							"height": 1560,
+							"imageType": "map"
 						},
 						{
 							"type": "section",
@@ -8856,7 +8864,7 @@
 										],
 										[
 											"2",
-											"The characters encounter a lost Cerberus Assembly {@creature mage} trying to return to Balenpost. The rest of the mage's team died in the ruins of Aeor, and there is a 50 percent chance the mage carries a recently recovered Aeorian item."
+											"The characters encounter a lost Cerberus Assembly {@creature mage} trying to return to Balenpost. The rest of the mage's team died in the ruins of Aeor, and there is a {@chance 50|50 percent} chance the mage carries a recently recovered Aeorian item."
 										],
 										[
 											"3",
@@ -10043,7 +10051,8 @@
 							},
 							"title": "Map 3.8: Wastes of Xorhas",
 							"width": 2550,
-							"height": 2956
+							"height": 2956,
+							"imageType": "map"
 						},
 						{
 							"type": "section",
@@ -11023,7 +11032,8 @@
 															},
 															"title": "Map 3.9: Rosohna",
 															"width": 2550,
-															"height": 3300
+															"height": 3300,
+															"imageType": "map"
 														}
 													]
 												}
@@ -11344,7 +11354,7 @@
 											"id": "4e5",
 											"entries": [
 												"The swampfolk of Urzin have always prized strength and guile: their leader is simply the reigning champion of one-on-one combat. The previous champion, Ogre Lord Buhfal, ruled the settlement for decades, assaulting the encroaching empire and fighting off the dangers of the marsh. Roughly forty years ago, Buhfal was challenged by the Kryn paragon Sunbreaker Olomon. In what is still retold as legend, a mighty bout between the two ended with Buhfal defeated and Olomon elevated to rule the settlement.",
-												"With his guidance, Olomon brought the teachings of the Luxon, in the name of the Bright Queen, and promised that with the hearts of the Urzin people behind him and his drow, the terrible soldiers of the empire would no longer terrorize the marshfolk. Renewed by this promise, Urzin follows the lead of the dynasty with an impressive fervor, working like clockwork to achieve any goal dictated by Olomon. In his absence, Ogre Lord Buhfal II proudly fills the role of leader and protector."
+												"With his guidance, Olomon brought the teachings of the Luxon, in the name of the Bright Queen, and promised that with the hearts of the Urzin people behind him and his drow, the terrible soldiers of the empire would no longer terrorize the marshfolk. Renewed by this promise, Urzin follows the lead of the dynasty with an impressive fervor, working like clockwork to achieve any goal dictated by Olomon. In his absence, {@creature Ogre Lord Buhfal II|EGW} proudly fills the role of leader and protector."
 											]
 										},
 										{
@@ -11622,7 +11632,8 @@
 							},
 							"title": "Map 3.10: Blightshore",
 							"width": 2550,
-							"height": 1650
+							"height": 1650,
+							"imageType": "map"
 						},
 						{
 							"type": "entries",
@@ -11652,7 +11663,7 @@
 											"type": "list",
 											"items": [
 												"Ranged attacks through electric wind are made with disadvantage.",
-												"Any creature that starts its turn surrounded by electric wind has a 5 percent chance of being struck by lightning. A creature struck by lightning must make a DC 15 Dexterity saving throw, taking {@dice 4d6} lightning damage on a failed save, or half as much damage on a successful one."
+												"Any creature that starts its turn surrounded by electric wind has a {@chance 5|5 percent} chance of being struck by lightning. A creature struck by lightning must make a DC 15 Dexterity saving throw, taking {@dice 4d6} lightning damage on a failed save, or half as much damage on a successful one."
 											]
 										}
 									]
@@ -11685,7 +11696,7 @@
 											"type": "list",
 											"items": [
 												"An etheric rift is a lightly obscured area.",
-												"Any creature that enters an etheric rift or starts its turn there has a 33 percent chance of gaining the effect of the {@spell etherealness} spell until the end of its next turn."
+												"Any creature that enters an etheric rift or starts its turn there has a {@chance 33|33 percent} chance of gaining the effect of the {@spell etherealness} spell until the end of its next turn."
 											]
 										}
 									]
@@ -11703,7 +11714,7 @@
 												"Strength checks made within a gravity funnel have disadvantage.",
 												"A ranged weapon attack made through or within a gravity funnel automatically misses a target beyond the weapon's normal range.",
 												"Creatures and objects that are fully contained within a gravity funnel have resistance against force damage.",
-												"The gravity funnel counts as difficult terrain."
+												"The gravity funnel counts as {@quickref difficult terrain||3}."
 											]
 										}
 									]
@@ -11751,7 +11762,7 @@
 										{
 											"type": "list",
 											"items": [
-												"Any non-plant creature within 20 feet of a toxic fungus colony is {@condition poisoned}. A creature {@condition poisoned} by the colony for 1 hour has a 20 percent chance of gaining a random form of short-term madness (see \"{@book Madness|DMG|8|Madness}\" in chapter 8 of the {@book Dungeon Master's Guide|DMG}).",
+												"Any non-plant creature within 20 feet of a toxic fungus colony is {@condition poisoned}. A creature {@condition poisoned} by the colony for 1 hour has a {@chance 20|20 percent} chance of gaining a random form of short-term madness (see \"{@book Madness|DMG|8|Madness}\" in chapter 8 of the {@book Dungeon Master's Guide|DMG}).",
 												"A toxic fungus colony can be bioluminescent. A bioluminescent colony sheds dim light within its area and for an additional 20 feet beyond its outer edges."
 											]
 										}
@@ -11821,7 +11832,7 @@
 												],
 												[
 													"10",
-													"This place is haunted by fragments of the Far Realm. Whenever the target of a Wisdom saving throw fails its save, that creature has a 5 percent chance of becoming afflicted by a random form of long-term madness (see \"{@book Madness|DMG|8|Madness}\" in chapter 8 of the {@book Dungeon Master's Guide|DMG})."
+													"This place is haunted by fragments of the Far Realm. Whenever the target of a Wisdom saving throw fails its save, that creature has a {@chance 5|5 percent} chance of becoming afflicted by a random form of long-term madness (see \"{@book Madness|DMG|8|Madness}\" in chapter 8 of the {@book Dungeon Master's Guide|DMG})."
 												]
 											]
 										}
@@ -11996,7 +12007,7 @@
 							"id": "51c",
 							"entries": [
 								"The ruined keep at the heart of this crumbling city once served as an arcane repository and research facility for the Betrayer Gods during their pre-Calamity ascent to power. Artifacts and wondrous items from the Age of Arcanum are rumored to linger within its shadow-haunted vaults, lying in wait for those brave or foolish enough to challenge the citadel's timeless guardians. Now, its decaying battlements stand as a stark monument to the Calamity's unstoppable devastation.",
-								"The name Ghor Veles means \"Vault of Shadows,\" and a vast dungeon indeed lurks below the ruins of the city. These catacombs were home to the aberrant and undead minions of the dracolich Oracs the Enduring. Countless adventuring parties and would-be tomb robbers have attempted to lay siege to the vaults below Ghor Veles, only to perish at the clawed hands and creeping doom of the keep's fearsome inhabitants. But a destiny worse than death awaits them: most of these ill-fated interlopers become undead minions themselves, bound to Oracs in unending servitude. As this army grows, so does Oracs's hold over the Miskath Strand.",
+								"The name Ghor Veles means \"Vault of Shadows,\" and a vast dungeon indeed lurks below the ruins of the city. These catacombs were home to the aberrant and undead minions of the dracolich {@creature Oracs the Enduring|EGW}. Countless adventuring parties and would-be tomb robbers have attempted to lay siege to the vaults below Ghor Veles, only to perish at the clawed hands and creeping doom of the keep's fearsome inhabitants. But a destiny worse than death awaits them: most of these ill-fated interlopers become undead minions themselves, bound to Oracs in unending servitude. As this army grows, so does Oracs's hold over the Miskath Strand.",
 								{
 									"type": "entries",
 									"name": "Land of Refugees and Hermits",
@@ -12372,7 +12383,7 @@
 									"page": 158,
 									"id": "544",
 									"entries": [
-										"This petrified woodland is the domain of an ancient silver shadow dragon named Karkethzerethzerus, the Sable Despoiler (Karketh for short). Before his malign reign, this region of the Miskath Strand was a verdant haven for a long-lost nation of wood elves and centaurs. For reasons unknown, Karkethzerethzerus plotted to annihilate the woodland nation, killing it off with energies from the Shadowfell. Since doing exactly that, the Sable Despoiler has ruled Strathfell with equal measures of gleeful arrogance and baleful suspicion. The shadow dragon's lair, like his motives, remain hidden. Etheric rifts run throughout Strathfell's gloomy expanse, allowing denizens such as darklings and meenlocks to travel to and from the Shadowfell with unsettling regularity. Most of these interplanar paths are invisible to the naked eye\u2014but minions of Karkethzerethzerus know all too well where the veil grows thin.",
+										"This petrified woodland is the domain of an ancient silver shadow dragon named {@creature Karkethzerethzerus, the Sable Despoiler|EGW} (Karketh for short). Before his malign reign, this region of the Miskath Strand was a verdant haven for a long-lost nation of wood elves and centaurs. For reasons unknown, Karkethzerethzerus plotted to annihilate the woodland nation, killing it off with energies from the Shadowfell. Since doing exactly that, the Sable Despoiler has ruled Strathfell with equal measures of gleeful arrogance and baleful suspicion. The shadow dragon's lair, like his motives, remain hidden. Etheric rifts run throughout Strathfell's gloomy expanse, allowing denizens such as darklings and meenlocks to travel to and from the Shadowfell with unsettling regularity. Most of these interplanar paths are invisible to the naked eye\u2014but minions of Karkethzerethzerus know all too well where the veil grows thin.",
 										"The future of Strathfell is not without hope, for good-aligned centaurs continue to patrol the woods as their ancestors did in ages past, battling the evil forces of the shadow dragon at every turn. The centaurs could use some help, however, as they are few in number."
 									]
 								},
@@ -13388,7 +13399,6 @@
 													"type": "item",
 													"name": "Cantrips",
 													"entries": [
-														"",
 														"{@spell sapping sting|EGW} (necromancy)"
 													]
 												},
@@ -13396,7 +13406,6 @@
 													"type": "item",
 													"name": "Level 1",
 													"entries": [
-														"",
 														"{@spell gift of alacrity|EGW}* (divination)",
 														"{@spell magnify gravity|EGW}** (transmutation)"
 													]
@@ -13405,7 +13414,6 @@
 													"type": "item",
 													"name": "Level 2",
 													"entries": [
-														"",
 														"{@spell fortune's favor|EGW} (divination)",
 														"{@spell immovable object|EGW}** (transmutation)",
 														"{@spell wristpocket|EGW} (conjuration, ritual)"
@@ -13415,7 +13423,6 @@
 													"type": "item",
 													"name": "Level 3",
 													"entries": [
-														"",
 														"{@spell pulse wave|EGW} (evocation)"
 													]
 												},
@@ -13423,7 +13430,6 @@
 													"type": "item",
 													"name": "Level 4",
 													"entries": [
-														"",
 														"{@spell gravity sinkhole|EGW}** (evocation)"
 													]
 												},
@@ -13431,7 +13437,6 @@
 													"type": "item",
 													"name": "Level 5",
 													"entries": [
-														"",
 														"{@spell temporal shunt|EGW}* (transmutation)"
 													]
 												},
@@ -13439,7 +13444,6 @@
 													"type": "item",
 													"name": "Level 6",
 													"entries": [
-														"",
 														"{@spell gravity fissure|EGW}** (evocation)"
 													]
 												},
@@ -13447,7 +13451,6 @@
 													"type": "item",
 													"name": "Level 7",
 													"entries": [
-														"",
 														"{@spell tether essence|EGW} (necromancy)"
 													]
 												},
@@ -13455,7 +13458,6 @@
 													"type": "item",
 													"name": "Level 8",
 													"entries": [
-														"",
 														"{@spell dark star|EGW}** (evocation)",
 														"{@spell reality break|EGW}* (conjuration)"
 													]
@@ -13464,7 +13466,6 @@
 													"type": "item",
 													"name": "Level 9",
 													"entries": [
-														"",
 														"{@spell ravenous void|EGW}** (evocation)",
 														"{@spell time ravage|EGW}* (necromancy)"
 													]
@@ -15595,7 +15596,7 @@
 								"{@item Mace of the Black Crown|egw}",
 								"{@item Ruin's Wake|egw}",
 								"{@item Silken Spite|egw}",
-								"{@item the Bloody End|egw}",
+								"{@item The Bloody End|egw}",
 								"{@item Will of the Talon|egw}"
 							]
 						}

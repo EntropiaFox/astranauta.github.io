@@ -3,6 +3,7 @@
 		{
 			"type": "section",
 			"name": "Introduction",
+			"page": 2,
 			"id": "000",
 			"entries": [
 				{
@@ -20,6 +21,7 @@
 				{
 					"type": "section",
 					"name": "Running the Adventure",
+					"page": 2,
 					"id": "001",
 					"entries": [
 						{
@@ -32,11 +34,12 @@
 							"height": 1000
 						},
 						"{@i The Lost Dungeon of Rickedness: Big Rick Energy} is an adventure for four to five characters of 1st level. During the course of the adventure, the characters will advance to 3rd level. See \"{@area Leveling Up|013|x}\" for details on when it's best for the characters to advance.",
-						"While the rulebook provides you with everything you need to create your own characters, this adventure assumes players are using the {@i Rick and Morty} pregenerated characters provided in this boxed set. If they're not, that's fine, but players might want to consider why their characters find themselves on an adventure in the unpredictable world of {@i Rick and Morty}\u2014or not, and just be prepared for whatever weirdness comes their way!",
+						"While the rulebook provides you with everything you need to create your own characters, this adventure assumes players are using the {@i Rick and Morty} {@adventure pregenerated characters|rmbre|0|Pregenerated Characters} provided in this boxed set. If they're not, that's fine, but players might want to consider why their characters find themselves on an adventure in the unpredictable world of {@i Rick and Morty}\u2014or not, and just be prepared for whatever weirdness comes their way!",
 						"If this is your first time running a D&D adventure, read the \"Role of the Dungeon Master\" section; it will help you better understand your role and responsibilities.",
 						{
 							"type": "entries",
 							"name": "Role of the Dungeon Master",
+							"page": 2,
 							"id": "002",
 							"entries": [
 								"The Dungeon Master (DM) has a special role in the Dungeons & Dragons game.",
@@ -49,6 +52,7 @@
 								{
 									"type": "entries",
 									"name": "Choosing a Dungeon Master",
+									"page": 3,
 									"id": "003",
 									"entries": [
 										"Who should be the Dungeon Master for your group? Whoever wants to be! The person with the most drive to pull a group together and start a game often ends up being the DM, but that doesn't have to be the case."
@@ -57,6 +61,7 @@
 								{
 									"type": "entries",
 									"name": "Dungeon Master Tips",
+									"page": 3,
 									"id": "004",
 									"entries": [
 										"As the Dungeon Master, you are the final authority when it comes to rules questions or disputes during the game. Here are some guidelines to help you arbitrate issues as they come up.",
@@ -81,6 +86,7 @@
 								{
 									"type": "entries",
 									"name": "Improvising Ability Checks",
+									"page": 3,
 									"id": "005",
 									"entries": [
 										"The adventure often tells you what ability checks characters might try in a certain situation and the Difficulty Class (DC) of those checks. Sometimes adventurers try things that the adventure can't possibly anticipate. It's up to you to decide whether their attempts are successful. If it seems like anyone should have an easy time doing it, don't ask for an ability check; just tell the player what happens. Likewise, if there's no way anyone could accomplish the task, just tell the player it doesn't work.",
@@ -93,7 +99,7 @@
 												"What's the result?"
 											]
 										},
-										"Use the descriptions of the ability scores and their associated skills in the rulebook to help you decide what kind of ability check to use. Then determine how hard the task is so that you can set the DC for the check. The higher the DC, the more difficult the task. The easiest way to set a DC is to decide whether the task's difficulty is easy, moderate, or hard, and use these three DCs:",
+										"Use the {@book descriptions of the ability scores|rmr|0|Six Abilities} and {@book their associated skills|rmr|0|skills} in the rulebook to help you decide what kind of ability check to use. Then determine how hard the task is so that you can set the DC for the check. The higher the DC, the more difficult the task. The easiest way to set a DC is to decide whether the task's difficulty is easy, moderate, or hard, and use these three DCs:",
 										"{@b Easy (DC 10}). An easy task requires a minimal level of competence or a modicum of luck to accomplish.",
 										"{@b Moderate (DC 15}). A moderate task requires a slightly higher level of competence to accomplish. A character with a combination of natural aptitude and specialized training can accomplish a moderate task more often than not.",
 										"{@b Hard (DC 20}). Hard tasks include any effort that is beyond the capabilities of most people without aid or exceptional ability. Even with aptitude and training, a character needs some amount of luck\u2014or a lot of specialized training\u2014to pull off a hard task.",
@@ -103,6 +109,7 @@
 								{
 									"type": "entries",
 									"name": "DM Screen",
+									"page": 4,
 									"id": "006",
 									"entries": [
 										"The inside of the folding screen included in this set has information that can help you while running the adventure. You can also use the screen to hide your notes and die rolls, thus keeping the players in suspense. Even though this DM screen has a {@i Rick and Morty} spin to the art, it is 100 percent serious DM business\u2014no jokes there, just loads of valuable DM reference material."
@@ -111,6 +118,7 @@
 								{
 									"type": "entries",
 									"name": "Adventure Map",
+									"page": 4,
 									"id": "007",
 									"entries": [
 										"Map 1.1 shows the entire dungeon. This map is for your eyes only, providing insight into the dungeon's secrets and how encounters fit together. You probably don't want to share this map with the players, as it can spoil upcoming encounters. When characters arrive at a location marked on the map, you can either rely on a verbal description to give them a clear mental picture of the location, or you can draw what they see on a piece of graph paper, copying what's on your map while omitting details as appropriate. It's not important that your hand-drawn map perfectly match whats in the printed adventure. Focus on getting the shape and dimensions correct, and leave the rest to the players' imaginations.",
@@ -125,7 +133,1242 @@
 													},
 													"title": "Map 1.1: the Lost Dungeon of Rickedness",
 													"width": 5100,
-													"height": 2202
+													"height": 2202,
+													"imageType": "map",
+													"id": "10b",
+													"mapRegions": [
+														{
+															"area": "019",
+															"points": [
+																[
+																	368,
+																	1614
+																],
+																[
+																	669,
+																	1614
+																],
+																[
+																	670,
+																	1739
+																],
+																[
+																	366,
+																	1740
+																]
+															]
+														},
+														{
+															"area": "01c",
+															"points": [
+																[
+																	428,
+																	1491
+																],
+																[
+																	668,
+																	1495
+																],
+																[
+																	669,
+																	1431
+																],
+																[
+																	609,
+																	1429
+																],
+																[
+																	607,
+																	1375
+																],
+																[
+																	427,
+																	1377
+																]
+															]
+														},
+														{
+															"area": "01e",
+															"points": [
+																[
+																	365,
+																	1251
+																],
+																[
+																	788,
+																	1251
+																],
+																[
+																	792,
+																	1224
+																],
+																[
+																	607,
+																	1006
+																],
+																[
+																	363,
+																	1009
+																]
+															]
+														},
+														{
+															"area": "023",
+															"points": [
+																[
+																	365,
+																	278
+																],
+																[
+																	548,
+																	279
+																],
+																[
+																	549,
+																	700
+																],
+																[
+																	365,
+																	701
+																]
+															]
+														},
+														{
+															"area": "027",
+															"points": [
+																[
+																	705,
+																	332
+																],
+																[
+																	795,
+																	268
+																],
+																[
+																	896,
+																	268
+																],
+																[
+																	983,
+																	321
+																],
+																[
+																	1030,
+																	410
+																],
+																[
+																	1026,
+																	501
+																],
+																[
+																	967,
+																	594
+																],
+																[
+																	851,
+																	631
+																],
+																[
+																	769,
+																	610
+																],
+																[
+																	696,
+																	548
+																],
+																[
+																	663,
+																	454
+																],
+																[
+																	669,
+																	395
+																]
+															]
+														},
+														{
+															"area": "02b",
+															"points": [
+																[
+																	1109,
+																	461
+																],
+																[
+																	1087,
+																	523
+																],
+																[
+																	1109,
+																	587
+																],
+																[
+																	1164,
+																	626
+																],
+																[
+																	1218,
+																	624
+																],
+																[
+																	1281,
+																	579
+																],
+																[
+																	1293,
+																	519
+																],
+																[
+																	1279,
+																	480
+																],
+																[
+																	1244,
+																	436
+																],
+																[
+																	1184,
+																	422
+																],
+																[
+																	1144,
+																	434
+																]
+															]
+														},
+														{
+															"area": "030",
+															"points": [
+																[
+																	1014,
+																	711
+																],
+																[
+																	1074,
+																	680
+																],
+																[
+																	1173,
+																	683
+																],
+																[
+																	1270,
+																	745
+																],
+																[
+																	1304,
+																	851
+																],
+																[
+																	1294,
+																	916
+																],
+																[
+																	1241,
+																	993
+																],
+																[
+																	1151,
+																	1039
+																],
+																[
+																	1052,
+																	1027
+																],
+																[
+																	966,
+																	947
+																],
+																[
+																	939,
+																	869
+																],
+																[
+																	945,
+																	795
+																]
+															]
+														},
+														{
+															"area": "035",
+															"points": [
+																[
+																	1579,
+																	822
+																],
+																[
+																	1579,
+																	1068
+																],
+																[
+																	1950,
+																	1068
+																],
+																[
+																	1952,
+																	1013
+																],
+																[
+																	1926,
+																	964
+																],
+																[
+																	1883,
+																	899
+																],
+																[
+																	1801,
+																	820
+																]
+															]
+														},
+														{
+															"area": "049",
+															"points": [
+																[
+																	1576,
+																	1189
+																],
+																[
+																	1703,
+																	1191
+																],
+																[
+																	1705,
+																	1313
+																],
+																[
+																	1575,
+																	1312
+																]
+															]
+														},
+														{
+															"area": "051",
+															"points": [
+																[
+																	1400,
+																	282
+																],
+																[
+																	1548,
+																	187
+																],
+																[
+																	1703,
+																	276
+																],
+																[
+																	1705,
+																	452
+																],
+																[
+																	1549,
+																	539
+																],
+																[
+																	1398,
+																	449
+																]
+															]
+														},
+														{
+															"area": "055",
+															"points": [
+																[
+																	1401,
+																	1492
+																],
+																[
+																	1523,
+																	1492
+																],
+																[
+																	1523,
+																	1740
+																],
+																[
+																	1402,
+																	1742
+																]
+															]
+														},
+														{
+															"area": "05c",
+															"points": [
+																[
+																	855,
+																	1310
+																],
+																[
+																	860,
+																	1597
+																],
+																[
+																	976,
+																	1739
+																],
+																[
+																	1221,
+																	1736
+																]
+															]
+														},
+														{
+															"area": "060",
+															"points": [
+																[
+																	1604,
+																	1613
+																],
+																[
+																	1606,
+																	1550
+																],
+																[
+																	1652,
+																	1492
+																],
+																[
+																	1755,
+																	1495
+																],
+																[
+																	1805,
+																	1563
+																],
+																[
+																	1805,
+																	1613
+																],
+																[
+																	1761,
+																	1681
+																],
+																[
+																	1703,
+																	1692
+																],
+																[
+																	1639,
+																	1674
+																]
+															]
+														},
+														{
+															"area": "063",
+															"points": [
+																[
+																	1707,
+																	519
+																],
+																[
+																	1949,
+																	519
+																],
+																[
+																	1952,
+																	701
+																],
+																[
+																	1706,
+																	702
+																]
+															]
+														},
+														{
+															"area": "067",
+															"points": [
+																[
+																	1765,
+																	1431
+																],
+																[
+																	2009,
+																	1433
+																],
+																[
+																	2009,
+																	1187
+																],
+																[
+																	1954,
+																	1188
+																],
+																[
+																	1951,
+																	1071
+																],
+																[
+																	1883,
+																	1070
+																],
+																[
+																	1885,
+																	1310
+																],
+																[
+																	1763,
+																	1312
+																]
+															]
+														},
+														{
+															"area": "06c",
+															"points": [
+																[
+																	1857,
+																	1609
+																],
+																[
+																	1884,
+																	1551
+																],
+																[
+																	1947,
+																	1517
+																],
+																[
+																	2013,
+																	1545
+																],
+																[
+																	2048,
+																	1619
+																],
+																[
+																	2018,
+																	1683
+																],
+																[
+																	1950,
+																	1712
+																],
+																[
+																	1882,
+																	1679
+																]
+															]
+														},
+														{
+															"area": "074",
+															"points": [
+																[
+																	1889,
+																	274
+																],
+																[
+																	1888,
+																	456
+																],
+																[
+																	2257,
+																	454
+																],
+																[
+																	2256,
+																	276
+																]
+															]
+														},
+														{
+															"area": "079",
+															"points": [
+																[
+																	2484,
+																	368
+																],
+																[
+																	2444,
+																	434
+																],
+																[
+																	2436,
+																	527
+																],
+																[
+																	2476,
+																	611
+																],
+																[
+																	2542,
+																	666
+																],
+																[
+																	2632,
+																	682
+																],
+																[
+																	2703,
+																	658
+																],
+																[
+																	2770,
+																	600
+																],
+																[
+																	2803,
+																	520
+																],
+																[
+																	2797,
+																	436
+																],
+																[
+																	2757,
+																	366
+																],
+																[
+																	2674,
+																	316
+																],
+																[
+																	2589,
+																	310
+																],
+																[
+																	2520,
+																	336
+																]
+															]
+														},
+														{
+															"area": "07d",
+															"points": [
+																[
+																	2134,
+																	1494
+																],
+																[
+																	2254,
+																	1493
+																],
+																[
+																	2255,
+																	1738
+																],
+																[
+																	2129,
+																	1737
+																]
+															]
+														},
+														{
+															"area": "083",
+															"points": [
+																[
+																	2511,
+																	705
+																],
+																[
+																	2575,
+																	720
+																],
+																[
+																	2630,
+																	764
+																],
+																[
+																	2660,
+																	846
+																],
+																[
+																	2636,
+																	919
+																],
+																[
+																	2576,
+																	975
+																],
+																[
+																	2497,
+																	990
+																],
+																[
+																	2412,
+																	951
+																],
+																[
+																	2374,
+																	883
+																],
+																[
+																	2372,
+																	820
+																],
+																[
+																	2415,
+																	742
+																]
+															]
+														},
+														{
+															"area": "088",
+															"points": [
+																[
+																	2436,
+																	1066
+																],
+																[
+																	2620,
+																	1068
+																],
+																[
+																	2623,
+																	1313
+																],
+																[
+																	2434,
+																	1314
+																]
+															]
+														},
+														{
+															"area": "08a",
+															"points": [
+																[
+																	2439,
+																	1433
+																],
+																[
+																	2621,
+																	1434
+																],
+																[
+																	2623,
+																	1552
+																],
+																[
+																	2799,
+																	1554
+																],
+																[
+																	2800,
+																	1739
+																],
+																[
+																	2438,
+																	1737
+																]
+															]
+														},
+														{
+															"area": "090",
+															"points": [
+																[
+																	2985,
+																	1539
+																],
+																[
+																	2931,
+																	1562
+																],
+																[
+																	2901,
+																	1617
+																],
+																[
+																	2904,
+																	1671
+																],
+																[
+																	2984,
+																	1734
+																],
+																[
+																	3055,
+																	1717
+																],
+																[
+																	3096,
+																	1655
+																],
+																[
+																	3090,
+																	1594
+																],
+																[
+																	3042,
+																	1549
+																]
+															]
+														},
+														{
+															"area": "097",
+															"points": [
+																[
+																	2982,
+																	1428
+																],
+																[
+																	3108,
+																	1431
+																],
+																[
+																	3110,
+																	1554
+																],
+																[
+																	3236,
+																	1432
+																],
+																[
+																	3233,
+																	1250
+																],
+																[
+																	3108,
+																	1253
+																],
+																[
+																	2982,
+																	1379
+																]
+															]
+														},
+														{
+															"area": "09e",
+															"points": [
+																[
+																	3350,
+																	1247
+																],
+																[
+																	3350,
+																	1625
+																],
+																[
+																	3657,
+																	1618
+																],
+																[
+																	3660,
+																	1250
+																]
+															]
+														},
+														{
+															"area": "0a8",
+															"points": [
+																[
+																	3415,
+																	1003
+																],
+																[
+																	3653,
+																	1007
+																],
+																[
+																	3655,
+																	1245
+																],
+																[
+																	3592,
+																	1244
+																],
+																[
+																	3592,
+																	1188
+																],
+																[
+																	3413,
+																	1189
+																]
+															]
+														},
+														{
+															"area": "0ac",
+															"points": [
+																[
+																	2867,
+																	394
+																],
+																[
+																	2875,
+																	461
+																],
+																[
+																	2934,
+																	563
+																],
+																[
+																	3052,
+																	601
+																],
+																[
+																	3147,
+																	570
+																],
+																[
+																	3218,
+																	472
+																],
+																[
+																	3220,
+																	380
+																],
+																[
+																	3149,
+																	276
+																],
+																[
+																	3040,
+																	243
+																],
+																[
+																	2947,
+																	273
+																],
+																[
+																	2895,
+																	328
+																]
+															]
+														},
+														{
+															"area": "0b2",
+															"points": [
+																[
+																	3349,
+																	640
+																],
+																[
+																	3472,
+																	642
+																],
+																[
+																	3471,
+																	945
+																],
+																[
+																	3349,
+																	942
+																]
+															]
+														},
+														{
+															"area": "0b6",
+															"points": [
+																[
+																	3410,
+																	274
+																],
+																[
+																	3655,
+																	277
+																],
+																[
+																	3654,
+																	579
+																],
+																[
+																	3407,
+																	578
+																]
+															]
+														},
+														{
+															"area": "0bc",
+															"points": [
+																[
+																	3714,
+																	820
+																],
+																[
+																	3838,
+																	821
+																],
+																[
+																	3838,
+																	887
+																],
+																[
+																	3953,
+																	881
+																],
+																[
+																	3951,
+																	945
+																],
+																[
+																	3868,
+																	943
+																],
+																[
+																	3886,
+																	981
+																],
+																[
+																	3831,
+																	1012
+																],
+																[
+																	3711,
+																	1009
+																]
+															]
+														},
+														{
+															"area": "0c1",
+															"points": [
+																[
+																	3985,
+																	1153
+																],
+																[
+																	4017,
+																	1138
+																],
+																[
+																	4016,
+																	1066
+																],
+																[
+																	4202,
+																	1070
+																],
+																[
+																	4203,
+																	1191
+																],
+																[
+																	4043,
+																	1193
+																],
+																[
+																	4012,
+																	1217
+																]
+															]
+														},
+														{
+															"area": "0c5",
+															"points": [
+																[
+																	4016,
+																	1370
+																],
+																[
+																	4086,
+																	1346
+																],
+																[
+																	4102,
+																	1369
+																],
+																[
+																	4325,
+																	1370
+																],
+																[
+																	4324,
+																	1554
+																],
+																[
+																	4015,
+																	1554
+																]
+															]
+														},
+														{
+															"area": "0cb",
+															"points": [
+																[
+																	4019,
+																	1614
+																],
+																[
+																	4322,
+																	1613
+																],
+																[
+																	4326,
+																	1735
+																],
+																[
+																	4016,
+																	1736
+																]
+															]
+														},
+														{
+															"area": "0d4",
+															"points": [
+																[
+																	3897,
+																	701
+																],
+																[
+																	4200,
+																	702
+																],
+																[
+																	4202,
+																	817
+																],
+																[
+																	4081,
+																	820
+																],
+																[
+																	4082,
+																	943
+																],
+																[
+																	3956,
+																	948
+																],
+																[
+																	3954,
+																	819
+																],
+																[
+																	3900,
+																	818
+																]
+															]
+														},
+														{
+															"area": "0e0",
+															"points": [
+																[
+																	4020,
+																	271
+																],
+																[
+																	4263,
+																	273
+																],
+																[
+																	4265,
+																	581
+																],
+																[
+																	4017,
+																	579
+																]
+															]
+														},
+														{
+															"area": "0e8",
+															"points": [
+																[
+																	4324,
+																	393
+																],
+																[
+																	4326,
+																	457
+																],
+																[
+																	4693,
+																	457
+																],
+																[
+																	4693,
+																	274
+																],
+																[
+																	4448,
+																	277
+																],
+																[
+																	4444,
+																	392
+																]
+															]
+														},
+														{
+															"area": "0f0",
+															"points": [
+																[
+																	4443,
+																	577
+																],
+																[
+																	4690,
+																	577
+																],
+																[
+																	4690,
+																	761
+																],
+																[
+																	4632,
+																	761
+																],
+																[
+																	4632,
+																	1131
+																],
+																[
+																	4505,
+																	1131
+																],
+																[
+																	4507,
+																	755
+																],
+																[
+																	4444,
+																	759
+																]
+															]
+														},
+														{
+															"area": "0f7",
+															"points": [
+																[
+																	4510,
+																	1249
+																],
+																[
+																	4632,
+																	1249
+																],
+																[
+																	4634,
+																	1495
+																],
+																[
+																	4507,
+																	1494
+																]
+															]
+														},
+														{
+															"area": "0fc",
+															"points": [
+																[
+																	4543,
+																	1595
+																],
+																[
+																	4495,
+																	1649
+																],
+																[
+																	4511,
+																	1720
+																],
+																[
+																	4575,
+																	1740
+																],
+																[
+																	4631,
+																	1707
+																],
+																[
+																	4642,
+																	1642
+																],
+																[
+																	4596,
+																	1597
+																]
+															]
+														}
+													]
 												},
 												{
 													"type": "image",
@@ -135,7 +1378,13 @@
 													},
 													"title": "(Player Version)",
 													"width": 4709,
-													"height": 1845
+													"height": 1845,
+													"imageType": "mapPlayer",
+													"mapParent": {
+														"id": "10b",
+														"offsetX": 187,
+														"offsetY": 98
+													}
 												}
 											]
 										}
@@ -146,6 +1395,7 @@
 						{
 							"type": "entries",
 							"name": "Glossary",
+							"page": 5,
 							"id": "008",
 							"entries": [
 								"The adventure uses terms that might be unfamiliar to you. Many of those are Rick's words, and you're on your own to figure them out. The most important D&D related ones, though, are described here. For descriptions of other rules-specific terms, see the rulebook.",
@@ -156,6 +1406,7 @@
 										{
 											"type": "entries",
 											"name": "Characters",
+											"page": 5,
 											"id": "00a",
 											"entries": [
 												"This term refers to the adventurers run by the players. They are the protagonists in any D&D adventure. A group of characters or adventurers is called a {@i party}."
@@ -164,6 +1415,7 @@
 										{
 											"type": "entries",
 											"name": "Boxed Text",
+											"page": 5,
 											"id": "00b",
 											"entries": [
 												"At various places, the adventure presents descriptive text that's meant to be read or paraphrased aloud to players. This read-aloud text is offset in boxes. Boxed text is most commonly used to describe rooms or present bits of scripted dialogue."
@@ -172,6 +1424,7 @@
 										{
 											"type": "entries",
 											"name": "Nonplayer Characters (NPCs)",
+											"page": 5,
 											"id": "00c",
 											"entries": [
 												"This term refers to characters run by the DM. How an NPC behaves is dictated by the adventure and by the DM."
@@ -180,6 +1433,7 @@
 										{
 											"type": "entries",
 											"name": "Stat Block",
+											"page": 5,
 											"id": "00d",
 											"entries": [
 												"Any monster or NPC that is likely to be involved in combat requires game statistics so the DM can run it effectively. These statistics are presented in a format called a {@i statistics block}, or {@i stat block}. You'll find the stat blocks needed for this adventure in {@adventure appendix D|RMBRE|3}."
@@ -192,6 +1446,7 @@
 						{
 							"type": "entries",
 							"name": "Magic Items and Monsters",
+							"page": 5,
 							"id": "00e",
 							"entries": [
 								"Whenever the text refers to a magic item, its name is presented in {@i italic} type. For a description of the item and its magical properties, see {@adventure appendix C|RMBRE|2}.",
@@ -201,6 +1456,7 @@
 						{
 							"type": "entries",
 							"name": "Abbreviations",
+							"page": 5,
 							"id": "00f",
 							"entries": [
 								"The following abbreviations are used in this adventure.",
@@ -285,6 +1541,7 @@
 		{
 			"type": "section",
 			"name": "The Lost Dungeon of Rickedness",
+			"page": 6,
 			"id": "011",
 			"entries": [
 				"It goes without saying, but this is a great dungeon. How did the characters get here? Who cares?! They're here now, and that's enough to deal with without dwelling on the past. Maybe this is all a bad dream, or some hallucination brought on by eating gnarly shrimp. Are there safe places to take rests? That's up to you, although I say no rest for the Ricked.",
@@ -292,6 +1549,7 @@
 				{
 					"type": "section",
 					"name": "General Features",
+					"page": 6,
 					"id": "012",
 					"entries": [
 						"Unless otherwise noted, the dungeon is well lit by magic. (I'm getting into that wizards-did-it bulls**t right off.)",
@@ -303,6 +1561,7 @@
 				{
 					"type": "section",
 					"name": "Leveling Up",
+					"page": 6,
 					"id": "013",
 					"entries": [
 						"By the time they finish this dungeon, the characters should be 3rd level. Because they can wander around the dungeon in any kind of bananas-ass circuitous route, as a general guideline, you can let them hit 2nd level at about 30 percent of the way through the adventure, then hit 3rd level at 75 percent of the way through."
@@ -311,6 +1570,7 @@
 				{
 					"type": "section",
 					"name": "What If They Die?",
+					"page": 6,
 					"id": "014",
 					"entries": [
 						"First of all, if the characters die in the dungeon, great. Working as intended. Second, if the characters die, the players also die in real life. Third, that was a joke\u2014dead players are no fun for anybody. How are you supposed to lord your powers over corpses? Anyway, you can get creative about bringing back dead characters. One pro move is to take the dead character's sheet, cross out the old name, and write a new name with, like, one letter different from before. That's the player's new character, who suddenly steps in from the previous room! Carry on."
@@ -319,12 +1579,14 @@
 				{
 					"type": "section",
 					"name": "The Lost Dungeon of Rickedness Locations",
+					"page": 6,
 					"id": "015",
 					"entries": [
 						"All the locations talked about in the adventure are from {@adventure map 1.1|RMBRE|0|Map 1.1: The Lost Dungeon of Rickedness}. Obviously.",
 						{
 							"type": "entries",
 							"name": "Let's Get Going Already",
+							"page": 6,
 							"id": "016",
 							"entries": [
 								"Read the following. Right now. Just do it:",
@@ -345,11 +1607,13 @@
 				{
 					"type": "section",
 					"name": "Locations 1-9",
+					"page": 6,
 					"id": "018",
 					"entries": [
 						{
 							"type": "entries",
 							"name": "1. Stirge Room",
+							"page": 6,
 							"id": "019",
 							"entries": [
 								"When the characters descend the stairs into this room, read the following to set the scene:",
@@ -365,6 +1629,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 6,
 									"id": "01b",
 									"entries": [
 										"Anyone who searches the room and succeeds on a DC 12 Wisdom ({@skill Perception}) check unearths 35 sp scattered around. Searching\u2014whether the characters find anything or not\u2014also makes their hands smell like stirge poo, which imposes disadvantage on their Charisma checks and Charisma saving throws until it's washed off."
@@ -375,9 +1640,10 @@
 						{
 							"type": "entries",
 							"name": "2. Goblin Room",
+							"page": 7,
 							"id": "01c",
 							"entries": [
-								"As the adventurers approach this room, have everyone make a DC 12 Wisdom ({@skill Perception}) check. Anyone who succeeds can hear two {@creature Goblin||goblins} talking in Goblin about how their friend Jerry is a useless jerk.",
+								"As the adventurers approach this room, have everyone make a DC 12 Wisdom ({@skill Perception}) check. Anyone who succeeds can hear two {@creature Goblin||goblins} talking in {@language Goblin} about how their friend Jerry is a useless jerk.",
 								"When the characters enter or peek inside the room, read this description:",
 								{
 									"type": "insetReadaloud",
@@ -392,6 +1658,7 @@
 						{
 							"type": "entries",
 							"name": "3. Statue Room",
+							"page": 7,
 							"id": "01e",
 							"entries": [
 								{
@@ -404,6 +1671,7 @@
 								{
 									"type": "entries",
 									"name": "Statues",
+									"page": 7,
 									"id": "020",
 									"entries": [
 										"Most of the statues are pretty self-explanatory, but if a character examines the statue of the armored woman, read the following:",
@@ -414,7 +1682,7 @@
 												"At the base of the statue, a plaque reads: \"DON'T WORRY. I'M NOT A REAL PERSON TURNED TO STONE. I'M JUST A COOL-LOOKING STATUE PUT HERE TO INTRIGUE YOU.\" It's probably nothing. You should pick a door, let's get a move on!"
 											]
 										},
-										"A careful search accompanied by a successful DC 12 Wisdom ({@skill Perception}) check reveals a hidden compartment in this statue that holds a scrap of paper. Inspecting the paper reveals a note written in Common:",
+										"A careful search accompanied by a successful DC 12 Wisdom ({@skill Perception}) check reveals a hidden compartment in this statue that holds a scrap of paper. Inspecting the paper reveals a note written in {@language Common}:",
 										{
 											"type": "insetReadaloud",
 											"id": "022",
@@ -429,6 +1697,7 @@
 						{
 							"type": "entries",
 							"name": "4. Magic Mouth Room",
+							"page": 7,
 							"id": "023",
 							"entries": [
 								{
@@ -461,10 +1730,11 @@
 								"The party has one chance collectively to answer the riddle. One!",
 								"If they try to leave, the characters discover that the way out is blocked by an invisible wall that can't be attacked or dispelled or anything. Describe how their faces smoosh up against it, then laugh at them.",
 								"While they're trying to figure out the answer, pretend you're the big orange mouth and smack your lips a bunch. Get all gross with your tongue so the players have trouble concentrating on anything else.",
-								"The mouth spits out anything placed in it. If the characters are stupid enough to try destroying the mouth instead of answering, have any moron who attacks it get licked for 3 ({@dice 1d6}) shame damage. That's right: shame. There's no resistance to shame.",
+								"The mouth spits out anything placed in it. If the characters are stupid enough to try destroying the mouth instead of answering, have any moron who attacks it get licked for 3 ({@damage 1d6}) shame damage. That's right: shame. There's no resistance to shame.",
 								{
 									"type": "entries",
 									"name": "Solution",
+									"page": 8,
 									"id": "026",
 									"entries": [
 										"The answer is \"Y.\" The pattern stands for \"second, minute, hour, day, week, month.\" Next in the sequence is year, or \"Y.\"",
@@ -477,6 +1747,7 @@
 						{
 							"type": "entries",
 							"name": "5. Another Goblin Room",
+							"page": 8,
 							"id": "027",
 							"entries": [
 								{
@@ -486,23 +1757,25 @@
 										"This big old circular room features six bedrolls on the floor, a bunch of dice, and some parchments scattered around. Oh yeah, and four goblins are here."
 									]
 								},
-								"The four {@creature Goblin||goblins} are named Jerry, Jeri, Gerry, and Gerie. If Leg or Eye from {@area area 2|01c|x} fled here, all the goblins have grabbed their scimitars and set up an ambush\u2014but around the entrance opposite the one the party comes through. If Leg or Eye didn't make it here, the characters catch the goblins even more off guard.",
+								"The four {@creature Goblin||goblins} are named Jerry, Jeri, Gerry, and Gerie. If Leg or Eye from {@area area 2|01c|x} fled here, all the goblins have grabbed their {@item scimitar|phb|scimitars} and set up an ambush\u2014but around the entrance opposite the one the party comes through. If Leg or Eye didn't make it here, the characters catch the goblins even more off guard.",
 								"If the adventurers are naked (most likely because of the mouth in {@area area 4|023|x}, but for any reason, really), the goblins have disadvantage on attack rolls in the first round of combat, as they giggle at the group's jiggly unmentionables.",
 								{
 									"type": "entries",
 									"name": "G&G Nerds",
+									"page": 8,
 									"id": "029",
 									"entries": [
-										"At first glance, it might look like the goblins were gambling. But a successful DC 15 Intelligence ({@skill Investigation}) check made to poke through the dice and parchments reveals that they were actually playing {@i Goblins & Gizzards} (G&G), their favorite tabletop roleplaying game, written in Goblin.",
+										"At first glance, it might look like the goblins were gambling. But a successful DC 15 Intelligence ({@skill Investigation}) check made to poke through the dice and parchments reveals that they were actually playing {@i Goblins & Gizzards} (G&G), their favorite tabletop roleplaying game, written in {@language Goblin}.",
 										"{@i Goblins & Gizzards} is way better than D&D."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 8,
 									"id": "02a",
 									"entries": [
-										"The goblins carry 20 gp, 35 sp, and the key to the treasure room (area 6). Their gaming setup also features a really nice set of eleven greenish-yellow dice. Each die is worth 1 gp and comes with a lifetime of warm, murderous memories (adding no additional value). Any character who takes these dice has the strong urge to collect more. Many, many more."
+										"The goblins carry 20 gp, 35 sp, and the key to the treasure room ({@area area 6|02b|x}). Their gaming setup also features a really nice set of eleven greenish-yellow dice. Each die is worth 1 gp and comes with a lifetime of warm, murderous memories (adding no additional value). Any character who takes these dice has the strong urge to collect more. Many, many more."
 									]
 								}
 							]
@@ -510,6 +1783,7 @@
 						{
 							"type": "entries",
 							"name": "6. Treasure Room",
+							"page": 8,
 							"id": "02b",
 							"entries": [
 								{
@@ -530,15 +1804,17 @@
 								{
 									"type": "entries",
 									"name": "Trapped Chest",
+									"page": 8,
 									"id": "02e",
 									"entries": [
-										"If a character specifically asks to check for traps on and around the treasure chest, a successful DC 14 Wisdom ({@skill Perception}) check reveals a trap built into the chest's lid\u2014and determines that the trap can't be disabled. If the chest is opened, the character opening it needs to make a DC 13 Dexterity saving throw as a screeching buzz-saw blade pops up out of the chest. On a failed save, the blade slices that character right in the gut for 7 ({@dice 2d6}) slashing damage.",
+										"If a character specifically asks to check for traps on and around the treasure chest, a successful DC 14 Wisdom ({@skill Perception}) check reveals a trap built into the chest's lid\u2014and determines that the trap can't be disabled. If the chest is opened, the character opening it needs to make a DC 13 Dexterity saving throw as a screeching buzz-saw blade pops up out of the chest. On a failed save, the blade slices that character right in the gut for 7 ({@damage 2d6}) slashing damage.",
 										"When someone opens the chest, get all quiet for a second, then make a loud buzz saw screeching noise. Just do it. Scare the s*** out of them."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 8,
 									"id": "02f",
 									"entries": [
 										"Inside the chest is a glittery mound of treasure: 210 gp, 410 sp, 3 ep, two {@item Potion of Healing||potions of healing}, and a fake ruby that smells like fresh-baked cherry pie. The ruby has a permanent {@spell prestidigitation} spell cast on it that creates the bakery scent. The jewel doesn't do anything else, but feel free to make it seem more important than it really is. That's the true path of Dungeon Mastery."
@@ -549,9 +1825,10 @@
 						{
 							"type": "entries",
 							"name": "7. Third Goblin Room",
+							"page": 8,
 							"id": "030",
 							"entries": [
-								"As the party approaches this room, pick a character at random and demand a Wisdom ({@skill Perception}) check. If they get a 10 or higher, they hear voices arguing beyond the door in what sounds like Goblin. Because it is Goblin, and there are goblins in there.",
+								"As the party approaches this room, pick a character at random and demand a Wisdom ({@skill Perception}) check. If they get a 10 or higher, they hear voices arguing beyond the door in what sounds like {@language Goblin}. Because it is {@language Goblin}, and there are goblins in there.",
 								"If the characters open the door, drop this on them:",
 								{
 									"type": "insetReadaloud",
@@ -561,21 +1838,23 @@
 										"Behind them is a pile of glittering treasure. Wealth beyond reckoning! It could be yours! Just deal with these goblins first, and remember: these are someone's mommy and daddy, maybe."
 									]
 								},
-								"All three of these little monsters (living and dead) have armor and weapons. Once they notice the characters, they drag them into the argument too. The two {@creature Goblin||goblins} speak only a little Common, so their speech is mostly Goblin chittering with Common words sprinkled in: \"murder,\" \"treasure,\" \"a-hole,\" that kind of thing. Anyone who speaks Goblin understands that the two goblins are accusing each other of murdering the third. Classic.",
+								"All three of these little monsters (living and dead) have armor and weapons. Once they notice the characters, they drag them into the argument too. The two {@creature Goblin||goblins} speak only a little {@language Common}, so their speech is mostly {@language Goblin} chittering with {@language Common} words sprinkled in: \"murder,\" \"treasure,\" \"a-hole,\" that kind of thing. Anyone who speaks {@language Goblin} understands that the two goblins are accusing each other of murdering the third. Classic.",
 								{
 									"type": "entries",
 									"name": "Investigation Option",
+									"page": 9,
 									"id": "032",
 									"entries": [
 										"So your players are a bunch of spongy-spined Jerrys who want to play fantasy Sherlock Holmes instead of attacking? Fine. Let them try to interrogate the goblins and inspect the body. The goblins just chatter away angrily and blame each other for the murder. With a successful DC 10 Intelligence ({@skill Investigation}) check, a character searching the body discovers coins scattered near its mouth. If they're gutsy enough to pry the dead gob's mouth open, they'll find it full of coins as well.",
 										"If these observations are pointed out to the living goblins, they both act shocked. A hearty and successful DC 10 Wisdom ({@skill Insight}) check reveals they're full of s***. A successful DC 12 Charisma ({@skill Intimidation} or {@skill Persuasion}) check then pries a confession out of them.",
-										"The goblins switch immediately from being argumentative to being ashamed. In halting Common, they admit that they dared their friend to swallow more coins than they did (around 100 gp for each of them). If the characters demand they cough up the gold, the goblins try to make themselves vomit. This creates all kinds of terrible noises, but those coins are happy right where they are: in the tum-tum.",
+										"The goblins switch immediately from being argumentative to being ashamed. In halting {@language Common}, they admit that they dared their friend to swallow more coins than they did (around 100 gp for each of them). If the characters demand they cough up the gold, the goblins try to make themselves vomit. This creates all kinds of terrible noises, but those coins are happy right where they are: in the tum-tum.",
 										"If the characters still don't attack after all that, the goblins flee the room, left alive to pass on their successful genetics and create more coin-eating idiots."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Murder Option",
+									"page": 9,
 									"id": "033",
 									"entries": [
 										"Much better! Who cares who killed the goblin? They're all little monsters, get rid of them! Jeez, I hate goblins. Every time you kill a goblin, somewhere out there, a Rick gets his wings. Nice work. If the gobs from {@area area 5|027|x} are still breathing, they join in this mayhem after {@dice 1d4} rounds of combat.",
@@ -585,6 +1864,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 9,
 									"id": "034",
 									"entries": [
 										"The dead goblin has 200 gp inside them. If killed, each of the other goblins holds 100 gp in their stomach.",
@@ -596,6 +1876,7 @@
 						{
 							"type": "entries",
 							"name": "8. Writer's Room",
+							"page": 9,
 							"id": "035",
 							"entries": [
 								"This room's not done. The deadline really crept up on me, but don't sweat it. I've got a writer on it, and she's writing like her life depends on it\u2014because it does! Lay it all down by reading the following:",
@@ -615,6 +1896,7 @@
 								{
 									"type": "entries",
 									"name": "Malleable Space",
+									"page": 9,
 									"id": "037",
 									"entries": [
 										"The room's normal form is reflected on the map. It reverts to that form if the writer is {@condition unconscious} or leaves the room. But until that happens, the room looks nothing like what the map shows. The writer can use her inkwell and parchment to make the room any size she wants, up to 100 feet by 100 feet, but she defaults to transforming it into a 40-foot-wide-by-100-foot-long tunnel to keep distractions away from her while she's working. She can also make the room's doors disappear or reappear at her whim.",
@@ -624,6 +1906,7 @@
 								{
 									"type": "entries",
 									"name": "Writing Obstacles",
+									"page": 10,
 									"id": "038",
 									"entries": [
 										"At the start of each round, or whenever a character moves 10 feet farther into the room, the writer creates a new obstacle from the Fun Obstacle table."
@@ -632,6 +1915,7 @@
 								{
 									"type": "entries",
 									"name": "Fun Obstacle",
+									"page": 10,
 									"id": "039",
 									"entries": [
 										{
@@ -699,14 +1983,16 @@
 										{
 											"type": "entries",
 											"name": "Fire Geyser Trap",
+											"page": 10,
 											"id": "03a",
 											"entries": [
-												"Whenever a creature ends its turn touching the floor in the room, roll a {@dice d20}. On a roll of 10 or higher, fire erupts from the floor beneath that creature. The target must make a DC 12 Dexterity saving throw, taking 7 ({@dice 2d6}) fire damage on a failed save, or half as much damage on a successful one."
+												"Whenever a creature ends its turn touching the floor in the room, roll a {@dice d20}. On a roll of 10 or higher, fire erupts from the floor beneath that creature. The target must make a DC 12 Dexterity saving throw, taking 7 ({@damage 2d6}) fire damage on a failed save, or half as much damage on a successful one."
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Freak-Out Orbs Trap",
+											"page": 10,
 											"id": "03b",
 											"entries": [
 												"Magic orbs appear, buzzing around the room and flashing psychedelic patterns that freak people out. Each creature in the room must succeed on a DC 12 Wisdom saving throw or suffer the effect of a {@creature Spectator||spectator's} confusion eye ray."
@@ -715,6 +2001,7 @@
 										{
 											"type": "entries",
 											"name": "Groovy Stirges Trap",
+											"page": 10,
 											"id": "03c",
 											"entries": [
 												"A pipe descends from the ceiling, and {@dice 1d8} {@creature Stirge||stirges} fly out of it. The annoying creatures attack characters at random. Simultaneously, sick-ass beats fill the room. Any creature except the stirges that can hear the music must succeed on a DC 12 Wisdom saving throw or give in to the music and start dancing.",
@@ -724,6 +2011,7 @@
 										{
 											"type": "entries",
 											"name": "Hacky Trap",
+											"page": 10,
 											"id": "03d",
 											"entries": [
 												"Out of ideas, the writer throws a portal at the party. Each creature in the room must succeed on a DC 15 Dexterity saving throw or be magically teleported back to the start of the room, thereby giving the writer some much-needed time to keep working."
@@ -732,6 +2020,7 @@
 										{
 											"type": "entries",
 											"name": "Like Being Drunk Trap",
+											"page": 10,
 											"id": "03e",
 											"entries": [
 												"For {@dice 1d4} rounds, the whole floor heaves like when you're completely hammered. For as long as the floor pitches, each creature that starts its turn standing on the floor must succeed on a DC 18 Dexterity ({@skill Acrobatics}) check or fall on its ass, {@condition prone}."
@@ -740,6 +2029,7 @@
 										{
 											"type": "entries",
 											"name": "Million Ants Trap",
+											"page": 10,
 											"id": "03f",
 											"entries": [
 												"Five ants crawl out of cracks in the floor. Each round, a random character must succeed on a DC 12 Dexterity saving throw or accidentally crush one of these ants. If they do, 999,995 more ants come pouring up out of the floor, gathering into a massive, solid swarm that uses the {@creature ogre} stat block and attacks."
@@ -748,6 +2038,7 @@
 										{
 											"type": "entries",
 											"name": "Mocking Mouths Trap",
+											"page": 10,
 											"id": "040",
 											"entries": [
 												"Creeepy mouths form on every surface of the room. They're jerks, and for {@dice 1d4} rounds, they berate random characters, choosing a new target at the start of each round. The mouths mock the size of the target's weapons, their spell selection, their dump stats, or whatever in-game, out-of-game, or metagame topic catches their middle-school-bully-like attention.",
@@ -757,14 +2048,16 @@
 										{
 											"type": "entries",
 											"name": "Nasty Pit Trap",
+											"page": 10,
 											"id": "041",
 											"entries": [
-												"The floor gives way under a random character. It's self-respect's greatest enemy: falling over, but weaponized into a trap! The target character and each creature standing within 10 feet of the character must succeed on a DC 12 Dexterity saving throw or fall into the 15-foot-deep pit, taking 3 ({@dice 1d6}) bludgeoning damage. To climb out of the pit and regain a modicum of dignity\u2014after falling for literally the oldest trick in the {@book Dungeon Master's Guide|DMG}\u2014a creature must succeed on a DC 10 Strength ({@skill Athletics}) check."
+												"The floor gives way under a random character. It's self-respect's greatest enemy: falling over, but weaponized into a trap! The target character and each creature standing within 10 feet of the character must succeed on a DC 12 Dexterity saving throw or fall into the 15-foot-deep pit, taking 3 ({@damage 1d6}) bludgeoning damage. To climb out of the pit and regain a modicum of dignity\u2014after falling for literally the oldest trick in the {@book Dungeon Master's Guide|DMG}\u2014a creature must succeed on a DC 10 Strength ({@skill Athletics}) check."
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Phantom Gas Trap",
+											"page": 10,
 											"id": "042",
 											"entries": [
 												"There's a joke in here somewhere. But while the characters are off looking for it, a phantom fart loudly makes itself known. Each creature in the room must succeed on a DC 12 Constitution saving throw or suffer a random effect from the Fart Gas table.",
@@ -776,6 +2069,7 @@
 								{
 									"type": "entries",
 									"name": "Fart Gas",
+									"page": 10,
 									"id": "043",
 									"entries": [
 										{
@@ -810,14 +2104,16 @@
 										{
 											"type": "entries",
 											"name": "Punch Trap",
+											"page": 10,
 											"id": "044",
 											"entries": [
-												"A {@creature goblin} emerges from a trapdoor and punches a random character right in the groin. The character needs to dodge with a successful DC 15 Dexterity saving throw or take 2 ({@dice 1d4}) bludgeoning damage. The goblin attacks once and then disappears back through the trapdoor, which immediately vanishes to leave no opportunity for counterattacks."
+												"A {@creature goblin} emerges from a trapdoor and punches a random character right in the groin. The character needs to dodge with a successful DC 15 Dexterity saving throw or take 2 ({@damage 1d4}) bludgeoning damage. The goblin attacks once and then disappears back through the trapdoor, which immediately vanishes to leave no opportunity for counterattacks."
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Spinning Blades Trap",
+											"page": 10,
 											"id": "045",
 											"entries": [
 												"Slots in the walls open up and six round saw blades come flying out. Each blade makes one attack against a random character:"
@@ -826,17 +2122,19 @@
 										{
 											"type": "entries",
 											"name": "Spinning Blade",
+											"page": 10,
 											"id": "046",
 											"entries": [
-												"{@i Ranged Weapon Attack}: +3 to hit, range 100 ft., one target. {@i Hit}: 4 ({@dice 1d8}) slashing damage."
+												"{@i Ranged Weapon Attack}: +3 to hit, range 100 ft., one target. {@i Hit}: 4 ({@damage 1d8}) slashing damage."
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Tenderizer Trap",
+											"page": 10,
 											"id": "047",
 											"entries": [
-												"For the next {@dice 1d4} rounds, 5-foot-diameter chunks of the ceiling fall at regular intervals, pretty much making the room a giant game of whack-a-mole. Each round, a random character is targeted by a smashy bit, and must succeed on a DC 15 Dexterity saving throw or take 3 ({@dice 1d6}) bludgeoning damage."
+												"For the next {@dice 1d4} rounds, 5-foot-diameter chunks of the ceiling fall at regular intervals, pretty much making the room a giant game of whack-a-mole. Each round, a random character is targeted by a smashy bit, and must succeed on a DC 15 Dexterity saving throw or take 3 ({@damage 1d6}) bludgeoning damage."
 											]
 										}
 									]
@@ -844,6 +2142,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 10,
 									"id": "048",
 									"entries": [
 										"A drawer in the desk contains a three-quarters empty bottle of scotch and a pack of cigarettes."
@@ -854,6 +2153,7 @@
 						{
 							"type": "entries",
 							"name": "9. Pickle Roooom!",
+							"page": 11,
 							"id": "049",
 							"entries": [
 								{
@@ -878,17 +2178,19 @@
 								{
 									"type": "entries",
 									"name": "Pickle Power",
+									"page": 11,
 									"id": "04b",
 									"entries": [
 										"Most of the pickles in this room are {@creature Lycanthropickle|RMBRE|lycanthropickles} in hybrid form. These terrors use the {@creature twig blight} stat block with the following adjusted ability:",
 										{
 											"type": "entries",
 											"name": "False Appearance",
+											"page": 11,
 											"id": "04c",
 											"entries": [
-												"While the lycanthropickle remains motionless, it is indistinguishable from a pickle.",
+												"While the {@creature lycanthropickle|RMBRE} remains motionless, it is indistinguishable from a pickle.",
 												"Once free of its jar, a {@creature lycanthropickle|RMBRE} grows pickle arms and pickle legs, and proceeds to chase and attack any nonpickles in the room. Characters who choose to battle the lycanthropickles must make additional Dexterity ({@skill Acrobatics}) checks each round to avoid interacting with the jars, risking the release of more frenzied fruits. (Yeah, cucumbers are fruits\u2014fight me.)",
-												"No more than six {@creature Lycanthropickle|RMBRE|lycanthropickles} can attack the characters at one time. If additional pickle jars are shattered while six lycanthropickles are at large, they release only slightly spicy but otherwise normal pickles."
+												"No more than six {@creature Lycanthropickle|RMBRE|lycanthropickles} can attack the characters at one time. If additional pickle jars are shattered while six {@creature Lycanthropickle|RMBRE|lycanthropickles} are at large, they release only slightly spicy but otherwise normal pickles."
 											]
 										}
 									]
@@ -896,6 +2198,7 @@
 								{
 									"type": "entries",
 									"name": "Jostling Jars",
+									"page": 11,
 									"id": "04d",
 									"entries": [
 										"If a jar is jostled, read this terrifying portent:",
@@ -906,16 +2209,17 @@
 												"The two-foot-long pickle in the jar you just jostled turns to face you. Which is to say, the pickle has a face. Let me say that again: it's a pickle with a face. It starts to head-butt the jar from the inside, edging it toward\u2014you guessed it\u2014the edge of the shelf."
 											]
 										},
-										"Left to its own devices, the lycanthropickle in the jar sends the jar plummeting to the ground at the end of the next round. Upon doing so, the jar shatters, releasing the lycanthropickle. If a jar is knocked off the shelf with a really bad check, it automatically smashes to free the lycanthropickle within. Either way, the tiny terror immediately springs up and attacks the closest nonpickle.",
-										"This alerts {@dice 1d4} other lycanthropickles, which start head-butting their own jars, and which escape at the end of the following round unless thwarted. A character can use an action to pick up a jar with an agitated pickle and place it safely on the ground, preventing it from smashing.",
+										"Left to its own devices, the {@creature lycanthropickle|RMBRE} in the jar sends the jar plummeting to the ground at the end of the next round. Upon doing so, the jar shatters, releasing the {@creature lycanthropickle|RMBRE}. If a jar is knocked off the shelf with a really bad check, it automatically smashes to free the {@creature lycanthropickle|RMBRE} within. Either way, the tiny terror immediately springs up and attacks the closest nonpickle.",
+										"This alerts {@dice 1d4} other {@creature Lycanthropickle|RMBRE|lycanthropickles}, which start head-butting their own jars, and which escape at the end of the following round unless thwarted. A character can use an action to pick up a jar with an agitated pickle and place it safely on the ground, preventing it from smashing.",
 										{
 											"type": "inset",
 											"name": "Curse of Lycanthropickling",
+											"page": 11,
 											"id": "04f",
 											"entries": [
-												"A humanoid creature has a 20 percent chance to be afflicted with the curse of lycanthropickling after being wounded by a {@creature Lycanthropickle|RMBRE|lycanthropickles}. The curse lasts for 3 days. Each long rest the creature spends in a vat or jar of pickling brine prolongs the curse by 1 day.",
-												"A {@creature lycanthropickle|RMBRE} can either resist its curse or embrace it. By resisting the curse, a lycanthropickle retains its normal alignment and personality while in humanoid form. It lives its boring life as it always has, burying deep its raging, murderous urges just like the rest of us.",
-												"Some individuals see little point in fighting the curse and accept what they are. They can assume pickle form or hybrid form at will. Most {@creature Lycanthropickle|RMBRE|lycanthropickles} that embrace their briny natures succumb to bloodlust, becoming evil, opportunistic creatures that prey on the weak. In hybrid form, a lycanthropickle has the same statistics as a {@creature twig blight} with the altered ability noted in area 9. In pickle form, a lycanthropickle has no statistics and is indistinguishable from a pickle... because it's a pickle."
+												"A humanoid creature has a {@chance 20|20 percent} chance to be afflicted with the curse of lycanthropickling after being wounded by a {@creature Lycanthropickle|RMBRE|lycanthropickles}. The curse lasts for 3 days. Each long rest the creature spends in a vat or jar of pickling brine prolongs the curse by 1 day.",
+												"A {@creature lycanthropickle|RMBRE} can either resist its curse or embrace it. By resisting the curse, a {@creature lycanthropickle|RMBRE} retains its normal alignment and personality while in humanoid form. It lives its boring life as it always has, burying deep its raging, murderous urges just like the rest of us.",
+												"Some individuals see little point in fighting the curse and accept what they are. They can assume pickle form or hybrid form at will. Most {@creature Lycanthropickle|RMBRE|lycanthropickles} that embrace their briny natures succumb to bloodlust, becoming evil, opportunistic creatures that prey on the weak. In hybrid form, a {@creature lycanthropickle|RMBRE} has the same statistics as a {@creature twig blight} with the altered ability noted in {@area area 9|04b|x}. In pickle form, a {@creature lycanthropickle|RMBRE} has no statistics and is indistinguishable from a pickle... because it's a pickle."
 											]
 										}
 									]
@@ -927,11 +2231,13 @@
 				{
 					"type": "section",
 					"name": "Locations 10-19",
+					"page": 12,
 					"id": "050",
 					"entries": [
 						{
 							"type": "entries",
 							"name": "10. Butt Room",
+							"page": 12,
 							"id": "051",
 							"entries": [
 								{
@@ -945,15 +2251,17 @@
 								{
 									"type": "entries",
 									"name": "Butt It's a Trap",
+									"page": 12,
 									"id": "053",
 									"entries": [
-										"The shiny thing is a plaque written in Common, which can be read by any character who moves within a few feet of it\u2014including those who clamber up and perch atop the stone butt. It reads: \"SAY GOODBYE TO YOUR BUTT.\" Have the poor sap reading the plaque make a DC 15 Dexterity saving throw. On a failure, the trap magically steals their whole ass. On a success, it steals only half their ass. The creature can pick which half.",
+										"The shiny thing is a plaque written in {@language Common}, which can be read by any character who moves within a few feet of it\u2014including those who clamber up and perch atop the stone butt. It reads: \"SAY GOODBYE TO YOUR BUTT.\" Have the poor sap reading the plaque make a DC 15 Dexterity saving throw. On a failure, the trap magically steals their whole ass. On a success, it steals only half their ass. The creature can pick which half.",
 										"On the bright side, this doesn't inflict damage or pain. The creature just doesn't have a butt anymore. Their legs still attach to their body, albeit awkwardly and in a way that makes sitting uncomfortable. Be sure to mention this as often as possible for the rest of the adventure."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Butt Cache",
+									"page": 12,
 									"id": "054",
 									"entries": [
 										"The butt trap contains an extradimensional space full of stolen butts claimed by the trap. Some of the butts belong to the zombies in {@area area 15|067|x}, while others are tied to the Order of the Buttless in {@area area 32|0c5|x}. Some of them even look like they could be famous. Is that George Washington's butt? I'm not saying it is\u2014butt I'm not saying it isn't.",
@@ -965,6 +2273,7 @@
 						{
 							"type": "entries",
 							"name": "11. Orc Gift Room",
+							"page": 12,
 							"id": "055",
 							"entries": [
 								"Are orcs evil? Normally, evil is hard to pin down, but according to the parameters of this game, evil is a thing, and orcs are of that thing.",
@@ -979,16 +2288,18 @@
 								{
 									"type": "entries",
 									"name": "Orcs Bearing Gifts",
+									"page": 12,
 									"id": "057",
 									"entries": [
 										"If anyone speaks Orc, a successful DC 15 Wisdom ({@skill Perception}) check overhears one of the six {@creature Orc||orcs} speak up to say, \"Hurry it up, Grobblegob! We can't be late!\"",
-										"The orcs then stand up and make their way to {@area area 12|05c|x}\u2014that is, unless the characters grab their attention. The orcs know this dungeon is crazy dangerous, so they defend themselves if attacked. However, they aren't otherwise inclined to fight as they hurry to {@area area 12|05c|x}. Three of the orcs are armed with greataxes, but the other three carry only the large burlap sacks they have slung over their shoulders. Replace those orcs' greataxe attack with the following attack:",
+										"The orcs then stand up and make their way to {@area area 12|05c|x}\u2014that is, unless the characters grab their attention. The orcs know this dungeon is crazy dangerous, so they defend themselves if attacked. However, they aren't otherwise inclined to fight as they hurry to {@area area 12|05c|x}. Three of the orcs are armed with {@item greataxe|phb|greataxes}, but the other three carry only the large burlap sacks they have slung over their shoulders. Replace those orcs' {@item greataxe|phb} attack with the following attack:",
 										{
 											"type": "entries",
 											"name": "Whack Sack",
+											"page": 12,
 											"id": "058",
 											"entries": [
-												"{@i Melee Weapon Attack}: +3 to hit, reach 5 ft., one target. {@i Hit}: 5 ({@dice 1d4 + 3}) bludgeoning damage."
+												"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@i Hit}: 5 ({@damage 1d4 + 3}) bludgeoning damage."
 											]
 										}
 									]
@@ -996,14 +2307,16 @@
 								{
 									"type": "entries",
 									"name": "Western Door",
+									"page": 12,
 									"id": "059",
 									"entries": [
-										"A thick door made out of some sort of fantasy wood opens onto the hall leading to {@area area 12|05c|x}. The door is locked but can be opened with the key that the orcs here are carrying (see \"Treasure\" below). The lock can also be picked with a successful DC 17 Dexterity check using thieves' tools, or the door can be kicked open with a successful DC 15 Strength ({@skill Athletics}) check."
+										"A thick door made out of some sort of fantasy wood opens onto the hall leading to {@area area 12|05c|x}. The door is locked but can be opened with the key that the orcs here are carrying (see \"Treasure\" below). The lock can also be picked with a successful DC 17 Dexterity check using {@item thieves' tools|phb}, or the door can be kicked open with a successful DC 15 Strength ({@skill Athletics}) check."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 12,
 									"id": "05a",
 									"entries": [
 										"One of the sack-bearing orcs has a funky orc key on their belt. It opens the door leading to {@area area 12|05c|x}.",
@@ -1013,6 +2326,7 @@
 								{
 									"type": "entries",
 									"name": "Thingies",
+									"page": 12,
 									"id": "05b",
 									"entries": [
 										{
@@ -1067,6 +2381,7 @@
 						{
 							"type": "entries",
 							"name": "12. Festive Dinner Room",
+							"page": 12,
 							"id": "05c",
 							"entries": [
 								{
@@ -1076,12 +2391,13 @@
 										"A warm fire crackles in a fireplace along the far wall of this chamber. Several orcs sit around a long table that's set for a feast, complete with a large, covered silver platter at the center. The smell of baking bread and spiced potatoes fills the room."
 									]
 								},
-								"At least five adult {@creature Orc||orcs} occupy this room, and as many as eleven if all the orcs from area 11 managed to make it home for supper.",
-								"If the characters killed any orcs in area 11, they'll note empty place settings at the table for any missing orcs. Once they make their presence known to this group of orcs, the characters see two juvenile orcs (noncombatants) emerge from under the table. They point at the character in the lead and say (in Orc) with tears in their eyes, \"You're not mommy. Did she send you with my present?\"",
-								"Regardless of how depressing things get (and even if all the orcs from area 11 are safe and sound), the adult orcs move to put themselves between the characters and the two kids. Some of the orcs are pretty old, and they start yelling at the \"heroes,\" demanding to know what in the Nine Hells is going on (again, in Orc). If the characters don't leave or can't convince the orcs that they mean no harm, the orcs assume harm is coming, and they attack. One of the elderly orcs tries to escape with the terrified, bawling children, fleeing the dungeon if successful.",
+								"At least five adult {@creature Orc||orcs} occupy this room, and as many as eleven if all the orcs from {@area area 11|055|x} managed to make it home for supper.",
+								"If the characters killed any orcs in {@area area 11|055|x}, they'll note empty place settings at the table for any missing orcs. Once they make their presence known to this group of orcs, the characters see two juvenile orcs (noncombatants) emerge from under the table. They point at the character in the lead and say (in {@language Orc}) with tears in their eyes, \"You're not mommy. Did she send you with my present?\"",
+								"Regardless of how depressing things get (and even if all the orcs from {@area area 11|055|x} are safe and sound), the adult orcs move to put themselves between the characters and the two kids. Some of the orcs are pretty old, and they start yelling at the \"heroes,\" demanding to know what in the Nine Hells is going on (again, in {@language Orc}). If the characters don't leave or can't convince the orcs that they mean no harm, the orcs assume harm is coming, and they attack. One of the elderly orcs tries to escape with the terrified, bawling children, fleeing the dungeon if successful.",
 								{
 									"type": "entries",
 									"name": "Main Course",
+									"page": 13,
 									"id": "05e",
 									"entries": [
 										{
@@ -1100,9 +2416,10 @@
 								{
 									"type": "entries",
 									"name": "Roleplaying Frumfle",
+									"page": 13,
 									"id": "05f",
 									"entries": [
-										"A down-on-his-luck goblin, Frumfle has absolutely nothing left to lose\u2014yet he's an eternal optimist. He truly believes that everything will work out. Sure, he has his doubts sometimes, like when he was about to be eaten alive only moments ago. But he doggedly clings to the notion that the multiverse has a plan. He's fond of saying, \"Pay it forward,\" though he thinks that saying means, \"One good turn deserves another.\" This explains why if anyone gives him a hand, he refuses to leave their side until he's repaid them in kind. ",
+										"A down-on-his-luck goblin, Frumfle has absolutely nothing left to lose\u2014yet he's an eternal optimist. He truly believes that everything will work out. Sure, he has his doubts sometimes, like when he was about to be eaten alive only moments ago. But he doggedly clings to the notion that the multiverse has a plan. He's fond of saying, \"Pay it forward,\" though he thinks that saying means, \"One good turn deserves another.\" This explains why if anyone gives him a hand, he refuses to leave their side until he's repaid them in kind.",
 										"When faced with danger, Frumfle does his best to put himself between it and the character he's sworn to protect. If he fails at that mission, he bolts away from danger as fast as he can."
 									]
 								}
@@ -1111,6 +2428,7 @@
 						{
 							"type": "entries",
 							"name": "13. Da Mage Room",
+							"page": 13,
 							"id": "060",
 							"entries": [
 								{
@@ -1124,6 +2442,7 @@
 								{
 									"type": "entries",
 									"name": "Mage Surgery",
+									"page": 13,
 									"id": "062",
 									"entries": [
 										"You can figure out how the characters can get Glizzlegus out of the pit. Even once that's done, though, she still needs medical assistance so that gigantic spike hole doesn't kill her. If magical healing isn't available, a successful DC 15 Wisdom ({@skill Medicine}) check is required to suture her wounds. (If Beth is playing, encourage her not to use healing magic and give her advantage on the skill check.)",
@@ -1135,6 +2454,7 @@
 						{
 							"type": "entries",
 							"name": "14. Synecdoche Room",
+							"page": 13,
 							"id": "063",
 							"entries": [
 								{
@@ -1160,6 +2480,7 @@
 								{
 									"type": "entries",
 									"name": "Figurines",
+									"page": 14,
 									"id": "065",
 									"entries": [
 										"When one of the monster figurines is placed into the dungeon, that monster comes alive and hungers for the flesh of tiny adventurers. The little adventuring party is capable of defeating the giant spider or the zombie, but the ogre or the young green dragon destroy them completely. Facing more than one enemy at a time also melts them to the ground."
@@ -1168,9 +2489,10 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 14,
 									"id": "066",
 									"entries": [
-										"After the destruction of the tiny adventuring party, one of the miniature treasure chests pops open. Inside is an unbelievably tiny {@item wand of magic missiles}. It works normally, but a character has a 50 percent chance of losing it each time it is used or put away. A {@spell detect magic} spell can help find it again."
+										"After the destruction of the tiny adventuring party, one of the miniature treasure chests pops open. Inside is an unbelievably tiny {@item wand of magic missiles}. It works normally, but a character has a {@chance 50|50 percent} chance of losing it each time it is used or put away. A {@spell detect magic} spell can help find it again."
 									]
 								}
 							]
@@ -1178,6 +2500,7 @@
 						{
 							"type": "entries",
 							"name": "15. Buttless Zombie Room",
+							"page": 14,
 							"id": "067",
 							"entries": [
 								"The doors to this room are open just a crack. Regardless of which direction the characters approach from, a gravelly croak for help issues from inside the room. If the characters look inside, read my words:",
@@ -1199,11 +2522,12 @@
 									"width": 630,
 									"height": 800
 								},
-								"Once any character makes their presence known, the zombies turn toward the party, and the ghoul in the chair calls out: \"Help! I know I'm a ghoul, and this could easily be my thing, but it isn't! The zombies think I ate their butts, but I swear, I didn't! Help me, please!\"",
+								"Once any character makes their presence known, the {@creature Zombie||zombies} turn toward the party, and the {@creature ghoul} in the chair calls out: \"Help! I know I'm a ghoul, and this could easily be my thing, but it isn't! The zombies think I ate their butts, but I swear, I didn't! Help me, please!\"",
 								"The ghoul implores the characters to go find the zombie butts and prove its innocence. The heroes can choose to find some butts, or hang around and fight some zombies.",
 								{
 									"type": "entries",
 									"name": "Finding the Butts",
+									"page": 14,
 									"id": "069",
 									"entries": [
 										"The characters can agree to help find the missing butts and return after they do. If they return to this room after the butt trap in {@area area 10|051|x} is destroyed, the zombies' butts are restored. The ghoul has freed itself and fled, but the zombies present the room's treasure (see below) to the characters."
@@ -1212,6 +2536,7 @@
 								{
 									"type": "entries",
 									"name": "Fighting the Zombies",
+									"page": 14,
 									"id": "06a",
 									"entries": [
 										"If a fight breaks out, the ghoul capitalizes on the distraction and gnaws through the ropes binding it. It takes {@dice 1d4} rounds for the ghoul to escape. When it does, it apologizes profusely for its immense hunger, then attacks the party. Undead, am I right? Jeez!"
@@ -1220,6 +2545,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 14,
 									"id": "06b",
 									"entries": [
 										"A small ring box is concealed beneath the cushion of the chair the ghoul was tied to, and can be found with a successful DC 13 Wisdom ({@skill Perception}) check. When the box is opened, it dissolves into dust... which then reforms into a {@item ring of protection}."
@@ -1230,6 +2556,7 @@
 						{
 							"type": "entries",
 							"name": "16. Many Doors Room",
+							"page": 15,
 							"id": "06c",
 							"entries": [
 								{
@@ -1259,6 +2586,7 @@
 								{
 									"type": "entries",
 									"name": "Just Passing Through",
+									"page": 15,
 									"id": "070",
 									"entries": [
 										"The twelve doors are identical, and the weird glowing orb makes any creature in this area forget which doors were the real doors. Thankfully, that doesn't matter to start with, because opening any door causes another door to open at random, and characters looking through either door can see into what appears to be this same room. A character who passes through either door emerges through the other. Weird!",
@@ -1275,6 +2603,7 @@
 								{
 									"type": "entries",
 									"name": "Dimensional Doors",
+									"page": 15,
 									"id": "072",
 									"entries": [
 										"Each open door still goes to the same place\u2014which is to say, back into this same room through a random door. But each door now accesses this same room in a different parallel dimension. Each dimension has one difference from the others, determined by rolling on the Bonkers Dimensions table. A character who passes through a door immediately notices the novelty of the dimension, but the rest of the characters waiting in the room have always existed in this new parallel dimension, and they don't think it's strange at all."
@@ -1283,6 +2612,7 @@
 								{
 									"type": "entries",
 									"name": "Bonkers Dimensions",
+									"page": 15,
 									"id": "073",
 									"entries": [
 										{
@@ -1354,6 +2684,7 @@
 						{
 							"type": "entries",
 							"name": "17. Wizard Room",
+							"page": 15,
 							"id": "074",
 							"entries": [
 								{
@@ -1368,6 +2699,7 @@
 								{
 									"type": "entries",
 									"name": "Attacking the Mage",
+									"page": 15,
 									"id": "076",
 									"entries": [
 										"When the characters inevitably decide to attack, they find that the mage doesn't fight back\u2014and that he's immune to all conditions and damage. Sorry about that. With each different type of attack made against him, the mage only increases the number of things he brags about being immune to. \"Ha! No sword can pierce my flesh!\" Then, \"Ha! No sword or arrow can pierce my flesh!\" Then add halberds, pikes, you name it. He goes on and on like this.",
@@ -1377,6 +2709,7 @@
 								{
 									"type": "entries",
 									"name": "Runes and Ray Guns",
+									"page": 16,
 									"id": "077",
 									"entries": [
 										"Any character who inspects the walls or floor and succeeds on a DC 12 Wisdom ({@skill Perception}) check notices that the patterns on the left wall make up huge runes representing the letters \"R\" and \"A.\" The right wall contains an equally huge and equally hidden \"U\" and \"N.\" Runes for \"Y\" and \"G\" are worked into the floor.",
@@ -1397,6 +2730,7 @@
 						{
 							"type": "entries",
 							"name": "18. Meeseeks Room",
+							"page": 16,
 							"id": "079",
 							"entries": [
 								{
@@ -1406,10 +2740,11 @@
 										"An innocuous-looking teal cube sits on a pedestal in the middle of this room. Atop the cube is an inviting button. Engraved on the back of the pedestal is a sentence none of you can read no matter how hard you try."
 									]
 								},
-								"The phrase etched on the pedestal says \"I'M MISTER MEESEEKS LOOK AT ME,\" but only a Meeseeks is able to read it.",
+								"The phrase etched on the pedestal says \"I'M MISTER {@creature MEESEEKS|RMBRE} LOOK AT ME,\" but only a {@creature Meeseeks|RMBRE} is able to read it.",
 								{
 									"type": "entries",
 									"name": "Meeseeks to Be Helpful",
+									"page": 16,
 									"id": "07b",
 									"entries": [
 										{
@@ -1421,26 +2756,27 @@
 											"width": 655,
 											"height": 800
 										},
-										"The box is a Meeseeks box. Pressing the button on the top of the box summons\u2014predictably\u2014a Meeseeks. Every Meeseeks appears in the same six-foot-tall, skinny blue humanoid form. Some have little tufts of orange hair on their heads. They use the {@creature commoner} stat block but ignore hit points, since Meeseeks are immune to damage.",
-										"Once materialized, these friendly entities exist solely to fulfill a purpose of your choosing. Pretty nifty, right? For example, you could tell a Meeseeks to read the phrase etched on the pedestal. Once it does that, the Meeseeks vanishes, its purpose fulfilled.",
-										"Just a warning, though: if someone gives a Meeseeks a purpose it can't fulfill, or if a Meeseeks is prevented from fulfilling its purpose, it does go sort of insane, becoming hostile toward its summoner after {@dice 1d4} hours.",
-										"While the box is in the room, it can summon as many Meeseeks as you like. It's also possible to take the box. If it's used outside the room, though, roll a {@dice d20} and add the number of Meeseeks that have already been summoned. If the total is higher than 20, the Meeseeks box implodes and makes a sad whining sound, destroying it."
+										"The box is a {@creature Meeseeks|RMBRE} box. Pressing the button on the top of the box summons\u2014predictably\u2014a {@creature Meeseeks|RMBRE}. Every {@creature Meeseeks|RMBRE} appears in the same six-foot-tall, skinny blue humanoid form. Some have little tufts of orange hair on their heads. They use the {@creature commoner} stat block but ignore hit points, since {@creature Meeseeks|RMBRE} are immune to damage.",
+										"Once materialized, these friendly entities exist solely to fulfill a purpose of your choosing. Pretty nifty, right? For example, you could tell a {@creature Meeseeks|RMBRE} to read the phrase etched on the pedestal. Once it does that, the {@creature Meeseeks|RMBRE} vanishes, its purpose fulfilled.",
+										"Just a warning, though: if someone gives a {@creature Meeseeks|RMBRE} a purpose it can't fulfill, or if a {@creature Meeseeks|RMBRE} is prevented from fulfilling its purpose, it does go sort of insane, becoming hostile toward its summoner after {@dice 1d4} hours.",
+										"While the box is in the room, it can summon as many {@creature Meeseeks|RMBRE} as you like. It's also possible to take the box. If it's used outside the room, though, roll a {@dice d20} and add the number of {@creature Meeseeks|RMBRE} that have already been summoned. If the total is higher than 20, the {@creature Meeseeks|RMBRE} box implodes and makes a sad whining sound, destroying it."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Roleplaying a Meeseeks",
+									"page": 16,
 									"id": "07c",
 									"entries": [
-										"A word to the wise DM on this room: have fun with it. Think of yourself as the genie who takes your players' wishes extremely literally. Find ways to make a Meeseeks fulfill its purpose and vanish as quickly as you can. The goal isn't to {@i actually} make them turn against the party. If the players manage to stump you by giving a Meeseeks a purpose so carefully worded that even you can't figure out a way to subvert it, have that Meeseeks summon another Meeseeks to help out. This soon reveals itself to be a terrible cascading problem.",
-										"Generally, Meeseeks are cheerful and eager to help, unless their existences last longer than a few hours. They're unwilling to fight and they're too stupid to solve puzzles. They'll cheer you on, though, even as they provide unhelpful pointers.",
-										"Meeseeks have a few distinct qualities you might employ for maximum immersion:",
+										"A word to the wise DM on this room: have fun with it. Think of yourself as the genie who takes your players' wishes extremely literally. Find ways to make a {@creature Meeseeks|RMBRE} fulfill its purpose and vanish as quickly as you can. The goal isn't to {@i actually} make them turn against the party. If the players manage to stump you by giving a {@creature Meeseeks|RMBRE} a purpose so carefully worded that even you can't figure out a way to subvert it, have that {@creature Meeseeks|RMBRE} summon another {@creature Meeseeks|RMBRE} to help out. This soon reveals itself to be a terrible cascading problem.",
+										"Generally, {@creature Meeseeks|RMBRE} are cheerful and eager to help, unless their existences last longer than a few hours. They're unwilling to fight and they're too stupid to solve puzzles. They'll cheer you on, though, even as they provide unhelpful pointers.",
+										"{@creature Meeseeks|RMBRE} have a few distinct qualities you might employ for maximum immersion:",
 										{
 											"type": "list",
 											"items": [
-												"Constantly speak in a screechy voice. This imposes disadvantage on any Dexterity ({@skill Stealth}) checks the characters attempt while a Meeseeks is around.",
-												"Begin or end utterances with, \"I'm Mister Meeseeks, look at me!\" or some variation thereof.",
-												"Talk about how a Meeseeks grows facial stubble as it gets closer to its homicidal break."
+												"Constantly speak in a screechy voice. This imposes disadvantage on any Dexterity ({@skill Stealth}) checks the characters attempt while a {@creature Meeseeks|RMBRE} is around.",
+												"Begin or end utterances with, \"I'm Mister {@creature Meeseeks|RMBRE}, look at me!\" or some variation thereof.",
+												"Talk about how a {@creature Meeseeks|RMBRE} grows facial stubble as it gets closer to its homicidal break."
 											]
 										}
 									]
@@ -1450,6 +2786,7 @@
 						{
 							"type": "entries",
 							"name": "19. Evil Clock Room",
+							"page": 17,
 							"id": "07d",
 							"entries": [
 								{
@@ -1472,6 +2809,7 @@
 								{
 									"type": "entries",
 									"name": "Rapture Button",
+									"page": 17,
 									"id": "080",
 									"entries": [
 										"As the countdown nears zero, the room begins to rumble. If the \"RAPTURE\" button is pressed at any point during the countdown, the clock resets\u2014but instead of 60 seconds, it starts at 50 seconds and starts counting down to zero again. This happens every time the button is pressed, with the countdown losing 10 seconds each time (so that it starts again at 40 seconds, then 30, and so on).",
@@ -1493,11 +2831,13 @@
 				{
 					"type": "section",
 					"name": "Locations 20-29",
+					"page": 17,
 					"id": "082",
 					"entries": [
 						{
 							"type": "entries",
 							"name": "20. Mort... Sorry, Goblin Room",
+							"page": 17,
 							"id": "083",
 							"entries": [
 								{
@@ -1521,6 +2861,7 @@
 								{
 									"type": "entries",
 									"name": "Mort\u2014Uh, I Mean Goblins",
+									"page": 17,
 									"id": "086",
 									"entries": [
 										"There are, like, thirty {@creature Goblin||goblins} in this room. Maybe more, maybe less. You figure it out. All of them are obnoxious but not hostile. The characters can interact with them, but any information the little turds provide is incorrect. The goblins constantly whinge and give bad advice, particularly when they're not asked. The goblins speak in worried tones at all times, perpetually saying things like:",
@@ -1539,6 +2880,7 @@
 								{
 									"type": "entries",
 									"name": "Gem Puzzle",
+									"page": 17,
 									"id": "087",
 									"entries": [
 										"Ideally, the puzzle is solved by putting the red, green, and purple gems into the slots. The remaining yellow and blue gems must be destroyed in some way. It's probably a coincidence that these annoying f***ing goblins are wearing yellow and blue.",
@@ -1552,6 +2894,7 @@
 						{
 							"type": "entries",
 							"name": "21. Bathroom Room",
+							"page": 18,
 							"id": "088",
 							"entries": [
 								{
@@ -1568,6 +2911,7 @@
 						{
 							"type": "entries",
 							"name": "22. Tommy Two-Butts Room",
+							"page": 18,
 							"id": "08a",
 							"entries": [
 								{
@@ -1578,7 +2922,7 @@
 										"Also, the bugbear's got two butts. No, I don't know why. Yeah, it's weird. Try not to stare."
 									]
 								},
-								"The {@creature bugbear} is Tommy Two-Butts, a genius (adjust his Intelligence to 21) and a sworn enemy of the Order of the Buttless (see {@area area 32|0c5|x}). Tommy has been hiding out here with his two {@creature goblin} assistants, Greeble and Flerp, designing a weapon that can destroy the butt trap (see {@area area 10|051|x}). Tommy has the design know-how to produce this weapon, called the churd cannon, but he doesn't have the magical knowledge to complete its design.",
+								"The {@creature bugbear} is {@creature Tommy Two-Butts|RMBRE}, a genius (adjust his Intelligence to 21) and a sworn enemy of the Order of the Buttless (see {@area area 32|0c5|x}). {@creature Tommy Two-Butts|RMBRE|Tommy} has been hiding out here with his two {@creature goblin} assistants, Greeble and Flerp, designing a weapon that can destroy the butt trap (see {@area area 10|051|x}). {@creature Tommy Two-Butts|RMBRE|Tommy} has the design know-how to produce this weapon, called the churd cannon, but he doesn't have the magical knowledge to complete its design.",
 								{
 									"type": "image",
 									"href": {
@@ -1591,9 +2935,10 @@
 								{
 									"type": "entries",
 									"name": "Churd Cannon",
+									"page": 18,
 									"id": "08c",
 									"entries": [
-										"If the adventurers offer to help Tommy, he excitedly pulls them over to one of the tables, on which sit a bunch of incomprehensibly named parts and a long metal tube etched with magic symbols.",
+										"If the adventurers offer to help {@creature Tommy Two-Butts|RMBRE|Tommy}, he excitedly pulls them over to one of the tables, on which sit a bunch of incomprehensibly named parts and a long metal tube etched with magic symbols.",
 										"To help Tommy, a character must read his notes (taking 1 hour of study), then succeed on a DC 14 Intelligence ({@skill Arcana}) check to determine the following facts:",
 										{
 											"type": "list",
@@ -1609,17 +2954,19 @@
 								{
 									"type": "entries",
 									"name": "Destroy the Butt Trap",
+									"page": 18,
 									"id": "08d",
 									"entries": [
-										"With the churd cannon assembled, Tommy asks the party to help him destroy the evil butt trap in {@area area 10|051|x}. Not only has the trap stolen countless butts, it's also brainwashed Tommy's friends, who joined the Order of the Buttless.",
+										"With the churd cannon assembled, {@creature Tommy Two-Butts|RMBRE|Tommy} asks the party to help him destroy the evil butt trap in {@area area 10|051|x}. Not only has the trap stolen countless butts, it's also brainwashed Tommy's friends, who joined the Order of the Buttless.",
 										"If the characters agree to accompany Tommy, Greeble, and Flerp to complete their mission, Tommy entrusts the churd cannon to one party member with a solemn reminder: \"Remember. It's one shot for all the butts.\" It's unclear exactly what this means.",
-										"When the characters arrive at the butt room ({@area area 10|051|x}), there's a 75 percent chance that they encounter the Order of the Buttless there unless that group has been {@condition incapacitated} in some way (see {@area area 32|0c5|x}). The buttless have caught wind of Tommy Two-Butts's plan and intend to stop his blasphemy. The characters might well have to choose sides between Tommy Two-Butts or the Buttless.",
+										"When the characters arrive at the butt room ({@area area 10|051|x}), there's a {@chance 75|75 percent} chance that they encounter the Order of the Buttless there unless that group has been {@condition incapacitated} in some way (see {@area area 32|0c5|x}). The buttless have caught wind of {@creature Tommy Two-Butts|RMBRE}'s plan and intend to stop his blasphemy. The characters might well have to choose sides between {@creature Tommy Two-Butts|RMBRE} or the Buttless.",
 										{
 											"type": "entries",
 											"name": "Firing the Churd Cannon",
+											"page": 19,
 											"id": "08e",
 											"entries": [
-												"When a character fires the churd cannon in {@area area 10|051|x}, have the character's player roll a {@dice d20}. On any roll other than a 1, the cannon destroys the Butt Trap in a blinding flash. See area 10 for details on what happens afterward.",
+												"When a character fires the churd cannon in {@area area 10|051|x}, have the character's player roll a {@dice d20}. On any roll other than a 1, the cannon destroys the Butt Trap in a blinding flash. See {@area area 10|051|x} for details on what happens afterward.",
 												"If the player rolls a 1, each creature in the room must succeed on a DC 14 Constitution saving throw or lose their butt to the butt trap. The churd cannon then falls apart with a pathetic farting sound."
 											]
 										}
@@ -1628,10 +2975,11 @@
 								{
 									"type": "entries",
 									"name": "Aftermath",
+									"page": 19,
 									"id": "08f",
 									"entries": [
-										"If the butt trap in {@area area 10|051|x} is destroyed, the buttless all regain their butts. They consider it a sign from their god and they rejoice, sure to mark this as a high holiday that they observe in perpetuity. Tommy Two-Butts hails the party as heroes and reconnects with his former friends.",
-										"If the butt trap is not destroyed, the Order of the Buttless continue spreading their old-time religion, and Tommy Two-Butts goes back to the drawing board."
+										"If the butt trap in {@area area 10|051|x} is destroyed, the buttless all regain their butts. They consider it a sign from their god and they rejoice, sure to mark this as a high holiday that they observe in perpetuity. {@creature Tommy Two-Butts|RMBRE} hails the party as heroes and reconnects with his former friends.",
+										"If the butt trap is not destroyed, the Order of the Buttless continue spreading their old-time religion, and {@creature Tommy Two-Butts|RMBRE} goes back to the drawing board."
 									]
 								}
 							]
@@ -1639,6 +2987,7 @@
 						{
 							"type": "entries",
 							"name": "23. Commercial Room",
+							"page": 19,
 							"id": "090",
 							"entries": [
 								"This is one of those rooms that's probably a lot bigger on the inside than it looks on the map. Cartographers, am I right? Anyway, read this:",
@@ -1658,10 +3007,11 @@
 										"It takes your eyes a moment to adjust, but you soon find yourself squinting into a magic spotlight hanging over rows of enthusiastic monsters. Their faces are masks of delight and relief. A hobgoblin beckons you to join her in the middle of the room."
 									]
 								},
-								"The {@creature hobgoblin} continues to urge the characters to join her in the center of the spotlight. In Common, she bellows, \"Welcome to the finest dungeon entertainment this side of the staircase that led you down into the dungeon: the Spawn Sword Ship Hour! Monsters love commercials, and this show is entirely that: commercials!\" The crowd erupts into cheers. This sounds like a horrible premise for a show, to be honest, but monster life is probably pretty bleak.",
+								"The {@creature hobgoblin} continues to urge the characters to join her in the center of the spotlight. In {@language Common}, she bellows, \"Welcome to the finest dungeon entertainment this side of the staircase that led you down into the dungeon: the Spawn Sword Ship Hour! Monsters love commercials, and this show is entirely that: commercials!\" The crowd erupts into cheers. This sounds like a horrible premise for a show, to be honest, but monster life is probably pretty bleak.",
 								{
 									"type": "entries",
 									"name": "A Few Words from Our Sponsors",
+									"page": 19,
 									"id": "093",
 									"entries": [
 										"The hobgoblin, whose name is Cla'a'a'arg, can be prevailed upon to explain exactly what in the Nine Hells is going on here:",
@@ -1681,6 +3031,7 @@
 								{
 									"type": "entries",
 									"name": "Irresistible Objects",
+									"page": 19,
 									"id": "094",
 									"entries": [
 										{
@@ -1717,6 +3068,7 @@
 								{
 									"type": "entries",
 									"name": "Time to Perform",
+									"page": 19,
 									"id": "095",
 									"entries": [
 										"The silent audience anticipates their commercial with bated breath. Each character is expected to contribute to the performance of this commercial by attempting a DC 14 Charisma ({@skill Performance} or {@skill Persuasion}) check. If half or more of the group participates and succeeds on the check, the audience erupts into applause and appears genuinely impressed, pelting the group with coins. If half or more of the characters fail the check or don't attempt it, the characters are booed and pelted with monstrous detritus by the crowd\u2014mostly goblin fingers, owlbear pellets, and orc snot."
@@ -1725,6 +3077,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 19,
 									"id": "096",
 									"entries": [
 										"The coins thrown at the characters total 150 gp. Even better, if the characters escape the room still in possession of the object they were trying to advertise, they can keep it for the remainder of the adventure."
@@ -1735,6 +3088,7 @@
 						{
 							"type": "entries",
 							"name": "24. Ooze Cult Room",
+							"page": 20,
 							"id": "097",
 							"entries": [
 								"Even before they reach the door leading into this room, the characters notice that the floor, ceiling, and walls of the corridor adjacent to the door are moist and glistening. When you describe it, really draw out the word \"moist.\" It makes people pretty uncomfortable.",
@@ -1761,6 +3115,7 @@
 								{
 									"type": "entries",
 									"name": "Entering the Room",
+									"page": 20,
 									"id": "09a",
 									"entries": [
 										"The door to the room is unlocked. If the characters decide to follow the vomit into the room, read this description:",
@@ -1788,15 +3143,17 @@
 								{
 									"type": "entries",
 									"name": "Turning a Blind Eye",
+									"page": 20,
 									"id": "09c",
 									"entries": [
-										"If, instead of entering the room, the characters decide to walk away from Borkibok and his plight, the door bursts open, unleashing the ochre jelly! The phlegmy mass pursues the party, indignant about being snubbed.",
-										"If Borkibok is still alive, he's so overcome with reverence for his goo god that he attacks the characters. The other five cultists in the room follow the ochre jelly and join the fight after 2 rounds of combat."
+										"If, instead of entering the room, the characters decide to walk away from Borkibok and his plight, the door bursts open, unleashing the {@creature ochre jelly}! The phlegmy mass pursues the party, indignant about being snubbed.",
+										"If Borkibok is still alive, he's so overcome with reverence for his goo god that he attacks the characters. The other five {@creature Cultist||cultists} in the room follow the {@creature ochre jelly} and join the fight after 2 rounds of combat."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 20,
 									"id": "09d",
 									"entries": [
 										"A half-empty cask sits on the balcony in the room, containing the oily, yellowish ipecac syrup that inspires the cultists to... make their offerings. A sticker portraying a green cartoon face smiles from the cask's side. There are ten full swigs of \"medicine\" remaining within. Anyone who drinks from the cask spends the next {@dice 1d4} rounds {@condition prone} and unable to stand as they heave up the contents of their stomachs. Why anyone would want to do this is beyond me, but if you're drinking the leftovers of a whole mob of ooze cultists, you sort of get what you deserve."
@@ -1807,6 +3164,7 @@
 						{
 							"type": "entries",
 							"name": "25. Pirate Room",
+							"page": 21,
 							"id": "09e",
 							"entries": [
 								{
@@ -1816,19 +3174,21 @@
 										"We've had a lot of fun so far, folks, but this next room is truly horrifying. Near darkness fills the room, and the sound of gently sloshing water echoes off the walls. A rowboat bobs in a slow-moving stream, tied by a rope to a small concrete pier. The horrid, oily water flowing in the stream looks suspiciously like pancreatic juice."
 									]
 								},
-								"This room is illuminated only by dim light. The oily water fills the stream to a depth of 3 feet where it runs a winding course through this area. The stream is just wide enough to accommodate the rowboat.",
+								"This room is illuminated only by dim light. The oily water fills the stream to a depth of 3 feet where it runs a winding course through this area. The stream is just wide enough to accommodate the {@item rowboat}.",
 								{
 									"type": "entries",
 									"name": "Boat",
+									"page": 21,
 									"id": "0a0",
 									"entries": [
-										"The rowboat is conveniently sized to fit the whole party. If the rope is unfastened, the boat floats down the dark, spooky stream at a rate of 10 feet per round. As the boat moves, the walls flash with bright images: a parrot, a doubloon, a treasure map! The dread is palpable.",
+										"The {@item rowboat} is conveniently sized to fit the whole party. If the rope is unfastened, the boat floats down the dark, spooky stream at a rate of 10 feet per round. As the boat moves, the walls flash with bright images: a parrot, a doubloon, a treasure map! The dread is palpable.",
 										"If any players decide to crack wise about how \"pirates aren't scary,\" tell them each of their characters needs to succeed on a DC 15 Wisdom saving throw or gain a permanent fear of pirates, forcibly making them the most sensible person in the party."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Emergency Exit",
+									"page": 21,
 									"id": "0a1",
 									"entries": [
 										"Maybe halfway through this terror exercise, the characters clearly see a glowing \"EXIT\" sign hanging over a dimly visible, unlocked door. If they're too frightened to continue\u2014trust me, I understand\u2014they can bail out of the boat and leave through this door. The oily water is uncomfortably warm but safe to traverse."
@@ -1837,6 +3197,7 @@
 								{
 									"type": "entries",
 									"name": "Pirates!",
+									"page": 21,
 									"id": "0a2",
 									"entries": [
 										"In the event that these steely-nerved idiots stay on the boat, they find themselves floating into a well-lit cavern. Read the following in your spookiest ghost-story voice:",
@@ -1862,10 +3223,11 @@
 								{
 									"type": "entries",
 									"name": "Pirate Captain",
+									"page": 21,
 									"id": "0a5",
 									"entries": [
-										"The pirate captain is a nightmarishly well-programmed magical animatronic figure. It's a Large object with AC 17, 50 hit points, a speed of 0 feet, and immunity to poison and psychic damage. It has the following ability scores: Strength 14, Dexterity 10, Intelligence 3, Wisdom 3, and Charisma 1 (obviously). It has {@sense blindsight} out to a range of 30 feet and is blind beyond this distance. As an action, the captain can make a ranged weapon attack (+5 to hit, range 30 feet, one target) with the ship's fake (not really fake) cannon. On a hit, the cannon deals 3 ({@dice 1d6}) bludgeoning damage.",
-										"If the characters ask the animatronic pirate captain its name, it tells them, \"Captain A-Hole\" (emphasis on the A). After any other initial pleasantries or tea-and-crumpets crap, A-Hole rattles off its crappy riddle:",
+										"The pirate captain is a nightmarishly well-programmed magical animatronic figure. {@object Captain A-Hole|RMBRE|It's a Large object with} AC 17, 50 hit points, a speed of 0 feet, and immunity to poison and psychic damage. It has the following ability scores: Strength 14, Dexterity 10, Intelligence 3, Wisdom 3, and Charisma 1 (obviously). It has {@sense blindsight} out to a range of 30 feet and is blind beyond this distance. As an action, the captain can make a ranged weapon attack ({@hit 5} to hit, range 30 feet, one target) with the ship's fake (not really fake) cannon. On a hit, the cannon deals 3 ({@damage 1d6}) bludgeoning damage.",
+										"If the characters ask the animatronic pirate captain its name, it tells them, \"{@object Captain A-Hole|RMBRE}\" (emphasis on the A). After any other initial pleasantries or tea-and-crumpets crap, A-Hole rattles off its crappy riddle:",
 										{
 											"type": "insetReadaloud",
 											"id": "0a6",
@@ -1884,13 +3246,14 @@
 										},
 										"The answer is \"a hole.\" Maybe now you understand why this guy is horrible.",
 										"If the characters successfully answer the riddle, the captain's mouth slowly opens into a supernatural screaming shape. A black cloth object flies out of it, landing neatly between the characters. See \"Treasure\" later in this section for details.",
-										"If the characters tank the riddle and you get sick of waiting for the right answer, the construct captain shoots a cannon from the deck of its dumb ship and sinks the rowboat. Now the characters have to slog to the exit, and their pants and shoes are all wet.",
+										"If the characters tank the riddle and you get sick of waiting for the right answer, the construct captain shoots a cannon from the deck of its dumb ship and sinks the {@item rowboat}. Now the characters have to slog to the exit, and their pants and shoes are all wet.",
 										"After the riddle bulls**t is resolved, the boat floats onward to an exit beyond the pirate cavern, ending at a landing with a unlocked door."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 22,
 									"id": "0a7",
 									"entries": [
 										"The black thing tossed by the captain looks like a pocket extradimensional space called a {@item portable hole}! It's not, though. It's just a crunchy fabric patch slathered with some newfangled ultra black paint\u2014and it smells like pirate. Balled in it is 1 pp, though. The coin also smells like pirate, yet, somehow, that doesn't decrease the value."
@@ -1901,6 +3264,7 @@
 						{
 							"type": "entries",
 							"name": "26. Clone Room",
+							"page": 22,
 							"id": "0a8",
 							"entries": [
 								{
@@ -1922,6 +3286,7 @@
 								{
 									"type": "entries",
 									"name": "Attack (of) the Clones",
+									"page": 22,
 									"id": "0ab",
 									"entries": [
 										"Whenever you think it'd be most dramatic, a voice yells, \"THERE CAN ONLY BE ONE!\" Suddenly, each character is isolated in a one-on-one confrontation against their double, with fog obscuring everyone's vision of the other pairs. It should be obvious what's happening, but have the players roll initiative to hammer it home.",
@@ -1935,6 +3300,7 @@
 						{
 							"type": "entries",
 							"name": "27. Heavy Door Room",
+							"page": 22,
 							"id": "0ac",
 							"entries": [
 								"Read this to the players when the characters approach the door to this room:",
@@ -1949,6 +3315,7 @@
 								{
 									"type": "entries",
 									"name": "Flame On!",
+									"page": 22,
 									"id": "0ae",
 									"entries": [
 										"When one of the characters gets around to opening the sliding peephole thingy, that character is immediately targeted by the flameskull's Fire Ray. The little guy was floating there on the other side of the door with its empty eye sockets pressed up against the peephole. After the blast, the flameskull is all apologetic, as follows:",
@@ -1967,6 +3334,7 @@
 								{
 									"type": "entries",
 									"name": "That's Gratitude For Ya",
+									"page": 23,
 									"id": "0b0",
 									"entries": [
 										{
@@ -1986,6 +3354,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 23,
 									"id": "0b1",
 									"entries": [
 										"Andy was hiding a {@item potion of flying} in his head because why not."
@@ -1996,6 +3365,7 @@
 						{
 							"type": "entries",
 							"name": "28. Schwifty Room",
+							"page": 23,
 							"id": "0b2",
 							"entries": [
 								{
@@ -2006,10 +3376,11 @@
 									]
 								},
 								"The monster, a {@creature spectator}, doesn't attack. As soon as any of the characters tries to speak, rudely interrupt them with a telepathic communication from this budget beholder. It shouts directly into the minds of each of the characters in turn: \"SHOW ME WHAT YOU GOT! I WANT TO SEE WHAT YOU GOT!\"",
-								"Any further attempt to communicate with the spectator elicits the same message. It's here to see the show of a lifetime.",
+								"Any further attempt to communicate with the {@creature spectator} elicits the same message. It's here to see the show of a lifetime.",
 								{
 									"type": "entries",
 									"name": "Get Schwifty",
+									"page": 23,
 									"id": "0b4",
 									"entries": [
 										{
@@ -2023,13 +3394,14 @@
 										},
 										"Listen, you knew it had to happen. This is Rick and f***ing Morty, and \"schwifty\" is the money shot. (While we're on the subject, if one more person comes up to me and yells, \"Get schwifty!\", I'm traveling to the future to schwift directly on their grave.)",
 										"Anyway, half or more of the characters must succeed on a DC 15 Charisma ({@skill Performance}) check, but they better be coordinated. None of that \"I'll dance, you juggle, and Fantasy Carol can do card tricks\" garbage. This ain't a middle school talent show.",
-										"If the group succeeds, the spectator grunts in approval and vanishes through a hole in the ceiling that promptly opens before it, promptly closes after it, and can't be found again. At the same time, a previously unseen trapdoor appears in the floor of the room. The trapdoor is unlocked and opens up to a small cubbyhole.",
-										"If the group fails to deliver dulcet tones and sick drops, the spectator tries to burn the sight of this hideous failure out of its multiple eyes. In other words, it attacks until destroyed."
+										"If the group succeeds, the {@creature spectator} grunts in approval and vanishes through a hole in the ceiling that promptly opens before it, promptly closes after it, and can't be found again. At the same time, a previously unseen trapdoor appears in the floor of the room. The trapdoor is unlocked and opens up to a small cubbyhole.",
+										"If the group fails to deliver dulcet tones and sick drops, the {@creature spectator} tries to burn the sight of this hideous failure out of its multiple eyes. In other words, it attacks until destroyed."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 23,
 									"id": "0b5",
 									"entries": [
 										"Inside the trapdoor cubbyhole is a bag containing 17 gp, two small rubies (20 gp each), and a dead spider (worth 5,000 gp for some crazy reason)."
@@ -2040,6 +3412,7 @@
 						{
 							"type": "entries",
 							"name": "29. Mimic Room",
+							"page": 24,
 							"id": "0b6",
 							"entries": [
 								{
@@ -2054,6 +3427,7 @@
 								{
 									"type": "entries",
 									"name": "Another Mimic",
+									"page": 24,
 									"id": "0b8",
 									"entries": [
 										"When the chest mimic is killed, the pedestal suddenly shoots an equally nasty tongue out of {@i its} mouth. Because\u2014uh oh\u2014it's a {@creature mimic}, too! This one has 18 hit points when the fight starts."
@@ -2062,6 +3436,7 @@
 								{
 									"type": "entries",
 									"name": "Ha Ha, Another Mimic",
+									"page": 24,
 									"id": "0b9",
 									"entries": [
 										"As the second mimic collapses in a heap and the characters think they're safe, wouldn't you know it! Part of the floor reveals itself to be another, {@creature Large Mimic|RMBRE|even bigger mimic}! This 10-foot-by-10-foot mimic appears beneath as many characters in the room as possible and gives them a big nasty lick across the toes. It has the statistics of a normal {@creature mimic}, with these changes:",
@@ -2080,6 +3455,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 24,
 									"id": "0ba",
 									"entries": [
 										"Anyone brave enough to go fishing around in the mimic corpses finds two {@item Potion of Healing||potions of healing}."
@@ -2092,11 +3468,13 @@
 				{
 					"type": "section",
 					"name": "Locations 30-39",
+					"page": 24,
 					"id": "0bb",
 					"entries": [
 						{
 							"type": "entries",
 							"name": "30. Virus Room",
+							"page": 24,
 							"id": "0bc",
 							"entries": [
 								"Read the following to set the scene:",
@@ -2120,9 +3498,10 @@
 								{
 									"type": "entries",
 									"name": "Spider Mania",
+									"page": 24,
 									"id": "0bf",
 									"entries": [
-										"The four {@creature Giant Spider||giant spiders} were conveniently hidden in the flickering shadows. Or maybe they were invisible. Whatever. Sometimes you don't need the characters killing everything as soon as they see it.",
+										"The four {@creature Giant Spider||giant spiders} were conveniently hidden in the flickering shadows. Or maybe they were {@condition invisible}. Whatever. Sometimes you don't need the characters killing everything as soon as they see it.",
 										"The number of parchment strips conveniently equals the number of characters. At this point, you can convey individual messages to any characters who read the parchments given to them by the spiders (see \"Getting Ahead\" below). You can write the notes on scraps of paper and hand them out, drag individual people out of the room and tell them, whisper it to them like a gossipy middle schooler, or do whatever else that can drive this info into the players' oblong heads.",
 										"Here's the catch, though. Each character who reads a parchment must succeed on a DC 20 Intelligence saving throw or contract a visual virus that forces them to obey the note. Each infected character must adhere to their parchment's command as strictly as possible."
 									]
@@ -2130,6 +3509,7 @@
 								{
 									"type": "entries",
 									"name": "Getting Ahead",
+									"page": 24,
 									"id": "0c0",
 									"entries": [
 										"You can use the following note-based commands, or make up your own:",
@@ -2150,6 +3530,7 @@
 						{
 							"type": "entries",
 							"name": "31. Lever Room",
+							"page": 25,
 							"id": "0c1",
 							"entries": [
 								{
@@ -2163,6 +3544,7 @@
 								{
 									"type": "entries",
 									"name": "Yank on These Levers",
+									"page": 25,
 									"id": "0c3",
 									"entries": [
 										"Sure, the room description says something good could happen. But that's a lie crafted for your entertainment. Nothing good ever happens when a character pulls a lever. Regardless of what configuration the characters announce they want to work with, ask them dubiously, \"Are you sure?\" Then roll on this fresh-ass Lever Punishment table to determine the minor doom that befalls them."
@@ -2171,6 +3553,7 @@
 								{
 									"type": "entries",
 									"name": "Lever Punishment",
+									"page": 25,
 									"id": "0c4",
 									"entries": [
 										{
@@ -2202,7 +3585,7 @@
 												],
 												[
 													"5",
-													"Everyone standing in the room is teleported onto the ceiling, then falls back to the floor, taking 3 ({@dice 1d6}) bludgeoning damage. Gravity! She's a fickle mistress."
+													"Everyone standing in the room is teleported onto the ceiling, then falls back to the floor, taking 3 ({@damage 1d6}) bludgeoning damage. Gravity! She's a fickle mistress."
 												],
 												[
 													"6",
@@ -2218,6 +3601,7 @@
 						{
 							"type": "entries",
 							"name": "32. Chapel of the Buttless Room",
+							"page": 25,
 							"id": "0c5",
 							"entries": [
 								{
@@ -2242,6 +3626,7 @@
 								{
 									"type": "entries",
 									"name": "A Party with Butts",
+									"page": 25,
 									"id": "0c7",
 									"entries": [
 										"If all the characters still have their butts, Zorg and the other buttless see this as an opportunity to introduce the party to a new reality free from butt bondage. They try to convince the characters to accompany them to the butt trap in {@area area 10|051|x}. Once there, the members of the order attempt to get the characters to trigger the trap."
@@ -2250,6 +3635,7 @@
 								{
 									"type": "entries",
 									"name": "A Party Missing Butts",
+									"page": 26,
 									"id": "0c8",
 									"entries": [
 										"If one or more of the party members have previously lost their butts, Zorg and the other members of the Order of the Buttless begin to get excited, asking repeatedly whether this might be the Buttless Messiah (or messiahs) that the prophecy foretold. To dispel everyone's curiosity, Zorg produces the {@i Book of the Buttless}, an enviably pert tome filled with prophecies and star charts that predict the coming of the Buttless Messiah. To determine the meanings of omens that could herald the messiah, roll a {@dice d6} and consult the Buttless Prophecy table."
@@ -2258,6 +3644,7 @@
 								{
 									"type": "entries",
 									"name": "Buttless Prophecy",
+									"page": 26,
 									"id": "0c9",
 									"entries": [
 										{
@@ -2288,6 +3675,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 26,
 									"id": "0ca",
 									"entries": [
 										"Behind the shrine lies a sack containing 20 gp, 55 sp, and the order's holiest relic\u2014a turd-shaped lump of gold worth 150 gp."
@@ -2298,9 +3686,10 @@
 						{
 							"type": "entries",
 							"name": "33. Nothic Room",
+							"page": 26,
 							"id": "0cb",
 							"entries": [
-								"Remember when you mentioned in area 32 that the door into this area is unusually short? It's a safe bet the players don't. No memory for important details, these people. Unless someone announces that they're stooping down as they go through the door, when the first Medium or larger character enters this room, they must succeed on a DC 10 Wisdom ({@skill Perception}) check or take 1 point of bludgeoning damage as they bonk their dome.",
+								"Remember when you mentioned in {@area area 32|0c5|x} that the door into this area is unusually short? It's a safe bet the players don't. No memory for important details, these people. Unless someone announces that they're stooping down as they go through the door, when the first Medium or larger character enters this room, they must succeed on a DC 10 Wisdom ({@skill Perception}) check or take 1 point of bludgeoning damage as they bonk their dome.",
 								"Read the following to any survivors:",
 								{
 									"type": "insetReadaloud",
@@ -2310,14 +3699,15 @@
 									]
 								},
 								"A {@creature nothic} with a {@item concertina|RMBRE} (a less charming kind of accordion) waits here, concealed behind an overturned torture chair. The creature has been drinking heavily and is already pretty wrecked. When the party interrupts its stupor by showing up, the unseen nothic plays a tune\u2014something like, \"Naaaa na na na na na na naaaa nana.\" I'm not Mozart, but you get the gist.",
-								"The concertina is a rare magic item. In addition to knocking out a killer polka, a creature playing the concertina can use an action to cause an area of mist or water up to 30 feet in diameter and 6 inches deep to freeze solid. Once used, this feature of the concertina can't be used again until the next dawn.",
+								"The {@item concertina|RMBRE} is a rare magic item. In addition to knocking out a killer polka, a creature playing the concertina can use an action to cause an area of mist or water up to 30 feet in diameter and 6 inches deep to freeze solid. Once used, this feature of the concertina can't be used again until the next dawn.",
 								"At the end of the tune and before any characters move too close, the nothic uses the magic concertina to cause the mist on the floor to turn to solid ice. Any creatures touching the floor must succeed on a DC 20 Dexterity saving throw or be {@condition restrained} by the ice. (The nothic hops up at just the right time.) As an action, a character can attempt to free itself or another creature within its reach from the ice, doing so with a successful DC 20 Strength ({@skill Athletics}) check. A character freed from the ice is no longer {@condition restrained} by it. The ice melts in an hour if everyone in the party turns out to be helpless baby birds.",
 								{
 									"type": "entries",
 									"name": "The Weirdest Insights",
+									"page": 26,
 									"id": "0cd",
 									"entries": [
-										"After the mist freezes, the nothic reveals itself. Lay down the following:",
+										"After the mist freezes, the {@creature nothic} reveals itself. Lay down the following:",
 										{
 											"type": "insetReadaloud",
 											"id": "0ce",
@@ -2325,13 +3715,14 @@
 												"A hunched, one-eyed creature shambles out from hiding behind some torture stuff. It levels a concertina menacingly. \"Me gonna stir up some s***,\" it hisses with unmistakable glee."
 											]
 										},
-										"The nothic uses its Weird Insight ability to yank a juicy tidbit from one of the player's minds. That's right, not the character, the player, which is sure to shake up the group's harmonious dynamic. Roll a {@dice d4} and consult the following insight tables for each player to determine what information the nothic gains based on which character it looks at. The nothic then shares that private thought with the whole group.",
+										"The {@creature nothic} uses its Weird Insight ability to yank a juicy tidbit from one of the player's minds. That's right, not the character, the player, which is sure to shake up the group's harmonious dynamic. Roll a {@dice d4} and consult the following insight tables for each player to determine what information the nothic gains based on which character it looks at. The nothic then shares that private thought with the whole group.",
 										"If the nothic isn't stopped, it continues to hunt for insights and share them with the group. Fun! Aside from killing it, the only way to shut it up is to give it a magic item. Any magic item suffices. It's a greedy bastard."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Beth's Insights",
+									"page": 26,
 									"id": "0cf",
 									"entries": [
 										{
@@ -2374,6 +3765,7 @@
 								{
 									"type": "entries",
 									"name": "Jerry's Insights",
+									"page": 26,
 									"id": "0d0",
 									"entries": [
 										{
@@ -2416,6 +3808,7 @@
 								{
 									"type": "entries",
 									"name": "Meatface's Insights",
+									"page": 27,
 									"id": "0d1",
 									"entries": [
 										{
@@ -2458,6 +3851,7 @@
 								{
 									"type": "entries",
 									"name": "Morty's Insights",
+									"page": 27,
 									"id": "0d2",
 									"entries": [
 										{
@@ -2500,6 +3894,7 @@
 								{
 									"type": "entries",
 									"name": "Summer's Insights",
+									"page": 27,
 									"id": "0d3",
 									"entries": [
 										{
@@ -2544,6 +3939,7 @@
 						{
 							"type": "entries",
 							"name": "34. Frankie Freem's Room",
+							"page": 27,
 							"id": "0d4",
 							"entries": [
 								"This room is way bigger on the inside than it should be, because it's got some weird interdimensional s*** going on. Get ready to blow some minds:",
@@ -2562,11 +3958,12 @@
 										"An animatronic iguana wearing overalls and a straw hat comes over and says, \"Hi! Welcome to Frankie Freem's! Y'all need a drink?\" She's trying to be, like, some kind of southern belle and is carrying a guitar. Except she's a lizard and her name tag reads \"Layla.\""
 									]
 								},
-								"The iguana is Layla the Lizard (see \"Automatons\" below). Frankie Freem's is a tavern demiplane that, once entered, doesn't allow anyone to exit until the happy hour known as the Slaughterfest. That's the time when the tavern's staff ruthlessly murder the patrons, who are then brought back to life to repeat the same hijinks the next day.",
+								"The iguana is {@creature Layla the Lizard|RMBRE} (see \"Automatons\" below). Frankie Freem's is a tavern demiplane that, once entered, doesn't allow anyone to exit until the happy hour known as the Slaughterfest. That's the time when the tavern's staff ruthlessly murder the patrons, who are then brought back to life to repeat the same hijinks the next day.",
 								"The characters need to figure out that the only way out of the tavern is to destroy all the constructs during the Slaughterfest. Characters attempting to exit Frankie Freem's before this time find that the doors are magically sealed and can't be opened or damaged.",
 								{
 									"type": "entries",
 									"name": "Patrons",
+									"page": 27,
 									"id": "0d7",
 									"entries": [
 										"The tavern's patrons ({@creature Commoner||commoners}) are all either humanoids or alien-looking planar weirdos, huddling in varying states of shock and terror. Some stare off into space, others hide under tables, and some occupy makeshift forts. There are fifteen patrons here, ten of whom won't participate in any scuffles that break out, as they're too old, too young, or too catatonic.",
@@ -2587,6 +3984,7 @@
 								{
 									"type": "entries",
 									"name": "Automatons",
+									"page": 27,
 									"id": "0d8",
 									"entries": [
 										{
@@ -2598,7 +3996,7 @@
 											"width": 641,
 											"height": 800
 										},
-										"The five automatons that serve as the tavern's wait staff all speak and understand Common. They are immune to poison and psychic damage as well as the following conditions: {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition exhaustion}, {@condition frightened}, {@condition paralyzed}, {@condition petrified}, and {@condition poisoned}.",
+										"The five automatons that serve as the tavern's wait staff all speak and understand {@language Common}. They are immune to poison and psychic damage as well as the following conditions: {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition exhaustion}, {@condition frightened}, {@condition paralyzed}, {@condition petrified}, and {@condition poisoned}.",
 										"Each automaton has a name tag, is super friendly to the patrons, and attends to everyone's needs until it comes time for the Slaughterfest. If an automaton is attacked before the Slaughterfest, it giggles and repeats folksy homilies until it is destroyed. The next round, it magically pops back to life fully healed, then asks, \"What can I do for ya?\"",
 										"As the characters spend time in the tavern, they'll eventually encounter each of the following automatons, which use the indicated stat blocks:",
 										"{@creature Billy Beaver|RMBRE} ({@creature owlbear}) is a goofy, owlbear-sized beaver with a raccoon-skin cap, playing a washboard and spoons. He has 34 hit points and has neither the Multiattack nor Claws action option.",
@@ -2606,9 +4004,10 @@
 										{
 											"type": "entries",
 											"name": "Bashin' Banjo",
+											"page": 27,
 											"id": "0d9",
 											"entries": [
-												"{@i Melee Weapon Attack}: +4 to hit, reach 5 ft., one target. {@i Hit}: 6 ({@dice 1d8 + 2}) bludgeoning damage.",
+												"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@i Hit}: 6 ({@damage 1d8 + 2}) bludgeoning damage.",
 												"{@creature Layla the Lizard|RMBRE} ({@creature ghoul}) has blue overalls, a guitar, and a straw hat. Layla's claws do not cause paralysis.",
 												"{@creature Piggy Wiggle Butt|RMBRE} ({@creature orc}) is an anthropomorphic pig with no pants and no butt. (Nothing to do with any of the other buttless creatures in the dungeon. Total coincidence.) She plays a clay jug and dances. Replace Piggy Wiggle's action options with the Clay Jug action option described below."
 											]
@@ -2616,18 +4015,20 @@
 										{
 											"type": "entries",
 											"name": "Clay Jug",
+											"page": 28,
 											"id": "0da",
 											"entries": [
-												"{@i Melee Weapon Attack}: +5 to hit, reach 5 ft., one target. {@i Hit}: 7 ({@dice 1d8 + 3}) bludgeoning damage.",
+												"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@i Hit}: 7 ({@damage 1d8 + 3}) bludgeoning damage.",
 												"{@creature Thomas T. Toad|RMBRE} ({@creature ogre}) is a hulking, anthropomorphic toad wearing a tuxedo and spats. Thomas sings a throaty song about the moon falling in love with its reflection on a lake. Replace Thomas's action options with the Webby Hands action option described below."
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Webby Hands",
+											"page": 28,
 											"id": "0db",
 											"entries": [
-												"{@i Melee Weapon Attack}: +6 to hit, reach 5 ft., one target. {@i Hit}: 8 ({@dice 1d8 + 4}) bludgeoning damage."
+												"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@i Hit}: 8 ({@damage 1d8 + 4}) bludgeoning damage."
 											]
 										}
 									]
@@ -2635,6 +4036,7 @@
 								{
 									"type": "entries",
 									"name": "The Slaughterfest",
+									"page": 28,
 									"id": "0dc",
 									"entries": [
 										"Every twelve hours, the Slaughterfest commences. The lights go out, sirens wail, and strobe lights flash. All the automatons then begin singing a catchy Slaughterfest song as they attack everyone in the restaurant.",
@@ -2645,20 +4047,23 @@
 								{
 									"type": "entries",
 									"name": "Slaughterfest Tactics",
+									"page": 28,
 									"id": "0dd",
 									"entries": [
 										"If the characters don't want to commit to a direct assault on Frankie Freem's staff, they might employ a variety of restaurant-ruining tactics instead. If any of the following ideas\u2014or anything else\u2014comes up, totally run with it.",
 										{
 											"type": "entries",
 											"name": "Bar Room Blitz",
+											"page": 28,
 											"id": "0de",
 											"entries": [
-												"Like, a thousand percent of injuries in the home happen in the kitchen. So any restaurant is pretty much a death trap where you're expected to tip. If the characters want to find cooking oil or bottles of alcohol and set them aflame, go for it! Doing so nets them {@dice 2d6} improvised ranged weapons. Likewise, if the characters want to create walls and choke points from dining tables, great! If they want to pull a giant pizza spatula off the wall and use it as a maul, beautiful! Remember, the customer is always right!"
+												"Like, a thousand percent of injuries in the home happen in the kitchen. So any restaurant is pretty much a death trap where you're expected to tip. If the characters want to find cooking oil or bottles of alcohol and set them aflame, go for it! Doing so nets them {@dice 2d6} improvised ranged weapons. Likewise, if the characters want to create walls and choke points from dining tables, great! If they want to pull a giant pizza spatula off the wall and use it as a {@item maul|phb}, beautiful! Remember, the customer is always right!"
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Hungry for Revenge",
+											"page": 28,
 											"id": "0df",
 											"entries": [
 												"If the characters need allies to take down the tavern staff, they can recruit help from among the restaurant's other patrons. These guests have all been traumatized by dying again and again, but the sturdiest among them might be convinced to die for a reason next time. Up to five patrons can be convinced to aid the party, though each must be personally wooed with a successful DC 12 Charisma ({@skill Intimidation} or {@skill Persuasion}) check. If these folks aren't enough to turn the tide, feel free to have more strangers trickle in before the next Slaughterfest."
@@ -2671,6 +4076,7 @@
 						{
 							"type": "entries",
 							"name": "35. Treasure Treats Room",
+							"page": 28,
 							"id": "0e0",
 							"entries": [
 								{
@@ -2687,6 +4093,7 @@
 								{
 									"type": "entries",
 									"name": "Free Treasure",
+									"page": 29,
 									"id": "0e2",
 									"entries": [
 										{
@@ -2723,6 +4130,7 @@
 								{
 									"type": "entries",
 									"name": "Oh No You Don't",
+									"page": 29,
 									"id": "0e3",
 									"entries": [
 										"As soon as the characters try to leave this room (whether they've taken any treasure or not), three 4-foot-tall orange people ({@creature Commoner||commoners}) burst through the door the characters were about to exit through, slam the door behind them, and attack. Why? Because they assume the characters are ripe for looting! The attackers drop even more gold that they've previously stolen from other hapless adventurers in the dungeon\u20141,000 gp each!"
@@ -2731,6 +4139,7 @@
 								{
 									"type": "entries",
 									"name": "All Good Things",
+									"page": 29,
 									"id": "0e4",
 									"entries": [
 										"After the party defeats the attackers, both doors out of the room open. As each character steps through, they hear a sinister laugh. Any character that took treasure from this room\u2014including the gold dropped by the orange weirdos\u2014feels that treasure disappear.",
@@ -2755,6 +4164,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure (Not Kidding This Time)",
+									"page": 29,
 									"id": "0e7",
 									"entries": [
 										"Award characters who kept their paws to themselves 1,000 gp to split among them. Tell them to buy something nice\u2014not that there's any place to shop in the dungeon."
@@ -2765,6 +4175,7 @@
 						{
 							"type": "entries",
 							"name": "36. Nice Butterfly Room",
+							"page": 29,
 							"id": "0e8",
 							"entries": [
 								"As the party approaches this room, read this description:",
@@ -2795,6 +4206,7 @@
 								{
 									"type": "entries",
 									"name": "Healing Butterflies",
+									"page": 29,
 									"id": "0ec",
 									"entries": [
 										"Each time a butterfly lands on a character, that character regains 1 hit point. Have a butterfly land on an injured character soon after the party enters the room to illustrate this. Thereafter, a character can coax a butterfly to land on them with a successful DC 5 Wisdom ({@skill Animal Handling}) check\u2014how lovely! If anyone attacks the butterflies, they all disappear. Shame on them."
@@ -2803,6 +4215,7 @@
 								{
 									"type": "entries",
 									"name": "Nice Flowers",
+									"page": 29,
 									"id": "0ed",
 									"entries": [
 										"If a character sniffs one of the flowers, it smells ever so nice. If they pick one and carry it with them, that character has advantage on Charisma checks and Charisma saving throws for the next 24 hours."
@@ -2811,6 +4224,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 29,
 									"id": "0ee",
 									"entries": [
 										"When the first character leaves the room, all the butterflies (assuming they weren't attacked) transform into gold pieces and fall to the ground\u2014282 gp in total."
@@ -2819,6 +4233,7 @@
 								{
 									"type": "entries",
 									"name": "What the Heck's Going On Here?",
+									"page": 29,
 									"id": "0ef",
 									"entries": [
 										"Hey Dungeon Master! Ooh boy, Rick's really done it this time! There's an multiplanar intergalactic entity that's been stalking him for a while\u2014tale as old as time, right? Anyway, dimension C-137 is pretty well guarded. Rick has set up a lot of precautions. I don't think he set them up to guard this realm, though, and now this entity's taken control of the rest of the dungeon! Proceed with caution, y'all!"
@@ -2829,6 +4244,7 @@
 						{
 							"type": "entries",
 							"name": "37. Fun Skeleton Room",
+							"page": 30,
 							"id": "0f0",
 							"entries": [
 								{
@@ -2858,6 +4274,7 @@
 								{
 									"type": "entries",
 									"name": "Bone Jam Session",
+									"page": 30,
 									"id": "0f4",
 									"entries": [
 										"Once a character picks up the xylobone mallets, the skeletons run to other nearby bone instruments: two guitars, a drum set, an upright bass, and a saxobone. The skeletons beckon to the other characters, encouraging them to play other instruments. Once everyone is in place, the bone jam session begins! Have each character playing an instrument make a DC 15 Charisma ({@skill Performance}) check. If all the characters succeed, the jam session sounds amazing! If any of the characters fail, one of the skeletons comes over to wordlessly give advice on how to play better. Have that character make the check again. If they succeed, the skeleton rejoices. If they fail again, the skeleton gently takes the instrument, exchanging it for something the character can't f*** up\u2014like bone maracas or a skull toot-jug."
@@ -2866,6 +4283,7 @@
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 30,
 									"id": "0f5",
 									"entries": [
 										"After everyone's done jamming, one of the skeletons approaches the character who had the highest Charisma ({@skill Performance}) check. Roll on the Bone Gifts table to see what instrument the skeleton grants the character. This gift functions as a regular instrument."
@@ -2874,6 +4292,7 @@
 								{
 									"type": "entries",
 									"name": "Bone Gifts",
+									"page": 30,
 									"id": "0f6",
 									"entries": [
 										{
@@ -2920,6 +4339,7 @@
 						{
 							"type": "entries",
 							"name": "38. Mama Owlbear Room",
+							"page": 30,
 							"id": "0f7",
 							"entries": [
 								"As the party approaches this room, read the following:",
@@ -2944,6 +4364,7 @@
 								{
 									"type": "entries",
 									"name": "Empty Nest Syndrome",
+									"page": 30,
 									"id": "0fa",
 									"entries": [
 										{
@@ -2957,13 +4378,14 @@
 										},
 										"This owlbear had her babies stolen by nasty, mean old Rick for use as monsters in another of his dungeons. She just happened to have as many cublets as there are members of the party, and she misses her wayward offspring terribly. She attempts to make this clear by presenting her hatched eggs to the party and moaning.",
 										"To placate her, the entire party must assuage her grieving maternal instinct. How they do so is up to them, but the easiest way is to disguise themselves as owlbear cublets (using feathers and clumps of fur, easily found in the nest) and get cozy with their new mom. This delights the owlbear, who immediately ushers them into the nest and grooms them thoroughly with her razor-sharp beak. The experience is actually quite pleasant.",
-										"Once this is complete, the owlbear falls asleep contentedly in her nest. A successful DC 10 Dexterity ({@skill Stealth}) check allows each character to escape through the exit without waking her up. If a character fails the check, the sleeping owlbear rolls over and traps the character under her considerable weight. A successful DC 15 Strength ({@skill Stealth}) check is required to escape.",
+										"Once this is complete, the owlbear falls asleep contentedly in her nest. A successful DC 10 Dexterity ({@skill Stealth}) check allows each character to escape through the exit without waking her up. If a character fails the check, the sleeping owlbear rolls over and traps the character under her considerable weight. A successful DC 15 Strength ({@skill Athletics}) check is required to escape.",
 										"The owlbear wakes back up only if the party makes a truly apocalyptic amount of noise, giving characters plenty of opportunity to free trapped companions. If the owlbear does wake up, she grumbles, repeats the grooming process, then goes back to sleep."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Treasure",
+									"page": 31,
 									"id": "0fb",
 									"entries": [
 										"It isn't easy to search for treasure while the owlbear is awake. If the owlbear is distracted, a character who rolls a successful DC 14 Wisdom ({@skill Perception}) check turns up a {@item ring of protection} and two {@item Potion of Healing||potions of healing} concealed amid the bones scattered around the room."
@@ -2974,6 +4396,7 @@
 						{
 							"type": "entries",
 							"name": "39. Boss Room",
+							"page": 31,
 							"id": "0fc",
 							"entries": [
 								"This is the end game. If anyone has anything they wanted to get off their chest, they should probably deal with it now. Then read the following:",
@@ -3005,6 +4428,7 @@
 								{
 									"type": "entries",
 									"name": "What Lies Beneath",
+									"page": 31,
 									"id": "100",
 									"entries": [
 										"The table and the object on it aren't trapped, but a successful DC 15 Intelligence ({@skill Investigation}) check reveals that wasn't always the case. The remains of a disabled pressure plate reveal a mechanism that would have released a boulder from the ceiling, obliterating anyone inside the room. Real original, Rick.",
@@ -3032,6 +4456,7 @@
 								{
 									"type": "entries",
 									"name": "Rousing Rick",
+									"page": 31,
 									"id": "102",
 									"entries": [
 										"As the stones fly up from the floor, they reveal a 20-foot-deep pit with a humanoid lying at the bottom. A successful DC 10 Wisdom ({@skill Perception}) check allows a character to recognize the form as Rick Sanchez himself, dressed in wizardly garb and clearly {@condition unconscious}.",
@@ -3041,6 +4466,7 @@
 								{
 									"type": "entries",
 									"name": "Dungeons IS Dragons",
+									"page": 32,
 									"id": "103",
 									"entries": [
 										"Once Rick is conscious, the dragon focuses its attacks on him. Rick has AC 17 and 138 hit points. He automatically takes half damage from the dragon's attacks even without making saving throws. On each of his turns, Rick casts {@spell fireball} or {@spell lightning bolt}. He'll be doing the heavy lifting for a few rounds, is what I'm saying.",
@@ -3080,6 +4506,7 @@
 				{
 					"type": "section",
 					"name": "Conclusion",
+					"page": 32,
 					"id": "107",
 					"entries": [
 						"Characters who exit through the portal find themselves sitting around a table in the Smith family dining room\u2014including Meatface, who is of course a beloved family friend and a character we've all grown fond of over the years. Those who don't exit the dungeon find themselves crushed to death almost immediately, and they die in real life. But thankfully only in a particular dimension that isn't this one. Lucky!",
@@ -3106,12 +4533,14 @@
 		{
 			"type": "section",
 			"name": "Appendix C: Magic Items",
+			"page": 33,
 			"id": "108",
 			"entries": [
 				"{@i The Lost Dungeon of Rickedness: Big Rick Energy} contains an assortment of magic items, and just a hint of the wider variety of magic items waiting to be found in the worlds of D&D. The following provides an overview of the magic items in this adventure, along with details on how to make use of them. See the {@book Dungeon Master's Guide|DMG} for an even wider variety of magic items.",
 				{
 					"type": "section",
 					"name": "Using a Magic Item",
+					"page": 33,
 					"id": "109",
 					"entries": [
 						"A magic item's description explains how the item works. Handling a magic item is enough to give a character a sense that something is extraordinary about the item. Casting the {@spell identify} spell on the item then reveals its properties. Alternatively, a character can concentrate on the item during a short rest, while being in physical contact with the item. At the end of the rest, the character learns the item's properties. Potions are an exception; a taste is enough to tell the taster what the potion does.",
@@ -3123,6 +4552,7 @@
 				{
 					"type": "section",
 					"name": "Item Descriptions",
+					"page": 33,
 					"id": "10a",
 					"entries": [
 						{
@@ -3143,24 +4573,28 @@
 		{
 			"type": "section",
 			"name": "Appendix D: Creatures",
+			"page": 34,
 			"id": "110",
 			"entries": [
 				"This section contains stat blocks and descriptions for the creatures that appear in {@i The Lost Dungeon of Rickedness: Big Rick Energy}.",
 				{
 					"type": "section",
 					"name": "Creature Stat Blocks",
+					"page": 34,
 					"id": "111",
 					"entries": [
 						"A creature's stat block provides the essential information that you, as the DM, need to run the creature.",
 						{
 							"type": "entries",
 							"name": "Size",
+							"page": 34,
 							"id": "112",
 							"entries": [
 								"The Size Categories table shows how much space a creature of a particular size controls in combat. This space is not a measure of the creature's physical dimensions. For example, a typical Medium creature isn't 5 feet wide, but it controls a space that wide. If a Medium orc stands in a 5-foot-wide doorway, other creatures can't get through unless the orc lets them.",
 								{
 									"type": "entries",
 									"name": "Size Categories",
+									"page": 34,
 									"id": "113",
 									"entries": [
 										{
@@ -3201,6 +4635,7 @@
 								{
 									"type": "entries",
 									"name": "Squeezing into a Smaller Space",
+									"page": 34,
 									"id": "114",
 									"entries": [
 										"A creature can squeeze through a space large enough for a creature one size smaller than itself. When squeezing through such a space, the creature's speed is halved. While squeezing, a creature has disadvantage on attack rolls and Dexterity saving throws, and attack rolls against it have advantage."
@@ -3211,6 +4646,7 @@
 						{
 							"type": "entries",
 							"name": "Type",
+							"page": 34,
 							"id": "115",
 							"entries": [
 								"A creature's type speaks to its fundamental nature. The following types of creatures appear in this adventure:",
@@ -3226,6 +4662,7 @@
 								{
 									"type": "entries",
 									"name": "Tags",
+									"page": 34,
 									"id": "116",
 									"entries": [
 										"A creature might have one or more tags appended to its type, in parentheses. For example, a mimic has the monstrosity (shapechanger) type. These parenthetical tags provide an additional layer of categorization for certain creatures, but they have no bearing on how a creature is used in combat."
@@ -3236,6 +4673,7 @@
 						{
 							"type": "entries",
 							"name": "Alignment",
+							"page": 34,
 							"id": "117",
 							"entries": [
 								"A creature's alignment reflects its disposition. Alignment indicates whether a creature leans toward law or chaos and good or evil, or whether a creature is neutral.",
@@ -3246,14 +4684,16 @@
 										{
 											"type": "entries",
 											"name": "Any Alignment",
+											"page": 34,
 											"id": "119",
 											"entries": [
-												"Some creatures, such as the veteran, can have any alignment. In other words, you choose the creature's alignment. Depending on the creature, its alignment entry might indicate a tendency or aversion toward law, chaos, good, or evil."
+												"Some creatures, such as the {@creature veteran}, can have any alignment. In other words, you choose the creature's alignment. Depending on the creature, its alignment entry might indicate a tendency or aversion toward law, chaos, good, or evil."
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Unaligned",
+											"page": 34,
 											"id": "11a",
 											"entries": [
 												"Many creatures of low intelligence have no comprehension of law or chaos, good or evil. They don't make moral or ethical choices, but rather act on instinct. These creatures are unaligned, which means they don't have an alignment."
@@ -3266,6 +4706,7 @@
 						{
 							"type": "entries",
 							"name": "Armor Class",
+							"page": 34,
 							"id": "11b",
 							"entries": [
 								"A creature that wears armor or carries a shield has an AC that takes its armor, shield, and Dexterity into account. Otherwise, a creature's AC is based on its Dexterity modifier and any natural armor or supernatural resilience it might possess.",
@@ -3275,6 +4716,7 @@
 						{
 							"type": "entries",
 							"name": "Hit Points",
+							"page": 34,
 							"id": "11c",
 							"entries": [
 								"A creature usually dies or is destroyed when its hit points drop to 0. For more on hit points, see {@book the rulebook|RMR|0}."
@@ -3283,6 +4725,7 @@
 						{
 							"type": "entries",
 							"name": "Speed",
+							"page": 34,
 							"id": "11d",
 							"entries": [
 								"A creature's speed tells you how far it can move on its turn. For more information on speed, see {@book the rulebook|RMR|0}.",
@@ -3294,6 +4737,7 @@
 										{
 											"type": "entries",
 											"name": "Climb",
+											"page": 34,
 											"id": "11f",
 											"entries": [
 												"A creature that has a climbing speed can use all or part of its movement to move on vertical surfaces. The creature doesn't need to spend extra movement to climb."
@@ -3302,6 +4746,7 @@
 										{
 											"type": "entries",
 											"name": "Fly",
+											"page": 34,
 											"id": "120",
 											"entries": [
 												"A creature that has a flying speed can use all or part of its movement to fly. If the creature is {@condition incapacitated} or knocked {@condition prone} while flying, it falls unless it can hover."
@@ -3310,6 +4755,7 @@
 										{
 											"type": "entries",
 											"name": "Swim",
+											"page": 34,
 											"id": "121",
 											"entries": [
 												"A creature that has a swimming speed doesn't need to spend extra movement to swim."
@@ -3322,6 +4768,7 @@
 						{
 							"type": "entries",
 							"name": "Ability Scores",
+							"page": 34,
 							"id": "122",
 							"entries": [
 								"Every creature has six ability scores (Strength, Dexterity, Constitution, Intelligence, Wisdom, and Charisma) and corresponding modifiers. For more information on ability scores and how they're used in play, see {@book the rulebook|RMR|0}."
@@ -3330,6 +4777,7 @@
 						{
 							"type": "entries",
 							"name": "Saving Throws",
+							"page": 35,
 							"id": "123",
 							"entries": [
 								"The Saving Throws entry is reserved for creatures that are particularly adept at resisting certain kinds of effects."
@@ -3338,6 +4786,7 @@
 						{
 							"type": "entries",
 							"name": "Skills",
+							"page": 35,
 							"id": "124",
 							"entries": [
 								"The Skills entry is reserved for creatures that are proficient in one or more skills. For example, a perceptive and stealthy creature might have higher-than-normal bonuses to Wisdom ({@skill Perception}) and Dexterity ({@skill Stealth}) checks.",
@@ -3345,6 +4794,7 @@
 								{
 									"type": "entries",
 									"name": "Armor, Weapon, and Tool Proficiencies",
+									"page": 35,
 									"id": "125",
 									"entries": [
 										"Assume a creature is proficient with its armor, weapons, and tools. If you swap out a creature's armor and weapons, you must decide whether the creature is proficient with its new equipment. see {@book the rulebook|RMR|0} for what happens when you use these items without proficiency."
@@ -3355,6 +4805,7 @@
 						{
 							"type": "entries",
 							"name": "Vulnerabilities, Resistances, and Immunities",
+							"page": 35,
 							"id": "126",
 							"entries": [
 								"Some creatures have vulnerability, resistance, or immunity to certain types of damage. Additionally, some creatures are immune to certain conditions and other game effects. These immunities are also noted here."
@@ -3363,6 +4814,7 @@
 						{
 							"type": "entries",
 							"name": "Senses",
+							"page": 35,
 							"id": "127",
 							"entries": [
 								"The Senses entry notes a creature's passive Wisdom ({@skill Perception}) score, as well as any special senses the creature might have, such as the following senses.",
@@ -3373,6 +4825,7 @@
 										{
 											"type": "entries",
 											"name": "Blindsight",
+											"page": 35,
 											"id": "129",
 											"entries": [
 												"A creature with {@sense blindsight} can perceive its surroundings without having to rely on sight, within a specific radius."
@@ -3381,6 +4834,7 @@
 										{
 											"type": "entries",
 											"name": "Darkvision",
+											"page": 35,
 											"id": "12a",
 											"entries": [
 												"A creature with {@sense darkvision} can see in the dark within a specific radius. The creature can see in dim light within the radius as if it were bright light, and in darkness as if it were dim light. The creature can't discern color in darkness, only shades of gray."
@@ -3389,6 +4843,7 @@
 										{
 											"type": "entries",
 											"name": "Truesight",
+											"page": 35,
 											"id": "12b",
 											"entries": [
 												"A creature with {@sense truesight} can see in normal and magic darkness, see {@condition invisible} creatures and objects, automatically detect visual illusions and succeed on saving throws against them, and perceive the original form of a shapechanger or a creature that is transformed by magic. Furthermore, the creature can see into the Ethereal Plane."
@@ -3401,6 +4856,7 @@
 						{
 							"type": "entries",
 							"name": "Languages",
+							"page": 35,
 							"id": "12c",
 							"entries": [
 								"The languages that a creature can speak are listed in alphabetical order. Sometimes a creature can understand a language but not speak it, and this is noted in the entry."
@@ -3409,12 +4865,14 @@
 						{
 							"type": "entries",
 							"name": "Challenge",
+							"page": 35,
 							"id": "12d",
 							"entries": [
 								"An appropriately equipped and well-rested party of four adventurers should be able to defeat a creature that has a challenge rating equal to their level without suffering any casualties. Creatures that are significantly weaker than 1st-level characters have challenge ratings lower than 1.",
 								{
 									"type": "entries",
 									"name": "Experience Points (XP)",
+									"page": 35,
 									"id": "12e",
 									"entries": [
 										"The number of experience points a creature is worth is based on its challenge rating. Typically, XP is awarded for defeating the creature, and characters gain levels as they accumulate XP.",
@@ -3426,6 +4884,7 @@
 						{
 							"type": "entries",
 							"name": "Traits",
+							"page": 35,
 							"id": "12f",
 							"entries": [
 								"Traits are special features of the creature that are likely to be relevant in a combat encounter."
@@ -3434,21 +4893,24 @@
 						{
 							"type": "entries",
 							"name": "Actions",
+							"page": 35,
 							"id": "130",
 							"entries": [
 								"When a creature takes its action, it can choose from the options in the \"Actions\" section of its stat block. The rulebook describes other actions available to all creatures.",
 								{
 									"type": "entries",
 									"name": "Melee and Ranged Attacks",
+									"page": 35,
 									"id": "131",
 									"entries": [
 										"The most common actions that a creature will take in combat are melee and ranged attacks. These can be spell attacks or weapon attacks, where the \"weapon\" might be a manufactured item or a natural weapon, such as a claw.",
 										{
 											"type": "entries",
 											"name": "Hit",
+											"page": 35,
 											"id": "132",
 											"entries": [
-												"Any damage or other effects that occur as a result of an attack hitting a target are described here. As the DM, you can take average damage or roll the damage; for this reason, both the average damage and the die expression are presented. For example, a monster might deal 4 ({@dice 1d8}) slashing damage with its longsword. That notation means you can have the monster deal 4 damage, or you can roll {@dice 1d8} to determine the damage."
+												"Any damage or other effects that occur as a result of an attack hitting a target are described here. As the DM, you can take average damage or roll the damage; for this reason, both the average damage and the die expression are presented. For example, a monster might deal 4 ({@damage 1d8}) slashing damage with its {@item longsword|phb}. That notation means you can have the monster deal 4 damage, or you can roll {@damage 1d8} to determine the damage."
 											]
 										}
 									]
@@ -3458,6 +4920,7 @@
 						{
 							"type": "entries",
 							"name": "Reactions",
+							"page": 35,
 							"id": "133",
 							"entries": [
 								"If a creature can do something unusual with its reaction, that information is contained here. Most creatures don't have special reactions, in which case this section is absent. Reactions are explained in the rulebook."
@@ -3466,6 +4929,7 @@
 						{
 							"type": "entries",
 							"name": "Limited Usage",
+							"page": 35,
 							"id": "134",
 							"entries": [
 								"Some special abilities\u2014whether they are traits, actions, or reactions\u2014have restrictions on the number of times they can be used.",
@@ -3476,6 +4940,7 @@
 										{
 											"type": "entries",
 											"name": "Recharge X\u2013Y",
+											"page": 35,
 											"id": "136",
 											"entries": [
 												"The notation \"Recharge X\u2013Y\" means a creature can use a special ability once and that the ability then has a random chance of recharging during each subsequent round of combat. At the start of each of the creature's turns, roll a {@dice d6}. If the roll is one of the numbers in the recharge notation, the creature regains the use of that special ability. The ability also recharges when the creature finishes a short or long rest."
@@ -3490,6 +4955,7 @@
 				{
 					"type": "section",
 					"name": "Creature Descriptions",
+					"page": 36,
 					"id": "137",
 					"entries": [
 						{
@@ -3517,6 +4983,20 @@
 								"{@creature Twig Blight}",
 								"{@creature Young Green Dragon}",
 								"{@creature Zombie}"
+							]
+						},
+						{
+							"type": "list",
+							"columns": 3,
+							"items": [
+								"{@creature Billy Beaver|RMBRE}",
+								"{@creature Buster the Bear|RMBRE}",
+								"{@creature Large Mimic|RMBRE}",
+								"{@creature Layla the Lizard|RMBRE}",
+								"{@creature Lycanthropickle|RMBRE}",
+								"{@creature Meeseeks|RMBRE}",
+								"{@creature Piggy Wiggle Butt|RMBRE}",
+								"{@creature Thomas T. Toad|RMBRE}"
 							]
 						}
 					]

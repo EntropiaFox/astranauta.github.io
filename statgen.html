@@ -48,7 +48,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -84,12 +87,12 @@
 	</header>
 
 	<nav class="container page__nav" id="navigation">
-		<ul class="nav page__nav-inner" id="navbar"></ul>
+		<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
 	</nav>
 
 	<div class="container container--main h-100 min-h-0">
-		<div class="flex-col w-100 h-100 py-2" id="statgen-main">
-			<div class="flex-vh-center initial-message initial-message--large w-100 h-100">Loading...</div>
+		<div class="ve-flex-col w-100 h-100 py-2" id="statgen-main">
+			<div class="ve-flex-vh-center initial-message initial-message--large w-100 h-100">Loading...</div>
 		</div>
 	</div>
 </div>
@@ -106,6 +109,7 @@
 <script type="text/javascript" src="js/scalecreature.js"></script>
 <script type="text/javascript" src="js/hist.js"></script>
 <script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/filter-races.js"></script>
 <script type="text/javascript" src="js/filter-feats.js"></script>
 <script type="text/javascript" src="js/statgen.js"></script>

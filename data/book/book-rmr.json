@@ -3,6 +3,7 @@
 		{
 			"type": "section",
 			"name": "Chapter 1: How to Play",
+			"page": 2,
 			"id": "000",
 			"entries": [
 				"The Dungeons & Dragons Roleplaying Game is about storytelling in worlds of swords and sorcery. Like games of make-believe, D&D is driven by imagination. It's about picturing a crumbling castle in a darkening forest and imagining how a fantasy adventurer might react to the challenges that scene presents. In this fantasy world, the possibilities are limitless.",
@@ -194,6 +195,7 @@
 				{
 					"type": "section",
 					"name": "Getting Started",
+					"page": 5,
 					"id": "00b",
 					"entries": [
 						"If this is your first time playing Dungeons & Dragons, start by reading the rest of this chapter. It tells you the most important rules you need to play the game.",
@@ -228,6 +230,7 @@
 						{
 							"type": "entries",
 							"name": "Game Dice",
+							"page": 5,
 							"id": "00e",
 							"entries": [
 								{
@@ -275,6 +278,7 @@
 						{
 							"type": "entries",
 							"name": "The Structure of Play",
+							"page": 6,
 							"id": "010",
 							"entries": [
 								"The D&D game consists of a group of characters (controlled by the players) embarking on an adventure that the DM presents. The adventure is the heart of the game. An adventure unfolds as a story that the DM and the other players tell together using the material in the adventure book, in another published adventure, or in a setting of the DM's creation. The DM sets the scene at the start, giving the adventurers a reason to get involved. They are the protagonists of the story. The players control what they do, and the DM controls the monsters and people the adventurers meet. {@highlight The DM also decides how the world changes as a result of the adventurers' actions.}",
@@ -299,6 +303,7 @@
 								{
 									"type": "entries",
 									"name": "1. The DM describes the environment",
+									"page": 6,
 									"id": "012",
 									"entries": [
 										"The DM tells the players where their adventurers are and what's around them, presenting the basic scope of options available: how many doors lead out of a room, what's on a table, who's in the tavern, and so on. The players can ask questions to make sure they understand what their characters perceive.",
@@ -324,6 +329,7 @@
 								{
 									"type": "entries",
 									"name": "2. The players describe what they want to do",
+									"page": 6,
 									"id": "014",
 									"entries": [
 										"Sometimes one player speaks for the whole group, saying, \"We'll take the east door,\" for example. Other times, different adventurers do different things. One adventurer might search a treasure chest while a second one examines an esoteric symbol engraved on a wall and a third one keeps watch for monsters. The players don't need to take turns, but the DM listens to every player and decides how to resolve those actions.",
@@ -351,7 +357,8 @@
 								},
 								{
 									"type": "entries",
-									"name": "3. The DM narrates the results of the adventurers' actions.",
+									"name": "3. The DM narrates the results of the adventurers' actions",
+									"page": 6,
 									"id": "016",
 									"entries": [
 										"Describing the results often leads to another decision point, which brings the flow of the game right back to step 1.",
@@ -370,6 +377,7 @@
 										{
 											"type": "inset",
 											"name": "What's Next?",
+											"page": 6,
 											"id": "018",
 											"entries": [
 												"This set is a complete Dungeons & Dragons experience, enough to provide hours of play. You can even play through the adventure book multiple times. You might be surprised at how differently things can turn out! But one of the most rewarding things about D&D is that it provides the opportunity to create characters, and even worlds, of your own.",
@@ -402,6 +410,7 @@
 						{
 							"type": "entries",
 							"name": "Halving",
+							"page": 7,
 							"id": "01a",
 							"entries": [
 								"Round down whenever the game requires you to halve a number. For example, {@highlight if you halve 15, you get 7.}",
@@ -430,6 +439,7 @@
 				{
 					"type": "section",
 					"name": "Six Abilities",
+					"page": 7,
 					"id": "01c",
 					"entries": [
 						"Six abilities provide a quick game description of every character's and monster's physical and mental characteristics:",
@@ -476,6 +486,7 @@
 								{
 									"type": "entries",
 									"name": "Ability Scores and Modifiers",
+									"page": 7,
 									"id": "01f",
 									"entries": [
 										{
@@ -557,12 +568,14 @@
 						{
 							"type": "entries",
 							"name": "The Core Rule",
+							"page": 8,
 							"id": "021",
 							"entries": [
 								"Does an adventurer's sword swing hurt a dragon or bounce off its iron-hard scales? Does the ogre believe an outrageous bluff? Can a character swim across a raging river? Does a character avoid the main blast of a fireball or take full damage from the blaze? When the outcome of an action is uncertain, the game relies on the roll of a {@dice d20} to determine success or failure. Ability checks, attack rolls, and saving throws are the three main kinds of {@dice d20} rolls. For each one, you roll a {@dice d20}, add any bonuses or penalties, and compare the total to a target number. If the total equals or exceeds it, you succeed. Here are those steps in more detail:",
 								{
 									"type": "entries",
 									"name": "1. Roll the die",
+									"page": 8,
 									"id": "022",
 									"entries": [
 										"Roll a {@dice d20}, then add the modifier of the ability score used for the roll. A Dexterity saving throw, for instance, uses your Dexterity modifier."
@@ -571,6 +584,7 @@
 								{
 									"type": "entries",
 									"name": "2. Apply circumstantial bonuses and penalties",
+									"page": 8,
 									"id": "023",
 									"entries": [
 										"A spell, a particular circumstance, or some other effect might give a bonus or penalty to the roll."
@@ -579,6 +593,7 @@
 								{
 									"type": "entries",
 									"name": "3. Compare the total to a target number",
+									"page": 8,
 									"id": "024",
 									"entries": [
 										"If the total equals or exceeds the target number, the roll is a success. Otherwise, it's a failure. The target number for an ability check or saving throw is called a Difficulty Class (DC). For an attack roll, it's the Armor Class (AC) of the target being attacked. The DM is usually the one who determines target numbers and tells players whether their ability checks, attack rolls, and saving throws succeed or fail.",
@@ -601,6 +616,7 @@
 						{
 							"type": "entries",
 							"name": "Advantage and Disadvantage",
+							"page": 8,
 							"id": "025",
 							"entries": [
 								"Sometimes a special ability or spell tells you that you have advantage or disadvantage on a {@dice d20} roll. When that happens, you roll a second {@dice d20} when you make the roll. Use the higher of the two rolls if you have advantage, and use the lower roll if you have disadvantage. For example, if you have disadvantage and roll a 17 and a 5, you use the 5. If you instead have advantage and roll those numbers, you use the 17.",
@@ -632,6 +648,7 @@
 						{
 							"type": "entries",
 							"name": "Ability Checks",
+							"page": 9,
 							"id": "027",
 							"entries": [
 								"An ability check tests a character's or monster's innate talent and training in an effort to overcome a challenge. The DM calls for an ability check when a character or monster attempts an action (other than an attack) that has a chance of failure. A character might make a Strength check to force open a door, an Intelligence check to make sense of clues, or a Wisdom check to notice goblins lying in ambush along the road. When the outcome is uncertain, the dice determine the results.",
@@ -683,6 +700,7 @@
 								{
 									"type": "entries",
 									"name": "Proficiency Bonus",
+									"page": 9,
 									"id": "029",
 									"entries": [
 										"You might be particularly skilled at a certain kind of task related to an ability check. The character sheets list each character's proficiencies with skills and special tools, and the monster statistics in the adventure book show monsters' proficiencies. If you have proficiency in a skill, such as {@skill Acrobatics} or {@skill Deception}, you add your proficiency bonus to ability checks you make that use that skill. If you have proficiency with a certain tool, such as {@item thieves' tools|PHB}, you add your proficiency bonus to ability checks you make using those tools. You never add your proficiency bonus more than once to the same {@dice d20} roll.",
@@ -709,6 +727,7 @@
 								{
 									"type": "entries",
 									"name": "Contests",
+									"page": 10,
 									"id": "02b",
 									"entries": [
 										"Sometimes one character's or monster's efforts are directly opposed to another's. This can occur when both of them are trying to do the same thing and only one can succeed, such as attempting to snatch up a magic ring that has fallen on the floor. This situation also applies when one of them is trying to prevent the other one from accomplishing a goal\u2014for example, when a monster tries to force open a door that an adventurer is holding closed. In situations like these, the outcome is determined by a special form of ability check, called a contest.",
@@ -736,6 +755,7 @@
 								{
 									"type": "entries",
 									"name": "Skills",
+									"page": 10,
 									"id": "02d",
 									"entries": [
 										"Each ability covers a broad range of capabilities, including skills that a character can be proficient in. A skill represents a specific aspect of an ability score, and a character's proficiency in a skill demonstrates a focus on that aspect.",
@@ -791,12 +811,14 @@
 						{
 							"type": "entries",
 							"name": "Strength Checks",
+							"page": 11,
 							"id": "02f",
 							"entries": [
 								"Strength measures bodily power, athletic training, and the extent to which you can exert raw physical force. A Strength check can model any attempt to lift, push, pull, or break something, to force your body through a space, or to otherwise apply brute force to a situation. The {@skill Athletics} skill reflects aptitude in certain kinds of Strength checks.",
 								{
 									"type": "entries",
 									"name": "Athletics",
+									"page": 11,
 									"id": "030",
 									"entries": [
 										"Your Strength ({@skill Athletics}) check covers difficult situations you encounter while climbing, jumping, or swimming. Examples include the following activities:",
@@ -816,6 +838,7 @@
 						{
 							"type": "entries",
 							"name": "Dexterity Checks",
+							"page": 11,
 							"id": "031",
 							"entries": [
 								"Dexterity measures physical agility, reflexes, and balance. A Dexterity check can model any attempt to move nimbly, quickly, or quietly, or to keep from falling on tricky footing. The {@skill Acrobatics}, {@skill Sleight of Hand}, and {@skill Stealth} skills reflect aptitude in certain kinds of Dexterity checks.",
@@ -841,6 +864,7 @@
 								{
 									"type": "entries",
 									"name": "Acrobatics",
+									"page": 11,
 									"id": "033",
 									"entries": [
 										"Your Dexterity ({@skill Acrobatics}) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship's deck. The DM might also call for a Dexterity ({@skill Acrobatics}) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips."
@@ -849,6 +873,7 @@
 								{
 									"type": "entries",
 									"name": "Sleight of Hand",
+									"page": 11,
 									"id": "034",
 									"entries": [
 										"Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity ({@skill Sleight of Hand}) check. The DM might also call for a Dexterity ({@skill Sleight of Hand}) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket.",
@@ -878,6 +903,7 @@
 								{
 									"type": "entries",
 									"name": "Stealth",
+									"page": 11,
 									"id": "036",
 									"entries": [
 										"Make a Dexterity ({@skill Stealth}) check when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard.",
@@ -902,6 +928,7 @@
 										{
 											"type": "inset",
 											"name": "Hiding and Vision",
+											"page": 12,
 											"id": "038",
 											"entries": [
 												"When you try to hide, make a Dexterity ({@skill Stealth}) check. Until you are discovered or you stop hiding, that check's total is contested by the Wisdom ({@skill Perception}) check of any creature that actively searches for signs of your presence.",
@@ -909,6 +936,7 @@
 												{
 													"type": "entries",
 													"name": "Passive Perception",
+													"page": 12,
 													"id": "039",
 													"entries": [
 														"When you hide, there's a chance someone will notice you even if they aren't searching. To determine whether such a creature notices you, the DM compares your Dexterity ({@skill Stealth}) check with that creature's passive Wisdom ({@skill Perception}) score, which equals 10 + the creature's Wisdom modifier, as well as any other bonuses or penalties. If the creature has advantage, add 5. For disadvantage, subtract 5.",
@@ -918,6 +946,7 @@
 												{
 													"type": "entries",
 													"name": "What Can You See",
+													"page": 12,
 													"id": "03a",
 													"entries": [
 														"One of the main factors in determining whether you can find a hidden creature or object is how well you can see in an area, which might be lightly or heavily obscured. In a lightly obscured area\u2014such as dim light, patchy fog, or moderate foliage\u2014creatures have disadvantage on Wisdom ({@skill Perception}) checks that rely on sight. In a heavily obscured area\u2014such as darkness, opaque fog, or dense foliage\u2014vision is blocked, effectively imposing the {@condition blinded} condition, as explained in the appendix."
@@ -951,6 +980,7 @@
 						{
 							"type": "entries",
 							"name": "Constitution Checks",
+							"page": 12,
 							"id": "03c",
 							"entries": [
 								"Constitution measures health, stamina, and vital force. Constitution checks are uncommon, and no skills apply to Constitution checks, because the endurance this ability represents is largely passive rather than involving a specific effort on the part of a character or monster. A Constitution check can model your attempt to push beyond normal limits, however.",
@@ -996,12 +1026,14 @@
 						{
 							"type": "entries",
 							"name": "Intelligence Checks",
+							"page": 13,
 							"id": "03e",
 							"entries": [
 								"Intelligence measures mental acuity, strength of recall, and the ability to reason. An Intelligence check comes into play when you need to draw on logic, education, memory, or deductive reasoning. The {@skill Arcana}, {@skill History}, {@skill Investigation}, {@skill Nature}, and {@skill Religion} skills reflect aptitude in certain kinds of Intelligence checks.",
 								{
 									"type": "entries",
 									"name": "Arcana",
+									"page": 13,
 									"id": "03f",
 									"entries": [
 										"Your Intelligence ({@skill Arcana}) check measures your ability to recall lore about spells, magic items, eldritch symbols, magical traditions, the planes of existence, and the inhabitants of those planes."
@@ -1010,6 +1042,7 @@
 								{
 									"type": "entries",
 									"name": "History",
+									"page": 13,
 									"id": "040",
 									"entries": [
 										"Your Intelligence ({@skill History}) check measures your ability to recall lore about historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost civilizations."
@@ -1018,6 +1051,7 @@
 								{
 									"type": "entries",
 									"name": "Investigation",
+									"page": 13,
 									"id": "041",
 									"entries": [
 										"When you look around for clues and make deductions based on those clues, you make an Intelligence ({@skill Investigation}) check. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could cause it to collapse. Poring through ancient scrolls in search of a hidden fragment of knowledge might also call for an Intelligence ({@skill Investigation}) check."
@@ -1026,6 +1060,7 @@
 								{
 									"type": "entries",
 									"name": "Nature",
+									"page": 13,
 									"id": "042",
 									"entries": [
 										"Your Intelligence ({@skill Nature}) check measures your ability to recall lore about terrain, plants and animals, the weather, and natural cycles."
@@ -1034,6 +1069,7 @@
 								{
 									"type": "entries",
 									"name": "Religion",
+									"page": 13,
 									"id": "043",
 									"entries": [
 										"Your Intelligence ({@skill Religion}) check measures your ability to recall lore about deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults.",
@@ -1061,12 +1097,14 @@
 						{
 							"type": "entries",
 							"name": "Wisdom Checks",
+							"page": 13,
 							"id": "045",
 							"entries": [
 								"Wisdom reflects how attuned you are to the world around you, representing perceptiveness and intuition. A Wisdom check might reflect an effort to read body language, understand someone's feelings, notice things about the environment, or care for an injured person. The {@skill Animal Handling}, {@skill Insight}, {@skill Medicine}, {@skill Perception}, and {@skill Survival} skills reflect aptitude in certain kinds of Wisdom checks.",
 								{
 									"type": "entries",
 									"name": "Animal Handling",
+									"page": 13,
 									"id": "046",
 									"entries": [
 										"When there is any question whether you can calm down a domesticated animal, keep a mount from getting spooked, or intuit an animal's intentions, the DM might call for a Wisdom ({@skill Animal Handling}) check. You also make a Wisdom ({@skill Animal Handling}) check to control your mount when you attempt a risky maneuver.",
@@ -1093,6 +1131,7 @@
 								{
 									"type": "entries",
 									"name": "Insight",
+									"page": 13,
 									"id": "048",
 									"entries": [
 										"Your Wisdom ({@skill Insight}) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone's next move. Doing so involves gleaning clues from body language, speech habits, and changes in mannerisms.",
@@ -1124,6 +1163,7 @@
 								{
 									"type": "entries",
 									"name": "Medicine",
+									"page": 14,
 									"id": "04a",
 									"entries": [
 										"A Wisdom ({@skill Medicine}) check lets you try to stabilize a dying companion or diagnose an illness.",
@@ -1150,6 +1190,7 @@
 								{
 									"type": "entries",
 									"name": "Perception",
+									"page": 14,
 									"id": "04c",
 									"entries": [
 										"Your Wisdom ({@skill Perception}) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear monsters moving stealthily in the forest. Or you might try to spot things that are obscured or easy to miss, whether they are orcs lying in ambush on a road, thugs hiding in the shadows of an alley, or candlelight under a closed secret door.",
@@ -1177,6 +1218,7 @@
 								{
 									"type": "entries",
 									"name": "Survival",
+									"page": 14,
 									"id": "04e",
 									"entries": [
 										"The DM might ask you to make a Wisdom ({@skill Survival}) check to follow tracks, hunt wild game, guide your group through frozen wastelands, identify signs that owlbears live nearby, predict the weather, or avoid quicksand and other natural hazards.",
@@ -1206,12 +1248,14 @@
 						{
 							"type": "entries",
 							"name": "Charisma Checks",
+							"page": 15,
 							"id": "050",
 							"entries": [
 								"Charisma measures your ability to interact effectively with others. It includes such factors as confidence and eloquence. A Charisma check might arise when you try to influence or entertain others, when you try to make an impression or tell a convincing lie, or when you are navigating a tricky social situation. The {@skill Deception}, {@skill Intimidation}, {@skill Performance}, and {@skill Persuasion} skills reflect aptitude in certain kinds of Charisma checks.",
 								{
 									"type": "entries",
 									"name": "Deception",
+									"page": 15,
 									"id": "051",
 									"entries": [
 										"Your Charisma ({@skill Deception}) check determines whether you can convincingly hide the truth, either verbally or through your actions. This deception can encompass everything from misleading others through ambiguity to telling outright lies. Typical situations include trying to fast-talk a guard, con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone's suspicions with false assurances, or maintain a straight face while telling a blatant lie."
@@ -1220,6 +1264,7 @@
 								{
 									"type": "entries",
 									"name": "Intimidation",
+									"page": 15,
 									"id": "052",
 									"entries": [
 										"When you attempt to influence someone through overt threats, hostile actions, and physical violence, the DM might ask you to make a Charisma ({@skill Intimidation}) check. Examples include trying to pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the edge of a broken bottle to convince a sneering vizier to reconsider a decision."
@@ -1228,6 +1273,7 @@
 								{
 									"type": "entries",
 									"name": "Performance",
+									"page": 15,
 									"id": "053",
 									"entries": [
 										"Your Charisma ({@skill Performance}) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment."
@@ -1236,12 +1282,14 @@
 								{
 									"type": "entries",
 									"name": "Persuasion",
+									"page": 15,
 									"id": "054",
 									"entries": [
 										"When you attempt to influence someone or a group of people with tact, social graces, or good nature, the DM might ask you to make a Charisma ({@skill Persuasion}) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk.",
 										{
 											"type": "inset",
 											"name": "Finding a Hidden Object",
+											"page": 15,
 											"id": "055",
 											"entries": [
 												"When your character searches for a hidden object such as a secret door or a trap, the DM typically asks you to make a Wisdom ({@skill Perception}) check. Such a check can be used to find hidden details or other information and clues that you might otherwise overlook.",
@@ -1255,6 +1303,7 @@
 						{
 							"type": "entries",
 							"name": "Saving Throws",
+							"page": 15,
 							"id": "056",
 							"entries": [
 								"A saving throw, or save, represents an attempt to resist or avoid a spell, a trap, a poison, a disease, or a similar threat. You don't normally decide to make a saving throw; you are forced to do so because your character or monster is at risk of harm.",
@@ -1288,6 +1337,7 @@
 		{
 			"type": "section",
 			"name": "Chapter 2: Combat",
+			"page": 16,
 			"id": "058",
 			"entries": [
 				"Battle often erupts when adventurers face their foes, whether the enemies are savage monsters or cunning villains. This chapter provides the rules you need for such combat. The rules address you, the player or Dungeon Master. The Dungeon Master controls all the monsters and nonplayer characters involved in combat, and each other player controls an adventurer. \"You\" can also mean the character or monster that you control.",
@@ -1322,6 +1372,7 @@
 				{
 					"type": "section",
 					"name": "The Order of Combat",
+					"page": 17,
 					"id": "05a",
 					"entries": [
 						"A typical combat encounter is a clash between two sides, a flurry of weapon swings, feints, parries, footwork, and spellcasting. The game organizes the chaos of combat into a cycle of rounds and turns. {@highlight A round represents about 6 seconds in the game world.} During a round, each participant in a battle takes a {@b turn}.",
@@ -1345,6 +1396,7 @@
 						{
 							"type": "inset",
 							"name": "Combat Step by Step",
+							"page": 17,
 							"id": "05c",
 							"entries": [
 								"{@b 1. Determine surprise}. The DM determines whether anyone involved in the combat encounter is surprised.",
@@ -1357,6 +1409,7 @@
 						{
 							"type": "entries",
 							"name": "Surprise",
+							"page": 17,
 							"id": "05d",
 							"entries": [
 								{
@@ -1460,6 +1513,7 @@
 						{
 							"type": "entries",
 							"name": "Initiative",
+							"page": 18,
 							"id": "060",
 							"entries": [
 								"Initiative determines the order of turns during combat. When combat starts, every participant makes a Dexterity check to determine their place in the initiative order. The DM makes one roll for an entire group of identical creatures, so each member of the group acts at the same time.",
@@ -1499,6 +1553,7 @@
 						{
 							"type": "entries",
 							"name": "Your Turn",
+							"page": 19,
 							"id": "062",
 							"entries": [
 								"On your turn, you can {@b move} a distance up to your speed and {@b take one action}. You decide whether to move first or take your action first. Your speed\u2014sometimes called your walking speed\u2014is noted on your character sheet.",
@@ -1508,6 +1563,7 @@
 								{
 									"type": "entries",
 									"name": "Bonus Actions",
+									"page": 19,
 									"id": "063",
 									"entries": [
 										"Various class features, spells, and other abilities let you take an additional action on your turn called a bonus action. The Cunning Action feature, for example, allows a rogue to take a bonus action. You can take a bonus action only when a special ability, spell, or other feature of the game allows you to do something as a bonus action. You otherwise don't have one to take.",
@@ -1547,6 +1603,7 @@
 								{
 									"type": "entries",
 									"name": "Other Activity on Your Turn",
+									"page": 19,
 									"id": "065",
 									"entries": [
 										"Your turn can include a variety of flourishes that require neither your action nor your move.",
@@ -1580,6 +1637,7 @@
 						{
 							"type": "entries",
 							"name": "Reactions",
+							"page": 19,
 							"id": "067",
 							"entries": [
 								"Certain special abilities, spells, and situations allow you to take a special action called a reaction. A reaction is an instant response to a trigger of some kind, which can occur on your turn or on someone else's. The opportunity attack, described later in this chapter, is the most common type of reaction.",
@@ -1612,12 +1670,14 @@
 				{
 					"type": "section",
 					"name": "Movement and Position",
+					"page": 20,
 					"id": "069",
 					"entries": [
 						"In combat, characters and monsters are in constant motion, often using movement and position to gain the upper hand. On your turn, you can move a distance up to your speed. You can use as much or as little of your speed as you like on your turn, following the rules here. Your move can include jumping, climbing, and swimming, as described in {@book chapter 3|RMR|2}.",
 						{
 							"type": "entries",
 							"name": "Breaking Up Your Move",
+							"page": 20,
 							"id": "06a",
 							"entries": [
 								{
@@ -1659,10 +1719,11 @@
 						{
 							"type": "entries",
 							"name": "Difficult Terrain",
+							"page": 20,
 							"id": "06c",
 							"entries": [
-								"Combatants are often slowed down by difficult terrain. Low furniture, rubble, undergrowth, steep stairs, snow, and shallow bogs are examples of difficult terrain. The space of another creature, whether hostile or not, also counts as difficult terrain.",
-								"Every foot of movement in difficult terrain costs 1 extra foot. This rule is true even if multiple things in a space count as difficult terrain.",
+								"Combatants are often slowed down by {@quickref difficult terrain||3}. Low furniture, rubble, undergrowth, steep stairs, snow, and shallow bogs are examples of {@quickref difficult terrain||3}. The space of another creature, whether hostile or not, also counts as {@quickref difficult terrain||3}.",
+								"Every foot of movement in {@quickref difficult terrain||3} costs 1 extra foot. This rule is true even if multiple things in a space count as {@quickref difficult terrain||3}.",
 								{
 									"type": "inset",
 									"id": "06d",
@@ -1687,16 +1748,18 @@
 						{
 							"type": "entries",
 							"name": "Being Prone",
+							"page": 20,
 							"id": "06e",
 							"entries": [
 								"Combatants often find themselves lying on the ground, either because they are knocked down or because they throw themselves down. In the game, they are {@condition prone}, a condition described in {@book appendix A|RMR|4}.",
 								"You can {@b drop {@condition prone}} without using any of your speed. {@b Standing up} takes more effort; doing so costs an amount of movement equal to half your speed. For example, if your speed is 30 feet, you must spend 15 feet of movement to stand up. You can't stand up if you don't have enough movement left or if your speed is 0.",
-								"To move while {@condition prone}, you must {@b crawl} or use magic such as teleportation. Every foot of movement while crawling costs 1 extra foot. Crawling 1 foot in difficult terrain, therefore, costs 3 feet of movement."
+								"To move while {@condition prone}, you must {@b crawl} or use magic such as teleportation. Every foot of movement while crawling costs 1 extra foot. Crawling 1 foot in {@quickref difficult terrain||3}, therefore, costs 3 feet of movement."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Moving Around Other Creatures",
+							"page": 20,
 							"id": "06f",
 							"entries": [
 								"You can move through a nonhostile creature's space. In contrast, you can move through a hostile creature's space only if it is at least two sizes larger or smaller than you (creature sizes are detailed in the adventure book). Whether a creature is a friend or an enemy, you can't willingly end your move in its space.",
@@ -1717,12 +1780,14 @@
 				{
 					"type": "section",
 					"name": "Actions in Combat",
+					"page": 21,
 					"id": "070",
 					"entries": [
 						"When you take your action on your turn, you can take one of the actions presented here, an action you gained from your class or a special feature, or an action that you improvise. When you describe an action not detailed elsewhere in the rules, the DM tells you whether that action is possible and what kind of roll you need to make, if any, to determine success or failure.",
 						{
 							"type": "inset",
 							"name": "Casting a Spell",
+							"page": 21,
 							"id": "071",
 							"entries": [
 								"Spellcasters such as wizards and clerics, as well as many monsters, have access to spells and can use them to great effect in combat. Each spell has a casting time, which specifies whether the caster must use an action, a reaction, minutes, or even hours to cast the spell. Most spells have a casting time of 1 action, so a spellcaster often uses his or her action in combat to cast such a spell. See {@book chapter 4|RMR|3} for the rules on spellcasting."
@@ -1731,6 +1796,7 @@
 						{
 							"type": "entries",
 							"name": "Attack",
+							"page": 21,
 							"id": "072",
 							"entries": [
 								"The most common action to take in combat is the {@action Attack} action, whether you are swinging a sword, firing an arrow from a bow, or brawling with your fists.",
@@ -1762,6 +1828,7 @@
 						{
 							"type": "entries",
 							"name": "Dash",
+							"page": 22,
 							"id": "074",
 							"entries": [
 								"When you take the {@action Dash} action, you gain extra movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on your turn if you dash.",
@@ -1771,6 +1838,7 @@
 						{
 							"type": "entries",
 							"name": "Disengage",
+							"page": 22,
 							"id": "075",
 							"entries": [
 								"If you take the {@action Disengage} action, your movement doesn't provoke opportunity attacks for the rest of the turn.",
@@ -1799,6 +1867,7 @@
 						{
 							"type": "entries",
 							"name": "Dodge",
+							"page": 22,
 							"id": "077",
 							"entries": [
 								"When you take the {@action Dodge} action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are {@condition incapacitated} (as explained in {@book appendix A|RMR|4}) or if your speed drops to 0."
@@ -1807,6 +1876,7 @@
 						{
 							"type": "entries",
 							"name": "Help",
+							"page": 22,
 							"id": "078",
 							"entries": [
 								"You can lend your aid to another creature in the completion of a task. When you take the {@action Help} action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn.",
@@ -1834,6 +1904,7 @@
 						{
 							"type": "entries",
 							"name": "Hide",
+							"page": 22,
 							"id": "07a",
 							"entries": [
 								"When you take the {@action Hide} action, you make a Dexterity ({@skill Stealth}) check in an attempt to hide, following the rules in {@book chapter 1|RMR|0} for hiding. If you succeed, you gain certain benefits, as described in the \"{@book Unseen Attackers and Targets|RMR|1|Unseen Attackers and Targets}\" section later in this chapter."
@@ -1842,6 +1913,7 @@
 						{
 							"type": "entries",
 							"name": "Ready",
+							"page": 22,
 							"id": "07b",
 							"entries": [
 								"Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the {@action Ready} action on your turn, which lets you act using your reaction before the start of your next turn.",
@@ -1860,6 +1932,7 @@
 						{
 							"type": "entries",
 							"name": "Search",
+							"page": 22,
 							"id": "07d",
 							"entries": [
 								"When you take the {@action Search} action, you devote your attention to finding something. Depending on the nature of your search, the DM might have you make a Wisdom ({@skill Perception}) check or an Intelligence ({@skill Investigation}) check."
@@ -1868,6 +1941,7 @@
 						{
 							"type": "entries",
 							"name": "Use an Object",
+							"page": 22,
 							"id": "07e",
 							"entries": [
 								"You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the {@action Use an Object} action. This action is also useful when you want to interact with more than one object on your turn."
@@ -1878,6 +1952,7 @@
 				{
 					"type": "section",
 					"name": "Making an Attack",
+					"page": 23,
 					"id": "07f",
 					"entries": [
 						"Whenever you make an attack roll, you're making an attack. Whether you're striking with a melee weapon, firing a weapon at range, or making an attack roll as part of a spell, an attack has the following structure:",
@@ -1889,6 +1964,7 @@
 						{
 							"type": "entries",
 							"name": "Attack Rolls",
+							"page": 23,
 							"id": "080",
 							"entries": [
 								{
@@ -1904,12 +1980,14 @@
 								{
 									"type": "entries",
 									"name": "Modifiers to the Roll",
+									"page": 23,
 									"id": "081",
 									"entries": [
 										"When a character makes an attack roll, the two most common modifiers to the roll are an ability modifier and the character's proficiency bonus. A monster uses whatever modifier is provided in its stat block.",
 										{
 											"type": "entries",
 											"name": "Ability Modifier",
+											"page": 23,
 											"id": "082",
 											"entries": [
 												"The ability modifier used for a melee weapon attack is Strength, and the ability modifier used for a ranged weapon attack is Dexterity. Weapons that have the finesse or thrown property break this rule.",
@@ -1919,6 +1997,7 @@
 										{
 											"type": "entries",
 											"name": "Proficiency Bonus",
+											"page": 23,
 											"id": "083",
 											"entries": [
 												"If you are proficient with the weapon you are attacking with, you can add your proficiency bonus to the attack roll.",
@@ -1931,6 +2010,7 @@
 								{
 									"type": "entries",
 									"name": "Rolling 1 or 20",
+									"page": 23,
 									"id": "084",
 									"entries": [
 										"Sometimes fate blesses or curses a combatant, causing the novice to hit or the veteran to miss.",
@@ -1963,6 +2043,7 @@
 						{
 							"type": "entries",
 							"name": "Unseen Attackers and Targets",
+							"page": 24,
 							"id": "086",
 							"entries": [
 								{
@@ -1992,6 +2073,7 @@
 						{
 							"type": "entries",
 							"name": "Ranged Attacks",
+							"page": 24,
 							"id": "088",
 							"entries": [
 								{
@@ -2007,6 +2089,7 @@
 								{
 									"type": "entries",
 									"name": "Range",
+									"page": 24,
 									"id": "089",
 									"entries": [
 										"You can make ranged attacks only against targets within a specified range. If a ranged attack, such as one made with a spell, has a single range, you can't attack a target beyond this range. Some ranged attacks, such as those made with a longbow or a shortbow, have two ranges. The smaller number is the normal range, and the larger number is the long range. Your attack roll has disadvantage when your target is beyond normal range, and you can't attack a target beyond the long range."
@@ -2015,6 +2098,7 @@
 								{
 									"type": "entries",
 									"name": "Ranged Attacks in Close Combat",
+									"page": 24,
 									"id": "08a",
 									"entries": [
 										"Aiming a ranged attack is more difficult when a foe is next to you. When you make a ranged attack with a weapon, a spell, or some other means, you have disadvantage on the attack roll if you are within 5 feet of a hostile creature who can see you and who isn't {@condition incapacitated}.",
@@ -2032,6 +2116,7 @@
 						{
 							"type": "entries",
 							"name": "Melee Attacks",
+							"page": 25,
 							"id": "08c",
 							"entries": [
 								"Used in hand-to-hand combat, a melee attack allows you to attack a foe within your reach. Most creatures have a 5-foot reach and can thus attack targets within 5 feet of them. Certain creatures (typically those larger than a human) have greater reach, as noted in their descriptions.",
@@ -2094,6 +2179,7 @@
 						{
 							"type": "entries",
 							"name": "Opportunity Attacks",
+							"page": 25,
 							"id": "08e",
 							"entries": [
 								"In a fight, everyone is constantly watching for enemies to drop their guard. You can rarely move heedlessly past your foes without putting yourself in danger; doing so provokes an opportunity attack.",
@@ -2121,6 +2207,7 @@
 						{
 							"type": "entries",
 							"name": "Two-Weapon Fighting",
+							"page": 25,
 							"id": "090",
 							"entries": [
 								"When you take the {@action Attack} action and attack with a light melee weapon that you're holding in one hand, you gain a bonus action you can use to attack with a different light melee weapon that you're holding in the other hand. You don't add your ability modifier to the damage of the bonus attack, unless that modifier is negative.",
@@ -2132,6 +2219,7 @@
 				{
 					"type": "section",
 					"name": "Cover",
+					"page": 26,
 					"id": "091",
 					"entries": [
 						{
@@ -2192,6 +2280,7 @@
 				{
 					"type": "section",
 					"name": "Damage and Healing",
+					"page": 27,
 					"id": "094",
 					"entries": [
 						"Injury and the risk of death are {@highlight constant companions} of those who explore the worlds of D&D.",
@@ -2205,6 +2294,7 @@
 						{
 							"type": "entries",
 							"name": "Hit Points",
+							"page": 27,
 							"id": "096",
 							"entries": [
 								"Hit points represent a combination of physical and mental durability, the will to live, and luck. Creatures with more hit points are more difficult to kill. Those with fewer hit points are more fragile.",
@@ -2233,6 +2323,7 @@
 						{
 							"type": "entries",
 							"name": "Damage Rolls",
+							"page": 27,
 							"id": "098",
 							"entries": [
 								"Each weapon and spell notes the damage it deals on a successful attack. You roll the damage die or dice, add any modifiers, and apply the damage to your target. Magic weapons, special abilities, and other factors can grant a bonus to damage. In addition, certain special abilities give extra damage represented by bonus dice.",
@@ -2258,6 +2349,7 @@
 								{
 									"type": "entries",
 									"name": "Critical Hits",
+									"page": 28,
 									"id": "09a",
 									"entries": [
 										"When you score a critical hit, you get to roll extra dice for the attack's damage against the target. Roll all of the attack's damage dice twice and add them together. Then add any relevant modifiers as normal. To speed up play, you can roll all the damage dice at once.",
@@ -2352,6 +2444,7 @@
 								{
 									"type": "entries",
 									"name": "Damage Types",
+									"page": 29,
 									"id": "09c",
 									"entries": [
 										"Different attacks and damaging spells deal different types of damage. Damage types have no rules of their own, but other rules, such as damage resistance, rely on the types.",
@@ -2399,6 +2492,7 @@
 						{
 							"type": "entries",
 							"name": "Damage Resistance and Vulnerability",
+							"page": 29,
 							"id": "09f",
 							"entries": [
 								"Some creatures and objects are exceedingly difficult or unusually easy to hurt with certain types of damage.",
@@ -2427,6 +2521,7 @@
 						{
 							"type": "entries",
 							"name": "Healing",
+							"page": 30,
 							"id": "0a1",
 							"entries": [
 								"Unless it results in death, damage isn't permanent, and even death is reversible through powerful magic. Rest can restore a creature's hit points (as explained in {@book chapter 3|RMR|2}), and magical methods such as a {@spell cure wounds} spell or a {@item potion of healing} can remove damage in an instant.",
@@ -2457,6 +2552,7 @@
 						{
 							"type": "entries",
 							"name": "Dropping to 0 Hit Points",
+							"page": 30,
 							"id": "0a3",
 							"entries": [
 								"When you drop to 0 hit points, you either die outright or fall {@condition unconscious}, as explained in the following sections.",
@@ -2465,6 +2561,7 @@
 								{
 									"type": "entries",
 									"name": "Instant Death",
+									"page": 30,
 									"id": "0a4",
 									"entries": [
 										"Massive damage can kill you instantly. When damage reduces you to 0 hit points and there is damage remaining, you die if the remaining damage equals or exceeds your hit point maximum. For example, a cleric with a maximum of 12 hit points currently has 6 hit points. If she takes 18 damage from an attack, she is reduced to 0 hit points, but 12 damage remains. Because the remaining damage equals her hit point maximum, the cleric dies.",
@@ -2517,6 +2614,7 @@
 								{
 									"type": "entries",
 									"name": "Falling Unconscious",
+									"page": 31,
 									"id": "0a6",
 									"entries": [
 										"If damage reduces you to 0 hit points and fails to kill you, you fall {@condition unconscious} (see {@book appendix A|RMR|4}). This unconsciousness ends if you regain any hit points.",
@@ -2544,6 +2642,7 @@
 								{
 									"type": "entries",
 									"name": "Death Saving Throws",
+									"page": 31,
 									"id": "0a8",
 									"entries": [
 										"Whenever you start your turn with 0 hit points, you must make a special saving throw, called a death saving throw, to determine whether you creep closer to death or hang onto life. Unlike other saving throws, this one isn't tied to any ability score. You are in the hands of fate now, aided only by spells and features that improve your chances of succeeding on a saving throw.",
@@ -2551,6 +2650,7 @@
 										{
 											"type": "entries",
 											"name": "Rolling 1 or 20",
+											"page": 31,
 											"id": "0a9",
 											"entries": [
 												"When you make a death saving throw and roll a 1 on the {@dice d20}, it counts as two failures. If you roll a 20 on the {@dice d20}, you regain 1 hit point."
@@ -2559,6 +2659,7 @@
 										{
 											"type": "entries",
 											"name": "Damage at 0 Hit Points",
+											"page": 31,
 											"id": "0aa",
 											"entries": [
 												"If you take any damage while you have 0 hit points, you suffer a death saving throw failure. If the damage is from a critical hit, you suffer two failures instead. If the damage equals or exceeds your hit point maximum, you suffer instant death."
@@ -2569,6 +2670,7 @@
 								{
 									"type": "entries",
 									"name": "Stabilizing a Creature",
+									"page": 31,
 									"id": "0ab",
 									"entries": [
 										"The best way to save a creature with 0 hit points is to heal it. If healing is unavailable, the creature can at least be stabilized so that it isn't killed by a failed death saving throw.",
@@ -2581,6 +2683,7 @@
 						{
 							"type": "entries",
 							"name": "Knocking a Creature Out",
+							"page": 31,
 							"id": "0ac",
 							"entries": [
 								"Sometimes an attacker wants to incapacitate a foe, rather than deal a killing blow. When an attacker reduces a creature to 0 hit points with a melee attack, the attacker can knock the creature out. The attacker can make this choice the instant the damage is dealt. The creature falls {@condition unconscious} and is stable.",
@@ -2682,6 +2785,7 @@
 		{
 			"type": "section",
 			"name": "Chapter 3: Adventuring",
+			"page": 32,
 			"id": "0b2",
 			"entries": [
 				"Whether delving into a dungeon, trekking through wilderness, or navigating a teeming city, adventurers need rest, and they seek advancement and gear. This chapter gives rules for travel and resting, describes rewards, and details equipment that might help the characters survive.",
@@ -2719,6 +2823,7 @@
 				{
 					"type": "section",
 					"name": "Travel",
+					"page": 33,
 					"id": "0b4",
 					"entries": [
 						{
@@ -2738,6 +2843,7 @@
 						{
 							"type": "entries",
 							"name": "Marching Order",
+							"page": 33,
 							"id": "0b5",
 							"entries": [
 								"The adventurers should establish a marching order. A character might occupy the front rank, a middle rank, or the back rank. The characters in the front and back rank are keeping watch for danger, while those in the middle might be making a map, navigating, or gathering food for the characters to eat when they make camp. If the group encounters monsters or other threats, it's important for the DM to know where each character is located.",
@@ -2765,22 +2871,25 @@
 						{
 							"type": "entries",
 							"name": "Special Forms of Movement",
+							"page": 33,
 							"id": "0b7",
 							"entries": [
 								"A journey overland or through a dungeon often requires an adventurer to jump, climb, or swim.",
 								{
 									"type": "entries",
 									"name": "Long Jumps",
+									"page": 33,
 									"id": "0b8",
 									"entries": [
 										"When you make a long jump, you cover a number of feet up to your Strength score if you move at least 10 feet on foot immediately before the jump. When you make a standing long jump, you can leap only half that distance. Either way, each foot you clear on the jump costs a foot of movement. In some circumstances, your DM might allow you to make a Strength ({@skill Athletics}) check to jump farther than you normally can.",
 										"This rule assumes that the height of your jump doesn't matter, such as a jump across a stream or chasm. At your DM's option, you must succeed on a DC 10 Strength ({@skill Athletics}) check to clear a low obstacle (no taller than a quarter of the jump's distance). Otherwise, you hit it.",
-										"When you land in difficult terrain, you must succeed on a DC 10 Dexterity ({@skill Acrobatics}) check to land on your feet. Otherwise, you land {@condition prone}."
+										"When you land in {@quickref difficult terrain||3}, you must succeed on a DC 10 Dexterity ({@skill Acrobatics}) check to land on your feet. Otherwise, you land {@condition prone}."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "High Jumps",
+									"page": 34,
 									"id": "0b9",
 									"entries": [
 										"When you make a high jump, you leap into the air a number of feet equal to 3 + your Strength modifier if you move at least 10 feet on foot immediately before the jump. When you make a standing high jump, you can jump only half that distance. Either way, each foot you clear on the jump costs a foot of movement. In some circumstances, your DM might allow you to make a Strength ({@skill Athletics}) check to jump higher than you normally can."
@@ -2789,9 +2898,10 @@
 								{
 									"type": "entries",
 									"name": "Climbing and Swimming",
+									"page": 34,
 									"id": "0ba",
 									"entries": [
-										"While climbing or swimming, each foot of movement costs 1 extra foot (2 extra feet in difficult terrain), unless a creature has a climbing or swimming speed. At the DM's option, climbing a slippery surface or one with few handholds requires a successful Strength ({@skill Athletics}) check. Similarly, gaining any distance in rough water might require a successful Strength ({@skill Athletics}) check.",
+										"While climbing or swimming, each foot of movement costs 1 extra foot (2 extra feet in {@quickref difficult terrain||3}), unless a creature has a climbing or swimming speed. At the DM's option, climbing a slippery surface or one with few handholds requires a successful Strength ({@skill Athletics}) check. Similarly, gaining any distance in rough water might require a successful Strength ({@skill Athletics}) check.",
 										{
 											"type": "inset",
 											"id": "0bb",
@@ -2819,6 +2929,7 @@
 				{
 					"type": "section",
 					"name": "Resting",
+					"page": 34,
 					"id": "0bc",
 					"entries": [
 						"Heroic as they might be, adventurers can't spend every hour of the day in the thick of exploration, social interaction, and combat. They need rest\u2014time to sleep and eat, tend their wounds, refresh their minds and spirits for spellcasting, and brace themselves for further adventure.",
@@ -2848,6 +2959,7 @@
 						{
 							"type": "entries",
 							"name": "Short Rest",
+							"page": 34,
 							"id": "0be",
 							"entries": [
 								"A short rest is a period of downtime, at least 1 hour long, during which a character does nothing more strenuous than eating, drinking, reading, and tending to wounds.",
@@ -2857,6 +2969,7 @@
 						{
 							"type": "entries",
 							"name": "Long Rest",
+							"page": 34,
 							"id": "0bf",
 							"entries": [
 								"A long rest is a period of extended downtime, at least 8 hours long, during which a character sleeps or performs light activity: reading, talking, eating, or standing watch for no more than 2 hours. If the rest is interrupted by a period of strenuous activity\u2014at least 1 hour of walking, fighting, casting spells, or similar adventuring activity\u2014the character must begin the rest again to benefit from it.",
@@ -2901,6 +3014,7 @@
 				{
 					"type": "section",
 					"name": "Rewards",
+					"page": 35,
 					"id": "0c1",
 					"entries": [
 						"{@comicH1 LOOT}",
@@ -2988,6 +3102,7 @@
 						{
 							"type": "inset",
 							"name": "Coinage",
+							"page": 35,
 							"id": "0c4",
 							"entries": [
 								"Common coins come in several different denominations based on the relative worth of the metal from which they are made. The three most common coins are the gold piece (gp), the silver piece (sp), and the copper piece (cp).",
@@ -3017,6 +3132,7 @@
 				{
 					"type": "section",
 					"name": "Equipment",
+					"page": 36,
 					"id": "0c6",
 					"entries": [
 						"Proper equipment can mean the difference between life and death in a dangerous environment such as an ancient dungeon or untamed wilderness. Armor and weapons are essential in combat, and a variety of other tools and supplies are useful for exploring dungeons, ruins, and the wilds. This section describes the equipment that the characters have when they start the adventure and additional items they can buy with the treasure they acquire along the way.",
@@ -3040,6 +3156,7 @@
 						{
 							"type": "entries",
 							"name": "Carrying Capacity",
+							"page": 36,
 							"id": "0c8",
 							"entries": [
 								"A character's Strength score determines the maximum weight the character can carry and still move, provided that the weight is distributed across the body. Multiply a character's Strength by 15 to determine the weight (in pounds) that the character can carry. A character carrying more than this weight has a speed of 0.",
@@ -3057,6 +3174,7 @@
 				{
 					"type": "section",
 					"name": "Armor and Shields",
+					"page": 36,
 					"id": "0ca",
 					"entries": [
 						"Adventurers have access to a wide range of armor types. Armor falls into three categories in the game: light armor, medium armor, and heavy armor. Many warriors supplement their armor with a shield.",
@@ -3081,6 +3199,7 @@
 						{
 							"type": "entries",
 							"name": "Armor Proficiency",
+							"page": 37,
 							"id": "0cc",
 							"entries": [
 								"Anyone can put on a suit of armor or strap a shield to an arm. Only those proficient with the armor know how to wear it effectively, however. Your class determines what types of armor you have proficiency with: the fighter and cleric can wear any armor and use shields, the rogue is limited to light armor, and the wizard isn't proficient with any armor or shields at all. If you wear armor that you lack proficiency with, you have disadvantage on any ability check, saving throw, or attack roll that involves Strength or Dexterity, and you can't cast spells.",
@@ -3106,6 +3225,7 @@
 						{
 							"type": "entries",
 							"name": "Light Armor",
+							"page": 37,
 							"id": "0ce",
 							"entries": [
 								"Light armor is favored by rogues because it lets them make the best use of their Dexterity and doesn't interfere with stealthy movement. When you wear light armor, you add your Dexterity modifier to the number shown on the table to determine your Armor Class.",
@@ -3147,6 +3267,7 @@
 						{
 							"type": "entries",
 							"name": "Medium Armor",
+							"page": 37,
 							"id": "0cf",
 							"entries": [
 								"Medium armor offers more protection than light armor, but it also impairs movement more. When you wear medium armor, you add your Dexterity modifier, to a maximum of +2, to the number shown on the table to determine your Armor Class. If your Dexterity is 16 or higher, you still add only 2.",
@@ -3200,6 +3321,7 @@
 						{
 							"type": "entries",
 							"name": "Heavy Armor",
+							"page": 37,
 							"id": "0d0",
 							"entries": [
 								"Heavy armor offers the best protection, and it requires extensive training to master. The fighter and the cleric are proficient with it. When you wear heavy armor, you don't apply your Dexterity modifier to your Armor Class. You also have disadvantage on Dexterity ({@skill Stealth}) checks.",
@@ -3244,6 +3366,7 @@
 						{
 							"type": "entries",
 							"name": "Shields",
+							"page": 37,
 							"id": "0d1",
 							"entries": [
 								"A shield, made from wood or metal, is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.",
@@ -3295,6 +3418,7 @@
 				{
 					"type": "section",
 					"name": "Weapons",
+					"page": 38,
 					"id": "0d3",
 					"entries": [
 						"The Weapons table shows the most common weapons used in the worlds of D&D, their price and weight, the damage they deal when they hit, and any special properties they possess. Every weapon is classified as either melee or ranged. A {@b melee weapon} is used to attack a target within 5 feet of you, whereas a {@b ranged weapon} is used to attack a target at a distance.",
@@ -3320,6 +3444,7 @@
 						{
 							"type": "entries",
 							"name": "Weapon Proficiency",
+							"page": 38,
 							"id": "0d5",
 							"entries": [
 								"Your class grants you proficiency with certain weapons or categories of weapons. The two main categories are {@b simple} and {@b martial}. Certain races, such as the elf race, also grant weapon proficiencies. Proficiency with a weapon allows you to add your proficiency bonus to the attack roll for any attack you make with that weapon.",
@@ -3349,6 +3474,7 @@
 						{
 							"type": "entries",
 							"name": "Weapon Properties",
+							"page": 38,
 							"id": "0d7",
 							"entries": [
 								"Many weapons have special properties related to their use, as shown in the Weapons table.",
@@ -3359,6 +3485,7 @@
 										{
 											"type": "entries",
 											"name": "Ammunition",
+											"page": 38,
 											"id": "0d9",
 											"entries": [
 												"You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.",
@@ -3368,6 +3495,7 @@
 										{
 											"type": "entries",
 											"name": "Finesse",
+											"page": 38,
 											"id": "0da",
 											"entries": [
 												"When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both."
@@ -3376,6 +3504,7 @@
 										{
 											"type": "entries",
 											"name": "Heavy",
+											"page": 38,
 											"id": "0db",
 											"entries": [
 												"Small or Tiny creatures have disadvantage on attack rolls with heavy weapons."
@@ -3384,6 +3513,7 @@
 										{
 											"type": "entries",
 											"name": "Light",
+											"page": 38,
 											"id": "0dc",
 											"entries": [
 												"A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons. See the rules for two-weapon fighting in {@book chapter 2|RMR|1}."
@@ -3392,6 +3522,7 @@
 										{
 											"type": "entries",
 											"name": "Loading",
+											"page": 38,
 											"id": "0dd",
 											"entries": [
 												"Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use your action or reaction to fire it, regardless of the number of attacks you can normally make."
@@ -3400,6 +3531,7 @@
 										{
 											"type": "entries",
 											"name": "Range",
+											"page": 38,
 											"id": "0de",
 											"entries": [
 												"A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second is the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range."
@@ -3408,6 +3540,7 @@
 										{
 											"type": "entries",
 											"name": "Thrown",
+											"page": 38,
 											"id": "0df",
 											"entries": [
 												"If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property."
@@ -3416,6 +3549,7 @@
 										{
 											"type": "entries",
 											"name": "Two-Handed",
+											"page": 39,
 											"id": "0e0",
 											"entries": [
 												"This weapon requires two hands to use."
@@ -3424,6 +3558,7 @@
 										{
 											"type": "entries",
 											"name": "Versatile",
+											"page": 39,
 											"id": "0e1",
 											"entries": [
 												"This weapon can be used with one or two hands. A damage value in parentheses appears with the property\u2014the damage when the weapon is used with two hands to make a melee attack."
@@ -3436,6 +3571,7 @@
 						{
 							"type": "entries",
 							"name": "Simple Melee Weapons",
+							"page": 39,
 							"id": "0e2",
 							"entries": [
 								{
@@ -3525,6 +3661,7 @@
 						{
 							"type": "entries",
 							"name": "Simple Ranged Weapons",
+							"page": 39,
 							"id": "0e3",
 							"entries": [
 								{
@@ -3565,6 +3702,7 @@
 						{
 							"type": "entries",
 							"name": "Martial Melee Weapons",
+							"page": 39,
 							"id": "0e4",
 							"entries": [
 								{
@@ -3668,6 +3806,7 @@
 						{
 							"type": "entries",
 							"name": "Martial Ranged Weapons",
+							"page": 39,
 							"id": "0e5",
 							"entries": [
 								{
@@ -3715,6 +3854,7 @@
 						{
 							"type": "entries",
 							"name": "{@comic Marital Emotional Weapons}",
+							"page": 39,
 							"id": "0e6",
 							"entries": [
 								{
@@ -3755,6 +3895,7 @@
 						{
 							"type": "entries",
 							"name": "Improvised Weapons",
+							"page": 39,
 							"id": "0e7",
 							"entries": [
 								"Sometimes characters don't have their weapons and have to attack with whatever is close at hand: a broken bottle, a table leg, a frying pan, or a wagon wheel. Most combatants are not proficient with such objects as weapons. In many cases, an improvised weapon is similar to an actual weapon and can be treated as such. For example, a table leg is akin to a club. At the DM's option, a character proficient with a weapon can use a similar object as if it were that weapon and use his or her proficiency bonus.",
@@ -3784,6 +3925,7 @@
 				{
 					"type": "section",
 					"name": "Miscellaneous Gear and Services",
+					"page": 40,
 					"id": "0e9",
 					"entries": [
 						{
@@ -3817,6 +3959,7 @@
 						{
 							"type": "entries",
 							"name": "Adventuring Gear",
+							"page": 41,
 							"id": "0eb",
 							"entries": [
 								{
@@ -4126,6 +4269,7 @@
 										{
 											"type": "entries",
 											"name": "Candle",
+											"page": 40,
 											"id": "0ed",
 											"entries": [
 												"For 1 hour, a candle sheds bright light in a 5-foot radius and dim light for an additional 5 feet."
@@ -4134,6 +4278,7 @@
 										{
 											"type": "entries",
 											"name": "Component Pouch",
+											"page": 40,
 											"id": "0ee",
 											"entries": [
 												"A component pouch is a small, watertight leather belt pouch that holds all the material components and other special items you need to cast your spells, except for those components that have a specific cost. See {@book chapter 4|RMR|3} for more about spellcasting.",
@@ -4161,6 +4306,7 @@
 										{
 											"type": "entries",
 											"name": "Crowbar",
+											"page": 40,
 											"id": "0f0",
 											"entries": [
 												"Using a crowbar grants advantage to Strength checks where the crowbar's leverage can be applied.",
@@ -4187,6 +4333,7 @@
 										{
 											"type": "entries",
 											"name": "Healer's Kit",
+											"page": 40,
 											"id": "0f2",
 											"entries": [
 												"This kit is a leather pouch containing bandages, salves, and splints. The kit has ten uses. As an action, you can expend one use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom ({@skill Medicine}) check.",
@@ -4205,6 +4352,7 @@
 										{
 											"type": "entries",
 											"name": "Holy Symbol",
+											"page": 40,
 											"id": "0f3",
 											"entries": [
 												"A holy symbol is a representation of a god or pantheon. It might be a silver amulet depicting a symbol commonly used to represent a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic. The cleric can use a holy symbol to replace the material components of spells, except for those components that have a specific cost. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it emblazoned on a shield. See {@book chapter 4|RMR|3} for more about spellcasting."
@@ -4213,6 +4361,7 @@
 										{
 											"type": "entries",
 											"name": "Lantern, Bullseye",
+											"page": 40,
 											"id": "0f4",
 											"entries": [
 												"A bullseye lantern casts bright light in a 60-foot cone and dim light for an additional 60 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil."
@@ -4221,6 +4370,7 @@
 										{
 											"type": "entries",
 											"name": "Lantern, Hooded",
+											"page": 40,
 											"id": "0f5",
 											"entries": [
 												"A hooded lantern casts bright light in a 30-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil. As an action, you can lower the hood, reducing the light to dim light in a 5-foot radius."
@@ -4229,6 +4379,7 @@
 										{
 											"type": "entries",
 											"name": "Lock",
+											"page": 40,
 											"id": "0f6",
 											"entries": [
 												"A creature proficient with thieves' tools can pick this lock with a successful DC 15 Dexterity check. Better locks are available for higher prices."
@@ -4237,6 +4388,7 @@
 										{
 											"type": "entries",
 											"name": "Oil",
+											"page": 40,
 											"id": "0f7",
 											"entries": [
 												"As an action, you can splash the oil in this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. Make a ranged attack against a target creature or object. On a hit, the target is covered in oil. If the target takes any fire damage before the oil dries (after 1 minute), the target takes an additional 5 fire damage from the burning oil. You can also pour a flask of oil on the ground to cover a 5-foot-square area, provided that the surface is level. If lit, the oil burns for 2 rounds and deals 5 fire damage to any creature that enters the area or ends its turn in the area. A creature can take this damage only once per turn.",
@@ -4254,6 +4406,7 @@
 										{
 											"type": "entries",
 											"name": "Playing Cards",
+											"page": 42,
 											"id": "0f8",
 											"entries": [
 												"If you are proficient with playing cards, you can add your proficiency bonus to ability checks you make to play a game with them."
@@ -4262,6 +4415,7 @@
 										{
 											"type": "entries",
 											"name": "Potion of Healing",
+											"page": 42,
 											"id": "0f9",
 											"entries": [
 												"A character who drinks the magic, red fluid in this vial regains {@dice 2d4 + 2} hit points. Drinking or administering a potion takes an action."
@@ -4270,6 +4424,7 @@
 										{
 											"type": "entries",
 											"name": "Rations",
+											"page": 42,
 											"id": "0fa",
 											"entries": [
 												"Compact, dry foods suitable for extended travel, rations include jerky, dried fruit, hardtack, and nuts."
@@ -4278,6 +4433,7 @@
 										{
 											"type": "entries",
 											"name": "Rope",
+											"page": 42,
 											"id": "0fb",
 											"entries": [
 												"Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check."
@@ -4286,6 +4442,7 @@
 										{
 											"type": "entries",
 											"name": "Spellbook",
+											"page": 42,
 											"id": "0fc",
 											"entries": [
 												"Essential for wizards, a spellbook is a leather-bound tome with 100 blank vellum pages suitable for recording spells.",
@@ -4312,6 +4469,7 @@
 										{
 											"type": "entries",
 											"name": "Thieves' Tools",
+											"page": 42,
 											"id": "0fe",
 											"entries": [
 												"This set of tools includes a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps or open locks."
@@ -4320,6 +4478,7 @@
 										{
 											"type": "entries",
 											"name": "Tinderbox",
+											"page": 42,
 											"id": "0ff",
 											"entries": [
 												"This small container holds flint, fire steel, and tinder (usually dry cloth soaked in light oil) used to kindle a fire. Using it to light a torch\u2014or anything else with abundant, exposed fuel\u2014takes an action. Lighting any other fire takes 1 minute.",
@@ -4338,6 +4497,7 @@
 										{
 											"type": "entries",
 											"name": "Torch",
+											"page": 42,
 											"id": "100",
 											"entries": [
 												"A torch burns for 1 hour, providing bright light in a 20-foot radius and dim light for an additional 20 feet. If you make a melee attack with a burning torch and hit, it deals 1 fire damage.",
@@ -4357,6 +4517,7 @@
 						{
 							"type": "entries",
 							"name": "Mounts and Other Animals",
+							"page": 43,
 							"id": "102",
 							"entries": [
 								{
@@ -4399,6 +4560,7 @@
 						{
 							"type": "entries",
 							"name": "Tack and Harness",
+							"page": 43,
 							"id": "103",
 							"entries": [
 								{
@@ -4468,6 +4630,7 @@
 						{
 							"type": "entries",
 							"name": "Food, Drink, and Lodging",
+							"page": 43,
 							"id": "104",
 							"entries": [
 								{
@@ -4670,6 +4833,7 @@
 		{
 			"type": "section",
 			"name": "Chapter 4: Spellcasting",
+			"page": 44,
 			"id": "105",
 			"entries": [
 				"Magic permeates the worlds of D&D and most often appears in the form of a spell. This chapter provides the rules for casting spells. Clerics and wizards have distinctive ways of learning and preparing their spells, and monsters use spells in unique ways. Regardless of its source, a spell follows the rules here.",
@@ -4706,6 +4870,7 @@
 				{
 					"type": "section",
 					"name": "What Is a Spell?",
+					"page": 45,
 					"id": "107",
 					"entries": [
 						"A spell is a discrete magical effect, a single shaping of the magical energies that suffuse the multiverse into a specific, limited expression. In casting a spell, a character carefully plucks at the invisible strands of raw magic suffusing the world, pins them in place in a particular pattern, sets them vibrating in a specific way, and then releases them to unleash the desired effect\u2014in most cases, all in the span of seconds.",
@@ -4731,6 +4896,7 @@
 						{
 							"type": "entries",
 							"name": "Spell Level",
+							"page": 45,
 							"id": "109",
 							"entries": [
 								"Every spell in this set has a level from 0 to 3. A spell's level is a general indicator of how powerful it is, with the lowly (but still impressive) {@spell magic missile} at 1st level and the devastating {@spell fireball} at 3rd. (Spells of higher levels, up to 9th, exist in the world but aren't included in this set.) Cantrips\u2014simple but powerful spells that characters can cast almost by rote\u2014are level 0. The higher a spell's level, the higher level a spellcaster must be to use that spell.",
@@ -4740,6 +4906,7 @@
 						{
 							"type": "entries",
 							"name": "Known and Prepared Spells",
+							"page": 45,
 							"id": "10a",
 							"entries": [
 								"Before a spellcaster can use a spell, he or she must have the spell firmly fixed in mind. Clerics and wizards undergo a process of preparing spells. {@highlight The number of spells a caster can have fixed in mind at any given time is shown on the character sheets.}",
@@ -4768,6 +4935,7 @@
 						{
 							"type": "entries",
 							"name": "Spell Slots",
+							"page": 45,
 							"id": "10c",
 							"entries": [
 								"Regardless of how many spells a caster knows or prepares, he or she can cast only a limited number of spells before resting. Manipulating the fabric of magic and channeling its energy into even a simple spell is physically and mentally taxing, and higher-level spells are even more so. Thus, the character sheet for a spellcaster includes how many spell slots of each level the character can use at each character level. For example, at 3rd level, the wizard has four 1st-level slots and two 2nd-level slots.",
@@ -4795,6 +4963,7 @@
 								{
 									"type": "entries",
 									"name": "Casting a Spell at a Higher Level",
+									"page": 45,
 									"id": "10e",
 									"entries": [
 										"When a spellcaster casts a spell using a slot that is a higher level than the spell, the spell assumes the higher level for that casting. For instance, if a wizard casts {@spell magic missile} using a 2nd-level slot, that {@spell magic missile} is 2nd level. The spell effectively expands to fill the slot.",
@@ -4806,6 +4975,7 @@
 						{
 							"type": "entries",
 							"name": "Cantrips",
+							"page": 46,
 							"id": "10f",
 							"entries": [
 								"A cantrip is a spell that can be cast at will, without using a spell slot and without being prepared in advance. Repeated practice has fixed the spell in the caster's mind and infused the caster with the magic needed to produce the effect over and over. A cantrip's spell level is 0.",
@@ -4850,6 +5020,7 @@
 						{
 							"type": "entries",
 							"name": "Rituals",
+							"page": 46,
 							"id": "112",
 							"entries": [
 								"Certain spells have a special tag: ritual. Such a spell can be cast following the normal rules for spellcasting, or the spell can be cast as a ritual. The ritual version of a spell takes 10 minutes longer to cast than normal, and it doesn't expend a spell slot.",
@@ -4866,6 +5037,7 @@
 								{
 									"type": "inset",
 									"name": "Casting in Armor",
+									"page": 46,
 									"id": "113",
 									"entries": [
 										"Because of the mental focus and precise gestures required for spellcasting, you must be proficient with the armor you are wearing to cast a spell. You are otherwise too distracted and physically hampered by your armor for spellcasting."
@@ -4878,6 +5050,7 @@
 				{
 					"type": "section",
 					"name": "Casting a Spell",
+					"page": 46,
 					"id": "114",
 					"entries": [
 						"When a character casts any spell, the rules here apply, regardless of the character's class or the spell's effects.",
@@ -4885,12 +5058,14 @@
 						{
 							"type": "entries",
 							"name": "Casting Time",
+							"page": 46,
 							"id": "115",
 							"entries": [
 								"Most spells require a single action to cast, but some spells require a bonus action, a reaction, or much more time.",
 								{
 									"type": "entries",
 									"name": "Bonus Action",
+									"page": 46,
 									"id": "116",
 									"entries": [
 										"A spell cast with a bonus action is especially swift. You must use a bonus action on your turn to cast the spell, provided that you haven't already taken a bonus action this turn. You can't cast another spell during the same turn, except for a cantrip with a casting time of 1 action."
@@ -4899,6 +5074,7 @@
 								{
 									"type": "entries",
 									"name": "Reactions",
+									"page": 46,
 									"id": "117",
 									"entries": [
 										"Some spells can be cast as reactions. These spells take a fraction of a second to bring about and are cast in response to some event. If a spell can be cast as a reaction, the spell description tells you exactly when you can do so."
@@ -4907,6 +5083,7 @@
 								{
 									"type": "entries",
 									"name": "Longer Casting Times",
+									"page": 46,
 									"id": "118",
 									"entries": [
 										"Certain spells (including spells cast as rituals) require more time to cast: minutes or even hours. When you cast a spell with a casting time longer than a single action or reaction, you must spend your action each turn casting the spell, and you must maintain your concentration while you do so (see \"{@book Concentration|RMR|3|Concentration}\" later in this chapter). If your concentration is broken, the spell fails, but you don't expend a spell slot. If you want to try casting the spell again, you must start over."
@@ -4917,6 +5094,7 @@
 						{
 							"type": "entries",
 							"name": "Range",
+							"page": 46,
 							"id": "119",
 							"entries": [
 								"The target of a spell must be within the spell's range. For a spell like {@spell magic missile}, the target is a creature. For a spell like {@spell fireball}, the target is the point in space where the ball of fire erupts.",
@@ -4947,12 +5125,14 @@
 						{
 							"type": "entries",
 							"name": "Components",
+							"page": 47,
 							"id": "11b",
 							"entries": [
 								"A spell's components are the physical requirements you must meet in order to cast it. Each spell's description indicates whether it requires verbal (V), somatic (S), or material (M) components. If you can't provide one or more of a spell's components, you are unable to cast the spell.",
 								{
 									"type": "entries",
 									"name": "Verbal (V)",
+									"page": 47,
 									"id": "11c",
 									"entries": [
 										"Most spells require the chanting of mystic words. The words themselves aren't the source of the spell's power; rather, the particular combination of sounds, with specific pitch and resonance, sets the threads of magic in motion. Thus, a character who is gagged or in an area of silence, such as one created by the {@spell silence} spell, can't cast a spell with a verbal component.",
@@ -4977,6 +5157,7 @@
 								{
 									"type": "entries",
 									"name": "Somatic (S)",
+									"page": 47,
 									"id": "11e",
 									"entries": [
 										"Spellcasting gestures might include a forceful gesticulation or an intricate set of gestures. If a spell requires a somatic component, the caster must have free use of at least one hand to perform these gestures.",
@@ -4992,6 +5173,7 @@
 								{
 									"type": "entries",
 									"name": "Material (M)",
+									"page": 47,
 									"id": "120",
 									"entries": [
 										"Casting some spells requires particular objects, specified in parentheses in the component entry. A component pouch includes all the needed material components to cast spells, except those that have a gold piece cost shown in the spell. A cleric's holy symbol replaces material components, again excepting those with a gold piece cost. If a cost is indicated, a character must purchase that specific component before casting the spell in question.",
@@ -5020,12 +5202,14 @@
 						{
 							"type": "entries",
 							"name": "Duration",
+							"page": 48,
 							"id": "122",
 							"entries": [
 								"A spell's duration is the length of time the spell persists. A duration can be expressed in rounds, minutes, hours, or even years. A spell might specify that its effects last until the spell is dispelled or the effects are destroyed.",
 								{
 									"type": "entries",
 									"name": "Instantaneous",
+									"page": 48,
 									"id": "123",
 									"entries": [
 										"Many spells are instantaneous. The spell harms, heals, creates, or alters a creature or an object in a way that can't be dispelled, because its magic exists {@highlight only for an instant}.",
@@ -5052,6 +5236,7 @@
 								{
 									"type": "entries",
 									"name": "Concentration",
+									"page": 48,
 									"id": "125",
 									"entries": [
 										"Some spells require you to maintain concentration in order to keep their magic active. If you lose concentration, such a spell ends.",
@@ -5072,12 +5257,14 @@
 						{
 							"type": "entries",
 							"name": "Targets",
+							"page": 48,
 							"id": "126",
 							"entries": [
 								"A typical spell requires you to pick one or more targets to be affected by the spell's magic. A spell's description tells you whether the spell targets creatures, objects, or a point of origin for an area of effect (described below).",
 								{
 									"type": "entries",
 									"name": "A Clear Path to the Target",
+									"page": 48,
 									"id": "127",
 									"entries": [
 										"To target something, you must have a clear path to it, so it can't be behind total cover.",
@@ -5087,6 +5274,7 @@
 								{
 									"type": "entries",
 									"name": "Targeting Yourself",
+									"page": 48,
 									"id": "128",
 									"entries": [
 										"If a spell targets a creature of your choice, you can choose yourself, unless the creature must be hostile or specifically a creature other than you. If you are in the area of effect of a spell you cast, you can target yourself."
@@ -5097,6 +5285,7 @@
 						{
 							"type": "entries",
 							"name": "Areas of Effect",
+							"page": 48,
 							"id": "129",
 							"entries": [
 								"Spells such as {@spell burning hands} and {@spell fireball} cover an area, allowing them to affect multiple creatures at once.",
@@ -5106,6 +5295,7 @@
 								{
 									"type": "entries",
 									"name": "Cone",
+									"page": 48,
 									"id": "12a",
 									"entries": [
 										"A cone extends in a direction you choose from its point of origin. A cone's width at a given point along its length is equal to that point's distance from the point of origin. A cone's area of effect specifies its maximum length."
@@ -5114,6 +5304,7 @@
 								{
 									"type": "entries",
 									"name": "Cube",
+									"page": 48,
 									"id": "12b",
 									"entries": [
 										"You select a cube's point of origin, which lies anywhere on a face of the cubic effect. The cube's size is expressed as the length of each side."
@@ -5122,6 +5313,7 @@
 								{
 									"type": "entries",
 									"name": "Line",
+									"page": 48,
 									"id": "12c",
 									"entries": [
 										"A line extends from its point of origin in a straight path up to its length and covers an area defined by its width."
@@ -5130,6 +5322,7 @@
 								{
 									"type": "entries",
 									"name": "Sphere",
+									"page": 48,
 									"id": "12d",
 									"entries": [
 										"You select a sphere's point of origin, and the sphere extends outward from that point. The sphere's size is expressed as a radius in feet that extends from the point.",
@@ -5158,6 +5351,7 @@
 						{
 							"type": "entries",
 							"name": "Saving Throws",
+							"page": 49,
 							"id": "12f",
 							"entries": [
 								"Many spells specify that a target can make a saving throw to avoid some or all of a spell's effects. The spell specifies the ability that the target uses for the save and what happens on a success or failure.",
@@ -5167,6 +5361,7 @@
 						{
 							"type": "entries",
 							"name": "Attack Rolls",
+							"page": 49,
 							"id": "130",
 							"entries": [
 								"Some spells require the caster to make an attack roll to determine whether the spell effect hits the intended target. Your attack bonus with a spell attack equals your spellcasting ability modifier + your proficiency bonus.",
@@ -5176,6 +5371,7 @@
 						{
 							"type": "entries",
 							"name": "Combining Magical Effects",
+							"page": 49,
 							"id": "131",
 							"entries": [
 								"The effects of different spells add together while the durations of those spells overlap. The effects of the same spell cast multiple times don't combine, however. Instead, the most potent effect\u2014such as the highest bonus\u2014from those castings applies while their durations overlap.",
@@ -5183,6 +5379,7 @@
 								{
 									"type": "inset",
 									"name": "Schools of Magic",
+									"page": 49,
 									"id": "132",
 									"entries": [
 										"Scholars who study the workings of magic group spells into eight categories called schools of magic. The schools help describe spells; the schools have no game rules of their own.",
@@ -5232,11 +5429,13 @@
 				{
 					"type": "section",
 					"name": "Spell Lists",
+					"page": 49,
 					"id": "135",
 					"entries": [
 						{
 							"type": "entries",
 							"name": "Cleric Spells",
+							"page": 49,
 							"id": "136",
 							"entries": [
 								{
@@ -5368,6 +5567,7 @@
 				{
 					"type": "section",
 					"name": "Spells",
+					"page": 50,
 					"id": "138",
 					"entries": [
 						"Presented in alphabetical order, these spells are used by characters and monsters in this set.",
@@ -5375,6 +5575,7 @@
 						{
 							"type": "entries",
 							"name": "Aid",
+							"page": 50,
 							"id": "139",
 							"entries": [
 								"{@i 2nd-level abjuration}",
@@ -5396,6 +5597,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 50,
 											"id": "13b",
 											"entries": [
 												"When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
@@ -5409,6 +5611,7 @@
 						{
 							"type": "entries",
 							"name": "Augury",
+							"page": 50,
 							"id": "13c",
 							"entries": [
 								"{@i 2nd-level divination (ritual})",
@@ -5433,13 +5636,14 @@
 									]
 								},
 								"The spell doesn't take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion.",
-								"If you cast the spell two or more times before completing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a false reading. The DM makes this roll in secret.",
+								"If you cast the spell two or more times before completing your next long rest, there is a cumulative {@chance 25|25 percent} chance for each casting after the first that you get a false reading. The DM makes this roll in secret.",
 								"{@comic This is for theater majors and Jerrys. Don't worry about divining the future when you play D&D, Morty. The story will find you when you start killing.}"
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Beacon of Hope",
+							"page": 50,
 							"id": "13d",
 							"entries": [
 								"{@i 3rd-level abjuration}",
@@ -5460,6 +5664,7 @@
 						{
 							"type": "entries",
 							"name": "Bless",
+							"page": 50,
 							"id": "13e",
 							"entries": [
 								"{@i 1st-level enchantment}",
@@ -5481,6 +5686,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 50,
 											"id": "140",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
@@ -5494,6 +5700,7 @@
 						{
 							"type": "entries",
 							"name": "Blur",
+							"page": 50,
 							"id": "141",
 							"entries": [
 								"{@i 2nd-level illusion}",
@@ -5524,6 +5731,7 @@
 						{
 							"type": "entries",
 							"name": "Burning Hands",
+							"page": 51,
 							"id": "142",
 							"entries": [
 								"{@i 1st-level evocation}",
@@ -5546,6 +5754,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 51,
 											"id": "144",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6} for each slot level above 1st.",
@@ -5576,6 +5785,7 @@
 						{
 							"type": "entries",
 							"name": "Charm Person",
+							"page": 51,
 							"id": "146",
 							"entries": [
 								"{@i 1st-level enchantment}",
@@ -5597,6 +5807,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 51,
 											"id": "148",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
@@ -5611,6 +5822,7 @@
 						{
 							"type": "entries",
 							"name": "Command",
+							"page": 51,
 							"id": "149",
 							"entries": [
 								"{@i 1st-level enchantment}",
@@ -5633,6 +5845,7 @@
 										{
 											"type": "entries",
 											"name": "Approach",
+											"page": 51,
 											"id": "14b",
 											"entries": [
 												"The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you."
@@ -5641,6 +5854,7 @@
 										{
 											"type": "entries",
 											"name": "Drop",
+											"page": 51,
 											"id": "14c",
 											"entries": [
 												"The target drops whatever it is holding and then ends its turn."
@@ -5649,6 +5863,7 @@
 										{
 											"type": "entries",
 											"name": "Flee",
+											"page": 51,
 											"id": "14d",
 											"entries": [
 												"The target spends its turn moving away from you by the fastest available means."
@@ -5657,6 +5872,7 @@
 										{
 											"type": "entries",
 											"name": "Grovel",
+											"page": 51,
 											"id": "14e",
 											"entries": [
 												"The target falls {@condition prone} and then ends its turn."
@@ -5665,6 +5881,7 @@
 										{
 											"type": "entries",
 											"name": "Halt",
+											"page": 51,
 											"id": "14f",
 											"entries": [
 												"The target doesn't move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air.",
@@ -5682,6 +5899,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 51,
 											"id": "150",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
@@ -5696,6 +5914,7 @@
 						{
 							"type": "entries",
 							"name": "Comprehend Languages",
+							"page": 52,
 							"id": "151",
 							"entries": [
 								"{@i 1st-level divination (ritual})",
@@ -5718,6 +5937,7 @@
 						{
 							"type": "entries",
 							"name": "Cure Wounds",
+							"page": 52,
 							"id": "152",
 							"entries": [
 								"{@i 1st-level evocation}",
@@ -5739,6 +5959,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 52,
 											"id": "154",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by {@dice 1d8} for each slot level above 1st.",
@@ -5752,6 +5973,7 @@
 						{
 							"type": "entries",
 							"name": "Dancing Lights",
+							"page": 52,
 							"id": "155",
 							"entries": [
 								"{@i Evocation cantrip}",
@@ -5783,6 +6005,7 @@
 						{
 							"type": "entries",
 							"name": "Darkness",
+							"page": 52,
 							"id": "156",
 							"entries": [
 								"{@i 2nd-level evocation}",
@@ -5805,6 +6028,7 @@
 						{
 							"type": "entries",
 							"name": "Detect Magic",
+							"page": 52,
 							"id": "157",
 							"entries": [
 								"{@i 1st-level divination (ritual})",
@@ -5826,6 +6050,7 @@
 						{
 							"type": "entries",
 							"name": "Dispel Magic",
+							"page": 53,
 							"id": "158",
 							"entries": [
 								"{@i 3rd-level abjuration}",
@@ -5847,6 +6072,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 53,
 											"id": "15a",
 											"entries": [
 												"When you cast this spell using a spell slot of 4th level or higher, you automatically end the effects of a spell on the target if the spell's level is equal to or less than the level of the spell slot you used.",
@@ -5878,6 +6104,7 @@
 						{
 							"type": "entries",
 							"name": "Feather Fall",
+							"page": 53,
 							"id": "15c",
 							"entries": [
 								"{@i 1st-level transmutation}",
@@ -5899,6 +6126,7 @@
 						{
 							"type": "entries",
 							"name": "Fireball",
+							"page": 53,
 							"id": "15d",
 							"entries": [
 								"{@i 3rd-level evocation}",
@@ -5921,6 +6149,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 53,
 											"id": "15f",
 											"entries": [
 												"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d6} for each slot level above 3rd.",
@@ -5935,6 +6164,7 @@
 						{
 							"type": "entries",
 							"name": "Flaming Sphere",
+							"page": 53,
 							"id": "160",
 							"entries": [
 								"{@i 2nd-level conjuration}",
@@ -5958,6 +6188,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 53,
 											"id": "162",
 											"entries": [
 												"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d6} for each slot level above 2nd.",
@@ -5971,6 +6202,7 @@
 						{
 							"type": "entries",
 							"name": "Fly",
+							"page": 54,
 							"id": "163",
 							"entries": [
 								"{@i 3rd-level transmutation}",
@@ -5992,6 +6224,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 54,
 											"id": "165",
 											"entries": [
 												"When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd.",
@@ -6021,6 +6254,7 @@
 						{
 							"type": "entries",
 							"name": "Guidance",
+							"page": 54,
 							"id": "167",
 							"entries": [
 								"{@i Divination cantrip}",
@@ -6041,6 +6275,7 @@
 						{
 							"type": "entries",
 							"name": "Guiding Bolt",
+							"page": 54,
 							"id": "168",
 							"entries": [
 								"{@i 1st-level evocation}",
@@ -6062,6 +6297,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 54,
 											"id": "16a",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6} for each slot level above 1st.",
@@ -6075,6 +6311,7 @@
 						{
 							"type": "entries",
 							"name": "Healing Word",
+							"page": 54,
 							"id": "16b",
 							"entries": [
 								"{@i 1st-level evocation}",
@@ -6096,6 +6333,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 54,
 											"id": "16d",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by {@dice 1d4} for each slot level above 1st.",
@@ -6109,6 +6347,7 @@
 						{
 							"type": "entries",
 							"name": "Hold Person",
+							"page": 54,
 							"id": "16e",
 							"entries": [
 								"{@i 2nd-level enchantment}",
@@ -6130,6 +6369,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 54,
 											"id": "170",
 											"entries": [
 												"When you cast this spell using a spell slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.",
@@ -6143,6 +6383,7 @@
 						{
 							"type": "entries",
 							"name": "Identify",
+							"page": 54,
 							"id": "171",
 							"entries": [
 								"{@i 1st-level divination (ritual})",
@@ -6164,6 +6405,7 @@
 						{
 							"type": "entries",
 							"name": "Inflict Wounds",
+							"page": 55,
 							"id": "172",
 							"entries": [
 								"{@i 1st-level necromancy}",
@@ -6185,6 +6427,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 55,
 											"id": "174",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d10} for each slot level above 1st.",
@@ -6198,6 +6441,7 @@
 						{
 							"type": "entries",
 							"name": "Invisibility",
+							"page": 55,
 							"id": "175",
 							"entries": [
 								"{@i 2nd-level illusion}",
@@ -6219,6 +6463,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 55,
 											"id": "177",
 											"entries": [
 												"When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
@@ -6232,6 +6477,7 @@
 						{
 							"type": "entries",
 							"name": "Lesser Restoration",
+							"page": 55,
 							"id": "178",
 							"entries": [
 								{
@@ -6278,6 +6524,7 @@
 						{
 							"type": "entries",
 							"name": "Light",
+							"page": 55,
 							"id": "17a",
 							"entries": [
 								"{@i Evocation cantrip}",
@@ -6299,6 +6546,7 @@
 						{
 							"type": "entries",
 							"name": "Lightning Bolt",
+							"page": 56,
 							"id": "17b",
 							"entries": [
 								{
@@ -6330,6 +6578,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 56,
 											"id": "17d",
 											"entries": [
 												"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d6} for each slot level above 3rd.",
@@ -6343,6 +6592,7 @@
 						{
 							"type": "entries",
 							"name": "Mage Armor",
+							"page": 56,
 							"id": "17e",
 							"entries": [
 								"{@i 1st-level abjuration}",
@@ -6379,6 +6629,7 @@
 						{
 							"type": "entries",
 							"name": "Mage Hand",
+							"page": 56,
 							"id": "180",
 							"entries": [
 								"{@i Conjuration cantrip}",
@@ -6405,6 +6656,7 @@
 						{
 							"type": "entries",
 							"name": "Magic Missile",
+							"page": 57,
 							"id": "181",
 							"entries": [
 								"{@i 1st-level evocation}",
@@ -6426,6 +6678,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 57,
 											"id": "183",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
@@ -6440,6 +6693,7 @@
 						{
 							"type": "entries",
 							"name": "Mass Healing Word",
+							"page": 57,
 							"id": "184",
 							"entries": [
 								"{@i 3rd-level evocation}",
@@ -6461,6 +6715,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 57,
 											"id": "186",
 											"entries": [
 												"When you cast this spell using a spell slot of 4th level or higher, the healing increases by {@dice 1d4} for each slot level above 3rd.",
@@ -6474,6 +6729,7 @@
 						{
 							"type": "entries",
 							"name": "Misty Step",
+							"page": 57,
 							"id": "187",
 							"entries": [
 								"{@i 2nd-level conjuration}",
@@ -6510,6 +6766,7 @@
 						{
 							"type": "entries",
 							"name": "Prayer of Healing",
+							"page": 57,
 							"id": "189",
 							"entries": [
 								"{@i 2nd-level evocation}",
@@ -6531,6 +6788,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 57,
 											"id": "18b",
 											"entries": [
 												"When you cast this spell using a spell slot of 3rd level or higher, the healing increases by {@dice 1d8} for each slot level above 2nd.",
@@ -6544,6 +6802,7 @@
 						{
 							"type": "entries",
 							"name": "Prestidigitation",
+							"page": 57,
 							"id": "18c",
 							"entries": [
 								"{@i Transmutation cantrip}",
@@ -6577,6 +6836,7 @@
 						{
 							"type": "entries",
 							"name": "Protection from Energy",
+							"page": 58,
 							"id": "18d",
 							"entries": [
 								"{@i 3rd-level abjuration}",
@@ -6597,6 +6857,7 @@
 						{
 							"type": "entries",
 							"name": "Ray of Frost",
+							"page": 58,
 							"id": "18e",
 							"entries": [
 								"{@i Evocation cantrip}",
@@ -6618,6 +6879,7 @@
 						{
 							"type": "entries",
 							"name": "Resistance",
+							"page": 58,
 							"id": "18f",
 							"entries": [
 								"{@i Abjuration cantrip}",
@@ -6656,6 +6918,7 @@
 						{
 							"type": "entries",
 							"name": "Revivify",
+							"page": 58,
 							"id": "191",
 							"entries": [
 								"{@i 3rd-level necromancy}",
@@ -6692,6 +6955,7 @@
 						{
 							"type": "entries",
 							"name": "Sacred Flame",
+							"page": 58,
 							"id": "193",
 							"entries": [
 								"{@i Evocation cantrip}",
@@ -6713,6 +6977,7 @@
 						{
 							"type": "entries",
 							"name": "Sanctuary",
+							"page": 58,
 							"id": "194",
 							"entries": [
 								"{@i 1st-level abjuration}",
@@ -6734,6 +6999,7 @@
 						{
 							"type": "entries",
 							"name": "Shield",
+							"page": 59,
 							"id": "195",
 							"entries": [
 								"{@i 1st-level abjuration}",
@@ -6754,6 +7020,7 @@
 						{
 							"type": "entries",
 							"name": "Shield of Faith",
+							"page": 59,
 							"id": "196",
 							"entries": [
 								"{@i 1st-level abjuration}",
@@ -6775,6 +7042,7 @@
 						{
 							"type": "entries",
 							"name": "Shocking Grasp",
+							"page": 59,
 							"id": "197",
 							"entries": [
 								"{@i Evocation cantrip}",
@@ -6796,6 +7064,7 @@
 						{
 							"type": "entries",
 							"name": "Silence",
+							"page": 59,
 							"id": "198",
 							"entries": [
 								"{@i 2nd-level illusion (ritual})",
@@ -6816,6 +7085,7 @@
 						{
 							"type": "entries",
 							"name": "Sleep",
+							"page": 59,
 							"id": "199",
 							"entries": [
 								"{@i 1st-level enchantment}",
@@ -6839,6 +7109,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 59,
 											"id": "19b",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, roll an additional {@dice 2d8} for each slot level above 1st.",
@@ -6853,6 +7124,7 @@
 						{
 							"type": "entries",
 							"name": "Spider Climb",
+							"page": 60,
 							"id": "19c",
 							"entries": [
 								"{@i 2nd-level transmutation}",
@@ -6889,6 +7161,7 @@
 						{
 							"type": "entries",
 							"name": "Spirit Guardians",
+							"page": 60,
 							"id": "19e",
 							"entries": [
 								"{@i 3rd-level conjuration}",
@@ -6911,6 +7184,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 60,
 											"id": "1a0",
 											"entries": [
 												"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d8} for each slot level above 3rd.",
@@ -6926,6 +7200,7 @@
 						{
 							"type": "entries",
 							"name": "Spiritual Weapon",
+							"page": 60,
 							"id": "1a1",
 							"entries": [
 								"{@i 2nd-level evocation}",
@@ -6949,6 +7224,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 60,
 											"id": "1a3",
 											"entries": [
 												"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d8} for every two slot levels above the 2nd.",
@@ -6962,6 +7238,7 @@
 						{
 							"type": "entries",
 							"name": "Suggestion",
+							"page": 60,
 							"id": "1a4",
 							"entries": [
 								"{@i 2nd-level enchantment}",
@@ -6985,6 +7262,7 @@
 						{
 							"type": "entries",
 							"name": "Thaumaturgy",
+							"page": 61,
 							"id": "1a5",
 							"entries": [
 								"{@i Transmutation cantrip}",
@@ -7017,6 +7295,7 @@
 						{
 							"type": "entries",
 							"name": "Thunderwave",
+							"page": 61,
 							"id": "1a6",
 							"entries": [
 								"{@i 1st-level evocation}",
@@ -7049,6 +7328,7 @@
 										{
 											"type": "entries",
 											"name": "At Higher Levels",
+											"page": 61,
 											"id": "1a8",
 											"entries": [
 												"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d8} for each slot level above 1st.",
@@ -7062,6 +7342,7 @@
 						{
 							"type": "entries",
 							"name": "Warding Bond",
+							"page": 61,
 							"id": "1a9",
 							"entries": [
 								"{@i 2nd-level abjuration}",
@@ -7099,6 +7380,7 @@
 						{
 							"type": "entries",
 							"name": "Web",
+							"page": 61,
 							"id": "1ab",
 							"entries": [
 								"{@i 2nd-level conjuration}",
@@ -7112,7 +7394,7 @@
 										"{@b Duration}: Concentration, up to 1 hour"
 									]
 								},
-								"You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are difficult terrain and lightly obscure their area.",
+								"You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are {@quickref difficult terrain||3} and lightly obscure their area.",
 								"If the webs are not anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the conjured web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet.",
 								"Each creature that starts its turn in the webs or that enters them during its turn must make a Dexterity saving throw. On a failed save, the creature is {@condition restrained} as long as it remains in the webs or until it breaks free.",
 								"A creature {@condition restrained} by the webs can use its action to make a Strength check against your spell save DC. If it succeeds, it is no longer {@condition restrained}.",
@@ -7128,6 +7410,7 @@
 		{
 			"type": "section",
 			"name": "Appendix A: Conditions",
+			"page": 62,
 			"id": "1ac",
 			"entries": [
 				"Conditions alter a creature's capabilities in a variety of ways and can arise as a result of a spell, a class feature, a monster's attack, or other effect. Most conditions, such as {@condition blinded}, are impairments, but a few, such as {@condition invisible}, can be advantageous.",
@@ -7137,6 +7420,7 @@
 				{
 					"type": "section",
 					"name": "Blinded",
+					"page": 62,
 					"id": "1ad",
 					"entries": [
 						{
@@ -7151,6 +7435,7 @@
 				{
 					"type": "section",
 					"name": "Charmed",
+					"page": 62,
 					"id": "1ae",
 					"entries": [
 						{
@@ -7174,6 +7459,7 @@
 				{
 					"type": "section",
 					"name": "Deafened",
+					"page": 62,
 					"id": "1af",
 					"entries": [
 						{
@@ -7187,6 +7473,7 @@
 				{
 					"type": "section",
 					"name": "Exhaustion",
+					"page": 62,
 					"id": "1b0",
 					"entries": [
 						"Some special abilities and environmental hazards, such as starvation and the long-term effects of freezing or scorching temperatures, can lead to a special condition called exhaustion. Exhaustion is measured in six levels. An effect can give a creature one or more levels of exhaustion, as specified in the effect's description.",
@@ -7236,6 +7523,7 @@
 				{
 					"type": "section",
 					"name": "Frightened",
+					"page": 62,
 					"id": "1b1",
 					"entries": [
 						{
@@ -7250,6 +7538,7 @@
 				{
 					"type": "section",
 					"name": "Grappled",
+					"page": 62,
 					"id": "1b2",
 					"entries": [
 						{
@@ -7274,6 +7563,7 @@
 				{
 					"type": "section",
 					"name": "Incapacitated",
+					"page": 62,
 					"id": "1b3",
 					"entries": [
 						{
@@ -7287,6 +7577,7 @@
 				{
 					"type": "section",
 					"name": "Invisible",
+					"page": 62,
 					"id": "1b4",
 					"entries": [
 						{
@@ -7301,6 +7592,7 @@
 				{
 					"type": "section",
 					"name": "Paralyzed",
+					"page": 62,
 					"id": "1b5",
 					"entries": [
 						{
@@ -7326,6 +7618,7 @@
 				{
 					"type": "section",
 					"name": "Petrified",
+					"page": 62,
 					"id": "1b6",
 					"entries": [
 						{
@@ -7353,6 +7646,7 @@
 				{
 					"type": "section",
 					"name": "Poisoned",
+					"page": 62,
 					"id": "1b7",
 					"entries": [
 						{
@@ -7366,6 +7660,7 @@
 				{
 					"type": "section",
 					"name": "Prone",
+					"page": 62,
 					"id": "1b8",
 					"entries": [
 						{
@@ -7390,6 +7685,7 @@
 				{
 					"type": "section",
 					"name": "Restrained",
+					"page": 62,
 					"id": "1b9",
 					"entries": [
 						{
@@ -7405,6 +7701,7 @@
 				{
 					"type": "section",
 					"name": "Stunned",
+					"page": 62,
 					"id": "1ba",
 					"entries": [
 						{
@@ -7429,6 +7726,7 @@
 				{
 					"type": "section",
 					"name": "Unconscious",
+					"page": 62,
 					"id": "1bb",
 					"entries": [
 						{
@@ -7457,6 +7755,7 @@
 		{
 			"type": "section",
 			"name": "{@comicH1 APPENDIX B: WHAT IS THE F***ING POINT?!}",
+			"page": 63,
 			"id": "1bc",
 			"entries": [
 				"{@comic {@comicH3 Okay, Morty.} Maybe it's just the vodka and the tranquilizers talking, b-b-but I think we've reached a critical moment in your D&D education. Y-y-you've internalized a lot of the key features, and you're tingling with anticipation of the adventures to come.}",

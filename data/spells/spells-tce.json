@@ -1543,7 +1543,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 2d4} for each slot level above 1st."
+						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 2d4|1-9|2d4} for each slot level above 1st."
 					]
 				}
 			],
@@ -1695,7 +1695,13 @@
 					]
 				}
 			],
-			"conditionInflict": [
+			"damageImmune": [
+				"fire",
+				"poison",
+				"radiant",
+				"necrotic"
+			],
+			"conditionImmune": [
 				"charmed",
 				"poisoned"
 			],

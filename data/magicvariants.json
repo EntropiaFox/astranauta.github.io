@@ -41,6 +41,7 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"basicRules": true,
 				"tier": "major",
 				"rarity": "rare",
 				"bonusAc": "+1",
@@ -90,6 +91,7 @@
 				"source": "DMG",
 				"page": 213,
 				"srd": true,
+				"basicRules": true,
 				"tier": "major",
 				"rarity": "uncommon",
 				"bonusWeapon": "+1",
@@ -162,6 +164,7 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"basicRules": true,
 				"tier": "major",
 				"rarity": "very rare",
 				"bonusAc": "+2",
@@ -211,6 +214,7 @@
 				"source": "DMG",
 				"page": 213,
 				"srd": true,
+				"basicRules": true,
 				"tier": "major",
 				"rarity": "rare",
 				"bonusWeapon": "+2",
@@ -283,6 +287,7 @@
 				"source": "DMG",
 				"page": 152,
 				"srd": true,
+				"basicRules": true,
 				"tier": "major",
 				"rarity": "legendary",
 				"bonusAc": "+3",
@@ -332,6 +337,7 @@
 				"source": "DMG",
 				"page": 213,
 				"srd": true,
+				"basicRules": true,
 				"tier": "major",
 				"rarity": "very rare",
 				"bonusWeapon": "+3",
@@ -620,7 +626,10 @@
 			"type": "GV",
 			"requires": [
 				{
-					"armor": true
+					"type": "HA"
+				},
+				{
+					"type": "MA"
 				}
 			],
 			"inherits": {
@@ -820,6 +829,29 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Ascendant Dragon's Wrath Weapon",
+			"type": "GV",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Ascendant Dragon's Wrath ",
+				"source": "FTD",
+				"page": 25,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"bonusWeapon": "+3",
+				"entries": [
+					"This weapon is decorated with dragon heads, claws, wings, scales, or Draconic letters. When it steeps in a dragon's hoard, it absorbs the energy of the dragon's breath weapon and deals damage of that type with its special properties.",
+					"Whenever you roll a 20 on your attack roll with this weapon, each creature of your choice within 5 feet of the target takes 5 damage of the type dealt by the dragon's breath weapon.",
+					"You gain a {=bonusWeapon} bonus to attack and damage rolls made using the weapon. On a hit, the weapon deals an extra {@damage 3d6} damage of the type dealt by the dragon's breath weapon.",
+					"As an action, you can unleash a 60-foot cone of destructive energy from the weapon. Each creature in that area must make a DC 18 Dexterity saving throw, taking {@damage 12d6} damage of the type dealt by the dragon's breath weapon on a failed save, or half as much damage on a successful one. Once this action is used, it can't be used again until the next dawn."
+				]
+			}
+		},
+		{
 			"name": "Barding",
 			"type": "GV",
 			"requires": [
@@ -833,6 +865,7 @@
 				"source": "PHB",
 				"page": 157,
 				"srd": true,
+				"basicRules": true,
 				"type": "TAH",
 				"rarity": "none",
 				"weightMult": 2,
@@ -872,7 +905,7 @@
 							"This axe is cursed, and becoming attuned to it extends the curse to you. As long as you remain cursed, you are unwilling to part with the axe, keeping it within reach at all times. You also have disadvantage on attack rolls with weapons other than this one, unless no foe is within 60 feet of you that you can see or hear."
 						]
 					},
-					"Whenever a hostile creature damages you while the axe is in your possession, you must succeed on a DC 15 Wisdom saving throw or go berserk. While berserk, you must use your action each round to attack the creature nearest to you with the axe. If you can make extra attacks as part of the Attack action, you use those extra attacks, moving to attack the next nearest creature after you fell your current target. If you have multiple possible targets, you attack one at random. You are berserk until you start your turn with no creatures within 60 feet of you that you can see or hear."
+					"Whenever a hostile creature damages you while the axe is in your possession, you must succeed on a DC 15 Wisdom saving throw or go berserk. While berserk, you must use your action each round to attack the creature nearest to you with the axe. If you can make extra attacks as part of the {@action Attack} action, you use those extra attacks, moving to attack the next nearest creature after you fell your current target. If you have multiple possible targets, you attack one at random. You are berserk until you start your turn with no creatures within 60 feet of you that you can see or hear."
 				],
 				"lootTables": [
 					"Magic Item Table G"
@@ -945,6 +978,29 @@
 				"entries": [
 					"You gain a {=bonusWeapon} bonus to attack and damage rolls made with this magic weapon.",
 					"When you hit an undead creature with an attack using this weapon, the attack deals an extra {@damage 1d8} damage of the weapon's type, and the creature has disadvantage on saving throws against effects that turn undead until the start of your next turn."
+				]
+			}
+		},
+		{
+			"name": "Crystal Blade",
+			"type": "GV",
+			"requires": [
+				{
+					"sword": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Crystal ",
+				"source": "FTD",
+				"page": 22,
+				"rarity": "rare",
+				"reqAttune": true,
+				"recharge": "dawn",
+				"charges": 3,
+				"entries": [
+					"This magic sword's blade is fashioned from a horn or spine from a crystal dragon. When you hit with an attack roll using this sword, the target takes an extra {@damage 1d8} radiant damage.",
+					"The sword has 3 charges and regains {@dice 1d3} expended charges daily at dawn. When you hit a creature with an attack roll using the sword, you can expend 1 charge to regain a number of hit points equal to the extra radiant damage the sword dealt.",
+					"While you're holding the sword, you can use a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet, to cause it to shed dim light in a 10-foot radius, or to douse the light."
 				]
 			}
 		},
@@ -1030,6 +1086,54 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Dragon Wing Bow",
+			"type": "GV",
+			"requires": [
+				{
+					"bow": true
+				},
+				{
+					"crossbow": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Dragon Wing ",
+				"source": "FTD",
+				"page": 23,
+				"rarity": "rare",
+				"reqAttune": true,
+				"entries": [
+					"The limb tips of this magic bow are shaped like a dragon's wings, and the weapon is infused with the essence of a chromatic, gem, or metallic dragon's breath. When you hit with an attack roll using this magic bow, the target takes an extra {@damage 1d6} damage of the same type as the breath infused in the bow\u2014acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder.",
+					"If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you pull back the string. The ammunition created by the bow vanishes the instant after it hits or misses a target."
+				]
+			}
+		},
+		{
+			"name": "Dragonlance",
+			"type": "GV",
+			"requires": [
+				{
+					"name": "Pike"
+				},
+				{
+					"name": "Lance"
+				}
+			],
+			"inherits": {
+				"namePrefix": "Dragonlance ",
+				"source": "FTD",
+				"page": 23,
+				"rarity": "legendary",
+				"reqAttune": true,
+				"bonusWeapon": "+3",
+				"entries": [
+					"A dragonlance is a renowned weapon forged from rare metal with the aid of powerful artifacts associated with Bahamut. Different lances are forged for use by foot soldiers (as pikes) and by riders (as lances), but the magical properties of the weapons are the same.",
+					"You gain a {=bonusWeapon} bonus to attack and damage rolls made with this magic weapon.",
+					"When you hit a Dragon with this weapon, the Dragon takes an extra {@damage 3d6} force damage, and any Dragon of your choice that you can see within 30 feet of you can immediately use its reaction to make a melee attack."
+				]
+			}
+		},
+		{
 			"name": "Drow +1 Armor",
 			"type": "GV",
 			"requires": [
@@ -1065,6 +1169,88 @@
 				"page": 126,
 				"rarity": "unknown (magic)",
 				"bonusWeapon": "+1",
+				"entries": [
+					"You have a {=bonusWeapon} bonus to attack and damage rolls made with this weapon. This weapon loses its enchantment bonus permanently if it is exposed to sunlight for 1 hour or longer."
+				]
+			}
+		},
+		{
+			"name": "Drow +2 Armor",
+			"type": "GV",
+			"requires": [
+				{
+					"armor": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Drow +2 ",
+				"source": "MM",
+				"page": 126,
+				"rarity": "unknown (magic)",
+				"bonusAc": "+2",
+				"entries": [
+					"You have a {=bonusAc} bonus to AC while wearing this armor. This armor loses its enchantment bonus permanently if it is exposed to sunlight for 1 hour or longer."
+				]
+			}
+		},
+		{
+			"name": "Drow +2 Weapon",
+			"type": "GV",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"excludes": {
+				"net": true
+			},
+			"inherits": {
+				"namePrefix": "Drow +2 ",
+				"source": "MM",
+				"page": 126,
+				"rarity": "unknown (magic)",
+				"bonusWeapon": "+2",
+				"entries": [
+					"You have a {=bonusWeapon} bonus to attack and damage rolls made with this weapon. This weapon loses its enchantment bonus permanently if it is exposed to sunlight for 1 hour or longer."
+				]
+			}
+		},
+		{
+			"name": "Drow +3 Armor",
+			"type": "GV",
+			"requires": [
+				{
+					"armor": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Drow +3 ",
+				"source": "MM",
+				"page": 126,
+				"rarity": "unknown (magic)",
+				"bonusAc": "+3",
+				"entries": [
+					"You have a {=bonusAc} bonus to AC while wearing this armor. This armor loses its enchantment bonus permanently if it is exposed to sunlight for 1 hour or longer."
+				]
+			}
+		},
+		{
+			"name": "Drow +3 Weapon",
+			"type": "GV",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"excludes": {
+				"net": true
+			},
+			"inherits": {
+				"namePrefix": "Drow +3 ",
+				"source": "MM",
+				"page": 126,
+				"rarity": "unknown (magic)",
+				"bonusWeapon": "+3",
 				"entries": [
 					"You have a {=bonusWeapon} bonus to attack and damage rolls made with this weapon. This weapon loses its enchantment bonus permanently if it is exposed to sunlight for 1 hour or longer."
 				]
@@ -1643,6 +1829,11 @@
 				"page": 181,
 				"tier": "minor",
 				"rarity": "uncommon",
+				"modifySpeed": {
+					"equal": {
+						"swim": "walk"
+					}
+				},
 				"entries": [
 					"While wearing this armor, you have a swimming speed equal to your walking speed. In addition, whenever you start your turn underwater with 0 hit points, the armor causes you to rise 60 feet toward the surface. The armor is decorated with fish and shell motifs."
 				],
@@ -1769,6 +1960,39 @@
 				"rarity": "rare",
 				"entries": [
 					"This suit of armor is reinforced with a magically enhanced metal alloy called mizzium, which is made in Izzet foundries. While you're wearing the armor, any critical hit against you becomes a normal hit. In addition, when you are subjected to a magical effect that allows you to make a Strength or Constitution saving throw to take only half damage, you instead take no damage if you succeed on the saving throw."
+				]
+			}
+		},
+		{
+			"name": "Molten Bronze Skin",
+			"type": "GV",
+			"requires": [
+				{
+					"name": "Half Plate Armor",
+					"source": "PHB"
+				},
+				{
+					"name": "Plate Armor",
+					"source": "PHB"
+				},
+				{
+					"name": "Breastplate",
+					"source": "PHB"
+				}
+			],
+			"inherits": {
+				"namePrefix": "Molten Bronze Skin ",
+				"source": "MOT",
+				"page": 197,
+				"resist": [
+					"fire"
+				],
+				"rarity": "rare",
+				"reqAttune": true,
+				"stealth": false,
+				"entries": [
+					"This magical armor appears as a jug of molten bronze. When you attune to it, the bronze adheres and contours to your skin. The armor can be worn under normal clothes, but it doesn't impede bodily functions. Once you put it on, it can't be removed unless you choose to do so.",
+					"While wearing the armor, you have resistance to fire damage. The armor also doesn't impose disadvantage on Dexterity ({@skill Stealth}) checks."
 				]
 			}
 		},
@@ -2222,6 +2446,116 @@
 			}
 		},
 		{
+			"name": "Ruidium Armor",
+			"type": "GV",
+			"requires": [
+				{
+					"type": "MA"
+				},
+				{
+					"type": "HA"
+				}
+			],
+			"excludes": {
+				"name": "Hide Armor"
+			},
+			"inherits": {
+				"namePrefix": "Ruidium ",
+				"source": "CRCotN",
+				"page": 215,
+				"resist": [
+					"psychic"
+				],
+				"rarity": "very rare",
+				"reqAttune": true,
+				"bonusAc": "+1",
+				"modifySpeed": {
+					"equal": {
+						"swim": "walk"
+					}
+				},
+				"entries": [
+					"This magic armor has a dull, rusty color or has veins of ruidium running through it. While you wear this armor, you gain the following benefits:",
+					{
+						"type": "list",
+						"items": [
+							"You have resistance to psychic damage.",
+							"You can breathe water.",
+							"You gain a swimming speed equal to your walking speed."
+						]
+					},
+					{
+						"type": "entries",
+						"name": "Ruidium Corruption",
+						"entries": [
+							"When you roll a 1 on a saving throw while wearing this armor, you must make a DC 15 Charisma saving throw. On a failed save, you gain 1 level of {@condition exhaustion}. If you are not already suffering from ruidium corruption, you become corrupted when you fail this save."
+						]
+					},
+					{
+						"type": "entries",
+						"name": "If Ruidium Is Destroyed",
+						"entries": [
+							"If the Apotheon is killed or redeemed, all the ruidium in Exandria is destroyed instantly, and ruidium armor becomes {@item +1 armor}."
+						]
+					}
+				]
+			}
+		},
+		{
+			"name": "Ruidium Weapon",
+			"type": "GV",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Ruidium ",
+				"source": "CRCotN",
+				"page": 216,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"bonusWeapon": "+2",
+				"modifySpeed": {
+					"equal": {
+						"swim": "walk"
+					}
+				},
+				"entries": [
+					"This magic weapon has a dull, rusty color or has veins of ruidium running through it. While this weapon is on your person, you gain the following benefits:",
+					{
+						"type": "list",
+						"items": [
+							"You can breathe water.",
+							"You gain a swimming speed equal to your walking speed."
+						]
+					},
+					{
+						"type": "entries",
+						"name": "Ruidium Strike",
+						"entries": [
+							"A creature you hit with this weapon takes an extra {@damage 2d6} psychic damage."
+						]
+					},
+					{
+						"type": "entries",
+						"name": "Ruidium Corruption",
+						"entries": [
+							"When you roll a 1 on an attack roll made with this weapon, you must make a DC 20 Charisma saving throw. On a failed save, you gain 1 level of {@condition exhaustion}. If you are not already suffering from ruidium corruption, you become corrupted when you fail this save."
+						]
+					},
+					{
+						"type": "entries",
+						"name": "If Ruidium Is Destroyed",
+						"entries": [
+							"If the Apotheon is killed or redeemed, all the ruidium in Exandria is destroyed instantly, and a ruidium weapon becomes a {@item +2 weapon}."
+						]
+					}
+				]
+			},
+			"hasFluffImages": true
+		},
+		{
 			"name": "Silvered Ammunition",
 			"type": "GV",
 			"requires": [
@@ -2243,6 +2577,7 @@
 				"namePrefix": "Silvered ",
 				"source": "PHB",
 				"page": 148,
+				"basicRules": true,
 				"tier": "minor",
 				"rarity": "unknown"
 			}
@@ -2265,9 +2600,31 @@
 				"namePrefix": "Silvered ",
 				"source": "PHB",
 				"page": 148,
+				"basicRules": true,
 				"tier": "major",
 				"rarity": "unknown",
 				"valueExpression": "[[baseItem.value]] + 10000"
+			}
+		},
+		{
+			"name": "Slumbering Dragon's Wrath Weapon",
+			"type": "GV",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Slumbering Dragon's Wrath ",
+				"source": "FTD",
+				"page": 25,
+				"rarity": "uncommon",
+				"reqAttune": true,
+				"bonusWeapon": "+1",
+				"entries": [
+					"This weapon is decorated with dragon heads, claws, wings, scales, or Draconic letters. When it steeps in a dragon's hoard, it absorbs the energy of the dragon's breath weapon and deals damage of that type with its special properties.",
+					"Whenever you roll a 20 on your attack roll with this weapon, each creature of your choice within 5 feet of the target takes 5 damage of the type dealt by the dragon's breath weapon."
+				]
 			}
 		},
 		{
@@ -2286,6 +2643,28 @@
 				"rarity": "common",
 				"entries": [
 					"Wisps of harmless, odorless smoke rise from this armor while it is worn."
+				]
+			}
+		},
+		{
+			"name": "Stirring Dragon's Wrath Weapon",
+			"type": "GV",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Stirring Dragon's Wrath ",
+				"source": "FTD",
+				"page": 25,
+				"rarity": "rare",
+				"reqAttune": true,
+				"bonusWeapon": "+1",
+				"entries": [
+					"This weapon is decorated with dragon heads, claws, wings, scales, or Draconic letters. When it steeps in a dragon's hoard, it absorbs the energy of the dragon's breath weapon and deals damage of that type with its special properties.",
+					"Whenever you roll a 20 on your attack roll with this weapon, each creature of your choice within 5 feet of the target takes 5 damage of the type dealt by the dragon's breath weapon.",
+					"You gain a {=bonusWeapon} bonus to attack and damage rolls made using the weapon. On a hit, the weapon deals an extra {@damage 1d6} damage of the type dealt by the dragon's breath weapon."
 				]
 			}
 		},
@@ -2490,6 +2869,29 @@
 				]
 			},
 			"hasFluffImages": true
+		},
+		{
+			"name": "Wakened Dragon's Wrath Weapon",
+			"type": "GV",
+			"requires": [
+				{
+					"weapon": true
+				}
+			],
+			"inherits": {
+				"namePrefix": "Wakened Dragon's Wrath ",
+				"source": "FTD",
+				"page": 25,
+				"rarity": "very rare",
+				"reqAttune": true,
+				"bonusWeapon": "+2",
+				"entries": [
+					"This weapon is decorated with dragon heads, claws, wings, scales, or Draconic letters. When it steeps in a dragon's hoard, it absorbs the energy of the dragon's breath weapon and deals damage of that type with its special properties.",
+					"Whenever you roll a 20 on your attack roll with this weapon, each creature of your choice within 5 feet of the target takes 5 damage of the type dealt by the dragon's breath weapon.",
+					"You gain a {=bonusWeapon} bonus to attack and damage rolls made using the weapon. On a hit, the weapon deals an extra {@damage 2d6} damage of the type dealt by the dragon's breath weapon.",
+					"As an action, you can unleash a 30-foot cone of destructive energy from the weapon. Each creature in that area must make a DC 16 Dexterity saving throw, taking {@damage 8d6} damage of the type dealt by the dragon's breath weapon on a failed save, or half as much damage on a successful one. Once this action is used, it can't be used again until the next dawn."
+				]
+			}
 		},
 		{
 			"name": "Walloping Ammunition",

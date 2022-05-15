@@ -9,7 +9,7 @@ function getHiddenModeList (psionic) {
 		if (modeList[i].submodes != null) {
 			const subModes = modeList[i].submodes;
 			for (let j = 0; j < subModes.length; ++j) {
-				outArray.push(`"${subModes[j].name}"`)
+				outArray.push(`"${subModes[j].name}"`);
 			}
 		}
 	}
@@ -34,46 +34,14 @@ class PsionicsPage extends ListPage {
 				$btnOpen: $(`#btn-psibook`),
 				$eleNoneVisible: $(`<span class="initial-message">If you wish to view multiple psionics, please first make a list</span>`),
 				pageTitle: "Psionics Book View",
-				popTblGetNumShown: $wrpContent => {
-					const toShow = ListUtil.getSublistedIds().map(id => this._dataList[id]);
-
-					const stack = [];
-					const renderPsionic = (p) => {
-						stack.push(`<div class="bkmv__wrp-item"><table class="stats stats--book stats--bkmv"><tbody>`);
-						stack.push(Renderer.psionic.getCompactRenderedString(p));
-						stack.push(`</tbody></table></div>`);
-					};
-
-					const renderType = (type) => {
-						const toRender = toShow.filter(p => p.type === type);
-						if (toRender.length) {
-							toRender.forEach(p => renderPsionic(p));
-						}
-					};
-
-					renderType("T");
-					renderType("D");
-
-					if (!toShow.length && Hist.lastLoadedId != null) {
-						renderPsionic(this._dataList[Hist.lastLoadedId]);
-					}
-
-					if (!toShow.length && Hist.lastLoadedId != null) {
-						stack.push(`<tr class="spellbook-level"><td>`);
-						renderPsionic(this._dataList[Hist.lastLoadedId]);
-						stack.push(`</td></tr>`);
-					}
-
-					$wrpContent.append(stack.join(""));
-					return toShow.length;
-				},
+				popTblGetNumShown: (opts) => this._bookView_popTblGetNumShown(opts, {fnPartition: it => it.type === "T" ? 0 : 1}),
 			},
 
 			tableViewOptions: {
 				title: "Psionics",
 				colTransforms: {
-					name: {name: "Name", transform: true},
-					source: {name: "Source", transform: (it) => `<span class="${Parser.sourceJsonToColor(it)}" title="${Parser.sourceJsonToFull(it)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${Parser.sourceJsonToAbv(it)}</span>`},
+					name: UtilsTableview.COL_TRANSFORM_NAME,
+					source: UtilsTableview.COL_TRANSFORM_SOURCE,
 					_text: {name: "Text", transform: (it) => Renderer.psionic.getBodyText(it, Renderer.get()), flex: 3},
 				},
 				filter: {generator: ListUtil.basicFilterGenerator},
@@ -86,7 +54,7 @@ class PsionicsPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(p, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(p.source);
 		const hash = UrlUtil.autoEncodeHash(p);
@@ -96,7 +64,7 @@ class PsionicsPage extends ListPage {
 			<span class="bold col-6 pl-0">${p.name}</span>
 			<span class="col-2 text-center">${typeMeta.short}</span>
 			<span class="col-2 text-center ${p._fOrder === VeCt.STR_NONE ? "list-entry-none" : ""}">${p._fOrder}</span>
-			<span class="col-2 text-center pr-0" title="${Parser.sourceJsonToFull(p.source)}" ${BrewUtil.sourceJsonToStyle(p.source)}>${source}</span>
+			<span class="col-2 text-center pr-0" title="${Parser.sourceJsonToFull(p.source)}" ${BrewUtil2.sourceJsonToStyle(p.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -111,7 +79,6 @@ class PsionicsPage extends ListPage {
 				searchModeList: getHiddenModeList(p),
 			},
 			{
-				uniqueId: p.uniqueId ? p.uniqueId : psI,
 				isExcluded,
 			},
 		);
@@ -128,11 +95,11 @@ class PsionicsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (p, pinId) {
+	pGetSublistItem (p, ix) {
 		const hash = UrlUtil.autoEncodeHash(p);
 		const typeMeta = Parser.psiTypeToMeta(p.type);
 
-		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="bold col-6 pl-0">${p.name}</span>
 				<span class="col-3">${typeMeta.short}</span>
@@ -143,7 +110,7 @@ class PsionicsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			p.name,
 			{
@@ -158,15 +125,13 @@ class PsionicsPage extends ListPage {
 	doLoadHash (id) {
 		const psi = this._dataList[id];
 
-		$(`#pagecontent`).empty().append(RenderPsionics.$getRenderedPsionic(psi));
+		this._$pgContent.empty().append(RenderPsionics.$getRenderedPsionic(psi));
 
 		ListUtil.updateSelected();
 	}
 
 	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
-
+		sub = await super.pDoLoadSubHash(sub);
 		await this._bookView.pHandleSub(sub);
 	}
 

@@ -10,8 +10,6 @@ class SearchPage {
 	}
 
 	static _render () {
-		let isInitialHooks = true;
-
 		Omnisearch.initState();
 
 		const $iptSearch = $(`<input class="form-control pg-search__ipt" placeholder="Search everywhere..." title="Disclaimer: unlikely to search everywhere. Use with caution.">`)
@@ -19,7 +17,7 @@ class SearchPage {
 				if (evt.key !== "Enter") return;
 				$btnSearch.click();
 			})
-			.val(decodeURIComponent(location.search.slice(1).replace(/\+/g, " ")))
+			.val(decodeURIComponent(location.search.slice(1).replace(/\+/g, " ")));
 
 		const $btnSearch = $(`<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>`)
 			.click(() => {
@@ -31,23 +29,33 @@ class SearchPage {
 
 		const $btnToggleUa = $(`<button class="btn btn-default" title="Filter Unearthed Arcana and other unofficial source results">Include UA</button>`)
 			.click(() => Omnisearch.doToggleUa());
-		const hkUa = () => {
+		const hkUa = (val) => {
 			$btnToggleUa.toggleClass("active", Omnisearch.isShowUa);
-			if (isInitialHooks) return;
+			if (val == null) return;
 			this._doSearch();
 		};
-		Omnisearch.addHookUa(hkUa)
+		Omnisearch.addHookUa(hkUa);
 		hkUa();
 
 		const $btnToggleBlacklisted = $(`<button class="btn btn-default" title="Filter blacklisted content results">Include Blacklisted</button>`)
 			.click(() => Omnisearch.doToggleBlacklisted());
-		const hkBlacklisted = () => {
+		const hkBlacklisted = (val) => {
 			$btnToggleBlacklisted.toggleClass("active", Omnisearch.isShowBlacklisted);
-			if (isInitialHooks) return;
+			if (val == null) return;
 			this._doSearch();
 		};
-		Omnisearch.addHookBlacklisted(hkBlacklisted)
+		Omnisearch.addHookBlacklisted(hkBlacklisted);
 		hkBlacklisted();
+
+		const $btnToggleSrd = $(`<button class="btn btn-default" title="Filter non- Systems Reference Document results">SRD Only</button>`)
+			.click(() => Omnisearch.doToggleSrdOnly());
+		const hkSrd = (val) => {
+			$btnToggleSrd.toggleClass("active", Omnisearch.isSrdOnly);
+			if (val == null) return;
+			this._doSearch();
+		};
+		Omnisearch.addHookSrdOnly(hkSrd);
+		hkSrd();
 
 		const handleMassExpandCollapse = mode => {
 			SearchPage._isAllExpanded = mode;
@@ -65,19 +73,20 @@ class SearchPage {
 		const $btnExpandAll = $(`<button class="btn btn-default" title="Expand All Results"><span class="glyphicon glyphicon-plus"></span></button>`)
 			.click(() => handleMassExpandCollapse(true));
 
-		SearchPage._$wrpResults = $(`<div class="flex-col w-100">${this._getWrpResult_message("Loading...")}</div>`);
+		SearchPage._$wrpResults = $(`<div class="ve-flex-col w-100">${this._getWrpResult_message("Loading...")}</div>`);
 
-		$$(SearchPage._$wrp)`<div class="flex-col w-100 pg-search__wrp">
-			<div class="flex-v-center mb-2 mobile__flex-col">
-				<div class="flex-v-center input-group btn-group mr-2 w-100 mobile__mb-2">${$iptSearch}${$btnSearch}</div>
+		$$(SearchPage._$wrp)`<div class="ve-flex-col w-100 pg-search__wrp">
+			<div class="ve-flex-v-center mb-2 mobile__ve-flex-col">
+				<div class="ve-flex-v-center input-group btn-group mr-2 w-100 mobile__mb-2">${$iptSearch}${$btnSearch}</div>
 
-				<div class="flex-v-center">
+				<div class="ve-flex-v-center">
 					${$btnHelp}
-					<div class="flex-v-center btn-group mr-2">
+					<div class="ve-flex-v-center btn-group mr-2">
 						${$btnToggleUa}
 						${$btnToggleBlacklisted}
+						${$btnToggleSrd}
 					</div>
-					<div class="btn-group flex-v-center">
+					<div class="btn-group ve-flex-v-center">
 						${$btnCollapseAll}
 						${$btnExpandAll}
 					</div>
@@ -85,8 +94,6 @@ class SearchPage {
 			</div>
 			${SearchPage._$wrpResults}
 		</div>`;
-
-		isInitialHooks = false;
 
 		this._doSearch();
 	}
@@ -106,7 +113,7 @@ class SearchPage {
 					});
 				},
 				{rootMargin: "150px 0px", threshold: 0.01},
-			)
+			);
 		}
 		SearchPage._rowMetas = [];
 
@@ -129,33 +136,33 @@ class SearchPage {
 
 					const $link = Omnisearch.$getResultLink(r);
 
-					const {s: source, p: page, h: isHoverable, c: category, u: hash} = r;
+					const {s: source, p: page, h: isHoverable, c: category, u: hash, r: isSrd} = r;
 					const ptPageInner = page ? `page ${page}` : "";
 					const adventureBookSourceHref = SourceUtil.getAdventureBookSourceHref(source, page);
 					const ptPage = ptPageInner && adventureBookSourceHref
 						? `<a href="${adventureBookSourceHref}">${ptPageInner}</a>`
 						: ptPageInner;
 
-					const ptSourceInner = source ? `<i>${Parser.sourceJsonToFull(source)}</i> (<span class="${Parser.sourceJsonToColor(source)}" ${BrewUtil.sourceJsonToStyle(source)}>${Parser.sourceJsonToAbv(source)}</span>)` : `<span></span>`;
+					const ptSourceInner = source ? `<i>${Parser.sourceJsonToFull(source)}</i> (<span class="${Parser.sourceJsonToColor(source)}" ${BrewUtil2.sourceJsonToStyle(source)}>${Parser.sourceJsonToAbv(source)}</span>)${isSrd ? `<span class="ve-muted relative help-subtle pg-search__disp-srd" title="Available in the Systems Reference Document">[SRD]</span>` : ""}` : `<span></span>`;
 					const ptSource = ptPage || !adventureBookSourceHref
 						? ptSourceInner
 						: `<a href="${adventureBookSourceHref}">${ptSourceInner}</a>`;
 
-					const $dispImage = $(`<div class="flex-col pg-search__disp-token mr-3 no-shrink"></div>`);
-					const $dispPreview = $(`<div class="flex-col mobile__w-100"></div>`);
-					const $wrpPreviewControls = $(`<div class="flex-col mobile__mb-2 mobile__w-100 h-100"></div>`);
+					const $dispImage = $(`<div class="ve-flex-col pg-search__disp-token mr-3 no-shrink"></div>`);
+					const $dispPreview = $(`<div class="ve-flex-col mobile__w-100"></div>`);
+					const $wrpPreviewControls = $(`<div class="ve-flex-col mobile__mb-2 mobile__w-100 h-100"></div>`);
 
 					const out = {};
 
-					const $row = $$`<div class="my-2 py-2 pl-3 pr-2 pg-search__wrp-result flex relative mobile__flex-col">
-						<div class="flex-v-center mobile__mb-2 w-100">
+					const $row = $$`<div class="my-2 py-2 pl-3 pr-2 pg-search__wrp-result ve-flex relative mobile__ve-flex-col">
+						<div class="ve-flex-v-center mobile__mb-2 w-100">
 							${$dispImage}
-							<div class="flex-col flex-h-center mr-auto">
+							<div class="ve-flex-col ve-flex-h-center mr-auto">
 								<div class="mb-2">${$link}</div>
 								<div>${ptSource}${ptPage ? `, ${ptPage}` : ""}</div>
 							</div>
 						</div>
-						<div class="flex-v-center mobile__flex-col-reverse mobile__flex-ai-start">
+						<div class="ve-flex-v-center mobile__ve-flex-col-reverse mobile__ve-flex-ai-start">
 							${$dispPreview}
 							${$wrpPreviewControls}
 						</div>
@@ -190,7 +197,7 @@ class SearchPage {
 										// region Render tokens, where available
 										let isImagePopulated = false;
 										if (category === Parser.CAT_ID_CREATURE) {
-											const hasToken = (ent.tokenUrl && ent.uniqueId) || ent.hasToken;
+											const hasToken = ent.tokenUrl || ent.hasToken;
 											if (hasToken) {
 												isImagePopulated = true;
 												const tokenUrl = Renderer.monster.getTokenUrl(ent);
@@ -203,7 +210,7 @@ class SearchPage {
 
 										// region Render preview
 										Renderer.hover.$getHoverContent_stats(page, ent)
-											.addClass("pg-search__wrp-preview mobile__w-100")
+											.addClass("pg-search__wrp-preview mobile__w-100 br-0")
 											.appendTo($dispPreview);
 										// endregion
 									});
@@ -228,7 +235,7 @@ class SearchPage {
 	}
 
 	static _getWrpResult_message (message) {
-		return `<div class="my-2 py-2 px-3 pg-search__wrp-result flex-vh-center"><i>${message.qq()}</i></div>`
+		return `<div class="my-2 py-2 px-3 pg-search__wrp-result ve-flex-vh-center"><i>${message.qq()}</i></div>`;
 	}
 }
 SearchPage._STORAGE_KEY_IS_EXPANDED = "isExpanded";

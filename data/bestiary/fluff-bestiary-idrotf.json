@@ -282,46 +282,6 @@
 			]
 		},
 		{
-			"name": "Brain in a Jar",
-			"source": "IDRotF",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Through an eldritch ritual combining alchemy, necromancy, and grim surgical precision, the brain of a mortal being (willing or unwilling) is encased in a glass jar filled with preserving fluids and the liquefied goop of their body's flesh. The transformation renders the brain immortal and imbues it with psionic power, so that it can spend eternity plotting and executing its desires.",
-								"A brain in a jar can speak without vocal cords, psionically projecting its disembodied voice outward for all to hear. It enjoys conversation so much that it is prone to talking for hours on end, sometimes to itself if there are no others with whom it can speak. It also likes to think out loud and reflect on the events and decisions that led to its great transformation.",
-								"Being divorced from one's body can tax the mind, and the longer a brain in a jar exists, the more likely some form of insanity will take hold of it. A brain in a jar is particularly susceptible to dementia, schizophrenia, and paranoia.",
-								{
-									"type": "entries",
-									"entries": [
-										{
-											"type": "entries",
-											"name": "Immortal Vessels",
-											"entries": [
-												"The brain floats in a jar of solution, pulsating as it reacts to its surroundings. Some brains have been known to thump against the walls of their containers when excited or vexed. A jar's metal casing might be rusty but serviceable, or an elegantly wrought masterwork, depending on its creator. A brain in a jar weighs roughly 125 pounds."
-											]
-										}
-									]
-								}
-							]
-						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/IDRotF/Brain in a Jar.jpg"
-					}
-				}
-			]
-		},
-		{
 			"name": "Chardalyn Berserker",
 			"source": "IDRotF",
 			"entries": [
@@ -641,7 +601,7 @@
 					"type": "entries",
 					"entries": [
 						"Unbeknownst to his executioners, Dzaan had used a spell scroll of simulacrum to create a copy of himself. This simulacrum dwells in the sunken Netherese spire, waiting for its creator to return.",
-						"The simulacrum, which looks and acts like Dzaan, has half of Dzaan's hit points and can't regain expended spell slots. It has wasted its 3rd-level spell slots trying to reach Dzaan with sending spells, to no avail, and has expended other spell slots to help it survive the perils of the spire. It uses its remaining spell slots sparingly.",
+						"The simulacrum, which looks and acts like Dzaan, has half of Dzaan's hit points and can't regain expended spell slots. It has wasted its 3rd-level spell slots trying to reach Dzaan with {@spell sending} spells, to no avail, and has expended other spell slots to help it survive the perils of the spire. It uses its remaining spell slots sparingly.",
 						"The sunken Netherese tower contains a special room that can transform the simulacrum into a real person\u2014or any magical illusion into the real thing, for that matter. If this change occurs, the simulacrum effectively becomes a clone of Dzaan, authentic in every way."
 					]
 				}
@@ -934,7 +894,7 @@
 					"entries": [
 						"Grandolpha Muzgardt, the grand dame of the Muzgardt duergar clan, has recently arrived at the fortress after being invited here by Xardorok. The Muzgardts are based in Gracklstugh, a duergar city in the Underdark. They mass-produce and distribute a filthy duergar ale made from mushrooms. Xardorok has been eager to take a fourth wife and has had his eye on Grandolpha Muzgardt for many years. He asked Grandolpha to his fortress to give her a gift\u2014a pseudodragon made of chardalyn (a pseudo-pseudodragon, if you will)\u2014and make her an offer she can't refuse. Once he conquers Icewind Dale, he wants the Muzgardts to control the ale trade throughout his sunless surface kingdom.",
 						"Grandolpha, for her part, is too canny and jaded to fall for Xardorok's blunt attempt at seduction. She has begun plotting with disenfranchised advisors and warriors in his ranks to overthrow him when the moment is right. Ironically, despite his paranoia, Xardorok is too blinded by his admiration for Grandolpha to foresee her treachery.",
-						"Before entering combat, Grandolpha casts stoneskin on herself. Once her guards come to her rescue, she withdraws from combat and uses her faerie fire spell to make enemies easier for her guards to hit. The chardalyn pseudodragon defends Grandolpha to the death."
+						"Before entering combat, Grandolpha casts {@spell stoneskin} on herself. Once her guards come to her rescue, she withdraws from combat and uses her {@spell faerie fire} spell to make enemies easier for her guards to hit. The chardalyn pseudodragon defends Grandolpha to the death."
 					]
 				}
 			],
@@ -1121,7 +1081,7 @@
 				{
 					"type": "entries",
 					"entries": [
-						"The necromancer Vellynne Harpell has Icewind kobold guides in her employ, including a pair that died and were turned into zombies using animate dead spells. The cold climate helps to preserve their dead flesh."
+						"The necromancer Vellynne Harpell has Icewind kobold guides in her employ, including a pair that died and were turned into zombies using {@spell animate dead} spells. The cold climate helps to preserve their dead flesh."
 					]
 				}
 			]
@@ -1183,7 +1143,7 @@
 				{
 					"type": "entries",
 					"entries": [
-						"Scrivenscry is an arcanaloth who always refers to itself in the third person. It has a fondness for black licorice, strips of which it keeps in the pockets of its robe. The fiend is attended by Kingsport, a blind, albino giant penguin under the effect of an awaken spell.",
+						"Scrivenscry is an arcanaloth who always refers to itself in the third person. It has a fondness for black licorice, strips of which it keeps in the pockets of its robe. The fiend is attended by Kingsport, a blind, albino giant penguin under the effect of an {@spell awaken} spell.",
 						"Scrivenscry's anxious penguin servant, Kingsport, was promised a life of enlightenment. The truth is that Kingsport was turned into Scrivenscry's lackey, who lives in fear of his cruel, unpredictable master. The blind giant penguin hopes to be free of the arcanaloth one day."
 					]
 				}
@@ -1437,7 +1397,7 @@
 						"Rather than put Gant to death for his crimes in Icewind Dale, the Council of Speakers in Ten-Towns made a deal with representatives of the Lords' Alliance to have Gant serve a life sentence in Revel's End, so as not to incur the Arcane Brotherhood's wrath. The Council of Speakers did this not realizing that Gant's scheme wasn't sanctioned by the Arcane Brotherhood but rather hatched by Gant himself, who intended to impress his superiors by pulling it off.",
 						"For a long time, Gant held out hope that the Arcane Brotherhood would apply pressure to secure his release, and that the Lords' Alliance would acquiesce to the brotherhood's demands rather than risk an all-out attack on Revel's End. But by now, Gant has been incarcerated long enough to reasonably conclude that no such rescue is forthcoming. His failed scheme was an embarrassment to the Arcane Brotherhood, which has clearly forsaken him.",
 						"Vaelish Gant is a mage who specializes in the arcane tradition of abjuration. Pompous and conniving, he never doubts that he's the smartest person in the room, and he makes sure everyone around him knows how he feels.",
-						"Gant has neither a spellbook nor material components for spellcasting, and he can't avail himself of his magic while locked in his cell due to the antimagic field that encompasses it."
+						"Gant has neither a spellbook nor material components for spellcasting, and he can't avail himself of his magic while locked in his cell due to the {@spell antimagic field} that encompasses it."
 					]
 				}
 			],

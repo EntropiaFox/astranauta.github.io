@@ -4,7 +4,9 @@
 			"name": "Drake Companion",
 			"source": "UA2020SubclassesPt5",
 			"page": 3,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "dragon",
 			"ac": [
 				{
@@ -24,7 +26,7 @@
 			"wis": 14,
 			"cha": 8,
 			"save": {
-				"dex": "+2 + PB",
+				"dex": "+1 + PB",
 				"wis": "+2 + PB"
 			},
 			"senses": [

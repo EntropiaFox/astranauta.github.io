@@ -5,6 +5,7 @@
 			"source": "PHB",
 			"page": 70,
 			"srd": true,
+			"basicRules": true,
 			"hd": {
 				"number": 1,
 				"faces": 10
@@ -12,6 +13,17 @@
 			"proficiency": [
 				"str",
 				"con"
+			],
+			"optionalfeatureProgression": [
+				{
+					"name": "Fighting Style",
+					"featureType": [
+						"FS:F"
+					],
+					"progression": {
+						"1": 1
+					}
+				}
 			],
 			"startingProficiencies": {
 				"armor": [
@@ -469,6 +481,20 @@
 			"className": "Fighter",
 			"classSource": "PHB",
 			"page": 73,
+			"optionalfeatureProgression": [
+				{
+					"name": "Maneuvers",
+					"featureType": [
+						"MV:B"
+					],
+					"progression": {
+						"3": 3,
+						"7": 5,
+						"10": 7,
+						"15": 9
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Battle Master|Fighter||Battle Master||3",
 				"Additional Maneuvers|Fighter||Battle Master||7",
@@ -490,6 +516,18 @@
 			"classSource": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
+			"optionalfeatureProgression": [
+				{
+					"name": "Fighting Style",
+					"featureType": [
+						"FS:F"
+					],
+					"progression": {
+						"10": 1
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Champion|Fighter||Champion||3",
 				"Remarkable Athlete|Fighter||Champion||7",
@@ -660,7 +698,7 @@
 						"{@filter 3rd|spells|level=3|subclass=Fighter: Eldritch Knight}",
 						"{@filter 4th|spells|level=4|subclass=Fighter: Eldritch Knight}"
 					],
-					"rows": [
+					"rowsSpellProgression": [
 						[
 							0,
 							0,
@@ -863,6 +901,21 @@
 			"classSource": "PHB",
 			"page": 1,
 			"isReprinted": true,
+			"optionalfeatureProgression": [
+				{
+					"name": "Arcane Shots",
+					"featureType": [
+						"AS:V1-UA"
+					],
+					"progression": {
+						"3": 2,
+						"7": 3,
+						"10": 4,
+						"15": 5,
+						"18": 6
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Arcane Archer|Fighter||Arcane Archer (UA)|UAFighter|3",
 				"Conjure Arrows|Fighter||Arcane Archer (UA)|UAFighter|7",
@@ -928,6 +981,21 @@
 			"classSource": "PHB",
 			"page": 2,
 			"isReprinted": true,
+			"optionalfeatureProgression": [
+				{
+					"name": "Arcane Shots",
+					"featureType": [
+						"AS:V2-UA"
+					],
+					"progression": {
+						"3": 2,
+						"7": 3,
+						"10": 4,
+						"15": 5,
+						"18": 6
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Arcane Archer v2|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|3",
 				"Curving Shot|Fighter||Arcane Archer v2 (UA)|UARevisedSubclasses|7",
@@ -963,17 +1031,32 @@
 			"page": 28,
 			"additionalSpells": [
 				{
-					"innate": {
+					"known": {
 						"3": [
-							"prestidigitation"
+							"prestidigitation#c"
 						]
 					}
 				},
 				{
-					"innate": {
+					"known": {
 						"3": [
-							"druidcraft"
+							"druidcraft#c"
 						]
+					}
+				}
+			],
+			"optionalfeatureProgression": [
+				{
+					"name": "Arcane Shots",
+					"featureType": [
+						"AS"
+					],
+					"progression": {
+						"3": 2,
+						"7": 3,
+						"10": 4,
+						"15": 5,
+						"18": 6
 					}
 				}
 			],
@@ -1025,6 +1108,17 @@
 			"className": "Fighter",
 			"classSource": "PHB",
 			"page": 2,
+			"optionalfeatureProgression": [
+				{
+					"name": "Fighting Style",
+					"featureType": [
+						"FS:F"
+					],
+					"progression": {
+						"10": 1
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Brute|Fighter||Brute (UA)|UAThreeSubclasses|3",
 				"Brutish Durability|Fighter||Brute (UA)|UAThreeSubclasses|7",
@@ -1041,6 +1135,20 @@
 			"classSource": "PHB",
 			"page": 1,
 			"isReprinted": true,
+			"optionalfeatureProgression": [
+				{
+					"name": "Runes",
+					"featureType": [
+						"RN"
+					],
+					"progression": {
+						"3": 2,
+						"7": 3,
+						"10": 4,
+						"15": 5
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Rune Knight|Fighter||Rune Knight (UA)|UAFighterRangerRogue|3",
 				"Defensive Runes|Fighter||Rune Knight (UA)|UAFighterRangerRogue|7",
@@ -1119,6 +1227,20 @@
 			"className": "Fighter",
 			"classSource": "PHB",
 			"page": 44,
+			"optionalfeatureProgression": [
+				{
+					"name": "Runes",
+					"featureType": [
+						"RN"
+					],
+					"progression": {
+						"3": 2,
+						"7": 3,
+						"10": 4,
+						"15": 5
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Rune Knight|Fighter||Rune Knight|TCE|3",
 				"Runic Shield|Fighter||Rune Knight|TCE|7",
@@ -1137,6 +1259,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 1,
@@ -1257,6 +1380,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 1,
@@ -1270,6 +1394,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 2,
@@ -1283,6 +1408,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 3,
@@ -1295,6 +1421,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 4,
@@ -1342,6 +1469,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 5,
@@ -1355,6 +1483,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 6,
@@ -1382,6 +1511,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 7,
@@ -1394,6 +1524,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 8,
@@ -1421,6 +1552,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 9,
@@ -1434,6 +1566,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 10,
@@ -1446,6 +1579,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 11,
@@ -1458,6 +1592,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 12,
@@ -1485,6 +1620,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 13,
@@ -1497,6 +1633,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 14,
@@ -1524,6 +1661,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 15,
@@ -1536,6 +1674,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 16,
@@ -1563,6 +1702,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 17,
@@ -1575,6 +1715,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 17,
@@ -1587,6 +1728,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 18,
@@ -1599,6 +1741,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 19,
@@ -1626,6 +1769,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"level": 20,
@@ -2202,6 +2346,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"subclassShortName": "Champion",
@@ -2220,6 +2365,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"subclassShortName": "Champion",
@@ -2235,6 +2381,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"subclassShortName": "Champion",
@@ -2251,6 +2398,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"subclassShortName": "Champion",
@@ -2266,6 +2414,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"subclassShortName": "Champion",
@@ -2281,6 +2430,7 @@
 			"source": "PHB",
 			"page": 72,
 			"srd": true,
+			"basicRules": true,
 			"className": "Fighter",
 			"classSource": "PHB",
 			"subclassShortName": "Champion",
@@ -2644,11 +2794,11 @@
 					"entries": [
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "Psi-Powered Leap.|Fighter|TCE|Psi Warrior|TCE|7"
+							"subclassFeature": "Psi-Powered Leap|Fighter|TCE|Psi Warrior|TCE|7"
 						},
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "Telekinetic Thrust.|Fighter|TCE|Psi Warrior|TCE|7"
+							"subclassFeature": "Telekinetic Thrust|Fighter|TCE|Psi Warrior|TCE|7"
 						}
 					]
 				}
@@ -3044,17 +3194,17 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Protective Field.",
+							"name": "Protective Field",
 							"entry": "When you or another creature you can see within 30 feet of you takes damage, you can use your reaction to roll your Psionic Talent die and reduce the damage taken by the number rolled plus your Intelligence modifier (minimum reduction of 1), as you create a momentary shield of telekinetic force."
 						},
 						{
 							"type": "item",
-							"name": "Psi-Powered Leap.",
+							"name": "Psi-Powered Leap",
 							"entry": "When you make a high or long jump, you can roll your Psionic Talent die and extend the distance of the jump, up to a number of feet equal to twice the number rolled plus twice your Intelligence modifier (minimum of 1 extra foot). This extra distance costs you only 1 foot of movement."
 						},
 						{
 							"type": "item",
-							"name": "Telekinetic Strike.",
+							"name": "Telekinetic Strike",
 							"entry": "You can propel your attacks with telekinetic force. Once on each of your turns, immediately after you deal damage to a target within 30 feet of you with a weapon attack, you can roll your Psionic Talent die and also deal force damage to the target equal to the number rolled."
 						}
 					]
@@ -3080,12 +3230,12 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Psionic Thrust.",
+							"name": "Psionic Thrust",
 							"entry": "When you deal damage to a target with the Telekinetic Strike of your Psionic Talent, you can force the target to make a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Intelligence modifier. Unless the save succeeds, you can knock the target {@condition prone} or move it up to 10 feet in any direction horizontally."
 						},
 						{
 							"type": "item",
-							"name": "Telekinetic Movement.",
+							"name": "Telekinetic Movement",
 							"entry": "If your Psionic Talent die is available, you can move an object or a creature with your mind. As an action, you target one loose object that is Large or smaller or one willing creature, other than yourself. If you can see the target and it is within 30 feet of you, you can move it up to 30 feet to an unoccupied space you can see. Alternatively, if it is a Tiny object, you can move it to or from your hand. Either way, you can move the target horizontally, vertically, or both. When you take this action, your Psionic Talent die decreases by one die size."
 						}
 					]
@@ -4615,7 +4765,7 @@
 			"entries": [
 				"The maneuvers are presented in alphabetical order.",
 				{
-					"type": "options",
+					"type": "entries",
 					"entries": [
 						{
 							"type": "refOptionalfeature",
@@ -5479,6 +5629,9 @@
 			"subclassShortName": "Psi Warrior",
 			"subclassSource": "TCE",
 			"level": 3,
+			"consumes": {
+				"name": "Psionic Energy Dice"
+			},
 			"entries": [
 				"When you or another creature you can see within 30 feet of you takes damage, you can use your reaction to expend one Psionic Energy die, roll the die, and reduce the damage taken by the number rolled plus your Intelligence modifier (minimum reduction of 1), as you create a momentary shield of telekinetic force."
 			]
@@ -5492,6 +5645,9 @@
 			"subclassShortName": "Psi Warrior",
 			"subclassSource": "TCE",
 			"level": 3,
+			"consumes": {
+				"name": "Psionic Energy Dice"
+			},
 			"entries": [
 				"You can propel your weapons with psionic force. Once on each of your turns, immediately after you hit a target within 30 feet of you with an attack and deal damage to it with a weapon, you can expend one Psionic Energy die, rolling it and dealing force damage to the target equal to the number rolled plus your Intelligence modifier."
 			]
@@ -5510,7 +5666,7 @@
 			]
 		},
 		{
-			"name": "Psi-Powered Leap.",
+			"name": "Psi-Powered Leap",
 			"source": "TCE",
 			"page": 42,
 			"className": "Fighter",
@@ -5523,7 +5679,7 @@
 			]
 		},
 		{
-			"name": "Telekinetic Thrust.",
+			"name": "Telekinetic Thrust",
 			"source": "TCE",
 			"page": 42,
 			"className": "Fighter",

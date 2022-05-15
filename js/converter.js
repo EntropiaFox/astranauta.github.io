@@ -12,7 +12,7 @@ class BaseConverter extends BaseComponent {
 			case "html": return "HTML";
 			case "md": return "Markdown";
 			case "txt": return "Text";
-			default: throw new Error(`Unimplemented!`)
+			default: throw new Error(`Unimplemented!`);
 		}
 	}
 
@@ -52,8 +52,14 @@ class BaseConverter extends BaseComponent {
 	get canSaveLocal () { return this._canSaveLocal; }
 	get prop () { return this._prop; }
 
+	get source () { return this._hasSource ? this._state.source : null; }
+	set source (val) {
+		if (!this._hasSource) return;
+		this._state.source = val;
+	}
+
 	renderSidebar (parent, $parent) {
-		const $wrpSidebar = $(`<div class="w-100 flex-col"/>`).appendTo($parent);
+		const $wrpSidebar = $(`<div class="w-100 ve-flex-col"/>`).appendTo($parent);
 		const hkShowSidebar = () => $wrpSidebar.toggleClass("hidden", parent.get("converter") !== this._converterId);
 		parent.addHook("converter", hkShowSidebar);
 		hkShowSidebar();
@@ -79,7 +85,7 @@ class BaseConverter extends BaseComponent {
 				});
 		});
 
-		$$`<div class="sidemenu__row flex-vh-center-around">${$btnsSamples}</div>`.appendTo($wrpSidebar);
+		$$`<div class="sidemenu__row ve-flex-vh-center-around">${$btnsSamples}</div>`.appendTo($wrpSidebar);
 
 		ConverterUiUtil.renderSideMenuDivider($wrpSidebar);
 	}
@@ -91,7 +97,7 @@ class BaseConverter extends BaseComponent {
 
 		if (hasModes) {
 			const $selMode = ComponentUiUtil.$getSelEnum(this, "mode", {values: this._modes, html: `<select class="form-control input-sm select-inline"/>`, fnDisplay: it => `Parse as ${BaseConverter._getDisplayMode(it)}`});
-			$$`<div class="sidemenu__row flex-vh-center-around">${$selMode}</div>`.appendTo($wrpSidebar);
+			$$`<div class="sidemenu__row ve-flex-vh-center-around">${$selMode}</div>`.appendTo($wrpSidebar);
 		}
 
 		if (this._titleCaseFields) {
@@ -123,13 +129,13 @@ class BaseConverter extends BaseComponent {
 			SourceUiUtil.render({
 				...options,
 				$parent: $wrpSourceOverlay,
-				cbConfirm: (source) => {
+				cbConfirm: async (source) => {
 					const isNewSource = options.mode !== "edit";
 
-					if (isNewSource) BrewUtil.addSource(source);
-					else BrewUtil.updateSource(source);
+					if (isNewSource) await BrewUtil2.pAddSource(source);
+					else await BrewUtil2.pEditSource(source);
 
-					if (isNewSource) parent.set("availableSources", [...parent.get("availableSources"), source.json]);
+					if (isNewSource) parent.doRefreshAvailableSources();
 					this._state.source = source.json;
 
 					if (modalMeta) modalMeta.doClose();
@@ -148,27 +154,46 @@ class BaseConverter extends BaseComponent {
 		const $selSource = $$`
 			<select class="form-control input-sm"><option value="">(None)</option></select>`
 			.change(() => this._state.source = $selSource.val());
-		const hkSource = () => $selSource.val(this._state.source);
-		hkSource();
-		this._addHookBase("source", hkSource);
+
+		$(`<option/>`, {val: "5e_divider", text: `\u2014`, disabled: true}).appendTo($selSource);
+
+		Object.keys(Parser.SOURCE_JSON_TO_FULL)
+			.forEach(src => $(`<option/>`, {val: src, text: Parser.sourceJsonToFull(src)}).appendTo($selSource));
 
 		const hkAvailSources = () => {
 			const curSources = new Set($selSource.find(`option`).map((i, e) => $(e).val()));
 			curSources.add("");
 			const nxtSources = new Set(parent.get("availableSources"));
 			nxtSources.add("");
+			nxtSources.add("5e_divider");
+			Object.keys(Parser.SOURCE_JSON_TO_FULL).forEach(it => nxtSources.add(it));
+
+			const optionsToAdd = [];
+
 			parent.get("availableSources").forEach(source => {
-				const fullSource = BrewUtil.sourceJsonToSource(source);
 				nxtSources.add(source);
 				if (!curSources.has(source)) {
-					$(`<option/>`, {val: fullSource.json, text: fullSource.full}).appendTo($selSource);
+					optionsToAdd.push(source);
 				}
 			});
+
+			if (optionsToAdd.length) {
+				const $optBrewLast = $selSource.find(`option[disabled]`).prev();
+				optionsToAdd.forEach(source => {
+					const fullSource = BrewUtil2.sourceJsonToSource(source);
+					$(`<option/>`, {val: fullSource.json, text: fullSource.full}).insertAfter($optBrewLast);
+				});
+			}
+
 			const toDelete = CollectionUtil.setDiff(curSources, nxtSources);
 			if (toDelete.size) $selSource.find(`option`).filter((i, e) => toDelete.has($(e).val())).remove();
 		};
 		parent.addHook("availableSources", hkAvailSources);
 		hkAvailSources();
+
+		const hkSource = () => $selSource.val(this._state.source);
+		this._addHookBase("source", hkSource);
+		hkSource();
 
 		$$`<div class="sidemenu__row split-v-center"><div class="sidemenu__row__label">Source</div>${$selSource}</div>`.appendTo($wrpSidebar);
 
@@ -180,7 +205,7 @@ class BaseConverter extends BaseComponent {
 					return;
 				}
 
-				const curSource = BrewUtil.sourceJsonToSource(curSourceJson);
+				const curSource = BrewUtil2.sourceJsonToSource(curSourceJson);
 				if (!curSource) return;
 				rebuildStageSource({mode: "edit", source: MiscUtil.copy(curSource)});
 				modalMeta = UiUtil.getShowModal({
@@ -524,6 +549,74 @@ You’ve learned how to exert your will on your spells to alter how they functio
 `;
 // endregion
 
+class RaceConverter extends BaseConverter {
+	constructor (ui) {
+		super(
+			ui,
+			{
+				converterId: "Race",
+				canSaveLocal: true,
+				modes: ["md"],
+				hasPageNumbers: true,
+				titleCaseFields: ["name"],
+				hasSource: true,
+				prop: "race",
+			},
+		);
+	}
+
+	_renderSidebar (parent, $wrpSidebar) {
+		$wrpSidebar.empty();
+	}
+
+	handleParse (input, cbOutput, cbWarning, isAppend) {
+		const opts = {
+			cbWarning,
+			cbOutput,
+			isAppend,
+			titleCaseFields: this._titleCaseFields,
+			isTitleCase: this._state.isTitleCase,
+			source: this._state.source,
+			page: this._state.page,
+		};
+
+		switch (this._state.mode) {
+			case "md": return RaceParser.doParseMarkdown(input, opts);
+			default: throw new Error(`Unimplemented!`);
+		}
+	}
+
+	_getSample (format) {
+		switch (format) {
+			case "md": return RaceConverter.SAMPLE_MD;
+			default: throw new Error(`Unknown format "${format}"`);
+		}
+	}
+}
+// region sample
+RaceConverter.SAMPLE_MD = `Aasimar
+
+**Creature Type.** You are a humanoid.
+
+**Size**. You are Medium or Small. You choose the size when you select this race.
+
+**Speed**. Your walking speed is 30 feet.
+
+**Celestial Resistance.** You have resistance to necrotic damage and radiant damage.
+
+**Darkvision**. You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray.
+
+**Healing Hands**. As an action, you can touch a creature and roll a number of d4s equal to your proficiency bonus. The creature regains a number of hit points equal to the total rolled. Once you use this trait, you can’t use it again until you finish a long rest.
+
+**Light Bearer**. You know the light cantrip. Charisma is your spellcasting ability for it.
+
+**Celestial Revelation. **When you reach 3rd level, choose one of the revelation options below. Thereafter, you can use a bonus action to unleash the celestial energy within yourself, gaining the benefits of that revelation. Your transformation lasts for 1 minute or until you end it as a bonus action. While you’re transformed, Once you transform using your revelation below, you can’t use it again until you finish a long rest.
+
+* **Necrotic Shroud**. Your eyes briefly become pools of darkness, and ghostly, flightless wings sprout from your back temporarily. Creatures other than your allies within 10 feet of you that can see you must succeed on a Charisma saving throw (DC 8 + your proficiency bonus + your Charisma modifier) or become frightened of you until the end of your next turn. Until the transformation ends, once on each of your turns, you can deal extra necrotic damage to one target when you deal damage to it with an attack or a spell. The extra damage equals your proficiency bonus.
+* **Radiant Consumption**. Searing light temporarily radiates from your eyes and mouth. For the duration, you shed bright light in a 10-foot radius and dim light for an additional 10 feet, and at the end of each of your turns, each creature within 10 feet of you takes radiant damage equal to your proficiency bonus. Until the transformation ends, once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra damage equals your proficiency bonus.
+* **Radiant Soul**. Two luminous, spectral wings sprout from your back temporarily. Until the transformation ends, you have a flying speed equal to your walking speed, and once on each of your turns, you can deal extra radiant damage to one target when you deal damage to it with an attack or a spell. The extra damage equals your proficiency bonus.`;
+// endregion
+
 class TableConverter extends BaseConverter {
 	constructor (ui) {
 		super(
@@ -562,7 +655,7 @@ class TableConverter extends BaseConverter {
 		switch (format) {
 			case "html": return TableConverter.SAMPLE_HTML;
 			case "md": return TableConverter.SAMPLE_MARKDOWN;
-			default: throw new Error(`Unknown format "${format}"`)
+			default: throw new Error(`Unknown format "${format}"`);
 		}
 	}
 }
@@ -635,7 +728,19 @@ class ConverterUi extends BaseComponent {
 		return {
 			...super.getBaseSaveableState(),
 			...Object.values(this._converters).mergeMap(it => ({[it.converterId]: it.getBaseSaveableState()})),
-		}
+		};
+	}
+
+	getPod () {
+		return {
+			...super.getPod(),
+			doRefreshAvailableSources: this._doRefreshAvailableSources.bind(this),
+		};
+	}
+
+	_doRefreshAvailableSources () {
+		this._state.availableSources = BrewUtil2.getSources().sort((a, b) => SortUtil.ascSortLower(a.full, b.full))
+			.map(it => it.json);
 	}
 
 	async pInit () {
@@ -649,8 +754,10 @@ class ConverterUi extends BaseComponent {
 		}
 
 		// forcibly overwrite available sources with fresh data
-		this._state.availableSources = (BrewUtil.homebrewMeta.sources || []).sort((a, b) => SortUtil.ascSortLower(a.full, b.full))
-			.map(it => it.json);
+		this._doRefreshAvailableSources();
+		Object.values(this._converters)
+			.filter(it => it.source && !this._state.availableSources.includes(it.source))
+			.forEach(it => it.source = "");
 
 		// reset this temp flag
 		this._state.hasAppended = false;
@@ -664,7 +771,7 @@ class ConverterUi extends BaseComponent {
 		try {
 			const prevInput = await StorageUtil.pGetForPage(ConverterUi.STORAGE_INPUT);
 			if (prevInput) this._editorIn.setValue(prevInput, -1);
-		} catch (ignored) { setTimeout(() => { throw ignored; }) }
+		} catch (ignored) { setTimeout(() => { throw ignored; }); }
 		this._editorIn.on("change", () => this._saveInputDebounced());
 
 		this._editorOut = ace.edit("converter_output");
@@ -675,29 +782,38 @@ class ConverterUi extends BaseComponent {
 		});
 
 		$(`#editable`).click(() => {
-			if (confirm(`Edits will be overwritten as you parse new statblocks. Enable anyway?`)) this._outReadOnly = false;
+			this._outReadOnly = false;
+			JqueryUtil.doToast({type: "warning", content: "Enabled editing. Note that edits will be overwritten as you parse new statblocks."});
 		});
 
 		const $btnSaveLocal = $(`#save_local`).click(async () => {
 			const output = this._outText;
-			if (output && output.trim()) {
-				try {
-					const prop = this.activeConverter.prop;
-					const entries = JSON.parse(`[${output}]`);
 
-					const invalidSources = entries.map(it => !it.source || !BrewUtil.hasSourceJson(it.source) ? (it.name || it.caption || "(Unnamed)").trim() : false).filter(Boolean);
-					if (invalidSources.length) {
-						JqueryUtil.doToast({
-							content: `One or more entries have missing or unknown sources: ${invalidSources.join(", ")}`,
-							type: "danger",
-						});
-						return;
-					}
+			if (!(output || "").trim()) {
+				return JqueryUtil.doToast({
+					content: "Nothing to save!",
+					type: "warning",
+				});
+			}
 
-					// ignore duplicates
-					const _dupes = {};
-					const dupes = [];
-					const dedupedEntries = entries.map(it => {
+			try {
+				const prop = this.activeConverter.prop;
+				const entries = JSON.parse(`[${output}]`);
+
+				const invalidSources = entries.map(it => !it.source || !BrewUtil2.hasSourceJson(it.source) ? (it.name || it.caption || "(Unnamed)").trim() : false).filter(Boolean);
+				if (invalidSources.length) {
+					JqueryUtil.doToast({
+						content: `One or more entries have missing or unknown sources: ${invalidSources.join(", ")}`,
+						type: "danger",
+					});
+					return;
+				}
+
+				// ignore duplicates
+				const _dupes = {};
+				const dupes = [];
+				const dedupedEntries = entries
+					.map(it => {
 						const lSource = it.source.toLowerCase();
 						const lName = it.name.toLowerCase();
 						_dupes[lSource] = _dupes[lSource] || {};
@@ -708,56 +824,66 @@ class ConverterUi extends BaseComponent {
 							_dupes[lSource][lName] = true;
 							return it;
 						}
-					}).filter(Boolean);
-					if (dupes.length) {
-						JqueryUtil.doToast({
-							type: "warning",
-							content: `Ignored ${dupes.length} duplicate entr${dupes.length === 1 ? "y" : "ies"}`,
-						})
-					}
+					})
+					.filter(Boolean);
 
-					// handle overwrites
-					const overwriteMeta = dedupedEntries.map(it => {
-						const ix = (BrewUtil.homebrew[prop] || []).findIndex(bru => bru.name.toLowerCase() === it.name.toLowerCase() && bru.source.toLowerCase() === it.source.toLowerCase());
-						if (~ix) {
-							return {
-								isOverwrite: true,
-								ix,
-								entry: it,
-							}
-						} else return {entry: it, isOverwrite: false};
-					}).filter(Boolean);
-					const willOverwrite = overwriteMeta.map(it => it.isOverwrite).filter(Boolean);
-					if (willOverwrite.length && !confirm(`This will overwrite ${willOverwrite.length} entr${willOverwrite.length === 1 ? "y" : "ies"}. Are you sure?`)) {
-						return;
-					}
-
-					await Promise.all(overwriteMeta.map(meta => {
-						if (meta.isOverwrite) {
-							return BrewUtil.pUpdateEntryByIx(prop, meta.ix, MiscUtil.copy(meta.entry));
-						} else {
-							return BrewUtil.pAddEntry(prop, MiscUtil.copy(meta.entry));
-						}
-					}));
-
+				if (dupes.length) {
 					JqueryUtil.doToast({
-						type: "success",
-						content: `Saved!`,
+						type: "warning",
+						content: `Ignored ${dupes.length} duplicate entr${dupes.length === 1 ? "y" : "ies"}`,
 					});
-
-					Omnisearch.pAddToIndex("monster", overwriteMeta.filter(meta => !meta.isOverwrite).map(meta => meta.entry));
-				} catch (e) {
-					JqueryUtil.doToast({
-						content: `Current output was not valid JSON!`,
-						type: "danger",
-					});
-					setTimeout(() => { throw e });
 				}
-			} else {
+
+				if (!dedupedEntries.length) {
+					return JqueryUtil.doToast({
+						content: "Nothing to save!",
+						type: "warning",
+					});
+				}
+
+				// handle overwrites
+				const brewDoc = await BrewUtil2.pGetOrCreateEditableBrewDoc();
+				const overwriteMeta = dedupedEntries
+					.map(it => {
+						if (!brewDoc?.body?.[prop]) return {entry: it, isOverwrite: false};
+
+						const ix = brewDoc.body[prop].findIndex(bru => bru.name.toLowerCase() === it.name.toLowerCase() && bru.source.toLowerCase() === it.source.toLowerCase());
+						if (!~ix) return {entry: it, isOverwrite: false};
+
+						return {
+							isOverwrite: true,
+							ix,
+							entry: it,
+						};
+					})
+					.filter(Boolean);
+
+				const willOverwrite = overwriteMeta.map(it => it.isOverwrite).filter(Boolean);
+				if (
+					willOverwrite.length
+					&& !await InputUiUtil.pGetUserBoolean({title: "Overwrite Entries", htmlDescription: `This will overwrite ${willOverwrite.length} entr${willOverwrite.length === 1 ? "y" : "ies"}. Are you sure?`, textYes: "Yes", textNo: "Cancel"})
+				) {
+					return;
+				}
+
+				const cpyBrewDoc = MiscUtil.copy(brewDoc);
+				overwriteMeta.forEach(meta => {
+					if (meta.isOverwrite) return cpyBrewDoc.body[prop][meta.ix] = MiscUtil.copy(meta.entry);
+					(cpyBrewDoc.body[prop] = cpyBrewDoc.body[prop] || []).push(MiscUtil.copy(meta.entry));
+				});
+
+				await BrewUtil2.pSetEditableBrewDoc(cpyBrewDoc);
+
 				JqueryUtil.doToast({
-					content: "Nothing to save!",
+					type: "success",
+					content: `Saved!`,
+				});
+			} catch (e) {
+				JqueryUtil.doToast({
+					content: `Current output was not valid JSON!`,
 					type: "danger",
 				});
+				setTimeout(() => { throw e; });
 			}
 		});
 		const hkConverter = () => {
@@ -791,27 +917,31 @@ class ConverterUi extends BaseComponent {
 
 		/**
 		 * Wrap a function in an error handler which will wipe the error output, and append future errors to it.
-		 * @param toRun
+		 * @param pToRun
 		 */
-		const catchErrors = (toRun) => {
+		const catchErrors = async (pToRun) => {
 			try {
 				$(`#lastWarnings`).hide().html("");
 				$(`#lastError`).hide().html("");
 				this._editorOut.resize();
-				toRun();
+				await pToRun();
 			} catch (x) {
 				const splitStack = x.stack.split("\n");
 				const atPos = splitStack.length > 1 ? splitStack[1].trim() : "(Unknown location)";
 				const message = `[Error] ${x.message} ${atPos}`;
 				$(`#lastError`).show().html(message);
 				this._editorOut.resize();
-				setTimeout(() => { throw x });
+				setTimeout(() => { throw x; });
 			}
 		};
 
 		const doConversion = (isAppend) => {
-			catchErrors(() => {
-				if (isAppend && this._state.hasAppended && !confirm("You're about to overwrite multiple entries. Are you sure?")) return;
+			catchErrors(async () => {
+				if (
+					isAppend
+					&& !this._state.hasAppended
+					&& !await InputUiUtil.pGetUserBoolean({title: "Are you Sure?", htmlDescription: "You're about to overwrite multiple entries. Are you sure?", textYes: "Yes", textNo: "Cancel"})
+				) return;
 
 				const chunks = (this._state.inputSeparator
 					? this.inText.split(this._state.inputSeparator)
@@ -850,6 +980,7 @@ class ConverterUi extends BaseComponent {
 					"Creature",
 					"Feat",
 					"Item",
+					"Race",
 					"Spell",
 					"Table",
 				],
@@ -870,11 +1001,11 @@ class ConverterUi extends BaseComponent {
 		ConverterUiUtil.renderSideMenuDivider($mnu);
 		// endregion
 
-		const $wrpConverters = $(`<div class="w-100 flex-col"/>`).appendTo($mnu);
+		const $wrpConverters = $(`<div class="w-100 ve-flex-col"/>`).appendTo($mnu);
 		Object
 			.keys(this._converters)
 			.sort(SortUtil.ascSortLower)
-			.forEach(k => this._converters[k].renderSidebar(this.getPod(), $wrpConverters))
+			.forEach(k => this._converters[k].renderSidebar(this.getPod(), $wrpConverters));
 	}
 
 	showWarning (text) {
@@ -883,7 +1014,7 @@ class ConverterUi extends BaseComponent {
 	}
 
 	doCleanAndOutput (obj, append) {
-		const asCleanString = CleanUtil.getCleanJson(obj);
+		const asCleanString = CleanUtil.getCleanJson(obj, {isFast: false});
 		if (append) {
 			this._outText = `${asCleanString},\n${this._outText}`;
 			this._state.hasAppended = true;
@@ -898,7 +1029,7 @@ class ConverterUi extends BaseComponent {
 	get _outText () { return this._editorOut.getValue(); }
 	set _outText (text) { this._editorOut.setValue(text, -1); }
 
-	get inText () { return CleanUtil.getCleanString((this._editorIn.getValue() || "").trim(), false); }
+	get inText () { return CleanUtil.getCleanString((this._editorIn.getValue() || "").trim(), {isFast: false}); }
 	set inText (text) { this._editorIn.setValue(text, -1); }
 
 	_getDefaultState () { return MiscUtil.copy(ConverterUi._DEFAULT_STATE); }
@@ -914,23 +1045,27 @@ ConverterUi._DEFAULT_STATE = {
 
 async function doPageInit () {
 	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
-	const [spells, items, legendaryGroups, classes] = await Promise.all([
+	const [spells, items, itemsRaw, legendaryGroups, classes] = await Promise.all([
 		DataUtil.spell.pLoadAll(),
 		Renderer.item.pBuildList(),
+		DataUtil.item.loadRawJSON(),
 		DataUtil.legendaryGroup.pLoadAll(),
 		DataUtil.class.loadJSON(),
-		BrewUtil.pAddBrewData(), // init homebrew
+		BrewUtil2.pGetBrewProcessed(), // init homebrew
 	]);
 	SpellcastingTraitConvert.init(spells);
 	ItemParser.init(items, classes);
 	AcConvert.init(items);
-	TagCondition.init(legendaryGroups, spells);
+	TaggerUtils.init({legendaryGroups, spells});
+	await TagJsons.pInit({spells});
+	RaceTraitTag.init({itemsRaw});
 
 	const ui = new ConverterUi();
 
-	const statblockConverter = new CreatureConverter(ui)
+	const statblockConverter = new CreatureConverter(ui);
 	const itemConverter = new ItemConverter(ui);
 	const featConverter = new FeatConverter(ui);
+	const raceConverter = new RaceConverter(ui);
 	const spellConverter = new SpellConverter(ui);
 	const tableConverter = new TableConverter(ui);
 
@@ -938,6 +1073,7 @@ async function doPageInit () {
 		[statblockConverter.converterId]: statblockConverter,
 		[itemConverter.converterId]: itemConverter,
 		[featConverter.converterId]: featConverter,
+		[raceConverter.converterId]: raceConverter,
 		[spellConverter.converterId]: spellConverter,
 		[tableConverter.converterId]: tableConverter,
 	};

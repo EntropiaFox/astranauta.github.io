@@ -164,22 +164,22 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Ceilings.",
+									"name": "Ceilings",
 									"entry": "The ceiling of the galley's lower deck is 8 feet high."
 								},
 								{
 									"type": "item",
-									"name": "Light.",
+									"name": "Light",
 									"entry": "Hanging lanterns cast bright light throughout the ship."
 								},
 								{
 									"type": "item",
-									"name": "Rigging.",
+									"name": "Rigging",
 									"entry": "Rigging on the ship can be climbed without an ability check."
 								},
 								{
 									"type": "item",
-									"name": "Sails and Oars.",
+									"name": "Sails and Oars",
 									"entry": "The galley has one 120-foot-tall mast with sails to catch the wind and oars on the lower deck for rowing the vessel."
 								}
 							]
@@ -212,42 +212,42 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Ballistas.",
+											"name": "Ballistas",
 											"entry": "Four ballistas (DMG, ch. 8) are attached to the fore of the deck. Ten ballista arrows are stacked and secured near each."
 										},
 										{
 											"type": "item",
-											"name": "Mangonels.",
+											"name": "Mangonels",
 											"entry": "Two mangonels (DMG, ch. 8) are attached to the aft of the deck. Ten mangonel stones are stacked and secured near each catapult."
 										},
 										{
 											"type": "item",
-											"name": "Naval Ram.",
+											"name": "Naval Ram",
 											"entry": "The galley's stern features an iron naval ram used for attacking other ships."
 										},
 										{
 											"type": "item",
-											"name": "Opening.",
+											"name": "Opening",
 											"entry": "A 10-foot-wide, 80-foot-long open space in the middle of the deck stretches fore to aft and leads down to the lower deck."
 										},
 										{
 											"type": "item",
-											"name": "Railing.",
+											"name": "Railing",
 											"entry": "A 3-foot-high rail is built around the deck's perimeter, providing half cover for Medium creatures and three-quarters cover for Small creatures behind it."
 										},
 										{
 											"type": "item",
-											"name": "Rowboats.",
+											"name": "Rowboats",
 											"entry": "Eight rowboats are stacked in two groups of four on this deck. Ropes and pulleys can hoist these boats in and out of the water."
 										},
 										{
 											"type": "item",
-											"name": "Timpani.",
+											"name": "Timpani",
 											"entry": "A timpani with two attached mallets sits on the aft of the main deck just before the opening to the lower deck. A crew member plays this instrument while the sailors on the lower deck row, the beat helping to synchronize the rowers' strokes."
 										},
 										{
 											"type": "item",
-											"name": "Wheel.",
+											"name": "Wheel",
 											"entry": "The ship's wheel stands at the aft of the deck."
 										}
 									]
@@ -265,12 +265,12 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Cargo Holds.",
+											"name": "Cargo Holds",
 											"entry": "Cargo holds at the fore and aft of the lower deck hold crates, barrels, and ammunition secured with rope."
 										},
 										{
 											"type": "item",
-											"name": "Oars.",
+											"name": "Oars",
 											"entry": "Thirty-two benches are built into the deck, each with a 20-foot-long oar. When the ship is rowed, crew members sit on these benches to work the oars. Ten spare oars hang on the walls."
 										}
 									]
@@ -305,17 +305,17 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Light. ",
+									"name": "Light",
 									"entry": "A hanging lantern or two casts bright light across the ship."
 								},
 								{
 									"type": "item",
-									"name": "Rigging. ",
+									"name": "Rigging",
 									"entry": "Rigging on the ship can be climbed without an ability check."
 								},
 								{
 									"type": "item",
-									"name": "Sails. ",
+									"name": "Sails",
 									"entry": "The keelboat has one 10-foot-tall mast with sails."
 								}
 							]
@@ -338,17 +338,17 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Ballista.",
+											"name": "Ballista",
 											"entry": "A ballista (DMG, ch. 8) is mounted on the fore of the deck. Ten ballista arrows are stacked and secured nearby."
 										},
 										{
 											"type": "item",
-											"name": "Oars.",
+											"name": "Oars",
 											"entry": "The deck of the ship holds twelve benches and four 15-foot-long oars. When the ship is rowed, crew members sit on these benches to work the oars."
 										},
 										{
 											"type": "item",
-											"name": "Railing.",
+											"name": "Railing",
 											"entry": "The deck has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it."
 										}
 									]
@@ -366,12 +366,12 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Footlockers.",
+											"name": "Footlockers",
 											"entry": "Beneath each bed is a footlocker. The footlockers are iron and have AC 19, 18 hit points, and immunity to poison and psychic damage."
 										},
 										{
 											"type": "item",
-											"name": "Furnishings.",
+											"name": "Furnishings",
 											"entry": "Two beds and a desk with a chair stand at the aft of the cabin."
 										}
 									]
@@ -406,22 +406,22 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Light.",
+									"name": "Light",
 									"entry": "Hanging lanterns cast bright light over the deck."
 								},
 								{
 									"type": "item",
-									"name": "Rigging.",
+									"name": "Rigging",
 									"entry": "Rigging on the ship can be climbed without an ability check."
 								},
 								{
 									"type": "item",
-									"name": "Rudder.",
+									"name": "Rudder",
 									"entry": "The ship is steered by a rudder control on the aft of the deck."
 								},
 								{
 									"type": "item",
-									"name": "Sails.",
+									"name": "Sails",
 									"entry": "The longship has one 20-foot-tall mast with sails that can be used to sail the ship."
 								}
 							]
@@ -452,12 +452,12 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Oars.",
+											"name": "Oars",
 											"entry": "Sixteen benches are built into the deck, each with a 15-foot-long oar. When the ship is rowed, crew members sit on these benches to work the oars. Five spare oars hang on the walls."
 										},
 										{
 											"type": "item",
-											"name": "Railing.",
+											"name": "Railing",
 											"entry": "The deck has a 3-foot-high rail covered in wooden shields around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it."
 										}
 									]
@@ -550,32 +550,32 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Ceilings.",
+									"name": "Ceilings",
 									"entry": "The ceilings in the lower deck, holds, and cabins are 8 feet high with 6-foot-high doorways."
 								},
 								{
 									"type": "item",
-									"name": "Doors.",
+									"name": "Doors",
 									"entry": "The ship's doors are made of wood and have AC 15, 18 hit points, and immunity to poison and psychic damage. A lock can be picked with a successful DC 15 Dexterity check made using thieves' tools, or the door can be forced open with a successful DC 20 Strength (Athletics) check."
 								},
 								{
 									"type": "item",
-									"name": "Footlockers.",
+									"name": "Footlockers",
 									"entry": "Footlockers on the ship are iron and have AC 19, 18 hit points, and immunity to poison and psychic damage."
 								},
 								{
 									"type": "item",
-									"name": "Light.",
+									"name": "Light",
 									"entry": "Hanging lanterns cast bright light throughout the ship."
 								},
 								{
 									"type": "item",
-									"name": "Rigging.",
+									"name": "Rigging",
 									"entry": "Rigging on the ship can be climbed without an ability check."
 								},
 								{
 									"type": "item",
-									"name": "Sails.",
+									"name": "Sails",
 									"entry": "The ship has three 80-foot-tall masts with sails to catch the wind and oars on the lower deck for rowing."
 								}
 							]
@@ -606,22 +606,22 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Mangonel.",
+											"name": "Mangonel",
 											"entry": "Sailing ships have one {@object mangonel} (DMG, ch. 8) attached to the deck.  Each weapon has 10 mangonel stones stacked and secured near it."
 										},
 										{
 											"type": "item",
-											"name": "Hatch.",
+											"name": "Hatch",
 											"entry": "A covered, 10-foot-square opening leads to the lower deck (area W8)."
 										},
 										{
 											"type": "item",
-											"name": "Railing.",
+											"name": "Railing",
 											"entry": "The main deck has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it."
 										},
 										{
 											"type": "item",
-											"name": "Rowboats.",
+											"name": "Rowboats",
 											"entry": "Four {@vehicle rowboat||rowboats} are stacked on top of each other on this deck. Ropes and pulleys can hoist these boats in and out of the water."
 										}
 									]
@@ -667,12 +667,12 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Ballista.",
+											"name": "Ballista",
 											"entry": "A {@object ballista} (DMG, ch. 8) is attached to the deck. Ten ballista arrows are stacked and secured nearby."
 										},
 										{
 											"type": "item",
-											"name": "Railing.",
+											"name": "Railing",
 											"entry": "The forecastle has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it."
 										}
 									]
@@ -690,12 +690,12 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Railing.",
+											"name": "Railing",
 											"entry": "The quarterdeck has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it."
 										},
 										{
 											"type": "item",
-											"name": "Wheel.",
+											"name": "Wheel",
 											"entry": "The ship's wheel stands at the aft of the quarterdeck."
 										}
 									]
@@ -824,32 +824,32 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Ceilings.",
+									"name": "Ceilings",
 									"entry": "The ceilings in the lower deck, holds, and cabins are 8 feet high with 6-foot-high doorways."
 								},
 								{
 									"type": "item",
-									"name": "Doors.",
+									"name": "Doors",
 									"entry": "The ship's doors are made of wood and have AC 15, 18 hit points, and immunity to poison and psychic damage. A lock can be picked with a successful DC 15 Dexterity check made using thieves' tools, or the door can be forced open with a successful DC 20 Strength (Athletics) check."
 								},
 								{
 									"type": "item",
-									"name": "Footlockers.",
+									"name": "Footlockers",
 									"entry": "Footlockers on the ship are iron and have AC 19, 18 hit points, and immunity to poison and psychic damage."
 								},
 								{
 									"type": "item",
-									"name": "Light.",
+									"name": "Light",
 									"entry": "Hanging lanterns cast bright light throughout the ship."
 								},
 								{
 									"type": "item",
-									"name": "Rigging.",
+									"name": "Rigging",
 									"entry": "Rigging on the ship can be climbed without an ability check."
 								},
 								{
 									"type": "item",
-									"name": "Sails.",
+									"name": "Sails",
 									"entry": "The ship has three 80-foot-tall masts with sails to catch the wind and oars on the lower deck for rowing."
 								}
 							]
@@ -889,22 +889,22 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Mangonel.",
+											"name": "Mangonel",
 											"entry": "Sailing ships have one {@object mangonel} (DMG, ch. 8) attached to the deck. Warships have two mangonels (DMG, ch. 8). Each weapon has 10 mangonel stones stacked and secured near it."
 										},
 										{
 											"type": "item",
-											"name": "Hatch.",
+											"name": "Hatch",
 											"entry": "A covered, 10-foot-square opening leads to the lower deck (area W8)."
 										},
 										{
 											"type": "item",
-											"name": "Railing.",
+											"name": "Railing",
 											"entry": "The main deck has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it."
 										},
 										{
 											"type": "item",
-											"name": "Rowboats.",
+											"name": "Rowboats",
 											"entry": "Four {@vehicle rowboat||rowboats} are stacked on top of each other on this deck. Ropes and pulleys can hoist these boats in and out of the water."
 										}
 									]
@@ -950,17 +950,17 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Ballista.",
+											"name": "Ballista",
 											"entry": "A {@object ballista} (DMG, ch. 8) is attached to the deck. Ten ballista arrows are stacked and secured nearby."
 										},
 										{
 											"type": "item",
-											"name": "Figurehead.",
+											"name": "Figurehead",
 											"entry": "Warships have an iron figurehead at the front of their forecastle, often shaped to look like a fearsome sea predator. This figurehead serves as the ship's naval ram."
 										},
 										{
 											"type": "item",
-											"name": "Railing.",
+											"name": "Railing",
 											"entry": "The forecastle has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it."
 										}
 									]
@@ -978,17 +978,17 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Ballista.",
+											"name": "Ballista",
 											"entry": "On a warship, a {@object ballista} (DMG, ch. 8) is attached to the deck. Ten ballista arrows are stacked and secured nearby."
 										},
 										{
 											"type": "item",
-											"name": "Railing.",
+											"name": "Railing",
 											"entry": "The quarterdeck has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it."
 										},
 										{
 											"type": "item",
-											"name": "Wheel.",
+											"name": "Wheel",
 											"entry": "The ship's wheel stands at the aft of the quarterdeck."
 										}
 									]

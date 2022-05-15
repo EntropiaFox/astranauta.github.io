@@ -14,6 +14,9 @@ class TablesPage extends ListPage {
 			},
 
 			sublistClass: "subtablesdata",
+			sublistOptions: {
+				sortByInitial: "sortName",
+			},
 
 			dataProps: ["table", "tableGroup"],
 		});
@@ -25,14 +28,14 @@ class TablesPage extends ListPage {
 		const sortName = it.name.replace(/^\s*([\d,.]+)\s*gp/, (...m) => m[1].replace(Parser._numberCleanRegexp, "").padStart(9, "0"));
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(it.source);
 		const hash = UrlUtil.autoEncodeHash(it);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-10 pl-0">${it.name}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil2.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -45,7 +48,6 @@ class TablesPage extends ListPage {
 				source,
 			},
 			{
-				uniqueId: it.uniqueId ? it.uniqueId : tbI,
 				isExcluded,
 			},
 		);
@@ -62,15 +64,15 @@ class TablesPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (it, pinId) {
+	pGetSublistItem (it, ix) {
 		const hash = UrlUtil.autoEncodeHash(it);
 
-		const $ele = $(`<div class="lst__row lst__row--sublist flex-col"><a href="#${hash}" class="lst--border lst__row-inner" title="${it.name}"><span class="bold col-12 px-0">${it.name}</span></a></div>`)
+		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col"><a href="#${hash}" class="lst--border lst__row-inner" title="${it.name}"><span class="bold col-12 px-0">${it.name}</span></a></div>`)
 			.contextmenu(evt => ListUtil.openSubContextMenu(evt, listItem))
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			it.name,
 			{
@@ -84,14 +86,9 @@ class TablesPage extends ListPage {
 		Renderer.get().setFirstSection(true);
 		const it = this._dataList[id];
 
-		$("#pagecontent").empty().append(RenderTables.$getRenderedTable(it));
+		this._$pgContent.empty().append(RenderTables.$getRenderedTable(it));
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 
 	_getSearchCache (entity) {

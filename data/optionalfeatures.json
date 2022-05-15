@@ -60,6 +60,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make a Dexterity ({@skill Stealth}) check or an initiative roll, you can expend one superiority die and add the die to the roll, provided you aren't {@condition incapacitated}."
 			]
@@ -72,6 +75,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make a Dexterity ({@skill Stealth}) check or an initiative roll, you can expend one superiority die and add the die to the roll."
 			]
@@ -118,7 +124,7 @@
 					"type": "list",
 					"items": [
 						"The wearer's walking speed increases by 5 feet.",
-						"The armor includes gauntlets, each of which is a magic melee weapon that can be wielded only when the hand is holding nothing. The wearer is proficient with the gauntlets, and each one deals 1d8 force damage on a hit and has the thrown property, with a normal range of 20 feet and a long range of 60 feet. When thrown, the gauntlet detaches and flies at the attack's target, then immediately returns to the wearer and reattaches.",
+						"The armor includes gauntlets, each of which is a magic melee weapon that can be wielded only when the hand is holding nothing. The wearer is proficient with the gauntlets, and each one deals {@damage 1d8} force damage on a hit and has the thrown property, with a normal range of 20 feet and a long range of 60 feet. When thrown, the gauntlet detaches and flies at the attack's target, then immediately returns to the wearer and reattaches.",
 						"The armor can't be removed against the wearer's will.",
 						"If the wearer is missing any limbs, the armor replaces those limbs\u2014hands, arms, feet, legs, or similar appendages. The replacements function identically to the body parts they replace."
 					]
@@ -330,6 +336,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you're within 5 feet of a creature on your turn, you can expend one superiority die and switch places with that creature, provided you spend at least 5 feet of movement and the creature is willing and isn't {@condition incapacitated}. This movement doesn't provoke opportunity attacks.",
 				"Roll the superiority die. Until the start of your next turn, you or the other creature (your choice) gains a bonus to AC equal to the number rolled."
@@ -343,6 +352,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you're within 5 feet of an ally on your turn, you can expend one superiority die and switch places with that ally, provided you spend at least 5 feet of movement. This movement doesn't provoke opportunity attacks.",
 				"Roll the superiority die. Until the start of your next turn, the ally gains a bonus to AC equal to the number rolled."
@@ -355,6 +367,9 @@
 			"featureType": [
 				"AS:V2-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You use abjuration magic to try to temporarily banish your target to a harmless location in the Feywild. If the arrow hits a creature, the target must also succeed on a Charisma saving throw or be banished. While banished in this way, its speed is 0, and it is {@condition incapacitated}. At the end of its next turn, the target reappears in the space it vacated or in the nearest unoccupied space if that space is occupied.",
 				"After you reach 18th level in this class, a target also takes {@damage 2d6} force damage when the arrow hits it."
@@ -367,6 +382,9 @@
 			"featureType": [
 				"AS"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You use abjuration magic to try to temporarily banish your target to a harmless location in the Feywild. The creature hit by the arrow must also succeed on a Charisma saving throw or be banished. While banished in this way, the target's speed is 0, and it is {@condition incapacitated}. At the end of its next turn, the target reappears in the space it vacated or in the nearest unoccupied space if that space is occupied.",
 				"After you reach 18th level in this class, a target also takes {@damage 2d6} force damage when the arrow hits it."
@@ -400,6 +418,9 @@
 			"featureType": [
 				"AS:V1-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"Your enchantment magic causes this arrow to temporarily beguile its target. Choose one of your allies within 30 feet of the target. If the arrow hits the target, the target can't attack the chosen ally or include that ally in a harmful area of effect until the end of your next turn. The target ignores this effect if it is immune to the {@condition charmed} condition. This effect also ends if the chosen ally deals any damage to the target."
 			]
@@ -411,6 +432,9 @@
 			"featureType": [
 				"AS"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"Your enchantment magic causes this arrow to temporarily beguile its target. The creature hit by the arrow takes an extra {@damage 2d6} psychic damage, and choose one of your allies within 30 feet of the target. The target must succeed on a Wisdom saving throw, or it is {@condition charmed} by the chosen ally until the start of your next turn. This effect ends early if the chosen ally attacks the {@condition charmed} target, deals damage to it, or forces it to make a saving throw.",
 				"The psychic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -480,7 +504,7 @@
 			"additionalSpells": [
 				{
 					"ability": "cha",
-					"innate": {
+					"known": {
 						"_": [
 							{
 								"choose": "level=0|class=cleric",
@@ -505,7 +529,7 @@
 			"additionalSpells": [
 				{
 					"ability": "cha",
-					"innate": {
+					"known": {
 						"_": [
 							{
 								"choose": "level=0|class=cleric",
@@ -528,6 +552,11 @@
 				"FS:F",
 				"FS:P",
 				"FS:R"
+			],
+			"senses": [
+				{
+					"blindsight": 10
+				}
 			],
 			"entries": [
 				"You have {@sense blindsight} with a range of 10 feet. Within that range, you can effectively see anything that isn't behind total cover, even if you're {@condition blinded} or in darkness. Moreover, you can see an {@condition invisible} creature within that range, unless the creature successfully hides from you."
@@ -688,6 +717,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When a creature you can see moves into the reach you have with the melee weapon you're wielding, you can use your reaction to expend one superiority die and make one attack against the creature, using that weapon. If the attack hits, add the superiority die to the weapon's damage roll."
 			]
@@ -700,6 +732,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When an enemy you can see moves within 5 feet of you, you can use your reaction to expend one superiority die and make one weapon attack against that creature. If the attack hits, add the superiority die to the attack's damage roll."
 			]
@@ -749,6 +784,9 @@
 			"featureType": [
 				"AS:V1-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You weave necromantic magic into your arrow. If a creature is hit by the arrow, any bludgeoning, piercing, or slashing damage dealt by the creature's attacks is halved until the end of your next turn."
 			]
@@ -760,6 +798,9 @@
 			"featureType": [
 				"AS:V2-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You weave necromantic magic into your arrow. If your arrow hits a creature, the target takes an extra {@damage 2d6} necrotic damage and must make a Constitution saving throw. On a failed save, the damage of the target's attacks is halved until the next turn.",
 				"The necrotic damage increases to {@damage 4d6} when you reach 18th level with this class."
@@ -788,6 +829,9 @@
 			"featureType": [
 				"AS:V1-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You imbue your arrow with a blast of force energy drawn from the school of evocation. If you hit a creature with this arrow, each creature within 10 feet of it takes {@damage 2d6} force damage."
 			]
@@ -799,6 +843,9 @@
 			"featureType": [
 				"AS:V2-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You imbue your arrow with a blast of force energy drawn from the school of evocation. If the arrow hits a creature, the target and each creature within 10 feet of it takes {@damage 2d6} force damage.",
 				"The force damage increases to {@damage 4d6} when you reach 18th level with this class."
@@ -811,6 +858,9 @@
 			"featureType": [
 				"AS"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You imbue your arrow with force energy drawn from the school of evocation. The energy detonates after your attack. Immediately after the arrow hits the creature, the target and all other creatures within 10 feet of it take {@damage 2d6} force damage each.",
 				"The force damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -846,6 +896,9 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell."
 			]
@@ -1095,6 +1148,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you take the {@action Attack} action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attack's damage roll."
 			]
@@ -1107,6 +1163,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make a Charisma ({@skill Intimidation}), a Charisma ({@skill Performance}), or a Charisma ({@skill Persuasion}) check, you can expend one superiority die and add the superiority die to the ability check."
 			]
@@ -1118,6 +1177,9 @@
 			"featureType": [
 				"MV:C2-UA"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make a Wisdom ({@skill Animal Handling}) check to influence a creature that you or an ally is riding, you can expend one superiority die, roll it, and add the number rolled to the check. You can do this before or after rolling the {@dice d20}, but before applying the results of the check."
 			]
@@ -1147,6 +1209,9 @@
 			"featureType": [
 				"AS:V1-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You use abjuration magic to weave a charm that disrupts your enemy's magic. A creature hit by this arrow suffers disadvantage on the next attack roll it makes before the end of your next turn."
 			]
@@ -1209,6 +1274,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it's holding. You add the superiority die to the attack's damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet."
 			]
@@ -1232,6 +1300,9 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"When you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell.",
 				"When you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feet."
@@ -1244,6 +1315,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to distract the creature, giving your allies an opening. You add the superiority die to the attack's damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn."
 			]
@@ -1294,7 +1368,7 @@
 			"additionalSpells": [
 				{
 					"ability": "wis",
-					"innate": {
+					"known": {
 						"_": [
 							{
 								"choose": "level=0|class=druid",
@@ -1319,7 +1393,7 @@
 			"additionalSpells": [
 				{
 					"ability": "wis",
-					"innate": {
+					"known": {
 						"_": [
 							{
 								"choose": "level=0|class=druid",
@@ -1532,6 +1606,9 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"When you cast a spell that deals a type of damage from the following list, you can spend 1 sorcery point to change that damage type to one of the other listed types: acid, cold, fire, lightning, thunder."
 			]
@@ -1544,6 +1621,9 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.",
 				"You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell."
@@ -1556,6 +1636,9 @@
 			"featureType": [
 				"AS"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You weave necromantic magic into your arrow. The creature hit by the arrow takes an extra {@damage 2d6} necrotic damage. The target must also succeed on a Constitution saving throw, or the damage dealt by its weapon attacks is halved until the start of your next turn.",
 				"The necrotic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -1738,6 +1821,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until you stop moving."
 			]
@@ -1750,6 +1836,9 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"When you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours."
 			]
@@ -1798,7 +1887,7 @@
 			],
 			"additionalSpells": [
 				{
-					"prepared": {
+					"innate": {
 						"_": [
 							"sending"
 						]
@@ -1832,7 +1921,7 @@
 			],
 			"additionalSpells": [
 				{
-					"prepared": {
+					"innate": {
 						"_": [
 							"sending"
 						]
@@ -1852,6 +1941,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"You can expend one superiority die and use a bonus action on your turn to feint, choosing one creature within 5 feet of you as your target. You have advantage on your next attack roll this turn against that creature. If that attack hits, add the superiority die to the attack's damage roll.",
 				"The advantage is lost if not used on the turn you gain it."
@@ -2253,6 +2345,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to goad the target into attacking you. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn."
 			]
@@ -2303,6 +2398,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"Immediately after you hit a creature with a melee attack on your turn, you can expend one superiority die and then try to grapple the target as a bonus action (see the Player's Handbook for rules on grappling). Add the superiority die to your Strength ({@skill Athletics}) check."
 			]
@@ -2373,6 +2471,9 @@
 			"featureType": [
 				"AS:V1-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"When this arrow strikes its target, conjuration magic creates grasping, thorny brambles that wrap around the target. The target hit by the arrow takes a -10 penalty to speed, and it takes {@damage 2d6} slashing damage if it moves 1 foot or more without teleporting. The target or any creature that can touch it can use its action to try to remove the brambles, which requires a successful DC 10 Strength check. Otherwise, the brambles last for 1 minute."
 			]
@@ -2384,6 +2485,9 @@
 			"featureType": [
 				"AS:V2-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"When this arrow strikes its target, conjuration magic creates grasping, thorny brambles that wrap around the target. If the arrow hits a creature, the target takes an extra {@damage 2d6} poison damage, its speed is reduced by 10 feet, and it takes {@damage 2d6} slashing damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength ({@skill Athletics}) check against your Arcane Shot save DC. Otherwise, the brambles last for 1 minute or until you use this option again.",
 				"The poison and slashing damage both increase to {@damage 4d6} when you reach 18th level in this class."
@@ -2396,6 +2500,9 @@
 			"featureType": [
 				"AS"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"When this arrow strikes its target, conjuration magic creates grasping, poisonous brambles, which wrap around the target. The creature hit by the arrow takes an extra {@damage 2d6} poison damage, its speed is reduced by 10 feet, and it takes {@damage 2d6} slashing damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength ({@skill Athletics}) check against your Arcane Shot save DC. Otherwise, the brambles last for 1 minute or until you use this option again.",
 				"The poison damage and slashing damage both increase to {@damage 4d6} when you reach 18th level in this class."
@@ -2467,6 +2574,10 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points",
+				"amount": 3
+			},
 			"entries": [
 				"When you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell."
 			]
@@ -2569,7 +2680,7 @@
 				"You determine the homunculus's appearance. Some artificers prefer mechanical-looking birds, whereas some like winged vials or miniature, animate cauldrons.",
 				"The homunculus is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the Homunculus Servant stat block, which uses your proficiency bonus (PB) in several places.",
 				"In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the {@action Dodge} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition incapacitated}, the homunculus can take any action of its choice, not just {@action Dodge}.",
-				"The homunculus regains {@dice 2d6} hit points if the {@spell mending} spell is cast on it. If it dies, it vanishes, leaving its heart in its space. If you or the homunculus dies, it vanishes, leaving its heart in its space."
+				"The homunculus regains {@dice 2d6} hit points if the {@spell mending} spell is cast on it. If you or the homunculus dies, it vanishes, leaving its heart in its space."
 			]
 		},
 		{
@@ -2837,6 +2948,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make a melee weapon attack on your turn, you can expend one superiority die to increase your reach for that attack by 5 feet. If you hit, you add the superiority die to the attack's damage roll."
 			]
@@ -2914,6 +3028,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to maneuver one of your comrades into a more advantageous position. You add the superiority die to the attack's damage roll, and you choose a friendly creature who can see or hear you. That creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of your attack."
 			]
@@ -3015,6 +3132,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, it is {@condition frightened} of you until the end of your next turn."
 			]
@@ -3062,6 +3182,9 @@
 			"featureType": [
 				"AS:V2-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"Your enchantment magic causes this arrow to temporarily beguile its target. Choose one of your allies within 30 feet of the target. If the arrow hits a creature, the target takes an extra {@damage 2d6} psychic damage, and it must succeed on a Wisdom saving throw or it can't attack the chosen ally or include that ally in a harmful area of effect until the start of your next turn. This effect ends early if the chosen ally deals any damage to the target.",
 				"The psychic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -3382,7 +3505,7 @@
 			"additionalSpells": [
 				{
 					"ability": "cha",
-					"innate": {
+					"known": {
 						"_": [
 							{
 								"choose": "level=0",
@@ -3403,6 +3526,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When another creature damages you with a melee attack, you can use your reaction and expend one superiority die to reduce the damage by the number you roll on your superiority die + your Dexterity modifier."
 			]
@@ -3420,7 +3546,7 @@
 				}
 			],
 			"entries": [
-				"The Seeker bids you to travel in search of knowledge, and little can prevent you from walking this path. You ignore difficult terrain, have advantage on all checks to escape a grapple, manacles, or rope bindings, and advantage on saving throws against being {@condition paralyzed}."
+				"The Seeker bids you to travel in search of knowledge, and little can prevent you from walking this path. You ignore {@quickref difficult terrain||3}, have advantage on all checks to escape a grapple, manacles, or rope bindings, and advantage on saving throws against being {@condition paralyzed}."
 			]
 		},
 		{
@@ -3430,6 +3556,9 @@
 			"featureType": [
 				"AS:V1-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You use transmutation magic to transform your arrow into an ethereal dart that passes through its targets. When you attack with this arrow, it fires forward in a line that is 1 foot wide and 30 feet long. You make a separate attack using your Arcane Arrow against each creature in that line."
 			]
@@ -3441,6 +3570,9 @@
 			"featureType": [
 				"AS:V2-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You use transmutation magic to transform your arrow into an ethereal dart that passes through its targets. You use transmutation magic to give your arrow an ethereal quality. When you use this option, you don't make an attack roll for the attack. Instead, the arrow fires forward in a line that is 1 foot wide and 30 feet long, before disappearing. The arrow passes harmlessly through objects, ignoring cover. Each creature in that line must make a Dexterity saving throw. On a failed save, a target takes damage as if it were hit by the arrow, plus an extra {@damage 1d6} piercing damage. On a successful save, a target takes half as much damage.",
 				"The piercing damage increases to {@damage 2d6} when you reach 18th level in this class."
@@ -3453,6 +3585,9 @@
 			"featureType": [
 				"AS"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You use transmutation magic to give your arrow an ethereal quality. When you use this option, you don't make an attack roll for the attack. Instead, the arrow shoots forward in a line, which is 1 foot wide and 30 feet long, before disappearing. The arrow passes harmlessly through objects, ignoring cover. Each creature in that line must make a Dexterity saving throw. On a failed save, a creature takes damage as if it were hit by the arrow, plus an extra {@damage 1d6} piercing damage. On a successful save, a target takes half as much damage.",
 				"The piercing damage increases to {@damage 2d6} when you reach 18th level in this class."
@@ -3465,6 +3600,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make a weapon attack roll against a creature, you can expend one superiority die to add it to the roll. You can use this maneuver before or after making the attack roll, but before any effects of the attack are applied."
 			]
@@ -3476,6 +3614,9 @@
 			"featureType": [
 				"MV:C2-UA"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make a weapon attack against a creature, you can expend one superiority die, roll it, and add it to the attack roll. You can use this ability before or after rolling the {@dice d20}, but before any of the effects of the attack are applied."
 			]
@@ -3563,6 +3704,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to drive the target back. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 15 feet away from you."
 			]
@@ -3575,6 +3719,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"As a bonus action, you can expend one superiority die and make a ranged attack with a weapon that has the thrown property. You can draw the weapon as part of making this attack. If you hit, add the superiority die to the weapon's damage roll."
 			]
@@ -3587,6 +3734,10 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points",
+				"amount": 2
+			},
 			"entries": [
 				"When you cast a spell that has a casting time of 1 action, you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting."
 			]
@@ -3654,6 +3805,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Charisma modifier."
 			]
@@ -3804,7 +3958,7 @@
 			],
 			"entries": [
 				"This magic weapon grants a +1 bonus to attack and damage rolls made with it when it's used to make a ranged attack, and it ignores the loading property if it has it.",
-				"If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target."
+				"If the weapon lacks ammunition, it produces its own, automatically creating one piece of magic ammunition when the wielder makes a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target."
 			]
 		},
 		{
@@ -4494,6 +4648,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"Immediately after you hit a creature with a melee weapon attack on your turn, you can expend one superiority die and use a bonus action to grapple the target (see chapter 9 in the Player's Handbook for rules on grappling). Add the superiority die to your Strength ({@skill Athletics}) check. The target is also {@condition restrained} while {@condition grappled} in this way."
 			]
@@ -4585,6 +4742,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When a creature misses you with a melee attack, you can use your reaction and expend one superiority die to make a melee weapon attack against the creature. If you hit, you add the superiority die to the attack's damage roll."
 			]
@@ -4740,6 +4900,9 @@
 			"featureType": [
 				"AS:V1-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"Using divination magic, you grant your arrow the ability to seek out your target, allowing the arrow to curve and twist its path in search of its prey. As an action, choose one creature you have seen in the past minute, and make a ranged attack against it, using the Arcane Arrow. The arrow flies around corners if necessary, and this attack ignores three-quarters cover, half cover, and disadvantage caused by the target being out of sight or being at long range. The attack automatically misses if the target is out of the weapon's range or if there is no path large enough for the arrow to travel to the target. If the arrow hits its target, you know it, but you don't learn the target's location unless it's within your line of sight."
 			]
@@ -4751,6 +4914,9 @@
 			"featureType": [
 				"AS:V2-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"Using divination magic, you grant your arrow the ability to seek out your target, allowing the arrow to curve and twist its path in search of its prey. When you use this option, you don't make an attack roll for the attack. Instead, choose one creature you have seen in the past minute. The arrow flies toward that creature, moving around corners if necessary and ignoring three-quarters cover and half cover. If the target is within the weapon's range and there is a path large enough for the arrow to travel to the target, the target must make a Dexterity saving throw. On a failed save, it takes damage as if it were hit by the arrow, plus an extra {@damage 1d6} force damage, and you learn the target's current location. On a successful save, the target takes half as much damage, and you don't learn its location.",
 				"The force damage increases to {@damage 2d6} when you reach 18th level in this class."
@@ -4763,6 +4929,9 @@
 			"featureType": [
 				"AS"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"Using divination magic, you grant your arrow the ability to seek out a target. When you use this option, you don't make an attack roll for the attack. Instead, choose one creature you have seen in the past minute. The arrow flies toward that creature, moving around corners if necessary and ignoring three-quarters cover and half cover. If the target is within the weapon's range and there is a path large enough for the arrow to travel to the target, the target must make a Dexterity saving throw. Otherwise, the arrow disappears after traveling as far as it can. On a failed save, the target takes damage as if it were hit by the arrow, plus an extra {@damage 1d6} force damage, and you learn the target's current location. On a successful save, the target takes half as much damage, and you don't learn its location.",
 				"The force damage increases to {@damage 2d6} when you reach 18th level in this class."
@@ -4776,6 +4945,10 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points",
+				"amount": 2
+			},
 			"entries": [
 				"If you make an attack roll for a spell and miss, you can spend 2 sorcery points to reroll the {@dice d20}, and you must use the new roll.",
 				"You can use Seeking Spell even if you have already used a different Metamagic option during the casting of the spell."
@@ -4789,6 +4962,9 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"When you cast a spell that requires you to make a spell attack roll or that forces a target to make a Dexterity saving throw, you can spend 1 sorcery point to ignore the effects of half- and three-quarters cover against targets of the spell."
 			]
@@ -4800,6 +4976,9 @@
 			"featureType": [
 				"AS:V1-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You weave illusion magic into your arrow, causing it to occlude your foe's vision with grasping shadows. Until the end of your next turn, the target hit by the arrow can't see more than 30 feet away."
 			]
@@ -4811,6 +4990,9 @@
 			"featureType": [
 				"AS:V2-UA"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You weave illusion magic into your arrow, causing it to occlude your foe's vision with grasping shadows. If the arrow hits a creature, the target takes an extra {@damage 2d6} psychic damage, and it must succeed on a Wisdom saving throw or be unable to see anything farther than 5 feet away until the start of your next turn.",
 				"The psychic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -4823,6 +5005,9 @@
 			"featureType": [
 				"AS"
 			],
+			"consumes": {
+				"name": "Arcane Shot"
+			},
 			"entries": [
 				"You weave illusion magic into your arrow, causing it to occlude your foe's vision with shadows. The creature hit by the arrow takes an extra {@damage 2d6} psychic damage, and it must succeed on a Wisdom saving throw or be unable to see anything farther than 5 feet away until the start of your next turn.",
 				"The psychic damage increases to {@damage 4d6} when you reach 18th level in this class."
@@ -4968,6 +5153,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make a Charisma ({@skill Deception}) check or a Charisma ({@skill Persuasion}) check, you can expend one superiority die, and add the superiority die to the ability check."
 			]
@@ -5003,6 +5191,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"As a bonus action, you can expend one superiority die and make a ranged weapon attack. You can draw a thrown weapon as part of making this attack. If you hit, add the superiority die to the attack's damage roll."
 			]
@@ -5062,6 +5253,11 @@
 			"featureType": [
 				"RN"
 			],
+			"senses": [
+				{
+					"darkvision": 60
+				}
+			],
 			"entries": [
 				"This rune's magic channels the insightfulness of a stone giant. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom ({@skill Insight}) checks, and you have {@sense darkvision} out to a range of 60 feet. If you already have {@sense darkvision}, its range increases by 30 feet.",
 				"In addition, when a creature you can see ends its turn within 30 feet of you, you can use your reaction to invoke the rune and force the creature to make a Wisdom saving throw. Unless the save succeeds, the creature is {@condition charmed} by you for 1 minute. While {@condition charmed} in this way, the creature has a speed of 0 and is {@condition incapacitated}, descending into a dreamy stupor. The effect ends if the {@condition charmed} creature takes any damage or if someone else uses an action to shake the creature out of its haze. Once you invoke the rune, you can't do so again until you finish a short or long rest."
@@ -5073,6 +5269,11 @@
 			"page": 45,
 			"featureType": [
 				"RN"
+			],
+			"senses": [
+				{
+					"darkvision": 120
+				}
 			],
 			"entries": [
 				"This rune's magic channels the judiciousness associated with stone giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom ({@skill Insight}) checks, and you have {@sense darkvision} out to a range of 120 feet.",
@@ -5112,6 +5313,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make a Wisdom ({@skill Insight}) check or an Intelligence ({@skill Investigation}) check, you can expend one superiority die, and add the superiority die to the ability check."
 			]
@@ -5124,6 +5328,9 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"When you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components."
 			]
@@ -5158,6 +5365,17 @@
 			"featureType": [
 				"FS:F"
 			],
+			"optionalfeatureProgression": [
+				{
+					"name": "Maneuvers",
+					"featureType": [
+						"MV:B"
+					],
+					"progression": {
+						"*": 1
+					}
+				}
+			],
 			"entries": [
 				"You learn one {@filter maneuver|optionalfeatures|feature type=MV:B} of your choice from among those available to the {@class fighter|phb|Battle Master|Battle Master|phb|2-0} archetype. If a maneuver you use requires your target to make a saving throw to resist the maneuver's effects, the saving throw DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).",
 				"You gain one superiority die, which is a {@dice d6} (this die is added to any superiority dice you have from another source). This die is used to fuel your maneuvers. A superiority die is expended when you use it. You regain your expended superiority dice when you finish a short or long rest."
@@ -5171,8 +5389,19 @@
 			"featureType": [
 				"FS:F"
 			],
+			"optionalfeatureProgression": [
+				{
+					"name": "Maneuvers",
+					"featureType": [
+						"MV:B"
+					],
+					"progression": {
+						"*": 1
+					}
+				}
+			],
 			"entries": [
-				"You learn one {@filter maneuver|optionalfeatures|feature type=MV;MV:B} of your choice from among those available to the Battle Master archetype. If a maneuver you use requires your target to make a saving throw to resist the maneuver's effects, the saving throw DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).",
+				"You learn one {@filter maneuver|optionalfeatures|feature type=MV:B} of your choice from among those available to the Battle Master archetype. If a maneuver you use requires your target to make a saving throw to resist the maneuver's effects, the saving throw DC equals 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice).",
 				"You gain one superiority die, which is a {@dice d6} (this die is added to any superiority dice you have from another source). This die is used to fuel your maneuvers. A superiority die is expended when you use it. You regain your expended superiority dice when you finish a short or long rest."
 			]
 		},
@@ -5183,6 +5412,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you hit a creature with a melee weapon attack, you can expend one superiority die to attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your superiority die. The damage is of the same type dealt by the original attack."
 			]
@@ -5242,6 +5474,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you make an Intelligence ({@skill Investigation}), an Intelligence ({@skill History}), or a Wisdom ({@skill Insight}) check, you can expend one superiority die and add the superiority die to the ability check."
 			]
@@ -5254,7 +5489,7 @@
 				"AF"
 			],
 			"entries": [
-				"As an action, you can reach into your Alchemist's Satchel and pull out a bag filled with writhing, sticky black tar and hurl it at a point on the ground within 30 feet of you (the bag and its contents disappear if you don't hurl the bag by the end of the current turn). The bag bursts on impact and covers the ground in a 5-foot radius with sticky goo. That area becomes difficult terrain for 1 minute, and any creature that starts its turn on the ground in that area has its speed halved for that turn. After using this formula, you can't do so again for 1 minute."
+				"As an action, you can reach into your Alchemist's Satchel and pull out a bag filled with writhing, sticky black tar and hurl it at a point on the ground within 30 feet of you (the bag and its contents disappear if you don't hurl the bag by the end of the current turn). The bag bursts on impact and covers the ground in a 5-foot radius with sticky goo. That area becomes {@quickref difficult terrain||3} for 1 minute, and any creature that starts its turn on the ground in that area has its speed halved for that turn. After using this formula, you can't do so again for 1 minute."
 			]
 		},
 		{
@@ -5418,6 +5653,9 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points"
+			},
 			"entries": [
 				"When you cast a spell that deals a type of damage from the following list, you can spend 1 sorcery point to change that damage type to one of the other listed types: acid, cold, fire, lightning, poison, thunder."
 			]
@@ -5501,6 +5739,9 @@
 			"featureType": [
 				"MV:B"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target {@condition prone}."
 			]
@@ -5512,6 +5753,9 @@
 			"featureType": [
 				"MV:C2-UA"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. Roll the die, and add it to the attack's damage roll. If the target is Large or smaller, it must also succeed on a Strength saving throw (DC 8 + your proficiency bonus + your Strength modifier) or be knocked {@condition prone}."
 			]
@@ -5537,6 +5781,10 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points",
+				"amount": 1
+			},
 			"entries": [
 				"When you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).",
 				"To be eligible, a spell must be incapable of targeting more than one creature at the spell's current level. For example, {@spell magic missile} and {@spell scorching ray} aren't eligible, but {@spell ray of frost} and {@spell chromatic orb} are."
@@ -5678,6 +5926,10 @@
 			"featureType": [
 				"MM"
 			],
+			"consumes": {
+				"name": "Sorcery Points",
+				"amount": 2
+			},
 			"entries": [
 				"If you make an attack roll for a spell and miss, you can spend 2 sorcery points to reroll the attack roll. You must use the result of the second roll.",
 				"You can use Unerring Spell even if you have already used a different Metamagic option during the casting of the spell."
@@ -5750,6 +6002,9 @@
 			"featureType": [
 				"MV:C2-UA"
 			],
+			"consumes": {
+				"name": "Superiority Dice"
+			},
 			"entries": [
 				"If you or a creature within 5 feet of you is hit by an attack, you can expend one superiority die as a reaction if you're wielding a weapon or a shield. Roll the die, and add the number rolled to the target's AC against that attack. If the attack still hits, the target has resistance against the attack's damage."
 			]

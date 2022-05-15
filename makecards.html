@@ -46,7 +46,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -81,7 +84,7 @@
 		</div>
 	</header>
 
-	<nav class="container page__nav" id="navigation"><ul class="nav page__nav-inner" id="navbar"></ul></nav>
+	<nav class="container page__nav" id="navigation"><ul class="nav nav-pills page__nav-inner" id="navbar"></ul></nav>
 
 	<div class="container view-col-wrapper mt-2">
 		<div class="view-col overflow-y-auto" style="flex: 3;">
@@ -92,7 +95,7 @@
 			<div id="wrp_config"></div>
 		</div>
 
-		<div id="wrp_main" class="view-col flex-col" style="flex: 7;"></div>
+		<div id="wrp_main" class="view-col ve-flex-col" style="flex: 7;"></div>
 	</div>
 </div>
 
@@ -110,12 +113,14 @@
 <script type="text/javascript" src="js/scalecreature.js"></script>
 <script type="text/javascript" src="js/hist.js"></script>
 <script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/filter-bestiary.js"></script>
 <script type="text/javascript" src="js/filter-items.js"></script>
 <script type="text/javascript" src="js/filter-spells.js"></script>
 <script type="text/javascript" src="js/filter-races.js"></script>
 <script type="text/javascript" src="js/filter-backgrounds.js"></script>
 <script type="text/javascript" src="js/filter-feats.js"></script>
+<script type="text/javascript" src="js/filter-optionalfeatures.js"></script>
 <script type="text/javascript" src="js/makecards.js"></script>
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script type="text/javascript" src="js/list2.js"></script>

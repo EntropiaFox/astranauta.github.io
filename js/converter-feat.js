@@ -23,7 +23,7 @@ class FeatParser extends BaseParser {
 		options = this._getValidOptions(options);
 
 		if (!inText || !inText.trim()) return options.cbWarning("No input!");
-		const toConvert = this._getCleanInput(inText)
+		const toConvert = this._getCleanInput(inText, options)
 			.split("\n")
 			.filter(it => it && it.trim());
 		const feat = {};
@@ -78,7 +78,7 @@ class FeatParser extends BaseParser {
 		TagCondition.tryTagConditions(feat);
 		ArtifactPropertiesTag.tryRun(feat);
 		if (feat.entries) {
-			feat.entries = feat.entries.map(it => DiceConvert.getTaggedEntry(it))
+			feat.entries = feat.entries.map(it => DiceConvert.getTaggedEntry(it));
 			EntryConvert.tryRun(feat, "entries");
 			feat.entries = SkillTag.tryRun(feat.entries);
 			feat.entries = ActionTag.tryRun(feat.entries);
@@ -99,16 +99,43 @@ class FeatParser extends BaseParser {
 
 			const joinedStack = tkStack.join(" ").trim();
 
-			if (/^spellcasting$/i.test(joinedStack)) {
-				if (!pres.some(it => it.spellcasting2020)) pres.push({spellcasting2020: true});
-			} else if (/^pact magic feature$/i.test(joinedStack)) {
-				if (!pres.some(it => it.spellcasting2020)) pres.push({spellcasting2020: true});
-			} else if (/proficiency with a martial weapon/i.test(joinedStack)) {
-				pres.push({proficiency: [{weapon: "martial"}]});
-			} else {
-				pres.push({other: joinedStack});
-				options.cbWarning(`(${feat.name}) Prerequisite "${joinedStack}" requires manual conversion`)
-			}
+			const parts = joinedStack.split(StrUtil.COMMA_SPACE_NOT_IN_PARENTHESES_REGEX);
+
+			const pre = {};
+
+			parts.forEach(pt => {
+				pt = pt.trim();
+
+				if (/^spellcasting$/i.test(pt)) return pre.spellcasting2020 = true;
+
+				if (/^pact magic feature$/i.test(pt)) return pre.spellcasting2020 = true;
+
+				if (/proficiency with a martial weapon/i.test(pt)) {
+					pre.proficiency = pre.proficiency || [{}];
+					pre.proficiency[0].weapon = "martial";
+					return;
+				}
+
+				const mLevel = /^(?<level>\d+).. level$/i.exec(pt);
+				if (mLevel) return pre.level = Number(mLevel.groups.level);
+
+				const mFeat = /^(?<feat>.*?) feat$/i.exec(pt);
+				if (mFeat) return pre.feat = mFeat.groups.feat.toLowerCase().trim();
+
+				const mAlignment = /^(?<align>.*?) alignment/i.exec(pt);
+				if (mAlignment) {
+					const {alignment} = AlignmentUtil.tryGetConvertedAlignment(mAlignment.groups.align);
+					if (alignment) {
+						pre.alignment = alignment;
+						return;
+					}
+				}
+
+				pre.other = pt;
+				options.cbWarning(`(${feat.name}) Prerequisite "${pt}" requires manual conversion`);
+			});
+
+			if (Object.keys(pre).length) pres.push(pre);
 
 			tkStack = [];
 		};
@@ -152,7 +179,7 @@ class FeatParser extends BaseParser {
 										amount: 1,
 									},
 								},
-							]
+							];
 						}
 
 						obj.items.shift();
@@ -164,13 +191,13 @@ class FeatParser extends BaseParser {
 									amount: 1,
 								},
 							},
-						]
+						];
 
 						obj.items.shift();
 					}
 				},
 			},
-		)
+		);
 	}
 }
 

@@ -10,7 +10,8 @@
 			"monster": {
 				"MM": "IDRotF",
 				"MTF": "IDRotF",
-				"SKT": "IDRotF"
+				"SKT": "IDRotF",
+				"VRGR": "IDRotF"
 			}
 		}
 	},
@@ -22,7 +23,9 @@
 			"source": "IDRotF",
 			"page": 169,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -135,7 +138,9 @@
 			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 275,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -225,7 +230,7 @@
 				{
 					"name": "Divine Rejuvenation",
 					"entries": [
-						"When Auril drops to 0 hit points, her body turns to slush and melts away. Auril instantly reappears in her second form, in an unoccupied space within 60 feet of where her first form disappeared. Her initiative count doesn't change."
+						"When Auril drops to 0 hit points, her body turns to slush and melts away. Auril instantly reappears in her {@creature Auril (second form)|idrotf|second form}, in an unoccupied space within 60 feet of where her first form disappeared. Her initiative count doesn't change."
 					]
 				},
 				{
@@ -293,7 +298,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -313,12 +317,22 @@
 				"C",
 				"P"
 			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"I",
+				"L",
+				"T"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -328,7 +342,9 @@
 			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 277,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N",
@@ -401,7 +417,7 @@
 				{
 					"name": "Divine Rejuvenation",
 					"entries": [
-						"When Auril drops to 0 hit points, her body collapses into shards of ice, whereupon Auril instantly reappears in her third form, in an unoccupied space within 60 feet of where her second form was destroyed. Her initiative count doesn't change."
+						"When Auril drops to 0 hit points, her body collapses into shards of ice, whereupon Auril instantly reappears in her {@creature Auril (third form)|idrotf|third form}, in an unoccupied space within 60 feet of where her second form was destroyed. Her initiative count doesn't change."
 					]
 				},
 				{
@@ -481,7 +497,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -507,6 +522,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -516,7 +532,9 @@
 			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 278,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N",
@@ -663,7 +681,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -688,6 +705,7 @@
 			"conditionInflict": [
 				"blinded"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -696,7 +714,9 @@
 			"isNpc": true,
 			"source": "IDRotF",
 			"page": 269,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -815,7 +835,7 @@
 				{
 					"name": "Special Equipment",
 					"entries": [
-						"Avarice wields a staff of frost with 10 charges (see \"Actions\" below)."
+						"Avarice wields a {@item staff of frost} with 10 charges (see \"Actions\" below)."
 					]
 				}
 			],
@@ -829,7 +849,7 @@
 				{
 					"name": "Staff of Frost",
 					"entries": [
-						"While holding this staff, Avarice can expend 1 or more of its charges to cast one of the following spells from it (spell save {@dc 14}): cone of cold (5 charges), fog cloud (1 charge), ice storm (4 charges), or wall of ice (4 charges). The staff regains {@dice 1d6 + 4} charges daily at dawn. If its last charge is expended, roll a {@dice d20}; on a 1, the staff turns to water and is destroyed."
+						"While holding this staff, Avarice can expend 1 or more of its charges to cast one of the following spells from it (spell save {@dc 14}): {@spell cone of cold} (5 charges), {@spell fog cloud} (1 charge), {@spell ice storm} (4 charges), or {@spell wall of ice} (4 charges). The staff regains {@dice 1d6 + 4} charges daily at dawn. If its last charge is expended, roll a {@dice d20}; on a 1, the staff turns to water and is destroyed."
 					]
 				}
 			],
@@ -841,7 +861,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -856,6 +875,12 @@
 				"C",
 				"F"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"F",
+				"O"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -865,6 +890,7 @@
 			"conditionInflictSpell": [
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -873,7 +899,9 @@
 			"source": "IDRotF",
 			"page": 82,
 			"_isCopy": true,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"N",
@@ -939,7 +967,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Charge"
 			],
@@ -959,6 +986,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -967,7 +995,9 @@
 			"source": "IDRotF",
 			"page": 107,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1041,7 +1071,7 @@
 				{
 					"name": "Handaxe",
 					"entries": [
-						"{@atk mw,rw} {@hit 2} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}3 ({@damage 1d6 + 0}) piercing damage."
+						"{@atk mw,rw} {@hit 2} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}3 ({@damage 1d6 + 0}) slashing damage."
 					]
 				},
 				{
@@ -1080,7 +1110,9 @@
 			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 306,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1151,7 +1183,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1169,163 +1200,7 @@
 				"RW",
 				"THW"
 			],
-			"hasFluff": true,
-			"hasFluffImages": true
-		},
-		{
-			"name": "Brain in a Jar",
-			"source": "IDRotF",
-			"page": 278,
-			"otherSources": [
-				{
-					"source": "VRGR",
-					"page": 278
-				}
-			],
-			"size": "S",
-			"type": "undead",
-			"alignment": [
-				"A"
-			],
-			"ac": [
-				{
-					"ac": 11,
-					"from": [
-						"natural armor"
-					]
-				}
-			],
-			"hp": {
-				"average": 55,
-				"formula": "10d6 + 20"
-			},
-			"speed": {
-				"walk": 0,
-				"fly": {
-					"number": 10,
-					"condition": "(hover)"
-				},
-				"canHover": true
-			},
-			"str": 1,
-			"dex": 3,
-			"con": 15,
-			"int": 19,
-			"wis": 10,
-			"cha": 15,
-			"save": {
-				"int": "+6",
-				"cha": "+4"
-			},
-			"senses": [
-				"blindsight 120 ft. (blind beyond this radius); see also \"detect sentience\" below"
-			],
-			"passive": 10,
-			"immune": [
-				"poison"
-			],
-			"conditionImmune": [
-				"exhaustion",
-				"paralyzed",
-				"poisoned",
-				"prone"
-			],
-			"languages": [
-				"the languages it knew in life"
-			],
-			"cr": "3",
-			"spellcasting": [
-				{
-					"name": "Innate Spellcasting (Psionics)",
-					"headerEntries": [
-						"The brain's innate spellcasting ability is Intelligence (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It can innately cast the following spells, requiring no components:"
-					],
-					"will": [
-						"{@spell chill touch} (see \"Actions\" below)",
-						"{@spell detect thoughts}",
-						"{@spell mage hand}",
-						"{@spell zone of truth}"
-					],
-					"daily": {
-						"3e": [
-							"{@spell charm person}",
-							"{@spell hold person}"
-						],
-						"1e": [
-							"{@spell compulsion}",
-							"{@spell hold monster}",
-							"{@spell sleep} (3rd-level version)",
-							"{@spell Tasha's hideous laughter}"
-						]
-					},
-					"ability": "int"
-				}
-			],
-			"trait": [
-				{
-					"name": "Detect Sentience",
-					"entries": [
-						"The brain can sense the presence and location of any creature within 300 feet of it that has an Intelligence of 3 or higher, regardless of interposing barriers, unless the creature is protected by a mind blank spell."
-					]
-				},
-				{
-					"name": "Magic Resistance",
-					"entries": [
-						"The brain has advantage on saving throws against spells and other magic effects."
-					]
-				},
-				{
-					"name": "Unusual Nature",
-					"entries": [
-						"The brain doesn't require air, food, drink, or sleep."
-					]
-				}
-			],
-			"action": [
-				{
-					"name": "Chill Touch (Cantrip)",
-					"entries": [
-						"{@atk rs} {@hit 6} to hit, range 120 ft., one creature. {@h}13 ({@damage 3d8}) necrotic damage, and the target can't regain hit points until the start of the brain's next turn. If the target is undead, it also has disadvantage on attack rolls against the brain until the end of the brain's next turn."
-					]
-				},
-				{
-					"name": "Mind Blast {@recharge 5}",
-					"entries": [
-						"The brain magically emits psychic energy in a 60-foot cone. Each creature in that area must succeed on a {@dc 14} Intelligence saving throw or take 17 ({@damage 3d8 + 4}) psychic damage and be {@condition stunned} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
-					]
-				}
-			],
 			"hasToken": true,
-			"traitTags": [
-				"Magic Resistance"
-			],
-			"senseTags": [
-				"B"
-			],
-			"languageTags": [
-				"LF"
-			],
-			"damageTags": [
-				"N",
-				"Y"
-			],
-			"spellcastingTags": [
-				"I",
-				"P"
-			],
-			"miscTags": [
-				"AOE"
-			],
-			"conditionInflict": [
-				"stunned"
-			],
-			"conditionInflictSpell": [
-				"charmed",
-				"incapacitated",
-				"paralyzed",
-				"prone",
-				"unconscious"
-			],
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1333,7 +1208,9 @@
 			"name": "Chardalyn Berserker",
 			"source": "IDRotF",
 			"page": 280,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fiend",
 			"alignment": [
 				"C",
@@ -1402,7 +1279,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Reckless"
 			],
@@ -1425,6 +1301,7 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1432,7 +1309,9 @@
 			"name": "Chardalyn Dragon",
 			"source": "IDRotF",
 			"page": 281,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "construct",
 			"alignment": [
 				"C",
@@ -1560,7 +1439,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Immutable Form",
 				"Magic Resistance",
@@ -1570,6 +1448,7 @@
 				"SD"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"damageTags": [
@@ -1585,6 +1464,7 @@
 			"conditionInflict": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1593,7 +1473,9 @@
 			"source": "IDRotF",
 			"page": 246,
 			"_isCopy": true,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -1649,7 +1531,9 @@
 			"source": "IDRotF",
 			"page": 246,
 			"_isCopy": true,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -1717,7 +1601,9 @@
 			"source": "IDRotF",
 			"page": 246,
 			"_isCopy": true,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -1783,7 +1669,9 @@
 			"source": "IDRotF",
 			"page": 246,
 			"_isCopy": true,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -1826,77 +1714,30 @@
 			"name": "Chimeric Rat",
 			"source": "IDRotF",
 			"page": 246,
-			"_isCopy": true,
-			"size": "T",
-			"type": "beast",
-			"alignment": [
-				"U"
-			],
-			"ac": [
-				10
-			],
-			"hp": {
-				"average": 1,
-				"formula": "1d4 - 1"
-			},
-			"speed": {
-				"walk": 40,
-				"climb": 30
-			},
-			"str": 2,
-			"dex": 11,
-			"con": 9,
-			"int": 2,
-			"wis": 10,
-			"cha": 4,
-			"skill": {
-				"perception": "+3",
-				"stealth": "+4"
-			},
-			"passive": 10,
-			"cr": "0",
-			"trait": [
-				{
-					"name": "Keen Smell",
-					"entries": [
-						"The rat has advantage on Wisdom (Perception) checks that rely on smell."
-					]
-				},
-				{
-					"name": "Chimeric Creation",
-					"entries": [
-						"The rat has gills, iridescent scales, and the ability to breathe air and water."
-					]
+			"_copy": {
+				"name": "Rat",
+				"source": "MM",
+				"_mod": {
+					"trait": {
+						"mode": "appendArr",
+						"items": {
+							"name": "Chimeric Creation",
+							"entries": [
+								"The rat has gills, iridescent scales, and the ability to breathe air and water."
+							]
+						}
+					}
 				}
-			],
-			"action": [
-				{
-					"name": "Bite",
-					"entries": [
-						"{@atk mw} {@hit 0} to hit, reach 5 ft., one target. {@h}1 piercing damage."
-					]
-				}
-			],
-			"traitTags": [
-				"Keen Senses"
-			],
-			"senseTags": [
-				"B",
-				"T"
-			],
-			"damageTags": [
-				"P"
-			],
-			"miscTags": [
-				"MW"
-			]
+			}
 		},
 		{
 			"name": "Chimeric Weasel",
 			"source": "IDRotF",
 			"page": 246,
 			"_isCopy": true,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -1972,7 +1813,9 @@
 			"name": "Coldlight Walker",
 			"source": "IDRotF",
 			"page": 284,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -2059,7 +1902,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2077,6 +1919,7 @@
 			"conditionInflict": [
 				"blinded"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2084,7 +1927,9 @@
 			"name": "Demos Magen",
 			"source": "IDRotF",
 			"page": 300,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -2165,7 +2010,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -2184,6 +2028,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2194,7 +2039,9 @@
 			"source": "IDRotF",
 			"page": 270,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2317,7 +2164,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -2329,12 +2175,23 @@
 				"L",
 				"O"
 			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"F",
+				"L",
+				"O",
+				"P",
+				"S",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2343,7 +2200,9 @@
 			"isNpc": true,
 			"source": "IDRotF",
 			"page": 270,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"L",
@@ -2440,7 +2299,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -2452,12 +2310,19 @@
 				"L",
 				"O"
 			],
+			"damageTagsSpell": [
+				"A",
+				"L",
+				"O",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2489,6 +2354,7 @@
 			"cr": "0",
 			"spellcasting": null,
 			"action": null,
+			"actionTags": [],
 			"spellcastingTags": [],
 			"miscTags": [],
 			"conditionInflict": [],
@@ -2498,7 +2364,9 @@
 			"name": "Fox",
 			"source": "IDRotF",
 			"page": 288,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -2546,7 +2414,6 @@
 				}
 			],
 			"familiar": true,
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -2559,6 +2426,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2566,7 +2434,9 @@
 			"name": "Frost Druid",
 			"source": "IDRotF",
 			"page": 288,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2622,7 +2492,7 @@
 				"survival": "+6"
 			},
 			"senses": [
-				"darkvision 60ft. (beast form only)"
+				"darkvision 60 ft. (beast form only)"
 			],
 			"passive": 16,
 			"resist": [
@@ -2714,12 +2584,12 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
 			"actionTags": [
-				"Multiattack"
+				"Multiattack",
+				"Shapechanger"
 			],
 			"languageTags": [
 				"C",
@@ -2729,6 +2599,11 @@
 				"C",
 				"P",
 				"S"
+			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"R"
 			],
 			"spellcastingTags": [
 				"CD",
@@ -2741,6 +2616,7 @@
 				"charmed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2748,7 +2624,9 @@
 			"name": "Frost Giant Skeleton",
 			"source": "IDRotF",
 			"page": 288,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -2822,7 +2700,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2844,6 +2721,7 @@
 			"conditionInflict": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2851,7 +2729,9 @@
 			"name": "Galvan Magen",
 			"source": "IDRotF",
 			"page": 301,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -2933,7 +2813,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -2949,6 +2828,7 @@
 			"miscTags": [
 				"AOE"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2956,7 +2836,9 @@
 			"name": "Giant Walrus",
 			"source": "IDRotF",
 			"page": 312,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -3011,7 +2893,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -3028,6 +2909,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3035,7 +2917,9 @@
 			"name": "Gnoll Vampire",
 			"source": "IDRotF",
 			"page": 290,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "undead",
 				"tags": [
@@ -3168,7 +3052,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Rampage",
@@ -3198,6 +3081,7 @@
 				"frightened",
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3205,7 +3089,9 @@
 			"name": "Gnome Ceremorph",
 			"source": "IDRotF",
 			"page": 303,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "aberration",
 			"alignment": [
 				"A"
@@ -3308,7 +3194,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -3345,6 +3230,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3352,7 +3238,9 @@
 			"name": "Gnome Squidling",
 			"source": "IDRotF",
 			"page": 303,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "aberration",
 			"alignment": [
 				"U"
@@ -3425,7 +3313,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -3453,6 +3340,11 @@
 				"AOE",
 				"MW"
 			],
+			"conditionInflict": [
+				"grappled",
+				"stunned"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3460,7 +3352,9 @@
 			"name": "Goliath Warrior",
 			"source": "IDRotF",
 			"page": 292,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3547,7 +3441,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3564,6 +3457,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3571,7 +3465,9 @@
 			"name": "Goliath Werebear",
 			"source": "IDRotF",
 			"page": 293,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3700,7 +3596,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Shapechanger"
@@ -3720,6 +3615,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3730,7 +3626,9 @@
 			"source": "IDRotF",
 			"page": 176,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3816,7 +3714,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sunlight Sensitivity"
 			],
@@ -3831,6 +3728,9 @@
 			"damageTags": [
 				"I"
 			],
+			"damageTagsSpell": [
+				"I"
+			],
 			"spellcastingTags": [
 				"I",
 				"P"
@@ -3838,6 +3738,7 @@
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3847,7 +3748,9 @@
 			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 305,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3929,7 +3832,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3948,13 +3850,16 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Hare",
 			"source": "IDRotF",
 			"page": 294,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -4000,7 +3905,9 @@
 			"source": "IDRotF",
 			"page": 244,
 			"_isCopy": true,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -4108,7 +4015,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption",
 				"Immutable Form",
@@ -4132,6 +4038,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4141,7 +4048,9 @@
 			"source": "IDRotF",
 			"page": 215,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4259,7 +4168,9 @@
 			"name": "Hypnos Magen",
 			"source": "IDRotF",
 			"page": 301,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -4326,11 +4237,10 @@
 				{
 					"name": "Suggestion",
 					"entries": [
-						"The magen casts the suggestion spell (save {@dc 12}), requiring no material components. The target must be a creature that the magen can communicate with telepathically. If it succeeds on its saving throw, the target is immune to this magen's suggestion spell for the next 24 hours. The magen's spellcasting ability is Intelligence."
+						"The magen casts the {@spell suggestion} spell (save {@dc 12}), requiring no material components. The target must be a creature that the magen can communicate with telepathically. If it succeeds on its saving throw, the target is immune to this magen's {@spell suggestion} spell for the next 24 hours. The magen's spellcasting ability is Intelligence."
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -4341,6 +4251,7 @@
 			"damageTags": [
 				"Y"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4349,7 +4260,9 @@
 			"source": "IDRotF",
 			"page": 226,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -4410,7 +4323,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance",
 				"Spider Climb"
@@ -4426,13 +4338,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Ice Troll",
 			"source": "IDRotF",
 			"page": 295,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -4513,7 +4428,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Regeneration"
@@ -4535,6 +4449,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4542,7 +4457,9 @@
 			"name": "Icewind Kobold",
 			"source": "IDRotF",
 			"page": 296,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4620,7 +4537,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics",
 				"Sunlight Sensitivity"
@@ -4640,6 +4556,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4647,7 +4564,9 @@
 			"name": "Icewind Kobold Zombie",
 			"source": "IDRotF",
 			"page": 297,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "undead",
 			"alignment": [
 				"N",
@@ -4713,7 +4632,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Undead Fortitude"
 			],
@@ -4731,6 +4649,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4739,7 +4658,9 @@
 			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 307,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4826,7 +4747,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -4847,6 +4767,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4855,7 +4776,9 @@
 			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 305,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4936,7 +4859,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Brute"
 			],
@@ -4956,6 +4878,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4964,7 +4887,9 @@
 			"source": "IDRotF",
 			"page": 42,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5068,7 +4993,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -5082,6 +5006,11 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"R"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
@@ -5094,6 +5023,7 @@
 				"paralyzed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5103,7 +5033,9 @@
 			"source": "IDRotF",
 			"page": 243,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -5149,7 +5081,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -5165,6 +5096,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5173,7 +5105,9 @@
 			"source": "IDRotF",
 			"page": 259,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5290,6 +5224,11 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"R"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
@@ -5308,7 +5247,9 @@
 			"name": "Knucklehead Trout",
 			"source": "IDRotF",
 			"page": 295,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -5357,7 +5298,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Water Breathing"
 			],
@@ -5371,6 +5311,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5378,7 +5319,9 @@
 			"name": "Kobold Vampire Spawn",
 			"source": "IDRotF",
 			"page": 297,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "undead",
 			"alignment": [
 				"N",
@@ -5468,7 +5411,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics",
 				"Regeneration",
@@ -5488,6 +5430,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5495,7 +5438,9 @@
 			"name": "Living Bigby's Hand",
 			"source": "IDRotF",
 			"page": 298,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -5581,7 +5526,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -5595,6 +5539,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5602,7 +5547,9 @@
 			"name": "Living Blade of Disaster",
 			"source": "IDRotF",
 			"page": 299,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "construct",
 			"alignment": [
 				"C",
@@ -5698,7 +5645,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -5708,6 +5654,7 @@
 			"damageTags": [
 				"O"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5715,7 +5662,9 @@
 			"name": "Living Demiplane",
 			"source": "IDRotF",
 			"page": 299,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -5792,13 +5741,13 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
 			"senseTags": [
 				"D"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5807,7 +5756,9 @@
 			"source": "IDRotF",
 			"page": 81,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -5888,7 +5839,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The banshee can move through other creatures and objects as if they were difficult terrain. She takes 5 ({@damage 1d10}) force damage if she ends her turn inside an object."
+						"The banshee can move through other creatures and objects as if they were {@quickref difficult terrain||3}. She takes 5 ({@damage 1d10}) force damage if she ends her turn inside an object."
 					]
 				}
 			],
@@ -5912,7 +5863,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement"
 			],
@@ -5931,6 +5881,7 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5940,7 +5891,9 @@
 			"source": "IDRotF",
 			"page": 215,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6026,6 +5979,10 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"F",
+				"T"
+			],
 			"spellcastingTags": [
 				"CD"
 			],
@@ -6041,7 +5998,9 @@
 			"name": "Mountain Goat",
 			"source": "IDRotF",
 			"page": 304,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -6087,7 +6046,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Charge"
 			],
@@ -6100,6 +6058,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6108,7 +6067,9 @@
 			"isNpc": true,
 			"source": "IDRotF",
 			"page": 272,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"N",
@@ -6219,7 +6180,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The ghost can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"The ghost can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				}
 			],
@@ -6239,17 +6200,16 @@
 				{
 					"name": "Horrifying Visage",
 					"entries": [
-						"Each non-undead creature within 60 feet of the ghost that can see it must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} for 1 minute. If the save fails by 5 or more, the target also ages {@dice 1d4 × 10} years. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the {@condition frightened} condition on itself on a success. If the target's saving throw is successful or the effect ends for it, the target is immune to this ghost's Horrifying Visage for the next 24 hours. The aging effect can be reversed by a greater restoration spell, but only if it is cast within 24 hours."
+						"Each non-undead creature within 60 feet of the ghost that can see it must succeed on a {@dc 14} Wisdom saving throw or be {@condition frightened} for 1 minute. If the save fails by 5 or more, the target also ages {@dice 1d4 × 10} years. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the {@condition frightened} condition on itself on a success. If the target's saving throw is successful or the effect ends for it, the target is immune to this ghost's Horrifying Visage for the next 24 hours. The aging effect can be reversed by a {@spell greater restoration} spell, but only if it is cast within 24 hours."
 					]
 				},
 				{
 					"name": "Possession {@recharge}",
 					"entries": [
-						"One humanoid that the ghost can see within 5 feet of it must succeed on a {@dc 14} Charisma saving throw or be possessed by the ghost; the ghost then disappears, and the target is {@condition incapacitated} and loses control of its body. The ghost now controls the body but doesn't deprive the target of awareness. The ghost can't be targeted by any attack, spell, or other effect, except ones that turn undead, and it retains its alignment, Intelligence, Wisdom, Charisma, and immunity to being {@condition charmed} and {@condition frightened}. It otherwise uses the possessed target's statistics, but doesn't gain access to the target's knowledge, class features, or proficiencies. The possession lasts until the body drops to 0 hit points, the ghost ends it as a bonus action, or the ghost is turned or forced out by an effect like the dispel evil and good spell. When the possession ends, the ghost reappears in an unoccupied space within 5 feet of the body. The target is immune to this ghost's Possession for 24 hours after succeeding on the saving throw or after the possession ends."
+						"One humanoid that the ghost can see within 5 feet of it must succeed on a {@dc 14} Charisma saving throw or be possessed by the ghost; the ghost then disappears, and the target is {@condition incapacitated} and loses control of its body. The ghost now controls the body but doesn't deprive the target of awareness. The ghost can't be targeted by any attack, spell, or other effect, except ones that turn undead, and it retains its alignment, Intelligence, Wisdom, Charisma, and immunity to being {@condition charmed} and {@condition frightened}. It otherwise uses the possessed target's statistics, but doesn't gain access to the target's knowledge, class features, or proficiencies. The possession lasts until the body drops to 0 hit points, the ghost ends it as a bonus action, or the ghost is turned or forced out by an effect like the {@spell dispel evil and good} spell. When the possession ends, the ghost reappears in an unoccupied space within 5 feet of the body. The target is immune to this ghost's Possession for 24 hours after succeeding on the saving throw or after the possession ends."
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement"
 			],
@@ -6266,12 +6226,21 @@
 				"N",
 				"O"
 			],
+			"damageTagsSpell": [
+				"C",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"conditionInflict": [
+				"frightened",
+				"incapacitated"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6281,7 +6250,9 @@
 			"source": "IDRotF",
 			"page": 160,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6377,7 +6348,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DR",
@@ -6387,12 +6357,16 @@
 			"damageTags": [
 				"L"
 			],
+			"damageTagsSpell": [
+				"L"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"conditionInflictSpell": [
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6401,7 +6375,9 @@
 			"source": "IDRotF",
 			"page": 152,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6519,7 +6495,9 @@
 			"source": "IDRotF",
 			"page": 152,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6608,7 +6586,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Brute"
 			],
@@ -6631,6 +6608,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -6638,7 +6616,9 @@
 			"source": "IDRotF",
 			"page": 152,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6718,13 +6698,16 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DU"
 			],
 			"damageTags": [
 				"B"
+			],
+			"damageTagsSpell": [
+				"F",
+				"T"
 			],
 			"spellcastingTags": [
 				"CD"
@@ -6735,6 +6718,7 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -6742,7 +6726,9 @@
 			"source": "IDRotF",
 			"page": 152,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6797,7 +6783,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -6812,6 +6797,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -6835,7 +6821,9 @@
 			"name": "Seal",
 			"source": "IDRotF",
 			"page": 308,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -6884,7 +6872,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath",
 				"Keen Senses"
@@ -6898,6 +6885,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6908,7 +6896,9 @@
 			"source": "IDRotF",
 			"page": 23,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"N",
@@ -6989,7 +6979,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7009,6 +6998,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7016,7 +7006,9 @@
 			"name": "Snow Golem",
 			"source": "IDRotF",
 			"page": 308,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -7112,7 +7104,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption",
 				"Immutable Form"
@@ -7131,6 +7122,7 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7139,7 +7131,9 @@
 			"source": "IDRotF",
 			"page": 309,
 			"_isCopy": true,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -7202,7 +7196,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -7219,6 +7212,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -7227,7 +7221,9 @@
 			"source": "IDRotF",
 			"page": 144,
 			"_isCopy": true,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -7325,7 +7321,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -7340,19 +7335,30 @@
 				"F",
 				"L"
 			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"T"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Sperm Whale",
 			"source": "IDRotF",
 			"page": 309,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -7424,7 +7430,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath",
 				"Keen Senses"
@@ -7445,6 +7450,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7452,7 +7458,9 @@
 			"name": "Spitting Mimic",
 			"source": "IDRotF",
 			"page": 302,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -7555,7 +7563,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance",
 				"Magic Resistance",
@@ -7579,6 +7586,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7587,7 +7595,9 @@
 			"source": "IDRotF",
 			"page": 244,
 			"_isCopy": true,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -7687,7 +7697,9 @@
 			"name": "Tomb Tapper",
 			"source": "IDRotF",
 			"page": 310,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "construct",
 			"alignment": [
 				"L",
@@ -7790,7 +7802,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -7812,6 +7823,7 @@
 				"RCH",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7820,7 +7832,9 @@
 			"source": "IDRotF",
 			"page": 52,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "plant",
 			"alignment": [
 				"U"
@@ -7882,7 +7896,9 @@
 			"isNpc": true,
 			"source": "IDRotF",
 			"page": 273,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -8006,11 +8022,10 @@
 				{
 					"name": "Wand of Magic Missiles",
 					"entries": [
-						"While holding this wand, Vellynne can expend 1 or more of its 7 charges to cast the magic missile spell from it. She can expend 1 charge to cast the 1st-level version of the spell. She can increase the spell slot level by one for each additional charge she expends. The wand regains {@dice 1d6 + 1} expended charges daily at dawn. If the wand's last charge is expended, roll a {@dice d20}; on a 1, the wand crumbles into ashes and is destroyed."
+						"While holding this wand, Vellynne can expend 1 or more of its 7 charges to cast the {@spell magic missile} spell from it. She can expend 1 charge to cast the 1st-level version of the spell. She can increase the spell slot level by one for each additional charge she expends. The wand regains {@dice 1d6 + 1} expended charges daily at dawn. If the wand's last charge is expended, roll a {@dice d20}; on a 1, the wand crumbles into ashes and is destroyed."
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
@@ -8019,6 +8034,10 @@
 				"O"
 			],
 			"damageTags": [
+				"N"
+			],
+			"damageTagsSpell": [
+				"I",
 				"N"
 			],
 			"spellcastingTags": [
@@ -8030,6 +8049,7 @@
 				"poisoned",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8037,7 +8057,9 @@
 			"name": "Verbeeg Longstrider",
 			"source": "IDRotF",
 			"page": 311,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"N"
@@ -8126,7 +8148,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -8153,13 +8174,16 @@
 			"conditionInflictSpell": [
 				"deafened"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Verbeeg Marauder",
 			"source": "IDRotF",
 			"page": 311,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"N",
@@ -8224,7 +8248,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -8240,6 +8263,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8247,7 +8271,9 @@
 			"name": "Walrus",
 			"source": "IDRotF",
 			"page": 312,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -8287,7 +8313,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -8297,6 +8322,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -8305,7 +8331,9 @@
 			"isNamedCreature": true,
 			"source": "IDRotF",
 			"page": 287,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -8395,7 +8423,7 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"Xardorok attacks twice with a weapon or casts eldritch blast twice."
+						"Xardorok attacks twice with a weapon or casts {@spell eldritch blast} twice."
 					]
 				},
 				{
@@ -8431,7 +8459,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sunlight Sensitivity"
 			],
@@ -8450,15 +8477,22 @@
 				"O",
 				"P"
 			],
+			"damageTagsSpell": [
+				"O"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
 			"conditionInflictSpell": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8466,7 +8500,9 @@
 			"name": "Yeti Tyke",
 			"source": "IDRotF",
 			"page": 313,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -8527,7 +8563,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -8545,6 +8580,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8553,7 +8589,9 @@
 			"source": "IDRotF",
 			"page": 163,
 			"_isCopy": true,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -8611,7 +8649,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -8628,6 +8665,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8636,7 +8674,9 @@
 			"source": "IDRotF",
 			"page": 163,
 			"_isCopy": true,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -8694,7 +8734,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -8711,6 +8750,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8719,7 +8759,9 @@
 			"source": "IDRotF",
 			"page": 163,
 			"_isCopy": true,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -8777,7 +8819,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -8794,6 +8835,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

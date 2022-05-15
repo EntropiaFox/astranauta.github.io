@@ -3,6 +3,7 @@
 		{
 			"type": "section",
 			"name": "Adventure Primer",
+			"page": 1,
 			"id": "000",
 			"entries": [
 				"The legendary inventor Kwalish disappeared eons ago... as it turns out, finding a crashed planar ship and studying its technology to fuel his own experiments. Only now, Kwalish's lost research is desperately needed! Will you dare an alternate expedition into the Barrier Peaks to find him?",
@@ -10,6 +11,7 @@
 				{
 					"type": "section",
 					"name": "Background",
+					"page": 1,
 					"id": "001",
 					"entries": [
 						"In centuries long past, a common scholar named Kwalish took an unlikely path to becoming one of the most powerful arcane inventors of all time, after his discovery of strange magic in the Barrier Peaks. His studies of an ancient, crashed planar craft set him on a path that might have seen him rival Ioun and Heward\u2014until his experiments overtook him, and he became lost to the ages. All that's left of his legacy is a single example of his earliest work\u2014the {@item Apparatus of Kwalish} that is the only way most folk now know his name.",
@@ -21,6 +23,7 @@
 						{
 							"type": "inset",
 							"name": "A Note from the D&D Team",
+							"page": 1,
 							"id": "002",
 							"entries": [
 								"In 2017, the D&D team added several projects to the DMs Guild in support of Extra Life (including One Grung Above, The Lost Kenku, and The Tortle Package). The funds raised from the sale of these packages went to this extremely worthy cause\u2014and for 2018, you'll find even more projects made available on the DMs Guild throughout the year. As part of these efforts, it's our privilege to contribute the following adventure to the cause. We wanted to provide as much value for your donation as we could, providing new maps, monsters, and magic items\u2014and of course, the scenario itself, accompanied by a range of notes and options to help cater to your preferred play style. We hope you enjoy Lost Laboratory of Kwalish. And you have our sincere thanks for your support of Extra Life and Children's Miracle Network Hospitals."
@@ -31,6 +34,7 @@
 				{
 					"type": "section",
 					"name": "Adventure Summary",
+					"page": 2,
 					"id": "003",
 					"entries": [
 						"The characters are charged with locating Kwalish's long-lost laboratory and the magical technology that might be found there. As they start their search, they're first directed to an accomplished gnome map merchant named Anaxi Zephries, known as \"the Cartophile.\" Information collected by Anaxi over the years has traced Kwalish's route into the Barrier Peaks\u2014at least up to the point where his expedition was lost, despite its members' formidable knowledge and skill.",
@@ -39,6 +43,7 @@
 						{
 							"type": "inset",
 							"name": "Placing the Adventure",
+							"page": 2,
 							"id": "004",
 							"entries": [
 								"The original Expedition to the Barrier Peaks\u20141980's adventure module S3 for first edition AD&D\u2014placed its titular mountains in Greyhawk, north of the Grand Duchy of Geoff and the Valley of the Mage. Depending on your campaign, you can set this adventure in any similar location: a mysterious mountain range that even dedicated explorers have failed to fully map. In the Forgotten Realms, one possible location for the adventure is Chult, the land explored in Tomb of Annihilation. The mysterious and poorly mapped peninsula contains several suitable mountain ranges, including the Mistcliffs and the Kobold Mountains. Elsewhere in Faerûn, the peaks surrounding Halruaa, a land known for its magical technology, are a good choice. Alternatively, campaigns making use of the {@adventure Waterdeep: Dragon Heist|WDH} adventure might look for a location closer to the city, including the Greypeaks or the Nether Mountains."
@@ -49,6 +54,7 @@
 				{
 					"type": "section",
 					"name": "Running the Adventure",
+					"page": 2,
 					"id": "005",
 					"entries": [
 						"To run this adventure, you need the D&D fifth edition core rulebooks ({@book Player's Handbook|PHB}, {@book Dungeon Master's  Guide|DMG}, and {@book Monster Manual|MM}).",
@@ -64,12 +70,14 @@
 						{
 							"type": "inset",
 							"name": "Adventure Length",
+							"page": 3,
 							"id": "007",
 							"entries": [
 								"This adventure features numerous encounters and challenges that should keep a group entertained for multiple sessions. However, you can easily run a shorter version of the adventure, or even an exciting one-shot, by making the following modifications:",
 								{
 									"type": "entries",
 									"name": "Full Version (Five to Six Sessions)",
+									"page": 3,
 									"id": "008",
 									"entries": [
 										"Run the adventure as written, making use of both the monastery and the ooze-flooded city locations."
@@ -78,6 +86,7 @@
 								{
 									"type": "entries",
 									"name": "Short Version (Two to Three Sessions)",
+									"page": 3,
 									"id": "009",
 									"entries": [
 										" Run the adventure as written, up to the monastery. Then forgo a second laboratory location, instead replacing the final brain in a jar in the treasury (area M10) with Kwalish, and conclude the adventure there"
@@ -86,6 +95,7 @@
 								{
 									"type": "entries",
 									"name": "One-Shot (One Four-Hour Session)",
+									"page": 3,
 									"id": "00a",
 									"entries": [
 										"Give your players an adventure hook, assign them a guide (see \"{@adventure Part 1: Mission to the Barrier Peaks|LLK|1}\"), and start them at {@area C1|032}, overlooking the bone devil's monastery. Then as above, replace the treasury's brain in a jar with Kwalish for an exciting conclusion."
@@ -98,6 +108,7 @@
 				{
 					"type": "section",
 					"name": "Adventure Hooks",
+					"page": 2,
 					"id": "00b",
 					"entries": [
 						"In the course of previous adventures, the characters might have come up against a special magical-mechanical dilemma too challenging to overcome. Perhaps a secret door in a dungeon complex has been built around an iron golem, or an array of dangerous clockwork devices discovered within a city defy any attempts to turn them off. All research into the problem suggests that the inventor Kwalish might have the solution\u2014if only he hadn't gone missing years before.",
@@ -105,6 +116,7 @@
 						{
 							"type": "entries",
 							"name": "Thwarting Annihilation",
+							"page": 2,
 							"id": "00c",
 							"entries": [
 								"If you're playing through or using events from {@adventure Tomb of Annihilation|ToA} in your campaign, the characters might hear rumors that Kwalish's laboratory holds lore that can help deactivate the Soulmonger. If the characters have any hope of surviving the tomb and ending the death curse, they must first make the dangerous journey to the inventor's lost lab.",
@@ -114,6 +126,7 @@
 						{
 							"type": "entries",
 							"name": "Waterdeep Dangers",
+							"page": 3,
 							"id": "00d",
 							"entries": [
 								"A number of hooks can connect to the exploits of characters engaged in a {@adventure Waterdeep: Dragon Heist|WDH} campaign. The famed walking statues of Waterdeep are showing signs of getting ready to power up once more, and not even the Blackstaff can shut them down. Old histories suggest that Kwalish's lore might hold the secrets of doing so, and the characters are sent to seek that lore out before the great magical statues can run amok.",
@@ -124,6 +137,7 @@
 						{
 							"type": "entries",
 							"name": "Ravnica in Peril",
+							"page": 3,
 							"id": "00e",
 							"entries": [
 								"If your campaign is set in the city world of Ravnica, as outlined in {@book Guildmasters' Guide to Ravnica|GGR}, Kwalish might be a chemister from the Izzet League who left the guild to pursue his own work away from Niv-Mizzetr's prying eyes. Centuries later, Izzet researchers have uncovered some of Kwalish's notes. Desperate to locate the chemister's laboratory, the Izzet League reaches out to the characters to accomplish the task."
@@ -132,6 +146,7 @@
 						{
 							"type": "entries",
 							"name": "From One Mad Mage to Another",
+							"page": 3,
 							"id": "00f",
 							"entries": [
 								"If you're running a campaign making use of {@adventure Waterdeep: Dungeon of the Mad Mage|WDMM}, Kwalish's laboratory might contain secrets useful in the exploration of Undermountain. Or you could have some of the dungeon's deadly features be strange mechanical-magical devices reminiscent of Kwalish's work. The secrets to controlling or disabling such devices might be instrumental to a successful foray into the legendary dungeon."
@@ -140,6 +155,7 @@
 						{
 							"type": "entries",
 							"name": "Unnatural Invasion",
+							"page": 3,
 							"id": "010",
 							"entries": [
 								"A massive magical-mechanical golem, an unknown planar vessel, or some other rare threat has appeared in civilized lands. Though local settlements are safe for the moment, the characters are charged with tracking down Kwalish and his laboratory in hopes that the secrets to disabling the imminent threat might be found there."
@@ -148,6 +164,7 @@
 						{
 							"type": "entries",
 							"name": "Planar Retribution",
+							"page": 3,
 							"id": "011",
 							"entries": [
 								"A powerful marut (detailed in {@book Mordenkainen's Tome of Foes|MTF}) hunts one or more of the characters for breaking some cosmic contract. Their only hope of survival is to find Kwalish's laboratory, whose planar magic holds the means of restoring the balance the marut seeks to enforce."
@@ -156,6 +173,7 @@
 						{
 							"type": "entries",
 							"name": "Journey of Discovery",
+							"page": 3,
 							"id": "012",
 							"entries": [
 								"The characters are hired by a gnome sage known as the Cartophile for a mission of exploration, as he seeks to complete a failed expedition to Daoine Gloine undertaken by his ancestors. The characters must find their way to the lost city hidden within the Barrier Peaks, then return with its location.",
@@ -169,12 +187,14 @@
 		{
 			"type": "section",
 			"name": "Part 1: Mission to the Barrier Peaks",
+			"page": 3,
 			"id": "013",
 			"entries": [
 				"No matter what hook brings the characters into the adventure, any research into Kwalish's lost laboratory\u2014or any NPC familiar with the inventor's failed expedition to the Barrier Peaks\u2014establishes that seeking out the gnome known as the Cartophile is a crucial first step for their mission.",
 				{
 					"type": "section",
 					"name": "The Cartophile",
+					"page": 3,
 					"id": "014",
 					"entries": [
 						"Anaxi Zephries is a wealthy gnome merchant and sage. He is well known for his vast collection of maps, which cover the known world, pocket dimensions, routes across the planes, and more. In this role, the Cartophile has served as patron for numerous expeditions of exploration, sending adventurers to all corners of the world\u2014both to draw new maps and to verify the authenticity of others already in his possession.",
@@ -195,6 +215,7 @@
 				{
 					"type": "section",
 					"name": "Hirelings",
+					"page": 4,
 					"id": "015",
 					"entries": [
 						"Any of the following NPCs can join the party as custodians and translators of the materials loaned to the characters by the Cartophile. Each hireling is also charged with chronicling the party's progress along the way, in the hope of finally mapping the route to Daoine Gloine, and has specific value to the party in certain areas of expertise. However, each hireling also has one or more secret agendas that might work against the characters' interests.",
@@ -206,6 +227,7 @@
 								{
 									"type": "entries",
 									"name": "Ctenmiir the Vampire",
+									"page": 4,
 									"id": "017",
 									"entries": [
 										"{@i LE male vampire}",
@@ -223,6 +245,7 @@
 										{
 											"type": "entries",
 											"name": "Value to the Party",
+											"page": 5,
 											"id": "018",
 											"entries": [
 												"Originally native to an area near the Barrier Peaks, Ctenmiir has much experience with the initial route into the mountains, and can provide warnings of early encounters through the fey woods and foothills (see \"{@area Reaching the Peaks|028|x},\" below, and {@adventure appendix A|LLK|4}). The vampire's coffin can also serve as a makeshift {@item Apparatus of Kwalish} at your determination, making it easier for characters to explore Daoine Gloine\u2014though Ctenmiir will need to first be released. The coffin can also be used as protective shelter against adversaries, including a freed Ctenmiir."
@@ -231,6 +254,7 @@
 										{
 											"type": "entries",
 											"name": "Secret Agendas",
+											"page": 5,
 											"id": "019",
 											"entries": [
 												"Get out of the coffin. Feed on at least one character."
@@ -239,6 +263,7 @@
 										{
 											"type": "entries",
 											"name": "Alternative Entry",
+											"page": 5,
 											"id": "01a",
 											"entries": [
 												"If Ctenmiir does not start with the party, he might instead be found in the foothills, in the possession of outlaws seeking the monastery who use the vampire as their guide.",
@@ -250,6 +275,7 @@
 								{
 									"type": "entries",
 									"name": "Garret Levistusson",
+									"page": 5,
 									"id": "01b",
 									"entries": [
 										"{@i CN male tiefling bard/rogue}",
@@ -266,6 +292,7 @@
 										{
 											"type": "entries",
 											"name": "Value to the Party",
+											"page": 5,
 											"id": "01c",
 											"entries": [
 												"Garret can draw the maps requested by the Cartophile. He also knows several rumors (both true and false) regarding the Barrier Peaks, and provides advantage to any characters' ability checks made to interact with the monastery's Grand Master."
@@ -274,6 +301,7 @@
 										{
 											"type": "entries",
 											"name": "Secret Agendas",
+											"page": 5,
 											"id": "01d",
 											"entries": [
 												"Steal the highest-valued object from the party without getting caught; convince as many characters as possible to sit for a sketch; and relay a secret communication to the Grand Master. This message takes the form of a written note from Garret's infernal patron, ordering the Grand Master to return to Stygia in the Nine Hells to complete a service required by Levistus. A forged addendum adds that the bearer of the note should be rewarded handsomely."
@@ -282,6 +310,7 @@
 										{
 											"type": "entries",
 											"name": "Alternative Entry",
+											"page": 5,
 											"id": "01e",
 											"entries": [
 												"Garret can be found as a prisoner in {@area M6|061} of the monastery. If he does start out with the party, he might choose to leave them at the monastery, joining with the Grand Master."
@@ -292,6 +321,7 @@
 								{
 									"type": "entries",
 									"name": "Gearbox",
+									"page": 5,
 									"id": "01f",
 									"entries": [
 										"{@i LN monodrone}",
@@ -308,6 +338,7 @@
 										{
 											"type": "entries",
 											"name": "Value to the Party",
+											"page": 6,
 											"id": "020",
 											"entries": [
 												"Gearbox's unique programming allows the modron to function as an {@item Orb of Direction|XGE} and an {@item Orb of Time|XGE} (see {@book Xanathar's Guide to Everything|XGE}), to cast the {@spell light} cantrip at will, and to grant other characters advantage on Dexterity checks made with thieves' tools and on ability checks made to identify or operate mechanical or laboratory equipment. It can also help override the security of the monastery's control room ({@area M8|06d}) and treasury ({@area area M10|079|x}), and can pilot the skiff first seen in {@area area C3|03b|x}."
@@ -316,6 +347,7 @@
 										{
 											"type": "entries",
 											"name": "Secret Agendas",
+											"page": 6,
 											"id": "021",
 											"entries": [
 												"None as such. Gearbox genuinely wishes to help the characters, but he will be tempted to connect with the monastery control room."
@@ -324,6 +356,7 @@
 										{
 											"type": "entries",
 											"name": "Alternative Entry",
+											"page": 6,
 											"id": "022",
 											"entries": [
 												"Gearbox can appear with Garret whenever the tiefling first appears, or he could be found in the monastery's control room. The modron might choose to remain at the monastery, integrating with its control room to become the site's new integrated mind."
@@ -334,6 +367,7 @@
 								{
 									"type": "entries",
 									"name": "Mary Greymalkin",
+									"page": 6,
 									"id": "023",
 									"entries": [
 										"{@i N female eladrin warlock}",
@@ -352,6 +386,7 @@
 										{
 											"type": "entries",
 											"name": "Value to the Party",
+											"page": 6,
 											"id": "024",
 											"entries": [
 												"Mary's expertise as a diviner can grant advantage on any characters' checks to determine correct passage through the caverns leading to the monastery. Her magical knowledge also provides advantage on interactions with the enhanced sphinx guarding the monastery entrance (see {@area area C2|034|x}) and on any negotiations for ferry passage with the merrenoloth ({@area area C3|03b|x})."
@@ -360,6 +395,7 @@
 										{
 											"type": "entries",
 											"name": "Secret Agendas",
+											"page": 6,
 											"id": "025",
 											"entries": [
 												"Mary's biggest secret is that she is actually her cat familiar, polymorphed from human form, and using magic to create and direct the human simulacrum of \"Mary\" as a helpful decoy. (Readers of {@i Dragon+} might alternatively make Mary one of the intelligent cats of Adam Lee's \"Herding Tahra's Cats\" in issue 12). But of more potential peril to the party is Mary's long-term relationship with Ctenmiir, whom she first met when he would fly out of White Plume Mountain at night to meet with her near Thingizzard's hut. Her goals are to keep the knowledge of her true form and her relationship with Ctenmiir a secret; to free the vampire if she can, without incriminating herself; and to convince characters to draw from her {@i deck of several things}."
@@ -368,6 +404,7 @@
 										{
 											"type": "entries",
 											"name": "Alternative Entry",
+											"page": 6,
 											"id": "026",
 											"entries": [
 												"If Mary does not start the expedition with the party, she might instead be found in the company of the enhanced sphinx ({@area area C2|034|x}), where she offers to guide the characters to the monastery's Grand Master. If she does start with the party, she might choose to remain with the enhanced sphinx, discoursing the secrets of the multiverse with her."
@@ -382,6 +419,7 @@
 				{
 					"type": "section",
 					"name": "Rumors and Legends",
+					"page": 6,
 					"id": "027",
 					"entries": [
 						"Countless legends have arisen regarding the mysterious Barrier Peaks, and those tales circulate constantly among adventurers, explorers, and bards. Rumors specific to Kwalish and his lost expedition are more difficult to come by. But for each day spent talking to knowledgeable travelers, a character can attempt a DC 12 Charisma ({@skill Persuasion}) check. If the check succeeds, roll percentile dice and consult the table below to determine what the character learns. False rumors are in {@i italics}.",
@@ -432,11 +470,11 @@
 								],
 								[
 									"81\u201386",
-									"{@i The way to reach Daoine Gloine isn't through any pass in the peaks. You'll need to access the right combination of controls on the} Machine of Lum the Mad{@i , and only then will a portal to the city open}."
+									"{@i The way to reach Daoine Gloine isn't through any pass in the peaks. You'll need to access the right combination of controls on the} Machine of Lum the Mad, {@i and only then will a portal to the city open}."
 								],
 								[
 									"87\u201395",
-									"Daoine Gloine took its name from the monster kept there by the city's priests. They would sacrifice victims to the medusa Gloine Nathair-Nathair, using the bodies of those poor victims as the city's statuary."
+									"Daoine Gloine took its name from the monster kept there by the city's priests. They would sacrifice victims to the medusa {@creature Gloine Nathair-Nathair|IMR}, using the bodies of those poor victims as the city's statuary."
 								],
 								[
 									"96\u201300",
@@ -449,6 +487,7 @@
 				{
 					"type": "section",
 					"name": "Reaching the Peaks",
+					"page": 7,
 					"id": "028",
 					"entries": [
 						"The Cartophile's maps and notes guide the characters from their starting location into the Barrier Peaks, leading them as far as a series of caverns that Kwalish's original expedition believed would provide a shortcut to Daoine Gloine. From wherever the characters start, it takes a journey of several weeks to reach the foothills of the peaks. You might consider adding a few wilderness encounters along the way, especially within the thick band of woods that surrounds the pass leading up and into the mountains, and which is infused with elements of the Feywild. See {@adventure appendix A|LLK|4}, \"Random Encounters,\" for more information.",
@@ -466,6 +505,7 @@
 				{
 					"type": "section",
 					"name": "Trinkets from the Barrier Peaks",
+					"page": 7,
 					"id": "02a",
 					"entries": [
 						"See the {@item Barrier Peaks Trinket|LLK|items page entry}."
@@ -476,6 +516,7 @@
 		{
 			"type": "section",
 			"name": "Part 2: Monastery of the Distressed Body",
+			"page": 8,
 			"id": "02b",
 			"entries": [
 				"The known route of Kwalish's original expedition ends at the series of tunnels leading into the Barrier Peaks, with no sense of how that long-lost company proceeded. However, recent carvings have been etched into these tunnels in thieves' cant and Infernal, marking the route to the monastery for new recruits. The markings can be spotted with a successful DC 12 Wisdom ({@skill Perception}) check, and list the names of individual outlaws that have passed through. They also make reference to something called \"the Monastery of the Distressed Body\" and its \"Grand Master,\" who supposedly offers shelter and protection to all those who submit to their authority.",
@@ -483,12 +524,14 @@
 				{
 					"type": "inset",
 					"name": "Scaling Options",
+					"page": 11,
 					"id": "02c",
 					"entries": [
 						"This adventure is designed for characters of 5th to 10th level. For lower-level parties, you can adjust the adventure as follows:",
 						{
 							"type": "entries",
 							"name": "Part 1: Mission to the Barrier Peaks",
+							"page": 11,
 							"id": "02d",
 							"entries": [
 								"Make sure the party has at least two of the NPCs with them. Then downplay those NPCs' secret agendas as needed to increase their party loyalty."
@@ -497,6 +540,7 @@
 						{
 							"type": "entries",
 							"name": "Part 2: Monastery of the Distressed Body",
+							"page": 11,
 							"id": "02e",
 							"entries": [
 								"For encounters built around five monks led by an elder monk, use three monks led by an elder monk instead. You can also limit those attending any audience in the central abbey to just the elder monks."
@@ -505,6 +549,7 @@
 						{
 							"type": "entries",
 							"name": "Part 3: The Ooze-Flooded City",
+							"page": 11,
 							"id": "02f",
 							"entries": [
 								"Adjust the ooze-folk so that {@dice 1d4} of those defenders activate only every 20 minutes, and within 50 to 100 feet of the characters."
@@ -513,6 +558,7 @@
 						{
 							"type": "entries",
 							"name": "Appendix D: Magic Items",
+							"page": 11,
 							"id": "030",
 							"entries": [
 								"As a reminder, many items listed in the appendix\u2014even though thematic to the adventure\u2014are not level appropriate. The appendix offers advice for limiting their use."
@@ -523,6 +569,7 @@
 				{
 					"type": "section",
 					"name": "Cliff-Side Approach",
+					"page": 10,
 					"id": "031",
 					"entries": [
 						"Whether following the monks' symbols or finding their own route through the caverns, the characters eventually emerge on a narrow cliff ledge overlooking an impossibly deep bowl-shaped valley within the Barrier Peaks.",
@@ -543,11 +590,13 @@
 							},
 							"title": "(Player Version)",
 							"width": 5000,
-							"height": 6471
+							"height": 6471,
+							"imageType": "mapPlayer"
 						},
 						{
 							"type": "entries",
 							"name": "C1. Cliff Edge",
+							"page": 10,
 							"id": "032",
 							"entries": [
 								{
@@ -565,6 +614,7 @@
 						{
 							"type": "entries",
 							"name": "C2. Enhanced Sphinx",
+							"page": 10,
 							"id": "034",
 							"entries": [
 								"Sitting regally on the metallic dock, this enhanced sphinx protects the approach to the monastery. It intervenes in any attempt to fly or otherwise cross to the floating island, but negotiates for passage if the characters speak to it.",
@@ -591,6 +641,7 @@
 										{
 											"type": "entries",
 											"name": "Creature",
+											"page": 11,
 											"id": "037",
 											"entries": [
 												"Originally wounded in an encounter that nearly destroyed Kwalish's expedition, the enhanced sphinx was subsequently repaired with magical-mechanical parts\u2014and (unknown to it) programmed by Kwalish to serve his needs and guard this location. The sphinx's head is also surrounded by a series of mechanical devices that function as {@item Ioun Stone|LLK|Ioun stones}, which add to its vast knowledge. The enhanced sphinx is a {@creature Gynosphinx}, with these changes:",
@@ -607,6 +658,7 @@
 										{
 											"type": "entries",
 											"name": "The Sphinx's Riddle",
+											"page": 11,
 											"id": "038",
 											"entries": [
 												"Instead of asking a traditional riddle that the characters must solve, the enhanced sphinx demands that they ask a question that it cannot answer. This could be a riddle, a secret, a logical contradiction, or any other question\u2014but the sphinx warns the characters that with all the knowledge it has collected throughout the years, it knows the answer to every question. If it fails to answer, the characters are allowed to cross to the island without paying the toll.",
@@ -617,6 +669,7 @@
 										{
 											"type": "entries",
 											"name": "Dock",
+											"page": 11,
 											"id": "039",
 											"entries": [
 												"Created by Kwalish, this structure is built so that a ferry summoned from the monastery slots into it, allowing characters to easily board. An identical dock juts out from the edge of the flying island."
@@ -625,9 +678,10 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 11,
 											"id": "03a",
 											"entries": [
-												"If the sphinx is defeated in combat, most of its mechanical {@item Ioun Stone|LLK|Ioun stones} shatter, reversing the effects of the sphinx's tolls on all characters. Additionally, two {@item Ioun Stone|LLK|Ioun stones} survive and can be claimed. (If she is with the party, Mary Greymalkin covets these magical-mechanical devices, and turns against the characters if doing so helps her claim them.) Choose these two unique stones from the new examples in {@adventure appendix D|LLK|7}."
+												"If the sphinx is defeated in combat, most of its mechanical {@item Ioun Stone|LLK|Ioun stones} shatter, reversing the effects of the sphinx's tolls on all characters. Additionally, two {@item Ioun Stone|LLK|Ioun stones} survive and can be claimed. (If she is with the party, {@creature Mary Greymalkin|LLK} covets these magical-mechanical devices, and turns against the characters if doing so helps her claim them.) Choose these two unique stones from the new examples in {@adventure appendix D|LLK|7}."
 											]
 										}
 									]
@@ -637,6 +691,7 @@
 						{
 							"type": "entries",
 							"name": "C3. Ferry Service",
+							"page": 11,
 							"id": "03b",
 							"entries": [
 								"The flying ferry is summoned from the monastery's dock at the sphinx's mental command, crossing over to the cliff ledge. The ferry also comes if the sphinx is killed, adhering to the Grand Master's orders that any powerful visitors are to be brought to the devil's attention. Alternatively, the Grand Master might send over a squad of five monks ({@creature Cultist||Cultists}) led by an elder monk ({@creature Cult Fanatic}) to investigate the sphinx's death and assess the characters' potential threat.",
@@ -654,6 +709,7 @@
 						{
 							"type": "entries",
 							"name": "C4. Valley Floor",
+							"page": 12,
 							"id": "03d",
 							"entries": [
 								"If any character is unfortunate enough to fall from the cliff, the other characters quickly lose sight of them in a light mist that covers the valley floor. Any subsequent search for a body comes up empty\u2014because a floating teleportation-field device (see the sidebar) zooms around the bottom of the valley, and automatically teleports the falling character into the prison cells at area M6."
@@ -664,6 +720,7 @@
 				{
 					"type": "section",
 					"name": "The Monastery",
+					"page": 12,
 					"id": "03e",
 					"entries": [
 						"The crashed planar craft still makes up most of the monastery's general structure, having been long ago converted into Kwalish's first laboratory, then converted again into this present sinister site. The overall sense of the place\u2014as evidenced in the alien geometries of its buildings and its exposed technology\u2014should be one of a brooding, otherworldly environ where nothing feels quite right.",
@@ -680,6 +737,7 @@
 										{
 											"type": "entries",
 											"name": "Hooked Polearm",
+											"page": 12,
 											"id": "041",
 											"entries": [
 												"{@i Melee Weapon Attack}: +3 to hit, reach 5 ft., one target. {@i Hit}: 4 ({@dice 1d6 + 1}) piercing damage. If the target is a Medium or smaller creature, it is {@condition grappled} (escape DC 10). Until this grapple ends, the monk cannot use its polearm on another target.",
@@ -689,6 +747,7 @@
 										{
 											"type": "entries",
 											"name": "Force Pike",
+											"page": 12,
 											"id": "042",
 											"entries": [
 												"{@i Melee or Ranged Weapon Attack}: +4 to hit, reach 5 ft. or range 40/100 ft., one creature. {@i Hit}: 7 ({@dice 1d10 + 2}) force damage. The attack has disadvantage against any target with polished metal armor or shield, and has its ranged halved when firing through smoke or fog.",
@@ -696,6 +755,7 @@
 												{
 													"type": "inset",
 													"name": "Teleportation-Field Devices",
+													"page": 12,
 													"id": "043",
 													"entries": [
 														"One of the more impressive bits of technology from the crashed planar craft, teleportation-field devices consist of two matched magical-mechanical rings. Both rings channel the power of teleportation and flight, and were originally used to undertake repairs on the outside of the craft, handle dangerous substances at a distance, and so forth.",
@@ -710,6 +770,7 @@
 								{
 									"type": "entries",
 									"name": "Roleplaying the Monks",
+									"page": 12,
 									"id": "044",
 									"entries": [
 										"The Monastery of the Distressed Body has been secretly drawing in outlaws for decades. As such, you might add to the ranks of the monks with any number of villainous NPCs the players have heard about, or even foes that slipped through their clutches in years past. Sir Bluto Sans Pite from White Plume Mountain in {@adventure Tales from the Yawning Portal|TftYP} is a good candidate, as are Faroul and Gondolo from Port Nyanzaru in {@i Tomb of Annihilation}.",
@@ -720,6 +781,7 @@
 								{
 									"type": "entries",
 									"name": "Prisoners of the Monastery",
+									"page": 12,
 									"id": "045",
 									"entries": [
 										"Some thirty humanoid prisoners ({@creature Commoner||Commoners}) are held in the monastery. All have had their faces flayed to make them barely distinguishable from the monks. Most work in the engine room (area M5) during the day, and are penned together at night in the cells of area M6. A smaller group of more dangerous humanoids has been permanently imprisoned in that same area.",
@@ -733,12 +795,14 @@
 				{
 					"type": "section",
 					"name": "Locations in the Monastery",
+					"page": 13,
 					"id": "046",
 					"entries": [
 						"The following locations are identified on the map on page 9.",
 						{
 							"type": "entries",
 							"name": "M1. Monastery Dock",
+							"page": 13,
 							"id": "047",
 							"entries": [
 								"The merrenoloth's ferry departs from and arrives at this metallic dock. As the characters arrive, an elder monk named Lean Meimbaol greets them.",
@@ -763,6 +827,7 @@
 						{
 							"type": "entries",
 							"name": "M2. Monastery Grounds",
+							"page": 13,
 							"id": "04a",
 							"entries": [
 								"At the surface level of the floating rock island, the monastery is laid out as a large campus composed of sharp-angled buildings. These jut out of the ground like massive metallic crystals, with scraggly gardens set between them and paths winding throughout. Five monks led by an elder can be found here, silently going about the business of gardening, observing prayers, scrubbing flagstones, and other mundane activities.",
@@ -773,6 +838,7 @@
 										{
 											"type": "entries",
 											"name": "Dark Tidings",
+											"page": 13,
 											"id": "04c",
 											"entries": [
 												"With a successful DC 12 Intelligence ({@skill Investigation}) or Wisdom ({@skill Perception}) check made to quietly search or inspect the area, a character learns a number of things regarding the monastery's darker nature. Graffiti scratched into the walls in thieves' cant and Infernal reveals dire sentiments regarding how the doubtful are punished, and how only service to the monastery can keep it aloft. In addition, the original metal of the structures here has been melted and reworked in many places into a preponderance of leering skulls.",
@@ -782,6 +848,7 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 13,
 											"id": "04d",
 											"entries": [
 												"If the check result is 14 or higher, a character catches sight or warning of magically animated leather faces (from area M7, the leather works) lurking around the most shadowy corners of the grounds. These unnatural creatures flutter away if any characters approach them, but they attack if pressed. Treat any group of leather faces as a {@creature Swarm of Bats}, and see the leather works (area M7) for more information."
@@ -794,6 +861,7 @@
 						{
 							"type": "entries",
 							"name": "M3. Central Abbey",
+							"page": 13,
 							"id": "04e",
 							"entries": [
 								"Visible from across the monastery grounds, the planar craft's former main conning tower rises several hundred feet into the air. It now serves as the monastery's central abbey.",
@@ -813,6 +881,7 @@
 										{
 											"type": "entries",
 											"name": "The Grand Master",
+											"page": 13,
 											"id": "051",
 											"entries": [
 												"As the characters draw closer to the Grand Master, anyone can see that the devil's horrid leather cloak is crafted from the faces of flayed monks and prisoners, the flesh cured to leather and roughly stitched together. The scepter and crown it bears appear almost mechanical in nature, and are crafted from repurposed magical-mechanical parts from the planar craft. Large rings seemingly crafted in the same way encircle the devil's arms and tail.",
@@ -834,6 +903,7 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 14,
 											"id": "052",
 											"entries": [
 												"The Grand Master is a {@creature Bone Devil} with these changes:",
@@ -851,6 +921,7 @@
 														{
 															"type": "entries",
 															"name": "{@item Polymorph Blade|LLK}",
+															"page": 14,
 															"id": "053",
 															"entries": [
 																"{@i Melee Weapon Attack}: +5 to hit, reach 5 ft., one target. {@i Hit}: 7 ({@dice 1d8 + 3}) piercing damage. If East Wind rolls a 20 on the attack roll, the target must succeed on a DC 15 Wisdom saving throw or suffer the effects of a {@i polymorph} spell."
@@ -859,6 +930,7 @@
 														{
 															"type": "entries",
 															"name": "{@item Blade of the Medusa|LLK}",
+															"page": 14,
 															"id": "054",
 															"entries": [
 																"{@i Melee Weapon Attack}: +5 to hit, reach 5 ft., one target. {@i Hit}: 7 ({@dice 1d8 + 3}) piercing damage. If West Wind rolls a 20 on the attack roll, the target must succeed on a DC 15 Constitution saving throw or suffer the effects of a {@i flesh to stone} spell."
@@ -873,6 +945,7 @@
 										{
 											"type": "entries",
 											"name": "Death of the Grand Master",
+											"page": 15,
 											"id": "055",
 											"entries": [
 												"If the Grand Master is slain, the bone devil is revealed to be an advanced ruse\u2014a war machine of Kwalish's design, piloted by a particularly ingenious {@creature Quasit} named Whazzit. The original bone devil met its demise after Kwalish's exile, when it was drawn into the laboratory's machinery while trying to convert the planar craft into the monastery. This rendered the devil into the treasury's brain in a jar. In the aftermath, the Grand Master's servant Whazzit discovered Kwalish's war machine designs and managed to construct it using the bone devil's exoskeleton. The tiny fiend has kept up this pretense for years, piloting this exoskeleton in the guise of the Grand Master. If the Grand Master's true nature is discovered, the quasit immediately surrenders and any remaining monks quickly and chaotically revolt. They'll begin looting, abandon work in the engine room, and eventually attempt to flee."
@@ -881,6 +954,7 @@
 										{
 											"type": "entries",
 											"name": "Throne Gate",
+											"page": 15,
 											"id": "056",
 											"entries": [
 												"The throne is an assemblage of magical-mechanical parts backed by a standing metallic arch set with complex filigree. The armrests of the throne are set with a complicated array of instruments, though many of the controls have been stripped away. (The throne was once the control center of the archway\u2014the gate Kwalish opened to the Nine Hells, crafted from the technology of the crashed planar craft.)",
@@ -890,6 +964,7 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 15,
 											"id": "057",
 											"entries": [
 												"The crown and scepter are crafted of rare metal alloys and set with jeweled crystalline buttons plundered from the planar craft's instrument panels. They have no magical power outside the monastery and the city of Daoine Gloine (see area O4), but if sold as art objects, the crown is worth 500 gp and the scepter is worth 750 gp."
@@ -902,6 +977,7 @@
 						{
 							"type": "entries",
 							"name": "M4. Dormitories",
+							"page": 15,
 							"id": "058",
 							"entries": [
 								"When not on duty, the monks reside in this series of ill-kept rooms.",
@@ -919,6 +995,7 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 15,
 											"id": "05b",
 											"entries": [
 												"A group of five monks led by an elder monk can be found here at any time, sleeping, eating, and taking part in decidedly non-monastic activities (gambling, flinging chamber pots at one another, comparing dueling scars, plotting a way to rob the treasury, and so forth)."
@@ -927,6 +1004,7 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 15,
 											"id": "05c",
 											"entries": [
 												"Though anything of value brought to or found in the monastery is meant for the treasury, the monks have managed to hide away some personal treasure. A successful DC 13 Intelligence ({@skill Investigation}) check discerns how the buttons and dials of the furnishings can be worked to access hidden compartments, revealing {@dice 10d10} gp worth of loose coins, three uncut sapphires (50 gp each), and a map showing the route to a cache of stolen goods hidden near a thieves guild in a city of your choice.",
@@ -940,6 +1018,7 @@
 						{
 							"type": "entries",
 							"name": "M5. Engine Room",
+							"page": 15,
 							"id": "05d",
 							"entries": [
 								"This area contains the magical workings of the monastery's engines.",
@@ -959,6 +1038,7 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 15,
 											"id": "060",
 											"entries": [
 												"Five monks led by an elder oversee a group of twenty prisoners toiling to keep the engines burning and the monastery aloft. If the monks are dealt with and the prisoners are freed, they can fill the characters in on the layout of the monastery. All the prisoners are desperate to escape the monastery before its engines fail. They can steal a skiff and follow the marked trails out of the Barrier Peaks if left to their own devices."
@@ -971,6 +1051,7 @@
 						{
 							"type": "entries",
 							"name": "M6. Prison Cells",
+							"page": 16,
 							"id": "061",
 							"entries": [
 								{
@@ -988,6 +1069,7 @@
 										{
 											"type": "entries",
 											"name": "Cells",
+											"page": 16,
 											"id": "064",
 											"entries": [
 												"The cells are all repurposed metal containers from the planar craft, and are all locked. A character can pick a cell's lock with a successful DC 15 Dexterity check using thieves' tools. The metal of the cells is especially susceptible to the planar craft's technology, allowing a lock to be automatically sliced open with an attack from an elder monk's force pike.",
@@ -997,6 +1079,7 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 16,
 											"id": "065",
 											"entries": [
 												"Five monks led by an elder monk guard the prisoners here. The elder monk carries keys to all the cells. The ten prisoners are humanoid {@creature Commoner||Commoners}, most of which require healing in order to speak coherently or walk on their own. If the monks are dealt with, freed prisoners can fill the characters in on the layout of the monastery. If the engines are set to fail, all the prisoners will be desperate to escape the monastery before its fall. If freed in any event, they can steal a skiff and follow the marked trails out of the Barrier Peaks if left to their own devices."
@@ -1005,6 +1088,7 @@
 										{
 											"type": "entries",
 											"name": "Immured Ones",
+											"page": 16,
 											"id": "066",
 											"entries": [
 												"These three unfortunate prisoners have been driven mad by their incarceration and abuse. If freed, each attacks the nearest target unless a character succeeds on a DC 12 Charisma ({@skill Persuasion}) check. A successful check causes the immured ones to run off and attempt to escape.",
@@ -1025,6 +1109,7 @@
 						{
 							"type": "entries",
 							"name": "M7. Leather Works",
+							"page": 16,
 							"id": "067",
 							"entries": [
 								"The planar craft's medical station has been repurposed into a torture chamber by the Grand Master. Here, new arrivals are flayed to take on the bone devil's own ghastly image.",
@@ -1044,6 +1129,7 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 16,
 											"id": "06a",
 											"entries": [
 												"Five monks led by an elder are all sharpening tools and preparing to flay the flesh from the face of a new recruit to the monastery. They attack at the first sign of intruders, with the magically animated leather faces detaching from the walls to attack alongside them. Treat all the faces as a {@creature Swarm of Bats}."
@@ -1052,6 +1138,7 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 16,
 											"id": "06b",
 											"entries": [
 												"Any inspection or a successful DC 12 Wisdom ({@skill Perception}) check reveals that the leather-clad figure on the floor is actually a suit of {@item Leather Golem Armor|LLK}. See {@adventure appendix D|LLK|7} for more information."
@@ -1060,6 +1147,7 @@
 										{
 											"type": "entries",
 											"name": "Development",
+											"page": 16,
 											"id": "06c",
 											"entries": [
 												"If any leather mask is placed on the face of a flayed prisoner while that prisoner is targeted by healing magic, the magic of the mask is undone and the prisoner's original face is restored."
@@ -1072,6 +1160,7 @@
 						{
 							"type": "entries",
 							"name": "M8. Control Room",
+							"page": 16,
 							"id": "06d",
 							"entries": [
 								"This central area once served as the bridge of the planar craft.",
@@ -1090,6 +1179,7 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 16,
 											"id": "070",
 											"entries": [
 												"These horrid undead are the monastery's so-called \"enlightened ones.\" Through the technology of the planar craft and Kwalish's experimentation, each {@b brain in a jar} has been chained to the others to form a hive-mind consciousness, even as each retains its individual voice. Working together, the brains maintain the monastery's technical operations. Each brain is also responsible for two of the floating disks that lead out to the treasury (see area M9, \"Floating Bridge\"), each of which is kept active by default.",
@@ -1099,6 +1189,7 @@
 										{
 											"type": "entries",
 											"name": "Lore and Information",
+											"page": 17,
 											"id": "071",
 											"entries": [
 												"With respectful discussion and a successful DC 12 Charisma ({@skill Persuasion}) check, a brain can be enticed to reveal its knowledge of Kwalish and his initial expedition. All of Kwalish's companions died at the hands of the sphinx, but the inventor managed to harvest their brains in order to return them to a semblance of life. Kwalish promised to research a means of finding new bodies for his fallen companions, but was driven away by the Grand Master before he could complete this task. The brains suspect that Kwalish traveled onward to Daoine Gloine, and though they don't know the route, they do know that Kwalish's journal from their original expedition can be found in the treasury (area M10).",
@@ -1109,6 +1200,7 @@
 										{
 											"type": "entries",
 											"name": "Negotiating with the Brains",
+											"page": 17,
 											"id": "072",
 											"entries": [
 												"The brains in their jars are currently engaged in running the monastery, and each deactivates the floating disks it controls in response to any attempt by the characters to enter the treasury. However, the brains can be {@condition charmed}, intimidated, cajoled, or negotiated with to keep their floating disks active. If the characters negotiate poorly, or if any brains are destroyed, certain disks deactivate\u2014and reaching the treasury becomes a greater challenge.",
@@ -1120,6 +1212,7 @@
 										{
 											"type": "entries",
 											"name": "Gearbox to the Rescue",
+											"page": 17,
 											"id": "073",
 											"entries": [
 												"If Gearbox the modron is with the party, one character can attempt a DC 12 Dexterity check to connect the construct to the controls in this area. Successfully doing so overrides all the brains in jars and keeps all the floating disks active. However, doing so instills Gearbox with a greater sense of purpose, after which it refuses to disconnect. The modron thereafter integrates its consciousness into the monastery's, running its systems as its new integrated mind."
@@ -1130,6 +1223,7 @@
 								{
 									"type": "entries",
 									"name": "Brains in Jars",
+									"page": 17,
 									"id": "074",
 									"entries": [
 										{
@@ -1186,6 +1280,7 @@
 						{
 							"type": "entries",
 							"name": "M9. Floating Bridge",
+							"page": 18,
 							"id": "075",
 							"entries": [
 								"The route to the treasury takes characters out across a series of ten magical floating disks\u2014all of which are suspended hundreds of feet in the open air above the valley floor. All the disks are kept active by default, unless they are specifically deactivated by one of the brains in jars in area M8. Each disk is identical to the effect created by a {@spell Tenser's floating disk} spell\u2014a circular, horizontal plane of force 3 feet in diameter and 1 inch thick. The disks are set in a line and spaced 5 feet apart. If any disks are deactivated, a not-insignificant leap is required to cross the empty space between them.",
@@ -1196,6 +1291,7 @@
 										{
 											"type": "entries",
 											"name": "Antimagic Field",
+											"page": 18,
 											"id": "077",
 											"entries": [
 												"As a defense against intruders simply flying or teleporting across the gap, the exterior of the treasury is surrounded by a massive antimagic field, identical to the effect of the spell of the same name. Its radius extends to between the ninth and tenth disks, which are immune to the field's effect."
@@ -1204,6 +1300,7 @@
 										{
 											"type": "entries",
 											"name": "Valley Floor",
+											"page": 18,
 											"id": "078",
 											"entries": [
 												"If any character is unfortunate enough to fall while crossing the disks, they are teleported into the prison cells at area M6. See area C4 for more information.",
@@ -1225,6 +1322,7 @@
 						{
 							"type": "entries",
 							"name": "M10. Treasury",
+							"page": 18,
 							"id": "079",
 							"entries": [
 								"This solitary building is set atop a small floating islet within an area of open space punched down through the main body of the monastery's island. It is held aloft on its own sputtering engine, and is largely filled with a heaping, tangled mass of wreckage. This consists of old machine parts from other areas of the monastery, broken relics of Kwalish's earliest experiments, dead energy cells, and the like.",
@@ -1236,6 +1334,7 @@
 										{
 											"type": "entries",
 											"name": "Creature",
+											"page": 18,
 											"id": "07b",
 											"entries": [
 												"The brain in a jar in this area belongs to the bone devil that founded the monastery. It is in charge of the treasury engine, with its canister housed atop the actual engine mounting, rendering it immobile. While investigating the laboratory workings in this area, the devil inadvertently found its brain magically drawn into the jar, where it remains desperate to be reunited with its body.",
@@ -1245,6 +1344,7 @@
 										{
 											"type": "entries",
 											"name": "Kwalish's Journal",
+											"page": 18,
 											"id": "07c",
 											"entries": [
 												"The cover of Kwalish's journal is set with all manner of gears. A successful DC 12 Wisdom ({@skill Perception}) check confirms that these are not just decorative, but appear to be set in some sort of working order. The same check reveals that wires lead from the journal into another pile of junk, behind which stands the canister of the final brain in a jar.",
@@ -1255,6 +1355,7 @@
 										{
 											"type": "entries",
 											"name": "Antimagic Controls",
+											"page": 18,
 											"id": "07d",
 											"entries": [
 												"It takes a successful DC 12 Intelligence ({@skill Investigation}) or Wisdom ({@skill Perception}) check to find the controls, which appear to have been constructed from an augmented beholder's or astral dreadnought's eye set within a mechanical socket. A successful DC 15 Intelligence ({@skill Arcana}) check or Dexterity check made with thieves' tools or tinker's tools allows a character to deactivate the antimagic field."
@@ -1263,6 +1364,7 @@
 										{
 											"type": "entries",
 											"name": "Gearbox to the Rescue",
+											"page": 18,
 											"id": "07e",
 											"entries": [
 												"As in the control room, if Gearbox the modron is with the party, a character can attempt a DC 12 Dexterity check to help the construct override the brain's control of the treasury engine. Successfully doing so keeps the engine running, but Gearbox is unable to disconnect as a result."
@@ -1271,6 +1373,7 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 19,
 											"id": "07f",
 											"entries": [
 												"All manner of goods and magic items collected by the monastery over long years can be found scattered throughout the junk in this area, including the following:",
@@ -1300,6 +1403,7 @@
 				{
 					"type": "section",
 					"name": "Onward Journey",
+					"page": 19,
 					"id": "080",
 					"entries": [
 						"Kwalish's recovered journal and its notes on finding Daoine Gloine can be used to locate a series of mountain passes on the other side of the monastery's valley. These passes and trails lead to the legendary lost city after a journey of several weeks. Alternatively, the characters might want to use the technology found in the monastery to expedite the journey. A bit of bargaining\u2014or theft\u2014might gain the party the use of the merrenoloth's skiff. Or the characters could make use of Kwalish's notes to shape the components and energy cells of the treasury into a walking or flying vehicle. The use of a skiff or constructed vehicle cuts down the time it takes to reach Daoine Gloine, as you determine.",
@@ -1307,6 +1411,7 @@
 						{
 							"type": "inset",
 							"name": "First Things Last ",
+							"page": 19,
 							"id": "081",
 							"entries": [
 								"As the characters enter the Barrier Peaks, the adventure has the Cartophile's notes and maps directing them initially to the monastery that was once Kwalish's first laboratory. Hidden in the treasury of the monastery are further notes and lore that let the characters push on to Daoine Gloine. But you can easily reverse that setup by having the Cartophile's lore lead the characters straight to Daoine Gloine\u2014with the lost city set up as the site of Kwalish's first lab. Kwalish isn't there, but old lore and notes talk of how he was driven from the area by the ooze, and allow the characters to reach the monastery. There, Kwalish can be found as the final brain in a jar in the treasury (area M10). Alternatively, the Cartophile's material might lead the characters to the monastery, but also reveal caverns that continue past and provide a route straight to Daoine Gloine. Taking that route to find Kwalish in the city, the characters are asked by the inventor to help purge the monastery of the Grand Master and finally reunite the brains in jars with new bodies."
@@ -1319,6 +1424,7 @@
 		{
 			"type": "section",
 			"name": "Part 3: The Ooze-Flooded City",
+			"page": 19,
 			"id": "082",
 			"entries": [
 				"When Kwalish found it, the legendary lost city of Daoine Gloine was already an isolated mountain settlement. After he took over, the inventor set about closing off any and all routes to the site. As such, as the characters follow the notes found in Kwalish's journal, they find that the narrow mountain passes begin to tighten around them the closer they come to the location where the city is said to be. Many of the passes, tunnels, and trails the characters follow are deliberately blocked off with rockslides and other unexplained disasters. The need to circumnavigate such areas accounts for much of the travel time to the city, unless the characters have arranged an alternative method of travel.",
@@ -1326,10 +1432,11 @@
 				{
 					"type": "section",
 					"name": "Daoine Gloine",
+					"page": 19,
 					"id": "083",
 					"entries": [
 						"The city of Daoine Gloine has long been thought of as mere legend\u2014just another strange tale from the already-strange Barrier Peaks. Occasionally, travelers would return from the mountains with wild claims of having been lost in the peaks and visiting the city by accident. And though none of them could produce a full map showing the route they took, their stories all shared a common element\u2014that Daoine Gloine was populated by creatures made of living glass, tended to by kenku in love with those creatures' shining beauty. These occasional tales drove more explorers\u2014including Kwalish's own expedition\u2014to seek out the route to Daoine Gloine and learn the truth of who dwelled there.",
-						"As is often the case, the common tales had more sinister origins. In ages past, the kenku that inhabited the city captured a unique medusa\u2014Gloine Nathair-Nathair, whose gaze could transform victims into glass instead of stone. A cult of the medusa arose to worship the creature, which was effectively incarcerated within a central temple. Kenku priests brought regular sacrificial victims\u2014both willing and unwilling\u2014to stand before the medusa's gaze. And when Gloine Nathair-Nathair died, the kenku raised her in undeath to prolong their cult, continuing to fill their city with glass statues.",
+						"As is often the case, the common tales had more sinister origins. In ages past, the kenku that inhabited the city captured a unique medusa\u2014{@creature Gloine Nathair-Nathair|IMR}, whose gaze could transform victims into glass instead of stone. A cult of the medusa arose to worship the creature, which was effectively incarcerated within a central temple. Kenku priests brought regular sacrificial victims\u2014both willing and unwilling\u2014to stand before the medusa's gaze. And when {@creature Gloine Nathair-Nathair|IMR} died, the kenku raised her in undeath to prolong their cult, continuing to fill their city with glass statues.",
 						"After Kwalish fled his first laboratory, he used the initial research of his expedition to eventually make his way to Daoine Gloine. But instead of being welcomed and allowed to work in peace, Kwalish found the city's evil high priest threatening to transform him into Daoine Gloine's latest art installation. Desperate, Kwalish constructed another planar gateway while imprisoned in the temple, then opened a portal to the 222nd layer of the Abyss\u2014Juiblex's Slime Pits. A flood of ooze issued forth, driving the kenku from Daoine Gloine and effectively sealing the city away from the rest of the world.",
 						"The entire site\u2014including the entrance to Kwalish's second lab\u2014now spreads beneath a deadly layer of clear gelatinous ooze\u2014perfectly preserved, eerily staged, and utterly devoid of anything organic. The kenku that once occupied Daoine Gloine have all long been turned to glass or driven out. The city's only resident is Kwalish, but the inventor has developed potent defenses to defend the entrance to his lab.",
 						"The following locations are identified on the map below.",
@@ -1350,7 +1457,8 @@
 							},
 							"title": "(Player Version)",
 							"width": 5000,
-							"height": 6471
+							"height": 6471,
+							"imageType": "mapPlayer"
 						},
 						{
 							"type": "entries",
@@ -1359,6 +1467,7 @@
 								{
 									"type": "entries",
 									"name": "O1. Overlook",
+									"page": 21,
 									"id": "085",
 									"entries": [
 										"The mountain passes the characters follow eventually open onto the top edge of a deep valley. Characters who arrive at this overlook can gaze down on the city below.",
@@ -1373,6 +1482,7 @@
 										{
 											"type": "entries",
 											"name": "Ooze Barrier",
+											"page": 21,
 											"id": "087",
 											"entries": [
 												"The gleaming barrier marks the upper edge of the ooze. Above the creature, the flora of the mountains grows in abundance. But from about the third-story level down to the streets, the city appears immaculately clean, with all organic matter consumed by the ooze. A number of the towers that have toppled from age are above the ooze, providing a means for characters to explore and take shelter safely above the city.",
@@ -1384,6 +1494,7 @@
 								{
 									"type": "entries",
 									"name": "O2. Tower Level",
+									"page": 21,
 									"id": "088",
 									"entries": [
 										"As the characters draw closer to the city, they get a better view of the stone towers rising above the ooze.",
@@ -1397,6 +1508,7 @@
 										{
 											"type": "entries",
 											"name": "Horrid Statues",
+											"page": 21,
 											"id": "08a",
 											"entries": [
 												"The glass statues that fill Daoine Gloine are the city's sacrificial victims, forced into intricate poses and {@condition petrified} (or, rather, vitrified) by the cult of the medusa. Many of the statues above the ooze show chips and cracks from long years of weathering. But below the ooze, most of the well-protected statues are perfectly intact and appear uncannily lifelike. Many are kenku (the last inhabitants of the city before Kwalish and the ooze arrived), but explorers and mountain folk of many other races have also been trapped forever in glass."
@@ -1405,6 +1517,7 @@
 										{
 											"type": "entries",
 											"name": "Creature",
+											"page": 21,
 											"id": "08b",
 											"entries": [
 												"When any intruder climbs the upper towers or moves along the bridges created where towers have fallen, the vibration of their movement alerts the {@creature Clockwork Kraken|LLK} at the apparatus garage ({@area area O5|097|x}). The construct's tentacles are outfitted with local teleportation-field devices (see the earlier sidebar), allowing them to move throughout the city with a flying speed of 40 feet. When the tentacles reach intruders, they attack in an attempt to shove those creatures into the gelatinous ooze. See \"{@book Shoving a Creature|PHB|9|Shoving a Creature}\" under \"{@book Melee Attacks|PHB|9|Melee Attacks}\" in chapter 9 of the {@book Player's Handbook|PHB}."
@@ -1415,6 +1528,7 @@
 								{
 									"type": "entries",
 									"name": "O3. Street Level",
+									"page": 21,
 									"id": "08c",
 									"entries": [
 										"Several trails lead down into the city, granting a better view of the tableau beneath the ooze.",
@@ -1430,6 +1544,7 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 22,
 											"id": "08e",
 											"entries": [
 												"The gelatinous ooze that protects the city is a single creature of incomprehensible size. It fills the valley to a depth of 30 feet, and cannot move beyond the valley or the city. Even though it has no ability to move, the ooze is aware of all activity around it, and has extensive experience with drawing prey into itself. Treat the ooze as a massive, immobile {@creature Gelatinous Cube} with these changes:",
@@ -1451,6 +1566,7 @@
 								{
 									"type": "entries",
 									"name": "O4. Tomb of the Medusa",
+									"page": 22,
 									"id": "08f",
 									"entries": [
 										{
@@ -1474,6 +1590,7 @@
 										{
 											"type": "entries",
 											"name": "Temple",
+											"page": 23,
 											"id": "091",
 											"entries": [
 												"If enough statues are moved or broken open, they reveal a pit beyond, where a sheer drop of 25 feet leads down into this former temple.",
@@ -1484,13 +1601,14 @@
 														"The space below the statues is a huge temple gone to ruin. A main hall lined with painted murals is abutted by many smaller side chambers once filled with fine furnishings and decorations. All of that has rotted away to nothing now, but a series of shackles bolted to the wall across from some sort of large glass device hints at the horrid rites that must once have taken place here."
 													]
 												},
-												"The wall murals can be deciphered with a successful DC 12 Wisdom ({@skill Perception}) check. These tell the story of the cult of the medusa, starting with the capture of Gloine Nathair-Nathair, long years of sacrificial victims brought before her, and the vitrified statues now found throughout the city.",
+												"The wall murals can be deciphered with a successful DC 12 Wisdom ({@skill Perception}) check. These tell the story of the cult of the medusa, starting with the capture of {@creature Gloine Nathair-Nathair|IMR}, long years of sacrificial victims brought before her, and the vitrified statues now found throughout the city.",
 												"Old shackles set along one wall show where victims were held. A space opposite that shows where other shackles have been removed from heavy bolts sunk into the stone. (The medusa's shackles were once set here, but were removed and used in the clockwork kraken's engine at {@area area O5|097|x}.)"
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Monitor",
+											"page": 23,
 											"id": "093",
 											"entries": [
 												"The window-like device hangs against the wall where the medusa's shackles were once set, and is framed by a complex mechanical filigree. This device is a two-way monitor that can be activated by a successful DC 16 Intelligence ({@skill Arcana}) check. Doing so shows a silent view through the similar monitor in Kwalish's lab ({@area area O7|0a0|x})."
@@ -1499,11 +1617,12 @@
 										{
 											"type": "entries",
 											"name": "Creature",
+											"page": 23,
 											"id": "094",
 											"entries": [
-												"Once worshipped as a living goddess for her unique trait of transforming victims into glass instead of stone, Gloine Nathair-Nathair was kept a prisoner in the temple ever since the creature was captured by the long-gone kenku. The medusa still occupies the tower, but is now undead and in skeletal form, unfettered and thoroughly insane. It can be heard hissing about the priests and their inane babble (the kenku's mimicry), and ranting about how it can still sense the hated high priest's presence in the city. If the characters descend the pit, it attacks at once.",
+												"Once worshipped as a living goddess for her unique trait of transforming victims into glass instead of stone, {@creature Gloine Nathair-Nathair|IMR} was kept a prisoner in the temple ever since the creature was captured by the long-gone kenku. The medusa still occupies the tower, but is now undead and in skeletal form, unfettered and thoroughly insane. It can be heard hissing about the priests and their inane babble (the kenku's mimicry), and ranting about how it can still sense the hated high priest's presence in the city. If the characters descend the pit, it attacks at once.",
 												"The medusa fights until destroyed unless distracted by any information regarding the high priest (see {@area area O5|097|x}) or any offer to help leave the temple. If the characters confirm the presence of the high priest in {@area area O5|097|x} (truthfully or otherwise), the medusa ignores them, scales the pit to escape using the entrance they created, and hunts the priest down.",
-												"Gloine Nathair-Nathair is a {@creature Medusa} with the following changes:",
+												"{@creature Gloine Nathair-Nathair|IMR} is a {@creature Medusa} with the following changes:",
 												{
 													"type": "list",
 													"items": [
@@ -1518,6 +1637,7 @@
 										{
 											"type": "entries",
 											"name": "Temple Gate",
+											"page": 23,
 											"id": "095",
 											"entries": [
 												"On the ground floor of the temple tower, beneath the ooze where it fills the lower levels of the building, is a standing arch that is a match to the arch in the central abbey of the monastery ({@area area M3|04e|x}), but without the throne. If the crown and scepter from that area are worn and held by a creature within 5 feet of the arch (including a creature within an {@item Apparatus of Kwalish} or similar device), that creature can attempt a DC 15 Intelligence ({@skill Arcana}) check to open the archway. Treat this as if the character had cast the {@spell gate} spell to open a gate to the 222nd layer of the Abyss."
@@ -1526,9 +1646,10 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 23,
 											"id": "096",
 											"entries": [
-												"If Gloine Nathair-Nathair is defeated, the medusa wears a gold necklace (1,200 gp), a pair of gold bracers (375 gp each), and ten gem-studded gold rings (50 gp each).",
+												"If {@creature Gloine Nathair-Nathair|IMR} is defeated, the medusa wears a gold necklace (1,200 gp), a pair of gold bracers (375 gp each), and ten gem-studded gold rings (50 gp each).",
 												"A thorough search of the levels of the temple above the ooze also turns up the following:",
 												{
 													"type": "list",
@@ -1545,6 +1666,7 @@
 								{
 									"type": "entries",
 									"name": "O5. Apparatus Garage",
+									"page": 23,
 									"id": "097",
 									"entries": [
 										"This tower once served Kwalish as a temporary workshop, and still contains crucial remnants of his experiments.",
@@ -1559,19 +1681,21 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 23,
 											"id": "099",
 											"entries": [
 												"A {@creature Clockwork Kraken|LLK} has been installed in this area by Kwalish to protect the city. The main component of the construct's clockwork engine is a coffin-like structure that bears a strong resemblance to Ctenmiir's coffin. The engine housing can be opened with a successful DC 15 Intelligence ({@skill Arcana}) check or Dexterity check made with thieves' tools or tinker's tools. If Gearbox is with the party, a character can attempt a DC 12 Dexterity check to help the modron open and override the engine.",
 												"Within the coffin is the jellified remains of a former kenku high priest of Daoine Gloine. Her undead body now powers the kraken, though she does not control it. If still active, the kraken's tentacles work to defend its engine.",
-												"Kwalish developed a process of using living and undead creatures as a control module for powerful constructs, and placed the evil high priest here as punishment for her role in the countless sacrifices made to Gloine Nathair-Nathair. If the priest is attacked, treat her as a {@creature Vampire Spawn} that cannot leave the coffin. But after endless years of undead incarceration, she sees the characters as potential servants, not foes."
+												"Kwalish developed a process of using living and undead creatures as a control module for powerful constructs, and placed the evil high priest here as punishment for her role in the countless sacrifices made to {@creature Gloine Nathair-Nathair|IMR}. If the priest is attacked, treat her as a {@creature Vampire Spawn} that cannot leave the coffin. But after endless years of undead incarceration, she sees the characters as potential servants, not foes."
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Priestly Bargaining",
+											"page": 24,
 											"id": "09a",
 											"entries": [
-												"The high priest attempts to engage the characters as soon as they enter the tower\u2014but being a kenku, she communicates only through mimicry. Her pleas to be freed from the coffin might thus take the form of the last words of victims she brought before the medusa, or the rantings of Gloine Nathair-Nathair while the medusa lived and railed against her captivity.",
+												"The high priest attempts to engage the characters as soon as they enter the tower\u2014but being a kenku, she communicates only through mimicry. Her pleas to be freed from the coffin might thus take the form of the last words of victims she brought before the medusa, or the rantings of {@creature Gloine Nathair-Nathair|IMR} while the medusa lived and railed against her captivity.",
 												"In whatever way she can, the undead high priest begs the characters to open the coffin and free her. Her jellified undead body is slopped around an ornamental helmet and shackles. (These devices were once used to safely contain the medusa. See {@area area O4|08f|x}.) A thin silver wire connects the helmet and shackles to the coffin, and can be recognized as a form of astral silver cord with a successful DC 15 Intelligence ({@skill Arcana}) check.",
 												"If the high priest is disconnected (most easily by extracting the helmet and shackles from what's left of her), the clockwork kraken and all ooze-folk in the city deactivate. The priest knows that after Kwalish flooded the city, he eventually escaped into an extradimensional space hidden beneath the ooze. She can also inform the characters about the garage's {@item Apparatus of Kwalish}, and its ability to connect with the glass baubles. She suspects that one of the baubles leads to Kwalish's lab, though she does not know which one. If questioned about the city's countless sacrifices or the cult of the medusa, the evil priest falsely denies any knowledge of such things.",
 												{
@@ -1588,6 +1712,7 @@
 										{
 											"type": "entries",
 											"name": "Development",
+											"page": 24,
 											"id": "09b",
 											"entries": [
 												"A successful DC 12 Intelligence ({@skill Investigation}) or Wisdom ({@skill Perception}) check made while searching the garage reveals the remains of a massive prototype {@item Apparatus of Kwalish}, able to transport up to ten Medium or smaller creatures.",
@@ -1609,6 +1734,7 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 25,
 											"id": "09c",
 											"entries": [
 												"A thorough search of the garage turns up a number of valuable components used in Kwalish's experiments, worth 1,500 gp to any tinker, inventor, or artificer."
@@ -1619,6 +1745,7 @@
 								{
 									"type": "entries",
 									"name": "O6. Baubles",
+									"page": 25,
 									"id": "09d",
 									"entries": [
 										"Hundreds of baubles have been set throughout the tableau of the city streets. If any ooze-folk (see {@area area O3|08c|x}) or the clockwork kraken (see {@area area O2|088|x}) become active in response to the characters' intrusion, those defenders do not touch or intentionally damage any of the baubles, instead actively protecting them from harm.",
@@ -1626,6 +1753,7 @@
 										{
 											"type": "entries",
 											"name": "Dimensional Gateways",
+											"page": 25,
 											"id": "09e",
 											"entries": [
 												"Touching a crystal bauble, or connecting with one by way of the {@item Apparatus of Kwalish} from {@area area O5|097|x}, opens a magical connection to an extradimensional space within the bauble. Entering the correct bauble brings the characters into Kwalish's laboratory. But entering one of the many decoy crystal baubles scattered throughout the city leads to a pocket dimension where the characters face a number of fanciful and challenging encounters. Use the \"{@area Sample Bauble Encounters|0a9|x}\" table to randomly determine extradimensional encounters within decoy crystals, or as inspiration for making up your own.",
@@ -1635,6 +1763,7 @@
 										{
 											"type": "entries",
 											"name": "Kwalish's Bauble Gate",
+											"page": 25,
 											"id": "09f",
 											"entries": [
 												"A glass workshop can be found by characters exploring the city. Its kiln remains magically lit even beneath the ooze, filling the immediate area with an eerie light. A glass statue of an artisan near the kiln's fire holds a crystal bauble as if shaping it. Accessing the extradimensional space within this bauble grants entrance to Kwalish's lab at {@area area O7|0a0|x}."
@@ -1645,6 +1774,7 @@
 								{
 									"type": "entries",
 									"name": "O7. Kwalish's Lab",
+									"page": 25,
 									"id": "0a0",
 									"entries": [
 										"The crystal bauble found in the city's glass workshop opens a portal to the extradimensional space in which Kwalish maintains his personal laboratory.",
@@ -1660,6 +1790,7 @@
 										{
 											"type": "entries",
 											"name": "Glass Piping",
+											"page": 25,
 											"id": "0a2",
 											"entries": [
 												"Clear glass tubes connect flasks, funnels, columns, and other alchemical gear filled with strange components undergoing constant transformation. Some are boiling, others are condensing or solidifying into crumbling powder, and all this work is fueled by burners emitting strange-colored flames and powered by ten steam mephits trapped in retort flasks. A successful DC 15 Intelligence ({@skill Investigation}) check grants a character enough insight into the instruments to gain basic control over the lab, such that the experiments here can be safely examined. However, if the check is failed by 5 or more, the {@creature Steam Mephit||Steam Mephits} are released.",
@@ -1669,6 +1800,7 @@
 										{
 											"type": "entries",
 											"name": "Instrument Panels",
+											"page": 25,
 											"id": "0a3",
 											"entries": [
 												"These control panels are covered with buttons, dials, and gauges, as well as delicate machinery containing tiny clockwork devices reminiscent of ants performing intricate functions. A character who succeeds on a DC 14 Intelligence ({@skill Arcana}) check determines that the workings of the panels derive from strange sources\u2014some taken from the planar craft that became the monastery, but also from the bodies of modrons and inevitables (see {@book Mordenkainen's Tome of Foes|MTF}). Also set among the panels is a skull that has gems for its eyes and teeth (a magically modified demilich skull; see the \"{@area Meeting Kwalish|0aa|x}\" section below)."
@@ -1677,14 +1809,16 @@
 										{
 											"type": "entries",
 											"name": "Monitor",
+											"page": 25,
 											"id": "0a4",
 											"entries": [
-												"The window-like device hanging against the wall is a two-way monitor that can be activated with a successful DC 16 Intelligence ({@skill Arcana}) check. Doing so shows a silent view through the similar monitor in the tomb of the medusa ({@area area O4|08f|x}). If Gloine Nathair-Nathair is still at that location, turning on this monitor brings her into view and allows her to use her Petrifying Gaze on any creature in the laboratory that she can see through the monitor."
+												"The window-like device hanging against the wall is a two-way monitor that can be activated with a successful DC 16 Intelligence ({@skill Arcana}) check. Doing so shows a silent view through the similar monitor in the tomb of the medusa ({@area area O4|08f|x}). If {@creature Gloine Nathair-Nathair|IMR} is still at that location, turning on this monitor brings her into view and allows her to use her Petrifying Gaze on any creature in the laboratory that she can see through the monitor."
 											]
 										},
 										{
 											"type": "entries",
 											"name": "Canisters",
+											"page": 25,
 											"id": "0a5",
 											"entries": [
 												"Five clear canisters line the walls, each one filled with fluid and the living, beating heart of some type of creature. With a successful DC 15 Intelligence ({@skill Nature}) check, a character recognizes the hearts of three humanoids, a troll, and a dragon. Each canister is connected by a thin silver wire to multiple pieces of the laboratory's equipment. The wire can be recognized as a form of astral silver cord with a successful DC 15 Intelligence ({@skill Arcana}) check.",
@@ -1694,10 +1828,11 @@
 										{
 											"type": "entries",
 											"name": "Creatures",
+											"page": 26,
 											"id": "0a6",
 											"entries": [
 												"Kwalish's presence in the lab is left to your determination, and might depend on how much more adventuring you want the characters to do. See the \"{@area Meeting Kwalish|0aa|x}\" section below for more information.",
-												"If the steam mephits are released, they might try to immediately escape (a 50 percent chance), but they otherwise attack everyone in the lab.",
+												"If the steam mephits are released, they might try to immediately escape (a {@chance 50|50 percent} chance), but they otherwise attack everyone in the lab.",
 												"A {@creature Mind Flayer Arcanist} (a variant creature in the {@book Monster Manual|MM}) is trapped within a glass-walled stasis chamber, kept on hand by Kwalish to be consulted for its magical knowledge. A successful DC 14 Intelligence ({@skill Arcana} or {@skill Investigation}) check can activate the stasis controls and awaken the mind flayer.",
 												"The mind flayer has no effective attacks while within the stasis chamber, as no spells or other effects can pass through the cylinder in either direction. However, if the check to activate the controls fails by 5 or more, the cylinder accidentally opens to free the mind flayer. The creature attempts to bargain for its safety with a large number of well-armed characters, but it betrays and attempts to slay them at the first opportunity."
 											]
@@ -1705,6 +1840,7 @@
 										{
 											"type": "entries",
 											"name": "{@item Powered Armor|LLK}",
+											"page": 27,
 											"id": "0a7",
 											"entries": [
 												"The suit of armor at the end of the room is clearly the focus of the lab's current experimentation, connected to various pieces of equipment by more silver wire recognizable as a form of astral cord. If the characters end the adventure on friendly terms with Kwalish, he indicates that although the {@i powered armor} is still being researched, it requires a test subject. He is thus willing to loan the armor to any character, provided they use it as their sole suit of armor and report back to him periodically so as to gauge its efficacy.",
@@ -1715,6 +1851,7 @@
 										{
 											"type": "entries",
 											"name": "Treasure",
+											"page": 27,
 											"id": "0a8",
 											"entries": [
 												"If Kwalish is defeated, or if the gnome is missing when the characters come to the lab, a thorough search of the area turns up the following:",
@@ -1739,6 +1876,7 @@
 								{
 									"type": "entries",
 									"name": "Sample Bauble Encounters",
+									"page": 26,
 									"id": "0a9",
 									"entries": [
 										{
@@ -1787,7 +1925,7 @@
 												[
 													"7",
 													"One of the eyes in a statue of a devil",
-													"The characters find themselves inside a variant version of the {@item Apparatus of Kwalish} abandoned within the Nine Hells. Characters cannot leave the apparatus, but they can pilot it and explore their surroundings. Every 10 minutes of exploration, there is a 20 percent chance that one or more randomly determined devils happens upon the apparatus and attacks it."
+													"The characters find themselves inside a variant version of the {@item Apparatus of Kwalish} abandoned within the Nine Hells. Characters cannot leave the apparatus, but they can pilot it and explore their surroundings. Every 10 minutes of exploration, there is a {@chance 20|20 percent} chance that one or more randomly determined devils happens upon the apparatus and attacks it."
 												],
 												[
 													"8",
@@ -1802,17 +1940,17 @@
 												[
 													"10",
 													"The centerpiece in a complex mechanical clock in a central square",
-													"The characters find themselves inside a variant version of the {@item Apparatus of Kwalish}, wandering the plane of Mechanus. Characters cannot leave the apparatus, but they can pilot it and explore their surroundings. Every 10 minutes of exploration, there is a 20 percent chance that one or more randomly determined modrons happens upon the apparatus and attacks it."
+													"The characters find themselves inside a variant version of the {@item Apparatus of Kwalish}, wandering the plane of Mechanus. Characters cannot leave the apparatus, but they can pilot it and explore their surroundings. Every 10 minutes of exploration, there is a {@chance 20|20 percent} chance that one or more randomly determined modrons happens upon the apparatus and attacks it."
 												],
 												[
 													"11",
 													"The eye of a squid set within an extensive aquarium",
-													"The characters find themselves inside a variant version of the {@item Apparatus of Kwalish} at the bottom of a deep ocean. Characters cannot leave the apparatus, but they can pilot it and explore their surroundings. Every 10 minutes of exploration, there is a 20 percent chance that one or more randomly determined aquatic creatures happens upon the apparatus and attacks it."
+													"The characters find themselves inside a variant version of the {@item Apparatus of Kwalish} at the bottom of a deep ocean. Characters cannot leave the apparatus, but they can pilot it and explore their surroundings. Every 10 minutes of exploration, there is a {@chance 20|20 percent} chance that one or more randomly determined aquatic creatures happens upon the apparatus and attacks it."
 												],
 												[
 													"12",
 													"A crystal ball held by a statue of a medusa",
-													"The characters appear in a version of the tomb of the medusa ({@area area O4|08f|x}), in which Gloine Nathair-Nathair is still alive. (The {@creature Medusa} uses normal statistics, but its Petrifying Gaze feature transforms {@condition petrified} victims to glass.) A ceremony is underway as the characters arrive, with phantom victims being led before the medusa. If the creature is allowed to vitrify those victims, the extradimensional gateway is breached and the illusory surroundings are flooded by ooze, with effects as you determine."
+													"The characters appear in a version of the tomb of the medusa ({@area area O4|08f|x}), in which {@creature Gloine Nathair-Nathair|IMR} is still alive. (The {@creature Medusa} uses normal statistics, but its Petrifying Gaze feature transforms {@condition petrified} victims to glass.) A ceremony is underway as the characters arrive, with phantom victims being led before the medusa. If the creature is allowed to vitrify those victims, the extradimensional gateway is breached and the illusory surroundings are flooded by ooze, with effects as you determine."
 												]
 											]
 										}
@@ -1825,6 +1963,7 @@
 				{
 					"type": "section",
 					"name": "Meeting Kwalish",
+					"page": 27,
 					"id": "0aa",
 					"entries": [
 						"You have several options for having Kwalish appear to the characters, depending on how much time you wish to dedicate to the party's exploration of the city of Daoine Gloine.",
@@ -1835,6 +1974,7 @@
 								{
 									"type": "entries",
 									"name": "Quick Contact",
+									"page": 27,
 									"id": "0ac",
 									"entries": [
 										"The easiest approach is to have Kwalish in {@area area O7|0a0|x} when the characters arrive\u2014an elderly gnome arcane inventor (use the {@creature Evoker|VGM} stat block from {@book Volo's Guide to Monsters|VGM}) working on his latest experiments. Though surprised by visitors, Kwalish listens to the characters and might even be willing to bargain for whatever help they need to complete their quest. In exchange, he requires only a bit of special material to fuel his experiments and continue his work\u2014a piece of the characters' souls, extracted by his machinery.",
@@ -1844,6 +1984,7 @@
 								{
 									"type": "entries",
 									"name": "Just a Bit of Trouble",
+									"page": 27,
 									"id": "0ad",
 									"entries": [
 										"Kwalish is missing, trapped in stasis inside his own {@i powered armor}. The characters must first discover him there by making a close-up investigation of the armor, then find a way to access its controls. This can be accomplished with a successful DC 16 Intelligence ({@skill Arcana}) check or Dexterity check made with thieves' tools or tinker's tools. Alternatively, characters who experiment with tools found throughout the lab can access the armor's controls given enough time. Even after accessing the controls, though, no one can approach the armor without setting off its automatic defenses. See the \"{@adventure Powered Armor Options|LLK|7}\" sidebar in {@adventure appendix D|LLK|7}.",
@@ -1853,6 +1994,7 @@
 								{
 									"type": "entries",
 									"name": "Kwalish Who?",
+									"page": 27,
 									"id": "0ae",
 									"entries": [
 										"Kwalish is missing, his physical body having been caught up within his laboratory equipment and rendered into various bodily components that now make their way through the glass piping in perpetuity. His mind, however, can still communicate through various means\u2014clockwork ants forming signals and signs, messages drawn by mechanical hands, consultation with the trapped mind flayer, and so on. As best he can, Kwalish tries to instruct characters in the methods that might reconstitute his body (with those methods determined by you). Unfortunately, some of his body parts have been installed elsewhere in the city (within other baubles, forming part of the kraken's engine, and so forth) and must be tracked down.",
@@ -1862,6 +2004,7 @@
 								{
 									"type": "entries",
 									"name": "Roleplaying Kwalish",
+									"page": 28,
 									"id": "0af",
 									"entries": [
 										"However he is met, Kwalish presents himself as a detached, single-minded researcher. In his mind, his work is more important than any other concerns, and he believes that the secrets of the technology found in the Barrier Peaks hold a vast potential to advance knowledge. If questioned, he proudly details his experiments (including with the {@i powered armor}), as well as the complete history of his time in the Barrier Peaks. If pressed, he talks of how he salvaged the minds of the members of his first expedition only after they were slain by the sphinx, and of how he buried Daoine Gloine in ooze only after discovering its inhabitants to be depraved cultists. In both cases, the inventor deemed his desperate actions as necessary measures to advance his research."
@@ -1870,6 +2013,7 @@
 								{
 									"type": "entries",
 									"name": "Sphinx's Curse",
+									"page": 28,
 									"id": "0b0",
 									"entries": [
 										"If the characters engage Kwalish successfully, or as an added reward if they rescue him, the inventor can use his skill to remove the curse imposed by the enhanced sphinx (whose machinery he created). This restores to normal any ability scores decreased by the sphinx (see {@area area C2|034|x})."
@@ -1878,6 +2022,7 @@
 								{
 									"type": "entries",
 									"name": "Laboratory Fight",
+									"page": 28,
 									"id": "0b1",
 									"entries": [
 										"If negotiations break down, or if the characters take unkindly to Kwalish's cavalier attitude toward life, they might decide to confront and attack him. Kwalish first creates a distraction by releasing the mephits and the mind flayer in his lab as an action. He then turns on the monitor and ducks down to stay out of the medusa's field of view. During the subsequent chaos, the gnome attempts to don the {@i powered armor}, then wreak havoc."
@@ -1890,21 +2035,24 @@
 				{
 					"type": "section",
 					"name": "Concluding the Adventure",
+					"page": 28,
 					"id": "0b2",
 					"entries": [
 						"Depending on your specific adventure hook and how this adventure fits into your overall campaign, completing the adventure might have multiple ramifications.",
 						{
 							"type": "entries",
 							"name": "Loose Ends",
+							"page": 28,
 							"id": "0b3",
 							"entries": [
 								"If Kwalish's knowledge was needed to oppose threats in other lands, those threats might have been permanently quelled\u2014or they might only have been temporarily driven back. Moreover, Kwalish's aid could inadvertently create new threats, as might happen if opening the coffin-prison of the vampire, Ctenmiir, opens similar Kwalish-designed prisons across the world.",
-								"The power in the Barrier Peaks likely shifts dramatically if the Grand Master is defeated, and a new power struggle soon ensues for control of the monastery. If Ctenmiir escapes or is freed, he might return to the monastery to occupy it as his new lair. Mary Greymalkin joins him there, creating a sanctum of evil magic. If Gearbox has connected with the monastery, he might remain there as the pair's unwitting servant\u2014or the modron might seek to overthrow this new set of evil lords in the name of establishing the monastery as a place of pure knowledge and balance."
+								"The power in the Barrier Peaks likely shifts dramatically if the Grand Master is defeated, and a new power struggle soon ensues for control of the monastery. If Ctenmiir escapes or is freed, he might return to the monastery to occupy it as his new lair. {@creature Mary Greymalkin|LLK} joins him there, creating a sanctum of evil magic. If Gearbox has connected with the monastery, he might remain there as the pair's unwitting servant\u2014or the modron might seek to overthrow this new set of evil lords in the name of establishing the monastery as a place of pure knowledge and balance."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Kwalish's Plans",
+							"page": 28,
 							"id": "0b4",
 							"entries": [
 								"Kwalish has long yearned to help the members of his former expedition trapped as brains in jars in the Monastery of the Distressed Body. Knowing that they still survive, he might provide instructions and materials for the characters to return to the monastery and provide the brains with new bodies. And in Daoine Gloine, the characters might entreat the inventor to discover a way to return the vitrified statues of the city to flesh. (If the characters haven't destroyed the undead medusa yet, such means might involve a side quest where they bring Kwalish her severed head.)",
@@ -1914,6 +2062,7 @@
 						{
 							"type": "entries",
 							"name": "New Discoveries",
+							"page": 28,
 							"id": "0b5",
 							"entries": [
 								"The Cartophile possesses a good number of treasure maps in his extensive collections\u2014some of which are even accurate. As an added reward for returning with maps and news of Kwalish's original expedition, he might gift one such map to the characters. He might also look to hire the characters for future mapping expeditions, or to undertake specific dangerous missions in exchange for a share of the knowledge or treasure to be found there.",
@@ -1934,6 +2083,7 @@
 		{
 			"type": "section",
 			"name": "Appendix A: Random Encounters",
+			"page": 32,
 			"id": "0b7",
 			"entries": [
 				"Characters undertaking this adventure will spend a significant amount of game time on the journey to the Monastery of the Distressed Body and the lost city of Daoine Gloine. You can help bring those weeks of exploration to life with random encounters\u2014some of which might increase or decrease the length of the characters' journey, as you decide.",
@@ -1941,6 +2091,7 @@
 				{
 					"type": "entries",
 					"name": "Wilderness Encounters",
+					"page": 32,
 					"id": "0b8",
 					"entries": [
 						"Reaching the foothills of the Barrier Peaks takes the characters through a broad range of wild lands\u2014including woods infused with the power of the Feywild.",
@@ -1971,7 +2122,7 @@
 								],
 								[
 									"2",
-									"The path leads into a lonely grove that serves as the grave of a former dryad queen. If appropriate respects are paid, the characters have a 50 percent chance to receive a supernatural gift (see {@book chapter 7|DMG|7|Supernatural Gifts} of the {@book Dungeon Master's Guide|DMG})\u2014a charm that allows a character to cast the {@spell Galder's Tower|LLK|Galder's tower} spell (see {@adventure appendix E|LLK|7}) once as an action."
+									"The path leads into a lonely grove that serves as the grave of a former dryad queen. If appropriate respects are paid, the characters have a {@chance 50|50 percent} chance to receive a supernatural gift (see {@book chapter 7|DMG|7|Supernatural Gifts} of the {@book Dungeon Master's Guide|DMG})\u2014a charm that allows a character to cast the {@spell Galder's Tower|LLK|Galder's tower} spell (see {@adventure appendix E|LLK|7}) once as an action."
 								],
 								[
 									"3",
@@ -2000,6 +2151,7 @@
 				{
 					"type": "entries",
 					"name": "Cavern Encounters",
+					"page": 33,
 					"id": "0b9",
 					"entries": [
 						"The caverns and tunnels of the Barrier Peaks are a treacherous maze that has claimed more than one adventurer. This challenging route might involve cavern encounters that can help flesh out the characters' journey to the Monastery of the Distressed Body.",
@@ -2050,6 +2202,7 @@
 				{
 					"type": "entries",
 					"name": "Mountain Encounters",
+					"page": 33,
 					"id": "0ba",
 					"entries": [
 						"The rocky trails and forbidding passes of the Barrier Peaks hold endless mysteries, and are ripe for random encounters as the characters make their way to Daoine Gloine.",
@@ -2098,12 +2251,14 @@
 		{
 			"type": "section",
 			"name": "Appendix B: Further Options",
+			"page": 34,
 			"id": "0bb",
 			"entries": [
 				"The wide-open nature of this adventure, the optional setups provided in the \"Adventure Length\" and \"First Things Last\" sidebars, and the options in the \"Meeting Kwalish\" section give you the opportunity to run {@i Lost Laboratory of Kwalish} in a number of different ways. But if you'd like to customize this scenario even further, consider any of the following options.",
 				{
 					"type": "section",
 					"name": "The Cartophile",
+					"page": 34,
 					"id": "0bc",
 					"entries": [
 						"The starting point for the adventure has a big impact on establishing the full identity of the Cartophile. In Waterdeep, Anaxi Zephries might be a member of that city's Surveyors', Map-, and Chart-makers' Guild. But if the adventure is tied to Chult and {@adventure Tomb of Annihilation|ToA}, he might instead work as a merchant prince in Port Nyanzaru. And either way, no matter how genuinely you portray him, the Cartophile might fall under suspicion by the characters in the manner of so many too-helpful NPCs. You can opt to run with such suspicions by giving the Cartophile a secret agenda.",
@@ -2114,6 +2269,7 @@
 				{
 					"type": "section",
 					"name": "Mary Greymalkin",
+					"page": 34,
 					"id": "0bd",
 					"entries": [
 						"A number of options present themselves for using the {@i deck of several things} within the adventure. As written, Mary already carries the deck, and no matter how many cards are drawn from it, the complete deck reappears magically in her possession at the conclusion of the adventure. But if she remains as an NPC in your campaign, or is first placed in an earlier adventure, consider modifying the cards' effects to more broadly fit the campaign.",
@@ -2124,6 +2280,7 @@
 				{
 					"type": "section",
 					"name": "The Enhanced Sphinx",
+					"page": 34,
 					"id": "0be",
 					"entries": [
 						"Plenty of additional options can be used during the process of resolving the sphinx's riddle, including working with the idea that because the enhanced sphinx gains much new knowledge from outlaws crossing into the monastery, asking about good-aligned topics might negate its advantage on the Intelligence check it makes to answer. Alternatively, you might decide that the dock the sphinx sits on magically fuels its enhanced abilities, and that by tricking or forcing the creature off the dock, it has disadvantage on its Intelligence checks to answer.",
@@ -2139,6 +2296,7 @@
 										{
 											"type": "entries",
 											"name": "Seeker of Knowledge",
+											"page": 34,
 											"id": "0c1",
 											"entries": [
 												"As a custodian of rare knowledge, the sphinx might have long coveted the knowledge of the monastery's brains in jars\u2014all of them creatures with advanced intellect and a unique perspective on the world. She might strike a deal with the characters if they agree to find the brains and bring her one, allowing them to summon the ferry without paying her toll."
@@ -2147,6 +2305,7 @@
 										{
 											"type": "entries",
 											"name": "Restoring Old Debts",
+											"page": 34,
 											"id": "0c2",
 											"entries": [
 												"If the sphinx is slain, the mechanical items that circle around her (functioning as {@item Ioun Stone|LLK|Ioun stones}) might all be released. The life force they contain (in the form of decreases to ability scores) might then be usable by their original owners to reverse the decrease. If any of those owners are still alive, the stones might help guide the characters to them, allowing the party to gain favor by returning the sphinx's toll to some of those who have paid it. If Mary is with the party, she might seek to keep all the mechanical {@item Ioun Stone|LLK|Ioun stones} for herself\u2014and might stop at nothing to get them back if the other characters seize them."
@@ -2161,6 +2320,7 @@
 				{
 					"type": "section",
 					"name": "The Grand Master",
+					"page": 35,
 					"id": "0c3",
 					"entries": [
 						"As the leader of the monastery, the Grand Master is meant to present a difficult but not impossible challenge. You might wish to modify his capabilities depending on the relative power of the characters.",
@@ -2175,6 +2335,7 @@
 										{
 											"type": "entries",
 											"name": "Vorpal Shards",
+											"page": 35,
 											"id": "0c6",
 											"entries": [
 												"Even while keeping the idea that the grand master's claw shards are from a {@item Vorpal Sword}, you might wish to mitigate their threat of an instant kill by having them deal an extra {@dice 6d8} slashing damage instead. You might also have the shards be from a {@item Polymorph Blade|LLK}, a {@item Blade of the Medusa|LLK}, or some other type of weapon.",
@@ -2184,6 +2345,7 @@
 										{
 											"type": "entries",
 											"name": "Cloak of Faces",
+											"page": 35,
 											"id": "0c7",
 											"entries": [
 												"If an added threat is needed, you might have the Grand Master's cloak fly apart into its various faces during battle, attacking as a {@creature swarm of bats}."
@@ -2192,6 +2354,7 @@
 										{
 											"type": "entries",
 											"name": "Throne Gate",
+											"page": 35,
 											"id": "0c8",
 											"entries": [
 												"The Grand Master might have long ago figured out how to activate this gate. If things go bad for it in combat, it might choose to do so in order to escape (if you wish to preserve the Grand Master as a future villain), or to summon an ally (if the fight against it proves too easy)."
@@ -2206,9 +2369,10 @@
 				{
 					"type": "section",
 					"name": "Brains in Jars",
+					"page": 35,
 					"id": "0c9",
 					"entries": [
-						"Depending on your campaign, you might wish to identify some or all of the monastery's brains with other figures from D&D lore. Perhaps the monastery has long been home to obscure or lesser-known figures such as Quaal, Queen Ehlissa, Keoghtom, Nolzur, and Tuerny the Merciless\u2014all of them known mostly for the magic items that bear their names. If you use Nolzur, the creator of {@item Nolzur's Marvelous Pigments} would be of special interest to Garret, while Tuerny (creator of the lost artifact {@i The {@item Iron Flask} of Tuerny the Merciless}) would be of special interest to Mary Greymalkin.",
+						"Depending on your campaign, you might wish to identify some or all of the monastery's brains with other figures from D&D lore. Perhaps the monastery has long been home to obscure or lesser-known figures such as Quaal, Queen Ehlissa, Keoghtom, Nolzur, and Tuerny the Merciless\u2014all of them known mostly for the magic items that bear their names. If you use Nolzur, the creator of {@item Nolzur's Marvelous Pigments} would be of special interest to Garret, while Tuerny (creator of the lost artifact {@i The {@item Iron Flask} of Tuerny the Merciless}) would be of special interest to {@creature Mary Greymalkin|LLK}.",
 						{
 							"type": "entries",
 							"id": "0ca",
@@ -2220,6 +2384,7 @@
 										{
 											"type": "entries",
 											"name": "The New Body Problem",
+											"page": 35,
 											"id": "0cc",
 											"entries": [
 												"Every brain in a jar is desperate for a new body, and a brain immediately agrees to aid the characters any way it can if they promise to restore it to life. Any number of possible options might be available to characters wanting to achieve this end. Most easily, the brains can guide characters through the process of transferring their intellect into a host such as a slain monk, or a mechanical entity such as Ctenmiir's coffin or Gearbox. This process requires a successful DC 14 Wisdom ({@skill Medicine}) check or Dexterity check with thieves' tools or tinker's tools. However, on a failed check, the brain is destroyed and any floating disks it controls in the treasury (area M10) are permanently deactivated.",
@@ -2230,6 +2395,7 @@
 										{
 											"type": "entries",
 											"name": "Conflict with the Sphinx",
+											"page": 35,
 											"id": "0cd",
 											"entries": [
 												"If you work with the idea that the sphinx seeks the knowledge held by the brains in jars, the brains know this\u2014and greatly fear that outcome. They might strike a deal with the characters to use their control over the monastery to aid the party\u2014but only if they agree to first go back and slay the sphinx. Once the sphinx is slain\u2014or if the characters killed it before coming to the monastery\u2014any ability checks made to deal with the brains are made with advantage."
@@ -2244,6 +2410,7 @@
 				{
 					"type": "section",
 					"name": "More Monastery",
+					"page": 35,
 					"id": "0ce",
 					"entries": [
 						"The original {@i Expedition to the Barrier Peaks} mapped out six levels of the adventure's crashed ship: \"a large exploration-colonization expedition of human origin.\" This adventure focuses on only a cursory exploration of a similarly crashed planar craft, but you can easily expand the adventure by allowing characters to discover portals in the monastery that lead to lower levels of the vessel.",
@@ -2255,6 +2422,7 @@
 				{
 					"type": "section",
 					"name": "High Priest",
+					"page": 36,
 					"id": "0cf",
 					"entries": [
 						"In the ooze-flooded city of Daoine Gloine, the high priest in area O5 might negotiate with the characters for a new physical body. She readily agrees to deactivate the clockwork kraken if the characters open her coffin and help her, suggesting that they drop her into the gelatinous ooze covering the city so that she can sink down and use one of Kwalish's armatures for a new body. However, you might decide that if this is done, the priest's still-potent magical power allows her to merge with the great ooze and control it\u2014effectively using that titanic creature as the new body she seeks."
@@ -2263,6 +2431,7 @@
 				{
 					"type": "section",
 					"name": "Baubles",
+					"page": 36,
 					"id": "0d0",
 					"entries": [
 						"As the characters search through the endless baubles of Daoine Gloine, you might want to distinguish the single bauble leading to Kwalish's lab from the other crystal baubles by having it composed of diamond. A successful DC 18 Wisdom ({@skill Perception}) check spots the difference between the diamond bauble and the other crystal specimens.",
@@ -2272,6 +2441,7 @@
 				{
 					"type": "section",
 					"name": "Abyssal Throne Gate",
+					"page": 36,
 					"id": "0d1",
 					"entries": [
 						"Opening either of these devices (in the central abbey or the tomb of the medusa) creates the effect of casting a {@spell gate} spell. As per that spell, the characters might wish to name a specific creature from the plane the gate leads to, hoping to interact with it. Or you might have a creature Kwalish previously met through the gate arrive in response to it being opened. That creature might have knowledge to impart, a debt to repay, or a grudge to have righted. You could even have creatures from the two gates know of each another\u2014and, as with the monastery's sphinx and brains in jars\u2014attempt to work with the characters against one another.",
@@ -2283,6 +2453,7 @@
 				{
 					"type": "section",
 					"name": "Kwalish",
+					"page": 36,
 					"id": "0d2",
 					"entries": [
 						"The legendary arcane inventor is presented as an obsessed, distracted, but basically benign figure in the adventure. However, you might choose to present him as a much more sinister villain. Instead of preserving the brains of his fallen comrades in the hope of one day reviving them, Kwalish might have worked with the sphinx to arrange their deaths in order to harvest their brains for his research. Any of the brains in jars in the Monastery of the Distressed Body can detail those events.",
@@ -2295,6 +2466,7 @@
 		{
 			"type": "section",
 			"name": "Appendix C: Monsters and NPCs",
+			"page": 37,
 			"id": "0d3",
 			"entries": [
 				"This section includes new monsters and nonplayer characters introduced in {@i Lost Laboratory of Kwalish}, as well as stat blocks from the {@book Monster Manual|MM}, {@book Volo's Guide to Monsters|VGM}, and {@book Mordenkainen's Tome of Foes|MTF} that are referenced in the adventure.",
@@ -2393,6 +2565,7 @@
 		{
 			"type": "section",
 			"name": "Appendix D: Magic Items",
+			"page": 53,
 			"id": "0d4",
 			"entries": [
 				"The unique magical-mechanical crafting techniques seen in the Monastery of the Distressed Body and the lost city of Daoine Gloine are the basis of a number of unique magic items found in the adventure. Because of their power and rarity, the items in this section (or at least those that aren't cursed) are best suited for characters in a high-magic campaign. Alternatively, treat each item as the equivalent of two or more magic items appropriate for characters of 5th to 10th level.",
@@ -2417,6 +2590,7 @@
 		{
 			"type": "section",
 			"name": "Appendix E: New Spells",
+			"page": 57,
 			"id": "0d5",
 			"entries": [
 				"The following new spells can be found as {@item Spell Scroll||spell scrolls} and supernatural charms in this adventure.",
@@ -2433,6 +2607,7 @@
 		{
 			"type": "section",
 			"name": "Appendix F: Additional Rumors",
+			"page": 58,
 			"id": "0d6",
 			"entries": [
 				"Tales of the legendary Barrier Peaks have circulated for centuries, passing from person to person and town to town across the length and breadth of the land\u2014and the only one who knows the full truth of those tales is you. None of the following rumors connect directly to this adventure. But you can use them as alternative false rumors for the \"Rumors and Legends\" section, or as true inspiration for side treks and new adventures.",

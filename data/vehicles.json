@@ -346,22 +346,22 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Fire Ballista.",
+							"name": "Fire Ballista",
 							"entry": "The battle balloon can fire its harpoon guns."
 						},
 						{
 							"type": "item",
-							"name": "Fire Green Flame Arbalester.",
+							"name": "Fire Green Flame Arbalester",
 							"entry": "The battle balloon can fire its green flame arbalester."
 						},
 						{
 							"type": "item",
-							"name": "Move.",
+							"name": "Move",
 							"entry": "The battle balloon can use its helm to move using its propeller. If the battle balloon enters a Large or smaller creature's space, that creature is automatically pushed to the edge of the battle balloon's space. The creature must also succeed on a DC 15 Dexterity saving throw or take 5 ({@damage 1d10}) bludgeoning damage."
 						},
 						{
 							"type": "item",
-							"name": "Harpoon Haul.",
+							"name": "Harpoon Haul",
 							"entry": "The battle balloon can pull each target {@condition grappled} by it up to 30 feet toward the battle balloon."
 						}
 					]
@@ -440,7 +440,7 @@
 				{
 					"name": "Chomper (Requires 1 Crew and Grants Half Cover)",
 					"entries": [
-						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}25 ({@damage 6d6 + 4}) piercing damage. A target reduced to 0 hit points by this damage is ground to bits and spit out through pipes on both sides of the Demon Grinder.Any nonmagical items the target was holding or carrying are destroyed as well."
+						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}25 ({@damage 6d6 + 4}) piercing damage. A target reduced to 0 hit points by this damage is ground to bits and spit out through pipes on both sides of the Demon Grinder. Any nonmagical items the target was holding or carrying are destroyed as well."
 					]
 				},
 				{
@@ -670,17 +670,17 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Fire Ballistas.",
+							"name": "Fire Ballistas",
 							"entry": "The galley can fire its {@object ballista||ballistas} (DMG, ch. 8)."
 						},
 						{
 							"type": "item",
-							"name": "Fire Mangonels.",
+							"name": "Fire Mangonels",
 							"entry": "The galley can fire its {@object mangonel||mangonels} (DMG, ch. 8)."
 						},
 						{
 							"type": "item",
-							"name": "Move.",
+							"name": "Move",
 							"entry": "The galley can use its helm to move with its oars or sails. As part of this move, it can use its naval ram."
 						}
 					]
@@ -923,12 +923,12 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Fire Ballista.",
+							"name": "Fire Ballista",
 							"entry": "The keelboat can fire its {@object ballista} (DMG, ch. 8)."
 						},
 						{
 							"type": "item",
-							"name": "Move.",
+							"name": "Move",
 							"entry": "The keelboat can use its helm to move with its oars or sails."
 						}
 					]
@@ -1140,7 +1140,7 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Move.",
+							"name": "Move",
 							"entry": "The longship can use its helm to move with its oars or sails."
 						}
 					]
@@ -1332,17 +1332,17 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Disintegration Ray.",
+									"name": "Disintegration Ray",
 									"entry": "If the target is a creature, it must succeed on a DC 15 Dexterity saving throw or take 18 ({@damage 4d8}) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is a Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it."
 								},
 								{
 									"type": "item",
-									"name": "Enervation Ray.",
+									"name": "Enervation Ray",
 									"entry": "The targeted creature must make a DC 15 Constitution saving throw, taking 18 ({@damage 4d8}) necrotic damage on a failed save, or half as much damage on a successful one."
 								},
 								{
 									"type": "item",
-									"name": "Paralyzing Ray.",
+									"name": "Paralyzing Ray",
 									"entry": "The targeted creature must succeed on a DC 15 Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 								}
 							]
@@ -1362,12 +1362,12 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Eye Rays.",
+							"name": "Eye Rays",
 							"entry": "The mechanical beholder can use its eye ray tentacles."
 						},
 						{
 							"type": "item",
-							"name": "Move.",
+							"name": "Move",
 							"entry": "The mechanical beholder can use its helm to move using its magical propulsion unit."
 						}
 					]
@@ -1483,7 +1483,7 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Move.",
+							"name": "Move",
 							"entry": "The rowboat can move using its oars."
 						}
 					]
@@ -1667,17 +1667,17 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Fire Ballista.",
+							"name": "Fire Ballista",
 							"entry": "The ship can fire its {@object ballista} (DMG, ch. 8)."
 						},
 						{
 							"type": "item",
-							"name": "Fire Mangonel.",
+							"name": "Fire Mangonel",
 							"entry": "The ship can fire its {@object mangonel} (DMG, ch. 8)."
 						},
 						{
 							"type": "item",
-							"name": "Move.",
+							"name": "Move",
 							"entry": "The ship can use its helm to move with its sails."
 						}
 					]
@@ -1874,7 +1874,9 @@
 			"source": "DD",
 			"page": 235,
 			"vehicleType": "CREATURE",
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "vehicle",
 			"terrain": [
 				"land"
@@ -2167,17 +2169,17 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Fire Ballistas.",
+							"name": "Fire Ballistas",
 							"entry": "The warship can fire its {@object ballista||ballistas} (DMG, ch. 8)."
 						},
 						{
 							"type": "item",
-							"name": "Fire Mangonels.",
+							"name": "Fire Mangonels",
 							"entry": "The warship can fire its {@object mangonel||mangonels} (DMG, ch. 8)."
 						},
 						{
 							"type": "item",
-							"name": "Move.",
+							"name": "Move",
 							"entry": "The warship can use its helm to move with its oars or sails. As part of this move, it can use its naval ram."
 						}
 					]
@@ -2372,7 +2374,7 @@
 			],
 			"entries": [
 				"A tempest rages within these rune-etched, iron chains. Raiders and pirates who operate under the blessings of a storm god sometimes make use of this upgrade.",
-				"By draping the chains over a ship's hull, the storm's fury thrashes into the water around it. The water within 210 feet of the ship is difficult terrain for everything other than this ship."
+				"By draping the chains over a ship's hull, the storm's fury thrashes into the water around it. The water within 210 feet of the ship is {@quickref difficult terrain||3} for everything other than this ship."
 			]
 		},
 		{

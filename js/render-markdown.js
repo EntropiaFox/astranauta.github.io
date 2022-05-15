@@ -99,6 +99,8 @@ class RendererMarkdown {
 	_renderList (entry, textStack, meta, options) {
 		if (!entry.items) return;
 
+		if (textStack[0] && textStack[0].slice(-1) !== "\n") textStack[0] += "\n";
+
 		const listDepth = Math.max(meta._typeStack.filter(it => it === "list").length - 1, 0);
 
 		if (entry.name) textStack[0] += `##### ${entry.name}`;
@@ -122,6 +124,7 @@ class RendererMarkdown {
 
 				const cacheDepth = this._adjustDepth(meta, 1);
 				this._recursiveRender(entry.items[i], textStack, meta, {suffix: "\n"});
+				if (textStack[0].slice(-2) === "\n\n") textStack[0] = textStack[0].slice(0, -1);
 				meta.depth = cacheDepth;
 			}
 		}
@@ -275,7 +278,7 @@ class RendererMarkdown {
 				meta.depth = cacheDepth;
 			}
 		}
-		if (entry.variantSource) textStack[0] += `>${RendererMarkdown.utils.getPageText(entry.variantSource)}\n`;
+		if (entry.source) textStack[0] += `>${RendererMarkdown.utils.getPageText({source: entry.source, page: entry.page})}\n`;
 		textStack[0] += "\n";
 	}
 
@@ -422,7 +425,7 @@ class RendererMarkdown {
 			addedDataCreature = true;
 		}
 
-		const mon = entry.dataCreature;
+		const {dataCreature: mon, legendaryGroup} = entry;
 
 		const monTypes = Parser.monTypeToFullObj(mon.type);
 		this.isSkipStylingItemLinks = true;
@@ -447,11 +450,14 @@ class RendererMarkdown {
 		const legendaryActionsPart = mon.legendary ? `\n>### Legendary Actions\n>${Renderer.monster.getLegendaryActionIntro(mon, RendererMarkdown.get())}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(mon.legendary, 1, meta)}` : "";
 		const mythicActionsPart = mon.mythic ? `\n>### Mythic Actions\n>${Renderer.monster.getMythicActionIntro(mon, RendererMarkdown.get())}\n>\n${RendererMarkdown.monster._getRenderedLegendarySection(mon.mythic, 1, meta)}` : "";
 
+		const legendaryGroupLairPart = legendaryGroup?.lairActions ? `\n>### Lair Actions\n${RendererMarkdown.monster._getRenderedSection(legendaryGroup.lairActions, -1, meta)}` : "";
+		const legendaryGroupRegionalPart = legendaryGroup?.regionalEffects ? `\n>### Regional Effects\n${RendererMarkdown.monster._getRenderedSection(legendaryGroup.regionalEffects, -1, meta)}` : "";
+
 		const footerPart = mon.footer ? `\n${RendererMarkdown.monster._getRenderedSection(mon.footer, 0, meta)}` : "";
 
 		const unbreakablePart = `___
 >## ${mon._displayName || mon.name}
->*${mon.level ? `${Parser.getOrdinalForm(mon.level)}-level ` : ""}${Parser.sizeAbvToFull(mon.size)} ${monTypes.asText}${mon.alignment ? `, ${Parser.alignmentListToFull(mon.alignment)}` : ""}*
+>*${mon.level ? `${Parser.getOrdinalForm(mon.level)}-level ` : ""}${Renderer.utils.getRenderedSize(mon.size)} ${monTypes.asText}${mon.alignment ? `, ${mon.alignmentPrefix ? RendererMarkdown.get().render(mon.alignmentPrefix) : ""}${Parser.alignmentListToFull(mon.alignment)}` : ""}*
 >___
 >- **Armor Class** ${acPart}
 >- **Hit Points** ${Renderer.monster.getRenderedHp(mon.hp, true)}
@@ -464,10 +470,10 @@ class RendererMarkdown {
 >- **Senses** ${mon.senses ? `${Renderer.monster.getRenderedSenses(mon.senses, true)}, ` : ""}passive Perception ${mon.passive || "\u2014"}
 >- **Languages** ${Renderer.monster.getRenderedLanguages(mon.languages)}
 >- **Challenge** ${mon.cr ? Parser.monCrToFull(mon.cr, {isMythic: !!mon.mythic}) : "\u2014"}
-${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_UNKNOWN ? `>- **Proficiency Bonus** ${mon.pbNote ?? UiUtil.intToBonus(Parser.crToPb(mon.cr))}` : ""}
+${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_CUSTOM ? `>- **Proficiency Bonus** ${mon.pbNote ?? UiUtil.intToBonus(Parser.crToPb(mon.cr))}` : ""}
 >___`;
 
-		let breakablePart = `${traitsPart}${actionsPart}${bonusActionsPart}${reactionsPart}${legendaryActionsPart}${mythicActionsPart}${footerPart}`;
+		let breakablePart = `${traitsPart}${actionsPart}${bonusActionsPart}${reactionsPart}${legendaryActionsPart}${mythicActionsPart}${legendaryGroupLairPart}${legendaryGroupRegionalPart}${footerPart}`;
 
 		if (RendererMarkdown._isAddColumnBreaks) {
 			let charAllowanceFirstCol = 2200 - unbreakablePart.length;
@@ -501,7 +507,7 @@ ${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_UNKNOWN ? `>- **Proficiency 
 ___
 - **Casting Time:** ${Parser.spTimeListToFull(sp.time)}
 - **Range:** ${Parser.spRangeToFull(sp.range)}
-- **Components:** ${Parser.spComponentsToFull(sp.components, sp.level)}
+- **Components:** ${Parser.spComponentsToFull(sp.components, sp.level, {isPlainText: true})}
 - **Duration:** ${Parser.spDurationToFull(sp.duration)}
 ---\n`;
 
@@ -687,7 +693,11 @@ ___
 			case "@h": textStack[0] += `*Hit:* `; break;
 
 			// DCs /////////////////////////////////////////////////////////////////////////////////////////////
-			case "@dc": textStack[0] += `DC ${text}`; break;
+			case "@dc": {
+				const [dcText, displayText] = Renderer.splitTagByPipe(text);
+				textStack[0] += `DC ${displayText || dcText}`;
+				break;
+			}
 
 			// DICE ////////////////////////////////////////////////////////////////////////////////////////////
 			case "@dice":
@@ -754,7 +764,7 @@ ___
 		}
 	}
 
-	_renderPrimitive (entry, textStack, meta, options) { textStack[0] += `${entry}` }
+	_renderPrimitive (entry, textStack, meta, options) { textStack[0] += `${entry}`; }
 	// endregion
 
 	// region Static options
@@ -795,10 +805,10 @@ ___
 					return $$`<div class="m-1 stripe-even"><label class="split-v-center">
 						<div class="w-100 mr-2">${v.name}</div>
 						${$ipt.addClass("max-w-33")}
-					</label></div>`
+					</label></div>`;
 				});
 
-			RendererMarkdown.__$wrpSettings = $$`<div class="flex-v-col w-100 h-100">${$rows}</div>`;
+			RendererMarkdown.__$wrpSettings = $$`<div class="ve-flex-v-col w-100 h-100">${$rows}</div>`;
 		}
 		RendererMarkdown.__$wrpSettings.appendTo($modalInner);
 	}
@@ -833,20 +843,20 @@ RendererMarkdown.utils = class {
 		return `${introText} ${it[prop].map(as => {
 			if (as.entry) return Renderer.get().render(as.entry);
 			else return `*${Parser.sourceJsonToAbv(as.source)}*${Renderer.utils.isDisplayPage(as.page) ? `, page ${as.page}` : ""}`;
-		}).join("; ")}`
+		}).join("; ")}`;
 	}
 };
 
 RendererMarkdown.monster = class {
 	static getSave (attr, mod) {
 		if (attr === "special") return Renderer.stripTags(mod);
-		return `${attr.uppercaseFirst()} ${mod}`
+		return `${attr.uppercaseFirst()} ${mod}`;
 	}
 
 	static getSkillsString (mon) {
 		function doSortMapJoinSkillKeys (obj, keys, joinWithOr) {
 			const toJoin = keys.sort(SortUtil.ascSort).map(s => `${s.toTitleCase()} ${obj[s]}`);
-			return joinWithOr ? toJoin.joinConjunct(", ", " or ") : toJoin.join(", ")
+			return joinWithOr ? toJoin.joinConjunct(", ", " or ") : toJoin.join(", ");
 		}
 
 		const skills = doSortMapJoinSkillKeys(mon.skill, Object.keys(mon.skill).filter(k => k !== "other" && k !== "special"));
@@ -854,9 +864,9 @@ RendererMarkdown.monster = class {
 		if (mon.skill.other || mon.skill.special) {
 			const others = mon.skill.other && mon.skill.other.map(it => {
 				if (it.oneOf) {
-					return `plus one of the following: ${doSortMapJoinSkillKeys(it.oneOf, Object.keys(it.oneOf), true)}`
+					return `plus one of the following: ${doSortMapJoinSkillKeys(it.oneOf, Object.keys(it.oneOf), true)}`;
 				}
-				throw new Error(`Unhandled monster "other" skill properties!`)
+				throw new Error(`Unhandled monster "other" skill properties!`);
 			});
 			const special = mon.skill.special && Renderer.stripTags(mon.skill.special);
 			return [skills, others, special].filter(Boolean).join(", ");
@@ -1040,7 +1050,7 @@ class MarkdownConverter {
 					type: "inset",
 					name: "(To convert creature statblocks, please use the Text Converter utility)",
 					entries: line.lines.slice(1).map(it => it.slice(1).trim()),
-				}
+				};
 			}
 		}
 	}
@@ -1068,7 +1078,7 @@ class MarkdownConverter {
 
 			obj.forEach(it => {
 				if (typeof it !== "object") return;
-				this._coalesceConvert_doRecurse(it, fn)
+				this._coalesceConvert_doRecurse(it, fn);
 			});
 		} else {
 			if (obj.type) {
@@ -1164,7 +1174,7 @@ class MarkdownConverter {
 						if (!nxt || !nxt.trim()) {
 							// Allow a max of one blank line before breaking into another list
 							if (blankCount++ < 1) continue;
-							else break
+							else break;
 						}
 						blankCount = 0;
 						if (typeof nxt !== "string") break;
@@ -1615,8 +1625,9 @@ class MarkdownConverter {
 		(function doCheckDiceOrNumericCol0 () {
 			// check if first column is all strictly number-like
 			tbl.rows.forEach(r => {
+				const r0Clean = Renderer.stripTags((r[0] || "").trim());
 				// u2012 = figure dash; u2013 = en-dash
-				if (!/^[-+*/×÷x^.,0-9\u2012\u2013]+$/i.exec((r[0] || "").trim())) return isDiceCol0 = false;
+				if (!/^[-+*/×÷x^.,0-9\u2012\u2013]+(?:st|nd|rd|th)?$/i.exec(r0Clean)) return isDiceCol0 = false;
 			});
 		})();
 
@@ -1714,18 +1725,18 @@ class MarkdownConverter {
 
 				tbl.rows.forEach(r => {
 					if (typeof r[i] !== "string") return counts.text++;
-					const clean = r[i]
+					const clean = Renderer.stripTags(r[i])
 						.replace(/[.,]/g, "") // Remove number separators
 						.replace(/(^| )(cp|sp|gp|pp|lb\.|ft\.)( |$)/g, "") // Remove units
 						.trim();
-					counts[isNaN(Number(clean)) ? "text" : "number"]++
+					counts[isNaN(Number(clean)) ? "text" : "number"]++;
 				});
 
 				// If most of the cells in this column contain number data, right-align
 				// Unless it's the first column, in which case, center-align
 				if ((counts.number / tbl.rows.length) >= 0.80) {
 					if (i === 0) tbl.colStyles[i] += ` text-center`;
-					else tbl.colStyles[i] += ` text-right`
+					else tbl.colStyles[i] += ` text-right`;
 				}
 			});
 		})();
@@ -1748,7 +1759,7 @@ class MarkdownConverter {
 					const cell = r[i];
 					if (typeof cell !== "string") return counts.long++;
 					const words = Renderer.stripTags(cell).split(" ");
-					counts[words.length <= 3 ? "short" : "long"]++
+					counts[words.length <= 3 ? "short" : "long"]++;
 				});
 
 				// If most of the cells in this column contain short text, center-align
@@ -1765,7 +1776,7 @@ class MarkdownConverter {
 		(function doEvenCenteredColumns () {
 			if (!isDiceCol0) return;
 			if (tbl.colStyles.length === 2 && isFewWordsCol1) {
-				tbl.colStyles = ["col-6 text-center", "col-6 text-center"]
+				tbl.colStyles = ["col-6 text-center", "col-6 text-center"];
 			}
 		})();
 
@@ -1775,7 +1786,7 @@ class MarkdownConverter {
 				if (cell === "--") return "\u2014";
 				return cell;
 			});
-		})
+		});
 	}
 
 	static _doCleanTable (tbl) {
@@ -1790,5 +1801,5 @@ if (typeof module !== "undefined") {
 	module.exports = {
 		RendererMarkdown,
 		MarkdownConverter,
-	}
+	};
 }

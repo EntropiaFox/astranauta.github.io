@@ -499,7 +499,7 @@
 			"entries": [
 				"You cause a creature to be flooded with emotions of disgust."
 			],
-			"focus": "While you are focused on this discipline, the area in a 5 foot radius around you is difficult terrain for any enemy that isn't immune to being {@condition frightened}.",
+			"focus": "While you are focused on this discipline, the area in a 5 foot radius around you is {@quickref difficult terrain||3} for any enemy that isn't immune to being {@condition frightened}.",
 			"modes": [
 				{
 					"cost": {
@@ -1206,7 +1206,7 @@
 			"entries": [
 				"You become one with the power of elemental air."
 			],
-			"focus": "While focused on this discipline, you take no falling damage, and you ignore difficult terrain when walking.",
+			"focus": "While focused on this discipline, you take no falling damage, and you ignore {@quickref difficult terrain||3} when walking.",
 			"modes": [
 				{
 					"cost": {
@@ -1527,7 +1527,7 @@
 					},
 					"name": "Ice Sheet",
 					"entries": [
-						"As an action, choose a point on the ground you can see within 60 feet of you. The ground in a 20-foot radius centered on that point becomes covered in ice for 10 minutes. It is difficult terrain, and any creature that moves more than 10 feet on it must succeed on a Dexterity saving throw or fall {@condition prone}. If the surface is sloped, a creature that falls {@condition prone} in the area immediately slides to the bottom of the slope."
+						"As an action, choose a point on the ground you can see within 60 feet of you. The ground in a 20-foot radius centered on that point becomes covered in ice for 10 minutes. It is {@quickref difficult terrain||3}, and any creature that moves more than 10 feet on it must succeed on a Dexterity saving throw or fall {@condition prone}. If the surface is sloped, a creature that falls {@condition prone} in the area immediately slides to the bottom of the slope."
 					]
 				},
 				{

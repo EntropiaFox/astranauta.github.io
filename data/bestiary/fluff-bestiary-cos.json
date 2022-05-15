@@ -201,6 +201,19 @@
 			]
 		},
 		{
+			"name": "Emil Toranescu",
+			"source": "CoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/CoS/Emil Toranescu.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Ezmerelda d'Avenir",
 			"source": "CoS",
 			"entries": [
@@ -921,7 +934,7 @@
 										"Strahd can afford to be bold in his tactics, for he has additional protection in the form of a giant crystal heart hidden inside Castle Ravenloft.",
 										"Any damage that Strahd takes is transferred to the Heart of Sorrow (see chapter 4, area K20). If the heart absorbs damage that reduces it to 0 hit points, it is destroyed, and Strahd takes any leftover damage. The Heart of Sorrow has 50 hit points and is restored to that number of hit points each dawn, provided it has at least 1 hit point remaining. Strahd can, as a bonus action on his turn, break his link to the Heart of Sorrow so that it no longer absorbs damage dealt to him. Strahd can reestablish his link to the Heart of Sorrow as a bonus action on his turn, but only while in Castle Ravenloft.",
 										"The effect of the protection afforded by the Heart of Sorrow can be chilling to behold, as damage to Strahd is quickly undone. For example, a critical hit might dislocate Strahd's jaw, but only for a moment; then the vampire's jaw quickly resets itself.",
-										"The ability of the Heart of Sorrow to absorb damage is suppressed if it or Strahd is fully within an antimagic field."
+										"The ability of the Heart of Sorrow to absorb damage is suppressed if it or Strahd is fully within an {@spell antimagic field}."
 									]
 								}
 							]
@@ -1156,62 +1169,6 @@
 							]
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "Wereraven",
-			"source": "CoS",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "entries",
-							"entries": [
-								"Wereravens are secretive and extraordinarily cautious lycanthropes that trust one another but are wary of just about everyone else. Although skilled at blending into society, they keep mostly to themselves, respect local laws, and strive to do good whenever possible.",
-								"In their human and hybrid forms, wereravens favor light weapons. They are reluctant to make bite attacks in raven form for fear of spreading their curse to those who don't deserve it or who would abuse it.",
-								{
-									"name": "A Kindness of Wereravens",
-									"entries": [
-										" Wereravens refer to their tightly knit groups as kindnesses. A kindness of were-ravens usually numbers between seven and twelve individuals. Not surprisingly, wereravens get along well with ravens and often hide in plain sight among them."
-									],
-									"type": "entries"
-								},
-								{
-									"name": "Charitable Collectors",
-									"type": "entries",
-									"entries": [
-										"Wereravens like to collect shiny trinkets and precious baubles. They are fond of sharing their wealth with those in need and, in their humanoid forms, modestly give money to charity. They take steps to keep magic items out of evil hands by stashing them in secret hiding places."
-									]
-								},
-								{
-									"name": "Characters as Wereravens",
-									"type": "entries",
-									"entries": [
-										"The Monster Manual has rules for characters afflicted with lycanthropy. The following text applies to wereraven characters specifically.",
-										"A character cursed with wereraven lycanthropy gains a Dexterity of 15 if his or her score isn't already higher. Attack and damage rolls for the wereraven's bite are based on whichever is higher of the character's Strength and Dexterity. The bite of a wereraven in raven form deals 1 piercing damage (no ability modifier applies to this damage) and carries the curse of lycanthropy; see the \"Player Characters as Lycanthropes\" sidebar in the lycanthropes entry in the Monster Manual for details."
-									]
-								}
-							]
-						}
-					]
-				}
-			],
-			"images": [
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/CoS/Wereraven.png"
-					}
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "bestiary/CoS/Wereraven 2.png"
-					}
 				}
 			]
 		}

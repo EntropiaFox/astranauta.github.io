@@ -9,7 +9,9 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -65,7 +67,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/abyssal-wretch.mp3"
@@ -82,13 +83,19 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Adult Kruthik",
 			"source": "MTF",
 			"page": 212,
-			"size": "M",
+			"reprintedAs": [
+				"Adult Kruthik|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -170,7 +177,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/adult-kruthik.mp3"
@@ -196,6 +202,7 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -208,7 +215,12 @@
 					"source": "IMR"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Adult Oblex|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "ooze",
 			"alignment": [
 				"L",
@@ -316,7 +328,7 @@
 				{
 					"name": "Eat Memories",
 					"entries": [
-						"The oblex targets one creature it can see within 5 feet of it. The target must succeed on a {@dc 15} Wisdom saving throw or take 18 ({@damage 4d8}) psychic damage and become memory drained until it finishes a short or long rest or until it benefits from the {@spell greater restoration} or heal spell. Constructs, oozes, plants, and undead succeed on the save automatically.",
+						"The oblex targets one creature it can see within 5 feet of it. The target must succeed on a {@dc 15} Wisdom saving throw or take 18 ({@damage 4d8}) psychic damage and become memory drained until it finishes a short or long rest or until it benefits from the {@spell greater restoration} or {@spell heal} spell. Constructs, oozes, plants, and undead succeed on the save automatically.",
 						"While memory drained, the target must roll a {@dice d4} and subtract the number rolled from any ability check or attack roll it makes. Each time the target is memory drained beyond the first, the die size increases by one: the {@dice d4} becomes a {@dice d6}, the {@dice d6} becomes a {@dice d8}, and so on until the die becomes a {@dice d20}, at which point the target becomes {@condition unconscious} for 1 hour. The effect then ends.",
 						"When an oblex causes a target to become memory drained, the oblex learns all the languages the target knows and gains all its proficiencies, except for any saving throw proficiencies."
 					]
@@ -327,7 +339,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/oblex-adult.mp3"
@@ -363,6 +374,7 @@
 				"charmed",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -385,7 +397,12 @@
 					"page": 212
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Air Elemental Myrmidon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -475,7 +492,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/air-elemental-myrmidon.mp3"
@@ -502,6 +518,7 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -517,7 +534,12 @@
 					"source": "SDW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Alkilith|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -632,7 +654,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/alkilith.mp3"
@@ -660,6 +681,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -675,7 +697,12 @@
 					"source": "SLW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Allip|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -753,7 +780,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The allip can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"The allip can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				}
 			],
@@ -781,7 +808,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/allip.mp3"
@@ -802,6 +828,7 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -814,7 +841,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Amnizu|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -976,10 +1008,13 @@
 								"The amnizu summons {@dice 2d4} bearded devils or {@dice 1d4} barbed devils. A summoned devil appears in an unoccupied space within 60 feet of the amnizu, acts as an ally of the amnizu, and can't summon other devils. It remains for 1 minute, until the amnizu dies, or until its summoner dismisses it as an action"
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Amnizu (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/amnizu.mp3"
@@ -1004,6 +1039,10 @@
 				"O",
 				"S"
 			],
+			"damageTagsSpell": [
+				"F",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -1019,6 +1058,7 @@
 				"charmed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1026,7 +1066,12 @@
 			"name": "Armanite",
 			"source": "MTF",
 			"page": 131,
-			"size": "L",
+			"reprintedAs": [
+				"Armanite|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -1127,7 +1172,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/armanite.mp3"
@@ -1155,6 +1199,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1162,7 +1207,12 @@
 			"name": "Astral Dreadnought",
 			"source": "MTF",
 			"page": 117,
-			"size": "G",
+			"reprintedAs": [
+				"Astral Dreadnought|MPMM"
+			],
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -1310,7 +1360,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/astral-dreadnought.mp3"
@@ -1339,6 +1388,7 @@
 			"conditionInflict": [
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1346,7 +1396,12 @@
 			"name": "Autumn Eladrin",
 			"source": "MTF",
 			"page": 195,
-			"size": "M",
+			"reprintedAs": [
+				"Autumn Eladrin|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fey",
 				"tags": [
@@ -1473,7 +1528,6 @@
 			"environment": [
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/autumn-eladrin.mp3"
@@ -1508,6 +1562,7 @@
 			"conditionInflictSpell": [
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1516,7 +1571,12 @@
 			"isNamedCreature": true,
 			"source": "MTF",
 			"page": 170,
-			"size": "L",
+			"reprintedAs": [
+				"Bael|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -1689,7 +1749,7 @@
 				{
 					"name": "Awaken Greed",
 					"entries": [
-						"Bael casts charm person or major image."
+						"Bael casts {@spell charm person} or major image."
 					]
 				},
 				{
@@ -1705,7 +1765,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/bael.mp3"
@@ -1731,6 +1790,13 @@
 				"N",
 				"P"
 			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"N",
+				"P",
+				"S"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -1746,6 +1812,7 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1753,7 +1820,12 @@
 			"name": "Balhannoth",
 			"source": "MTF",
 			"page": 119,
-			"size": "L",
+			"reprintedAs": [
+				"Balhannoth|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "aberration",
 			"alignment": [
 				"C",
@@ -1856,7 +1928,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/balhannoth.mp3"
@@ -1885,11 +1956,13 @@
 			],
 			"conditionInflict": [
 				"grappled",
+				"invisible",
 				"restrained"
 			],
 			"conditionInflictLegendary": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1907,7 +1980,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Baphomet|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -1965,7 +2043,7 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks",
+					"note": "that is nonmagical",
 					"cond": true
 				}
 			],
@@ -2014,7 +2092,7 @@
 				{
 					"name": "Labyrinthine Recall",
 					"entries": [
-						"Baphomet can perfectly recall any path he has traveled, and he is immune to the maze spell."
+						"Baphomet can perfectly recall any path he has traveled, and he is immune to the {@spell maze} spell."
 					]
 				},
 				{
@@ -2093,7 +2171,6 @@
 				"name": "Baphomet",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Charge",
 				"Legendary Resistances",
@@ -2130,6 +2207,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2137,7 +2215,12 @@
 			"name": "Berbalang",
 			"source": "MTF",
 			"page": 120,
-			"size": "M",
+			"reprintedAs": [
+				"Berbalang|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"N",
@@ -2233,7 +2316,6 @@
 			"environment": [
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/berbalang.mp3"
@@ -2257,6 +2339,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2264,7 +2347,12 @@
 			"name": "Black Abishai",
 			"source": "MTF",
 			"page": 160,
-			"size": "M",
+			"reprintedAs": [
+				"Black Abishai|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -2390,7 +2478,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/black-abishai.mp3"
@@ -2419,6 +2506,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2426,7 +2514,12 @@
 			"name": "Blue Abishai",
 			"source": "MTF",
 			"page": 161,
-			"size": "M",
+			"reprintedAs": [
+				"Blue Abishai|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -2614,7 +2707,6 @@
 				"coastal",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/blue-abishai.mp3"
@@ -2640,12 +2732,23 @@
 				"L",
 				"P"
 			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"I",
+				"L",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2661,7 +2764,12 @@
 					"source": "DIP"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Boneclaw|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -2773,7 +2881,6 @@
 				"desert",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/boneclaw.mp3"
@@ -2801,6 +2908,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2808,7 +2916,12 @@
 			"name": "Bronze Scout",
 			"source": "MTF",
 			"page": 125,
-			"size": "M",
+			"reprintedAs": [
+				"Clockwork Bronze Scout|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -2896,7 +3009,6 @@
 				"hill",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/bronze-scout.mp3"
@@ -2917,6 +3029,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2929,7 +3042,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Bulezau|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -3011,7 +3129,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/bulezau.mp3"
@@ -3033,6 +3150,7 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3040,7 +3158,12 @@
 			"name": "Cadaver Collector",
 			"source": "MTF",
 			"page": 122,
-			"size": "L",
+			"reprintedAs": [
+				"Cadaver Collector|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"L",
@@ -3134,7 +3257,6 @@
 			"environment": [
 				"grassland"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/cadaver-collector.mp3"
@@ -3146,6 +3268,7 @@
 				"D"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -3163,6 +3286,7 @@
 			"conditionInflict": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3170,7 +3294,12 @@
 			"name": "Canoloth",
 			"source": "MTF",
 			"page": 247,
-			"size": "M",
+			"reprintedAs": [
+				"Canoloth|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -3295,7 +3424,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/canoloth.mp3"
@@ -3328,6 +3456,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3341,7 +3470,12 @@
 					"page": 232
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Choker|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "aberration",
 			"alignment": [
 				"C",
@@ -3418,7 +3552,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/choker.mp3"
@@ -3454,6 +3587,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3461,7 +3595,12 @@
 			"name": "Corpse Flower",
 			"source": "MTF",
 			"page": 127,
-			"size": "L",
+			"reprintedAs": [
+				"Corpse Flower|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "plant",
 			"alignment": [
 				"C",
@@ -3546,7 +3685,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/corpse-flower.mp3"
@@ -3572,6 +3710,7 @@
 			"conditionInflict": [
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3579,7 +3718,12 @@
 			"name": "Deathlock",
 			"source": "MTF",
 			"page": 128,
-			"size": "M",
+			"reprintedAs": [
+				"Deathlock|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -3720,7 +3864,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/deathlock.mp3"
@@ -3737,6 +3880,12 @@
 			"damageTags": [
 				"N"
 			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"N",
+				"O"
+			],
 			"spellcastingTags": [
 				"CL",
 				"I"
@@ -3744,8 +3893,128 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Deathlock (Archfey Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell eldritch blast}",
+											"{@spell mage hand}"
+										]
+									},
+									"3": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell blink}",
+											"{@spell faerie fire}",
+											"{@spell hunger of Hadar}",
+											"{@spell hypnotic pattern}",
+											"{@spell phantasmal force}",
+											"{@spell sleep}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Deathlock (Fiend Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell eldritch blast}",
+											"{@spell mage hand}"
+										]
+									},
+									"3": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell blindness/deafness}",
+											"{@spell burning hands}",
+											"{@spell command}",
+											"{@spell fireball}",
+											"{@spell hellish rebuke}",
+											"{@spell scorching ray}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Deathlock (Great Old One Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 5th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 13}, {@hit 5} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell eldritch blast}",
+											"{@spell mage hand}"
+										]
+									},
+									"3": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell armor of Agathys}",
+											"{@spell detect thoughts}",
+											"{@spell dissonant whispers}",
+											"{@spell hunger of Hadar}",
+											"{@spell Tasha's hideous laughter}",
+											"{@spell phantasmal force}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Deathlock Mastermind",
@@ -3756,7 +4025,12 @@
 					"source": "SDW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Deathlock Mastermind|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -3909,7 +4183,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/deathlock-mastermind.mp3"
@@ -3926,6 +4199,11 @@
 			"damageTags": [
 				"N"
 			],
+			"damageTagsSpell": [
+				"I",
+				"N",
+				"O"
+			],
 			"spellcastingTags": [
 				"CL",
 				"I"
@@ -3941,8 +4219,143 @@
 				"invisible",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Deathlock Mastermind (Archfey Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 10th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell mage hand}",
+											"{@spell minor illusion}",
+											"{@spell poison spray}"
+										]
+									},
+									"5": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell blink}",
+											"{@spell dominate beast}",
+											"{@spell dominate person}",
+											"{@spell faerie fire}",
+											"{@spell greater invisibility}",
+											"{@spell hunger of Hadar}",
+											"{@spell hypnotic pattern}",
+											"{@spell phantasmal force}",
+											"{@spell seeming}",
+											"{@spell sleep}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Deathlock Mastermind (Fiend Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 10th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell mage hand}",
+											"{@spell minor illusion}",
+											"{@spell poison spray}"
+										]
+									},
+									"5": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell blindness/deafness}",
+											"{@spell burning hands}",
+											"{@spell command}",
+											"{@spell fire shield}",
+											"{@spell fireball}",
+											"{@spell flame strike}",
+											"{@spell hellish rebuke}",
+											"{@spell scorching ray}",
+											"{@spell stinking cloud}",
+											"{@spell wall of fire}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Deathlock Mastermind (Great Old One Patron)",
+					"source": "MTF",
+					"_mod": {
+						"spellcasting": {
+							"mode": "replaceArr",
+							"replace": "Spellcasting",
+							"items": {
+								"name": "Spellcasting",
+								"headerEntries": [
+									"The deathlock is a 10th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It regains its expended spell slots when it finishes a short or long rest. It knows the following warlock spells:"
+								],
+								"spells": {
+									"0": {
+										"spells": [
+											"{@spell chill touch}",
+											"{@spell mage hand}",
+											"{@spell minor illusion}",
+											"{@spell poison spray}"
+										]
+									},
+									"5": {
+										"lower": 1,
+										"slots": 2,
+										"spells": [
+											"{@spell clairvoyance}",
+											"{@spell detect thoughts}",
+											"{@spell dissonant whispers}",
+											"{@spell dominate person}",
+											"{@spell Evard's black tentacles}",
+											"{@spell hunger of Hadar}",
+											"{@spell phantasmal force}",
+											"{@spell sending}",
+											"{@spell Tasha's hideous laughter}",
+											"{@spell telekinesis}"
+										]
+									}
+								},
+								"ability": "cha"
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Deathlock Wight",
@@ -3954,7 +4367,12 @@
 					"page": 233
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Deathlock Wight|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -4065,7 +4483,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/deathlock-wight.mp3"
@@ -4097,6 +4514,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4111,7 +4529,12 @@
 					"page": 236
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Demogorgon|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -4171,7 +4594,7 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks",
+					"note": "that is nonmagical",
 					"cond": true
 				}
 			],
@@ -4279,7 +4702,6 @@
 				"name": "Demogorgon",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -4300,6 +4722,9 @@
 				"B",
 				"N"
 			],
+			"damageTagsSpell": [
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -4317,6 +4742,7 @@
 				"frightened",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4330,7 +4756,12 @@
 					"page": 224
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Derro|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4406,7 +4837,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/derro.mp3"
@@ -4433,6 +4863,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4446,7 +4877,12 @@
 					"page": 225
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Derro Savant|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4556,7 +4992,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/derro-savant.mp3"
@@ -4575,12 +5010,21 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"T"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4588,7 +5032,12 @@
 			"name": "Dhergoloth",
 			"source": "MTF",
 			"page": 248,
-			"size": "M",
+			"reprintedAs": [
+				"Dhergoloth|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -4716,7 +5165,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/dhergoloth.mp3"
@@ -4747,6 +5195,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4754,7 +5203,12 @@
 			"name": "Dire Troll",
 			"source": "MTF",
 			"page": 243,
-			"size": "H",
+			"reprintedAs": [
+				"Dire Troll|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -4858,7 +5312,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/dire-troll.mp3"
@@ -4885,6 +5338,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4892,7 +5346,12 @@
 			"name": "Drow Arachnomancer",
 			"source": "MTF",
 			"page": 182,
-			"size": "M",
+			"reprintedAs": [
+				"Drow Arachnomancer|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4907,7 +5366,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -5016,7 +5475,7 @@
 				{
 					"name": "Change Shape (Recharges after a Short or Long Rest)",
 					"entries": [
-						"The drow can use a bonus action to magically polymorph into a giant spider, remaining in that form for up to 1 hour. It can revert to its true form as a bonus action. Its statistics, other than its size, are the same in each form. It can speak and cast spells while in giant spider form. Any equipment it is wearing or carrying in humanoid form melds into the giant spider form. It can't activate, use, wield, or otherwise benefit from any of its equipment. It reverts to its humanoid form if it dies."
+						"The drow can use a bonus action to magically polymorph into a {@creature giant spider}, remaining in that form for up to 1 hour. It can revert to its true form as a bonus action. Its statistics, other than its size, are the same in each form. It can speak and cast spells while in giant spider form. Any equipment it is wearing or carrying in humanoid form melds into the giant spider form. It can't activate, use, wield, or otherwise benefit from any of its equipment. It reverts to its humanoid form if it dies."
 					]
 				},
 				{
@@ -5073,7 +5532,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/drow-arachnomancer.mp3"
@@ -5099,6 +5557,14 @@
 				"I",
 				"P"
 			],
+			"damageTagsSpell": [
+				"F",
+				"I",
+				"L",
+				"N",
+				"O",
+				"P"
+			],
 			"spellcastingTags": [
 				"CL",
 				"I"
@@ -5120,13 +5586,19 @@
 				"restrained",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Drow Favored Consort",
 			"source": "MTF",
 			"page": 183,
-			"size": "M",
+			"reprintedAs": [
+				"Drow Favored Consort|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5303,7 +5775,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/drow-favored-consort.mp3"
@@ -5327,6 +5798,14 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"C",
+				"F",
+				"I",
+				"L",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW",
 				"I"
@@ -5343,6 +5822,7 @@
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5350,7 +5830,12 @@
 			"name": "Drow House Captain",
 			"source": "MTF",
 			"page": 184,
-			"size": "M",
+			"reprintedAs": [
+				"Drow House Captain|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5476,7 +5961,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/drow-house-captain.mp3"
@@ -5510,13 +5994,23 @@
 				"RNG",
 				"RW"
 			],
+			"conditionInflict": [
+				"poisoned",
+				"unconscious"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Drow Inquisitor",
 			"source": "MTF",
 			"page": 184,
-			"size": "M",
+			"reprintedAs": [
+				"Drow Inquisitor|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5710,16 +6204,19 @@
 							"name": "Summon Demon (1/Day)",
 							"type": "entries",
 							"entries": [
-								"The drow attempts to magically summon a yochlol, with a 50 percent chance of success. If the attempt fails, the drow takes 5 ({@damage 1d10}) psychic damage. Otherwise, the summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action. (see notes for link)"
+								"The drow attempts to magically summon a yochlol, with a {@chance 50|50 percent} chance of success. If the attempt fails, the drow takes 5 ({@damage 1d10}) psychic damage. Otherwise, the summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action. (see notes for link)"
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Drow Inquisitor (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/drow-inquisitor.mp3"
@@ -5744,6 +6241,12 @@
 				"P",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"I",
+				"N",
+				"O",
+				"P"
+			],
 			"spellcastingTags": [
 				"CC",
 				"I"
@@ -5758,13 +6261,19 @@
 				"poisoned",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Drow Matron Mother",
 			"source": "MTF",
 			"page": 186,
-			"size": "M",
+			"reprintedAs": [
+				"Drow Matron Mother|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6008,7 +6517,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/drow-matron-mother.mp3"
@@ -6032,6 +6540,14 @@
 				"B",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"F",
+				"N",
+				"O",
+				"R",
+				"S",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CC",
 				"I"
@@ -6053,6 +6569,7 @@
 				"prone",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6060,7 +6577,12 @@
 			"name": "Drow Shadowblade",
 			"source": "MTF",
 			"page": 187,
-			"size": "M",
+			"reprintedAs": [
+				"Drow Shadowblade|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6075,7 +6597,7 @@
 				{
 					"ac": 17,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -6179,16 +6701,19 @@
 							"name": "Summon Shadow Demon (1/Day)",
 							"type": "entries",
 							"entries": [
-								"The drow attempts to magically summon a shadow demon with a 50 percent chance of success. If the attempt fails, the drow takes 5 ({@damage 1d10}) psychic damage. Otherwise, the summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action."
+								"The drow attempts to magically summon a shadow demon with a {@chance 50|50 percent} chance of success. If the attempt fails, the drow takes 5 ({@damage 1d10}) psychic damage. Otherwise, the summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Drow Shadowblade (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/drow-shadowblade.mp3"
@@ -6222,13 +6747,23 @@
 				"RNG",
 				"RW"
 			],
+			"conditionInflict": [
+				"poisoned",
+				"unconscious"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Duergar Despot",
 			"source": "MTF",
 			"page": 188,
-			"size": "M",
+			"reprintedAs": [
+				"Duergar Despot|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6353,7 +6888,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/duergar-despot.mp3"
@@ -6384,6 +6918,10 @@
 			"miscTags": [
 				"MW"
 			],
+			"conditionInflict": [
+				"prone"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -6395,7 +6933,12 @@
 					"source": "IDRotF"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Duergar Hammerer|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"L",
@@ -6479,7 +7022,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/duergar-hammerer.mp3"
@@ -6503,6 +7045,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -6515,7 +7058,12 @@
 					"page": 226
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Duergar Kavalrachni|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6610,7 +7158,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/duergar-kavalrachni.mp3"
@@ -6637,6 +7184,10 @@
 				"RNG",
 				"RW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -6648,7 +7199,12 @@
 					"source": "IDRotF"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Duergar Mind Master|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6754,7 +7310,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/duergar-mind-master.mp3"
@@ -6780,6 +7335,10 @@
 			"miscTags": [
 				"MW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6787,7 +7346,12 @@
 			"name": "Duergar Screamer",
 			"source": "MTF",
 			"page": 190,
-			"size": "M",
+			"reprintedAs": [
+				"Duergar Screamer|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"L",
@@ -6864,7 +7428,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/duergar-screamer.mp3"
@@ -6890,6 +7453,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -6902,7 +7466,12 @@
 					"page": 227
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Duergar Soulblade|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -7009,7 +7578,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/duergar-soulblade.mp3"
@@ -7034,6 +7602,10 @@
 			"miscTags": [
 				"MW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -7046,7 +7618,12 @@
 					"page": 227
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Duergar Stone Guard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -7141,7 +7718,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/duergar-stone-guard.mp3"
@@ -7164,6 +7740,10 @@
 				"RW",
 				"THW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7171,7 +7751,12 @@
 			"name": "Duergar Warlord",
 			"source": "MTF",
 			"page": 192,
-			"size": "M",
+			"reprintedAs": [
+				"Duergar Warlord|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -7280,7 +7865,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/duergar-warlord.mp3"
@@ -7308,6 +7892,10 @@
 				"RW",
 				"THW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -7320,7 +7908,12 @@
 					"page": 226
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Duergar Xarrorn|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -7408,7 +8001,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/duergar-xarrorn.mp3"
@@ -7432,13 +8024,22 @@
 				"MW",
 				"RCH"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Dybbuk",
 			"source": "MTF",
 			"page": 132,
-			"size": "M",
+			"reprintedAs": [
+				"Dybbuk|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -7537,7 +8138,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The dybbuk can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"The dybbuk can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				},
 				{
@@ -7573,7 +8174,6 @@
 				"desert",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/dybbuk.mp3"
@@ -7594,6 +8194,10 @@
 				"N",
 				"O"
 			],
+			"damageTagsSpell": [
+				"O",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -7606,6 +8210,7 @@
 			"conditionInflictSpell": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7619,7 +8224,12 @@
 					"page": 212
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Earth Elemental Myrmidon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -7702,7 +8312,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/earth-elemental-myrmidon.mp3"
@@ -7729,6 +8338,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7747,7 +8357,12 @@
 					"source": "IMR"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Eidolon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"A"
@@ -7822,7 +8437,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The eidolon can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object other than a sacred statue."
+						"The eidolon can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object other than a sacred statue."
 					]
 				},
 				{
@@ -7854,7 +8469,6 @@
 				"mountain",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/eidolon.mp3"
@@ -7876,13 +8490,19 @@
 				"frightened",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Elder Oblex",
 			"source": "MTF",
 			"page": 219,
-			"size": "H",
+			"reprintedAs": [
+				"Elder Oblex|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": "ooze",
 			"alignment": [
 				"L",
@@ -7993,7 +8613,7 @@
 				{
 					"name": "Eat Memories",
 					"entries": [
-						"The oblex targets one creature it can see within 5 feet of it. The target must succeed on a {@dc 18} Wisdom saving throw or take 44 ({@damage 8d10}) psychic damage and become memory drained until it finishes a short or long rest or until it benefits from the {@spell greater restoration} or heal spell. Constructs, oozes, plants, and undead succeed on the save automatically.",
+						"The oblex targets one creature it can see within 5 feet of it. The target must succeed on a {@dc 18} Wisdom saving throw or take 44 ({@damage 8d10}) psychic damage and become memory drained until it finishes a short or long rest or until it benefits from the {@spell greater restoration} or {@spell heal} spell. Constructs, oozes, plants, and undead succeed on the save automatically.",
 						"While memory drained, the target must roll a {@dice d4} and subtract the number rolled from any ability check or attack roll it makes. Each time the target is memory drained beyond the first, the die size increases by one: the {@dice d4} becomes a {@dice d6}, the {@dice d6} becomes a {@dice d8}, and so on until the die becomes a {@dice d20}, at which point the target becomes {@condition unconscious} for 1 hour. The effect then ends.",
 						"When an oblex causes a target to become memory drained, the oblex learns all the languages the target knows and gains all its proficiencies, except any saving throw proficiencies."
 					]
@@ -8004,7 +8624,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/elder-oblex.mp3"
@@ -8026,6 +8645,9 @@
 				"B",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"O"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -8043,6 +8665,7 @@
 				"paralyzed",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8050,7 +8673,12 @@
 			"name": "Elder Tempest",
 			"source": "MTF",
 			"page": 200,
-			"size": "G",
+			"reprintedAs": [
+				"Elder Tempest|MPMM"
+			],
+			"size": [
+				"G"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -8191,7 +8819,6 @@
 				"hill",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/elder-tempest.mp3"
@@ -8220,6 +8847,7 @@
 				"prone",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8233,7 +8861,12 @@
 					"page": 231
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Female Steeder|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -8300,7 +8933,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/female-steeder.mp3"
@@ -8321,6 +8953,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8334,7 +8967,12 @@
 					"page": 213
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Fire Elemental Myrmidon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -8430,7 +9068,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/fire-elemental-myrmidon.mp3"
@@ -8457,6 +9094,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8471,7 +9109,12 @@
 					"page": 238
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Fraz-Urb'luu|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -8532,7 +9175,7 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks",
+					"note": "that is nonmagical",
 					"cond": true
 				}
 			],
@@ -8643,7 +9286,6 @@
 				"name": "Fraz-Urb'luu",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -8663,6 +9305,15 @@
 				"B",
 				"P"
 			],
+			"damageTagsLegendary": [
+				"Y"
+			],
+			"damageTagsSpell": [
+				"B",
+				"P",
+				"S",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -8681,6 +9332,7 @@
 				"incapacitated",
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8688,7 +9340,12 @@
 			"name": "Frost Salamander",
 			"source": "MTF",
 			"page": 223,
-			"size": "H",
+			"reprintedAs": [
+				"Frost Salamander|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": "elemental",
 			"alignment": [
 				"U"
@@ -8775,7 +9432,6 @@
 			"environment": [
 				"arctic"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/frost-salamander.mp3"
@@ -8785,6 +9441,7 @@
 				"T"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -8799,6 +9456,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8807,7 +9465,12 @@
 			"isNamedCreature": true,
 			"source": "MTF",
 			"page": 173,
-			"size": "H",
+			"reprintedAs": [
+				"Geryon|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -8996,10 +9659,13 @@
 								"Geryon blows his horn, which causes {@dice 5d4} minotaurs to appear in unoccupied spaces of his choice within 600 feet of him. The minotaurs roll initiative when they appear. They remain until they die or Geryon uses an action to dismiss any or all of them."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Geryon (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/geryon.mp3"
@@ -9025,6 +9691,17 @@
 				"I",
 				"P",
 				"S"
+			],
+			"damageTagsLegendary": [
+				"C"
+			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"N",
+				"P",
+				"S",
+				"Y"
 			],
 			"spellcastingTags": [
 				"I"
@@ -9052,6 +9729,7 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9059,7 +9737,12 @@
 			"name": "Giff",
 			"source": "MTF",
 			"page": 204,
-			"size": "M",
+			"reprintedAs": [
+				"Giff|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"alignment": [
 				"L",
@@ -9140,7 +9823,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/giff.mp3"
@@ -9163,6 +9845,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9175,7 +9858,12 @@
 					"source": "WDMM"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Githyanki Gish|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -9320,7 +10008,6 @@
 				"mountain",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/githyanki-gish.mp3"
@@ -9335,6 +10022,11 @@
 				"S",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"F",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW",
 				"I",
@@ -9343,6 +10035,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9350,7 +10043,12 @@
 			"name": "Githyanki Kith'rak",
 			"source": "MTF",
 			"page": 205,
-			"size": "M",
+			"reprintedAs": [
+				"Githyanki Kith'rak|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -9455,7 +10153,6 @@
 				"mountain",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/githyanki-kith_rak.mp3"
@@ -9481,6 +10178,7 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9488,7 +10186,12 @@
 			"name": "Githyanki Supreme Commander",
 			"source": "MTF",
 			"page": 206,
-			"size": "M",
+			"reprintedAs": [
+				"Githyanki Supreme Commander|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -9599,7 +10302,7 @@
 				{
 					"name": "Teleport",
 					"entries": [
-						"The githyanki magically teleports, along with any equipment it is wearing and carrying, to an unoccupied space it can see within 30 feet of it. It also becomes insubstantial until the start of its next turn. While insubstantial, it can move through other creatures and objects as if they were difficult terrain. If it ends its turn inside an object, it takes 16 ({@damage 3d10}) force damage and is moved to the nearest unoccupied space."
+						"The githyanki magically teleports, along with any equipment it is wearing and carrying, to an unoccupied space it can see within 30 feet of it. It also becomes insubstantial until the start of its next turn. While insubstantial, it can move through other creatures and objects as if they were {@quickref difficult terrain||3}. If it ends its turn inside an object, it takes 16 ({@damage 3d10}) force damage and is moved to the nearest unoccupied space."
 					]
 				}
 			],
@@ -9608,7 +10311,6 @@
 				"mountain",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/githyanki-supreme-commander.mp3"
@@ -9625,6 +10327,10 @@
 				"S",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"B",
+				"O"
+			],
 			"spellcastingTags": [
 				"I",
 				"P"
@@ -9632,6 +10338,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9639,7 +10346,12 @@
 			"name": "Githzerai Anarch",
 			"source": "MTF",
 			"page": 207,
-			"size": "M",
+			"reprintedAs": [
+				"Githzerai Anarch|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -9752,7 +10464,7 @@
 				{
 					"name": "Change Gravity (Costs 3 Actions)",
 					"entries": [
-						"The anarch casts the reverse gravity spell. The spell has the normal effect, except that the anarch can orient the area in any direction and creatures and objects fall toward the end of the area."
+						"The anarch casts the {@spell reverse gravity} spell. The spell has the normal effect, except that the anarch can orient the area in any direction and creatures and objects fall toward the end of the area."
 					]
 				}
 			],
@@ -9760,7 +10472,6 @@
 				"name": "Githzerai Anarch",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/githzerai-anarch.mp3"
@@ -9775,6 +10486,9 @@
 				"B",
 				"Y"
 			],
+			"damageTagsLegendary": [
+				"L"
+			],
 			"spellcastingTags": [
 				"I",
 				"P"
@@ -9782,6 +10496,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9789,7 +10504,12 @@
 			"name": "Githzerai Enlightened",
 			"source": "MTF",
 			"page": 208,
-			"size": "M",
+			"reprintedAs": [
+				"Githzerai Enlightened|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -9892,7 +10612,6 @@
 				"mountain",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/githzerai-enlightened.mp3"
@@ -9914,6 +10633,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9921,7 +10641,12 @@
 			"name": "Gloom Weaver",
 			"source": "MTF",
 			"page": 224,
-			"size": "M",
+			"reprintedAs": [
+				"Shadar-kai Gloom Weaver|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -10072,7 +10797,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/gloom-weaver.mp3"
@@ -10094,6 +10818,13 @@
 				"N",
 				"P"
 			],
+			"damageTagsSpell": [
+				"C",
+				"L",
+				"N",
+				"O",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CL",
 				"I"
@@ -10107,6 +10838,7 @@
 				"incapacitated",
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10114,7 +10846,12 @@
 			"name": "Gray Render",
 			"source": "MTF",
 			"page": 209,
-			"size": "L",
+			"reprintedAs": [
+				"Gray Render|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -10185,7 +10922,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/gray-render.mp3"
@@ -10208,6 +10944,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10222,7 +10959,12 @@
 					"page": 241
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Graz'zt|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -10283,7 +11025,7 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks",
+					"note": "that is nonmagical",
 					"cond": true
 				}
 			],
@@ -10390,7 +11132,7 @@
 				{
 					"name": "Sow Discord",
 					"entries": [
-						"Graz'zt casts crown of madness or dissonant whispers."
+						"Graz'zt casts {@spell crown of madness} or dissonant whispers."
 					]
 				},
 				{
@@ -10404,7 +11146,6 @@
 				"name": "Graz'zt",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -10426,6 +11167,9 @@
 				"A",
 				"S"
 			],
+			"damageTagsSpell": [
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -10438,6 +11182,7 @@
 				"invisible",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10445,7 +11190,12 @@
 			"name": "Green Abishai",
 			"source": "MTF",
 			"page": 162,
-			"size": "M",
+			"reprintedAs": [
+				"Green Abishai|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -10585,7 +11335,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/green-abishai.mp3"
@@ -10611,6 +11360,11 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"B",
+				"P",
+				"S"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -10624,6 +11378,7 @@
 				"charmed",
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10631,7 +11386,12 @@
 			"name": "Hellfire Engine",
 			"source": "MTF",
 			"page": 165,
-			"size": "H",
+			"reprintedAs": [
+				"Hellfire Engine|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": "construct",
 			"alignment": [
 				"L",
@@ -10747,7 +11507,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/hellfire-engine.mp3"
@@ -10779,6 +11538,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10786,7 +11546,12 @@
 			"name": "Howler",
 			"source": "MTF",
 			"page": 210,
-			"size": "L",
+			"reprintedAs": [
+				"Howler|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "fiend",
 			"alignment": [
 				"C",
@@ -10875,7 +11640,6 @@
 				"hill",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/howler.mp3"
@@ -10904,6 +11668,7 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10912,7 +11677,12 @@
 			"isNamedCreature": true,
 			"source": "MTF",
 			"page": 175,
-			"size": "L",
+			"reprintedAs": [
+				"Hutijin|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -11111,7 +11881,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/hutijin.mp3"
@@ -11140,6 +11909,14 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"L",
+				"N",
+				"P",
+				"S"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -11160,6 +11937,7 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11167,7 +11945,12 @@
 			"name": "Hydroloth",
 			"source": "MTF",
 			"page": 249,
-			"size": "M",
+			"reprintedAs": [
+				"Hydroloth|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -11322,7 +12105,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/hydroloth.mp3"
@@ -11350,12 +12132,17 @@
 				"S",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"B",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11368,7 +12155,12 @@
 					"source": "GoS"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Clockwork Iron Cobra|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -11445,7 +12237,6 @@
 				"hill",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/iron-cobra.mp3"
@@ -11469,6 +12260,7 @@
 			"conditionInflict": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11483,7 +12275,12 @@
 					"page": 243
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Juiblex|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -11540,7 +12337,7 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks",
+					"note": "that is nonmagical",
 					"cond": true
 				}
 			],
@@ -11646,7 +12443,7 @@
 				{
 					"name": "Acid Splash",
 					"entries": [
-						"Juiblex casts acid splash."
+						"Juiblex casts {@spell acid splash}."
 					]
 				},
 				{
@@ -11666,7 +12463,6 @@
 				"name": "Juiblex",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -11688,6 +12484,13 @@
 				"A",
 				"I"
 			],
+			"damageTagsLegendary": [
+				"F"
+			],
+			"damageTagsSpell": [
+				"A",
+				"N"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -11707,6 +12510,7 @@
 				"poisoned",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11714,7 +12518,12 @@
 			"name": "Kruthik Hive Lord",
 			"source": "MTF",
 			"page": 212,
-			"size": "L",
+			"reprintedAs": [
+				"Kruthik Hive Lord|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -11802,7 +12611,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/kruthik-hive-lord.mp3"
@@ -11831,6 +12639,7 @@
 				"RCH",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11838,7 +12647,12 @@
 			"name": "Leviathan",
 			"source": "MTF",
 			"page": 198,
-			"size": "G",
+			"reprintedAs": [
+				"Leviathan|MPMM"
+			],
+			"size": [
+				"G"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -11966,7 +12780,6 @@
 				"coastal",
 				"underwater"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/leviathan.mp3"
@@ -11990,6 +12803,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12003,7 +12817,12 @@
 					"page": 231
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Male Steeder|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -12070,7 +12889,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/male-steeder.mp3"
@@ -12091,6 +12909,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12098,7 +12917,12 @@
 			"name": "Marut",
 			"source": "MTF",
 			"page": 213,
-			"size": "L",
+			"reprintedAs": [
+				"Marut|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "construct",
 				"tags": [
@@ -12234,7 +13058,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/marut.mp3"
@@ -12264,6 +13087,10 @@
 				"AOE",
 				"MW"
 			],
+			"conditionInflict": [
+				"stunned"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12271,7 +13098,12 @@
 			"name": "Maurezhi",
 			"source": "MTF",
 			"page": 133,
-			"size": "M",
+			"reprintedAs": [
+				"Maurezhi|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -12383,7 +13215,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/maurezhi.mp3"
@@ -12412,6 +13243,7 @@
 			"conditionInflict": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12419,7 +13251,12 @@
 			"name": "Meazel",
 			"source": "MTF",
 			"page": 214,
-			"size": "M",
+			"reprintedAs": [
+				"Meazel|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -12497,7 +13334,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/meazel.mp3"
@@ -12519,6 +13355,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12531,7 +13368,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Merregon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -12634,7 +13476,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/merregon.mp3"
@@ -12664,6 +13505,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12671,7 +13513,12 @@
 			"name": "Merrenoloth",
 			"source": "MTF",
 			"page": 250,
-			"size": "M",
+			"reprintedAs": [
+				"Merrenoloth|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -12812,7 +13659,6 @@
 			"environment": [
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/merrenoloth.mp3"
@@ -12836,6 +13682,9 @@
 			"damageTags": [
 				"S"
 			],
+			"damageTagsSpell": [
+				"B"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -12851,6 +13700,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12859,7 +13709,12 @@
 			"isNamedCreature": true,
 			"source": "MTF",
 			"page": 177,
-			"size": "L",
+			"reprintedAs": [
+				"Moloch|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -13029,7 +13884,7 @@
 				{
 					"name": "Stinking Cloud",
 					"entries": [
-						"Moloch casts stinking cloud."
+						"Moloch casts {@spell stinking cloud}."
 					]
 				},
 				{
@@ -13045,7 +13900,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/moloch.mp3"
@@ -13060,6 +13914,7 @@
 				"SD"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack",
 				"Teleport"
 			],
@@ -13070,6 +13925,15 @@
 			"damageTags": [
 				"L",
 				"P",
+				"S",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"N",
+				"P",
+				"R",
 				"S",
 				"Y"
 			],
@@ -13091,6 +13955,7 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13098,7 +13963,12 @@
 			"name": "Molydeus",
 			"source": "MTF",
 			"page": 134,
-			"size": "H",
+			"reprintedAs": [
+				"Molydeus|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -13272,13 +14142,16 @@
 							"name": "Summon Demon (1/Day)",
 							"type": "entries",
 							"entries": [
-								"As an action, the molydeus has a 50 percent chance of summoning its choice of {@dice 1d6} babaus, {@dice 1d4} {@creature chasme||chasmes}, or one {@creature marilith}. A summoned demon appears in an unoccupied space within 60 feet of the molydeus, acts as an ally of the molydeus, and can't summon other demons. It remains for 1 minute, until it or the molydeus dies, or until the molydeus dismisses it as an action."
+								"As an action, the molydeus has a {@chance 50|50 percent} chance of summoning its choice of {@dice 1d6} babaus, {@dice 1d4} {@creature chasme||chasmes}, or one {@creature marilith}. A summoned demon appears in an unoccupied space within 60 feet of the molydeus, acts as an ally of the molydeus, and can't summon other demons. It remains for 1 minute, until it or the molydeus dies, or until the molydeus dismisses it as an action."
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Molydeus (Summoner)",
+						"addHeadersAs": "action"
+					}
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/molydeus.mp3"
@@ -13302,6 +14175,9 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"L"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -13309,13 +14185,19 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Nabassu",
 			"source": "MTF",
 			"page": 135,
-			"size": "M",
+			"reprintedAs": [
+				"Nabassu|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -13441,7 +14323,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/nabassu.mp3"
@@ -13468,6 +14349,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13475,7 +14357,12 @@
 			"name": "Nagpa",
 			"source": "MTF",
 			"page": 215,
-			"size": "M",
+			"reprintedAs": [
+				"Nagpa|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -13638,7 +14525,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/nagpa.mp3"
@@ -13652,6 +14538,16 @@
 			],
 			"damageTags": [
 				"B"
+			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"N",
+				"O",
+				"Y"
 			],
 			"spellcastingTags": [
 				"CW"
@@ -13670,6 +14566,7 @@
 				"petrified",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13682,7 +14579,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Narzugon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -13809,7 +14711,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/narzugon.mp3"
@@ -13839,6 +14740,7 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13846,7 +14748,12 @@
 			"name": "Nightwalker",
 			"source": "MTF",
 			"page": 216,
-			"size": "H",
+			"reprintedAs": [
+				"Nightwalker|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -13947,7 +14854,6 @@
 				"swamp",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/nightwalker.mp3"
@@ -13969,6 +14875,7 @@
 				"frightened",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13981,7 +14888,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Nupperibo|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -14069,7 +14981,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/nupperibo.mp3"
@@ -14087,6 +14998,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14094,7 +15006,12 @@
 			"name": "Oaken Bolter",
 			"source": "MTF",
 			"page": 126,
-			"size": "M",
+			"reprintedAs": [
+				"Clockwork Oaken Bolter|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -14188,7 +15105,6 @@
 				"hill",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/oaken-bolter.mp3"
@@ -14217,6 +15133,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14224,7 +15141,12 @@
 			"name": "Oblex Spawn",
 			"source": "MTF",
 			"page": 217,
-			"size": "T",
+			"reprintedAs": [
+				"Oblex Spawn|MPMM"
+			],
+			"size": [
+				"T"
+			],
 			"type": "ooze",
 			"alignment": [
 				"L",
@@ -14289,7 +15211,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/oblex-spawn.mp3"
@@ -14307,6 +15228,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14314,7 +15236,12 @@
 			"name": "Ogre Battering Ram",
 			"source": "MTF",
 			"page": 220,
-			"size": "L",
+			"reprintedAs": [
+				"Ogre Battering Ram|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -14377,7 +15304,6 @@
 				"hill",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/ogre-battering-ram.mp3"
@@ -14398,6 +15324,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14405,7 +15332,12 @@
 			"name": "Ogre Bolt Launcher",
 			"source": "MTF",
 			"page": 220,
-			"size": "L",
+			"reprintedAs": [
+				"Ogre Bolt Launcher|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -14460,7 +15392,6 @@
 				"hill",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/ogre-bolt-launcher.mp3"
@@ -14480,13 +15411,19 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Ogre Chain Brute",
 			"source": "MTF",
 			"page": 221,
-			"size": "L",
+			"reprintedAs": [
+				"Ogre Chain Brute|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -14547,7 +15484,6 @@
 				"hill",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/ogre-chain-brute.mp3"
@@ -14570,13 +15506,19 @@
 				"prone",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Ogre Howdah",
 			"source": "MTF",
 			"page": 221,
-			"size": "L",
+			"reprintedAs": [
+				"Ogre Howdah|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -14632,7 +15574,6 @@
 				"grassland",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/ogre-howdah.mp3"
@@ -14650,6 +15591,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14657,7 +15599,12 @@
 			"name": "Oinoloth",
 			"source": "MTF",
 			"page": 251,
-			"size": "M",
+			"reprintedAs": [
+				"Oinoloth|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -14811,7 +15758,6 @@
 				"desert",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/oinoloth.mp3"
@@ -14837,6 +15783,11 @@
 				"N",
 				"S"
 			],
+			"damageTagsSpell": [
+				"C",
+				"F",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -14845,12 +15796,14 @@
 			],
 			"conditionInflict": [
 				"charmed",
+				"exhaustion",
 				"poisoned",
 				"restrained"
 			],
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14865,7 +15818,12 @@
 					"page": 245
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Orcus|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -14929,7 +15887,7 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks",
+					"note": "that is nonmagical",
 					"cond": true
 				}
 			],
@@ -14995,7 +15953,7 @@
 				{
 					"name": "Master of Undeath",
 					"entries": [
-						"When Orcus casts {@spell animate dead} or {@spell create undead}, he chooses the level at which the spell is cast, and the creatures created by the spells remain under his control indefinitely. Additionally, he can cast create undead even when it isn't night."
+						"When Orcus casts {@spell animate dead} or {@spell create undead}, he chooses the level at which the spell is cast, and the creatures created by the spells remain under his control indefinitely. Additionally, he can cast {@spell create undead} even when it isn't night."
 					]
 				}
 			],
@@ -15029,7 +15987,7 @@
 				{
 					"name": "A Taste of Undeath",
 					"entries": [
-						"Orcus casts chill touch (17th level)."
+						"Orcus casts {@spell chill touch} (17th level)."
 					]
 				},
 				{
@@ -15043,7 +16001,6 @@
 				"name": "Orcus",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -15065,6 +16022,9 @@
 				"N",
 				"P"
 			],
+			"damageTagsSpell": [
+				"N"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -15073,6 +16033,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15085,7 +16046,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Orthon|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -15237,7 +16203,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/orthon.mp3"
@@ -15274,6 +16239,7 @@
 				"poisoned",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15286,7 +16252,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "G",
+			"reprintedAs": [
+				"Phoenix|MPMM"
+			],
+			"size": [
+				"G"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -15425,7 +16396,6 @@
 				"desert",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/phoenix.mp3"
@@ -15450,6 +16420,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15457,7 +16428,12 @@
 			"name": "Red Abishai",
 			"source": "MTF",
 			"page": 160,
-			"size": "M",
+			"reprintedAs": [
+				"Red Abishai|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -15596,7 +16572,6 @@
 				"mountain",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/red-abishai.mp3"
@@ -15630,6 +16605,7 @@
 				"charmed",
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15637,7 +16613,12 @@
 			"name": "Retriever",
 			"source": "MTF",
 			"page": 222,
-			"size": "L",
+			"reprintedAs": [
+				"Retriever|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"L",
@@ -15761,7 +16742,6 @@
 				"forest",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/retriever.mp3"
@@ -15783,6 +16763,9 @@
 				"O",
 				"S"
 			],
+			"damageTagsSpell": [
+				"F"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -15796,6 +16779,7 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15811,7 +16795,12 @@
 					"source": "SLW"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Rot Troll|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -15886,7 +16875,6 @@
 				"swamp",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/rot-troll.mp3"
@@ -15908,6 +16896,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15915,7 +16904,12 @@
 			"name": "Rutterkin",
 			"source": "MTF",
 			"page": 136,
-			"size": "M",
+			"reprintedAs": [
+				"Rutterkin|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -15979,7 +16973,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/rutterkin.mp3"
@@ -16002,6 +16995,7 @@
 				"poisoned",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -16020,7 +17014,12 @@
 					"source": "IMR"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Sacred Statue|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				{
@@ -16125,7 +17124,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/sacred-statue.mp3"
@@ -16150,13 +17148,19 @@
 				"RCH",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Shadow Dancer",
 			"source": "MTF",
 			"page": 225,
-			"size": "M",
+			"reprintedAs": [
+				"Shadar-kai Shadow Dancer|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -16170,7 +17174,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -16251,7 +17255,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/shadow-dancer.mp3"
@@ -16282,6 +17285,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -16294,7 +17298,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Sibriex|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -16393,7 +17402,7 @@
 				{
 					"name": "Contamination",
 					"entries": [
-						"The sibriex emits an aura of corruption 30 feet in every direction. Plants that aren't creatures wither in the aura, and the ground in it is difficult terrain for other creatures. Any creature that starts its turn in the aura must succeed on a {@dc 20} Constitution saving throw or take 14 ({@damage 4d6}) poison damage. A creature that succeeds on the save is immune to this sibriex's Contamination for 24 hours."
+						"The sibriex emits an aura of corruption 30 feet in every direction. Plants that aren't creatures wither in the aura, and the ground in it is {@quickref difficult terrain||3} for other creatures. Any creature that starts its turn in the aura must succeed on a {@dc 20} Constitution saving throw or take 14 ({@damage 4d6}) poison damage. A creature that succeeds on the save is immune to this sibriex's Contamination for 24 hours."
 					]
 				},
 				{
@@ -16562,13 +17571,16 @@
 								]
 							]
 						}
-					]
+					],
+					"_version": {
+						"name": "Sibriex (Flesh Warping)",
+						"addAs": "trait"
+					}
 				}
 			],
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/sibriex.mp3"
@@ -16592,6 +17604,9 @@
 				"I",
 				"P"
 			],
+			"damageTagsSpell": [
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -16609,6 +17624,7 @@
 				"paralyzed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -16616,7 +17632,12 @@
 			"name": "Skulk",
 			"source": "MTF",
 			"page": 227,
-			"size": "M",
+			"reprintedAs": [
+				"Skulk|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"alignment": [
 				"C",
@@ -16695,7 +17716,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/skulk.mp3"
@@ -16714,6 +17734,10 @@
 			"miscTags": [
 				"MW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -16721,7 +17745,12 @@
 			"name": "Skull Lord",
 			"source": "MTF",
 			"page": 230,
-			"size": "M",
+			"reprintedAs": [
+				"Skull Lord|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -16922,7 +17951,6 @@
 				"swamp",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/skull-lord.mp3"
@@ -16943,12 +17971,23 @@
 				"B",
 				"N"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"F",
+				"I",
+				"L",
+				"N",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -16956,7 +17995,12 @@
 			"name": "Soul Monger",
 			"source": "MTF",
 			"page": 226,
-			"size": "M",
+			"reprintedAs": [
+				"Shadar-kai Soul Monger|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -16970,7 +18014,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -17086,7 +18130,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/soul-monger.mp3"
@@ -17110,6 +18153,12 @@
 				"P",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"I",
+				"L",
+				"N",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -17123,6 +18172,7 @@
 			"conditionInflictSpell": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -17130,7 +18180,12 @@
 			"name": "Spirit Troll",
 			"source": "MTF",
 			"page": 244,
-			"size": "L",
+			"reprintedAs": [
+				"Spirit Troll|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -17199,7 +18254,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The troll can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"The troll can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				},
 				{
@@ -17235,7 +18290,6 @@
 				"swamp",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/spirit-troll.mp3"
@@ -17263,6 +18317,7 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -17270,7 +18325,12 @@
 			"name": "Spring Eladrin",
 			"source": "MTF",
 			"page": 196,
-			"size": "M",
+			"reprintedAs": [
+				"Spring Eladrin|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fey",
 				"tags": [
@@ -17396,7 +18456,6 @@
 				"forest",
 				"grassland"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/spring-eladrin.mp3"
@@ -17436,6 +18495,7 @@
 				"incapacitated",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -17443,7 +18503,12 @@
 			"name": "Star Spawn Grue",
 			"source": "MTF",
 			"page": 234,
-			"size": "S",
+			"reprintedAs": [
+				"Star Spawn Grue|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -17496,7 +18561,6 @@
 				"mountain",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/star-spawn-grue.mp3"
@@ -17513,13 +18577,19 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Star Spawn Hulk",
 			"source": "MTF",
 			"page": 234,
-			"size": "L",
+			"reprintedAs": [
+				"Star Spawn Hulk|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "aberration",
 			"alignment": [
 				"C",
@@ -17604,7 +18674,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/star-spawn-hulk.mp3"
@@ -17630,6 +18699,7 @@
 				"prone",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -17641,7 +18711,12 @@
 					"source": "WDMM"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Star Spawn Larva Mage|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"C",
@@ -17735,7 +18810,7 @@
 				{
 					"name": "Return to Worms",
 					"entries": [
-						"When the larva mage is reduced to 0 hit points, it breaks apart into a swarm of insects in the same space. Unless the swarm is destroyed, the larva mage reforms from it 24 hours later."
+						"When the larva mage is reduced to 0 hit points, it breaks apart into a {@creature swarm of insects} in the same space. Unless the swarm is destroyed, the larva mage reforms from it 24 hours later."
 					]
 				}
 			],
@@ -17784,7 +18859,6 @@
 			"environment": [
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/star-spawn-larva-mage.mp3"
@@ -17798,6 +18872,10 @@
 			"damageTags": [
 				"B",
 				"N"
+			],
+			"damageTagsSpell": [
+				"N",
+				"O"
 			],
 			"spellcastingTags": [
 				"I"
@@ -17814,6 +18892,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -17832,7 +18911,12 @@
 					"source": "SLW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Star Spawn Mangler|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"C",
@@ -17883,7 +18967,7 @@
 			"cr": "5",
 			"trait": [
 				{
-					"name": "Ambush",
+					"name": "Ambusher",
 					"entries": [
 						"On the first round of each combat, the mangler has advantage on attack rolls against a creature that hasn't taken a turn yet."
 					]
@@ -17915,7 +18999,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/star-spawn-mangler.mp3"
@@ -17939,13 +19022,19 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Star Spawn Seer",
 			"source": "MTF",
 			"page": 236,
-			"size": "M",
+			"reprintedAs": [
+				"Star Spawn Seer|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -18014,7 +19103,7 @@
 				{
 					"name": "Out-of-Phase Movement",
 					"entries": [
-						"The seer can move through other creatures and objects as if they were difficult terrain. Each creature it moves through takes 5 ({@damage 1d10}) psychic damage; no creature can take this damage more than once per turn. The seer takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"The seer can move through other creatures and objects as if they were {@quickref difficult terrain||3}. Each creature it moves through takes 5 ({@damage 1d10}) psychic damage; no creature can take this damage more than once per turn. The seer takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				}
 			],
@@ -18057,7 +19146,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/star-spawn-seer.mp3"
@@ -18084,13 +19172,19 @@
 			"conditionInflict": [
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Steel Predator",
 			"source": "MTF",
 			"page": 239,
-			"size": "L",
+			"reprintedAs": [
+				"Steel Predator|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"L",
@@ -18217,7 +19311,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/steel-predator.mp3"
@@ -18242,6 +19335,9 @@
 				"S",
 				"T"
 			],
+			"damageTagsSpell": [
+				"O"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -18249,6 +19345,10 @@
 				"AOE",
 				"MW"
 			],
+			"conditionInflict": [
+				"stunned"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18256,7 +19356,12 @@
 			"name": "Stone Cursed",
 			"source": "MTF",
 			"page": 240,
-			"size": "M",
+			"reprintedAs": [
+				"Stone Cursed|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"L",
@@ -18328,7 +19433,6 @@
 				"mountain",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/stone-cursed.mp3"
@@ -18349,6 +19453,7 @@
 				"petrified",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18356,7 +19461,12 @@
 			"name": "Stone Defender",
 			"source": "MTF",
 			"page": 126,
-			"size": "M",
+			"reprintedAs": [
+				"Clockwork Stone Defender|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -18446,7 +19556,6 @@
 				"hill",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/stone-defender.mp3"
@@ -18470,6 +19579,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18477,7 +19587,12 @@
 			"name": "Summer Eladrin",
 			"source": "MTF",
 			"page": 196,
-			"size": "M",
+			"reprintedAs": [
+				"Summer Eladrin|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fey",
 				"tags": [
@@ -18586,7 +19701,6 @@
 				"desert",
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/summer-eladrin.mp3"
@@ -18619,6 +19733,7 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18637,7 +19752,12 @@
 					"source": "SDW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Sword Wraith Commander|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -18741,7 +19861,6 @@
 				"grassland",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/sword-wraith-commander.mp3"
@@ -18768,6 +19887,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18786,7 +19906,12 @@
 					"source": "SDW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Sword Wraith Warrior|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -18869,7 +19994,6 @@
 				"grassland",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/sword-wraith-warrior.mp3"
@@ -18889,6 +20013,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18896,7 +20021,12 @@
 			"name": "The Angry",
 			"source": "MTF",
 			"page": 231,
-			"size": "M",
+			"reprintedAs": [
+				"Angry Sorrowsworn|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"L",
@@ -18978,7 +20108,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/the-angry.mp3"
@@ -18999,6 +20128,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -19006,7 +20136,12 @@
 			"name": "The Hungry",
 			"source": "MTF",
 			"page": 232,
-			"size": "M",
+			"reprintedAs": [
+				"Hungry Sorrowsworn|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"L",
@@ -19085,7 +20220,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/the-hungry.mp3"
@@ -19112,6 +20246,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -19119,7 +20254,12 @@
 			"name": "The Lonely",
 			"source": "MTF",
 			"page": 232,
-			"size": "M",
+			"reprintedAs": [
+				"Lonely Sorrowsworn|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"L",
@@ -19207,7 +20347,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/the-lonely.mp3"
@@ -19232,6 +20371,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -19239,7 +20379,12 @@
 			"name": "The Lost",
 			"source": "MTF",
 			"page": 233,
-			"size": "M",
+			"reprintedAs": [
+				"Lost Sorrowsworn|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"L",
@@ -19325,7 +20470,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/the-lost.mp3"
@@ -19350,6 +20494,7 @@
 				"frightened",
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -19357,7 +20502,12 @@
 			"name": "The Wretched",
 			"source": "MTF",
 			"page": 233,
-			"size": "S",
+			"reprintedAs": [
+				"Wretched Sorrowsworn|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"L",
@@ -19422,7 +20572,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/the-wretched.mp3"
@@ -19437,6 +20586,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -19445,7 +20595,12 @@
 			"isNamedCreature": true,
 			"source": "MTF",
 			"page": 179,
-			"size": "M",
+			"reprintedAs": [
+				"Titivilus|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -19635,7 +20790,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/titivilus.mp3"
@@ -19661,6 +20815,13 @@
 				"N",
 				"S"
 			],
+			"damageTagsSpell": [
+				"B",
+				"N",
+				"P",
+				"S",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -19681,6 +20842,7 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -19694,7 +20856,12 @@
 					"page": 23
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Tortle|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -19773,7 +20940,6 @@
 			"environment": [
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/tortle.mp3"
@@ -19795,6 +20961,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -19808,7 +20975,12 @@
 					"page": 23
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Tortle Druid|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -19916,7 +21088,6 @@
 			"environment": [
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/tortle-druid.mp3"
@@ -19932,6 +21103,10 @@
 				"B",
 				"S"
 			],
+			"damageTagsSpell": [
+				"F",
+				"T"
+			],
 			"spellcastingTags": [
 				"CD"
 			],
@@ -19942,6 +21117,7 @@
 				"charmed",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -19955,7 +21131,12 @@
 					"page": 247
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Vampiric Mist|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -20063,7 +21244,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/vampiric-mist.mp3"
@@ -20084,6 +21264,7 @@
 				"N",
 				"R"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -20091,7 +21272,12 @@
 			"name": "Venom Troll",
 			"source": "MTF",
 			"page": 245,
-			"size": "L",
+			"reprintedAs": [
+				"Venom Troll|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "giant",
 			"alignment": [
 				"C",
@@ -20186,7 +21372,6 @@
 				"swamp",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/venom-troll.mp3"
@@ -20216,6 +21401,7 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -20223,7 +21409,12 @@
 			"name": "Wastrilith",
 			"source": "MTF",
 			"page": 139,
-			"size": "L",
+			"reprintedAs": [
+				"Wastrilith|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -20313,7 +21504,7 @@
 				{
 					"name": "Undertow",
 					"entries": [
-						"As a bonus action when the wastrilith is underwater, it can cause all water within 60 feet of it to be difficult terrain for other creatures until the start of its next turn."
+						"As a bonus action when the wastrilith is underwater, it can cause all water within 60 feet of it to be {@quickref difficult terrain||3} for other creatures until the start of its next turn."
 					]
 				}
 			],
@@ -20349,7 +21540,6 @@
 				"underdark",
 				"underwater"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/wastrilith.mp3"
@@ -20381,6 +21571,7 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -20397,7 +21588,12 @@
 					"page": 213
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Water Elemental Myrmidon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -20482,7 +21678,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/water-elemental-myrmidon.mp3"
@@ -20508,6 +21703,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -20520,7 +21716,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"White Abishai|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -20649,7 +21850,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/white-abishai.mp3"
@@ -20679,6 +21879,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -20686,7 +21887,12 @@
 			"name": "Winter Eladrin",
 			"source": "MTF",
 			"page": 197,
-			"size": "M",
+			"reprintedAs": [
+				"Winter Eladrin|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fey",
 				"tags": [
@@ -20806,7 +22012,6 @@
 				"arctic",
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/winter-eladrin.mp3"
@@ -20827,6 +22032,10 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -20835,6 +22044,10 @@
 				"RNG",
 				"RW"
 			],
+			"conditionInflict": [
+				"charmed"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -20842,7 +22055,12 @@
 			"name": "Yagnoloth",
 			"source": "MTF",
 			"page": 252,
-			"size": "L",
+			"reprintedAs": [
+				"Yagnoloth|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -20994,7 +22212,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/yagnoloth.mp3"
@@ -21021,6 +22238,9 @@
 				"L",
 				"N"
 			],
+			"damageTagsSpell": [
+				"L"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -21034,6 +22254,7 @@
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -21051,7 +22272,12 @@
 					"source": "BGDIA"
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Yeenoghu|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -21109,7 +22335,7 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks",
+					"note": "that is nonmagical",
 					"cond": true
 				}
 			],
@@ -21219,7 +22445,6 @@
 				"name": "Yeenoghu",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -21240,6 +22465,9 @@
 				"B",
 				"P"
 			],
+			"damageTagsLegendary": [
+				"P"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -21258,6 +22486,7 @@
 				"frightened",
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -21265,7 +22494,12 @@
 			"name": "Young Kruthik",
 			"source": "MTF",
 			"page": 211,
-			"size": "S",
+			"reprintedAs": [
+				"Young Kruthik|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -21318,7 +22552,7 @@
 				{
 					"name": "Tunneler",
 					"entries": [
-						"The kruthik can burrow through solid rock at half its burrowing speed and leaves a 2 1/2-foot-diameter tunnel in its wake."
+						"The kruthik can burrow through solid rock at half its burrowing speed and leaves a 2½-foot-diameter tunnel in its wake."
 					]
 				}
 			],
@@ -21335,7 +22569,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/young-kruthik.mp3"
@@ -21357,6 +22590,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -21364,7 +22598,12 @@
 			"name": "Zaratan",
 			"source": "MTF",
 			"page": 201,
-			"size": "G",
+			"reprintedAs": [
+				"Zaratan|MPMM"
+			],
+			"size": [
+				"G"
+			],
 			"type": "elemental",
 			"alignment": [
 				"N"
@@ -21432,7 +22671,7 @@
 				{
 					"name": "Earth-Shaking Movement",
 					"entries": [
-						"As a bonus action after moving at least 10 feet on the ground, the zaratan can send a shock wave through the ground in a 120-foot-radius circle centered on itself. That area becomes difficult terrain for 1 minute. Each creature on the ground that is concentrating must succeed on a {@dc 25} Constitution saving throw or the creature's concentration is broken.",
+						"As a bonus action after moving at least 10 feet on the ground, the zaratan can send a shock wave through the ground in a 120-foot-radius circle centered on itself. That area becomes {@quickref difficult terrain||3} for 1 minute. Each creature on the ground that is concentrating must succeed on a {@dc 25} Constitution saving throw or the creature's concentration is broken.",
 						"The shock wave deals 100 thunder damage to all structures in contact with the ground in the area. If a creature is near a structure that collapses, the creature might be buried; a creature within half the distance of the structure's height must make a {@dc 25} Dexterity saving throw. On a failed save, the creature takes 17 ({@damage 5d6}) bludgeoning damage, is knocked {@condition prone}, and is trapped in the rubble. A trapped creature is {@condition restrained}, requiring a successful {@dc 20} Strength (Athletics) check as an action to escape. Another creature within 5 feet of the buried creature can use its action to clear rubble and grant advantage on the check. If three creatures use their actions in this way, the check is an automatic success. On a successful save, the creature takes half as much damage and doesn't fall {@condition prone} or become trapped."
 					]
 				},
@@ -21533,7 +22772,6 @@
 				"mountain",
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/zaratan.mp3"
@@ -21565,6 +22803,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -21573,7 +22812,12 @@
 			"isNamedCreature": true,
 			"source": "MTF",
 			"page": 180,
-			"size": "L",
+			"reprintedAs": [
+				"Zariel|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -21753,7 +22997,6 @@
 				"name": "Zariel",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Devil's Sight",
 				"Legendary Resistances",
@@ -21773,6 +23016,16 @@
 				"XX"
 			],
 			"damageTags": [
+				"F",
+				"N",
+				"P",
+				"S"
+			],
+			"damageTagsLegendary": [
+				"F"
+			],
+			"damageTagsSpell": [
+				"B",
 				"F",
 				"N",
 				"P",
@@ -21798,6 +23051,7 @@
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -21812,7 +23066,12 @@
 					"page": 249
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Zuggtmoy|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -21869,7 +23128,7 @@
 						"piercing",
 						"slashing"
 					],
-					"note": "from nonmagical attacks",
+					"note": "that is nonmagical",
 					"cond": true
 				}
 			],
@@ -21982,7 +23241,6 @@
 				"name": "Zuggtmoy",
 				"source": "MTF"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -22002,6 +23260,11 @@
 				"B",
 				"I"
 			],
+			"damageTagsSpell": [
+				"I",
+				"O",
+				"P"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -22017,6 +23280,7 @@
 				"poisoned",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

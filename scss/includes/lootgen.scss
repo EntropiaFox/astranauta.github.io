@@ -1,0 +1,9 @@
+@import "vars";
+
+.lootg__ {
+	&wrp-output {
+		border-radius: 5px;
+		background: $rgb-bg;
+		border: 1px solid $rgb-border-grey;
+	}
+}

@@ -99,9 +99,12 @@ function getFnListSort (prop) {
 			|| SortUtil.ascSort(a.header || 0, b.header || 0)
 			|| SortUtil.ascSortLower(a.name, b.name)
 			|| SortUtil.ascSortLower(a.source, b.source);
-		case "adventure":
-		case "book":
-			return (a, b) => SortUtil.ascSortDate(new Date(b.published), new Date(a.published) || SortUtil.ascSortLower(a.name, b.name));
+		case "subrace": return (a, b) => SortUtil.ascSortLower(a.raceName, b.raceName)
+			|| SortUtil.ascSortLower(a.raceSource, b.raceSource)
+			|| SortUtil.ascSortLower(a.name || "", b.name || "")
+			|| SortUtil.ascSortLower(a.source, b.source);
+		case "adventure": return (a, b) => SortUtil.ascSortAdventure(a, b);
+		case "book": return (a, b) => SortUtil.ascSortBook(a, b);
 		default: throw new Error(`Unhandled prop "${prop}"`);
 	}
 }
@@ -136,7 +139,7 @@ function prettifyFolder (folder) {
 			const keyOrder = Object.keys(json)
 				.sort((a, b) => {
 					const ixA = _FILE_PROP_ORDER.indexOf(a);
-					const ixB = _FILE_PROP_ORDER.indexOf(b)
+					const ixB = _FILE_PROP_ORDER.indexOf(b);
 					return SortUtil.ascSort(~ixA ? ixA : Number.MAX_SAFE_INTEGER, ~ixB ? ixB : Number.MAX_SAFE_INTEGER);
 				});
 			const numUnhandledKeys = Object.keys(json).filter(it => !~_FILE_PROP_ORDER.indexOf(it));
@@ -157,7 +160,7 @@ function prettifyFolder (folder) {
 		.forEach(([prop, set]) => {
 			console.warn(`Unhandled keys for data property "${prop}":`);
 			set.forEach(k => console.warn(`\t${k}`));
-		})
+		});
 }
 
 prettifyFolder(`./data`);

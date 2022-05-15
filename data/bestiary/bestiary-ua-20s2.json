@@ -4,7 +4,9 @@
 			"name": "Dancing Item",
 			"source": "UA2020SubclassesPt2",
 			"page": 2,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"sizeNote": "or smaller",
 			"type": "construct",
 			"alignment": [

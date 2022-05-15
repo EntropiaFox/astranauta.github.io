@@ -1,9 +1,1 @@
-{
-	"version": 3,
-	"file": "list-page--grouped.css",
-	"sources": [
-		"../scss/list-page--grouped.scss"
-	],
-	"names": [],
-	"mappings": "AAAA,AAAA,uBAAuB,AAAC,CACvB,WAAW,CAAE,IAAI,CACjB,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,IAAI,CACf,OAAO,CAAE,SAAS,CAClB,AAED,AAAA,cAAc,AAAC,CACd,IAAI,CAAE,CAAC,CACP,AAED,AAAA,eAAe,AAAC,CACf,IAAI,CAAE,CAAC,CACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,AAED,AAAA,eAAe,AAAC,CACf,UAAU,CAAE,IAAI,CAChB,AAED,AAAA,WAAW,AAAC,CACX,aAAa,CAAE,GAAG,CAClB,AAED,AAAA,UAAU,AAAC,CACV,OAAO,CAAE,IAAI,CACb"
-}
+{"version":3,"sourceRoot":"","sources":["../scss/list-page--grouped.scss"],"names":[],"mappings":"AAAA,wBACC,iBACA,iBACA,eACA,kBAGD,eACC,OAGD,gBACC,OACA,aACA,sBAGD,gBACC,gBAGD,YACC,kBAGD,WACC","file":"list-page--grouped.css"}

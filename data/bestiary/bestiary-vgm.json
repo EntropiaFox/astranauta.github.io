@@ -14,7 +14,12 @@
 			"name": "Abjurer",
 			"source": "VGM",
 			"page": 209,
-			"size": "M",
+			"reprintedAs": [
+				"Abjurer Wizard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -78,7 +83,7 @@
 							"slots": 4,
 							"spells": [
 								"{@spell alarm}*",
-								"{@spell mage armor}",
+								"{@spell mage armor}*",
 								"{@spell magic missile}",
 								"{@spell shield}*"
 							]
@@ -152,7 +157,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/abjurer.mp3"
@@ -163,19 +167,31 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"C",
+				"F",
+				"N",
+				"O"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Alhoon",
 			"source": "VGM",
 			"page": 172,
-			"size": "M",
+			"reprintedAs": [
+				"Alhoon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -367,7 +383,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/alhoon.mp3"
@@ -388,6 +403,14 @@
 				"C",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"L",
+				"N",
+				"O",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CW",
 				"I",
@@ -406,6 +429,7 @@
 				"invisible",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -418,7 +442,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Annis Hag|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -490,225 +519,6 @@
 						]
 					},
 					"ability": "cha"
-				},
-				{
-					"name": "Shared Spellcasting (Coven Only)",
-					"headerEntries": [
-						"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell identify}",
-								"{@spell ray of sickness}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell hold person}",
-								"{@spell locate object}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell bestow curse}",
-								"{@spell counterspell}",
-								"{@spell lightning bolt}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell phantasmal killer}",
-								"{@spell polymorph}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell contact other plane}",
-								"{@spell scrying}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell eyebite}"
-							]
-						}
-					},
-					"footerEntries": [
-						"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12 + the hag's Intelligence modifier, and the spell attack bonus is 4 + the hag's Intelligence modifier."
-					]
-				},
-				{
-					"name": "Variant: Death Coven",
-					"headerEntries": [
-						"For a death coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell false life}",
-								"{@spell inflict wounds}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell gentle repose}",
-								"{@spell ray of enfeeblement}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell animate dead}",
-								"{@spell revivify}",
-								"{@spell speak with dead}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell blight}",
-								"{@spell death ward}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell contagion}",
-								"{@spell raise dead}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell circle of death}"
-							]
-						}
-					}
-				},
-				{
-					"name": "Variant: Nature Coven",
-					"headerEntries": [
-						"For a nature coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell entangle}",
-								"{@spell speak with animals}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell flaming sphere}",
-								"{@spell moonbeam}",
-								"{@spell spike growth}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell call lightning}",
-								"{@spell plant growth}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell dominate beast}",
-								"{@spell grasping vine}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell insect plague}",
-								"{@spell tree stride}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell wall of thorns}"
-							]
-						}
-					}
-				},
-				{
-					"name": "Variant: Prophecy Coven",
-					"headerEntries": [
-						"For a prophecy coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell bane}",
-								"{@spell bless}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell augury}",
-								"{@spell detect thoughts}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell clairvoyance}",
-								"{@spell dispel magic}",
-								"{@spell nondetection}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell arcane eye}",
-								"{@spell locate creature}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell geas}",
-								"{@spell legend lore}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell true seeing}"
-							]
-						}
-					}
-				}
-			],
-			"trait": [
-				{
-					"name": "Hag Coven",
-					"entries": [
-						"When hags must work together, they form covens, in spite of their selfish natures. A coven is made up of hags of any type, all of whom are equals within the group. However, each of the hags continues to desire more personal power.",
-						"A coven consists of three hags so that any arguments between two hags can be settled by the third. If more than three hags ever come together, as might happen if two covens come into conflict, the result is usually chaos."
-					]
-				},
-				{
-					"name": "Hag Eye (Coven Only)",
-					"entries": [
-						"A hag coven can craft a magic item called a hag eye, which is made from a real eye coated in varnish and often fitted to a pendant or other wearable item. The hag eye is usually entrusted to a minion for safekeeping and transport. A hag in the coven can take an action to see what the hag eye sees if the hag eye is on the same plane of existence. A hag eye has AC 10, 1 hit point, and darkvision with a radius of 60 feet. If it is destroyed, each coven member takes {@dice 3d10} psychic damage and is {@condition blinded} for 24 hours.",
-						"A hag coven can have only one hag eye at a time, and creating a new one requires all three members of the coven to perform a ritual. The ritual takes 1 hour, and the hags can't perform it while {@condition blinded}. During the ritual, if the hags take any action other than performing the ritual, they must start over."
-					]
 				}
 			],
 			"action": [
@@ -737,11 +547,257 @@
 					]
 				}
 			],
+			"legendaryGroup": {
+				"name": "Annis Hag",
+				"source": "VGM"
+			},
+			"variant": [
+				{
+					"type": "inset",
+					"name": "Hag Covens",
+					"entries": [
+						"When hags must work together, they form covens, in spite of their selfish natures. A coven is made up of hags of any type, all of whom are equals within the group. However, each of the hags continues to desire more personal power.",
+						"A coven consists of three hags so that any arguments between two hags can be settled by the third. If more than three hags ever come together, as might happen if two covens come into conflict, the result is usually chaos.",
+						{
+							"type": "spellcasting",
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell identify}",
+										"{@spell ray of sickness}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell hold person}",
+										"{@spell locate object}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell bestow curse}",
+										"{@spell counterspell}",
+										"{@spell lightning bolt}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell phantasmal killer}",
+										"{@spell polymorph}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell contact other plane}",
+										"{@spell scrying}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell eyebite}"
+									]
+								}
+							},
+							"footerEntries": [
+								"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12 + the hag's Intelligence modifier, and the spell attack bonus is 4 + the hag's Intelligence modifier."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Hag Eye",
+							"entries": [
+								"A hag coven can craft a magic item called a hag eye, which is made from a real eye coated in varnish and often fitted to a pendant or other wearable item. The hag eye is usually entrusted to a minion for safekeeping and transport. A hag in the coven can take an action to see what the hag eye sees if the hag eye is on the same plane of existence. A hag eye has AC 10, 1 hit point, and darkvision with a radius of 60 feet. If it is destroyed, each coven member takes {@dice 3d10} psychic damage and is {@condition blinded} for 24 hours.",
+								"A hag coven can have only one hag eye at a time, and creating a new one requires all three members of the coven to perform a ritual. The ritual takes 1 hour, and the hags can't perform it while {@condition blinded}. During the ritual, if the hags take any action other than performing the ritual, they must start over."
+							]
+						}
+					]
+				},
+				{
+					"type": "variant",
+					"name": "Death Coven",
+					"entries": [
+						{
+							"type": "spellcasting",
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"For a death coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell false life}",
+										"{@spell inflict wounds}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell gentle repose}",
+										"{@spell ray of enfeeblement}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell animate dead}",
+										"{@spell revivify}",
+										"{@spell speak with dead}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell blight}",
+										"{@spell death ward}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell contagion}",
+										"{@spell raise dead}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell circle of death}"
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "variant",
+					"name": "Nature Coven",
+					"entries": [
+						{
+							"type": "spellcasting",
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"For a nature coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell entangle}",
+										"{@spell speak with animals}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell flaming sphere}",
+										"{@spell moonbeam}",
+										"{@spell spike growth}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell call lightning}",
+										"{@spell plant growth}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell dominate beast}",
+										"{@spell grasping vine}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell insect plague}",
+										"{@spell tree stride}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell wall of thorns}"
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "variant",
+					"name": "Prophecy Coven",
+					"entries": [
+						{
+							"type": "spellcasting",
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"For a prophecy coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell bane}",
+										"{@spell bless}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell augury}",
+										"{@spell detect thoughts}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell clairvoyance}",
+										"{@spell dispel magic}",
+										"{@spell nondetection}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell arcane eye}",
+										"{@spell locate creature}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell geas}",
+										"{@spell legend lore}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell true seeing}"
+									]
+								}
+							}
+						}
+					]
+				}
+			],
 			"environment": [
 				"mountain",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/annis-hag.mp3"
@@ -762,6 +818,9 @@
 				"P",
 				"S"
 			],
+			"damageTagsLegendary": [
+				"A"
+			],
 			"spellcastingTags": [
 				"CW",
 				"I",
@@ -773,6 +832,9 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"conditionInflictLegendary": [
+				"restrained"
+			],
 			"conditionInflictSpell": [
 				"blinded",
 				"charmed",
@@ -783,8 +845,271 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Annis Hag (Coven)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell identify}",
+											"{@spell ray of sickness}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell hold person}",
+											"{@spell locate object}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell bestow curse}",
+											"{@spell counterspell}",
+											"{@spell lightning bolt}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell phantasmal killer}",
+											"{@spell polymorph}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contact other plane}",
+											"{@spell scrying}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell eyebite}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "8",
+					"variant": null
+				},
+				{
+					"name": "Annis Hag (Coven; Death)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell false life}",
+											"{@spell inflict wounds}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell gentle repose}",
+											"{@spell ray of enfeeblement}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell animate dead}",
+											"{@spell revivify}",
+											"{@spell speak with dead}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell blight}",
+											"{@spell death ward}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contagion}",
+											"{@spell raise dead}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell circle of death}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "8",
+					"variant": null
+				},
+				{
+					"name": "Annis Hag (Coven; Nature)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell entangle}",
+											"{@spell speak with animals}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell flaming sphere}",
+											"{@spell moonbeam}",
+											"{@spell spike growth}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell call lightning}",
+											"{@spell plant growth}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell dominate beast}",
+											"{@spell grasping vine}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell insect plague}",
+											"{@spell tree stride}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell wall of thorns}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "8",
+					"variant": null
+				},
+				{
+					"name": "Annis Hag (Coven; Prophecy)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell bane}",
+											"{@spell bless}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell augury}",
+											"{@spell detect thoughts}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell clairvoyance}",
+											"{@spell dispel magic}",
+											"{@spell nondetection}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell arcane eye}",
+											"{@spell locate creature}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell geas}",
+											"{@spell legend lore}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell true seeing}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "8",
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Apprentice Wizard",
@@ -807,7 +1132,12 @@
 					"source": "ERLW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Apprentice Wizard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -879,7 +1209,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/apprentice-wizard.mp3"
@@ -891,6 +1220,9 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"F"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -899,6 +1231,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -917,7 +1250,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Archdruid|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1071,17 +1409,25 @@
 				"mountain",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/archdruid.mp3"
 			},
+			"actionTags": [
+				"Shapechanger"
+			],
 			"languageTags": [
 				"DU",
 				"X"
 			],
 			"damageTags": [
 				"S"
+			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"I",
+				"R"
 			],
 			"spellcastingTags": [
 				"CD"
@@ -1096,6 +1442,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1113,7 +1460,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Archer|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1127,7 +1479,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -1185,7 +1537,6 @@
 				"forest",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/archer.mp3"
@@ -1205,6 +1556,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1212,7 +1564,12 @@
 			"name": "Aurochs",
 			"source": "VGM",
 			"page": 207,
-			"size": "L",
+			"reprintedAs": [
+				"Aurochs|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -1261,7 +1618,6 @@
 				"grassland",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/aurochs.mp3"
@@ -1278,6 +1634,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1285,7 +1642,12 @@
 			"name": "Babau",
 			"source": "VGM",
 			"page": 136,
-			"size": "M",
+			"reprintedAs": [
+				"Babau|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -1395,7 +1757,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/babau.mp3"
@@ -1413,6 +1774,9 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"F"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -1421,6 +1785,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1428,7 +1793,12 @@
 			"name": "Banderhobb",
 			"source": "VGM",
 			"page": 122,
-			"size": "L",
+			"reprintedAs": [
+				"Banderhobb|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -1515,7 +1885,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/banderhobb.mp3"
@@ -1542,6 +1911,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1560,7 +1930,12 @@
 					"source": "SDW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Bard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1671,7 +2046,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/bard.mp3"
@@ -1682,6 +2056,10 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"T",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CB"
 			],
@@ -1690,6 +2068,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1702,7 +2081,12 @@
 					"source": "TftYP"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Barghest|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -1808,7 +2192,7 @@
 				{
 					"name": "Fire Banishment",
 					"entries": [
-						"When the barghest starts its turn engulfed in flames that are at least 10 feet high or wide, it must succeed on a {@dc 15} Charisma saving throw or be instantly banished to Gehenna. Instantaneous bursts of flame (such as a red dragon's breath or a fireball spell) don't have this effect on the barghest."
+						"When the barghest starts its turn engulfed in flames that are at least 10 feet high or wide, it must succeed on a {@dc 15} Charisma saving throw or be instantly banished to Gehenna. Instantaneous bursts of flame (such as a red dragon's breath or a {@spell fireball} spell) don't have this effect on the barghest."
 					]
 				},
 				{
@@ -1821,7 +2205,7 @@
 					"name": "Soul Feeding",
 					"entries": [
 						"A barghest can feed on the corpse of a humanoid that it killed that has been dead for less than 10 minutes, devouring both flesh and soul in doing so. This feeding takes at least 1 minute, and it destroys the victim's body. The victim's soul is trapped in the barghest for 24 hours, after which time it is digested. If the barghest dies before the soul is digested, the soul is released.",
-						"While a humanoid's soul is trapped in a barghest, any form of revival that could work has only a 50 percent chance of doing so, freeing the soul from the barghest if it is successful. Once a creature's soul is digested, however, no mortal magic can return that humanoid to life."
+						"While a humanoid's soul is trapped in a barghest, any form of revival that could work has only a {@chance 50|50 percent} chance of doing so, freeing the soul from the barghest if it is successful. Once a creature's soul is digested, however, no mortal magic can return that humanoid to life."
 					]
 				}
 			],
@@ -1846,7 +2230,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/barghest.mp3"
@@ -1870,12 +2253,16 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"O"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1883,7 +2270,12 @@
 			"name": "Bheur Hag",
 			"source": "VGM",
 			"page": 160,
-			"size": "M",
+			"reprintedAs": [
+				"Bheur Hag|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -1956,209 +2348,6 @@
 						]
 					},
 					"ability": "cha"
-				},
-				{
-					"name": "Shared Spellcasting (Coven Only)",
-					"headerEntries": [
-						"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell identify}",
-								"{@spell ray of sickness}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell hold person}",
-								"{@spell locate object}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell bestow curse}",
-								"{@spell counterspell}",
-								"{@spell lightning bolt}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell phantasmal killer}",
-								"{@spell polymorph}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell contact other plane}",
-								"{@spell scrying}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell eyebite}"
-							]
-						}
-					},
-					"footerEntries": [
-						"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12 + the hag's Intelligence modifier, and the spell attack bonus is 4 + the hag's Intelligence modifier."
-					]
-				},
-				{
-					"name": "Variant: Death Coven",
-					"headerEntries": [
-						"For a death coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell false life}",
-								"{@spell inflict wounds}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell gentle repose}",
-								"{@spell ray of enfeeblement}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell animate dead}",
-								"{@spell revivify}",
-								"{@spell speak with dead}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell blight}",
-								"{@spell death ward}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell contagion}",
-								"{@spell raise dead}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell circle of death}"
-							]
-						}
-					}
-				},
-				{
-					"name": "Variant: Nature Coven",
-					"headerEntries": [
-						"For a nature coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell entangle}",
-								"{@spell speak with animals}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell flaming sphere}",
-								"{@spell moonbeam}",
-								"{@spell spike growth}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell call lightning}",
-								"{@spell plant growth}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell dominate beast}",
-								"{@spell grasping vine}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell insect plague}",
-								"{@spell tree stride}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell wall of thorns}"
-							]
-						}
-					}
-				},
-				{
-					"name": "Variant: Prophecy Coven",
-					"headerEntries": [
-						"For a prophecy coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
-					],
-					"spells": {
-						"1": {
-							"slots": 4,
-							"spells": [
-								"{@spell bane}",
-								"{@spell bless}"
-							]
-						},
-						"2": {
-							"slots": 3,
-							"spells": [
-								"{@spell augury}",
-								"{@spell detect thoughts}"
-							]
-						},
-						"3": {
-							"slots": 3,
-							"spells": [
-								"{@spell clairvoyance}",
-								"{@spell dispel magic}",
-								"{@spell nondetection}"
-							]
-						},
-						"4": {
-							"slots": 3,
-							"spells": [
-								"{@spell arcane eye}",
-								"{@spell locate creature}"
-							]
-						},
-						"5": {
-							"slots": 2,
-							"spells": [
-								"{@spell geas}",
-								"{@spell legend lore}"
-							]
-						},
-						"6": {
-							"slots": 1,
-							"spells": [
-								"{@spell true seeing}"
-							]
-						}
-					}
 				}
 			],
 			"trait": [
@@ -2171,21 +2360,7 @@
 				{
 					"name": "Ice Walk",
 					"entries": [
-						"The hag can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost her extra moment."
-					]
-				},
-				{
-					"name": "Hag Coven",
-					"entries": [
-						"When hags must work together, they form covens, in spite of their selfish natures. A coven is made up of hags of any type, all of whom are equals within the group. However, each of the hags continues to desire more personal power.",
-						"A coven consists of three hags so that any arguments between two hags can be settled by the third. If more than three hags ever come together, as might happen if two covens come into conflict, the result is usually chaos."
-					]
-				},
-				{
-					"name": "Hag Eye (Coven Only)",
-					"entries": [
-						"A hag coven can craft a magic item called a hag eye, which is made from a real eye coated in varnish and often fitted to a pendant or other wearable item. The hag eye is usually entrusted to a minion for safekeeping and transport. A hag in the coven can take an action to see what the hag eye sees if the hag eye is on the same plane of existence. A hag eye has AC 10, 1 hit point, and darkvision with a radius of 60 feet. If it is destroyed, each coven member takes {@dice 3d10} psychic damage and is {@condition blinded} for 24 hours.",
-						"A hag coven can have only one hag eye at a time, and creating a new one requires all three members of the coven to perform a ritual. The ritual takes 1 hour, and the hags can't perform it while {@condition blinded}. During the ritual, if the hags take any action other than performing the ritual, they must start over."
+						"The hag can move across and climb icy surfaces without needing to make an ability check. Additionally, {@quickref difficult terrain||3} composed of ice or snow doesn't cost her extra moment."
 					]
 				}
 			],
@@ -2203,10 +2378,256 @@
 					]
 				}
 			],
+			"legendaryGroup": {
+				"name": "Bheur Hag",
+				"source": "VGM"
+			},
+			"variant": [
+				{
+					"type": "inset",
+					"name": "Hag Covens",
+					"entries": [
+						"When hags must work together, they form covens, in spite of their selfish natures. A coven is made up of hags of any type, all of whom are equals within the group. However, each of the hags continues to desire more personal power.",
+						"A coven consists of three hags so that any arguments between two hags can be settled by the third. If more than three hags ever come together, as might happen if two covens come into conflict, the result is usually chaos.",
+						{
+							"type": "spellcasting",
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell identify}",
+										"{@spell ray of sickness}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell hold person}",
+										"{@spell locate object}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell bestow curse}",
+										"{@spell counterspell}",
+										"{@spell lightning bolt}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell phantasmal killer}",
+										"{@spell polymorph}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell contact other plane}",
+										"{@spell scrying}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell eyebite}"
+									]
+								}
+							},
+							"footerEntries": [
+								"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save DC is 12 + the hag's Intelligence modifier, and the spell attack bonus is 4 + the hag's Intelligence modifier."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Hag Eye",
+							"entries": [
+								"A hag coven can craft a magic item called a hag eye, which is made from a real eye coated in varnish and often fitted to a pendant or other wearable item. The hag eye is usually entrusted to a minion for safekeeping and transport. A hag in the coven can take an action to see what the hag eye sees if the hag eye is on the same plane of existence. A hag eye has AC 10, 1 hit point, and darkvision with a radius of 60 feet. If it is destroyed, each coven member takes {@dice 3d10} psychic damage and is {@condition blinded} for 24 hours.",
+								"A hag coven can have only one hag eye at a time, and creating a new one requires all three members of the coven to perform a ritual. The ritual takes 1 hour, and the hags can't perform it while {@condition blinded}. During the ritual, if the hags take any action other than performing the ritual, they must start over."
+							]
+						}
+					]
+				},
+				{
+					"type": "variant",
+					"name": "Death Coven",
+					"entries": [
+						{
+							"type": "spellcasting",
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"For a death coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell false life}",
+										"{@spell inflict wounds}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell gentle repose}",
+										"{@spell ray of enfeeblement}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell animate dead}",
+										"{@spell revivify}",
+										"{@spell speak with dead}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell blight}",
+										"{@spell death ward}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell contagion}",
+										"{@spell raise dead}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell circle of death}"
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "variant",
+					"name": "Nature Coven",
+					"entries": [
+						{
+							"type": "spellcasting",
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"For a nature coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell entangle}",
+										"{@spell speak with animals}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell flaming sphere}",
+										"{@spell moonbeam}",
+										"{@spell spike growth}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell call lightning}",
+										"{@spell plant growth}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell dominate beast}",
+										"{@spell grasping vine}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell insect plague}",
+										"{@spell tree stride}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell wall of thorns}"
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "variant",
+					"name": "Prophecy Coven",
+					"entries": [
+						{
+							"type": "spellcasting",
+							"name": "Shared Spellcasting (Coven Only)",
+							"headerEntries": [
+								"For a prophecy coven, replace the spell list of the hags' Shared Spellcasting trait with the following spells:"
+							],
+							"spells": {
+								"1": {
+									"slots": 4,
+									"spells": [
+										"{@spell bane}",
+										"{@spell bless}"
+									]
+								},
+								"2": {
+									"slots": 3,
+									"spells": [
+										"{@spell augury}",
+										"{@spell detect thoughts}"
+									]
+								},
+								"3": {
+									"slots": 3,
+									"spells": [
+										"{@spell clairvoyance}",
+										"{@spell dispel magic}",
+										"{@spell nondetection}"
+									]
+								},
+								"4": {
+									"slots": 3,
+									"spells": [
+										"{@spell arcane eye}",
+										"{@spell locate creature}"
+									]
+								},
+								"5": {
+									"slots": 2,
+									"spells": [
+										"{@spell geas}",
+										"{@spell legend lore}"
+									]
+								},
+								"6": {
+									"slots": 1,
+									"spells": [
+										"{@spell true seeing}"
+									]
+								}
+							}
+						}
+					]
+				}
+			],
 			"environment": [
 				"arctic"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/bheur-hag.mp3"
@@ -2223,6 +2644,10 @@
 				"B",
 				"C"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C"
+			],
 			"spellcastingTags": [
 				"CW",
 				"I",
@@ -2235,6 +2660,9 @@
 				"frightened",
 				"incapacitated"
 			],
+			"conditionInflictLegendary": [
+				"restrained"
+			],
 			"conditionInflictSpell": [
 				"blinded",
 				"charmed",
@@ -2245,14 +2673,282 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Bheur Hag (Coven)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell identify}",
+											"{@spell ray of sickness}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell hold person}",
+											"{@spell locate object}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell bestow curse}",
+											"{@spell counterspell}",
+											"{@spell lightning bolt}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell phantasmal killer}",
+											"{@spell polymorph}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contact other plane}",
+											"{@spell scrying}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell eyebite}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "9",
+					"variant": null
+				},
+				{
+					"name": "Bheur Hag (Coven; Death)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell false life}",
+											"{@spell inflict wounds}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell gentle repose}",
+											"{@spell ray of enfeeblement}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell animate dead}",
+											"{@spell revivify}",
+											"{@spell speak with dead}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell blight}",
+											"{@spell death ward}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell contagion}",
+											"{@spell raise dead}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell circle of death}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "9",
+					"variant": null
+				},
+				{
+					"name": "Bheur Hag (Coven; Nature)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell entangle}",
+											"{@spell speak with animals}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell flaming sphere}",
+											"{@spell moonbeam}",
+											"{@spell spike growth}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell call lightning}",
+											"{@spell plant growth}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell dominate beast}",
+											"{@spell grasping vine}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell insect plague}",
+											"{@spell tree stride}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell wall of thorns}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "9",
+					"variant": null
+				},
+				{
+					"name": "Bheur Hag (Coven; Prophecy)",
+					"source": "VGM",
+					"_mod": {
+						"spellcasting": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Shared Spellcasting (Coven Only)",
+								"headerEntries": [
+									"While all three members of a hag coven are within 30 feet of one another, they can each cast the following spells from the wizard's spell list but must share the spell slots among themselves:"
+								],
+								"spells": {
+									"1": {
+										"slots": 4,
+										"spells": [
+											"{@spell bane}",
+											"{@spell bless}"
+										]
+									},
+									"2": {
+										"slots": 3,
+										"spells": [
+											"{@spell augury}",
+											"{@spell detect thoughts}"
+										]
+									},
+									"3": {
+										"slots": 3,
+										"spells": [
+											"{@spell clairvoyance}",
+											"{@spell dispel magic}",
+											"{@spell nondetection}"
+										]
+									},
+									"4": {
+										"slots": 3,
+										"spells": [
+											"{@spell arcane eye}",
+											"{@spell locate creature}"
+										]
+									},
+									"5": {
+										"slots": 2,
+										"spells": [
+											"{@spell geas}",
+											"{@spell legend lore}"
+										]
+									},
+									"6": {
+										"slots": 1,
+										"spells": [
+											"{@spell true seeing}"
+										]
+									}
+								},
+								"ability": "int",
+								"footerEntries": [
+									"For casting these spells, each hag is a 12th-level spellcaster that uses Intelligence as her spellcasting ability. The spell save {@dc 13}, and the spell attack bonus is {@hit 5}."
+								]
+							}
+						}
+					},
+					"cr": "9",
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Black Guard Drake",
 			"source": "VGM",
 			"page": 158,
-			"size": "M",
+			"reprintedAs": [
+				"Guard Drake|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "dragon",
 			"alignment": [
 				"U"
@@ -2325,7 +3021,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/guard-drake.mp3"
@@ -2350,6 +3045,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2371,7 +3067,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Blackguard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2483,7 +3184,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/blackguard.mp3"
@@ -2498,6 +3198,10 @@
 			"damageTags": [
 				"P",
 				"S"
+			],
+			"damageTagsSpell": [
+				"R",
+				"T"
 			],
 			"spellcastingTags": [
 				"CP"
@@ -2515,13 +3219,19 @@
 				"blinded",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Blue Guard Drake",
 			"source": "VGM",
 			"page": 158,
-			"size": "M",
+			"reprintedAs": [
+				"Guard Drake|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "dragon",
 			"alignment": [
 				"U"
@@ -2586,7 +3296,6 @@
 				"desert",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/guard-drake.mp3"
@@ -2608,6 +3317,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2623,7 +3333,12 @@
 					"source": "GoS"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Bodak|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -2726,7 +3441,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/bodak.mp3"
@@ -2753,6 +3467,7 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2763,14 +3478,23 @@
 			"otherSources": [
 				{
 					"source": "IMR"
+				},
+				{
+					"source": "WBtW"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Boggle|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
 				"N"
 			],
+			"alignmentPrefix": "typically ",
 			"ac": [
 				14
 			],
@@ -2836,7 +3560,7 @@
 				{
 					"name": "Oil Puddle",
 					"entries": [
-						"The boggle creates a puddle of oil that is either slippery or sticky (boggle's choice). The puddle is 1 inch deep and covers the ground in the boggle's space. The puddle is difficult terrain For all creatures except boggles and lasts for 1 hour.",
+						"The boggle creates a puddle of oil that is either slippery or sticky (boggle's choice). The puddle is 1 inch deep and covers the ground in the boggle's space. The puddle is {@quickref difficult terrain||3} For all creatures except boggles and lasts for 1 hour.",
 						"If the oil is slippery, any creature that enters the puddle's area or starts its turn there must succeed on a {@dc 11} Dexterity saving throw or fall {@condition prone}.",
 						"If the oil is sticky, any creature that enters the puddle's area or starts its turn there must succeed on a {@dc 11} Strength saving throw or be {@condition restrained}. On its turn. a creature can use an action to try to extricate itself from the sticky puddle, ending the effect and moving into the nearest safe unoccupied space with a successful {@dc 11} Strength check."
 					]
@@ -2848,7 +3572,6 @@
 				"hill",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/boggle.mp3"
@@ -2869,6 +3592,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3056,7 +3780,9 @@
 		},
 		{
 			"name": "Brontosaurus",
-			"group": "Dinosaurs",
+			"group": [
+				"Dinosaurs"
+			],
 			"source": "VGM",
 			"page": 139,
 			"otherSources": [
@@ -3064,7 +3790,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "G",
+			"reprintedAs": [
+				"Brontosaurus|MPMM"
+			],
+			"size": [
+				"G"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -3113,7 +3844,6 @@
 				"grassland",
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/brontosaurus.mp3"
@@ -3128,6 +3858,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3139,7 +3870,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Catoblepas|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -3201,7 +3937,6 @@
 			"environment": [
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/catoblepas.mp3"
@@ -3224,6 +3959,7 @@
 				"poisoned",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3231,7 +3967,12 @@
 			"name": "Cave Fisher",
 			"source": "VGM",
 			"page": 130,
-			"size": "M",
+			"reprintedAs": [
+				"Cave Fisher|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -3310,7 +4051,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/cave-fisher.mp3"
@@ -3333,6 +4073,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3351,7 +4092,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Champion|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3434,7 +4180,6 @@
 				"desert",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/champion.mp3"
@@ -3455,6 +4200,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3462,7 +4208,12 @@
 			"name": "Chitine",
 			"source": "VGM",
 			"page": 131,
-			"size": "S",
+			"reprintedAs": [
+				"Chitine|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -3545,7 +4296,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/chitine.mp3"
@@ -3573,6 +4323,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3580,7 +4331,12 @@
 			"name": "Choldrith",
 			"source": "VGM",
 			"page": 132,
-			"size": "M",
+			"reprintedAs": [
+				"Choldrith|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -3590,7 +4346,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -3705,7 +4461,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/choldrith.mp3"
@@ -3727,6 +4482,9 @@
 				"I",
 				"P"
 			],
+			"damageTagsSpell": [
+				"O"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
@@ -3741,6 +4499,7 @@
 			"conditionInflictSpell": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3748,7 +4507,12 @@
 			"name": "Cloud Giant Smiling One",
 			"source": "VGM",
 			"page": 146,
-			"size": "H",
+			"reprintedAs": [
+				"Cloud Giant Smiling One|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "giant",
 				"tags": [
@@ -3899,7 +4663,6 @@
 			"environment": [
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/cloud-giant-smiling-one.mp3"
@@ -3908,7 +4671,8 @@
 				"Keen Senses"
 			],
 			"actionTags": [
-				"Multiattack"
+				"Multiattack",
+				"Shapechanger"
 			],
 			"languageTags": [
 				"C",
@@ -3916,6 +4680,9 @@
 			],
 			"damageTags": [
 				"B"
+			],
+			"damageTagsSpell": [
+				"Y"
 			],
 			"spellcastingTags": [
 				"CB",
@@ -3926,6 +4693,7 @@
 				"RCH",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3938,7 +4706,12 @@
 					"source": "TftYP"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Conjurer Wizard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4060,7 +4833,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/conjurer.mp3"
@@ -4071,6 +4843,14 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"F",
+				"I",
+				"O",
+				"S"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -4079,6 +4859,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4090,7 +4871,9 @@
 					"source": "DIP"
 				}
 			],
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -4132,7 +4915,6 @@
 			"environment": [
 				"grassland"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/cow.mp3"
@@ -4146,13 +4928,19 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Cranium Rat",
 			"source": "VGM",
 			"page": 133,
-			"size": "T",
+			"reprintedAs": [
+				"Cranium Rat|MPMM"
+			],
+			"size": [
+				"T"
+			],
 			"type": "beast",
 			"alignment": [
 				"L",
@@ -4208,7 +4996,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/cranium-rat.mp3"
@@ -4229,6 +5016,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4236,7 +5024,17 @@
 			"name": "Darkling",
 			"source": "VGM",
 			"page": 134,
-			"size": "S",
+			"otherSources": [
+				{
+					"source": "WBtW"
+				}
+			],
+			"reprintedAs": [
+				"Darkling|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -4307,7 +5105,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/darkling.mp3"
@@ -4335,6 +5132,7 @@
 			"conditionInflict": [
 				"blinded"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4342,7 +5140,17 @@
 			"name": "Darkling Elder",
 			"source": "VGM",
 			"page": 134,
-			"size": "M",
+			"otherSources": [
+				{
+					"source": "WBtW"
+				}
+			],
+			"reprintedAs": [
+				"Darkling Elder|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -4352,7 +5160,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -4419,7 +5227,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/darkling-elder.mp3"
@@ -4446,15 +5253,23 @@
 			"conditionInflict": [
 				"blinded"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Death Kiss",
-			"group": "Beholders",
+			"group": [
+				"Beholders"
+			],
 			"source": "VGM",
 			"page": 124,
-			"size": "L",
+			"reprintedAs": [
+				"Death Kiss|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "aberration",
 			"alignment": [
 				"N",
@@ -4539,7 +5354,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/death-kiss.mp3"
@@ -4567,6 +5381,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4574,7 +5389,12 @@
 			"name": "Deep Rothé",
 			"source": "VGM",
 			"page": 208,
-			"size": "M",
+			"reprintedAs": [
+				"Deep Rothé|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -4634,7 +5454,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/rothe.mp3"
@@ -4654,6 +5473,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -4665,7 +5485,12 @@
 					"source": "GoS"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Deep Scion|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4765,7 +5590,6 @@
 				"underwater",
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/deep-scion.mp3"
@@ -4795,12 +5619,15 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Deinonychus",
-			"group": "Dinosaurs",
+			"group": [
+				"Dinosaurs"
+			],
 			"source": "VGM",
 			"page": 139,
 			"otherSources": [
@@ -4808,7 +5635,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Deinonychus|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -4872,7 +5704,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/deinonychus.mp3"
@@ -4893,13 +5724,19 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Devourer",
 			"source": "VGM",
 			"page": 138,
-			"size": "L",
+			"reprintedAs": [
+				"Devourer|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "fiend",
 			"alignment": [
 				"C",
@@ -4975,7 +5812,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/devourer.mp3"
@@ -4998,12 +5834,15 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Dimetrodon",
-			"group": "Dinosaurs",
+			"group": [
+				"Dinosaurs"
+			],
 			"source": "VGM",
 			"page": 139,
 			"otherSources": [
@@ -5011,7 +5850,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Dimetrodon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -5055,7 +5899,6 @@
 				"swamp",
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/dimetrodon.mp3"
@@ -5066,13 +5909,19 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Diviner",
 			"source": "VGM",
 			"page": 213,
-			"size": "M",
+			"reprintedAs": [
+				"Diviner Wizard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5217,7 +6066,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/diviner.mp3"
@@ -5228,12 +6076,18 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"F"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5245,7 +6099,12 @@
 					"source": "GoS"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Dolphin|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -5306,7 +6165,6 @@
 				"underwater",
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/dolphin.mp3"
@@ -5324,13 +6182,19 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Draegloth",
 			"source": "VGM",
 			"page": 141,
-			"size": "L",
+			"reprintedAs": [
+				"Draegloth|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -5437,7 +6301,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/draegloth.mp3"
@@ -5467,6 +6330,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5474,7 +6338,12 @@
 			"name": "Elder Brain",
 			"source": "VGM",
 			"page": 173,
-			"size": "L",
+			"reprintedAs": [
+				"Elder Brain|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -5624,7 +6493,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/elder-brain.mp3"
@@ -5665,6 +6533,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5677,7 +6546,12 @@
 					"source": "TftYP"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Enchanter Wizard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5800,7 +6674,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/enchanter.mp3"
@@ -5811,12 +6684,17 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"F",
+				"O"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -5837,7 +6715,12 @@
 					"source": "ERLW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Evoker Wizard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5967,7 +6850,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/evoker.mp3"
@@ -5978,19 +6860,33 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C",
+				"F",
+				"L",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Fire Giant Dreadnought",
 			"source": "VGM",
 			"page": 147,
-			"size": "H",
+			"reprintedAs": [
+				"Fire Giant Dreadnought|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "giant",
 				"tags": [
@@ -6078,7 +6974,6 @@
 				"underdark",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/fire-giant-dreadnought.mp3"
@@ -6101,6 +6996,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6113,7 +7009,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Firenewt Warlock of Imix|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6228,7 +7129,6 @@
 				"hill",
 				"desert"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -6242,6 +7142,9 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"F"
+			],
 			"spellcastingTags": [
 				"CL",
 				"I"
@@ -6249,6 +7152,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6261,7 +7165,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Firenewt Warrior|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6337,7 +7246,6 @@
 				"hill",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/firenewt-warrior.mp3"
@@ -6359,6 +7267,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6377,7 +7286,12 @@
 					"source": "SLW"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Flail Snail|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "elemental",
 			"alignment": [
 				"U"
@@ -6427,19 +7341,19 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1\u20132.",
+									"name": "1\u20132",
 									"style": "italic",
 									"entry": "If the spell affects an area or has multiple targets, it fails and has no effect. If the spell targets only the snail, it has no effect on the snail and is reflected back at the caster, using the spell slot level, spell save DC, attack bonus, and spellcasting ability of the caster."
 								},
 								{
 									"type": "item",
-									"name": "3\u20134.",
+									"name": "3\u20134",
 									"style": "italic",
 									"entry": "No additional effect."
 								},
 								{
 									"type": "item",
-									"name": "5\u20136.",
+									"name": "5\u20136",
 									"style": "italic",
 									"entry": "The snail's shell converts some of the spell's energy into a burst of destructive force. Each creature within 30 feet of the snail must make a {@dc 15} Constitution saving throw, taking {@dice 1d6} force damage per level of the spell on a failed save, or half as much damage on a successful one."
 								}
@@ -6450,7 +7364,7 @@
 				{
 					"name": "Flail Tentacles",
 					"entries": [
-						"The flail snail has five flail tentacles. Whenever the snail takes 10 damage or more on a single turn, one of its tentacles dies. If even one tentacle remains, the snail regrows all dead ones within {@dice 1d4} days. If all its tentacles die, the snail retracts into its shell, gaining total cover, and it begins wailing, a sound that can be heard for 600 feet, stopping only when it dies {@dice 5d6} minutes later. Healing magic that restores limbs, such as the regenerate spell, can halt this dying process."
+						"The flail snail has five flail tentacles. Whenever the snail takes 10 damage or more on a single turn, one of its tentacles dies. If even one tentacle remains, the snail regrows all dead ones within {@dice 1d4} days. If all its tentacles die, the snail retracts into its shell, gaining total cover, and it begins wailing, a sound that can be heard for 600 feet, stopping only when it dies {@dice 5d6} minutes later. Healing magic that restores limbs, such as the {@spell regenerate} spell, can halt this dying process."
 					]
 				}
 			],
@@ -6485,7 +7399,6 @@
 				"forest",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/flail-snail.mp3"
@@ -6508,6 +7421,7 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6515,7 +7429,12 @@
 			"name": "Flind",
 			"source": "VGM",
 			"page": 153,
-			"size": "M",
+			"reprintedAs": [
+				"Flind|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -6610,7 +7529,6 @@
 				"hill",
 				"arctic"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/flind.mp3"
@@ -6638,6 +7556,7 @@
 			"conditionInflict": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6650,7 +7569,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Froghemoth|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -6739,7 +7663,6 @@
 				"underdark",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/froghemoth.mp3"
@@ -6769,6 +7692,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -6776,7 +7700,12 @@
 			"name": "Frost Giant Everlasting One",
 			"source": "VGM",
 			"page": 148,
-			"size": "H",
+			"reprintedAs": [
+				"Frost Giant Everlasting One|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "giant",
 				"tags": [
@@ -6832,7 +7761,7 @@
 				{
 					"name": "Extra Heads",
 					"entries": [
-						"The giant has a 25 percent chance of having more than one head. If it has more than one, it has advantage on Wisdom ({@skill Perception}) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, or knocked {@condition unconscious}."
+						"The giant has a {@chance 25|25 percent} chance of having more than one head. If it has more than one, it has advantage on Wisdom ({@skill Perception}) checks and on saving throws against being {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition frightened}, {@condition stunned}, or knocked {@condition unconscious}."
 					]
 				},
 				{
@@ -6875,7 +7804,6 @@
 				"coastal",
 				"arctic"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/frost-giant-everlasting-one.mp3"
@@ -6901,15 +7829,23 @@
 				"RCH",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Gauth",
-			"group": "Beholders",
+			"group": [
+				"Beholders"
+			],
 			"source": "VGM",
 			"page": 125,
-			"size": "M",
+			"reprintedAs": [
+				"Gauth|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -6992,37 +7928,37 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1. Devour Magic Ray.",
+									"name": "1. Devour Magic Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 14} Dexterity saving throw or have one of its magic items lose all magical properties until the start of the gauth's next turn. If the object is a charged item, it also loses {@dice 1d4} charges. Determine the affected item randomly, ignoring single-use items such as potions and scrolls."
 								},
 								{
 									"type": "item",
-									"name": "2. Enervation Ray.",
+									"name": "2. Enervation Ray",
 									"style": "italic",
 									"entry": "The targeted creature must make a {@dc 14} Constitution saving throw, taking 18 ({@damage 4d8}) necrotic damage on a failed save, or half as much damage on a successful one."
 								},
 								{
 									"type": "item",
-									"name": "3. Pushing Ray.",
+									"name": "3. Pushing Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 14} Strength saving throw or be pushed up to 15 feet directly away from the gauth and have its speed halved until the start of the gauth's next turn."
 								},
 								{
 									"type": "item",
-									"name": "4. Fire Ray.",
+									"name": "4. Fire Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 14} Dexterity saving throw or take 22 ({@damage 4d10}) fire damage."
 								},
 								{
 									"type": "item",
-									"name": "5. Paralyzing Ray.",
+									"name": "5. Paralyzing Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 14} Constitution saving throw or be {@condition paralyzed} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 								},
 								{
 									"type": "item",
-									"name": "6. Sleep Ray.",
+									"name": "6. Sleep Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 14} Wisdom saving throw or fall asleep and remain {@condition unconscious} for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead."
 								}
@@ -7034,7 +7970,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/gauth.mp3"
@@ -7063,12 +7998,15 @@
 				"stunned",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Gazer",
-			"group": "Beholders",
+			"group": [
+				"Beholders"
+			],
 			"source": "VGM",
 			"page": 126,
 			"otherSources": [
@@ -7076,7 +8014,12 @@
 					"source": "WDH"
 				}
 			],
-			"size": "T",
+			"reprintedAs": [
+				"Gazer|MPMM"
+			],
+			"size": [
+				"T"
+			],
 			"type": "aberration",
 			"alignment": [
 				"N",
@@ -7149,25 +8092,25 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1. Dazing Ray.",
+									"name": "1. Dazing Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 12} Wisdom saving throw or be {@condition charmed} until the start of the gazer's next turn. While the target is {@condition charmed} in this way, its speed is halved, and it has disadvantage on attack rolls."
 								},
 								{
 									"type": "item",
-									"name": "2. Fear Ray.",
+									"name": "2. Fear Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 12} Wisdom saving throw or be {@condition frightened} until the start of the gazer's next turn."
 								},
 								{
 									"type": "item",
-									"name": "3. Frost Ray.",
+									"name": "3. Frost Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 12} Dexterity saving throw or take 10 ({@damage 3d6}) cold damage."
 								},
 								{
 									"type": "item",
-									"name": "4. Telekinetic Ray.",
+									"name": "4. Telekinetic Ray",
 									"style": "italic",
 									"entries": [
 										"If the target is a creature that is Medium or smaller, it must succeed on a {@dc 12} Strength saving throw or be moved up to 30 feet directly away from the gazer.",
@@ -7192,14 +8135,16 @@
 								"The gazer can serve another creature as a familiar, forming a telepathic bond with its willing master, provided that the master is at least a 3rd-level spellcaster. While the two are bonded, the master can sense what the gazer senses as long as they are within 1 mile of each other. If its master causes it physical harm, the gazer will end its service as a familiar, breaking the telepathic bond."
 							]
 						}
-					]
+					],
+					"_version": {
+						"addHeadersAs": "trait"
+					}
 				}
 			],
 			"environment": [
 				"underdark"
 			],
 			"familiar": true,
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/gazer.mp3"
@@ -7221,6 +8166,7 @@
 				"charmed",
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7233,7 +8179,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Giant Strider|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -7292,10 +8243,9 @@
 				"mountain",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
-				"path": "bestiary/giant-stider.mp3"
+				"path": "bestiary/giant-strider.mp3"
 			},
 			"traitTags": [
 				"Damage Absorption"
@@ -7308,6 +8258,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7323,7 +8274,12 @@
 					"source": "IMR"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Girallon|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -7391,7 +8347,6 @@
 			"environment": [
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/girallon.mp3"
@@ -7414,6 +8369,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7421,7 +8377,12 @@
 			"name": "Gnoll Flesh Gnawer",
 			"source": "VGM",
 			"page": 154,
-			"size": "M",
+			"reprintedAs": [
+				"Gnoll Flesh Gnawer|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -7436,7 +8397,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -7504,7 +8465,6 @@
 				"hill",
 				"arctic"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/gnoll-flesh-gnawer.mp3"
@@ -7527,6 +8487,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7534,7 +8495,12 @@
 			"name": "Gnoll Hunter",
 			"source": "VGM",
 			"page": 154,
-			"size": "M",
+			"reprintedAs": [
+				"Gnoll Hunter|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -7618,7 +8584,6 @@
 				"hill",
 				"arctic"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/gnoll-hunter.mp3"
@@ -7644,13 +8609,19 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Gnoll Witherling",
 			"source": "VGM",
 			"page": 155,
-			"size": "M",
+			"reprintedAs": [
+				"Gnoll Witherling|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -7734,7 +8705,6 @@
 				"hill",
 				"arctic"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/gnoll-witherling.mp3"
@@ -7759,6 +8729,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7766,7 +8737,12 @@
 			"name": "Green Guard Drake",
 			"source": "VGM",
 			"page": 158,
-			"size": "M",
+			"reprintedAs": [
+				"Guard Drake|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "dragon",
 			"alignment": [
 				"U"
@@ -7839,7 +8815,6 @@
 				"forest",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/guard-drake.mp3"
@@ -7864,6 +8839,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -7876,7 +8852,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Grung|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -8006,7 +8987,6 @@
 			"environment": [
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/grung.mp3"
@@ -8031,8 +9011,113 @@
 				"frightened",
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Grung (Blue)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must shout loudly or otherwise make a loud noise at the start and end of its turn."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Gold)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition charmed} and can speak Grung."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Green)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature can't move except to climb or make standing jumps. If the creature is flying, it can't take any actions or reactions unless it lands."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Orange)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition frightened} of its allies."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Purple)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature feels a desperate need to soak itself in liquid or mud. It can't take actions or move except to do so or to reach a body of liquid or mud."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung (Red)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must use its action to eat if food is within reach."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Grung Elite Warrior",
@@ -8043,7 +9128,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Grung Elite Warrior|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -8185,7 +9275,6 @@
 			"environment": [
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/grung-elite-warrior.mp3"
@@ -8212,8 +9301,113 @@
 				"poisoned",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Grung Elite Warrior (Blue)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must shout loudly or otherwise make a loud noise at the start and end of its turn."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Gold)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition charmed} and can speak Grung."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Green)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature can't move except to climb or make standing jumps. If the creature is flying, it can't take any actions or reactions unless it lands."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Orange)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition frightened} of its allies."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Purple)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature feels a desperate need to soak itself in liquid or mud. It can't take actions or move except to do so or to reach a body of liquid or mud."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Elite Warrior (Red)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must use its action to eat if food is within reach."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Grung Wildling",
@@ -8224,7 +9418,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Grung Wildling|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -8396,7 +9595,6 @@
 			"environment": [
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/grung-wildling.mp3"
@@ -8411,6 +9609,9 @@
 				"I",
 				"P"
 			],
+			"damageTagsSpell": [
+				"P"
+			],
 			"spellcastingTags": [
 				"CR"
 			],
@@ -8420,12 +9621,124 @@
 				"RW",
 				"THW"
 			],
+			"conditionInflict": [
+				"charmed",
+				"frightened",
+				"poisoned"
+			],
+			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Grung Wildling (Blue)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must shout loudly or otherwise make a loud noise at the start and end of its turn."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Gold)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition charmed} and can speak Grung."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Green)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature can't move except to climb or make standing jumps. If the creature is flying, it can't take any actions or reactions unless it lands."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Orange)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature is {@condition frightened} of its allies."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Purple)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature feels a desperate need to soak itself in liquid or mud. It can't take actions or move except to do so or to reach a body of liquid or mud."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Grung Wildling (Red)",
+					"source": "VGM",
+					"_mod": {
+						"trait": {
+							"mode": "replaceArr",
+							"replace": "Poisonous Skin",
+							"items": {
+								"name": "Poisonous Skin",
+								"entries": [
+									"Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a {@dc 12} Constitution saving throw or become {@condition poisoned} for 1 minute. A {@condition poisoned} creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. The {@condition poisoned} creature must use its action to eat if food is within reach."
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Hadrosaurus",
-			"group": "Dinosaurs",
+			"group": [
+				"Dinosaurs"
+			],
 			"source": "VGM",
 			"page": 140,
 			"otherSources": [
@@ -8433,7 +9746,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Hadrosaurus|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -8476,7 +9794,6 @@
 				"grassland",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/hadrosaurus.mp3"
@@ -8487,13 +9804,19 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Hobgoblin Devastator",
 			"source": "VGM",
 			"page": 161,
-			"size": "M",
+			"reprintedAs": [
+				"Hobgoblin Devastator|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -8508,7 +9831,7 @@
 				{
 					"ac": 13,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -8613,7 +9936,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/hobgoblin-devastator.mp3"
@@ -8628,12 +9950,22 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"L",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8641,7 +9973,12 @@
 			"name": "Hobgoblin Iron Shadow",
 			"source": "VGM",
 			"page": 162,
-			"size": "M",
+			"reprintedAs": [
+				"Hobgoblin Iron Shadow|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -8748,7 +10085,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/hobgoblin-iron-shadow.mp3"
@@ -8775,6 +10111,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -8785,7 +10122,9 @@
 			],
 			"source": "VGM",
 			"page": 172,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -9047,7 +10386,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/mind-flayer-lich-illithilich.mp3"
@@ -9074,6 +10412,18 @@
 				"P",
 				"Y"
 			],
+			"damageTagsLegendary": [
+				"N"
+			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"N",
+				"O",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW",
 				"I",
@@ -9093,6 +10443,7 @@
 				"invisible",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9105,7 +10456,12 @@
 					"source": "TftYP"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Illusionist Wizard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -9220,7 +10576,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/illusionist.mp3"
@@ -9230,6 +10585,11 @@
 			],
 			"damageTags": [
 				"B"
+			],
+			"damageTagsSpell": [
+				"I",
+				"O",
+				"Y"
 			],
 			"spellcastingTags": [
 				"CW"
@@ -9242,13 +10602,19 @@
 				"frightened",
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Ki-rin",
 			"source": "VGM",
 			"page": 163,
-			"size": "H",
+			"reprintedAs": [
+				"Ki-rin|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": "celestial",
 			"alignment": [
 				"L",
@@ -9456,7 +10822,7 @@
 				{
 					"name": "Smite",
 					"entries": [
-						"The ki-rin makes a hoof attack or casts sacred flame."
+						"The ki-rin makes a hoof attack or casts {@spell sacred flame}."
 					]
 				},
 				{
@@ -9476,7 +10842,6 @@
 				"desert",
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/ki-rin.mp3"
@@ -9501,6 +10866,10 @@
 				"B",
 				"P"
 			],
+			"damageTagsSpell": [
+				"O",
+				"R"
+			],
 			"spellcastingTags": [
 				"CC",
 				"I"
@@ -9509,6 +10878,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9524,7 +10894,12 @@
 					"source": "SLW"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Kobold Dragonshield|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -9615,7 +10990,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/kobold-dragonshield.mp3"
@@ -9642,6 +11016,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9654,7 +11029,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Kobold Inventor|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -9730,49 +11110,49 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1. Acid.",
+									"name": "1. Acid",
 									"style": "italic",
 									"entry": "The kobold hurls a flask of {@item Acid (vial)|phb|acid}. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}7 ({@damage 2d6}) acid damage."
 								},
 								{
 									"type": "item",
-									"name": "2. Alchemist's fire.",
+									"name": "2. Alchemist's fire",
 									"style": "italic",
 									"entry": "The kobold throws a flask of {@item Alchemist's Fire (flask)|phb|alchemist's fire}. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}2 ({@damage 1d4}) fire damage at the start of each of the target's turns. A creature can end this damage by using its action to make a {@dc 10} Dexterity check to extinguish the flames."
 								},
 								{
 									"type": "item",
-									"name": "3. Basket of Centipedes.",
+									"name": "3. Basket of Centipedes",
 									"style": "italic",
 									"entry": "The kobold throws a small basket into a 5-foot-square space within 20 feet of it. A {@creature swarm of centipedes||swarm of insects (centipedes)} with 11 hit points emerges from the basket and rolls initiative. At the end of each of the swarm's turns, there's a {@chance 50} chance that the swarm disperses."
 								},
 								{
 									"type": "item",
-									"name": "4. Green Slime Pot.",
+									"name": "4. Green Slime Pot",
 									"style": "italic",
 									"entry": "The kobold throws a clay pot full of green slime at the target, and it breaks open on impact. {@atk rw} {@hit 4} to hit, range 5/20 ft., one target. {@h}The target is covered in a patch of {@hazard green slime} (see chapter 5 of the Dungeon Master's Guide). Miss: A patch of green slime covers a randomly determined 5-foot-square section of wall or floor within 5 feet of the target."
 								},
 								{
 									"type": "item",
-									"name": "5. Rot Grub Pot.",
+									"name": "5. Rot Grub Pot",
 									"style": "italic",
 									"entry": "The kobold throws a clay pot into a 5-foot-square space within 20 feet of it, and it breaks open on impact. A {@creature Swarm of Rot Grubs|vgm|swarm of rot grubs} (see appendix A) emerges from the shattered pot and remains a hazard in that square."
 								},
 								{
 									"type": "item",
-									"name": "6. Scorpion on a Stick.",
+									"name": "6. Scorpion on a Stick",
 									"style": "italic",
 									"entry": "The kobold makes a melee attack with a scorpion tied to the end of a 5-foot-long pole. {@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}1 piercing damage, and the target must make a {@dc 9} Constitution saving throw, taking 4 ({@damage 1d8}) poison damage on a failed save, or half as much damage on a successful one."
 								},
 								{
 									"type": "item",
-									"name": "7. Skunk in a Cage.",
+									"name": "7. Skunk in a Cage",
 									"style": "italic",
 									"entry": "The kobold releases a skunk into an unoccupied space within 5 feet of it. The skunk has a walking speed of 20 feet, AC 10, 1 hit point, and no effective attacks. It rolls initiative and, on its turn, uses its action to spray musk at a random creature within 5 feet of it. The target must make a {@dc 9} Constitution saving throw. On a failed save, the target retches and can't take actions for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. A creature that doesn't need to breathe or is immune to poison automatically succeeds on the saving throw. Once the skunk has sprayed its musk, it can't do so again until it finishes a short or long rest."
 								},
 								{
 									"type": "item",
-									"name": "8. Wasp Nest in a Bag.",
+									"name": "8. Wasp Nest in a Bag",
 									"style": "italic",
 									"entry": "The kobold throws a small bag into a 5-foot-square space within 20 feet of it. A {@creature swarm of wasps||swarm of insects (wasps)} with 11 hit points emerges from the bag and rolls initiative. At the end of each of the swarm's turns, there's a {@chance 50} chance that the swarm disperses."
 								}
@@ -9788,7 +11168,6 @@
 				"hill",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/kobold-inventor.mp3"
@@ -9817,6 +11196,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9829,7 +11209,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Kobold Scale Sorcerer|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -9944,7 +11329,6 @@
 				"hill",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/kobold-scale-sorcerer.mp3"
@@ -9963,6 +11347,14 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"T"
+			],
 			"spellcastingTags": [
 				"CS"
 			],
@@ -9974,6 +11366,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -9981,7 +11374,17 @@
 			"name": "Korred",
 			"source": "VGM",
 			"page": 168,
-			"size": "S",
+			"otherSources": [
+				{
+					"source": "WBtW"
+				}
+			],
+			"reprintedAs": [
+				"Korred|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -10102,7 +11505,6 @@
 			"environment": [
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/korred.mp3"
@@ -10124,6 +11526,9 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"B"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -10138,6 +11543,7 @@
 			"conditionInflictSpell": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10159,7 +11565,12 @@
 					"source": "LR"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Kraken Priest|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -10259,7 +11670,6 @@
 				"coastal",
 				"underwater"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/kraken-priest.mp3"
@@ -10273,6 +11683,10 @@
 			"damageTags": [
 				"T"
 			],
+			"damageTagsSpell": [
+				"B",
+				"L"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -10283,6 +11697,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10298,7 +11713,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Leucrotta|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -10388,7 +11808,6 @@
 				"grassland",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/leucrotta.mp3"
@@ -10414,6 +11833,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10432,7 +11852,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Martial Arts Adept|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -10515,7 +11940,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/martial-arts-adept.mp3"
@@ -10540,6 +11964,7 @@
 				"prone",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -10564,7 +11989,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Master Thief|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -10578,7 +12008,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -10662,7 +12092,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/master-thief.mp3"
@@ -10686,6 +12115,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -10697,7 +12127,12 @@
 					"source": "GoS"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Maw Demon|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -10769,7 +12204,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/maw-demon.mp3"
@@ -10790,6 +12224,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10802,7 +12237,12 @@
 					"source": "CM"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Meenlock|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "fey",
 			"alignment": [
 				"N",
@@ -10878,7 +12318,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/meenlock.mp3"
@@ -10902,6 +12341,7 @@
 				"frightened",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -10912,7 +12352,9 @@
 			],
 			"source": "VGM",
 			"page": 71,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -11049,7 +12491,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -11066,6 +12507,10 @@
 			],
 			"damageTags": [
 				"P",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"B",
 				"Y"
 			],
 			"spellcastingTags": [
@@ -11086,6 +12531,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11093,7 +12539,12 @@
 			"name": "Mindwitness",
 			"source": "VGM",
 			"page": 176,
-			"size": "L",
+			"reprintedAs": [
+				"Mindwitness|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -11182,37 +12633,37 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1. Aversion Ray.",
+									"name": "1. Aversion Ray",
 									"style": "italic",
 									"entry": "The targeted creature must make a {@dc 13} Charisma saving throw. On a failed save, the target has disadvantage on attack rolls for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 								},
 								{
 									"type": "item",
-									"name": "2. Fear Ray.",
+									"name": "2. Fear Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 13} Wisdom saving throw or be {@condition frightened} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 								},
 								{
 									"type": "item",
-									"name": "3. Psychic Ray.",
+									"name": "3. Psychic Ray",
 									"style": "italic",
 									"entry": "The target must succeed on a {@dc 13} Intelligence saving throw or take 27 ({@damage 6d8}) psychic damage."
 								},
 								{
 									"type": "item",
-									"name": "4. Slowing Ray.",
+									"name": "4. Slowing Ray",
 									"style": "italic",
 									"entry": "The targeted creature must make a {@dc 13} Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on its turn but not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 								},
 								{
 									"type": "item",
-									"name": "5. Stunning Ray.",
+									"name": "5. Stunning Ray",
 									"style": "italic",
 									"entry": "The targeted creature must succeed on a {@dc 13} Constitution saving throw or be {@condition stunned} for 1 minute. The target can repeat the saving throw at the start of each of its turns, ending the effect on itself on a success."
 								},
 								{
 									"type": "item",
-									"name": "6. Telekinetic Ray.",
+									"name": "6. Telekinetic Ray",
 									"style": "italic",
 									"entries": [
 										"If the target is a creature, it must make a {@dc 13} Strength saving throw. On a failed save, the mindwitness moves it up to 30 feet in any direction, and it is {@condition restrained} by the ray's telekinetic grip until the start of the mindwitness's next turn or until the mindwitness is {@condition incapacitated}.",
@@ -11227,7 +12678,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/mindwitness.mp3"
@@ -11257,6 +12707,7 @@
 				"restrained",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11264,7 +12715,12 @@
 			"name": "Morkoth",
 			"source": "VGM",
 			"page": 177,
-			"size": "M",
+			"reprintedAs": [
+				"Morkoth|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"C",
@@ -11441,7 +12897,6 @@
 				"underwater",
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/morkoth.mp3"
@@ -11464,6 +12919,15 @@
 				"B",
 				"S"
 			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"L",
+				"O",
+				"T",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -11481,6 +12945,7 @@
 				"charmed",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11488,7 +12953,12 @@
 			"name": "Mouth of Grolantor",
 			"source": "VGM",
 			"page": 149,
-			"size": "H",
+			"reprintedAs": [
+				"Mouth of Grolantor|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "giant",
 				"tags": [
@@ -11562,7 +13032,6 @@
 				"grassland",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/mouth-of-grolantor.mp3"
@@ -11578,6 +13047,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11596,7 +13066,12 @@
 					"source": "DIP"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Necromancer Wizard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -11730,7 +13205,6 @@
 				"desert",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/necromancer.mp3"
@@ -11741,16 +13215,29 @@
 			"damageTags": [
 				"N"
 			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"I",
+				"N",
+				"O"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Neogi",
 			"source": "VGM",
 			"page": 180,
-			"size": "S",
+			"reprintedAs": [
+				"Neogi|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -11836,7 +13323,6 @@
 				"underdark",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/neogi.mp3"
@@ -11867,6 +13353,7 @@
 				"charmed",
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11874,7 +13361,12 @@
 			"name": "Neogi Hatchling",
 			"source": "VGM",
 			"page": 179,
-			"size": "T",
+			"reprintedAs": [
+				"Neogi Hatchling|MPMM"
+			],
+			"size": [
+				"T"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -11928,7 +13420,6 @@
 				"underdark",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/neogi-hatchling.mp3"
@@ -11949,6 +13440,7 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -11956,7 +13448,12 @@
 			"name": "Neogi Master",
 			"source": "VGM",
 			"page": 180,
-			"size": "M",
+			"reprintedAs": [
+				"Neogi Master|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -12084,7 +13581,6 @@
 				"underdark",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/neogi-master.mp3"
@@ -12109,6 +13605,13 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"N",
+				"O",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CL"
 			],
@@ -12125,6 +13628,7 @@
 				"invisible",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12137,7 +13641,12 @@
 					"source": "WDMM"
 				}
 			],
-			"size": "G",
+			"reprintedAs": [
+				"Neothelid|MPMM"
+			],
+			"size": [
+				"G"
+			],
 			"type": "aberration",
 			"alignment": [
 				"C",
@@ -12197,7 +13706,7 @@
 				{
 					"name": "Creature Sense",
 					"entries": [
-						"The neothelid is aware of the presence of creatures within 1 mile of it that have an Intelligence score of 4 or higher. It knows the distance and direction to each creature, as well as each creature's Intelligence score, but can't sense anything else about it. A creature protected by a mind blank spell, a nondetection spell, or similar magic can't be perceived in this manner."
+						"The neothelid is aware of the presence of creatures within 1 mile of it that have an Intelligence score of 4 or higher. It knows the distance and direction to each creature, as well as each creature's Intelligence score, but can't sense anything else about it. A creature protected by a {@spell mind blank} spell, a {@spell nondetection} spell, or similar magic can't be perceived in this manner."
 					]
 				},
 				{
@@ -12225,7 +13734,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/neothelid.mp3"
@@ -12237,12 +13745,16 @@
 				"B"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Swallow",
 				"Tentacles"
 			],
 			"damageTags": [
 				"A",
 				"B",
+				"Y"
+			],
+			"damageTagsSpell": [
 				"Y"
 			],
 			"spellcastingTags": [
@@ -12261,6 +13773,7 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12268,7 +13781,12 @@
 			"name": "Nilbog",
 			"source": "VGM",
 			"page": 182,
-			"size": "S",
+			"reprintedAs": [
+				"Nilbog|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -12372,7 +13890,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/nilbog.mp3"
@@ -12387,6 +13904,9 @@
 			"damageTags": [
 				"B",
 				"P"
+			],
+			"damageTagsSpell": [
+				"Y"
 			],
 			"spellcastingTags": [
 				"I"
@@ -12403,6 +13923,7 @@
 				"incapacitated",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12410,7 +13931,9 @@
 			"name": "Orc Blade of Ilneval",
 			"source": "VGM",
 			"page": 183,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -12507,7 +14030,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/orc-blade-of-ilneval.mp3"
@@ -12534,13 +14056,16 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Orc Claw of Luthic",
 			"source": "VGM",
 			"page": 183,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -12653,7 +14178,6 @@
 				"underdark",
 				"mountain"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/orc-claw-of-luthic.mp3"
@@ -12674,12 +14198,17 @@
 			"damageTags": [
 				"S"
 			],
+			"damageTagsSpell": [
+				"N",
+				"R"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12687,7 +14216,9 @@
 			"name": "Orc Hand of Yurtrus",
 			"source": "VGM",
 			"page": 184,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -12791,7 +14322,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/orc-hand-of-yurtrus.mp3"
@@ -12810,19 +14340,25 @@
 			"damageTags": [
 				"N"
 			],
+			"damageTagsSpell": [
+				"N"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Orc Nurtured One of Yurtrus",
 			"source": "VGM",
 			"page": 184,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -12899,7 +14435,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/orc-nurtured-one-of-yurtrus.mp3"
@@ -12925,6 +14460,7 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -12932,7 +14468,9 @@
 			"name": "Orc Red Fang of Shargaas",
 			"source": "VGM",
 			"page": 185,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -12947,7 +14485,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -13037,7 +14575,6 @@
 				"hill",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/orc-red-fang.mp3"
@@ -13061,6 +14598,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13073,7 +14611,12 @@
 					"source": "PotA"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Ox|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -13121,7 +14664,6 @@
 			"environment": [
 				"grassland"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/ox.mp3"
@@ -13135,11 +14677,14 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Quetzalcoatlus",
-			"group": "Dinosaurs",
+			"group": [
+				"Dinosaurs"
+			],
 			"source": "VGM",
 			"page": 140,
 			"otherSources": [
@@ -13147,7 +14692,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Quetzalcoatlus|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -13206,7 +14756,6 @@
 				"hill",
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/quetzalcoatlus.mp3"
@@ -13221,13 +14770,24 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Quickling",
 			"source": "VGM",
 			"page": 187,
-			"size": "T",
+			"otherSources": [
+				{
+					"source": "WBtW"
+				}
+			],
+			"reprintedAs": [
+				"Quickling|MPMM"
+			],
+			"size": [
+				"T"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -13295,7 +14855,6 @@
 			"environment": [
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/quickling.mp3"
@@ -13318,6 +14877,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13325,7 +14885,12 @@
 			"name": "Red Guard Drake",
 			"source": "VGM",
 			"page": 158,
-			"size": "M",
+			"reprintedAs": [
+				"Guard Drake|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "dragon",
 			"alignment": [
 				"U"
@@ -13391,7 +14956,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/guard-drake.mp3"
@@ -13413,6 +14977,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13429,9 +14994,17 @@
 				},
 				{
 					"source": "IMR"
+				},
+				{
+					"source": "WBtW"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Redcap|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -13513,10 +15086,12 @@
 						"A madcap is a redcap that soaks its hat in demon ichor instead of blood. Contact with demon ichor makes the creature even more psychotic, causing it to brood over irrational hatreds. A group of madcaps will sometimes band together over a shared hatred of something, such as music, creatures with curly hair, the word \"cool,\" or the color blue.",
 						"When a madcap drops to 0 hit points, its hateful existence comes to an end in spectacular fashion as it bursts into flames, reducing itself, its ichor-soaked hat, and its pants to ashes instantly while leaving behind its weapon and smoldering iron boots."
 					],
-					"variantSource": {
-						"source": "BGDIA",
-						"page": 240
-					}
+					"_version": {
+						"name": "Madcap",
+						"addAs": "trait"
+					},
+					"source": "BGDIA",
+					"page": 240
 				}
 			],
 			"environment": [
@@ -13524,7 +15099,6 @@
 				"swamp",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/redcap.mp3"
@@ -13555,6 +15129,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13562,7 +15137,9 @@
 			"name": "Rothé",
 			"source": "VGM",
 			"page": 208,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -13607,7 +15184,6 @@
 			"environment": [
 				"grassland"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/rothe.mp3"
@@ -13624,13 +15200,19 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Sea Spawn",
 			"source": "VGM",
 			"page": 189,
-			"size": "M",
+			"reprintedAs": [
+				"Sea Spawn|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"alignment": [
 				"N",
@@ -13697,17 +15279,17 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Bite.",
+									"name": "Bite",
 									"entry": "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
 								},
 								{
 									"type": "item",
-									"name": "Poison Quills.",
+									"name": "Poison Quills",
 									"entry": "{@atk mw} {@hit 5} to hit, reach 5 ft., one creature. {@h}3 ({@damage 1d6}) poison damage, and the target must succeed on a {@dc 12} Constitution saving throw or be {@condition poisoned} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 								},
 								{
 									"type": "item",
-									"name": "Tentacle.",
+									"name": "Tentacle",
 									"entry": "{@atk mw} {@hit 5} to hit, reach 10 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 12}) if it is a Medium or smaller creature. Until this grapple ends, the sea spawn can't use this tentacle on another target."
 								}
 							]
@@ -13719,7 +15301,6 @@
 				"underwater",
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/sea-spawn.mp3"
@@ -13748,6 +15329,7 @@
 				"grappled",
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -13755,7 +15337,12 @@
 			"name": "Shadow Mastiff",
 			"source": "VGM",
 			"page": 190,
-			"size": "M",
+			"reprintedAs": [
+				"Shadow Mastiff Alpha|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -13860,7 +15447,6 @@
 				"swamp",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/shadow-mastiff.mp3"
@@ -13881,14 +15467,43 @@
 				"frightened",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Shadow Mastiff Alpha",
+					"source": "VGM",
+					"_mod": {
+						"action": {
+							"mode": "appendArr",
+							"items": {
+								"name": "Terrifying Howl",
+								"entries": [
+									"The shadow mastiff howls. Any beast or humanoid within 300 feet of the mastiff and able to hear its howl must succeed on a {@dc 11} Wisdom saving throw or be {@condition frightened} for 1 minute. A {@condition frightened} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to any shadow mastiff's Terrifying Howl for the next 24 hours."
+								]
+							}
+						}
+					},
+					"hp": {
+						"average": 48,
+						"formula": "6d8 + 6"
+					},
+					"int": 6,
+					"variant": null
+				}
+			]
 		},
 		{
 			"name": "Shoosuva",
 			"source": "VGM",
 			"page": 137,
-			"size": "L",
+			"reprintedAs": [
+				"Shoosuva|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -13991,7 +15606,6 @@
 				"hill",
 				"arctic"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/shoosuva.mp3"
@@ -14021,6 +15635,7 @@
 				"paralyzed",
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14039,7 +15654,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Slithering Tracker|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "ooze",
 			"alignment": [
 				"C",
@@ -14162,7 +15782,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/slithering-tracker.mp3"
@@ -14190,6 +15809,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14197,7 +15817,12 @@
 			"name": "Spawn of Kyuss",
 			"source": "VGM",
 			"page": 192,
-			"size": "M",
+			"reprintedAs": [
+				"Spawn of Kyuss|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -14275,7 +15900,6 @@
 				"underdark",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/spawn-of-kyuss.mp3"
@@ -14301,12 +15925,15 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Stegosaurus",
-			"group": "Dinosaurs",
+			"group": [
+				"Dinosaurs"
+			],
 			"source": "VGM",
 			"page": 140,
 			"otherSources": [
@@ -14314,7 +15941,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Stegosaurus|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -14354,7 +15986,6 @@
 				"grassland",
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/stegosaurus.mp3"
@@ -14366,6 +15997,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14373,7 +16005,12 @@
 			"name": "Stench Kow",
 			"source": "VGM",
 			"page": 208,
-			"size": "L",
+			"reprintedAs": [
+				"Stench Kow|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -14426,7 +16063,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/stench-cow.mp3"
@@ -14446,13 +16082,19 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Stone Giant Dreamwalker",
 			"source": "VGM",
 			"page": 150,
-			"size": "H",
+			"reprintedAs": [
+				"Stone Giant Dreamwalker|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "giant",
 				"tags": [
@@ -14545,7 +16187,6 @@
 				"hill",
 				"coastal"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/stone-giant-dreamwalker.mp3"
@@ -14573,6 +16214,7 @@
 				"petrified",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14585,7 +16227,12 @@
 					"source": "GoS"
 				}
 			],
-			"size": "H",
+			"reprintedAs": [
+				"Storm Giant Quintessent|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "giant",
 				"tags": [
@@ -14697,7 +16344,7 @@
 				{
 					"name": "One with the Storm (3 Actions)",
 					"entries": [
-						"The giant vanishes, dispersing itself into the storm surrounding its lair. The giant can end this effect at the start of any of its turns, becoming a giant once more and appearing in any location it chooses within its lair. While dispersed, the giant can't take any actions other than lair actions, and it can't be targeted by attacks, spells, or other effects. The giant can't use this ability outside its lair, nor can it use this ability if another creature is using a control weather spell or similar magic to quell the storm."
+						"The giant vanishes, dispersing itself into the storm surrounding its lair. The giant can end this effect at the start of any of its turns, becoming a giant once more and appearing in any location it chooses within its lair. While dispersed, the giant can't take any actions other than lair actions, and it can't be targeted by attacks, spells, or other effects. The giant can't use this ability outside its lair, nor can it use this ability if another creature is using a {@spell control weather} spell or similar magic to quell the storm."
 					]
 				}
 			],
@@ -14712,7 +16359,6 @@
 				"coastal",
 				"arctic"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/storm-giant-quintessent.mp3"
@@ -14739,6 +16385,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14746,7 +16393,12 @@
 			"name": "Swarm of Cranium Rats",
 			"source": "VGM",
 			"page": 133,
-			"size": "M",
+			"reprintedAs": [
+				"Swarm of Cranium Rats|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "beast",
 				"swarmSize": "T"
@@ -14846,7 +16498,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/swarm-of-cranium-rats.mp3"
@@ -14871,6 +16522,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -14883,7 +16535,12 @@
 					"source": "GoS"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Swarm of Rot Grubs|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "beast",
 				"swarmSize": "T"
@@ -14946,7 +16603,6 @@
 				"underdark",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/swarm-of-rot-grubs.mp3"
@@ -14961,6 +16617,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -14984,7 +16641,12 @@
 					"source": "SDW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Swashbuckler|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -15067,7 +16729,6 @@
 				"coastal",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/swashbuckler.mp3"
@@ -15087,6 +16748,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15094,7 +16756,12 @@
 			"name": "Tanarukk",
 			"source": "VGM",
 			"page": 186,
-			"size": "M",
+			"reprintedAs": [
+				"Tanarukk|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -15192,7 +16859,6 @@
 				"mountain",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/tanarukk.mp3"
@@ -15219,6 +16885,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15231,7 +16898,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Thorny Vegepygmy|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "plant",
 			"alignment": [
 				"N"
@@ -15302,7 +16974,6 @@
 				"forest",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/thorny.mp3"
@@ -15319,6 +16990,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15326,7 +16998,12 @@
 			"name": "Tlincalli",
 			"source": "VGM",
 			"page": 193,
-			"size": "L",
+			"reprintedAs": [
+				"Tlincalli|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -15395,7 +17072,6 @@
 			"environment": [
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/tlincalli.mp3"
@@ -15424,6 +17100,7 @@
 				"poisoned",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15436,7 +17113,12 @@
 					"source": "TftYP"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Transmuter Wizard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -15563,7 +17245,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/transmuter.mp3"
@@ -15574,12 +17255,24 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"A",
+				"B",
+				"C",
+				"F",
+				"I",
+				"L",
+				"P",
+				"S",
+				"T"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -15591,7 +17284,12 @@
 					"source": "IMR"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Trapper|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -15652,7 +17350,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/trapper.mp3"
@@ -15674,6 +17371,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15686,7 +17384,12 @@
 					"source": "WDMM"
 				}
 			],
-			"size": "L",
+			"reprintedAs": [
+				"Ulitharid|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "aberration",
 			"alignment": [
 				"L",
@@ -15764,7 +17467,7 @@
 				{
 					"name": "Creature Sense",
 					"entries": [
-						"The ulitharid is aware of the presence of creatures within 2 miles of it that have an Intelligence score of 4 or higher. It knows the distance and direction to each creature, as well as each creature's intelligence score, but can't sense anything else about it. A creature protected by a mind blank spell, a nondetection spell, or similar magic can't be perceived in this manner."
+						"The ulitharid is aware of the presence of creatures within 2 miles of it that have an Intelligence score of 4 or higher. It knows the distance and direction to each creature, as well as each creature's intelligence score, but can't sense anything else about it. A creature protected by a {@spell mind blank} spell, a {@spell nondetection} spell, or similar magic can't be perceived in this manner."
 					]
 				},
 				{
@@ -15803,7 +17506,6 @@
 			"environment": [
 				"underdark"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/ulitharid.mp3"
@@ -15824,6 +17526,9 @@
 			],
 			"damageTags": [
 				"P",
+				"Y"
+			],
+			"damageTagsSpell": [
 				"Y"
 			],
 			"spellcastingTags": [
@@ -15847,6 +17552,7 @@
 				"restrained",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15854,7 +17560,12 @@
 			"name": "Vargouille",
 			"source": "VGM",
 			"page": 195,
-			"size": "T",
+			"reprintedAs": [
+				"Vargouille|MPMM"
+			],
+			"size": [
+				"T"
+			],
 			"type": "fiend",
 			"alignment": [
 				"C",
@@ -15908,7 +17619,7 @@
 				{
 					"name": "Kiss",
 					"entries": [
-						"The vargouille kisses one {@condition incapacitated} humanoid within 5 feet of it. The target must succeed on a {@dc 12} Charisma saving throw or become cursed. The cursed target loses 1 point of Charisma after each hour, as its head takes on fiendish aspects. The curse doesn't advance while the target is in sunlight or the area of a daylight spell; don't count that time. When the cursed target's Charisma becomes 2, it dies, and its head tears from its body and becomes a new vargouille. Casting {@spell remove curse}, {@spell greater restoration}, or a similar spell on the target before the transformation is complete can end the curse. Doing so undoes the changes made to the target by the curse."
+						"The vargouille kisses one {@condition incapacitated} humanoid within 5 feet of it. The target must succeed on a {@dc 12} Charisma saving throw or become cursed. The cursed target loses 1 point of Charisma after each hour, as its head takes on fiendish aspects. The curse doesn't advance while the target is in sunlight or the area of a {@spell daylight} spell; don't count that time. When the cursed target's Charisma becomes 2, it dies, and its head tears from its body and becomes a new vargouille. Casting {@spell remove curse}, {@spell greater restoration}, or a similar spell on the target before the transformation is complete can end the curse. Doing so undoes the changes made to the target by the curse."
 					]
 				},
 				{
@@ -15923,7 +17634,6 @@
 				"swamp",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/vargouille.mp3"
@@ -15947,6 +17657,7 @@
 				"frightened",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -15959,7 +17670,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Vegepygmy|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "plant",
 			"alignment": [
 				"N"
@@ -16033,7 +17749,6 @@
 				"forest",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/vegepygmy.mp3"
@@ -16056,6 +17771,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -16068,7 +17784,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "S",
+			"reprintedAs": [
+				"Vegepygmy Chief|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": "plant",
 			"alignment": [
 				"N"
@@ -16154,7 +17875,6 @@
 				"forest",
 				"swamp"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/vegepygmy-chief.mp3"
@@ -16185,12 +17905,15 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Velociraptor",
-			"group": "Dinosaurs",
+			"group": [
+				"Dinosaurs"
+			],
 			"source": "VGM",
 			"page": 140,
 			"otherSources": [
@@ -16198,7 +17921,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "T",
+			"reprintedAs": [
+				"Velociraptor|MPMM"
+			],
+			"size": [
+				"T"
+			],
 			"type": "beast",
 			"alignment": [
 				"U"
@@ -16261,7 +17989,6 @@
 				"grassland",
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/velociraptor.mp3"
@@ -16279,6 +18006,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -16299,7 +18027,12 @@
 					"source": "MOT"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"War Priest|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -16435,7 +18168,6 @@
 				"desert",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/war-priest.mp3"
@@ -16449,19 +18181,31 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"F",
+				"N",
+				"O",
+				"R"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Warlock of the Archfey",
 			"source": "VGM",
 			"page": 219,
-			"size": "M",
+			"reprintedAs": [
+				"Warlock of the Archfey|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -16590,7 +18334,6 @@
 				"swamp",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/warlock-of-the-archfey.mp3"
@@ -16601,6 +18344,10 @@
 			],
 			"damageTags": [
 				"P"
+			],
+			"damageTagsSpell": [
+				"O",
+				"Y"
 			],
 			"spellcastingTags": [
 				"CL",
@@ -16617,6 +18364,7 @@
 				"paralyzed",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -16628,7 +18376,12 @@
 					"source": "IMR"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Warlock of the Fiend|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -16767,7 +18520,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/warlock-of-the-fiend.mp3"
@@ -16784,6 +18536,17 @@
 				"B",
 				"F"
 			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"L",
+				"N",
+				"O",
+				"P",
+				"R",
+				"S",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CL",
 				"I"
@@ -16791,6 +18554,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -16803,7 +18567,12 @@
 					"source": "IMR"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Warlock of the Great Old One|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -16936,7 +18705,6 @@
 				"underdark",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/warlock-of-the-great-old-one.mp3"
@@ -16952,6 +18720,13 @@
 				"P",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"C",
+				"L",
+				"N",
+				"O",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CL",
 				"I"
@@ -16965,6 +18740,7 @@
 				"charmed",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -16976,7 +18752,12 @@
 					"source": "IMR"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Warlord|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -17080,7 +18861,6 @@
 			"environment": [
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/warlord.mp3"
@@ -17103,13 +18883,19 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "White Guard Drake",
 			"source": "VGM",
 			"page": 158,
-			"size": "M",
+			"reprintedAs": [
+				"Guard Drake|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "dragon",
 			"alignment": [
 				"U"
@@ -17175,7 +18961,6 @@
 				"arctic",
 				"urban"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/guard-drake.mp3"
@@ -17197,6 +18982,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -17212,7 +18998,12 @@
 					"source": "SDW"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Wood Woad|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": "plant",
 			"alignment": [
 				"L",
@@ -17308,13 +19099,13 @@
 			"environment": [
 				"forest"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/wood-woad.mp3"
 			},
 			"traitTags": [
-				"Regeneration"
+				"Regeneration",
+				"Tree Stride"
 			],
 			"senseTags": [
 				"D"
@@ -17331,6 +19122,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -17338,7 +19130,12 @@
 			"name": "Xvart",
 			"source": "VGM",
 			"page": 200,
-			"size": "S",
+			"reprintedAs": [
+				"Xvart|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -17419,7 +19216,6 @@
 				"underdark",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/xvart.mp3"
@@ -17439,6 +19235,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -17446,7 +19243,9 @@
 			"name": "Xvart Speaker",
 			"source": "VGM",
 			"page": 200,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -17527,7 +19326,6 @@
 				"underdark",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/xvart-speaker.mp3"
@@ -17550,6 +19348,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -17557,7 +19356,12 @@
 			"name": "Xvart Warlock of Raxivort",
 			"source": "VGM",
 			"page": 200,
-			"size": "S",
+			"reprintedAs": [
+				"Xvart Warlock of Raxivort|MPMM"
+			],
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -17673,7 +19477,6 @@
 				"underdark",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/xvart-warlock-of-raxivort.mp3"
@@ -17687,6 +19490,11 @@
 			"damageTags": [
 				"S"
 			],
+			"damageTagsSpell": [
+				"F",
+				"I",
+				"O"
+			],
 			"spellcastingTags": [
 				"CL",
 				"I"
@@ -17697,13 +19505,19 @@
 			"conditionInflictSpell": [
 				"invisible"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Yeth Hound",
 			"source": "VGM",
 			"page": 201,
-			"size": "L",
+			"reprintedAs": [
+				"Yeth Hound|MPMM"
+			],
+			"size": [
+				"L"
+			],
 			"type": "fey",
 			"alignment": [
 				"N",
@@ -17800,7 +19614,6 @@
 				"forest",
 				"hill"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/yeth-hound.mp3"
@@ -17827,6 +19640,7 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -17834,7 +19648,12 @@
 			"name": "Yuan-ti Anathema",
 			"source": "VGM",
 			"page": 202,
-			"size": "H",
+			"reprintedAs": [
+				"Yuan-ti Anathema|MPMM"
+			],
+			"size": [
+				"H"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -17978,21 +19797,33 @@
 					"name": "Acid Slime",
 					"entries": [
 						"As a bonus action, the yuan-ti can coat its body in a slimy acid that lasts for 1 minute. A creature that touches the yuan-ti, hits it with a melee attack while within 5 feet of it, or is hit by its constrict attack takes 5 ({@damage 1d10}) acid damage."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Anathema (Acid Slime)",
+						"addAs": "bonus"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Anathema (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Anathema (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [
@@ -18000,7 +19831,6 @@
 				"forest",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/yuan-ti-anathema.mp3"
@@ -18049,6 +19879,7 @@
 				"restrained",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18061,7 +19892,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Yuan-ti Broodguard|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -18157,14 +19993,22 @@
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Broodguard (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Broodguard (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [
@@ -18172,7 +20016,6 @@
 				"forest",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/yuan-ti-broodguard.mp3"
@@ -18198,6 +20041,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18210,7 +20054,9 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -18342,7 +20188,6 @@
 				"swamp",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/yuan-ti-malison.mp3"
@@ -18376,6 +20221,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18388,7 +20234,9 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -18520,7 +20368,6 @@
 				"swamp",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/yuan-ti-malison.mp3"
@@ -18554,6 +20401,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18561,7 +20409,12 @@
 			"name": "Yuan-ti Mind Whisperer",
 			"source": "VGM",
 			"page": 204,
-			"size": "M",
+			"reprintedAs": [
+				"Yuan-ti Mind Whisperer|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -18719,14 +20572,22 @@
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Mind Whisperer (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Mind Whisperer (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [
@@ -18734,7 +20595,6 @@
 				"forest",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/yuan-ti-mind-whisperer.mp3"
@@ -18760,6 +20620,10 @@
 				"S",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"I",
+				"O"
+			],
 			"spellcastingTags": [
 				"CL",
 				"F",
@@ -18768,6 +20632,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -18780,7 +20645,12 @@
 					"source": "ToA"
 				}
 			],
-			"size": "M",
+			"reprintedAs": [
+				"Yuan-ti Nightmare Speaker|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -18938,14 +20808,22 @@
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Nightmare Speaker (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Nightmare Speaker (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [
@@ -18953,7 +20831,6 @@
 				"forest",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/yuan-ti-nightmare-speaker.mp3"
@@ -18979,6 +20856,14 @@
 				"S",
 				"Y"
 			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"I",
+				"L",
+				"N",
+				"O"
+			],
 			"spellcastingTags": [
 				"CL",
 				"F",
@@ -18999,6 +20884,7 @@
 				"frightened",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -19006,7 +20892,12 @@
 			"name": "Yuan-ti Pit Master",
 			"source": "VGM",
 			"page": 206,
-			"size": "M",
+			"reprintedAs": [
+				"Yuan-ti Pit Master|MPMM"
+			],
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -19158,14 +21049,22 @@
 					"name": "Chameleon Skin",
 					"entries": [
 						"The yuan-ti has advantage on Dexterity (Stealth) checks made to hide."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Pit Master (Chameleon Skin)",
+						"addAs": "trait"
+					}
 				},
 				{
 					"type": "variant",
 					"name": "Shed Skin (1/Day)",
 					"entries": [
 						"The yuan-ti can shed its skin as a bonus action to free itself from a grapple, shackles, or other restraints. If the yuan-ti spends 1 minute eating its shed skin, it regains hit points equal to half its hit point maximum."
-					]
+					],
+					"_version": {
+						"name": "Yuan-ti Pit Master (Shed Skin)",
+						"addAs": "bonus"
+					}
 				}
 			],
 			"environment": [
@@ -19173,7 +21072,6 @@
 				"forest",
 				"desert"
 			],
-			"hasToken": true,
 			"soundClip": {
 				"type": "internal",
 				"path": "bestiary/yuan-ti-pit-master.mp3"
@@ -19197,6 +21095,12 @@
 				"I",
 				"P"
 			],
+			"damageTagsSpell": [
+				"F",
+				"I",
+				"N",
+				"O"
+			],
 			"spellcastingTags": [
 				"CL",
 				"F",
@@ -19213,6 +21117,7 @@
 				"invisible",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

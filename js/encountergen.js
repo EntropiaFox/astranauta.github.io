@@ -5,7 +5,7 @@ const tablePage = new TablePage({
 	dataProp: "encounter",
 	listClass: "encounters",
 	tableCol1: "Encounter",
-	fnGetTableName: (meta, table) => `${meta.name} Encounters (Levels ${table.minlvl}\u2014${table.maxlvl})`,
+	fnGetTableName: (meta, table) => `${meta.name} Encounters (Levels ${table.minlvl}\u2013${table.maxlvl})`,
 	fnGetTableHash: (meta, table) => UrlUtil.encodeForHash([meta.name, meta.source, `${table.minlvl}-${table.maxlvl}`]),
 });
 

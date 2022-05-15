@@ -1,7 +1,7 @@
 "use strict";
 
 class Hist {
-	static hashChange (forceLoad) {
+	static hashChange ({isForceLoad, isBlankFilterLoad = false} = {}) {
 		if (Hist.isHistorySuppressed) {
 			Hist.setSuppressHistory(false);
 			return;
@@ -9,11 +9,10 @@ class Hist {
 
 		const [link, ...sub] = Hist.getHashParts();
 
-		let blankFilterLoad = false;
-		if (link !== Hist.lastLoadedLink || sub.length === 0 || forceLoad) {
+		if (link !== Hist.lastLoadedLink || sub.length === 0 || isForceLoad) {
 			Hist.lastLoadedLink = link;
 			if (link === HASH_BLANK) {
-				blankFilterLoad = true;
+				isBlankFilterLoad = true;
 			} else {
 				const listItem = Hist.getActiveListItem(link);
 
@@ -38,12 +37,12 @@ class Hist {
 			}
 		}
 
-		if (typeof loadSubHash === "function" && (sub.length > 0 || forceLoad)) loadSubHash(sub);
-		if (blankFilterLoad) Hist._freshLoad();
+		if (typeof loadSubHash === "function" && (sub.length > 0 || isForceLoad)) loadSubHash(sub);
+		if (isBlankFilterLoad) Hist._freshLoad();
 	}
 
 	static init (initialLoadComplete) {
-		window.onhashchange = Hist.hashChange;
+		window.onhashchange = () => Hist.hashChange({isForceLoad: true});
 		if (window.location.hash.length) {
 			Hist.hashChange();
 		} else {
@@ -134,7 +133,7 @@ class Hist {
 		window.history.replaceState(
 			{},
 			document.title,
-			`${location.origin}${location.pathname}#${hash}`,
+			`${location.origin}${location.pathname}${hash ? `#${hash}` : ""}`,
 		);
 	}
 }

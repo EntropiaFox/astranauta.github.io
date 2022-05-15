@@ -680,6 +680,20 @@
 			]
 		},
 		{
+			"name": "Sir Braford",
+			"source": "TftYP",
+			"entries": [
+				"While traveling in the vicinity of the Sunless Citadel, Sir Braford and his companions were captured by goblins. The young paladin of Pelor has been corrupted by the sinister Gulthias Tree and now swings his magic sword, {@item Shatterspike|TftYP}, on behalf of a different sort of \"deity.\""
+			]
+		},
+		{
+			"name": "Siren",
+			"source": "TftYP",
+			"entries": [
+				"Imprisoned inside a mist-filled chamber in the Tomb of Horrors, Siren serves as evidence of Acererak's heartless sense of humor. This mysterious fey creature yearns to be released, but an enchantment laid on her by the demilich prevents her from telling visitors how to accomplish that task. If anyone succeeds in freeing her, she vows to be a lifelong friend."
+			]
+		},
+		{
 			"name": "Snarla",
 			"source": "TftYP",
 			"entries": [

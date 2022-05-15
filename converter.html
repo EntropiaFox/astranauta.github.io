@@ -46,7 +46,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -128,7 +131,7 @@
 		</div>
 	</header>
 	<nav class="container page__nav" id="navigation">
-		<ul class="nav page__nav-inner" id="navbar">
+		<ul class="nav nav-pills page__nav-inner" id="navbar">
 		</ul>
 	</nav>
 
@@ -172,21 +175,27 @@
 <script type="text/javascript" src="lib/localforage.js"></script>
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>
 <script type="text/javascript" src="js/render-markdown.js"></script>
 <script type="text/javascript" src="js/scalecreature.js"></script>
 <script type="text/javascript" src="js/hist.js"></script>
 <script type="text/javascript" src="js/converterutils.js"></script>
+<script type="text/javascript" src="js/converterutils-entries.js"></script>
+<script type="text/javascript" src="js/converterutils-markdown.js"></script>
 <script type="text/javascript" src="js/converterutils-creature.js"></script>
 <script type="text/javascript" src="js/converterutils-spell.js"></script>
 <script type="text/javascript" src="js/converterutils-item.js"></script>
+<script type="text/javascript" src="js/converterutils-race.js"></script>
 <script type="text/javascript" src="js/converter.js"></script>
 <script type="text/javascript" src="js/converter-creature.js"></script>
 <script type="text/javascript" src="js/converter-spell.js"></script>
 <script type="text/javascript" src="js/converter-item.js"></script>
 <script type="text/javascript" src="js/converter-table.js"></script>
 <script type="text/javascript" src="js/converter-feat.js"></script>
+<script type="text/javascript" src="js/converter-race.js"></script>
 <script type="text/javascript" src="js/list2.js"></script>
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script type="text/javascript" src="lib/elasticlunr.js"></script>

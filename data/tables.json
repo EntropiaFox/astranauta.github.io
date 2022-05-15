@@ -281,6 +281,68 @@
 			]
 		},
 		{
+			"name": "Beneficial Manifestations",
+			"source": "AitFR-AVT",
+			"page": 12,
+			"otherSources": [
+				{
+					"source": "AitFR-DN",
+					"page": 14
+				},
+				{
+					"source": "AitFR-FCD",
+					"page": 15
+				}
+			],
+			"caption": "Beneficial Manifestations",
+			"colLabels": [
+				"d100",
+				"Manifestation"
+			],
+			"colStyles": [
+				"col-2 text-center",
+				"col-10"
+			],
+			"rows": [
+				[
+					"01\u201320",
+					"Your creation has a smell that is pleasing to you, even if there is no source for it."
+				],
+				[
+					"21\u201330",
+					"You can spend 1 minute to dispel any lightly obscuring conditions within 120 feet in your creation."
+				],
+				[
+					"31\u201340",
+					"Within your creation, you can cast create food and water once per day without using a spell slot."
+				],
+				[
+					"41\u201350",
+					"You can understand any language spoken within 30 feet of you while within your creation."
+				],
+				[
+					"51\u201360",
+					"Beasts find your creation appealing or off-putting (you decide)."
+				],
+				[
+					"61\u201370",
+					"When your creation is made, you decide what weather is possible within it."
+				],
+				[
+					"71\u201380",
+					"You cannot be charmed or frightened while within your creation."
+				],
+				[
+					"81\u201390",
+					"All structures in your creation have +2 AC."
+				],
+				[
+					"91\u201300",
+					"You have advantage on your passive Perception score within your creation."
+				]
+			]
+		},
+		{
 			"name": "Damage Types",
 			"source": "PHB",
 			"page": 196,
@@ -436,6 +498,68 @@
 				[
 					"20",
 					"Hops from place to place"
+				]
+			]
+		},
+		{
+			"name": "Detrimental Manifestations",
+			"source": "AitFR-AVT",
+			"page": 12,
+			"otherSources": [
+				{
+					"source": "AitFR-DN",
+					"page": 15
+				},
+				{
+					"source": "AitFR-FCD",
+					"page": 15
+				}
+			],
+			"caption": "Detrimental Manifestations",
+			"colLabels": [
+				"d100",
+				"Manifestation"
+			],
+			"colStyles": [
+				"col-2 text-center",
+				"col-10"
+			],
+			"rows": [
+				[
+					"01\u201320",
+					"Your creation has an unpleasant smell, even if there is no source for it."
+				],
+				[
+					"21\u201330",
+					"Your creation is prone to haze, fog, and other lightly obscured conditions."
+				],
+				[
+					"31\u201340",
+					"Your creation has uncommonly long days or nights (DM decides)."
+				],
+				[
+					"41\u201350",
+					"Structures in your creation only have arrow loops instead of windows."
+				],
+				[
+					"51\u201360",
+					"Beasts either infest or avoid your creation (DM decides)."
+				],
+				[
+					"61\u201370",
+					"Strange weather patterns occur in your creation (DM decides what and when)."
+				],
+				[
+					"71\u201380",
+					"All DCs to detect or track creatures in your creation increase by 2."
+				],
+				[
+					"81\u201390",
+					"All structures in your creation have \u22122 AC."
+				],
+				[
+					"91\u201300",
+					"You have disadvantage on your passive Perception score within your creation."
 				]
 			]
 		},

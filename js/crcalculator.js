@@ -18,7 +18,7 @@ function addMonsterFeatures (mfData) {
 	monsterFeatures = mfData.monsterfeatures;
 	for (let i = 0; i < msbcr.cr.length; i++) {
 		const curCr = msbcr.cr[i];
-		$("#msbcr").append(`<tr><td>${curCr._cr}</td><td>${Parser.crToXp(curCr._cr)}</td><td>${curCr.pb}</td><td>${curCr.ac}</td><td>${curCr.hpmin}-${curCr.hpmax}</td><td>${curCr.attackbonus}</td><td>${curCr.dprmin}-${curCr.dprmax}</td><td>${curCr.savedc}</td></tr>`)
+		$("#msbcr").append(`<tr><td>${curCr._cr}</td><td>${Parser.crToXp(curCr._cr)}</td><td>${curCr.pb}</td><td>${curCr.ac}</td><td>${curCr.hpMin}-${curCr.hpMax}</td><td>${curCr.attackBonus}</td><td>${curCr.dprMin}-${curCr.dprMax}</td><td>${curCr.saveDc}</td></tr>`);
 	}
 
 	$("#crcalc input").change(calculateCr);
@@ -78,14 +78,14 @@ function addMonsterFeatures (mfData) {
 		if (f.hp) effectOnCr.push(`HP: ${f.hp}`);
 		if (f.ac) effectOnCr.push(`AC: ${f.ac}`);
 		if (f.dpr) effectOnCr.push(`DPR: ${f.dpr}`);
-		if (f.attackbonus) effectOnCr.push(`AB: ${f.attackbonus}`);
+		if (f.attackBonus) effectOnCr.push(`AB: ${f.attackBonus}`);
 
-		const numBox = f.numbox ? `<input type="number" value="0" min="0" class="form-control form-control--minimal crc__mon_feature_num input-xs ml-2">` : "";
+		const numBox = f.hasNumberParam ? `<input type="number" value="0" min="0" class="form-control form-control--minimal crc__mon_feature_num input-xs ml-2">` : "";
 
 		$wrpMonFeatures.append(`
 			<label class="row crc__mon_feature ui-tip__parent">
 				<div class="col-1 crc__mon_feature_wrp_cb">
-					<input type="checkbox" id="mf-${Parser.stringToSlug(f.name)}" title="${f.name}" data-hp="${f.hp}" data-ac="${f.ac}" data-dpr="${f.dpr}" data-attackbonus="${f.attackbonus}" class="crc__mon_feature_cb">${numBox}
+					<input type="checkbox" id="mf-${Parser.stringToSlug(f.name)}" title="${f.name}" data-hp="${f.hp || ""}" data-ac="${f.ac || ""}" data-dpr="${f.dpr || ""}" data-attackbonus="${f.attackBonus || ""}" class="crc__mon_feature_cb">${numBox}
 				</div>
 				<div class="col-2">${f.name}</div>
 				<div class="col-2">${Renderer.get().render(`{@creature ${f.example}}`)}</div>
@@ -133,7 +133,7 @@ function addMonsterFeatures (mfData) {
 		if ($cbFeature.prop("checked")) {
 			Hist.setSubhash(curFeature, $iptNum.length ? $iptNum.val() : true);
 		} else {
-			Hist.setSubhash(curFeature, null)
+			Hist.setSubhash(curFeature, null);
 		}
 	}
 
@@ -215,7 +215,7 @@ function calculateCr () {
 
 	for (let i = 0; i < msbcr.cr.length; i++) {
 		const curCr = msbcr.cr[i];
-		if (hp >= parseInt(curCr.hpmin) && hp <= parseInt(curCr.hpmax)) {
+		if (hp >= parseInt(curCr.hpMin) && hp <= parseInt(curCr.hpMax)) {
 			let defenseDifference = parseInt(curCr.ac) - ac;
 			if (defenseDifference > 0) defenseDifference = Math.floor(defenseDifference / 2);
 			if (defenseDifference < 0) defenseDifference = Math.ceil(defenseDifference / 2);
@@ -224,9 +224,9 @@ function calculateCr () {
 			if (defenseDifference >= msbcr.cr.length) defenseDifference = msbcr.cr.length - 1;
 			defensiveCR = msbcr.cr[defenseDifference]._cr;
 		}
-		if (dpr >= curCr.dprmin && dpr <= curCr.dprmax) {
-			let adjuster = parseInt(curCr.attackbonus);
-			if (useSaveDc) adjuster = parseInt(curCr.savedc);
+		if (dpr >= curCr.dprMin && dpr <= curCr.dprMax) {
+			let adjuster = parseInt(curCr.attackBonus);
+			if (useSaveDc) adjuster = parseInt(curCr.saveDc);
 			let attackDifference = adjuster - attackBonus;
 			if (attackDifference > 0) attackDifference = Math.floor(attackDifference / 2);
 			if (attackDifference < 0) attackDifference = Math.ceil(attackDifference / 2);
@@ -261,7 +261,7 @@ function calculateCr () {
 
 	const hitDice = calculateHd();
 	const hitDiceSize = $("#hdval").html();
-	const conMod = Math.floor(($("#con").val() - 10) / 2);
+	const conMod = Parser.getAbilityModNumber($("#con").val());
 	const hashParts = [
 		$("#expectedcr").val(), // 0
 		$("#ac").val(), // 1
@@ -279,7 +279,7 @@ function calculateCr () {
 			const $cb = $(e);
 			if ($cb.prop("checked")) {
 				const $iptNum = $cb.siblings("input[type=number]");
-				return `${$cb.attr("id")}:${$iptNum.length ? $iptNum.val() : true}`
+				return `${$cb.attr("id")}:${$iptNum.length ? $iptNum.val() : true}`;
 			} else return false;
 		}).get().filter(Boolean).join(","),
 	];
@@ -300,7 +300,7 @@ function calculateCr () {
 
 function calculateHd () {
 	const avgHp = $("#hdval").html().split("d")[1] / 2 + 0.5;
-	const conMod = Math.round(($("#con").val() - 10) / 2);
+	const conMod = Parser.getAbilityModNumber($("#con").val());
 	let curHd = Math.round(parseInt($("#hp").val()) / (avgHp + conMod));
 	if (!curHd) curHd = 1;
 	return curHd;
@@ -308,7 +308,7 @@ function calculateHd () {
 
 function calculateHp () {
 	const avgHp = $("#hdval").html().split("d")[1] / 2 + 0.5;
-	const conMod = Math.floor(($("#con").val() - 10) / 2);
+	const conMod = Parser.getAbilityModNumber($("#con").val());
 	return Math.floor((avgHp + conMod) * $("#hd").val());
 }
 

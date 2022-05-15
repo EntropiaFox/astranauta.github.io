@@ -22,7 +22,9 @@
 			"name": "Abhorrent Overlord",
 			"source": "MOT",
 			"page": 219,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "fiend",
 			"alignment": [
 				"L",
@@ -125,12 +127,11 @@
 				{
 					"name": "Storm of Crows {@recharge}",
 					"entries": [
-						"The abhorrent overlord conjures a swarm of spectral crows and harpies in a 20-foot-radius sphere centered on a point the overlord can see within 120 feet of it. The sphere remains for 1 minute or until the overlord loses concentration (as if concentrating on a spell), and its area is lightly obscured and difficult terrain.",
+						"The abhorrent overlord conjures a swarm of spectral crows and harpies in a 20-foot-radius sphere centered on a point the overlord can see within 120 feet of it. The sphere remains for 1 minute or until the overlord loses concentration (as if concentrating on a spell), and its area is lightly obscured and {@quickref difficult terrain||3}.",
 						"Any creature that moves into the area for the first time on a turn or starts its turn there must make a {@dc 15} Constitution saving throw. A creature takes 16 ({@damage 3d10}) slashing damage plus 16 ({@damage 3d10}) psychic damage on a failed save, or half as much damage on a successful one."
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -160,6 +161,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -167,7 +169,9 @@
 			"name": "Akroan Hoplite",
 			"source": "MOT",
 			"page": 228,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"alignment": [
 				"A"
@@ -231,7 +235,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -250,14 +253,19 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Alseid",
-			"group": "Nymph",
+			"group": [
+				"Nymph"
+			],
 			"source": "MOT",
 			"page": 235,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -353,7 +361,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -374,6 +381,7 @@
 				"charmed",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -381,7 +389,9 @@
 			"name": "Anvilwrought Raptor",
 			"source": "MOT",
 			"page": 209,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -471,10 +481,12 @@
 								"The anvilwrought can serve another creature as a familiar, forming a magical, telepathic bond with its willing master. While the two are bonded, the master can sense what the anvilwrought senses, as long as they are within 1 mile of each other."
 							]
 						}
-					]
+					],
+					"_version": {
+						"addHeadersAs": "trait"
+					}
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -493,6 +505,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -500,7 +513,9 @@
 			"name": "Aphemia",
 			"source": "MOT",
 			"page": 226,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -598,7 +613,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -624,6 +638,7 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -632,7 +647,9 @@
 			"isNamedCreature": true,
 			"source": "MOT",
 			"page": 248,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"N",
@@ -756,7 +773,7 @@
 				{
 					"name": "Web of Hair {@recharge 4}",
 					"entries": [
-						"Arasta unleashes her hair in the form of webbing that fills a 30-foot cube next to her. The web is difficult terrain, its area is lightly obscured, and it lasts for 1 minute. Any creature that moves into the web or that starts its turn there must make a {@dc 21} Dexterity saving throw. On a failed save, the creature is {@condition restrained} while in the web. A creature can use an action to make a {@dc 21} Strength check. On a success, it can free itself or a creature within 5 feet of it that is {@condition restrained} by the web. This webbing is immune to all damage except magical fire. A 5-foot cube of the web is destroyed if it takes at least 20 fire damage from a spell or other magical source on a single turn."
+						"Arasta unleashes her hair in the form of webbing that fills a 30-foot cube next to her. The web is {@quickref difficult terrain||3}, its area is lightly obscured, and it lasts for 1 minute. Any creature that moves into the web or that starts its turn there must make a {@dc 21} Dexterity saving throw. On a failed save, the creature is {@condition restrained} while in the web. A creature can use an action to make a {@dc 21} Strength check. On a success, it can free itself or a creature within 5 feet of it that is {@condition restrained} by the web. This webbing is immune to all damage except magical fire. A 5-foot cube of the web is destroyed if it takes at least 20 fire damage from a spell or other magical source on a single turn."
 					]
 				}
 			],
@@ -807,7 +824,6 @@
 				"name": "Arasta",
 				"source": "MOT"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -842,6 +858,7 @@
 				"poisoned",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -849,7 +866,9 @@
 			"name": "Archon of Falling Stars",
 			"source": "MOT",
 			"page": 212,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "celestial",
 			"alignment": [
 				"L",
@@ -962,7 +981,7 @@
 				{
 					"name": "Attack",
 					"entries": [
-						"The archon makes a radiant spear attack or casts guiding bolt."
+						"The archon makes a radiant spear attack or casts {@spell guiding bolt}."
 					]
 				},
 				{
@@ -978,7 +997,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -995,6 +1013,10 @@
 				"P",
 				"R"
 			],
+			"damageTagsSpell": [
+				"N",
+				"R"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -1008,6 +1030,7 @@
 			"conditionInflictSpell": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1015,7 +1038,9 @@
 			"name": "Ashen Rider",
 			"source": "MOT",
 			"page": 213,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "celestial",
 			"alignment": [
 				"L",
@@ -1139,11 +1164,10 @@
 				{
 					"name": "Reduce to Ash (Costs 3 Actions)",
 					"entries": [
-						"The ashen rider targets a creature it can see within 60 feet of it. The target must succeed on a {@dc 18} Constitution saving throw, or it takes 27 ({@damage 5d10}) necrotic damage and its hit point maximum is reduced by an amount equal to the necrotic damage taken. This reduction lasts until the target finishes a long rest. If the target's hit point maximum is reduced to 0, its body and everything it is wearing and carrying, except for magic items, are reduced to ash. A creature reduced to ash can't be revived by any means short of a wish spell."
+						"The ashen rider targets a creature it can see within 60 feet of it. The target must succeed on a {@dc 18} Constitution saving throw, or it takes 27 ({@damage 5d10}) necrotic damage and its hit point maximum is reduced by an amount equal to the necrotic damage taken. This reduction lasts until the target finishes a long rest. If the target's hit point maximum is reduced to 0, its body and everything it is wearing and carrying, except for magic items, are reduced to ash. A creature reduced to ash can't be revived by any means short of a {@spell wish} spell."
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"U"
 			],
@@ -1156,6 +1180,9 @@
 			"damageTags": [
 				"N",
 				"R",
+				"S"
+			],
+			"damageTagsSpell": [
 				"S"
 			],
 			"spellcastingTags": [
@@ -1172,6 +1199,7 @@
 				"incapacitated",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1179,7 +1207,9 @@
 			"name": "Blood-Toll Harpy",
 			"source": "MOT",
 			"page": 227,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -1244,7 +1274,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1258,6 +1287,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1265,7 +1295,9 @@
 			"name": "Broken King Antigonos",
 			"source": "MOT",
 			"page": 189,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -1377,7 +1409,9 @@
 			"name": "Bronze Sable",
 			"source": "MOT",
 			"page": 210,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -1460,7 +1494,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance",
 				"Pack Tactics"
@@ -1480,6 +1513,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1487,7 +1521,9 @@
 			"name": "Burnished Hart",
 			"source": "MOT",
 			"page": 211,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -1572,7 +1608,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Charge"
 			],
@@ -1596,13 +1631,16 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Colossus of Akros",
 			"source": "MOT",
 			"page": 218,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -1726,7 +1764,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption",
 				"Immutable Form",
@@ -1756,6 +1793,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1763,7 +1801,9 @@
 			"name": "Doomwake Giant",
 			"source": "MOT",
 			"page": 224,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"L",
@@ -1848,7 +1888,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -1873,6 +1912,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1880,7 +1920,9 @@
 			"name": "Eater of Hope",
 			"source": "MOT",
 			"page": 220,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "fiend",
 			"alignment": [
 				"L",
@@ -1971,7 +2013,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -1979,6 +2020,7 @@
 				"SD"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -1994,6 +2036,7 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2001,7 +2044,9 @@
 			"name": "Fleecemane Lion",
 			"source": "MOT",
 			"page": 223,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -2098,7 +2143,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Pounce"
@@ -2117,6 +2161,7 @@
 				"frightened",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2124,7 +2169,9 @@
 			"name": "Flitterstep Eidolon",
 			"source": "MOT",
 			"page": 222,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"A"
@@ -2195,7 +2242,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The eidolon can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"The eidolon can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				},
 				{
@@ -2225,7 +2272,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Turn Resistance"
@@ -2244,13 +2290,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Ghostblade Eidolon",
 			"source": "MOT",
 			"page": 222,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"A"
@@ -2316,7 +2365,7 @@
 				{
 					"name": "Incorporeal Movement",
 					"entries": [
-						"The eidolon can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
+						"The eidolon can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@damage 1d10}) force damage if it ends its turn inside an object."
 					]
 				},
 				{
@@ -2340,7 +2389,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Incorporeal Movement",
 				"Turn Resistance"
@@ -2358,6 +2406,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2365,7 +2414,9 @@
 			"name": "Gold-Forged Sentinel",
 			"source": "MOT",
 			"page": 211,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -2448,7 +2499,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Charge"
 			],
@@ -2456,6 +2506,7 @@
 				"SD"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -2472,6 +2523,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2479,7 +2531,9 @@
 			"name": "Hippocamp",
 			"source": "MOT",
 			"page": 227,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -2543,7 +2597,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Charge"
@@ -2560,6 +2613,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2567,7 +2621,9 @@
 			"name": "Hundred-Handed One",
 			"source": "MOT",
 			"page": 225,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "giant",
 			"alignment": [
 				"L",
@@ -2655,7 +2711,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -2677,6 +2732,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2685,7 +2741,9 @@
 			"isNamedCreature": true,
 			"source": "MOT",
 			"page": 252,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"L",
@@ -2765,7 +2823,7 @@
 				{
 					"name": "Petrifying Gaze",
 					"entries": [
-						"When a creature that can see Hythonia's eyes starts its turn within 30 feet of her, Hythonia can force it to make a {@dc 18} Constitution saving throw if she isn't {@condition incapacitated} and can see the creature. If the saving throw fails by 5 or more, the creature is instantly {@condition petrified}. Otherwise, on a failed save the creature begins to turn to stone and is {@condition restrained}. The {@condition restrained} creature must repeat the saving throw at the end of its next turn, becoming {@condition petrified} on a failure or ending the effect on a success. The petrification lasts until the creature is freed by the greater restoration spell or other magic. Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see Hythonia until the start of its next turn, when it can avert its eyes again. If the creature looks at Hythonia in the meantime, it must immediately make the save. If Hythonia sees herself reflected on a polished surface within 30 feet of her and in an area of bright light, she is affected by her own gaze."
+						"When a creature that can see Hythonia's eyes starts its turn within 30 feet of her, Hythonia can force it to make a {@dc 18} Constitution saving throw if she isn't {@condition incapacitated} and can see the creature. If the saving throw fails by 5 or more, the creature is instantly {@condition petrified}. Otherwise, on a failed save the creature begins to turn to stone and is {@condition restrained}. The {@condition restrained} creature must repeat the saving throw at the end of its next turn, becoming {@condition petrified} on a failure or ending the effect on a success. The petrification lasts until the creature is freed by the {@spell greater restoration} spell or other magic. Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see Hythonia until the start of its next turn, when it can avert its eyes again. If the creature looks at Hythonia in the meantime, it must immediately make the save. If Hythonia sees herself reflected on a polished surface within 30 feet of her and in an area of bright light, she is affected by her own gaze."
 					]
 				},
 				{
@@ -2817,7 +2875,7 @@
 				{
 					"name": "Petrified Earth (Costs 2 Actions)",
 					"entries": [
-						"Hythonia causes stone spikes to erupt from the ground in a 30-foot radius centered on her. The area becomes difficult terrain until the start of her next turn. Any creature, other than Hythonia, takes 9 ({@damage 2d8}) piercing damage for every 5 feet it moves on those spikes."
+						"Hythonia causes stone spikes to erupt from the ground in a 30-foot radius centered on her. The area becomes {@quickref difficult terrain||3} until the start of her next turn. Any creature, other than Hythonia, takes 9 ({@damage 2d8}) piercing damage for every 5 feet it moves on those spikes."
 					]
 				}
 			],
@@ -2828,7 +2886,7 @@
 				{
 					"name": "Numbing Claws",
 					"entries": [
-						"Hythonia makes two attacks with her claws. If both attacks hit the same creature, it takes an extra 7 ({@damage 2d6}) poison damage and must succeed on a DC 18 Constitution saving throw or become paralyzed until the start of her next turn."
+						"Hythonia makes two attacks with her claws. If both attacks hit the same creature, it takes an extra 7 ({@damage 2d6}) poison damage and must succeed on a DC 18 Constitution saving throw or become {@condition paralyzed} until the start of her next turn."
 					]
 				},
 				{
@@ -2842,7 +2900,6 @@
 				"name": "Hythonia",
 				"source": "MOT"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -2861,6 +2918,15 @@
 				"P",
 				"S"
 			],
+			"damageTagsLegendary": [
+				"B",
+				"P"
+			],
+			"damageTagsSpell": [
+				"B",
+				"P",
+				"S"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -2870,9 +2936,14 @@
 				"RCH"
 			],
 			"conditionInflict": [
+				"grappled",
 				"petrified",
 				"restrained"
 			],
+			"conditionInflictLegendary": [
+				"poisoned"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2880,7 +2951,9 @@
 			"name": "Ironscale Hydra",
 			"source": "MOT",
 			"page": 231,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -2964,7 +3037,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -2982,15 +3054,20 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Lampad",
-			"group": "Nymph",
+			"group": [
+				"Nymph"
+			],
 			"source": "MOT",
 			"page": 235,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fey",
 			"alignment": [
 				"N",
@@ -3085,7 +3162,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -3099,9 +3175,13 @@
 			"damageTags": [
 				"N"
 			],
+			"damageTagsSpell": [
+				"N"
+			],
 			"spellcastingTags": [
 				"I"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3109,7 +3189,9 @@
 			"name": "Leonin Iconoclast",
 			"source": "MOT",
 			"page": 232,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3209,7 +3291,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -3235,6 +3316,7 @@
 			"conditionInflictSpell": [
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3274,19 +3356,21 @@
 					]
 				}
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"I",
 				"P"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Meletian Hoplite",
 			"source": "MOT",
 			"page": 229,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"alignment": [
 				"A"
@@ -3387,7 +3471,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3398,6 +3481,10 @@
 				"B",
 				"C",
 				"P"
+			],
+			"damageTagsSpell": [
+				"C",
+				"S"
 			],
 			"spellcastingTags": [
 				"CW"
@@ -3415,11 +3502,14 @@
 				"invisible",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Naiad",
-			"group": "Nymph",
+			"group": [
+				"Nymph"
+			],
 			"source": "MOT",
 			"page": 236,
 			"otherSources": [
@@ -3427,7 +3517,9 @@
 					"source": "CM"
 				}
 			],
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -3531,7 +3623,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Magic Resistance"
@@ -3546,13 +3637,20 @@
 			"damageTags": [
 				"Y"
 			],
+			"damageTagsSpell": [
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
+			],
+			"conditionInflict": [
+				"invisible"
 			],
 			"conditionInflictSpell": [
 				"charmed",
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3560,7 +3658,9 @@
 			"name": "Nightmare Shepherd",
 			"source": "MOT",
 			"page": 221,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "fiend",
 			"alignment": [
 				"L",
@@ -3675,7 +3775,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -3705,6 +3804,7 @@
 			"conditionInflictSpell": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3712,7 +3812,9 @@
 			"name": "Nyx-Fleece Ram",
 			"source": "MOT",
 			"page": 233,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -3768,7 +3870,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Charge",
 				"Magic Resistance"
@@ -3783,6 +3884,7 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3790,7 +3892,9 @@
 			"name": "Oracle",
 			"source": "MOT",
 			"page": 238,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"alignment": [
 				"A"
@@ -3881,7 +3985,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"CE"
@@ -3889,21 +3992,29 @@
 			"damageTags": [
 				"O"
 			],
+			"damageTagsSpell": [
+				"R"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"conditionInflictSpell": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Oread",
-			"group": "Nymph",
+			"group": [
+				"Nymph"
+			],
 			"source": "MOT",
 			"page": 237,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -4013,7 +4124,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -4027,9 +4137,16 @@
 			"damageTags": [
 				"F"
 			],
+			"damageTagsSpell": [
+				"F"
+			],
 			"spellcastingTags": [
 				"I"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4037,7 +4154,9 @@
 			"name": "Phylaskia",
 			"source": "MOT",
 			"page": 239,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -4132,7 +4251,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Undead Fortitude"
 			],
@@ -4153,6 +4271,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4161,7 +4280,9 @@
 			"isNamedCreature": true,
 			"source": "MOT",
 			"page": 231,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -4289,7 +4410,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath",
 				"Legendary Resistances",
@@ -4310,13 +4430,16 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Returned Drifter",
 			"source": "MOT",
 			"page": 240,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -4385,7 +4508,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Turn Resistance"
 			],
@@ -4402,13 +4524,16 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Returned Kakomantis",
 			"source": "MOT",
 			"page": 240,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -4488,7 +4613,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Turn Resistance"
 			],
@@ -4503,13 +4627,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Returned Palamnite",
 			"source": "MOT",
 			"page": 241,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"C",
@@ -4589,7 +4716,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Turn Resistance"
 			],
@@ -4606,13 +4732,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Returned Sentry",
 			"source": "MOT",
 			"page": 241,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -4688,7 +4817,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics",
 				"Turn Resistance"
@@ -4707,13 +4835,16 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Satyr Reveler",
 			"source": "MOT",
 			"page": 242,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -4786,7 +4917,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -4809,6 +4939,7 @@
 			"conditionInflict": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4816,7 +4947,9 @@
 			"name": "Satyr Thornbearer",
 			"source": "MOT",
 			"page": 243,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fey",
 			"alignment": [
 				"C",
@@ -4894,7 +5027,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -4915,6 +5047,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4922,7 +5055,9 @@
 			"name": "Setessan Hoplite",
 			"source": "MOT",
 			"page": 229,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "humanoid",
 			"alignment": [
 				"A"
@@ -4991,7 +5126,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -5011,13 +5145,16 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Theran Chimera",
 			"source": "MOT",
 			"page": 216,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -5099,11 +5236,11 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -5121,6 +5258,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5128,7 +5266,9 @@
 			"name": "Triton Master of Waves",
 			"source": "MOT",
 			"page": 245,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5223,7 +5363,7 @@
 				{
 					"name": "Multiattack",
 					"entries": [
-						"The triton makes two attacks using Wave Touch and casts ray of frost."
+						"The triton makes two attacks using Wave Touch and casts {@spell ray of frost}."
 					]
 				},
 				{
@@ -5247,7 +5387,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -5264,9 +5403,14 @@
 			"damageTags": [
 				"C"
 			],
+			"damageTagsSpell": [
+				"B",
+				"C"
+			],
 			"spellcastingTags": [
 				"I"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5274,7 +5418,9 @@
 			"name": "Triton Shorestalker",
 			"source": "MOT",
 			"page": 244,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -5368,7 +5514,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious"
 			],
@@ -5393,6 +5538,7 @@
 				"MW",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5401,7 +5547,9 @@
 			"isNamedCreature": true,
 			"source": "MOT",
 			"page": 254,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -5576,7 +5724,6 @@
 				"name": "Tromokratis",
 				"source": "MOT"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Legendary Resistances",
@@ -5606,6 +5753,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5613,7 +5761,9 @@
 			"name": "Two-Headed Cerberus",
 			"source": "MOT",
 			"page": 215,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"L",
@@ -5696,7 +5846,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Aggressive",
 				"Pack Tactics"
@@ -5705,6 +5854,7 @@
 				"D"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"damageTags": [
@@ -5718,6 +5868,7 @@
 			"conditionInflict": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5725,7 +5876,9 @@
 			"name": "Typhon",
 			"source": "MOT",
 			"page": 246,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"C",
@@ -5807,7 +5960,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Keen Senses",
 				"Regeneration"
@@ -5834,6 +5986,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5841,7 +5994,9 @@
 			"name": "Underworld Cerberus",
 			"source": "MOT",
 			"page": 215,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"L",
@@ -5933,7 +6088,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Aggressive",
 				"Pack Tactics"
@@ -5942,6 +6096,7 @@
 				"U"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -5959,6 +6114,7 @@
 			"conditionInflict": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -5966,7 +6122,9 @@
 			"name": "Winged Bull",
 			"source": "MOT",
 			"page": 214,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "celestial",
 			"alignment": [
 				"U"
@@ -6009,7 +6167,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Charge"
 			],
@@ -6023,13 +6180,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Winged Lion",
 			"source": "MOT",
 			"page": 214,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "celestial",
 			"alignment": [
 				"U"
@@ -6078,7 +6238,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Pounce"
 			],
@@ -6096,13 +6255,16 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Woe Strider",
 			"source": "MOT",
 			"page": 247,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "aberration",
 			"alignment": [
 				"C",
@@ -6149,7 +6311,7 @@
 				{
 					"name": "Antimagic Cone",
 					"entries": [
-						"The woe strider's open mouth creates an area of antimagic, as in the antimagic field spell, in a 60-foot cone. At the start of each of its turns, the woe strider decides which way the cone faces and whether its mouth is open or closed."
+						"The woe strider's open mouth creates an area of antimagic, as in the {@spell antimagic field} spell, in a 60-foot cone. At the start of each of its turns, the woe strider decides which way the cone faces and whether its mouth is open or closed."
 					]
 				}
 			],
@@ -6173,7 +6335,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"SD"
 			],
@@ -6196,6 +6357,7 @@
 			"conditionInflict": [
 				"grappled"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

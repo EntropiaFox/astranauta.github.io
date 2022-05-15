@@ -12,15 +12,15 @@
 					"type": "entries",
 					"entries": [
 						"If one creature wants to jump onto another creature, it can do so by grappling. A small or Medium creature has little chance of making a successful grapple against a Huge or Gargantuan creature, however, unless magic has granted the grappler supernatural might.",
-						"As an alternative, a suitably large opponent can be treated as terrain for the purpose of jumping onto its back or clinging to a limb. After making any ability checks necessary to get into position and onto the larger creature, the smaller creature uses its action to make a Strength (Athletics) or Dexterity (Acrobatics) check contested by the target's Dexterity (Acrobatics) check. If it wins the contest, the smaller creature successfully moves into the target creature's space, the smaller creature moves with the target and has advantage on attack rolls against it.",
-						"The smaller creature can move around within the larger creature's space, treating the space as difficult terrain. The larger creature's ability to attack the smaller creature depends on the smaller creature's location, and is left to your discretion. The larger creature can dislodge the smaller creature as an action\u2014knocking it off, scraping it against a wall, or grabbing and throwing it\u2014by making a Strength (Athletics) check contested by the smaller creature's Strength (Athletics) or Dexterity (Acrobatics) check. The smaller creature chooses which ability to use."
+						"As an alternative, a suitably large opponent can be treated as terrain for the purpose of jumping onto its back or clinging to a limb. After making any ability checks necessary to get into position and onto the larger creature, the smaller creature uses its action to make a Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check contested by the target's Dexterity ({@skill Acrobatics}) check. If it wins the contest, the smaller creature successfully moves into the target creature's space, the smaller creature moves with the target and has advantage on attack rolls against it.",
+						"The smaller creature can move around within the larger creature's space, treating the space as {@quickref difficult terrain||3}. The larger creature's ability to attack the smaller creature depends on the smaller creature's location, and is left to your discretion. The larger creature can dislodge the smaller creature as an action\u2014knocking it off, scraping it against a wall, or grabbing and throwing it\u2014by making a Strength ({@skill Athletics}) check contested by the smaller creature's Strength ({@skill Athletics}) or Dexterity ({@skill Acrobatics}) check. The smaller creature chooses which ability to use."
 					]
 				},
 				{
 					"name": "Disarm",
 					"type": "entries",
 					"entries": [
-						"A creature can use a weapon attack to knock a weapon or another item from a target's grasp. The attacker makes an attack roll contested by the target's Strength (Athletics) check or Dexterity (Acrobatics) check. If the attacker wins the contest, the attack causes no damage or other ill effect, but the defender drops the item.",
+						"A creature can use a weapon attack to knock a weapon or another item from a target's grasp. The attacker makes an attack roll contested by the target's Strength ({@skill Athletics}) check or Dexterity ({@skill Acrobatics}) check. If the attacker wins the contest, the attack causes no damage or other ill effect, but the {@item defender} drops the item.",
 						"The attacker has disadvantage on its attack roll if the target is holding the item with two or more hands. The target has advantage on its ability check if it is larger than the attacking creature, or disadvantage if it is smaller."
 					]
 				},
@@ -29,28 +29,28 @@
 					"type": "entries",
 					"entries": [
 						"This option makes it easier for melee combatants to harry each other with opportunity attacks.",
-						"When a creature makes a melee attack, it can also mark its target. Until the end of the attacker's next turn, any opportunity attack it makes against the marked target has advantage. The opportunity attack doesn't expend the attacker's reaction, but the attacker can't make the attack if anything, such as the {@condition incapacitated} condition or the shocking grasp spell, is preventing it from taking reactions. The attacker is limited to one opportunity attack per turn."
+						"When a creature makes a melee attack, it can also mark its target. Until the end of the attacker's next turn, any opportunity attack it makes against the marked target has advantage. The opportunity attack doesn't expend the attacker's reaction, but the attacker can't make the attack if anything, such as the {@condition incapacitated} condition or the {@spell shocking grasp} spell, is preventing it from taking reactions. The attacker is limited to one opportunity attack per turn."
 					]
 				},
 				{
 					"name": "Overrun",
 					"type": "entries",
 					"entries": [
-						"When a creature tries to move through a hostile creature's space, the mover can try to force its way through by overrunning the hostile creature. As an action or a bonus action, the mover makes a Strength (Athletics) check contested by the hostile creature's Strength (Athletics) check. The creature attempting the overrun has advantage on this check if it is larger than the hostile creature, or disadvantage if it is smaller. If the mover wins the contest, it can move through the hostile creature's space once this turn."
+						"When a creature tries to move through a hostile creature's space, the mover can try to force its way through by overrunning the hostile creature. As an action or a bonus action, the mover makes a Strength ({@skill Athletics}) check contested by the hostile creature's Strength ({@skill Athletics}) check. The creature attempting the overrun has advantage on this check if it is larger than the hostile creature, or disadvantage if it is smaller. If the mover wins the contest, it can move through the hostile creature's space once this turn."
 					]
 				},
 				{
 					"name": "Shove Aside",
 					"type": "entries",
 					"entries": [
-						"With this option, a creature uses the special {@action shove} attack from the Player's Handbook to force a target to the side, rather than away. The attacker has disadvantage on its Strength (Athletics) check when it does so. If that check is successful, the attacker moves the target 5 feet to a different space within its reach."
+						"With this option, a creature uses the special {@action shove} attack from the Player's Handbook to force a target to the side, rather than away. The attacker has disadvantage on its Strength ({@skill Athletics}) check when it does so. If that check is successful, the attacker moves the target 5 feet to a different space within its reach."
 					]
 				},
 				{
 					"name": "Tumble",
 					"type": "entries",
 					"entries": [
-						"A creature can try to tumble through a hostile creature's space, ducking and weaving past the opponent. As an action or a bonus action, the tumbler makes a Dexterity (Acrobatics) check contested by the hostile creature's Dexterity (Acrobatics) check. If the tumbler wins the contest, it can move through the hostile creature's space once this turn."
+						"A creature can try to tumble through a hostile creature's space, ducking and weaving past the opponent. As an action or a bonus action, the tumbler makes a Dexterity ({@skill Acrobatics}) check contested by the hostile creature's Dexterity ({@skill Acrobatics}) check. If the tumbler wins the contest, it can move through the hostile creature's space once this turn."
 					]
 				}
 			]
@@ -88,7 +88,7 @@
 			"ruleType": "O",
 			"type": "section",
 			"entries": [
-				"Adamantine is an ultrahard metal found in meteorites and extraordinary mineral veins. In addition to being used to craft adamantine armor, the metal is also used for weapons.",
+				"Adamantine is an ultrahard metal found in meteorites and extraordinary mineral veins. In addition to being used to craft {@item adamantine armor}, the metal is also used for weapons.",
 				"Melee weapons and ammunition made of or coated with adamantine are unusually effective when used to break objects. Whenever an {@item adamantine weapon|xge} or piece of {@item adamantine ammunition|xge|ammunition} hits an object, the hit is a critical hit.",
 				"The adamantine version of a melee weapon or of ten pieces of ammunition costs 500 gp more than the normal version, whether the weapon or ammunition is made of the metal or coated with it."
 			]
@@ -252,7 +252,7 @@
 					"type": "entries",
 					"name": "The Schema",
 					"entries": [
-						"The first step in creating a magic item is to acquire a schema for it. This is the equivalent of a recipe or a blueprint; it explains the process and components required to create the item. If you can obtain a schema\u2014from House Cannith, the mystical library of Arcanix, the collection of an experienced artificer\u2014you're ready to move on. Otherwise, you can create a schema, but this takes time and skill. An arcane spellcaster uses Arcana to create schema. A divine caster uses Religion, while a druid or ranger relies on Nature. You must have a minimum skill bonus\u2014your proficiency bonus plus your ability score bonus\u2014in order to develop a schema. You must maintain the minimum skill bonus for the duration of your work, so an effect that increases an ability score for a few minutes won't help you.",
+						"The first step in creating a magic item is to acquire a schema for it. This is the equivalent of a recipe or a blueprint; it explains the process and components required to create the item. If you can obtain a schema\u2014from House Cannith, the mystical library of Arcanix, the collection of an experienced artificer\u2014you're ready to move on. Otherwise, you can create a schema, but this takes time and skill. An arcane spellcaster uses {@skill Arcana} to create schema. A divine caster uses {@skill Religion}, while a druid or ranger relies on {@skill Nature}. You must have a minimum skill bonus\u2014your proficiency bonus plus your ability score bonus\u2014in order to develop a schema. You must maintain the minimum skill bonus for the duration of your work, so an effect that increases an ability score for a few minutes won't help you.",
 						{
 							"type": "table",
 							"caption": "Schema Creation Requirements",
@@ -395,7 +395,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"These rules for magic item creation are derived from the system presented in Xanathar's Guide to Everything. This also offers the idea that the creation of a magic item is a complex procedure and that complications can arise. If you use this rule, there's a 10 percent chance of a complication arising for every five workweeks spent on crafting the item. Xanathar's Guide presents a number of possible complications. Here are few tied to Eberron.",
+						"These rules for magic item creation are derived from the system presented in Xanathar's Guide to Everything. This also offers the idea that the creation of a magic item is a complex procedure and that complications can arise. If you use this rule, there's a {@chance 10|10 percent} chance of a complication arising for every five workweeks spent on crafting the item. Xanathar's Guide presents a number of possible complications. Here are few tied to Eberron.",
 						{
 							"type": "table",
 							"colLabels": [
@@ -563,12 +563,12 @@
 			"ruleType": "O",
 			"type": "section",
 			"entries": [
-				"At 1st level, you choose various aspects of your character, including ability scores, race, class, and background. Together these elements help paint a picture of your character's origin and give you the ability to create many different types of characters. Despite that versatility, a typical character race in D&D includes little or no choice\u2014a lack that can make it difficult to realize certain character concepts. The following subsections address that lack by adding choice to your character's race, allowing you to customize your ability scores, languages, and certain proficiencies to fit the origin you have in mind for your character. Character race in the game represents your character's fantasy species, combined with certain cultural assumptions. The following options step outside those assumptions to pave the way for truly unique characters.",
+				"At 1st level, you choose various aspects of your character, including ability scores, race, class, and background. Together these elements help paint a picture of your character's origin and give you the ability to create many different types of characters. Despite that versatility, a D&D race that has the Ability Score Increase trait includes little or no choice\u2014a lack that can make it difficult to realize certain character concepts. The following subsections address that lack by adding choice to your character's race if it includes the Ability Score Increase trait, allowing you to customize your ability scores, languages, and certain proficiencies to fit the origin you have in mind for your character. Character race in the game represents your character's fantasy species, combined with certain cultural assumptions. The following options step outside those assumptions to pave the way for truly unique characters.",
 				{
 					"type": "entries",
 					"name": "Ability Score Increases",
 					"entries": [
-						"Whatever D&D race you choose for your character, you get a trait called Ability Score Increase. This increase reflects an archetypal bit of excellence in the adventurers of this kind in D&D's past. For example, if you're a dwarf, your Constitution increases by 2, because dwarf heroes in D&D are often exceptionally tough. This increase doesn't apply to every dwarf, just to dwarf adventurers, and it exists to reinforce an archetype. That reinforcement is appropriate if you want to lean into the archetype, but it's unhelpful if your character doesn't conform to the archetype.",
+						"The Ability Score Increase trait in a race reflects an archetypal bit of excellence in the adventurers of this kind in D&D's past. For example, if you're a dwarf, your Constitution increases by 2, because dwarf heroes in D&D are often exceptionally tough. This increase doesn't apply to every dwarf, just to dwarf adventurers, and it exists to reinforce an archetype. That reinforcement is appropriate if you want to lean into the archetype, but it's unhelpful if your character doesn't conform to the archetype.",
 						"If you'd like your character to follow their own path, you may ignore your Ability Score Increase trait and assign ability score increases tailored to your character. Here's how to do it: take any ability score increase you gain in your race or subrace and apply it to an ability score of your choice. If you gain more than one increase, you can't apply those increases to the same ability score, and you can't increase a score above 20.",
 						"For example, if the Ability Score Increase trait of your race or subrace increases your Constitution by 2 and your Wisdom by 1, you could instead increase your Intelligence by 2 and your Charisma by 1."
 					]
@@ -577,7 +577,7 @@
 					"type": "entries",
 					"name": "Languages",
 					"entries": [
-						"Your character's race includes languages that your character is assumed to know, usually Common and the language of your ancestors. For example, a halfling adventurer is assumed to know Common and Halfling. Here's the thing: D&D adventurers are extraordinary, and your character might have grown up speaking languages different from the ones in your Languages trait.",
+						"If your character's race has the Languages trait, that trait includes languages that your character is assumed to know, usually Common and the language of your ancestors. For example, a halfling adventurer is assumed to know Common and Halfling. Here's the thing: D&D adventurers are extraordinary, and your character might have grown up speaking languages different from the ones in your Languages trait.",
 						"To customize the languages you know, you may replace each language in your Languages trait with a language from the following list: Abyssal, Celestial, Common, Deep Speech, Draconic, Dwarvish, Elvish, Giant, Gnomish, Goblin, Halfling, Infernal, Orc, Primordial, Sylvan, or Undercommon.",
 						"Your DM may add or remove languages from that list, depending on what languages are appropriate for your campaign."
 					]
@@ -586,7 +586,7 @@
 					"type": "entries",
 					"name": "Proficiencies",
 					"entries": [
-						"Some races and subraces grant proficiencies. These proficiencies are usually cultural, and your character might not have any connection with the culture in question or might have pursued different training. You can replace each of those proficiencies with a different one of your choice, following the restrictions on the Proficiency Swaps table.",
+						"Some races that include the Ability Score Increase trait also grant proficiencies. These proficiencies are usually cultural, and your character might not have any connection with the culture in question or might have pursued different training. You can replace each of those proficiencies with a different one of your choice, following the restrictions on the Proficiency Swaps table.",
 						{
 							"type": "table",
 							"caption": "Proficiency Swaps",
@@ -621,7 +621,7 @@
 								]
 							]
 						},
-						"For example, high elf adventurers have proficiency with longswords, which are martial weapons. Consulting the Proficiency Swaps table, we see that your high elf can swap that proficiency for proficiency with another weapon or a tool. Your elf might be a musician, who chooses proficiency with a musical instrument\u2014a type of tool\u2014instead of with longswords. Similarly, elves start with proficiency in the {@skill Perception} skill. Your elf might not have the keen senses associated with your kin and could take proficiency in a different skill, such as {@skill Performance}.",
+						"For example, high elf adventurers have proficiency with longswords, which are martial weapons. Consulting the Proficiency Swaps table, we see that your high elf can swap that proficiency for proficiency with another weapon or a tool. Your elf might be a musician, who chooses proficiency with a {@item musical instrument|PHB}\u2014a type of tool\u2014instead of with longswords. Similarly, elves start with proficiency in the {@skill Perception} skill. Your elf might not have the keen senses associated with your kin and could take proficiency in a different skill, such as {@skill Performance}.",
 						"The \"{@book Equipment|PHB|4}\" chapter of the {@book Player's Handbook|PHB} includes weapons and tools suitable for these swaps, and your DM might allow additional options."
 					]
 				},
@@ -641,37 +641,37 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Creature Type.",
+											"name": "Creature Type",
 											"entry": "You are a humanoid. You determine your appearance and whether you resemble any of your kin."
 										},
 										{
 											"type": "item",
-											"name": "Size.",
+											"name": "Size",
 											"entry": "You are Small or Medium (your choice)."
 										},
 										{
 											"type": "item",
-											"name": "Speed.",
+											"name": "Speed",
 											"entry": "Your base walking speed is 30 feet."
 										},
 										{
 											"type": "item",
-											"name": "Ability Score Increase.",
+											"name": "Ability Score Increase",
 											"entry": "One ability score of your choice increases by 2."
 										},
 										{
 											"type": "item",
-											"name": "Feat.",
+											"name": "Feat",
 											"entry": "You gain one feat of your choice for which you qualify."
 										},
 										{
 											"type": "item",
-											"name": "Variable Trait.",
+											"name": "Variable Trait",
 											"entry": "You gain one of the following options of your choice: (a) {@sense darkvision} with a range of 60 feet or (b) proficiency in one skill of your choice."
 										},
 										{
 											"type": "item",
-											"name": "Languages.",
+											"name": "Languages",
 											"entry": "You can speak, read, and write Common and one other language that you and your DM agree is appropriate for your character."
 										}
 									]
@@ -784,7 +784,7 @@
 					"type": "entries",
 					"name": "Resolution",
 					"entries": [
-						"A character seeking to buy a magic item makes a Charisma (Persuasion) check to determine the quality of the seller found. The character gains a +1 bonus on the check for every workweek beyond the first that is spent seeking a seller and a +1 bonus for every additional 100 gp spent on the search, up to a maximum bonus of +10. The monetary cost includes a wealthy lifestyle, for a buyer must impress potential business partners.",
+						"A character seeking to buy a magic item makes a Charisma ({@skill Persuasion}) check to determine the quality of the seller found. The character gains a +1 bonus on the check for every workweek beyond the first that is spent seeking a seller and a +1 bonus for every additional 100 gp spent on the search, up to a maximum bonus of +10. The monetary cost includes a wealthy lifestyle, for a buyer must impress potential business partners.",
 						"As shown on the Buying Magic Items table, the total of the check dictates which table in the Dungeon Master's Guide to roll on to determine which items are on the market. Or you can roll for items from any table associated with a lower total on the Buying Magic Items table. As a further option to reflect the availability of items in your campaign, you can apply a -10 penalty for low magic campaigns or a +10 bonus for high magic campaigns. Furthermore, you can double magic item costs in low magic campaigns.",
 						"Using the Magic Item Price table, you then assign prices to the available items, based on their rarity. Halve the price of any consumable item, such as a potion or a scroll, when using the table to determine an asking price.",
 						"You have final say in determining which items are for sale and their final price, no matter what the tables say.",
@@ -986,7 +986,7 @@
 						],
 						[
 							"31-40",
-							"You are caught up in a whirlwind romance. Roll a d20. On a 1\u20135, the romance ends badly. On a 6\u201310, the romance ends amicably. On an 11\u201320, the romance is ongoing. You determine the identity of the love interest, subject to your DM's approval. If the romance ends badly, you might gain a new flaw. If it ends well or is ongoing, your new love interest might represent a new bond."
+							"You are caught up in a whirlwind romance. Roll a {@dice d20}. On a 1\u20135, the romance ends badly. On a 6\u201310, the romance ends amicably. On an 11\u201320, the romance is ongoing. You determine the identity of the love interest, subject to your DM's approval. If the romance ends badly, you might gain a new flaw. If it ends well or is ongoing, your new love interest might represent a new bond."
 						],
 						[
 							"41-80",
@@ -1017,14 +1017,14 @@
 					"name": "Resources",
 					"entries": [
 						"Carousing covers a workweek of fine food, strong drink, and socializing. A character can attempt to carouse among lower-, middle-, or upper-class folk. A character can carouse with the lower class for 10 gp to cover expenses, or 50 gp for the middle class. Carousing with the upper class requires 250 gp for the workweek and access to the local nobility.",
-						"A character with the noble background can mingle with the upper class, but other characters can do so only if you judge that the character has made sufficient contacts. Alternatively, a character might use a disguise kit and the Deception skill to pass as a noble visiting from a distant city."
+						"A character with the noble background can mingle with the upper class, but other characters can do so only if you judge that the character has made sufficient contacts. Alternatively, a character might use a {@item disguise kit|PHB} and the {@skill Deception} skill to pass as a noble visiting from a distant city."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Resolution",
 					"entries": [
-						"After a workweek of carousing, a character stands to make contacts within the selected social class. The character makes a Charisma (Persuasion) check using the Carousing table.",
+						"After a workweek of carousing, a character stands to make contacts within the selected social class. The character makes a Charisma ({@skill Persuasion}) check using the Carousing table.",
 						{
 							"type": "table",
 							"caption": "Carousing",
@@ -1075,7 +1075,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"Characters who carouse risk bar brawls, accumulating a cloud of nasty rumors, and building a bad reputation around town. As a rule of thumb, a character has a 10 percent chance of triggering a complication for each workweek of carousing.",
+						"Characters who carouse risk bar brawls, accumulating a cloud of nasty rumors, and building a bad reputation around town. As a rule of thumb, a character has a {@chance 10|10 percent} chance of triggering a complication for each workweek of carousing.",
 						{
 							"type": "table",
 							"caption": "Lower-Class Carousing Complications",
@@ -1240,8 +1240,8 @@
 			"ruleType": "O",
 			"entries": [
 				"Magic items are the DM's purview, so you decide how they fall into the party's possession. As an option, you can allow player characters to craft magic items.",
-				"The creation of a magic item is a lengthy, expensive task. To start, a character must have a formula that describes the construction of the item. The character must also be a spellcaster with spell slots and must be able to cast any spells that the item can produce. Moreover, the character must meet a level minimum determined by the item's rarity, as shown in the Crafting Magic Items table. For example, a 3rd-level character could create a wand of magic missiles (an uncommon item), as long as the character has spell slots and can cast magic missile. That same character could make a +1 weapon (another uncommon item), no particular spell required.",
-				"You can decide that certain items also require special materials or locations to be created. For example, a character might need {@item alchemist's supplies|phb} to brew a particular potion, or the formula for a flame tongue might require that the weapon be forged with lava.",
+				"The creation of a magic item is a lengthy, expensive task. To start, a character must have a formula that describes the construction of the item. The character must also be a spellcaster with spell slots and must be able to cast any spells that the item can produce. Moreover, the character must meet a level minimum determined by the item's rarity, as shown in the Crafting Magic Items table. For example, a 3rd-level character could create a {@item wand of magic missiles} (an uncommon item), as long as the character has spell slots and can cast {@spell magic missile}. That same character could make a {@item +1 weapon} (another uncommon item), no particular spell required.",
+				"You can decide that certain items also require special materials or locations to be created. For example, a character might need {@item alchemist's supplies|phb} to brew a particular potion, or the formula for a {@item flame tongue} might require that the weapon be forged with lava.",
 				{
 					"type": "table",
 					"caption": "Crafting Magic Items",
@@ -1284,7 +1284,7 @@
 					]
 				},
 				"An item has a creation cost specified in the Crafting Magic Items table. A character engaged in the crafting of a magic item makes progress in 25 gp increments, spending that amount for each day of work until the total cost is paid. The character is assumed to work for 8 hours each of those days. Thus, creating an uncommon magic item takes 20 days and 500 gp. You are free to adjust the costs to better suit your campaign.",
-				"If a spell will be produced by the item being created, the creator must expend one spell slot of the spell's level for each day of the creation process. The spell's material components must also be at hand throughout the process. If the spell normally consumes those components, they are consumed by the creation process. If the item will be able to produce the spell only once, as with a spell scroll, the components are consumed only once by the process. Otherwise, the components are consumed once each day of the item's creation.",
+				"If a spell will be produced by the item being created, the creator must expend one spell slot of the spell's level for each day of the creation process. The spell's material components must also be at hand throughout the process. If the spell normally consumes those components, they are consumed by the creation process. If the item will be able to produce the spell only once, as with a {@item spell scroll}, the components are consumed only once by the process. Otherwise, the components are consumed once each day of the item's creation.",
 				"Multiple characters can combine their efforts to create a magic item if each of them meets the level prerequisite. Each character can contribute spells, spell slots and components, as long as everyone participates during the entire crafting process. Each character can contribute 25 gp worth of effort for each day spent helping to craft the item.",
 				"Normally, a character who undertakes this activity creates a magic item described in chapter 7, \"Treasure.\" At your discretion, you can allow players to design their own magic items, using the guidelines in chapter 9, \"Dungeon Master's Workshop.\"",
 				"While crafting a magic item, a character can maintain modest lifestyle without having to pay the 1 gp per day, or a comfortable lifestyle at half the normal cost (see chapter 5, \"Equipment,\" of the Player's Handbook).",
@@ -1329,7 +1329,7 @@
 							"rows": [
 								[
 									"{@item Herbalism kit|phb}",
-									"Antitoxin, potion of healing"
+									"Antitoxin, {@item potion of healing}"
 								],
 								[
 									"{@item Leatherworker's tools|phb}",
@@ -1353,7 +1353,7 @@
 					"name": "Crafting Magic Items",
 					"entries": [
 						"Creating a magic item requires more than just time, effort, and materials. It is a long-term process that involves one or more adventures to track down rare materials and the lore needed to create the item.",
-						"Potions of healing and spell scrolls are exceptions to the following rules. For more information, see \"Brewing Potions of Healing\" later in this section and the \"Scribing a Spell Scroll\" section, below.",
+						"Potions of healing and spell scrolls are exceptions to the following rules. For more information, see \"Brewing Potions of Healing\" later in this section and the \"Scribing a {@item Spell Scroll}\" section, below.",
 						"To start with, a character needs a formula for a magic item in order to create it. The formula is like a recipe. It lists the materials needed and steps required to make the item.",
 						"An item invariably requires an exotic material to complete it. This material can range from the skin of a yeti to a vial of water taken from a whirlpool on the Elemental Plane of Water. Finding that material should take place as part of an adventure.",
 						"The Magic Item Ingredients table suggests the challenge rating of a creature that the characters need to face to acquire the materials for an item. Note that facing a creature does not necessarily mean that the characters must collect items from its corpse. Rather, the creature might guard a location or a resource that the characters need access to.",
@@ -1391,7 +1391,7 @@
 								]
 							]
 						},
-						"If appropriate, pick a monster or a location that is a thematic fit for the item to be crafted. For example, creating mariner's armor might require the essence of a water weird. Crafting a staff of charming might require the cooperation of a specific arcanaloth, who will help only if the characters complete a task for it. Making a staff of power might hinge on acquiring a piece of an ancient stone that was once touched by the god of magic\u2014a stone now guarded by a suspicious androsphinx.",
+						"If appropriate, pick a monster or a location that is a thematic fit for the item to be crafted. For example, creating {@item mariner's armor} might require the essence of a water weird. Crafting a {@item staff of charming} might require the cooperation of a specific arcanaloth, who will help only if the characters complete a task for it. Making a {@item staff of power} might hinge on acquiring a piece of an ancient stone that was once touched by the god of magic\u2014a stone now guarded by a suspicious androsphinx.",
 						"In addition to facing a specific creature, creating an item comes with a gold piece cost covering other materials, tools, and so on, based on the item's rarity. Those values, as well as the time a character needs to work in order to complete the item, are shown on the Magic Item Crafting Time and Cost table. Halve the listed price and creation time for any consumable items.",
 						{
 							"type": "table",
@@ -1437,7 +1437,7 @@
 								"*Halved for a consumable item like a potion or scroll"
 							]
 						},
-						"To complete a magic item, a character also needs whatever tool proficiency is appropriate, as for crafting a nonmagical object, or proficiency in the Arcana skill.",
+						"To complete a magic item, a character also needs whatever tool proficiency is appropriate, as for crafting a nonmagical object, or proficiency in the {@skill Arcana} skill.",
 						"If all the above requirements are met, the result of the process is a magic item of the desired sort."
 					]
 				},
@@ -1445,7 +1445,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"Most of the complications involved in creating something, especially a magic item, are linked to the difficulty in finding rare ingredients or components needed to complete the work. The complications a character might face as byproducts of the creation process are most interesting when the characters are working on a magic item: there's a 10 percent chance for every five workweeks spent on crafting an item that a complication occurs. The Crafting Complications table provides examples of what might happen.",
+						"Most of the complications involved in creating something, especially a magic item, are linked to the difficulty in finding rare ingredients or components needed to complete the work. The complications a character might face as byproducts of the creation process are most interesting when the characters are working on a magic item: there's a {@chance 10|10 percent} chance for every five workweeks spent on crafting an item that a complication occurs. The Crafting Complications table provides examples of what might happen.",
 						{
 							"type": "table",
 							"caption": "Crafting Complications",
@@ -1493,7 +1493,7 @@
 					"type": "entries",
 					"name": "Brewing Potions of Healing",
 					"entries": [
-						"Potions of healing fall into a special category for item crafting, separate from other magic items. A character who has proficiency with the herbalism kit can create these potions. The times and costs for doing so are summarized on the Potion of Healing Creation table.",
+						"Potions of healing fall into a special category for item crafting, separate from other magic items. A character who has proficiency with the {@item herbalism kit|PHB} can create these potions. The times and costs for doing so are summarized on the {@item Potion of Healing} Creation table.",
 						{
 							"type": "table",
 							"caption": "Potion of Healing Creation",
@@ -1555,7 +1555,7 @@
 					"entries": [
 						"The character must make a series of checks, with the DC for all the checks chosen by the character according to the amount of profit sought from the crime.",
 						"The chosen DC can be 10, 15, 20, or 25. Successful completion of the crime yields a number of gold pieces, as shown on the Loot Value table.",
-						"To attempt a crime, the character makes three checks: Dexterity (Stealth), Dexterity using thieves' tools, and the player's choice of Intelligence (Investigation), Wisdom (Perception), or Charisma (Deception).",
+						"To attempt a crime, the character makes three checks: Dexterity ({@skill Stealth}), Dexterity using {@item thieves' tools|PHB}, and the player's choice of Intelligence ({@skill Investigation}), Wisdom ({@skill Perception}), or Charisma ({@skill Deception}).",
 						"If none of the checks are successful, the character is caught and jailed. The character must pay a fine equal to the profit the crime would have earned and must spend one week in jail for each 25 gp of the fine.",
 						"If only one check is successful, the heist fails but the character escapes.",
 						"If two checks are successful, the heist is a partial success, netting the character half the payout.",
@@ -1679,7 +1679,7 @@
 					"name": "Resolution",
 					"entries": [
 						"The character must make a series of checks, with a DC determined at random based on the quality of the competition that the character runs into. Part of the risk of gambling is that one never knows who might end up sitting across the table.",
-						"The character makes three checks: Wisdom (Insight), Charisma (Deception), and Charisma (Intimidation). If the character has proficiency with an appropriate gaming set, that tool proficiency can replace the relevant skill in any of the checks. The DC for each of the checks is {@dice 5 + 2d10}; generate a separate DC for each one. Consult the Gambling Results table to see how the character did.",
+						"The character makes three checks: Wisdom ({@skill Insight}), Charisma ({@skill Deception}), and Charisma ({@skill Intimidation}). If the character has proficiency with an appropriate {@item gaming set|PHB}, that tool proficiency can replace the relevant skill in any of the checks. The DC for each of the checks is {@dice 5 + 2d10}; generate a separate DC for each one. Consult the Gambling Results table to see how the character did.",
 						{
 							"type": "table",
 							"caption": "Gambling Results",
@@ -1716,7 +1716,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"Gambling tends to attract unsavory individuals. The potential complications involved come from run-ins with the law and associations with various criminals tied to the activity. Every workweek spent gambling brings a 10 percent chance of a complication, examples of which are on the Gambling Complications table.",
+						"Gambling tends to attract unsavory individuals. The potential complications involved come from run-ins with the law and associations with various criminals tied to the activity. Every workweek spent gambling brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Gambling Complications table.",
 						{
 							"type": "table",
 							"caption": "Gambling Complications",
@@ -1793,7 +1793,7 @@
 					"name": "Resolution",
 					"entries": [
 						"The character must make a series of checks, with a DC determined at random based on the quality of the opposition that the character runs into. A big part of the challenge in pit fighting lies in the unknown nature of a character's opponents.",
-						"The character makes three checks: Strength (Athletics), Dexterity (Acrobatics), and a special Constitution check that has a bonus equal to a roll of the character's largest Hit Die (this roll doesn't spend that die). If desired, the character can replace one of these skill checks with an attack roll using one of the character's weapons. The DC for each of the checks is {@dice 5 + 2d10}; generate a separate DC for each one. Consult the Pit Fighting Results table to see how the character did.",
+						"The character makes three checks: Strength ({@skill Athletics}), Dexterity ({@skill Acrobatics}), and a special Constitution check that has a bonus equal to a roll of the character's largest Hit Die (this roll doesn't spend that die). If desired, the character can replace one of these skill checks with an attack roll using one of the character's weapons. The DC for each of the checks is {@dice 5 + 2d10}; generate a separate DC for each one. Consult the Pit Fighting Results table to see how the character did.",
 						{
 							"type": "table",
 							"caption": "Pit Fighting Results",
@@ -1830,7 +1830,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"Characters involved in pit fighting must deal with their opponents, the people who bet on matches, and the matches' promoters. Every workweek spent pit fighting brings a 10 percent chance of a complication, examples of which are on the Pit Fighting Complications table.",
+						"Characters involved in pit fighting must deal with their opponents, the people who bet on matches, and the matches' promoters. Every workweek spent pit fighting brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Pit Fighting Complications table.",
 						{
 							"type": "table",
 							"caption": "Pit Fighting Complications",
@@ -1926,7 +1926,7 @@
 					"type": "entries",
 					"name": "Resolution",
 					"entries": [
-						"At the end of the required time, the character chooses to make either an Intelligence (Religion) check or a Charisma (Persuasion) check. The total of the check determines the benefits of service, as shown on the Religious Service table.",
+						"At the end of the required time, the character chooses to make either an Intelligence ({@skill Religion}) check or a Charisma ({@skill Persuasion}) check. The total of the check determines the benefits of service, as shown on the Religious Service table.",
 						{
 							"type": "table",
 							"caption": "Religious Service",
@@ -1961,7 +1961,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"Temples can be labyrinths of political and social scheming. Even the best-intentioned sect can fall prone to rivalries. A character who serves a temple risks becoming embroiled in such struggles. Every workweek spent in religious service brings a 10 percent chance of a complication, examples of which are on the Religious Service Complications table.",
+						"Temples can be labyrinths of political and social scheming. Even the best-intentioned sect can fall prone to rivalries. A character who serves a temple risks becoming embroiled in such struggles. Every workweek spent in religious service brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Religious Service Complications table.",
 						{
 							"type": "table",
 							"caption": "Religious Service Complications",
@@ -2066,7 +2066,7 @@
 					"name": "Complications",
 					"entries": [
 						"The greatest risk in research is uncovering false information. Not all lore is accurate or truthful, and a rival with a scholarly bent might try to lead the character astray, especially if the object of the research is known to the rival. The rival might plant false information, bribe sages to give bad advice, or steal key tomes needed to find the truth.",
-						"In addition, a character might run into other complications during research. Every workweek spent in research brings a 10 percent chance of a complication, examples of which are on the Research Complications table.",
+						"In addition, a character might run into other complications during research. Every workweek spent in research brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Research Complications table.",
 						{
 							"type": "table",
 							"caption": "Research Complications",
@@ -2172,12 +2172,12 @@
 			"ruleType": "VO",
 			"type": "entries",
 			"entries": [
-				"With time and patience, a spellcaster can transfer a spell to a scroll, creating a spell scroll.",
+				"With time and patience, a spellcaster can transfer a spell to a scroll, creating a {@item spell scroll}.",
 				{
 					"type": "entries",
 					"name": "Resources",
 					"entries": [
-						"Scribing a spell scroll takes an amount of time and money related to the level of the spell the character wants to scribe, as shown in the Spell Scroll Costs table. In addition, the character must have proficiency in the Arcana skill and must provide any material components required for the casting of the spell. Moreover, the character must have the spell prepared, or it must be among the character's known spells, in order to scribe a scroll of that spell.",
+						"Scribing a {@item spell scroll} takes an amount of time and money related to the level of the spell the character wants to scribe, as shown in the {@item Spell Scroll} Costs table. In addition, the character must have proficiency in the {@skill Arcana} skill and must provide any material components required for the casting of the spell. Moreover, the character must have the spell prepared, or it must be among the character's known spells, in order to scribe a scroll of that spell.",
 						"If the scribed spell is a cantrip, the version on the scroll works as if the caster were 1st level.",
 						{
 							"type": "table",
@@ -2251,7 +2251,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"Crafting a spell scroll is a solitary task, unlikely to attract much attention. The complications that arise are more likely to involve the preparation needed for the activity. Every workweek spent scribing brings a 10 percent chance of a complication, examples of which are on the Scribe a Scroll Complications table.",
+						"Crafting a {@item spell scroll} is a solitary task, unlikely to attract much attention. The complications that arise are more likely to involve the preparation needed for the activity. Every workweek spent scribing brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Scribe a Scroll Complications table.",
 						{
 							"type": "table",
 							"caption": "Scribe a Scroll Complications",
@@ -2316,7 +2316,7 @@
 					"type": "entries",
 					"name": "Resolution",
 					"entries": [
-						"A character who wants to sell an item must make a Charisma (Persuasion) check to determine what kind of offer comes in. The character can always opt not to sell, instead forfeiting the workweek of effort and trying again later. Use the Magic Item Base Prices and Magic Item Offer tables to determine the sale price.",
+						"A character who wants to sell an item must make a Charisma ({@skill Persuasion}) check to determine what kind of offer comes in. The character can always opt not to sell, instead forfeiting the workweek of effort and trying again later. Use the Magic Item Base Prices and Magic Item Offer tables to determine the sale price.",
 						{
 							"type": "table",
 							"caption": "Magic Item Base Prices",
@@ -2386,7 +2386,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"The main risk in selling a magic item lies in attracting thieves and anyone else who wants the item but doesn't want to pay for it. Other folk might try to undermine a deal in order to bolster their own business or seek to discredit the character as a legitimate seller. Every workweek spent trying to sell an item brings a 10 percent chance of a complication, examples of which are on the Magic Item Sale Complications table.",
+						"The main risk in selling a magic item lies in attracting thieves and anyone else who wants the item but doesn't want to pay for it. Other folk might try to undermine a deal in order to bolster their own business or seek to discredit the character as a legitimate seller. Every workweek spent trying to sell an item brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Magic Item Sale Complications table.",
 						{
 							"type": "table",
 							"caption": "Magic Item Sale Complications",
@@ -2440,9 +2440,9 @@
 			"entries": [
 				"Few people can afford to buy a magic item, and fewer still know how to find one. Adventurers are exceptional in this regard due to the nature of their profession.",
 				"A character who comes into possession of a common, uncommon, rare, or very rare magic item that he or she wants to sell can spend downtime searching for a buyer. This downtime activity can be performed only in a city or another location where one can find wealthy individuals interested in buying magic items. Legendary magic items and priceless artifacts can't be sold during downtime. Finding someone to buy such an item can be the substance of an adventure or quest.",
-				"For each salable item, the character makes a DC 20 Intelligence (Investigation) check to find buyers. Another character can use his or her downtime to assist with the search, granting advantage on the checks. On a failed check, no buyer for the item is found after a search that lasts 10 days. On a successful check, a buyer for the item is found after a number of days based on the item's rarity, as shown in the Salable Magic Item table.",
-				"A character can attempt to find buyers for multiple magic items at once. Although this requires multiple Intelligence (Investigation) checks, the searches are occurring simultaneously, and the results of multiple failures or successes aren't added together. For example, if the character finds a buyer for a common magic item in 2 days and a buyer for an uncommon item in 5 days, but fails to find a buyer for a rare item up for grabs, the entire search takes 10 days.",
-				"For each item a character wishes to sell, the player rolls percentile dice and consults the Selling a Magic Item table, applying a modifier based on the item's rarity, as shown in the Salable Magic Items table. The character also makes a Charisma (Persuasion) check and adds that check's total to the roll. The subsequent total determines what a buyer offers to pay for the item.",
+				"For each salable item, the character makes a DC 20 Intelligence ({@skill Investigation}) check to find buyers. Another character can use his or her downtime to assist with the search, granting advantage on the checks. On a failed check, no buyer for the item is found after a search that lasts 10 days. On a successful check, a buyer for the item is found after a number of days based on the item's rarity, as shown in the Salable Magic Item table.",
+				"A character can attempt to find buyers for multiple magic items at once. Although this requires multiple Intelligence ({@skill Investigation}) checks, the searches are occurring simultaneously, and the results of multiple failures or successes aren't added together. For example, if the character finds a buyer for a common magic item in 2 days and a buyer for an uncommon item in 5 days, but fails to find a buyer for a rare item up for grabs, the entire search takes 10 days.",
+				"For each item a character wishes to sell, the player rolls percentile dice and consults the Selling a Magic Item table, applying a modifier based on the item's rarity, as shown in the Salable Magic Items table. The character also makes a Charisma ({@skill Persuasion}) check and adds that check's total to the roll. The subsequent total determines what a buyer offers to pay for the item.",
 				"You determine a buyer's identity. Buyers sometimes procure rare and very rare items through proxies to ensure that their identities remain unknown. If the buyer is shady, it's up to you whether the sale creates legal complications for the party later.",
 				{
 					"type": "table",
@@ -2559,7 +2559,7 @@
 						]
 					]
 				},
-				"The character must spend 1 gp per day to cover the cost of drinks, social appearances, and the like. At the end of the time spent sowing the rumor, the character must make a DC 15 Charisma (Deception or Persuasion) check. If the check succeeds, the community's prevailing attitude toward the subject shifts one step toward friendly or hostile, as the character wishes. If the check fails, the rumor gains no traction, and further attempts to propagate it fail.",
+				"The character must spend 1 gp per day to cover the cost of drinks, social appearances, and the like. At the end of the time spent sowing the rumor, the character must make a DC 15 Charisma ({@skill Deception} or {@skill Persuasion}) check. If the check succeeds, the community's prevailing attitude toward the subject shifts one step toward friendly or hostile, as the character wishes. If the check fails, the rumor gains no traction, and further attempts to propagate it fail.",
 				"Shifting a community's general attitude toward a person or organization doesn't affect everyone in the community. Individuals might hold to their own opinions, particularly if they have personal experience in dealing with the subject of the rumors."
 			]
 		},
@@ -2582,7 +2582,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"Complications that arise while training typically involve the teacher. Every ten workweeks spent in training brings a 10 percent chance of a complication, examples of which are on the Training Complications table.",
+						"Complications that arise while training typically involve the teacher. Every ten workweeks spent in training brings a {@chance 10|10 percent} chance of a complication, examples of which are on the Training Complications table.",
 						{
 							"type": "table",
 							"caption": "Training Complications",
@@ -2693,7 +2693,7 @@
 					"type": "entries",
 					"name": "Resolution",
 					"entries": [
-						"To determine how much money a character earns, the character makes an ability check: Strength (Athletics), Dexterity (Acrobatics), Intelligence using a set of tools, Charisma (Performance), or Charisma using a musical instrument. Consult the Wages table to see how much money is generated according to the total of the check.",
+						"To determine how much money a character earns, the character makes an ability check: Strength ({@skill Athletics}), Dexterity ({@skill Acrobatics}), Intelligence using a set of tools, Charisma ({@skill Performance}), or Charisma using a {@item musical instrument|PHB}. Consult the Wages table to see how much money is generated according to the total of the check.",
 						{
 							"type": "table",
 							"caption": "Wages",
@@ -2730,7 +2730,7 @@
 					"type": "entries",
 					"name": "Complications",
 					"entries": [
-						"Ordinary work is rarely filled with significant complications. Still, the Work Complications table can add some difficulties to a worker's life. Each workweek of activity brings a 10 percent chance that a character encounters a complication.",
+						"Ordinary work is rarely filled with significant complications. Still, the Work Complications table can add some difficulties to a worker's life. Each workweek of activity brings a {@chance 10|10 percent} chance that a character encounters a complication.",
 						{
 							"type": "table",
 							"caption": "Work Complications",
@@ -2983,7 +2983,7 @@
 			"ruleType": "VO",
 			"entries": [
 				"If you do want to add elements of Emrakul's madness to your campaign, use the {@variantrule New Ability Scores: Honor and Sanity||Sanity} score rules in chapter 9 of the Dungeon Master's Guide. Allow characters to make Sanity checks to interpret the effects of Emrakul's corruption, and Sanity saving throws to resist the effects of the spreading madness.",
-				"A creature or character whose Sanity score is below 10 can begin to manifest signs of physical corruption, which progresses in stages.",
+				"A creature or character whose {@variantrule New Ability Scores: Honor and Sanity||Sanity score} is below 10 can begin to manifest signs of physical corruption, which progresses in stages.",
 				{
 					"type": "entries",
 					"name": "Distorted (Sanity 8\u20139)",
@@ -3377,7 +3377,7 @@
 			"page": 8,
 			"ruleType": "O",
 			"entries": [
-				"Combat can feel very mechanical. {@i I move 10 feet. I make an attack roll. I use a reaction.} One way for the DM to encourage more cinematic action is to present a list of Environmental Elements. In a tavern, this list could include Chandelier, Plate Glass Window, Roaring Fireplace, Tray of Drinks, Drunk Patron. If you're fighting in an ancient tomb the list could be Pile of Gold Coins, Scattered Bones, Rotting Tapestry, Moss-Covered Statue. Each turn, a player can work one of these elements into their description of their action. The primary purpose of this is to give players ideas; interesting details to use while describing their actions. But if a player comes up with a particularly clever way to use an element, the DM could grant advantage on a check or attack roll, or some other benefit. The rogue needs to cross a room full of enemies and wants to swing on the chandelier? As the DM, I'd let them make a simple Dexterity (Acrobatics) check to avoid opportunity attacks, essentially getting a free Disengage action.",
+				"Combat can feel very mechanical. {@i I move 10 feet. I make an attack roll. I use a reaction.} One way for the DM to encourage more cinematic action is to present a list of Environmental Elements. In a tavern, this list could include Chandelier, Plate Glass Window, Roaring Fireplace, Tray of Drinks, Drunk Patron. If you're fighting in an ancient tomb the list could be Pile of Gold Coins, Scattered Bones, Rotting Tapestry, Moss-Covered Statue. Each turn, a player can work one of these elements into their description of their action. The primary purpose of this is to give players ideas; interesting details to use while describing their actions. But if a player comes up with a particularly clever way to use an element, the DM could grant advantage on a check or attack roll, or some other benefit. The rogue needs to cross a room full of enemies and wants to swing on the chandelier? As the DM, I'd let them make a simple Dexterity ({@skill Acrobatics}) check to avoid opportunity attacks, essentially getting a free {@action Disengage} action.",
 				"Environmental elements are always  optional and largely cosmetic. As a DM, you  don't have to grant a bonus for every use of an   element. But presenting a list can help players  think of the location as more than just squares  on a map and challenge them to add more  cinematic flair to their actions."
 			]
 		},
@@ -3910,7 +3910,7 @@
 									"type": "entries",
 									"name": "Delaying",
 									"entries": [
-										"You cannot use the Ready action under these rules, but you can instead choose to delay your turn. Instead of taking your turn on your initiative count, you simply act on a later initiative count, before or after other creatures as you choose. If more than one creature has chosen to delay, each creature's original initiative needs to be noted. Whenever a delaying creature decides to act, another delaying creature with a lower initiative can decide to act immediately before it."
+										"You cannot use the {@action Ready} action under these rules, but you can instead choose to delay your turn. Instead of taking your turn on your initiative count, you simply act on a later initiative count, before or after other creatures as you choose. If more than one creature has chosen to delay, each creature's original initiative needs to be noted. Whenever a delaying creature decides to act, another delaying creature with a lower initiative can decide to act immediately before it."
 									]
 								},
 								{
@@ -3933,7 +3933,7 @@
 							"type": "entries",
 							"name": "Choosing Another Creature's Actions",
 							"entries": [
-								"If you are in a position to choose the actions that another creature takes on its turn (for example, if you have successfully targeted that creature with the dominate monster spell), you roll initiative for the actions you plan to have the creature take, then add that result to your initiative. The final result is the creature's initiative.",
+								"If you are in a position to choose the actions that another creature takes on its turn (for example, if you have successfully targeted that creature with the {@spell dominate monster} spell), you roll initiative for the actions you plan to have the creature take, then add that result to your initiative. The final result is the creature's initiative.",
 								"In general, if an effect causes a creature to change its actions and it has not yet taken a turn, the creature rerolls its initiative and adds the result to the initiative of the creature or effect that triggered the change."
 							]
 						},
@@ -4002,7 +4002,7 @@
 					"type": "entries",
 					"name": "Disarming Haunted Traps",
 					"entries": [
-						"Characters who notice a haunted trap before it activates can attempt to disarm it. Typical methods of disarming traps, such as thieves' tools and {@spell dispel magic}, don't affect haunted traps. However, the Channel Divinity class feature and the {@spell remove curse} spell can disarm a haunted trap.",
+						"Characters who notice a haunted trap before it activates can attempt to disarm it. Typical methods of disarming traps, such as {@item thieves' tools|PHB} and {@spell dispel magic}, don't affect haunted traps. However, the Channel Divinity class feature and the {@spell remove curse} spell can disarm a haunted trap.",
 						"To use Channel Divinity to disarm a haunted trap, a character uses an action to present their holy symbol and speak a prayer. To use {@spell remove curse} instead, a character must cast the spell and touch an object that is part of the trap. Whichever disarming method is used, the trap itself then makes a saving throw against the character's spell save DC, adding its Haunt Bonus to the save. On a failure, the trap is disarmed for 24 hours. If the trap fails the save by 10 or more, the trap is disarmed permanently.",
 						"Depending on the haunted trap's origins, certain spells might also affect the trap. For example, a haunted trap with a fiendish origin might be permanently disarmed by the spell {@spell dispel evil and good}.",
 						"Some haunted traps might also be disarmed in nonmagical ways related to the history of a haunted area. Such methods might be as simple as wearing the clothes of a haunted house's former owner or singing a lullaby that soothes a restless spirit. Haunted traps disarmed in such ways typically remain disarmed for 24 hours."
@@ -4400,11 +4400,11 @@
 						],
 						[
 							"3",
-							"{@bold Lose a Foot or Leg.} Your speed on foot is halved, and you must use a cane or crutch to move unless you have a peg leg or other prosthesis. You fall {@condition prone} after using the Dash action. You have disadvantage on Dexterity checks made to balance. Magic such as the {@spell regenerate} spell can restore the lost appendage."
+							"{@bold Lose a Foot or Leg.} Your speed on foot is halved, and you must use a cane or crutch to move unless you have a peg leg or other prosthesis. You fall {@condition prone} after using the {@action Dash} action. You have disadvantage on Dexterity checks made to balance. Magic such as the {@spell regenerate} spell can restore the lost appendage."
 						],
 						[
 							"4",
-							"{@bold Limp.} Your speed on foot is reduced by 5 feet. You must make a DC 10 Dexterity saving throw after using the Dash action. If you fail the save, you fall {@condition prone}. Magical healing removes the limp."
+							"{@bold Limp.} Your speed on foot is reduced by 5 feet. You must make a DC 10 Dexterity saving throw after using the {@action Dash} action. If you fail the save, you fall {@condition prone}. Magical healing removes the limp."
 						],
 						[
 							"5-7",
@@ -4420,7 +4420,7 @@
 						],
 						[
 							"14-16",
-							"{@bold Festering Wound.} Your hit point maximum is reduced by 1 every 24 hours the wound persists. If your hit point maximum drops to 0, you die. The wound heals if you receive magical healing. Alternatively, someone can tend to the wound and make a DC 15 Wisdom (Medicine) check once every 24 hours. After ten successes, the wound heals."
+							"{@bold Festering Wound.} Your hit point maximum is reduced by 1 every 24 hours the wound persists. If your hit point maximum drops to 0, you die. The wound heals if you receive magical healing. Alternatively, someone can tend to the wound and make a DC 15 Wisdom ({@skill Medicine}) check once every 24 hours. After ten successes, the wound heals."
 						],
 						[
 							"17-20",
@@ -4590,7 +4590,7 @@
 					"name": "Tracking Loyalty",
 					"entries": [
 						"Keep track of an NPC's loyalty score in secret so that the players won't know for sure whether an NPC party member is loyal or disloyal (even if the NPC is currently under a player's control).",
-						"An NPC's loyalty score increases by {@dice 1d4} if other party members help the NPC achieve a goal tied to its bond. Likewise, an NPC's loyalty score increases by {@dice 1d4} if the NPC is treated particularly well (for example, given a magic weapon as a gift) or rescued by another party member. An NPC 's loyalty score can never be raised above its maximum.",
+						"An NPC's loyalty score increases by {@dice 1d4} if other party members help the NPC achieve a goal tied to its bond. Likewise, an NPC's loyalty score increases by {@dice 1d4} if the NPC is treated particularly well (for example, given a magic weapon as a gift) or rescued by another party member. An NPC's loyalty score can never be raised above its maximum.",
 						"When other party members act in a manner that runs counter to the NPC's alignment or bond, reduce the PC's loyalty score by {@dice 1d4}. Reduce the NPC's loyalty score by {@dice 2d4} if the character is abused, misled, or endangered by other party members for purely selfish reasons.",
 						"An NPC whose loyalty score drops to 0 is no longer loyal to the party and might part ways with them. A loyalty score can never drop below 0.",
 						"An NPC with a loyalty score of 10 or higher risks life and limb to help fellow party members. If the NPC's loyalty score is between 1 and 10, its loyalty is tenuous. An NPC whose loyalty drops to 0 no longer acts in the party's best interests. The disloyal NPC either leaves the party (attacking characters who attempt to intervene) or works in secret to bring about the party's downfall."
@@ -4610,8 +4610,8 @@
 					"type": "entries",
 					"name": "Going Mad",
 					"entries": [
-						"Various magical effects can inflict madness on an otherwise stable mind. Certain spells, such as contact other plane and symbol, can cause insanity, and you can use the madness rules here instead of the spell effects in the Player's Handbook. Diseases, poisons, and planar effects such as psychic wind or the howling winds of Pandemonium can all inflict madness. Some artifacts can also break the psyche of a character who uses or becomes attuned to them.",
-						"Resisting a madness-inducing effect usually requires a Wisdom or Charisma saving throw. If your game includes the Sanity score (see chapter 9, \"Dungeon Master's Workshop\"), a creature makes a Sanity saving throw instead."
+						"Various magical effects can inflict madness on an otherwise stable mind. Certain spells, such as {@spell contact other plane} and {@spell symbol}, can cause insanity, and you can use the madness rules here instead of the spell effects in the Player's Handbook. Diseases, poisons, and planar effects such as psychic wind or the howling winds of Pandemonium can all inflict madness. Some artifacts can also break the psyche of a character who uses or becomes attuned to them.",
+						"Resisting a madness-inducing effect usually requires a Wisdom or Charisma saving throw. If your game includes the {@variantrule New Ability Scores: Honor and Sanity||Sanity score} (see chapter 9, \"Dungeon Master's Workshop\"), a creature makes a Sanity saving throw instead."
 					]
 				},
 				{
@@ -4698,7 +4698,7 @@
 								],
 								[
 									"21-30",
-									"The character suffers extreme paranoia. The character has disadvantage on Wisdom and Charisma checks"
+									"The character suffers extreme paranoia. The character has disadvantage on Wisdom and Charisma checks."
 								],
 								[
 									"31-40",
@@ -5217,7 +5217,7 @@
 									"type": "entries",
 									"name": "Movement",
 									"entries": [
-										"A unit must stop moving if it moves adjacent to an enemy unit, and a unit can't move if it is adjacent to an enemy unit, unless it uses the Disengage action that turn. Otherwise, use the rules for movement from the {@i Player's Handbook} to resolve how far a unit can move."
+										"A unit must stop moving if it moves adjacent to an enemy unit, and a unit can't move if it is adjacent to an enemy unit, unless it uses the {@action Disengage} action that turn. Otherwise, use the rules for movement from the {@i Player's Handbook} to resolve how far a unit can move."
 									]
 								},
 								{
@@ -5233,7 +5233,7 @@
 							"type": "entries",
 							"name": "Action Options",
 							"entries": [
-								"When a unit takes its action, it chooses one of the following action options: Attack, Dash, Defend, Disengage, or Guard. Each option is described below.",
+								"When a unit takes its action, it chooses one of the following action options: {@action Attack}, Dash, Defend, {@action Disengage}, or Guard. Each option is described below.",
 								{
 									"type": "entries",
 									"name": "Attack",
@@ -5259,7 +5259,7 @@
 									"type": "entries",
 									"name": "Disengage",
 									"entries": [
-										"A unit that is adjacent to an enemy unit normally can't move. If the unit takes the Disengage action, it has the chance to move away. The unit must immediately make a DC 10 morale check. If it fails, it loses its action and doesn't move. If it succeeds, it can move up to half its speed. During this move, it doesn't need to stop if it moves adjacent to an enemy unit."
+										"A unit that is adjacent to an enemy unit normally can't move. If the unit takes the {@action Disengage} action, it has the chance to move away. The unit must immediately make a DC 10 morale check. If it fails, it loses its action and doesn't move. If it succeeds, it can move up to half its speed. During this move, it doesn't need to stop if it moves adjacent to an enemy unit."
 									]
 								},
 								{
@@ -5284,22 +5284,22 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Tie.",
+											"name": "Tie",
 											"entry": "Nothing happens if the attacker and the target tie."
 										},
 										{
 											"type": "item",
-											"name": "Target Wins.",
+											"name": "Target Wins",
 											"entry": "If the target's total is higher, the attack has no effect."
 										},
 										{
 											"type": "item",
-											"name": "Attacker Wins by 10 or Less.",
+											"name": "Attacker Wins by 10 or Less",
 											"entry": "The attacker scores casualties, but not enough to break the target unit. The target's BR is reduced by 2."
 										},
 										{
 											"type": "item",
-											"name": "Attacker Wins by 11 or More.",
+											"name": "Attacker Wins by 11 or More",
 											"entry": "The attacker scores heavy casualties on the target. The target's BR is reduced by 5, and it must immediately make a DC 10 morale check. If the check fails, the unit flees the battle and is eliminated. Remove it from play."
 										}
 									]
@@ -5343,12 +5343,12 @@
 									"items": [
 										{
 											"type": "item",
-											"name": "Casualties.",
+											"name": "Casualties",
 											"entry": "If a unit is reduced to half or less of its starting BR, it must immediately make a DC 15 morale check. If it fails, it is eliminated from the battle. Remove it from play."
 										},
 										{
 											"type": "item",
-											"name": "Friendly Casualties.",
+											"name": "Friendly Casualties",
 											"entry": "If a friendly unit within 500 feet of the unit is eliminated, the unit must immediately make a DC 10 morale check. If it fails, the unit can't move or take actions on its next turn."
 										}
 									]
@@ -5583,7 +5583,7 @@
 			"page": 136,
 			"ruleType": "V",
 			"entries": [
-				"If you prefer magic items to have a greater mystique, consider removing the ability to identify the properties of a magic item during a short rest, and require the identify spell, experimentation, or both to reveal what a magic item does."
+				"If you prefer magic items to have a greater mystique, consider removing the ability to identify the properties of a magic item during a short rest, and require the {@spell identify} spell, experimentation, or both to reveal what a magic item does."
 			]
 		},
 		{
@@ -5710,7 +5710,7 @@
 								],
 								[
 									"{@class Bard}",
-									"Light armor, one skill of your choice, one musical instrument of your choice"
+									"Light armor, one skill of your choice, one {@item musical instrument|PHB} of your choice"
 								],
 								[
 									"{@class Cleric}",
@@ -5738,7 +5738,7 @@
 								],
 								[
 									"{@class Rogue}",
-									"Light armor, one skill from the class's skill list, thieves' tools"
+									"Light armor, one skill from the class's skill list, {@item thieves' tools|PHB}"
 								],
 								[
 									"{@class Sorcerer}",
@@ -6841,7 +6841,7 @@
 										],
 										[
 											"4",
-											"Razorvine (see \"{@book Wilderness Hazards|DMG|5|Wilderness Hazards}\" in chapter 5, \"{@adventure Adventure Environments|DMG|-1},\" of the {@book Dungeon Master's Guide|DMG}) grows in 10-foot-tall hedges shaped like animals."
+											"{@hazard Razorvine} (see \"{@book Wilderness Hazards|DMG|5|Wilderness Hazards}\" in chapter 5, \"{@adventure Adventure Environments|DMG|-1},\" of the {@book Dungeon Master's Guide|DMG}) grows in 10-foot-tall hedges shaped like animals."
 										],
 										[
 											"5",
@@ -7007,7 +7007,7 @@
 					"entries": [
 						"If your campaign involves cultures where a rigid code of honor is part of daily life, consider using the Honor score as a means of measuring a character's devotion to that code. This ability fits well in a setting inspired by Asian cultures, such as Kara-Tur in the Forgotten Realms. The Honor ability is also useful in any campaign that revolves around orders of knights.",
 						"Honor measures not only a character's devotion to a code but also the character's understanding of it. The Honor score can also reflect how others perceive a character's honor. A character with a high Honor usually has a reputation that others know about, especially those who have high Honor scores themselves.",
-						"Unlike other abilities, Honor can't be raised with normal ability score increases. Instead, you can award increases to Honor\u2014or impose reductions\u2014based on a character's actions. At the end of an adventure, if you think a character 's actions in the adventure reflected well or poorly on his or her understanding of the code, you can increase or decrease the character's Honor by 1. As with other ability scores, a character's Honor can't exceed 20 or fall below 1.",
+						"Unlike other abilities, Honor can't be raised with normal ability score increases. Instead, you can award increases to Honor\u2014or impose reductions\u2014based on a character's actions. At the end of an adventure, if you think a character's actions in the adventure reflected well or poorly on his or her understanding of the code, you can increase or decrease the character's Honor by 1. As with other ability scores, a character's Honor can't exceed 20 or fall below 1.",
 						{
 							"type": "entries",
 							"name": "Honor Checks",
@@ -7073,12 +7073,12 @@
 									"items": [
 										"Seeing a creature from the Far Realm or other alien realms for the first time",
 										"Making direct contact with the mind of an alien creature",
-										"Being subjected to spells that affect mental stability, such as the insanity option of the symbol spell",
+										"Being subjected to spells that affect mental stability, such as the insanity option of the {@spell symbol} spell",
 										"Passing through a demiplane built on alien physics",
 										"Resisting an effect conferred by an attack or spell that deals psychic damage"
 									]
 								},
-								"A failed Sanity save might result in short-term, long-term, or indefinite madness, as described in chapter 8, \"Running the Game.\" Any time a character suffers from long-term or indefinite madness, the character's Sanity is reduced by 1. A greater restoration spell can restore Sanity lost in this way, and a character can increase his or her Sanity through level advancement."
+								"A failed Sanity save might result in {@table short-term madness||short-term}, {@table long-term madness||long-term}, or {@table indefinite madness}, as described in chapter 8, \"Running the Game.\" Any time a character suffers from long-term or indefinite madness, the character's Sanity is reduced by 1. A {@spell greater restoration} spell can restore Sanity lost in this way, and a character can increase his or her Sanity through level advancement."
 							]
 						}
 					]
@@ -7393,7 +7393,7 @@
 					"name": "Kelp Forests",
 					"entries": [
 						"Kelp grows in dense forests across the ocean floor. Most forests are found within depths of less than 100 feet near the shoreline, and range from 10 feet to over 100 miles in length and width. The kelp grows in vines up to 175 feet in length.",
-						"Kelp roots are shallow, and a whole forest can be uprooted by a strong storm. But it grows at a rapid pace, sometimes as much as 18 inches a day, meaning that a kelp forest can spring up quickly. Such forests can hide thousands of small fish and other prey animals, which attract predators. The forest is so dense that anything within it is heavily obscured to an observer more than 10 feet away, and the whole area is difficult terrain."
+						"Kelp roots are shallow, and a whole forest can be uprooted by a strong storm. But it grows at a rapid pace, sometimes as much as 18 inches a day, meaning that a kelp forest can spring up quickly. Such forests can hide thousands of small fish and other prey animals, which attract predators. The forest is so dense that anything within it is heavily obscured to an observer more than 10 feet away, and the whole area is {@quickref difficult terrain||3}."
 					]
 				},
 				{
@@ -7532,7 +7532,7 @@
 							"type": "entries",
 							"name": "Navigating Sandbars",
 							"entries": [
-								"Sandbars make dangerous obstacles for vessels, particularly at high tide when they are less noticeable. The crew of a ship moving toward a sandbar beneath the waves must have a passive Wisdom ({@skill Perception}) score of 12 or higher or fail to see the sandbar in the way (see \"{@adventure Noticing Threats|GoS|8|Noticing Threats}\"). When a ship passes over a submerged sandbar, the sandbar counts as difficult terrain, and the ship must succeed on a Dexterity saving throw. The DC of this save corresponds with the depth of the sandbar, as listed on the Sandbar DCs table. If the ship fails this save, it gets stuck on the sandbar. A ship can become unstuck by using an action to make a Strength check, with a bonus equal to the crew's quality, against the sandbar's DC.",
+								"Sandbars make dangerous obstacles for vessels, particularly at high tide when they are less noticeable. The crew of a ship moving toward a sandbar beneath the waves must have a passive Wisdom ({@skill Perception}) score of 12 or higher or fail to see the sandbar in the way (see \"{@adventure Noticing Threats|GoS|8|Noticing Threats}\"). When a ship passes over a submerged sandbar, the sandbar counts as {@quickref difficult terrain||3}, and the ship must succeed on a Dexterity saving throw. The DC of this save corresponds with the depth of the sandbar, as listed on the Sandbar DCs table. If the ship fails this save, it gets stuck on the sandbar. A ship can become unstuck by using an action to make a Strength check, with a bonus equal to the crew's quality, against the sandbar's DC.",
 								{
 									"type": "table",
 									"caption": "Sandbar DCs",
@@ -7636,7 +7636,7 @@
 					"type": "entries",
 					"name": "Whirlpools",
 					"entries": [
-						"In areas where storms or opposed currents drive powerful waters together, violent maelstroms might form. Whirlpools are difficult terrain. Each whirlpool has a rank, which determines its size and strength, as shown on the Whirlpool Rank table. A whirlpool's depth equals half its diameter.",
+						"In areas where storms or opposed currents drive powerful waters together, violent maelstroms might form. Whirlpools are {@quickref difficult terrain||3}. Each whirlpool has a rank, which determines its size and strength, as shown on the Whirlpool Rank table. A whirlpool's depth equals half its diameter.",
 						{
 							"type": "table",
 							"caption": "Whirlpool Rank",
@@ -7991,7 +7991,7 @@
 							"name": "Time Warp",
 							"entries": [
 								"While time seems to pass normally in the Feywild, characters might spend a day there and realize, upon leaving the plane, that less or more time has elapsed everywhere else in the multiverse.",
-								"Whenever a creature or group of creatures leaves the Feywild after spending at least 1 day on that plane, you can choose a time change that works best for your campaign, if any, or roll on the Feywild Time Warp table. A wish spell can be used to remove the effect on up to ten creatures. Some powerful fey have the ability to grant such wishes and might do so if the beneficiaries agree to subject themselves to a {@spell geas} spell and complete a quest after the {@spell wish} spell is cast.",
+								"Whenever a creature or group of creatures leaves the Feywild after spending at least 1 day on that plane, you can choose a time change that works best for your campaign, if any, or roll on the Feywild Time Warp table. A {@spell wish} spell can be used to remove the effect on up to ten creatures. Some powerful fey have the ability to grant such wishes and might do so if the beneficiaries agree to subject themselves to a {@spell geas} spell and complete a quest after the {@spell wish} spell is cast.",
 								{
 									"type": "table",
 									"caption": "Feywild Time Warp",
@@ -8109,7 +8109,7 @@
 					"type": "entries",
 					"name": "The Beastlands: Beast Transformation",
 					"entries": [
-						"Whenever a visitor slays a beast native to the plane, the slayer must succeed on a DC 10 Charisma saving throw or become transformed (as the polymorph spell) into the type of beast that was slain. In this form, the creature retains its intelligence and ability to speak. At the end of each long rest, the polymorphed creature can repeat the saving throw. On a successful saving throw, the creature returns to its true form. After three failed saving throws. the transformation can be undone only by a {@spell remove curse} spell or similar magic. "
+						"Whenever a visitor slays a beast native to the plane, the slayer must succeed on a DC 10 Charisma saving throw or become transformed (as the {@spell polymorph} spell) into the type of beast that was slain. In this form, the creature retains its intelligence and ability to speak. At the end of each long rest, the polymorphed creature can repeat the saving throw. On a successful saving throw, the creature returns to its true form. After three failed saving throws. the transformation can be undone only by a {@spell remove curse} spell or similar magic. "
 					]
 				},
 				{
@@ -8147,7 +8147,7 @@
 					"name": "The Abyss: Abyssal Corruption",
 					"entries": [
 						"A non-evil visitor that finishes a long rest in the Abyss must make a DC 10 Charisma saving throw. On a failure, the creature becomes corrupted. Refer to the Abyssal Corruption table to determine the effects of this corruption. You can substitute different corruption effects of your own creation.",
-						"After finishing a long rest, a corrupted creature can make a DC 15 Charisma saving throw. On a successful save, the corruption effect ends. A dispel evil and good spell or any magic that removes a curse also ends the effect.",
+						"After finishing a long rest, a corrupted creature can make a DC 15 Charisma saving throw. On a successful save, the corruption effect ends. A {@spell dispel evil and good} spell or any magic that removes a curse also ends the effect.",
 						"If a corrupted creature doesn't leave the plane within {@dice 1d4 + 2} days, its alignment changes to chaotic evil. Casting the {@spell dispel evil and good} spell on the creature restores its original alignment.",
 						{
 							"type": "table",
@@ -8303,7 +8303,7 @@
 						},
 						{
 							"type": "entries",
-							"name": "{@creature Wereraven|CoS}",
+							"name": "{@creature Wereraven|VRGR}",
 							"source": "CoS",
 							"page": 242,
 							"entries": [
@@ -8326,7 +8326,7 @@
 							"page": 237,
 							"entries": [
 								"A Humanoid who succumbs to a loup garou's lycanthropy becomes a {@creature werewolf} (see above). This form of lycanthropy can't be removed while the loup garou that inflicted the curse lives.",
-								"Once a loup garou is slain, a remove curse spell cast during the night of a full moon on any afflicted werewolf it created forces the target to make a DC 17 Constitution saving throw. On a success, the curse is broken, and the target returns to its normal form and gains 3 levels of exhaustion. On a failure, the curse remains, and the target automatically fails any saving throw made to break this curse for 1 month."
+								"Once a loup garou is slain, a {@spell remove curse} spell cast during the night of a full moon on any afflicted werewolf it created forces the target to make a DC 17 Constitution saving throw. On a success, the curse is broken, and the target returns to its normal form and gains 3 levels of {@condition exhaustion}. On a failure, the curse remains, and the target automatically fails any saving throw made to break this curse for 1 month."
 							]
 						}
 					]
@@ -8344,7 +8344,7 @@
 				}
 			],
 			"entries": [
-				"The game statistics of a player character transformed into a {@creature vampire spawn} and then a {@creature vampire} don't change, except that the character's Strength, Dexterity, and Constitution scores become 18 if they aren't higher. In addition, the character gains the vampire's damage resistances, darkvision, traits, and actions. Attack and damage rolls for the vampire's attacks are based on Strength. The save DC for Charm is 8 + the vampire's proficiency bonus + the vampire's Charisma modifier. The character's alignment becomes lawful evil, and the DM might take control of the character until the vampirism is reversed with a {@spell wish} spell or the character is killed and brought back to life.",
+				"The game statistics of a player character transformed into a {@creature vampire spawn} and then a {@creature vampire} don't change, except that the character's Strength, Dexterity, and Constitution scores become 18 if they aren't higher. In addition, the character gains the vampire's damage resistances, {@sense darkvision}, traits, and actions. Attack and damage rolls for the vampire's attacks are based on Strength. The save DC for Charm is 8 + the vampire's proficiency bonus + the vampire's Charisma modifier. The character's alignment becomes lawful evil, and the DM might take control of the character until the vampirism is reversed with a {@spell wish} spell or the character is killed and brought back to life.",
 				{
 					"type": "entries",
 					"name": "Jiangshi",
@@ -8424,7 +8424,7 @@
 							"type": "entries",
 							"entries": [
 								"To enter a square, you must have at least 1 square of movement left, even if the square is diagonally adjacent to the square you're in. (The rule for diagonal movement sacrifices realism for the sake of smooth play. The Dungeon Master's Guide provides guidance on using a more realistic approach.)",
-								"If a square costs extra movement, as a square of difficult terrain does, you must have enough movement left to pay for entering it. For example, you must have at least 2 squares of movement left to enter a square of difficult terrain."
+								"If a square costs extra movement, as a square of {@quickref difficult terrain||3} does, you must have enough movement left to pay for entering it. For example, you must have at least 2 squares of movement left to enter a square of {@quickref difficult terrain||3}."
 							]
 						},
 						{
@@ -9032,7 +9032,7 @@
 									"items": [
 										"The ship has resistance to the following damage types: acid, fire, lightning, and thunder, as well as bludgeoning, piercing, and slashing from nonmagical attacks.",
 										"The ship is immune to cold, necrotic, poison, and psychic damage.",
-										"The ship can move through other creatures and objects as if they were difficult terrain. It takes 5 ({@dice 1d10}) force damage if it ends its turn inside an object."
+										"The ship can move through other creatures and objects as if they were {@quickref difficult terrain||3}. It takes 5 ({@dice 1d10}) force damage if it ends its turn inside an object."
 									]
 								},
 								"Crew members and officers on good and neutral ghost ships are {@creature Ghost||ghosts}. On evil ghost ships, the crew members are 90 percent {@creature Skeleton||skeletons} and {@creature Zombie||zombies} (even mix of each), 10 percent are {@creature Specter||specters}, and the officers are {@creature Wraith||wraiths}."
@@ -9548,7 +9548,7 @@
 			"page": 140,
 			"ruleType": "V",
 			"entries": [
-				"A creature who tries and fails to cast a spell from a spell scroll must make a DC 10 Intelligence saving throw. If the saving throw fails, roll on the Scroll Mishap table.",
+				"A creature who tries and fails to cast a spell from a {@item spell scroll} must make a DC 10 Intelligence saving throw. If the saving throw fails, roll on the Scroll Mishap table.",
 				{
 					"type": "table",
 					"caption": "Scroll Mishap",
@@ -9773,7 +9773,7 @@
 					"type": "entries",
 					"name": "Buying and Selling",
 					"entries": [
-						"Characters can use their monetary treasure to purchase anything from the equipment lists in chapter 5 of the Player's Handbook. In addition, the Adventurers League allows characters to purchase potions and spell scrolls, as detailed below. A spell scroll can be purchased only by a character who is capable of casting the spell in question.",
+						"Characters can use their monetary treasure to purchase anything from the equipment lists in chapter 5 of the Player's Handbook. In addition, the Adventurers League allows characters to purchase potions and spell scrolls, as detailed below. A {@item spell scroll} can be purchased only by a character who is capable of casting the spell in question.",
 						{
 							"type": "table",
 							"caption": "Potions for Sale",
@@ -9896,7 +9896,7 @@
 					"type": "entries",
 					"name": "Mutiny",
 					"entries": [
-						"A poorly led or mistreated crew might turn against its officers. Once per day, if a crew's quality score is lower than 0, the captain must make a Charisma (Intimidation or Persuasion) check modified by the crew's quality score. If the check total is between 1 and 9, the crew's quality score decreases by 1.",
+						"A poorly led or mistreated crew might turn against its officers. Once per day, if a crew's quality score is lower than 0, the captain must make a Charisma ({@skill Intimidation} or {@skill Persuasion}) check modified by the crew's quality score. If the check total is between 1 and 9, the crew's quality score decreases by 1.",
 						"If the check total is 0 or lower, the crew mutinies. They become hostile to the officers and might attempt to kill them, imprison them, or throw them overboard. The crew can be cowed into obedience through violence, combat, or offers of treasure and other rewards. When the DM ends the mutiny, the crew's quality score increases by {@dice 1d4}."
 					]
 				},
@@ -9924,33 +9924,33 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Captain.",
-							"entry": "The captain issues orders. The best captains have high Intelligence and Charisma scores, as well as proficiency with water vehicles and the Intimidation and Persuasion skills."
+							"name": "Captain",
+							"entry": "The captain issues orders. The best captains have high Intelligence and Charisma scores, as well as proficiency with water vehicles and the {@skill Intimidation} and {@skill Persuasion} skills."
 						},
 						{
 							"type": "item",
-							"name": "First Mate.",
-							"entry": "This specialist keeps the crew's morale up by providing close supervision, encouragement, and discipline. A first mate benefits from a high Charisma score, as well as proficiency with the Intimidation and Persuasion skills."
+							"name": "First Mate",
+							"entry": "This specialist keeps the crew's morale up by providing close supervision, encouragement, and discipline. A first mate benefits from a high Charisma score, as well as proficiency with the {@skill Intimidation} and {@skill Persuasion} skills."
 						},
 						{
 							"type": "item",
-							"name": "Bosun.",
-							"entry": "The bosun (or boatswain) provides technical advice to the captain and crew and leads repair and maintenance efforts. A good bonus has a high Strength score, as well as proficiency with carpenter's tools and the Athletics skill."
+							"name": "Bosun",
+							"entry": "The bosun (or boatswain) provides technical advice to the captain and crew and leads repair and maintenance efforts. A good bosun has a high Strength score, as well as proficiency with {@item carpenter's tools|PHB} and the {@skill Athletics} skill."
 						},
 						{
 							"type": "item",
-							"name": "Quartermaster.",
-							"entry": "The quartermaster plots the ship's course, relying on knowledge of nautical charts and a study of weather and sea conditions. A reliable quartermaster tends to have a high Wisdom score, as well as proficiency with navigator's tools and the Nature skill."
+							"name": "Quartermaster",
+							"entry": "The quartermaster plots the ship's course, relying on knowledge of nautical charts and a study of weather and sea conditions. A reliable quartermaster tends to have a high Wisdom score, as well as proficiency with {@item navigator's tools|PHB} and the {@skill Nature} skill."
 						},
 						{
 							"type": "item",
-							"name": "Surgeon.",
-							"entry": "The ship's surgeon tends to injuries, keeps illnesses from spreading throughout the ship, and oversees sanitation. A capable surgeon benefits from a high Intelligence score, as well as proficiency with herbalism kits and the Medicine skill."
+							"name": "Surgeon",
+							"entry": "The ship's surgeon tends to injuries, keeps illnesses from spreading throughout the ship, and oversees sanitation. A capable surgeon benefits from a high Intelligence score, as well as proficiency with herbalism kits and the {@skill Medicine} skill."
 						},
 						{
 							"type": "item",
-							"name": "Cook.",
-							"entry": "A ship's cook works with the limited ingredients aboard a ship to make meals. A skilled cook keeps the crew's morale in top shape, while a poor one drags down the entire crew's performance. A talented cook has a high Constitution score, as well as proficiency with brewer's supplies and cook's utensils."
+							"name": "Cook",
+							"entry": "A ship's cook works with the limited ingredients aboard a ship to make meals. A skilled cook keeps the crew's morale in top shape, while a poor one drags down the entire crew's performance. A talented cook has a high Constitution score, as well as proficiency with {@item brewer's supplies|PHB} and {@item cook's utensils|PHB}."
 						}
 					]
 				}
@@ -10146,7 +10146,7 @@
 							"type": "inset",
 							"name": "Typical Ship Immunities",
 							"entries": [
-								"If you're creating your own ship, they're usually immune to poison and psychic damage. Ones crafted from metal or stone are also typically immune to necrotic damage. They are also usually immune to the following conditions: blinded, charmed, deafened, exhaustion frightened, incapacitated, paralyzed, petrified, poisoned, prone, stunned, and unconscious."
+								"If you're creating your own ship, they're usually immune to poison and psychic damage. Ones crafted from metal or stone are also typically immune to necrotic damage. They are also usually immune to the following conditions: {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition exhaustion} {@condition frightened}, {@condition incapacitated}, {@condition paralyzed}, {@condition petrified}, {@condition poisoned}, {@condition prone}, {@condition stunned}, and {@condition unconscious}."
 							]
 						}
 					]
@@ -10431,7 +10431,7 @@
 										"type": "entries",
 										"name": "Cunning Action",
 										"entries": [
-											"On the expert's turn in combat, it can take the Dash, Disengage, or {@action Hide} action as a bonus action."
+											"On the expert's turn in combat, it can take the {@action Dash}, Disengage, or {@action Hide} action as a bonus action."
 										]
 									}
 								],
@@ -10524,7 +10524,7 @@
 										"type": "entries",
 										"name": "Ability Score Improvement",
 										"entries": [
-											"The spellcaster's Int. (mage) or Wis. (healer) score increases by 2, raising the modifier by 1, so increase the following numbers by 1: the spellcaster's spell save DC and the bonus to hit of spell attacks, the bonuses in the Skills entry of the mage, the Wisdom saving throw bonus of the healer, and the passive Perception of the healer. Spellcasting. The spellcaster learns another cantrip: {@spell resistance} (healer) or {@spell mage hand} (mage)."
+											"The spellcaster's Int. (mage) or Wis. (healer) score increases by 2, raising the modifier by 1, so increase the following numbers by 1: the spellcaster's spell save DC and the bonus to hit of spell attacks, the bonuses in the Skills entry of the mage, the Wisdom saving throw bonus of the healer, and the passive {@skill Perception} of the healer. Spellcasting. The spellcaster learns another cantrip: {@spell resistance} (healer) or {@spell mage hand} (mage)."
 										]
 									}
 								],
@@ -10618,7 +10618,7 @@
 										"type": "entries",
 										"name": "Proficiency Bonus",
 										"entries": [
-											"The warrior's proficiency bonus increases by 1, so make the following changes in the stat block: increase the bonuses in the Saving Throws and Skills entries by 1, increase the passive Perception by 1, and increase the bonuses to hit of the weapon attacks by 1."
+											"The warrior's proficiency bonus increases by 1, so make the following changes in the stat block: increase the bonuses in the Saving Throws and Skills entries by 1, increase the passive {@skill Perception} by 1, and increase the bonuses to hit of the weapon attacks by 1."
 										]
 									}
 								],
@@ -10691,7 +10691,7 @@
 							"name": "Hit Points",
 							"entries": [
 								"Whenever the sidekick gains a level, it gains one Hit Die, and its hit point maximum increases. To determine the amount of the increase, roll the Hit Die (the type of die appears in the sidekick's stat block), and add its Constitution modifier. It gains a minimum of 1 hit point per level.",
-								"If the sidekick drops to 0 hit points and isn't killed outright, it falls unconscious and subsequently makes death saving throws, just like a player character."
+								"If the sidekick drops to 0 hit points and isn't killed outright, it falls {@condition unconscious} and subsequently makes death saving throws, just like a player character."
 							]
 						},
 						{
@@ -10783,7 +10783,7 @@
 							"type": "inset",
 							"name": "Multiattack vs. Extra Attack",
 							"entries": [
-								"Your sidekick might have the Multiattack action in its stat block. If it does and it gains the Extra Attack class feature, remember that Extra Attack works with the Attack action, not the Multiattack action. In short, you can't use Extra Attack with Multiattack."
+								"Your sidekick might have the Multiattack action in its stat block. If it does and it gains the Extra Attack class feature, remember that Extra Attack works with the {@action Attack} action, not the Multiattack action. In short, you can't use Extra Attack with Multiattack."
 							]
 						}
 					]
@@ -10908,7 +10908,7 @@
 			"page": 175,
 			"ruleType": "V",
 			"entries": [
-				"Normally, your proficiency in a skill applies only to a specific kind of ability check. Proficiency in {@skill Athletics}, for example, usually applies to Strength checks. In some situations, though, your proficiency might reasonably apply to a different kind of check. In such cases, the DM might ask for a check using an unusual combination of ability and skill, or you might ask your DM if you can apply a proficiency to a different check. For example, if you have to swim from an offshore island to the mainland, your DM might call for a Constitution check to see if you have the stamina to make it that far. In this case, your DM might allow you to apply your proficiency in Athletics and ask for a Constitution (Athletics) check. So if you're proficient in {@skill Athletics}, you apply your proficiency bonus to the Constitution check just as you would normally do for a Strength (Athletics) check. Similarly, when your half-orc barbarian uses a display of raw strength to intimidate an enemy, your DM might ask for a Strength ({@skill Intimidation}) check, even though Intimidation is normally associated with Charisma."
+				"Normally, your proficiency in a skill applies only to a specific kind of ability check. Proficiency in {@skill Athletics}, for example, usually applies to Strength checks. In some situations, though, your proficiency might reasonably apply to a different kind of check. In such cases, the DM might ask for a check using an unusual combination of ability and skill, or you might ask your DM if you can apply a proficiency to a different check. For example, if you have to swim from an offshore island to the mainland, your DM might call for a Constitution check to see if you have the stamina to make it that far. In this case, your DM might allow you to apply your proficiency in {@skill Athletics} and ask for a Constitution ({@skill Athletics}) check. So if you're proficient in {@skill Athletics}, you apply your proficiency bonus to the Constitution check just as you would normally do for a Strength ({@skill Athletics}) check. Similarly, when your half-orc barbarian uses a display of raw strength to intimidate an enemy, your DM might ask for a Strength ({@skill Intimidation}) check, even though {@skill Intimidation} is normally associated with Charisma."
 			]
 		},
 		{
@@ -10924,7 +10924,7 @@
 					"name": "Waking Someone",
 					"entries": [
 						"A creature that is naturally sleeping, as opposed to being in a magically or chemically induced sleep, wakes up if it takes any damage or if someone else uses an action to shake or slap the creature awake. A sudden loud noise\u2014such as yelling, thunder, or a ringing bell\u2014also awakens someone that is sleeping naturally.",
-						"Whispers don't disturb sleep, unless a sleeper's passive Wisdom (Perception) score is 20 or higher and the whispers are within 10 feet of the sleeper. Speech at a normal volume awakens a sleeper if the environment is otherwise silent (no wind, birdsong, crickets, street sounds, or the like) and the sleeper has a passive Wisdom (Perception) score of 15 or higher."
+						"Whispers don't disturb sleep, unless a sleeper's passive Wisdom ({@skill Perception}) score is 20 or higher and the whispers are within 10 feet of the sleeper. Speech at a normal volume awakens a sleeper if the environment is otherwise silent (no wind, birdsong, crickets, street sounds, or the like) and the sleeper has a passive Wisdom ({@skill Perception}) score of 15 or higher."
 					]
 				},
 				{
@@ -11149,15 +11149,15 @@
 					"name": "Identifying a Spell",
 					"entries": [
 						"Sometimes a character wants to identify a spell that someone else is casting or that was already cast. To do so, a character can use their reaction to identify a spell as it's being cast, or they can use an action on their turn to identify a spell by its effect after it is cast.",
-						"If the character perceived the casting, the spell's effect, or both, the character can make an Intelligence (Arcana) check with their reaction or action. The DC equals 15 + the spell's level. If the spell is cast as a class spell and the character is a member of that class, the check is made with advantage. For example, if the spellcaster casts a spell as a cleric, another cleric has advantage on the check to identify the spell. Some spells aren't associated with any class when they're cast, such as when a monster uses its Innate Spellcasting trait.",
-						"This Intelligence (Arcana) check represents the fact that identifying a spell requires a quick mind and familiarity with the theory and practice of casting. This is true even for a character whose spellcasting ability is Wisdom or Charisma. Being able to cast spells doesn't by itself make you adept at deducing exactly what others are doing when they cast their spells."
+						"If the character perceived the casting, the spell's effect, or both, the character can make an Intelligence ({@skill Arcana}) check with their reaction or action. The DC equals 15 + the spell's level. If the spell is cast as a class spell and the character is a member of that class, the check is made with advantage. For example, if the spellcaster casts a spell as a cleric, another cleric has advantage on the check to identify the spell. Some spells aren't associated with any class when they're cast, such as when a monster uses its Innate Spellcasting trait.",
+						"This Intelligence ({@skill Arcana}) check represents the fact that identifying a spell requires a quick mind and familiarity with the theory and practice of casting. This is true even for a character whose spellcasting ability is Wisdom or Charisma. Being able to cast spells doesn't by itself make you adept at deducing exactly what others are doing when they cast their spells."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Invalid Spell Targets",
 					"entries": [
-						"A spell specifies what a caster can target with it: any type of creature, a creature of a certain type (humanoid or beast, for instance), an object, an area, the caster, or something else. But what happens if a spell targets something that isn't a valid target? For example, someone might cast charm person on a creature believed to be a humanoid, not knowing that the target is in fact a vampire. If this issue comes up, handle it using the following rule.",
+						"A spell specifies what a caster can target with it: any type of creature, a creature of a certain type (humanoid or beast, for instance), an object, an area, the caster, or something else. But what happens if a spell targets something that isn't a valid target? For example, someone might cast {@spell charm person} on a creature believed to be a humanoid, not knowing that the target is in fact a vampire. If this issue comes up, handle it using the following rule.",
 						"If you cast a spell on someone or something that can't be affected by the spell, nothing happens to that target, but if you used a spell slot to cast the spell, the slot is still expended. If the spell normally has no effect on a target that succeeds on a saving throw, the invalid target appears to have succeeded on its saving throw, even though it didn't attempt one (giving no hint that the creature is in fact an invalid target). Otherwise, you perceive that the spell did nothing to the target."
 					]
 				},
@@ -11177,7 +11177,7 @@
 									"type": "entries",
 									"name": "Making a Template",
 									"entries": [
-										"Making a template is simple. Get a piece of paper or card stock, and cut it in the shape of the area of effect you're using. Every 5 feet of the area equals 1 inch of the template's size. For example, the 20-foot-radius sphere of the fireball spell, which has a 40-foot diameter, would translate into a circular template with an 8-inch diameter."
+										"Making a template is simple. Get a piece of paper or card stock, and cut it in the shape of the area of effect you're using. Every 5 feet of the area equals 1 inch of the template's size. For example, the 20-foot-radius sphere of the {@spell fireball} spell, which has a 40-foot diameter, would translate into a circular template with an 8-inch diameter."
 									]
 								},
 								{
@@ -11741,7 +11741,7 @@
 					"type": "entries",
 					"name": "Tools and Skills Together",
 					"entries": [
-						"Tools have more specific applications than skills. The History skill applies to any event in the past. A tool such as a {@item forgery kit|phb} is used to make fake objects and little else. Thus, why would a character who has the opportunity to acquire one or the other want to gain a tool proficiency instead of proficiency in a skill?",
+						"Tools have more specific applications than skills. The {@skill History} skill applies to any event in the past. A tool such as a {@item forgery kit|phb} is used to make fake objects and little else. Thus, why would a character who has the opportunity to acquire one or the other want to gain a tool proficiency instead of proficiency in a skill?",
 						"To make tool proficiencies more attractive choices for the characters, you can use the methods outlined below.",
 						{
 							"type": "entries",
@@ -11834,7 +11834,7 @@
 									"type": "entries",
 									"name": "Alchemical Crafting",
 									"entries": [
-										"You can use this tool proficiency to create alchemical items. A character can spend money to collect raw materials, which weigh 1 pound for every 50 gp spent. The DM can allow a character to make a check using the indicated skill with advantage. As part of a long rest, you can use {@item alchemist's supplies|phb} to make one dose of acid, alchemist's fire, antitoxin, oil, perfume, or soap. Subtract half the value of the created item from the total gp worth of raw materials you are carrying."
+										"You can use this tool proficiency to create alchemical items. A character can spend money to collect raw materials, which weigh 1 pound for every 50 gp spent. The DM can allow a character to make a check using the indicated skill with advantage. As part of a long rest, you can use {@item alchemist's supplies|phb} to make one dose of {@item acid (vial)|phb|acid}, {@item alchemist's fire (flask)|phb|alchemist's fire}, {@item antitoxin (vial)|phb|antitoxin}, {@item oil (flask)|phb|oil}, {@item perfume (vial)|phb|perfume}, or {@item soap|phb}. Subtract half the value of the created item from the total gp worth of raw materials you are carrying."
 									]
 								},
 								{
@@ -12106,7 +12106,7 @@
 								},
 								{
 									"type": "entries",
-									"name": "Arcana, History, Religion.",
+									"name": "Arcana, History, Religion",
 									"entries": [
 										"You can use your knowledge of maps and locations to unearth more detailed information when you use these skills. For instance, you might spot hidden messages in a map, identify when the map was made to determine if geographical features have changed since then, and so forth."
 									]
@@ -12201,7 +12201,7 @@
 									"type": "entries",
 									"name": "Craft Hidden Compartment",
 									"entries": [
-										"With 8 hours of work, you can add a hidden compartment to a pair of shoes. The compartment can hold an object up to 3 inches long and 1 inch wide and deep. You make an Intelligence check using your tool proficiency to determine the Intelligence (Investigation) check DC needed to find the compartment."
+										"With 8 hours of work, you can add a hidden compartment to a pair of shoes. The compartment can hold an object up to 3 inches long and 1 inch wide and deep. You make an Intelligence check using your tool proficiency to determine the Intelligence ({@skill Investigation}) check DC needed to find the compartment."
 									]
 								},
 								{
@@ -12344,7 +12344,7 @@
 									"type": "entries",
 									"name": "Create Disguise",
 									"entries": [
-										"As part of a long rest, you can create a disguise. It takes you 1 minute to don such a disguise once you have created it. You can carry only one such disguise on you at a time without drawing undue attention, unless you have a bag of holding or a similar method to keep them hidden. Each disguise weighs 1 pound.",
+										"As part of a long rest, you can create a disguise. It takes you 1 minute to don such a disguise once you have created it. You can carry only one such disguise on you at a time without drawing undue attention, unless you have a {@item bag of holding} or a similar method to keep them hidden. Each disguise weighs 1 pound.",
 										"At other times, it takes 10 minutes to craft a disguise that involves moderate changes to your appearance, and 30 minutes for one that requires more extensive changes."
 									]
 								},
@@ -12392,7 +12392,7 @@
 									"type": "entries",
 									"name": "Arcana",
 									"entries": [
-										"A {@item forgery kit|phb} can be used in conjunction with the Arcana skill to determine if a magic item is real or fake."
+										"A {@item forgery kit|phb} can be used in conjunction with the {@skill Arcana} skill to determine if a magic item is real or fake."
 									]
 								},
 								{
@@ -12427,7 +12427,7 @@
 									"type": "entries",
 									"name": "Quick Fake",
 									"entries": [
-										"As part of a short rest, you can produce a forged document no more than one page in length. As part of a long rest, you can produce a document that is up to four pages long. Your Intelligence check using a {@item forgery kit|phb} determines the DC for someone else's Intelligence (Investigation) check to spot the fake."
+										"As part of a short rest, you can produce a forged document no more than one page in length. As part of a long rest, you can produce a document that is up to four pages long. Your Intelligence check using a {@item forgery kit|phb} determines the DC for someone else's Intelligence ({@skill Investigation}) check to spot the fake."
 									]
 								},
 								{
@@ -12458,12 +12458,12 @@
 							"type": "entries",
 							"name": "Gaming Set",
 							"entries": [
-								"Proficiency with a gaming set applies to one type of game, such as Three-Dragon Ante or games of chance that use dice.",
+								"Proficiency with a {@item gaming set|PHB} applies to one type of game, such as Three-Dragon Ante or games of chance that use dice.",
 								{
 									"type": "entries",
 									"name": "Components",
 									"entries": [
-										"A gaming set has all the pieces needed to play a specific game or type of game, such as a complete deck of cards or a board and tokens."
+										"A {@item gaming set|PHB} has all the pieces needed to play a specific game or type of game, such as a complete deck of cards or a board and tokens."
 									]
 								},
 								{
@@ -12484,7 +12484,7 @@
 									"type": "entries",
 									"name": "Sleight of Hand",
 									"entries": [
-										"Sleight of Hand is a useful skill for cheating at a game, as it allows you to swap pieces, palm cards, or alter a die roll. Alternatively, engrossing a target in a game by manipulating the components with dexterous movements is a great distraction for a pickpocketing attempt."
+										"{@skill Sleight of Hand} is a useful skill for cheating at a game, as it allows you to swap pieces, palm cards, or alter a die roll. Alternatively, engrossing a target in a game by manipulating the components with dexterous movements is a great distraction for a pickpocketing attempt."
 									]
 								},
 								{
@@ -12876,7 +12876,7 @@
 							"type": "entries",
 							"name": "Musical Instruments",
 							"entries": [
-								"Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+								"Proficiency with a {@item musical instrument|PHB} indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
 								{
 									"type": "entries",
 									"name": "History",
@@ -13226,12 +13226,12 @@
 							"type": "entries",
 							"name": "Thieves' Tools",
 							"entries": [
-								"Perhaps the most common tools used by adventurers, thieves' tools are designed for picking locks and foiling traps. Proficiency with the tools also grants you a general knowledge of traps and locks.",
+								"Perhaps the most common tools used by adventurers, {@item thieves' tools|PHB} are designed for picking locks and foiling traps. Proficiency with the tools also grants you a general knowledge of traps and locks.",
 								{
 									"type": "entries",
 									"name": "Components",
 									"entries": [
-										"Thieves' tools include a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers."
+										"{@item Thieves' tools|PHB} include a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers."
 									]
 								},
 								{
@@ -14166,35 +14166,35 @@
 							"type": "entries",
 							"name": "Forage",
 							"entries": [
-								"The character casts out fishing lines, keeping an eye out for sources of food, making a Wisdom (Survival) check when the DM calls for it."
+								"The character casts out fishing lines, keeping an eye out for sources of food, making a Wisdom ({@skill Survival}) check when the DM calls for it."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Raise Morale (First Mate Only)",
 							"entries": [
-								"The first mate can manage the crew's time to grant extended breaks, provide instruction, and improve morale. Once per day, if the crew's quality score is 3 or lower, the first mate can make a DC 15 Charisma (Persuasion) check. On a successful check, the crew's quality score increases by 1."
+								"The first mate can manage the crew's time to grant extended breaks, provide instruction, and improve morale. Once per day, if the crew's quality score is 3 or lower, the first mate can make a DC 15 Charisma ({@skill Persuasion}) check. On a successful check, the crew's quality score increases by 1."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Navigate (Quartermaster Only)",
 							"entries": [
-								"The quartermaster can try to prevent the group from becoming lost, making a Wisdom (Survival) check when the DM calls for it. (See \"{@book Becoming Lost|dmg|5|becoming lost}\" in chapter 5 of the Dungeon Master's Guide for more information.)"
+								"The quartermaster can try to prevent the group from becoming lost, making a Wisdom ({@skill Survival}) check when the DM calls for it. (See \"{@book Becoming Lost|dmg|5|becoming lost}\" in chapter 5 of the Dungeon Master's Guide for more information.)"
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Noticing Threats",
 							"entries": [
-								"Use the passive Wisdom (Perception) score of the characters or the crew to determine whether anyone on the ship notices a hidden threat. The crew has a passive Wisdom (Perception) score equal to 10 + the crew's quality score. The DM might decide that a threat can be noticed only by characters in a specific area of the ship. For example, only characters below deck might have a chance to hear or spot a creature hiding on board."
+								"Use the passive Wisdom ({@skill Perception}) score of the characters or the crew to determine whether anyone on the ship notices a hidden threat. The crew has a passive Wisdom ({@skill Perception}) score equal to 10 + the crew's quality score. The DM might decide that a threat can be noticed only by characters in a specific area of the ship. For example, only characters below deck might have a chance to hear or spot a creature hiding on board."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Repair (Bosun Only)",
 							"entries": [
-								"The ship's bosun can undertake this activity. At the end of the day, the bosun can make a Strength check using carpenter's tools. On a 15 or higher, each damaged component regains hit points equal to {@dice 1d6} + the crew's quality score (minimum of 1 hit point). A component other than the hull that had 0 hit points becomes functional again."
+								"The ship's bosun can undertake this activity. At the end of the day, the bosun can make a Strength check using {@item carpenter's tools|PHB}. On a 15 or higher, each damaged component regains hit points equal to {@dice 1d6} + the crew's quality score (minimum of 1 hit point). A component other than the hull that had 0 hit points becomes functional again."
 							]
 						},
 						{
@@ -14235,23 +14235,23 @@
 										],
 										[
 											"First mate",
-											"mate Charisma (Intimidation)"
+											"mate Charisma ({@skill Intimidation})"
 										],
 										[
 											"Bosun",
-											"Strength (carpenter's tools)"
+											"Strength ({@item carpenter's tools|PHB})"
 										],
 										[
 											"Quartermaster ",
-											"Wisdom (Nature)"
+											"Wisdom ({@skill Nature})"
 										],
 										[
 											"Surgeon",
-											"Intelligence (Medicine)"
+											"Intelligence ({@skill Medicine})"
 										],
 										[
 											"Cook",
-											"Constitution (cook's utensils)"
+											"Constitution ({@item cook's utensils|PHB})"
 										]
 									]
 								},
@@ -14296,7 +14296,7 @@
 							"name": "Other Events",
 							"entries": [
 								"In addition to rough seas and daunting weather, a ship might face a number of other threats.",
-								"The hazards below serve as examples of what can go wrong on a ship. Each one requires a different officer to spend a day dealing with the hazard instead of engaging in other activity. As a rule of thumb, there is a 10 percent chance each day that one of the following events occurs.",
+								"The hazards below serve as examples of what can go wrong on a ship. Each one requires a different officer to spend a day dealing with the hazard instead of engaging in other activity. As a rule of thumb, there is a {@chance 10|10 percent} chance each day that one of the following events occurs.",
 								{
 									"type": "entries",
 									"name": "Emergency Maneuvers",
@@ -14308,28 +14308,28 @@
 									"type": "entries",
 									"name": "Conflict",
 									"entries": [
-										"Life at sea is a mixture of monotony, hard work, and sudden moments of terror. The stress can wear on the stoutest sailor. Sometimes, that stress turns into conflict among the crew. If dissension spreads in the ranks, the first mate's activity that day must be spent making a DC 15 Charisma (Intimidation) check to control the crew. On a failed check, the crew's quality score decreases by {@dice 1d4}."
+										"Life at sea is a mixture of monotony, hard work, and sudden moments of terror. The stress can wear on the stoutest sailor. Sometimes, that stress turns into conflict among the crew. If dissension spreads in the ranks, the first mate's activity that day must be spent making a DC 15 Charisma ({@skill Intimidation}) check to control the crew. On a failed check, the crew's quality score decreases by {@dice 1d4}."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Fire",
 									"entries": [
-										"A fire at sea can render a ship unable to function. Pick a random component. It takes {@dice 4d10} fire damage unless the bosun succeeds on a DC 15 Strength (carpenter's tools) check."
+										"A fire at sea can render a ship unable to function. Pick a random component. It takes {@dice 4d10} fire damage unless the bosun succeeds on a DC 15 Strength ({@item carpenter's tools|PHB}) check."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Plague",
 									"entries": [
-										"An illness sweeps through the ranks, perhaps caused by rats or insects that made their way aboard. The surgeon must make a DC 15 Wisdom (Medicine) check. On a failed check, the crew's quality score decreases by 5 for {@dice 1d6} days."
+										"An illness sweeps through the ranks, perhaps caused by rats or insects that made their way aboard. The surgeon must make a DC 15 Wisdom ({@skill Medicine}) check. On a failed check, the crew's quality score decreases by 5 for {@dice 1d6} days."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Infestation",
 									"entries": [
-										"Beetles, rats, or other pests infest the ship, threatening its food stores. The cook must make a DC 15 Constitution (brewer's supplies) check to save what food they can. On a failed check, the crew has disadvantage on any checks involving its quality score until the ship has a chance to restock supplies."
+										"Beetles, rats, or other pests infest the ship, threatening its food stores. The cook must make a DC 15 Constitution ({@item brewer's supplies|PHB}) check to save what food they can. On a failed check, the crew has disadvantage on any checks involving its quality score until the ship has a chance to restock supplies."
 									]
 								}
 							]
@@ -14684,7 +14684,7 @@
 									"name": "Dalixiateara",
 									"entries": [
 										"Recently the hags captured a female {@creature young bronze dragon} named Dalixiateara. The dragon is chained to the side of the gorge ({@adventure area C7|GoS|8|C7. Cove Gorge}) at a depth of 1,200 feet, muzzled, and {@condition restrained}. The hags are trying to break the dragon's mind to force it to serve them but have had no luck so far.",
-										"The locked chains have AC 19, 50 hit points, and immunity to poison and psychic damage. Auntie Canker holds the key to the chains. A character who makes a successful DC 17 Dexterity check using thieves' tools can pick the lock, freeing Dalixiateara. If freed, the dragon attacks the hags and rewards the characters who freed her with a {@item cloak of the manta ray} from her hoard."
+										"The locked chains have AC 19, 50 hit points, and immunity to poison and psychic damage. Auntie Canker holds the key to the chains. A character who makes a successful DC 17 Dexterity check using {@item thieves' tools|PHB} can pick the lock, freeing Dalixiateara. If freed, the dragon attacks the hags and rewards the characters who freed her with a {@item cloak of the manta ray} from her hoard."
 									]
 								},
 								{
@@ -14813,7 +14813,7 @@
 									"type": "entries",
 									"name": "Rusty Chains",
 									"entries": [
-										"The chains that bind the statue of St. Cuthbert have AC 14, 18 hit points, and immunity to poison and psychic damage. The chains are rusty but solidly locked. A character can pick the lock with a successful DC 15 Dexterity check using thieves' tools. A character can break the chains with a successful DC 14 Strength check."
+										"The chains that bind the statue of St. Cuthbert have AC 14, 18 hit points, and immunity to poison and psychic damage. The chains are rusty but solidly locked. A character can pick the lock with a successful DC 15 Dexterity check using {@item thieves' tools|PHB}. A character can break the chains with a successful DC 14 Strength check."
 									]
 								},
 								{
@@ -14853,7 +14853,7 @@
 									"type": "entries",
 									"name": "Treasure",
 									"entries": [
-										"A character who succeeds on a DC 13 Wisdom ({@skill Perception}) check while searching the room finds a set of gilded navigator's tools (100 gp) amid a great deal of ruined paper and deteriorated clothing."
+										"A character who succeeds on a DC 13 Wisdom ({@skill Perception}) check while searching the room finds a set of gilded {@item navigator's tools|PHB} (100 gp) amid a great deal of ruined paper and deteriorated clothing."
 									]
 								}
 							]
@@ -14884,7 +14884,7 @@
 							"type": "entries",
 							"name": "M7. Missionary Cargo",
 							"entries": [
-								"The door to this area is locked. A character can pick the lock with a successful DC 15 Dexterity check using thieves' tools. A character can break the door open with a successful DC 12 Strength check.",
+								"The door to this area is locked. A character can pick the lock with a successful DC 15 Dexterity check using {@item thieves' tools|PHB}. A character can break the door open with a successful DC 12 Strength check.",
 								"This cabin contains fifteen watertight crates of various sizes, which hold hundreds of copies of {@i St. Cuthbert and Common Sense}, a short book used to explain the tenets of the deity's faith to nonbelievers."
 							]
 						},
@@ -15341,7 +15341,7 @@
 									"type": "entries",
 									"name": "W7b. Supply Closets",
 									"entries": [
-										"These supply closets held food and liturgical materials that were lost to or broken by the sea. A closet has a 25 percent chance of containing a hungry quipper and a 10 percent chance of containing an object from the 25 gp {@book Art Objects table|DMG|7|Art Objects} in chapter 7 of the {@book Dungeon Master's Guide|DMG}."
+										"These supply closets held food and liturgical materials that were lost to or broken by the sea. A closet has a {@chance 25|25 percent} chance of containing a hungry quipper and a {@chance 10|10 percent} chance of containing an object from the 25 gp {@book Art Objects table|DMG|7|Art Objects} in chapter 7 of the {@book Dungeon Master's Guide|DMG}."
 									]
 								},
 								{
@@ -15395,7 +15395,7 @@
 									"type": "entries",
 									"name": "W7h. Ballroom",
 									"entries": [
-										"The ballroom once hosted grand celebrations in honor of Vaalastroth. A 10-foot-diameter, 200-pound crystal chandelier shaped like a kraken (750 gp) hangs from the ceiling. A character who succeeds on a DC 15 Dexterity check using mason's tools can safely remove the chandelier from the ceiling. The chandelier is fragile. If takes any damage, it becomes worthless."
+										"The ballroom once hosted grand celebrations in honor of Vaalastroth. A 10-foot-diameter, 200-pound crystal chandelier shaped like a kraken (750 gp) hangs from the ceiling. A character who succeeds on a DC 15 Dexterity check using {@item mason's tools|PHB} can safely remove the chandelier from the ceiling. The chandelier is fragile. If takes any damage, it becomes worthless."
 									]
 								},
 								{

@@ -1,6 +1,19 @@
 {
 	"spellFluff": [
 		{
+			"name": "Control Flames",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "spells/XGE/Control Flames.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Danse Macabre",
 			"source": "XGE",
 			"images": [
@@ -9,6 +22,19 @@
 					"href": {
 						"type": "internal",
 						"path": "spells/XGE/Danse Macabre.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Erupting Earth",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "spells/XGE/Erupting Earth.png"
 					}
 				}
 			]
@@ -87,6 +113,19 @@
 					"href": {
 						"type": "internal",
 						"path": "spells/XGE/Tiny Servant.png"
+					}
+				}
+			]
+		},
+		{
+			"name": "Whirlwind",
+			"source": "XGE",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "spells/XGE/Whirlwind.png"
 					}
 				}
 			]

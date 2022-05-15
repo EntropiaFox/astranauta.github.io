@@ -21,6 +21,6 @@ toDump.forEach(it => {
 	});
 
 	const path = `./data/generated/gendata-wotc-${it.prop}.json`;
-	fs.writeFileSync(path, CleanUtil.getCleanJson(out, true), "utf-8");
+	fs.writeFileSync(path, CleanUtil.getCleanJson(out, {isMinify: true}), "utf-8");
 	console.log(`Saved combined ${it.prop} file to "${path}".`);
 });

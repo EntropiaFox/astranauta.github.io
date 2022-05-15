@@ -20,7 +20,7 @@ class RewardsPage extends ListPage {
 		this._pageFilter.mutateAndAddToFilters(reward, isExcluded);
 
 		const eleLi = document.createElement("div");
-		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
+		eleLi.className = `lst__row ve-flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const source = Parser.sourceJsonToAbv(reward.source);
 		const hash = UrlUtil.autoEncodeHash(reward);
@@ -28,7 +28,7 @@ class RewardsPage extends ListPage {
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-2 text-center pl-0">${reward.type}</span>
 			<span class="bold col-8">${reward.name}</span>
-			<span class="col-2 text-center ${Parser.sourceJsonToColor(reward.source)} pr-0" title="${Parser.sourceJsonToFull(reward.source)}" ${BrewUtil.sourceJsonToStyle(reward.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(reward.source)} pr-0" title="${Parser.sourceJsonToFull(reward.source)}" ${BrewUtil2.sourceJsonToStyle(reward.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -41,7 +41,6 @@ class RewardsPage extends ListPage {
 				type: reward.type,
 			},
 			{
-				uniqueId: reward.uniqueId ? reward.uniqueId : rwI,
 				isExcluded,
 			},
 		);
@@ -58,10 +57,10 @@ class RewardsPage extends ListPage {
 		FilterBox.selectFirstVisible(this._dataList);
 	}
 
-	getSublistItem (reward, pinId) {
+	pGetSublistItem (reward, ix) {
 		const hash = UrlUtil.autoEncodeHash(reward);
 
-		const $ele = $(`<div class="lst__row lst__row--sublist flex-col">
+		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
 				<span class="name col-2 pl-0 text-center">${reward.type}</span>
 				<span class="name col-10 pr-0">${reward.name}</span>
@@ -71,7 +70,7 @@ class RewardsPage extends ListPage {
 			.click(evt => ListUtil.sublist.doSelect(listItem, evt));
 
 		const listItem = new ListItem(
-			pinId,
+			ix,
 			$ele,
 			reward.name,
 			{
@@ -86,14 +85,9 @@ class RewardsPage extends ListPage {
 		Renderer.get().setFirstSection(true);
 		const reward = this._dataList[id];
 
-		$("#pagecontent").empty().append(RenderRewards.$getRenderedReward(reward));
+		this._$pgContent.empty().append(RenderRewards.$getRenderedReward(reward));
 
 		ListUtil.updateSelected();
-	}
-
-	async pDoLoadSubHash (sub) {
-		sub = this._filterBox.setFromSubHashes(sub);
-		await ListUtil.pSetFromSubHashes(sub);
 	}
 }
 

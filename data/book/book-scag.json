@@ -482,32 +482,38 @@
 												{
 													"type": "item",
 													"name": "Amn",
-													"entry": "fander, taran, centaur, danter, roldon"
+													"entry": "fander, taran, centaur, danter, roldon",
+													"nameDot": false
 												},
 												{
 													"type": "item",
 													"name": "Cormyr",
-													"entry": "thumb, falcon, blue eye, golden lion, tricrown"
+													"entry": "thumb, falcon, blue eye, golden lion, tricrown",
+													"nameDot": false
 												},
 												{
 													"type": "item",
 													"name": "Sembia",
-													"entry": "steelpence (an iron coin), hawk, blue eye, noble"
+													"entry": "steelpence (an iron coin), hawk, blue eye, noble",
+													"nameDot": false
 												},
 												{
 													"type": "item",
 													"name": "Silverymoon",
-													"entry": "glint, shield, sword, dragon, unicorn"
+													"entry": "glint, shield, sword, dragon, unicorn",
+													"nameDot": false
 												},
 												{
 													"type": "item",
 													"name": "Waterdeep",
-													"entry": "nib, shard, sambar, dragon, sun"
+													"entry": "nib, shard, sambar, dragon, sun",
+													"nameDot": false
 												},
 												{
 													"type": "item",
 													"name": "Zhentil Keep",
-													"entry": "fang (\"dung-piece\"), talon/naal (\"flea-bit\"), tarenth (\"hardhammer\"), glory (\"weeping wolf\"), platinum glory (\"flat metal gem\")"
+													"entry": "fang (\"dung-piece\"), talon/naal (\"flea-bit\"), tarenth (\"hardhammer\"), glory (\"weeping wolf\"), platinum glory (\"flat metal gem\")",
+													"nameDot": false
 												}
 											]
 										},
@@ -3713,7 +3719,7 @@
 								"Ah Elturgard! If any place in the world exemplifies humanity's potential for greatness, it is this nascent nation. Who could forget the shining sight of a host of its Companions, paladins all, riding out on the field, banners taught and snapping, breastplates and shields agleam with the symbol of Elturgard, and each bearing a holy symbol of his or her god\u2014armor for the soul. We have no shortage of the good and the just among my people, but the sheer zeal and genuine bravado the Companions have in pursuit of righteousness seems to me something uniquely human. And it's not just those few touched by the gods who seek these high ideals; Elturgard's armed forces swell with men and women who aspire to join the Companions. They are the Hellriders, so named because long ago warriors of Elturel literally rode through a gate into the Nine Hells to pursue and destroy devils that had been plaguing their people. With these bright examples to look up to, is it any wonder that the common people of Elturgard also tend to be devout in their pursuit of justice and worship of the gods?",
 								"Oh how bright Elturgard's light burns! If only it could last. Humans are, after all, short-lived creatures, and fickle in their faith and attentions. Elturgard is the product of just a generation or two of humans, and it seems implausible that it will last many more. Sadly, I think I shall witness Elturgard diminish. But it was a miracle that brought about the nation of Elturgard, and perhaps that divine provenance will preserve it.",
 								"It began, as all the great stories do, in darkness. Half a century ago, the city of Elturel was a petty power. It had claimed its neighbors' territory under various excuses, putting them under \"Elturel's Guard.\" Then, the city's leader, its High Rider, was revealed to be a vampire. The extent of the vampire's network of charmed servants, undead allies, and willing sycophants took the Hellriders by surprise. An undead plague swamped Elturel, and although its Hellriders made some gains by day, in darkness the vampire and its minions inflicted cruel losses. Each night the good people of Elturel prayed to the gods that dawn might come more swiftly.",
-								"Then, on a particularly disastrous night when all seemed lost, dawn did come. A warm golden light suffused the city and surrounding lands, cast down from a golden orb that hung unwavering in the sky, so bright that it seemed a new day had dawned. Caught outside when this miracle appeared, the High Rider and his{@creature vampire spawn} burned away to dust, and the other undead quailed in its illumination. In short order, Elturel was free.",
+								"Then, on a particularly disastrous night when all seemed lost, dawn did come. A warm golden light suffused the city and surrounding lands, cast down from a golden orb that hung unwavering in the sky, so bright that it seemed a new day had dawned. Caught outside when this miracle appeared, the High Rider and his {@creature vampire spawn} burned away to dust, and the other undead quailed in its illumination. In short order, Elturel was free.",
 								"When the true dawn came, the new sun remained. And it stayed in the sky through the next night, and the night after, and each night from then until now. While some called it Amaunator's Gift, none could say what god granted them this boon. Most saw it as a companion to the sun and to themselves, and so it is known as the Companion. This holy wonder brought pilgrims of all kinds to Elturel. The devout, the curious, the afflicted\u2014all came to bathe in its warmth and see its blessed light by night. Paladins had always been small in number among the Hellriders, but the Companion drew many to Elturgard, and the best among them was named High Observer to rule in the High Rider's place.",
 								"To maintain order among the many faiths of the paladins, a special knighthood was created, named after the Companion sun. These paladins swore to uphold the Creed Resolute, an oath of service to Elturgard and all good people. And thus Elturgard now has both the Companions and the Hellriders.",
 								"The post of High Observer is no longer occupied by a paladin, but by a priest of Torm named Thavus Kreeg, and this to me seems fitting. Paladins should be out in the world, using their divine gifts for the good of all, not signing documents behind some desk or dithering with dignitaries. High Observer Kreeg has ruled wisely and well these past forty years or so, but as a shortlived human, he is nearing the end of his years. When he passes or can no longer cope with the demands of his office, I hope that Elturgard can make a smooth transition to equally strong leadership. It is during such change and the struggles for power that result that humans often stray from the righteous path. Perhaps the light of the Companion will show them the way.",
@@ -5224,97 +5230,97 @@
 													"items": [
 														{
 															"type": "item",
-															"name": "Arkaiun",
+															"name": "Arkaiun:",
 															"entry": "Dambrathan (written in Espruar)"
 														},
 														{
 															"type": "item",
-															"name": "Bedine",
+															"name": "Bedine:",
 															"entry": "Midani"
 														},
 														{
 															"type": "item",
-															"name": "Calishite",
+															"name": "Calishite:",
 															"entry": "Alzhedo"
 														},
 														{
 															"type": "item",
-															"name": "Chondathan",
+															"name": "Chondathan:",
 															"entry": "Chondathan"
 														},
 														{
 															"type": "item",
-															"name": "Damaran",
+															"name": "Damaran:",
 															"entry": "Damaran (written in Dethek)"
 														},
 														{
 															"type": "item",
-															"name": "Ffolk",
+															"name": "Ffolk:",
 															"entry": "Waelan"
 														},
 														{
 															"type": "item",
-															"name": "Gur",
+															"name": "Gur:",
 															"entry": "Guran (a patois of Roushoum and Rashemi)"
 														},
 														{
 															"type": "item",
-															"name": "Halruaan",
+															"name": "Halruaan:",
 															"entry": "Halruaan (written in Draconic)"
 														},
 														{
 															"type": "item",
-															"name": "Illuskan",
+															"name": "Illuskan:",
 															"entry": "Illuskan"
 														},
 														{
 															"type": "item",
-															"name": "Imaskari",
+															"name": "Imaskari:",
 															"entry": "Roushoum"
 														},
 														{
 															"type": "item",
-															"name": "Mulan",
+															"name": "Mulan:",
 															"entry": "Chessentan, Mulhorandi, Untheric, or Thayan"
 														},
 														{
 															"type": "item",
-															"name": "Nar",
+															"name": "Nar:",
 															"entry": "Damaran"
 														},
 														{
 															"type": "item",
-															"name": "Rashemi",
+															"name": "Rashemi:",
 															"entry": "Rashemi"
 														},
 														{
 															"type": "item",
-															"name": "Shaaran",
+															"name": "Shaaran:",
 															"entry": "Shaaran (written in Dethek)"
 														},
 														{
 															"type": "item",
-															"name": "Shou",
+															"name": "Shou:",
 															"entry": "Shou"
 														},
 														{
 															"type": "item",
-															"name": "Tethyrian",
+															"name": "Tethyrian:",
 															"entry": "Chondathan"
 														},
 														{
 															"type": "item",
-															"name": "Tuigan",
+															"name": "Tuigan:",
 															"entry": "Tuigan"
 														},
 														{
 															"type": "item",
-															"name": "Turami",
+															"name": "Turami:",
 															"entry": "Turmic"
 														},
 														{
 															"type": "item",
-															"name": "Ulutiun",
+															"name": "Ulutiun:",
 															"entry": "Uluik"
 														}
 													]
@@ -5563,7 +5569,7 @@
 									"type": "inset",
 									"name": "Half-Elf Variants",
 									"entries": [
-										"Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character can forgo Skill Versatility and instead take the elf trait Keen Senses or a trait based on your elf parentage:",
+										"Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character can forgo Skill Versatility and instead take a trait based on your elf parentage:",
 										{
 											"type": "list",
 											"items": [
@@ -5788,6 +5794,66 @@
 							"items": [
 								"{@class barbarian|phb|Path of the Battlerager|Battlerager|scag}"
 							]
+						},
+						{
+							"type": "inset",
+							"name": "Uthgardt Totems",
+							"entries": [
+								"The totems of the Uthgardt barbarians of the North (described in chapter 5) correspond to the spirits of the Path of the Totem Warrior as shown in the following table.",
+								{
+									"type": "table",
+									"colLabels": [
+										"Totem",
+										"Spirit"
+									],
+									"colStyles": [
+										"col-2 text-center",
+										"col-10"
+									],
+									"rows": [
+										[
+											"Black Lion",
+											"Tiger"
+										],
+										[
+											"Black Raven",
+											"Eagle"
+										],
+										[
+											"Blue Bear",
+											"Bear"
+										],
+										[
+											"Gray Wolf",
+											"Wolf"
+										],
+										[
+											"Great Worm",
+											"Wolf"
+										],
+										[
+											"Griffon",
+											"Eagle"
+										],
+										[
+											"Red Tiger",
+											"Tiger"
+										],
+										[
+											"Sky Pony",
+											"Eagle, with the Elk Aspect of the Beast"
+										],
+										[
+											"Thunderbeast",
+											"Bear, with the Tiger Totemic Attunement"
+										],
+										[
+											"Tree Ghost",
+											"Bear, with {@spell speak with plants} in place of the normal rituals for the Spirit Seeker feature"
+										]
+									]
+								}
+							]
 						}
 					],
 					"id": "19b"
@@ -5873,62 +5939,62 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "Birdpipes",
+									"name": "Birdpipes:",
 									"entry": "Pan pipes or satyr pipes, also known as the shalm, these are sacred to Lliira and popular with wood elf and wild elf bards."
 								},
 								{
 									"type": "item",
-									"name": "Glaur",
+									"name": "Glaur:",
 									"entry": "Short, curved horns like a cornucopia. Played with valves, glaur sound like trumpets, while those without valves, known as gloon, have a more mournful sound."
 								},
 								{
 									"type": "item",
-									"name": "Hand Drum",
+									"name": "Hand Drum:",
 									"entry": "A double-headed skin drum fitted with handles along its side."
 								},
 								{
 									"type": "item",
-									"name": "Longhorn",
+									"name": "Longhorn:",
 									"entry": "A Faerûnian flute of sophisticated make, found only in areas with skilled artisans, as in great cities or elven enclaves."
 								},
 								{
 									"type": "item",
-									"name": "Shawm",
+									"name": "Shawm:",
 									"entry": "A double-reed instrument similar to an oboe or a bassoon, popular with gnomes, who have developed some bellows-powered versions."
 								},
 								{
 									"type": "item",
-									"name": "Songhorn",
+									"name": "Songhorn:",
 									"entry": "A recorder, a simple type of flute, usually carved from wood."
 								},
 								{
 									"type": "item",
-									"name": "Tantan",
+									"name": "Tantan:",
 									"entry": "A tambourine, a popular instrument with halflings and humans south of the Dalelands."
 								},
 								{
 									"type": "item",
-									"name": "Thelarr",
+									"name": "Thelarr:",
 									"entry": "Also known as a whistlecane, a simple and easy-to-make wind instrument cut from a reed. They are so simple, in fact, that skilled bards frequently make and give them away to children\u2014to the parents' delight or regret."
 								},
 								{
 									"type": "item",
-									"name": "Tocken",
+									"name": "Tocken:",
 									"entry": "A hanging set of carved oval bells, usually played with a pair of light wooden hammers (or open handed). They are most common in underground cultures, where the resonant tones can carry."
 								},
 								{
 									"type": "item",
-									"name": "Wargong",
+									"name": "Wargong:",
 									"entry": "A metal gong, traditionally made from a shield, particularly the shield of an enemy. Both goblins and dwarves make and play wargongs, their sound echoing through tunnels in the Underdark."
 								},
 								{
 									"type": "item",
-									"name": "Yarting",
+									"name": "Yarting:",
 									"entry": "A southern instrument from Amn and Calimshan that is a Faerûnian analog to the guitar. Numerous variations have spread across the continent."
 								},
 								{
 									"type": "item",
-									"name": "Zulkoon",
+									"name": "Zulkoon:",
 									"entry": "A complex pump organ that originated with the zulkirs of Thay, who use it in the casting of their spells. It is considered to have a dramatic, but sinister, sound."
 								}
 							]
@@ -6044,7 +6110,7 @@
 						{
 							"type": "quote",
 							"entries": [
-								"\"Slow to learn, aren't they?\" a white-haired old knight who'd lost his helm in the last fray drawled. \"This is getting to be like a proper romp in the dragonjaws, it is! I'll have to get my minstrel to write a ballad about this...\" \"I hope he sings swiftly, \" a purple dragon armsman growled. \"Here they are!\" The howling spilled over the bodies in another rushing tide of flapping leather, slashing swords, and beady goblin eyes. Men planted themselves\u2014no running and leaping now\u2014to hew steadily, like harvesters with scythes and many fields in front of them, in a rhythm of death."
+								"\"Slow to learn, aren't they?\" a white-haired old knight who'd lost his helm in the last fray drawled. \"This is getting to be like a proper romp in the dragonjaws, it is! I'll have to get my minstrel to write a ballad about this...\" \"I hope he sings swiftly, \"a purple dragon armsman growled. \"Here they are!\" The howling spilled over the bodies in another rushing tide of flapping leather, slashing swords, and beady goblin eyes. Men planted themselves\u2014no running and leaping now\u2014to hew steadily, like harvesters with scythes and many fields in front of them, in a rhythm of death."
 							],
 							"by": "Troy Denning, Death of the Dragon"
 						},

@@ -46,7 +46,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -64,14 +67,14 @@
 	</div>
 </header>
 <nav class="container page__nav" id="navigation">
-	<ul class="nav page__nav-inner" id="navbar"></ul>
+	<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
 </nav>
 
 <div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
 
 <div class="container view-col-wrapper">
 	<div class="view-col book-contents view-col--wrp-book-contents" id="listcontainer">
-		<div class="list contents flex-col">
+		<div class="list contents ve-flex-col">
 			<!-- populate with JS -->
 		</div>
 	</div>
@@ -87,7 +90,7 @@
 		</table>
 
 		<div class="bk__overlay-loading">
-			<div class="h-100 w-100 flex-vh-center"><span class="initial-message">Loading...</span></div>
+			<div class="h-100 w-100 ve-flex-vh-center"><span class="initial-message">Loading...</span></div>
 		</div>
 
 		<div class="cancer__footer-pad w-100"></div>
@@ -102,6 +105,8 @@
 <script type="text/javascript" src="lib/localforage.js"></script>
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>
 <script type="text/javascript" src="js/render-map.js"></script>

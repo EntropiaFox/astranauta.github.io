@@ -973,15 +973,6 @@
 								},
 								{
 									"type": "entries",
-									"name": "Alignment",
-									"page": 17,
-									"entries": [
-										"Most races have tendencies toward certain alignments, described in this entry. These are not binding for player characters, but considering why your dwarf is chaotic, for example, in defiance of lawful dwarf society can help you better define your character."
-									],
-									"id": "03b"
-								},
-								{
-									"type": "entries",
 									"name": "Size",
 									"page": 17,
 									"entries": [
@@ -1022,6 +1013,27 @@
 						}
 					],
 					"id": "037"
+				},
+				{
+					"type": "section",
+					"entries": [
+						{
+							"type": "list",
+							"columns": 3,
+							"items": [
+								"{@race Dragonborn}",
+								"{@race Dwarf}",
+								"{@race Elf}",
+								"{@race Gnome}",
+								"{@race Half-Elf}",
+								"{@race Half-Orc}",
+								"{@race Halfling}",
+								"{@race Human}",
+								"{@race Tiefling}"
+							]
+						}
+					],
+					"id": "217"
 				}
 			],
 			"id": "02b"
@@ -1226,84 +1238,84 @@
 									],
 									"rows": [
 										[
-											"Human",
+											"{@race Human}",
 											"4'8\"",
 											"+{@dice 2d10}",
 											"110 lb.",
 											"× ({@dice 2d4}) lb."
 										],
 										[
-											"Dwarf, hill",
+											"{@race Dwarf (hill)}",
 											"3'8\"",
 											"+{@dice 2d4}",
 											"115 lb.",
 											"× ({@dice 2d6}) lb."
 										],
 										[
-											"Dwarf, mountain",
+											"{@race Dwarf (mountain)}",
 											"4'",
 											"+{@dice 2d4}",
 											"130 lb.",
 											"× ({@dice 2d6}) lb."
 										],
 										[
-											"Elf, high",
+											"{@race Elf (high)}",
 											"4'6\"",
 											"+{@dice 2d10}",
 											"90 lb.",
 											"× ({@dice 1d4}) lb."
 										],
 										[
-											"Elf, wood",
+											"{@race Elf (wood)}",
 											"4'6\"",
 											"+{@dice 2d10}",
 											"100 lb.",
 											"× ({@dice 1d4}) lb."
 										],
 										[
-											"Elf, drow",
+											"{@race Elf (drow)}",
 											"4'5\"",
 											"+{@dice 2d6}",
 											"75 lb.",
 											"× ({@dice 1d6}) lb."
 										],
 										[
-											"Halfling",
+											"{@race Halfling}",
 											"2'7\"",
 											"+{@dice 2d4}",
 											"35 lb.",
 											"× 1 lb"
 										],
 										[
-											"Dragonborn",
+											"{@race Dragonborn}",
 											"5'6\"",
 											"+{@dice 2d8}",
 											"175 lb.",
 											"× ({@dice 2d6}) lb."
 										],
 										[
-											"Gnome",
+											"{@race Gnome}",
 											"2' 11\"",
 											"+{@dice 2d4}",
 											"35 lb.",
 											"× 1 lb."
 										],
 										[
-											"Half-elf",
+											"{@race Half-elf}",
 											"4'9\"",
 											"+{@dice 2d8}",
 											"110 lb.",
 											"× ({@dice 2d4}) lb."
 										],
 										[
-											"Half-orc",
+											"{@race Half-orc}",
 											"4'10\"",
 											"+{@dice 2d10}",
 											"140 lb.",
 											"× ({@dice 2d6}) lb."
 										],
 										[
-											"Tiefling",
+											"{@race Tiefling}",
 											"4 '9\"",
 											"+{@dice 2d8}",
 											"110 lb.",
@@ -1341,24 +1353,22 @@
 								"A typical creature in the worlds of Dungeons & Dragons has an alignment, which broadly describes its moral and personal attitudes. Alignment is a combination of two factors: one identifies morality (good, evil, or neutral), and the other describes attitudes toward society and order (lawful, chaotic, or neutral).",
 								"Thus, nine distinct alignments define the possible combinations.",
 								"These brief summaries of the nine alignments describe the typical behavior of a creature with that alignment. Individuals might vary significantly from that typical behavior, and few people are perfectly and consistently faithful to the precepts of their alignment.",
-								"{@b Lawful good} (LG) creatures can be counted on to do the right thing as expected by society. Gold dragons, paladins, and most dwarves are lawful good.",
-								"{@b Neutral good} (NG) folk do the best they can to help others according to their needs. Many celestials, some cloud giants, and most gnomes are neutral good.",
-								"{@b Chaotic good} (CG) creatures act as their conscience directs, with little regard for what others expect. Copper dragons, many elves, and unicorns are chaotic good.",
-								"{@b Lawful neutral} (LN) individuals act in accordance with law, tradition, or personal codes. Many monks and some wizards are lawful neutral.",
-								"{@b Neutral} (N) is the alignment of those who prefer to steer clear of moral questions and don't take sides, doing what seems best at the time. Lizardfolk, most druids, and many humans are neutral.",
-								"{@b Chaotic neutral} (CN) creatures follow their whims, holding their personal freedom above all else. Many barbarians and rogues, and some bards, are chaotic neutral.",
-								"{@b Lawful evil} (LE) creatures methodically take what they want, within the limits of a code of tradition, loyalty, or order. Devils, blue dragons, and hobgoblins are lawful evil.",
-								"{@b Neutral evil} (NE) is the alignment of those who do whatever they can get away with, without compassion or qualms. Many drow, some cloud giants, and yugoloths are neutral evil.",
-								"{@b Chaotic evil} (CE) creatures act with arbitrary violence, spurred by their greed, hatred, or bloodlust. Demons, red dragons, and orcs are chaotic evil.",
+								"{@b Lawful good} (LG) creatures can be counted on to do the right thing as expected by society. Gold dragons and paladins are typically lawful good.",
+								"{@b Neutral good} (NG) folk do the best they can to help others according to their needs. Many celestials are neutral good.",
+								"{@b Chaotic good} (CG) creatures act as their conscience directs, with little regard for what others expect. Copper dragons and unicorns are typically chaotic good.",
+								"{@b Lawful neutral} (LN) individuals act in accordance with law, tradition, or personal codes. Modrons and many wizards and monks are lawful neutral.",
+								"{@b Neutral} (N) is the alignment of those who prefer to steer clear of moral questions and don't take sides, doing what seems best at the time. Druids are traditionally neutral, as are typical townsfolk.",
+								"{@b Chaotic neutral} (CN) creatures follow their whims, holding their personal freedom above all else. Many rogues and bards are chaotic neutral.",
+								"{@b Lawful evil} (LE) creatures methodically take what they want, within the limits of a code of tradition, loyalty, or order. Devils and blue dragons are typically lawful evil.",
+								"{@b Neutral evil} (NE) is the alignment of those who do whatever they can get away with, without compassion or qualms. Yugoloths are typically neutral evil.",
+								"{@b Chaotic evil} (CE) creatures act with arbitrary violence, spurred by their greed, hatred, or bloodlust. Demons and red dragons are typically chaotic evil.",
 								{
 									"type": "entries",
 									"name": "Alignment in the Multiverse",
 									"page": 122,
 									"entries": [
-										"For many thinking creatures, alignment is a moral choice. Humans, dwarves, elves, and other humanoid races can choose whether to follow the paths of good or evil, law or chaos. According to myth, the good-aligned gods who created these races gave them free will to choose their moral paths, knowing that good without free will is slavery.",
-										"The evil deities who created other races, though, made those races to serve them. Those races have strong inborn tendencies that match the nature of their gods.",
-										"Most orcs share the violent, savage nature of the orc god Gruumsh, and are thus inclined towards evil. Even if orc chooses a good alignment, it struggles against its innate tendencies for its entire life. (Even half-orcs feel the lingering pull of the orc god's influence.)",
-										"Alignment is an essential part of the nature of celestials and fiends.",
+										"For many thinking creatures, alignment is a moral choice. Humans, dwarves, elves, and other people can choose whether to follow the paths of good or evil, law or chaos. According to myth, the gods who created these folk gave them free will to choose their moral paths.",
+										"Alignment is an essential part of the nature of celestials and fiends. Both types of creatures are associated with metaphysical planes of existence\u2014specifically the Outer Planes\u2014that embody certain alignments. For example, most devils hail from the Nine Hells, a plane of lawful evil. A devil does not choose to be lawful evil or tend toward lawful evil, but rather it is lawful evil in its essence. If it somehow ceases to be lawful evil, it changes into something new\u2014a transformation worthy of legend.",
 										"Generally, evil alignments are for villains and monsters.",
 										"A devil does not choose to be lawful evil, and it doesn't tend toward lawful evil, but rather it is lawful evil in its essence. If it somehow ceased to be lawful evil, it would cease to be a devil.",
 										"Most creatures that lack the capacity for rational thought do not have alignments\u2014they are {@b unaligned}. Such a creature is incapable of making a moral or ethical choice and acts according to its bestial nature. Sharks are savage predators, for example, but they are not evil; they have no alignment.",
@@ -3858,7 +3868,7 @@
 											"name": "Holy Symbol",
 											"page": 151,
 											"entries": [
-												"A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred rite. Appendix B lists the symbols commonly associated with many gods in the multiverse. A cleric or paladin can use a holy symbol as a spell casing focus, as described in Part 3: The Rules of Magic. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
+												"A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred rite. Appendix B lists the symbols commonly associated with many gods in the multiverse. A cleric or paladin can use a holy symbol as a spellcasting focus, as described in Part 3: The Rules of Magic. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield."
 											],
 											"id": "0af"
 										},
@@ -4098,55 +4108,55 @@
 							],
 							"rows": [
 								[
-									"Backpack*",
+									"{@item Backpack|phb}*",
 									"1 cubic foot/30 pounds of gear"
 								],
 								[
-									"Barrel",
+									"{@item Barrel|phb}",
 									"40 gallons liquid, 4 cubic feet solid"
 								],
 								[
-									"Basket",
+									"{@item Basket|phb}",
 									"2 cubic feet/40 pounds of gear"
 								],
 								[
-									"Bottle",
+									"{@item Glass Bottle|phb|Bottle}",
 									"1½ pints liquid"
 								],
 								[
-									"Bucket",
+									"{@item Bucket|phb}",
 									"3 gallons liquid, 1/2 cubic foot solid"
 								],
 								[
-									"Chest",
+									"{@item Chest|phb}",
 									"12 cubic feet/300 pounds of gear"
 								],
 								[
-									"Flask or tankard",
+									"{@item Flask|phb} or {@item tankard|phb}",
 									"1 pint liquid"
 								],
 								[
-									"Jug or pitcher",
+									"{@item Jug|phb} or {@item pitcher|phb}",
 									"1 gallon liquid"
 								],
 								[
-									"Pot, iron",
+									"{@item Iron Pot|phb|Pot, iron}",
 									"1 gallon liquid"
 								],
 								[
-									"Pouch",
+									"{@item Pouch|phb}",
 									"1/5 cubic foot/6 pounds of gear"
 								],
 								[
-									"Sack",
+									"{@item Sack|phb}",
 									"1 cubic foot/30 pounds of gear"
 								],
 								[
-									"Vial",
+									"{@item Vial|phb}",
 									"4 ounces liquid"
 								],
 								[
-									"Waterskin",
+									"{@item Waterskin|phb}",
 									"4 pints liquid"
 								]
 							],
@@ -4710,7 +4720,7 @@
 									"name": "Saddles",
 									"page": 155,
 									"entries": [
-										"A military saddle braces the rider, helping you keep your seat on an active mount in battle. It gives you advantage on any check you make to remain mounted. An exotic saddle is required for riding any aquatic or flying mount."
+										"A {@item military saddle|phb} braces the rider, helping you keep your seat on an active mount in battle. It gives you advantage on any check you make to remain mounted. An {@item exotic saddle|phb} is required for riding any aquatic or flying mount."
 									],
 									"id": "0df"
 								},
@@ -4752,49 +4762,49 @@
 							],
 							"rows": [
 								[
-									"Camel",
+									"{@item Camel|phb}",
 									"50 gp",
 									"50 ft.",
 									"480 lb."
 								],
 								[
-									"Donkey or mule",
+									"{@item Donkey|phb} or {@item mule|phb}",
 									"8 gp",
 									"40 ft.",
 									"420 lb."
 								],
 								[
-									"Elephant",
+									"{@item Elephant|phb}",
 									"200 gp",
 									"40 ft.",
 									"1,320 lb."
 								],
 								[
-									"Horse, draft",
+									"{@item draft horse|phb|Horse, draft}",
 									"50 gp",
 									"40 ft.",
 									"540 lb."
 								],
 								[
-									"Horse, riding",
+									"{@item riding horse|phb|Horse, riding}",
 									"75 gp",
 									"60 ft.",
 									"480 lb."
 								],
 								[
-									"Mastiff",
+									"{@item Mastiff|phb}",
 									"25 gp",
 									"40 ft.",
 									"195 lb."
 								],
 								[
-									"Pony",
+									"{@item Pony|phb}",
 									"30 gp",
 									"40 ft.",
 									"225 lb."
 								],
 								[
-									"Warhorse",
+									"{@item Warhorse|phb}",
 									"400 gp",
 									"60 ft.",
 									"540 lb."
@@ -6570,9 +6580,8 @@
 									"page": 177,
 									"entries": [
 										"The DM decides when circumstances are appropriate for hiding. When you try to hide, make a Dexterity ({@skill Stealth}) check. Until you are discovered or you stop hiding, that check's total is contested by the Wisdom ({@skill Perception}) check of any creature that actively searches for signs of your presence.",
-										"You can't hide from a creature that can see you clearly, and if you make noise (such as shouting a warning or knocking over a vase), you give away your position. An {@condition invisible} creature can't be seen, so it can always try to hide. Signs of its passage might still be noticed, however, and it still has to stay quiet.",
-										"In combat, most creatures stay alert for signs of danger all around, so if you come out of hiding and approach a creature, it usually sees you. However, under certain circumstances, the Dungeon Master might allow you to stay hidden as you approach a creature that is distracted, allowing you to gain advantage on an attack before you are seen.",
-										"Ultimately, the DM decides when circumstances are appropriate for hiding.",
+										"You can't hide from a creature that can see you clearly, and you give away your position if you make noise, such as shouting a warning or knocking over a vase. An {@condition invisible} creature can always try to hide. Signs of its passage might still be noticed, and it does have to stay quiet.",
+										"In combat, most creatures stay alert for signs of danger all around, so if you come out of hiding and approach a creature, it usually sees you. However, under certain circumstances, the DM might allow you to stay hidden as you approach a creature that is distracted, allowing you to gain advantage on an attack roll before you are seen.",
 										{
 											"type": "entries",
 											"name": "Passive Perception",
@@ -6967,7 +6976,7 @@
 					"page": 181,
 					"entries": [
 						"Swimming across a rushing river, sneaking down a dungeon corridor, scaling a treacherous mountain slope all sorts of movement play a key role in D&D adventures.",
-						"The DM can summarize the adventurers' movement without calculating exact distances or travel times: \"You travel through the forest and find the dungeon entrance late in the evening of the third day.\" Even in a dungeon, particularly a large dungeon or a cave network, the DM can summarize movement between encounters: \"After killing the guardian at the entrance to the ancient dwarven stronghold, you consult your map, which leads you through miles of echoing corridors to a chasm bridged by a narrow stone arch.\"Sometimes it's important, though, to know how long it takes to get from one spot to another, whether the answer is in days, hours, or minutes. The rules for determining travel time depend on two factors: the speed and travel pace of the creatures moving and the terrain they're moving over.",
+						"The DM can summarize the adventurers' movement without calculating exact distances or travel times: \"You travel through the forest and find the dungeon entrance late in the evening of the third day.\" Even in a dungeon, particularly a large dungeon or a cave network, the DM can summarize movement between encounters: \"After killing the guardian at the entrance to the ancient dwarven stronghold, you consult your map, which leads you through miles of echoing corridors to a chasm bridged by a narrow stone arch.\" Sometimes it's important, though, to know how long it takes to get from one spot to another, whether the answer is in days, hours, or minutes. The rules for determining travel time depend on two factors: the speed and travel pace of the creatures moving and the terrain they're moving over.",
 						{
 							"type": "entries",
 							"name": "Speed",
@@ -7079,7 +7088,7 @@
 									"name": "Climbing, Swimming, and Crawling",
 									"page": 182,
 									"entries": [
-										"Each foot of movement costs 1 extra foot (2 extra feet in difficult terrain) when you're climbing, swimming, or crawling. You ignore this extra cost if you have a climbing speed and use it to climb, or a swimming speed and use it to swim. At the DM's option, climbing a slippery vertical surface or one with few handholds requires a successful Strength ({@skill Athletics}) check. Similarly, gaining any distance in rough water might require a successful Strength ({@skill Athletics}) check."
+										"Each foot of movement costs 1 extra foot (2 extra feet in {@quickref difficult terrain||3}) when you're climbing, swimming, or crawling. You ignore this extra cost if you have a climbing speed and use it to climb, or a swimming speed and use it to swim. At the DM's option, climbing a slippery vertical surface or one with few handholds requires a successful Strength ({@skill Athletics}) check. Similarly, gaining any distance in rough water might require a successful Strength ({@skill Athletics}) check."
 									],
 									"id": "14d"
 								},
@@ -7099,7 +7108,7 @@
 											"entries": [
 												"When you make a long jump, you cover a number of feet up to your Strength score if you move at least 10 feet on foot immediately before the jump. When you make a standing long jump, you can leap only half that distance. Either way, each foot you clear on the jump costs a foot of movement.",
 												"This rule assumes that the height of your jump doesn't matter, such as a jump across a stream or chasm. At your DM's option, you must succeed on a DC 10 Strength ({@skill Athletics}) check to clear a low obstacle (no taller than a quarter of the jump's distance), such as a hedge or low wall. Otherwise, you hit it.",
-												"When you land in difficult terrain, you must succeed on a DC 10 Dexterity ({@skill Acrobatics}) check to land on your feet. Otherwise, you land {@condition prone}."
+												"When you land in {@quickref difficult terrain||3}, you must succeed on a DC 10 Dexterity ({@skill Acrobatics}) check to land on your feet. Otherwise, you land {@condition prone}."
 											],
 											"id": "14f"
 										},
@@ -7604,7 +7613,7 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1. Determine surprise.",
+									"name": "1. Determine surprise",
 									"entry": "The DM determines whether anyone involved in the combat encounter is surprised."
 								}
 							]
@@ -7615,7 +7624,7 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "2. Establish positions.",
+									"name": "2. Establish positions",
 									"entry": "The DM decides where all the characters and monsters are located. Given the adventurers' marching order or their stated positions in the room or other location, the DM figures out where the adversaries are\u2014how far away and in what direction."
 								}
 							]
@@ -7626,7 +7635,7 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "3. Roll initiative.",
+									"name": "3. Roll initiative",
 									"entry": "Everyone involved in the combat encounter rolls initiative, determining the order of combatants' turns."
 								}
 							]
@@ -7637,7 +7646,7 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "4. Take turns.",
+									"name": "4. Take turns",
 									"entry": "Each participant in the battle takes a turn in initiative order."
 								}
 							]
@@ -7648,7 +7657,7 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "5. Begin the next round.",
+									"name": "5. Begin the next round",
 									"entry": "When everyone involved in the combat has had a turn, the round ends. Repeat step 4 until the fighting stops."
 								}
 							]
@@ -7839,7 +7848,7 @@
 							"entries": [
 								"Combatants often find themselves lying on the ground, either because they are knocked down or because they throw themselves down. In the game, they are {@condition prone}, a condition described in the appendix.",
 								"You can drop {@condition prone} without using any of your speed. Standing up takes more effort; doing so costs an amount of movement equal to half your speed. For example, if your speed is 30 feet, you must spend 15 feet of movement to stand up. You can't stand up if you don't have enough movement left or if your speed is 0.",
-								"To move while {@condition prone}, you must crawl or use magic such as teleportation. Every foot of movement while crawling costs 1 extra foot. Crawling 1 foot in difficult terrain, therefore, costs 3 feet of movement."
+								"To move while {@condition prone}, you must crawl or use magic such as teleportation. Every foot of movement while crawling costs 1 extra foot. Crawling 1 foot in {@quickref difficult terrain||3}, therefore, costs 3 feet of movement."
 							],
 							"id": "189"
 						},
@@ -7848,7 +7857,7 @@
 							"name": "Moving around Other Creatures",
 							"page": 191,
 							"entries": [
-								"You can move through a nonhostile creature's space. In contrast, you can move through a hostile creature's space only if the creature is at least two sizes larger or smaller than you. Remember that another creature's space is difficult terrain for you.",
+								"You can move through a nonhostile creature's space. In contrast, you can move through a hostile creature's space only if the creature is at least two sizes larger or smaller than you. Remember that another creature's space is {@quickref difficult terrain||3} for you.",
 								"Whether a creature is a friend or an enemy, you can't willingly end your move in its space.",
 								"If you leave a hostile creature's reach during your move, you provoke an opportunity attack, as explained later in the chapter."
 							],
@@ -7966,7 +7975,7 @@
 									"type": "entries",
 									"entries": [
 										"To enter a square, you must have at least 1 square of movement left, even if the square is diagonally adjacent to the square you're in. (The rule for diagonal movement sacrifices realism for the sake of smooth play. The Dungeon Master's Guide provides guidance on using a more realistic approach.)",
-										"If a square costs extra movement, as a square of difficult terrain does, you must have enough movement left to pay for entering it. For example, you must have at least 2 squares of movement left to enter a square of difficult terrain."
+										"If a square costs extra movement, as a square of {@quickref difficult terrain||3} does, you must have enough movement left to pay for entering it. For example, you must have at least 2 squares of movement left to enter a square of {@quickref difficult terrain||3}."
 									],
 									"id": "192"
 								},
@@ -8039,17 +8048,17 @@
 							"items": [
 								{
 									"type": "item",
-									"name": "1. Choose a target.",
+									"name": "1. Choose a target",
 									"entry": "Pick a target within your attack's range: a creature, an object, or a location."
 								},
 								{
 									"type": "item",
-									"name": "2. Determine modifiers.",
+									"name": "2. Determine modifiers",
 									"entry": "The DM determines whether the target has cover and whether you have advantage or disadvantage against the target. In addition, spells, special abilities, and other effects can apply penalties or bonuses to your attack roll."
 								},
 								{
 									"type": "item",
-									"name": "3. Resolve the attack.",
+									"name": "3. Resolve the attack",
 									"entry": "You make the attack roll. On a hit, you roll damage, unless the particular attack has rules that specify otherwise. Some attacks cause special effects in addition to or instead of damage."
 								}
 							]
@@ -8630,7 +8639,7 @@
 					"page": 201,
 					"entries": [
 						"A spell is a discrete magical effect, a single shaping of the magical energies that suffuse the multiverse into a specific, limited expression. In casting a spell, a character carefully plucks at the invisible strands of raw magic suffusing the world, pins them in place in a particular pattern, sets them vibrating in a specific way, and then releases them to unleash the desired effect\u2014in most cases, all in the span of seconds.",
-						"Spells can be versatile tools, weapons, or protective wards. They can deal damage or undo it, impose or remove conditions (see the appendix), drain life energy away, and restore life to the dead.",
+						"Spells can be versatile tools, weapons, or protective wards. They can deal damage or undo it, impose or remove conditions (see {@book appendix A|PHB|12}), drain life energy away, and restore life to the dead.",
 						"Uncounted thousands of spells have been created over the course of the multiverse's history, and many of them are long forgotten. Some might yet lie recorded in crumbling spellbooks hidden in ancient ruins or trapped in the minds of dead gods. Or they might someday be reinvented by a character who has amassed enough power and wisdom to do so.",
 						{
 							"type": "entries",
@@ -8881,32 +8890,38 @@
 										{
 											"type": "item",
 											"name": "Abjuration",
-											"entry": "spells are protective in nature, though some of them have aggressive uses. They create magical barriers, negate harmful effects, harm trespassers, or banish creatures to other planes of existence."
+											"entry": "spells are protective in nature, though some of them have aggressive uses. They create magical barriers, negate harmful effects, harm trespassers, or banish creatures to other planes of existence.",
+											"nameDot": false
 										},
 										{
 											"type": "item",
 											"name": "Conjuration",
-											"entry": "spells involve the transportation of objects and creatures from one location to another. Some spells summon creatures or objects to the caster's side, whereas others allow the caster to teleport to another location. Some conjurations create objects or effects out of nothing."
+											"entry": "spells involve the transportation of objects and creatures from one location to another. Some spells summon creatures or objects to the caster's side, whereas others allow the caster to teleport to another location. Some conjurations create objects or effects out of nothing.",
+											"nameDot": false
 										},
 										{
 											"type": "item",
 											"name": "Divination",
-											"entry": "spells reveal information, whether in the form of secrets long forgotten, glimpses of the future, the locations of hidden things, the truth behind illusions, or visions of distant people or places."
+											"entry": "spells reveal information, whether in the form of secrets long forgotten, glimpses of the future, the locations of hidden things, the truth behind illusions, or visions of distant people or places.",
+											"nameDot": false
 										},
 										{
 											"type": "item",
 											"name": "Enchantment",
-											"entry": "spells affect the minds of others, influencing or controlling their behavior. Such spells can make enemies see the caster as a friend, force creatures to take a course of action, or even control another creature like a puppet."
+											"entry": "spells affect the minds of others, influencing or controlling their behavior. Such spells can make enemies see the caster as a friend, force creatures to take a course of action, or even control another creature like a puppet.",
+											"nameDot": false
 										},
 										{
 											"type": "item",
 											"name": "Evocation",
-											"entry": "spells manipulate magical energy to produce a desired effect. Some call up blasts of fire or lightning. Others channel positive energy to heal wounds."
+											"entry": "spells manipulate magical energy to produce a desired effect. Some call up blasts of fire or lightning. Others channel positive energy to heal wounds.",
+											"nameDot": false
 										},
 										{
 											"type": "item",
 											"name": "Illusion",
-											"entry": "spells deceive the senses or minds of others. They cause people to see things that are not there, to miss things that are there, to hear phantom noises, or to remember things that never happened. Some illusions create phantom images that any creature can see, but the most insidious illusions plant an image directly in the mind of a creature."
+											"entry": "spells deceive the senses or minds of others. They cause people to see things that are not there, to miss things that are there, to hear phantom noises, or to remember things that never happened. Some illusions create phantom images that any creature can see, but the most insidious illusions plant an image directly in the mind of a creature.",
+											"nameDot": false
 										},
 										{
 											"type": "item",
@@ -8914,12 +8929,14 @@
 											"entries": [
 												"spells manipulate the energies of life and death. Such spells can grant an extra reserve of life force, drain the life energy from another creature, create the undead, or even bring the dead back to life.",
 												"Creating the undead through the use of necromancy spells such as {@spell animate dead} is not a good act, and only evil casters use such spells frequently."
-											]
+											],
+											"nameDot": false
 										},
 										{
 											"type": "item",
 											"name": "Transmutation",
-											"entry": "spells change the properties of a creature, object, or environment. They might turn an enemy into a harmless creature, bolster the strength of an ally, make an object move at the caster's command, or enhance a creature's innate healing abilities to rapidly recover from injury."
+											"entry": "spells change the properties of a creature, object, or environment. They might turn an enemy into a harmless creature, bolster the strength of an ally, make an object move at the caster's command, or enhance a creature's innate healing abilities to rapidly recover from injury.",
+											"nameDot": false
 										}
 									]
 								}
@@ -8997,6 +9014,26 @@
 								"quickrefIndex": true
 							},
 							"id": "1ee"
+						},
+						{
+							"type": "entries",
+							"name": "Saving Throws",
+							"page": 205,
+							"entries": [
+								" Many spells specify that a target can make a saving throw to avoid some or all of a spell's effects. The spell specifies the ability that the target uses for the save and what happens on a success or failure.",
+								"The DC to resist one of your spells equals 8 + your spellcasting ability modifier + your proficiency bonus + any special modifiers."
+							],
+							"id": "03b"
+						},
+						{
+							"type": "entries",
+							"name": "Attack Rolls",
+							"page": 205,
+							"entries": [
+								"Some spells require the caster to make an attack roll to determine whether the spell effect hits the intended target. Your attack bonus with a spell attack equals your spellcasting ability modifier + your proficiency bonus.",
+								"Most spells that require attack rolls involve ranged attacks. Remember that you have disadvantage on a ranged attack roll if you are within 5 feet of a hostile creature that can see you and that isn't {@condition incapacitated}."
+							],
+							"id": "218"
 						},
 						{
 							"type": "entries",
@@ -12434,7 +12471,7 @@
 											"Hammer"
 										],
 										[
-											"{@deity Thrym|norse}, god of fire giants and cold",
+											"{@deity Thrym|norse}, god of frost giants and cold",
 											"CE",
 											"War",
 											"White double-bladed axe"

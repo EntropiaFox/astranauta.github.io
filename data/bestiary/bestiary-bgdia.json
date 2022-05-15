@@ -26,7 +26,9 @@
 			"name": "Abyssal Chicken",
 			"source": "BGDIA",
 			"page": 97,
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -63,7 +65,7 @@
 			"wis": 9,
 			"cha": 5,
 			"senses": [
-				"blindsight 30ft. (blind beyond this radius)"
+				"blindsight 30 ft. (blind beyond this radius)"
 			],
 			"passive": 9,
 			"resist": [
@@ -111,7 +113,6 @@
 				}
 			],
 			"familiar": true,
-			"hasToken": true,
 			"senseTags": [
 				"B"
 			],
@@ -129,6 +130,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -137,7 +139,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 30,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -210,7 +214,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -227,6 +230,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -291,7 +295,6 @@
 				"necrotic",
 				"poison"
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"C",
@@ -299,10 +302,12 @@
 				"N",
 				"P"
 			],
+			"damageTagsLegendary": [],
 			"miscTags": [
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -311,7 +316,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 111,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -408,7 +415,7 @@
 				{
 					"name": "Hand of Vecna",
 					"entries": [
-						"The Hand of Vecna has 8 charges and regains {@dice 1d4 + 4} expended charges daily at dawn. Arkhan can cast the following spells from the hand by expending the specified number of charges (spell save {@dc 18}): {@spell finger of death} (5 charges), {@spell sleep} (1 charge), {@spell slow} (2 charges), and {@spell teleport} (3 charges)."
+						"The {@item Hand of Vecna} has 8 charges and regains {@dice 1d4 + 4} expended charges daily at dawn. Arkhan can cast the following spells from the hand by expending the specified number of charges (spell save {@dc 18}): {@spell finger of death} (5 charges), {@spell sleep} (1 charge), {@spell slow} (2 charges), and {@spell teleport} (3 charges)."
 					]
 				},
 				{
@@ -438,7 +445,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -455,6 +461,10 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"R",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -466,6 +476,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -474,7 +485,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 115,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -625,7 +638,7 @@
 				{
 					"name": "Fireball",
 					"entries": [
-						"Bel casts fireball."
+						"Bel casts {@spell fireball}."
 					]
 				},
 				{
@@ -641,7 +654,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -662,6 +674,10 @@
 				"F",
 				"S"
 			],
+			"damageTagsSpell": [
+				"B",
+				"F"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -680,6 +696,7 @@
 				"paralyzed",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -709,7 +726,9 @@
 			"name": "Black Gauntlet of Bane",
 			"source": "BGDIA",
 			"page": 235,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -832,7 +851,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -841,6 +859,10 @@
 			],
 			"damageTags": [
 				"B",
+				"N",
+				"R"
+			],
+			"damageTagsSpell": [
 				"N",
 				"R"
 			],
@@ -855,13 +877,16 @@
 				"deafened",
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Bone Whelk",
 			"source": "BGDIA",
 			"page": 119,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -921,7 +946,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Spider Climb"
 			],
@@ -935,6 +959,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -982,6 +1007,7 @@
 					}
 				}
 			},
+			"damageTagsLegendary": [],
 			"hasToken": true
 		},
 		{
@@ -1009,10 +1035,10 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Clonk",
@@ -1039,20 +1065,22 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"B"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Crokek'toeck",
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 231,
-			"size": "G",
+			"size": [
+				"G"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -1165,7 +1193,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Amphibious",
 				"Magic Resistance",
@@ -1185,6 +1212,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1192,7 +1220,9 @@
 			"name": "Death's Head of Bhaal",
 			"source": "BGDIA",
 			"page": 233,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1275,7 +1305,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -1299,6 +1328,7 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1323,7 +1353,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 38,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1407,7 +1439,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Devil's Sight"
 			],
@@ -1429,6 +1460,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1467,13 +1499,13 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"miscTags": [
 				"MW",
 				"RCH",
 				"RW",
 				"THW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Feonor",
@@ -1508,7 +1540,9 @@
 			"name": "Fiendish Flesh Golem",
 			"source": "BGDIA",
 			"page": 236,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -1618,7 +1652,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Damage Absorption",
 				"Immutable Form",
@@ -1640,13 +1673,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Fist of Bane",
 			"source": "BGDIA",
 			"page": 232,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1709,7 +1745,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
@@ -1722,6 +1757,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -1749,22 +1785,26 @@
 					}
 				}
 			},
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"hp": {
 				"average": 7,
 				"formula": "3d4"
 			},
-			"hasToken": true,
 			"damageTags": [
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Gideon Lightward",
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 65,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "undead",
 			"alignment": [
 				"L",
@@ -1854,7 +1894,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Regeneration"
 			],
@@ -1874,6 +1913,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1903,7 +1943,6 @@
 					"human"
 				]
 			},
-			"hasToken": true,
 			"damageTags": [
 				"B",
 				"P"
@@ -1911,13 +1950,16 @@
 			"miscTags": [
 				"MW",
 				"RNG"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Hellwasp",
 			"source": "BGDIA",
 			"page": 236,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "fiend",
 			"alignment": [
 				"L",
@@ -1996,7 +2038,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Weapons"
 			],
@@ -2021,6 +2062,7 @@
 				"paralyzed",
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2038,7 +2080,9 @@
 			"name": "Hollyphant",
 			"source": "BGDIA",
 			"page": 237,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": "celestial",
 			"alignment": [
 				"L",
@@ -2160,7 +2204,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Weapons"
 			],
@@ -2186,6 +2229,7 @@
 			"conditionInflictSpell": [
 				"incapacitated"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2193,7 +2237,9 @@
 			"name": "Iron Consul",
 			"source": "BGDIA",
 			"page": 232,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2268,7 +2314,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2283,6 +2328,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -2291,7 +2337,9 @@
 			"isNamedCreature": true,
 			"source": "BGDIA",
 			"page": 105,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "fiend",
 				"tags": [
@@ -2442,7 +2490,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -2463,6 +2510,9 @@
 				"C",
 				"P"
 			],
+			"damageTagsSpell": [
+				"N"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -2470,6 +2520,7 @@
 				"MW",
 				"RCH"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2478,7 +2529,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 110,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2645,7 +2698,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -2658,6 +2710,12 @@
 				"B",
 				"N",
 				"P"
+			],
+			"damageTagsSpell": [
+				"I",
+				"N",
+				"O",
+				"R"
 			],
 			"spellcastingTags": [
 				"CC"
@@ -2673,6 +2731,7 @@
 				"poisoned",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -2718,7 +2777,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 127,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "fiend",
 			"alignment": [
 				"L",
@@ -2846,7 +2907,7 @@
 				{
 					"name": "Claw",
 					"entries": [
-						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) slashing damage, and the target is cursed if it's a creature. The curse takes effect whenever the target takes a short or long rest, filling the target's thoughts with horrible images and dreams. The cursed target gains no benefit from finishing a short or long rest. The curse lasts until it is lifted by a remove curse spell or similar magic."
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) slashing damage, and the target is cursed if it's a creature. The curse takes effect whenever the target takes a short or long rest, filling the target's thoughts with horrible images and dreams. The cursed target gains no benefit from finishing a short or long rest. The curse lasts until it is lifted by a {@spell remove curse} spell or similar magic."
 					]
 				},
 				{
@@ -2856,7 +2917,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Weapons"
 			],
@@ -2874,12 +2934,17 @@
 			"damageTags": [
 				"S"
 			],
+			"damageTagsSpell": [
+				"F",
+				"Y"
+			],
 			"spellcastingTags": [
 				"I"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2887,7 +2952,9 @@
 			"name": "Master of Souls",
 			"source": "BGDIA",
 			"page": 234,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3011,7 +3078,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3022,6 +3088,11 @@
 			],
 			"damageTags": [
 				"B",
+				"F",
+				"I",
+				"N"
+			],
+			"damageTagsSpell": [
 				"F",
 				"I",
 				"N"
@@ -3038,6 +3109,7 @@
 			"conditionInflictSpell": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3045,7 +3117,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 26,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3109,7 +3183,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3125,6 +3198,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3132,7 +3206,9 @@
 			"name": "Necromite of Myrkul",
 			"source": "BGDIA",
 			"page": 234,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3184,7 +3260,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -3197,6 +3272,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3237,18 +3313,20 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"damageTags": [
 				"A",
 				"N",
 				"P"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Night Blade",
 			"source": "BGDIA",
 			"page": 233,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3303,7 +3381,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -3318,6 +3395,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3325,7 +3403,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 170,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3411,7 +3491,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3427,6 +3506,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3493,7 +3573,9 @@
 			"name": "Reaper of Bhaal",
 			"source": "BGDIA",
 			"page": 233,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3578,7 +3660,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -3599,9 +3680,13 @@
 				"RW",
 				"THW"
 			],
+			"conditionInflict": [
+				"invisible"
+			],
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3610,7 +3695,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 199,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3699,7 +3786,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3715,6 +3801,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -3736,7 +3823,9 @@
 			"name": "Skull Lasher of Myrkul",
 			"source": "BGDIA",
 			"page": 234,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3831,7 +3920,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3845,6 +3933,9 @@
 				"I",
 				"N"
 			],
+			"damageTagsSpell": [
+				"I"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -3857,6 +3948,7 @@
 			"conditionInflictSpell": [
 				"poisoned"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
@@ -3864,7 +3956,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 133,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "fey",
 				"tags": [
@@ -3979,7 +4073,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -4003,6 +4096,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4047,7 +4141,6 @@
 				"Infernal",
 				"Primordial"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -4059,14 +4152,17 @@
 			"spellcastingTags": [
 				"CW",
 				"I"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Thavius Kreeg",
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 42,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4122,7 +4218,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"AB",
 				"C",
@@ -4133,14 +4228,17 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Thurstwell Vanthampur",
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 34,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4222,7 +4320,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"E",
@@ -4231,12 +4328,16 @@
 			"damageTags": [
 				"R"
 			],
+			"damageTagsSpell": [
+				"R"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
 			"conditionInflictSpell": [
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -4245,7 +4346,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 112,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"L",
@@ -4334,7 +4437,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -4353,6 +4455,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
@@ -4383,7 +4486,9 @@
 					}
 				}
 			},
-			"size": "T",
+			"size": [
+				"T"
+			],
 			"type": "beast",
 			"alignment": [
 				"C",
@@ -4398,7 +4503,6 @@
 				"Halfling",
 				"Troglodyte"
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"D",
@@ -4406,22 +4510,17 @@
 				"G",
 				"H",
 				"OTH"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Tressym",
 			"source": "BGDIA",
 			"page": 241,
-			"otherSources": [
-				{
-					"source": "IMR"
-				}
-			],
 			"_copy": {
 				"name": "Tressym",
 				"source": "SKT"
 			},
-			"type": "monstrosity",
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -4430,7 +4529,9 @@
 			"isNpc": true,
 			"source": "BGDIA",
 			"page": 70,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -4504,7 +4605,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4518,6 +4618,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},

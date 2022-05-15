@@ -46,7 +46,10 @@
 	<!-- macOS Safari Pinned Tab and Touch Bar -->
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
 
-	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");</script>
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
 
 	<script type="text/javascript" src="js/styleswitch.js"></script>
 	<script type="text/javascript" src="js/navigation.js"></script>
@@ -79,7 +82,7 @@
 	</header>
 
 	<nav class="container page__nav" id="navigation">
-		<ul class="nav page__nav-inner" id="navbar"></ul>
+		<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
 	</nav>
 
 	<div class="view-col-group--cancer h-100 mh-0">
@@ -88,15 +91,15 @@
 				<div class="lst__form-top" id="filter-search-group">
 					<div class="w-100 relative">
 						<input type="search" id="lst__search" autocomplete="off" autocapitalize="off" spellcheck="false" class="search form-control lst__search lst__search--no-border-h">
-						<div id="lst__search-glass" class="lst__wrp-search-glass no-events flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
-						<div class="lst__wrp-search-visible no-events flex-vh-center"></div>
+						<div id="lst__search-glass" class="lst__wrp-search-glass no-events ve-flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
+						<div class="lst__wrp-search-visible no-events ve-flex-vh-center"></div>
 					</div>
 					<button class="btn btn-default" id="reset">Reset</button>
 				</div>
-				<div id="filtertools" class="input-group input-group--bottom flex no-shrink">
-					<button class="col-8 sort btn btn-default btn-xs" data-sort="name">Name <span class="caret_wrp"></span></button>
-					<button class="col-2 sort btn btn-default btn-xs" data-sort="size">Size <span class="caret_wrp"></span></button>
-					<button class="sort btn btn-default btn-xs ve-grow" data-sort="source">Source <span class="caret_wrp"></span></button>
+				<div id="filtertools" class="input-group input-group--bottom ve-flex no-shrink">
+					<button class="col-8 sort btn btn-default btn-xs" data-sort="name">Name</button>
+					<button class="col-2 sort btn btn-default btn-xs" data-sort="size">Size</button>
+					<button class="sort btn btn-default btn-xs ve-grow" data-sort="source">Source</button>
 				</div>
 
 				<ul id="objectsList" class="list list--stats objects">
@@ -107,8 +110,8 @@
 			<div id="contentwrapper" class="view-col">
 				<div id="sublistcontainer" class="sublist sublist--resizable">
 					<div id="sublistsort" class="btn-group sublist__wrp-cols">
-						<button class="col-9 sort btn btn-default btn-xs" data-sort="name">Name <span class="caret_wrp"></span></button>
-						<button class="col-3 sort btn btn-default btn-xs" data-sort="size">Size <span class="caret_wrp"></span></button>
+						<button class="col-9 sort btn btn-default btn-xs" data-sort="name">Name</button>
+						<button class="col-3 sort btn btn-default btn-xs" data-sort="size">Size</button>
 					</div>
 					<div class="list subobjects">
 						<!-- populate with JS -->
@@ -116,10 +119,7 @@
 				</div>
 
 				<div class="wrp-stat-tab">
-					<div id="tabs-right">
-						<button class="ui-tab__btn-tab-head btn btn-default" id="btn-pin"><span class="glyphicon glyphicon-pushpin"></span></button>
-						<button class="ui-tab__btn-tab-head btn btn-default" id="btn-popout"><span class="glyphicon glyphicon-new-window"></span></button>
-					</div>
+					<div id="tabs-right"></div>
 				</div>
 
 				<div id="float-token" class="relative"></div>
@@ -149,6 +149,7 @@
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
 <script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>
 <script type="text/javascript" src="js/render-objects.js"></script>

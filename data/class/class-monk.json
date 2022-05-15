@@ -774,9 +774,9 @@
 			"page": 80,
 			"additionalSpells": [
 				{
-					"innate": {
+					"known": {
 						"3": [
-							"minor illusion"
+							"minor illusion#c"
 						]
 					}
 				}
@@ -796,6 +796,25 @@
 			"classSource": "PHB",
 			"page": 80,
 			"spellcastingAbility": "wis",
+			"optionalfeatureProgression": [
+				{
+					"name": "Elemental Disciplines",
+					"featureType": [
+						"ED"
+					],
+					"progression": {
+						"3": 2,
+						"6": 3,
+						"11": 4,
+						"17": 5
+					},
+					"required": {
+						"3": [
+							"Elemental Attunement|PHB"
+						]
+					}
+				}
+			],
 			"subclassFeatures": [
 				"Way of the Four Elements|Monk||Four Elements||3",
 				"Extra Elemental Discipline|Monk||Four Elements||6",
@@ -978,6 +997,7 @@
 			"className": "Monk",
 			"classSource": "PHB",
 			"page": 1,
+			"isReprinted": true,
 			"subclassFeatures": [
 				"Way of the Ascendant Dragon|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|3",
 				"Wings Unfurled|Monk||Ascendant Dragon (UA)|UA2020SubclassesPt5|6",
@@ -1011,6 +1031,20 @@
 				"Visage of the Astral Self|Monk||Astral Self|TCE|6",
 				"Body of the Astral Self|Monk||Astral Self|TCE|11",
 				"Awakened Astral Self|Monk||Astral Self|TCE|17"
+			]
+		},
+		{
+			"name": "Way of the Ascendant Dragon",
+			"shortName": "Ascendant Dragon",
+			"source": "FTD",
+			"className": "Monk",
+			"classSource": "PHB",
+			"page": 13,
+			"subclassFeatures": [
+				"Way of the Ascendant Dragon|Monk||Ascendant Dragon|FTD|3",
+				"Wings Unfurled|Monk||Ascendant Dragon|FTD|6",
+				"Aspect of the Wyrm|Monk||Ascendant Dragon|FTD|11",
+				"Ascendant Aspect|Monk||Ascendant Dragon|FTD|17"
 			]
 		}
 	],
@@ -1094,6 +1128,22 @@
 			]
 		},
 		{
+			"name": "Flurry of Blows",
+			"source": "PHB",
+			"page": 76,
+			"srd": true,
+			"className": "Monk",
+			"classSource": "PHB",
+			"level": 2,
+			"header": 2,
+			"consumes": {
+				"name": "Ki"
+			},
+			"entries": [
+				"Immediately after you take the {@action Attack} action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action."
+			]
+		},
+		{
 			"name": "Ki",
 			"source": "PHB",
 			"page": 76,
@@ -1115,23 +1165,19 @@
 				},
 				{
 					"type": "entries",
-					"name": "Flurry of Blows",
 					"entries": [
-						"Immediately after you take the {@action Attack} action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Patient Defense",
-					"entries": [
-						"You can spend 1 ki point to take the {@action Dodge} action as a bonus action on your turn."
-					]
-				},
-				{
-					"type": "entries",
-					"name": "Step of the Wind",
-					"entries": [
-						"You can spend 1 ki point to take the {@action Disengage} or {@action Dash} action as a bonus action on your turn, and your jump distance is doubled for the turn."
+						{
+							"type": "refClassFeature",
+							"classFeature": "Flurry of Blows|Monk||2"
+						},
+						{
+							"type": "refClassFeature",
+							"classFeature": "Patient Defense|Monk||2"
+						},
+						{
+							"type": "refClassFeature",
+							"classFeature": "Step of the Wind|Monk||2"
+						}
 					]
 				}
 			]
@@ -1174,6 +1220,38 @@
 			"entries": [
 				"{@i 2nd-level monk feature (enhances Ki)}",
 				"If you spend 1 ki or more as part of your action on your turn, you can then immediately make one unarmed strike as a bonus action."
+			]
+		},
+		{
+			"name": "Patient Defense",
+			"source": "PHB",
+			"page": 76,
+			"srd": true,
+			"className": "Monk",
+			"classSource": "PHB",
+			"level": 2,
+			"header": 2,
+			"consumes": {
+				"name": "Ki"
+			},
+			"entries": [
+				"You can spend 1 ki point to take the {@action Dodge} action as a bonus action on your turn."
+			]
+		},
+		{
+			"name": "Step of the Wind",
+			"source": "PHB",
+			"page": 76,
+			"srd": true,
+			"className": "Monk",
+			"classSource": "PHB",
+			"level": 2,
+			"header": 2,
+			"consumes": {
+				"name": "Ki"
+			},
+			"entries": [
+				"You can spend 1 ki point to take the {@action Disengage} or {@action Dash} action as a bonus action on your turn, and your jump distance is doubled for the turn."
 			]
 		},
 		{
@@ -1584,6 +1662,203 @@
 		}
 	],
 	"subclassFeature": [
+		{
+			"name": "Way of the Ascendant Dragon",
+			"source": "FTD",
+			"page": 13,
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 3,
+			"entries": [
+				"The dragon god Bahamut is known to travel the Material Plane in the guise of a young monk, and legend says that he founded the first monastery of the Way of the Ascendant Dragon in this guise. The fundamental teaching of this tradition holds that by emulating dragons, a monk becomes a more integrated part of the world and its magic. By altering their spirit to resonate with draconic might, monks who follow this tradition augment their prowess in battle, bolster their allies, and can even soar through the air on draconic wings. But all this power is in service of a greater goal: achieving a spiritual unity with the essence of the Material Plane.",
+				"As a follower of the Way of the Ascendant Dragon, you decide how you unlocked the power of dragons within yourself. The Ascendant Dragon Origin table offers a number of possibilities.",
+				{
+					"type": "table",
+					"caption": "Ascendant Dragon Origin",
+					"colLabels": [
+						"d6",
+						"Origin"
+					],
+					"colStyles": [
+						"col-1 text-center",
+						"col-11"
+					],
+					"rows": [
+						[
+							"1",
+							"You honed your abilities by aligning your spirit with a dragon's world-altering power."
+						],
+						[
+							"2",
+							"A dragon personally took an active role in shaping your inner energy."
+						],
+						[
+							"3",
+							"You studied at a monastery that traces its teachings back centuries or more to a single dragon's instruction, or one that is devoted to a dragon god."
+						],
+						[
+							"4",
+							"You spent long stretches meditating in the region around an ancient dragon's lair, absorbing that lair's ambient magic."
+						],
+						[
+							"5",
+							"You found a scroll written in Draconic that contained inspiring new techniques."
+						],
+						[
+							"6",
+							"After a dream featuring a five-handed dragonborn, you awoke with the mystical breath of dragons."
+						]
+					]
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Draconic Disciple|Monk||Ascendant Dragon|FTD|3"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Breath of the Dragon|Monk||Ascendant Dragon|FTD|3"
+				}
+			]
+		},
+		{
+			"name": "Breath of the Dragon",
+			"source": "FTD",
+			"page": 13,
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"{@i 3rd-level Way of the Ascendant Dragon feature}",
+				"You can channel destructive waves of energy, like those created by the dragons you emulate. When you take the {@action Attack} action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in that area must make a Dexterity saving throw against your ki save DC, taking damage of the chosen type equal to two rolls of your Martial Arts die on a failed save, or half as much damage on a successful one.",
+				"At 11th level, the damage of this feature increases to three rolls of your Martial Arts die.",
+				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. While you have no uses available, you can spend 2 ki points to use this feature again."
+			]
+		},
+		{
+			"name": "Draconic Disciple",
+			"source": "FTD",
+			"page": 13,
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 3,
+			"header": 1,
+			"entries": [
+				"{@i 3rd-level Way of the Ascendant Dragon feature}",
+				"You can channel draconic power to magnify your presence and imbue your unarmed strikes with the essence of a dragon's breath. You gain the following benefits:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Draconic Presence",
+							"entry": "If you fail a Charisma ({@skill Intimidation}) or Charisma ({@skill Persuasion}) check, you can use your reaction to reroll the check, as you tap into the mighty presence of dragons. Once this feature turns a failure into a success, you can't use it again until you finish a long rest."
+						},
+						{
+							"type": "item",
+							"name": "Draconic Strike",
+							"entry": "When you damage a target with an unarmed strike, you can change the damage type to acid, cold, fire, lightning, or poison."
+						},
+						{
+							"type": "item",
+							"name": "Tongue of Dragons",
+							"entry": "You learn to speak, read, and write {@language Draconic} or one other language of your choice."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Wings Unfurled",
+			"source": "FTD",
+			"page": 13,
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 6,
+			"header": 2,
+			"entries": [
+				"{@i 6th-level Way of the Ascendant Dragon feature}",
+				"When you use your Step of the Wind, you can unfurl spectral draconic wings from your back that vanish at the end of your turn. While the wings exist, you have a flying speed equal to your walking speed.",
+				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+			]
+		},
+		{
+			"name": "Aspect of the Wyrm",
+			"source": "FTD",
+			"page": 13,
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 11,
+			"header": 2,
+			"entries": [
+				"{@i 11th-level Way of the Ascendant Dragon feature}",
+				"The power of your draconic spirit now radiates from you, warding your allies or inspiring fear in your enemies. As a bonus action, you can create an aura of draconic power that radiates 10 feet from you for 1 minute. For the duration, you gain one of the following effects of your choice:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Frightful Presence",
+							"entry": "When you create this aura, and as a bonus action on subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw against your ki save DC or become {@condition frightened} of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
+						},
+						{
+							"type": "item",
+							"name": "Resistance",
+							"entry": "Choose a damage type when you activate this aura: acid, cold, fire, lightning, or poison. You and your allies within the aura have resistance to that damage."
+						}
+					]
+				},
+				"Once you create this aura, you can't create it again until you finish a long rest, unless you expend 3 ki points to create it again."
+			]
+		},
+		{
+			"name": "Ascendant Aspect",
+			"source": "FTD",
+			"page": 13,
+			"className": "Monk",
+			"classSource": "PHB",
+			"subclassShortName": "Ascendant Dragon",
+			"subclassSource": "FTD",
+			"level": 17,
+			"header": 2,
+			"entries": [
+				"{@i 17th-level Way of the Ascendant Dragon feature}",
+				"Your draconic spirit reaches its peak. You gain the following benefits:",
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"items": [
+						{
+							"type": "item",
+							"name": "Augment Breath",
+							"entry": "When you use your Breath of the Dragon, you can spend 1 ki point to augment its shape and power. The exhalation of draconic energy becomes either a 60-foot cone or a 90-foot line that is 5 feet wide (your choice), and each creature in that area takes damage equal to four rolls of your Martial Arts die on a failed save, or half as much damage on a successful one."
+						},
+						{
+							"type": "item",
+							"name": "Blindsight",
+							"entry": "You gain {@sense blindsight} out to 10 feet. Within that range, you can effectively see anything that isn't behind total cover, even if you're {@condition blinded} or in darkness. Moreover, you can see an {@condition invisible} creature within that range, unless the creature successfully hides from you."
+						},
+						{
+							"type": "item",
+							"name": "Explosive Fury",
+							"entry": "When you activate your Aspect of the Wyrm, draconic fury explodes from you. Choose any number of creatures you can see in your aura. Each of those creatures must succeed on a Dexterity saving throw against your ki save DC or take {@damage 3d10} acid, cold, fire, lightning, or poison damage (your choice)."
+						}
+					]
+				}
+			]
+		},
 		{
 			"name": "Way of the Four Elements",
 			"source": "PHB",
@@ -2021,6 +2296,9 @@
 			"subclassSource": "SCAG",
 			"level": 11,
 			"header": 2,
+			"consumes": {
+				"name": "Ki"
+			},
 			"entries": [
 				"Beginning at 11th level, you use your familiarity with death to escape its grasp. When you are reduced to 0 hit points, you can expend 1 ki point (no action required) to have 1 hit point instead."
 			]
@@ -2035,6 +2313,9 @@
 			"subclassSource": "SCAG",
 			"level": 17,
 			"header": 2,
+			"consumes": {
+				"name": "Ki"
+			},
 			"entries": [
 				"Starting at 17th level, your touch can channel the energy of death into a creature. As an action, you touch one creature within 5 feet of you, and you expend 1 to 10 ki points. The target must make a Constitution saving throw, and it takes {@damage 2d10} necrotic damage per ki point spent on a failed save, or half as much damage on a successful one."
 			]
@@ -2355,6 +2636,10 @@
 			"subclassSource": "TCE",
 			"level": 17,
 			"header": 2,
+			"consumes": {
+				"name": "Ki",
+				"amount": 5
+			},
 			"entries": [
 				"{@i 17th-level Way of Mercy feature}",
 				"Your mastery of life energy opens the door to the ultimate mercy. As an action, you can touch the corpse of a creature that died within the past 24 hours and expend 5 ki points. The creature then returns to life, regaining a number of hit points equal to {@dice 4d10} + your Wisdom modifier. If the creature died while subject to any of the following conditions, it revives with them removed: {@condition blinded}, {@condition deafened}, {@condition paralyzed}, {@condition poisoned}, and {@condition stunned}.",
@@ -2512,6 +2797,10 @@
 			"subclassSource": "UA2020SubclassesPt1",
 			"level": 17,
 			"header": 2,
+			"consumes": {
+				"name": "Ki",
+				"amount": 4
+			},
 			"entries": [
 				"{@i 17th-level Way of Mercy feature}",
 				"Your mastery of life energy opens the door to the ultimate respite technique. As an action, you can touch a creature, expend 4 ki points, and force the creature to make a Constitution saving throw (a creature can willingly fail this save). Unless the save succeeds, the creature enters a state of suspended animation for a number of days equal to your monk level or until you end the effect early (no action required). During this time, the creature is {@condition paralyzed}, has immunity to all damage, and any curse, disease, or poison affecting it is suspended. The creature appears dead to all outward inspection and to spells used to determine the creature's status.",
@@ -3030,6 +3319,10 @@
 			"subclassSource": "UAMonk",
 			"level": 11,
 			"header": 2,
+			"consumes": {
+				"name": "Ki",
+				"amount": 3
+			},
 			"entries": [
 				"At 11th level, you gain the ability to augment your weapons with the strength of your ki. As a bonus action, you can expend up to 3 ki points to grant a weapon you touch a bonus to attack and damage rolls while you wield it. The bonus equals the number of ki points you spent. This bonus lasts for 1 minute."
 			]
@@ -3235,6 +3528,10 @@
 			"subclassSource": "UARevisedSubclasses",
 			"level": 11,
 			"header": 2,
+			"consumes": {
+				"name": "Ki",
+				"amount": 3
+			},
 			"entries": [
 				"At 11th level, you gain the ability to augment your weapons with the strength of your ki. As a bonus action, you can expend up to 3 ki points to grant one kensei weapon you touch a bonus to attack and damage rolls while you wield it. The bonus equals the number of ki points you spent. This bonus lasts for 1 minute or until you use this feature again."
 			]
@@ -3455,6 +3752,10 @@
 			"subclassSource": "XGE",
 			"level": 11,
 			"header": 2,
+			"consumes": {
+				"name": "Ki",
+				"amount": 3
+			},
 			"entries": [
 				"At 11th level, you gain the ability to augment your weapons further with your ki. As a bonus action, you can expend up to 3 ki points to grant one kensei weapon you touch a bonus to attack and damage rolls when you attack with it. The bonus equals the number of ki points you spent. This bonus lasts for 1 minute or until you use this feature again. This feature has no effect on a magic weapon that already has a bonus to attack and damage rolls."
 			]
@@ -3502,9 +3803,8 @@
 			"header": 1,
 			"entries": [
 				"Starting when you choose this tradition at 3rd level, you can hurl searing bolts of magical radiance.",
-				"You gain a new attack option that you can use with the {@action Attack} action. This special attack is a ranged spell attack with a range of 30 feet. You are proficient with it, and you add your Dexterity modifier to its attack and damage rolls. Its damage is radiant, and its damage die is a {@dice d4}. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.",
-				"When you take the {@action Attack} action on your turn and use this special attack as part of it, you can spend 1 ki point to make the special attack twice as a bonus action.",
-				"When you gain the Extra Attack feature, this special attack can be used for any of the attacks you make as part of the {@action Attack} action."
+				"You gain a new attack option that you can use with the {@action Attack} action. The special attack is a ranged spell attack with a range of 30 feet. You are proficient with it, and you add your Dexterity modifier to its attack and damage rolls. Its damage is radiant, and its damage die is a {@dice d4}. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.",
+				"When you take the {@action Attack} action on your turn and use this special attack as part of it, you can spend 1 ki point to make the special attack twice as a bonus action. When you gain the Extra Attack feature, this special attack can be used for any of the attacks you make as part of the {@action Attack} action."
 			]
 		},
 		{

@@ -9,7 +9,7 @@
 			"page": 2,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"3": [
 							"knock",
 							"locate object"
@@ -59,7 +59,7 @@
 			"page": 5,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"3": [
 							"knock",
 							"locate object"
@@ -109,7 +109,7 @@
 			"page": 8,
 			"additionalSpells": [
 				{
-					"prepared": {
+					"known": {
 						"3": [
 							"lesser restoration",
 							"ray of enfeeblement"
@@ -169,7 +169,7 @@
 			"isGainAtNextFeatureLevel": true,
 			"entries": [
 				"{@i Level 1+ Mage of Lorehold Feature}",
-				"You learn the cantrip sacred flame and the 1st-level spell comprehend languages. You learn additional spells when you reach certain levels in this class, as shown on the Lorehold Spells table.",
+				"You learn the cantrip {@spell sacred flame} and the 1st-level spell {@spell comprehend languages}. You learn additional spells when you reach certain levels in this class, as shown on the Lorehold Spells table.",
 				"Each of these spells counts as a class spell for you, but it doesn't count against the number of spells you know. If you are a wizard, you can add these spells to your spellbook upon learning them, without expending any gold, and prepare them as normal.",
 				{
 					"type": "table",
@@ -255,17 +255,17 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "Healer.",
+							"name": "Healer",
 							"entry": "Your hit point maximum increases by an amount equal to your level in this class, and you gain the same number of hit points. When you regain hit points from a spell, you regain an additional {@dice 1d8} hit points."
 						},
 						{
 							"type": "item",
-							"name": "Sage.",
+							"name": "Sage",
 							"entry": "You have advantage on ability checks using the {@skill Arcana}, {@skill History}, {@skill Nature}, and {@skill Religion} skills. Additionally, once per turn, when you deal damage to a creature with a spell of 1st-level or higher, you can deal an additional {@damage 1d8} force damage to that creature."
 						},
 						{
 							"type": "item",
-							"name": "Warrior.",
+							"name": "Warrior",
 							"entry": "If you use your action to cast a cantrip, you can make one weapon attack as part of that action. If that weapon attack hits, the target takes an additional {@damage 1d8} radiant damage."
 						}
 					]
@@ -641,7 +641,7 @@
 			"entries": [
 				"{@i Level 14+ Mage of Quandrix Feature}",
 				"Your mathematical expertise extends to altering the foundational equations of your very being. You gain resistance to bludgeoning, piercing, and slashing damage.",
-				"Additionally, you can move through other creatures and objects as if they were difficult terrain, but you take {@damage 1d10} force damage for every 5 feet you move while inside another creature or object. If you end your turn inside a creature or an object, you are shunted into the nearest unoccupied space you last occupied."
+				"Additionally, you can move through other creatures and objects as if they were {@quickref difficult terrain||3}, but you take {@damage 1d10} force damage for every 5 feet you move while inside another creature or object. If you end your turn inside a creature or an object, you are shunted into the nearest unoccupied space you last occupied."
 			]
 		},
 		{
@@ -656,7 +656,7 @@
 			"isGainAtNextFeatureLevel": true,
 			"entries": [
 				"{@i Level 1+ Mage of Silverquill Feature}",
-				"You learn one cantrip of your choice, either sacred flame or vicious mockery. It doesn't count against the number of cantrips you know, and it is added to your class spell list if it isn't there already.",
+				"You learn one cantrip of your choice, either {@spell sacred flame} or {@spell vicious mockery}. It doesn't count against the number of cantrips you know, and it is added to your class spell list if it isn't there already.",
 				"Additionally, you gain proficiency in your choice of two of the following skills: {@skill Deception}, {@skill Intimidation}, {@skill Performance}, {@skill Persuasion}, or {@skill Insight}."
 			]
 		},
@@ -721,7 +721,7 @@
 			"header": 2,
 			"entries": [
 				"{@i Level 6+ Mage of Silverquill Feature}",
-				"You learn the darkness spell, and it is added to your class spell list if it isn't there already. If you are a wizard, you add it to your spellbook, if it's not there already.",
+				"You learn the {@spell darkness} spell, and it is added to your class spell list if it isn't there already. If you are a wizard, you add it to your spellbook, if it's not there already.",
 				"You can cast the spell without expending a spell slot, and you can't do so again until you finish a long rest. When you cast the spell in this way, you can see normally through the darkness created, and when a creature you can see starts its turn in the darkness, you can deal {@damage 2d10} psychic damage to that creature.",
 				"You can also cast the spell normally, without the additional effects, by using spell slots you have of 2nd level or higher."
 			]

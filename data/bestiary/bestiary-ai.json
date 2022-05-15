@@ -4,7 +4,9 @@
 			"name": "Ancient Deep Crow",
 			"source": "AI",
 			"page": 211,
-			"size": "H",
+			"size": [
+				"H"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -123,7 +125,6 @@
 				"name": "Ancient Deep Crow",
 				"source": "AI"
 			},
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -133,6 +134,9 @@
 			],
 			"actionTags": [
 				"Multiattack"
+			],
+			"languageTags": [
+				"OTH"
 			],
 			"damageTags": [
 				"B",
@@ -149,6 +153,7 @@
 				"prone",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -157,7 +162,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 208,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -236,7 +243,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -257,6 +263,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -265,7 +272,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 205,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -365,7 +374,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -375,6 +383,10 @@
 			],
 			"damageTags": [
 				"S"
+			],
+			"damageTagsSpell": [
+				"S",
+				"Y"
 			],
 			"spellcastingTags": [
 				"CB"
@@ -390,6 +402,7 @@
 				"invisible",
 				"unconscious"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -397,7 +410,9 @@
 			"name": "Chaos Quadrapod",
 			"source": "AI",
 			"page": 209,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "aberration",
 			"alignment": [
 				"C",
@@ -462,7 +477,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -486,6 +500,7 @@
 				"restrained",
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -493,7 +508,9 @@
 			"name": "Clockwork Dragon",
 			"source": "AI",
 			"page": 209,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"N"
@@ -570,13 +587,15 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"False Appearance"
 			],
 			"senseTags": [
 				"B",
 				"D"
+			],
+			"actionTags": [
+				"Breath Weapon"
 			],
 			"languageTags": [
 				"C",
@@ -590,13 +609,16 @@
 				"AOE",
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Deep Crow",
 			"source": "AI",
 			"page": 210,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": "monstrosity",
 			"alignment": [
 				"U"
@@ -680,7 +702,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Magic Resistance",
 				"Sunlight Sensitivity"
@@ -691,6 +712,9 @@
 			],
 			"actionTags": [
 				"Multiattack"
+			],
+			"languageTags": [
+				"OTH"
 			],
 			"damageTags": [
 				"P",
@@ -704,6 +728,7 @@
 				"grappled",
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -712,7 +737,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 201,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -828,7 +855,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -840,6 +866,10 @@
 			"damageTags": [
 				"A",
 				"S"
+			],
+			"damageTagsSpell": [
+				"R",
+				"Y"
 			],
 			"spellcastingTags": [
 				"CP"
@@ -853,6 +883,7 @@
 				"frightened",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -861,7 +892,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 200,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -975,7 +1008,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DR",
@@ -985,6 +1017,11 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"C",
+				"F",
+				"L"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
@@ -993,6 +1030,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1001,7 +1039,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 197,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1111,7 +1151,13 @@
 				{
 					"name": "Special Equipment",
 					"entries": [
-						"Jim carries a wand of wonder. Benign Transportation (Recharges after Jim Casts a Conjuration Spell of 1st Level or Higher). As a bonus action, Jim teleports up to 30 feet to a space he can see. The space must be unoccupied or occupied by a willing Small or Medium creature. If the latter, Jim and the willing creature both teleport, swapping places."
+						"Jim carries a {@item wand of wonder}."
+					]
+				},
+				{
+					"name": "Benign Transportation (Recharges after Jim Casts a Conjuration Spell of 1st Level or Higher)",
+					"entries": [
+						"As a bonus action, Jim teleports up to 30 feet to a space he can see. The space must be unoccupied or occupied by a willing Small or Medium creature. If the latter, Jim and the willing creature both teleport, swapping places."
 					]
 				}
 			],
@@ -1129,12 +1175,15 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C"
 			],
 			"damageTags": [
 				"P"
+			],
+			"damageTagsSpell": [
+				"F",
+				"O"
 			],
 			"spellcastingTags": [
 				"CW"
@@ -1144,6 +1193,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1152,7 +1202,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 202,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1167,7 +1219,7 @@
 				{
 					"ac": 14,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -1264,7 +1316,7 @@
 				{
 					"name": "Special Equipment",
 					"entries": [
-						"K'thriss wears a robe of stars (accounted for in his statistics). The robe allows him to cast the following spells: 6/day: magic missile (7 missiles)"
+						"K'thriss wears a {@item robe of stars} (accounted for in his statistics). The robe allows him to cast the following spells: 6/day: {@spell magic missile} (7 missiles)"
 					]
 				},
 				{
@@ -1294,7 +1346,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -1314,6 +1365,13 @@
 			"damageTags": [
 				"S"
 			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"P",
+				"T",
+				"Y"
+			],
 			"spellcastingTags": [
 				"CL",
 				"I"
@@ -1321,6 +1379,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1328,7 +1387,9 @@
 			"name": "Keg Robot",
 			"source": "AI",
 			"page": 212,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": "construct",
 			"alignment": [
 				"U"
@@ -1425,7 +1486,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -1447,6 +1507,7 @@
 				"poisoned",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1455,7 +1516,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 199,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1470,7 +1533,7 @@
 				{
 					"ac": 16,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -1581,7 +1644,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -1602,6 +1664,9 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"P"
+			],
 			"spellcastingTags": [
 				"CR",
 				"I"
@@ -1614,6 +1679,7 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1622,7 +1688,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 205,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1647,7 +1715,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"{@item studded leather armor|phb}"
+						"{@item studded leather armor|phb|studded leather}"
 					]
 				}
 			],
@@ -1718,7 +1786,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry",
 				"Keen Senses"
@@ -1737,6 +1804,7 @@
 				"RNG",
 				"RW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1745,7 +1813,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 196,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -1903,7 +1973,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -1922,6 +1991,12 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"F",
+				"N",
+				"O",
+				"R"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
@@ -1933,6 +2008,7 @@
 				"paralyzed",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -1941,7 +2017,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 206,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2039,7 +2117,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"languageTags": [
 				"C",
 				"DR",
@@ -2049,12 +2126,21 @@
 			"damageTags": [
 				"P"
 			],
+			"damageTagsSpell": [
+				"A",
+				"F",
+				"I",
+				"L",
+				"O",
+				"S"
+			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2063,7 +2149,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 206,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2164,7 +2252,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2174,6 +2261,10 @@
 			],
 			"damageTags": [
 				"B"
+			],
+			"damageTagsSpell": [
+				"O",
+				"R"
 			],
 			"spellcastingTags": [
 				"CC"
@@ -2187,6 +2278,7 @@
 			"conditionInflictSpell": [
 				"paralyzed"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2195,7 +2287,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 208,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "monstrosity",
 				"tags": [
@@ -2272,7 +2366,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -2280,7 +2373,8 @@
 				"D"
 			],
 			"actionTags": [
-				"Multiattack"
+				"Multiattack",
+				"Shapechanger"
 			],
 			"languageTags": [
 				"C",
@@ -2292,6 +2386,7 @@
 			"miscTags": [
 				"MW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2299,7 +2394,9 @@
 			"name": "Prophetess Dran",
 			"source": "AI",
 			"page": 208,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2421,19 +2518,27 @@
 				"B",
 				"R"
 			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"R"
+			],
 			"spellcastingTags": [
 				"CC"
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Rosie Beestinger",
 			"isNpc": true,
 			"source": "AI",
 			"page": 203,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2560,7 +2665,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2573,6 +2677,9 @@
 			"damageTags": [
 				"B"
 			],
+			"damageTagsSpell": [
+				"R"
+			],
 			"spellcastingTags": [
 				"I"
 			],
@@ -2583,6 +2690,7 @@
 				"deafened",
 				"prone"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2590,7 +2698,9 @@
 			"name": "Splugoth the Returned",
 			"source": "AI",
 			"page": 213,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2688,7 +2798,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -2710,6 +2819,7 @@
 			"conditionInflict": [
 				"stunned"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2718,7 +2828,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 198,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -2738,9 +2850,6 @@
 				},
 				{
 					"ac": 19,
-					"from": [
-						"{@item +1 Studded Leather Armor||+1 studded leather}"
-					],
 					"condition": "while wielding two melee weapons",
 					"braces": true
 				}
@@ -2832,7 +2941,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -2852,6 +2960,7 @@
 				"RW",
 				"THW"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -2860,7 +2969,9 @@
 			"isNpc": true,
 			"source": "AI",
 			"page": 204,
-			"size": "M",
+			"size": [
+				"M"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -3005,7 +3116,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -3025,6 +3135,14 @@
 				"P",
 				"S"
 			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"N",
+				"P",
+				"R",
+				"T"
+			],
 			"spellcastingTags": [
 				"CD"
 			],
@@ -3036,6 +3154,7 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}

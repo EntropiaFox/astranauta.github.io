@@ -33,25 +33,26 @@ class PageFilterFeats extends PageFilter {
 			header: "Benefits",
 			items: [
 				"Armor Proficiency",
+				"Language Proficiency",
 				"Skill Proficiency",
 				"Spellcasting",
 				"Tool Proficiency",
 				"Weapon Proficiency",
 			],
 		});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isSrdFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (feat) {
 		const ability = Renderer.getAbilityData(feat.ability);
 		feat._fAbility = ability.asCollection.filter(a => !ability.areNegative.includes(a)); // used for filtering
 
-		const prereqText = Renderer.utils.getPrerequisiteText(feat.prerequisite, true) || VeCt.STR_NONE;
+		const prereqText = Renderer.utils.getPrerequisiteHtml(feat.prerequisite, {isListMode: true}) || VeCt.STR_NONE;
 
 		const preSet = new Set();
 		(feat.prerequisite || []).forEach(it => preSet.add(...Object.keys(it)));
 		feat._fPrereqOther = [...preSet].map(it => (it === "other" ? "special" : it === "spellcasting2020" ? "spellcasting" : it).uppercaseFirst());
-		if (feat.prerequisite) feat._fPrereqLevel = feat.prerequisite.filter(it => it.level != null).map(it => `Level ${it.level.level}`);
+		if (feat.prerequisite) feat._fPrereqLevel = feat.prerequisite.filter(it => it.level != null).map(it => `Level ${it.level.level ?? it.level}`);
 		feat._fBenifits = [
 			feat.resist ? "Damage Resistance" : null,
 			feat.immune ? "Damage Immunity" : null,
@@ -61,7 +62,13 @@ class PageFilterFeats extends PageFilter {
 			feat.armorProficiencies ? "Armor Proficiency" : null,
 			feat.weaponProficiencies ? "Weapon Proficiency" : null,
 			feat.toolProficiencies ? "Tool Proficiency" : null,
+			feat.languageProficiencies ? "Language Proficiency" : null,
 		].filter(it => it);
+		if (feat.skillToolLanguageProficiencies?.length) {
+			if (feat.skillToolLanguageProficiencies.some(it => (it.choose || []).some(x => x.from || [].includes("anySkill")))) feat._fBenifits.push("Skill Proficiency");
+			if (feat.skillToolLanguageProficiencies.some(it => (it.choose || []).some(x => x.from || [].includes("anyTool")))) feat._fBenifits.push("Tool Proficiency");
+			if (feat.skillToolLanguageProficiencies.some(it => (it.choose || []).some(x => x.from || [].includes("anyLanguage")))) feat._fBenifits.push("Language Proficiency");
+		}
 		feat._fMisc = feat.srd ? ["SRD"] : [];
 
 		feat._slAbility = ability.asText || VeCt.STR_NONE;
@@ -96,7 +103,7 @@ class PageFilterFeats extends PageFilter {
 			],
 			ft._fBenifits,
 			ft._fMisc,
-		)
+		);
 	}
 }
 
@@ -127,7 +134,7 @@ class ModalFilterFeats extends ModalFilter {
 	}
 
 	async _pLoadAllData () {
-		const brew = await BrewUtil.pAddBrewData();
+		const brew = await BrewUtil2.pGetBrewProcessed();
 		const fromData = (await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/feats.json`)).feat;
 		const fromBrew = brew.feat || [];
 		return [...fromData, ...fromBrew];
@@ -135,22 +142,22 @@ class ModalFilterFeats extends ModalFilter {
 
 	_getListItem (pageFilter, feat, ftI) {
 		const eleRow = document.createElement("div");
-		eleRow.className = "px-0 w-100 flex-col no-shrink";
+		eleRow.className = "px-0 w-100 ve-flex-col no-shrink";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_FEATS](feat);
 		const source = Parser.sourceJsonToAbv(feat.source);
 
-		eleRow.innerHTML = `<div class="w-100 flex-vh-center lst--border no-select lst__wrp-cells">
-			<div class="col-0-5 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
+		eleRow.innerHTML = `<div class="w-100 ve-flex-vh-center lst--border no-select lst__wrp-cells">
+			<div class="col-0-5 pl-0 ve-flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 
-			<div class="col-0-5 px-1 flex-vh-center">
-				<div class="ui-list__btn-inline px-2" title="Toggle Preview">[+]</div>
+			<div class="col-0-5 px-1 ve-flex-vh-center">
+				<div class="ui-list__btn-inline px-2" title="Toggle Preview (SHIFT to Toggle Info Preview)">[+]</div>
 			</div>
 
 			<div class="col-4 ${this._getNameStyle()}">${feat.name}</div>
 			<span class="col-3 ${feat._slAbility === VeCt.STR_NONE ? "italic" : ""}">${feat._slAbility}</span>
 				<span class="col-3 ${feat._slPrereq === VeCt.STR_NONE ? "italic" : ""}">${feat._slPrereq}</span>
-			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(feat.source)}" title="${Parser.sourceJsonToFull(feat.source)}" ${BrewUtil.sourceJsonToStyle(feat.source)}>${source}</div>
+			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(feat.source)}" title="${Parser.sourceJsonToFull(feat.source)}" ${BrewUtil2.sourceJsonToStyle(feat.source)}>${source}</div>
 		</div>`;
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;

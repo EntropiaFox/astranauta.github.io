@@ -4,7 +4,9 @@
 			"name": "Goblin Gang Member",
 			"source": "KKW",
 			"page": 167,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -70,7 +72,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -85,14 +86,17 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Krenko",
 			"isNpc": true,
 			"source": "KKW",
 			"page": 168,
-			"size": "S",
+			"size": [
+				"S"
+			],
 			"type": {
 				"type": "humanoid",
 				"tags": [
@@ -175,7 +179,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"senseTags": [
 				"D"
 			],
@@ -195,14 +198,17 @@
 				"MW",
 				"RNG",
 				"RW"
-			]
+			],
+			"hasToken": true
 		},
 		{
 			"name": "Loading Rig",
 			"isNpc": true,
 			"source": "KKW",
 			"page": 170,
-			"size": "L",
+			"size": [
+				"L"
+			],
 			"type": {
 				"type": "construct"
 			},
@@ -253,7 +259,7 @@
 				{
 					"name": "Antimagic Susceptibility",
 					"entries": [
-						"The rig is {@condition incapacitated} while in the area of an antimagic field. If targeted by dispel magic, the rig must succeed on a Constitution saving throw against the caster's spell save DC or fall {@condition unconscious} for 1 minute."
+						"The rig is {@condition incapacitated} while in the area of an {@spell antimagic field}. If targeted by {@spell dispel magic}, the rig must succeed on a Constitution saving throw against the caster's spell save DC or fall {@condition unconscious} for 1 minute."
 					]
 				},
 				{
@@ -277,7 +283,6 @@
 					]
 				}
 			],
-			"hasToken": true,
 			"traitTags": [
 				"Antimagic Susceptibility"
 			],
@@ -292,7 +297,8 @@
 			],
 			"miscTags": [
 				"MW"
-			]
+			],
+			"hasToken": true
 		}
 	]
 }

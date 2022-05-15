@@ -57,7 +57,7 @@ class SpellParser extends BaseParser {
 		}
 
 		if (!inText || !inText.trim()) return options.cbWarning("No input!");
-		const toConvert = this._getCleanInput(inText)
+		const toConvert = this._getCleanInput(inText, options)
 			.split("\n")
 			.filter(it => it && it.trim());
 		const spell = {};
@@ -93,7 +93,7 @@ class SpellParser extends BaseParser {
 			}
 
 			// range
-			if (!curLine.indexOf_handleColon("Range")) {
+			if (ConvertUtil.isStatblockLineHeaderStart("Range", curLine)) {
 				// noinspection StatementWithEmptyBodyJS
 				while (absorbBrokenLine(true)) ;
 				this._setCleanRange(spell, curLine, options);
@@ -101,7 +101,7 @@ class SpellParser extends BaseParser {
 			}
 
 			// components
-			if (!curLine.indexOf_handleColon("Components")) {
+			if (ConvertUtil.isStatblockLineHeaderStart("Components", curLine)) {
 				// noinspection StatementWithEmptyBodyJS
 				while (absorbBrokenLine(true)) ;
 				this._setCleanComponents(spell, curLine, options);
@@ -109,14 +109,14 @@ class SpellParser extends BaseParser {
 			}
 
 			// duration
-			if (!curLine.indexOf_handleColon("Duration")) {
+			if (ConvertUtil.isStatblockLineHeaderStart("Duration", curLine)) {
 				// avoid absorbing main body text
 				this._setCleanDuration(spell, curLine, options);
 				continue;
 			}
 
 			// class spell lists (alt)
-			if (!curLine.indexOf_handleColon("Classes")) {
+			if (ConvertUtil.isStatblockLineHeaderStart("Classes", curLine)) {
 				// avoid absorbing main body text
 				this._setCleanClasses(spell, curLine, options);
 				continue;
@@ -144,7 +144,7 @@ class SpellParser extends BaseParser {
 			// class spell lists
 			if (i < toConvert.length) {
 				curLine = toConvert[i].trim();
-				if (!curLine.indexOf_handleColon("Classes")) {
+				if (ConvertUtil.isStatblockLineHeaderStart("Classes", curLine)) {
 					this._setCleanClasses(spell, curLine, options);
 				}
 			}
@@ -176,7 +176,7 @@ class SpellParser extends BaseParser {
 				}
 			});
 		};
-		TagCondition.tryTagConditions(stats, true);
+		TagCondition.tryTagConditions(stats, {isTagInflicted: true});
 		if (stats.entries) {
 			stats.entries = stats.entries.map(it => DiceConvert.getTaggedEntry(it));
 			EntryConvert.tryRun(stats, "entries");
@@ -185,7 +185,7 @@ class SpellParser extends BaseParser {
 			stats.entries = SenseTag.tryRun(stats.entries);
 		}
 		if (stats.entriesHigherLevel) {
-			stats.entriesHigherLevel = stats.entriesHigherLevel.map(it => DiceConvert.getTaggedEntry(it))
+			stats.entriesHigherLevel = stats.entriesHigherLevel.map(it => DiceConvert.getTaggedEntry(it));
 			EntryConvert.tryRun(stats, "entriesHigherLevel");
 			stats.entriesHigherLevel = SkillTag.tryRun(stats.entriesHigherLevel);
 			stats.entriesHigherLevel = ActionTag.tryRun(stats.entriesHigherLevel);
@@ -259,7 +259,7 @@ class SpellParser extends BaseParser {
 	static _setCleanRange (stats, line, options) {
 		const getUnit = (str) => str.toLowerCase().includes("mile") ? "miles" : "feet";
 
-		const range = ConvertUtil.cleanDashes(line.split_handleColon("Range", 1)[1].trim());
+		const range = ConvertUtil.cleanDashes(ConvertUtil.getStatblockLineHeaderText("Range", line));
 
 		if (range.toLowerCase() === "self") return stats.range = {type: "point", distance: {type: "self"}};
 		if (range.toLowerCase() === "special") return stats.range = {type: "special"};
@@ -321,7 +321,7 @@ class SpellParser extends BaseParser {
 	}
 
 	static _setCleanCastingTime (stats, line, options) {
-		const allParts = line.split_handleColon("Casting Time", 1)[1].trim();
+		const allParts = ConvertUtil.getStatblockLineHeaderText("Casting Time", line);
 		const parts = allParts.toLowerCase().includes("reaction")
 			? [allParts]
 			: allParts.split(/; | or /gi);
@@ -351,7 +351,7 @@ class SpellParser extends BaseParser {
 	}
 
 	static _setCleanComponents (stats, line, options) {
-		const components = line.split_handleColon("Components", 1)[1].trim();
+		const components = ConvertUtil.getStatblockLineHeaderText("Components", line);
 		const parts = components.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX);
 
 		stats.components = {};
@@ -395,7 +395,7 @@ class SpellParser extends BaseParser {
 	}
 
 	static _setCleanDuration (stats, line, options) {
-		const dur = line.split_handleColon("Duration", 1)[1].trim();
+		const dur = ConvertUtil.getStatblockLineHeaderText("Duration", line);
 
 		if (dur.toLowerCase() === "instantaneous") return stats.duration = [{type: "instant"}];
 		if (dur.toLowerCase() === "instantaneous (see text)") return stats.duration = [{type: "instant", condition: "see text"}];
@@ -433,7 +433,7 @@ class SpellParser extends BaseParser {
 	}
 
 	static _setCleanClasses (stats, line, options) {
-		const classLine = line.split_handleColon("Classes", 1)[1].trim();
+		const classLine = ConvertUtil.getStatblockLineHeaderText("Classes", line);
 		const classes = classLine.split(StrUtil.COMMAS_NOT_IN_PARENTHESES_REGEX);
 
 		stats.classes = {fromClassList: []};

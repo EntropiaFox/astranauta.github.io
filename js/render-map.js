@@ -2,6 +2,10 @@ class RenderMap {
 	static async pShowViewer (evt, ele) {
 		const mapData = JSON.parse(ele.dataset.rdPackedMap);
 
+		if (!mapData.page) mapData.page = ele.dataset.rdAdventureBookMapPage;
+		if (!mapData.source) mapData.source = ele.dataset.rdAdventureBookMapSource;
+		if (!mapData.hash) mapData.hash = ele.dataset.rdAdventureBookMapHash;
+
 		await RenderMap._pMutMapData(mapData);
 
 		if (!mapData.loadedImage) return;
@@ -23,8 +27,9 @@ class RenderMap {
 					return {
 						width: Math.min(window.innerWidth, Math.round(mapData.getZoom() * mapData.width)),
 						height: Math.min(window.innerHeight, Math.round(mapData.getZoom() * mapData.height) + 32),
-					}
+					};
 				},
+				isPopout: !!evt.shiftKey,
 			},
 		);
 	}
@@ -60,7 +65,7 @@ class RenderMap {
 			out = await pLoad;
 		} catch (e) {
 			JqueryUtil.doToast({type: "danger", content: `Failed to load image! ${VeCt.STR_SEE_CONSOLE}`});
-			setTimeout(() => { throw e; })
+			setTimeout(() => { throw e; });
 		}
 		return out;
 	}
@@ -317,9 +322,9 @@ class RenderMap {
 				zoomChangeDebounced(direction);
 			});
 
-		const $out = $$`<div class="flex-col w-100 h-100">
-			<div class="flex no-shrink p-2">
-				<div class="btn-group flex mr-2">
+		const $out = $$`<div class="ve-flex-col w-100 h-100">
+			<div class="ve-flex no-shrink p-2">
+				<div class="btn-group ve-flex mr-2">
 					${$btnZoomMinus}
 					${$btnZoomPlus}
 				</div>
@@ -345,7 +350,7 @@ class RenderMap {
 			const loaded = await Renderer.hover.pCacheAndGet(mapData.page, mapData.source, mapData.hash);
 			(RenderMap._AREA_CACHE[mapData.source] =
 				RenderMap._AREA_CACHE[mapData.source] || {})[mapData.hash] =
-				Renderer.adventureBook.getEntryIdLookup(loaded.adventureData.data);
+				Renderer.adventureBook.getEntryIdLookup((loaded.adventureData || loaded.bookData).data);
 			return RenderMap._AREA_CACHE[mapData.source][mapData.hash][areaId];
 		}
 
@@ -388,5 +393,5 @@ class RenderMap {
 		}
 	}
 }
-RenderMap._ZOOM_LEVELS = [0.25, 0.33, 0.50, 0.67, 0.75, 0.8, 0.9, 1.0, 1.1, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 4.0, 5.0];
+RenderMap._ZOOM_LEVELS = [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 4.0, 5.0];
 RenderMap._AREA_CACHE = {};
