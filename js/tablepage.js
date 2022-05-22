@@ -18,10 +18,12 @@ class TablePage {
 	}
 
 	async pInit () {
+		await BrewUtil2.pInit();
+
 		window.addEventListener("hashchange", this._handleHashChange.bind(this));
 		window.loadHash = this._doLoadHash.bind(this);
 
-		ExcludeUtil.pInitialise(); // don't await, as this is only used for search
+		ExcludeUtil.pInitialise().then(null); // don't await, as this is only used for search
 		this._dataList = (await DataUtil.loadJSON(this._jsonUrl))[this._dataProp];
 		this._list = ListUtil.initList({listClass: this._listClass, isUseJquery: true, isBindFindHotkey: true});
 		ListUtil.setOptions({primaryLists: [this._list]});

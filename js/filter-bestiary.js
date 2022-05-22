@@ -101,7 +101,7 @@ class PageFilterBestiary extends PageFilter {
 			displayFn: StrUtil.toTitleCase,
 			itemSortFn: SortUtil.ascSortLower,
 		});
-		this._tagFilter = new Filter({header: "Tag", displayFn: StrUtil.uppercaseFirst});
+		this._tagFilter = new Filter({header: "Tag", displayFn: StrUtil.toTitleCase});
 		this._alignmentFilter = new Filter({
 			header: "Alignment",
 			items: ["L", "NX", "C", "G", "NY", "E", "N", "U", "A", "No Alignment"],

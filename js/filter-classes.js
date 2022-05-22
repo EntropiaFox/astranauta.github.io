@@ -138,7 +138,13 @@ class PageFilterClassesBase extends PageFilter {
 			});
 	}
 
-	static _getIsSubclassDisplayedToDisplayParams (cls, sc, otherSourcesSource) { return [otherSourcesSource || sc.source, sc._fMisc]; }
+	static _getIsSubclassDisplayedToDisplayParams (cls, sc, otherSourcesSource) {
+		return [
+			otherSourcesSource || sc.source,
+			sc._fMisc,
+			null,
+		];
+	}
 
 	isSubclassVisible (f, cls, sc) {
 		if (this.filterBox.toDisplay(
@@ -155,7 +161,11 @@ class PageFilterClassesBase extends PageFilter {
 	}
 
 	static _getIsSubclassVisibleToDisplayParams (cls, sc, otherSourcesSource) {
-		return [otherSourcesSource || sc.source, sc._fMisc, null];
+		return [
+			otherSourcesSource || sc.source,
+			sc._fMisc,
+			null,
+		];
 	}
 
 	/** Return the first active source we find; use this as a fake source for things we want to force-display. */
@@ -178,6 +188,7 @@ class PageFilterClassesBase extends PageFilter {
 				? cls._fSourceSubclass
 				: (cls._fSources ?? cls.source),
 			cls._fMisc,
+			null,
 		];
 	}
 }

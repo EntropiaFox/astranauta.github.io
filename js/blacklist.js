@@ -10,6 +10,7 @@ class Blacklist {
 }
 
 window.addEventListener("load", async () => {
+	await BrewUtil2.pInit();
 	await ExcludeUtil.pInitialise();
 	await Blacklist.pInit();
 });

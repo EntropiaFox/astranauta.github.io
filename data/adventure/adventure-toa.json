@@ -14220,7 +14220,7 @@
 										"Thick green gas billows out of skull-shaped nozzles set into the walls of this cramped room. A rotting corpse clad in studded leather armor lies on the floor, mouth open and hands grasping its throat. Wrapped around one of its arms is a yellow band."
 									]
 								},
-								"The green gas that fills this room fills {@area area 58|484|x} when the two rooms are open to each other, but the gas is too heavy to rise up the shaft into {@area area 58|484|x}. The gas has two effects:",
+								"The green gas that fills this room fills {@area area 58|484|x} when the two rooms are open to each other, but the gas is too heavy to rise up the shaft into {@area area 45|41e|x}. The gas has two effects:",
 								{
 									"type": "list",
 									"items": [

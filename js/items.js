@@ -297,6 +297,8 @@ class ItemsPage extends ListPage {
 	async pOnLoad () {
 		this._$pgContent = $(`#pagecontent`);
 
+		await BrewUtil2.pInit();
+
 		window.loadHash = this.doLoadHash.bind(this);
 		window.loadSubHash = this.pDoLoadSubHash.bind(this);
 

@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.154.2"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.155.2"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -56,6 +56,9 @@ VeCt = {
 	SYM_UTIL_TIMEOUT: Symbol("timeout"),
 
 	LOC_ORIGIN_CANCER: "https://5e.tools",
+
+	URL_BREW: `https://github.com/TheGiddyLimit/homebrew`,
+	URL_ROOT_BREW: `https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/`, // N.b. must end with a slash
 
 	STR_NO_ATTUNEMENT: "No Attunement Required",
 
@@ -740,9 +743,12 @@ JqueryUtil = {
 
 	_ACTIVE_TOAST: [],
 	/**
-	 * @param {Object|string} options
+	 * @param {{content: jQuery|string, type?: string, autoHideTime?: number} | string} options The options for the toast.
 	 * @param {(jQuery|string)} options.content Toast contents. Supports jQuery objects.
 	 * @param {string} options.type Toast type. Can be any Bootstrap alert type ("success", "info", "warning", or "danger").
+	 * @param {number} options.autoHideTime The time in ms before the toast will be automatically hidden.
+	 * Defaults to 5000 ms.
+	 * @param {boolean} options.isAutoHide
 	 */
 	doToast (options) {
 		if (typeof window === "undefined") return;
@@ -754,6 +760,9 @@ JqueryUtil = {
 			};
 		}
 		options.type = options.type || "info";
+
+		options.isAutoHide = options.isAutoHide ?? true;
+		options.autoHideTime = options.autoHideTime ?? 5000;
 
 		const doCleanup = ($toast) => {
 			$toast.removeClass("toast--animate");
@@ -779,7 +788,11 @@ JqueryUtil = {
 			});
 
 		setTimeout(() => $toast.addClass(`toast--animate`), 5);
-		setTimeout(() => doCleanup($toast), 5000);
+		if (options.isAutoHide) {
+			setTimeout(() => {
+				doCleanup($toast);
+			}, options.autoHideTime);
+		}
 
 		if (JqueryUtil._ACTIVE_TOAST.length) {
 			JqueryUtil._ACTIVE_TOAST.forEach($oldToast => {
@@ -4645,8 +4658,9 @@ DataUtil = {
 			if (urlRoot && urlRoot.trim()) {
 				urlRoot = urlRoot.trim();
 				if (!urlRoot.endsWith("/")) urlRoot = `${urlRoot}/`;
-			} else urlRoot = `https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/`;
-			return urlRoot;
+				return urlRoot;
+			}
+			return VeCt.URL_ROOT_BREW;
 		},
 
 		async pLoadTimestamps (urlRoot) {
@@ -4854,7 +4868,7 @@ function StorageUtilBase () {
 
 	this.syncGetDump = function () {
 		const out = {};
-		this._syncGetPresentKeys().forEach(([key]) => out[key] = this.syncGet(key));
+		this._syncGetPresentKeys().forEach(key => out[key] = this.syncGet(key));
 		return out;
 	};
 
@@ -4911,7 +4925,7 @@ function StorageUtilBase () {
 	this.pGetDump = async function () {
 		const out = {};
 		await Promise.all(
-			(await this._pGetPresentKeys()).map(async ([key]) => out[key] = await this.pGet(key)),
+			(await this._pGetPresentKeys()).map(async (key) => out[key] = await this.pGet(key)),
 		);
 		return out;
 	};

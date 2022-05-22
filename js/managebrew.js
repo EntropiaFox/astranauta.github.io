@@ -12,7 +12,8 @@ class ManageBrew {
 }
 
 window.addEventListener("load", async () => {
-	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
+	await BrewUtil2.pInit();
+	ExcludeUtil.pInitialise().then(null); // don't await, as this is only used for search
 	await ManageBrew.pInitialise();
 
 	window.dispatchEvent(new Event("toolsLoaded"));

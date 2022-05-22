@@ -810,14 +810,24 @@ class ModalFilterClasses extends ModalFilter {
 			if (li.data.ixSubclass != null) {
 				const sc = cls.subclasses[li.data.ixSubclass];
 				// Both the subclass and the class must be displayed
-				return pageFilter.toDisplay(f, cls) && pageFilter.filterBox.toDisplay(
+				if (
+					!pageFilter.toDisplay(
+						f,
+						cls,
+						[],
+						null,
+					)
+				) return false;
+
+				return pageFilter.filterBox.toDisplay(
 					f,
 					sc.source,
 					sc._fMisc,
+					null,
 				);
 			}
 
-			return pageFilter.toDisplay(f, cls);
+			return pageFilter.toDisplay(f, cls, [], null);
 		});
 	}
 
@@ -874,7 +884,7 @@ class ModalFilterClasses extends ModalFilter {
 			]);
 
 			// Combine main data with brew
-			const clsProps = BrewUtil2.getPageProps(UrlUtil.PG_CLASSES);
+			const clsProps = BrewUtil2.getPageProps({page: UrlUtil.PG_CLASSES});
 			if (clsProps.includes("*")) {
 				Object.entries(brew)
 					.filter(([, brewVal]) => brewVal instanceof Array)

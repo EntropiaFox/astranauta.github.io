@@ -1248,7 +1248,8 @@ class Makebrew {
 		Makebrew._LOCK = new VeLock();
 
 		// generic init
-		ExcludeUtil.pInitialise(); // don't await, as this is only used for search
+		await BrewUtil2.pInit();
+		ExcludeUtil.pInitialise().then(null); // don't await, as this is only used for search
 		await BrewUtil2.pGetBrewProcessed();
 		await SearchUiUtil.pDoGlobalInit();
 		// Do this asynchronously, to avoid blocking the load

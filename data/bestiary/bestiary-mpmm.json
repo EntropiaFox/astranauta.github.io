@@ -147,7 +147,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Kruthik",
@@ -265,7 +266,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Adult Oblex",
@@ -445,7 +447,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Air Elemental Myrmidon",
@@ -566,7 +569,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Alhoon",
@@ -773,7 +777,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Alkilith",
@@ -951,7 +956,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Allip",
@@ -1102,7 +1108,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Amnizu",
@@ -1319,7 +1326,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Angry Sorrowsworn",
@@ -1437,7 +1445,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Annis Hag",
@@ -1575,7 +1584,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Apprentice Wizard",
@@ -1673,7 +1683,8 @@
 				"F"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Archdruid",
@@ -1823,7 +1834,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Archer",
@@ -1924,7 +1936,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Armanite",
@@ -2064,7 +2077,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Astral Dreadnought",
@@ -2252,7 +2266,8 @@
 				"incapacitated"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aurochs",
@@ -2326,7 +2341,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Autumn Eladrin",
@@ -2502,7 +2518,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Babau",
@@ -2649,7 +2666,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bael",
@@ -2877,7 +2895,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Balhannoth",
@@ -3030,7 +3049,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Banderhobb",
@@ -3168,7 +3188,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Baphomet",
@@ -3379,7 +3400,8 @@
 				"charmed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bard",
@@ -3521,7 +3543,8 @@
 				"unconscious"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Barghest",
@@ -3710,7 +3733,8 @@
 				"charmed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Berbalang",
@@ -3845,7 +3869,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bheur Hag",
@@ -4020,7 +4045,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Black Abishai",
@@ -4185,7 +4211,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blackguard",
@@ -4344,7 +4371,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Blue Abishai",
@@ -4530,7 +4558,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bodak",
@@ -4682,7 +4711,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Boggle",
@@ -4831,7 +4861,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Boneclaw",
@@ -4985,7 +5016,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Brontosaurus",
@@ -5187,7 +5219,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cadaver Collector",
@@ -5334,7 +5367,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Canoloth",
@@ -5499,7 +5533,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Catoblepas",
@@ -5592,7 +5627,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cave Fisher",
@@ -5707,7 +5743,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Champion",
@@ -5822,7 +5859,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Chitine",
@@ -5948,7 +5986,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Choker",
@@ -6066,7 +6105,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Choldrith",
@@ -6239,7 +6279,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Clockwork Bronze Scout",
@@ -6359,7 +6400,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Clockwork Iron Cobra",
@@ -6495,7 +6537,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Clockwork Oaken Bolter",
@@ -6638,7 +6681,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Clockwork Stone Defender",
@@ -6756,7 +6800,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cloud Giant Smiling One",
@@ -6918,7 +6963,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Conjurer Wizard",
@@ -7051,7 +7097,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Corpse Flower",
@@ -7181,7 +7228,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cranium Rat",
@@ -7270,7 +7318,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Darkling",
@@ -7385,7 +7434,8 @@
 				"blinded"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Darkling Elder",
@@ -7505,7 +7555,8 @@
 				"blinded"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Death Kiss",
@@ -7638,7 +7689,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deathlock",
@@ -7807,7 +7859,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deathlock Mastermind",
@@ -7986,7 +8039,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deathlock Wight",
@@ -8145,7 +8199,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deep Rothé",
@@ -8229,7 +8284,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deep Scion",
@@ -8371,7 +8427,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Deinonychus",
@@ -8720,7 +8777,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Derro",
@@ -8833,7 +8891,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Derro Savant",
@@ -8972,7 +9031,8 @@
 				"unconscious"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Devourer",
@@ -9097,7 +9157,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dhergoloth",
@@ -9261,7 +9322,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dimetrodon",
@@ -9475,7 +9537,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Diviner Wizard",
@@ -9615,7 +9678,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dolphin",
@@ -9701,7 +9765,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dolphin Delighter",
@@ -9819,7 +9884,8 @@
 			"conditionInflict": [
 				"blinded"
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Draegloth",
@@ -9969,7 +10035,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Arachnomancer",
@@ -10173,7 +10240,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Favored Consort",
@@ -10341,7 +10409,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow House Captain",
@@ -10518,7 +10587,8 @@
 				"unconscious"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Inquisitor",
@@ -10708,7 +10778,8 @@
 				"deafened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Matron Mother",
@@ -10949,7 +11020,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drow Shadowblade",
@@ -11130,7 +11202,8 @@
 				"unconscious"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Despot",
@@ -11301,7 +11374,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Hammerer",
@@ -11430,7 +11504,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Kavalrachni",
@@ -11568,7 +11643,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Mind Master",
@@ -11714,7 +11790,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Screamer",
@@ -11836,7 +11913,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Soulblade",
@@ -11954,7 +12032,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Stone Guard",
@@ -12099,7 +12178,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Warlord",
@@ -12254,7 +12334,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Duergar Xarrorn",
@@ -12384,7 +12465,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dybbuk",
@@ -12566,7 +12648,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Earth Elemental Myrmidon",
@@ -12680,7 +12763,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Eidolon",
@@ -12832,7 +12916,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elder Brain",
@@ -13049,7 +13134,8 @@
 				"incapacitated"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elder Oblex",
@@ -13233,7 +13319,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elder Tempest",
@@ -13418,7 +13505,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Enchanter Wizard",
@@ -13542,7 +13630,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Evoker Wizard",
@@ -13671,7 +13760,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Female Steeder",
@@ -13773,7 +13863,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fire Elemental Myrmidon",
@@ -13904,7 +13995,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fire Giant Dreadnought",
@@ -14025,7 +14117,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Firenewt Warlock of Imix",
@@ -14158,7 +14251,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Firenewt Warrior",
@@ -14264,7 +14358,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flail Snail",
@@ -14381,7 +14476,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Flind",
@@ -14399,7 +14495,7 @@
 			"type": {
 				"type": "fiend",
 				"tags": [
-					"Gnoll"
+					"gnoll"
 				]
 			},
 			"alignment": [
@@ -14520,7 +14616,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fraz-Urb'luu",
@@ -14748,7 +14845,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Froghemoth",
@@ -14881,7 +14979,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frost Giant Everlasting One",
@@ -15022,7 +15121,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Frost Salamander",
@@ -15149,7 +15249,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gauth",
@@ -15331,7 +15432,8 @@
 				"unconscious"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gazer",
@@ -15498,7 +15600,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Geryon",
@@ -15756,7 +15859,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giant Strider",
@@ -15844,7 +15948,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giff",
@@ -15962,7 +16067,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Girallon",
@@ -16057,7 +16163,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githyanki Gish",
@@ -16208,7 +16315,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githyanki Kith'rak",
@@ -16356,7 +16464,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githyanki Supreme Commander",
@@ -16529,7 +16638,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githzerai Anarch",
@@ -16701,7 +16811,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githzerai Enlightened",
@@ -16846,7 +16957,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnoll Flesh Gnawer",
@@ -16959,7 +17071,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnoll Hunter",
@@ -17076,7 +17189,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnoll Witherling",
@@ -17205,7 +17319,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gray Render",
@@ -17314,7 +17429,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Graz'zt",
@@ -17534,7 +17650,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Green Abishai",
@@ -17717,7 +17834,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grung",
@@ -17990,7 +18108,8 @@
 					},
 					"variant": null
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grung Elite Warrior",
@@ -18277,7 +18396,8 @@
 					},
 					"variant": null
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grung Wildling",
@@ -18587,7 +18707,8 @@
 					},
 					"variant": null
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Guard Drake",
@@ -18819,7 +18940,8 @@
 					],
 					"variant": null
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hadrosaurus",
@@ -19067,7 +19189,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hobgoblin Devastator",
@@ -19211,7 +19334,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hobgoblin Iron Shadow",
@@ -19358,7 +19482,8 @@
 				"charmed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Howler",
@@ -19491,7 +19616,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hungry Sorrowsworn",
@@ -19611,7 +19737,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hutijin",
@@ -19864,7 +19991,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hydroloth",
@@ -20064,7 +20192,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Illusionist Wizard",
@@ -20189,7 +20318,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Juiblex",
@@ -20420,7 +20550,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ki-rin",
@@ -20616,7 +20747,8 @@
 				"incapacitated"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kobold Dragonshield",
@@ -20747,7 +20879,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kobold Inventor",
@@ -20926,7 +21059,8 @@
 				"incapacitated"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kobold Scale Sorcerer",
@@ -21071,7 +21205,8 @@
 				"charmed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Korred",
@@ -21239,7 +21374,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kraken Priest",
@@ -21382,7 +21518,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kruthik Hive Lord",
@@ -21509,7 +21646,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Leucrotta",
@@ -21635,7 +21773,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Leviathan",
@@ -21803,7 +21942,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lonely Sorrowsworn",
@@ -21931,7 +22071,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lost Sorrowsworn",
@@ -22058,7 +22199,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Male Steeder",
@@ -22160,7 +22302,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Martial Arts Adept",
@@ -22289,7 +22432,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Marut",
@@ -22463,7 +22607,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Master Thief",
@@ -22588,7 +22733,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Maurezhi",
@@ -22744,7 +22890,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Maw Demon",
@@ -22852,7 +22999,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Meazel",
@@ -22962,7 +23110,8 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Meenlock",
@@ -23079,7 +23228,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Merregon",
@@ -23227,7 +23377,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Merrenoloth",
@@ -23415,7 +23566,8 @@
 				"charmed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mindwitness",
@@ -23599,7 +23751,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Moloch",
@@ -23829,7 +23982,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Molydeus",
@@ -24054,7 +24208,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Morkoth",
@@ -24231,7 +24386,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mouth of Grolantor",
@@ -24358,7 +24514,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nabassu",
@@ -24519,7 +24676,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nagpa",
@@ -24694,7 +24852,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Narzugon",
@@ -24859,7 +25018,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Necromancer Wizard",
@@ -24999,7 +25159,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Neogi",
@@ -25133,7 +25294,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Neogi Hatchling",
@@ -25223,7 +25385,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Neogi Master",
@@ -25415,7 +25578,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Neothelid",
@@ -25557,7 +25721,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nightwalker",
@@ -25701,7 +25866,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nilbog",
@@ -25844,7 +26010,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Nupperibo",
@@ -25957,7 +26124,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Oblex Spawn",
@@ -26057,7 +26225,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ogre Battering Ram",
@@ -26167,7 +26336,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ogre Bolt Launcher",
@@ -26257,7 +26427,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ogre Chain Brute",
@@ -26356,7 +26527,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ogre Howdah",
@@ -26446,7 +26618,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Oinoloth",
@@ -26645,7 +26818,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orcus",
@@ -26899,7 +27073,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orthon",
@@ -27105,7 +27280,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ox",
@@ -27178,7 +27354,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Phoenix",
@@ -27359,7 +27536,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Quetzalcoatlus",
@@ -27552,7 +27730,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Red Abishai",
@@ -27728,7 +27907,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Redcap",
@@ -27847,7 +28027,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Retriever",
@@ -28022,7 +28203,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rot Troll",
@@ -28135,7 +28317,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Rutterkin",
@@ -28237,7 +28420,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sacred Statue",
@@ -28387,7 +28571,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sea Spawn",
@@ -28526,7 +28711,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadar-kai Gloom Weaver",
@@ -28686,7 +28872,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadar-kai Shadow Dancer",
@@ -28848,7 +29035,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadar-kai Soul Monger",
@@ -29025,7 +29213,8 @@
 				"exhaustion"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadow Mastiff",
@@ -29134,7 +29323,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadow Mastiff Alpha",
@@ -29250,7 +29440,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shoosuva",
@@ -29386,7 +29577,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sibriex",
@@ -29712,7 +29904,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Skulk",
@@ -29835,7 +30028,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Skull Lord",
@@ -30049,7 +30243,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Slithering Tracker",
@@ -30199,7 +30394,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spawn of Kyuss",
@@ -30324,7 +30520,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spirit Troll",
@@ -30470,7 +30667,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Spring Eladrin",
@@ -30636,7 +30834,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Star Spawn Grue",
@@ -30721,7 +30920,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Star Spawn Hulk",
@@ -30848,7 +31048,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Star Spawn Larva Mage",
@@ -31045,7 +31246,8 @@
 				"charmed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Star Spawn Mangler",
@@ -31170,7 +31372,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Star Spawn Seer",
@@ -31327,7 +31530,8 @@
 				"incapacitated"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Steel Predator",
@@ -31504,7 +31708,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stegosaurus",
@@ -31575,7 +31780,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stench Kow",
@@ -31662,7 +31868,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stone Cursed",
@@ -31776,7 +31983,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Stone Giant Dreamwalker",
@@ -31907,7 +32115,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Storm Giant Quintessent",
@@ -32078,7 +32287,8 @@
 				"RCH"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Summer Eladrin",
@@ -32229,7 +32439,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swarm of Cranium Rats",
@@ -32373,7 +32584,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swarm of Rot Grubs",
@@ -32471,7 +32683,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Swashbuckler",
@@ -32582,7 +32795,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sword Wraith Commander",
@@ -32736,7 +32950,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sword Wraith Warrior",
@@ -32862,7 +33077,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tanarukk",
@@ -33002,7 +33218,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thorny Vegepygmy",
@@ -33105,7 +33322,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Titivilus",
@@ -33341,7 +33559,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tlincalli",
@@ -33453,7 +33672,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tortle",
@@ -33562,7 +33782,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tortle Druid",
@@ -33699,7 +33920,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Transmuter Wizard",
@@ -33861,7 +34083,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Trapper",
@@ -33958,7 +34181,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ulitharid",
@@ -34140,7 +34364,8 @@
 				"unconscious"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vampiric Mist",
@@ -34290,7 +34515,8 @@
 				"R"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vargouille",
@@ -34398,7 +34624,8 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vegepygmy",
@@ -34510,7 +34737,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Vegepygmy Chief",
@@ -34642,7 +34870,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Velociraptor",
@@ -34875,7 +35104,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "War Priest",
@@ -35022,7 +35252,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Warlock of the Archfey",
@@ -35174,7 +35405,8 @@
 				"unconscious"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Warlock of the Fiend",
@@ -35341,7 +35573,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Warlock of the Great Old One",
@@ -35497,7 +35730,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Warlord",
@@ -35635,7 +35869,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wastrilith",
@@ -35810,7 +36045,8 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Water Elemental Myrmidon",
@@ -35925,7 +36161,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "White Abishai",
@@ -36093,7 +36330,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Winter Eladrin",
@@ -36258,7 +36496,8 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wood Woad",
@@ -36387,7 +36626,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wretched Sorrowsworn",
@@ -36482,7 +36722,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Xvart",
@@ -36588,7 +36829,8 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Xvart Warlock of Raxivort",
@@ -36732,7 +36974,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yagnoloth",
@@ -36933,7 +37176,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yeenoghu",
@@ -37177,7 +37421,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yeth Hound",
@@ -37308,7 +37553,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Young Kruthik",
@@ -37410,7 +37656,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Anathema",
@@ -37606,7 +37853,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Broodguard",
@@ -37733,7 +37981,8 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Mind Whisperer",
@@ -37923,7 +38172,8 @@
 				"incapacitated"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Nightmare Speaker",
@@ -38121,7 +38371,8 @@
 				"frightened"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Pit Master",
@@ -38309,7 +38560,8 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zaratan",
@@ -38516,7 +38768,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zariel",
@@ -38756,7 +39009,8 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Zuggtmoy",
@@ -38968,7 +39222,8 @@
 				"restrained"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }

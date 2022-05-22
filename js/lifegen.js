@@ -894,7 +894,8 @@ function roll () {
 }
 
 window.addEventListener("load", async () => {
-	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
+	await BrewUtil2.pInit();
+	ExcludeUtil.pInitialise().then(null); // don't await, as this is only used for search
 	const [lifeData, nameData] = await Promise.all([
 		DataUtil.loadJSON("data/life.json"),
 		DataUtil.loadJSON("data/names.json"),

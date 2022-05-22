@@ -186,6 +186,7 @@ class Board {
 		this.doAdjust$creenCss();
 		this.doShowLoading();
 
+		await BrewUtil2.pInit();
 		await ExcludeUtil.pInitialise();
 
 		await Promise.all([

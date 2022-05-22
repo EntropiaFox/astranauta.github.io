@@ -6,6 +6,7 @@ class LootGenPage {
 	}
 
 	async pInit () {
+		await BrewUtil2.pInit();
 		await ExcludeUtil.pInitialise();
 
 		const $stgLhs = $(`#lootgen-lhs`);

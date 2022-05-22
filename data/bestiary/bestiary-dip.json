@@ -2,9 +2,9 @@
 	"_meta": {
 		"otherSources": {
 			"monster": {
-				"MM": "DC",
-				"MTF": "DC",
-				"VGM": "DC"
+				"MM": "DIP",
+				"MTF": "DIP",
+				"VGM": "DIP"
 			}
 		}
 	},

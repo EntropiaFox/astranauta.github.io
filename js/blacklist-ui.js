@@ -205,7 +205,7 @@ class BlacklistUi {
 
 			<hr class="${this._isCompactUi ? "hr-2" : "hr-5"}">
 
-			<h4 class="my-0">Exclusion List</h4>
+			<h4 class="my-0">Blacklist</h4>
 			<div class="text-muted ${this._isCompactUi ? "mb-2" : "mb-3"}"><i>Rows marked with an asterisk (*) in a field match everything in that field.</i></div>
 
 			<div class="ve-flex-col min-h-0">
@@ -296,7 +296,7 @@ class BlacklistUi {
 		this._$wrpSelName = $(`<div class="w-100 ve-flex"></div>`);
 		this._doHandleSourceCategorySelChange();
 
-		const $btnAddExclusion = $(`<button class="btn btn-default btn-xs">Add Exclusion</button>`)
+		const $btnAddExclusion = $(`<button class="btn btn-default btn-xs">Add to Blacklist</button>`)
 			.click(() => this._pAdd());
 		// endregion
 

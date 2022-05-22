@@ -103,6 +103,7 @@ class ListPage {
 	async pOnLoad () {
 		this._$pgContent = $(`#pagecontent`);
 
+		await BrewUtil2.pInit();
 		await ExcludeUtil.pInitialise();
 
 		let data;

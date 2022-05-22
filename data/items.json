@@ -1942,10 +1942,14 @@
 		{
 			"name": "Ascendant Dragon Vessel",
 			"source": "FTD",
-			"page": 27,
+			"_copy": {
+				"name": "Wakened Dragon Vessel",
+				"source": "FTD",
+				"_preserve": {
+					"page": true
+				}
+			},
 			"rarity": "legendary",
-			"reqAttune": true,
-			"wondrous": true,
 			"entries": [
 				"This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.",
 				"As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, mead, wine, whiskey, a {@item potion of healing}, a {@item potion of greater healing}, a {@item potion of superior healing}, a {@item potion of supreme healing}, a {@item potion of climbing}, a {@item potion of fire breath}, a {@item potion of flying}, or a {@item potion of dragon's majesty|FTD}. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
@@ -1954,26 +1958,14 @@
 		{
 			"name": "Ascendant Dragon-Touched Focus",
 			"source": "FTD",
-			"page": 26,
-			"rarity": "legendary",
-			"reqAttune": "by a spellcaster",
-			"reqAttuneTags": [
-				{
-					"spellcasting": true
+			"_copy": {
+				"name": "Wakened Dragon-Touched Focus",
+				"source": "FTD",
+				"_preserve": {
+					"page": true
 				}
-			],
-			"wondrous": true,
-			"focus": [
-				"Artificer",
-				"Bard",
-				"Cleric",
-				"Druid",
-				"Paladin",
-				"Ranger",
-				"Sorcerer",
-				"Warlock",
-				"Wizard"
-			],
+			},
+			"rarity": "legendary",
 			"entries": [
 				"This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales.",
 				"You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.",
@@ -2039,16 +2031,14 @@
 		{
 			"name": "Ascendant Scaled Ornament",
 			"source": "FTD",
-			"page": 27,
-			"rarity": "legendary",
-			"reqAttune": true,
-			"wondrous": true,
-			"bonusAc": "+1",
-			"modifySpeed": {
-				"equal": {
-					"fly": "walk"
+			"_copy": {
+				"name": "Wakened Scaled Ornament",
+				"source": "FTD",
+				"_preserve": {
+					"page": true
 				}
 			},
+			"rarity": "legendary",
 			"entries": [
 				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
 				"You gain a +1 bonus to AC, and you can't be {@condition charmed} or {@condition frightened}. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on itself.",
@@ -8332,7 +8322,8 @@
 					"page": true,
 					"hasFluffImages": true
 				}
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Danoth's Visor (Dormant)",
@@ -8386,7 +8377,8 @@
 			},
 			"attachedSpells": [
 				"antimagic field"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dark Shard Amulet",
@@ -14572,7 +14564,8 @@
 					"page": true,
 					"hasFluffImages": true
 				}
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grimoire Infinitus (Dormant)",
@@ -14630,7 +14623,8 @@
 					"page": true,
 					"hasFluffImages": true
 				}
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grovelthrash (Awakened)",
@@ -14669,7 +14663,8 @@
 				"equal": {
 					"burrow": "walk"
 				}
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Grovelthrash (Dormant)",
@@ -14769,7 +14764,8 @@
 				"earthquake",
 				"meld into stone",
 				"stone shape"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gruul Guild Signet",
@@ -17155,7 +17151,8 @@
 				"invisibility",
 				"knock",
 				"pass without trace"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Infiltrator's Key (Dormant)",
@@ -17225,7 +17222,8 @@
 				"dimension door",
 				"gaseous form",
 				"mislead"
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ingot of the Skold Rune",
@@ -19391,7 +19389,8 @@
 					"hasFluffImages": true
 				}
 			},
-			"bonusWeapon": "+2"
+			"bonusWeapon": "+2",
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lash of Shadows (Dormant)",
@@ -19502,7 +19501,8 @@
 					"hasFluffImages": true
 				}
 			},
-			"bonusWeapon": "+3"
+			"bonusWeapon": "+3",
+			"hasFluffImages": true
 		},
 		{
 			"name": "Leather Golem Armor",
@@ -20503,7 +20503,8 @@
 					"hasFluffImages": true
 				}
 			},
-			"bonusWeapon": "+2"
+			"bonusWeapon": "+2",
+			"hasFluffImages": true
 		},
 		{
 			"name": "Mace of the Black Crown (Dormant)",
@@ -20599,7 +20600,8 @@
 					"hasFluffImages": true
 				}
 			},
-			"bonusWeapon": "+3"
+			"bonusWeapon": "+3",
+			"hasFluffImages": true
 		},
 		{
 			"name": "Macuahuitl",
@@ -28428,7 +28430,8 @@
 					"hasFluffImages": true
 				}
 			},
-			"bonusWeapon": "+2"
+			"bonusWeapon": "+2",
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ruin's Wake (Dormant)",
@@ -28525,7 +28528,8 @@
 					"hasFluffImages": true
 				}
 			},
-			"bonusWeapon": "+3"
+			"bonusWeapon": "+3",
+			"hasFluffImages": true
 		},
 		{
 			"name": "Ruinblade",
@@ -32639,10 +32643,14 @@
 		{
 			"name": "Stirring Dragon Vessel",
 			"source": "FTD",
-			"page": 27,
+			"_copy": {
+				"name": "Slumbering Dragon Vessel",
+				"source": "FTD",
+				"_preserve": {
+					"page": true
+				}
+			},
 			"rarity": "rare",
-			"reqAttune": true,
-			"wondrous": true,
 			"entries": [
 				"This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.",
 				"As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, mead, a {@item potion of healing}, a {@item potion of greater healing}, a {@item potion of climbing}, or a {@item potion of fire breath}. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
@@ -32651,26 +32659,14 @@
 		{
 			"name": "Stirring Dragon-Touched Focus",
 			"source": "FTD",
-			"page": 26,
-			"rarity": "rare",
-			"reqAttune": "by a spellcaster",
-			"reqAttuneTags": [
-				{
-					"spellcasting": true
+			"_copy": {
+				"name": "Slumbering Dragon-Touched Focus",
+				"source": "FTD",
+				"_preserve": {
+					"page": true
 				}
-			],
-			"wondrous": true,
-			"focus": [
-				"Artificer",
-				"Bard",
-				"Cleric",
-				"Druid",
-				"Paladin",
-				"Ranger",
-				"Sorcerer",
-				"Warlock",
-				"Wizard"
-			],
+			},
+			"rarity": "rare",
 			"entries": [
 				"This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales.",
 				"You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.",
@@ -32707,16 +32703,14 @@
 		{
 			"name": "Stirring Scaled Ornament",
 			"source": "FTD",
-			"page": 27,
-			"rarity": "rare",
-			"reqAttune": true,
-			"wondrous": true,
-			"bonusAc": "+1",
-			"modifySpeed": {
-				"equal": {
-					"fly": "walk"
+			"_copy": {
+				"name": "Slumbering Scaled Ornament",
+				"source": "FTD",
+				"_preserve": {
+					"page": true
 				}
 			},
+			"rarity": "rare",
 			"entries": [
 				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
 				"You gain a +1 bonus to AC, and you can't be {@condition charmed} or {@condition frightened}. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on itself."
@@ -37703,10 +37697,14 @@
 		{
 			"name": "Wakened Dragon Vessel",
 			"source": "FTD",
-			"page": 27,
+			"_copy": {
+				"name": "Stirring Dragon Vessel",
+				"source": "FTD",
+				"_preserve": {
+					"page": true
+				}
+			},
 			"rarity": "very rare",
-			"reqAttune": true,
-			"wondrous": true,
 			"entries": [
 				"This vessel can be a potion bottle, drinking horn, or other container meant to hold a liquid.",
 				"As a bonus action, if the vessel is empty, you can speak the command word to fill the vessel with one of the following (your choice): ale, olive oil, mead, wine, a {@item potion of healing}, a {@item potion of greater healing}, a {@item potion of superior healing}, a {@item potion of climbing}, a {@item potion of fire breath}, or a {@item potion of flying}. Once this property is used, it can't be used until the next dawn. A potion you create in this way loses its magical properties if it isn't imbibed within 24 hours."
@@ -37715,26 +37713,14 @@
 		{
 			"name": "Wakened Dragon-Touched Focus",
 			"source": "FTD",
-			"page": 26,
-			"rarity": "very rare",
-			"reqAttune": "by a spellcaster",
-			"reqAttuneTags": [
-				{
-					"spellcasting": true
+			"_copy": {
+				"name": "Stirring Dragon-Touched Focus",
+				"source": "FTD",
+				"_preserve": {
+					"page": true
 				}
-			],
-			"wondrous": true,
-			"focus": [
-				"Artificer",
-				"Bard",
-				"Cleric",
-				"Druid",
-				"Paladin",
-				"Ranger",
-				"Sorcerer",
-				"Warlock",
-				"Wizard"
-			],
+			},
+			"rarity": "very rare",
 			"entries": [
 				"This wondrous item can be a scepter, an orb, an amulet, a crystal, or another finely crafted object. It typically incorporates imagery of dragons' wings, claws, teeth, or scales.",
 				"You have advantage on initiative rolls. While you are holding the focus, it can function as a spellcasting focus for all your spells.",
@@ -37807,16 +37793,14 @@
 		{
 			"name": "Wakened Scaled Ornament",
 			"source": "FTD",
-			"page": 27,
-			"rarity": "very rare",
-			"reqAttune": true,
-			"wondrous": true,
-			"bonusAc": "+1",
-			"modifySpeed": {
-				"equal": {
-					"fly": "walk"
+			"_copy": {
+				"name": "Stirring Scaled Ornament",
+				"source": "FTD",
+				"_preserve": {
+					"page": true
 				}
 			},
+			"rarity": "very rare",
 			"entries": [
 				"This ornament can be jewelry, a cloak, or another wearable accessory. It appears to be fashioned from a dragon's scale, tooth, or claw, or it incorporates images in those shapes.",
 				"You gain a +1 bonus to AC, and you can't be {@condition charmed} or {@condition frightened}. Moreover, each creature of your choice within 30 feet of you has advantage on saving throws it makes to avoid being {@condition charmed} or {@condition frightened} or to end those conditions on itself.",
@@ -39753,7 +39737,8 @@
 					"page": true,
 					"hasFluffImages": true
 				}
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wreath of the Prism (Dormant)",
@@ -39808,7 +39793,8 @@
 					"page": true,
 					"hasFluffImages": true
 				}
-			}
+			},
+			"hasFluffImages": true
 		},
 		{
 			"name": "Wukka Nut",

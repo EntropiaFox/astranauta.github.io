@@ -72,6 +72,38 @@ class BrewDoc {
 		"currencyConversions",
 	];
 
+	static _META_KEYS_MERGEABLE_SPECIAL = {
+		"dateAdded": (a, b) => a != null && b != null ? Math.min(a, b) : a ?? b,
+		"dateLastModified": (a, b) => a != null && b != null ? Math.max(a, b) : a ?? b,
+
+		"dependencies": (a, b) => this._metaMerge_dependenciesIncludes(a, b),
+		"includes": (a, b) => this._metaMerge_dependenciesIncludes(a, b),
+		"internalCopies": (a, b) => [...(a || []), ...(b || [])].unique(),
+
+		"otherSources": (a, b) => this._metaMerge_otherSources(a, b),
+	};
+
+	static _metaMerge_dependenciesIncludes (a, b) {
+		if (a != null && b != null) {
+			Object.entries(b)
+				.forEach(([prop, arr]) => a[prop] = [...(a[prop] || []), ...arr].unique());
+			return a;
+		}
+
+		return a ?? b;
+	}
+
+	static _metaMerge_otherSources (a, b) {
+		if (a != null && b != null) {
+			// Note that this can clobber the values in the mapping, but we don't really care since they're not used.
+			Object.entries(b)
+				.forEach(([prop, obj]) => a[prop] = Object.assign(a[prop] || {}, obj));
+			return a;
+		}
+
+		return a ?? b;
+	}
+
 	static _mergeObjects_key__meta ({out, val}) {
 		out._meta = out._meta || {};
 
@@ -79,6 +111,10 @@ class BrewDoc {
 
 		Object.entries(val)
 			.forEach(([metaProp, metaVal]) => {
+				if (this._META_KEYS_MERGEABLE_SPECIAL[metaProp]) {
+					out._meta[metaProp] = this._META_KEYS_MERGEABLE_SPECIAL[metaProp](out._meta[metaProp], metaVal);
+					return;
+				}
 				if (!this._META_KEYS_MERGEABLE_OBJECTS.includes(metaProp)) return;
 				Object.assign(out._meta[metaProp] = out._meta[metaProp] || {}, metaVal);
 			});
@@ -189,6 +225,13 @@ class BrewUtil2 {
 
 	static _storage = StorageUtil;
 
+	static async pInit () {
+		// region Ensure the local homebrew cache is hot, to allow us to fetch from it later in a sync manner.
+		//   This is necessary to replicate the "meta" caching done for non-local brew.
+		await this._pGetBrew_pGetLocalBrew();
+		// endregion
+	}
+
 	static async pGetCustomUrl () { return this._storage.pGet(this._STORAGE_KEY_CUSTOM_URL); }
 
 	static async pSetCustomUrl (val) {
@@ -199,7 +242,13 @@ class BrewUtil2 {
 
 	static isReloadRequired () { return this._isDirty; }
 
-	static _getBrewMetas () { return this._storage.syncGet(this._STORAGE_KEY_META); }
+	static _getBrewMetas () {
+		return [
+			...(this._storage.syncGet(this._STORAGE_KEY_META) || []),
+			...(this._cache_brewsLocal || []).map(brew => this._getBrewDocReduced(brew)),
+		];
+	}
+
 	static _setBrewMetas (val) {
 		this._cache_metas = null;
 		return this._storage.syncSet(this._STORAGE_KEY_META, val);
@@ -335,6 +384,8 @@ class BrewUtil2 {
 	}
 
 	static async _pGetBrew_pGetLocalBrew () {
+		if (this._cache_brewsLocal) return this._cache_brewsLocal;
+
 		if (IS_VTT || IS_DEPLOYED || typeof window === "undefined") return this._cache_brewsLocal = [];
 
 		// auto-load from `homebrew/`, for custom versions of the site
@@ -347,7 +398,7 @@ class BrewUtil2 {
 			const filename = UrlUtil.getFilename(url);
 			try {
 				const json = await DataUtil.loadRawJSON(url);
-				return this._getBrewDoc({json, url, filename});
+				return this._getBrewDoc({json, url, filename, isLocal: true});
 			} catch (e) {
 				JqueryUtil.doToast({type: "danger", content: `Failed to load local homebrew from URL "${url}"! ${VeCt.STR_SEE_CONSOLE}`});
 				setTimeout(() => { throw e; });
@@ -444,13 +495,17 @@ class BrewUtil2 {
 
 	static _getBrewId (brew) {
 		if (brew.head.url) return brew.head.url;
-		if (brew.head._meta?.sources?.length) return brew.head._meta.sources.map(src => (src.json || "").toLowerCase()).sort(SortUtil.ascSortLower).join(" :: ");
+		if (brew.body._meta?.sources?.length) return brew.body._meta.sources.map(src => (src.json || "").toLowerCase()).sort(SortUtil.ascSortLower).join(" :: ");
 		return null;
 	}
 
 	static _getNextBrews (brews, brewsToAdd) {
-		const idsToAdd = new Set(brewsToAdd.map(brews => this._getBrewId(brews)));
-		brews = brews.filter(brew => !idsToAdd.has(this._getBrewId(brew)));
+		const idsToAdd = new Set(brewsToAdd.map(brews => this._getBrewId(brews)).filter(Boolean));
+		brews = brews.filter(brew => {
+			const id = this._getBrewId(brew);
+			if (id == null) return true;
+			return !idsToAdd.has(id);
+		});
 		return [...brews, ...brewsToAdd];
 	}
 
@@ -807,47 +862,61 @@ class BrewUtil2 {
 	// endregion
 
 	// region Rendering/etc.
-	static getPageProps (page) {
+	static _PAGE_TO_PROPS__SPELLS = ["spell", "spellFluff"];
+	static _PAGE_TO_PROPS__BESTIARY = ["monster", "legendaryGroup", "monsterFluff"];
+
+	static _PAGE_TO_PROPS = {
+		[UrlUtil.PG_SPELLS]: this._PAGE_TO_PROPS__SPELLS,
+		[UrlUtil.PG_CLASSES]: ["class", "subclass", "classFeature", "subclassFeature"],
+		[UrlUtil.PG_BESTIARY]: this._PAGE_TO_PROPS__BESTIARY,
+		[UrlUtil.PG_BACKGROUNDS]: ["background"],
+		[UrlUtil.PG_FEATS]: ["feat"],
+		[UrlUtil.PG_OPT_FEATURES]: ["optionalfeature"],
+		[UrlUtil.PG_RACES]: ["race", "raceFluff", "subrace"],
+		[UrlUtil.PG_OBJECTS]: ["object"],
+		[UrlUtil.PG_TRAPS_HAZARDS]: ["trap", "hazard"],
+		[UrlUtil.PG_DEITIES]: ["deity"],
+		[UrlUtil.PG_ITEMS]: ["item", "baseitem", "variant", "itemProperty", "itemType", "itemFluff", "itemGroup", "itemEntry"],
+		[UrlUtil.PG_REWARDS]: ["reward"],
+		[UrlUtil.PG_PSIONICS]: ["psionic"],
+		[UrlUtil.PG_VARIANTRULES]: ["variantrule"],
+		[UrlUtil.PG_CONDITIONS_DISEASES]: ["condition", "disease", "status"],
+		[UrlUtil.PG_ADVENTURES]: ["adventure", "adventureData"],
+		[UrlUtil.PG_BOOKS]: ["book", "bookData"],
+		[UrlUtil.PG_TABLES]: ["table", "tableGroup"],
+		[UrlUtil.PG_MAKE_BREW]: [
+			...this._PAGE_TO_PROPS__SPELLS,
+			...this._PAGE_TO_PROPS__BESTIARY,
+			"makebrewCreatureTrait",
+		],
+		[UrlUtil.PG_MANAGE_BREW]: ["*"],
+		[UrlUtil.PG_DEMO_RENDER]: ["*"],
+		[UrlUtil.PG_VEHICLES]: ["vehicle", "vehicleUpgrade"],
+		[UrlUtil.PG_ACTIONS]: ["action"],
+		[UrlUtil.PG_CULTS_BOONS]: ["cult", "boon"],
+		[UrlUtil.PG_LANGUAGES]: ["language", "languageScript"],
+		[UrlUtil.PG_CHAR_CREATION_OPTIONS]: ["charoption"],
+		[UrlUtil.PG_RECIPES]: ["recipe"],
+		[UrlUtil.PG_CLASS_SUBCLASS_FEATURES]: ["classFeature", "subclassFeature"],
+	};
+
+	static getPageProps ({page, isStrict = false, fallback = null} = {}) {
 		page = this._getBrewPage(page);
 
-		const _PG_SPELLS = ["spell", "spellFluff"];
-		const _PG_BESTIARY = ["monster", "legendaryGroup", "monsterFluff"];
+		const out = this._PAGE_TO_PROPS[page];
+		if (out) return out;
+		if (fallback) return fallback;
 
-		switch (page) {
-			case UrlUtil.PG_SPELLS: return _PG_SPELLS;
-			case UrlUtil.PG_CLASSES: return ["class", "subclass", "classFeature", "subclassFeature"];
-			case UrlUtil.PG_BESTIARY: return _PG_BESTIARY;
-			case UrlUtil.PG_BACKGROUNDS: return ["background"];
-			case UrlUtil.PG_FEATS: return ["feat"];
-			case UrlUtil.PG_OPT_FEATURES: return ["optionalfeature"];
-			case UrlUtil.PG_RACES: return ["race", "raceFluff", "subrace"];
-			case UrlUtil.PG_OBJECTS: return ["object"];
-			case UrlUtil.PG_TRAPS_HAZARDS: return ["trap", "hazard"];
-			case UrlUtil.PG_DEITIES: return ["deity"];
-			case UrlUtil.PG_ITEMS: return ["item", "baseitem", "variant", "itemProperty", "itemType", "itemFluff", "itemGroup", "itemEntry"];
-			case UrlUtil.PG_REWARDS: return ["reward"];
-			case UrlUtil.PG_PSIONICS: return ["psionic"];
-			case UrlUtil.PG_VARIANTRULES: return ["variantrule"];
-			case UrlUtil.PG_CONDITIONS_DISEASES: return ["condition", "disease", "status"];
-			case UrlUtil.PG_ADVENTURES: return ["adventure", "adventureData"];
-			case UrlUtil.PG_BOOKS: return ["book", "bookData"];
-			case UrlUtil.PG_TABLES: return ["table", "tableGroup"];
-			case UrlUtil.PG_MAKE_BREW: return [
-				..._PG_SPELLS,
-				..._PG_BESTIARY,
-				"makebrewCreatureTrait",
-			];
-			case UrlUtil.PG_MANAGE_BREW:
-			case UrlUtil.PG_DEMO_RENDER: return ["*"];
-			case UrlUtil.PG_VEHICLES: return ["vehicle", "vehicleUpgrade"];
-			case UrlUtil.PG_ACTIONS: return ["action"];
-			case UrlUtil.PG_CULTS_BOONS: return ["cult", "boon"];
-			case UrlUtil.PG_LANGUAGES: return ["language", "languageScript"];
-			case UrlUtil.PG_CHAR_CREATION_OPTIONS: return ["charoption"];
-			case UrlUtil.PG_RECIPES: return ["recipe"];
-			case UrlUtil.PG_CLASS_SUBCLASS_FEATURES: return ["classFeature", "subclassFeature"];
-			default: throw new Error(`No homebrew properties defined for category ${page}`);
-		}
+		if (isStrict) throw new Error(`No homebrew properties defined for category ${page}`);
+
+		return null;
+	}
+
+	static getPropPages () {
+		return Object.entries(this._PAGE_TO_PROPS)
+			.map(([page, props]) => [page, props.filter(it => it !== "*")])
+			.filter(([, props]) => props.length)
+			.map(([page]) => page);
 	}
 
 	static _getBrewPage (page) {
@@ -1018,8 +1087,8 @@ class BrewUtil2 {
 	/**
 	 * Get data in a format similar to the main search index
 	 */
-	static async pGetSearchIndex () {
-		const indexer = new Omnidexer(Omnisearch.highestId + 1);
+	static async pGetSearchIndex ({id = 0} = {}) {
+		const indexer = new Omnidexer(id);
 
 		const brew = await BrewUtil2.pGetBrewProcessed();
 
@@ -1213,7 +1282,7 @@ class ManageBrewUi {
 				</div>
 			</div>
 			<div class="ve-flex-v-center">
-				<a href="https://github.com/TheGiddyLimit/homebrew" class="ve-flex-v-center" target="_blank" rel="noopener noreferrer"><button class="btn btn-default btn-sm mr-2">Browse Source Repository</button></a>
+				<a href="${VeCt.URL_BREW}" class="ve-flex-v-center" target="_blank" rel="noopener noreferrer"><button class="btn btn-default btn-sm mr-2">Browse Source Repository</button></a>
 
 				<div class="ve-flex-v-center btn-group">
 					${$btnPullAll}
@@ -1275,7 +1344,12 @@ class ManageBrewUi {
 		const customBrewUtl = await BrewUtil2.pGetCustomUrl();
 
 		const nxtUrl = await InputUiUtil.pGetUserString({
-			title: "Homebrew Repository URL (Blank for Default)",
+			title: "Homebrew Repository URL",
+			$elePre: $(`<div>
+				<p>Leave blank to use the <a href="${VeCt.URL_BREW}" rel="noopener noreferrer" target="_blank">default homebrew repo</a>.</p>
+				<div>Note that for GitHub URLs, the <code>raw.</code> URL must be used. For example, <code>https://raw.githubusercontent.com/Username/homebrew/master/</code></div>
+				<hr class="hr-3">
+			</div>`),
 			default: customBrewUtl,
 		});
 		if (nxtUrl == null) return;
@@ -1298,7 +1372,6 @@ class ManageBrewUi {
 			$iptSearch,
 			$wrpList,
 			isUseJquery: true,
-			isFuzzy: true,
 			sortByInitial: rdState.list ? rdState.list.sortBy : undefined,
 			sortDirInitial: rdState.list ? rdState.list.sortDir : undefined,
 		});
@@ -1364,7 +1437,7 @@ class ManageBrewUi {
 				async () => this._pDoPullAll({
 					rdState,
 					brews: getSelBrews({
-						fnFilter: brew => !brew.head.isEditable && BrewUtil2.isPullable(brew),
+						fnFilter: brew => this.constructor._isBrewOperationPermitted_update(brew),
 					}),
 				}),
 			),
@@ -1379,7 +1452,7 @@ class ManageBrewUi {
 				async () => this._pRender_pDoMoveToEditable({
 					rdState,
 					brews: getSelBrews({
-						fnFilter: brew => !brew.head.isEditable,
+						fnFilter: brew => this.constructor._isBrewOperationPermitted_moveToEditable(brew),
 					}),
 				}),
 			),
@@ -1388,12 +1461,16 @@ class ManageBrewUi {
 				async () => this._pRender_pDoDelete({
 					rdState,
 					brews: getSelBrews({
-						fnFilter: brew => !brew.head.isLocal,
+						fnFilter: brew => this.constructor._isBrewOperationPermitted_delete(brew),
 					}),
 				}),
 			),
 		]);
 	}
+
+	static _isBrewOperationPermitted_update (brew) { return !brew.head.isEditable && BrewUtil2.isPullable(brew); }
+	static _isBrewOperationPermitted_moveToEditable (brew) { return !brew.head.isEditable && !brew.head.isLocal; }
+	static _isBrewOperationPermitted_delete (brew) { return !brew.head.isLocal; }
 
 	async _pHandleClick_btnListMass ({evt, rdState}) {
 		this._initListMassMenu({rdState});
@@ -1492,11 +1569,12 @@ class ManageBrewUi {
 		// region These are mutually exclusive
 		const btnPull = this._pRender_getBtnPull({rdState, brew});
 		const btnEdit = this._pRender_getBtnEdit({rdState, brew});
+		const btnPullEditPlaceholder = (btnPull || btnEdit) ? null : this.constructor._pRender_getBtnPlaceholder();
 		// endregion
 
 		const btnDownload = e_({
 			tag: "button",
-			clazz: `btn btn-default btn-xs mobile__hidden`,
+			clazz: `btn btn-default btn-xs mobile__hidden w-24p`,
 			title: this.constructor._LBL_LIST_EXPORT,
 			children: [
 				e_({
@@ -1509,8 +1587,8 @@ class ManageBrewUi {
 
 		const btnViewJson = e_({
 			tag: "button",
-			clazz: `btn btn-default btn-xs mobile-ish__hidden`,
-			title: this.constructor._LBL_LIST_VIEW_JSON,
+			clazz: `btn btn-default btn-xs mobile-ish__hidden w-24p`,
+			title: `${this.constructor._LBL_LIST_VIEW_JSON}: ${this.constructor._getBrewJsonTitle({brew, brewName})}`,
 			children: [
 				e_({
 					tag: "span",
@@ -1523,7 +1601,7 @@ class ManageBrewUi {
 
 		const btnOpenMenu = e_({
 			tag: "button",
-			clazz: `btn btn-default btn-xs`,
+			clazz: `btn btn-default btn-xs w-24p`,
 			title: "Menu",
 			children: [
 				e_({
@@ -1534,9 +1612,9 @@ class ManageBrewUi {
 			click: evt => this._pRender_pDoOpenBrewMenu({evt, rdState, brew, brewName, rowMeta}),
 		});
 
-		const btnDelete = brew.head.isLocal ? null : e_({
+		const btnDelete = this.constructor._isBrewOperationPermitted_delete(brew) ? e_({
 			tag: "button",
-			clazz: `btn btn-danger btn-xs mobile__hidden`,
+			clazz: `btn btn-danger btn-xs mobile__hidden w-24p`,
 			title: this.constructor._LBL_LIST_DELETE,
 			children: [
 				e_({
@@ -1545,7 +1623,7 @@ class ManageBrewUi {
 				}),
 			],
 			click: () => this._pRender_pDoDelete({rdState, brews: [brew]}),
-		});
+		}) : this.constructor._pRender_getBtnPlaceholder();
 
 		// Weave in HRs
 		const elesSub = rowsSubMetas.map(it => it.eleRow);
@@ -1589,6 +1667,7 @@ class ManageBrewUi {
 					children: [
 						btnPull,
 						btnEdit,
+						btnPullEditPlaceholder,
 						btnDownload,
 						btnViewJson,
 						btnOpenMenu,
@@ -1620,12 +1699,21 @@ class ManageBrewUi {
 		return rowMeta;
 	}
 
+	static _pRender_getBtnPlaceholder () {
+		return e_({
+			tag: "button",
+			clazz: `btn btn-default btn-xs mobile__hidden w-24p`,
+			html: "&nbsp;",
+		})
+			.attr("disabled", true);
+	}
+
 	_pRender_getBtnPull ({rdState, brew}) {
-		if (brew.head.isEditable) return null;
+		if (!this.constructor._isBrewOperationPermitted_update(brew)) return null;
 
 		const btnPull = e_({
 			tag: "button",
-			clazz: `btn btn-default btn-xs mobile__hidden`,
+			clazz: `btn btn-default btn-xs mobile__hidden w-24p`,
 			title: this.constructor._LBL_LIST_UPDATE,
 			children: [
 				e_({
@@ -1644,7 +1732,7 @@ class ManageBrewUi {
 
 		return e_({
 			tag: "button",
-			clazz: `btn btn-default btn-xs mobile__hidden`,
+			clazz: `btn btn-default btn-xs mobile__hidden w-24p`,
 			title: this.constructor._LBL_LIST_MANAGE_CONTENTS,
 			children: [
 				e_({
@@ -1724,8 +1812,13 @@ class ManageBrewUi {
 		return DataUtil.userDownload(reducedFilename, cpyBrew, {isSkipAdditionalMetadata: true});
 	}
 
+	static _getBrewJsonTitle ({brew, brewName}) {
+		brewName = brewName || this._getBrewName(brew);
+		return brew.head.filename || brewName;
+	}
+
 	_pRender_doViewBrew ({evt, brew, brewName}) {
-		const title = brew.head.filename || brewName;
+		const title = this.constructor._getBrewJsonTitle({brew, brewName});
 		const $content = Renderer.hover.$getHoverContent_statsCode(brew.body, {isSkipClean: true, title});
 		Renderer.hover.getShowWindow(
 			$content,
@@ -1747,7 +1840,7 @@ class ManageBrewUi {
 	_pRender_getBrewMenu ({rdState, brew, brewName}) {
 		const menuItems = [];
 
-		if (BrewUtil2.isPullable(brew)) {
+		if (this.constructor._isBrewOperationPermitted_update(brew)) {
 			menuItems.push(
 				new ContextUtil.Action(
 					this.constructor._LBL_LIST_UPDATE,
@@ -1774,7 +1867,7 @@ class ManageBrewUi {
 			),
 		);
 
-		if (!brew.head.isEditable) {
+		if (this.constructor._isBrewOperationPermitted_moveToEditable(brew)) {
 			menuItems.push(
 				new ContextUtil.Action(
 					this.constructor._LBL_LIST_MOVE_TO_EDITABLE,
@@ -1783,12 +1876,14 @@ class ManageBrewUi {
 			);
 		}
 
-		menuItems.push(
-			new ContextUtil.Action(
-				this.constructor._LBL_LIST_DELETE,
-				async () => this._pRender_pDoDelete({rdState, brews: [brew]}),
-			),
-		);
+		if (this.constructor._isBrewOperationPermitted_delete(brew)) {
+			menuItems.push(
+				new ContextUtil.Action(
+					this.constructor._LBL_LIST_DELETE,
+					async () => this._pRender_pDoDelete({rdState, brews: [brew]}),
+				),
+			);
+		}
 
 		return ContextUtil.getMenu(menuItems);
 	}
@@ -1862,17 +1957,56 @@ class GetBrewUi {
 		}
 	};
 
+	static _TypeFilter = class extends Filter {
+		constructor () {
+			const pageProps = BrewUtil2.getPageProps({fallback: ["*"]});
+			super({
+				header: "Category",
+				items: [],
+				displayFn: BrewUtil2.getPropDisplayName.bind(BrewUtil2),
+				selFn: prop => pageProps.includes("*") || pageProps.includes(prop),
+				isSortByDisplayItems: true,
+			});
+		}
+
+		_getHeaderControls_addExtraStateBtns (opts, wrpStateBtnsOuter) {
+			const menu = ContextUtil.getMenu(
+				BrewUtil2.getPropPages()
+					.map(page => ({page, displayPage: UrlUtil.PG_TO_NAME[page] || page}))
+					.sort(SortUtil.ascSortProp.bind(SortUtil, "displayPage"))
+					.map(({page, displayPage}) => {
+						return new ContextUtil.Action(
+							displayPage,
+							() => {
+								const propsActive = new Set(BrewUtil2.getPageProps({page, fallback: []}));
+								Object.keys(this._state).forEach(prop => this._state[prop] = propsActive.has(prop) ? 1 : 0);
+							},
+						);
+					}),
+			);
+
+			const btnPage = e_({
+				tag: "button",
+				clazz: `btn btn-default w-100 btn-xs`,
+				text: `Select for Page...`,
+				click: evt => ContextUtil.pOpenMenu(evt, menu),
+			});
+
+			e_({
+				tag: "div",
+				clazz: `btn-group mr-2 w-100 ve-flex-v-center`,
+				children: [
+					btnPage,
+				],
+			}).prependTo(wrpStateBtnsOuter);
+		}
+	};
+
 	static _PageFilterGetBrew = class extends PageFilter {
 		constructor () {
 			super();
 
-			const pageProps = BrewUtil2.getPageProps();
-			this._typeFilter = new Filter({
-				header: "Type",
-				items: [],
-				displayFn: BrewUtil2.getPropDisplayName.bind(BrewUtil2),
-				selFn: prop => pageProps.includes("*") || pageProps.includes(prop),
-			});
+			this._typeFilter = new GetBrewUi._TypeFilter();
 			this._miscFilter = new Filter({
 				header: "Miscellaneous",
 				items: ["Sample"],
@@ -1908,6 +2042,8 @@ class GetBrewUi {
 
 	static async pDoGetBrew ({isModal: isParentModal = false} = {}) {
 		return new Promise((resolve, reject) => {
+			const ui = new this({isModal: true});
+			const rdState = new this._RenderState();
 			const {$modalInner} = UiUtil.getShowModal({
 				isHeight100: true,
 				title: `Get Homebrew`,
@@ -1915,11 +2051,13 @@ class GetBrewUi {
 				isWidth100: true,
 				overlayColor: isParentModal ? "transparent" : undefined,
 				isHeaderBorder: true,
-				cbClose: () => resolve([...ui._brewsLoaded]),
+				cbClose: async () => {
+					await ui.pHandlePreCloseModal({rdState});
+					resolve([...ui._brewsLoaded]);
+				},
 			});
-			const ui = new this({isModal: true});
 			ui.pInit()
-				.then(() => ui.pRender($modalInner))
+				.then(() => ui.pRender($modalInner, {rdState}))
 				.catch(e => reject(e));
 		});
 	}
@@ -1996,11 +2134,29 @@ class GetBrewUi {
 			.sort((a, b) => SortUtil.ascSortLower(a._brewName, b._brewName));
 	}
 
-	async pRender ($wrp) {
-		const rdState = new this.constructor._RenderState();
+	async pHandlePreCloseModal ({rdState}) {
+		// region If the user has selected list items, prompt to load them before closing the modal
+		const cntSel = rdState.list.items.filter(it => it.data.cbSel.checked).length;
+		if (!cntSel) return;
+
+		const isSave = await InputUiUtil.pGetUserBoolean({
+			title: "Selected Homebrew",
+			htmlDescription: `You have ${cntSel} homebrew${cntSel === 1 ? "" : "s"} selected which ${cntSel === 1 ? "is" : "are"} not yet loaded. Would you like to load ${cntSel === 1 ? "it" : "them"}?`,
+			textYes: "Load",
+			textNo: "Discard",
+		});
+		if (!isSave) return;
+
+		await this._pHandleClick_btnAddSelected({rdState});
+		// endregion
+	}
+
+	async pRender ($wrp, {rdState} = {}) {
+		rdState = rdState || new this.constructor._RenderState();
+
 		rdState.pageFilter = new this.constructor._PageFilterGetBrew();
 
-		const $btnAddSelected = $(`<button class="btn btn-default btn-xs" disabled>Add Selected</button>`);
+		const $btnAddSelected = $(`<button class="btn btn-info btn-sm col-0-5 text-center" disabled title="Add Selected"><span class="glyphicon glyphicon-save"></button>`);
 
 		const $wrpRows = $$`<div class="list smooth-scroll max-h-unset"><div class="lst__row ve-flex-col"><div class="lst__wrp-cells lst--border lst__row-inner ve-flex w-100"><i>Loading...</i></div></div></div>`;
 
@@ -2033,10 +2189,10 @@ class GetBrewUi {
 
 		$$($wrp)`
 		<div class="mt-1"><i>A list of homebrew available in the public repository. Click a name to load the homebrew, or view the source directly.<br>
-		Contributions are welcome; see the <a href="https://github.com/TheGiddyLimit/homebrew/blob/master/README.md" target="_blank" rel="noopener noreferrer">README</a>, or stop by our <a href="https://discord.gg/5etools" target="_blank" rel="noopener noreferrer">Discord</a>.</i></div>
-		<hr class="hr-1">
-		<div class="ve-flex-v-center mb-1">${$btnAddSelected}</div>
+		Contributions are welcome; see the <a href="${VeCt.URL_BREW}/blob/master/README.md" target="_blank" rel="noopener noreferrer">README</a>, or stop by our <a href="https://discord.gg/5etools" target="_blank" rel="noopener noreferrer">Discord</a>.</i></div>
+		<hr class="hr-3">
 		<div class="lst__form-top">
+			${$btnAddSelected}
 			${$btnFilter}
 			${$btnToggleSummaryHidden}
 			<div class="w-100 relative">
@@ -2056,6 +2212,7 @@ class GetBrewUi {
 			fnSort: this._sortUrlList.bind(this),
 			isUseJquery: true,
 			isFuzzy: true,
+			isSkipSearchKeybindingEnter: true,
 		});
 
 		rdState.list.on("updated", () => $dispCntVisible.html(`${rdState.list.visibleItems.length}/${rdState.list.items.length}`));
@@ -2168,14 +2325,12 @@ class GetBrewUi {
 			brewInfo._brewName,
 			{
 				author: brewInfo._brewAuthor,
-				category: brewInfo._brewPropDisplayName,
+				// category: brewInfo._brewPropDisplayName, // Unwanted in search
 				internalSources: brewInfo._brewInternalSources, // Used for search
 			},
 			{
 				btnAdd,
 				cbSel,
-				added: timestampAdded,
-				modified: timestampAdded,
 				pFnDoDownload: ({isLazy = false} = {}) => this._pHandleClick_btnGetRemote({btn: btnAdd, url: brewInfo.download_url, isLazy}),
 			},
 		);
@@ -2209,6 +2364,9 @@ class GetBrewUi {
 
 	async _pHandleClick_btnAddSelected ({rdState}) {
 		const listItems = rdState.list.items.filter(it => it.data.cbSel.checked);
+
+		if (!listItems.length) return JqueryUtil.doToast({type: "warning", content: "Please select some homebrews first!"});
+
 		if (listItems.length > 25 && !await InputUiUtil.pGetUserBoolean({title: "Are you sure?", htmlDescription: `<div>You area about to load ${listItems.length} homebrew files.<br>Loading large quantities of homebrew can lead to performance and stability issues.</div>`, textYes: "Continue"})) return;
 
 		rdState.cbAll.checked = false;
@@ -2736,6 +2894,10 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 				if (ent.name) return ent.name || this._NAME_UNKNOWN;
 				if (ent.entries) {
 					const name = Renderer.findName(ent.entries);
+					if (name) return name;
+				}
+				if (ent.entriesTemplate) {
+					const name = Renderer.findName(ent.entriesTemplate);
 					if (name) return name;
 				}
 				return ent.abbreviation || this._NAME_UNKNOWN;

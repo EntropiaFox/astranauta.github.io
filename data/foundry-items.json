@@ -102,6 +102,16 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Oversized Longbow",
+			"source": "WDH",
+			"data":  {
+				"damage.parts": [
+					"2d6 + @abilities.str.mod",
+					"piercing"
+				]
+			}
 		}
 	]
 }

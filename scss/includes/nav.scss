@@ -17,15 +17,6 @@
 	.night-mode .nav > li > a {
 		border-color: $rgb-border-grey--night;
 	}
-
-	.nav .caret--right {
-		transform: none;
-	}
-
-	.nav .dropdown-menu--side {
-		top: 100%;
-		left: 0;
-	}
 }
 
 .night-mode {
@@ -62,6 +53,17 @@
 	.nav li.active.open > a:focus,
 	.nav li.active.open > a:hover {
 		background-color: $rgb-off-black;
+	}
+}
+
+@media (max-width: $width-screen-lg) {
+	.nav .caret--right {
+		transform: none;
+	}
+
+	.nav .dropdown-menu--side {
+		top: 100%;
+		left: 0;
 	}
 }
 // endregion

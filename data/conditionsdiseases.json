@@ -405,6 +405,16 @@
 			]
 		},
 		{
+			"name": "Grackle-Lung",
+			"source": "OotA",
+			"page": 54,
+			"entries": [
+				"The constant smog in Gracklstugh causes grackle-lung in living, breathing creatures, resulting in persistent, wracking coughs and the spewing of thick, black phlegm. Whenever a living, breathing creature finishes a long rest in Gracklstugh, it must make a DC 11 Constitution saving throw. On each failed save, the creature gains one level of {@condition exhaustion} as its airways become increasingly clogged. A creature that reaches level 6 {@condition exhaustion} dies, as normal.",
+				"A creature with one or more levels of {@condition exhaustion} brought on by grackle-lung must succeed on a Constitution check to take the {@action Dash} action. If the check fails, the action cannot be attempted. If the creature attempts to cast a spell with a verbal component, it must succeed on a Constitution check or be unable to complete the spell, causing the spell to fail with no effect. The DC for each check is 10 + the creature's current {@condition exhaustion} level.",
+				"If a creature's {@condition exhaustion} level drops below 1, it no longer suffers the effects of grackle-lung and becomes immune to it for the next week. Duergar and derro are inured to grackle-lung, making Constitution checks against it with advantage. Any spell or effect that cures disease also cures grackle-lung, effectively removing all levels of {@condition exhaustion} brought on by the affliction."
+			]
+		},
+		{
 			"name": "Mindfire",
 			"source": "PHB",
 			"page": 227,
@@ -559,16 +569,6 @@
 			"entries": [
 				"Minuscule parasites known as throat leeches infect the water in Chult's forests, swamps, and rivers. Any giant or humanoid that swallows tainted water must succeed on a DC 12 Constitution saving throw or be infested with throat leeches. Immediate symptoms include throat inflammation and shortness of breath. After {@dice 1d6} hours, the infected character gains 1 level of {@condition exhaustion} that can't be removed (except as described below) until the disease is cured. At the end of each long rest, the infected creature must repeat the saving throw. On a failed save, the creature's {@condition exhaustion} increases by 1 level; on a successful save, the creature's {@condition exhaustion} decreases by 1 level. If a successful saving throw reduces the infected creature's level of {@condition exhaustion} below 1, the creature recovers from the disease.",
 				"Explorers can avoid contracting throat leeches by drinking only rainwater or water that's been boiled or magically purified."
-			]
-		},
-		{
-			"name": "Grackle-Lung",
-			"source": "OotA",
-			"page": 54,
-			"entries": [
-				"The constant smog in Gracklstugh causes grackle-lung in living, breathing creatures, resulting in persistent, wracking coughs and the spewing of thick, black phlegm. Whenever a living, breathing creature finishes a long rest in Gracklstugh, it must make a DC 11 Constitution saving throw. On each failed save, the creature gains one level of {@condition exhaustion} as its airways become increasingly clogged. A creature that reaches level 6 {@condition exhaustion} dies, as normal.",
-				"A creature with one or more levels of {@condition exhaustion} brought on by grackle-lung must succeed on a Constitution check to take the {@action Dash} action. If the check fails, the action cannot be attempted. If the creature attempts to cast a spell with a verbal component, it must succeed on a Constitution check or be unable to complete the spell, causing the spell to fail with no effect. The DC for each check is 10 + the creature's current {@condition exhaustion} level.",
-				"If a creature's {@condition exhaustion} level drops below 1, it no longer suffers the effects of grackle-lung and becomes immune to it for the next week. Duergar and derro are inured to grackle-lung, making Constitution checks against it with advantage. Any spell or effect that cures disease also cures grackle-lung, effectively removing all levels of {@condition exhaustion} brought on by the affliction."
 			]
 		}
 	],

@@ -65,6 +65,7 @@ class ClassesPage extends MixinComponentGlobalState(BaseComponent) {
 	async pOnLoad () {
 		this._$pgContent = $(`#pagecontent`);
 
+		await BrewUtil2.pInit();
 		await ExcludeUtil.pInitialise();
 		Omnisearch.addScrollTopFloat();
 		const data = await DataUtil.class.loadJSON();

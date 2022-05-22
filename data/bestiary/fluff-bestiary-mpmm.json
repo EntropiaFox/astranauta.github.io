@@ -37,7 +37,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Abjurer Wizard.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Adult Kruthik",
@@ -57,7 +66,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Adult Kruthik.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Adult Oblex",
@@ -76,7 +94,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Adult Oblex.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Air Elemental Myrmidon",
@@ -84,7 +111,16 @@
 			"_copy": {
 				"name": "Elemental Myrmidons",
 				"source": "MPMM"
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Air Elemental Myrmidon.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Alhoon",
@@ -113,6 +149,15 @@
 						"Destroying a periapt of mind trapping consigns those trapped within it to oblivion, and thus alhoons often work together to create elaborate protections for their periapt and their preferred ritual site. Sometimes a single alhoon is entrusted with the periapt of mind trapping, but this is a dangerous proposition. Anyone who holds the periapt gains advantage on attacks, saving throws, and checks against the alhoons associated with its creation, and those alhoons in turn suffer disadvantage on attacks, saving throws, and checks against the holder. In addition, the holder can telepathically communicate with any sacrificed soul trapped within, and alhoons within the periapt can speak telepathically with the holder. A creature carrying the periapt can't prevent communication from alhoons but can silence trapped souls."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Alhoon.webp"
+					}
+				}
 			]
 		},
 		{
@@ -122,6 +167,15 @@
 				"An alkilith is easily mistaken for some kind of foul fungal growth that appears on doorways, windows, and other portals. These dripping infestations conceal the demonic nature of the alkilith, making what should be a dire warning appear strange but otherwise innocuous. Wherever alkiliths take root, they weaken the fabric of reality, creating a portal through which even nastier demons can invade.",
 				"The appearance of an alkilith in the world heralds a great wrongness and an imminent catastrophe. An alkilith searches for an aperture such as a window or a door around which it can take root, stretching its body around the opening and anchoring itself with a sticky secretion. If left undisturbed, the opening becomes attuned to the Abyss and eventually becomes a portal to that plane (see \"Planar Portals\" in the Dungeon Master's Guide).",
 				"Alkiliths spring from cast-off bits of the hideous, shuddering body of Juiblex. They gradually become self-aware and seek to find their way onto the Material Plane. Since most cultists consider them too risky to summon\u2014they can, after all, create portals to the Abyss\u2014alkiliths must find other escape routes out of their native plane."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Alkilith.webp"
+					}
+				}
 			]
 		},
 		{
@@ -137,6 +191,15 @@
 						"An allip might attempt to share its lore to escape its curse and enter the afterlife. It can transfer knowledge from its mind by guiding another creature to write down what it knows. This process takes days or possibly weeks. An allip can accomplish this task by lurking in the study or workplace of a scholar. If the allip remains hidden, its victim is gradually overcome by frantic energy. A scholar, driven by sudden insights to work night and day, produces reams of text with little memory of exactly what the documents contain. If the allip succeeds, it passes from the world\u2014and its terrible secret hides somewhere in the scholar's text, waiting to be discovered by its next victim."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Allip.webp"
+					}
+				}
 			]
 		},
 		{
@@ -145,6 +208,15 @@
 			"entries": [
 				"Amnizus lead infernal legions into battle and command guardians at the gateways to the Hells. Amnizus are arrogant, bullying, and ruthless, but they're also highly intelligent tacticians and unfailingly loyal\u2014qualities the hellish archdukes value.",
 				"Some amnizus perform the critical task of watching over the River Styx from fortresses along the river's blighted banks, where it flows through Dis and Stygia. They collect the souls arriving in the form of {@creature lemure||lemures}. Lemures have no personalities or memories; they're driven only by the desire to commit evil. The amnizus that patrol here drill the rules of the Nine Hells into the new arrivals' minds and marshal them into legions."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Amnizu.webp"
+					}
+				}
 			]
 		},
 		{
@@ -164,7 +236,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Angry Sorrowsworn.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Annis Hag",
@@ -182,6 +263,15 @@
 						"Thereafter, any creature that holds this iron token can have a whispered conversation with the hag, provided the creature and the hag are within 10 miles of each other. When the hag speaks through the token, the holder can hear the hag's whisper but not any other sounds at the hag's location. Similarly, the hag can hear the holder of the token but not the noise around it.",
 						"A hag can have up to three iron tokens active at one time. As an action, the hag can discern the direction and approximate distance to those active tokens. The hag can deactivate any of those tokens at any distance (no action required), whereupon the token retains its current form but loses its magic."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Annis Hag.webp"
+					}
 				}
 			]
 		},
@@ -202,7 +292,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Apprentice Wizard.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Archdruid",
@@ -255,6 +354,15 @@
 							"{@creature Water elemental}"
 						]
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Archdruid.webp"
+					}
 				}
 			]
 		},
@@ -326,6 +434,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Archer.webp"
+					}
+				}
 			]
 		},
 		{
@@ -335,6 +452,15 @@
 				"Great herds of armanites race across the blasted fields of the Abyss, bent on slaughter and death, driven by unrestrained bloodlust. Whether they're controlled by more powerful demons or charging into battle for the sake of it, armanites use their claws and hooves, as well as their long, whiplike tails, to tear apart foes.",
 				"In the armies of demon lords, armanites perform the role of heavy cavalry, leading the charge and tearing into their enemies' flanks. Armanites fight all the time\u2014even battling each other if they can't find another enemy. They make ideal shock troops, utterly ruthless and bold to the point of stupidity.",
 				"Part of what makes armanites so fearsome is the number of weapons they have at their disposal. They possess dense hooves, claws that end in curling talons, and long tails whose serrated ridges can flense the flesh from a victim, and they use them all to carve through their foes. When they're up against tough formations, they can call on their innate magic to loose bolts of lightning and blow holes in enemy ranks."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Armanite.webp"
+					}
+				}
 			]
 		},
 		{
@@ -343,6 +469,15 @@
 			"entries": [
 				"Enormous and terrifying, astral dreadnoughts haunt the silvery void of the Astral Plane, causing planar travelers to shudder at the very thought of them. Dreadnoughts have been gliding through the astral mists since the dawn of the multiverse, trying to devour all other creatures they encounter.",
 				"Covered from head to tail in layers of thick, spiked plates, a dreadnought has two gnarled limbs that end in magic-enhanced pincer claws. Constellations appear to swirl in the depths of its single eye, and its serpentine tail trails off into the silvery void. Anything it swallows is deposited in a unique demiplane\u2014an enclosed space that contains eons worth of detritus, as well as the remains of travelers. The place has gravity and breathable air, and organic matter decays there. When the dreadnought dies, its demiplane vanishes, and its contents are released into the Astral Plane."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Astral Dreadnought.webp"
+					}
+				}
 			]
 		},
 		{
@@ -362,7 +497,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Aurochs.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Autumn Eladrin",
@@ -381,7 +525,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Autumn Eladrin.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Babau",
@@ -396,6 +549,15 @@
 				},
 				"Demons and devils clash endlessly for control of the Lower Planes. One of these battles pitted the legions of the archdevil Glasya against the screaming hordes of the demon lord Graz'zt. It is said that when Glasya wounded Graz'zt with her sword, the first babaus arose where his blood struck the ground. Their sudden appearance helped rout Glasya and secured Graz'zt's place as one of the preeminent demon lords of the Abyss.",
 				"A babau demon has the cunning of a devil and the bloodthirstiness of a demon. It has leathery skin pulled tight over its gaunt frame and a curved horn protruding from the back of its elongated skull. A babau's baleful glare can weaken a creature, and its talons gleam with acidic slime."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Babau.webp"
+					}
+				}
 			]
 		},
 		{
@@ -407,6 +569,15 @@
 				"Bael prefers to make servants out of his adversaries, and mortals bound to his service earn their wretched place by falling victim to his superior stratagems. Bael gladly spares the lives of those he defeats\u2014if they pledge their souls and service to him. Demons are an exception; although he is willing to corrupt almost any other foes, he always destroys demons he defeats.",
 				"Bael also welcomes mortals into his service if they can provide him with an advantage in his politicking. He recruits savvy individuals and relies on them to represent his interests at Mammon's court, which leaves him free to pursue his battle lust.",
 				"Despite his lack of interest in affairs outside battle, or perhaps because of it, Bael has gained a small following of cultists. Those who worship at his altar call him the King of Hell, and the most deluded believe that he is the lord of all devils. In arcane circles, certain writings, such as the dreaded Book of Fire, say that Bael revealed the invisibility spell to the world, though some scholars of magic hotly refute such claims. Bael is sometimes depicted as a toad, a cat, a human, or some combination of these forms."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Bael.webp"
+					}
+				}
 			]
 		},
 		{
@@ -422,6 +593,15 @@
 						"In the Shadowfell, balhannoths make their lairs near places inhabited by creatures they hunt. They typically haunt well-traveled roads and paths, snatching people who come along. A balhannoth used as a guardian in the Underdark might lair in caves near Underdark passages and guard the ways in and out of its keepers' enclave."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Balhannoth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -432,6 +612,15 @@
 				"Hags have devised a ritual for creating banderhobbs\u2014a hag who knows the ritual might be willing to teach it for the right price. Some other wicked Fey and powerful Fiends also know of the process, as do a few mortal mages.",
 				"During its brief existence, a banderhobb attempts to carry out its creator's bidding. It accomplishes its mission with no concern for the harm it suffers or causes. Its only desire is to serve and succeed. A banderhobb that is assigned to track down a target is particularly dangerous when it is provided with a lock of hair, a personal belonging, or another object connected to the target. Possession of such an item allows it to sense the creature's location from as far as a mile away.",
 				"A banderhobb fulfills its duties until its existence ends. When it expires, usually several days after its birth, it leaves behind only tarry goo and wisps of shadow. Legends tell of an ominous tower in the Shadowfell where the shadows sometimes reform and banderhobbs roam."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Banderhobb.webp"
+					}
+				}
 			]
 		},
 		{
@@ -456,6 +645,15 @@
 					"entries": [
 						"Baphomet's lair is his palace, the Lyktion, which is on the layer of the Abyss called the Endless Maze. Nestled within the twisting passages of the planewide labyrinth, the Lyktion is immaculately maintained and surrounded by a moat constructed in the fashion of a three-dimensional maze. The palace is a towering structure whose interior is as labyrinthine as the plane on which it stands; it is populated by {@creature minotaur||minotaurs}, {@creature goristro||goristros}, and {@creature quasit||quasits}."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Baphomet.webp"
+					}
 				}
 			]
 		},
@@ -519,6 +717,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Bard.webp"
+					}
+				}
 			]
 		},
 		{
@@ -529,6 +736,15 @@
 				"The mission of every barghest, implanted in it by the General of Gehenna, is to consume souls. It eats these souls by devouring the bodies of those it kills, preferring goblinoids.",
 				"A barghest hungers for the day when it can complete its mission, return to Gehenna, and serve the General directly in his yugoloth legions, but it doesn't kill goblinoids indiscriminately. By devouring the souls of goblinoid leaders and other powerful individuals, a barghest earns elevated status in the afterlife. Barghests typically keep their true nature secret, preying on the occasional lone goblin when the opportunity arises, until they reach adulthood and are capable of seeking out stronger prey. A barghest avoids contact with large, open fires.",
 				"Any conflagration larger than its body acts as a gateway to Gehenna and banishes it to that plane, where it is likely to be slain or enslaved by a yugoloth for its failure."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Barghest.webp"
+					}
+				}
 			]
 		},
 		{
@@ -539,6 +755,15 @@
 				"Berbalangs prefer to speak only to dead things, and specifically only to the spirits they call forth in the hope of learning secrets. They record their stories on the bones that once belonged to these creatures, thus preserving the information they gain.",
 				"Pursuit of knowledge drives everything berbalangs do. Although they mostly learn their secrets from the dead, they aren't above spying on the living to take knowledge from them as well. A berbalang can create a spectral duplicate of itself and send the duplicate out to gather information on other planes by watching places where the gods and their servants gather. When a berbalang is perceiving its environment through its duplicate, its actual body is {@condition unconscious} and can't protect itself. Thus, a berbalang typically uses its duplicate for only a short time before returning its consciousness to its body.",
 				"The knowledge that berbalangs accumulate makes them great sources of information for powerful people traveling the planes. Berbalangs ignore petitioners, however, unless they come bearing a choice secret or the bones of a particularly interesting creature. Some githyanki have been able to strike deals with the creatures, using berbalangs to spy on their enemies and to watch over their creches on the Material Plane."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Berbalang.webp"
+					}
+				}
 			]
 		},
 		{
@@ -549,6 +774,15 @@
 				"A bheur hag's skin has the bluish hue of a person who has frozen to death. The hag's hair is white, and the hag is emaciated, with pale eyes surrounded by bruise-colored flesh. A bheur hag carries a twisted gray wooden staff that can be ridden like a flying broom and that augments the hag's magic.",
 				"Bheur hags are attracted to selfish actions inspired by deadly cold, such as murdering a traveler for a winter coat or chopping down a dryad's grove for firewood. These actions are especially sweet to a bheur if they are unwarranted, such as a greedy merchant hoarding excess food for the winter while others starve. Bheurs use their ability to manipulate weather to batter villages with freezing cold, hoping to instill a despair that turns folk against each other.",
 				"In combat, a bheur hag also strives to inspire horror. When near a recently slain foe, the hag may forgo an attack to feed on the corpse. The sight of this butchery is enough to terrify most witnesses."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Bheur Hag.webp"
+					}
+				}
 			]
 		},
 		{
@@ -568,7 +802,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Black Abishai.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Blackguard",
@@ -622,6 +865,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Blackguard.webp"
+					}
+				}
 			]
 		},
 		{
@@ -641,7 +893,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Blue Abishai.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Bodak",
@@ -651,6 +912,15 @@
 				"A worshiper of Orcus can take ritual vows while carving the demon lord's symbol on their chest over the heart. Orcus's power flays body, mind, and soul, leaving behind a sentient husk that consumes life energy near it. Most bodaks come into being in this way, then are unleashed to spread death in Orcus's name.",
 				"Bodaks are extensions of Orcus's will outside the Abyss, serving the demon prince's aims and other minions. Orcus can recall anything a bodak sees or hears. If he so chooses, he can speak through a bodak to address his enemies and followers directly.",
 				"A bodak retains vague impressions of its past life. It seeks out its former allies and enemies alike to destroy them, as its warped soul seeks to erase anything connected to its former life. Minions of Orcus are the one exception to this compulsion; a bodak recognizes them as kindred souls and spares them from its wrath. Anyone who knew the individual before its transformation into a bodak can recognize mannerisms or other subtle clues to its original identity."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Bodak.webp"
+					}
+				}
 			]
 		},
 		{
@@ -661,6 +931,15 @@
 				"Boggles are born out of feelings of loneliness. They materialize when a sapient being feels isolated or abandoned near a place where the Feywild touches the world. For example, a forsaken child might unintentionally conjure a boggle and see them as a sort of imaginary friend. A boggle might also appear in the attic of a lonely widower's house or in a hermit's cave.",
 				"Boggles engage in petty pranks to amuse themselves, using the oil they excrete to cause trouble. A boggle also isn't above breaking dishes, hiding tools, startling cows to decrease their milk, or hiding a baby in an attic. Although a boggle's antics might cause distress and unintentional harm, mischief\u2014not mayhem\u2014is usually the intent. If threatened, a boggle flees rather than stand and fight.",
 				"A boggle can create magical openings to travel short distances or to pilfer items that would otherwise be beyond its reach. To create such a rift in space, a boggle must be adjacent to a space defined by a frame, such as an open window or a doorway, a gap between the bars of a cage, or the opening between the feet of a bed and the floor. The rift is {@condition invisible} and disappears after a few seconds\u2014just enough time for the boggle to step, reach, or attack through it."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Boggle.webp"
+					}
+				}
 			]
 		},
 		{
@@ -671,6 +950,15 @@
 				"The most important part of the transformation ritual occurs when the soul of the aspiring lich migrates to a prepared phylactery. If the wizard is too physically or magically weak to compel the soul into its new home, the soul instead seeks out a master\u2014a person within a few miles who has a hate-filled heart. The soul bonds to that person and becomes enslaved to its new master's wishes. The boneclaw forms near its master, sometimes appearing before that individual to receive orders and other times simply seeking to fulfill its master's desires.",
 				"A boneclaw can serve only an evil creature. If its master finds redemption or sincerely turns away from the path of evil, the boneclaw is destroyed. Otherwise, a boneclaw can't be destroyed while its master lives. No matter what happens to the boneclaw's body, it re-forms within hours.",
 				"In service to its master, a boneclaw delights in causing horrific pain. It lurks like a spider in shadowy recesses, waiting for victims to approach within reach of its long, bony limbs. Once speared, a creature is pulled into the darkness to be sliced apart."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Boneclaw.webp"
+					}
+				}
 			]
 		},
 		{
@@ -695,6 +983,15 @@
 				"Diseased manifestations of animalistic rage, bulezaus embody the violence of nature. Across the Abyss, these demons lurk in deep canyons and lofty crags, and many find a place in the ranks of demon lords' armies, serving as foot soldiers in the Abyss's endless warring.",
 				"Bulezaus crave violence. Their eagerness to kill and willingness to die make them common members of many demon lords' entourages. When not being corralled by larger and tougher demons, bulezaus gather into scrabbling mobs, wrestling and fighting among themselves until a better target comes along or until a stronger demon bullies them into subservience.",
 				"Disfiguring ailments plague bulezaus: crusted eyes, maggots wriggling in open sores, and a reek of rotten meat that follows them wherever they go."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Bulezau.webp"
+					}
+				}
 			]
 		},
 		{
@@ -704,6 +1001,15 @@
 				"The ancient war machines known as cadaver collectors lumber aimlessly across the blasted plains of Acheron until they are called upon by a necromancer to bolster the ranks of a conquering army on the Material Plane. These fearsome Constructs obey their summoners until they are dismissed back to Acheron, but if a summoner comes to a bad end, a cadaver collector might wander the Material Plane for centuries, collecting corpses while searching for a way to return home.",
 				"Cadaver collectors respond to a summons from a mortal only when they are called to the scene of a great battle\u2014either where one is in progress, where one is imminent, or where one once took place. They encase themselves in the armor and weapons of fallen warriors and impale the corpses of those warriors on the lances and other weapons embedded in their salvaged armor.",
 				"Corpses that accumulate on a cadaver collector's shell aren't just grisly battle trophies. A cadaver collector can summon the spirits of these cadavers to battle against its enemies. Although these specters are individually weak, a cadaver collector can call up an almost endless supply of them, if given enough time."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Cadaver Collector.webp"
+					}
+				}
 			]
 		},
 		{
@@ -719,6 +1025,15 @@
 				},
 				"A type of yugoloth, canoloths are fiendish trackers and guardians employed by evil powers. They prefer to enter into contracts to guard valuable treasures and important locations. They always do exactly as asked\u2014never any more, never any less.",
 				"With senses sharp enough to pinpoint the locations of nearby {@condition invisible} creatures, canoloths respond unfailingly to any threat to their charges. Furthermore, they emit a magical distortion field that prevents creatures close to them from teleporting. Canoloths confront intruders with swift and terrible force, projecting long, spiny tongues to grab their foes and drag them close. What happens next depends on the contract. Unless instructed to kill, a canoloth merely holds on to its prisoner, but if given the order to do so, it tears its prey limb from limb."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Canoloth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -741,6 +1056,15 @@
 						"Ordinary folk rarely see a catoblepas, but the creature has such a feared reputation that stories about it are ingrained in the popular culture. Any rumor of a catoblepas taking up residence nearby is taken to be a bad omen, even if the rumor is proven false. In some lands, the silhouette of a catoblepas, with its tail extended over its body and its head held low, is a baleful heraldic figure signifying death or doom.",
 						"Sages say that gods of pestilence and rot created catoblepases as embodiments of their influence, while other stories link them to misfortune. Some such tales claim that swamp-dwelling hags tend catoblepases like cattle, drinking the monsters' milk and using them as guardians or pets. Other legends say that those of impure heart can tame a catoblepas and whisper of malevolent warlocks and wicked knights who ride them into battle."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Catoblepas.webp"
+					}
 				}
 			]
 		},
@@ -771,6 +1095,15 @@
 						"Nearly every part of a cave fisher is useful after the creature has been dispatched. Cave fisher filaments can be woven into rope that is thin, tough, and nearly {@condition invisible}. The creature's shell is used in the manufacture of tools, armor, and jewelry. Its blood is alcoholic and tastes like strong liquor. Several dwarven spirits include cave fisher blood, and some dwarves, especially berserkers, drink the blood straight. Cave fisher meat is edible, tasting much like crab cooked in strong wine.",
 						"While some folk hunt cave fishers to kill them to harvest their filaments, shells, and blood, others capture cave fisher eggs and rear the hatchlings, which can be trained to guard passages or serve as beasts of war. Cave fishers have a natural aversion to fire, since their blood is flammable. As such, Underdark denizens often use the threat of fire when training them."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Cave Fisher.webp"
+					}
 				}
 			]
 		},
@@ -849,6 +1182,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Champion.webp"
+					}
+				}
 			]
 		},
 		{
@@ -860,6 +1202,15 @@
 				"The cult of Lolth still creates chitines as the need arises. Outside the presence of a choldrith, chitines make good workers, and they can be useful if the cult finds an independent chitine colony and want to infiltrate it. If the creation process yields a choldrith, though, the cult destroys the creature.",
 				"As servants of Lolth, chitines love spiders. They rear spiders and similar arachnids, such as cave fishers (also in this book). Chitine colonies erect shrines to Lolth that serve as beacons, attracting spiders and other beings that serve her. Anywhere chitines set up a colony quickly becomes a webshrouded, gloomy, and treacherous place.",
 				"Chitines resemble spiders, but they behave more like social insects such as ants. They are divided into worker and warrior castes; choldriths, when present, occupy the top levels of a colony's hierarchy. Each chitine has a social position that comes with duties related to that rank, and all are expected to sacrifice themselves to protect the colony's choldriths. Every chitine has spinnerets and slowly produces webbing that is used to build floors, walls, structures, objects, and traps that benefit the colony. A warrior might be responsible for crafting web armor (which is as tough as hide or leather), while a group of workers might be tasked to dig pit traps and cover them with fragile webbing disguised with loose dirt to appear as a solid surface."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Chitine.webp"
+					}
+				}
 			]
 		},
 		{
@@ -871,6 +1222,15 @@
 				"A choker's usual method for luring prey involves positioning the body of its latest catch just outside its hiding spot. Whenever it gets hungry, it tears off a few chunks of flesh to feed itself. In the meantime, the corpse serves to entice other curious folk\u2014explorers from the surface world, drow, duergar, or the choker's favorite prey, goblins\u2014to come within reach.",
 				"When a target presents itself, the choker's starfish-shaped hands dart out of its hiding spot, wrap around the victim's throat, and pin the unfortunate creature against the cavern wall. Because its arms are so long, the choker can keep its body deep inside the crevice where it hides, beyond the reach of most normal weapons.",
 				"Chokers tend to set their ambushes alone, rather than working in concert, but where one choker is found, others are likely to be nearby. They communicate through eerie, keening howls that travel long distances through caves and tunnels but are difficult to identify or locate in a typical echo-filled cavern."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Choker.webp"
+					}
+				}
 			]
 		},
 		{
@@ -881,6 +1241,15 @@
 				"When devotees of Lolth created the first chitines, she watched as her followers used arcane magic and demonic powers and invoked her aid for the divine spark needed to ensure the subjects' survival, expecting to see these new abominations dedicated solely to her, but the devotees performed no such ritual. As revenge for the devotees' betrayal, the Spider Queen manipulated the creation rituals so that they sometimes created choldriths instead of chitines.",
 				"At first, these devotees were unaware that the new creatures, which they dubbed choldriths, were signs of Lolth's wrath. Instead, they were pleased, because choldriths could lay eggs that birthed more chitines (and the rare choldrith) and could direct the chitines in their work. But the devotees soon realized their mistake\u2014choldriths belonged to Lolth, body and soul. Choldriths whispered to the chitines of their adoration of the Spider Queen and their enmity against their creators, and led them in a successful revolt.",
 				"Choldriths are born with a mystical connection to Lolth, which gives them divine magic. They also make up the ruling caste of most chitine colonies. A colony can support numerous choldriths, who serve as commanders, priests, and supervisors. The choldriths continually jockey for position, although they rarely confront one another in a way that puts the colony at risk. The colony is ruled by a sovereign, who determines which colony members perform which tasks, including whether a choldrith is permitted to lay eggs. Sometimes a choldrith ruler receives a vision from Lolth that inspires the entire colony into some grand, often violent, action."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Choldrith.webp"
+					}
+				}
 			]
 		},
 		{
@@ -900,7 +1269,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Clockwork Bronze Scout.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Clockwork Iron Cobra",
@@ -919,7 +1297,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Clockwork Iron Cobra.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Clockwork Oaken Bolter",
@@ -938,7 +1325,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Clockwork Oaken Bolter.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Clockwork Stone Defender",
@@ -957,7 +1353,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Clockwork Stone Defender.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Clockworks",
@@ -1085,6 +1490,15 @@
 			"entries": [
 				"Smiling ones are cloud giants who honor and emulate the craftiness and deceit of the deity Memnor above all else. They are tricksters supreme who use sleight of hand, deception, misdirection, and magic in their pursuit of wealth. They also possess a flair for unpredictability and a wicked sense of humor. Smiling ones overstep all bounds of decorum with their behavior, doing and saying things that even other knavish folk consider beneath their dignity.",
 				"Smiling ones take their name from the strange two-faced masks they wear. The smiling half of the face often looks more like a smirk or a triumphant sneer than a pleasant grin. The frowning half represents the displeasure smiling ones feel about cloud giants' place in the ordning\u2014second to storm giants. The masks serve as symbols of smiling ones' devotion and also conceal their wearers' true facial expressions."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Cloud Giant Smiling One.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1104,7 +1518,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Conjurer Wizard.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Corpse Flower",
@@ -1112,6 +1535,15 @@
 			"entries": [
 				"A corpse flower can sprout atop the grave of an evil necromancer or the remains of powerful Undead creatures. Unless it is uprooted and burned while it is still a seedling, the corpse flower grows to enormous size over several weeks, then tears itself free of the earth and begins scavenging Humanoid corpses from battlefields and graveyards. Using its fibrous tentacles, it stuffs the remains into its body to sustain and repair itself. The plant has a malevolent bent and despises the living.",
 				"With or without corpses nested in its body, a corpse flower exudes a stench of decay that can overwhelm the senses of nearby creatures, causing them to become nauseated. The stench, which serves as a defense mechanism, fades {@dice 2d4} days after the corpse flower dies."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Corpse Flower.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1125,6 +1557,15 @@
 						"Mind flayers create cranium rats by bombarding rats with psionic energy. Cranium rats are somewhat smarter than ordinary rats and behave as such. If enough cranium rats come together to form a swarm, they merge their minds into a single intelligence with the accumulated memories of all the swarm's constituents. The rats become smarter as a result, and retain their heightened intelligence for as long as the swarm persists. The swarm also awakens latent psionic abilities implanted within each cranium rat by its mind flayer creators, bestowing upon the swarm psionic powers.",
 						"A single cranium rat uses its natural telepathy to communicate hunger, fear, and other base emotions. A swarm of cranium rats communicating telepathically \"speaks\" as one creature, often referring to itself using the collective pronouns \"we\" and \"us.\" Some mind flayer colonies use cranium rats as spies. The rats invade communities and act as eyes and ears for the colony's elder brain, transmitting their thoughts when they swarm and are within range of the elder brain's telepathy."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Swarm of Cranium Rats.webp"
+					}
 				}
 			]
 		},
@@ -1145,7 +1586,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Darkling.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Darkling Elder",
@@ -1164,7 +1614,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Darkling Elder.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Darklings",
@@ -1187,6 +1646,15 @@
 				"Death kisses fear true beholders, which can easily kill or subdue them. Lacking the egotism of their stronger kin, a death kiss usually submits to the rule of its creator or any other beholder it encounters, but it tries to escape as soon as the beholder is preoccupied.",
 				"A death kiss consumes ingested blood, which it also uses to heal and generate electrical energy inside its body. Terrified of dying from starvation, it obsessively drains even little creatures such as rats, leaving behind a trail of bloodless corpses. When underground, it uses its tentacles as feelers, prodding and examining the environment in all directions. Above ground, it usually keeps its tentacles retracted when on the hunt, then lashes out with them to catch opponents off guard.",
 				"A death kiss lacks the combat finesse and intelligence of a true beholder. In most cases, it simply latches on to its prey with one or more of its tentacles and drains blood until the prey collapses. If it's in a superior position and its foe poses no threat, it might toy with its food, drawing out its prey's death. A death kiss prefers to hunt alone. If it meets another of its kind, it might fight, flee, or team up, depending on its health and pride."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Death Kiss.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1207,7 +1675,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Deathlock.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Deathlock Mastermind",
@@ -1226,7 +1703,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Deathlock Mastermind.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Deathlock Wight",
@@ -1245,7 +1731,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Deathlock Wight.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Deathlocks",
@@ -1278,7 +1773,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Deep Rothé.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Deep Scion",
@@ -1287,6 +1791,15 @@
 				"Deep scions began life as people who were stolen from shore or saved from sinking ships and offered a terrible bargain by an undersea power: surrender, body and soul, or drown. Those who submit are subjected to an ancient ritual widespread among evil aquatic creatures. Its methods are painful and the result never certain, but when it works, the magic transforms an air-breathing person into a shapeshifter that can take on an aquatic form.",
 				"A deep scion emerges from the depths in service to their underwater master, which is likely a kraken or some other ancient being of the deep. While wearing the mind and body of the person they once were as a sort of mask, the creature is bent on fulfilling their master's desires. Sometimes a deep scion returns to their former home\u2014unexpectedly found alive when all hope was lost. At other times the deep scion takes on a new identity. In any case, it is the deep scion's duty to infiltrate the air-breathing world and report back to their master. When set to this task, a deep scion worms their way into the life of an unsuspecting enemy as a new friend, a lover, the perfect candidate for a job, or some other role that enables the minion to carry out their master's commands.",
 				"The training to which a deep scion is subjected rids it of empathy for those they spy on. Though a deep scion might behave as though infatuated, laugh at the joke of a friend, or appear incensed at some injustice, each of these acts is artificial to the deep scion, a means to an end. The creature believes that their true form is the shape they take when they return to the sea they think of as home. Ironically, however, a deep scion that is killed when in their piscine form is stripped of the magic that enabled them to transform, leaving behind the corpse of the person the deep scion once was."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Deep Scion.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1324,6 +1837,15 @@
 						"Demogorgon makes his lair in a palace called Abysm, found on a layer of the Abyss known as the Gaping Maw. Demogorgon's lair is a place of confusion and duality; the portion of the palace that lies above water takes the form of two serpentine towers, each crowned by a skull-shaped minaret. There, Demogorgon's heads contemplate the mysteries of the arcane while arguing about how best to obliterate their rivals. The bulk of this palace extends deep underwater, in chill and darkened caverns."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Demogorgon.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1342,6 +1864,15 @@
 				"Fractious in groups and individually weak, derro would have died out long ago but for two elements of their character. They are cautious and distrustful, which serves them well as they navigate the dangers of the Underdark and its societies. They also have a stronger-than-normal tendency to develop sorcerous power. Individuals who do so usually serve as leaders and are known as savants.",
 				"Grandiose fantasies and rampant fanaticism have obscured derro's true origin, even among themselves. Most dwarves don't recognize derro as kin, but the legends that derro tell about their people and the story that duergar believe share a grain of truth. According to the histories of some duergar, derro are descended from a dwarven community that was left behind when the others escaped the rule of mind flayers. These remnants were so distorted by the mind flayers' psionic power that the dwarves became Aberrations.",
 				"Derro tell their own stories of flight and survival in the Underdark, in which mind flayers aren't always the enemy. They tell of two brothers, the gods Diirinka and Diinkarazan, and of how Diirinka cleverly betrayed his sibling so that he could steal magical power from the evil they escaped. The danger the brothers are said to face in this legend varies, depending on whatever foe the savants want to lead their people against, yet the essence of the story remains the same: a lesson of survival at any price and an example of how deceitfulness and cruelty can be virtues."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Derro Savant.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1359,6 +1890,15 @@
 				"Of all the abominations unleashed by {@creature Orcus|MPMM}, devourers are among the most feared. These tall, mummy-like Undead wander the planes, consuming souls and spreading Orcus's creed of replacing all life with everlasting death.",
 				"A lesser demon that proves itself to Orcus might be granted the privilege of becoming a devourer. The Prince of Undeath transforms such a demon into an 8-foot-tall, desiccated biped with a hollowed-out ribcage, then fills the new creature with a hunger for souls. Orcus grants each new devourer the essence of a less fortunate demon to power the devourer's first foray into the planes. Most devourers remain in the Abyss or on the Astral or Ethereal Plane, pursuing Orcus's schemes and interests in those realms. When Orcus sends devourers to the Material Plane, he often sets them on a mission to create, control, and lead a plague of Undead. {@creature skeleton||Skeletons}, {@creature zombie||zombies}, {@creature ghoul||ghouls}, {@creature ghast||ghasts}, and {@creature shadow||shadows} are particularly attracted to the presence of a devourer.",
 				"Devourers hunt Humanoids with the intent of consuming them body and soul. After a devourer brings a target to the brink of death, it pulls the victim's body in and traps the creature within its own ribcage. As the victim tries to stave off death (usually without success), the devourer tortures its soul with telepathic noise. When the victim expires, it undergoes a horrible transformation, springing forth from the devourer's body to begin its new existence as an Undead servitor of the monster that spawned it."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Devourer.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1375,6 +1915,15 @@
 				},
 				"A kind of yugoloth, dhergoloths rush into battle like whirlwinds of destruction, lashing out with the five sets of claws that extend from their squat, barrel-shaped bodies. They take contracts to put down uprisings, clear out rabble, and eliminate scouts and skirmishers, and they revel in the butchery they create, their gleeful laughter rising above their victims' screams.",
 				"Since dhergoloths are little more than brutes, employers must use caution when instructing them. They can handle simple orders that don't take a lot of time to resolve. When given anything complex to do, however, they either forget what they're told or don't listen in the first place, and then bungle the task that was set for them."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Dhergoloth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1402,7 +1951,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Dire Troll.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Diviner Wizard",
@@ -1421,7 +1979,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Diviner Wizard.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Dolphin",
@@ -1440,7 +2007,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Dolphin.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Dolphin Delighter",
@@ -1460,7 +2036,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Dolphin Delighter.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Dolphins",
@@ -1483,6 +2068,15 @@
 				"A draegloth is an ogre-sized, four-armed biped with purple skin and pale hair. Two of its arms are muscular, tipped with sharp claws; the other two are the size and shape of an elf's arms, capable of delicate movements. Although the creature is heavily muscled, it is graceful like an elf. Its bestial face features glowing red eyes, a doglike snout, and a mouth full of sharp teeth.",
 				"Among the drow noble houses of Menzoberranzan in the Forgotten Realms, a high priestess's successful creation of a draegloth is seen as a sign of Lolth's favor toward her house\u2014and a sign of the demon lord's disregard for the family's rivals, who were not thus gifted. The creation prompts the leaders of the house to begin crafting new plans to strike at its rivals when the draegloth is fully grown. These plans use the draegloth in a significant role, because its abilities can turn the tide in a battle against a house that doesn't have a draegloth of its own.",
 				"Although draegloths plays an important part in the plans of Lolth's cult, a draegloth can't rise above the status of a favored servant to a priest in that cult. Before a draegloth is given any duties, it receives instruction in accepting the role set for it and not challenging authority. Most draegloths fiercely resent being given orders, but thanks to their training, they typically take out their frustration on their creator's enemies, rather than on their creator. A draegloth that can't suppress its ambitions might abandon its creator and strike out on its own. Whether these rebellious draegloths are part of Lolth's plan for sowing chaos is unclear."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Draegloth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1490,6 +2084,15 @@
 			"source": "MPMM",
 			"entries": [
 				"Drow spellcasters who seek to devote themselves wholly to {@deity Lolth|Drow|MTF}, the Spider Queen, sometimes walk the sinister path of the arachnomancer. By offering up body and soul to Lolth, they gain tremendous power and a supernatural connection to the ancient spiders of the Demonweb Pits, channeling magic from that dread place."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Drow Arachnomancer.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1499,6 +2102,15 @@
 				"Nearly every priestess of {@deity Lolth|Drow|MTF}, including the powerful {@creature drow matron mother|MPMM} in this book, takes an attractive drow as consort. Chosen as much for beauty as for magical might, a drow favored consort can hold their own in both conversation and combat. Combining the roles of advisor, protector, and beloved, some favored consorts are content with a supporting role, while more ambitious consorts aspire to be the power behind the throne\u2014or even to claim the throne themselves.",
 				"Those favored consorts who prove their cunning gain the ear, and perhaps even the heart, of their priestess and are relied on to provide useful advice. No position of consort is assured for long, though; Lolth's priestesses are notoriously fickle, and a consort must often contend with rivals.",
 				"Some favored consorts work behind the scenes to undermine the evils encouraged by Lolth. Others can be found in Underdark cities free of Lolth's influence, where these powerful spellcasters apply their might toward ending her tyranny."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Drow Favored Consort.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1514,6 +2126,15 @@
 				},
 				"A drow house captain leads the troops of an Underdark faction, whether defending a stronghold or leading forces against enemies. These officers make extensive study of strategy and tactics to become effective leaders in battle.",
 				"Among Lolth's devotees in the city of Menzoberranzan in the Forgotten Realms, each noble house entrusts the leadership of its military forces to a house captain, who is typically the first or second son of a drow matron mother. Elsewhere drow house captains fight in the war against Lolth, often allying with duergar and others who also wish to rid their subterranean world of that god's malevolence."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Drow House Captain.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1521,6 +2142,15 @@
 			"source": "MPMM",
 			"entries": [
 				"Lolth's worshipers expect treachery\u2014the Spider Queen encourages it, after all. A certain amount of backstabbing and double-crossing can be managed, but too much can undermine an entire community. To keep some semblance of order and to root out traitors, priestesses of Lolth employ inquisitors. Inquisitors are chosen from the ranks of the priesthood, and their authority is equaled only by that of the {@creature drow matron mother|MPMM|drow matron mothers} (also in this book) of the noble houses. Anyone they decide is at odds with the hierarchy faces painful interrogation and usually an excruciating death."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Drow Inquisitor.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1546,6 +2176,15 @@
 						"Any temple of {@deity Lolth|Drow|MTF} also functions as a matron mother's lair while she is inside it, unless she has renounced Lolth or another matron mother is present. When two or more matron mothers gather within a temple of their goddess, none of them can use it as their lair."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Drow Matron Mother.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1554,6 +2193,15 @@
 			"entries": [
 				"Drow shadowblades steal down the dim passages of the Underdark, bound on errands of mayhem. They protect enclaves and Underdark cities from enemies and track down thieves who make off with prized treasures. In the city of Menzoberranzan in the Forgotten Realms, noble houses often employ shadowblades to eliminate rivals from other houses. In communities free of Lolth's sway, they serve as spies tasked with foiling the plots of that demon lord's cult. In any role they take on, they move undetected until the moment they attack\u2014and then they are the last thing their victims see.",
 				"A shadowblade gains their powers over shadow via a ritual in which they kill a shadow demon and mystically prevent it from re-forming in the Abyss, siphoning its essence into themselves."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Drow Shadowblade.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1637,7 +2285,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Duergar Hammerer.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Duergar Kavalrachni",
@@ -1675,7 +2332,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Duergar Mind Master.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Duergar Screamer",
@@ -1713,7 +2379,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Duergar Soulblade.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Duergar Stone Guard",
@@ -1732,7 +2407,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Duergar Stone Guard.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Duergar Warlord",
@@ -1751,7 +2435,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Duergar Warlord.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Duergar Xarrorn",
@@ -1770,7 +2463,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Duergar Xarrorn.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Dybbuk",
@@ -1778,6 +2480,15 @@
 			"entries": [
 				"Dybbuks are demons that terrorize mortals on the Material Plane by possessing corpses and giving them a semblance of life, after which the demons use them to engage in a range of sordid activities.",
 				"In their natural form, dybbuks appear as translucent flying jellyfish, trailing long tentacles as they move through the air. They rarely travel in this fashion, however. Instead, a dybbuk possesses a suitable corpse as a vehicle, rousing the body from death. Dybbuks delight in terrorizing other creatures by making their host bodies behave in horrifying ways\u2014throwing up gouts of blood, excreting piles of squirming maggots, and contorting their limbs in impossible ways as they scuttle across the ground."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Dybbuk.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1786,13 +2497,31 @@
 			"_copy": {
 				"name": "Elemental Myrmidons",
 				"source": "MPMM"
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Earth Elemental Myrmidon.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Eidolon",
 			"source": "MPMM",
 			"entries": [
 				"To protect sites they deem holy, gods often rely on eidolons, ghostly spirits bound to safeguard a sacred place. Forged from the souls of those with unwavering devotion, eidolons stalk temples and vaults to ensure that no enemy defiles, damages, or plunders these sites. If an enemy sets foot inside a warded location, the {@creature eidolon|MPMM} plunges into a {@creature sacred statue|MPMM|statue} specially prepared to house its soul; it then animates this effigy and uses the statue to drive out the intruders."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Sacred Statue.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1848,6 +2577,15 @@
 						"An elder brain's ambitions are always tempered by its relative immobility. Although its telepathic senses can reach for miles, moving anywhere is always a dangerous proposition. If forced outside its brine pool, an elder brain swiftly expires, and transporting an elder brain in its pool through confining and tortuous subterranean tunnels frequently proves difficult or impossible."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Elder Brain.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1867,13 +2605,31 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Elder Oblex.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Elder Tempest",
 			"source": "MPMM",
 			"entries": [
 				"Terrifying storms manifest in the bodies of elder tempests. Beings carved from clouds, wind, rain, and lightning, elder tempests assume the shape of serpents that slither through the sky. They drown the land beneath them with rain and stab the earth with lances of lightning. Punishing winds scream around them as they fly, feeding the chaos they create."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Elder Tempest.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1925,7 +2681,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Evoker Wizard.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Female Steeder",
@@ -1933,7 +2698,16 @@
 			"_copy": {
 				"name": "Steeders",
 				"source": "MPMM"
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Female Steeder.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Fire Elemental Myrmidon",
@@ -1941,7 +2715,16 @@
 			"_copy": {
 				"name": "Elemental Myrmidons",
 				"source": "MPMM"
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Fire Elemental Myrmidon.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Fire Giant Dreadnought",
@@ -1958,6 +2741,15 @@
 				"Those whose primary virtue is brawn are usually consigned to the lowliest of tasks, such as working forge bellows or moving coal. However, the strongest among these can excel at and gain rank through a specialized role: the dreadnought.",
 				"Dreadnoughts are massively powerful fire giants who wield two huge shields like plow blades. These shields bear spikes on their exterior and have hollow interiors into which the dreadnought pours hot coals at the first sign of danger. Armed with these two shields, the dreadnought can present a fiery wall to any attacker. When the dreadnought has finished, often all that is left of a foe is a smoking smear on the floor.",
 				"When not called on to fight, dreadnoughts maintain their strength by using their shields to shove huge quantities of coal, stone, or ore about the foundry. Occasionally, dreadnoughts are called on by their superiors to accompany a war or diplomatic delegation and use their fierce and intimidating demeanor to strengthen the delegation's position."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Fire Giant Dreadnought.webp"
+					}
+				}
 			]
 		},
 		{
@@ -1996,7 +2788,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Firenewt Warrior.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Firenewts",
@@ -2026,6 +2827,15 @@
 						"A flail snail shell can also be used to make a {@item robe of scintillating colors}. The shell is ground and added to the dye applied to the fabric. The powder is also a material component of the ritual that enchants the robe."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Flail Snail.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2035,6 +2845,15 @@
 				"When the demon lord Yeenoghu wants to create a particularly fearsome war band leader, he transforms an excep tionally strong and vicious gnoll into a demonic warrior known as a flind.",
 				"A war band of demon-worshiping gnolls typically contains only one flind, and that creature sets the war band's path. Because of its special connection to Yeenoghu, a flind uses demonic insight to guide the gnolls toward weak prey ripe for slaughter.",
 				"Unlike other leaders who might skulk behind their minions, a flind leads the charge in battle. Its flail causes wracking pain, paralysis, and disorientation in those it strikes."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Flind.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2060,6 +2879,15 @@
 						"The challenge rating of Fraz-Urb'luu is 24 (62,000 XP) when he's encountered in his lair."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Fraz-Urbluu.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2070,6 +2898,15 @@
 				"Froghemoths are creatures not of this world. A journal purportedly written long ago by the wizard Lum describes strange, cylindrical chambers of metal buried in the ground from which froghemoths emerged, but no reliable reports of the location of such places exist.",
 				"Every few years, a froghemoth can lay a fertile egg without mating. The froghemoth cares nothing for its egg and might eat the hatchling. A young froghemoth's survival thus depends on its parent leaving it behind in indifference. A newborn froghemoth grows to full size over a period of months by indiscriminately preying on other creatures in its swampy domain. It learns to hide its enormous body in murky pools, keeping only its eyestalk above water to watch for passing creatures. When food comes within reach, the froghemoth erupts from its pool, tentacles and tongue flailing. It can grab several targets at once; it wraps its tongue around one and pulls it in to be devoured while holding the rest at bay.",
 				"If {@creature bullywug||bullywugs} come across a froghemoth, the bullywugs may treat the froghemoth as a god and do all they can to coax the monster into their den. A froghemoth can be tamed (after a fashion) by offering it food, and bullywugs can communicate with it on a basic level, so the creature might eat only a few bullywugs before following the rest. The bullywugs gather food as tribute for it, provide it with a comfortable lair, protect it from harm, and try to ensure that any of its offspring reach maturity."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Froghemoth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2079,6 +2916,15 @@
 				"To hold its place or rise within the ordning, a frost giant must routinely face mighty foes in single combat. Some seek out magic that will aid them, but enchanted objects can be taken or lost. True greatness relies on personal prowess. Faced with this truth, a frost giant might seek a supernatural gift from Vaprak the Destroyer.",
 				"Vaprak is a ferocious god of strength and hunger also worshiped by some ogres and trolls. He likes to tempt frost giants with dreams of glory followed by nightmares of bloody cannibalism. Those who don't shrink from such visions or report them to priests of Thrym receive more of the same. If a frost giant comes to relish these dreams and nightmares, as some do, Vaprak sets a troll upon a sacred quest to find the frost giant and meet the giant in secret. The troll offers up its own body to be devoured in Vaprak's name. Only the boldest and most determined frost giants can finish such a gory feast.",
 				"After devouring the troll sent by Vaprak, bones and all, a frost giant becomes an everlasting one, gaining tremendous strength, an ill temper, and a troll's regenerative ability. With these gifts, the frost giant can swiftly claim the title of jarl and easily fend off rivals for decades. However, if the frost giant doesn't give enough honor to Vaprak or fails to heed Vaprak's visions, injuries the frost giant sustains heal wrong, resulting in discolored skin; warty scars; and vestigial body parts, such as extra digits, limbs, and even heads. The touch of Vaprak can no longer be hidden then, and the everlasting one is either killed or exiled by their clan. Sometimes small communities of everlasting ones gather and even reproduce, passing the \"blessing\" and worship of Vaprak from one generation to the next."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Frost Giant Everlasting One.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2090,6 +2936,15 @@
 				"Although frost salamanders can burrow their way through loose soil, they prefer to dig into ice. They roll around in piles of broken chunks of ice, allowing it to scratch their backs as they grind it down. This habit leads them to create extensive networks of ice caves, which become ever larger as they claw fresh chunks of ice from the walls of their lairs.",
 				"A frost salamander that dwells in a lair for a while carves out enough space to allow a small army to camp within. Inexperienced travelers who come across these caves see them as a welcome shelter, though they are anything but. Frost salamanders greedily devour any prey foolhardy enough to try sleeping in their lairs.",
 				"On rare occasions, {@creature frost giant||frost giants} capture and tame these creatures, using them to burrow into the ice to help create outposts and fortresses."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Frost Salamander.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2100,6 +2955,15 @@
 				"A gauth can survive on meat but prefers to sustain itself with power drained from magic objects. If starved of magic for several weeks, it is forced back to its home plane, so it constantly seeks new items to drain. A gauth might employ creatures to bring it items that can provide it with sustenance.",
 				"When the ritual to summon a spectator goes wrong, a gauth might push itself through the flawed connection, arriving immediately or several minutes later. It might present itself as a beholder to ignorant creatures in an attempt to intimidate them, or as a spectator to its summoner in order to drain magic items it is expected to guard.",
 				"A {@creature beholder} usually drives away or kills any gauths that enter its territory, but it might choose to force them to serve it as lieutenants. Gauths are less xenophobic than beholders, so they might form small clusters and work together, though they're just as likely to ignore each other entirely."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Gauth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2109,6 +2973,15 @@
 				"A gazer is a tiny manifestation of the dreams of a beholder. It resembles the beholder who dreamed it into existence, but its body is only 8 inches wide and it has only four eyestalks. It follows its creator like a devoted, aggressive puppy, and sometimes small packs of these creatures patrol their master's lair for vermin to kill and lone creatures to harass.",
 				"A gazer can't speak any languages but can approximate words and sentences it hears, mimicking them in a high-pitched, mocking manner. Beholders find gazers amusing and tolerate their presence like spoiled pets. Some beholders with wizard minions insist they take a gazer as a familiar because the beholders can see through the eyes of these creatures.",
 				"A wild gazer (one living separately from a beholder) is territorial, eats bugs and little animals, and is known for playing with its food. A lone wild gazer avoids picking fights with creatures that are Medium or larger, but a pack of them might take on larger prey. A gazer might follow the folk in its territory, noisily mimicking their speech and generally being a nuisance, until they leave the area, but it flees if confronted by something it can't kill."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Gazer.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2130,6 +3003,15 @@
 					"entries": [
 						"Geryon has recently reclaimed his ancient fortress, Coldsteel, a sprawling complex that rises from the icy center of Stygia. He roams the passages, spitting oaths of vengeance against Asmodeus and hatching schemes to reclaim his standing from Levistus. The challenge rating of Geryon is 23 (50,000 XP) when he's encountered in his lair."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Geryon.webp"
+					}
 				}
 			]
 		},
@@ -2153,6 +3035,15 @@
 				},
 				"These fierce and majestic monsters exhibit attributes of both birds and reptiles, but are truly neither. Giant striders have a supernatural affinity to fire and can spit gouts of flame at distant enemies. They are most often found in tropical, volcanically active areas or regions that similarly provide sources of both water and extreme heat.",
 				"Firenewts prize giant striders and seek to adopt them whenever possible. They provide for stables of these creatures in their lairs, and in return, the giant striders voluntarily serve as mounts for firenewt warriors (in this book)."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Giant Strider.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2177,6 +3068,15 @@
 						"Every other keg of gunpowder within 20 feet of an exploding keg has a {@chance 50|50 percent} chance of also exploding. Check each keg only once per turn, no matter how many other kegs explode around it."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Giff.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2190,6 +3090,15 @@
 				"Girallons' strange appearance and attraction to ruins lead sages to believe they were created through magic to serve as guardians for some lost empire. When that empire fell ages ago, girallons turned feral and spread out across the world.",
 				"Numerous creatures have tried to tame, subjugate, or cooperate with the monsters. For instance, some forest-dwelling peoples capture girallons and train them to serve as sentinels. Recognizing that girallons are peaceful among their own kind, other folk have learned how to approach a group's leader, offering food and other gifts in hopes of establishing an alliance with the creatures.",
 				"Girallons that are well treated might be willing to serve as guards, though they lack the intelligence to take on tasks more complicated than attacking strangers who enter their domain. A girallon that's captured when young and carefully trained could end up in a seemingly unlikely place, such as guarding the entrance to a city's thieves' guild. Those who would keep a girallon must always be wary, however, because the creature could revert to its predatory nature at any time."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Girallon.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2222,7 +3131,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Githyanki Gish.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Githyanki Kith'rak",
@@ -2241,7 +3159,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Githyanki Kithrak.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Githyanki Supreme Commander",
@@ -2260,7 +3187,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Githyanki Supreme Commander.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Githzerai",
@@ -2300,7 +3236,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Githzerai Anarch.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Githzerai Enlightened",
@@ -2319,7 +3264,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Githzerai Enlightened.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Gnoll Flesh Gnawer",
@@ -2338,7 +3292,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Gnoll Flesh Gnawer.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Gnoll Hunter",
@@ -2374,6 +3337,15 @@
 				"Sometimes the gnolls of Yeenoghu turn against each other, perhaps to determine who rules a war band or because of extreme starvation. Even under ordinary circumstances, gnolls that are deprived of victims for too long struggle to control their hunger and violent urges. Eventually, they fight among themselves.",
 				"The survivors devour the flesh of their slain comrades but preserve the bones. Then, by invoking rituals to Yeenoghu they bring the remains back to a semblance of life in the form of a gnoll witherling.",
 				"Witherlings travel with their comrades and try to kill anything in their path. They don't eat and aren't motivated by hunger, leaving more flesh for the rest of the war band."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Gnoll Witherling.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2459,6 +3431,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Gray Render.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2484,6 +3465,15 @@
 						"Graz'zt's lair is a den of ostentation and hedonism. It is adorned with finery and decorations so decadent that even the wealthiest of mortals would blush at the excess. Within Graz'zt's lairs, devotees and subjects alike are forced to slake Graz'zt's thirst for pageantry."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Grazzt.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2503,7 +3493,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Green Abishai.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Grung",
@@ -2584,6 +3583,15 @@
 				"Tiamat's cult practices the ritual to create guard drakes, as do other groups that are skilled in arcana and associated with Dragons. The ritual requires a chromatic dragon's aid; the dragon typically helps to reward its allies or worshipers with a valuable servant.",
 				"The ritual, which takes several days, requires 10 pounds of fresh dragon scales (donated by the dragon allied with the group), a large amount of fresh meat, and an iron cauldron. When the process is complete, a Small egg emerges from the cauldron and hatches within a few hours.",
 				"A newly hatched guard drake imprints upon the first creature that feeds it (usually the one planning to train it), establishing an aggressive but trusting bond with that individual. A guard drake is fully grown within two to three weeks and can be trained in the same length of time. It is the equivalent of a guard dog in terms of what it can be trained to do. A guard drake resembles the type of dragon it was created from, but with a wingless, squat, muscular build. A drake can't reproduce, nor can its scales be used to make other guard drakes."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Guard Drake.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2600,6 +3608,15 @@
 				"Hellfire engines are semiautonomous bringers of destruction. Amnizus (in this book) and other devilish generals hold them in reserve until they are needed to repel an incursion by demons or crusading mortals, but occasionally one of these magical-mechanical hybrids gets loose, driven berserk by its need to destroy.",
 				"Hellfire engines take many forms, but all of them have one purpose: to mow down foes in waves. They are incapable of subtlety or trickery, but their destructive capability is immense.",
 				"Mortal creatures slain by hellfire engines are doomed to join the infernal legions in mere hours unless powerful magic-wielders intervene on their behalf. The archdukes of the Nine Hells would like nothing better than to modify this magic so it works against demons, too, but that discovery has eluded them so far."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Hellfire Engine.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2616,6 +3633,15 @@
 						"The goblinoid peoples\u2014goblins, hobgoblins, and bugbears\u2014first appeared in the Feywild millennia ago, and they resided there until the god Maglubiyet conquered them. They then spread throughout the multiverse, with many of them ending up on the worlds of the Material Plane. Most goblinoids encountered on those worlds are members of families that have been away from the Feywild for centuries, and over time, those lineages have become Humanoid. Fey goblinoids, who still bear the magic of the Feywild, are rare on the Material Plane but not unheard of. Hobgoblin devastators are examples of such Fey folk, as are hobgoblin iron shadows and nilbogs (also in this book)."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Hobgoblin Devastator.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2624,6 +3650,15 @@
 			"entries": [
 				"Iron shadows are hobgoblin martial artists who serve fey and mortal courts as secret police, scouts, and assassins. They spy to ferret out treachery, rebellion, and betrayal and deal with it ruthlessly. Iron shadows possess agility and stamina matched only by their ironclad commitment to the will of their masters. They wield a deadly combination of unarmed fighting techniques and shadow magic to deceive and defeat their foes. While on secret missions, they wear masks crafted to resemble monsters, both to conceal their identities and to strike fear into their foes.",
 				"An iron shadow is usually recruited from the ranks of the Feywild's hobgoblin armies or from among the hobgoblins who have resided in the Material Plane for centuries. A candidate for admission undergoes a series of tests designed to reveal any potential for treachery. Those who fail are slain, while those who pass receive secret training in the arts of magic and stealth. This indoctrination is a slow and arduous process; many aspirants don't finish it, and years might go by during which the iron shadows welcome no new members into their ranks. When a recruit's training is complete, they are tasked with conducting assassinations and spy missions."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Hobgoblin Iron Shadow.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2640,6 +3675,15 @@
 				"A far-off wail precedes the sight of a howler. Even at a distance, listeners' minds cringe at the sound and fill with horror at the realization that the noise is drawing closer. When howlers go on the prowl, courage isn't enough to stand up against them.",
 				"These nightmare creatures are native to Pandemonium, but they can be found on most of the Lower Planes, where they are trained as war hounds. Howlers can be domesticated, after a fashion, but they respond only to brutal training in which they are forced to recognize the trainer as the pack's undisputed leader. A trained pack then follows its leader without hesitation. Howler packs course over the battlefields of the Blood War and also serve evil mortals powerful and vicious enough to command their loyalty.",
 				"Howlers rely on speed, numbers, and their mind-numbing howling to corner prey before they tear it apart. Their howls flood the minds of their victims, making complex thought impossible. Listeners can do little more than stare in horror and stumble around the battlefield in a search for safety. Fiends especially prize howlers for this reason, because for a few crucial moments in a battle, their howls can neutralize an enemy."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Howler.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2659,7 +3703,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Hungry Sorrowsworn.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Hutijin",
@@ -2669,6 +3722,15 @@
 				"Across the Hells, Hutijin's name fills lesser devils with fear and loathing, for this duke commands two companies of {@creature pit fiend|MM|pit fiends}. With such soldiers under his command, Hutijin can easily crush any rival who gets in his way while also defending Mephistopheles against armies seeking to contest his dominion. Hutijin has amassed enough power to challenge the lord of Cania, but he has never wavered in his support for his master\u2014suggesting, perhaps, that Mephistopheles has some hold over him.",
 				"Outside the Nine Hells, Hutijin is a relatively obscure figure, known only to the most learned infernal scholars. He has no cults of his own, and his servants are few in number. The reason is simple: Hutijin hates mortals. When summoned from the Hells, he repays the instigator with a long and agonizing death.",
 				"Mephistopheles forbids Hutijin from making too many forays into the Material Plane, since the duke's absence leaves him vulnerable to his rivals. Other archdevils know how much Hutijin despises mortals and have secretly disseminated the means to call him from the Nine Hells in the hope of distracting the archdevil long enough for them to assail Mephistopheles. Hutijin sends devils into the Material Plane to eradicate mention of his name and destroy those who have learned of him, but the summonings still occur. When called from his post, he negotiates as quickly as he can, usually closing a deal with little cost to the summoner. However, once the deal has been fulfilled, Hutijin repays the interruption with death."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Hutijin.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2677,6 +3739,15 @@
 			"entries": [
 				"Like the thought-stealing waters of the River Styx they inhabit, hydroloths filch the memories of creatures they attack, stealing away thoughts for delivery to whatever master they happen to serve. Hydroloths also savor finding lost things, especially those that have been swallowed up in the deeps.",
 				"For amphibious assaults or underwater conflicts, hydroloths have no equal among yugoloths. They sometimes hire themselves out to attack and scuttle ships and raid coastal settlements."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Hydroloth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2696,7 +3767,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Illusionist Wizard.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Juiblex",
@@ -2719,6 +3799,15 @@
 						"Juiblex's challenge rating is 24 (62,000 XP) when encountered in its lair."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Juiblex.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2739,6 +3828,15 @@
 						"When viewed from the outside, a ki-rin's lair is indistinguishable from a natural site, and the entrance is difficult for visitors to find and reach. Inside, the lair is a serene and comfortable place, its ambiance a mix between palace and temple. If the ki-rin has taken creatures into its service, its lair doubles as a sacred site wherein the ki-rin not only rests but also teaches of holy mysteries."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Ki-rin.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2754,6 +3852,15 @@
 				},
 				"Kobold dragonshields are champions of their people. Almost all dragonshields begin life as normal kobolds, then are chosen by a dragon and invested with power for the purpose of protecting the dragon's eggs, but once every few years a kobold hatches with an innate version of the dragonshield's abilities. In either case, a dragonshield is skilled at hand-to-hand combat and bears a shield made of dragon scales, as well as scars from desperate fights.",
 				"Dragonshields know they have a place of honor among those who venerate dragons, but\u2014being kobolds at heart\u2014most of them feel unworthy of their status and are desperate to prove themselves deserving of it. But they also have the ability to rally in the face of certain death, inspiring others to follow them into battle."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Kobold Dragonshield.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2761,6 +3868,15 @@
 			"source": "MPMM",
 			"entries": [
 				"A kobold inventor builds improvised weapons to gain an advantage in combat. These weapons last for only one or two attacks before they break and typically work only for the inventor, but they might be surprisingly effective in the meantime. The weapons don't have to be lethal\u2014often one serves its purpose if it distracts, scares, or confuses a creature long enough for the inventor to kill that foe."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Kobold Inventor.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2769,6 +3885,15 @@
 			"entries": [
 				"Kobold scale sorcerers have an innate talent for arcane magic, making them highly valuable members of their communities. These sorcerers typically fill the role of advisor, and when threatened, a scale sorcerer lashes out with colorful magic.",
 				"A scale sorcerer who resides in or near a dragon's lair may serve as that dragon's diplomat and mouthpiece\u2014anticipating the dragon's needs, issuing commands to others on the dragon's behalf, and reporting information back to the dragon. Such scale sorcerers often wear artificial wings, which are a sign of their draconic office. Scale sorcerers are just as awed by and respectful of dragons as others who venerate these mighty creatures, but they know that duty requires them not to fawn over their master at all times. They also understand that their frequent proximity to their dragon master means they would probably be the first to die if their master became angry or displeased, so they frantically maintain a balance between adoration and terror in their behavior toward their master."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Kobold Scale Sorcerer.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2785,6 +3910,15 @@
 						"Korreds have hair all over their bodies, but the hair that grows from their heads is magical. When cut, it transforms into whatever material was used to cut it. Korreds use iron shears to cut lengths of this magical hair, then twist the strands together to create iron ropes that they can manipulate, animating them to bind or snake around creatures and objects. Korreds take great pride in their hair and equally great offense at anyone who attempts to cut it without permission."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Korred.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2793,6 +3927,15 @@
 			"entries": [
 				"A kraken can seem godlike to folk who have faced its fury. Those who mistake its might for divine power and those who seek to appease the monster through veneration are sometimes rewarded with power, to serve thereafter as kraken priests.",
 				"Every kraken priest undergoes a change in appearance that reflects the kraken's influence, although each one differs in how their reverence is displayed. One kraken priest might have ink-black eyes and a suckered tentacle for a tongue, while another has a featureless face and a body covered in eyes and mouths that dribble seawater. These horrific manifestations intensify when the kraken possesses its minion to utter dire pronouncements."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Kraken Priest.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2812,7 +3955,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Kruthik Hive Lord.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Kruthiks",
@@ -2854,6 +4006,15 @@
 				"As clever as it is cruel, a leucrotta loves to deceive, torture, and kill. Creatures who venerate Yeenoghu\u2014particularly his gnoll followers\u2014view leucrottas with great respect. Although a leucrotta is unlikely to lead a gnoll war band, it can influence the leader and might agree to carry the leader into battle and offer advice during the fight. Followers of Yeenoghu also see leucrottas as a form of entertainment. They enjoy watching a leucrotta work almost as much as they like doing their own killing, since leucrottas are meticulous in their cruelty and able to draw out kills for better and longer sport. And when there are no victims to be had, a leucrotta can mimic the delightful squeals of a suffering victim.",
 				"A leucrotta is so loathsome that few outside of its own kind can stand to be around one for long. Its horrific, hodgepodge body oozes a foul stench. This reek is outdone only by the creature's breath, which issues from a maw that drips fluid corrupted with rot and digestive juices. In place of fangs, a leucrotta has bony ridges as hard as steel that can crush bones and lacerate flesh. These plates are so tough that a leucrotta can use them to peel plate armor away from the body of a slain knight.",
 				"A leucrotta's stench would normally warn away prey long before the creature could attack. It has two natural capabilities, however, that give it an advantage. First, a leucrotta's tracks are nearly impossible to distinguish from those of common deer. Second, it can duplicate the call or the vocal expressions of just about any creature it has heard. The monster uses its mimicry to lure in potential victims, then attacks while they are confused or unaware of the actual threat."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Leucrotta.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2862,6 +4023,15 @@
 			"entries": [
 				"A leviathan is an immense creature that acts as a force of nature, dragging ships down to the ocean's depths and washing away coastal settlements. When called forth, a leviathan arises from a large body of water and takes on the form of a gigantic serpent.",
 				"Usually found only on the Elemental Plane of Water, a leviathan sometimes swims through a portal to another world, where tritons, sea elves, and other aquatic folk attempt to contain it. Nihilistic cults have also been known to perform arduous rituals to summon a leviathan to a world, with the aim of using the creature to destroy coastal communities. Those cultists often consider it a blessing to drown themselves in the elemental's waters."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Leviathan.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2881,7 +4051,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Lonely Sorrowsworn.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Lost Sorrowsworn",
@@ -2901,7 +4080,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Lost Sorrowsworn.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Male Steeder",
@@ -2963,6 +4151,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Martial Arts Adept.webp"
+					}
+				}
 			]
 		},
 		{
@@ -2972,6 +4169,15 @@
 				"The nigh-unstoppable inevitables serve a singular purpose: they enforce contracts forged in the Hall of Concordance in the city of Sigil. Primus, the leader of the modrons, created maruts and other inevitables to bring order to dealings between planar folk. A wide array of disparate creatures, including yugoloths, will enter into a contract with inevitables if asked.",
 				"The Hall of Concordance is an embassy of pure law in Sigil, the City of Doors. In the hall, parties who agree to mutual terms\u2014and who pay the requisite gold to the Kolyarut, a mechanical engine of absolute jurisprudence\u2014can have their contract chiseled onto a sheet of gold that is placed in the chest of a marut. From that moment until the contract is fulfilled, the marut is bound to enforce its terms and to punish any party who breaks them. A marut resorts to lethal force only if a contract calls for it, if the contract is fully broken, or if the marut is attacked.",
 				"Inevitables care nothing for the spirit of an agreement, only the letter. A marut enforces what is written, not what was meant by or supposed to be understood from the writing. The Kolyarut rejects contracts that contain vague, contradictory, or unenforceable terms. Beyond that, it doesn't care whether both parties understand what they're agreeing to."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Marut.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3034,6 +4240,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Master Thief.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3043,6 +4258,15 @@
 				"When Doresain, the King of Ghouls, corrupted a society of elves, he created a new sort of demon\u2014the maurezhi\u2014to lead packs of {@creature ghoul||ghouls} and {@creature ghast||ghasts} on the Material Plane.",
 				"When a maurezhi consumes the corpse of a Humanoid it has slain\u2014a process that takes about 10 minutes\u2014it instantly assumes the creature's appearance as it was in life. The new appearance begins to rot away over the next few days, eventually revealing the demon's original form.",
 				"A maurezhi is contagion incarnate. Its bite can drain a victim's sense of self. If this affliction is allowed to go far enough, the victim is infected with an unholy hunger for flesh that overpowers their personality and transforms them into a ghoul."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Maurezhi.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3105,6 +4329,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Maw Demon.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3114,6 +4347,15 @@
 				"Meazels are malicious hermits who fled to the Shadowfell to escape their mortal existence and contemplate their misery. There the shadows transformed them, and their bitterness made them twisted and cruel. Now hate burns in their hearts, and they resent any intrusion into their suffering, waylaying travelers who venture too close to their lairs.",
 				"The evil that corrupted meazels also imbued them with magical powers that allow them to move through shadows with ease. They can step from one pool of darkness into another one, using this talent to ambush prey. Sometimes they snatch victims around the throat with their strangling cords and then step away; other times they ferry their victims to isolated spots and then leave the hapless souls to the designs of whatever horrors lurk there.",
 				"Any creatures meazels draw through the shadows are cursed by the meazels' baleful magic. The curse acts as a beacon; sorrowsworn (which appear in this book), Undead, and other terrors sense where they are located and descend on the stranded victims to tear them apart."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Meazel.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3130,6 +4372,15 @@
 						"Up to four meenlocks can telepathically torment one {@condition incapacitated} creature, filling its mind with disturbing sounds and dreadful imagery. Participating meenlocks can't use their telepathy for any other purpose during this time, though they can move about and take actions and reactions as normal. This torment has no effect on a creature that is immune to the {@condition frightened} condition. If the creature is susceptible and remains {@condition incapacitated} for 1 hour, the creature must make a Wisdom saving throw, taking 10 ({@damage 3d6}) psychic damage on a failed save, or half as much damage on a successful one. The save DC is 10 + the number of meenlocks participating in the torment, considering only those that remain within sight of the victim for the entire hour and aren't {@condition incapacitated} during it. The process can be repeated. A Humanoid that drops to 0 hit points as a result of this damage instantly transforms into a meenlock at full health and under the DM's control. Only a {@spell wish} spell or divine intervention can restore a transformed creature to its former state."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Meenlock.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3139,6 +4390,15 @@
 				"The souls of fallen soldiers, mercenaries, and bodyguards who served evil without reservation often find everlasting servitude in the Nine Hells as merregons. These faceless foot soldiers are the Hells' legionnaires, tasked with protecting their infernal plane and its rulers against intruders.",
 				"Merregons have no individuality and hence no need for faces. Every merregon legionnaire has a metal mask bolted to its head. Markings on the mask indicate the only elements of the wearer's identity that matter: the commander it serves and the layer of the Nine Hells it protects.",
 				"Because of their unshakable loyalty, merregons form the backbone of many devils' protective retinues. They shrink from no task, no matter how dangerous. Unless ordered to fall back, they never retreat from a fight."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Merregon.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3146,6 +4406,15 @@
 			"source": "MPMM",
 			"entries": [
 				"The grim captains of the ferries on the River Styx, merrenoloths can navigate safely through the worst storms and always stay on course. Wielding fiery oars, merrenoloths strike fear into anyone who forcefully boards their vessels."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Merrenoloth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3155,6 +4424,15 @@
 				"If a beholder is {@condition stunned} and brought to the brine pool of an elder brain, the beholder can be converted into a mindwitness. This alters some of its eye rays and transforms four of its eyestalks into tentacles similar to a mind flayer's. The mindwitness is psychically imprinted with devotion to the elder brain and submission to illithid commands.",
 				"A mindwitness's primary function is to improve telepathic communication in a mind flayer colony. A creature in telepathic communication with a mindwitness can converse through it to as many as seven other creatures the mindwitness can see, rapidly disseminating commands and other information.",
 				"If separated from its illithid masters, a mindwitness seeks out other telepathic creatures to tell it what to do. Mindwitnesses have been known to ally with {@creature flumph||flumphs} and planar beings such as demons, shifting their worldview and alignment to match those of their new masters."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Mindwitness.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3174,6 +4452,15 @@
 				"Moloch was rendered nearly powerless by this failure. He schemes of ways to reclaim his former status, but every time he enters the Nine Hells, he is demoted to an {@creature imp} and can't regain his normal powers until he leaves. Thus, he lives a split existence, sometimes plotting in Malbolge or other layers of the Hells and at other times wandering the planes in search of magical might or secrets that might help him win back his title.",
 				"Rumors suggest that he can often be found in Sigil, where he bargains with yugoloths to build yet another army with which he might invade Malbolge and wrest the throne from Glasya. Bereft as he is, he has little to offer in exchange, so he might bargain with mortals to gain their aid in acquiring coin, jewels, and other riches in return for knowledge about the Nine Hells and the other planes.",
 				"Most of Moloch's cultists have switched allegiance to one of the other archdevils, but idols constructed to honor him still stand in deep dungeons, their jeweled eyes and the remnants of power they hold drawing monstrous worshipers and unwise adventurers into places where his foul influence remains."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Moloch.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3182,6 +4469,15 @@
 			"entries": [
 				"The fearsome molydeus speaks for the demon lord it serves and enforces its master's will. This demon is 12 feet tall, and its bipedal body has a slavering wolfs head and a fanged serpent's head. Its demon lord can speak and see through the serpent head; this master also uses the molydeus to guard treasures, slay foes, and terrify troops into obedience.",
 				"A molydeus's demon lord bestows on it a powerful weapon that dissolves if the molydeus dies. The weapon's form varies depending on the creator, but that doesn't affect the weapon's capabilities."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Molydeus.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3202,6 +4498,15 @@
 						"A morkoth encountered in its lair has a challenge rating of 12 (8,400 XP)."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Morkoth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3211,6 +4516,15 @@
 				"Hill giants consume spoiled food and diseased carcasses with as much enthusiasm as children eating dessert and rarely suffer for such eating habits. When one of their kind becomes incapable of keeping down food, that giant is seen, among hill giant worshipers of the god Grolantor, as the vessel of a message from the deity.",
 				"The sickened giant's compatriots separate the giant from the rest of the community, often trapping them in a cage or tying them to a post. A priest of Grolantor visits the famished giant daily, trying to read portents in the puddles of bile the hill giant retches up. If the sickness soon passes, they allow the hill giant to rejoin society. If not, the hill giant is instead starved to the point of desperation so Grolantor's hunger can be given a mouth in the world.",
 				"A mouth of Grolantor is revered as a holy embodiment of Grolantor's aching hunger. Unlike a typical sluggish hill giant, a mouth of Grolantor is thin as a whippet, alert like a bird, and constantly twitchy. Mouths are kept perpetually imprisoned or shackled; if they break free, they're sure to kill anyone nearby before they're brought down or escape on a killing spree. The only time mouths of Grolantor are set loose is during a war, during a raid against an enemy settlement, or in a last-ditch defense of Grolantor's faithful. When a mouth of Grolantor has slaughtered and eaten their fill of enemies, they pass out amid the gory remains of their victims, making them easy to recapture."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Mouth of Grolantor.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3220,6 +4534,15 @@
 				"The insatiable nabassus prowl the multiverse in search of souls to devour. If they think they can kill a creature and consume its soul, they attack\u2014even if that other creature is a demon, including another nabassu.",
 				"Most other demons shun nabassus and force them to live on the fringes of the Abyss. There, nabassus pick off weaker demons or, if the situation warrants, gather in packs to take down larger prey. Some especially powerful nabassus even search for demon lords' amulets.",
 				"Whenever magic pulls demons from the Abyss to the Material Plane, nabassus try to get summoned so that they can embark on a feast of souls there. A summoned nabassu seeks to break free so that it can devour the soul of its summoner and then feed on the souls of whatever other creatures it can catch. One way a summoner can avoid this fate is by providing a steady supply of souls to the nabassu, which might persuade the demon to be cooperative\u2014as long as the supply lasts."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Nabassu.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3229,6 +4552,15 @@
 				"Long ago, the Raven Queen cursed a cabal of powerful wizards for meddling in a ritual that would have helped avert a war between the gods. She transformed them into the scabrous, birdlike creatures known as nagpas and rendered them able to acquire new lore and magical power only from the ruins of fallen civilizations and great calamities.",
 				"Nagpas still fear the Raven Queen and do their best to avoid her and her agents. When it's impossible to do so, they become cringing, fawning things, eager to please and thereby escape further attention from her cold gaze. All the original thirteen remain alive, thanks to their cunning and their willingness to do whatever is necessary to survive.",
 				"Hungry to claim more power despite the Raven Queen's curse, nagpas strive to bring about world-shaking destruction. From the shadows, they manipulate events to bring about ruin. They can bring to bear an array of spells to turn other creatures into their agents, influencing their decisions in subtle ways and making them unwitting accomplices in their own destruction. Nagpas are extraordinarily patient and pursue several schemes simultaneously, so if one plan goes awry, they can shift their focus to another. Typically, nagpas emerge from the shadows only when they can deliver a finishing blow. They then revel in the grand devastation their plotting brought about\u2014looting libraries, plundering vaults, and prying secrets of arcane lore and power from the wreckage."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Nagpa.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3238,6 +4570,15 @@
 				"Paladins who make deals with devils and carry their twisted sense of honor into the afterlife are especially valuable to the archdukes of the Nine Hells. These narzugons act as horrific perversions of knights errant, carrying out their masters' will.",
 				"Narzugons wield hell-forged lances that shunt the souls of any they killed to the River Styx for rebirth as {@creature lemure||lemures}. Every lance bears the marks of both a narzugon and its master.",
 				"Each narzugon claims a {@creature nightmare} as its mount. These steeds are bound by {@item infernal tack|MTF} and must respond to the summons and commands of the spurs' wearer."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Narzugon.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3257,7 +4598,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Necromancer Wizard.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Neogi",
@@ -3277,7 +4627,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Neogi.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Neogi (*)",
@@ -3317,7 +4676,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Neogi Hatchling.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Neogi Master",
@@ -3345,6 +4713,15 @@
 				"A slime-covered worm of immense size, a neothelid is the result of the mind flayer reproductive cycle gone horribly wrong. When an illithid colony collapses, typically after an external assault, and the elder brain is killed, the colony's tadpoles are suddenly freed from their fate. They no longer serve as food\u2014and are no longer fed by their caretakers. Driven by hunger, they turn to devouring one another. Only one tadpole survives out of the thousands in the colony's pool, and it emerges as a neothelid.",
 				"Neothelids know nothing beyond their predatory existence. They prowl subterranean passages, using their rudimentary psionic abilities to search out and incapacitate brains to sate their constant hunger, growing ever more vicious. These creatures can spray tissue-dissolving enzymes from their tentacle ducts, reducing victims to puddles of slime and leaving only the pulsing brains unharmed. They have no knowledge of their link to illithids, so they're just as likely to prey on mind flayers as on anything else.",
 				"Mind flayers consider neothelids dangerous abominations\u2014normally they eat or destroy any tadpoles that grow larger than a few inches in length without being implanted in a brain so they can't become such threats. Neothelids are not intelligent enough for elder brains to detect, so mind flayers are always alert for signs of their presence and organize hunting parties to exterminate any of these murderous worms they learn of."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Neothelid.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3354,6 +4731,15 @@
 				"The Negative Plane is a place of death, anathema to all living things. Yet there are some who would tap into its fell power and use its energy for sinister ends. Most individuals prove unequal to the task. Those not destroyed outright are sometimes drawn inside the plane and replaced by nightwalkers\u2014terrifying Undead creatures that devour all life they encounter.",
 				"One can reach the Negative Plane from the Shadowfell in places where the barrier between the planes is thin. Stepping onto the Negative Plane is almost always fatal since the plane sucks the life and soul from creatures, annihilating most at once. The few who survive by sheer luck or by harnessing some rare form of protective magic soon discover that they can't leave as easily as they arrived. Worse, for each creature that enters the plane, a nightwalker is released to take its place. In order for a trapped creature to escape, the released nightwalker must be lured back to the Negative Plane by offerings of life for it to devour. If the nightwalker is destroyed, the trapped creature has no hope of escape.",
 				"Generally, a nightwalker on the Material Plane is attracted to elements of the world associated with the creature responsible for its creation, which can provide clues as to who the trapped creature is. This attraction doesn't indicate a willingness to engage with the world, though; nightwalkers exist to make life extinct, and they prioritize anything associated with the trapped creature for destruction."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Nightwalker.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3371,6 +4757,15 @@
 						"A goblin targeted by the spirit must succeed on a {@dc 15} Charisma saving throw or become possessed. While possessed, the goblin uses the nilbog stat block. If the save succeeds, the spirit can't possess that goblin for 24 hours.",
 						"If its host is killed or the possession is ended by a spell such as hallow, magic circle, or protection from evil and good, the spirit searches for another goblin to possess. The spirit can leave its host at any time, but it won't do so willingly unless it knows there's another potential host nearby. A goblin stripped of their nilbog spirit reverts to their normal statistics and loses the traits they gained while possessed."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Nilbog.webp"
+					}
 				}
 			]
 		},
@@ -3391,6 +4786,15 @@
 				"Individually, nupperibos are weak, but they're rarely alone and can be dangerous when gathered into packs. Clouds of stinging insects, {@creature stirge||stirges}, and other vermin surround them in a terrifying, reeking sheath that torments any non-devil that draws near.",
 				"A nupperibo knows nothing but the desire to destroy non-Fiends. Once a nupperibo's vermin cloud senses a potential meal, any nearby nupperibos pursue that prey tirelessly until it or the nupperibos are slain, or some other potential victim crosses the devils' path and distracts them.",
 				"Nupperibos unthinkingly obey any command they receive telepathically from another devil. This blind loyalty makes them the easiest of infernal troops to lead into battle, but their presence in a legion does nothing to elevate its general's status."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Nupperibo.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3411,7 +4815,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Oblex Spawn.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Oblexes",
@@ -3458,7 +4871,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Ogre Battering Ram.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Ogre Bolt Launcher",
@@ -3515,7 +4937,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Ogre Howdah.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Ogres of War",
@@ -3536,6 +4967,15 @@
 			"entries": [
 				"Grim specters of death, oinoloths bring pestilence wherever they go. When armies recognize their awful forms, their mere appearance causes soldiers to break ranks and flee, lest they succumb to one of the awful plagues that oinoloths let loose.",
 				"Oinoloths solve thorny problems by killing everyone involved. They are typically hired as a last resort when a siege has gone on too long or an army has proven too strong to overcome. Once summoned, oinoloths stalk the killing field, poisoning the ground and sickening creatures they encounter. Sometimes they might be hired to lift the very plagues they spread, but the price for such work is high, and the effort turns the creatures they save into debilitated wrecks."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Oinoloth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3559,6 +4999,15 @@
 						"Orcus makes his lair in the fortress city of Naratyr, which is on Thanatos, the layer of the Abyss that he rules. Surrounded by a moat fed by the River Styx, Naratyr is an eerily quiet and cold city, its streets empty for hours at a time. The central castle of bone has interior walls of flesh and carpets made of woven hair. The city contains wandering Undead, many of which are engaged in continuous battles with one another."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Orcus.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3568,6 +5017,15 @@
 				"When an archduke of the Nine Hells needs a creature tracked, found, and either done away with or captured, the task usually falls to an orthon. These devils are infernal bounty hunters, tireless in their pursuit of their quarry across the multiverse.",
 				"Orthons are infamous for their sharp senses. Because an orthon can become invisible at will, its quarry is often unaware of being hunted until the orthon strikes. This invisibility can be disrupted when the devil is attacked, however, so a strong counterattack is often the best defense against it.",
 				"Orthons value the challenge of the chase and the thrill of one-on-one combat above all else. An orthon's first loyalty is to its archduke, but one with no immediate assignment might work for anyone who promises it a worthy struggle against a lethal foe. Because they travel widely, orthons are unequaled as guides through the layers of the Nine Hells."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Orthon.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3601,6 +5059,15 @@
 					"by": "Mordenkainen"
 				},
 				"Releasing a phoenix from the Inner Planes creates an explosion of fire that spreads across the sky. An enormous fiery bird forms in the center of the flames and smoke\u2014an elder Elemental possessed by a need to burn everything to ash. The phoenix rarely stays in one place for long as it strives to transform the world into an inferno."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Phoenix.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3639,7 +5106,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Red Abishai.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Redcap",
@@ -3651,6 +5127,15 @@
 				"Redcaps' desire to slay is rooted in their will to survive. To sustain their unnatural existence, they must soak their hats in the fresh blood of their victims. When redcaps are born, their hats are coated with wet blood, and they know that if the blood isn't replenished at least once every three days, they will vanish as if they had never been.",
 				"Some redcaps can sense the being whose murderous acts led to their birth. They typically use this innate connection to find their creator and make that creature their first victim, though they might instead seek out their maker to enjoy proximity to a kindred spirit. Although redcaps don't usually operate in groups, an individual responsible for the creation of multiple redcaps at the same site could attract the entire group to serve as cohorts, emulating that individual's murderous handiwork. Some hags and wicked mages know methods to call redcaps out of the Feywild and might likewise put teams of them to work as grisly servants.",
 				"In any case, if a redcap works with another being, the redcap demands to be paid in victims. A patron who tries to stifle a redcap's natural and necessary urge for blood risks becoming the redcap's next target."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Redcap.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3659,6 +5144,15 @@
 			"entries": [
 				"The retriever is a potent, spider-like Construct conceived and built by Underdark followers of Lolth for one original purpose\u2014to prowl the Abyss and capture demons for these cultists to enslave or use in their rituals. The automatons proved so effective and so fearsome that they now perform many different missions.",
 				"Though retrievers were created to operate only in the Abyss, they are sometimes dispatched when a powerful devotee of Lolth needs some creature or object captured and brought back alive and intact. Only under the rarest of circumstances is a retriever handed over or sold to others, since Lolth's cultists don't want to take the chance that their creations will be turned against them."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Retriever.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3678,7 +5172,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Rot Troll.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Rutterkin",
@@ -3694,6 +5197,15 @@
 				},
 				"Rutterkins are warped demons that roam the Abyss in mobs, constantly searching for intruders to surround and devour. These Fiends protect the Abyss from non-demons. When they spot any interlopers, they gather in a crowd and surge forward, emitting a wave of fear in advance of their attacks that leaves their victims terrified and rooted in place.",
 				"Creatures bitten by rutterkins are exposed to a terrible disease that infects them with the corrupting influence of the Abyss. Victims afflicted with the disease experience tremendous pain as their bodies become disfigured, flesh twisting around the bones, until they transform to join the mass of {@creature manes} demons that follow in the wake of the rutterkin mob that laid them low."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Rutterkin.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3719,6 +5231,15 @@
 						"Visitors to a string of islands called the Purple Rocks (in the Forgotten Realms setting) might notice one curious fact about the islands' human inhabitants: no infants or elderly are among them. This is because babies born to the Rocklanders are claimed by a {@creature kraken} named Slarkrethel. The experience transforms the children into fanatics dedicated to the kraken. They return from the sea as humans, but when they reach old age, they transform into sea spawn and rejoin their master in the depths. Some children return having suffered partial transformations and must conceal themselves from strangers until their full transformation in order to keep the secret of the Purple Rocks.",
 						"Kraken priests (in this book) tend to the kraken's flock. Most of the priests are island natives, but some are other sorts of creatures that live in the water around the Purple Rocks, such as {@creature merfolk} or {@creature merrow}, or even sea elves."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Sea Spawn.webp"
+					}
 				}
 			]
 		},
@@ -3763,7 +5284,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Shadar-kai Gloom Weaver.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Shadar-kai Shadow Dancer",
@@ -3782,7 +5312,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Shadar-kai Shadow Dancer.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Shadar-kai Soul Monger",
@@ -3801,7 +5340,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Shadar-kai Soul Monger.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Shadow Mastiff",
@@ -3820,7 +5368,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Shadow Mastiff.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Shadow Mastiff Alpha",
@@ -3874,6 +5431,15 @@
 				},
 				"A shoosuva is a hyena-demon gifted by {@creature Yeenoghu|MPMM} to an especially powerful worshiper (typically a {@creature gnoll fang of Yeenoghu||fang of Yeenoghu}). A shoosuva manifests shortly after a Yeenoghu-worshiping war band achieves a great victory, emerging from a billowing, fetid cloud of smoke as it arrives from the Abyss. In battle, the demon wraps its slavering jaws around one victim while lashing out with the poisonous stinger on its tail to bring down another. A creature immobilized by the poison becomes easy pickings for any nearby members of the war band.",
 				"Each shoosuva is bonded to a particular worshiper of Yeenoghu and fights alongside its master. A gnoll that has been gifted with a shoosuva is second only to a flind in status within a war band dedicated to Yeenoghu."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Shoosuva.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3883,6 +5449,15 @@
 				"Thought to be as old as the Abyss itself, sibriexes haunt remote parts of that plane, where they use their vile abilities to create new horrors and they seek ancient lore. Rivulets of blood and bile cascade from a sibriex's body, polluting the surrounding landscape.",
 				"Sibriexes have spent eons amassing knowledge from across the planes, hoarding it for when it might be useful. Such are their incredible intellects and stores of information that many seek them out, including demon lords. Some sibriexes act as advisors and oracles, manipulating demons into serving their ends, while others parcel out lore only when doing so advances their plans.",
 				"Sibriexes can channel the power of the Abyss to create new demons from other creatures. Some demons petition sibriexes for physical gifts, for sibriexes can graft on new body parts to give the demons greater strength, vision, or stamina. Sibriexes never give aid freely, though; they demand a service or a treasure in return for the flesh-shaping they provide."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Sibriex.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3899,6 +5474,15 @@
 				"Skulks are the soulless shells of travelers who became lost in the Shadowfell, wandering its gray wastes until they lost all sense of self. They are so devoid of identity that they have become permanently {@condition invisible}. Only children can see a skulk without the help of a mirror or a special candle. On the rare occasions when a skulk is visible, it appears as a drab, featureless, hairless biped.",
 				"A skulk can be summoned from the Shadowfell by performing a ritual, and it is bound to obey the summoner's commands for 30 days. During this time, if the skulk is visible, an astute observer might deduce who summoned it, because the skulk assumes a vague likeness of its master.",
 				"Cruel and chaotic, skulks carry out their orders in the most violent manner possible. A summoned skulk can't return to the Shadowfell until it dies, so many throw themselves into creating bloodshed and mayhem with no regard for their own lives. After killing a person on the Material Plane, some skulks take up a silent imitation of that person's life. In extreme cases, skulks have invaded villages, killed all the occupants, and turned the places into seeming ghost towns where flavorless food is prepared daily, colorless clothes are hung up to dry, and livestock is shifted from pen to pen until it starves."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Skulk.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3907,6 +5491,15 @@
 			"entries": [
 				"Skull lords have claimed vast regions of the Shadowfell as their dominion. From these blighted lands, they wage war against their rivals, commanding hordes of the undying in a bid to establish dominance. Yet skull lords always prove to be their own worst enemies; each is a combined being born from three hateful individuals, and they constantly plot against themselves.",
 				"Infighting and treachery brought skull lords into existence. The first of them appeared in the aftermath of Veena's bid to conquer the world of Greyhawk, after the vampire Kas betrayed Vecna and took his eye and hand. In the confusion resulting from this turn of events, Veena's warlords turned against each other, and his plans were dashed. In a rage, Vecna gathered up his generals and captains and bound them in groups of three, fusing them into abominations cursed to fight among themselves for all time. Since the first skull lords were exiled into the shadows, others have arisen, typically created from other leaders who betrayed their masters."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Skull Lord.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3917,6 +5510,15 @@
 				"The ritual for creating a slithering tracker is known to hags, liches, and priests who worship gods of vengeance. It can be performed only on a willing creature that hungers for revenge. The ritual sucks all the moisture from the subject's body, killing it. Yet the subject's mind lives on in the puddle that issues forth from the remains, and so too does its insatiable need for retribution.",
 				"A slithering tracker tastes the ground it courses over, seeking any trace of its prey. To kill, a slithering tracker rises up and enshrouds a creature, attempting to drown the creature while also draining it of blood.",
 				"Achieving revenge against its target doesn't end a slithering tracker's existence or its hunger for blood. Some slithering trackers remain aware of their purpose and extend their quest for vengeance to others, such as anyone who supported or befriended the original target. Most of the time, though, a tracker's mind can't cope with being trapped in liquid form, unable to communicate, and driven by the desire for blood; after fulfilling its duty, the overwhelmed creature attacks indiscriminately until it is destroyed."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Slithering Tracker.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3939,6 +5541,15 @@
 				"Kyuss was a high priest of Orcus who plundered corpses from necropolises to create the first spawn of Kyuss. Even centuries after Kyuss's death, his malign disciples continue performing the horrific rites he perfected.",
 				"From a distance or in poor light, a spawn of Kyuss looks like an ordinary zombie. As it comes into clearer view, however, the scores of little green worms crawling in and out of it become visible. These worms jump onto nearby Humanoids and burrow into their flesh. A worm that penetrates a Humanoid body makes its way to the creature's brain. Once inside the brain, the worm kills its host and animates the corpse, transforming it into a spawn of Kyuss, which breeds more worms.",
 				"Spawn of Kyuss are expressions of Orcus's intent to replace all life with undeath. Left to its own devices, a solitary spawn of Kyuss travels aimlessly. If it stumbles across a living creature, the spawn attacks with the sole intent of creating more spawn. Whether spawn are dispersed or clustered, they reproduce exponentially if nothing stops them."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Spawn of Kyuss.webp"
+					}
+				}
 			]
 		},
 		{
@@ -3958,7 +5569,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Spirit Troll.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Spring Eladrin",
@@ -3977,7 +5597,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Spring Eladrin.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Star Spawn",
@@ -4037,7 +5666,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Star Spawn Grue.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Star Spawn Hulk",
@@ -4056,7 +5694,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Star Spawn Hulk.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Star Spawn Larva Mage",
@@ -4075,7 +5722,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Star Spawn Larva Mage.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Star Spawn Mangler",
@@ -4102,7 +5758,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Star Spawn Mangler.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Star Spawn Seer",
@@ -4123,7 +5788,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Star Spawn Seer.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Steeders",
@@ -4157,6 +5831,15 @@
 				"To create a steel predator, the modron's machine must be fed something that identifies the predator's target, such as a lock of hair, a well-worn glove, or a much-used weapon. The moment the newly manufactured steel predator emerges, it bounds away in search of its prey. It senses the location of its target across planar boundaries, but such detection is accurate only to within a thousand yards; to close the remaining distance, the steel predator locates its prey by sight and smell.",
 				"Once battle is joined, the predator ignores every other threat to attack its target, unless other creatures prevent it from reaching the target. In that case, it does what it must to fulfill its mission.",
 				"If all goes according to plan, a steel predator slays its target and then voluntarily returns to Sigil, where it's broken down into parts that can be used in another steel predator. Battle damage can cause this instinct to fail, however, in which case the steel predator lingers in the area, hunting and killing other creatures that resemble its target or that simply live nearby. Such rogue predators are dangerous to anyone in the vicinity."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Steel Predator.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4164,6 +5847,15 @@
 			"source": "MPMM",
 			"entries": [
 				"This heavily built dinosaur has rows of plates on its back and a flexible, spiked tail held high to strike predators. It tends to travel in herds of mixed ages."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Stegosaurus.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4199,6 +5891,15 @@
 						"Even though a creature transformed into a stone cursed is long dead, a vague whisper of their memories lives on in the obsidian skull embedded within the stone cursed's body. At the end of a short rest, a character can make a {@dc 20} Intelligence ({@skill Arcana}) check to attempt to extract a memory from the skull that is a response to a verbal question posed to the skull by the character. Once this check is made, whether it succeeds or fails, the skull can't be used in this manner again."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Stone Cursed.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4209,6 +5910,15 @@
 				"Stone giants sometimes go on dream quests in the surface world, seeking inspiration for their art, a break from decades-long ennui, or satisfaction of simple curiosity. Some who go on these quests let themselves become lost in the dream. Other stone giants are banished to the surface as punishment. Regardless of the reason they ended up on the surface, if they don't take shelter under stone, such stone giants can become dreamwalkers.",
 				"Dreamwalkers occupy an odd place of respect outside the stone giant ordning. They are considered outcasts, but their familiarity with the surface world makes them valuable guides, and their insights can help other stone giants grasp the dangers of living in a dream.",
 				"Dreamwalkers become divorced from reality by isolation, shame, and their unendingly alien surroundings, and this delirium leaches out into the world around them, affecting other creatures that get too close. Believing that they're living in a dream and that their actions have no real consequences, dreamwalkers act as they please, becoming forces of chaos. As they travel the world, they collect objects and creatures that seem especially significant to them. Over time, the collected things accrete to their bodies, becoming encased in stone."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Stone Giant Dreamwalker.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4225,6 +5935,15 @@
 					"entries": [
 						"A storm giant quintessent has no need for castles or dungeon lairs. Their lair is usually a secluded region or prominent geographic feature, such as a mountain peak, a great waterfall, a remote island, a fog-shrouded loch, a beautiful coral reef, or a windswept desert bluff. The storm in which the giant lives could be a blizzard, a typhoon, a thunderstorm, or a sandstorm, as befits the environment."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Storm Giant Quintessent.webp"
+					}
 				}
 			]
 		},
@@ -4245,7 +5964,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Summer Eladrin.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Swarm of Cranium Rats",
@@ -4269,6 +5997,15 @@
 						"Rot grubs pose a threat both singly and as a swarm. See the stat block for the mechanics of a swarm of rot grubs. A single rot grub has no stat block.",
 						"Any creature that comes into contact with a single rot grub must succeed on a {@dc 10} Constitution saving throw or be {@condition poisoned}, as the rot grub burrows into the creature. The {@condition poisoned} creature takes 3 ({@damage 1d6}) poison damage at the end of each of its turns. Whenever the {@condition poisoned} creature takes fire damage, the creature can repeat the saving throw, ending the effect on itself on a success. If the {@condition poisoned} creature ends its turn with 0 hit points, it dies, as the rot grub kills it."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Swarm of Rot Grubs.webp"
+					}
 				}
 			]
 		},
@@ -4364,6 +6101,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Swashbuckler.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4402,7 +6148,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Sword Wraith Warrior.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Sword Wraiths",
@@ -4431,6 +6186,15 @@
 				"When demonic influence corrupts the leadership of a people or an organization, the leaders might embrace abyssal magic to make tanarukks, using these ferocious warriors to bolster their followers' strength.",
 				"The demon lord {@creature Baphomet|MPMM} gladly shares the secret of creating tanarukks with those who entreat him for power; the cult of Gruumsh has also mastered a ritual for this purpose, and bestows it on those deemed worthy. Whatever process is used corrupts the subject, transforming them into a vicious Fiend.",
 				"Although tanarukks are valued as fearsome fighters, they are a threat to their allies off the battlefield. When not in combat, a tanarukk is destructive and volatile and is usually kept imprisoned by its allies. If unrestrained, a free tanarukk embarks on a rampage, attempting to take over by force. Most such coups fail but are costly nonetheless. If a tanarukk does seize the leadership of a group, reckless raiding or even war is the course they inevitably choose."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Tanarukk.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4450,7 +6214,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Thorny Vegepygmy.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Titivilus",
@@ -4461,6 +6234,15 @@
 				"Although Titivilus is inferior in physical strength and power when compared to other archdevils, he compensates with cunning. A shrewd politician, he has clawed his way up through the ranks to become the second-most powerful devil in Dis, entirely by saying the right thing at the right time to get what he wanted. Charming and pleasant, he is a master at negotiation, able to twist words so as to leave his victims confused and believing he's on their side. Through these skills, Titivilus has manipulated everyone along his path to power, either to win them over to his cause or to remove them as a threat.",
 				"Since gaining his position, Titivilus has convinced Dispater that countless plots are being hatched against him and that Asmodeus himself seeks to remove Dispater from power. In response, Dispater has withdrawn to his palace and left day-to-day decisions to Titivilus, even authorizing him to answer and negotiate bargains with mortals who attempt to summon Dispater. Titivilus now represents his master and speaks with his voice, a turn of events that leads some to whisper that either Titivilus is Dispater in disguise or Titivilus has removed the archduke and replaced him altogether.",
 				"Titivilus recognizes the precariousness of his position. After all, Dispater's acceptance of his plans and his advice can last only so long before some other plotter steps in and reveals the truth. For insurance, Titivilus has begun recruiting outsiders to deal with problem devils, to insulate him against criticism, and, above all, to create complications that he can solve so as to reinforce his value in the eyes of his master. Titivilus finds adventurers well suited to the tasks he needs performed and recruits them directly or through intermediaries, expending them later as his plans require."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Titivilus.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4473,6 +6255,15 @@
 				"Tlincallis eat what they kill, whether their hunt nets desert animals or a caravan, but when they have new mouths to feed, they are careful to take some of their prey alive. After using their stingers to paralyze victims and their spiked chains to bind them, tlincallis take these captives back to their encampment and tie them to cacti or rock formations. When the sun sets, the newly hatched young emerge from the lair to eat the captives alive.",
 				"These predators see themselves as great hunters, and respect others with such skills. If a tlincalli encounters a more powerful hunter, such as a blue dragon, they carefully weigh whether to serve the superior hunter, move on, or fight to the death to remove it as competition.",
 				"Tlincallis rarely build cities, make clothing, or mine metals. Instead, they scavenge much of what they need or want. They do, however, melt down scavenged metal to forge crude weapons, armor, and tools."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Tlincalli.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4492,7 +6283,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Tortle.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Tortle Druid",
@@ -4544,7 +6344,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Transmuter Wizard.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Trapper",
@@ -4554,6 +6363,15 @@
 				"A trapper's ability to alter the color and texture of its outer side enables it to blend in with any surface made of stone, earth, or wood, masking its presence to any but the most rigorous scrutiny. It can't change its texture to that of a grassy or snow-covered surface, but it is just cunning enough to change its color to match and then conceal itself under a thin layer of vegetation or actual snow.",
 				"A trapper that lurks on the floor of its hunting grounds can cover any remains there with its body, making them look like irregularities in the surface. The creature might instead attach itself to a nearby wall or a ceiling, using the remnants as bait; any creature that stops to investigate the bones for valuables becomes the trapper's next meal.",
 				"A trapper needs to eat a {@race halfling}-sized meal once per week to remain sated. Given a steady supply of food, trappers are content to stay in one place, making them a threat along well-traveled dungeon corridor and on routes through the wilderness that see a lot of traffic. When prey is scarce, a trapper enters a state of hibernation that can last for months, though it is still aware when prey comes near. A trapper on the verge of starvation might defy its instincts and abandon its old territory in search of better hunting."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Trapper.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4584,6 +6402,15 @@
 				"Very rarely, when a tadpole from the brine pool of an {@creature elder brain|MPMM} is implanted into a creature, that creature transforms into an ulitharid: a larger and more potent {@creature mind flayer} with six tentacles. Illithids innately recognize that an ulitharid's survival is more important than their own. An {@creature elder brain|MPMM|elder brain's} reaction to the rise of an ulitharid varies. In most colonies, the ulitharid becomes an elder brain's most favored servant, invested with power and authority. In others, the {@creature elder brain|MPMM} perceives an ulitharid as a potential rival and manipulates or quashes the ulitharid's ambitions accordingly.",
 				"When an ulitharid finds sharing leadership with an {@creature elder brain|MPMM} insufferable, it breaks off from the colony, taking a group of {@creature mind flayer||mind flayers} with it, and moves to another location to form a new colony. After the death of the ulitharid's body, a special process transforms its brain into a new {@creature elder brain|MPMM} for the colony.",
 				"This process doesn't work on the brain of an ulitharid that dies a natural death, as such brains are too decrepit to be used. Instead, each ulitharid carries a psionically enhanced staff; when the ulitharid is ready to give up its life, it attaches the staff to the back of its head, and the staff cracks open its skull, enabling its brain to be extracted. The brain and the staff are then planted in the ulitharid's corpse, causing it to dissolve into ichor. This psionically potent slime helps to fuel the transformation of the area into a brine pool for the embryonic {@creature elder brain|MPMM}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Ulitharid.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4594,6 +6421,15 @@
 				"Vampiric mists, sometimes called crimson mists, are all that remain of {@creature vampire||vampires} who couldn't return to their burial places after being defeated or suf fering some mishap. Denied the restorative power of these places, the {@creature vampire||vampires'} bodies dissolve into mist. The transformation strips the intelligence and personality from them until only an unholy, insatiable thirst for blood remains.",
 				"Indistinguishable from fog aside from the charnel reek it exudes, a vampiric mist descends on a creature and causes the blood in the creature's body to ooze through its pores or spill out from its eyes, nose, and mouth. This blood wafts out from the victim like crimson smoke, which the mist then consumes. The feeding causes no pain or discomfort to the victim, so vampiric mists can feed on sleepers without waking them. The more a mist feeds, the redder it gets, such that it turns pink, then red, and finally a deep scarlet hue; when sated, it rains blood droplets wherever it goes.",
 				"Like sharks in water, vampiric mists can scent blood from up to a mile away. Any injury, no matter how small, might catch their attention and draw them toward their victims. In battle, a mist focuses its attacks on injured targets, since open wounds are a more ready source of blood."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Vampiric Mist.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4604,6 +6440,15 @@
 				"Swarms of vargouilles flap through the caverns and skies of the Abyss. They are given little regard by powerful and intelligent demons since vargouilles can do them no harm. Even the weakest demon, such as a manes or a dretch, fears vargouilles only if they appear in great numbers. In the Lower Planes, vargouilles rarely get the chance to eat live prey other than vermin. More often, they lap up the ichor left behind when one Fiend kills another.",
 				"Because of their hunger for living prey, vargouilles are eager to escape the Lower Planes. On rare occasions, summoning a demon to another plane can bring a vargouille along for the ride, attached like a tick. The precautions a mortal takes to control a summoned demon rarely account for a stowaway, enabling the vargouille to escape into the world.",
 				"Vargouilles that roam free on the Material Plane are a dire threat to all creatures. Their awful shrieking can {@condition paralyzed||paralyze} other creatures with fear, which also makes the creatures susceptible to the vargouille's curse. If the curse is allowed to run its course, an abyssal spirit invades the person's body, causing a gruesome transformation. Over a period of hours, the victim's head takes on fiendish aspects, such as fangs, tentacles, and horns. At the same time, the person's ears grow larger, expanding into wing-like appendages. In the final moments, the victim's head tears away from the body in a fountain of blood, becoming another vargouille, which often then eagerly laps up the blood spilling from its former body. Sunlight or the brilliant illumination of a {@spell daylight} spell can delay this transformation; otherwise, only magic can overcome the curse. "
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Vargouille.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4656,7 +6501,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Vegepygmy Chief.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Velociraptor",
@@ -4682,7 +6536,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Venom Troll.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "War Priest",
@@ -4776,6 +6639,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/War Priest.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4833,7 +6705,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Warlock of the Great Old One.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Warlocks",
@@ -4940,6 +6821,15 @@
 						]
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Warlord.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4949,6 +6839,15 @@
 				"Found in the waters of the Abyss and other bodies of water contaminated by that plane's fell influence, wastriliths establish themselves as lords of the deep and rule their dominions with cruelty.",
 				"A wastrilith pollutes the waters around it. Its noxious presence even affects nearby sources of water when the demon travels on land. The corrupted water, which contains a measure of the demon's essence, responds to the wastrilith's commands\u2014perhaps hardening to prevent foes from escaping or erupting in a surge that drags victims into its reach.",
 				"Creatures that ingest water corrupted by a wastrilith risk their very souls. Those who drink the poisonous liquid might wither away until they finally die, or they remain alive only to become thralls of chaos and evil. To represent this defilementchapter 2 of the Dungeon Master's Guide, you can use the {@table Optional Rule: Abyssal Corruption; Abyssal Corruption||optional rule on abyssal corruption} in {@book chapter 2 of the Dungeon Master's Guide|DMG|2|The Abyss}, causing the poisoned creature to be corrupted."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Wastrilith.webp"
+					}
+				}
 			]
 		},
 		{
@@ -4957,7 +6856,16 @@
 			"_copy": {
 				"name": "Elemental Myrmidons",
 				"source": "MPMM"
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Water Elemental Myrmidon.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "White Abishai",
@@ -4976,7 +6884,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/White Abishai.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Winter Eladrin",
@@ -4995,7 +6912,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Winter Eladrin.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Wizards",
@@ -5021,6 +6947,15 @@
 				"A wood woad has a hole where its heart would be, just as does the body of its former self, buried in the earth. Those who become wood woads trade their free will and all sense of sentiment for supernatural strength and a deathless duty. They exist only to protect woodlands and the people who tend them. A wood woad's face is void and expressionless, except for the motes of light that swim about in its eye sockets. Wood woads speak little, and when not called on to take action, they root themselves in the earth and silently take sustenance from it.",
 				"Like trees, wood woads need only sunlight, air, and nutrients from the earth to go on living. Because they are undying, some wood woads outlive their original purpose. The site a wood woad guards might lose its power or significance over time, or those whom it was assigned to guard might die. If it is freed from its specific duties, a wood woad might roam to find another place of natural beauty or fey influence to watch over.",
 				"Wood woads are drawn to creatures that have close ties to nature and that protect and respect the land, such as {@creature druid|MM|druids} and {@creature treant|MM|treants}. Some treants have wood woad servants by virtue of age-old pacts with druids or Fey that performed the rituals, while others acquire the services of freed wood woads that find renewed purpose in serving a kindred guardian."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Wood Woad.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5040,7 +6975,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Wretched Sorrowsworn.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Xvart",
@@ -5059,7 +7003,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Xvart.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Xvart Warlock of Raxivort",
@@ -5101,6 +7054,15 @@
 				"Anyone who would contract yugoloths for a task usually ends up dealing with a yagnoloth. Cunning negotiators, these strange Fiends handle the writing of contracts for their fellow yugoloths. Once a yagnoloth is hired, it communicates its employer's desires to the yugoloths it commands.",
 				"Although they are entrusted with leading lesser yugoloths, yagnoloths ultimately take their orders from arcanaloths and ultroloths. Aside from their superiors, yagnoloths have full authority over and expect obedience from the yugoloths under their command. Yagnoloths follow the dictates of the contracts they negotiate but always include a loophole to escape their obligations if the situation warrants.",
 				"A yagnoloth has one arm of human size and one giant-sized arm. During negotiations, the yagnoloth uses its human-sized arm to draft and sign contracts. When a show of force is necessary or when combat is joined, it attacks with its brutally powerful giant arm."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Yagnoloth.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5125,6 +7087,15 @@
 						"The challenge rating of Yeenoghu is 25 (75,000 XP) when he's encountered in his lair."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Yeenoghu.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5133,6 +7104,15 @@
 			"entries": [
 				"Granted by mighty Fey to individuals who please them, yeth hounds serve their masters like hunting dogs. They race in pursuit of their prey, running it down until it's too exhausted to fight back. Only the threat of dawn drives the pack back into hiding.",
 				"A pack of yeth hounds can be created by powerful Fey such as the Queen of Air and Darkness. Each pack's master can telepathically communicate with their yeth hounds to give the pack commands from afar. If a pack's master is killed, the hounds seek out a new master, typically an evil {@creature vampire}, {@creature necromancer|vgm}, or {@creature green hag|mm|hag}."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Yeth Hound.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5152,7 +7132,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Young Kruthik.webp"
+					}
+				}
+			]
 		},
 		{
 			"name": "Yuan-ti Anathema",
@@ -5161,6 +7150,15 @@
 				"As part of their quest for godhood, a yuan-ti abomination might perform a ritual that, if successful, transforms them into an even greater form: a yuan-ti anathema. This ritual demands the sacrifice of hundreds of snakes and requires the abomination to bathe in the blood of their enemies. The transformation is quick but painful.",
 				"Anathemas consider themselves demigods on the path to greater divinity. They demand obeisance from weaker creatures and use every resource at their disposal to war against neighbors, seeking the captives, sacrifices, glory, and riches the anathemas believe they need to achieve true divinity.",
 				"Anathemas don't age, allowing them to pursue their goals until the end of days. Truly powerful ones might rule multiple yuan-ti cities and bring entire regions under their control."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Yuan-ti Anathema.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5177,6 +7175,15 @@
 				"Broodguards were once Humanoids, but they have been transformed by yuan-ti into simpleminded, scaly Monstrosities that do their serpentine masters' bidding. The transformation process warps not only a subject's body but also their mind, making them instinctively obey any yuan-ti and filling them with a seething rage at the sight of non-reptilian creatures.",
 				"Although broodguards can no longer think as clearly as before their transformation, they are able to perform simple yet important tasks in the community, such as guarding eggs or patrolling for intruders. Yuan-ti refer to broodguards as \"histachii,\" which means \"egg-watchers.\"",
 				"Most broodguards are made from human captives forced to consume a magical brew that renders them helpless and unable to fight off the inevitable transformation. A human transformed into a broodguard loses all semblance of who they once were. A broodguard is hairless and emaciated, with scaly skin. They have a forked tongue, and they smell faintly of rotting meat. Broodguards can speak but rarely do so, preferring to communicate via snakelike hisses and guttural noises."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Yuan-ti Broodguard.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5185,6 +7192,15 @@
 			"entries": [
 				"Mind whisperers are yuan-ti malison spellcasters who enter into a pact with the serpent god Sseth, the Sibilant Death. They use their abilities to convert others to their faith, increase their personal power, and befuddle the minds of their enemies.",
 				"Mind whisperers are elusive, manipulative, unpredictable, and willing to cheat or kill comrades and rivals alike if doing so benefits them. The worshipers of Sseth have their hands in many schemes, often plying the middle ground between two factions, and thus spend a lot of energy making sure none of their allies learn of their conflicting connections. Even among Sseth-worshiping communities, mind whisperers are known for being self-important, sneaky, and prone to flee at the first sign of trouble."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Yuan-ti Mind Whisperer.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5193,6 +7209,15 @@
 			"entries": [
 				"Nightmare speakers are yuan-ti malison priests who make a pact with the Dendar the Night Serpent to feed their deity the fears and nightmares of their victims in exchange for power in the mortal world. These priests receive nightmarish visions from Dendar that they interpret as prophecies, and they then use their magic and influence to make these visions come true.",
 				"Nightmare speakers revel in torturing others, keeping their victims in a constant state of fear and dread. They prefer to terrify rather than kill their opponents. They manipulate communities for the purpose of acquiring more victims and enjoy the company of Undead."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Yuan-ti Nightmare Speaker.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5201,6 +7226,15 @@
 			"entries": [
 				"With snakes for arms, pit masters are yuan-ti malison priests who have made a pact with the god Merrshaulk and seek to rouse him from his slumber by sacrificing Humanoids to him. They are the most traditionalist yuan-ti and believe that they are best equipped to achieve the goals of their people.",
 				"Pit masters are deeply involved in yuan-ti's longterm plan to take over Humanoid governments, as well as in the ongoing effort to protect their cities from discovery or attacks by hostiles. They oppose reckless behavior and argue for a slow, cautious approach in all matters."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Yuan-ti Pit Master.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5212,6 +7246,15 @@
 					"entries": [
 						"When a zaratan is summoned from the Elemental Plane of Earth, the ground rises up to take the shape of a hulking, armored reptile. A zaratan's steps trigger shock waves severe enough to level structures. It expresses its rage through trumpeting calls and the occasional boulder or blast of debris it spews from its cavernous maw. If seriously injured, a zaratan retracts its appendages to gain shelter beneath its impervious shell, biding its time until it recovers and can resume its march."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Zaratan.webp"
+					}
 				}
 			]
 		},
@@ -5248,6 +7291,15 @@
 						"Zariel makes her lair in a basalt citadel that rises up in Avernus. From nearly a mile away, one can hear the screams and moans coming from the burned victims chained to the stronghold's wall, the dying remains of those who failed to impress the archdevil. The stronghold, covering five square miles, is surrounded by walls reinforced with high turrets. Devils of all kinds crawl over the structure, ensuring that no intruders breach their defenses."
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Zariel.webp"
+					}
+				}
 			]
 		},
 		{
@@ -5271,6 +7323,15 @@
 					"entries": [
 						"Zuggtmoy's principal lair is her palace on Shedaklah. It consists of two dozen mushrooms of pale yellow and rancid brown. These massive fungi are some of the largest in existence. They are surrounded by a field of acidic puffballs and poisonous vapors. The mushrooms themselves are all interconnected by bridges of shelf-fungi, and countless chambers have been hollowed out from within their rubbery, fibrous stalks."
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Zuggtmoy.webp"
+					}
 				}
 			]
 		}

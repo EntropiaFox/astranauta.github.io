@@ -1044,7 +1044,8 @@ ConverterUi._DEFAULT_STATE = {
 };
 
 async function doPageInit () {
-	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
+	await BrewUtil2.pInit();
+	ExcludeUtil.pInitialise().then(null); // don't await, as this is only used for search
 	const [spells, items, itemsRaw, legendaryGroups, classes] = await Promise.all([
 		DataUtil.spell.pLoadAll(),
 		Renderer.item.pBuildList(),

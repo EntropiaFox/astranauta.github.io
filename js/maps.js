@@ -25,13 +25,14 @@ class MapsPage extends BaseComponent {
 	}
 
 	async pOnLoad () {
+		await BrewUtil2.pInit();
+		await ExcludeUtil.pInitialise();
+
 		const savedState = await StorageUtil.pGetForPage(this.constructor._STORAGE_STATE);
 		if (savedState) this.setBaseSaveableStateFrom(savedState);
 
 		const hkSave = () => this.saveSettingsDebounced();
 		this.constructor._PROPS_STORABLE_STATE.forEach(prop => this._addHookBase(prop, hkSave));
-
-		await ExcludeUtil.pInitialise();
 
 		const mapData = await this._pGetMapData();
 

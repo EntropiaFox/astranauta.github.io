@@ -1744,7 +1744,7 @@ function Renderer () {
 
 	this._renderString_getLoaderTagMeta = function (text) {
 		const [name, file] = Renderer.splitTagByPipe(text);
-		const path = /^.*?:\/\//.test(file) ? file : `https://raw.githubusercontent.com/TheGiddyLimit/homebrew/master/${file}`;
+		const path = /^.*?:\/\//.test(file) ? file : `${VeCt.URL_ROOT_BREW}${file}`;
 		return {name, path};
 	};
 
@@ -8799,7 +8799,7 @@ Renderer.hover = {
 						<title>${opts.title}</title>
 						${$(`link[rel="stylesheet"][href]`).map((i, e) => e.outerHTML).get().join("\n")}
 						<!-- Favicons -->
-						<link rel="icon" type="image/svg+xml" href="favicon.svg?v=1.115">
+						<link rel="icon" type="image/svg+xml" href="favicon.svg">
 						<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
 						<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
 						<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
@@ -9289,9 +9289,11 @@ Renderer.hover = {
 			hash,
 			loadKey,
 			async () => {
-				const brewData = await BrewUtil2.pGetBrewProcessed();
-				if (fnPrePopulate) fnPrePopulate(brewData, {isBrew: true});
-				if (brewData[listProp]) Renderer.hover._pCacheAndGet_populate(page, brewData, listProp, {fnGetHash: opts.fnGetHash});
+				if (typeof BrewUtil2 !== "undefined") {
+					const brewData = await BrewUtil2.pGetBrewProcessed();
+					if (fnPrePopulate) fnPrePopulate(brewData, {isBrew: true});
+					if (brewData[listProp]) Renderer.hover._pCacheAndGet_populate(page, brewData, listProp, {fnGetHash: opts.fnGetHash});
+				}
 				const index = await DataUtil.loadJSON(`${Renderer.get().baseUrl}${baseUrl}${opts.isFluff ? "fluff-" : ""}index.json`);
 				const officialSources = {};
 				Object.entries(index).forEach(([k, v]) => officialSources[k.toLowerCase()] = v);

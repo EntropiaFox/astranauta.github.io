@@ -407,7 +407,7 @@ class Omnisearch {
 
 		data.forEach(it => this._addToIndex(it));
 
-		const brewIndex = await BrewUtil2.pGetSearchIndex();
+		const brewIndex = await BrewUtil2.pGetSearchIndex({id: this._searchIndex.documentStore.length});
 		brewIndex.forEach(it => this._addToIndex(it));
 
 		this._adventureBookLookup = {};

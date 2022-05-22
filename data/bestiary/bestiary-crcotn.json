@@ -1018,7 +1018,8 @@
 				"exhaustion"
 			],
 			"hasToken": true,
-			"hasFluffImages": true
+			"hasFluffImages": true,
+			"hasFluff": true
 		},
 		{
 			"name": "Alyxian the Tormented",

@@ -1,0 +1,27 @@
+{
+	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+	"version": "0.2",
+	"dictionaryDefinitions": [
+		{
+			"name": "dnd-words",
+			"path": "./spellcheck/dnd-words.txt",
+			"addWords": true
+		},
+		{
+			"name": "javascript-words",
+			"path": "./spellcheck/javascript-words.txt",
+			"addWords": true
+		}
+	],
+	"dictionaries": [
+		"dnd-words",
+		"javascript-words"
+	],
+	"ignorePaths": [
+		"./spellcheck/dnd-words.txt",
+		"./spellcheck/javascript-words.txt",
+		"node_modules",
+		"lib/",
+		"js/sw-files.js"
+	]
+}

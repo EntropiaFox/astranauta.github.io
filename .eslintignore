@@ -1,1 +1,12 @@
-js/sw-files.js
+# Generated
+sw.js
+sw-injector.js
+
+# Libraries
+lib
+node_modules
+
+# Scratches
+scratch
+trash
+trash_in

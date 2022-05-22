@@ -2,7 +2,8 @@
 
 class SearchPage {
 	static async pInit () {
-		ExcludeUtil.pInitialise(); // don't await, as this is only used for search
+		await BrewUtil2.pInit();
+		ExcludeUtil.pInitialise().then(null); // don't await, as this is only used for search
 
 		SearchPage._isAllExpanded = (await StorageUtil.pGetForPage(SearchPage._STORAGE_KEY_IS_EXPANDED)) || false;
 		SearchPage._$wrp = $(`#main_content`).empty();

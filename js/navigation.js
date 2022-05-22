@@ -110,7 +110,7 @@ class NavBar {
 		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "plutonium.html", "Plutonium (Foundry Module) Features");
 		this._addElement_divider(NavBar._CAT_UTILITIES);
-		this._addElement_li(NavBar._CAT_UTILITIES, "https://wiki.tercept.net/en/betteR20", "Roll20 Script Help");
+		this._addElement_li(NavBar._CAT_UTILITIES, "https://wiki.tercept.net/en/betteR20", "Roll20 Script Help", {isExternal: true});
 		this._addElement_divider(NavBar._CAT_UTILITIES);
 		this._addElement_li(NavBar._CAT_UTILITIES, "changelog.html", "Changelog");
 		this._addElement_li(NavBar._CAT_UTILITIES, `https://wiki.tercept.net/en/5eTools/HelpPages/${NavBar._getCurrentPage().replace(/.html$/i, "")}`, "Help", {isExternal: true});
@@ -162,12 +162,46 @@ class NavBar {
 				title: "Add the site to your home screen. When used in conjunction with the Preload Offline Data option, this can create a functional offline copy of the site.",
 			},
 		);
+		this._addElement_dropdown(NavBar._CAT_SETTINGS, NavBar._CAT_CACHE, {isSide: true});
+		this._addElement_label(NavBar._CAT_CACHE, `Note that visiting a page will automatically preload data for that page.<br>Note that data which is already preloaded will not be overwritten, unless it is out of date.`);
 		this._addElement_button(
-			NavBar._CAT_SETTINGS,
+			NavBar._CAT_CACHE,
 			{
-				html: "Preload Offline Data",
-				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt),
-				title: "Preload the site data for offline use. Warning: slow. If it appears to freeze, cancel it and try again; progress will be saved.",
+				html: "Preload Adventure Text <small>(25MB+)</small>",
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, /data\/adventure/),
+				title: "Preload adventure text for offline use.",
+			},
+		);
+		this._addElement_button(
+			NavBar._CAT_CACHE,
+			{
+				html: "Preload Book Images <small>(1GB+)</small>",
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, /img\/book/),
+				title: "Preload book images offline use. Note that book text is preloaded automatically.",
+			},
+		);
+		this._addElement_button(
+			NavBar._CAT_CACHE,
+			{
+				html: "Preload Adventure Text and Images <small>(2GB+)</small>",
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, /(?:data|img)\/adventure/),
+				title: "Preload adventure text and images for offline use.",
+			},
+		);
+		this._addElement_button(
+			NavBar._CAT_CACHE,
+			{
+				html: "Preload All Images <small>(4GB+)</small>",
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, /img/),
+				title: "Preload all images for offline use.",
+			},
+		);
+		this._addElement_button(
+			NavBar._CAT_CACHE,
+			{
+				html: "Preload All <small>(5GB+)</small>",
+				click: (evt) => NavBar.InteractionManager._pOnClick_button_preloadOffline(evt, /./),
+				title: "Preload everything for offline use.",
 			},
 		);
 	}
@@ -193,6 +227,7 @@ class NavBar {
 	 * - The user's Blacklist.
 	 */
 	static async _initAdventureBookElements () {
+		await BrewUtil2.pInit();
 		const [adventureBookIndex] = await Promise.all([
 			DataUtil.loadJSON(`${Renderer.get().baseUrl}data/generated/gendata-nav-adventure-book-index.json`),
 			ExcludeUtil.pInitialise(),
@@ -556,21 +591,42 @@ class NavBar {
 		else NavBar._openDropdown(ele);
 	}
 
-	static _openDropdown (fromLink) {
-		const noRemove = new Set();
-		let parent = fromLink.parentNode;
-		parent.classList.add("open");
-		noRemove.add(parent);
+	static _openDropdown (ele) {
+		const lisOpen = [];
 
-		while (parent.nodeName !== "NAV") {
+		let parent = ele.parentNode;
+		parent.classList.add("open");
+		lisOpen.push(parent);
+
+		do {
 			parent = parent.parentNode;
 			if (parent.nodeName === "LI") {
 				parent.classList.add("open");
-				noRemove.add(parent);
+				lisOpen.push(parent);
 			}
-		}
+		} while (parent.nodeName !== "NAV");
 
-		NavBar._dropdowns.filter(ele => !noRemove.has(ele)).forEach(ele => ele.classList.remove("open"));
+		NavBar._dropdowns.filter(ele => !lisOpen.includes(ele)).forEach(ele => ele.classList.remove("open"));
+
+		this._openDropdown_mutAlignment({liNavbar: lisOpen.slice(-1)[0]});
+	}
+
+	/**
+	 * If a dropdown
+	 * @param liNavbar
+	 * @private
+	 */
+	static _openDropdown_mutAlignment ({liNavbar}) {
+		const uls = [...liNavbar.querySelectorAll("ul.dropdown-menu")];
+		const widthRequired = window.innerWidth < 1200
+			? Math.max(...uls.map(ul => ul.getBoundingClientRect().width))
+			: uls.map(ul => ul.getBoundingClientRect().width).reduce((a, b) => a + b, 0);
+
+		const isForceRightAlign = liNavbar.getBoundingClientRect().left >= (window.innerWidth - widthRequired);
+
+		uls.forEach(ul => {
+			ul.style.left = isForceRightAlign ? `${-Math.round(ul.getBoundingClientRect().width) + ul.parentNode.getBoundingClientRect().width}px` : "";
+		});
 	}
 
 	static _handleItemMouseEnter (ele) {
@@ -664,6 +720,7 @@ NavBar._CAT_ADVENTURES = "Adventures";
 NavBar._CAT_REFERENCES = "References";
 NavBar._CAT_UTILITIES = "Utilities";
 NavBar._CAT_SETTINGS = "Settings";
+NavBar._CAT_CACHE = "Preload Data";
 
 NavBar._navbar = null;
 
@@ -674,7 +731,6 @@ NavBar._timersOpen = {};
 NavBar._timersClose = {};
 NavBar._timerMousePos = {};
 NavBar._cachedInstallEvent = null;
-NavBar._downloadBarMeta = null;
 
 NavBar.InteractionManager = class {
 	static _onClick_button_dayNight (evt) {
@@ -728,106 +784,15 @@ NavBar.InteractionManager = class {
 		}
 	}
 
-	static async _pOnClick_button_preloadOffline (evt) {
+	static async _pOnClick_button_preloadOffline (evt, route) {
 		evt.preventDefault();
 
-		if (!navigator.serviceWorker || !navigator.serviceWorker.controller) {
+		if (globalThis.swCacheRoutes === undefined) {
 			JqueryUtil.doToast(`The loader was not yet available! Reload the page and try again. If this problem persists, your browser may not support preloading.`);
 			return;
 		}
 
-		// a pipe with has "port1" and "port2" props; we'll send "port2" to the service worker so it can
-		//   send messages back down the pipe to us
-		const messageChannel = new MessageChannel();
-		let hasSentPort = false;
-		const sendMessage = (data) => {
-			try {
-				// Only send the MessageChannel port once, as the first send will transfer ownership of the
-				//   port over to the service worker (and we can no longer access it to even send it)
-				if (!hasSentPort) {
-					hasSentPort = true;
-					navigator.serviceWorker.controller.postMessage(data, [messageChannel.port2]);
-				} else {
-					navigator.serviceWorker.controller.postMessage(data);
-				}
-			} catch (e) {
-				// Ignore errors
-				setTimeout(() => { throw e; });
-			}
-		};
-
-		if (NavBar._downloadBarMeta) {
-			if (NavBar._downloadBarMeta) {
-				NavBar._downloadBarMeta.$wrpOuter.remove();
-				NavBar._downloadBarMeta = null;
-			}
-			sendMessage({type: "cache-cancel"});
-		}
-
-		const $dispProgress = $(`<div class="page__disp-download-progress-bar"/>`);
-		const $dispPct = $(`<div class="page__disp-download-progress-text ve-flex-vh-center bold">0%</div>`);
-
-		const $btnCancel = $(`<button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>`)
-			.click(() => {
-				if (NavBar._downloadBarMeta) {
-					NavBar._downloadBarMeta.$wrpOuter.remove();
-					NavBar._downloadBarMeta = null;
-				}
-				sendMessage({type: "cache-cancel"});
-			});
-
-		const $wrpBar = $$`<div class="page__wrp-download-bar w-100 relative mr-2">${$dispProgress}${$dispPct}</div>`;
-		const $wrpOuter = $$`<div class="page__wrp-download">
-			${$wrpBar}
-			${$btnCancel}
-		</div>`.appendTo(document.body);
-
-		NavBar._downloadBarMeta = {$wrpOuter, $wrpBar, $dispProgress, $dispPct};
-
-		// Trigger the service worker to cache everything
-		messageChannel.port1.onmessage = e => {
-			const msg = e.data;
-			switch (msg.type) {
-				case "download-continue": {
-					if (!NavBar._downloadBarMeta) return;
-
-					sendMessage({type: "cache-continue", data: {index: msg.data.index}});
-
-					break;
-				}
-				case "download-progress": {
-					if (!NavBar._downloadBarMeta) return;
-
-					NavBar._downloadBarMeta.$dispProgress.css("width", msg.data.pct);
-					NavBar._downloadBarMeta.$dispPct.text(msg.data.pct);
-
-					break;
-				}
-				case "download-cancelled": {
-					if (!NavBar._downloadBarMeta) return;
-
-					NavBar._downloadBarMeta.$wrpOuter.remove();
-					NavBar._downloadBarMeta = null;
-
-					break;
-				}
-				case "download-error": {
-					setTimeout(() => { throw new Error(msg.message); });
-
-					if (!NavBar._downloadBarMeta) return;
-
-					NavBar._downloadBarMeta.$wrpBar.addClass("page__wrp-download-bar--error");
-					NavBar._downloadBarMeta.$dispProgress.addClass("page__disp-download-progress-bar--error");
-					NavBar._downloadBarMeta.$dispPct.text("Error!");
-
-					JqueryUtil.doToast(`An error occurred. ${VeCt.STR_SEE_CONSOLE}`);
-
-					break;
-				}
-			}
-		};
-
-		sendMessage({type: "cache-start"});
+		globalThis.swCacheRoutes(route);
 	}
 };
 

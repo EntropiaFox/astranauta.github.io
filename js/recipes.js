@@ -120,7 +120,7 @@ class RecipesPage extends ListPage {
 
 		const tabMetas = [
 			new Renderer.utils.TabButton({
-				label: "Traits",
+				label: "Recipe",
 				fnPopulate: this._renderStats.bind(this, it),
 				isVisible: true,
 			}),

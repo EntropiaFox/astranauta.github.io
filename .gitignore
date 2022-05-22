@@ -9,11 +9,14 @@ node_modules
 # Visual Studio Code project files
 .vscode/
 
-# Generated files
-sitemap.xml
-js/sw-files.js
-*.DS_Store
-
 # Misc dev/scripting files
 trash
 trash_in
+
+# Generated files
+sitemap.xml
+*.DS_Store
+
+# Generated service worker files
+sw.js
+sw-injector.js

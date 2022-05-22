@@ -58,6 +58,7 @@ class List {
 	 * @param [opts.sortDirInitial] Initial sortDir.
 	 * @param [opts.syntax] A dictionary of search syntax prefixes, each with an item "to display" checker function.
 	 * @param [opts.isFuzzy]
+	 * @param [opts.isSkipSearchKeybindingEnter]
 	 */
 	constructor (opts) {
 		if (opts.fnSearch && opts.isFuzzy) throw new Error(`The options "fnSearch" and "isFuzzy" are mutually incompatible!`);
@@ -68,6 +69,7 @@ class List {
 		this._fnSearch = opts.fnSearch;
 		this._syntax = opts.syntax;
 		this._isFuzzy = !!opts.isFuzzy;
+		this._isSkipSearchKeybindingEnter = !!opts.isSkipSearchKeybindingEnter;
 
 		this._items = [];
 		this._eventHandlers = {};
@@ -147,7 +149,10 @@ class List {
 	}
 
 	_handleKeydown_enter (evt) {
+		if (this._isSkipSearchKeybindingEnter) return;
+
 		if (IS_VTT) return;
+		if (!EventUtil.noModifierKeys(evt)) return;
 
 		const firstVisibleItem = this.visibleItems[0];
 		if (!firstVisibleItem) return;

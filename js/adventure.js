@@ -2,9 +2,10 @@
 
 const CONTENTS_URL = "data/adventures.json";
 
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
 	BookUtil.$dispBook = $(`#pagecontent`);
-	ExcludeUtil.pInitialise(); // don't await, as this is only used for search
+	await BrewUtil2.pInit();
+	ExcludeUtil.pInitialise().then(null); // don't await, as this is only used for search
 	DataUtil.loadJSON(CONTENTS_URL).then(onJsonLoad);
 });
 

@@ -2,6 +2,9 @@
 
 class MakeCards extends BaseComponent {
 	static async pInit () {
+		await BrewUtil2.pInit();
+		await ExcludeUtil.pInitialise();
+
 		MakeCards._ = new MakeCards();
 		await MakeCards.utils.pLoadReducedData();
 		await MakeCards._.pInit();

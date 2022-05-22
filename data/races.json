@@ -201,7 +201,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aasimar",
@@ -462,7 +463,8 @@
 						}
 					}
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Aasimar",
@@ -1203,7 +1205,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Bugbear",
@@ -1614,7 +1617,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Centaur",
@@ -1887,7 +1891,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Changeling",
@@ -2259,7 +2264,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dhampir",
@@ -2323,7 +2329,7 @@
 							"type": "list",
 							"items": [
 								"regain hit points equal to the damage dealt by the bite",
-								"gain a bonus to the next ability check or attack roll you make; the bonus equals the damage dealt by the bite"
+								"gain a bonus to the next ability check or attack roll you make; the bonus equals the damage dealt by the bite."
 							]
 						},
 						"You can empower yourself with your bite a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
@@ -2568,7 +2574,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dragonborn (Chromatic)",
@@ -3478,7 +3486,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dwarf",
@@ -3786,7 +3795,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Elf",
@@ -4142,7 +4152,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Fairy",
@@ -4357,7 +4368,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Firbolg",
@@ -4589,7 +4601,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Giff",
@@ -4801,7 +4814,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Githzerai",
@@ -4872,7 +4886,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Gnoll",
@@ -5276,7 +5291,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Goblin",
@@ -5605,7 +5621,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Goliath",
@@ -6032,7 +6049,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Half-Orc",
@@ -6441,7 +6460,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Harengon",
@@ -6846,7 +6866,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Hobgoblin",
@@ -7067,7 +7088,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Human (Amonkhet)",
@@ -7743,7 +7766,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kenku",
@@ -8125,7 +8149,8 @@
 					},
 					"skillProficiencies": null
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kobold",
@@ -8652,7 +8677,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lizardfolk",
@@ -9480,7 +9506,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Minotaur",
@@ -10167,7 +10194,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Orc",
@@ -11028,7 +11056,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Sea Elf",
@@ -11122,7 +11151,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shadar-Kai",
@@ -11204,7 +11234,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shifter",
@@ -11440,7 +11471,8 @@
 						}
 					}
 				}
-			]
+			],
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shifter",
@@ -12031,7 +12063,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tabaxi",
@@ -12333,7 +12366,9 @@
 					],
 					"type": "entries"
 				}
-			]
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tortle",
@@ -12407,7 +12442,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Tortle",
@@ -12651,7 +12687,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Triton",
@@ -13868,7 +13905,8 @@
 					]
 				}
 			],
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Yuan-ti Pureblood",

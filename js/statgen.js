@@ -7,6 +7,7 @@ class StatGenPage {
 	}
 
 	async pInit () {
+		await BrewUtil2.pInit();
 		await ExcludeUtil.pInitialise();
 		const [races, feats] = await Promise.all([
 			await this._pLoadRaces(),

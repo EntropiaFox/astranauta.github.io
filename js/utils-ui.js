@@ -1298,10 +1298,7 @@ class SearchUiUtil {
 		Object.values(additionalData).forEach(arr => arr.forEach(d => handleDataItem(d)));
 		Object.values(alternateData).forEach(arr => arr.forEach(d => handleDataItem(d, true)));
 
-		// Add homebrew
-		Omnisearch.highestId = Math.max(ixMax, Omnisearch.highestId);
-
-		const brewIndex = await BrewUtil2.pGetSearchIndex();
+		const brewIndex = await BrewUtil2.pGetSearchIndex({id: availContent.ALL.documentStore.length});
 
 		brewIndex.forEach(d => {
 			if (SearchUiUtil._isNoHoverCat(d.c) || fromDeepIndex(d)) return;
@@ -2449,7 +2446,8 @@ class InputUiUtil {
 	 * @param [opts.isSkippable] If the prompt is skippable.
 	 * @param [opts.fnIsValid] A function which checks if the current input is valid, and prevents the user from
 	 *        submitting the value if it is.
-	 * @param [opts.$elePost] Element to add below the input.
+	 * @param [opts.$elePre] Element to add before the input.
+	 * @param [opts.$elePost] Element to add after the input.
 	 * @param [opts.cbPostRender] Callback to call after rendering the modal
 	 * @return {Promise<String>} A promise which resolves to the string if the user entered one, or null otherwise.
 	 */
@@ -2507,6 +2505,7 @@ class InputUiUtil {
 			title: opts.title || "Enter Text",
 			isMinHeight0: true,
 		});
+		if (opts.$elePre) opts.$elePre.appendTo($modalInner);
 		$iptStr.appendTo($modalInner);
 		if (opts.$elePost) opts.$elePost.appendTo($modalInner);
 		$$`<div class="ve-flex-v-center ve-flex-h-right pb-1 px-1">${$btnOk}${$btnCancel}${$btnSkip}</div>`.appendTo($modalInner);
