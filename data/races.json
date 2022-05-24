@@ -408,6 +408,7 @@
 				}
 			],
 			"hasFluff": true,
+			"hasFluffImages": true,
 			"_versions": [
 				{
 					"name": "Aasimar; Necrotic Shroud",
@@ -463,8 +464,7 @@
 						}
 					}
 				}
-			],
-			"hasFluffImages": true
+			]
 		},
 		{
 			"name": "Aasimar",
@@ -8093,6 +8093,7 @@
 				}
 			],
 			"hasFluff": true,
+			"hasFluffImages": true,
 			"_versions": [
 				{
 					"name": "Kobold; Craftiness",
@@ -8149,8 +8150,7 @@
 					},
 					"skillProficiencies": null
 				}
-			],
-			"hasFluffImages": true
+			]
 		},
 		{
 			"name": "Kobold",
@@ -11398,6 +11398,7 @@
 				}
 			],
 			"hasFluff": true,
+			"hasFluffImages": true,
 			"_versions": [
 				{
 					"name": "Shifter; Beasthide",
@@ -11471,8 +11472,7 @@
 						}
 					}
 				}
-			],
-			"hasFluffImages": true
+			]
 		},
 		{
 			"name": "Shifter",

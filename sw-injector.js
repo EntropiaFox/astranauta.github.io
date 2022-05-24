@@ -427,7 +427,12 @@
       JqueryUtil.doToast("Preload was canceled. Some data may have been preloaded.");
     }, 1e3);
   };
+  var swResetAll = () => {
+    wb.messageSW({ type: "RESET" });
+    JqueryUtil.doToast({ content: "Resetting..." });
+  };
   globalThis.swCacheRoutes = swCacheRoutes;
+  globalThis.swResetAll = swResetAll;
   var downloadBar = null;
   var removeDownloadBar = () => {
     if (downloadBar === null)

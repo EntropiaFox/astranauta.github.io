@@ -3263,6 +3263,17 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = src;
 });
+[
+	{src: SRC_PSA, id: "PS-A"},
+	{src: SRC_PSI, id: "PS-I"},
+	{src: SRC_PSK, id: "PS-K"},
+	{src: SRC_PSZ, id: "PS-Z"},
+	{src: SRC_PSX, id: "PS-X"},
+	{src: SRC_PSD, id: "PS-D"},
+].forEach(({src, id}) => {
+	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = id;
+	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = id;
+});
 Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE = {};
 [
 	SRC_LMoP,
@@ -3326,12 +3337,6 @@ Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE = {};
 	SRC_SCC_HfMT,
 	SRC_SCC_TMM,
 	SRC_SCC_ARiR,
-	SRC_PSA,
-	SRC_PSI,
-	SRC_PSK,
-	SRC_PSZ,
-	SRC_PSX,
-	SRC_PSD,
 	SRC_CRCotN,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_ADVENTURE[src] = src;

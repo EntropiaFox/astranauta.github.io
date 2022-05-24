@@ -11374,8 +11374,7 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Hammerer",
@@ -11643,8 +11642,7 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Mind Master",
@@ -11913,8 +11911,7 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Duergar Soulblade",
@@ -13630,8 +13627,7 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Evoker Wizard",
@@ -14251,8 +14247,7 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Firenewt Warrior",
@@ -17189,8 +17184,7 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Gnoll Witherling",
@@ -18108,8 +18102,7 @@
 					},
 					"variant": null
 				}
-			],
-			"hasFluffImages": true
+			]
 		},
 		{
 			"name": "Grung Elite Warrior",
@@ -18396,8 +18389,7 @@
 					},
 					"variant": null
 				}
-			],
-			"hasFluffImages": true
+			]
 		},
 		{
 			"name": "Grung Wildling",
@@ -18707,8 +18699,7 @@
 					},
 					"variant": null
 				}
-			],
-			"hasFluffImages": true
+			]
 		},
 		{
 			"name": "Guard Drake",
@@ -18856,6 +18847,7 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
+			"hasFluffImages": true,
 			"_versions": [
 				{
 					"name": "Guard Drake (Black)",
@@ -18940,8 +18932,7 @@
 					],
 					"variant": null
 				}
-			],
-			"hasFluffImages": true
+			]
 		},
 		{
 			"name": "Hadrosaurus",
@@ -22302,8 +22293,7 @@
 				"grappled"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Martial Arts Adept",
@@ -25578,8 +25568,7 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Neothelid",
@@ -26427,8 +26416,7 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Ogre Chain Brute",
@@ -26527,8 +26515,7 @@
 				"stunned"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Ogre Howdah",
@@ -27354,8 +27341,7 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Phoenix",
@@ -27730,8 +27716,7 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Red Abishai",
@@ -29440,8 +29425,7 @@
 				"prone"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Shoosuva",
@@ -31868,8 +31852,7 @@
 				"poisoned"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Stone Cursed",
@@ -32950,8 +32933,7 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Sword Wraith Warrior",
@@ -33920,8 +33902,7 @@
 				"paralyzed"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Transmuter Wizard",
@@ -34737,8 +34718,7 @@
 				"RW"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Vegepygmy Chief",
@@ -35405,8 +35385,7 @@
 				"unconscious"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Warlock of the Fiend",
@@ -35573,8 +35552,7 @@
 				"MW"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Warlock of the Great Old One",
@@ -36974,8 +36952,7 @@
 				"invisible"
 			],
 			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasFluff": true
 		},
 		{
 			"name": "Yagnoloth",

@@ -1779,7 +1779,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MPMM/Deep Rothé.webp"
+						"path": "bestiary/MPMM/Deep Rothe.webp"
 					}
 				}
 			]
@@ -5087,6 +5087,15 @@
 				"To other creatures, quicklings seem blindingly fast, vanishing into an indistinct blur as they move. Their cruel laughter is a burst of rapid staccato sounds, their speech a shrill squeal. Only when quicklings deliberately slow down, which they prefer not to do, can other beings properly see, hear, and comprehend them. Never truly at rest, \"stationary\" quicklings constantly pace and shift in place, as though they can't wait to be off again.",
 				"Quicklings have a capricious nature that goes well with their energy level: they think as fast as they run, and they are always up to something. They spend most of their time perpetrating acts of mischief on slower creatures. One rarely passes up an opportunity to tie a person's bootlaces together, move the stool a creature is about to sit on, or unbuckle a saddle while no one's looking.",
 				"Tricks of that sort are hardly the limit of quicklings' artful malice, however. They don't commit outright murder, but they can ruin lives in plenty of other ways: stealing an important letter, swiping coins collected for the poor, planting a stolen item in someone's bag. Quicklings enjoy causing suffering that transcends mere mischief, especially when the blame for their actions falls on others and creates discord."
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/MPMM/Quickling.webp"
+					}
+				}
 			]
 		},
 		{

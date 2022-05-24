@@ -180,7 +180,16 @@
 						}
 					}
 				}
-			}
+			},
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/ERLW/Clawfoot.png"
+					}
+				}
+			]
 		},
 		{
 			"name": "Dinosaurs",

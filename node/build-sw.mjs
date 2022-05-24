@@ -47,7 +47,8 @@ const workboxPrecacheBuildResult = await injectManifest({
 		"manifest.webmanifest", // we should make sure we have the manifest, although its not strictly needed...
 		// we want to store fonts to make things styled nicely
 		"fonts/glyphicons-halflings-regular.woff2",
-		"fonts/Convergence-Regular.ttf", // this should be a woff2 but that is its own pr
+		"fonts/Convergence-Regular.woff2",
+		"fonts/Roboto-Regular.woff2",
 		// we need to cache the sw-injector or we won't be injected
 		"sw-injector.js",
 	],

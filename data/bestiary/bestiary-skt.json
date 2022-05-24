@@ -4850,6 +4850,63 @@
 			"hasToken": true
 		},
 		{
+			"name": "Princess Serissa",
+			"isNpc": true,
+			"source": "SKT",
+			"page": 209,
+			"_copy": {
+				"name": "Storm Giant",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the giant",
+						"with": "Serissa",
+						"flags": "i"
+					},
+					"action": [
+						{
+							"mode": "replaceArr",
+							"replace": "Multiattack",
+							"items": {
+								"name": "Multiattack",
+								"entries": [
+									"Serissa makes two maul attacks."
+								]
+							}
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "Greatsword",
+							"items": {
+								"name": "Maul",
+								"entries": [
+									"{@atk mw} {@hit 14} to hit, reach 10 ft., one target. {@h}30 ({@damage 6d6 + 9}) bludgeoning damage."
+								]
+							}
+						}
+					]
+				}
+			},
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item hide armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 200,
+				"formula": "20d12 + 100"
+			},
+			"damageTags": [
+				"B",
+				"L"
+			],
+			"hasToken": true
+		},
+		{
 			"name": "Purple Wormling",
 			"source": "SKT",
 			"page": 242,
@@ -5018,63 +5075,6 @@
 			"languageTags": [
 				"C",
 				"E"
-			],
-			"hasToken": true
-		},
-		{
-			"name": "Serissa",
-			"isNpc": true,
-			"source": "SKT",
-			"page": 209,
-			"_copy": {
-				"name": "Storm Giant",
-				"source": "MM",
-				"_mod": {
-					"*": {
-						"mode": "replaceTxt",
-						"replace": "the giant",
-						"with": "Serissa",
-						"flags": "i"
-					},
-					"action": [
-						{
-							"mode": "replaceArr",
-							"replace": "Multiattack",
-							"items": {
-								"name": "Multiattack",
-								"entries": [
-									"Serissa makes two maul attacks."
-								]
-							}
-						},
-						{
-							"mode": "replaceArr",
-							"replace": "Greatsword",
-							"items": {
-								"name": "Maul",
-								"entries": [
-									"{@atk mw} {@hit 14} to hit, reach 10 ft., one target. {@h}30 ({@damage 6d6 + 9}) bludgeoning damage."
-								]
-							}
-						}
-					]
-				}
-			},
-			"ac": [
-				{
-					"ac": 14,
-					"from": [
-						"{@item hide armor|phb}"
-					]
-				}
-			],
-			"hp": {
-				"average": 200,
-				"formula": "20d12 + 100"
-			},
-			"damageTags": [
-				"B",
-				"L"
 			],
 			"hasToken": true
 		},

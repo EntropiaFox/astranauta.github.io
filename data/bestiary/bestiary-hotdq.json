@@ -946,6 +946,30 @@
 			"hasFluffImages": true
 		},
 		{
+			"name": "Four-Armed Troll",
+			"source": "HotDQ",
+			"page": 65,
+			"_copy": {
+				"name": "Troll",
+				"source": "MM",
+				"_mod": {
+					"action": {
+						"mode": "replaceArr",
+						"replace": "Multiattack",
+						"items": {
+							"name": "Multiattack",
+							"entries": [
+								"The troll attacks five times, once with its bite and four times with its claws. If two or more claws hit the same target, the troll rends the target, dealing an extra {@dice 2d6} slashing damage."
+							]
+						}
+					}
+				}
+			},
+			"cr": "6",
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"name": "Frulam Mondath",
 			"isNpc": true,
 			"source": "HotDQ",

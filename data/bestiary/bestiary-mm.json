@@ -60594,21 +60594,6 @@
 						"name": "Toll (Loathsome Limbs)",
 						"addHeadersAs": "trait"
 					}
-				},
-				{
-					"type": "inset",
-					"name": "Four-Armed Troll",
-					"source": "HotDQ",
-					"entries": [
-						"Sometimes when a troll loses a limb, it regenerates two limbs to replace the one it lost. This can result in trolls with multiple arms. A four-armed troll uses the {@creature troll} stat block, except that it is a challenge rating 6 monster (2,300 XP) and has the following action instead of the troll's normal Multiattack action:",
-						{
-							"type": "entries",
-							"name": "Multiattack",
-							"entries": [
-								"The troll attacks five times, once with its bite and four times with its claws. If two or more claws hit the same target, the troll rends the target, dealing an extra {@dice 2d6} slashing damage."
-							]
-						}
-					]
 				}
 			],
 			"environment": [
@@ -60645,27 +60630,7 @@
 			],
 			"hasToken": true,
 			"hasFluff": true,
-			"hasFluffImages": true,
-			"_versions": [
-				{
-					"name": "Four-Armed Troll",
-					"source": "HotDQ",
-					"_mod": {
-						"action": {
-							"mode": "replaceArr",
-							"replace": "Multiattack",
-							"items": {
-								"name": "Multiattack",
-								"entries": [
-									"The troll attacks five times, once with its bite and four times with its claws. If two or more claws hit the same target, the troll rends the target, dealing an extra {@dice 2d6} slashing damage."
-								]
-							}
-						}
-					},
-					"cr": "6",
-					"variant": null
-				}
-			]
+			"hasFluffImages": true
 		},
 		{
 			"name": "Twig Blight",

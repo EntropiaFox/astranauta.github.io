@@ -1986,10 +1986,14 @@ class Filter extends FilterBase {
 
 	addItem (item) {
 		if (item == null) return;
+
 		if (item instanceof Array) {
 			const len = item.length;
 			for (let i = 0; i < len; ++i) this.addItem(item[i]);
-		} else if (!this.__itemsSet.has(item.item || item)) {
+			return;
+		}
+
+		if (!this.__itemsSet.has(item.item || item)) {
 			item = item instanceof FilterItem ? item : new FilterItem({item});
 			Filter._validateItemNest(item, this._nests);
 
@@ -3139,7 +3143,12 @@ class RangeFilter extends FilterBase {
 
 	addItem (item) {
 		if (item == null) return;
-		if (item instanceof Array) return item.forEach(it => this.addItem(it));
+
+		if (item instanceof Array) {
+			const len = item.length;
+			for (let i = 0; i < len; ++i) this.addItem(item[i]);
+			return;
+		}
 
 		if (this._labels) {
 			if (!this._labels.some(it => it === item)) this._labels.push(item);
