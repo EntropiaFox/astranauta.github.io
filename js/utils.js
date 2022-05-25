@@ -4155,7 +4155,7 @@ DataUtil = {
 		async loadJSON () {
 			if (DataUtil.class._loadedJson) return DataUtil.class._loadedJson;
 
-			DataUtil.class._pLoadingJson = (async () => {
+			DataUtil.class._pLoadingJson = DataUtil.class._pLoadingJson || (async () => {
 				const index = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/class/index.json`);
 
 				const allData = (
@@ -4178,7 +4178,7 @@ DataUtil = {
 		async loadRawJSON () {
 			if (DataUtil.class._loadedRawJson) return DataUtil.class._loadedRawJson;
 
-			DataUtil.class._pLoadingRawJson = (async () => {
+			DataUtil.class._pLoadingRawJson = DataUtil.class._pLoadingRawJson || (async () => {
 				const index = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/class/index.json`);
 				const allData = await Promise.all(Object.values(index).map(it => DataUtil.loadJSON(`${Renderer.get().baseUrl}data/class/${it}`)));
 
