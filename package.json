@@ -15,7 +15,7 @@
 		"test:styles": "stylelint scss/*.scss scss/includes/*.scss",
 		"test:data": "node test/test-all.js",
 		"test": "npm run test:js && npm run test:styles && npm run test:data",
-		"build:css": "sass --style=compressed scss/:css/",
+		"build:css": "sass --style=compressed scss/:css/ && node node/rm.js css/includes/",
 		"build:deploy:dev": "bash build/deploy-prep-dev.sh",
 		"build:deploy:prod": "bash build/deploy-prep-prod.sh",
 		"build:deploy:prod:cdn": "bash build/deploy-prep-prod--cdn.sh",
