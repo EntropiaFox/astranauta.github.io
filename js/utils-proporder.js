@@ -725,6 +725,12 @@ PropOrder._FEAT = [
 	"armorProficiencies",
 	"skillToolLanguageProficiencies",
 	"savingThrowProficiencies",
+	"expertise",
+
+	"immune",
+	"resist",
+	"vulnerable",
+	"conditionImmune",
 
 	"additionalSpells",
 

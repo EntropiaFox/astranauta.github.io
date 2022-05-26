@@ -9772,10 +9772,6 @@ Renderer.hover = {
 
 							if (cpy) {
 								cntReplaces++;
-								delete cpy.className;
-								delete cpy.classSource;
-								delete cpy.subclassShortName;
-								delete cpy.subclassSource;
 								delete cpy.level;
 								delete cpy.header;
 								if (toReplaceMeta.name) cpy.name = toReplaceMeta.name;

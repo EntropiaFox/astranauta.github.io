@@ -1,7 +1,7 @@
 {
 	"name": "5etools",
 	"author": "TheGiddyLimit",
-	"version": "1.155.2",
+	"version": "1.157.0",
 	"license": "MIT",
 	"description": "A site dedicated to making playing games with your friends as easy as possible.",
 	"scripts": {
@@ -27,7 +27,7 @@
 		"version": "node node/version-bump.js",
 		"serve:dev": "http-server -c-1 --cors --port 5000",
 		"spellcheck:check-data": "echo \"This can take a few minutes.\" && npx cspell --no-progress --show-context --show-suggestions \"data/**/*.json\"",
-		"spellcheck:check-data-quick": "git diff --name-only | grep -P \"^data\/[^.]+.json\" | npx cspell --no-progress --show-context --show-suggestions --file-list stdin",
+		"spellcheck:check-data-quick": "git diff --name-only | grep -P \"^data/[^.]+.json\" | npx cspell --no-progress --show-context --show-suggestions --file-list stdin",
 		"spellcheck:trust-data": "echo \"This can take a few minutes.\" && echo \"# new words on $(date)\" >> spellcheck/dnd-words.txt && npx cspell --words-only --unique \"./data/**/*.json\" | sort --ignore-case >> spellcheck/dnd-words.txt"
 	},
 	"repository": {
