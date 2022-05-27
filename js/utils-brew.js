@@ -21,7 +21,7 @@ class BrewDoc {
 		});
 	}
 
-	static fromObject (obj, opts) {
+	static fromObject (obj, opts = {}) {
 		const {isCopy = false} = opts;
 		return new this({
 			head: BrewDocHead.fromObject(obj.head, opts),
@@ -1372,6 +1372,7 @@ class ManageBrewUi {
 			$iptSearch,
 			$wrpList,
 			isUseJquery: true,
+			isFuzzy: true,
 			sortByInitial: rdState.list ? rdState.list.sortBy : undefined,
 			sortDirInitial: rdState.list ? rdState.list.sortDir : undefined,
 		});

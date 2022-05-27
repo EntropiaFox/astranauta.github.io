@@ -6,6 +6,7 @@ class RacesPage extends ListPage {
 		super({
 			dataSource: DataUtil.race.loadJSON.bind(DataUtil.race, {isAddBaseRaces: true}),
 			dataSourceFluff: "data/fluff-races.json",
+			brewDataSource: DataUtil.race.loadBrew,
 
 			pageFilter,
 

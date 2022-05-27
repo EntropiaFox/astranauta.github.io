@@ -2051,5 +2051,10 @@
 		"date": "2022-05-26",
 		"title": "Sizeable Lads",
 		"txt": "- Added UA: Giant Options\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.157.1",
+		"date": "2022-05-27",
+		"txt": "- Fixed crash when attempting to load an existing creature into the Homebrew Builder using the Bestiary's \"Edit in Homebrew Builder\" button\n- Fixed crash when updating homebrews via URL\n- Fixed homebrew search index partially clobbering main search index, causing some entities to disappear from search\n- Fixed Get Homebrew search matching parts of, rather than all of, the search term\n- Fixed homebrew subraces never being shown \n- (Fixed typos/added tags)\n"
 	}
 ]

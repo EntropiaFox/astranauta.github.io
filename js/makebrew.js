@@ -1271,29 +1271,34 @@ class Makebrew {
 	static async pHashChange () {
 		try {
 			await Makebrew._LOCK.pLock();
+			return (await this._pHashChange());
+		} finally {
+			Makebrew._LOCK.unlock();
+		}
+	}
 
-			const [builderMode, ...sub] = Hist.getHashParts();
-			Hist.initialLoad = false; // Once we've extracted the hash's parts, we no longer care about preserving it
+	static async _pHashChange () {
+		const [builderMode, ...sub] = Hist.getHashParts();
+		Hist.initialLoad = false; // Once we've extracted the hash's parts, we no longer care about preserving it
 
-			if (!builderMode) return Hist.replaceHistoryHash(UrlUtil.encodeForHash(ui.activeBuilder));
+		if (!builderMode) return Hist.replaceHistoryHash(UrlUtil.encodeForHash(ui.activeBuilder));
 
-			const builder = ui.getBuilderById(builderMode);
-			if (!builder) return Hist.replaceHistoryHash(UrlUtil.encodeForHash(ui.activeBuilder));
+		const builder = ui.getBuilderById(builderMode);
+		if (!builder) return Hist.replaceHistoryHash(UrlUtil.encodeForHash(ui.activeBuilder));
 
-			await ui.pSetActiveBuilderById(builderMode); // (This will update the hash to the active builder)
+		await ui.pSetActiveBuilderById(builderMode); // (This will update the hash to the active builder)
 
-			if (sub.length) {
-				const initialLoadMeta = UrlUtil.unpackSubHash(sub[0]);
-				if (!initialLoadMeta.statemeta) return;
+		if (!sub.length) return;
 
-				const [page, source, hash] = initialLoadMeta.statemeta;
-				let toLoad = await Renderer.hover.pCacheAndGet(page, source, hash, {isCopy: true});
+		const initialLoadMeta = UrlUtil.unpackSubHash(sub[0]);
+		if (!initialLoadMeta.statemeta) return;
 
-				toLoad = await builder._pHashChange_pHandleSubHashes(sub, toLoad);
+		const [page, source, hash] = initialLoadMeta.statemeta;
+		let toLoad = await Renderer.hover.pCacheAndGet(page, source, hash, {isCopy: true});
 
-				return builder.pHandleSidebarLoadExistingData(toLoad, {isForce: true, meta});
-			}
-		} finally { Makebrew._LOCK.unlock(); }
+		toLoad = await builder._pHashChange_pHandleSubHashes(sub, toLoad);
+
+		return builder.pHandleSidebarLoadExistingData(toLoad, {isForce: true});
 	}
 }
 Makebrew._LOCK = null;

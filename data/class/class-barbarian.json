@@ -2229,8 +2229,8 @@
 			"subclassSource": "UA2022GiantOptions",
 			"level": 3,
 			"entries": [
-				"{@i 3rd-Level Path of the Giant Feature}",
-				"When you choose this path, you learn to speak, read, and write Giant or one other language of your choice if you already know Giant. Additionally, you learn either the druidcraft or {@spell thaumaturgy} cantrip (your choice). Wisdom is your spellcasting ability for this spell.",
+				"Barbarians who walk the Path of the Giant draw strength from the primal forces that are the Giants and their elemental ilk. Their rages surge with elemental power and cause these barbarians to grow in size, transforming them into avatars of primordial might.",
+				"During their rage, a barbarian may take after a legendary storm giant, hair turning white and eyes crackling with lightning. Others adopt the monstrous features of apocalyptic titans, rending the world around them so that it may be made anew.",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "Giant Power|Barbarian||Giant (UA)|UA2022GiantOptions|3"

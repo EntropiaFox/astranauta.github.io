@@ -215,6 +215,7 @@ class List {
 					fields: {
 						s: {expand: true},
 					},
+					bool: "AND",
 					expand: true,
 				},
 			);
