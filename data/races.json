@@ -10740,9 +10740,6 @@
 			"resist": [
 				"poison"
 			],
-			"conditionImmune": [
-				"poisoned"
-			],
 			"entries": [
 				{
 					"type": "entries",

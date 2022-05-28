@@ -281,11 +281,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "08a",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/TTP/thumbnail/Snout of Omgar DM-thumb.webp"
-							},
-							"id": "08a"
+								"path": "adventure/TTP/thumbnail/Snout of Omgar DM.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -1139,11 +1139,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "08b",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/TTP/thumbnail/Ahoyhoy DM-thumb.webp"
-							},
-							"id": "08b"
+								"path": "adventure/TTP/thumbnail/Ahoyhoy DM.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -2120,11 +2120,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "08c",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/TTP/thumbnail/Dangwaru DM-thumb.webp"
-							},
-							"id": "08c"
+								"path": "adventure/TTP/thumbnail/Dangwaru DM.webp"
+							}
 						},
 						{
 							"type": "image",

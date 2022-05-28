@@ -2055,6 +2055,12 @@
 	{
 		"ver": "1.157.1",
 		"date": "2022-05-27",
-		"txt": "- Fixed crash when attempting to load an existing creature into the Homebrew Builder using the Bestiary's \"Edit in Homebrew Builder\" button\n- Fixed crash when updating homebrews via URL\n- Fixed homebrew search index partially clobbering main search index, causing some entities to disappear from search\n- Fixed Get Homebrew search matching parts of, rather than all of, the search term\n- Fixed homebrew subraces never being shown \n- (Fixed typos/added tags)\n"
+		"txt": "- Fixed crash when attempting to load an existing creature into the Homebrew Builder using the Bestiary's \"Edit in Homebrew Builder\" button\n- Fixed crash when updating homebrews via URL\n- Fixed homebrew search index partially clobbering main search index, causing some entities to disappear from search\n- Fixed Get Homebrew search matching parts of, rather than all of, the search term\n- Fixed homebrew subraces never being shown \n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.158.0",
+		"date": "2022-05-28",
+		"title": "Map Happy",
+		"txt": "- Added Dynamic Map Viewer support to 400+ more maps, across all adventures/books\n- Added page numbers to PotA, OotA, and BGDIA _[these were missed in the last page-numbering pass]_\n- Fixed homebrew `legendaryGroup`s failing to show in the Bestiary\n- (Fixed typos/added tags)"
 	}
 ]

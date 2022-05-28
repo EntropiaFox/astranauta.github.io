@@ -890,27 +890,6 @@
 									]
 								},
 								{
-									"area": "05d",
-									"points": [
-										[
-											507,
-											745
-										],
-										[
-											507,
-											693
-										],
-										[
-											593,
-											693
-										],
-										[
-											593,
-											745
-										]
-									]
-								},
-								{
 									"area": "069",
 									"points": [
 										[
@@ -953,48 +932,6 @@
 									]
 								},
 								{
-									"area": "06f",
-									"points": [
-										[
-											1061,
-											616
-										],
-										[
-											1061,
-											526
-										],
-										[
-											948,
-											526
-										],
-										[
-											948,
-											616
-										]
-									]
-								},
-								{
-									"area": "072",
-									"points": [
-										[
-											1108,
-											578
-										],
-										[
-											1108,
-											491
-										],
-										[
-											1047,
-											491
-										],
-										[
-											1047,
-											578
-										]
-									]
-								},
-								{
 									"area": "06c",
 									"points": [
 										[
@@ -1033,27 +970,6 @@
 										[
 											555,
 											786
-										]
-									]
-								},
-								{
-									"area": "057",
-									"points": [
-										[
-											584,
-											843
-										],
-										[
-											584,
-											694
-										],
-										[
-											724,
-											694
-										],
-										[
-											724,
-											843
 										]
 									]
 								},
@@ -1159,48 +1075,6 @@
 										[
 											1091,
 											708
-										]
-									]
-								},
-								{
-									"area": "053",
-									"points": [
-										[
-											872,
-											1033
-										],
-										[
-											872,
-											871
-										],
-										[
-											932,
-											871
-										],
-										[
-											932,
-											1033
-										]
-									]
-								},
-								{
-									"area": "055",
-									"points": [
-										[
-											985,
-											1083
-										],
-										[
-											985,
-											999
-										],
-										[
-											925,
-											999
-										],
-										[
-											925,
-											1083
 										]
 									]
 								},
@@ -1541,27 +1415,6 @@
 									]
 								},
 								{
-									"area": "03d",
-									"points": [
-										[
-											633,
-											1434
-										],
-										[
-											633,
-											1570
-										],
-										[
-											766,
-											1570
-										],
-										[
-											766,
-											1434
-										]
-									]
-								},
-								{
 									"area": "08a",
 									"points": [
 										[
@@ -1621,27 +1474,6 @@
 										[
 											537,
 											1574
-										]
-									]
-								},
-								{
-									"area": "08e",
-									"points": [
-										[
-											536,
-											1546
-										],
-										[
-											536,
-											1634
-										],
-										[
-											646,
-											1634
-										],
-										[
-											646,
-											1546
 										]
 									]
 								},
@@ -1747,48 +1579,6 @@
 										[
 											736,
 											1942
-										]
-									]
-								},
-								{
-									"area": "09d",
-									"points": [
-										[
-											459,
-											2054
-										],
-										[
-											459,
-											2129
-										],
-										[
-											532,
-											2129
-										],
-										[
-											532,
-											2054
-										]
-									]
-								},
-								{
-									"area": "09b",
-									"points": [
-										[
-											500,
-											2112
-										],
-										[
-											500,
-											2159
-										],
-										[
-											904,
-											2159
-										],
-										[
-											904,
-											2112
 										]
 									]
 								},
@@ -2003,27 +1793,6 @@
 									]
 								},
 								{
-									"area": "0b1",
-									"points": [
-										[
-											1659,
-											1571
-										],
-										[
-											1659,
-											1629
-										],
-										[
-											1766,
-											1629
-										],
-										[
-											1766,
-											1571
-										]
-									]
-								},
-								{
 									"area": "0b2",
 									"points": [
 										[
@@ -2150,27 +1919,6 @@
 									]
 								},
 								{
-									"area": "0c2",
-									"points": [
-										[
-											1537,
-											1877
-										],
-										[
-											1537,
-											1997
-										],
-										[
-											1640,
-											1997
-										],
-										[
-											1640,
-											1877
-										]
-									]
-								},
-								{
 									"area": "0ab",
 									"points": [
 										[
@@ -2230,27 +1978,6 @@
 										[
 											1194,
 											2117
-										]
-									]
-								},
-								{
-									"area": "0cc",
-									"points": [
-										[
-											998,
-											2284
-										],
-										[
-											998,
-											2389
-										],
-										[
-											1142,
-											2389
-										],
-										[
-											1142,
-											2284
 										]
 									]
 								},
@@ -2358,15 +2085,288 @@
 											2454
 										]
 									]
+								},
+								{
+									"area": "05d",
+									"points": [
+										[
+											509,
+											696
+										],
+										[
+											509,
+											742
+										],
+										[
+											585,
+											742
+										],
+										[
+											585,
+											696
+										]
+									]
+								},
+								{
+									"area": "0a5",
+									"points": [
+										[
+											588,
+											697
+										],
+										[
+											588,
+											875
+										],
+										[
+											719,
+											875
+										],
+										[
+											719,
+											697
+										]
+									]
+								},
+								{
+									"area": "053",
+									"points": [
+										[
+											874,
+											875
+										],
+										[
+											874,
+											1028
+										],
+										[
+											926,
+											1028
+										],
+										[
+											926,
+											875
+										]
+									]
+								},
+								{
+									"area": "055",
+									"points": [
+										[
+											929,
+											1004
+										],
+										[
+											929,
+											1081
+										],
+										[
+											978,
+											1081
+										],
+										[
+											978,
+											1004
+										]
+									]
+								},
+								{
+									"area": "03d",
+									"points": [
+										[
+											641,
+											1454
+										],
+										[
+											641,
+											1542
+										],
+										[
+											740,
+											1542
+										],
+										[
+											740,
+											1454
+										]
+									]
+								},
+								{
+									"area": "08e",
+									"points": [
+										[
+											539,
+											1550
+										],
+										[
+											539,
+											1626
+										],
+										[
+											639,
+											1626
+										],
+										[
+											639,
+											1550
+										]
+									]
+								},
+								{
+									"area": "09d",
+									"points": [
+										[
+											479,
+											2094
+										],
+										[
+											479,
+											2121
+										],
+										[
+											516,
+											2121
+										],
+										[
+											516,
+											2094
+										]
+									]
+								},
+								{
+									"area": "09b",
+									"points": [
+										[
+											519,
+											2123
+										],
+										[
+											519,
+											2150
+										],
+										[
+											902,
+											2150
+										],
+										[
+											902,
+											2123
+										]
+									]
+								},
+								{
+									"area": "0cc",
+									"points": [
+										[
+											1074,
+											2300
+										],
+										[
+											1074,
+											2463
+										],
+										[
+											1117,
+											2463
+										],
+										[
+											1117,
+											2300
+										]
+									]
+								},
+								{
+									"area": "0c2",
+									"points": [
+										[
+											1550,
+											1887
+										],
+										[
+											1550,
+											1991
+										],
+										[
+											1631,
+											1991
+										],
+										[
+											1631,
+											1887
+										]
+									]
+								},
+								{
+									"area": "0b1",
+									"points": [
+										[
+											1677,
+											1579
+										],
+										[
+											1677,
+											1628
+										],
+										[
+											1761,
+											1628
+										],
+										[
+											1761,
+											1579
+										]
+									]
+								},
+								{
+									"area": "072",
+									"points": [
+										[
+											1057,
+											536
+										],
+										[
+											1057,
+											559
+										],
+										[
+											1084,
+											559
+										],
+										[
+											1084,
+											536
+										]
+									]
+								},
+								{
+									"area": "06f",
+									"points": [
+										[
+											982,
+											534
+										],
+										[
+											982,
+											616
+										],
+										[
+											1056,
+											616
+										],
+										[
+											1056,
+											534
+										]
+									]
 								}
 							],
 							"title": "Map 1",
 							"imageType": "map",
+							"id": "add",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/002-102-thumb.png"
-							},
-							"id": "add"
+								"path": "adventure/WDMM/thumbnail/002-102.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -4168,27 +4168,6 @@
 									]
 								},
 								{
-									"area": "0ea",
-									"points": [
-										[
-											892,
-											659
-										],
-										[
-											892,
-											729
-										],
-										[
-											986,
-											729
-										],
-										[
-											986,
-											659
-										]
-									]
-								},
-								{
 									"area": "0eb",
 									"points": [
 										[
@@ -5275,48 +5254,6 @@
 									]
 								},
 								{
-									"area": "15c",
-									"points": [
-										[
-											1487,
-											1771
-										],
-										[
-											1487,
-											1878
-										],
-										[
-											1557,
-											1878
-										],
-										[
-											1557,
-											1771
-										]
-									]
-								},
-								{
-									"area": "15a",
-									"points": [
-										[
-											1550,
-											1784
-										],
-										[
-											1550,
-											1956
-										],
-										[
-											1642,
-											1956
-										],
-										[
-											1642,
-											1784
-										]
-									]
-								},
-								{
 									"area": "158",
 									"points": [
 										[
@@ -5599,14 +5536,81 @@
 											2252
 										]
 									]
+								},
+								{
+									"area": "0ea",
+									"points": [
+										[
+											902,
+											674
+										],
+										[
+											978,
+											674
+										],
+										[
+											978,
+											699
+										],
+										[
+											953,
+											724
+										],
+										[
+											902,
+											724
+										]
+									]
+								},
+								{
+									"area": "15a",
+									"points": [
+										[
+											1555,
+											1947
+										],
+										[
+											1555,
+											1791
+										],
+										[
+											1630,
+											1791
+										],
+										[
+											1630,
+											1947
+										]
+									]
+								},
+								{
+									"area": "15c",
+									"points": [
+										[
+											1500,
+											1790
+										],
+										[
+											1500,
+											1815
+										],
+										[
+											1551,
+											1815
+										],
+										[
+											1551,
+											1790
+										]
+									]
 								}
 							],
 							"imageType": "map",
+							"id": "bdb",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/005-202-thumb.png"
-							},
-							"id": "bdb"
+								"path": "adventure/WDMM/thumbnail/005-202.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -7504,69 +7508,6 @@
 									]
 								},
 								{
-									"area": "19e",
-									"points": [
-										[
-											1349,
-											703
-										],
-										[
-											1349,
-											755
-										],
-										[
-											1394,
-											755
-										],
-										[
-											1394,
-											703
-										]
-									]
-								},
-								{
-									"area": "1a4",
-									"points": [
-										[
-											1392,
-											742
-										],
-										[
-											1392,
-											792
-										],
-										[
-											1488,
-											792
-										],
-										[
-											1488,
-											742
-										]
-									]
-								},
-								{
-									"area": "1a2",
-									"points": [
-										[
-											1362,
-											785
-										],
-										[
-											1362,
-											852
-										],
-										[
-											1433,
-											852
-										],
-										[
-											1433,
-											785
-										]
-									]
-								},
-								{
 									"area": "22c",
 									"points": [
 										[
@@ -8236,27 +8177,6 @@
 									]
 								},
 								{
-									"area": "1e7",
-									"points": [
-										[
-											497,
-											1836
-										],
-										[
-											497,
-											1941
-										],
-										[
-											569,
-											1941
-										],
-										[
-											569,
-											1836
-										]
-									]
-								},
-								{
 									"area": "1ea",
 									"points": [
 										[
@@ -8404,27 +8324,6 @@
 										[
 											908,
 											2563
-										]
-									]
-								},
-								{
-									"area": "1d7",
-									"points": [
-										[
-											872,
-											1786
-										],
-										[
-											872,
-											1854
-										],
-										[
-											963,
-											1854
-										],
-										[
-											963,
-											1786
 										]
 									]
 								},
@@ -8716,111 +8615,6 @@
 										[
 											1363,
 											1060
-										]
-									]
-								},
-								{
-									"area": "1aa",
-									"points": [
-										[
-											1379,
-											920
-										],
-										[
-											1379,
-											973
-										],
-										[
-											1435,
-											973
-										],
-										[
-											1435,
-											920
-										]
-									]
-								},
-								{
-									"area": "1ab",
-									"points": [
-										[
-											1283,
-											917
-										],
-										[
-											1283,
-											967
-										],
-										[
-											1339,
-											967
-										],
-										[
-											1339,
-											917
-										]
-									]
-								},
-								{
-									"area": "1af",
-									"points": [
-										[
-											1283,
-											968
-										],
-										[
-											1283,
-											1011
-										],
-										[
-											1335,
-											1011
-										],
-										[
-											1335,
-											968
-										]
-									]
-								},
-								{
-									"area": "1ac",
-									"points": [
-										[
-											1331,
-											951
-										],
-										[
-											1331,
-											1007
-										],
-										[
-											1385,
-											1007
-										],
-										[
-											1385,
-											951
-										]
-									]
-								},
-								{
-									"area": "1b1",
-									"points": [
-										[
-											1382,
-											970
-										],
-										[
-											1382,
-											1008
-										],
-										[
-											1433,
-											1008
-										],
-										[
-											1433,
-											970
 										]
 									]
 								},
@@ -9483,14 +9277,272 @@
 											515
 										]
 									]
+								},
+								{
+									"area": "1a4",
+									"points": [
+										[
+											1393,
+											751
+										],
+										[
+											1393,
+											780
+										],
+										[
+											1426,
+											780
+										],
+										[
+											1426,
+											751
+										]
+									]
+								},
+								{
+									"area": "19e",
+									"points": [
+										[
+											1357,
+											709
+										],
+										[
+											1357,
+											746
+										],
+										[
+											1388,
+											746
+										],
+										[
+											1388,
+											709
+										]
+									]
+								},
+								{
+									"area": "1a2",
+									"points": [
+										[
+											1369,
+											788
+										],
+										[
+											1369,
+											845
+										],
+										[
+											1428,
+											845
+										],
+										[
+											1428,
+											788
+										]
+									]
+								},
+								{
+									"area": "1af",
+									"points": [
+										[
+											1290,
+											974
+										],
+										[
+											1290,
+											1005
+										],
+										[
+											1330,
+											1005
+										],
+										[
+											1330,
+											974
+										]
+									]
+								},
+								{
+									"area": "1ab",
+									"points": [
+										[
+											1289,
+											925
+										],
+										[
+											1289,
+											966
+										],
+										[
+											1330,
+											966
+										],
+										[
+											1330,
+											925
+										]
+									]
+								},
+								{
+									"area": "1aa",
+									"points": [
+										[
+											1386,
+											925
+										],
+										[
+											1386,
+											966
+										],
+										[
+											1427,
+											966
+										],
+										[
+											1427,
+											925
+										]
+									]
+								},
+								{
+									"area": "1b1",
+									"points": [
+										[
+											1386,
+											973
+										],
+										[
+											1386,
+											1005
+										],
+										[
+											1429,
+											1005
+										],
+										[
+											1429,
+											973
+										]
+									]
+								},
+								{
+									"area": "1ac",
+									"points": [
+										[
+											1333,
+											954
+										],
+										[
+											1333,
+											1003
+										],
+										[
+											1380,
+											1003
+										],
+										[
+											1380,
+											954
+										]
+									]
+								},
+								{
+									"area": "1e7",
+									"points": [
+										[
+											513,
+											1842
+										],
+										[
+											523,
+											1842
+										],
+										[
+											534,
+											1846
+										],
+										[
+											544,
+											1843
+										],
+										[
+											545,
+											1862
+										],
+										[
+											550,
+											1886
+										],
+										[
+											550,
+											1899
+										],
+										[
+											557,
+											1918
+										],
+										[
+											566,
+											1925
+										],
+										[
+											556,
+											1932
+										],
+										[
+											538,
+											1923
+										],
+										[
+											527,
+											1912
+										],
+										[
+											506,
+											1906
+										],
+										[
+											510,
+											1886
+										],
+										[
+											513,
+											1871
+										],
+										[
+											514,
+											1853
+										]
+									]
+								},
+								{
+									"area": "1d7",
+									"points": [
+										[
+											881,
+											1801
+										],
+										[
+											881,
+											1841
+										],
+										[
+											957,
+											1841
+										],
+										[
+											957,
+											1801
+										]
+									]
 								}
 							],
 							"imageType": "map",
+							"id": "bdc",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/009-302-thumb.png"
-							},
-							"id": "bdc"
+								"path": "adventure/WDMM/thumbnail/009-302.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -12123,11 +12175,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bdd",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/012-402-thumb.png"
-							},
-							"id": "bdd"
+								"path": "adventure/WDMM/thumbnail/012-402.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -14845,11 +14897,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bde",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/016-502-thumb.png"
-							},
-							"id": "bde"
+								"path": "adventure/WDMM/thumbnail/016-502.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -17816,11 +17868,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bdf",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/019-602-thumb.png"
-							},
-							"id": "bdf"
+								"path": "adventure/WDMM/thumbnail/019-602.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -20941,11 +20993,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "be0",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/022-702-thumb.png"
-							},
-							"id": "be0"
+								"path": "adventure/WDMM/thumbnail/022-702.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -23084,27 +23136,6 @@
 									]
 								},
 								{
-									"area": "475",
-									"points": [
-										[
-											840,
-											2443
-										],
-										[
-											840,
-											2733
-										],
-										[
-											1013,
-											2733
-										],
-										[
-											1013,
-											2443
-										]
-									]
-								},
-								{
 									"area": "474",
 									"points": [
 										[
@@ -23304,14 +23335,35 @@
 											2471
 										]
 									]
+								},
+								{
+									"area": "475",
+									"points": [
+										[
+											880,
+											2471
+										],
+										[
+											880,
+											2736
+										],
+										[
+											1007,
+											2736
+										],
+										[
+											1007,
+											2471
+										]
+									]
 								}
 							],
 							"imageType": "map",
+							"id": "be1",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/025-802-thumb.png"
-							},
-							"id": "be1"
+								"path": "adventure/WDMM/thumbnail/025-802.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -25806,11 +25858,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "be2",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/028-902-thumb.png"
-							},
-							"id": "be2"
+								"path": "adventure/WDMM/thumbnail/028-902.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -29254,11 +29306,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "be3",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/031-10-02-thumb.png"
-							},
-							"id": "be3"
+								"path": "adventure/WDMM/thumbnail/031-10-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -32179,11 +32231,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "be4",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/036-11-02-thumb.png"
-							},
-							"id": "be4"
+								"path": "adventure/WDMM/thumbnail/036-11-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -34605,11 +34657,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "be5",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/039-12-02-thumb.png"
-							},
-							"id": "be5"
+								"path": "adventure/WDMM/thumbnail/039-12-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -36610,11 +36662,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "be6",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/042-13-02-thumb.png"
-							},
-							"id": "be6"
+								"path": "adventure/WDMM/thumbnail/042-13-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -38814,11 +38866,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "be7",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/045-14-02-thumb.png"
-							},
-							"id": "be7"
+								"path": "adventure/WDMM/thumbnail/045-14-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -40895,27 +40947,6 @@
 									]
 								},
 								{
-									"area": "7a1",
-									"points": [
-										[
-											247,
-											2221
-										],
-										[
-											247,
-											2301
-										],
-										[
-											399,
-											2301
-										],
-										[
-											399,
-											2221
-										]
-									]
-								},
-								{
 									"area": "7a2",
 									"points": [
 										[
@@ -41242,27 +41273,6 @@
 										[
 											1731,
 											1356
-										]
-									]
-								},
-								{
-									"area": "81a",
-									"points": [
-										[
-											1634,
-											1507
-										],
-										[
-											1634,
-											1706
-										],
-										[
-											1920,
-											1706
-										],
-										[
-											1920,
-											1507
 										]
 									]
 								},
@@ -41685,14 +41695,104 @@
 											2836
 										]
 									]
+								},
+								{
+									"area": "780",
+									"points": [
+										[
+											1833,
+											1660
+										],
+										[
+											1844,
+											1564
+										],
+										[
+											1837,
+											1528
+										],
+										[
+											1823,
+											1513
+										],
+										[
+											1852,
+											1500
+										],
+										[
+											1888,
+											1527
+										],
+										[
+											1901,
+											1550
+										],
+										[
+											1926,
+											1576
+										],
+										[
+											1952,
+											1613
+										],
+										[
+											1940,
+											1616
+										],
+										[
+											1931,
+											1606
+										],
+										[
+											1907,
+											1605
+										],
+										[
+											1894,
+											1620
+										],
+										[
+											1874,
+											1627
+										],
+										[
+											1860,
+											1637
+										],
+										[
+											1846,
+											1651
+										]
+									]
+								},
+								{
+									"area": "714",
+									"points": [
+										[
+											354,
+											2230
+										],
+										[
+											354,
+											2265
+										],
+										[
+											395,
+											2265
+										],
+										[
+											395,
+											2230
+										]
+									]
 								}
 							],
 							"imageType": "map",
+							"id": "be8",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/048-15-02-thumb.png"
-							},
-							"id": "be8"
+								"path": "adventure/WDMM/thumbnail/048-15-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -45121,11 +45221,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "be9",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/052-16-02-thumb.png"
-							},
-							"id": "be9"
+								"path": "adventure/WDMM/thumbnail/052-16-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -47271,11 +47371,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bea",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/055-17-02-thumb.png"
-							},
-							"id": "bea"
+								"path": "adventure/WDMM/thumbnail/055-17-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -49234,11 +49334,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "beb",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/058-18-02-thumb.png"
-							},
-							"id": "beb"
+								"path": "adventure/WDMM/thumbnail/058-18-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -51103,11 +51203,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bec",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/061-19-02-thumb.png"
-							},
-							"id": "bec"
+								"path": "adventure/WDMM/thumbnail/061-19-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -53199,11 +53299,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bed",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/066-20-02-thumb.png"
-							},
-							"id": "bed"
+								"path": "adventure/WDMM/thumbnail/066-20-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -55578,11 +55678,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bee",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/069-21-02-thumb.png"
-							},
-							"id": "bee"
+								"path": "adventure/WDMM/thumbnail/069-21-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -57858,11 +57958,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bef",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/072-22-02-thumb.png"
-							},
-							"id": "bef"
+								"path": "adventure/WDMM/thumbnail/072-22-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -60283,11 +60383,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bf0",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/076-23-02-thumb.png"
-							},
-							"id": "bf0"
+								"path": "adventure/WDMM/thumbnail/076-23-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -61883,11 +61983,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bf1",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/081-24-02-thumb.png"
-							},
-							"id": "bf1"
+								"path": "adventure/WDMM/thumbnail/081-24-02.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -62840,11 +62940,11 @@
 								}
 							],
 							"imageType": "map",
+							"id": "bf2",
 							"hrefThumbnail": {
 								"type": "internal",
-								"path": "adventure/WDMM/thumbnail/083-24-04-thumb.png"
-							},
-							"id": "bf2"
+								"path": "adventure/WDMM/thumbnail/083-24-04.webp"
+							}
 						},
 						{
 							"type": "image",
@@ -63261,11 +63361,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "bf3",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/WDMM/thumbnail/085-24-06-thumb.png"
-									},
-									"id": "bf3"
+										"path": "adventure/WDMM/thumbnail/085-24-06.webp"
+									}
 								},
 								{
 									"type": "image",

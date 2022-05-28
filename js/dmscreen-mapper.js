@@ -110,9 +110,9 @@ class DmMapper {
 
 		mapDatas.map(mapData => {
 			$(`<div class="m-1 p-1 clickable dm-map__picker-wrp-img relative">
-							<div class="dm-map__picker-img" style="background-image: url(${mapData.hrefThumbnail || mapData.href})"></div>
-							<span class="absolute text-center dm-map__picker-disp-name">${mapData.name.escapeQuotes()}</span>
-						</div>`)
+				<div class="dm-map__picker-img" style="background-image: url(${encodeURI(mapData.hrefThumbnail || mapData.href)})"></div>
+				<span class="absolute text-center dm-map__picker-disp-name">${mapData.name.escapeQuotes()}</span>
+			</div>`)
 				.click(() => {
 					doClose();
 					menu.pnl.doPopulate_AdventureBookDynamicMap({state: mapData});

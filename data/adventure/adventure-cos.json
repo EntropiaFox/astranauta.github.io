@@ -3740,11 +3740,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "0bc",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/007-001-thumb.png"
-									},
-									"id": "0bc"
+										"path": "adventure/CoS/thumbnail/007-001.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -4712,11 +4712,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "0bd",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/013-003-thumb.png"
-									},
-									"id": "0bd"
+										"path": "adventure/CoS/thumbnail/013-003.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -5079,11 +5079,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "11c",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/018-004-thumb.png"
-											},
-											"id": "11c"
+												"path": "adventure/CoS/thumbnail/018-004.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -6295,11 +6295,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "132",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/024-005-thumb.png"
-									},
-									"id": "132"
+										"path": "adventure/CoS/thumbnail/024-005.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -7366,11 +7366,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "16f",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/025-006-thumb.png"
-									},
-									"id": "16f"
+										"path": "adventure/CoS/thumbnail/025-006.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -8464,11 +8464,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "172",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/028-007-thumb.png"
-									},
-									"id": "172"
+										"path": "adventure/CoS/thumbnail/028-007.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -9594,11 +9594,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "182",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/030-008-thumb.png"
-									},
-									"id": "182"
+										"path": "adventure/CoS/thumbnail/030-008.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -10418,11 +10418,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "191",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/033-009-thumb.png"
-									},
-									"id": "191"
+										"path": "adventure/CoS/thumbnail/033-009.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -11397,11 +11397,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "441",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/036-010-thumb.png"
-											},
-											"id": "441"
+												"path": "adventure/CoS/thumbnail/036-010.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -13902,11 +13902,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "459",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/038-011-thumb.png"
-									},
-									"id": "459"
+										"path": "adventure/CoS/thumbnail/038-011.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -14122,11 +14122,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "46e",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/039-012-thumb.png"
-											},
-											"id": "46e"
+												"path": "adventure/CoS/thumbnail/039-012.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -14571,11 +14571,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "483",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/042-cos04-17-thumb.png"
-									},
-									"id": "483"
+										"path": "adventure/CoS/thumbnail/042-cos04-17.webp"
+									}
 								},
 								"The water is 3 feet deep in the hallway and opaque. The steps on both sides of the hallway descend another 2 feet before ending at the iron doors to the north and south.",
 								"The floor beneath the water isn't as solid as one might expect. There is a safe path around several weight-sensitive trapdoors (see the Traps in Area K73 diagram), but the water makes it impossible to see where the trapdoors are. For every 10 pounds of weight on a trapdoor, there is a {@chance 5|5 percent} chance that the trapdoor will open. The 10-foot-deep pit under each trapdoor contains a magic teleport trap that activates as soon as the trapdoor opens. Any Medium or smaller creature on a trapdoor when it opens plunges into the pit and is teleported to a cell in either {@area area K74|272|x} or {@area K75|284|x}, as the diagram indicates.",
@@ -16513,11 +16513,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "49f",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/047-013-thumb.png"
-									},
-									"id": "49f"
+										"path": "adventure/CoS/thumbnail/047-013.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -17172,11 +17172,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "4ce",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/050-014-thumb.png"
-											},
-											"id": "4ce"
+												"path": "adventure/CoS/thumbnail/050-014.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -18149,11 +18149,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "4eb",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/055-015-thumb.png"
-											},
-											"id": "4eb"
+												"path": "adventure/CoS/thumbnail/055-015.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -19307,11 +19307,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "514",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/058-016-thumb.png"
-											},
-											"id": "514"
+												"path": "adventure/CoS/thumbnail/058-016.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -20038,11 +20038,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "5b4",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/063-cos05-13-thumb.png"
-											},
-											"id": "5b4"
+												"path": "adventure/CoS/thumbnail/063-cos05-13.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -20834,11 +20834,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "5ba",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/066-018-thumb.png"
-											},
-											"id": "5ba"
+												"path": "adventure/CoS/thumbnail/066-018.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -21551,11 +21551,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "5cf",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/072-019-thumb.png"
-											},
-											"id": "5cf"
+												"path": "adventure/CoS/thumbnail/072-019.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -22594,11 +22594,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "5eb",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/077-020-thumb.png"
-									},
-									"id": "5eb"
+										"path": "adventure/CoS/thumbnail/077-020.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -23984,11 +23984,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "602",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/079-021-thumb.png"
-											},
-											"id": "602"
+												"path": "adventure/CoS/thumbnail/079-021.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -24848,11 +24848,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "619",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/083-022-thumb.png"
-									},
-									"id": "619"
+										"path": "adventure/CoS/thumbnail/083-022.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -25757,11 +25757,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "631",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/086-023-thumb.png"
-									},
-									"id": "631"
+										"path": "adventure/CoS/thumbnail/086-023.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -26186,11 +26186,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "6bb",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/090-024-thumb.png"
-											},
-											"id": "6bb"
+												"path": "adventure/CoS/thumbnail/090-024.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -27210,11 +27210,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "6bc",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/095-025-thumb.png"
-									},
-									"id": "6bc"
+										"path": "adventure/CoS/thumbnail/095-025.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -27746,11 +27746,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "6bd",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/099-026-thumb.png"
-									},
-									"id": "6bd"
+										"path": "adventure/CoS/thumbnail/099-026.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -27905,11 +27905,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "6be",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/101-cos10-02-thumb.png"
-											},
-											"id": "6be"
+												"path": "adventure/CoS/thumbnail/101-cos10-02.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -28584,11 +28584,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "6bf",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/105-027-thumb.png"
-											},
-											"id": "6bf"
+												"path": "adventure/CoS/thumbnail/105-027.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -29616,11 +29616,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "6c0",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/111-028-thumb.png"
-									},
-									"id": "6c0"
+										"path": "adventure/CoS/thumbnail/111-028.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -31115,11 +31115,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "6c1",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/117-029-thumb.png"
-									},
-									"id": "6c1"
+										"path": "adventure/CoS/thumbnail/117-029.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -32967,11 +32967,11 @@
 												}
 											],
 											"imageType": "map",
+											"id": "6c2",
 											"hrefThumbnail": {
 												"type": "internal",
-												"path": "adventure/CoS/thumbnail/120-030-thumb.png"
-											},
-											"id": "6c2"
+												"path": "adventure/CoS/thumbnail/120-030.webp"
+											}
 										},
 										{
 											"type": "image",
@@ -34046,11 +34046,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "6c3",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/124-031-thumb.png"
-									},
-									"id": "6c3"
+										"path": "adventure/CoS/thumbnail/124-031.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -35173,11 +35173,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "6c4",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/127-032-thumb.png"
-									},
-									"id": "6c4"
+										"path": "adventure/CoS/thumbnail/127-032.webp"
+									}
 								},
 								{
 									"type": "image",
@@ -37192,11 +37192,11 @@
 										}
 									],
 									"imageType": "map",
+									"id": "6c6",
 									"hrefThumbnail": {
 										"type": "internal",
-										"path": "adventure/CoS/thumbnail/134-deathhousedm-thumb.png"
-									},
-									"id": "6c6"
+										"path": "adventure/CoS/thumbnail/134-deathhousedm.webp"
+									}
 								},
 								{
 									"type": "image",

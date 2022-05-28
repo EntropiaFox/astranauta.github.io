@@ -40,6 +40,11 @@ class BestiaryPage extends ListPageMultiSource {
 			isSublistItemsCountable: true,
 
 			dataProps: ["monster"],
+			brewDataSource: async () => {
+				const brew = await BrewUtil2.pGetBrewProcessed();
+				DataUtil.monster.populateMetaReference(brew);
+				return brew;
+			},
 
 			hasAudio: true,
 
