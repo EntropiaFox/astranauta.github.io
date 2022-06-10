@@ -2,129 +2,203 @@
 <html lang="en">
 
 <head>
+	<!--5ETOOLS_CMP-->
+	<!--5ETOOLS_ANALYTICS-->
+	<!--5ETOOLS_ADCODE-->
 	<meta charset="utf-8">
+	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 
-	<!--
-	XML data was compiled by a reddit community for use with the "Fight Club 5" app.
-	Google "5e xml files" for more info.
-
-	Feel free to use, edit, and redistribute this as you wish.
-	I don't own any of the XML data anyway.
--->
-
-	<title>Stat Block Converter - 5etools</title>
+	<title>Text Converter - 5etools</title>
 
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" href="css/main.css">
 
+	<!-- Favicons -->
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+	<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+	<!-- Chrome Web App Icons -->
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="application-name" content="5etools">
+	<meta name="theme-color" content="#006bc4">
+
+	<!-- Windows Start Menu tiles -->
+	<meta name="msapplication-config" content="browserconfig.xml"/>
+	<meta name="msapplication-TileColor" content="#006bc4">
+
+	<!-- Apple Touch Icons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+	<meta name="apple-mobile-web-app-title" content="5etools">
+
+	<!-- macOS Safari Pinned Tab and Touch Bar -->
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
+
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script type="text/javascript" src="sw-injector.js"></script>
+
+	<script type="text/javascript" src="js/styleswitch.js"></script>
+	<script type="text/javascript" src="js/navigation.js"></script>
+	<script type="text/javascript" src="js/browsercheck.js"></script>
+
+	<style>
+		.inputArea,
+		.outputArea {
+			width: 100%;
+			height: 100%;
+		}
+
+		.select-inline {
+			display: inline-block;
+			width: initial;
+		}
+
+		#lastWarnings {
+			color: #df00ff;
+		}
+
+		#lastError {
+			color: red;
+		}
+
+		#lastWarnings,
+		#lastError {
+			margin-top: 5px;
+			margin-bottom: 10px;
+			display: none;
+			flex-shrink: 0;
+			padding: 9px;
+			font-size: 13px;
+			line-height: 1.4;
+			background-color: #f5f5f5;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+
+		.night-mode #lastError {
+			border-color: #555;
+		}
+
+		.conv__head {
+			margin-top: 0;
+			margin-bottom: 2px;
+		}
+
+		.conv__out_control__wrp {
+			padding: 0 3rem 0 0;
+			flex-shrink: 0;
+		}
+
+		@media (max-width: 991px) {
+			.view-col-wrapper {
+				height: 40vh;
+			}
+		}
+	</style>
 </head>
 
 <body>
-	<header class="hidden-xs hidden-sm">
+<div class="viewport-wrapper">
+	<div class="sidemenu__toggle">
+		<div class="sidemenu__hotzone"></div>
+		<div class="sidemenu__burger"></div>
+		<div class="sidemenu__burger"></div>
+		<div class="sidemenu__burger"></div>
+		<div class="sidemenu"></div>
+	</div>
+
+	<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
+
+	<header class="hidden-xs hidden-sm page__header">
 		<div class="container">
 
-			<h1>Stat Block Converter</h1>
-			<p>Input stat block on left, hit parse, copy JSON from right.</p>
+			<h1 class="page__title">Text Converter</h1>
+			<p class="page__subtitle">Input text on left, hit parse, copy JSON from right.</p>
 		</div>
 	</header>
-	<nav class="container">
-		<ul class="nav nav-pills ">
-			<li role="presentation"><a href="5etools.html">5eTools</a></li>
-			<li role="presentation"><a href="rules.html">Rules</a></li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Player Options <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="classes.html">Classes</a></li>
-					<li role="presentation"><a href="backgrounds.html">Backgrounds</a></li>
-					<li role="presentation"><a href="feats.html">Feats</a></li>
-					<li role="presentation"><a href="races.html">Races</a></li>
-				</ul>
-			</li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">DM Tools <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="crcalculator.html">CR Calculator</a></li>
-					<li role="presentation"><a href="http://kobold.club" target="_blank" title="I could literally never build something better than Kobold Fight Club">Encounter Builder</a></li>
-					<li role="presentation"><a href="lootgen.html">Loot Generator</a></li>
-				</ul>
-			</li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="bestiary.html">Bestiary</a></li>
-					<li role="presentation"><a href="conditions.html">Conditions</a></li>
-					<li role="presentation"><a href="items.html">Items</a></li>
-					<li role="presentation"><a href="spells.html">Spells</a></li>
-				</ul>
-			</li>
-			<li role="presentation"><a href="statgen.html">Statgen</a></li>
-			<li role="presentation" class="dropdown active">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Utilities<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation" class="active"><a href="converter.html">Stat Block to JSON</a></li>
-					<li role="presentation"><a href="editor.html">WYSIWYG Editor</a></li>
-				</ul>
-			</li>
+	<nav class="container page__nav" id="navigation">
+		<ul class="nav nav-pills page__nav-inner" id="navbar">
 		</ul>
 	</nav>
-	<main class="container bodyContent">
 
-		<div class="row">
-			<div class="col-sm-6">
-				<h3>Statblock <button id="parsestatblock" class="btn">Parse</button></h3>
-				<textarea id="statblock" style="width: 100%; height: 40em;">Mammon
-Huge fiend (devil), lawful evil
-Armor Class 20 (natural armor)
-Hit Points 378 (28d12 + 196)
-Speed 50 ft.
-STR DEX CON INT WIS CHA
-22 (+6) 13 (+1) 24 (+7) 23 (+6) 21 (+5) 26 (+8)
-Saving Throws Dex +9, Int +14, Wis +13, Cha +16
-Skills Deception +16, Insight +13, Perception +13, Persuasion +16
-Damage Resistances cold
-Damage Immunities fire, poison; bludgeoning, piercing, and slashing from weapons that aren’t silvered
-Condition Immunities charmed, exhaustion, frightened, poisoned
-Senses truesight 120 ft., passive Perception 23
-Languages all, telepathy 120 ft.
-Challenge 25 (75,000 XP)
-Innate Spellcasting. Mammon’s innate spellcasting ability is Charisma (spell save DC 24, +16 to hit with spell attacks). He can innately cast the following spells, requiring no material components:
-At will: charm person, detect magic, dispel magic, fabricate (Mammon can create valuable objects), heat metal, magic aura
-3/day each: animate objects, counterspell, creation, instant summons, legend lore, teleport
-1/day each: imprisonment (minimus containment only, inside gems), sunburst
-Legendary Resistance (3/day). If Mammon fails a saving throw, he can choose to succeed instead.
-Magic Resistance. Mammon has advantage on saving throws against spells and other magical effects.
-Magic Weapons. Mammon’s weapon attacks are magical.
-ACTIONS
-Multiattack. Mammon makes three attacks.
-Purse. Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage plus 18 (4d8) radiant damage.
-Molten Coins. Ranged Weapon Attack: +14 to hit, range 40/120 ft., one target. Hit: 16 (3d6 + 6) bludgeoning damage plus 18 (4d8) fire damage.
-Your Weight In Gold (Recharge 5-6). Mammon can use this ability as a bonus action immediately after hitting a creature with his purse attack. The creature must make a DC 24 Constitution saving throw. If the saving throw fails by 5 or more, the creature is instantly petrified by being turned to solid gold. Otherwise, a creature that fails the saving throw is restrained. A restrained creature repeats the saving throw at the end of its next turn, becoming petrified on a failure or ending the effect on a success. The petrification lasts until the creature receives a greater restoration spell or comparable magic.
-LEGENDARY ACTIONS
-Mammon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature’s turn. Mammon regains spent legendary actions at the start of his turn.
-Attack. Mammon makes one purse or molten coins attack.
-Make It Rain! Mammon casts gold and jewels into a 5-foot radius within 60 feet. One creature within 60 feet of the treasure that can see it must make a DC 24 Wisdom saving throw. On a failure, the creature must use its reaction to move its speed toward the trinkets, which vanish at the end of the turn.
-Deep Pockets (3 actions). Mammon recharges his Your Weight In Gold ability.</textarea>
-				<input type="text" placeholder="Source" id="source" value="Tome of Beasts"><br>
-				<small>This parser is very particular about its input. Use at your own risk.</small>
-			</div>
-			<div class="col-sm-6">
-				<h3>Output</h3>
-				<textarea id="jsonoutput" readonly style="width: 100%; height: 40em;"></textarea>
+	<div class="view-col-wrapper">
+
+		<div class="view-col">
+			<h3 class="conv__head">Input</h3>
+			<pre id="converter_input" class="inputArea ace_editor"></pre>
+			<div class="text-right">
+				<button id="parsestatblock" class="btn btn-sm btn-default">Parse</button>
+				<button id="parsestatblockadd" class="btn btn-sm btn-default">Parse and Add</button>
 			</div>
 		</div>
-	</main>
-	<footer class="container">
 
-	</footer>
+		<div class="view-col">
+			<h3 class="conv__head">Output</h3>
 
-	<script type="text/javascript" src="js/page-converter.js"></script>
-	<script type="text/javascript" src="js/list.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+			<pre id="converter_output" class="outputArea ace_editor"></pre>
 
+			<div class="split conv__out_control__wrp">
+				<button id="editable" class="btn btn-sm btn-default">Enable Editing</button>
+				<div>
+					<button id="save_local" class="btn btn-sm btn-default hidden">Save to Homebrew</button>
+					<button id="download" class="btn btn-sm btn-default">Download JSON</button>
+				</div>
+			</div>
+
+			<div id="lastWarnings" class="code"></div>
+			<div id="lastError" class="code"></div>
+		</div>
+	</div>
+</div>
+
+<!--5ETOOLS_SCRIPT_ANCHOR-->
+<!--5ETOOLS_AD_ADHESION-->
+<!--5ETOOLS_SCRIPT_ANCHOR__ACE-JS-->
+<script type="text/javascript" src="js/parser.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/utils-ui.js"></script>
+<script type="text/javascript" src="js/utils-proporder.js"></script>
+<script type="text/javascript" src="lib/localforage.js"></script>
+<script type="text/javascript" src="js/omnidexer.js"></script>
+<script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
+<script type="text/javascript" src="js/render.js"></script>
+<script type="text/javascript" src="js/render-dice.js"></script>
+<script type="text/javascript" src="js/render-markdown.js"></script>
+<script type="text/javascript" src="js/scalecreature.js"></script>
+<script type="text/javascript" src="js/hist.js"></script>
+<script type="text/javascript" src="js/converterutils.js"></script>
+<script type="text/javascript" src="js/converterutils-entries.js"></script>
+<script type="text/javascript" src="js/converterutils-markdown.js"></script>
+<script type="text/javascript" src="js/converterutils-creature.js"></script>
+<script type="text/javascript" src="js/converterutils-spell.js"></script>
+<script type="text/javascript" src="js/converterutils-item.js"></script>
+<script type="text/javascript" src="js/converterutils-race.js"></script>
+<script type="text/javascript" src="js/converter.js"></script>
+<script type="text/javascript" src="js/converter-creature.js"></script>
+<script type="text/javascript" src="js/converter-spell.js"></script>
+<script type="text/javascript" src="js/converter-item.js"></script>
+<script type="text/javascript" src="js/converter-table.js"></script>
+<script type="text/javascript" src="js/converter-feat.js"></script>
+<script type="text/javascript" src="js/converter-race.js"></script>
+<script type="text/javascript" src="js/list2.js"></script>
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="lib/elasticlunr.js"></script>
+<script type="text/javascript" src="lib/ace.js"></script>
 </body>
-
 </html>

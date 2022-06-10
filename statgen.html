@@ -2,128 +2,121 @@
 <html lang="en">
 
 <head>
+	<!--5ETOOLS_CMP-->
+	<!--5ETOOLS_ANALYTICS-->
+	<!--5ETOOLS_ADCODE-->
 	<meta charset="utf-8">
+	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!--
-	XML data was compiled by a reddit community for use with the "Fight Club 5" app.
-	Google "5e xml files" for more info.
-
-	Feel free to use, edit, and redistribute this as you wish.
-	I don't own any of the XML data anyway.
--->
+	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<title>Statgen - 5etools</title>
 
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" href="css/fontawesome.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/statgen-bundle.css">
 
+	<!-- Favicons -->
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+	<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+	<!-- Chrome Web App Icons -->
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="application-name" content="5etools">
+	<meta name="theme-color" content="#006bc4">
+
+	<!-- Windows Start Menu tiles -->
+	<meta name="msapplication-config" content="browserconfig.xml"/>
+	<meta name="msapplication-TileColor" content="#006bc4">
+
+	<!-- Apple Touch Icons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+	<meta name="apple-mobile-web-app-title" content="5etools">
+
+	<!-- macOS Safari Pinned Tab and Touch Bar -->
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
+
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script type="text/javascript" src="sw-injector.js"></script>
+
+	<script type="text/javascript" src="js/styleswitch.js"></script>
+	<script type="text/javascript" src="js/navigation.js"></script>
+	<script type="text/javascript" src="js/browsercheck.js"></script>
+
+	<style>
+		@media (max-width: 991px) {
+			.viewport-wrapper {
+				bottom: 0;
+				height: 100vh;
+				min-height: 0;
+			}
+		}
+
+		.container--main {
+			min-width: 420px;
+		}
+	</style>
 </head>
 
 <body>
-	<header class="hidden-xs hidden-sm">
+
+<div class="cancer__wrp-sidebar-rhs cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
+
+<div class="viewport-wrapper">
+	<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
+
+	<header class="hidden-xs hidden-sm page__header">
 		<div class="container">
-			<h1>Statgen</h1>
-			<p>Change method on the left, refer to method that appears on the right.</p>
+			<h1 class="page__title">Statgen</h1>
+			<p class="page__subtitle">Change method on the left, refer to method that appears on the right.</p>
 		</div>
 	</header>
-	<nav class="container">
-		<ul class="nav nav-pills ">
-			<li role="presentation"><a href="5etools.html">5eTools</a></li>
-			<li role="presentation"><a href="rules.html">Rules</a></li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Player Options <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="classes.html">Classes</a></li>
-					<li role="presentation"><a href="backgrounds.html">Backgrounds</a></li>
-					<li role="presentation"><a href="feats.html">Feats</a></li>
-					<li role="presentation"><a href="races.html">Races</a></li>
-				</ul>
-			</li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">DM Tools <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="crcalculator.html">CR Calculator</a></li>
-					<li role="presentation"><a href="http://kobold.club" target="_blank" title="I could literally never build something better than Kobold Fight Club">Encounter Builder</a></li>
-					<li role="presentation"><a href="lootgen.html">Loot Generator</a></li>
-				</ul>
-			</li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="bestiary.html">Bestiary</a></li>
-					<li role="presentation"><a href="conditions.html">Conditions</a></li>
-					<li role="presentation"><a href="items.html">Items</a></li>
-					<li role="presentation"><a href="spells.html">Spells</a></li>
-				</ul>
-			</li>
-			<li role="presentation" class="active"><a href="statgen.html">Statgen</a></li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Utilities<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="converter.html">Stat Block to JSON</a></li>
-					<li role="presentation"><a href="editor.html">WYSIWYG Editor</a></li>
-				</ul>
-			</li>
-		</ul>
+
+	<nav class="container page__nav" id="navigation">
+		<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
 	</nav>
-	<main class="container bodyContent">
 
-		<div class="row">
-			<div class="col-sm-3">
-				<nav>
-					<ul class="nav" id="rolltabs">
-						<li role="presentation" class="active"><a href="#0">Rolling</a></li>
-						<li role="presentation"><a href="#1">Array</a></li>
-						<li role="presentation"><a href="#2">Point Buy</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="col-sm-9 statmethod" id="rolled">
-				<h3>Rolled Stats</h3>
-				<button type="button" id="rollbutton" class="btn btn-default">Roll Stats</button>
-				<h3 id="rolls">
-				</h3>
-				<p>Click the button to roll for your stats. 4d6 are rolled with the lowest of the set discarded. This is done for each ability score. Assign these numbers to your abilities as desired. As this is based on your browser's JavaScript random number generator,
-					it cannot be considered at all "truly" random, but for most purposes can be considered "random enough."</p>
-			</div>
-			<div class="col-sm-9 statmethod" id="array">
-				<h3>Standard Array</h3>
-				<h4>15, 14, 13, 12, 10, 8</h4>
-				<p>Assign these numbers to your abilities as desired.</p>
-			</div>
-			<div class="col-sm-9 statmethod" id="pointbuy">
-				<h3>Point Buy</h3>
-				<form id="pointbuy">
-					<label for="budget">Budget: </label><input type="number" id="budget" min="0" max="54" value="27"><br>
-					<label for="remaining">Remaining: </label><input type="number" id="remaining" min="0" max="54" value="27" readonly><br>
-					<hr>
-					<label for="str">Strength: </label><input type="number" class="score" id="str" min="8" max="15" value="8" data-prev="8"><br>
-					<label for="dex">Dexterity: </label><input type="number" class="score" id="dex" min="8" max="15" value="8" data-prev="8"><br>
-					<label for="con">Constitution: </label><input type="number" class="score" id="con" min="8" max="15" value="8" data-prev="8"><br>
-					<label for="int">Intelligence: </label><input type="number" class="score" id="int" min="8" max="15" value="8" data-prev="8"><br>
-					<label for="wis">Wisdom: </label><input type="number" class="score" id="wis" min="8" max="15" value="8" data-prev="8"><br>
-					<label for="cha">Charisma: </label><input type="number" class="score" id="cha" min="8" max="15" value="8" data-prev="8"><br>
-					<p>A point budget is used to buy ability scores (default: 27). A score costs 1 point to increase for each step above 8 to a maximum of 15, with 14 and 15 each costing one extra point.</p>
-
-				</form>
-			</div>
+	<div class="container container--main h-100 min-h-0">
+		<div class="ve-flex-col w-100 h-100 py-2" id="statgen-main">
+			<div class="ve-flex-vh-center initial-message initial-message--large w-100 h-100">Loading...</div>
 		</div>
-	</main>
-
-
-	<!--
-	All the embedded crap.
-	Would load it in but I want this for offline use too
--->
-	<script type="text/javascript" src="js/page-statgen.js"></script>
-	<script type="text/javascript" src="js/droll.js"></script>
-	<script type="text/javascript" src="js/list.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-
+	</div>
+</div>
+<!--5ETOOLS_SCRIPT_ANCHOR-->
+<!--5ETOOLS_AD_ADHESION-->
+<script type="text/javascript" src="js/parser.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/utils-ui.js"></script>
+<script type="text/javascript" src="lib/localforage.js"></script>
+<script type="text/javascript" src="js/omnidexer.js"></script>
+<script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/render.js"></script>
+<script type="text/javascript" src="js/render-dice.js"></script>
+<script type="text/javascript" src="js/scalecreature.js"></script>
+<script type="text/javascript" src="js/hist.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
+<script type="text/javascript" src="js/filter-races.js"></script>
+<script type="text/javascript" src="js/filter-feats.js"></script>
+<script type="text/javascript" src="js/statgen.js"></script>
+<script type="text/javascript" src="js/statgen-ui.js"></script>
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="js/list2.js"></script>
+<script type="text/javascript" src="lib/elasticlunr.js"></script>
 </body>
 
 </html>

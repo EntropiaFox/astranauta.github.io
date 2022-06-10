@@ -1,0 +1,117 @@
+{
+	"variant": [
+		{
+			"name": "Berserker Axe",
+			"source": "DMG",
+			"effects": [
+				{
+					"name": "HP Increase",
+					"changes": [
+						{
+							"key": "data.attributes.hp.max",
+							"mode": "ADD",
+							"value": "@details.level"
+						}
+					]
+				}
+			]
+		}
+	],
+	"item": [
+		{
+			"name": "Tangler Grenade",
+			"source": "WDMM",
+			"type": "consumable"
+		},
+		{
+			"name": "Gnomengarde Grenade",
+			"source": "DC",
+			"type": "consumable"
+		},
+		{
+			"name": "Barrier Tattoo (Large)",
+			"source": "TCE",
+			"data": {
+				"armor.type": "heavy",
+				"armor.dex": 0,
+				"armor.value": 18
+			}
+		},
+		{
+			"name": "Barrier Tattoo (Medium)",
+			"source": "TCE",
+			"data": {
+				"armor.type": "medium",
+				"armor.dex": 2,
+				"armor.value": 15
+			}
+		},
+		{
+			"name": "Barrier Tattoo (Small)",
+			"source": "TCE",
+			"data": {
+				"armor.type": "light",
+				"armor.value": 12
+			}
+		},
+		{
+			"name": "Hazirawn",
+			"source": "HotDQ",
+			"data": {
+				"attackBonus": "+1 + floor(@item.attunement / 2)",
+				"damage.parts": [
+					[
+						"2d6+1+floor(@item.attunement / 2)",
+						"slashing"
+					],
+					[
+						"1d6+floor(@item.attunement / 2)d6",
+						"necrotic"
+					]
+				]
+			}
+		},
+		{
+			"name": "Sentinel Shield",
+			"source": "DMG",
+			"effects": [
+				{
+					"name": "Sentinel's Eye",
+					"changes": [
+						{
+							"key": "flags.dnd5e.initiativeAdv",
+							"mode": "OVERRIDE",
+							"value": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Gloves of Thievery",
+			"source": "DMG",
+			"effects": [
+				{
+					"name": "Fast Hands",
+					"changes": [
+						{
+							"key": "data.skills.slt.bonuses.check",
+							"mode": "ADD",
+							"value": "+5"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Oversized Longbow",
+			"source": "WDH",
+			"data":  {
+				"damage.parts": [
+					"2d6 + @abilities.str.mod",
+					"piercing"
+				]
+			}
+		}
+	]
+}

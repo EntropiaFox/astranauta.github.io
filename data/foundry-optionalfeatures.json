@@ -1,0 +1,209 @@
+{
+	"optionalfeature": [
+		{
+			"name": "Pact of the Blade",
+			"source": "PHB",
+			"data": {
+				"activation.type": "action",
+				"activation.cost": 1
+			}
+		},
+		{
+			"name": "Agonizing Blast",
+			"source": "PHB",
+			"effects": [
+				{
+					"name": "Bonus Damage",
+					"changes": [
+						{
+							"key": "data.bonuses.rsak.damage",
+							"mode": "ADD",
+							"value": "(@srd5e.name.eldritchblast * @abilities.cha.mod)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Devil's Sight",
+			"source": "PHB",
+			"effects": [
+				{
+					"name": "Enhanced Vision",
+					"changes": [
+						{
+							"key": "data.attributes.senses.darkvision",
+							"mode": "OVERRIDE",
+							"value": "120"
+						},
+						{
+							"key": "data.attributes.senses.special",
+							"mode": "ADD",
+							"value": "Devil's Sight"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Armor of Shadows",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Ascendant Step",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Beast Speech",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Bewitching Whispers",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Book of Ancient Secrets",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Chains of Carceri",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Dreadful Word",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Eldritch Sight",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Fiendish Vigor",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Mask of Many Faces",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Master of Myriad Forms",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Minions of Chaos",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Mire the Mind",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Misty Visions",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Otherworldly Leap",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Sculptor of Flesh",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Sign of Ill Omen",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Thief of Five Fates",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Visions of Distant Realms",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		},
+		{
+			"name": "Whispers of the Grave",
+			"source": "PHB",
+			"data": {
+				"activation.type": null,
+				"activation.cost": null
+			}
+		}
+	]
+}

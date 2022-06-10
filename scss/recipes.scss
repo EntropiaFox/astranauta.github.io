@@ -1,0 +1,17 @@
+@import "includes/vars";
+
+.recipes {
+	&__ {
+		&tbl-recipes {
+			border-left: 1px solid $rgb-border-grey--trans;
+		}
+	}
+}
+
+.night-mode .recipes {
+	&__ {
+		&tbl-recipes {
+			border-left: 1px solid $rgb-border-grey--trans-night;
+		}
+	}
+}

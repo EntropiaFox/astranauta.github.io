@@ -1,0 +1,67 @@
+{
+	"monster": [
+		{
+			"name": "Primeval Companion",
+			"source": "UA2022GiantOptions",
+			"page": 2,
+			"size": [
+				"M"
+			],
+			"type": "beast",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"special": "13 + PB (natural armor)"
+				}
+			],
+			"hp": {
+				"special": "10 + five times your druid level (the companion has a number of Hit Dice [d10s] equal to your druid level)"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 15,
+			"dex": 15,
+			"con": 17,
+			"int": 6,
+			"wis": 12,
+			"cha": 8,
+			"save": {
+				"dex": "+2 + PB",
+				"con": "+3 + PB"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 11,
+			"languages": [
+				"understands the languages you speak"
+			],
+			"pbNote": "equals your bonus",
+			"action": [
+				{
+					"name": "Strike",
+					"entries": [
+						"{@atk mw} +2 plus PB to hit, reach 5 ft., one target. {@h}{@dice 1d8} plus PB bludgeoning, piercing, or slashing damage (your choice)."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Intercept Attack",
+					"entries": [
+						"When a creature the companion can see hits a target with an attack, and the target is within 5 feet of the companion, the target instead takes half the damage. The companion takes the remainder of the damage."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"miscTags": [
+				"MW"
+			]
+		}
+	]
+}

@@ -2,530 +2,153 @@
 <html lang="en">
 
 <head>
+	<!--5ETOOLS_CMP-->
+	<!--5ETOOLS_ANALYTICS-->
+	<!--5ETOOLS_ADCODE-->
 	<meta charset="utf-8">
+	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!--
-	XML data was compiled by a reddit community for use with the "Fight Club 5" app.
-	Google "5e xml files" for more info.
-
-	Feel free to use, edit, and redistribute this as you wish.
-	I don't own any of the XML data anyway.
--->
+	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<title>Classes - 5etools</title>
 
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/classes.css">
 
+	<!-- Favicons -->
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+	<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+	<!-- Chrome Web App Icons -->
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="application-name" content="5etools">
+	<meta name="theme-color" content="#006bc4">
+
+	<!-- Windows Start Menu tiles -->
+	<meta name="msapplication-config" content="browserconfig.xml"/>
+	<meta name="msapplication-TileColor" content="#006bc4">
+
+	<!-- Apple Touch Icons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+	<meta name="apple-mobile-web-app-title" content="5etools">
+
+	<!-- macOS Safari Pinned Tab and Touch Bar -->
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
+
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script type="text/javascript" src="sw-injector.js"></script>
+
+	<script type="text/javascript" src="js/styleswitch.js"></script>
+	<script type="text/javascript" src="js/navigation.js"></script>
+	<script type="text/javascript" src="js/browsercheck.js"></script>
 </head>
 
 <body>
-	<header class="hidden-xs hidden-sm">
-		<div class="container">
+<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
 
-			<h1>Class List</h1>
-			<p>Search by name on the left, click class name to display on the right.</p>
-		</div>
-	</header>
-	<nav class="container">
-		<ul class="nav nav-pills ">
-			<li role="presentation"><a href="5etools.html">5eTools</a></li>
-			<li role="presentation"><a href="rules.html">Rules</a></li>
-			<li role="presentation" class="dropdown active">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Player Options <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation" class="active"><a href="classes.html">Classes</a></li>
-					<li role="presentation"><a href="backgrounds.html">Backgrounds</a></li>
-					<li role="presentation"><a href="feats.html">Feats</a></li>
-					<li role="presentation"><a href="races.html">Races</a></li>
-				</ul>
-			</li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">DM Tools <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="crcalculator.html">CR Calculator</a></li>
-					<li role="presentation"><a href="http://kobold.club" target="_blank" title="I could literally 	never build something better than Kobold Fight Club">Encounter Builder</a></li>
-					<li role="presentation"><a href="lootgen.html">Loot Generator</a></li>
-				</ul>
-			</li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="bestiary.html">Bestiary</a></li>
-					<li role="presentation"><a href="conditions.html">Conditions</a></li>
-					<li role="presentation"><a href="items.html">Items</a></li>
-					<li role="presentation"><a href="spells.html">Spells</a></li>
-				</ul>
-			</li>
-			<li role="presentation"><a href="statgen.html">Statgen</a></li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Utilities<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="converter.html">Stat Block to JSON</a></li>
-					<li role="presentation"><a href="editor.html">WYSIWYG Editor</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-	<main class="container bodyContent classes">
+<header class="hidden-xs hidden-sm page__header">
+	<div class="container">
 
-		<div class="row">
-			<div class="col-sm-3" id="listcontainer">
-				<div class="input-group">
-					<input type="search" id="search" class="search form-control" placeholder="Find class...">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="button" id="reset">Reset</button>
-					</span>
+		<h1 class="page__title">Classes</h1>
+		<p class="page__subtitle">Search by name on the left, click class name to display on the right.</p>
+	</div>
+</header>
+<nav class="container page__nav" id="navigation">
+	<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
+</nav>
+
+<div class="cancer__wrp-sidebar-rhs cancer__wrp-sidebar-rhs--scrolling-page cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
+
+<main class="container classes">
+
+	<div class="row">
+		<div class="col-sm-3" id="listcontainer">
+			<div class="night__shadow-big">
+				<div class="lst__form-top" id="filter-search-group">
+					<div class="w-100 relative">
+						<input type="search" id="lst__search" autocomplete="off" autocapitalize="off" spellcheck="false" class="search form-control lst__search lst__search--no-border-h">
+						<div id="lst__search-glass" class="lst__wrp-search-glass no-events ve-flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
+						<div class="lst__wrp-search-visible no-events ve-flex-vh-center"></div>
+					</div>
+					<button class="btn btn-default px-2" id="reset"><span class="glyphicon glyphicon-refresh"></span></button>
 				</div>
-				<br>
-				<form id="filtertools">
-					<span class="sortlabel btn-group">
-						<button class="col-xs-12 sort btn btn-default btn-xs" type="button" data-sort="name" sortby="asc">Name</button>
-					</span>
-				</form>
+				<div id="filtertools" class="input-group input-group--bottom ve-flex no-shrink">
+					<button class="col-8 sort btn btn-default btn-xs" data-sort="name">Name</button>
+					<button class="sort btn btn-default btn-xs ve-grow" data-sort="source">Source</button>
+				</div>
 
-				<ul class="list classes">
-
-				</ul>
+				<div class="list list--stats classes cls__list"></div>
 			</div>
-			<div class="col-sm-9" id="classtable">
-				<table>
-					<tr>
-						<th class="border" colspan="15"></th>
-					</tr>
-					<tr>
-						<th id="name" colspan="15">Name</th>
-					</tr>
-					<tr>
-						<th class="slotbuffer" colspan="3"></th>
-						<th class="slotlabel" colspan="0">
-							Spell Slots per Spell Level
-						</th>
-					</tr>
-					<tr>
-						<th class="level">Level</th>
-						<th class="pb">Proficiency Bonus</th>
-						<th class="features">Features</th>
-						<th class="slots spellslots0">Cantrips Known</th>
-						<th class="slots spellslots1">1st</th>
-						<th class="slots spellslots2">2nd</th>
-						<th class="slots spellslots3">3rd</th>
-						<th class="slots spellslots4">4th</th>
-						<th class="slots spellslots5">5th</th>
-						<th class="slots spellslots6">6th</th>
-						<th class="slots spellslots7">7th</th>
-						<th class="slots spellslots8">8th</th>
-						<th class="slots spellslots9">9th</th>
-					</tr>
-					<tr id="level1">
-						<td class="level">1st</td>
-						<td class="pb">+2</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level2">
-						<td class="level">2nd</td>
-						<td class="pb">+2</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level3">
-						<td class="level">3rd</td>
-						<td class="pb">+2</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level4">
-						<td class="level">4th</td>
-						<td class="pb">+2</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level5">
-						<td class="level">5th</td>
-						<td class="pb">+3</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level6">
-						<td class="level">6th</td>
-						<td class="pb">+3</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level7">
-						<td class="level">7th</td>
-						<td class="pb">+3</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level8">
-						<td class="level">8th</td>
-						<td class="pb">+3</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level9">
-						<td class="level">9th</td>
-						<td class="pb">+4</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level10">
-						<td class="level">10th</td>
-						<td class="pb">+4</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level11">
-						<td class="level">11th</td>
-						<td class="pb">+4</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level12">
-						<td class="level">12th</td>
-						<td class="pb">+4</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level13">
-						<td class="level">13th</td>
-						<td class="pb">+5</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level14">
-						<td class="level">14th</td>
-						<td class="pb">+5</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level15">
-						<td class="level">15th</td>
-						<td class="pb">+5</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level16">
-						<td class="level">16th</td>
-						<td class="pb">+5</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level17">
-						<td class="level">17th</td>
-						<td class="pb">+6</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level18">
-						<td class="level">18th</td>
-						<td class="pb">+6</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level19">
-						<td class="level">19th</td>
-						<td class="pb">+6</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr id="level20">
-						<td class="level">20th</td>
-						<td class="pb">+6</td>
-						<td class="features"></td>
-						<td class="slots spellslots0"></td>
-						<td class="slots spellslots1"></td>
-						<td class="slots spellslots2"></td>
-						<td class="slots spellslots3"></td>
-						<td class="slots spellslots4"></td>
-						<td class="slots spellslots5"></td>
-						<td class="slots spellslots6"></td>
-						<td class="slots spellslots7"></td>
-						<td class="slots spellslots8"></td>
-						<td class="slots spellslots9"></td>
-					</tr>
-					<tr>
-						<th class="border" colspan="15"></th>
-					</tr>
-				</table>
+
+			<div class="ve-flex-vh-center my-3">
+				<button class="btn btn-xs btn-info" id="manage-brew">Manage Homebrew</button>
 			</div>
 		</div>
-		<hr>
-		<div class="row">
-			<div class="col-md-3">
-				<table id="statsprof" class="stats">
-					<tr>
-						<th class="border" colspan="6"></th>
-					</tr>
-					<tr>
-						<th id="name" colspan="6">Name</th>
-					</tr>
-					<tr>
-						<td class="divider" colspan="6">
-							<div></div>
-						</td>
-					</tr>
-					<tr>
-						<td id="hp" colspan="6">
-							<h5>Hit Points</h3>
-								<div id="hitdice">
-									<strong>Hit Dice:</strong>
-									<span> </span>
-								</div>
-								<div id="hp1stlevel">
-									<strong>Hit Points at 1st Level:</strong>
-									<span> </span>
-								</div>
-								<div id="hphigherlevels">
-									<strong>Hit Points at Higher Levels:</strong>
-									<span> </span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td id="prof" colspan="6">
-								<h5>Proficiencies</h5>
-							<span>You are proficient with the following items, in addition to any proficiencies provided by your race or background.</span>
-							<div id="armor">
-								<strong>Armor:</strong>
-								<span> </span>
-							</div>
-							<div id="weapons">
-								<strong>Weapons:</strong>
-								<span> </span>
-							</div>
-							<div id="tools">
-								<strong>Tools:</strong>
-								<span> </span>
-							</div>
-							<div id="saves">
-								<strong>Saving Throws:</strong>
-								<span> </span>
-							</div>
-							<div id="skills">
-								<strong>Skills:</strong>
-								<span> </span>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td id="equipment" colspan="6">
-							<h5>Starting Equipment</h5>
-							<div></div>
-						</td>
-					</tr>
-
-					<tr>
-						<th class="border" colspan="6"></th>
-					</tr>
-				</table>
+		<div class="col-sm-9" id="classtable"></div>
+	</div>
+	<hr class="mt-0">
+	<div class="row ve-flex mobile__ve-flex-col">
+		<div class="col-md-3">
+			<div class="ve-flex-vh-center text-center wrp-btn-readmode mb-3">
+				<button class="btn btn-default btn-xs no-print mr-1" id="btn-comparemode" title="A pop-up table which can be used to compare subclass features.">Subclass Comparison</button>
+				<button class="btn btn-default btn-xs no-print mr-1" id="btn-readmode" title="A pop-up reading mode with a layout and content order matching that of the books.">Book View</button>
+				<div class=" ve-flex-v-center btn-group">
+					<button class="btn btn-default btn-xs" id="btn-link-export"><span class="glyphicon glyphicon-magnet"></span></button>
+					<button class="btn btn-default btn-xs" id="btn-sidebar-settings" title="Settings"><span class="glyphicon glyphicon-cog"></span></button>
+				</div>
 			</div>
-			<div class="col-md-9">
-				<div id="subclasses"></div>
-				<table id="stats" class="stats">
-					<tr>
-						<th class="border" colspan="6"></th>
-					</tr>
-					<tr id="features">
-						<td colspan="6">
-							<div></div>
-						</td>
-					</tr>
 
-					<tr>
-						<th class="border" colspan="6"></th>
-					</tr>
-				</table>
+			<div id="statsprof"></div>
 
-			</div>
+			<div id="sticky-nav" class="cls-nav"></div>
 		</div>
-	</main>
-	<footer class="container">
+		<div class="col-md-9">
+			<div class="cancer__wrp-mobile-1 cancer__anchor"><div class="cancer__disp-cancer"></div><!--5ETOOLS_AD_MOB_PLAYER_1--></div>
 
-	</footer>
-	<script type="text/javascript" src="js/page-classes.js"></script>
-	<script type="text/javascript" src="data/classes.json"></script>
-	<script type="text/javascript" src="js/list.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-
+			<div id="subclasstabs" class="w-100 ve-flex mb-2 cls-tabs__wrp"></div>
+			<table id="pagecontent" class="stats shadow-big">
+				<tr><th class="border" colspan="6"></th></tr>
+				<tr><td colspan="6" class="initial-message">Loading...</td></tr>
+				<tr><th class="border" colspan="6"></th></tr>
+			</table>
+		</div>
+	</div>
+</main>
+<!--5ETOOLS_SCRIPT_ANCHOR-->
+<!--5ETOOLS_AD_ADHESION-->
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="js/list2.js"></script>
+<script type="text/javascript" src="lib/elasticlunr.js"></script>
+<script type="text/javascript" src="js/parser.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/utils-list.js"></script>
+<script type="text/javascript" src="js/utils-ui.js"></script>
+<script type="text/javascript" src="lib/localforage.js"></script>
+<script type="text/javascript" src="js/omnidexer.js"></script>
+<script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
+<script type="text/javascript" src="js/render.js"></script>
+<script type="text/javascript" src="js/render-dice.js"></script>
+<script type="text/javascript" src="js/scalecreature.js"></script>
+<script type="text/javascript" src="js/hist.js"></script>
+<script type="text/javascript" src="js/listpage.js"></script>
+<script type="text/javascript" src="js/filter-classes.js"></script>
+<script type="text/javascript" src="js/classes.js"></script>
 </body>
-
 
 </html>

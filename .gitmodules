@@ -1,0 +1,4 @@
+[submodule "img"]
+	path = img
+	url = ssh://git@git.develop.5etools.com:2222/5etools/5etools_img.git
+	branch = master

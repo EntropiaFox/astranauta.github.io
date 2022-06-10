@@ -1,0 +1,36 @@
+@import "includes/vars";
+
+// region Proficiency dice rollers
+[data-proficiency-dice-mode="dice"] {
+	.rd__dc--rollable {
+		color: $rgb-link-blue;
+		cursor: pointer;
+	}
+
+	.rd__dc--rollable-text,
+	.rd__roller--roll-prof-bonus {
+		display: none;
+	}
+
+	.rd__dc--rollable-dice,
+	.rd__roller--roll-prof-dice {
+		display: inline;
+	}
+}
+
+[data-proficiency-dice-mode="bonus"] {
+	.rd__dc--rollable-text,
+	.rd__roller--roll-prof-bonus {
+		display: inline;
+	}
+
+	.rd__dc--rollable-dice,
+	.rd__roller--roll-prof-dice {
+		display: none;
+	}
+}
+
+.night-mode [data-proficiency-dice-mode="dice"] .rd__dc--rollable {
+	color: $rgb-link-blue--night;
+}
+// endregion

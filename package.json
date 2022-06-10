@@ -1,0 +1,62 @@
+{
+	"name": "5etools",
+	"author": "TheGiddyLimit",
+	"version": "1.158.0",
+	"license": "MIT",
+	"description": "A site dedicated to making playing games with your friends as easy as possible.",
+	"scripts": {
+		"version-bump": "npm version -m \"chore(version): bump\"",
+		"gen-all": "node node/generate-all.js",
+		"clean-jsons": "node node/clean-jsons.js",
+		"minify:js": "terser --keep-classnames --keep-fnames",
+		"minify:json": "node node/minify-json.js",
+		"test:js": "eslint .",
+		"lint:js": "eslint . --fix",
+		"test:styles": "stylelint scss/*.scss scss/includes/*.scss",
+		"test:data": "node test/test-all.js",
+		"test": "npm run test:js && npm run test:styles && npm run test:data",
+		"build:css": "sass --style=compressed scss/:css/ && node node/rm.js css/includes/",
+		"build:deploy:dev": "bash build/deploy-prep-dev.sh",
+		"build:deploy:prod": "bash build/deploy-prep-prod.sh",
+		"build:deploy:prod:cdn": "bash build/deploy-prep-prod--cdn.sh",
+		"build:seo": "node node/generate-seo.js",
+		"build:sw": "node node/build-sw.mjs",
+		"build:sw:prod": "node node/build-sw.mjs prod",
+		"build": "npm run clean-jsons && npm run gen-all && npm run build:css && npm run build:sw:prod",
+		"preversion": "npm test",
+		"version": "node node/version-bump.js",
+		"serve:dev": "http-server -c-1 --cors --port 5000",
+		"spellcheck:check-data": "echo \"This can take a few minutes.\" && npx cspell --no-progress --show-context --show-suggestions \"data/**/*.json\"",
+		"spellcheck:check-data-quick": "git diff --name-only | grep -P \"^data/[^.]+.json\" | npx cspell --no-progress --show-context --show-suggestions --file-list stdin",
+		"spellcheck:trust-data": "echo \"This can take a few minutes.\" && echo \"# new words on $(date)\" >> spellcheck/dnd-words.txt && npx cspell --words-only --unique \"./data/**/*.json\" | sort --ignore-case >> spellcheck/dnd-words.txt"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/5etools-mirror-1/5etools-mirror-1.github.io.git"
+	},
+	"devDependencies": {
+		"ajv": "^8.10.0",
+		"esbuild": "^0.14.38",
+		"eslint": "^8.5.0",
+		"http-server": "^0.12.3",
+		"json-source-map": "^0.6.1",
+		"probe-image-size": "^6.0.0",
+		"readline-sync": "^1.4.10",
+		"sass": "^1.45.0",
+		"sharp": "^0.30.5",
+		"simple-git": "2.34.2",
+		"stylelint": "^13.13.1",
+		"stylelint-config-sass-guidelines": "^8.0.0",
+		"terser": "^5.10.0",
+		"workbox-cli": "^6.5.3"
+	},
+	"bugs": {
+		"url": "https://github.com/5etools-mirror-1/5etools-mirror-1.github.io/issues"
+	},
+	"homepage": "https://github.com/5etools-mirror-1/5etools-mirror-1.github.io#readme",
+	"main": ".eslintrc.js",
+	"directories": {
+		"lib": "lib",
+		"test": "test"
+	}
+}

@@ -1,0 +1,83 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "rewards.json",
+	"version": "1.0.5",
+	"type": "object",
+	"properties": {
+		"reward": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"page": {
+						"$ref": "util.json#/definitions/page"
+					},
+					"type": {
+						"type": "string",
+						"enum": [
+							"Blessing",
+							"Boon",
+							"Charm",
+							"Draconic Gift",
+							"Inhabitation",
+							"Fragment of Suffering",
+							"Other"
+						]
+					},
+					"ability": {
+						"type": "object",
+						"properties": {
+							"entry": {
+								"$ref": "entry.json"
+							}
+						},
+						"required": [
+							"entry"
+						],
+						"additionalProperties": false
+					},
+					"signaturespells": {
+						"type": "object",
+						"properties": {
+							"entry": {
+								"$ref": "entry.json"
+							}
+						},
+						"required": [
+							"entry"
+						],
+						"additionalProperties": false
+					},
+					"rarity": {
+						"$ref": "util.json#/definitions/rarity"
+					},
+					"entries": {
+						"type": "array",
+						"uniqueItems": true,
+						"items": {
+							"$ref": "entry.json"
+						}
+					}
+				},
+				"required": [
+					"name",
+					"source",
+					"type",
+					"entries"
+				],
+				"additionalProperties": false
+			}
+		}
+	},
+	"required": [
+		"reward"
+	],
+	"additionalProperties": false
+}

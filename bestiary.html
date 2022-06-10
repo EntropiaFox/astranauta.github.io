@@ -2,243 +2,260 @@
 <html lang="en">
 
 <head>
+	<!--5ETOOLS_CMP-->
+	<!--5ETOOLS_ANALYTICS-->
+	<!--5ETOOLS_ADCODE-->
 	<meta charset="utf-8">
+	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-	<!--
-	XML data was compiled by a reddit community for use with the "Fight Club 5" app.
-	Google "5e xml files" for more info.
-
-	Feel free to use, edit, and redistribute this as you wish.
-	I don't own any of the XML data anyway.
-
--->
+	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<title>Bestiary - 5etools</title>
 
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/bestiary.css">
 
+	<!-- Favicons -->
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+	<link rel="icon" type="image/png" sizes="144x144" href="favicon-144x144.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+	<!-- Chrome Web App Icons -->
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="application-name" content="5etools">
+	<meta name="theme-color" content="#006bc4">
+
+	<!-- Windows Start Menu tiles -->
+	<meta name="msapplication-config" content="browserconfig.xml"/>
+	<meta name="msapplication-TileColor" content="#006bc4">
+
+	<!-- Apple Touch Icons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="360x360" href="apple-touch-icon-360x360.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+	<meta name="apple-mobile-web-app-title" content="5etools">
+
+	<!-- macOS Safari Pinned Tab and Touch Bar -->
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#006bc4">
+
+	<!-- OpenSearch -->
+	<link rel="search" href="open-search.xml" title="Search 5etools" type="application/opensearchdescription+xml">
+
+	<script type="text/javascript" src="sw-injector.js"></script>
+
+	<script type="text/javascript" src="js/styleswitch.js"></script>
+	<script type="text/javascript" src="js/navigation.js"></script>
+	<script type="text/javascript" src="js/browsercheck.js"></script>
+
+	<style>
+		img.token {
+			font-size: 1.6em;
+			right: 0.4em;
+		}
+
+		#wrp-profbonusdice {
+			display: inline-block;
+		}
+
+		.ecgen_active .lst__row--bestiary-sublist {
+			cursor: default;
+		}
+
+		.ecgen_active .lst__row--bestiary-sublist:hover {
+			background: initial;
+		}
+
+		.ecgen__players_head_advanced {
+			display: none;
+			align-items: center;
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 2px;
+			padding-bottom: 3px;
+			font-variant: small-caps;
+		}
+
+		.night-mode .ecgen__players_head_advanced {
+			border-color: #555;
+		}
+
+		.ecgen__group_lhs--advanced {
+			overflow-x: auto;
+		}
+
+		.ecgen__group_lhs--advanced .ecgen__players_head_simple {
+			display: none !important;
+		}
+
+		.ecgen__group_lhs--advanced .ecgen__players_head_advanced {
+			display: inline-flex !important;
+		}
+
+		.ecgen__del_players_filler {
+			width: 16px;
+			flex-shrink: 0;
+			flex-grow: 0;
+		}
+
+		.ecgen__player_advanced_flex {
+			align-items: center;
+		}
+
+		.ecgen__player_advanced__name,
+		.ecgen__player_advanced__name_head {
+			width: 100px;
+		}
+
+		.ecgen__player_advanced__level {
+			text-align: right;
+		}
+
+		.ecgen__player_advanced_narrow {
+			width: 40px;
+		}
+
+		.ecgen__wrp_add_players_btn_wrp {
+			width: calc(140px + 0.5rem);
+			flex-shrink: 0;
+			flex-grow: 0;
+		}
+
+		.ecgen__player_head_tall {
+			height: 22px;
+		}
+
+		#listofsaves {
+			height: initial;
+		}
+	</style>
 </head>
 
 <body>
-	<header class="hidden-xs hidden-sm">
+<div class="cancer__wrp-sidebar-rhs cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--top"><!--5ETOOLS_AD_RIGHT_1--></div><div class="cancer__sidebar-rhs-inner cancer__sidebar-rhs-inner--bottom"><!--5ETOOLS_AD_RIGHT_2--></div></div>
+
+<div class="viewport-wrapper">
+	<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
+
+	<header class="hidden-xs hidden-sm page__header">
 		<div class="container">
 
-			<h1>Bestiary</h1>
-			<p>Search by name on the left, click monster name to display on the right.</p>
+			<h1 class="page__title">Bestiary</h1>
+			<p class="page__subtitle">Search by name on the left, click monster name to display on the right.</p>
 		</div>
 	</header>
-	<nav class="container">
-		<ul class="nav nav-pills ">
-			<li role="presentation"><a href="5etools.html">5eTools</a></li>
-			<li role="presentation"><a href="rules.html">Rules</a></li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Player Options <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="classes.html">Classes</a></li>
-					<li role="presentation"><a href="backgrounds.html">Backgrounds</a></li>
-					<li role="presentation"><a href="feats.html">Feats</a></li>
-					<li role="presentation"><a href="races.html">Races</a></li>
-				</ul>
-			</li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">DM Tools <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="crcalculator.html">CR Calculator</a></li>
-					<li role="presentation"><a href="http://kobold.club" target="_blank" title="I could literally never build something better than Kobold Fight Club">Encounter Builder</a></li>
-					<li role="presentation"><a href="lootgen.html">Loot Generator</a></li>
-				</ul>
-			</li>
-			<li role="presentation" class="dropdown active">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation" class="active"><a href="bestiary.html">Bestiary</a></li>
-					<li role="presentation"><a href="conditions.html">Conditions</a></li>
-					<li role="presentation"><a href="items.html">Items</a></li>
-					<li role="presentation"><a href="spells.html">Spells</a></li>
-				</ul>
-			</li>
-			<li role="presentation"><a href="statgen.html">Statgen</a></li>
-			<li role="presentation" class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Utilities<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li role="presentation"><a href="converter.html">Stat Block to JSON</a></li>
-					<li role="presentation"><a href="editor.html">WYSIWYG Editor</a></li>
-				</ul>
-			</li>
-		</ul>
+	<nav class="container page__nav" id="navigation">
+		<ul class="nav nav-pills page__nav-inner" id="navbar"></ul>
 	</nav>
-	<main class="container bodyContent">
 
-		<div class="row">
-
-			<div class="col-sm-6" id="monstercontainer">
-				<div class="input-group" style="vertical-align: top;">
-					<input type="search" id="search" class="search form-control" placeholder="Find monster...">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="button" id="reset">Reset</button>
-					</span>
+	<div class="view-col-group--cancer h-100 mh-0">
+		<div class="container view-col-wrapper view-col-wrapper--cancer">
+			<div class="view-col" id="listcontainer">
+				<div class="lst__form-top" id="filter-search-group">
+					<div class="w-100 relative">
+						<input type="search" id="lst__search" autocomplete="off" autocapitalize="off" spellcheck="false" class="search form-control lst__search lst__search--no-border-h">
+						<div id="lst__search-glass" class="lst__wrp-search-glass no-events ve-flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
+						<div class="lst__wrp-search-visible no-events ve-flex-vh-center"></div>
+					</div>
+					<button class="btn btn-default" id="reset">Reset</button>
 				</div>
 
-				<form id="filtertools" class="form-group" autocomplete="off">
-					<select class="sourcefilter">
-						<option value="All">All Sources</option>
-					</select>
-					<select class="3ppfilter">
-						<option value="All">Third Party</option>
-						<option value="None">No Third Party</option>
-						<option value="Only">Third Party Only</option>
-					</select>
-					<select class="crfilter">
-						<option value="All">All CRs</option>
-					</select>
-					<select class="typefilter">
-						<option value="All">All Types</option>
-					</select>
-					<span class="sortlabel btn-group">
-							<button class="col-xs-4 sort btn btn-default btn-xs" type="button" sort="name" sortby="asc">Name</button>
-							<button class="col-xs-2 sort btn btn-default btn-xs" type="button" sort="source" sortby="asc">Source</button>
-							<button class="col-xs-3 sort btn btn-default btn-xs" type="button" sort="type" sortby="asc">Type</button>
-							<button class="col-xs-3 sort btn btn-default btn-xs" type="button" sort="cr" sortby="asc">CR</button>
-						</span>
-				</form>
-				<ul id="monsters" class="list">
+				<div id="filtertools" class="input-group input-group--bottom ve-flex no-shrink">
+					<button class="col-4-2 sort btn btn-default btn-xs" data-sort="name">Name</button>
+					<button class="col-4-1 sort btn btn-default btn-xs" data-sort="type">Type</button>
+					<button class="col-1-7 sort btn btn-default btn-xs" data-sort="cr">CR</button>
+					<button class="sort btn btn-default btn-xs ve-grow" data-sort="source">Source</button>
+				</div>
 
-				</ul>
-				<hr>
+				<div class="list list--stats monsters">
+					<!-- populate with JS -->
+				</div>
 			</div>
-			<div class="col-sm-6">
-				<img src="" alt="" id="token">
-				<table id="stats" class="monster">
-					<tr>
-						<th class="border" colspan="6"></th>
-					</tr>
-					<tr>
-						<th id="name" colspan="6">Name <span class="source" title="Source book">SRC</source></th>
-							</tr>
-							<tr>
-								<td id="sizetypealignment" colspan="6"><span id="size">Size</span> <span id="type">type</span>, <span id="alignment">alignment</span></td>
-					</tr>
-					<tr>
-						<td class="divider" colspan="6">
-							<div></div>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Armor Class</strong> <span id="ac">## (source)</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Hit Points</strong> <span id="hp">hp</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Speed</strong> <span id="speed">30 ft.</span></td>
-					</tr>
-					<tr>
-						<td class="divider" colspan="6">
-							<div></div>
-						</td>
-					</tr>
-					<tr id="abilitynames">
-						<th>STR </th>
-						<th>DEX </th>
-						<th>CON </th>
-						<th>INT </th>
-						<th>WIS </th>
-						<th>CHA </th>
-					</tr>
-					<tr id="abilityscores">
-						<td id="str"><span class="score">10</span> (<span class="mod">0</span>)</td>
-						<td id="dex"><span class="score">10</span> (<span class="mod">0</span>)</td>
-						<td id="con"><span class="score">10</span> (<span class="mod">0</span>)</td>
-						<td id="int"><span class="score">10</span> (<span class="mod">0</span>)</td>
-						<td id="wis"><span class="score">10</span> (<span class="mod">0</span>)</td>
-						<td id="cha"><span class="score">10</span> (<span class="mod">0</span>)</td>
-					</tr>
-					<tr>
-						<td class="divider" colspan="6">
-							<div></div>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Saving Throws</strong> <span id="saves">Str +0</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Skills</strong> <span id="skills">Perception +0</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Damage Vulnerabilities</strong> <span id="dmgvuln">fire</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Damage Resistances</strong> <span id="dmgres">cold</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Damage Immunities</strong> <span id="dmgimm">lightning</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Condition Immunities</strong> <span id="conimm">exhaustion</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Senses</strong> <span id="senses">darkvision 30 ft.</span> passive Perception <span id="pp">10</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Languages</strong> <span id="languages">Common</span></td>
-					</tr>
-					<tr>
-						<td colspan="6"><strong>Challenge</strong> <span id="cr">1</span> (<span id="xp">450</span> XP)</td>
-					</tr>
-					<tr id="traits">
-						<td class="divider" colspan="6">
-							<div></div>
-						</td>
-					</tr>
-					<tr class="trait">
-						<td colspan="6"><span class="name">Trait.</span> <span class="content">Content.</span></td>
-					</tr>
-					<tr id="actions">
-						<td colspan="6"><span>Actions</span></td>
-					</tr>
-					<tr class="action">
-						<td colspan="6"><span class="name">Action.</span> <span class="content">Content.</span></td>
-					</tr>
-					<tr id="reactions">
-						<td colspan="6"><span>Reactions</span></td>
-					</tr>
-					<tr class="reaction">
-						<td colspan="6"><span class="name">Reaction.</span> <span class="content">Content.</span></td>
-					</tr>
-					<tr id="legendaries">
-						<td colspan="6"><span>Legendary Actions</span></td>
-					</tr>
-					<tr class="legendary">
-						<td colspan="6"><span class="name">Action.</span> <span class="content">Content.</span></td>
-					</tr>
-					<tr>
-						<th class="border" colspan="6"></th>
-					</tr>
-				</table>
-				<div id="output"></div>
-				<br>
-				<button class="btn btn-block btn-default btn-xs" type="button" id="expandcollapse">Toggle Search</button>
+
+			<div id="contentwrapper" class="view-col">
+				<div class="ecgen__visible mb-3" id="wrp-encounterbuild-random-and-adjust"></div>
+
+				<div class="ecgen__visible mb-4" id="ecgen__wrp-save-controls"></div>
+
+				<div id="sublistcontainer" class="sublist sublist--resizable">
+					<div id="sublistsort" class="btn-group sublist__wrp-cols">
+						<button class="col-5 sort btn btn-default btn-xs" data-sort="name">Name</button>
+						<button class="col-3-8 sort btn btn-default btn-xs ecgen__hidden" data-sort="type">Type</button>
+						<button class="col-3-8 sort btn btn-default btn-xs ecgen__visible" disabled>&nbsp;</button>
+						<button class="col-1-2 sort btn btn-default btn-xs" data-sort="cr">CR</button>
+						<button class="col-2 sort btn btn-default btn-xs" data-sort="count">Number</button>
+					</div>
+					<div class="list submonsters">
+						<!-- populate with JS -->
+					</div>
+					<div class="row ecgen__hidden ve-small">
+						<span class="col-6 text-right pr-2">Total:</span>
+						<span class="col-6 no-wrap pl-0" id="totalcr"></span>
+					</div>
+				</div>
+
+				<div id="stat-tabs" class="wrp-stat-tab ecgen__hidden">
+					<div id="tabs-right"></div>
+				</div>
+
+				<div id="float-token" class="ecgen__hidden relative"></div>
+
+				<div id="wrp-pagecontent" class="wrp-stats-table ecgen__hidden">
+					<table id="pagecontent" class="stats monster">
+						<tr><th class="border" colspan="6"></th></tr>
+						<tr><td colspan="6" class="initial-message">Loading...</td></tr>
+						<tr><th class="border" colspan="6"></th></tr>
+					</table>
+				</div>
+
+				<div class="text-center mt-2 no-print ecgen__hidden">
+					<button class="btn btn-success btn-xs" id="btn-encounterbuild">Encounter Builder</button>
+					<div id="wrp-profbonusdice">
+						<button class="btn btn-default btn-xs" id="profbonusdice"
+								title="See the Dungeon Master&apos;s Guide, p263.">Use Proficiency Dice
+						</button>
+					</div>
+					<button class="btn btn-default btn-xs" id="btn-printbook">Printer View</button>
+					<button class="btn btn-default btn-xs" id="btn-show-table" title="View and Download Creatures in Tabular Format">Table View</button>
+					<button class="btn btn-xs btn-info" id="manage-brew">Manage Homebrew</button>
+				</div>
+
+				<div class="ecgen__visible--flex-col ecgen__wrp pb-1 px-2" id="wrp-encounterbuild-group-and-difficulty"></div>
 			</div>
 		</div>
-	</main>
-	<footer style="text-align: center;" class="container">
-		<small>Content tagged with "3pp" is third-party content from books such as Kobold Press' <em>Tome of Beasts</em>. Use at your own risk.</small>
-	</footer>
-
-	<script type="text/javascript" src="js/page-bestiary.js"></script>
-	<script type="text/javascript" src="data/bestiary.json"></script>
-	<script type="text/javascript" src="data/bestiary-tob.json"></script>
-	<script type="text/javascript" src="js/droll.js"></script>
-	<script type="text/javascript" src="js/list.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-
-
+	</div>
+</div>    <!--5ETOOLS_SCRIPT_ANCHOR-->
+<!--5ETOOLS_AD_ADHESION-->
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="js/parser.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/utils-list.js"></script>
+<script type="text/javascript" src="js/utils-ui.js"></script>
+<script type="text/javascript" src="js/utils-tableview.js"></script>
+<script type="text/javascript" src="lib/localforage.js"></script>
+<script type="text/javascript" src="js/omnidexer.js"></script>
+<script type="text/javascript" src="js/omnisearch.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-brew.js"></script>
+<script type="text/javascript" src="js/render.js"></script>
+<script type="text/javascript" src="js/render-dice.js"></script>
+<script type="text/javascript" src="js/render-markdown.js"></script>
+<script type="text/javascript" src="js/render-bestiary.js"></script>
+<script type="text/javascript" src="js/scalecreature.js"></script>
+<script type="text/javascript" src="js/hist.js"></script>
+<script type="text/javascript" src="js/listpage.js"></script>
+<script type="text/javascript" src="js/multisource.js"></script>
+<script type="text/javascript" src="js/filter-bestiary.js"></script>
+<script type="text/javascript" src="js/bestiary.js"></script>
+<script type="text/javascript" src="js/bestiary-encounterbuilder.js"></script>
+<script type="text/javascript" src="js/list2.js"></script>
+<script type="text/javascript" src="lib/elasticlunr.js"></script>
 </body>
-
 </html>
